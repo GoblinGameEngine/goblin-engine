@@ -43,6 +43,7 @@ var _repath_timer: float = 0.0
 
 @onready var nav_agent: NavigationAgent3D = $NavAgent
 @onready var health: Health = $Health
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
 # Generic sprite-driving: any NPC scene that has a child named "Sprite"
 # implementing play()/stop()/is_playing()/current_animation (see
@@ -181,14 +182,31 @@ func _physics_process(delta: float) -> void:
 # just push into it forever, never actually crossing -- the player has
 # had this since curbs were first added, but nothing gave NPCs the same
 # treatment until now.
+#
+# REAL BUG, found live (same root cause as Player.gd's own copy -- see its
+# comment for the full write-up): every probe ray was built from
+# `global_position` directly, which is EYE height on this CharacterBody3D,
+# not ground level (the CollisionShape3D carries a large negative Y offset
+# so feet land at the floor). All 3 rays fired ~0.9-1.9m above the actual
+# ground/curb/stair surface -- comfortably above anything they were meant
+# to detect -- so this never once triggered in practice; NPCs pathing
+# across a curb or up a stairwell just pushed into it and stalled, same as
+# the player. Fixed the same way: derive real foot Y from the collision
+# capsule's own bottom instead of assuming the root origin is ground level.
 const STEP_HEIGHT := 0.3
+
+func _foot_y() -> float:
+	var capsule := collision_shape.shape as CapsuleShape3D
+	return collision_shape.global_position.y - capsule.height / 2.0
 
 func _try_step_up(move_dir: Vector3) -> void:
 	if move_dir.length_squared() < 0.0001 or not is_on_floor():
 		return
 	var space_state := get_world_3d().direct_space_state
 	var probe := move_dir.normalized() * 0.4
-	var origin := global_position
+	var foot_y := _foot_y()
+	var eye_to_foot := global_position.y - foot_y
+	var origin := Vector3(global_position.x, foot_y, global_position.z)
 
 	var foot_from := origin + Vector3(0, 0.1, 0)
 	var foot_query := PhysicsRayQueryParameters3D.create(foot_from, foot_from + probe)
@@ -207,9 +225,9 @@ func _try_step_up(move_dir: Vector3) -> void:
 	down_query.exclude = [self]
 	var down_hit := space_state.intersect_ray(down_query)
 	if down_hit:
-		var new_y: float = down_hit["position"].y
-		if new_y > global_position.y:
-			global_position.y = new_y
+		var new_foot_y: float = down_hit["position"].y
+		if new_foot_y > foot_y:
+			global_position.y = new_foot_y + eye_to_foot
 
 func _update_sprite_animation() -> void:
 	if sprite == null:

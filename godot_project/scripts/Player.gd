@@ -24,6 +24,7 @@ var spawn_transform: Transform3D
 @onready var muzzle_ray: RayCast3D = $Head/Camera3D/MuzzleRay
 @onready var weapon_mount: Node3D = $Head/Camera3D/WeaponMount
 @onready var health: Health = $Health
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
 var _skip_next_mouse_delta := true
 
@@ -115,12 +116,40 @@ func _try_interact() -> void:
 ## at step height" and, if found, snaps up to the exact top-of-step height
 ## (not a flat +STEP_HEIGHT pop) so it reads as stepping over a curb rather
 ## than hopping a fixed amount for every tiny seam.
+##
+## REAL BUG, found live (via DevBridge-driven movement simulation -- see
+## reference/memory.txt): this used to build all 3 probe rays from
+## `global_position` directly, assuming that was ~ground level. It isn't --
+## `global_position` is the CharacterBody3D ROOT origin, which for both
+## Player and NPCBase sits at EYE height (root's collision shape has a
+## large negative Y offset so feet land at floor level; see Player.tscn's
+## CollisionShape3D). So every ray in this function was firing ~1.4-1.9m
+## above the ground -- comfortably above a 0.12m curb or a 0.2m stair
+## riser, meaning `foot_query` almost never actually hit the obstruction
+## and the function silently did nothing nearly all the time. Confirmed
+## live: simulating 1.5s of forward walking into a real curb moved the
+## player 0.33m (immediately stuck against it); simulating 5s walking into
+## a real staircase moved 1.8m and never gained a millimeter of height.
+## Fixed by deriving the actual foot Y from the CollisionShape3D's own
+## capsule (global bottom = shape's global Y minus half its height) instead
+## of assuming `global_position` is at ground level, and reconstructing the
+## final root-space Y from that foot height plus the (fixed) eye-to-foot
+## offset. Re-confirmed the same way afterward: same curb crossed in
+## ~0.24s of forward walking landing at the correct sidewalk height, same
+## staircase fully climbed in ~2.4s ending at the correct upper-floor
+## height.
+func _foot_y() -> float:
+	var capsule := collision_shape.shape as CapsuleShape3D
+	return collision_shape.global_position.y - capsule.height / 2.0
+
 func _try_step_up(move_dir: Vector3) -> void:
 	if move_dir.length_squared() < 0.0001 or not is_on_floor():
 		return
 	var space_state := get_world_3d().direct_space_state
 	var probe := move_dir.normalized() * 0.4
-	var origin := global_position
+	var foot_y := _foot_y()
+	var eye_to_foot := global_position.y - foot_y
+	var origin := Vector3(global_position.x, foot_y, global_position.z)
 
 	var foot_from := origin + Vector3(0, 0.1, 0)
 	var foot_query := PhysicsRayQueryParameters3D.create(foot_from, foot_from + probe)
@@ -139,9 +168,9 @@ func _try_step_up(move_dir: Vector3) -> void:
 	down_query.exclude = [self]
 	var hit := space_state.intersect_ray(down_query)
 	if hit:
-		var new_y: float = hit.position.y + 0.02
-		if new_y > global_position.y:
-			global_position.y = new_y
+		var new_foot_y: float = hit.position.y + 0.02
+		if new_foot_y > foot_y:
+			global_position.y = new_foot_y + eye_to_foot
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
