@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapons/Pistol.gd" id="1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_receiver"]
+size = Vector3(0.1, 0.13, 0.24)
+
+[sub_resource type="StandardMaterial3D" id="Mat_gunmetal"]
+albedo_color = Color(0.09, 0.09, 0.1, 1)
+roughness = 0.35
+
+[sub_resource type="BoxMesh" id="BoxMesh_grip"]
+size = Vector3(0.09, 0.24, 0.09)
+
+[sub_resource type="StandardMaterial3D" id="Mat_grip"]
+albedo_color = Color(0.22, 0.16, 0.1, 1)
+roughness = 0.7
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_barrel"]
+top_radius = 0.028
+bottom_radius = 0.028
+height = 0.46
+
+[sub_resource type="BoxMesh" id="BoxMesh_sight"]
+size = Vector3(0.02, 0.035, 0.02)
+
+[node name="Pistol" type="Node3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.33, -0.21, -0.9)
+script = ExtResource("1")
+
+[node name="GunReceiver" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -0.1)
+mesh = SubResource("BoxMesh_receiver")
+surface_material_override/0 = SubResource("Mat_gunmetal")
+
+[node name="GunGrip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16, 0.07)
+mesh = SubResource("BoxMesh_grip")
+surface_material_override/0 = SubResource("Mat_grip")
+
+[node name="GunBarrel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.05, -0.44)
+mesh = SubResource("CylinderMesh_barrel")
+surface_material_override/0 = SubResource("Mat_gunmetal")
+
+[node name="GunSightRear" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -0.14)
+mesh = SubResource("BoxMesh_sight")
+surface_material_override/0 = SubResource("Mat_gunmetal")

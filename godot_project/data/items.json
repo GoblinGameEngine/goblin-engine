@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "id": "scrap_metal", "name": "Scrap Metal", "stackable": true, "max_stack": 20, "description": "Salvaged junk. Somebody probably wants this." },
+    { "id": "health_kit",  "name": "Health Kit",  "stackable": true, "max_stack": 5,  "description": "Patches you up.", "use_effect": "heal", "use_value": 25 },
+    { "id": "bat_item",    "name": "Baseball Bat","stackable": false, "max_stack": 1, "description": "A weapon. See weapons.json:bat.", "grants_weapon": "bat" },
+    { "id": "pistol_item", "name": "Pistol",      "stackable": false, "max_stack": 1, "description": "A weapon. See weapons.json:pistol.", "grants_weapon": "pistol" },
+    { "id": "chitin",      "name": "Chitin",      "stackable": true, "max_stack": 99, "description": "A hardened plate looted from a bedbug." }
+  ]
+}

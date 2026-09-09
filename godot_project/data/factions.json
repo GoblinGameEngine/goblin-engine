@@ -1,0 +1,19 @@
+{
+  "factions": [
+    { "id": "player",   "name": "Player",    "behavior": "player" },
+    { "id": "civilian", "name": "Townsfolk", "behavior": "flee" },
+    { "id": "guard",    "name": "Guards",    "behavior": "aggressive" },
+    { "id": "hostile",  "name": "Goblins",   "behavior": "aggressive" }
+  ],
+  "relations": [
+    { "a": "player",   "b": "civilian", "disposition": 50 },
+    { "a": "player",   "b": "guard",    "disposition": 30 },
+    { "a": "player",   "b": "hostile",  "disposition": -100 },
+    { "a": "civilian", "b": "civilian", "disposition": 100 },
+    { "a": "civilian", "b": "guard",    "disposition": 40 },
+    { "a": "civilian", "b": "hostile",  "disposition": -100 },
+    { "a": "guard",    "b": "guard",    "disposition": 100 },
+    { "a": "guard",    "b": "hostile",  "disposition": -100 },
+    { "a": "hostile",  "b": "hostile",  "disposition": 100 }
+  ]
+}

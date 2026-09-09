@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/npc/NPCBase.tscn" id="1"]
+[ext_resource type="Script" path="res://scripts/npc/QuestGiverGeneric.gd" id="2"]
+
+[node name="Marty" instance=ExtResource("1")]
+script = ExtResource("2")
+faction_id = "civilian"
+wander_radius = 2.0
+npc_id = "marty"
+
+[node name="Sprite" parent="."]
+character = "marty"
+sprite_height = 1.7
+directional_clips = {
+"Idle": ["idle"],
+"Walk": ["walka", "walkb"],
+"Attack": ["attacka", "attackb"]
+}
+sequential_clips = {
+"Death": ["death"]
+}
+
+[node name="Health" parent="."]
+max_health = 500.0

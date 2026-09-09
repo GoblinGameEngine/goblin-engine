@@ -1,0 +1,18 @@
+# Reference material the user provided as source images to work from --
+# personal photos and character-reference art, not project source, and
+# not meant to be published (see conversation where this was decided).
+/reference/
+
+# Godot editor cache / import artifacts -- fully regenerated on next open
+godot_project/.godot/
+
+# Build outputs -- regenerate via Godot's export, not source
+godot_project/build/
+
+# Blender autosave backups
+*.blend1
+*.blend2
+
+# Spare local engine binary checked in alongside the project -- not
+# project code, redundant with the copy under ~/newtons-garden/tools/
+/godot/

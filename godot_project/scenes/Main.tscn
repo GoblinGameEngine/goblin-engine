@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/neighborhood.glb" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="2"]
+[ext_resource type="Script" path="res://scripts/Main.gd" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/npc/Marty.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/PoliceCar.tscn" id="5"]
+[ext_resource type="Script" path="res://scripts/PoliceBlockade.gd" id="6"]
+[ext_resource type="PackedScene" path="res://assets/clouds.glb" id="7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="Sky_1"]
+sky_top_color = Color(0.20, 0.28, 0.55, 1)
+sky_horizon_color = Color(0.98, 0.55, 0.30, 1)
+sky_curve = 0.18
+ground_bottom_color = Color(0.32, 0.27, 0.26, 1)
+ground_horizon_color = Color(0.95, 0.62, 0.42, 1)
+ground_curve = 0.18
+sun_angle_max = 12.0
+sun_curve = 0.15
+
+[sub_resource type="Sky" id="Sky_res"]
+sky_material = SubResource("Sky_1")
+
+[sub_resource type="Environment" id="Env_1"]
+background_mode = 2
+sky = SubResource("Sky_res")
+ambient_light_source = 3
+ambient_light_energy = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+
+[node name="Main" type="Node3D"]
+script = ExtResource("3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["world_environment"]]
+environment = SubResource("Env_1")
+
+[node name="Sun" type="DirectionalLight3D" parent="." groups=["sun_light"]]
+rotation_degrees = Vector3(-25, -50, 0)
+light_color = Color(1.0, 0.72, 0.45, 1)
+light_energy = 1.6
+shadow_enabled = true
+directional_shadow_max_distance = 140.0
+
+[node name="Fill" type="DirectionalLight3D" parent="." groups=["fill_light"]]
+rotation_degrees = Vector3(-35, 130, 0)
+light_color = Color(0.45, 0.55, 0.85, 1)
+light_energy = 0.28
+shadow_enabled = false
+
+[node name="NavRegion" type="NavigationRegion3D" parent="."]
+
+[node name="Neighborhood" parent="NavRegion" instance=ExtResource("1")]
+
+[node name="Clouds" type="Node3D" parent="."]
+
+[node name="CloudA" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 42, 40)
+
+[node name="CloudB" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 20, 48, 90)
+
+[node name="CloudC" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 70, 38, 10)
+
+[node name="CloudD" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -20, 45, 130)
+
+[node name="Player" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.68, 50)
+
+[node name="Marty" parent="." instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1, 0, 34)
+
+[node name="PoliceBlockade" type="Node3D" parent="."]
+script = ExtResource("6")
+
+[node name="CarLloydEast" parent="PoliceBlockade" instance=ExtResource("5")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 93, 0, 50)
+
+[node name="CarIraEast" parent="PoliceBlockade" instance=ExtResource("5")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 80, 0, 0)
+
+[node name="CarIraWest" parent="PoliceBlockade" instance=ExtResource("5")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -67, 0, 0)
+
+[node name="CarLakeshoreNorth" parent="PoliceBlockade" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -54)
+
+[node name="CarLakeshoreSouth" parent="PoliceBlockade" instance=ExtResource("5")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 104)
