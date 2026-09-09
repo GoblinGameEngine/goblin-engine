@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/npc/NPCBase.tscn" id="1"]
 [ext_resource type="Script" path="res://scripts/npc/QuestGiverGeneric.gd" id="2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_Marty"]
+radius = 0.35
+height = 1.88
 
 [node name="Marty" instance=ExtResource("1")]
 script = ExtResource("2")
@@ -11,7 +15,7 @@ npc_id = "marty"
 
 [node name="Sprite" parent="."]
 character = "marty"
-sprite_height = 1.7
+sprite_height = 1.88
 directional_clips = {
 "Idle": ["idle"],
 "Walk": ["walka", "walkb"],
@@ -20,6 +24,10 @@ directional_clips = {
 sequential_clips = {
 "Death": ["death"]
 }
+
+[node name="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94, 0)
+shape = SubResource("CapsuleShape3D_Marty")
 
 [node name="Health" parent="."]
 max_health = 500.0

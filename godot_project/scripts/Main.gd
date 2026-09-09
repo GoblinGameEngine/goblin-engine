@@ -45,11 +45,18 @@ func _ready() -> void:
 	var occluded := OcclusionSetup.setup(neighborhood)
 	print("Main: occlusion culling -- box occluder added to %d houses" % occluded)
 
-	var opened := OpeningsSetup.setup(neighborhood, _load_openings())
-	print("Main: placed %d doors, %d windows" % [opened["doors"], opened["windows"]])
-
 	var lake_ok := LakeSetup.setup(neighborhood)
 	print("Main: Summit Lake water animation attached: %s" % lake_ok)
+
+	# Doors are real StaticBody3D obstacles, closed by default -- unlike
+	# the old bare-hole interior openings, they need to be kept OFF the
+	# nav-mesh bake's geometry layer (below), or a closed door reads as a
+	# solid wall filling its own doorway. Placed here, before the bake,
+	# same as everything else -- ordering doesn't matter for this
+	# specifically (the layer mask handles it regardless of timing), but
+	# does for MapEditorUI placements just below.
+	var opened := OpeningsSetup.setup(neighborhood, _load_openings())
+	print("Main: placed %d doors, %d windows" % [opened["doors"], opened["windows"]])
 
 	# Anything placed with the in-game map editor (F2) -- loaded and
 	# spawned BEFORE the navigation mesh bakes below, same as everything
@@ -60,9 +67,49 @@ func _ready() -> void:
 
 	var nav_mesh := NavigationMesh.new()
 	nav_mesh.geometry_parsed_geometry_type = NavigationMesh.PARSED_GEOMETRY_STATIC_COLLIDERS
-	nav_mesh.agent_radius = 0.4
+	# Layer 1 only -- excludes doors (collision_layer 16, see Door.tscn/
+	# InteriorDoor.tscn) from the bake's source geometry entirely, so a
+	# closed door never reads as a wall filling its own doorway. The
+	# door itself still physically blocks the PLAYER (their collision_mask
+	# includes layer 16, see Player.tscn) until opened. Background NPCs
+	# don't collide with doors at all -- they have no door-opening
+	# behavior, so making them collide with a door they can never open
+	# would just strand them; they harmlessly clip through a shut
+	# interior door instead, matching what the navmesh already assumes.
+	nav_mesh.geometry_collision_mask = 1
+	# 0.37, not the previous 0.4 -- just above NPCBase's own real capsule
+	# radius (0.35, see NPCBase.tscn). Finer cell_size/cell_height too
+	# (default is 0.25, coarse relative to this map's sub-meter walls,
+	# doorways, and stairs).
+	#
+	# REAL BUG found live, and the reason both of these changed: Recast's
+	# erosion needs a genuinely clear ~2*agent_radius before it will
+	# produce ANY walkable polygon at all (see HALL_W's own comment in
+	# build_neighborhood.py for this exact lesson, learned once already
+	# for hallway widths) -- but that erosion is computed in whole VOXEL
+	# CELLS, not the raw float radius (the engine's own "agent_radius is
+	# ceiled to cell_size voxel units" warning is telling you this
+	# directly), so the EFFECTIVE erosion for a given doorway depends on
+	# where it happens to land on the fixed voxel grid, not just its
+	# width in meters. Confirmed live: a kitchen/bathroom doorway came
+	# back from NavigationServer3D.map_get_path() as completely
+	# disconnected (both path ends collapsed onto the SAME point) at
+	# 0.85m, while an identically-sized bathroom/stairwell doorway in the
+	# SAME house connected fine -- ruled out the door itself first
+	# (moving doors off this geometry layer, above, didn't fix it alone),
+	# then confirmed the real cause with an isolated two-room test scene
+	# (scratchpad/test_doorway_navmesh.gd) sweeping gap widths at these
+	# exact settings: 0.85m and 0.90m both failed to connect, 1.0m
+	# connected reliably regardless of grid position. Interior doorways
+	# are now 1.0m wide too (see INT_DOOR_W) rather than a more realistic
+	# but voxel-fragile ~0.85m; the finer cell_size here reduces (if it
+	# doesn't fully eliminate) this same grid-alignment sensitivity
+	# elsewhere on the map.
+	nav_mesh.agent_radius = 0.37
 	nav_mesh.agent_height = 1.8
 	nav_mesh.agent_max_climb = 0.4
+	nav_mesh.cell_size = 0.1
+	nav_mesh.cell_height = 0.1
 	nav_region.navigation_mesh = nav_mesh
 	nav_region.bake_finished.connect(_on_nav_baked)
 	nav_region.bake_navigation_mesh()

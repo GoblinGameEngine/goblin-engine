@@ -13,10 +13,12 @@ class_name OpeningsSetup
 # since each needs its own open/closed state.
 
 const DOOR_SCENE_PATH := "res://scenes/Door.tscn"
+const INTERIOR_DOOR_SCENE_PATH := "res://scenes/InteriorDoor.tscn"
 const WINDOW_SCENE_PATH := "res://scenes/Window.tscn"
 
 static func setup(root: Node3D, openings: Array) -> Dictionary:
 	var door_scene: PackedScene = load(DOOR_SCENE_PATH)
+	var interior_door_scene: PackedScene = load(INTERIOR_DOOR_SCENE_PATH)
 	var window_scene: PackedScene = load(WINDOW_SCENE_PATH)
 	var doors := 0
 	var windows := 0
@@ -25,8 +27,12 @@ static func setup(root: Node3D, openings: Array) -> Dictionary:
 		var width: float = o["width"]
 		var height: float = o["height"]
 		var plane_rot: float = o["plane_rot"]
-		if kind == "door":
-			var inst: Door = door_scene.instantiate()
+		if kind == "door" or kind == "door_int":
+			# door_int = a bedroom/bathroom doorway (see build_neighborhood.py's
+			# register_opening_generic()) -- same placement math as an
+			# exterior door, just a narrower, plainer InteriorDoor.tscn
+			# instead of Door.tscn.
+			var inst: Door = (interior_door_scene if kind == "door_int" else door_scene).instantiate()
 			root.add_child(inst)
 			inst.global_position = Vector3(o["hinge_x"], o["z"], -o["hinge_y"])
 			inst.rotation.y = plane_rot

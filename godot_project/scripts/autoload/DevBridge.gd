@@ -111,7 +111,7 @@ func _process(_delta: float) -> void:
 				var line: String = entry["buffer"].substr(0, nl)
 				var response := _dispatch_line(line)
 				peer.put_data((response + "\n").to_utf8_buffer())
-				peer.disconnect_from_stream()
+				peer.disconnect_from_host()
 				responded = true
 		if not responded:
 			still_alive.append(entry)

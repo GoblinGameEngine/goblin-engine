@@ -7,6 +7,7 @@ config_version=5
 [application]
 
 config/name="Goblins - Street Test"
+config/version="0.1.0-prealpha.1"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
@@ -106,6 +107,11 @@ DialogBox="*res://scenes/ui/DialogBox.tscn"
 Hud="*res://scenes/ui/Hud.tscn"
 MapEditorUI="*res://scenes/ui/MapEditorUI.tscn"
 QuestEditorUI="*res://scenes/ui/QuestEditorUI.tscn"
+
+[navigation]
+
+3d/default_cell_size=0.1
+3d/default_cell_height=0.1
 
 [rendering]
 

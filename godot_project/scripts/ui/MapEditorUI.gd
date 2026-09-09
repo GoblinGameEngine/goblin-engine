@@ -45,6 +45,7 @@ const VEHICLE_SCENES := {
 }
 const DOOR_WINDOW_SCENES := {
 	"Door": "res://scenes/Door.tscn",
+	"Interior Door": "res://scenes/InteriorDoor.tscn",
 	"Window": "res://scenes/Window.tscn",
 }
 
@@ -703,16 +704,17 @@ func _spawn_house_openings(entry: Dictionary, parent: Node3D) -> void:
 	var base := Vector3(entry["x"], entry["y"], entry["z"])
 	var id = entry.get("id", -1)
 	var door_scene: PackedScene = load(DOOR_WINDOW_SCENES["Door"])
+	var interior_door_scene: PackedScene = load(DOOR_WINDOW_SCENES["Interior Door"])
 	var window_scene: PackedScene = load(DOOR_WINDOW_SCENES["Window"])
 	for o in openings:
-		var is_door: bool = o["kind"] == "door"
+		var is_door: bool = o["kind"] == "door" or o["kind"] == "door_int"
 		var lx: float = o["hinge_x"] if is_door else o["x"]
 		var ly: float = o["hinge_y"] if is_door else o["y"]
 		var dx := lx * cos(theta) - ly * sin(theta)
 		var dz := -lx * sin(theta) - ly * cos(theta)
 		var plane_rot: float = theta + o["plane_rot"]
 		if is_door:
-			var inst: Door = door_scene.instantiate()
+			var inst: Door = (interior_door_scene if o["kind"] == "door_int" else door_scene).instantiate()
 			parent.add_child(inst)
 			inst.global_position = base + Vector3(dx, o["z"], dz)
 			inst.rotation.y = plane_rot
