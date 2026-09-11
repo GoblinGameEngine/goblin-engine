@@ -65,6 +65,18 @@ func _ready() -> void:
 	var placed := MapEditorUI.spawn_saved_placements(neighborhood)
 	print("Main: spawned %d saved map-editor placements" % placed)
 
+	# Cel shading -- 3D world geometry only (houses, terrain, streets,
+	# scenery, doors/windows -- everything under `neighborhood` by this
+	# point). Deliberately NOT applied to NPCs (sprite-based already, so
+	# never touched by this regardless -- it only walks MeshInstance3D/
+	# MultiMeshInstance3D) or the player (weapon view -- staying plain PBR
+	# for now, see ToonShading.gd). Placed here, after every last thing
+	# that adds children to `neighborhood` (doors/windows, saved map-
+	# editor placements) and before the nav-mesh bake, which doesn't care
+	# about materials at all.
+	var toon_count := ToonShading.apply_to_world(neighborhood)
+	print("Main: cel-shaded %d materials" % toon_count)
+
 	var nav_mesh := NavigationMesh.new()
 	nav_mesh.geometry_parsed_geometry_type = NavigationMesh.PARSED_GEOMETRY_STATIC_COLLIDERS
 	# Layer 1 only -- excludes doors (collision_layer 16, see Door.tscn/
@@ -368,5 +380,6 @@ func _spawn_vehicles() -> int:
 		inst.position = Vector3(bx, 0.0, -by)
 		inst.rotation.y = deg_to_rad(facing_deg)
 		add_child(inst)
+		ToonShading.apply_to_world(inst)
 		count += 1
 	return count
