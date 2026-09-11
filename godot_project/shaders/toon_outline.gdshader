@@ -18,7 +18,7 @@ render_mode cull_front, unshaded, depth_draw_always;
 
 uniform sampler2D albedo_texture : source_color, filter_nearest, repeat_enable;
 uniform bool use_texture = true;
-uniform float outline_width : hint_range(0.0, 0.2) = 0.01;
+uniform float outline_width : hint_range(0.0, 0.2) = 0.022;
 uniform vec4 outline_color : source_color = vec4(0.02, 0.02, 0.02, 1.0);
 
 void vertex() {

@@ -16,6 +16,29 @@ class_name ToonShading
 const TOON_SHADER := preload("res://shaders/toon.gdshader")
 const OUTLINE_SHADER := preload("res://shaders/toon_outline.gdshader")
 
+## Ground-level civic infrastructure never gets the outline pass (still
+## gets normal banded toon shading, just no next_pass) -- REAL BUG found
+## live: a black line was showing up out in the middle of the road, well
+## clear of the actual curb. Root cause: the outline is an inverted-hull
+## effect done PER MESH OBJECT, and the road/curb/sidewalk network is
+## built as several separate flat segments placed edge-to-edge (cut at
+## every cross-street, see build_neighborhood.py's _segments_excluding())
+## -- each segment is its own watertight box with its OWN silhouette, so
+## the outline pass dutifully drew a border around every one of those
+## internal seams too, not just the network's true outer edges. Rather
+## than try to weld every segment into one seamless mesh, simplest and
+## arguably more correct for the style: a flat ground plane doesn't
+## really want a cel outline at all (compare Wind Waker's terrain/ocean,
+## which isn't outlined, vs. its props and characters, which are).
+const NO_OUTLINE_KEYWORDS := ["road", "curb", "sidewalk", "driveway", "street"]
+
+static func _wants_outline(node_name: String) -> bool:
+	var lower := node_name.to_lower()
+	for kw in NO_OUTLINE_KEYWORDS:
+		if lower.find(kw) != -1:
+			return false
+	return true
+
 ## One shared outline material per DISTINCT texture (keyed by resource
 ## path) rather than truly one-per-surface -- the outline pass now has to
 ## sample the same texture as the main pass (see toon_outline.gdshader's
@@ -43,7 +66,7 @@ static func _outline_material_for(tex: Texture2D) -> ShaderMaterial:
 ## tint) -- everything else about the original PBR material (roughness,
 ## metallic, normal maps) is deliberately dropped, since a banded toon
 ## surface doesn't use any of it.
-static func _toon_material_for(src: Material) -> ShaderMaterial:
+static func _toon_material_for(src: Material, want_outline: bool = true) -> ShaderMaterial:
 	var mat := ShaderMaterial.new()
 	mat.shader = TOON_SHADER
 	var tex: Texture2D = null
@@ -55,7 +78,8 @@ static func _toon_material_for(src: Material) -> ShaderMaterial:
 	if tex:
 		mat.set_shader_parameter("albedo_texture", tex)
 	mat.set_shader_parameter("albedo_color", color)
-	mat.next_pass = _outline_material_for(tex)
+	if want_outline:
+		mat.next_pass = _outline_material_for(tex)
 	return mat
 
 ## Recursively walks `root`, replacing every MeshInstance3D surface
@@ -69,17 +93,18 @@ static func apply_to_world(root: Node) -> int:
 		var n: Node = stack.pop_back()
 		if n is MeshInstance3D:
 			var mi := n as MeshInstance3D
+			var outline := _wants_outline(mi.name)
 			if mi.mesh:
 				for i in range(mi.mesh.get_surface_count()):
 					var src_mat := mi.get_active_material(i)
-					mi.set_surface_override_material(i, _toon_material_for(src_mat))
+					mi.set_surface_override_material(i, _toon_material_for(src_mat, outline))
 					count += 1
 		elif n is MultiMeshInstance3D:
 			var mm := n as MultiMeshInstance3D
 			var src_mat: Material = mm.material_override
 			if src_mat == null and mm.multimesh and mm.multimesh.mesh and mm.multimesh.mesh.get_surface_count() > 0:
 				src_mat = mm.multimesh.mesh.surface_get_material(0)
-			mm.material_override = _toon_material_for(src_mat)
+			mm.material_override = _toon_material_for(src_mat, _wants_outline(mm.name))
 			count += 1
 		for c in n.get_children():
 			stack.append(c)
