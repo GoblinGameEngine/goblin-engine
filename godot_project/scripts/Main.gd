@@ -85,6 +85,23 @@ func _ready() -> void:
 	print("Main: distance culling -- %d small props, %d trees, %d houses" %
 		[culled["small"], culled["tree"], culled["house"]])
 
+	# Screen-space outline pass (shaders/screen_outline.gdshader,
+	# ScreenOutline.gd) -- replaces the old per-object inverted-hull
+	# outline entirely (ToonShading.apply_to_world() above now only does
+	# banded lighting, no outline material/next_pass of its own). See the
+	# shader's own comment for why: a world-space vertex offset gets
+	# disproportionately thick the closer the camera gets, no matter how
+	# well it's tuned per object shape -- a screen-space pass sidesteps
+	# that by construction, since its width is in screen pixels. Attached
+	# once, here, to the player's own camera.
+	var player := get_tree().get_first_node_in_group("player")
+	if player:
+		var player_cam: Camera3D = player.get_node_or_null("Head/Camera3D")
+		if player_cam:
+			ScreenOutline.attach_to_camera(player_cam)
+		else:
+			push_warning("Main: player has no Head/Camera3D -- no screen outline attached")
+
 	var nav_mesh := NavigationMesh.new()
 	nav_mesh.geometry_parsed_geometry_type = NavigationMesh.PARSED_GEOMETRY_STATIC_COLLIDERS
 	# Layer 1 only -- excludes doors (collision_layer 16, see Door.tscn/

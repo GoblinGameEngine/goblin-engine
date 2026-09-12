@@ -108,7 +108,11 @@ func _ready() -> void:
 	if sprite is GeometryInstance3D:
 		sprite.visibility_range_end = SPRITE_RENDER_RANGE
 		sprite.visibility_range_end_margin = SPRITE_RENDER_FADE_MARGIN
-		sprite.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_SELF
+		# DISABLED, not SELF -- see DistanceCulling.gd's own comment on
+		# _apply(): Godot's "smooth" fade is actually a per-pixel dither,
+		# which fed false edges into the screen-space outline pass right
+		# at this fade distance. Same fix, same reason, here too.
+		sprite.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_DISABLED
 	_setup_visibility_culling()
 
 ## Sized generously enough to cover the tallest NPC sprite (~1.7m, the

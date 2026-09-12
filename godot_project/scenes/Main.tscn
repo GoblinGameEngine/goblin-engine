@@ -40,7 +40,7 @@ rotation_degrees = Vector3(-25, -50, 0)
 light_color = Color(1.0, 0.72, 0.45, 1)
 light_energy = 1.6
 shadow_enabled = true
-directional_shadow_max_distance = 140.0
+directional_shadow_max_distance = 220.0
 
 [node name="Fill" type="DirectionalLight3D" parent="." groups=["fill_light"]]
 rotation_degrees = Vector3(-35, 130, 0)

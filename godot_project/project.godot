@@ -7,7 +7,7 @@ config_version=5
 [application]
 
 config/name="Goblins - Street Test"
-config/version="0.5.3-prealpha.11"
+config/version="0.6.0-prealpha.12"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
@@ -115,6 +115,6 @@ QuestEditorUI="*res://scenes/ui/QuestEditorUI.tscn"
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="forward_plus"
 renderer/rendering_method.mobile="mobile"
 textures/vram_compression/import_etc2_astc=true

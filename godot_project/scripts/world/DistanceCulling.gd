@@ -52,10 +52,23 @@ static func _category(node_name: String) -> String:
 			return "house"
 	return ""
 
+## REAL BUG found live: VISIBILITY_RANGE_FADE_SELF (a smooth-looking
+## fade) is implemented by Godot as a per-pixel DITHERED transparency
+## pattern, not an actual alpha blend -- right at an object's fade-out
+## distance, individual screen pixels flicker between fully opaque and
+## fully absent in a stipple pattern. That's invisible to the eye alone
+## normally, but it writes chaotic, dense depth/normal discontinuities
+## into the buffers the screen-space outline pass (shaders/
+## screen_outline.gdshader) reads every frame -- read as a solid band of
+## false edges at whatever distance small props (fences, mailboxes) were
+## fading out around (40m). Switched to VISIBILITY_RANGE_FADE_DISABLED:
+## a hard cutoff, no dither, no fade-adjacent noise -- the object just
+## pops rather than fading, a worthwhile trade now that the fade was
+## actively breaking a different system, not merely cosmetic on its own.
 static func _apply(gi: GeometryInstance3D, range_end: float) -> void:
 	gi.visibility_range_end = range_end
 	gi.visibility_range_end_margin = FADE_MARGIN
-	gi.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_SELF
+	gi.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_DISABLED
 
 ## Recursively walks `root`, setting a distance-appropriate
 ## visibility_range on every categorized GeometryInstance3D (covers both

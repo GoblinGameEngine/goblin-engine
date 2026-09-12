@@ -5,7 +5,7 @@ CLI scripting (Blender for assets, Godot for the engine).
 
 ## Version
 
-**Current: `0.5.3-prealpha.11`** — pre-alpha. Tracked in the `VERSION` file
+**Current: `0.6.0-prealpha.12`** — pre-alpha. Tracked in the `VERSION` file
 at the repo root (single source of truth) and mirrored into
 `godot_project/project.godot`'s `config/version`.
 
