@@ -77,6 +77,14 @@ func _ready() -> void:
 	var toon_count := ToonShading.apply_to_world(neighborhood)
 	print("Main: cel-shaded %d materials" % toon_count)
 
+	# Distance culling -- same "neighborhood, fully populated" timing as
+	# cel shading just above (order between the two doesn't matter, they
+	# touch different properties on the same nodes). See
+	# DistanceCulling.gd for the actual tiers/reasoning.
+	var culled := DistanceCulling.apply_to_world(neighborhood)
+	print("Main: distance culling -- %d small props, %d trees, %d houses" %
+		[culled["small"], culled["tree"], culled["house"]])
+
 	var nav_mesh := NavigationMesh.new()
 	nav_mesh.geometry_parsed_geometry_type = NavigationMesh.PARSED_GEOMETRY_STATIC_COLLIDERS
 	# Layer 1 only -- excludes doors (collision_layer 16, see Door.tscn/

@@ -88,6 +88,15 @@ func has_dialog() -> bool:
 func get_dialog_tree() -> Dictionary:
 	return {}
 
+## Real render distance for the sprite itself, on top of (not instead of)
+## the screen-frustum-based AI/animation pause below -- a background NPC
+## far enough away to be a few pixels tall doesn't need to be drawn at
+## all, comic-book outline or not. Same Godot visibility_range mechanism
+## DistanceCulling.gd uses for world scenery, just applied here directly
+## since NPCs live outside that script's own `neighborhood` subtree.
+const SPRITE_RENDER_RANGE := 65.0
+const SPRITE_RENDER_FADE_MARGIN := 8.0
+
 func _ready() -> void:
 	add_to_group("combatants")
 	_home_position = global_position
@@ -96,6 +105,10 @@ func _ready() -> void:
 	nav_agent.target_desired_distance = 0.6
 	_pick_new_wander_target()
 	sprite = find_child("Sprite", true, false)
+	if sprite is GeometryInstance3D:
+		sprite.visibility_range_end = SPRITE_RENDER_RANGE
+		sprite.visibility_range_end_margin = SPRITE_RENDER_FADE_MARGIN
+		sprite.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_SELF
 	_setup_visibility_culling()
 
 ## Sized generously enough to cover the tallest NPC sprite (~1.7m, the
