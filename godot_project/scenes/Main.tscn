@@ -66,6 +66,60 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 70, 38, 10)
 [node name="CloudD" parent="Clouds" instance=ExtResource("7")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -20, 45, 130)
 
+[node name="CloudE" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-0.0888, 0, 1.0418, 0, 1.0455, 0, -1.0418, 0, -0.0888, 26.83, 40.60, -148.50)
+
+[node name="CloudF" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(1.2420, 0, -0.2353, 0, 1.2641, 0, 0.2353, 0, 1.2420, 38.01, 36.09, 76.97)
+
+[node name="CloudG" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-0.5994, 0, 0.8237, 0, 1.0187, 0, -0.8237, 0, -0.5994, -99.41, 34.64, -23.61)
+
+[node name="CloudH" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(1.6890, 0, -0.0690, 0, 1.6904, 0, 0.0690, 0, 1.6890, -1.52, 48.14, -97.69)
+
+[node name="CloudI" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(0.9361, 0, 0.2579, 0, 0.9710, 0, -0.2579, 0, 0.9361, 76.75, 42.17, 26.52)
+
+[node name="CloudJ" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-1.3772, 0, 1.0507, 0, 1.7322, 0, -1.0507, 0, -1.3772, -64.02, 36.32, -130.89)
+
+[node name="CloudK" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-1.3516, 0, -1.2929, 0, 1.8704, 0, 1.2929, 0, -1.3516, 77.14, 46.87, 34.73)
+
+[node name="CloudL" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-1.5455, 0, 0.8164, 0, 1.7479, 0, -0.8164, 0, -1.5455, 0.61, 48.84, 60.65)
+
+[node name="CloudM" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(0.9807, 0, -0.5375, 0, 1.1183, 0, 0.5375, 0, 0.9807, 46.37, 39.47, -143.09)
+
+[node name="CloudN" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-0.9903, 0, -1.1257, 0, 1.4993, 0, 1.1257, 0, -0.9903, -95.16, 40.67, -128.74)
+
+[node name="CloudO" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-1.0940, 0, 1.4674, 0, 1.8303, 0, -1.4674, 0, -1.0940, -53.95, 40.41, -100.53)
+
+[node name="CloudP" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-0.7119, 0, -0.6731, 0, 0.9797, 0, 0.6731, 0, -0.7119, 17.74, 51.50, -110.50)
+
+[node name="CloudQ" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(0.8555, 0, 1.2962, 0, 1.5531, 0, -1.2962, 0, 0.8555, 131.86, 47.37, 11.40)
+
+[node name="CloudR" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-0.1276, 0, -1.1399, 0, 1.1470, 0, 1.1399, 0, -0.1276, 67.80, 34.77, -95.45)
+
+[node name="CloudS" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-0.6416, 0, 0.9497, 0, 1.1461, 0, -0.9497, 0, -0.6416, -101.71, 55.03, 90.16)
+
+[node name="CloudT" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(0.0231, 0, -1.0911, 0, 1.0914, 0, 1.0911, 0, 0.0231, -46.31, 45.01, 82.78)
+
+[node name="CloudU" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(-1.4422, 0, -1.0562, 0, 1.7876, 0, 1.0562, 0, -1.4422, 3.41, 48.03, -86.69)
+
+[node name="CloudV" parent="Clouds" instance=ExtResource("7")]
+transform = Transform3D(0.8608, 0, -0.2626, 0, 0.9000, 0, 0.2626, 0, 0.8608, -99.20, 46.23, 104.36)
+
 [node name="Player" parent="." instance=ExtResource("2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.43, 50)
 

@@ -16,6 +16,38 @@ var seconds_per_game_hour := 60.0
 var hour: float = 8.0  # 0-24, wraps
 var day: int = 1
 
+## Dev/debug time control -- added so screenshots/testing at a specific
+## time of day (dawn, noon, dusk, night) don't mean waiting out real
+## minutes or hand-writing the same `root.get_node("/root/GameClock").hour
+## = X` DevBridge `run` snippet every time. `frozen` short-circuits
+## _process() entirely (lighting stays exactly where set_hour() left it,
+## including across screenshot-capture frames), separate from just
+## setting seconds_per_game_hour to something huge -- that would still
+## drift a little and reads less clearly at the call site.
+var frozen := false
+
+## Jumps directly to `h` (0-24, wraps) and re-applies lighting
+## immediately -- doesn't wait for the next _process() tick, so a
+## `set_hour()` followed straight by a screenshot command shows the new
+## time, not the old one.
+func set_hour(h: float) -> void:
+	hour = fmod(h, 24.0)
+	if hour < 0.0:
+		hour += 24.0
+	_apply_lighting()
+
+func freeze() -> void:
+	frozen = true
+
+func unfreeze() -> void:
+	frozen = false
+
+## Real seconds per in-game hour -- lower is faster. Same
+## reload-vs-restart tradeoff as _load_config()'s other values: takes
+## effect immediately, no relaunch needed.
+func set_time_scale(seconds_per_hour: float) -> void:
+	seconds_per_game_hour = max(0.01, seconds_per_hour)
+
 # Warm dawn/dusk -> neutral midday -> cold dim night. Tunable in code for now;
 # could be moved to the config file too if you want to tweak it without
 # touching scripts.
@@ -50,6 +82,8 @@ func reload_config() -> void:
 	_load_config()
 
 func _process(delta: float) -> void:
+	if frozen:
+		return
 	var prev_hour := hour
 	hour += delta / seconds_per_game_hour
 	if hour >= 24.0:

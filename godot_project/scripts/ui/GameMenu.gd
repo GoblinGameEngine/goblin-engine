@@ -7,16 +7,28 @@ extends CanvasLayer
 const HAND_FONT := preload("res://fonts/PatrickHand-Regular.ttf")
 const OVERMAP_TEX := preload("res://textures/overmap_static.png")
 
-const PAPER_COLOR := Color(0.94, 0.90, 0.78)
+## Real legal pad bitmap (see scratchpad/gen_legal_pad.py) replacing the
+## old procedurally-drawn background -- REAL BUG in that old version,
+## found on review rather than live: it drew a column of circles down the
+## left edge as a "spiral binding", but researched legal pad proportions
+## (see the generator's own comment) confirmed a legal pad is glued/
+## perforated at the TOP, not spiral-bound on the side at all -- that was
+## a plain notebook's look, not a legal pad's, despite the menu already
+## being named/intended as one (its red margin line and yellow paper were
+## already correct; only the binding was the wrong stationery entirely).
+## Also part of the broader move of UI elements from procedural Control
+## drawing to flat bitmaps (see the doors/windows already using sprites
+## rather than 3D geometry) -- one draw_texture_rect per frame instead of
+## a fill + ~30 ruled-line draw_line calls + ~40 draw_circle calls.
+const LEGAL_PAD_TEX: Texture2D = preload("res://textures/legal_pad_bg.png")
+
 const INK_COLOR := Color(0.16, 0.13, 0.11)
-const RULE_COLOR := Color(0.55, 0.62, 0.80, 0.4)
-const MARGIN_LINE_COLOR := Color(0.82, 0.30, 0.28, 0.55)
 
 var _is_open := false
 var _theme: Theme
 
 var _menu_root: Control
-var _notebook_bg: Control
+var _notebook_bg: TextureRect
 var _tab_bar: HBoxContainer
 var _pages: Dictionary = {}       # name -> Control
 var _current_page := "quests"
@@ -97,8 +109,18 @@ func _build_ui() -> void:
 	add_child(root_margin)
 	_menu_root = root_margin
 
-	_notebook_bg = Control.new()
-	_notebook_bg.draw.connect(_draw_notebook)
+	_notebook_bg = TextureRect.new()
+	_notebook_bg.texture = LEGAL_PAD_TEX
+	_notebook_bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_notebook_bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	# COVERED, not SCALE -- the pad bitmap is drawn at the real portrait
+	# proportions of an actual sheet of paper (8.5x11.75in), which don't
+	# match this menu's landscape panel. SCALE would squash the ruled
+	# lines/margin into the wrong aspect (the exact distortion problem
+	# already solved for the door/window textures this session); COVERED
+	# scales to fill without distorting and crops the overflow instead,
+	# same as a photo "fill" mode.
+	_notebook_bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	root_margin.add_child(_notebook_bg)
 
 	var content_margin := MarginContainer.new()
@@ -142,25 +164,6 @@ func _switch_page(name: String) -> void:
 	_current_page = name
 	for key in _pages.keys():
 		_pages[key].visible = (key == name)
-
-func _draw_notebook() -> void:
-	var size: Vector2 = _notebook_bg.size
-	if size.x <= 0:
-		return
-	_notebook_bg.draw_rect(Rect2(Vector2.ZERO, size), PAPER_COLOR, true)
-	# ruled lines
-	var y := 40.0
-	while y < size.y:
-		_notebook_bg.draw_line(Vector2(60, y), Vector2(size.x - 10, y), RULE_COLOR, 1.0)
-		y += 34.0
-	# red margin line
-	_notebook_bg.draw_line(Vector2(58, 0), Vector2(58, size.y), MARGIN_LINE_COLOR, 2.0)
-	# spiral binding down the left edge
-	var sy := 24.0
-	while sy < size.y:
-		_notebook_bg.draw_circle(Vector2(24, sy), 9.0, Color(0.25, 0.22, 0.20))
-		_notebook_bg.draw_circle(Vector2(24, sy), 4.0, PAPER_COLOR)
-		sy += 30.0
 
 func _section_title(text: String) -> Label:
 	var l := Label.new()

@@ -7,7 +7,7 @@ config_version=5
 [application]
 
 config/name="Goblins - Street Test"
-config/version="0.5.2-prealpha.10"
+config/version="0.5.3-prealpha.11"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
