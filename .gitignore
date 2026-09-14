@@ -8,6 +8,7 @@ godot_project/.godot/
 
 # Build outputs -- regenerate via Godot's export, not source
 godot_project/build/
+godot_project/build_arm64/
 
 # Blender autosave backups
 *.blend1
