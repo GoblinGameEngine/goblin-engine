@@ -13,6 +13,14 @@ var sfx_volume: float = 0.8
 var music_volume: float = 0.6
 var gamma: float = 1.0
 var mouse_sensitivity_mult: float = 1.0
+## Scales DistanceCulling.gd's tiers (and NPCBase.gd's own sprite range)
+## uniformly -- 1.0 is this project's own tuned default. Exists because
+## "how far should things draw" stopped being a single fixed answer once
+## the screen-space outline pass made distance a real, varying cost
+## (weak hardware/high resolution wants shorter range; the Pi 5 preview
+## build in particular may need this turned WAY down) rather than a
+## constant to bake in once and forget.
+var draw_distance_mult: float = 1.0
 
 func _ready() -> void:
 	_ensure_bus("SFX")
@@ -35,6 +43,7 @@ func load_settings() -> void:
 		music_volume = cfg.get_value("audio", "music_volume", music_volume)
 		gamma = cfg.get_value("video", "gamma", gamma)
 		mouse_sensitivity_mult = cfg.get_value("controls", "mouse_sensitivity", mouse_sensitivity_mult)
+		draw_distance_mult = cfg.get_value("video", "draw_distance", draw_distance_mult)
 
 func save_settings() -> void:
 	var cfg := ConfigFile.new()
@@ -42,6 +51,7 @@ func save_settings() -> void:
 	cfg.set_value("audio", "music_volume", music_volume)
 	cfg.set_value("video", "gamma", gamma)
 	cfg.set_value("controls", "mouse_sensitivity", mouse_sensitivity_mult)
+	cfg.set_value("video", "draw_distance", draw_distance_mult)
 	cfg.save(SAVE_PATH)
 
 func set_sfx_volume(v: float) -> void:
@@ -64,6 +74,16 @@ func set_gamma(v: float) -> void:
 
 func set_mouse_sensitivity(v: float) -> void:
 	mouse_sensitivity_mult = v
+	save_settings()
+	changed.emit()
+
+## Doesn't touch the scene directly -- unlike volume/gamma, applying a new
+## draw distance means re-walking the whole world and every live NPC, not
+## a single value to poke. Main.gd listens for `changed` and does that
+## work; this just persists the choice and announces it, same as every
+## other setter here.
+func set_draw_distance(v: float) -> void:
+	draw_distance_mult = v
 	save_settings()
 	changed.emit()
 

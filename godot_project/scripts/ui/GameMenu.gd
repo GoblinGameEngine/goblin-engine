@@ -37,6 +37,7 @@ var _current_page := "quests"
 var _system_main: Control
 var _system_settings: Control
 var _system_keymap: Control
+var _system_graphics: Control
 
 var _quest_list: VBoxContainer
 var _item_list: VBoxContainer
@@ -184,6 +185,7 @@ func _build_system_page() -> Control:
 	_system_main.add_child(_section_title("System"))
 	for entry in [["New Game", _on_new_game], ["Resume", func(): set_open(false)],
 			["Settings", func(): _show_system_sub(_system_settings)],
+			["Graphics", func(): _show_system_sub(_system_graphics)],
 			["Keymap", func(): _show_system_sub(_system_keymap)]]:
 		var btn := Button.new()
 		btn.text = entry[0]
@@ -204,12 +206,19 @@ func _build_system_page() -> Control:
 	_system_keymap.add_child(_back_button(_system_keymap))
 	root.add_child(_system_keymap)
 
+	_system_graphics = _build_graphics_sub()
+	_system_graphics.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_system_graphics.visible = false
+	_system_graphics.add_child(_back_button(_system_graphics))
+	root.add_child(_system_graphics)
+
 	return root
 
 func _show_system_sub(sub: Control) -> void:
 	_system_main.visible = false
 	_system_settings.visible = (sub == _system_settings)
 	_system_keymap.visible = (sub == _system_keymap)
+	_system_graphics.visible = (sub == _system_graphics)
 
 func _back_button(sub: Control) -> Button:
 	var b := Button.new()
@@ -229,6 +238,49 @@ func _build_settings_sub() -> Control:
 	vbox.add_child(_slider_row("Music Volume", 0.0, 1.0, Settings.music_volume, func(v): Settings.set_music_volume(v)))
 	vbox.add_child(_slider_row("Gamma", 0.5, 1.8, Settings.gamma, func(v): Settings.set_gamma(v)))
 	vbox.add_child(_slider_row("Mouse Speed", 0.3, 3.0, Settings.mouse_sensitivity_mult, func(v): Settings.set_mouse_sensitivity(v)))
+	return vbox
+
+## A single Draw Distance control, not a raw multiplier alone -- shows
+## the actual effective house draw distance in meters as the slider
+## moves, since "1.35x" means nothing to a player on its own but "houses
+## draw to 270m" does. Exists because DistanceCulling.gd's tiers stopped
+## being a fixed, bake-once constant the moment the screen-space outline
+## pass made render distance a real, hardware-dependent tradeoff rather
+## than a style choice -- this is the knob for whoever's hardware needs
+## it turned down (or a fast machine that can afford to turn it up),
+## the Pi 5 preview build being the immediate reason this exists at all.
+func _build_graphics_sub() -> Control:
+	var vbox := VBoxContainer.new()
+	vbox.add_theme_constant_override("separation", 14)
+	vbox.add_child(_section_title("Graphics"))
+
+	var row := VBoxContainer.new()
+	var lbl := Label.new()
+	lbl.text = "Draw Distance"
+	row.add_child(lbl)
+	var readout := Label.new()
+	readout.add_theme_font_size_override("font_size", 18)
+	readout.add_theme_color_override("font_color", Color(0.35, 0.3, 0.5))
+	row.add_child(readout)
+	var slider := HSlider.new()
+	slider.min_value = 0.4
+	slider.max_value = 2.0
+	slider.step = 0.05
+	slider.value = Settings.draw_distance_mult
+	slider.custom_minimum_size = Vector2(320, 24)
+	var update_readout := func(v: float):
+		readout.text = "Houses draw to %dm, trees to %dm, small props to %dm" % [
+			round(DistanceCulling.HOUSE_RANGE * v),
+			round(DistanceCulling.TREE_RANGE * v),
+			round(DistanceCulling.SMALL_RANGE * v),
+		]
+	update_readout.call(slider.value)
+	slider.value_changed.connect(func(v):
+		update_readout.call(v)
+		Settings.set_draw_distance(v)
+	)
+	row.add_child(slider)
+	vbox.add_child(row)
 	return vbox
 
 func _slider_row(label_text: String, min_v: float, max_v: float, value: float, on_change: Callable) -> Control:

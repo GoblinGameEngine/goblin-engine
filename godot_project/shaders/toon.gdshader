@@ -40,6 +40,14 @@ render_mode cull_disabled, specular_disabled;
 uniform sampler2D albedo_texture : source_color, filter_nearest, repeat_enable;
 uniform vec4 albedo_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform bool use_texture = true;
+// REAL BUG found live (see ToonShading.gd's own comment on
+// _texture_has_real_alpha() for the full story): a plain RGB texture
+// with no alpha channel at all was still being alpha-discard-tested
+// below, and evidently sampled inconsistently between the ordinary
+// color pass and whatever separate pass populates the depth/normal
+// buffers a later screen-space effect reads -- discarding only makes
+// sense for a texture that actually HAS real alpha data to discard on.
+uniform bool has_alpha = true;
 
 // Band edges (in NdotL, 0..1) and the brightness multiplier for each band.
 uniform float band_edge_1 : hint_range(0.0, 1.0) = 0.25;
@@ -51,7 +59,7 @@ uniform float shade_lit : hint_range(0.0, 1.5) = 1.05;
 void fragment() {
 	vec4 tex_color = use_texture ? texture(albedo_texture, UV) : vec4(1.0);
 	vec4 base = tex_color * albedo_color;
-	if (base.a < 0.5) {
+	if (has_alpha && base.a < 0.5) {
 		discard;
 	}
 	ALBEDO = base.rgb;

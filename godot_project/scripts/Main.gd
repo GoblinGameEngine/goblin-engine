@@ -80,10 +80,15 @@ func _ready() -> void:
 	# Distance culling -- same "neighborhood, fully populated" timing as
 	# cel shading just above (order between the two doesn't matter, they
 	# touch different properties on the same nodes). See
-	# DistanceCulling.gd for the actual tiers/reasoning.
-	var culled := DistanceCulling.apply_to_world(neighborhood)
+	# DistanceCulling.gd for the actual tiers/reasoning. Scaled by the
+	# player's own Graphics > Draw Distance setting (GameMenu.gd) --
+	# _on_draw_distance_changed() below re-applies this same call
+	# whenever that setting changes mid-game, so this isn't a one-time
+	# boot-only value.
+	var culled := DistanceCulling.apply_to_world(neighborhood, Settings.draw_distance_mult)
 	print("Main: distance culling -- %d small props, %d trees, %d houses" %
 		[culled["small"], culled["tree"], culled["house"]])
+	Settings.changed.connect(_on_settings_changed)
 
 	# Screen-space outline pass (shaders/screen_outline.gdshader,
 	# ScreenOutline.gd) -- replaces the old per-object inverted-hull
@@ -408,3 +413,20 @@ func _spawn_vehicles() -> int:
 		ToonShading.apply_to_world(inst)
 		count += 1
 	return count
+
+## Fires on ANY Settings change (volume, gamma, mouse sensitivity too --
+## Settings.gd has one shared `changed` signal, not one per field), but
+## draw distance is the only one this needs to actively re-apply: the
+## others are read live where they're used (AudioServer bus volume,
+## Player.gd's own mouse-look code) rather than baked into
+## visibility_range_end values on hundreds of nodes at a point in time.
+## Re-running DistanceCulling.apply_to_world() is cheap and idempotent
+## (same walk Main._ready() already does once at boot), so no need to
+## track "did draw distance specifically change."
+func _on_settings_changed() -> void:
+	var culled := DistanceCulling.apply_to_world(neighborhood, Settings.draw_distance_mult)
+	print("Main: draw distance changed -- reapplied culling (%d small props, %d trees, %d houses)" %
+		[culled["small"], culled["tree"], culled["house"]])
+	for npc in get_tree().get_nodes_in_group("combatants"):
+		if npc.has_method("apply_draw_distance"):
+			npc.apply_draw_distance(Settings.draw_distance_mult)

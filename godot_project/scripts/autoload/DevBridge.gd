@@ -31,7 +31,7 @@ extends Node
 # (a command object, plus a "token" field -- see AUTH below) terminated
 # by "\n", read back ONE line of JSON (the response), connection closes
 # after that. See tools/gcmd.py (outside this project, in
-# ~/goblins/tools/) for the client half.
+# ~/goblin-engine/tools/) for the client half.
 #
 # Commands (each is {"cmd": "<name>", ...fields}):
 #   ping                                        -> {"ok": true, "result": "pong"}

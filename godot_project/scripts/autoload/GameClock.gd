@@ -131,7 +131,21 @@ func _apply_lighting() -> void:
 
 	if env_node and env_node.environment:
 		var environment: Environment = env_node.environment
-		environment.ambient_light_energy = lerp(0.25, 1.1, clamp(df, 0.0, 1.0))
+		# REAL BUG found live: this used to lerp up to 1.1 at full daylight --
+		# comparable in magnitude to the direct sun's own contribution (up to
+		# 1.8, but split into toon.gdshader's shade_dark/mid/lit bands of
+		# 0.5/0.78/1.05). Sky ambient is a smooth per-pixel function of surface
+		# normal (Godot samples it from the sky's own irradiance, not
+		# quantized the way light() is), so once it got that strong it didn't
+		# just brighten shadows -- it became a big enough share of the final
+		# pixel that the whole image read as smoothly lit, with the
+		# cel-shaded bands still technically there underneath but no longer
+		# visible. Confirmed live: zeroing ambient_light_energy outright made
+		# the 3-band tree/roof banding snap back immediately. Capped well
+		# under the bands' own range instead of removing the fill entirely --
+		# still enough to keep shadow sides off pure black, not enough to
+		# compete with them.
+		environment.ambient_light_energy = lerp(0.12, 0.35, clamp(df, 0.0, 1.0))
 		environment.background_energy_multiplier = lerp(0.35, 1.0, clamp(df, 0.0, 1.0))
 
 		var sky_mat := environment.sky.sky_material if environment.sky else null

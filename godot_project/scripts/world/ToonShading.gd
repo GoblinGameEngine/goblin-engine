@@ -36,6 +36,35 @@ class_name ToonShading
 
 const TOON_SHADER := preload("res://shaders/toon.gdshader")
 
+## REAL BUG found live, root-caused only after a long screen-space-
+## outline investigation kept measuring a completely wrong depth-buffer
+## value for tree canopies specifically (a tree 11m from the camera
+## reading back as 147m -- ~13x too far -- while ordinary geometry read
+## correctly at every distance tested all session): decorative scenery's
+## own textures (neighborhood_conifer_3.png, the leaf/bush noise
+## textures, etc.) are plain RGB with NO ALPHA CHANNEL AT ALL, yet
+## toon.gdshader's fragment() unconditionally tested `base.a < 0.5` and
+## discarded on it. Sampling an alpha-less texture reliably returns 1.0
+## in the ordinary forward color pass (matching what's actually visible
+## on screen -- these objects render fine), but evidently NOT
+## consistently in whatever separate pass populates the depth/normal
+## buffers hint_depth_texture/hint_normal_roughness_texture read -- this
+## project didn't chase that discrepancy into Godot's own internals, but
+## the fix doesn't need to: a texture with no real alpha data should
+## never have been a discard candidate in the first place, regardless of
+## mechanism. Detected here via Image.detect_alpha() (real cutout
+## textures -- fences, railings, window panes, door glass, all the
+## chroma-key-to-alpha textures this project actually generates with
+## real transparency -- correctly keep discarding; plain opaque
+## decorative noise textures like this one now never do).
+static func _texture_has_real_alpha(tex: Texture2D) -> bool:
+	if tex == null:
+		return false
+	var img := tex.get_image()
+	if img == null:
+		return false
+	return img.detect_alpha() != Image.ALPHA_NONE
+
 ## Builds the toon-shaded replacement for one existing material, carrying
 ## over just what the toon shader actually uses (the albedo texture and
 ## tint) -- everything else about the original PBR material (roughness,
@@ -53,6 +82,7 @@ static func _toon_material_for(src: Material) -> ShaderMaterial:
 	if tex:
 		mat.set_shader_parameter("albedo_texture", tex)
 	mat.set_shader_parameter("albedo_color", color)
+	mat.set_shader_parameter("has_alpha", _texture_has_real_alpha(tex))
 	return mat
 
 ## Recursively walks `root`, replacing every MeshInstance3D surface

@@ -15,12 +15,12 @@ comment for why) -- this script finds and sends it automatically, no
 setup needed for the normal workflow.
 
 Typical session:
-    cd ~/goblins/godot_project
+    cd ~/goblin-engine/godot_project
     nohup ~/newtons-garden/tools/godot4 --path . scenes/Main.tscn > /tmp/g.log 2>&1 &
-    python3 ~/goblins/tools/gcmd.py wait-ready          # instead of a guessed `sleep N`
-    python3 ~/goblins/tools/gcmd.py run "root.get_node('/root/MapEditorUI')._set_editing(true)"
-    python3 ~/goblins/tools/gcmd.py screenshot /tmp/out.png
-    python3 ~/goblins/tools/gcmd.py quit
+    python3 ~/goblin-engine/tools/gcmd.py wait-ready          # instead of a guessed `sleep N`
+    python3 ~/goblin-engine/tools/gcmd.py run "root.get_node('/root/MapEditorUI')._set_editing(true)"
+    python3 ~/goblin-engine/tools/gcmd.py screenshot /tmp/out.png
+    python3 ~/goblin-engine/tools/gcmd.py quit
 
 Prefer `run`/`eval` calling a system's own methods directly over
 `key`/`mouse_*` simulation wherever the target is OUR OWN UI code

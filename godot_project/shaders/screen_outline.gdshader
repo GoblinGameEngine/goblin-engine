@@ -80,12 +80,35 @@ render_mode unshaded, depth_draw_never, depth_test_disabled, cull_disabled, fog_
 uniform sampler2D depth_tex : hint_depth_texture, filter_nearest;
 uniform sampler2D normal_tex : hint_normal_roughness_texture, filter_nearest;
 
-// 0.4, not a rounder-looking 1.0+ -- see the file header's own account
-// of why. Verified live at close, medium, and far range (a sign post at
-// 3m, a street scene at 40-90m, a straight road out to the far clip) --
-// keep any increase to this backed by the same kind of verification,
-// not a single screenshot.
-uniform float outline_thickness_px : hint_range(0.2, 2.0) = 0.4;
+// REAL BUG, found live, superseding the note this replaces (which
+// claimed 0.4 was "verified live" -- it wasn't verified rigorously
+// enough: the earlier tests happened to sample pixels where this still
+// produced a stray edge by chance, not because the technique generally
+// worked): depth_tex/normal_tex are both filter_nearest, and a screen
+// fragment's own SCREEN_UV sits pixel-CENTERED -- i.e. already at the
+// midpoint of its own texel. Offsetting that UV by anything under half
+// a texel width, in either direction, rounds straight back to the SAME
+// texel under nearest filtering; it never reaches a neighbor to diff
+// against. At 0.4px (well under half of a 1px-wide texel) this isn't an
+// occasional miss, it's unconditional: EVERY fragment's four neighbor
+// taps collapsed onto its own center sample, so depth_jump and
+// normal_jump came out exactly 0.0 everywhere, at every distance,
+// including dead-on silhouette edges -- confirmed by a temporary
+// debug_mode dumping the raw reconstructed d_c value next to debug_mode
+// 3's raw texture sample: d_c varied correctly with real scene structure
+// on its own, but the neighbor-difference math built on top of it read
+// uniformly black across the whole screen. 1.0px is the real floor for
+// this technique to detect anything at all under nearest filtering, so
+// that's the new default and the new hint_range minimum -- also happens
+// to satisfy "give outlines a minimum width so distant objects don't
+// lose them" for free, since this is screen-space and already
+// distance-independent by construction once it's actually sampling a
+// neighbor. If the old 45-48m grazing-angle false-positive (see file
+// header) comes back at 1.0px where it didn't at 0.4, that means 0.4 was
+// only ever "fixing" it by being too small to detect ANY edge, not by
+// being a real fix -- the right follow-up there is a grazing-angle-aware
+// sensitivity term, not shrinking this back below the functional floor.
+uniform float outline_thickness_px : hint_range(1.0, 4.0) = 1.0;
 // Relative depth jump (fraction of the pixel's own view-space distance
 // from camera) that counts as a silhouette edge -- relative, not
 // absolute, so the same threshold works whether the edge is 2m or 200m
@@ -96,9 +119,13 @@ uniform float depth_sensitivity : hint_range(0.005, 0.2) = 0.03;
 uniform float normal_sensitivity : hint_range(0.05, 1.0) = 0.35;
 uniform vec4 outline_color : source_color = vec4(0.02, 0.02, 0.02, 1.0);
 // Live-toggleable diagnostic (set_shader_parameter, no relaunch needed):
-// 1 = depth_jump (R, /2 scale) + normal_jump (G, /4 scale), for exact
-// PIL pixel readback when chasing a bug like the one above again.
-uniform int debug_mode : hint_range(0, 1) = 0;
+// 1 = raw edge boolean, 2 = depth_jump (R, /2 scale) + normal_jump (G,
+// /4 scale), 3 = raw depth_tex sample (G) + log-scaled unprojected d_c
+// (R) -- for exact PIL pixel readback when chasing a bug like the ones
+// above again. hint_range's upper bound was still 2 despite mode 3
+// existing since it was added -- fixed, it's only an editor slider bound
+// anyway, never a runtime clamp, but a stale one is still worth fixing.
+uniform int debug_mode : hint_range(0, 3) = 0;
 
 void vertex() {
 	POSITION = vec4(VERTEX.xy, 1.0, 1.0);
@@ -159,8 +186,17 @@ void fragment() {
 	float edge = max(step(depth_sensitivity, depth_jump), step(normal_sensitivity, normal_jump));
 
 	if (debug_mode == 1) {
+		ALBEDO = vec3(edge, edge, edge);
+		ALPHA = 1.0;
+	} else if (debug_mode == 2) {
 		float depth_nan = isnan(depth_jump) ? 1.0 : 0.0;
 		ALBEDO = vec3(clamp(depth_jump / 2.0, 0.0, 1.0), clamp(normal_jump / 4.0, 0.0, 1.0), depth_nan);
+		ALPHA = 1.0;
+	} else if (debug_mode == 3) {
+		// Raw d_c, log-scaled so both a 15m tree and a "huge/wrong" sky
+		// value are distinguishable in one 0-255 channel: R = log2(d_c+1)/16.
+		float raw_d = texture(depth_tex, uv).r;
+		ALBEDO = vec3(clamp(log2(d_c + 1.0) / 16.0, 0.0, 1.0), raw_d, 0.0);
 		ALPHA = 1.0;
 	} else {
 		ALBEDO = outline_color.rgb;

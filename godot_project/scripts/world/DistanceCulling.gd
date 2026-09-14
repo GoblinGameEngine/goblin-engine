@@ -75,7 +75,13 @@ static func _apply(gi: GeometryInstance3D, range_end: float) -> void:
 ## MeshInstance3D and MultiMeshInstance3D, since both extend it). Returns
 ## a per-category count for a one-line boot log, same convention as
 ## ToonShading.apply_to_world()'s own return value.
-static func apply_to_world(root: Node) -> Dictionary:
+##
+## `multiplier` scales all three tiers uniformly -- Settings.draw_distance_mult,
+## normally, but callable() and re-callable directly too so re-applying
+## after the player changes the Graphics setting mid-game (Main.gd, on
+## Settings.changed) is just calling this again on the same root, not a
+## separate code path.
+static func apply_to_world(root: Node, multiplier: float = 1.0) -> Dictionary:
 	var counts := {"small": 0, "tree": 0, "house": 0}
 	var stack: Array = [root]
 	while not stack.is_empty():
@@ -83,13 +89,13 @@ static func apply_to_world(root: Node) -> Dictionary:
 		if n is GeometryInstance3D:
 			var cat := _category(n.name)
 			if cat == "small":
-				_apply(n, SMALL_RANGE)
+				_apply(n, SMALL_RANGE * multiplier)
 				counts["small"] += 1
 			elif cat == "tree":
-				_apply(n, TREE_RANGE)
+				_apply(n, TREE_RANGE * multiplier)
 				counts["tree"] += 1
 			elif cat == "house":
-				_apply(n, HOUSE_RANGE)
+				_apply(n, HOUSE_RANGE * multiplier)
 				counts["house"] += 1
 		for c in n.get_children():
 			stack.append(c)

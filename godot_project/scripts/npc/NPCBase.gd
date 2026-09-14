@@ -105,15 +105,25 @@ func _ready() -> void:
 	nav_agent.target_desired_distance = 0.6
 	_pick_new_wander_target()
 	sprite = find_child("Sprite", true, false)
-	if sprite is GeometryInstance3D:
-		sprite.visibility_range_end = SPRITE_RENDER_RANGE
-		sprite.visibility_range_end_margin = SPRITE_RENDER_FADE_MARGIN
-		# DISABLED, not SELF -- see DistanceCulling.gd's own comment on
-		# _apply(): Godot's "smooth" fade is actually a per-pixel dither,
-		# which fed false edges into the screen-space outline pass right
-		# at this fade distance. Same fix, same reason, here too.
-		sprite.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_DISABLED
+	apply_draw_distance(Settings.draw_distance_mult)
 	_setup_visibility_culling()
+
+## Scales SPRITE_RENDER_RANGE by the player's Graphics > Draw Distance
+## setting -- called once here at spawn time (reads the CURRENT setting,
+## covering every NPC spawned after the player changes it) and again by
+## Main.gd's Settings.changed handler for every already-alive NPC in the
+## "combatants" group, so an in-progress game doesn't need a respawn/
+## reload for a changed setting to take effect.
+func apply_draw_distance(multiplier: float) -> void:
+	if not (sprite is GeometryInstance3D):
+		return
+	sprite.visibility_range_end = SPRITE_RENDER_RANGE * multiplier
+	sprite.visibility_range_end_margin = SPRITE_RENDER_FADE_MARGIN
+	# DISABLED, not SELF -- see DistanceCulling.gd's own comment on
+	# _apply(): Godot's "smooth" fade is actually a per-pixel dither,
+	# which fed false edges into the screen-space outline pass right
+	# at this fade distance. Same fix, same reason, here too.
+	sprite.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_DISABLED
 
 ## Sized generously enough to cover the tallest NPC sprite (~1.7m, the
 ## officer/Lloyd characters) with margin -- an oversized box for the

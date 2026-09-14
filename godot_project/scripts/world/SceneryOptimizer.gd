@@ -38,12 +38,35 @@ const GRID_CELL := 35.0    # meters per bucket -- a few house-lots wide
 static func _grid_key(pos: Vector3) -> String:
 	return "%d_%d" % [floori(pos.x / GRID_CELL), floori(pos.z / GRID_CELL)]
 
+## REAL BUG found live: MultiMeshInstance3D geometry reports badly wrong
+## values to the depth buffer the new screen-space outline pass
+## (screen_outline.gdshader) reads -- measured directly, a conifer tree
+## 10.99m from the camera read back as 147.64m, roughly 13x too far,
+## while an ordinary MeshInstance3D (a house, using the exact same
+## toon.gdshader material) read correctly at every distance tested this
+## whole project. Root cause not fully chased into Godot's own
+## internals (a Forward+ depth-prepass quirk specific to MultiMesh
+## instancing, as far as this investigation got) -- fixed pragmatically
+## instead: multimesh BATCHING is what breaks it, so batching is off,
+## full stop, at the cost of the real performance win it bought
+## (Tier 1 pass, see reference/memory.txt: 6555 individual meshes
+## collapsed to 45 multimesh nodes, specifically to fix bad frame rate
+## at the time). Producer's explicit call, made aware of that cost:
+## every decorative object gets a correct outline uniformly over
+## keeping this optimization. If frame rate regresses badly, the
+## grid-cell multimesh grouping logic below is untouched and ready to
+## re-enable -- this flag is the ONLY thing gating it.
+const ENABLE_MULTIMESH_BATCHING := false
+
 static func optimize(root: Node3D) -> Dictionary:
 	var decor: Array = []
 	_collect_decor(root, decor)
 
 	for m in decor:
 		(m as GeometryInstance3D).cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+
+	if not ENABLE_MULTIMESH_BATCHING:
+		return {"decor_total": decor.size(), "multimeshes": 0, "collapsed": 0}
 
 	var groups: Dictionary = {}  # "<mesh id>_<material id>_<grid cell>" -> Array[MeshInstance3D]
 	for m in decor:
