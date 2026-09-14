@@ -3,6 +3,10 @@
 A first-person neighborhood RPG built in Godot 4.3, developed via headless
 CLI scripting (Blender for assets, Godot for the engine).
 
+**License:** all rights reserved for now (see `LICENSE`) — this repo is
+public so it's visible and testable, not because it's open source yet.
+A permissive license is planned once the project reaches a usable state.
+
 ## Version
 
 **Current: `0.6.0-prealpha.12`** — pre-alpha. Tracked in the `VERSION` file
