@@ -115,6 +115,25 @@ uniform float outline_thickness_px : hint_range(1.0, 4.0) = 1.0;
 // away (an absolute-meters threshold would either miss distant edges
 // entirely or false-positive on every close-up texture bump).
 uniform float depth_sensitivity : hint_range(0.005, 0.2) = 0.03;
+// REAL BUG, found live via debug_mode 2 (this file's own header warned
+// this would come back once outline_thickness_px moved 0.4 -> 1.0, and
+// it did): a long straight road/sidewalk read as one continuous wide
+// false edge for its entire length past ~45m, glowing in debug_mode 2's
+// depth_jump channel across the WHOLE visible ground plane, not at any
+// real silhouette. Cause: depth_jump's relative-to-d_c formula never
+// accounted for viewing ANGLE, only distance -- a flat, perfectly
+// continuous surface viewed at a shallow/grazing angle has a much
+// steeper depth-per-SCREEN-PIXEL gradient than the same surface viewed
+// face-on, purely from ordinary perspective foreshortening, and at
+// enough distance that gradient alone clears depth_sensitivity with no
+// real edge involved. Fixed below: scale the effective threshold by how
+// grazing the surface is at THIS fragment (view_dir_c vs. its own
+// normal) rather than raising depth_sensitivity globally, which would
+// have just as easily hidden real silhouette edges that happen to be
+// close and face-on. grazing_min_facing clamps the loosening factor
+// (1/facing) rather than letting a near-zero facing value send the
+// effective threshold to infinity and blind the check entirely.
+uniform float grazing_min_facing : hint_range(0.02, 0.5) = 0.08;
 // 1 - dot(neighbor normals) that counts as a real crease.
 uniform float normal_sensitivity : hint_range(0.05, 1.0) = 0.35;
 uniform vec4 outline_color : source_color = vec4(0.02, 0.02, 0.02, 1.0);
@@ -136,12 +155,16 @@ void vertex() {
 // from a helper function called from them (compile error: "Unknown
 // identifier in expression: 'INV_PROJECTION_MATRIX'") -- passed in
 // explicitly as a parameter instead.
-float view_depth(vec2 uv, mat4 inv_proj) {
+vec3 view_pos(vec2 uv, mat4 inv_proj) {
 	float d = texture(depth_tex, uv).r;
 	vec4 ndc = vec4(uv * 2.0 - 1.0, d, 1.0);
 	vec4 view = inv_proj * ndc;
 	view.xyz /= view.w;
-	return -view.z;
+	return view.xyz;
+}
+
+float view_depth(vec2 uv, mat4 inv_proj) {
+	return -view_pos(uv, inv_proj).z;
 }
 
 // REAL BUG found live: pixels where nothing meaningful was rendered
@@ -164,7 +187,8 @@ void fragment() {
 	vec2 uv = SCREEN_UV;
 	mat4 inv_proj = INV_PROJECTION_MATRIX;
 
-	float d_c = view_depth(uv, inv_proj);
+	vec3 p_c = view_pos(uv, inv_proj);
+	float d_c = -p_c.z;
 	float d_l = view_depth(uv - vec2(texel.x, 0.0), inv_proj);
 	float d_r = view_depth(uv + vec2(texel.x, 0.0), inv_proj);
 	float d_u = view_depth(uv + vec2(0.0, texel.y), inv_proj);
@@ -183,7 +207,21 @@ void fragment() {
 		normal_jump = 0.0;
 	}
 
-	float edge = max(step(depth_sensitivity, depth_jump), step(normal_sensitivity, normal_jump));
+	// Camera sits at the view-space origin, so the ray from it to this
+	// fragment's own world point is just that point's own direction --
+	// no separate camera-position uniform needed. facing == 1 means the
+	// surface faces the camera dead-on (its normal anti-parallel to the
+	// view ray); facing -> 0 means the surface is edge-on/grazing, which
+	// is exactly the case that inflates depth_jump on an otherwise
+	// perfectly continuous surface (see grazing_min_facing's own comment
+	// above). Dividing the threshold (not multiplying depth_jump) keeps
+	// this a pure gate change -- depth_jump itself stays the same number
+	// debug_mode 2 already shows.
+	vec3 view_dir_c = normalize(p_c);
+	float facing = clamp(abs(dot(n_c, view_dir_c)), grazing_min_facing, 1.0);
+	float depth_sensitivity_eff = depth_sensitivity / facing;
+
+	float edge = max(step(depth_sensitivity_eff, depth_jump), step(normal_sensitivity, normal_jump));
 
 	if (debug_mode == 1) {
 		ALBEDO = vec3(edge, edge, edge);
