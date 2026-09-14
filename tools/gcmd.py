@@ -9,6 +9,11 @@ imprecise, and stops working entirely if the desktop session locks. This
 talks to a small TCP JSON command server the game itself runs (debug
 builds only, 127.0.0.1 only) instead.
 
+Every command needs a per-launch auth token (a fresh random string
+DevBridge writes to a local file at startup, see DevBridge.gd's own
+comment for why) -- this script finds and sends it automatically, no
+setup needed for the normal workflow.
+
 Typical session:
     cd ~/goblins/godot_project
     nohup ~/newtons-garden/tools/godot4 --path . scenes/Main.tscn > /tmp/g.log 2>&1 &
@@ -35,6 +40,30 @@ import time
 DEFAULT_PORT = int(os.environ.get("GOBLINS_DEV_BRIDGE_PORT", "8765"))
 HOST = "127.0.0.1"
 
+
+def token_path() -> str:
+    """Mirrors DevBridge.gd's _token_path_for() exactly -- both sides
+    compute this independently rather than one telling the other, so
+    there's no handshake needed before the very first authenticated
+    command."""
+    override = os.environ.get("GOBLINS_DEV_BRIDGE_TOKEN_FILE")
+    if override:
+        return override
+    tmp_dir = os.environ.get("TMPDIR") or "/tmp"
+    return f"{tmp_dir.rstrip('/')}/goblins_devbridge_{DEFAULT_PORT}.token"
+
+
+def load_token() -> str:
+    """Empty string (not an exception) if the file isn't there yet --
+    lets `ping` keep working against a not-quite-ready or pre-auth
+    instance; every other command will just get a clear auth error back
+    from the server itself if the token is genuinely missing/wrong."""
+    try:
+        with open(token_path()) as f:
+            return f.read().strip()
+    except OSError:
+        return ""
+
 # Godot Key enum values worth having by name instead of memorizing
 # integers (see scratchpad/dump_keys.gd in the session that built this,
 # if these ever need re-deriving: they come straight from GDScript's
@@ -56,6 +85,10 @@ MOUSE_BUTTONS = {"left": 1, "right": 2, "middle": 3, "wheel_up": 4, "wheel_down"
 
 
 def send(cmd: dict, timeout: float = 10.0) -> dict:
+    if "token" not in cmd:
+        token = load_token()
+        if token:
+            cmd = {**cmd, "token": token}
     with socket.create_connection((HOST, DEFAULT_PORT), timeout=timeout) as sock:
         sock.sendall((json.dumps(cmd) + "\n").encode("utf-8"))
         sock.settimeout(timeout)
@@ -215,6 +248,19 @@ def main():
     mm.add_argument("--dx", type=float, default=0)
     mm.add_argument("--dy", type=float, default=0)
     mm.set_defaults(func=cmd_simple("mouse_motion", {"x": "x", "y": "y", "dx": "dx", "dy": "dy"}))
+
+    wf = sub.add_parser("wait_frame", help="block until N more frames have rendered (replaces guessing a sleep duration)")
+    wf.add_argument("--count", type=int, default=1)
+    wf.set_defaults(func=cmd_simple("wait_frame", {"count": "count"}))
+
+    rp = sub.add_parser("read_pixels", help="read RGBA of pixel(s) from the currently displayed frame, no PNG round-trip")
+    rp.add_argument("points", help='JSON list of [x,y] pairs, e.g. \'[[10,20],[30,40]]\'')
+    rp.set_defaults(func=lambda a: (print_result(send({"cmd": "read_pixels", "points": json.loads(a.points)})), 0)[1])
+
+    rs = sub.add_parser("reload_shader", help="hot-reload a .gdshader file onto a node's material_override, no relaunch")
+    rs.add_argument("node_path")
+    rs.add_argument("shader_path")
+    rs.set_defaults(func=lambda a: (print_result(send({"cmd": "reload_shader", "node_path": a.node_path, "shader_path": a.shader_path})), 0)[1])
 
     mw = sub.add_parser("mouse_wheel")
     mw.add_argument("--direction", choices=["up", "down"], default="up")
