@@ -105,13 +105,49 @@ func _on_settings_changed() -> void:
 	print("SpaceStation: draw distance changed -- reapplied culling (%d small props, %d trees, %d houses, %d crop groups)" %
 		[culled["small"], culled["tree"], culled["house"], culled["crop"]])
 
+## REAL BUG found live (reported by the user as "a shadow problem"): a
+## single fixed-direction DirectionalLight3D "sun" (below) makes sense
+## for a flat outdoor map (this project's original one) but not for the
+## inside of a ring station -- the floor's own surface normal sweeps
+## through all 360 degrees around the loop (see RingCoords.floor_basis()),
+## so a fixed light direction only ever lights roughly the HALF of the
+## ring whose local "up" happens to point toward it. The far half
+## received only the old dim ambient (color 0.08, energy 0.6 -- tuned for
+## a scene where direct light already reached everywhere, so ambient only
+## ever needed to be a subtle fill) and read as almost solid black.
+## Confirmed directly: screenshots at three different arc positions all
+## showed the identical dark-foreground band, including with ALL
+## neighborhood content hidden (bare ring floor), ruling out anything
+## content-specific and pointing squarely at the lighting setup itself.
+## Fixed by raising ambient enough to carry full local readability on its
+## own regardless of position (this is exactly what toon.gdshader's own
+## light()/fragment() split is built for -- see that shader's header
+## comment -- direct light still adds the banded cel-shaded contrast on
+## whichever half faces the sun, ambient guarantees the other half is
+## never pitch black). Verified live at all 4 zones: no wash-out on the
+## already-lit side, full readability on the previously-dark side.
 func _setup_environment() -> void:
 	var env := Environment.new()
 	env.background_mode = Environment.BG_COLOR
 	env.background_color = Color(0.01, 0.01, 0.02)
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
-	env.ambient_light_color = Color(0.08, 0.08, 0.1)
-	env.ambient_light_energy = 0.6
+	env.ambient_light_color = Color(0.5, 0.5, 0.55)
+	env.ambient_light_energy = 1.2
+
+	# Distance fog: fades far geometry into the background void instead of
+	# an abrupt DistanceCulling hard-cutoff pop, and softens the visually
+	# odd sight of the floor curving away at a 500m-radius ring's own
+	# horizon (e.g. looking straight down downtown's ~700m Main Street).
+	# fog_light_color deliberately close to background_color so the fog's
+	# own far limit blends into the void rather than reading as a flat
+	# gray wall; fog_sky_affect=0 keeps the BG_COLOR background itself
+	# untouched (there's no sky here to fog).
+	env.fog_enabled = true
+	env.fog_light_color = Color(0.06, 0.06, 0.08)
+	env.fog_light_energy = 1.0
+	env.fog_density = 0.012
+	env.fog_sky_affect = 0.0
+
 	var world_env := WorldEnvironment.new()
 	world_env.environment = env
 	add_child(world_env)
@@ -199,6 +235,14 @@ func _spawn_player() -> void:
 	# them back on the floor.
 	player.global_transform = _floor_spawn_transform()
 	add_child(player)
+	# The signature toon-outline pass (see ScreenOutline.gd/shaders/
+	# screen_outline.gdshader) -- Main.gd's flat-map path attaches this
+	# to the player camera, but nothing on the station-ring path ever
+	# did, so the ring has been rendering with flat cel-shaded bands and
+	# no outlines at all. Attached once here (not per rebuild_ring():
+	# the player node, and therefore its camera, isn't recreated by
+	# rebuild_ring() -- see that function's own doc comment).
+	ScreenOutline.attach_to_camera(player.camera)
 
 ## Live-tuning entry point -- see the file-level comment for the
 ## gcmd.py incantation. Applies any provided overrides, tears down and
