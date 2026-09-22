@@ -28,6 +28,7 @@ const CORN_HEIGHT := 2.3    # meters, full-grown sweet corn
 const SOY_HEIGHT := 0.7
 const EDGE_MARGIN := 10.0   # s-distance kept clear at each field end (road shoulder buffer)
 const CONNECTOR_CLEARANCE := 9.0  # +/- s-distance kept clear around each cross-connector road
+const STALKS_PER_FRAME := 60  # yield budget -- cheap per-stalk (no collision), so a big batch is fine
 
 ## Per-crop-type shared mesh + material, built lazily once and reused for
 ## EVERY stalk of that crop across the whole build (even across multiple
@@ -60,8 +61,12 @@ static func _shared_mesh_and_material(crop: String) -> Array:
 ## of arc-length positions where a perpendicular road crosses this field
 ## (FarmGenerator's 4 wall-to-wall connectors) -- stalks within
 ## CONNECTOR_CLEARANCE of any of those are skipped so the field doesn't
-## grow through the road surface. Returns how many stalks were placed.
-static func build(parent: Node3D, radius: float, segments: int,
+## grow through the road surface. Yields (RingCoords.yield_frame()) every
+## STALKS_PER_FRAME stalks -- ZoneStreamer.gd streams this in while the
+## player may already be walking around nearby, and a farm field runs to
+## ~1000+ stalks, measured taking a real, stutter-worthy chunk of the
+## ~460ms a whole farm zone's synchronous detail build used to cost.
+static func build_async(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, x_min: float, x_max: float,
 		crop: String, connector_s: Array, rng: RandomNumberGenerator) -> int:
 	var base_height: float = CORN_HEIGHT if crop == "corn" else SOY_HEIGHT
@@ -84,6 +89,8 @@ static func build(parent: Node3D, radius: float, segments: int,
 				var js: float = s + rng.randf_range(-JITTER, JITTER)
 				_place_stalk(parent, radius, segments, js, jx, quad, mat, base_height, crop, count, rng)
 				count += 1
+				if count % STALKS_PER_FRAME == 0:
+					await RingCoords.yield_frame()
 				x += ROW_SPACING
 		s += ROW_SPACING
 	return count

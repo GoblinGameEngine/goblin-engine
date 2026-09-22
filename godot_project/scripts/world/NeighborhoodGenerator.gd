@@ -14,10 +14,21 @@ class_name NeighborhoodGenerator
 # roads reach one zone's edge to whichever roads start the next zone's
 # (see _connect_zones() below).
 #
-# Phase A scope: zone range math + street skeletons for all 4 zones,
-# stitched at the seams. Buildings, the lake's own water/sand geometry,
-# and crops are later phases (see the plan file) -- their generator
-# calls get added here as each phase lands, following the same pattern.
+# STREAMING (requested directly: "do we need to keep so much of the ring
+# in memory... a background pre-loading system that loads the next
+# section as we need it... only rendering in detail what's close to the
+# player"): split into build_skeleton() -- roads/sidewalks/stop signs for
+# ALL 4 zones, built once at boot, cheap (a handful of committed meshes,
+# no per-building node/collision overhead) -- and
+# load_zone_detail_async()/ZoneStreamer.gd's unload -- buildings, crop
+# fields, and street furniture, which dominate both node count and
+# collision-generation cost, built/freed per zone as the player
+# approaches/leaves (ZoneStreamer.gd drives this from the player's own
+# arc-length position). The always-on road skeleton doubles as exactly
+# the "distant low-poly representation" asked for: from far away (or
+# before a zone has streamed in) you see the street layout, which is
+# already about as cheap as geometry gets, while the expensive detail
+# only ever exists near the player.
 
 const ZONE_NAMES := ["lake", "downtown", "residential", "farm"]
 
@@ -43,31 +54,48 @@ static func zone_ranges(radius: float, segments: int) -> Array[Dictionary]:
 		})
 	return zones
 
-static func build(root: Node3D, radius: float, ceiling_height: float, width: float, segments: int) -> void:
+## Builds every zone's road/sidewalk/stop-sign skeleton (the always-on
+## part) and the connector roads bridging each zone seam. Returns one
+## info Dictionary per zone (s_start/s_end/width plus whatever that
+## zone's own build_roads() returned under "roads") -- ZoneStreamer.gd
+## keeps this array and hands entries back to load_zone_detail_async()
+## when a zone needs to stream in, so the detail phase never has to
+## recompute anything the roads phase already worked out (waypoints,
+## street positions, connector arc-length positions).
+static func build_skeleton(root: Node3D, radius: float, segments: int, width: float) -> Array:
 	var zones := zone_ranges(radius, segments)
 
 	# ~33m at default scale -- both the no-build margin each zone's own
-	# generator gets trimmed by, AND (now) the span the connector roads
-	# built below get to bridge each seam.
+	# generator gets trimmed by, AND the span the connector roads built
+	# below get to bridge each seam.
 	var buffer := (TAU / segments) * radius
 
+	var zone_info: Array = []
+
 	var lake: Dictionary = zones[0]
-	var lake_result := LakeGenerator.build(root, radius, segments,
-		lake["s_start"] + buffer, lake["s_end"] - buffer, width)
+	var lake_s0: float = lake["s_start"] + buffer
+	var lake_s1: float = lake["s_end"] - buffer
+	var lake_roads := LakeGenerator.build_roads(root, radius, segments, lake_s0, lake_s1, width)
+	zone_info.append({"name": "lake", "s_start": lake_s0, "s_end": lake_s1, "width": width, "roads": lake_roads})
 
 	var downtown: Dictionary = zones[1]
-	var downtown_result := DowntownGenerator.build(root, radius, segments,
-		downtown["s_start"] + buffer, downtown["s_end"] - buffer, width)
+	var downtown_s0: float = downtown["s_start"] + buffer
+	var downtown_s1: float = downtown["s_end"] - buffer
+	var downtown_roads := DowntownGenerator.build_roads(root, radius, segments, downtown_s0, downtown_s1, width)
+	zone_info.append({"name": "downtown", "s_start": downtown_s0, "s_end": downtown_s1, "width": width, "roads": downtown_roads})
 
 	var residential: Dictionary = zones[2]
-	var residential_result := ResidentialGenerator.build(root, radius, segments,
-		residential["s_start"] + buffer, residential["s_end"] - buffer, width)
+	var residential_s0: float = residential["s_start"] + buffer
+	var residential_s1: float = residential["s_end"] - buffer
+	var residential_roads := ResidentialGenerator.build_roads(root, radius, segments, residential_s0, residential_s1, width)
+	zone_info.append({"name": "residential", "s_start": residential_s0, "s_end": residential_s1, "width": width, "roads": residential_roads})
 
 	var farm: Dictionary = zones[3]
-	var farm_result := FarmGenerator.build(root, radius, segments,
-		farm["s_start"] + buffer, farm["s_end"] - buffer, width)
+	var farm_s0: float = farm["s_start"] + buffer
+	var farm_s1: float = farm["s_end"] - buffer
+	var farm_roads := FarmGenerator.build_roads(root, radius, segments, farm_s0, farm_s1, width)
+	zone_info.append({"name": "farm", "s_start": farm_s0, "s_end": farm_s1, "width": width, "roads": farm_roads})
 
-	var results := [lake_result, downtown_result, residential_result, farm_result]
 	var connector_mat := StandardMaterial3D.new()
 	connector_mat.albedo_texture = load("res://assets/textures/road_tinted.png")
 	var st_connect := SurfaceTool.new()
@@ -85,7 +113,9 @@ static func build(root: Node3D, radius: float, ceiling_height: float, width: flo
 			# fposmod internally, so a value past TAU*radius still lands
 			# in the right physical spot.
 			entry_s += TAU * radius
-		if _connect_zone_pair(st_connect, radius, segments, results[i]["exit_x"], results[(i + 1) % 4]["entry_x"], exit_s, entry_s):
+		var exit_x: Array = zone_info[i]["roads"]["exit_x"]
+		var entry_x: Array = zone_info[(i + 1) % 4]["roads"]["entry_x"]
+		if _connect_zone_pair(st_connect, radius, segments, exit_x, entry_x, exit_s, entry_s):
 			any_connectors = true
 	if any_connectors:
 		st_connect.set_material(connector_mat)
@@ -96,54 +126,67 @@ static func build(root: Node3D, radius: float, ceiling_height: float, width: flo
 		connector_instance.mesh = connector_mesh
 		root.add_child(connector_instance)
 
-	# SceneryOptimizer runs here (Phase D): CropFieldGenerator.gd's
-	# corn_*/soy_* stalks (placed inside FarmGenerator.build() above)
-	# need to actually get grouped into MultiMeshInstance3D nodes to be
-	# worth having built the batching system for at all -- Main.gd's
-	# flat-map pipeline calls SceneryOptimizer.optimize() for exactly
-	# this reason, but nothing equivalent existed on the station-ring
-	# path (SpaceStation.gd calls this function, not Main.gd) until Phase
-	# D. Must run BEFORE ToonShading, same order Main.gd already uses:
-	# apply_to_world() below has to see the final MultiMeshInstance3D
-	# nodes to toon-shade (and billboard-flag) them, not the pre-batching
-	# individual MeshInstance3D stalks it would replace and then have
-	# collapsed out from under it.
-	var opt := SceneryOptimizer.optimize(root)
-	print("NeighborhoodGenerator: scenery optimize -- %d decorative meshes, collapsed %d into %d MultiMeshInstance3D" %
-		[opt["decor_total"], opt["collapsed"], opt["multimeshes"]])
-
-	# ToonShading needs to run after the above: confirmed live that a
-	# freshly built StandardMaterial3D mesh here is backface-culled under
-	# its own default cull_back mode from every angle a player would
-	# actually view a street from (the same _quad()/normal convention
-	# StationRingBuilder's own floor already uses -- that one only ever
-	# renders correctly because SpaceStation._build_ring() toon-shades
-	# it, with toon.gdshader's render_mode cull_disabled, before a player
-	# ever sees a frame of it). Re-running this per phase as more content
-	# is added is idempotent and cheap -- ToonShading.apply_to_world()
-	# just walks whatever's under `root` each time.
-	ToonShading.apply_to_world(root)
-
-	# Phase E: the rest of Main.gd's flat-map end-of-build sequence, now
-	# wired onto the station-ring path too (same gap SceneryOptimizer had
-	# before Phase D -- these three existed and were already extended for
-	# the ring's own building/street-furniture naming conventions, but
-	# nothing had ever actually CALLED them here).
-	var occluded := OcclusionSetup.setup(root)
-	print("NeighborhoodGenerator: occlusion culling -- box occluder added to %d buildings" % occluded)
-
-	# No-op today: the lake zone's water/sand/shore geometry itself
-	# (LakeGenerator.gd builds only the road loop around where it will
-	# go -- see that file's own comment) is still unbuilt, a real gap
-	# left over from earlier phases, not something this pass causes or
-	# fixes. Left wired in now so it starts working the moment that
-	# geometry exists, instead of needing a second "wire it up" pass
-	# later.
+	# No-op today: the lake zone's water/sand/shore geometry itself was
+	# never built (see LakeGenerator.gd's own comment) -- a real gap left
+	# from earlier phases. Scoped to the skeleton, not per-zone-detail:
+	# water/terrain belongs with the always-on roads, not the streamed
+	# buildings/crops, once it exists.
 	LakeSetup.setup(root)
 
-	var culled := DistanceCulling.apply_to_world(root, Settings.draw_distance_mult)
-	print("NeighborhoodGenerator: distance culling -- %d small props, %d trees, %d houses, %d crop groups" %
-		[culled["small"], culled["tree"], culled["house"], culled["crop"]])
+	# Backface-culling fix, same reasoning as before: a freshly built
+	# StandardMaterial3D mesh here is backface-culled under cull_back
+	# from every angle a player would view a street from, and this has
+	# to run before a player ever sees a frame of it. Scoped to `root`
+	# at THIS point in time -- zone detail hasn't streamed in yet, so
+	# this only ever walks the (cheap) skeleton; each zone's own detail
+	# gets its own ToonShading pass in load_zone_detail_async() below.
+	ToonShading.apply_to_world(root)
+
+	return zone_info
+
+## Streams one zone's buildings/crop-fields/street-furniture in, as a
+## fresh child of `root` (so ZoneStreamer.gd can just queue_free() that
+## one node to unload it later -- no need to track which of `root`'s
+## other children belong to which zone). `info` must be one of
+## build_skeleton()'s own returned entries for this `zone_index`
+## (0=lake, 1=downtown, 2=residential, 3=farm -- matches ZONE_NAMES).
+## Time-sliced (every generator's build_detail_async() awaits
+## RingCoords.yield_frame() periodically) -- callers should NOT await
+## this synchronously if the goal is a hitch-free stream-in; ZoneStreamer.
+## gd fires it and lets it run in the background.
+static func load_zone_detail_async(root: Node3D, radius: float, segments: int,
+		zone_index: int, info: Dictionary) -> Node3D:
+	var detail_root := Node3D.new()
+	detail_root.name = "ZoneDetail_%s" % info["name"]
+	root.add_child(detail_root)
+
+	var roads: Dictionary = info["roads"]
+	match zone_index:
+		0:
+			await LakeGenerator.build_detail_async(detail_root, radius, segments, info["width"])
+		1:
+			await DowntownGenerator.build_detail_async(detail_root, radius, segments,
+				info["s_start"], info["s_end"], roads["street_x"], 0.0)
+		2:
+			await ResidentialGenerator.build_detail_async(detail_root, radius, segments,
+				roads["wp_a"], roads["wp_b"])
+		3:
+			await FarmGenerator.build_detail_async(detail_root, radius, segments,
+				info["s_start"], info["s_end"], info["width"], roads["connector_s"])
+
+	if not is_instance_valid(detail_root):
+		# ZoneStreamer.gd unloaded this zone again while the above was
+		# still streaming in (player doubled back) -- nothing left to
+		# post-process.
+		return null
+
+	var opt := SceneryOptimizer.optimize(detail_root)
+	OcclusionSetup.setup(detail_root)
+	DistanceCulling.apply_to_world(detail_root, Settings.draw_distance_mult)
+	var toon_count := ToonShading.apply_to_world(detail_root)
+	print("NeighborhoodGenerator: streamed in %s detail -- %d decor collapsed into %d multimesh, %d materials toon-shaded" %
+		[info["name"], opt["decor_total"], opt["multimeshes"], toon_count])
+	return detail_root
 
 ## Bridges one zone seam: for every x in `exit_x` (roads leaving the
 ## first zone), finds the nearest x in `entry_x` (roads starting the

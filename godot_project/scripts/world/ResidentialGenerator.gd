@@ -49,8 +49,15 @@ static func _meander_x(base: float, k: int, phase: float) -> float:
 ## spur a 3-way T at both ends, with a stop sign posted at each end.
 ## Returns each collector's axial position AT the zone boundaries (for
 ## NeighborhoodGenerator.gd's inter-zone connectors) under "entry_x"/
-## "exit_x".
-static func build(parent: Node3D, radius: float, segments: int,
+## "exit_x", plus the full waypoint arrays under "wp_a"/"wp_b" so
+## build_detail_async() can follow the exact same curve without
+## recomputing it (the meander is deterministic, but re-deriving it here
+## AND there is one convention to keep in sync instead of zero).
+##
+## Roads/sidewalks/spurs/stop signs only -- cheap, stays loaded for the
+## whole ring regardless of player position (see ZoneStreamer.gd). Houses
+## + street furniture are build_detail_async(), streamed separately.
+static func build_roads(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, width: float) -> Dictionary:
 	var mesh := ArrayMesh.new()
 
@@ -107,15 +114,20 @@ static func build(parent: Node3D, radius: float, segments: int,
 	mesh_instance.mesh = mesh
 	parent.add_child(mesh_instance)
 
-	_place_houses(parent, radius, segments, wp_a, +1.0)
-	_place_houses(parent, radius, segments, wp_b, -1.0)
-	_place_furniture(parent, radius, segments, wp_a)
-	_place_furniture(parent, radius, segments, wp_b)
-
 	return {
 		"entry_x": [wp_a[0].y, wp_b[0].y],
 		"exit_x": [wp_a[N_SECTIONS].y, wp_b[N_SECTIONS].y],
+		"wp_a": wp_a, "wp_b": wp_b,
 	}
+
+## Houses + street furniture -- the expensive, streamed part. `wp_a`/
+## `wp_b` must be build_roads()'s own returned waypoints for this zone.
+static func build_detail_async(parent: Node3D, radius: float, segments: int,
+		wp_a: Array, wp_b: Array) -> void:
+	await _place_houses_async(parent, radius, segments, wp_a, +1.0)
+	await _place_houses_async(parent, radius, segments, wp_b, -1.0)
+	await _place_furniture_async(parent, radius, segments, wp_a)
+	await _place_furniture_async(parent, radius, segments, wp_b)
 
 ## The road's actual axial position at arc length `s`, using the SAME
 ## smoothstep easing StreetBuilder.build_curved_road() built it with --
@@ -135,12 +147,12 @@ static func _curve_x_at(waypoints: Array, s: float) -> float:
 ## meandering path, following its ACTUAL curve (via _curve_x_at(), same
 ## reasoning as _place_houses()'s own setback -- a fixed offset from the
 ## base line would drift off the road at the peak of a bend).
-static func _place_furniture(parent: Node3D, radius: float, segments: int, waypoints: Array) -> void:
+static func _place_furniture_async(parent: Node3D, radius: float, segments: int, waypoints: Array) -> void:
 	var s0: float = waypoints[0].x
 	var s1: float = waypoints[waypoints.size() - 1].x
 	var local_hw := LOCAL_ST_WIDTH * 0.5
 	var x_at := func(s: float) -> float: return _curve_x_at(waypoints, s)
-	StreetFurniture.place_along(parent, radius, segments, s0, s1, x_at, [-local_hw, local_hw])
+	await StreetFurniture.place_along_async(parent, radius, segments, s0, s1, x_at, [-local_hw, local_hw])
 
 static func _load_house_manifest() -> Dictionary:
 	var f := FileAccess.open(HOUSE_MANIFEST_PATH, FileAccess.READ)
@@ -166,7 +178,12 @@ static func _load_house_manifest() -> Dictionary:
 ## yaw derivation (confirmed live there that a building's own "forward"
 ## points THROUGH it from the door to the back wall, not out through the
 ## door, so +1 needs +90deg here and -1 needs -90deg, not the reverse).
-static func _place_houses(parent: Node3D, radius: float, segments: int, waypoints: Array, outward_sign: float) -> void:
+## house1/2/3.glb already carry real collision baked in from their
+## original export pipeline (confirmed live -- see RingCoords.
+## tag_structure_meshes()'s own comment), unlike the newer building_
+## helpers.py buildings -- no RingCoords.add_trimesh_collision() call
+## needed here, so this yields every 2 houses rather than every 1.
+static func _place_houses_async(parent: Node3D, radius: float, segments: int, waypoints: Array, outward_sign: float) -> void:
 	var manifest := _load_house_manifest()
 	if manifest.is_empty():
 		return
@@ -190,3 +207,5 @@ static func _place_houses(parent: Node3D, radius: float, segments: int, waypoint
 				OpeningsSetup.setup_transformed(inst, entry.get("openings", []))
 		s += HOUSE_SPACING
 		i += 1
+		if i % 2 == 0:
+			await RingCoords.yield_frame()

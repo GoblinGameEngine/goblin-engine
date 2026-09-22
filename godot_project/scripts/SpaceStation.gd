@@ -83,12 +83,18 @@ const STATION_PLAYER_SCENE := preload("res://scenes/StationPlayer.tscn")
 
 @onready var ring_body: AnimatableBody3D = $RingBody
 var player: StationPlayer
+var zone_streamer: ZoneStreamer
 
 func _ready() -> void:
 	add_to_group("space_station")
 	_setup_environment()
-	_build_ring()
+	# Player spawns BEFORE the ring builds now (reordered from build-then-
+	# spawn): _build_ring() below wires up ZoneStreamer.gd, which needs a
+	# live player reference to track arc-length position against. Safe to
+	# reorder -- _floor_spawn_transform() is pure RADIUS math, it doesn't
+	# read anything _build_ring() creates.
 	_spawn_player()
+	_build_ring()
 	Settings.changed.connect(_on_settings_changed)
 
 ## Same reasoning as Main.gd's own _on_settings_changed(): draw distance
@@ -185,15 +191,29 @@ func _build_ring() -> void:
 	# The procedural Midwestern neighborhood (see the plan file / Phase
 	# A-E commits) -- a separate "Neighborhood" node under ring_body, not
 	# ring_body's direct children like RingMesh above, so
-	# NeighborhoodGenerator.build()'s own SceneryOptimizer/ToonShading
-	# passes only ever walk the neighborhood's own content, not the ring
-	# shell + light fixtures too. Still a child of ring_body, so
-	# rebuild_ring()'s child-free loop above tears it down and
-	# regenerates it in place along with everything else, same as always.
+	# NeighborhoodGenerator's own SceneryOptimizer/ToonShading passes only
+	# ever walk the neighborhood's own content, not the ring shell +
+	# light fixtures too. Still a child of ring_body, so rebuild_ring()'s
+	# child-free loop above tears it down and regenerates it in place
+	# along with everything else, same as always.
+	#
+	# Only the road/sidewalk SKELETON builds eagerly here -- requested
+	# directly ("do we need to keep so much of the ring in memory... a
+	# background pre-loading system"): buildings/crops/furniture are the
+	# expensive part (node count, collision generation), and now stream
+	# in/out per zone via ZoneStreamer.gd, driven by the player's own
+	# arc-length position, instead of every zone's full detail existing
+	# for the whole ring's lifetime regardless of where the player is.
 	var neighborhood := Node3D.new()
 	neighborhood.name = "Neighborhood"
 	ring_body.add_child(neighborhood)
-	NeighborhoodGenerator.build(neighborhood, RADIUS, CEILING_HEIGHT, WIDTH, SEGMENTS)
+	var zone_info := NeighborhoodGenerator.build_skeleton(neighborhood, RADIUS, SEGMENTS, WIDTH)
+
+	if zone_streamer == null:
+		zone_streamer = ZoneStreamer.new()
+		zone_streamer.name = "ZoneStreamer"
+		add_child(zone_streamer)
+	zone_streamer.init(neighborhood, self, RADIUS, SEGMENTS, zone_info, player)
 
 ## Angle=0 spawn point, standing on the floor, facing along the loop --
 ## shared by initial spawn and by rebuild_ring()'s post-rebuild respawn

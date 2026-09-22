@@ -57,7 +57,15 @@ const MAIN_SEQUENCE := ["storefront_bank", "post_office", "storefront_general", 
 ## whole grid; NeighborhoodGenerator.gd uses the returned entry_x/exit_x
 ## lists to connect this zone's 5 streets to its neighbors' through the
 ## inter-zone buffer.
-static func build(parent: Node3D, radius: float, segments: int,
+##
+## Roads/sidewalks only -- cheap, stays loaded for the whole ring
+## regardless of player position (see ZoneStreamer.gd). Buildings +
+## street furniture are build_detail_async(), streamed in/out
+## separately -- a downtown block can run to 100+ buildings, measured as
+## a real stutter done synchronously all at once while the player is
+## already nearby. "street_x" is returned (alongside entry_x/exit_x, same
+## values) so build_detail_async() doesn't have to recompute it.
+static func build_roads(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, width: float, x_center: float = 0.0) -> Dictionary:
 	var mesh := ArrayMesh.new()
 
@@ -110,23 +118,27 @@ static func build(parent: Node3D, radius: float, segments: int,
 	mesh_instance.mesh = mesh
 	parent.add_child(mesh_instance)
 
-	_place_buildings(parent, radius, segments, s_start, s_end, street_x)
-	_place_furniture(parent, radius, segments, s_start, s_end, street_x, x_center)
+	return {"entry_x": street_x.duplicate(), "exit_x": street_x.duplicate(), "street_x": street_x.duplicate()}
 
-	return {"entry_x": street_x.duplicate(), "exit_x": street_x.duplicate()}
+## Buildings + street furniture -- the expensive, streamed part.
+## `street_x`/`x_center` must be build_roads()'s own values for this zone.
+static func build_detail_async(parent: Node3D, radius: float, segments: int,
+		s_start: float, s_end: float, street_x: Array, x_center: float) -> void:
+	await _place_buildings_async(parent, radius, segments, s_start, s_end, street_x)
+	await _place_furniture_async(parent, radius, segments, s_start, s_end, street_x, x_center)
 
 ## Lamp posts at the curb line (between road and sidewalk, so they clear
 ## both moving traffic and the buildings sitting flush to the sidewalk's
 ## OUTER edge with zero setback) on both sides of every street; fire
 ## hydrants at the sparser interval on one side only.
-static func _place_furniture(parent: Node3D, radius: float, segments: int,
+static func _place_furniture_async(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, street_x: Array, x_center: float) -> void:
 	for x in street_x:
 		var street_x_val: float = x
 		var road_width: float = MAIN_ST_WIDTH if is_equal_approx(street_x_val, x_center) else DOWNTOWN_ST_WIDTH
 		var hw := road_width * 0.5
 		var x_at := func(_s: float) -> float: return street_x_val
-		StreetFurniture.place_along(parent, radius, segments, s_start, s_end, x_at, [-hw, hw])
+		await StreetFurniture.place_along_async(parent, radius, segments, s_start, s_end, x_at, [-hw, hw])
 
 static func _load_manifest() -> Dictionary:
 	var f := FileAccess.open(DOWNTOWN_MANIFEST_PATH, FileAccess.READ)
@@ -173,8 +185,10 @@ static func _place_one(parent: Node3D, manifest: Dictionary, building_id: String
 
 ## Fills one band's whole arc-length run with buildings from `sequence`,
 ## cycled in order, each placed lot-line-to-lot-line (a LOT_GAP hair
-## apart) along s starting at s_start.
-static func _fill_band(parent: Node3D, manifest: Dictionary, sequence: Array,
+## apart) along s starting at s_start. Yields every building (each one
+## carries a create_trimesh_collision() call, the expensive part) so a
+## long block streams in over several frames instead of one.
+static func _fill_band_async(parent: Node3D, manifest: Dictionary, sequence: Array,
 		radius: float, segments: int, s_start: float, s_end: float, flush_x: float, face_sign: float) -> void:
 	var s := s_start
 	var i := 0
@@ -185,8 +199,9 @@ static func _fill_band(parent: Node3D, manifest: Dictionary, sequence: Array,
 			break
 		s += width + LOT_GAP
 		i += 1
+		await RingCoords.yield_frame()
 
-static func _place_buildings(parent: Node3D, radius: float, segments: int,
+static func _place_buildings_async(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, street_x: Array) -> void:
 	var manifest := _load_manifest()
 	if manifest.is_empty():
@@ -195,14 +210,14 @@ static func _place_buildings(parent: Node3D, radius: float, segments: int,
 	var half_main := MAIN_ST_WIDTH * 0.5 + SIDEWALK_WIDTH
 
 	# Band 0 [street_x[0], street_x[1]]: faces street_x[1], from its -X side.
-	_fill_band(parent, manifest, OUTER_SEQUENCE, radius, segments, s_start, s_end,
+	await _fill_band_async(parent, manifest, OUTER_SEQUENCE, radius, segments, s_start, s_end,
 		street_x[1] - half_downtown, 1.0)
 	# Band 1 [street_x[1], Main]: faces Main, from its -X side.
-	_fill_band(parent, manifest, MAIN_SEQUENCE, radius, segments, s_start, s_end,
+	await _fill_band_async(parent, manifest, MAIN_SEQUENCE, radius, segments, s_start, s_end,
 		street_x[2] - half_main, 1.0)
 	# Band 2 [Main, street_x[3]]: faces Main, from its +X side.
-	_fill_band(parent, manifest, MAIN_SEQUENCE, radius, segments, s_start, s_end,
+	await _fill_band_async(parent, manifest, MAIN_SEQUENCE, radius, segments, s_start, s_end,
 		street_x[2] + half_main, -1.0)
 	# Band 3 [street_x[3], street_x[4]]: faces street_x[3], from its +X side.
-	_fill_band(parent, manifest, OUTER_SEQUENCE, radius, segments, s_start, s_end,
+	await _fill_band_async(parent, manifest, OUTER_SEQUENCE, radius, segments, s_start, s_end,
 		street_x[3] + half_downtown, -1.0)

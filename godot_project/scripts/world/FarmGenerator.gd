@@ -13,8 +13,14 @@ class_name FarmGenerator
 # Buildings: 2 farmhouses (1 per main road, each facing its own road) +
 # a barn and pole building clustered near farmhouse A, all from
 # blender_scripts/build_farm_buildings.py's output (assets/farm_assets/
-# *.glb + manifest.json). Crop fields are still a later phase (Phase D,
-# once the MultiMesh billboard system is ready).
+# *.glb + manifest.json), plus corn/soy crop fields.
+#
+# Split into build_roads() (cheap, always resident -- see
+# ZoneStreamer.gd) and build_detail_async() (buildings + crop fields,
+# streamed in/out based on player proximity, time-sliced across frames
+# via RingCoords.yield_frame() -- a synchronous all-at-once version of
+# this measured ~460ms in Phase D/E testing, a real stutter for content
+# that now loads while the player is already walking around nearby).
 #
 # Setback distances are adapted from the researched real-world figures
 # (100+ft farmhouse-to-road, 150ft to the barn, 50-75ft barn-to-pole-
@@ -37,7 +43,16 @@ const UV_TILE := 8.0
 const FARM_ASSETS_DIR := "res://assets/farm_assets/"
 const FARM_MANIFEST_PATH := "res://assets/farm_assets/manifest.json"
 
-static func build(parent: Node3D, radius: float, segments: int,
+const BUILDINGS_PER_FRAME := 1  # collision generation is the expensive part -- see RingCoords.add_trimesh_collision()
+
+## Roads only -- cheap (one committed mesh), meant to stay loaded for the
+## whole ring regardless of player position (see ZoneStreamer.gd). x_a/
+## x_b/connector_s are returned so build_detail_async() (called
+## separately, only when this zone streams in) doesn't need to
+## recompute the connector positions independently -- they must match
+## exactly for CropFieldGenerator's connector-clearance skip to line up
+## with where the connector roads actually are.
+static func build_roads(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, width: float) -> Dictionary:
 	var mesh := ArrayMesh.new()
 
@@ -72,10 +87,17 @@ static func build(parent: Node3D, radius: float, segments: int,
 	mesh_instance.mesh = mesh
 	parent.add_child(mesh_instance)
 
-	_place_buildings(parent, radius, segments, s_start, s_end, x_a, x_b)
-	_place_crop_fields(parent, radius, segments, s_start, s_end, x_a, x_b, connector_s)
+	return {"entry_x": [x_a, x_b], "exit_x": [x_a, x_b], "connector_s": connector_s}
 
-	return {"entry_x": [x_a, x_b], "exit_x": [x_a, x_b]}
+## Buildings + crop fields -- the expensive, streamed part. `connector_s`
+## must be build_roads()'s own returned value for this same zone (so crop
+## rows skip exactly where the real connector roads are).
+static func build_detail_async(parent: Node3D, radius: float, segments: int,
+		s_start: float, s_end: float, width: float, connector_s: Array) -> void:
+	var x_a := -width * 0.25
+	var x_b := width * 0.25
+	await _place_buildings_async(parent, radius, segments, s_start, s_end, x_a, x_b)
+	await _place_crop_fields_async(parent, radius, segments, s_start, s_end, x_a, x_b, connector_s)
 
 ## Fills the open ground BETWEEN the two farm roads (x_a..x_b) with the
 ## zone's two required fields -- corn on the x_a-facing half, soy on the
@@ -83,16 +105,16 @@ static func build(parent: Node3D, radius: float, segments: int,
 ## one contiguous field each rather than an interleaved checkerboard.
 ## The MAIN_ROAD_WIDTH*0.5 inset keeps stalks off the road shoulder;
 ## connector_s lets CropFieldGenerator skip the 4 cross-streets.
-static func _place_crop_fields(parent: Node3D, radius: float, segments: int,
+static func _place_crop_fields_async(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, x_a: float, x_b: float, connector_s: Array) -> void:
 	var road_inset := MAIN_ROAD_WIDTH * 0.5 + 2.0
 	var field_gap := 3.0  # meters of bare ground straddling the midline between the two fields
 	var rng := RandomNumberGenerator.new()
 	rng.seed = 20260921  # deterministic field layout, regenerable like the rest of this pipeline
 
-	CropFieldGenerator.build(parent, radius, segments, s_start, s_end,
+	await CropFieldGenerator.build_async(parent, radius, segments, s_start, s_end,
 		x_a + road_inset, -field_gap, "corn", connector_s, rng)
-	CropFieldGenerator.build(parent, radius, segments, s_start, s_end,
+	await CropFieldGenerator.build_async(parent, radius, segments, s_start, s_end,
 		field_gap, x_b - road_inset, "soy", connector_s, rng)
 
 static func _load_manifest() -> Dictionary:
@@ -156,7 +178,7 @@ static func _place_building(parent: Node3D, manifest: Dictionary, building_id: S
 	RingCoords.add_trimesh_collision(inst)
 	OpeningsSetup.setup_transformed(inst, entry.get("openings", []))
 
-static func _place_buildings(parent: Node3D, radius: float, segments: int,
+static func _place_buildings_async(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, x_a: float, x_b: float) -> void:
 	var manifest := _load_manifest()
 	if manifest.is_empty():
@@ -170,16 +192,20 @@ static func _place_buildings(parent: Node3D, radius: float, segments: int,
 	var s_house_a := s_start + zone_len * 0.28
 	var x_house_a := x_a - setback
 	_place_building(parent, manifest, "farmhouse_foursquare", radius, segments, s_house_a, x_house_a, 1.0)
+	await RingCoords.yield_frame()
 
 	# Barn and pole building, clustered further from the road than the
 	# farmhouse, offset along the arc so they don't overlap it or each other.
 	var s_barn := s_house_a + 45.0
 	_place_building(parent, manifest, "barn", radius, segments, s_barn, x_a - setback - 10.0, 1.0)
+	await RingCoords.yield_frame()
 	var s_pole := s_barn + 55.0
 	_place_building(parent, manifest, "pole_building", radius, segments, s_pole, x_a - setback - 10.0, 1.0)
+	await RingCoords.yield_frame()
 
 	# Farmhouse B, near road B (x_b, positive side), facing back toward
 	# the road (-X direction).
 	var s_house_b := s_start + zone_len * 0.65
 	var x_house_b := x_b + setback
 	_place_building(parent, manifest, "farmhouse_gable", radius, segments, s_house_b, x_house_b, -1.0)
+	await RingCoords.yield_frame()

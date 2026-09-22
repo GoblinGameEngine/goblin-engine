@@ -30,7 +30,7 @@ const END_CAP_LEN := 40.0              # arc length each rounded end-cap connect
 
 const UV_TILE := 8.0
 
-static func build(parent: Node3D, radius: float, segments: int,
+static func build_roads(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, width: float) -> Dictionary:
 	var mesh := ArrayMesh.new()
 
@@ -100,3 +100,12 @@ static func build(parent: Node3D, radius: float, segments: int,
 	# this zone's own to hook into at the seams (the loop is a closed
 	# shape, on purpose).
 	return {"entry_x": [], "exit_x": []}
+
+## No detail content exists yet for this zone (the lake's own water/sand/
+## shore geometry was never built -- see this file's own header comment
+## and reference/memory.txt) -- a real gap from earlier phases, not
+## something ZoneStreamer.gd's arrival changes. Kept as a real (if empty)
+## async function so ZoneStreamer.gd can call every zone's
+## build_detail_async() uniformly instead of special-casing the lake.
+static func build_detail_async(_parent: Node3D, _radius: float, _segments: int, _width: float) -> void:
+	await RingCoords.yield_frame()

@@ -19,6 +19,7 @@ const LAMP_SCENE := preload("res://assets/street_furniture/lamp_post.glb")
 
 const LAMP_INTERVAL := 30.0     # meters between lamp posts along one sidewalk edge
 const HYDRANT_INTERVAL := 90.0  # meters between hydrants -- sparser, real-world-ish spacing
+const PLACEMENTS_PER_FRAME := 4  # yield budget -- each one carries a create_trimesh_collision() call
 
 ## Places lamp posts along EVERY offset in `edge_offsets` (each an axial
 ## distance from the street's own x, e.g. +/-(half-width + sidewalk) for
@@ -26,20 +27,23 @@ const HYDRANT_INTERVAL := 90.0  # meters between hydrants -- sparser, real-world
 ## fire hydrants at the sparser HYDRANT_INTERVAL on just `edge_offsets[0]`
 ## (one side only -- matches how real hydrants are placed, not every
 ## street edge). `x_at(s)` gives the street's actual axial position at
-## arc length s. Returns placement counts for a one-line boot log, same
-## convention as this project's other generator/optimizer return dicts.
-static func place_along(parent: Node3D, radius: float, segments: int,
+## arc length s. Yields (RingCoords.yield_frame()) every
+## PLACEMENTS_PER_FRAME items -- called from ZoneStreamer.gd's background
+## zone-detail loading, same reasoning as CropFieldGenerator.build_async().
+## Returns placement counts for a one-line boot log, same convention as
+## this project's other generator/optimizer return dicts.
+static func place_along_async(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, x_at: Callable, edge_offsets: Array) -> Dictionary:
 	var lamp_count := 0
 	var s := s_start + LAMP_INTERVAL * 0.5
-	var i := 0
 	while s < s_end:
 		var base_x: float = x_at.call(s)
 		for off in edge_offsets:
 			_place_one(parent, LAMP_SCENE, "lamp_post", radius, segments, s, base_x + float(off), lamp_count)
 			lamp_count += 1
+			if lamp_count % PLACEMENTS_PER_FRAME == 0:
+				await RingCoords.yield_frame()
 		s += LAMP_INTERVAL
-		i += 1
 
 	var hydrant_count := 0
 	if not edge_offsets.is_empty():
@@ -48,6 +52,8 @@ static func place_along(parent: Node3D, radius: float, segments: int,
 			var base_x: float = x_at.call(s)
 			_place_one(parent, HYDRANT_SCENE, "fire_hydrant", radius, segments, s, base_x + float(edge_offsets[0]), hydrant_count)
 			hydrant_count += 1
+			if hydrant_count % PLACEMENTS_PER_FRAME == 0:
+				await RingCoords.yield_frame()
 			s += HYDRANT_INTERVAL
 
 	return {"lamps": lamp_count, "hydrants": hydrant_count}

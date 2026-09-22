@@ -73,6 +73,33 @@ static func place_on_ring(inst: Node3D, radius: float, segments: int, s: float, 
 		basis = basis.rotated(basis.y, yaw)
 	inst.global_transform = Transform3D(basis, floor_point(radius, segments, s, x))
 
+## Yields one process frame -- the time-slicing primitive ZoneStreamer.gd's
+## background zone-detail loading uses (FarmGenerator/DowntownGenerator/
+## ResidentialGenerator/CropFieldGenerator/StreetFurniture's build_detail_
+## async() functions `await` this every few placements) so a zone
+## streaming in spreads its work across many frames instead of blocking
+## one frame for the whole thing -- a farm zone's ~2500 crop stalks +
+## building collision generation measured at ~460ms in one synchronous
+## call during Phase D/E testing, a real stutter if done all at once.
+## `get_tree()` isn't available here (these are plain `static func`s on
+## classes nothing ever instantiates) -- Engine.get_main_loop() is the
+## instance-free way to reach the same SceneTree.
+static func yield_frame() -> void:
+	await (Engine.get_main_loop() as SceneTree).process_frame
+
+## Inverse of floor_point()/floor_basis()'s own math: given a world
+## position (station-local, since RingBody never moves -- see
+## SpaceStation.gd), returns its arc length `s` around the loop. Matches
+## StationPlayer._radial_vector()'s own convention (project the axis/X
+## component out, leaving a vector in the Y/Z plane) -- ZoneStreamer.gd
+## uses this every ~check interval to know which zone(s) the player is
+## near, so it has to agree with how the player's own position is
+## already interpreted elsewhere in this project, not invent a second
+## convention.
+static func s_from_position(radius: float, pos: Vector3) -> float:
+	var theta := atan2(pos.z, pos.y)
+	return fposmod(theta, TAU) * radius
+
 ## Recursively adds real (trimesh) collision to every MeshInstance3D
 ## under `root` that doesn't already have a StaticBody3D sibling --
 ## confirmed live that a plain `blender_scripts/`-built .glb (no

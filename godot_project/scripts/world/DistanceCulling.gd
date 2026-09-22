@@ -21,6 +21,13 @@ class_name DistanceCulling
 const SMALL_RANGE := 40.0
 const TREE_RANGE := 85.0
 const HOUSE_RANGE := 200.0
+# Beyond this (shorter) range, roughly HALF of buildings -- a stable,
+# position-hashed "every other one," not literally alternating placement
+# order -- drop out early instead of waiting for the full HOUSE_RANGE.
+# Requested directly: thins a dense skyline (a long downtown block, e.g.)
+# at distance without touching what's actually close, where every
+# building still renders up to HOUSE_RANGE as before.
+const HOUSE_FAR_THIN_RANGE := 130.0
 # Crops get their own tier, not lumped into SMALL_RANGE: CropFieldGenerator.
 # gd's corn_*/soy_* stalks are batched per-GRID_CELL (SceneryOptimizer.
 # GRID_CELL=35m) into many separate MultiMeshInstance3D groups covering a
@@ -51,6 +58,19 @@ const TREE_KEYWORDS := [
 ]
 const HOUSE_KEYWORDS := ["structure"]
 const CROP_KEYWORDS := ["corn", "soy"]
+
+## Deterministic ~50/50 split by POSITION, not by any naming/index
+## convention -- buildings from different generators carry the tag on
+## different name components (see RingCoords.tag_structure_meshes()'s
+## own comment: the mesh itself is often just "<type>_structure" with no
+## per-instance number, only its WRAPPER node has one) so a name-based
+## parity would silently cull entire building TYPES at once (e.g. every
+## general-store storefront simultaneously) instead of alternating
+## individual buildings. Position varies per instance regardless of
+## naming, so this always alternates correctly.
+static func _is_thinned(pos: Vector3) -> bool:
+	var h := int(floor(pos.y * 3.0)) + int(floor(pos.z * 7.0))
+	return h % 2 != 0
 
 static func _category(node_name: String) -> String:
 	var lower := node_name.to_lower()
@@ -111,7 +131,8 @@ static func apply_to_world(root: Node, multiplier: float = 1.0) -> Dictionary:
 				_apply(n, TREE_RANGE * multiplier)
 				counts["tree"] += 1
 			elif cat == "house":
-				_apply(n, HOUSE_RANGE * multiplier)
+				var range_end := HOUSE_FAR_THIN_RANGE if _is_thinned((n as Node3D).global_position) else HOUSE_RANGE
+				_apply(n, range_end * multiplier)
 				counts["house"] += 1
 			elif cat == "crop":
 				_apply(n, CROP_RANGE * multiplier)
