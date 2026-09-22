@@ -143,19 +143,14 @@ func _setup_environment() -> void:
 	env.ambient_light_color = Color(0.5, 0.5, 0.55)
 	env.ambient_light_energy = 1.2
 
-	# Distance fog: fades far geometry into the background void instead of
-	# an abrupt DistanceCulling hard-cutoff pop, and softens the visually
-	# odd sight of the floor curving away at a 500m-radius ring's own
-	# horizon (e.g. looking straight down downtown's ~700m Main Street).
-	# fog_light_color deliberately close to background_color so the fog's
-	# own far limit blends into the void rather than reading as a flat
-	# gray wall; fog_sky_affect=0 keeps the BG_COLOR background itself
-	# untouched (there's no sky here to fog).
-	env.fog_enabled = true
-	env.fog_light_color = Color(0.06, 0.06, 0.08)
-	env.fog_light_energy = 1.0
-	env.fog_density = 0.012
-	env.fog_sky_affect = 0.0
+	# Distance fog: REMOVED. Was fading far geometry into the background
+	# void instead of an abrupt DistanceCulling hard-cutoff pop and
+	# softening the ring's own curving-away horizon, but it also fought
+	# the ceiling/wall sky system in ways that were hard to fully untangle
+	# (ceiling_sky.gdshader already needed a targeted fog_disabled render
+	# mode fix earlier for exactly this) -- removed outright at your
+	# direct request rather than chasing further interactions.
+	env.fog_enabled = false
 
 	var world_env := WorldEnvironment.new()
 	world_env.environment = env
@@ -208,7 +203,7 @@ func _build_ring() -> void:
 		sky_system = DaySkySystem.new()
 		sky_system.name = "DaySkySystem"
 		add_child(sky_system)
-	sky_system.setup(self, sun, ring_mesh, CEILING_HEIGHT, StationRingBuilder.TILE_WALL, RADIUS, StationRingBuilder.TILE_CEILING, environment)
+	sky_system.setup(self, sun, ring_mesh, CEILING_HEIGHT, StationRingBuilder.TILE_WALL, environment)
 
 	# The procedural Midwestern neighborhood (see the plan file / Phase
 	# A-E commits) -- a separate "Neighborhood" node under ring_body, not

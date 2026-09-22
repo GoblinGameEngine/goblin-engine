@@ -67,16 +67,18 @@ var env: Environment
 ## night, still nowhere near the old near-black default that caused an
 ## earlier session's "shadow problem").
 func setup(p_station: Node3D, p_sun: DirectionalLight3D, ring_mesh: MeshInstance3D,
-		ceiling_height: float, wall_tile: float, radius: float, tile_ceiling: float,
-		p_env: Environment = null) -> void:
+		ceiling_height: float, wall_tile: float, p_env: Environment = null) -> void:
 	station = p_station
 	sun = p_sun
 	env = p_env
+
+	var width: float = SpaceStation.WIDTH
 
 	ceiling_material = ShaderMaterial.new()
 	ceiling_material.shader = CEILING_SKY_SHADER
 	ceiling_material.set_shader_parameter("sky_day_texture", SKY_DAY_TEX)
 	ceiling_material.set_shader_parameter("sky_night_texture", SKY_NIGHT_TEX)
+	ceiling_material.set_shader_parameter("station_width", width)
 	ring_mesh.set_surface_override_material(1, ceiling_material)
 
 	wall_material = ShaderMaterial.new()
@@ -85,8 +87,7 @@ func setup(p_station: Node3D, p_sun: DirectionalLight3D, ring_mesh: MeshInstance
 	wall_material.set_shader_parameter("sky_day_texture", SKY_DAY_TEX)
 	wall_material.set_shader_parameter("sky_night_texture", SKY_NIGHT_TEX)
 	wall_material.set_shader_parameter("wall_v_max", ceiling_height / wall_tile)
-	wall_material.set_shader_parameter("ring_radius", radius)
-	wall_material.set_shader_parameter("sky_tile_scale", tile_ceiling)
+	wall_material.set_shader_parameter("station_width", width)
 	ring_mesh.set_surface_override_material(2, wall_material)
 
 	_apply(0.0)  # first frame's worth, before _process() runs
@@ -190,25 +191,39 @@ func _apply(_delta: float) -> void:
 	wall_material.set_shader_parameter("day_tint", tint)
 
 	if sun:
-		# The light's own direction sweeps the same west->east arc the
-		# visible band does, so shadows fall consistently with what's
-		# painted on the ceiling. -35/40 (pitch/base yaw) matches this
-		# project's original static "noon" sun; the sweep just adds/
-		# subtracts yaw around that. Rotation isn't updated at night
-		# (sun_pos holds its last day value) -- harmless, since
-		# sun_intensity/shadow_enabled are both off by then.
-		var sweep_deg: float = lerp(-55.0, 55.0, sun_pos)
+		# ONE real light standing in for whichever celestial body is up --
+		# requested directly: "everything needs to be lit with full
+		# daylight in the daytime and everything needs to be lit with
+		# moonlight at night," not just an ambient wash at night while the
+		# actual light source sits nearly off. Whichever of sun/moon is
+		# the stronger influence right now drives this light's rotation,
+		# color, and energy; the other's fields are simply unused while
+		# it's not. -35/40 (pitch/base yaw) matches this project's
+		# original static "noon" sun; the sweep just adds/subtracts yaw
+		# around that, using whichever body is active's own west->east
+		# position.
+		var use_moon := moon_intensity > sun_intensity
+		var active_pos: float = moon_pos if use_moon else sun_pos
+		var active_intensity: float = maxf(sun_intensity, moon_intensity)
+		var sweep_deg: float = lerp(-55.0, 55.0, active_pos)
 		sun.rotation_degrees = Vector3(-35.0, 40.0 + sweep_deg, 0.0)
-		sun.light_color = Color(tint.r, tint.g * 0.97, tint.b * 0.9)
-		sun.light_energy = 0.15 + sun_intensity * 1.15
-		sun.shadow_enabled = sun_intensity > 0.05
+		if use_moon:
+			sun.light_color = moon_color
+			sun.light_energy = 0.4 + moon_intensity * 0.9  # a real, working moonlight -- not near-off
+		else:
+			sun.light_color = Color(tint.r, tint.g * 0.97, tint.b * 0.9)
+			sun.light_energy = 0.2 + sun_intensity * 1.5  # "full daylight" -- brighter peak than before
+		sun.shadow_enabled = active_intensity > 0.05
 
 	if env:
-		# Requested directly ("the station is too dark in the daytime"):
-		# 2.0 by day (up from 1.2), 1.0 by night -- both still well above
-		# the original near-black 0.6 default that caused an earlier
-		# session's "shadow problem" in the first place.
-		env.ambient_light_energy = lerp(1.0, 2.0, 1.0 - night_mix)
+		# Requested directly, twice now ("the station is too dark in the
+		# daytime" / "we also need more ambient light"): 2.8 by day (up
+		# from 2.0), 1.6 by night (up from 1.0) -- both well above the
+		# original near-black 0.6 default that caused an earlier
+		# session's "shadow problem" in the first place, and now on top
+		# of a real moonlight/daylight DirectionalLight3D rather than
+		# carrying the whole scene alone.
+		env.ambient_light_energy = lerp(1.6, 2.8, 1.0 - night_mix)
 
 	var should_lights_be_on := night_mix > 0.5
 	if should_lights_be_on != lamp_light_on:
