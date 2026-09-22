@@ -208,7 +208,7 @@ func _build_ring() -> void:
 		sky_system = DaySkySystem.new()
 		sky_system.name = "DaySkySystem"
 		add_child(sky_system)
-	sky_system.setup(self, sun, ring_mesh, CEILING_HEIGHT, StationRingBuilder.TILE_WALL, environment)
+	sky_system.setup(self, sun, ring_mesh, CEILING_HEIGHT, StationRingBuilder.TILE_WALL, RADIUS, StationRingBuilder.TILE_CEILING, environment)
 
 	# The procedural Midwestern neighborhood (see the plan file / Phase
 	# A-E commits) -- a separate "Neighborhood" node under ring_body, not

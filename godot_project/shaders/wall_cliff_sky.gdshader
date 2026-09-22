@@ -9,6 +9,16 @@ shader_type spatial;
 // keyed on the wall's tangential angle, so it varies smoothly all the
 // way around the ring and wraps seamlessly at the loop).
 //
+// The sky portion samples sky_day_texture/sky_night_texture at a
+// SEPARATE, larger-scale UV computed from world position (sky_tile_scale,
+// set from GDScript to match StationRingBuilder.TILE_CEILING) rather than
+// the mesh's own UV (tied to TILE_WALL=6m, which must stay small -- the
+// cliff rock texture needs that fine a repeat to read as rock, not a
+// blown-up blur). Sampling the now-large-scale cloud/star art at TILE_
+// WALL's small repeat would otherwise show a tiny, frequently-repeating
+// crop of one big cloud instead of matching the ceiling's own big-tile
+// look.
+//
 // The cliff portion is toon cel-shaded like the rest of this project's
 // world geometry (render_mode cull_disabled, banded light()); the sky
 // portion is unshaded/self-lit via EMISSION instead (matching the
@@ -25,8 +35,12 @@ uniform float cliff_frac : hint_range(0.0, 1.0) = 0.6;
 uniform float jag_amplitude : hint_range(0.0, 0.3) = 0.07;  // +/- fraction of height the boundary jags by
 uniform float night_mix : hint_range(0.0, 1.0) = 0.0;
 uniform vec4 day_tint : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+uniform float cloud_drift = 0.0;
+uniform float sky_tile_scale = 60.0;   // meters -- matches StationRingBuilder.TILE_CEILING
+uniform float ring_radius = 500.0;     // SpaceStation.RADIUS, for the angle->arc-length conversion below
 
 varying float wall_angle;
+varying float world_x;
 
 void vertex() {
 	// atan2(z, y), not a raw coordinate -- the wall follows the ring's
@@ -34,6 +48,7 @@ void vertex() {
 	// single axis that's "tangential position" directly), and this
 	// wraps correctly at the TAU seam for free.
 	wall_angle = atan(VERTEX.z, VERTEX.y);
+	world_x = VERTEX.x;
 }
 
 float hash1(float n) { return fract(sin(n * 127.1) * 43758.5453); }
@@ -53,8 +68,9 @@ void fragment() {
 	float sky_mix = smoothstep(boundary - 0.015, boundary + 0.015, height_frac);
 
 	vec4 cliff_c = texture(cliff_texture, UV);
-	vec4 day_c = texture(sky_day_texture, UV) * day_tint;
-	vec4 night_c = texture(sky_night_texture, UV);
+	vec2 sky_uv = vec2(world_x / sky_tile_scale, (wall_angle * ring_radius) / sky_tile_scale);
+	vec4 day_c = texture(sky_day_texture, sky_uv + vec2(cloud_drift, 0.0)) * day_tint;
+	vec4 night_c = texture(sky_night_texture, sky_uv);
 	vec3 sky_c = mix(day_c.rgb, night_c.rgb, night_mix);
 
 	ALBEDO = cliff_c.rgb * (1.0 - sky_mix);

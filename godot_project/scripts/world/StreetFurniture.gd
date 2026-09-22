@@ -58,6 +58,11 @@ static func place_along_async(parent: Node3D, radius: float, segments: int,
 
 	return {"lamps": lamp_count, "hydrants": hydrant_count}
 
+const LAMP_LIGHT_HEIGHT := 3.98  # meters up the pole, at the lantern head -- see build_street_furniture.py's own head_z math
+const LAMP_LIGHT_COLOR := Color(1.0, 0.85, 0.55)
+const LAMP_LIGHT_RANGE := 14.0
+const LAMP_LIGHT_ENERGY := 3.0
+
 static func _place_one(parent: Node3D, scene: PackedScene, name_prefix: String,
 		radius: float, segments: int, s: float, x: float, index: int) -> void:
 	var inst := scene.instantiate()
@@ -65,3 +70,26 @@ static func _place_one(parent: Node3D, scene: PackedScene, name_prefix: String,
 	RingCoords.place_on_ring(inst, radius, segments, s, x)
 	parent.add_child(inst)
 	RingCoords.add_trimesh_collision(inst)
+
+	if name_prefix == "lamp_post":
+		# Requested directly: streetlights need to actually emit light at
+		# night. shadow_enabled=false -- with potentially hundreds of these
+		# live at once, per-light shadow maps would be a real cost for a
+		# small decorative glow; DaySkySystem.gd toggles `visible` in bulk
+		# via the "lamp_lights" group rather than every light checking the
+		# time of day itself each frame. Initial visibility reads
+		# DaySkySystem's CURRENT global state (a static var, not an
+		# instance call -- this runs from generator code with no
+		# DaySkySystem reference) so a lamp post streamed in at night
+		# already starts lit instead of waiting for the next day/night
+		# transition to notice it exists.
+		var light := OmniLight3D.new()
+		light.name = "lamp_light"
+		light.light_color = LAMP_LIGHT_COLOR
+		light.omni_range = LAMP_LIGHT_RANGE
+		light.light_energy = LAMP_LIGHT_ENERGY
+		light.shadow_enabled = false
+		light.position = Vector3(0.0, LAMP_LIGHT_HEIGHT, 0.0)
+		light.visible = DaySkySystem.lamp_light_on
+		light.add_to_group("lamp_lights")
+		inst.add_child(light)
