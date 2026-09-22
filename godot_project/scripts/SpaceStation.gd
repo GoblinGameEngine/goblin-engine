@@ -53,7 +53,7 @@ class_name SpaceStation
 # math (confirmed live, independent of whether anything is rotating).
 static var RADIUS := 500.0          # floor's distance from the axis -- also the "wall" gravity_at() ramps up to
 static var CEILING_HEIGHT := 150.0  # floor to ceiling
-static var WIDTH := 200.0           # wall-to-wall, along the axis
+static var WIDTH := 1000.0          # wall-to-wall, along the axis -- confirmed live (Phase E follow-up) that the ring/streaming/batching pipeline holds up fine at this scale; made the permanent default
 static var SEGMENTS := 96           # angular subdivision -- TAU/segments per facet, independent of radius
 
 static var TARGET_G := 9.8
@@ -84,6 +84,9 @@ const STATION_PLAYER_SCENE := preload("res://scenes/StationPlayer.tscn")
 @onready var ring_body: AnimatableBody3D = $RingBody
 var player: StationPlayer
 var zone_streamer: ZoneStreamer
+var sky_system: DaySkySystem
+var sun: DirectionalLight3D
+var environment: Environment
 
 func _ready() -> void:
 	add_to_group("space_station")
@@ -157,13 +160,20 @@ func _setup_environment() -> void:
 	var world_env := WorldEnvironment.new()
 	world_env.environment = env
 	add_child(world_env)
+	environment = env
 
-	var sun := DirectionalLight3D.new()
+	sun = DirectionalLight3D.new()
 	sun.rotation_degrees = Vector3(-35, 40, 0)
 	sun.light_energy = 1.3
 	sun.light_color = Color(1.0, 0.98, 0.92)
 	sun.shadow_enabled = true
 	add_child(sun)
+	# Rotation/color/energy/shadow_enabled above are just the initial
+	# pose -- DaySkySystem.gd (wired up in _build_ring()) takes over
+	# every frame once it exists, sweeping this to match the visible sky
+	# band. Created here (once, in _ready()) rather than by DaySkySystem
+	# itself since rebuild_ring() doesn't recreate the player/environment,
+	# only the ring geometry -- this light should persist the same way.
 
 func _build_ring() -> void:
 	var floor_mat := StandardMaterial3D.new()
@@ -187,6 +197,18 @@ func _build_ring() -> void:
 	var ring_mesh: MeshInstance3D = ring_body.get_node("RingMesh")
 	var toon_count := ToonShading.apply_to_world(ring_mesh)
 	print("SpaceStation: cel-shaded %d ring materials" % toon_count)
+
+	# The circadian sky cycle -- ceiling + wall surfaces (1/2 of RingMesh)
+	# get their own dynamic shaders here, AFTER ToonShading above (which
+	# would otherwise overwrite them with a plain toon material next
+	# rebuild -- see DaySkySystem.setup()'s own comment). sky_system
+	# itself persists across rebuild_ring() calls (created once, like
+	# zone_streamer/sun), just re-pointed at the fresh RingMesh each time.
+	if sky_system == null:
+		sky_system = DaySkySystem.new()
+		sky_system.name = "DaySkySystem"
+		add_child(sky_system)
+	sky_system.setup(self, sun, ring_mesh, CEILING_HEIGHT, StationRingBuilder.TILE_WALL, environment)
 
 	# The procedural Midwestern neighborhood (see the plan file / Phase
 	# A-E commits) -- a separate "Neighborhood" node under ring_body, not

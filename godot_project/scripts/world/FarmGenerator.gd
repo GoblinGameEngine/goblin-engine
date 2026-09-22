@@ -34,8 +34,8 @@ class_name FarmGenerator
 
 const FT := 0.3048
 
-const MAIN_ROAD_WIDTH := 24.0 * FT   # 2 lanes, no shoulder parking -- farm traffic, not residential
-const CONNECTOR_WIDTH := 20.0 * FT
+const MAIN_ROAD_WIDTH := 24.0 * FT * 2.0  # 2 lanes, no shoulder parking -- farm traffic, not residential -- doubled, requested directly
+const CONNECTOR_WIDTH := 20.0 * FT * 2.0
 const N_CONNECTORS := 4
 
 const UV_TILE := 8.0

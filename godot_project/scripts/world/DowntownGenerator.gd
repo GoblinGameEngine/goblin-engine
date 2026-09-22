@@ -34,13 +34,36 @@ const FT := 0.3048
 const DOWNTOWN_ST_WIDTH := 30.0 * FT   # curb-to-curb: 2 travel lanes + 1 parking lane (one side only)
 const MAIN_ST_WIDTH := DOWNTOWN_ST_WIDTH * 2.0
 const SIDEWALK_WIDTH := 10.0 * FT      # each side
+const HALF_DOWNTOWN_ST := DOWNTOWN_ST_WIDTH * 0.5 + SIDEWALK_WIDTH  # centerline to sidewalk's outer edge, a secondary street
+const HALF_MAIN_ST := MAIN_ST_WIDTH * 0.5 + SIDEWALK_WIDTH          # ...Main Street
 const BLOCK_SIZE := 6.0 * (25.0 * FT)  # 6 storefront lots (25ft each) per block, along the arc
-const BAND_DEPTH := 120.0 * FT         # one building-deep band, between adjacent parallel streets
 const UV_TILE := 8.0                   # meters per texture tile, matches StationRingBuilder's TILE_* convention
 
 const DOWNTOWN_ASSETS_DIR := "res://assets/downtown_assets/"
 const DOWNTOWN_MANIFEST_PATH := "res://assets/downtown_assets/manifest.json"
-const LOT_GAP := 0.3  # meters, a hair of clearance between adjacent lot-line-to-lot-line buildings
+
+# Spacing, requested directly: buildings need real air around them instead
+# of sitting flush to the sidewalk and to each other -- fewer buildings
+# per block as a result, which is an accepted tradeoff, not a bug.
+const SIDEWALK_SETBACK := 3.0  # meters, sidewalk's outer edge to building FRONT
+const BUILDING_GAP := 8.0      # meters, between adjacent buildings along the same row
+
+# Gravel alley behind each row of buildings, requested directly: 75% of
+# DOWNTOWN_ST_WIDTH, with a little clearance on each side (building-to-
+# alley, alley-to-next-street) so it doesn't touch either. MAX_BUILDING_
+# DEPTH is the deepest current building (post_office, 27.43m -- see
+# assets/downtown_assets/manifest.json).
+const ALLEY_WIDTH := DOWNTOWN_ST_WIDTH * 0.75
+const ALLEY_CLEARANCE := 2.0    # meters, building-back-to-alley and alley-to-next-sidewalk
+const MAX_BUILDING_DEPTH := 28.0
+# BAND_DEPTH is budgeted additively from real dimensions -- worst case (a
+# band bounded by two SECONDARY streets, not Main, which has more room
+# not less): this street's own half-width+sidewalk (flush_x already
+# starts measuring from there), then setback + deepest building + both
+# alley clearances + alley width, then the FAR street's own half-width+
+# sidewalk so the alley clears it too. A guessed constant could silently
+# overlap once any of the pieces above changed; this can't.
+const BAND_DEPTH := HALF_DOWNTOWN_ST + SIDEWALK_SETBACK + MAX_BUILDING_DEPTH + ALLEY_CLEARANCE + ALLEY_WIDTH + ALLEY_CLEARANCE + HALF_DOWNTOWN_ST
 
 # Building sequences per band -- outer bands (0 and 3, facing the
 # secondary streets) never get the bank/post office; the two
@@ -73,11 +96,15 @@ static func build_roads(parent: Node3D, radius: float, segments: int,
 	road_mat.albedo_texture = load("res://assets/textures/road_tinted.png")
 	var sidewalk_mat := StandardMaterial3D.new()
 	sidewalk_mat.albedo_texture = load("res://assets/textures/sidewalk_tinted_0.png")
+	var gravel_mat := StandardMaterial3D.new()
+	gravel_mat.albedo_texture = load("res://assets/textures/gravel_tinted.png")
 
 	var st_road := SurfaceTool.new()
 	st_road.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var st_sidewalk := SurfaceTool.new()
 	st_sidewalk.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var st_alley := SurfaceTool.new()
+	st_alley.begin(Mesh.PRIMITIVE_TRIANGLES)
 
 	# 5 parallel tangential streets: Main at the center, 2 flanking pairs
 	# at +/-BAND_DEPTH and +/-2*BAND_DEPTH, giving 4 building-deep bands.
@@ -104,10 +131,33 @@ static func build_roads(parent: Node3D, radius: float, segments: int,
 			break
 		StreetBuilder.build_axial_strip(st_road, radius, segments, s_cross, cross_x_start, cross_x_end, DOWNTOWN_ST_WIDTH, UV_TILE)
 
+	# Gravel alley behind each of the 4 bands' single row of buildings --
+	# same flush_x/face_sign per band as _place_buildings_async() uses
+	# (must match exactly, or the alley and the buildings it's meant to
+	# sit behind land in different places). Positioned at the far end of
+	# BAND_DEPTH's own budget: setback + deepest building + one
+	# clearance in from the row's front, centered on the alley's own
+	# width, with ALLEY_CLEARANCE still free on its far side before the
+	# next street's sidewalk (see BAND_DEPTH's own comment).
+	var alley_offset := SIDEWALK_SETBACK + MAX_BUILDING_DEPTH + ALLEY_CLEARANCE + ALLEY_WIDTH * 0.5
+	var band_fronts := [
+		[street_x[1] - HALF_DOWNTOWN_ST, 1.0],
+		[street_x[2] - HALF_MAIN_ST, 1.0],
+		[street_x[2] + HALF_MAIN_ST, -1.0],
+		[street_x[3] + HALF_DOWNTOWN_ST, -1.0],
+	]
+	for band in band_fronts:
+		var flush_x: float = band[0]
+		var face_sign: float = band[1]
+		var alley_x := flush_x - face_sign * alley_offset
+		StreetBuilder.build_tangential_strip(st_alley, radius, segments, s_start, s_end, alley_x, alley_x, ALLEY_WIDTH, UV_TILE)
+
 	st_road.set_material(road_mat)
 	st_road.commit(mesh)
 	st_sidewalk.set_material(sidewalk_mat)
 	st_sidewalk.commit(mesh)
+	st_alley.set_material(gravel_mat)
+	st_alley.commit(mesh)
 
 	var mesh_instance := MeshInstance3D.new()
 	# Deliberately NOT named with DistanceCulling's "structure" keyword --
@@ -176,7 +226,12 @@ static func _place_one(parent: Node3D, manifest: Dictionary, building_id: String
 	# needs the tag on the actual mesh, done here via RingCoords.
 	RingCoords.tag_structure_meshes(inst)
 	var yaw := PI * 0.5 if face_sign > 0.0 else -PI * 0.5
-	var center_x := flush_x - face_sign * (depth * 0.5)
+	# SIDEWALK_SETBACK pushes the building's FRONT face back from the
+	# sidewalk edge (flush_x) by 3m, per spec -- center_x is that front
+	# face's position, then another half-depth further back to the
+	# building's own center.
+	var front_x := flush_x - face_sign * SIDEWALK_SETBACK
+	var center_x := front_x - face_sign * (depth * 0.5)
 	RingCoords.place_on_ring(inst, radius, segments, s, center_x, yaw)
 	parent.add_child(inst)
 	RingCoords.add_trimesh_collision(inst)
@@ -184,10 +239,12 @@ static func _place_one(parent: Node3D, manifest: Dictionary, building_id: String
 	return float(entry["width"])
 
 ## Fills one band's whole arc-length run with buildings from `sequence`,
-## cycled in order, each placed lot-line-to-lot-line (a LOT_GAP hair
-## apart) along s starting at s_start. Yields every building (each one
-## carries a create_trimesh_collision() call, the expensive part) so a
-## long block streams in over several frames instead of one.
+## cycled in order, each placed BUILDING_GAP apart along s starting at
+## s_start -- fewer buildings per block than the old flush/near-zero-gap
+## layout, an accepted tradeoff (see BUILDING_GAP's own comment). Yields
+## every building (each one carries a create_trimesh_collision() call,
+## the expensive part) so a long block streams in over several frames
+## instead of one.
 static func _fill_band_async(parent: Node3D, manifest: Dictionary, sequence: Array,
 		radius: float, segments: int, s_start: float, s_end: float, flush_x: float, face_sign: float) -> void:
 	var s := s_start
@@ -197,7 +254,7 @@ static func _fill_band_async(parent: Node3D, manifest: Dictionary, sequence: Arr
 		var width := _place_one(parent, manifest, building_id, radius, segments, s, flush_x, face_sign, i)
 		if width <= 0.0:
 			break
-		s += width + LOT_GAP
+		s += width + BUILDING_GAP
 		i += 1
 		await RingCoords.yield_frame()
 
@@ -206,18 +263,16 @@ static func _place_buildings_async(parent: Node3D, radius: float, segments: int,
 	var manifest := _load_manifest()
 	if manifest.is_empty():
 		return
-	var half_downtown := DOWNTOWN_ST_WIDTH * 0.5 + SIDEWALK_WIDTH
-	var half_main := MAIN_ST_WIDTH * 0.5 + SIDEWALK_WIDTH
 
 	# Band 0 [street_x[0], street_x[1]]: faces street_x[1], from its -X side.
 	await _fill_band_async(parent, manifest, OUTER_SEQUENCE, radius, segments, s_start, s_end,
-		street_x[1] - half_downtown, 1.0)
+		street_x[1] - HALF_DOWNTOWN_ST, 1.0)
 	# Band 1 [street_x[1], Main]: faces Main, from its -X side.
 	await _fill_band_async(parent, manifest, MAIN_SEQUENCE, radius, segments, s_start, s_end,
-		street_x[2] - half_main, 1.0)
+		street_x[2] - HALF_MAIN_ST, 1.0)
 	# Band 2 [Main, street_x[3]]: faces Main, from its +X side.
 	await _fill_band_async(parent, manifest, MAIN_SEQUENCE, radius, segments, s_start, s_end,
-		street_x[2] + half_main, -1.0)
+		street_x[2] + HALF_MAIN_ST, -1.0)
 	# Band 3 [street_x[3], street_x[4]]: faces street_x[3], from its +X side.
 	await _fill_band_async(parent, manifest, OUTER_SEQUENCE, radius, segments, s_start, s_end,
-		street_x[3] + half_downtown, -1.0)
+		street_x[3] + HALF_DOWNTOWN_ST, -1.0)

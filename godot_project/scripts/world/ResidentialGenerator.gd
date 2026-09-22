@@ -24,7 +24,7 @@ class_name ResidentialGenerator
 
 const FT := 0.3048
 
-const LOCAL_ST_WIDTH := 34.0 * FT      # curb-to-curb, parking both sides
+const LOCAL_ST_WIDTH := 34.0 * FT * 2.0  # curb-to-curb, parking both sides -- doubled, requested directly
 const SIDEWALK_WIDTH := 5.0 * FT       # each side, plus a grass verge gap
 const VERGE_WIDTH := 4.0 * FT
 const UV_TILE := 8.0
