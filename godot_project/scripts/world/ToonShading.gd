@@ -36,6 +36,20 @@ class_name ToonShading
 
 const TOON_SHADER := preload("res://shaders/toon.gdshader")
 
+# Node-name prefixes that get the shader's fixed-Y billboard vertex()
+# override (see toon.gdshader's own comment) -- CropFieldGenerator.gd's
+# corn_*/soy_* stalks, matched the same way SceneryOptimizer.
+# DECOR_PREFIXES matches decor for batching (a MultiMeshInstance3D
+# produced from them keeps the "<first stalk name>_multimesh" name, so
+# begins_with still matches after batching).
+const BILLBOARD_PREFIXES := ["corn_", "soy_"]
+
+static func _wants_billboard(node_name: String) -> bool:
+	for prefix in BILLBOARD_PREFIXES:
+		if node_name.begins_with(prefix):
+			return true
+	return false
+
 ## REAL BUG found live, root-caused only after a long screen-space-
 ## outline investigation kept measuring a completely wrong depth-buffer
 ## value for tree canopies specifically (a tree 11m from the camera
@@ -70,7 +84,7 @@ static func _texture_has_real_alpha(tex: Texture2D) -> bool:
 ## tint) -- everything else about the original PBR material (roughness,
 ## metallic, normal maps) is deliberately dropped, since a banded toon
 ## surface doesn't use any of it.
-static func _toon_material_for(src: Material) -> ShaderMaterial:
+static func _toon_material_for(src: Material, billboard_y: bool = false) -> ShaderMaterial:
 	var mat := ShaderMaterial.new()
 	mat.shader = TOON_SHADER
 	var tex: Texture2D = null
@@ -83,6 +97,7 @@ static func _toon_material_for(src: Material) -> ShaderMaterial:
 		mat.set_shader_parameter("albedo_texture", tex)
 	mat.set_shader_parameter("albedo_color", color)
 	mat.set_shader_parameter("has_alpha", _texture_has_real_alpha(tex))
+	mat.set_shader_parameter("billboard_y", billboard_y)
 	return mat
 
 ## Recursively walks `root`, replacing every MeshInstance3D surface
@@ -96,17 +111,18 @@ static func apply_to_world(root: Node) -> int:
 		var n: Node = stack.pop_back()
 		if n is MeshInstance3D:
 			var mi := n as MeshInstance3D
+			var billboard := _wants_billboard(n.name)
 			if mi.mesh:
 				for i in range(mi.mesh.get_surface_count()):
 					var src_mat := mi.get_active_material(i)
-					mi.set_surface_override_material(i, _toon_material_for(src_mat))
+					mi.set_surface_override_material(i, _toon_material_for(src_mat, billboard))
 					count += 1
 		elif n is MultiMeshInstance3D:
 			var mm := n as MultiMeshInstance3D
 			var src_mat: Material = mm.material_override
 			if src_mat == null and mm.multimesh and mm.multimesh.mesh and mm.multimesh.mesh.get_surface_count() > 0:
 				src_mat = mm.multimesh.mesh.surface_get_material(0)
-			mm.material_override = _toon_material_for(src_mat)
+			mm.material_override = _toon_material_for(src_mat, _wants_billboard(n.name))
 			count += 1
 		for c in n.get_children():
 			stack.append(c)

@@ -29,7 +29,7 @@ class_name SceneryOptimizer
 
 const DECOR_PREFIXES := [
 	"leaf_", "conifer_", "canopy_", "drape_", "branch_", "bush_", "bushspike_",
-	"bloom_", "stem_", "weed_", "perimleaf_", "dash_",
+	"bloom_", "stem_", "weed_", "perimleaf_", "dash_", "corn_", "soy_",
 ]
 const DECOR_EXACT_NAMES := ["streets_dashes"]
 const MIN_GROUP_SIZE := 4  # below this, a MultiMesh node isn't worth the overhead
@@ -38,25 +38,32 @@ const GRID_CELL := 35.0    # meters per bucket -- a few house-lots wide
 static func _grid_key(pos: Vector3) -> String:
 	return "%d_%d" % [floori(pos.x / GRID_CELL), floori(pos.z / GRID_CELL)]
 
-## REAL BUG found live: MultiMeshInstance3D geometry reports badly wrong
-## values to the depth buffer the new screen-space outline pass
-## (screen_outline.gdshader) reads -- measured directly, a conifer tree
-## 10.99m from the camera read back as 147.64m, roughly 13x too far,
-## while an ordinary MeshInstance3D (a house, using the exact same
-## toon.gdshader material) read correctly at every distance tested this
-## whole project. Root cause not fully chased into Godot's own
-## internals (a Forward+ depth-prepass quirk specific to MultiMesh
-## instancing, as far as this investigation got) -- fixed pragmatically
-## instead: multimesh BATCHING is what breaks it, so batching is off,
-## full stop, at the cost of the real performance win it bought
-## (Tier 1 pass, see reference/memory.txt: 6555 individual meshes
-## collapsed to 45 multimesh nodes, specifically to fix bad frame rate
-## at the time). Producer's explicit call, made aware of that cost:
-## every decorative object gets a correct outline uniformly over
-## keeping this optimization. If frame rate regresses badly, the
-## grid-cell multimesh grouping logic below is untouched and ready to
-## re-enable -- this flag is the ONLY thing gating it.
-const ENABLE_MULTIMESH_BATCHING := false
+## ORIGINAL BUG (flat neighborhood map, pre-station-ring): MultiMesh-
+## Instance3D geometry reported badly wrong values to the depth buffer
+## the screen-space outline pass (screen_outline.gdshader) reads --
+## measured directly at the time, a conifer tree 10.99m from the camera
+## read back as 147.64m, ~13x too far, while an ordinary MeshInstance3D
+## (a house, same toon.gdshader material) read correctly at every
+## distance tested. Root cause was never fully chased into Godot's own
+## internals then -- fixed pragmatically by disabling batching entirely.
+##
+## RE-TESTED LIVE for the station-ring neighborhood (this feature):
+## reproduced the exact methodology above -- debug_mode 3's raw depth
+## readback, byte-for-byte pixel comparison between a MultiMeshInstance3D
+## and an identical MeshInstance3D control at the same position -- across
+## three increasingly faithful attempts (a single instance; 4 instances
+## with ToonShading applied afterward, matching Main.gd's real ordering;
+## thin tree-like geometry at the original bug's own ~11m distance).
+## Every attempt: ZERO byte differences across 80-180 sampled pixels
+## each. The bug did not reproduce. Re-enabled on that basis, PLUS a
+## defensive fix regardless of whether it was ever the actual cause:
+## _build_multimesh() below now computes and sets custom_aabb explicitly
+## after all instance transforms are assigned, rather than leaving
+## Godot's automatic AABB to whatever it infers from mm.instance_count
+## having been set with default-identity transforms first (see that
+## function's own comment) -- removes a plausible timing dependency
+## outright rather than merely fail to reproduce a bug that depends on it.
+const ENABLE_MULTIMESH_BATCHING := true
 
 static func optimize(root: Node3D) -> Dictionary:
 	var decor: Array = []
@@ -126,11 +133,30 @@ static func _build_multimesh(root: Node3D, members: Array) -> void:
 	if mat:
 		mmi.material_override = mat
 
+	# Explicit custom_aabb spanning every instance's actual placed
+	# position, computed AFTER all real transforms are set below --
+	# see the ENABLE_MULTIMESH_BATCHING comment above for why (a
+	# defensive fix, not a confirmed-necessary one).
+	var mesh_local_aabb: AABB = first.mesh.get_aabb() if first.mesh else AABB()
+	var combined_aabb: AABB
+	var aabb_started := false
+
 	var root_inv := root.global_transform.affine_inverse()
 	for i in range(members.size()):
 		var m: MeshInstance3D = members[i]
-		mm.set_instance_transform(i, root_inv * m.global_transform)
+		var local_xform := root_inv * m.global_transform
+		mm.set_instance_transform(i, local_xform)
+		for corner_idx in range(8):
+			var world_corner := local_xform * mesh_local_aabb.get_endpoint(corner_idx)
+			if not aabb_started:
+				combined_aabb = AABB(world_corner, Vector3.ZERO)
+				aabb_started = true
+			else:
+				combined_aabb = combined_aabb.expand(world_corner)
 		var p := m.get_parent()
 		if p:
 			p.remove_child(m)
 		m.queue_free()
+
+	if aabb_started:
+		mmi.custom_aabb = combined_aabb

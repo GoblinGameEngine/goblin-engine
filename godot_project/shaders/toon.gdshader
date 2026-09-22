@@ -49,12 +49,54 @@ uniform bool use_texture = true;
 // sense for a texture that actually HAS real alpha data to discard on.
 uniform bool has_alpha = true;
 
+// Fixed-axis billboard for crop sprites (CropFieldGenerator.gd's corn_*/
+// soy_* stalks) -- rotates the quad around its own local "up" axis to
+// face the camera, WITHOUT tilting it to face up/down (a true spherical
+// billboard would lay a standing stalk flat when viewed from above/
+// below, which reads as broken rather than stylized). Deliberately uses
+// each instance's own MODEL_MATRIX Y column as "up," not a hardcoded
+// world Vector3(0,1,0): this project's station-ring floor is curved, so
+// "up" varies by position (see RingCoords.gd) -- CropFieldGenerator.gd
+// places each stalk with a real per-position ring basis specifically so
+// this shader has the right axis to read back per instance, including
+// under MultiMesh instancing (MODEL_MATRIX already carries each
+// instance's own transform there, same as for a single MeshInstance3D).
+uniform bool billboard_y = false;
+
 // Band edges (in NdotL, 0..1) and the brightness multiplier for each band.
 uniform float band_edge_1 : hint_range(0.0, 1.0) = 0.25;
 uniform float band_edge_2 : hint_range(0.0, 1.0) = 0.6;
 uniform float shade_dark : hint_range(0.0, 1.5) = 0.5;
 uniform float shade_mid : hint_range(0.0, 1.5) = 0.78;
 uniform float shade_lit : hint_range(0.0, 1.5) = 1.05;
+
+void vertex() {
+	if (billboard_y) {
+		vec3 up = normalize(MODEL_MATRIX[1].xyz);
+		vec3 world_pos = MODEL_MATRIX[3].xyz;
+		vec3 cam_pos = INV_VIEW_MATRIX[3].xyz;
+		vec3 to_cam = cam_pos - world_pos;
+		to_cam -= up * dot(to_cam, up);  // project out the up component -- rotate only around "up"
+		float to_cam_len = length(to_cam);
+		vec3 fwd = to_cam_len > 0.0001 ? to_cam / to_cam_len : normalize(MODEL_MATRIX[2].xyz);
+		vec3 right = normalize(cross(up, fwd));
+		vec3 true_up = cross(fwd, right);
+
+		vec3 scale = vec3(
+			length(MODEL_MATRIX[0].xyz),
+			length(MODEL_MATRIX[1].xyz),
+			length(MODEL_MATRIX[2].xyz)
+		);
+
+		mat4 billboard_model = mat4(
+			vec4(right * scale.x, 0.0),
+			vec4(true_up * scale.y, 0.0),
+			vec4(fwd * scale.z, 0.0),
+			vec4(world_pos, 1.0)
+		);
+		MODELVIEW_MATRIX = VIEW_MATRIX * billboard_model;
+	}
+}
 
 void fragment() {
 	vec4 tex_color = use_texture ? texture(albedo_texture, UV) : vec4(1.0);

@@ -133,18 +133,36 @@ func show_notification(text: String) -> void:
 	_toast_tween.tween_interval(2.6)
 	_toast_tween.tween_property(_toast, "modulate:a", 0.0, 0.6)
 
+## Undoes the space station ring's own current spin, when there is one,
+## so the compass reads relative to the STATION instead of the fixed
+## world frame. Without this, a player standing still inside a rotating
+## station gets correctly carried around by the spin (see
+## StationPlayer.gd's co-rotation fix) and their world-frame heading
+## drifts steadily in one direction for it -- confirmed live as "keeps
+## drifting North" even with no input -- even though, relative to the
+## floor they're actually standing on, they haven't turned at all. A
+## real station's compass would be calibrated to the station, not the
+## stars, for exactly this reason. Identity (no correction) outside a
+## space station, so the normal game's compass is unaffected.
+func _compass_basis() -> Basis:
+	var station := get_tree().get_first_node_in_group("space_station")
+	if station == null:
+		return Basis.IDENTITY
+	var ring_body: Node3D = station.get_node("RingBody")
+	return ring_body.global_transform.basis.inverse()
+
 func _player_heading() -> float:
 	var player := get_tree().get_first_node_in_group("player") as Node3D
 	if player == null:
 		return 0.0
-	var fwd := -player.global_transform.basis.z
+	var fwd := _compass_basis() * (-player.global_transform.basis.z)
 	return rad_to_deg(atan2(fwd.x, -fwd.z))
 
 func _bearing_to(pos: Vector3) -> float:
 	var player := get_tree().get_first_node_in_group("player") as Node3D
 	if player == null:
 		return 0.0
-	var d := pos - player.global_position
+	var d := _compass_basis() * (pos - player.global_position)
 	return rad_to_deg(atan2(d.x, -d.z))
 
 func _wrap180(deg: float) -> float:

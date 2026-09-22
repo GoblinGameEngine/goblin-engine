@@ -1,0 +1,84 @@
+{
+  "farm_buildings": [
+    {
+      "id": "farmhouse_foursquare",
+      "stories": 1,
+      "wall_h": 5.5,
+      "width": 8.8392,
+      "depth": 8.8392,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -4.4196,
+          "hinge_x": -0.5,
+          "hinge_y": -4.4196,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "farmhouse_gable",
+      "stories": 1,
+      "wall_h": 4.3,
+      "width": 9.7536,
+      "depth": 12.192,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -6.096,
+          "hinge_x": -0.5,
+          "hinge_y": -6.096,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "barn",
+      "stories": 1,
+      "wall_h": 3.3528000000000002,
+      "width": 12.192,
+      "depth": 18.288,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -9.144,
+          "hinge_x": -0.5,
+          "hinge_y": -9.144,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "pole_building",
+      "stories": 1,
+      "wall_h": 3.6576000000000004,
+      "width": 12.192,
+      "depth": 18.288,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -9.144,
+          "hinge_x": -0.5,
+          "hinge_y": -9.144,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    }
+  ]
+}
