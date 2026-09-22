@@ -35,8 +35,9 @@ uniform float cliff_frac : hint_range(0.0, 1.0) = 0.6;
 uniform float jag_amplitude : hint_range(0.0, 0.3) = 0.07;  // +/- fraction of height the boundary jags by
 uniform float night_mix : hint_range(0.0, 1.0) = 0.0;
 uniform vec4 day_tint : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-uniform float cloud_drift = 0.0;
-uniform float sky_tile_scale = 60.0;   // meters -- matches StationRingBuilder.TILE_CEILING
+uniform float loop_duration = 22.0;    // matches ceiling_sky.gdshader -- same animation, same period
+uniform float drift_amplitude = 0.012;
+uniform float sky_tile_scale = 200.0;  // meters -- matches StationRingBuilder.TILE_CEILING
 uniform float ring_radius = 500.0;     // SpaceStation.RADIUS, for the angle->arc-length conversion below
 
 varying float wall_angle;
@@ -69,8 +70,10 @@ void fragment() {
 
 	vec4 cliff_c = texture(cliff_texture, UV);
 	vec2 sky_uv = vec2(world_x / sky_tile_scale, (wall_angle * ring_radius) / sky_tile_scale);
-	vec4 day_c = texture(sky_day_texture, sky_uv + vec2(cloud_drift, 0.0)) * day_tint;
-	vec4 night_c = texture(sky_night_texture, sky_uv);
+	float phase = TIME * TAU / loop_duration;
+	vec2 wobble = vec2(sin(phase), cos(phase)) * drift_amplitude;
+	vec4 day_c = texture(sky_day_texture, sky_uv + wobble) * day_tint;
+	vec4 night_c = texture(sky_night_texture, sky_uv + wobble);
 	vec3 sky_c = mix(day_c.rgb, night_c.rgb, night_mix);
 
 	ALBEDO = cliff_c.rgb * (1.0 - sky_mix);

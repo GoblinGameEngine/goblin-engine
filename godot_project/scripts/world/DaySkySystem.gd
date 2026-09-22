@@ -46,7 +46,6 @@ const COLOR_KEYFRAMES := [
 ]
 
 var time_of_day: float = 0.27  # start mid-morning, already light out
-var cloud_drift: float = 0.0
 var ceiling_material: ShaderMaterial
 var wall_material: ShaderMaterial
 var sun: DirectionalLight3D
@@ -153,7 +152,6 @@ static func _sun_moon_state(t: float) -> Dictionary:
 
 func _process(delta: float) -> void:
 	time_of_day = fposmod(time_of_day + delta / DAY_LENGTH_SECONDS, 1.0)
-	cloud_drift += delta * 0.0015  # slow -- "I would like it if [the clouds] did [move]," but gently
 	_apply(delta)
 
 func _apply(_delta: float) -> void:
@@ -179,7 +177,6 @@ func _apply(_delta: float) -> void:
 
 	ceiling_material.set_shader_parameter("night_mix", night_mix)
 	ceiling_material.set_shader_parameter("day_tint", tint)
-	ceiling_material.set_shader_parameter("cloud_drift", cloud_drift)
 	ceiling_material.set_shader_parameter("band_color", sun_color)
 	ceiling_material.set_shader_parameter("band_center", sun_center)
 	ceiling_material.set_shader_parameter("band_half_width", half_width)
@@ -191,7 +188,6 @@ func _apply(_delta: float) -> void:
 
 	wall_material.set_shader_parameter("night_mix", night_mix)
 	wall_material.set_shader_parameter("day_tint", tint)
-	wall_material.set_shader_parameter("cloud_drift", cloud_drift)
 
 	if sun:
 		# The light's own direction sweeps the same west->east arc the

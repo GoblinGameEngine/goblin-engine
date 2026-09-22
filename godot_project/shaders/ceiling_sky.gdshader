@@ -6,17 +6,22 @@ shader_type spatial;
 // as a real sky/skybox never being "in shadow." cull_disabled matches
 // this project's other flat-panel materials.
 //
-// sky_day_texture/sky_night_texture are TILED (StationRingBuilder.gd's
-// TILE_CEILING=60m, both axes -- large on purpose, requested directly:
-// "large fluffy clouds... a mosaic," not a densely-repeating small
-// pattern). The SUN and MOON bands are separate, non-tiled features
-// computed from world-space X (this station's RingBody never moves, so
-// object space IS world space here), independent of the tiled UV the
-// cloud/star/galaxy/panel-grid detail uses -- a band spanning the whole
-// width can't be baked into a tiled texture without repeating every
-// TILE_CEILING meters. No outline on either band (requested directly for
-// the sun originally, same reasoning applies to the moon) -- both are
-// pure color effects on an already-flat, single-normal surface, so the
+// sky_day_texture/sky_night_texture are your own two upscaled reference
+// photos (blender_scripts/upscale_sky_wallpapers.py), tiled at
+// StationRingBuilder.gd's TILE_CEILING=200m -- "big," per spec. Both
+// animate with a slow, small, exactly-periodic drift (loop_duration/
+// drift_amplitude below) -- "the animations should last a minimum of 15
+// seconds and have minimal movement... just enough to keep from being
+// static." Uses Godot's builtin TIME directly (sin/cos are exactly
+// periodic, so this loops with NO seam or jump, every loop_duration
+// seconds, forever) rather than a linearly-increasing scroll requiring
+// GDScript to track and reset an offset. The SUN and MOON bands are
+// separate, non-tiled features computed from world-space X (this
+// station's RingBody never moves, so object space IS world space here),
+// independent of the tiled UV the photo textures use -- a band spanning
+// the whole width can't be baked into a tiled texture without repeating
+// every TILE_CEILING meters. No outline on either band -- both are pure
+// color effects on an already-flat, single-normal surface, so the
 // screen-space outline pass (depth/normal-edge based) was never going to
 // draw one there anyway.
 // fog_disabled: SpaceStation.gd's distance fog is meant to soften far
@@ -32,7 +37,8 @@ uniform sampler2D sky_day_texture : source_color, filter_nearest, repeat_enable;
 uniform sampler2D sky_night_texture : source_color, filter_nearest, repeat_enable;
 uniform float night_mix : hint_range(0.0, 1.0) = 0.0;
 uniform vec4 day_tint : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-uniform float cloud_drift = 0.0;  // slow UV scroll on the day texture only -- "I would like it if [the clouds] did [move]"
+uniform float loop_duration = 22.0;    // seconds -- >= the requested 15s minimum
+uniform float drift_amplitude = 0.012; // UV units -- small on purpose ("very little movement")
 
 uniform vec4 band_color : source_color = vec4(1.0, 0.95, 0.85, 1.0);
 uniform float band_center = 0.0;
@@ -51,8 +57,14 @@ void vertex() {
 }
 
 void fragment() {
-	vec4 day_c = texture(sky_day_texture, UV + vec2(cloud_drift, 0.0)) * day_tint;
-	vec4 night_c = texture(sky_night_texture, UV);
+	// A small circular drift, exactly periodic at loop_duration seconds
+	// (sin/cos share that period, 90-degree phase apart) -- "animate
+	// them both," both day and night textures get the same wobble.
+	float phase = TIME * TAU / loop_duration;
+	vec2 wobble = vec2(sin(phase), cos(phase)) * drift_amplitude;
+
+	vec4 day_c = texture(sky_day_texture, UV + wobble) * day_tint;
+	vec4 night_c = texture(sky_night_texture, UV + wobble);
 	vec3 base = mix(day_c.rgb, night_c.rgb, night_mix);
 
 	float ds = abs(world_x - band_center);

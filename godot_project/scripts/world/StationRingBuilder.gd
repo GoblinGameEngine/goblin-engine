@@ -18,12 +18,13 @@ class_name StationRingBuilder
 
 const TILE_FLOOR := 8.0
 const TILE_WALL := 6.0
-# Requested directly ("large fluffy clouds... a mosaic"): 8m repeated a
-# small cloud pattern so densely it read as a fine texture, not big
-# individual clouds. 60m makes each ceiling tile cover a real chunk of
-# sky -- assets/textures/sky_day.png/sky_night.png were regenerated at a
-# matching physical scale (see blender_scripts/gen_sky_textures.scm).
-const TILE_CEILING := 60.0
+# "Just make a BIG animated sky texture for the ceiling" -- sky_day.png/
+# sky_night.png are now upscaled real photos (blender_scripts/
+# upscale_sky_wallpapers.py), not a tileable procedural pattern, so this
+# is chosen for "big" (one tile spans a real chunk of the ceiling) more
+# than for hiding the repeat seam, which a real photo can't avoid the
+# way the earlier GIMP-drawn art could.
+const TILE_CEILING := 200.0
 
 ## Adds two triangles for the quad a->b->c->d (a proper perimeter walk,
 ## not a crossed one) with `desired_normal` set explicitly on every
