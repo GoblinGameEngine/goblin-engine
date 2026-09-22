@@ -17,3 +17,4 @@ godot_project/build_arm64/
 # Spare local engine binary checked in alongside the project -- not
 # project code, redundant with the copy under ~/newtons-garden/tools/
 /godot/
+__pycache__/
