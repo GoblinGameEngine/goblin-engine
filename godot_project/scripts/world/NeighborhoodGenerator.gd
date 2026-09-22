@@ -96,35 +96,54 @@ static func build(root: Node3D, radius: float, ceiling_height: float, width: flo
 		connector_instance.mesh = connector_mesh
 		root.add_child(connector_instance)
 
-	# OcclusionSetup/LakeSetup/DistanceCulling still land in the LOD pass
-	# (Phase E, see the plan file). SceneryOptimizer runs here now, though
-	# (Phase D): CropFieldGenerator.gd's corn_*/soy_* stalks (placed
-	# inside FarmGenerator.build() above) need to actually get grouped
-	# into MultiMeshInstance3D nodes to be worth having built the batching
-	# system for at all -- Main.gd's flat-map pipeline calls
-	# SceneryOptimizer.optimize() for exactly this reason, but nothing
-	# equivalent existed on the station-ring path (SpaceStation.gd calls
-	# this function, not Main.gd) until now. Must run BEFORE ToonShading,
-	# same order Main.gd already uses: apply_to_world() below has to see
-	# the final MultiMeshInstance3D nodes to toon-shade (and billboard-
-	# flag) them, not the pre-batching individual MeshInstance3D stalks
-	# it would replace and then have collapsed out from under it.
+	# SceneryOptimizer runs here (Phase D): CropFieldGenerator.gd's
+	# corn_*/soy_* stalks (placed inside FarmGenerator.build() above)
+	# need to actually get grouped into MultiMeshInstance3D nodes to be
+	# worth having built the batching system for at all -- Main.gd's
+	# flat-map pipeline calls SceneryOptimizer.optimize() for exactly
+	# this reason, but nothing equivalent existed on the station-ring
+	# path (SpaceStation.gd calls this function, not Main.gd) until Phase
+	# D. Must run BEFORE ToonShading, same order Main.gd already uses:
+	# apply_to_world() below has to see the final MultiMeshInstance3D
+	# nodes to toon-shade (and billboard-flag) them, not the pre-batching
+	# individual MeshInstance3D stalks it would replace and then have
+	# collapsed out from under it.
 	var opt := SceneryOptimizer.optimize(root)
 	print("NeighborhoodGenerator: scenery optimize -- %d decorative meshes, collapsed %d into %d MultiMeshInstance3D" %
 		[opt["decor_total"], opt["collapsed"], opt["multimeshes"]])
 
-	# ToonShading needs to run after the above, not deferred to Phase E:
-	# confirmed live that a freshly built StandardMaterial3D mesh here is
-	# backface-culled under its own default cull_back mode from every
-	# angle a player would actually view a street from (the same _quad()/
-	# normal convention StationRingBuilder's own floor already uses --
-	# that one only ever renders correctly because SpaceStation.
-	# _build_ring() toon-shades it, with toon.gdshader's render_mode
-	# cull_disabled, before a player ever sees a frame of it). Re-running
-	# this per phase as more content is added is idempotent and cheap --
-	# ToonShading.apply_to_world() just walks whatever's under `root`
-	# each time.
+	# ToonShading needs to run after the above: confirmed live that a
+	# freshly built StandardMaterial3D mesh here is backface-culled under
+	# its own default cull_back mode from every angle a player would
+	# actually view a street from (the same _quad()/normal convention
+	# StationRingBuilder's own floor already uses -- that one only ever
+	# renders correctly because SpaceStation._build_ring() toon-shades
+	# it, with toon.gdshader's render_mode cull_disabled, before a player
+	# ever sees a frame of it). Re-running this per phase as more content
+	# is added is idempotent and cheap -- ToonShading.apply_to_world()
+	# just walks whatever's under `root` each time.
 	ToonShading.apply_to_world(root)
+
+	# Phase E: the rest of Main.gd's flat-map end-of-build sequence, now
+	# wired onto the station-ring path too (same gap SceneryOptimizer had
+	# before Phase D -- these three existed and were already extended for
+	# the ring's own building/street-furniture naming conventions, but
+	# nothing had ever actually CALLED them here).
+	var occluded := OcclusionSetup.setup(root)
+	print("NeighborhoodGenerator: occlusion culling -- box occluder added to %d buildings" % occluded)
+
+	# No-op today: the lake zone's water/sand/shore geometry itself
+	# (LakeGenerator.gd builds only the road loop around where it will
+	# go -- see that file's own comment) is still unbuilt, a real gap
+	# left over from earlier phases, not something this pass causes or
+	# fixes. Left wired in now so it starts working the moment that
+	# geometry exists, instead of needing a second "wire it up" pass
+	# later.
+	LakeSetup.setup(root)
+
+	var culled := DistanceCulling.apply_to_world(root, Settings.draw_distance_mult)
+	print("NeighborhoodGenerator: distance culling -- %d small props, %d trees, %d houses, %d crop groups" %
+		[culled["small"], culled["tree"], culled["house"], culled["crop"]])
 
 ## Bridges one zone seam: for every x in `exit_x` (roads leaving the
 ## first zone), finds the nearest x in `entry_x` (roads starting the

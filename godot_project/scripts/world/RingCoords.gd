@@ -110,3 +110,29 @@ static func add_trimesh_collision(root: Node3D) -> void:
 			stack.append(c)
 	for mi in targets:
 		(mi as MeshInstance3D).create_trimesh_collision()
+
+## Renames every MeshInstance3D under `root` to include "_structure" in
+## its OWN name if it doesn't already -- DistanceCulling.gd's
+## HOUSE_KEYWORDS match matches against the GeometryInstance3D node's own
+## name, not any ancestor's. Confirmed live that this is the PRE-
+## EXISTING convention, not a new one invented here: house1.glb's own
+## renderable mesh (from the original, lost export pipeline) is already
+## named "house1_94_structure" -- baked into the mesh itself, not just a
+## wrapper Node3D -- which is exactly why DistanceCulling's plain
+## substring match already worked for those without any code here.
+## building_helpers.py's new pipeline (farm/downtown buildings) instead
+## keeps each mesh's plain Blender object name ("barn", "storefront_
+## bank", ...) and only the WRAPPER Node3D gets "_structure" appended
+## (FarmGenerator._place_building()/DowntownGenerator._place_one(), for
+## OcclusionSetup's box-occluder host) -- so those buildings got zero
+## distance culling until callers also run this on their instantiated
+## scene. Idempotent: a mesh that already contains "_structure"
+## (residential's house1/2/3) is left alone.
+static func tag_structure_meshes(root: Node3D) -> void:
+	var stack: Array = [root]
+	while not stack.is_empty():
+		var n: Node = stack.pop_back()
+		if n is MeshInstance3D and n.name.find("_structure") == -1:
+			n.name = n.name + "_structure"
+		for c in n.get_children():
+			stack.append(c)

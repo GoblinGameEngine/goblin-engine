@@ -89,6 +89,21 @@ func _ready() -> void:
 	_setup_environment()
 	_build_ring()
 	_spawn_player()
+	Settings.changed.connect(_on_settings_changed)
+
+## Same reasoning as Main.gd's own _on_settings_changed(): draw distance
+## is the only Settings field that needs active re-application (baked
+## into visibility_range_end on many nodes at a point in time, unlike
+## the fields read live where they're used). Re-finds "Neighborhood"
+## fresh each call rather than caching a reference, since rebuild_ring()
+## frees and recreates it.
+func _on_settings_changed() -> void:
+	var neighborhood := ring_body.get_node_or_null("Neighborhood")
+	if neighborhood == null:
+		return
+	var culled := DistanceCulling.apply_to_world(neighborhood, Settings.draw_distance_mult)
+	print("SpaceStation: draw distance changed -- reapplied culling (%d small props, %d trees, %d houses, %d crop groups)" %
+		[culled["small"], culled["tree"], culled["house"], culled["crop"]])
 
 func _setup_environment() -> void:
 	var env := Environment.new()
@@ -130,6 +145,19 @@ func _build_ring() -> void:
 	var ring_mesh: MeshInstance3D = ring_body.get_node("RingMesh")
 	var toon_count := ToonShading.apply_to_world(ring_mesh)
 	print("SpaceStation: cel-shaded %d ring materials" % toon_count)
+
+	# The procedural Midwestern neighborhood (see the plan file / Phase
+	# A-E commits) -- a separate "Neighborhood" node under ring_body, not
+	# ring_body's direct children like RingMesh above, so
+	# NeighborhoodGenerator.build()'s own SceneryOptimizer/ToonShading
+	# passes only ever walk the neighborhood's own content, not the ring
+	# shell + light fixtures too. Still a child of ring_body, so
+	# rebuild_ring()'s child-free loop above tears it down and
+	# regenerates it in place along with everything else, same as always.
+	var neighborhood := Node3D.new()
+	neighborhood.name = "Neighborhood"
+	ring_body.add_child(neighborhood)
+	NeighborhoodGenerator.build(neighborhood, RADIUS, CEILING_HEIGHT, WIDTH, SEGMENTS)
 
 ## Angle=0 spawn point, standing on the floor, facing along the loop --
 ## shared by initial spawn and by rebuild_ring()'s post-rebuild respawn

@@ -109,6 +109,8 @@ static func build(parent: Node3D, radius: float, segments: int,
 
 	_place_houses(parent, radius, segments, wp_a, +1.0)
 	_place_houses(parent, radius, segments, wp_b, -1.0)
+	_place_furniture(parent, radius, segments, wp_a)
+	_place_furniture(parent, radius, segments, wp_b)
 
 	return {
 		"entry_x": [wp_a[0].y, wp_b[0].y],
@@ -128,6 +130,17 @@ static func _curve_x_at(waypoints: Array, s: float) -> float:
 			return StreetBuilder._curved_x(a.y, b.y, a.x, b.x - a.x, s, 1.0)
 	var last: Vector2 = waypoints[waypoints.size() - 1]
 	return last.y
+
+## Lamp posts + fire hydrants at the curb line on both sides of one
+## meandering path, following its ACTUAL curve (via _curve_x_at(), same
+## reasoning as _place_houses()'s own setback -- a fixed offset from the
+## base line would drift off the road at the peak of a bend).
+static func _place_furniture(parent: Node3D, radius: float, segments: int, waypoints: Array) -> void:
+	var s0: float = waypoints[0].x
+	var s1: float = waypoints[waypoints.size() - 1].x
+	var local_hw := LOCAL_ST_WIDTH * 0.5
+	var x_at := func(s: float) -> float: return _curve_x_at(waypoints, s)
+	StreetFurniture.place_along(parent, radius, segments, s0, s1, x_at, [-local_hw, local_hw])
 
 static func _load_house_manifest() -> Dictionary:
 	var f := FileAccess.open(HOUSE_MANIFEST_PATH, FileAccess.READ)

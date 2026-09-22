@@ -111,8 +111,22 @@ static func build(parent: Node3D, radius: float, segments: int,
 	parent.add_child(mesh_instance)
 
 	_place_buildings(parent, radius, segments, s_start, s_end, street_x)
+	_place_furniture(parent, radius, segments, s_start, s_end, street_x, x_center)
 
 	return {"entry_x": street_x.duplicate(), "exit_x": street_x.duplicate()}
+
+## Lamp posts at the curb line (between road and sidewalk, so they clear
+## both moving traffic and the buildings sitting flush to the sidewalk's
+## OUTER edge with zero setback) on both sides of every street; fire
+## hydrants at the sparser interval on one side only.
+static func _place_furniture(parent: Node3D, radius: float, segments: int,
+		s_start: float, s_end: float, street_x: Array, x_center: float) -> void:
+	for x in street_x:
+		var street_x_val: float = x
+		var road_width: float = MAIN_ST_WIDTH if is_equal_approx(street_x_val, x_center) else DOWNTOWN_ST_WIDTH
+		var hw := road_width * 0.5
+		var x_at := func(_s: float) -> float: return street_x_val
+		StreetFurniture.place_along(parent, radius, segments, s_start, s_end, x_at, [-hw, hw])
 
 static func _load_manifest() -> Dictionary:
 	var f := FileAccess.open(DOWNTOWN_MANIFEST_PATH, FileAccess.READ)
@@ -145,6 +159,10 @@ static func _place_one(parent: Node3D, manifest: Dictionary, building_id: String
 	var depth: float = entry["depth"]
 	var inst := scene.instantiate()
 	inst.name = building_id.capitalize().replace(" ", "") + "_structure_%d" % index
+	# See FarmGenerator._place_building()'s identical comment: the
+	# wrapper's own name above is for OcclusionSetup; DistanceCulling
+	# needs the tag on the actual mesh, done here via RingCoords.
+	RingCoords.tag_structure_meshes(inst)
 	var yaw := PI * 0.5 if face_sign > 0.0 else -PI * 0.5
 	var center_x := flush_x - face_sign * (depth * 0.5)
 	RingCoords.place_on_ring(inst, radius, segments, s, center_x, yaw)

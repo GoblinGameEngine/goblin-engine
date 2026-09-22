@@ -140,6 +140,16 @@ static func _place_building(parent: Node3D, manifest: Dictionary, building_id: S
 		return
 	var inst := scene.instantiate()
 	inst.name = building_id.capitalize().replace(" ", "") + "_structure"
+	# The wrapper's own "_structure" name (above) is what OcclusionSetup
+	# needs (its box occluder is hosted on this node); DistanceCulling
+	# needs "_structure" on the actual MeshInstance3D INSIDE it instead
+	# (it matches GeometryInstance3D nodes by their own name, not an
+	# ancestor's) -- see RingCoords.tag_structure_meshes()'s own comment
+	# for how this was confirmed live (house1.glb's mesh is already named
+	# "..._structure" from the original export pipeline; this new
+	# building_helpers.py pipeline keeps the plain Blender object name
+	# instead, e.g. "barn", so it needs tagging here explicitly).
+	RingCoords.tag_structure_meshes(inst)
 	var yaw := PI * 0.5 if face_sign > 0.0 else -PI * 0.5
 	RingCoords.place_on_ring(inst, radius, segments, s, x, yaw)
 	parent.add_child(inst)

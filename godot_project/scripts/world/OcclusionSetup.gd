@@ -17,6 +17,16 @@ class_name OcclusionSetup
 # house reads as "opaque" for occlusion purposes the overwhelming majority
 # of the time anyway.
 
+# "House_" is the original flat-map convention (neighborhood.glb's own
+# import names, from a lost Blender export script -- see reference/
+# memory.txt). "_structure" is every building the station-ring
+# procedural generators place (DowntownGenerator.gd's storefronts/post
+# office, ResidentialGenerator.gd's houses, FarmGenerator.gd's
+# farmhouses/barn/pole building) -- the same suffix DistanceCulling.gd's
+# own HOUSE_KEYWORDS already matches, kept consistent here rather than
+# inventing a second convention for the same category of object.
+const BUILDING_KEYWORDS := ["House_", "_structure"]
+
 static func setup(root: Node3D) -> int:
 	if not ProjectSettings.get_setting("rendering/occlusion_culling/use_occlusion_culling", false):
 		ProjectSettings.set_setting("rendering/occlusion_culling/use_occlusion_culling", true)
@@ -27,9 +37,20 @@ static func setup(root: Node3D) -> int:
 		_add_box_occluder(house)
 	return houses.size()
 
+static func _is_building(node_name: String) -> bool:
+	for kw in BUILDING_KEYWORDS:
+		if node_name.find(kw) != -1:
+			return true
+	return false
+
 static func _collect_houses(node: Node, out: Array) -> void:
-	if node.name.begins_with("House_") and node is Node3D:
+	if node is Node3D and _is_building(node.name):
 		out.append(node)
+		return  # don't also descend into it -- RingCoords.tag_structure_meshes()
+		        # tags the building's OWN MeshInstance3D with "_structure" too now
+		        # (for DistanceCulling.gd, which matches the mesh itself, not an
+		        # ancestor), which would otherwise double-match here: once for the
+		        # wrapper Node3D, once for its now-also-tagged child mesh.
 	for c in node.get_children():
 		_collect_houses(c, out)
 

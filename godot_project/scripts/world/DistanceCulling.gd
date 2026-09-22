@@ -21,6 +21,17 @@ class_name DistanceCulling
 const SMALL_RANGE := 40.0
 const TREE_RANGE := 85.0
 const HOUSE_RANGE := 200.0
+# Crops get their own tier, not lumped into SMALL_RANGE: CropFieldGenerator.
+# gd's corn_*/soy_* stalks are batched per-GRID_CELL (SceneryOptimizer.
+# GRID_CELL=35m) into many separate MultiMeshInstance3D groups covering a
+# single field, each one a GeometryInstance3D in its own right --
+# visibility_range_end on each culls that one grid cell independently, so
+# a large field disappears in chunks as its distance from the player
+# crosses CROP_RANGE, rather than either all at once (a single MultiMesh)
+# or never (no culling at all). 60m sits a bit past SMALL_RANGE: crops
+# are shorter than a bush/hedge but a whole FIELD of them reads as a
+# recognizable mass of color from further away than a single prop would.
+const CROP_RANGE := 60.0
 const FADE_MARGIN := 8.0
 
 # Matched against the LOWERCASED node name -- covers both the original
@@ -32,12 +43,14 @@ const FADE_MARGIN := 8.0
 const SMALL_KEYWORDS := [
 	"bush", "weed", "flower", "hedge", "chain", "porch_rail",
 	"mailbox", "perimbush", "perimleaf", "bloom", "stem", "fence",
+	"hydrant", "lamp_post",
 ]
 const TREE_KEYWORDS := [
 	"conifer", "leaf", "canopy", "branch", "tree_trunk", "narrowleaf",
 	"autumn", "shrubby", "weeping", "bark",
 ]
 const HOUSE_KEYWORDS := ["structure"]
+const CROP_KEYWORDS := ["corn", "soy"]
 
 static func _category(node_name: String) -> String:
 	var lower := node_name.to_lower()
@@ -50,6 +63,9 @@ static func _category(node_name: String) -> String:
 	for kw in HOUSE_KEYWORDS:
 		if lower.find(kw) != -1:
 			return "house"
+	for kw in CROP_KEYWORDS:
+		if lower.find(kw) != -1:
+			return "crop"
 	return ""
 
 ## REAL BUG found live: VISIBILITY_RANGE_FADE_SELF (a smooth-looking
@@ -82,7 +98,7 @@ static func _apply(gi: GeometryInstance3D, range_end: float) -> void:
 ## Settings.changed) is just calling this again on the same root, not a
 ## separate code path.
 static func apply_to_world(root: Node, multiplier: float = 1.0) -> Dictionary:
-	var counts := {"small": 0, "tree": 0, "house": 0}
+	var counts := {"small": 0, "tree": 0, "house": 0, "crop": 0}
 	var stack: Array = [root]
 	while not stack.is_empty():
 		var n: Node = stack.pop_back()
@@ -97,6 +113,9 @@ static func apply_to_world(root: Node, multiplier: float = 1.0) -> Dictionary:
 			elif cat == "house":
 				_apply(n, HOUSE_RANGE * multiplier)
 				counts["house"] += 1
+			elif cat == "crop":
+				_apply(n, CROP_RANGE * multiplier)
+				counts["crop"] += 1
 		for c in n.get_children():
 			stack.append(c)
 	return counts
