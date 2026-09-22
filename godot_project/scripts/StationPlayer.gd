@@ -46,6 +46,7 @@ class_name StationPlayer
 # side of tuning (radius, ceiling height, etc.), which needs a
 # rebuild_ring() call instead since those are baked into the built mesh.
 static var WALK_SPEED := 4.2
+static var SPRINT_SPEED := 7.5  # held (not toggled) via the "sprint" action -- left shift, project.godot's [input]
 static var JUMP_VELOCITY := 4.5
 static var MOUSE_SENSITIVITY := 0.0025
 static var PITCH_LIMIT := deg_to_rad(85)
@@ -194,7 +195,8 @@ func _physics_process(delta: float) -> void:
 	if move_dir.length_squared() > 0.0001:
 		move_dir = move_dir.normalized()
 
-	velocity = up * up_speed + move_dir * WALK_SPEED
+	var speed := SPRINT_SPEED if Input.is_action_pressed("sprint") else WALK_SPEED
+	velocity = up * up_speed + move_dir * speed
 	move_and_slide()
 
 func _on_died(_attacker: Node) -> void:
