@@ -208,6 +208,18 @@ angle θ (0→2π, arc length s = θ·C/2π). Any sum of `A_k·sin(k·θ + φ_k)
 | Farm ditch width | 2-4 m |
 | Drainage routing hierarchy | field ditch → 2-4 named creeks per farm-zone stretch → main river or nearest pond (never ditch directly into the main channel) |
 | Optional tile-drainage hint | faint parallel crop-color striping, 20-40 m spacing, perpendicular to ditches, for close-up/overhead views only |
+| **Local-street tributary crossing density** | Each of the 5-7 named pond-tributary creeks **must be crossed by at least 2 local/side streets** along its 60-300 m length |
+| **Minor unnamed tributary spurs** | 1-2 additional short (30-100 m) dead-end drainage spurs per Residential/Farm zone segment, each crossed by exactly 1 local street — pure crossing-density scenery filler, no pond required at the terminus |
+
+**Street-network generation rule (revised):** the local/side street network must treat every
+tributary creek and drainage spur as a **required crossing feature to route through**, not an
+obstacle to detour around or run parallel to. Previously nothing forced an intersection, so a
+generated street grid could plausibly avoid every tributary; this is now an explicit constraint.
+Combined with the farm ditch grid's own road-over-ditch culverts (§ road sections in the asset
+checklist), this produces roughly **10-20+ small bridge/culvert crossings distributed across
+Residential and Farm zones** per generated station, on top of the handful of large bridges
+where local/farm roads cross the *main* river channel — small-street crossings should
+substantially outnumber main-channel crossings, not the reverse.
 
 **Town-siting cross-check:** site Downtown's oldest/densest core on the **outside of a bend**
 (cut-bank side — higher, firmer ground); keep the inside/point-bar side low-density

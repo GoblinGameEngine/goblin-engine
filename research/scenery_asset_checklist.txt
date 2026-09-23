@@ -83,16 +83,43 @@ Everything else is [NEW] and not yet modeled.
 ================================================================================
 3. BRIDGES  [ALL NEW]
 ================================================================================
+Split into BIG (main river channel, ~45 m wide, few per station) and SMALL (tributary creeks
+4-10 m wide / farm ditches 2-4 m wide, many per station per generator_rules.md §10's new
+crossing-density rule — small-street crossings should substantially outnumber main-channel
+ones). Every road class in generator_rules.md §2 that could plausibly meet a tributary or ditch
+gets its own small-crossing variant below, rather than one generic "small bridge."
+
+--- Big bridges (main river channel) ---
 [NEW] Downtown river-crossing bridge (Main Street over the ~45 m river channel — needs to
       read as the town's primary bridge, per Charles City-style "Main Street crosses the
       river" pattern found in research)
 [NEW] Secondary/residential street river-crossing bridge (narrower than the Main St bridge)
-[NEW] Farm-road river/creek-crossing bridge (rural, narrower, possibly single-lane)
-[NEW] Footbridge (park/riverwalk pedestrian crossing over a tributary creek or narrow point)
-[NEW] Small culvert/creek crossing (road passes over a 4-10 m tributary creek without a full
-      bridge — needed for every farm-ditch-to-creek and creek-to-pond road crossing)
+[NEW] Farm-road river-crossing bridge (rural, narrower, possibly single-lane)
 [NEW] Rail crossing / trestle if a rail corridor is later added (flagged as optional — the
       rail-corridor downtown archetype and grain-elevator placement both imply a rail line)
+
+--- Small bridges/crossings (tributary creeks, 4-10 m wide) ---
+[NEW] Residential local-street tributary-creek bridge (small timber or single-span concrete
+      deck, ~4-10 m span — this is the single most-repeated bridge type per generator_rules.md
+      §10's new "≥2 local streets per named tributary" rule, so it needs enough visual variants
+      to avoid looking stamped when the player crosses several in one walk)
+[NEW] Downtown side-street/alley tributary-creek bridge (narrower urban variant, low parapet,
+      matches the downtown streetscape rather than the rural residential one)
+[NEW] Farm access-lane tributary-creek bridge (rural single-lane variant, distinct from the
+      farm-road *river* bridge above — this one is ditch/creek scale, not channel scale)
+[NEW] Footbridge (park/riverwalk pedestrian crossing over a tributary creek, main river
+      narrow point, or a minor unnamed drainage spur)
+[NEW] Minor unnamed drainage-spur crossing (smallest scale — a single-plank or narrow-span
+      footbridge/culvert hybrid for the new 30-100 m dead-end spurs in generator_rules.md §10,
+      which exist purely to add crossing-density scenery variety)
+
+--- Culverts (no visible span — road passes over, not a bridge structure) ---
+[NEW] Small culvert/creek crossing (road passes over a 4-10 m tributary creek with a buried
+      pipe/box culvert instead of a full bridge — an alternate, cheaper-reading option to the
+      small bridges above for lower-traffic crossings)
+[NEW] Road-over-drainage-ditch culvert (simple culvert pipe under a farm road or residential
+      street, smaller ditch scale, 2-4 m — the most numerous single crossing type given the
+      120-200 m farm ditch grid spacing)
 
 ================================================================================
 4. ROAD SECTIONS / INTERSECTIONS  [ALL NEW unless noted]
@@ -115,8 +142,12 @@ Everything else is [NEW] and not yet modeled.
 [NEW] Rail-corridor-parallel commercial street segment (rail-spine downtown archetype)
 [NEW] Narrow no-curb rural/village residential street segment (16-24 ft, gravel shoulder)
 [NEW] Farm access lane (unpaved/gravel, connects farmstead to main farm road)
-[NEW] Road-over-drainage-ditch crossing (simple culvert pipe under a farm road, distinct from
-      the creek-crossing culvert above — much smaller ditch scale, 2-4 m)
+[NEW] Minor unnamed drainage-spur road segment (short dead-end local street stub serving the
+      new 30-100 m drainage spurs in generator_rules.md §10 — pairs with the minor-spur
+      crossing in section 3)
+
+(Road-over-drainage-ditch culvert moved to section 3's Culverts subsection, alongside the
+other creek/ditch crossing types, to keep all bridge/crossing assets in one place.)
 
 ================================================================================
 5. WATER FEATURES  [ALL NEW]
@@ -154,6 +185,38 @@ Everything else is [NEW] and not yet modeled.
 [NEW] Orchard tree (regularly-gridded, distinct from windbreak row) — optional, only if the
       generator wants an orchard as a farm-zone variant
 
+Expanded species list (full detail + regional sourcing: research/lot_contents/
+expanded_trees_and_fences.md) — 18+ new species/variants, HIGH PRIORITY items marked:
+
+[NEW] Honeylocust (downtown street tree, thornless cultivar)
+[NEW] Littleleaf linden (downtown street tree)
+[NEW] London planetree (downtown street tree)
+[NEW] Red maple / Freeman maple (downtown street tree + residential yard)
+[NEW] Kentucky coffeetree (downtown street tree, diversity pick) *** HIGH PRIORITY ***
+[NEW] Large mature American elm, rare "legacy tree" variant (older residential — Dutch elm
+      disease survivor, visually reinforces the elm/ash die-off history)
+[NEW] Bur/red/white oak, large mature specimen (older residential + farm woodlot — dominant
+      surviving shade tree since oaks escaped both Dutch elm disease and emerald ash borer)
+[NEW] Sugar maple / Norway maple (residential yard tree, all eras)
+[NEW] Dead/removed ash stump or freshly-cut round (condition variant, residential + downtown)
+      *** HIGH PRIORITY — recent/ongoing emerald ash borer die-off, doubly regional since ash
+      replaced elm as the prior replacement species ***
+[NEW] Eastern white pine / blue spruce (residential evergreen accent, postwar suburban)
+[NEW] Eastern redcedar (farm windbreak/shelterbelt conifer)
+[NEW] Norway spruce / white spruce (farm windbreak/shelterbelt conifer)
+[NEW] Osage orange, gnarled fence-line relic tree (farm — pre-barbed-wire living hedge
+      remnant) *** HIGH PRIORITY ***
+[NEW] Apple orchard tree (farm — Michigan fruit-belt)
+[NEW] Tart/sweet cherry orchard tree (farm — Traverse City "Cherry Capital" region)
+      *** HIGH PRIORITY ***
+[NEW] Black walnut (farm fence-line/woodlot tree)
+[NEW] Black willow (Lake zone/streambank)
+[NEW] Eastern cottonwood (Lake zone/streambank/floodplain)
+[NEW] American sycamore (Lake zone/streambank/floodplain, mottled bark)
+[NEW] Storm-damaged tree (broken crown/leaning, still living — low-frequency, any zone)
+[NEW] Young replacement street tree (staked sapling — pairs with the dead-ash-stump variant
+      for a "before/after" storytelling detail on the same block)
+
 ================================================================================
 7. FENCES
 ================================================================================
@@ -163,6 +226,25 @@ Everything else is [NEW] and not yet modeled.
       from the existing suburban-scale fence set)
 [NEW] Corral / livestock pen fence (barnyard-adjacent, near barn_dairy/chicken_coop)
 [NEW] Split-rail fence (optional rural/farmhouse-yard variant)
+
+Expanded style list (full detail + regional sourcing: research/lot_contents/
+expanded_trees_and_fences.md) — 8 new fence types, HIGH PRIORITY items marked:
+
+[NEW] Snow fence, orange plastic mesh (farm/Lake zone/roadside — temporary, windward field
+      edges) *** HIGH PRIORITY — single most Great-Lakes-climate-distinctive fence type ***
+[NEW] Snow fence, wood-slat/lath (farm/roadside — semi-permanent counterpart to the above)
+      *** HIGH PRIORITY ***
+[NEW] High-tensile electric fence (farm livestock pasture — modern standard, distinct
+      behavior/silhouette from woven-wire field fence) *** HIGH PRIORITY ***
+[NEW] Chain-link security fence with razor/barbed-wire topping (industrial sites — grain
+      elevator, water tower, small factory yard) *** HIGH PRIORITY ***
+[NEW] Ornamental aluminum/wrought-iron-style fence (upper-income residential, historic
+      downtown district)
+[NEW] Deer fencing, tall woven mesh or multi-strand (farm — orchard/vineyard perimeter)
+[NEW] Farm gate, tube-steel livestock gate (companion prop to field/corral/high-tensile fence
+      runs — every pasture fence needs at least one)
+[NEW] Low iron/masonry cemetery perimeter fence (conditional — only if a cemetery is ever
+      added to the civic building catalog; not a confirmed near-term need)
 
 ================================================================================
 8. STREET FURNITURE / MISC SCENERY
@@ -233,6 +315,45 @@ generator scatters onto a residential lot once its era/setting/income layers are
       sample sparingly, skew seasonal rather than permanent)
 
 ================================================================================
+10. INTERIOR PROPS / FURNITURE  [ALL NEW]
+================================================================================
+Full deduplicated list: research/interior_props_master_list.md. **265 distinct items** across
+13 categories, extracted from all 49 building_catalog archetypes (residential + commercial/
+civic/farm) plus the 7 demographic diagnostic items. This is the union across every archetype
+— each entry is ONE model to build, reused everywhere its room-content pool calls for it, not
+one model per building. Not itemized line-by-line here (see the master list file); category
+totals below.
+
+| # | Category | Count |
+|---|---|---|
+| 1 | Furniture — Seating | 18 |
+| 2 | Furniture — Tables/Surfaces | 28 |
+| 3 | Furniture — Storage | 28 |
+| 4 | Furniture — Beds/Bedroom | 6 |
+| 5 | Appliances | 22 |
+| 6 | Fixtures — Kitchen/Bath | 11 |
+| 7 | Fixtures — Lighting | 7 |
+| 8 | Electronics | 16 |
+| 9 | Retail/Commercial Fixtures | 40 |
+| 10 | Civic/Institutional Fixtures | 23 |
+| 11 | Industrial/Farm Equipment | 30 |
+| 12 | Vehicles | 6 |
+| 13 | Small Props/Decor | 30 |
+| | **Total** | **265** |
+
+**Build these 18 first** — flagged [UNIVERSAL] in the master list for appearing across most/all
+relevant archetypes, so each one carries the highest reuse multiplier per model built: sofa,
+armchair, coffee table, dining table + chairs, kitchen/breakfast table + chairs, bed frame,
+nightstand, dresser, refrigerator, stove/range, kitchen sink, toilet, bathroom sink/vanity,
+tub/shower, mirror, towel rack, TV + entertainment stand, cash register, bookshelf.
+
+**Variant flags**: per the demographic-weighting framework (generator_rules.md §14), several
+universal items (bed frames, dining tables, sofas/armchairs, refrigerators/stoves) need a
+worn/budget pass and a new/upscale pass — flagged [VARIANT] in the master list — rather than
+being split into fully separate model entries; this keeps the 265 total from inflating with
+every income-tier permutation as its own item.
+
+================================================================================
 NOTES
 ================================================================================
 - This list is derived entirely from the research phase; nothing here has been modeled yet
@@ -257,3 +378,15 @@ NOTES
   work, since almost everything else (road sections, drainage, town-siting rules, and now the
   elevation/bluff system in generator_rules.md §16) depends on the river's geometry existing
   first.
+- Section 9 (yard/lot props), section 10 (interior props), the expanded tree/fence lists in
+  sections 6-7, and the small-bridge/crossing expansion in section 3 were all added in a
+  second checklist pass after the user pointed out the original count omitted interiors
+  entirely and under-specified small-street crossings and vegetation/fence variety. The
+  overall new-model count is now **411** (146 exterior/infrastructure items in this file, up
+  from the original 112, plus the 265-item interior props list) — see
+  research/interior_props_master_list.md for the itemized interior breakdown, since it isn't
+  reproduced line-by-line in this file.
+- generator_rules.md §10 now has an explicit street-network generation rule requiring every
+  named tributary creek to be crossed by at least 2 local/side streets, plus 1-2 minor
+  unnamed drainage spurs per Residential/Farm zone segment purely for crossing-density variety
+  — this is what drives section 3's expanded small-bridge/culvert list.
