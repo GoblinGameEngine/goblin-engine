@@ -355,6 +355,81 @@
     },
     {
       "id": "washstand"
+    },
+    {
+      "id": "end_side_table"
+    },
+    {
+      "id": "console_table"
+    },
+    {
+      "id": "home_office_desk"
+    },
+    {
+      "id": "workbench"
+    },
+    {
+      "id": "card_games_table"
+    },
+    {
+      "id": "bar_counter_backbar"
+    },
+    {
+      "id": "checkout_sales_counter"
+    },
+    {
+      "id": "service_teller_counter"
+    },
+    {
+      "id": "reception_front_desk"
+    },
+    {
+      "id": "pharmacy_dispensing_counter"
+    },
+    {
+      "id": "soda_fountain_counter"
+    },
+    {
+      "id": "commercial_prep_counter"
+    },
+    {
+      "id": "butcher_block_counter"
+    },
+    {
+      "id": "conference_jury_table"
+    },
+    {
+      "id": "teachers_desk"
+    },
+    {
+      "id": "student_desk"
+    },
+    {
+      "id": "drafting_table"
+    },
+    {
+      "id": "podium_lectern_pulpit"
+    },
+    {
+      "id": "judges_bench"
+    },
+    {
+      "id": "counsel_table"
+    },
+    {
+      "id": "cafeteria_table_bench"
+    },
+    {
+      "id": "long_folding_table"
+    },
+    {
+      "id": "shop_scale"
+    },
+    {
+      "id": "cutting_alterations_table"
+    },
+    {
+      "id": "rolltop_desk"
     }
   ]
 }
