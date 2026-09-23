@@ -30,15 +30,25 @@ const END_CAP_LEN := 40.0              # arc length each rounded end-cap connect
 
 const UV_TILE := 8.0
 
-## Shallow "forced-perspective" water depth (reference/memory.txt's
-## documented shore trick): the shared ring floor (built once, whole-ring,
-## by StationRingBuilder with no zone awareness) is reused as-is for the
-## lake bed rather than carving a real basin into it -- an opaque water
-## plane sitting this far above the ordinary floor reads as a real lake
-## from outside while staying fully walkable/swimmable underneath.
-const WATER_HEIGHT := 1.8
+## The lake now sits in a REAL carved basin (TerrainHeight.lake_depth(),
+## via RingCoords.floor_point()) rather than the earlier "forced
+## perspective" water-above-flat-floor hack -- "the lake will need to be
+## a lower elevation as water flows downhill." The water SURFACE is
+## still a flat plane (a real body of water has a level surface), placed
+## WATER_SURFACE_DROP below the original, ungraded shoreline grade --
+## always shallower than TerrainHeight's own minimum carved depth within
+## the lake's footprint (CHANNEL_DEPTH, at the necked ends), so there is
+## always a real bed below the water anywhere this mesh is built.
+const WATER_SURFACE_DROP := 2.0
 const WATER_TRIGGER_MARGIN := 0.6  # extra headroom above the surface the swim volume still counts as "in water"
 const UV_TILE_WATER := 12.0
+
+## The carved bed at (s, x), then lifted back up to the flat water
+## surface level (WATER_SURFACE_DROP below original grade) along `up`.
+static func _water_surface_point(radius: float, segments: int, s: float, x: float, up: Vector3) -> Vector3:
+	var bed := RingCoords.floor_point(radius, segments, s, x)
+	var depth := TerrainHeight.depth_at(radius, segments, s, x)
+	return bed + up * (depth - WATER_SURFACE_DROP)
 
 static func build_roads(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, width: float) -> Dictionary:
@@ -160,11 +170,10 @@ static func build_water(root: Node3D, radius: float, segments: int, s_start: flo
 			continue
 		var mid_s := (seg_s0 + seg_s1) * 0.5
 		var up := RingCoords.floor_basis(radius, segments, mid_s).y
-		var offset := up * WATER_HEIGHT
-		var p0 := RingCoords.floor_point(radius, segments, seg_s0, -hw_a) + offset
-		var p1 := RingCoords.floor_point(radius, segments, seg_s0, hw_a) + offset
-		var p2 := RingCoords.floor_point(radius, segments, seg_s1, hw_b) + offset
-		var p3 := RingCoords.floor_point(radius, segments, seg_s1, -hw_b) + offset
+		var p0 := _water_surface_point(radius, segments, seg_s0, -hw_a, up)
+		var p1 := _water_surface_point(radius, segments, seg_s0, hw_a, up)
+		var p2 := _water_surface_point(radius, segments, seg_s1, hw_b, up)
+		var p3 := _water_surface_point(radius, segments, seg_s1, -hw_b, up)
 		var v0 := seg_s0 / UV_TILE_WATER
 		var v1 := seg_s1 / UV_TILE_WATER
 		StationRingBuilder._quad(st_water, p0, p1, p2, p3, up,
@@ -197,16 +206,20 @@ static func _lake_half_width(s: float, s_start: float, s_end: float, straight_s0
 	return LAKE_HALF_WIDTH
 
 ## One convex swim-trigger box for one ring segment's worth of lake,
-## spanning from the shared floor up through WATER_TRIGGER_MARGIN above
-## the water surface. `chord` and `half_width` bound the box's footprint;
-## `radius`/`segments`/`mid_s` place and orient it via the same flat-quad
-## floor math everything else on the ring uses (RingCoords), so it never
+## spanning from the carved bed (at x=0, the basin's deepest point this
+## segment) up through WATER_TRIGGER_MARGIN above the water surface.
+## `chord` and `half_width` bound the box's footprint; `radius`/
+## `segments`/`mid_s` place and orient it via the same flat-quad floor
+## math everything else on the ring uses (RingCoords), so it never
 ## floats off the real segment the way an idealized-circle placement would.
 static func _add_water_trigger_box(parent: Node3D, radius: float, segments: int,
 		mid_s: float, chord: float, half_width: float) -> void:
 	var basis := RingCoords.floor_basis(radius, segments, mid_s)
-	var col_h := WATER_HEIGHT + WATER_TRIGGER_MARGIN
-	var center := RingCoords.floor_point(radius, segments, mid_s, 0.0) + basis.y * (col_h * 0.5)
+	var depth := TerrainHeight.depth_at(radius, segments, mid_s, 0.0)
+	var water_depth_here := maxf(0.1, depth - WATER_SURFACE_DROP)  # bed-to-surface, along "up"
+	var col_h := water_depth_here + WATER_TRIGGER_MARGIN
+	var bed := RingCoords.floor_point(radius, segments, mid_s, 0.0)
+	var center := bed + basis.y * (col_h * 0.5)
 	var cs := CollisionShape3D.new()
 	var box := BoxShape3D.new()
 	box.size = Vector3(half_width * 2.0, col_h, chord * 1.08)

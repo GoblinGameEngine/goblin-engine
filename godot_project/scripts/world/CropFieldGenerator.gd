@@ -87,7 +87,16 @@ static func build_async(parent: Node3D, radius: float, segments: int,
 			while x < x_max:
 				var jx: float = x + rng.randf_range(-JITTER, JITTER)
 				var js: float = s + rng.randf_range(-JITTER, JITTER)
-				_place_stalk(parent, radius, segments, js, jx, quad, mat, base_height, crop, count, rng)
+				# Skip stalks over carved ground -- a farm field's own
+				# footprint has no idea the river/ponds/creeks/ditches now
+				# cut through it (TerrainHeight was built after this field
+				# layout), so without this a crop would appear to grow
+				# out of open water. RingCoords.floor_point() already
+				# follows the carved terrain correctly wherever a stalk
+				# DOES get placed -- this only prevents placing one in the
+				# water in the first place.
+				if TerrainHeight.depth_at(radius, segments, js, jx) < 0.15:
+					_place_stalk(parent, radius, segments, js, jx, quad, mat, base_height, crop, count, rng)
 				count += 1
 				if count % STALKS_PER_FRAME == 0:
 					await RingCoords.yield_frame()

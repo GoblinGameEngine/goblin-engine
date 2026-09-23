@@ -225,6 +225,12 @@ func _build_ring() -> void:
 	neighborhood.name = "Neighborhood"
 	ring_body.add_child(neighborhood)
 	var zone_info := NeighborhoodGenerator.build_skeleton(neighborhood, RADIUS, SEGMENTS, WIDTH)
+	# Called from here, not from inside NeighborhoodGenerator.build_skeleton()
+	# -- RiverGenerator needs NeighborhoodGenerator.zone_ranges() for its
+	# bridge placement, and GDScript can't resolve two class_name scripts
+	# calling each other's static functions (confirmed empirically). See
+	# TerrainHeight.gd's header for this project's dependency-direction rule.
+	RiverGenerator.build(neighborhood, RADIUS, SEGMENTS)
 
 	if zone_streamer == null:
 		zone_streamer = ZoneStreamer.new()

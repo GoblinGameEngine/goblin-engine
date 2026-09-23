@@ -31,7 +31,12 @@ static func _segment_index(segments: int, theta: float) -> int:
 ## A point on the floor's actual flat quad at arc length `s`, axial
 ## position `x`. Matches StationRingBuilder.build()'s floor corners
 ## exactly at segment boundaries, and lerps between them elsewhere (the
-## real, flat, built surface -- not the idealized circle).
+## real, flat, built surface -- not the idealized circle) -- then, if
+## TerrainHeight carves anything here (river/lake/pond/creek/ditch),
+## recesses the point radially outward (away from the spin axis) by
+## that depth. Every existing caller (streets, buildings, the player,
+## water) gets terrain-aware placement for free through this one
+## function, and is completely unaffected wherever nothing is carved.
 static func floor_point(radius: float, segments: int, s: float, x: float) -> Vector3:
 	var d_theta := TAU / segments
 	var theta := fposmod(s / radius, TAU)
@@ -41,7 +46,13 @@ static func floor_point(radius: float, segments: int, s: float, x: float) -> Vec
 	var t := (theta - a0) / d_theta
 	var p0 := Vector3(x, radius * cos(a0), radius * sin(a0))
 	var p1 := Vector3(x, radius * cos(a1), radius * sin(a1))
-	return p0.lerp(p1, t)
+	var p := p0.lerp(p1, t)
+	var depth := TerrainHeight.depth_at(radius, segments, theta * radius, x)
+	if depth > 0.0:
+		var mid := (a0 + a1) * 0.5
+		var up := Vector3(0, -cos(mid), -sin(mid))
+		p -= up * depth
+	return p
 
 ## The (right/axial, up/radial-inward, forward/tangential) basis at arc
 ## length `s` -- constant across a whole segment (the quad is flat, so

@@ -131,6 +131,13 @@ static func build_skeleton(root: Node3D, radius: float, segments: int, width: fl
 	# cosmetic UV-scroll itself once the mesh exists -- see its own
 	# comment for why this used to be a no-op here).
 	LakeGenerator.build_water(root, radius, segments, lake_s0, lake_s1)
+	# The full ring-spanning river/ponds/creeks is built by SpaceStation
+	# itself right after this function returns, NOT here -- RiverGenerator
+	# calls back into this class (zone_ranges()) for its bridge placement,
+	# and GDScript's class_name resolution can't handle two scripts
+	# calling each other's static functions (confirmed empirically, not
+	# just a style preference) -- see TerrainHeight.gd's header for the
+	# fuller explanation of this project's dependency-direction rule.
 
 	# Backface-culling fix, same reasoning as before: a freshly built
 	# StandardMaterial3D mesh here is backface-culled under cull_back

@@ -54,6 +54,11 @@ static func _quad(st: SurfaceTool, a: Vector3, b: Vector3, c: Vector3, d: Vector
 static func build(ring_body: Node3D, radius: float, ceiling_height: float,
 		width: float, segments: int,
 		floor_material: Material, wall_material: Material, ceiling_material: Material) -> void:
+	# TerrainHeight can't reference SpaceStation.WIDTH directly (that would
+	# cycle: SpaceStation -> StationRingBuilder -> TerrainHeight -> back to
+	# SpaceStation -- see TerrainHeight.gd's header) -- this one-way write
+	# is how it learns the ring's width instead.
+	TerrainHeight.RING_WIDTH = width
 	var ceiling_radius := radius - ceiling_height
 	var half_w := width / 2.0
 	var mesh := ArrayMesh.new()
@@ -63,18 +68,33 @@ static func build(ring_body: Node3D, radius: float, ceiling_height: float,
 	for i in range(segments):
 		var a0 := (TAU / segments) * i
 		var a1 := (TAU / segments) * (i + 1)
-		var p0 := Vector3(-half_w, radius * cos(a0), radius * sin(a0))
-		var p1 := Vector3(half_w, radius * cos(a0), radius * sin(a0))
-		var p2 := Vector3(half_w, radius * cos(a1), radius * sin(a1))
-		var p3 := Vector3(-half_w, radius * cos(a1), radius * sin(a1))
+		var s0 := a0 * radius
+		var s1 := a1 * radius
 		var mid := (a0 + a1) * 0.5
 		var floor_normal := Vector3(0, -cos(mid), -sin(mid))  # points toward the spin axis -- "up" from the floor
-		var u0 := -half_w / TILE_FLOOR
-		var u1 := half_w / TILE_FLOOR
-		var v0 := (radius * a0) / TILE_FLOOR
-		var v1 := (radius * a1) / TILE_FLOOR
-		_quad(st_floor, p0, p1, p2, p3, floor_normal,
-			Vector2(u0, v0), Vector2(u1, v0), Vector2(u1, v1), Vector2(u0, v1))
+		# Adaptive per-segment x-slicing instead of one flat quad spanning
+		# the whole width: TerrainHeight.critical_x_values() returns this
+		# segment's true feature breakpoints (river/lake/pond/creek/ditch
+		# bed+bank edges, wherever they land this segment's meander has
+		# shifted them to), guaranteeing the carved terrain is always
+		# correctly resolved rather than risking a fixed grid straddling
+		# (and nearly erasing) a feature between samples. Away from any
+		# water feature this still returns just the two width extremes --
+		# one quad, identical to the old unconditional single-quad floor.
+		var xs: Array = TerrainHeight.critical_x_values(radius, segments, s0, s1, half_w)
+		for k in range(xs.size() - 1):
+			var xl: float = xs[k]
+			var xr: float = xs[k + 1]
+			var p0 := RingCoords.floor_point(radius, segments, s0, xl)
+			var p1 := RingCoords.floor_point(radius, segments, s0, xr)
+			var p2 := RingCoords.floor_point(radius, segments, s1, xr)
+			var p3 := RingCoords.floor_point(radius, segments, s1, xl)
+			var u0 := xl / TILE_FLOOR
+			var u1 := xr / TILE_FLOOR
+			var v0 := s0 / TILE_FLOOR
+			var v1 := s1 / TILE_FLOOR
+			_quad(st_floor, p0, p1, p2, p3, floor_normal,
+				Vector2(u0, v0), Vector2(u1, v0), Vector2(u1, v1), Vector2(u0, v1))
 	st_floor.set_material(floor_material)
 	st_floor.commit(mesh)
 
@@ -153,13 +173,42 @@ static func _add_collision_segments(ring_body: Node3D, radius: float, ceiling_he
 		var tangent := Vector3(0, -sin(mid), cos(mid))
 		var chord: float = radius * d_theta * margin
 
-		_add_box(ring_body, n_out * radius, -n_out, -tangent, Vector3(width, 1.0, chord))
+		_add_floor_collision_slices(ring_body, radius, segments, i, half_w, chord)
 		_add_box(ring_body, n_out * ceiling_radius, n_out, tangent, Vector3(width, 1.0, chord))
 
 		var wall_center := n_out * ((radius + ceiling_radius) * 0.5)
 		var wall_size := Vector3(1.0, ceiling_height + 1.0, chord)
 		_add_box(ring_body, wall_center + Vector3(half_w, 0, 0), n_out, tangent, wall_size)
 		_add_box(ring_body, wall_center + Vector3(-half_w, 0, 0), n_out, tangent, wall_size)
+
+## Floor collision for one segment, sliced across x at the SAME
+## TerrainHeight breakpoints the visual mesh uses (see build()'s floor
+## loop) -- one flat BoxShape3D per slice, each at that slice's own
+## midpoint depth. A flat box can't represent a sloped bank within
+## itself, so this is a "staircase" approximation of the true slope
+## (steps at each slice boundary) rather than a perfectly smooth ramp --
+## same convention as this file's own segment-faceted ring already
+## uses for the walls/ceiling ("reads as smoothly round at this scale"
+## rather than a true curve), and far lower-risk than introducing this
+## project's first HeightMapShape3D. `chord` and the local
+## RingCoords.floor_basis() orientation are shared with the ceiling/
+## wall boxes right above -- only the per-slice center/width differ.
+static func _add_floor_collision_slices(ring_body: Node3D, radius: float, segments: int,
+		seg_index: int, half_w: float, chord: float) -> void:
+	var d_theta := TAU / segments
+	var s0 := d_theta * seg_index * radius
+	var s1 := d_theta * (seg_index + 1) * radius
+	var mid_s := (s0 + s1) * 0.5
+	var basis := RingCoords.floor_basis(radius, segments, mid_s)
+	var xs: Array = TerrainHeight.critical_x_values(radius, segments, s0, s1, half_w)
+	for k in range(xs.size() - 1):
+		var xl: float = xs[k]
+		var xr: float = xs[k + 1]
+		var xm := (xl + xr) * 0.5
+		var center := RingCoords.floor_point(radius, segments, mid_s, xm)
+		# floor_basis()'s own z-column is -tangent (see its doc comment),
+		# matching this file's original floor box's z_axis=-tangent exactly.
+		_add_box(ring_body, center, basis.y, basis.z, Vector3((xr - xl) * 1.05, 1.0, chord))
 
 ## `size` is expressed along the local axes (RIGHT, y_axis, z_axis) in
 ## that order -- e.g. for the floor, size.x is the wall-to-wall width
