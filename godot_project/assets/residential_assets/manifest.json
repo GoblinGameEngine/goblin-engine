@@ -244,6 +244,38 @@
           "height": 2.1
         }
       ]
+    },
+    {
+      "id": "victorian_queen_anne",
+      "archetype": "victorian_queen_anne",
+      "stories": 2,
+      "wall_h": 5.4,
+      "width": 12.5,
+      "depth": 11.5,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 3.5000000000000004,
+          "y": -5.75,
+          "hinge_x": 3.0000000000000004,
+          "hinge_y": -5.75,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        },
+        {
+          "kind": "door",
+          "x": -3.0,
+          "y": -10.25,
+          "hinge_x": -3.5,
+          "hinge_y": -10.25,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
     }
   ]
 }

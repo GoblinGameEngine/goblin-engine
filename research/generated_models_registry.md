@@ -52,6 +52,7 @@ to touch it.
 | Mobile/Manufactured Home (single-wide) | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/mobile_home.glb` | `wall_tinted_2.png`, `roof_tinted_3.png` (reused existing) | 2026-09-22 | 4.6m x 18m, single story, very shallow 6° pitch (near-flat, the defining low-profile silhouette vs. shotgun's steep front gable despite similar narrow-long footprint). Verified: clean headless Godot import. Double-wide variant not yet built. |
 | Duplex (side-by-side) | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/duplex_side_by_side.glb` | `wall_tinted_5.png`, `roof_tinted_1.png` (reused existing) | 2026-09-22 | 13m x 9.5m (2 units x 6.5m), single shell w/ 2 front doors via NEW `build_multiunit_building` helper — one building, two units, not two separate buildings. Flat parapet roof. Verified: clean headless import, 2 doors confirmed in manifest. Stacked duplex variant not yet built. |
 | Rowhouse/Townhouse | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/rowhouse_townhouse.glb` | `wall_tinted_6.png`, `roof_tinted_2.png` (reused existing) | 2026-09-22 | 18m x 13m (3 units x 6m), 2-story, flat parapet roof, 3 front doors via `build_multiunit_building`. Verified: clean headless import, 3 doors confirmed in manifest. |
+| Victorian/Queen Anne | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/victorian_queen_anne.glb` | `wall_tinted_8.png`, `roof_tinted_3.png` (reused existing) | 2026-09-23 | 12.5m x 11.5m main block + 5m x 4.5m projecting front wing (asymmetric two-mass composition, NEW `build_victorian` function), wall_h 5.4m (2-3 story). Main door x=3.5/y=-5.75, wing door x=-3.0/y=-10.25 — both hand-verified against the translation math. Verified: clean headless Godot import, 2 doors confirmed in manifest with correct positions. Not visually screenshot-checked yet (numeric verification only) — flag for a visual pass before treating the wing-attachment geometry as fully proven. |
 
 ## Commercial / civic / farm buildings
 
@@ -109,7 +110,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 
 | Category | Planned | Done | Needs revisit | In progress |
 |---|---|---|---|---|
-| Residential buildings | 17 | 10 | 0 | 0 |
+| Residential buildings | 17 | 11 | 0 | 0 |
 | Commercial/civic/farm buildings | 27 | 0 | 0 | 0 |
 | Bridges | 6 | 0 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |

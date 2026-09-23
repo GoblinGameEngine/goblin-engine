@@ -23,6 +23,7 @@ Run headless:
 import sys
 import os
 import json
+import bpy
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from building_helpers import (
@@ -109,6 +110,73 @@ def build_multiunit_building(building_id, unit_width, depth, wall_h, unit_count,
 		"width": width,
 		"depth": depth,
 		"unit_count": unit_count,
+		"openings": openings,
+	}
+
+
+def _translate_and_apply(obj, dx, dy, dz=0.0):
+	obj.location = (dx, dy, dz)
+	bpy.ops.object.select_all(action="DESELECT")
+	obj.select_set(True)
+	bpy.context.view_layer.objects.active = obj
+	bpy.ops.object.transform_apply(location=True, rotation=False, scale=False)
+
+
+def build_victorian(building_id, main_width, main_depth, wing_width, wing_depth, wall_h, wing_x_offset,
+		wall_tex, roof_tex, roof_pitch_deg=30.0, roof_overhang=0.45, wing_pitch_deg=38.0, wing_overhang=0.4):
+	"""Asymmetric two-mass composition -- a main rectangular block plus a
+	smaller, front-facing-gabled wing projecting from one side, flush
+	against (not overlapping) the main block's front wall. Real Victorian/
+	Queen Anne massing is far more elaborate (turrets, wrap porches), but
+	this is the single most defining, cheapest-to-build trait: an
+	asymmetric silhouette with a projecting front gable, distinct from
+	every symmetric box-gable archetype built so far."""
+	openings = []
+
+	main_shell = build_shell(main_width, main_depth, wall_h)
+	main_door_x = main_width * 0.28  # offset toward the side AWAY from the wing
+	cut_front_door(main_shell, main_door_x, main_depth, DOOR_HEIGHT / 2.0)
+	register_front_door(openings, main_door_x, main_depth)
+	wall_mat = load_material(building_id + "_wall", wall_tex)
+	main_shell.data.materials.append(wall_mat)
+	cube_uv(main_shell)
+	roof_mat = load_material(building_id + "_roof", roof_tex)
+	main_roof = build_gable_roof(main_width, main_depth, wall_h, pitch_deg=roof_pitch_deg, overhang=roof_overhang, material=roof_mat)
+
+	wing_shell = build_shell(wing_width, wing_depth, wall_h)
+	cut_front_door(wing_shell, 0.0, wing_depth, DOOR_HEIGHT / 2.0)
+	wing_wall_mat = load_material(building_id + "_wing_wall", wall_tex)
+	wing_shell.data.materials.append(wing_wall_mat)
+	cube_uv(wing_shell)
+	wing_roof = build_gable_roof_frontfacing(wing_width, wing_depth, wall_h, pitch_deg=wing_pitch_deg, overhang=wing_overhang, material=roof_mat)
+	wing = join_objects([wing_shell, wing_roof])
+
+	# Flush against the main block's own front wall (y = -main_depth/2),
+	# offset sideways by wing_x_offset -- zero overlap, two volumes
+	# touching at a shared plane rather than interpenetrating.
+	wing_center_y = -main_depth / 2.0 - wing_depth / 2.0
+	_translate_and_apply(wing, wing_x_offset, wing_center_y)
+	# The wing's own front door was cut at its LOCAL (0, -wing_depth/2)
+	# before translation; its world-space position in the combined
+	# building is that local offset plus the wing's own translation.
+	wing_door_world_y = wing_center_y - wing_depth / 2.0
+	openings.append({
+		"kind": "door", "x": wing_x_offset, "y": wing_door_world_y,
+		"hinge_x": wing_x_offset - DOOR_WIDTH / 2.0, "hinge_y": wing_door_world_y,
+		"plane_rot": 0.0, "z": 0.0, "width": DOOR_WIDTH, "height": DOOR_HEIGHT,
+	})
+
+	combined = join_objects([main_shell, main_roof, wing])
+	combined.name = building_id + "-col"
+
+	export_glb(combined, OUT_DIR, building_id + ".glb")
+	return {
+		"id": building_id,
+		"archetype": building_id,
+		"stories": 2,
+		"wall_h": wall_h,
+		"width": main_width,
+		"depth": main_depth,
 		"openings": openings,
 	}
 
@@ -210,6 +278,16 @@ def main():
 	manifest["residential_buildings"].append(build_multiunit_building(
 		"rowhouse_townhouse", unit_width=6.0, depth=13.0, wall_h=2 * 2.7, unit_count=3,
 		wall_tex="wall_tinted_6.png", roof_tex="roof_tinted_2.png", stories=2))
+
+	# Victorian/Queen Anne: asymmetric two-mass composition (main block +
+	# projecting front-gabled wing) -- researched 11-15m x 11-15m main
+	# footprint, 2-3 stories, the largest/most elaborate archetype in
+	# this batch.
+	clear_scene()
+	manifest["residential_buildings"].append(build_victorian(
+		"victorian_queen_anne", main_width=12.5, main_depth=11.5,
+		wing_width=5.0, wing_depth=4.5, wall_h=5.4, wing_x_offset=-3.0,
+		wall_tex="wall_tinted_8.png", roof_tex="roof_tinted_3.png"))
 
 	with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
 		json.dump(manifest, f, indent=2)
