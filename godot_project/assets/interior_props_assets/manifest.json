@@ -565,6 +565,78 @@
     },
     {
       "id": "vehicle_in_repair"
+    },
+    {
+      "id": "altar_communion_table"
+    },
+    {
+      "id": "baptismal_font"
+    },
+    {
+      "id": "cross_crucifix"
+    },
+    {
+      "id": "altar_rail"
+    },
+    {
+      "id": "vestment_cabinet"
+    },
+    {
+      "id": "hymnal_rack"
+    },
+    {
+      "id": "witness_stand"
+    },
+    {
+      "id": "bailiffs_desk"
+    },
+    {
+      "id": "holding_cell_bench_bunk"
+    },
+    {
+      "id": "barred_cell_door"
+    },
+    {
+      "id": "booking_fingerprint_desk"
+    },
+    {
+      "id": "mugshot_backdrop"
+    },
+    {
+      "id": "bulletproof_glass_partition"
+    },
+    {
+      "id": "council_dais_raised_table"
+    },
+    {
+      "id": "circulation_desk_library"
+    },
+    {
+      "id": "study_carrel"
+    },
+    {
+      "id": "book_repair_table_cart"
+    },
+    {
+      "id": "chalkboard_whiteboard"
+    },
+    {
+      "id": "potbelly_wood_stove"
+    },
+    {
+      "id": "basketball_hoop_gym"
+    },
+    {
+      "id": "gymnasium_stage_platform"
+    },
+    {
+      "id": "cafeteria_serving_line"
+    },
+    {
+      "id": "flag_set_indoor"
+    },
+    {
+      "id": "wanted_poster_notice_board"
     }
   ]
 }
