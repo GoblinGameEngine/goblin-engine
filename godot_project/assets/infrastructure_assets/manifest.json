@@ -422,5 +422,46 @@
     {
       "id": "holiday_parade_bunting_set"
     }
+  ],
+  "vehicles": [
+    {
+      "id": "vehicle_school_bus"
+    },
+    {
+      "id": "vehicle_delivery_van_box_truck"
+    },
+    {
+      "id": "vehicle_ambulance"
+    },
+    {
+      "id": "vehicle_tow_truck"
+    },
+    {
+      "id": "vehicle_motorcycle"
+    },
+    {
+      "id": "vehicle_bicycle"
+    },
+    {
+      "id": "vehicle_semi_tractor_trailer"
+    },
+    {
+      "id": "vehicle_combine_harvester"
+    },
+    {
+      "id": "vehicle_grain_truck"
+    },
+    {
+      "id": "vehicle_snowmobile"
+    },
+    {
+      "id": "vehicle_atv"
+    },
+    {
+      "id": "vehicle_boat_pontoon"
+    },
+    {
+      "id": "vehicle_municipal_snowplow_dump_truck"
+    }
   ]
 }
