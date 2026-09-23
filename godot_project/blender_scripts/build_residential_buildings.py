@@ -289,6 +289,58 @@ def main():
 		wing_width=5.0, wing_depth=4.5, wall_h=5.4, wing_x_offset=-3.0,
 		wall_tex="wall_tinted_8.png", roof_tex="roof_tinted_3.png"))
 
+	# American Foursquare (residential-zone dedicated version -- distinct
+	# from the existing farm-zone farmhouse_foursquare.glb): near-square
+	# footprint, 2.5 stories, low-pitch roof -- researched 9-11m x 9-11m
+	# range, same shallow-gable approximation the farm version already
+	# uses for its hip roof (a true hip roof is a later visual
+	# refinement, not required for the interior/opening spec).
+	clear_scene()
+	manifest["residential_buildings"].append(build_building(
+		"foursquare", width=10.0, depth=10.0, wall_h=2 * 2.75,
+		roof_pitch_deg=22.0, roof_overhang=0.5,
+		wall_tex="wall_tinted_1.png", roof_tex="roof_tinted_1.png"))
+
+	# Split-level/split-foyer: researched "3-4 half-levels," approximated
+	# here as a single volume at an in-between wall height (taller than a
+	# 1-story ranch, shorter than a full 2-story) rather than true
+	# stepped massing -- flagged as a simplification for a later pass,
+	# researched 11-15.2m x 9.1-11m range.
+	clear_scene()
+	manifest["residential_buildings"].append(build_building(
+		"split_level", width=13.0, depth=10.0, wall_h=3.6,
+		roof_pitch_deg=24.0, roof_overhang=0.45,
+		wall_tex="wall_tinted_2.png", roof_tex="roof_tinted_0.png"))
+
+	# Small apartment building (2-3 story walk-up, 6-16 units): reuses
+	# build_multiunit_building directly -- an apartment walk-up IS the
+	# same "one shell, several doors" shape as the duplex/rowhouse above,
+	# just more units and taller. Researched 15.2-24.4m x 10.7-15.2m
+	# footprint -- modeled here as 6 units (the low end of the researched
+	# 6-16 unit range) to keep the per-unit width realistic.
+	clear_scene()
+	manifest["residential_buildings"].append(build_multiunit_building(
+		"apartment_small", unit_width=3.3, depth=13.0, wall_h=2 * 2.7, unit_count=6,
+		wall_tex="wall_tinted_5.png", roof_tex="roof_tinted_2.png", stories=2))
+
+	# Garden-style apartment complex: researched as a multi-building site,
+	# each building 18.3-30.5m x 10.7-13.7m, 2-3 story, 6-12 units/
+	# building -- this models ONE representative building from that
+	# complex (the site-plan/multi-building arrangement itself is a
+	# NeighborhoodGenerator-level placement concern, not a single model).
+	clear_scene()
+	manifest["residential_buildings"].append(build_multiunit_building(
+		"apartment_garden_style", unit_width=3.5, depth=12.0, wall_h=2 * 2.7, unit_count=8,
+		wall_tex="wall_tinted_9.png", roof_tex="roof_tinted_3.png", stories=2))
+
+	# Larger city apartment block (mid-rise, 4-6 story, 24-60+ units,
+	# elevator -- rare/landmark, small-city tier only per the research).
+	# Researched 30.5-45.7m x 18.3-24.4m footprint.
+	clear_scene()
+	manifest["residential_buildings"].append(build_multiunit_building(
+		"apartment_large", unit_width=4.0, depth=20.0, wall_h=4 * 2.8, unit_count=8,
+		wall_tex="wall_tinted_10.png", roof_tex="roof_tinted_1.png", stories=4))
+
 	with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
 		json.dump(manifest, f, indent=2)
 	print("build_residential_buildings: wrote %d buildings to %s" % (len(manifest["residential_buildings"]), OUT_DIR))
