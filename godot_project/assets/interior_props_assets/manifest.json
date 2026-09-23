@@ -292,6 +292,69 @@
     },
     {
       "id": "neon_signage"
+    },
+    {
+      "id": "loveseat_settee"
+    },
+    {
+      "id": "sectional_sofa"
+    },
+    {
+      "id": "wicker_rattan_chair"
+    },
+    {
+      "id": "bar_counter_stool"
+    },
+    {
+      "id": "barber_styling_chair"
+    },
+    {
+      "id": "waiting_bench",
+      "width": 1.5
+    },
+    {
+      "id": "booth_seating"
+    },
+    {
+      "id": "church_pew",
+      "width": 2.5
+    },
+    {
+      "id": "folding_stacking_chair"
+    },
+    {
+      "id": "gymnasium_bleachers",
+      "width": 4.0
+    },
+    {
+      "id": "theater_seating_row",
+      "width": 3.0
+    },
+    {
+      "id": "courtroom_gallery_bench",
+      "width": 2.5
+    },
+    {
+      "id": "jury_box_seating"
+    },
+    {
+      "id": "locker_room_bench",
+      "width": 1.8
+    },
+    {
+      "id": "porch_rocking_chair"
+    },
+    {
+      "id": "task_office_chair"
+    },
+    {
+      "id": "bunk_bed"
+    },
+    {
+      "id": "wardrobe_armoire"
+    },
+    {
+      "id": "washstand"
     }
   ]
 }
