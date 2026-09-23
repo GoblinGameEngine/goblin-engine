@@ -757,6 +757,96 @@
     },
     {
       "id": "tool_pegboard_wall"
+    },
+    {
+      "id": "tractor"
+    },
+    {
+      "id": "combine_large_implement"
+    },
+    {
+      "id": "plow"
+    },
+    {
+      "id": "disc"
+    },
+    {
+      "id": "planter"
+    },
+    {
+      "id": "mower"
+    },
+    {
+      "id": "baler"
+    },
+    {
+      "id": "farm_wagon"
+    },
+    {
+      "id": "hay_bale_stack"
+    },
+    {
+      "id": "stanchion_stall_partition"
+    },
+    {
+      "id": "feed_trough"
+    },
+    {
+      "id": "water_bowl_bucket_livestock"
+    },
+    {
+      "id": "harness_rack"
+    },
+    {
+      "id": "saddle_stand"
+    },
+    {
+      "id": "milking_stanchion"
+    },
+    {
+      "id": "milk_can_bulk_tank"
+    },
+    {
+      "id": "nest_box_row"
+    },
+    {
+      "id": "roosting_bar_perch"
+    },
+    {
+      "id": "poultry_feeder_waterer"
+    },
+    {
+      "id": "corn_hook_husking_peg"
+    },
+    {
+      "id": "grain_scoop_corn_fork"
+    },
+    {
+      "id": "coiled_fence_wire_post_stack"
+    },
+    {
+      "id": "welding_equipment"
+    },
+    {
+      "id": "vise"
+    },
+    {
+      "id": "production_floor_machinery"
+    },
+    {
+      "id": "conveyor_line"
+    },
+    {
+      "id": "overhead_lineshaft_crane_track"
+    },
+    {
+      "id": "truck_scale"
+    },
+    {
+      "id": "bucket_elevator_leg"
+    },
+    {
+      "id": "silage_unloader_auger"
     }
   ]
 }
