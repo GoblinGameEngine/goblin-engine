@@ -11,8 +11,7 @@ class_name StationRingBuilder
 # still reading as smoothly round at this scale: SEGMENTS=96 is 3.75
 # degrees per segment.
 #
-# Built directly in the axis this ring is meant to spin about (the
-# caller rotates the whole ring_body about local X each physics frame --
+# Built around local X, the ring's central axis (ring_body never moves --
 # see StationPlayer.gd for the matching radial-gravity math) -- angle 0
 # points along +Y, sweeping toward +Z.
 

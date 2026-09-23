@@ -5,5 +5,4 @@
 [node name="SpaceStation" type="Node3D"]
 script = ExtResource("1")
 
-[node name="RingBody" type="AnimatableBody3D" parent="."]
-sync_to_physics = true
+[node name="RingBody" type="StaticBody3D" parent="."]

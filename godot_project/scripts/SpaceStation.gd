@@ -81,7 +81,12 @@ static func gravity_at(radial_len: float) -> float:
 
 const STATION_PLAYER_SCENE := preload("res://scenes/StationPlayer.tscn")
 
-@onready var ring_body: AnimatableBody3D = $RingBody
+# StaticBody3D, not AnimatableBody3D: an animatable body sits in the
+# physics server's moving-body tree, so its ~7.9k floor prisms were
+# pair-tested against every overlapping building StaticBody3D each tick
+# (51k pairs, ~15ms/tick -> 25fps on the Deck). Static-vs-static is never
+# paired: 2 pairs, 0.6ms/tick.
+@onready var ring_body: StaticBody3D = $RingBody
 var player: StationPlayer
 var sky_system: DaySkySystem
 var sun: DirectionalLight3D
