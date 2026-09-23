@@ -553,6 +553,18 @@
     },
     {
       "id": "interrogation_recording_equipment"
+    },
+    {
+      "id": "derelict_car"
+    },
+    {
+      "id": "fire_truck_pumper"
+    },
+    {
+      "id": "boat_camper_atv_trailer"
+    },
+    {
+      "id": "vehicle_in_repair"
     }
   ]
 }
