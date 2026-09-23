@@ -354,5 +354,73 @@
     {
       "id": "yield_sign"
     }
+  ],
+  "park_cemetery_decor": [
+    {
+      "id": "playground_slide"
+    },
+    {
+      "id": "jungle_gym_climbing_structure"
+    },
+    {
+      "id": "swing_set_park_multibay"
+    },
+    {
+      "id": "baseball_backstop_bleachers"
+    },
+    {
+      "id": "basketball_court_outdoor"
+    },
+    {
+      "id": "gazebo_bandstand"
+    },
+    {
+      "id": "war_memorial_monument"
+    },
+    {
+      "id": "park_civic_flagpole"
+    },
+    {
+      "id": "picnic_shelter_pavilion"
+    },
+    {
+      "id": "park_drinking_fountain"
+    },
+    {
+      "id": "headstone_upright_slab"
+    },
+    {
+      "id": "headstone_obelisk_monument"
+    },
+    {
+      "id": "headstone_flat_flush"
+    },
+    {
+      "id": "mausoleum_family_scale"
+    },
+    {
+      "id": "cemetery_gate_entrance_arch"
+    },
+    {
+      "id": "cemetery_access_lane"
+    },
+    {
+      "id": "cemetery_memorial_bench"
+    },
+    {
+      "id": "string_lights_main_street"
+    },
+    {
+      "id": "banner_pole_seasonal"
+    },
+    {
+      "id": "town_christmas_tree"
+    },
+    {
+      "id": "wreath_lamppost"
+    },
+    {
+      "id": "holiday_parade_bunting_set"
+    }
   ]
 }
