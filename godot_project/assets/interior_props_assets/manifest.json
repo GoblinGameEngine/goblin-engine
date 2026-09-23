@@ -430,6 +430,87 @@
     },
     {
       "id": "rolltop_desk"
+    },
+    {
+      "id": "library_stack_range"
+    },
+    {
+      "id": "china_cabinet_hutch"
+    },
+    {
+      "id": "sideboard_buffet"
+    },
+    {
+      "id": "curio_cabinet"
+    },
+    {
+      "id": "filing_cabinet"
+    },
+    {
+      "id": "small_office_personal_safe"
+    },
+    {
+      "id": "retail_shelving_unit"
+    },
+    {
+      "id": "pantry_cabinet_shelving"
+    },
+    {
+      "id": "linen_cabinet"
+    },
+    {
+      "id": "coat_rack_hall_tree"
+    },
+    {
+      "id": "umbrella_stand"
+    },
+    {
+      "id": "gun_cabinet_safe"
+    },
+    {
+      "id": "toy_storage_bins"
+    },
+    {
+      "id": "canning_preserve_shelving"
+    },
+    {
+      "id": "hoosier_pantry_cabinet"
+    },
+    {
+      "id": "glass_front_retail_display_case"
+    },
+    {
+      "id": "gym_style_locker"
+    },
+    {
+      "id": "turnout_gear_rack"
+    },
+    {
+      "id": "evidence_storage_shelving"
+    },
+    {
+      "id": "mail_cubby_key_rack"
+    },
+    {
+      "id": "po_box_wall"
+    },
+    {
+      "id": "safe_deposit_box_wall"
+    },
+    {
+      "id": "card_catalog"
+    },
+    {
+      "id": "sorting_case_pigeonhole"
+    },
+    {
+      "id": "heavy_duty_pallet_rack"
+    },
+    {
+      "id": "tool_chest_rolling_cabinet"
+    },
+    {
+      "id": "butlers_pantry_glass_cabinet"
     }
   ]
 }
