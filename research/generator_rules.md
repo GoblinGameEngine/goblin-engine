@@ -523,7 +523,24 @@ the art team wants. Recommended approach:
 
 ---
 
-## 18. Open questions / flagged for the next phase
+## 19. Quest / NPC engine (pointer)
+
+The procedural quest and NPC-behavior system has its own sibling rules file:
+**`research/questing_engine/quest_engine_rules.md`** — not reproduced here since it's a
+distinct subsystem with its own weight tables, but built directly on top of this file's §14
+(demographic weighting) and §15 (community archetypes). Summary: quests are authored as roles
+with eligibility conditions (an alias system directly modeled on, and improving upon, Bethesda's
+Radiant Story architecture — see `research/questing_engine/radiant_reference/`), resolved only
+at instantiation against live world state, with weights covering quest-shape selection per
+demographic archetype, a nonfiction/fiction content-rarity split grounded in 66 real documented
+story patterns (`research/questing_engine/story_patterns/`), 12 anti-repetition/pacing rules
+addressing Radiant Story's own documented failure modes, and a reward-tier axis (structure only
+— actual items/currency deferred). No dialogue or quest text exists yet anywhere in this
+research — that's an explicitly separate, later phase.
+
+---
+
+## 20. Open questions / flagged for the next phase
 
 - Which single tier (or per-zone blend) the station should actually target is not decided here
   — recommended default is small-town, but this is a design choice, not a research finding.
