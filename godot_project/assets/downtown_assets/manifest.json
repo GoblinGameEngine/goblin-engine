@@ -529,6 +529,48 @@
       "depth": 10.0,
       "openings": [],
       "landmark_no_interior": true
+    },
+    {
+      "id": "school_oneroom",
+      "archetype": "school_oneroom",
+      "stories": 1,
+      "wall_h": 3.2,
+      "width": 8.0,
+      "depth": 10.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -5.0,
+          "hinge_x": -0.5,
+          "hinge_y": -5.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "school_consolidated",
+      "archetype": "school_consolidated",
+      "stories": 1,
+      "wall_h": 4.758,
+      "width": 40.0,
+      "depth": 55.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -27.5,
+          "hinge_x": -0.5,
+          "hinge_y": -27.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
     }
   ]
 }

@@ -83,6 +83,8 @@ to touch it.
 | Corn Crib (double-crib style) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_farm_structures_2.py` | `assets/farm_assets/corn_crib.glb` | `wall_tinted_4.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 8.5m x 10m gable shed. Verified: clean headless import. Slatted/ventilated crib walls (real corn cribs are open-slat, not solid) not modeled — solid-wall simplification for this pass. |
 | Farm Equipment Shed | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_farm_structures_2.py` | `assets/farm_assets/farm_equipment_shed.glb` | `wall_tinted_6.png`, `roof_tinted_3.png` (reused) | 2026-09-23 | 7.5m x 12m gable shed. Verified: clean headless import. Built fully-walled; open-sided visual variant (real equipment sheds are often open-sided) is a later refinement. Reminder: mutually exclusive with pole_building per farmstead (generator_rules.md §11), not both. |
 | Grain Silo (farm-scale) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_farm_structures_2.py` | `assets/farm_assets/grain_silo.glb` | `wall_tinted_2.png` (reused) | 2026-09-23 | 3m radius, 16m tall cylinder, same technique as the water tower. Landmark/non-walkable — no door, no interior, `landmark_no_interior: true`. Verified: clean headless import, exports as a genuine Cylinder primitive. |
+| School (one-room rural) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_school.py` | `assets/downtown_assets/school_oneroom.glb` | `wall_tinted_1.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 8m x 10m, small gable, village tier. Verified: clean headless import. |
+| School (consolidated) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_school.py` | `assets/downtown_assets/school_consolidated.glb` | `wall_tinted_5.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 40m x 55m, flat parapet, town/city tier — largest footprint of any building built so far. Verified: clean headless import. **Commercial/civic/farm buildings: 27/27 complete.** |
 
 ## Bridges
 
@@ -136,7 +138,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Category | Planned | Done | Needs revisit | In progress |
 |---|---|---|---|---|
 | Residential buildings | 17 | 11 | 0 | 0 |
-| Commercial/civic/farm buildings | 27 | 25 | 0 | 0 |
+| Commercial/civic/farm buildings | 27 | 27 | 0 | 0 |
 | Bridges | 6 | 0 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |
