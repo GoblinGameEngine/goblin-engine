@@ -511,6 +511,48 @@
     },
     {
       "id": "butlers_pantry_glass_cabinet"
+    },
+    {
+      "id": "period_radio_cabinet_console"
+    },
+    {
+      "id": "second_tv_game_console"
+    },
+    {
+      "id": "computer_library_terminal"
+    },
+    {
+      "id": "adding_machine_typewriter"
+    },
+    {
+      "id": "telephone"
+    },
+    {
+      "id": "police_dispatch_console"
+    },
+    {
+      "id": "radio_scanner"
+    },
+    {
+      "id": "security_camera_monitor"
+    },
+    {
+      "id": "film_projector"
+    },
+    {
+      "id": "film_reel_storage_rack"
+    },
+    {
+      "id": "microfilm_reader"
+    },
+    {
+      "id": "jukebox"
+    },
+    {
+      "id": "piano_organ"
+    },
+    {
+      "id": "interrogation_recording_equipment"
     }
   ]
 }
