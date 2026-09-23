@@ -203,6 +203,7 @@ to touch it.
 | Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
 |---|---|---|---|---|---|---|---|
 | Animals/Wildlife (B5, 10) | Expansion — Animals | [DONE] | `blender_scripts/build_animals.py` | `assets/infrastructure_assets/{animal_cow,animal_chicken,animal_pig,animal_horse,animal_dog,animal_cat,animal_bird_flock,animal_deer,animal_squirrel,animal_canada_goose}.glb` | reused `wall_tinted_N.png` throughout | 2026-09-23 | Completes Part B5 (10/10) — a previously completely-absent category despite barns/coops/farms/lake implying livestock and wildlife throughout. New `build_quadruped` (body+head+4 legs), `build_small_pet`, and `build_bird` (body+head+2 legs) functions. Verified: clean headless import, 10 confirmed in manifest. |
+| Street/Park Furniture and Public Infrastructure (B3, 15) | Expansion — Street Infra | [DONE] | `blender_scripts/build_street_infrastructure.py` | `assets/infrastructure_assets/{public_street_bench,public_trash_can,bike_rack_public,newspaper_vending_box,parking_meter,utility_power_pole,pad_mounted_transformer,manhole_cover,storm_drain_grate,traffic_light_signal,stop_sign,street_name_sign,crosswalk_marking,rural_route_speed_limit_sign,yield_sign}.glb` | reused `wall_tinted_N.png`/`road_tinted.png` throughout | 2026-09-23 | Completes Part B3 (15/15) — the single largest completely-unaddressed gap found in the completeness audit (generic municipal street furniture, despite extensive road/intersection/bridge coverage elsewhere). New `build_ground_decal` (flat thin patch, for manhole/storm-drain/crosswalk) and `build_sign_on_post` (post+sign panel, reused for traffic light/stop/street-name/speed-limit/yield signs) functions. Verified: clean headless import, 15 confirmed in manifest. |
 
 ---
 
@@ -220,8 +221,8 @@ to touch it.
 | Street furniture/misc | 8 | 0 (covered instead under Yard/lot props — see note below) | 0 | 0 |
 | Yard/lot props | 26 | 12 (11 + 1 bonus propane tank) | 0 | 0 |
 | Interior props | 265 | 263 (effectively complete — 2 covered by pre-existing assets, 1 is a material variant) | 0 | 0 |
-| Expansion-pass items (94 total: 23 Part A + 71 Part B) | 94 | 10 (Animals, Part B5) | 0 | 0 |
-| **Total (all categories)** | **~505** | **373** | **0** | **0** |
+| Expansion-pass items (94 total: 23 Part A + 71 Part B) | 94 | 25 (Animals B5 + Street Infra B3) | 0 | 0 |
+| **Total (all categories)** | **~505** | **388** | **0** | **0** |
 
 **Notes on the totals table:**
 - **Water features**: the 11 checklist items (meandering river, lake, ponds, tributary creeks,

@@ -307,5 +307,52 @@
     {
       "id": "animal_canada_goose"
     }
+  ],
+  "street_infrastructure": [
+    {
+      "id": "public_street_bench"
+    },
+    {
+      "id": "public_trash_can"
+    },
+    {
+      "id": "bike_rack_public"
+    },
+    {
+      "id": "newspaper_vending_box"
+    },
+    {
+      "id": "parking_meter"
+    },
+    {
+      "id": "utility_power_pole"
+    },
+    {
+      "id": "pad_mounted_transformer"
+    },
+    {
+      "id": "manhole_cover"
+    },
+    {
+      "id": "storm_drain_grate"
+    },
+    {
+      "id": "traffic_light_signal"
+    },
+    {
+      "id": "stop_sign"
+    },
+    {
+      "id": "street_name_sign"
+    },
+    {
+      "id": "crosswalk_marking"
+    },
+    {
+      "id": "rural_route_speed_limit_sign"
+    },
+    {
+      "id": "yield_sign"
+    }
   ]
 }
