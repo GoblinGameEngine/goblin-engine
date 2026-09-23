@@ -72,6 +72,13 @@ to touch it.
 | Police Station | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/police_station.glb` | `wall_tinted_10.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 18m x 25m, 1.5 stories. Verified: clean headless import. |
 | Courthouse | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/courthouse.glb` | `wall_tinted_2.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 28m x 35m, 3 stories — largest civic building built so far. Verified: clean headless import. Reminder: generate-once-per-county-seat per generator_rules.md §9/§11, a placement rule for the future generator, not a modeling constraint. |
 | Church (multi-denominational template) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/church.glb` | `wall_tinted_6.png`, `roof_tinted_2.png` (reused) | 2026-09-23 | 14m x 30m nave (6m wall height) + 3m x 3m steeple tower (8m tall) with a simple pyramidal cap, NEW `build_church` function using a bmesh apex construction (4 triangles to one point) for the cap. Verified: clean headless import. Denominational proportion variants (per interior_contents_why's church "why" research) not modeled — one shared template for now. |
+| Warehouse | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/warehouse.glb` | `wall_tinted_3.png`, `roof_tinted_2.png` (reused) | 2026-09-23 | 18m x 40m, flat parapet. Verified: clean headless import. |
+| Small Factory/Mill | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/small_factory_mill.glb` | `wall_tinted_5.png`, `roof_tinted_3.png` (reused) | 2026-09-23 | 22m x 45m, flat parapet. Verified: clean headless import. |
+| Auto Repair Shop | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/auto_repair_shop.glb` | `wall_tinted_7.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 15m x 20m, flat parapet. Verified: clean headless import. Service bay door (distinct from regular door) not modeled. |
+| Gas Station | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/gas_station.glb` | `wall_tinted_8.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 9m x 12m service building only. Verified: clean headless import. Forecourt/canopy/pump islands not modeled — separate street-furniture-scale props for a later pass. |
+| Grain Elevator (small) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/grain_elevator_small.glb` | `wall_tinted_2.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | ~7.9m x 7.9m footprint, ~11m tall. NEW `build_grain_elevator` function — simplified as a tall narrow tower, a reasonably accurate silhouette even without silo-cluster/headhouse detail. Verified: clean headless import. |
+| Grain Elevator (large) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/grain_elevator_large.glb` | `wall_tinted_2.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 9m x 9m footprint, ~29m tall (95ft, top of researched range). Verified: clean headless import. |
+| Water Tower | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/water_tower.glb` | `wall_tinted_9.png` (reused) | 2026-09-23 | NEW `build_water_tower` function — cylindrical tank (5m radius, 7m tall) on a single support column (1.2m radius, 25m tall), "standpipe" style chosen over spider-leg style for build simplicity. Landmark/non-walkable per the checklist — no door, no interior, no manifest opening entries, `landmark_no_interior: true` flag added. Verified: clean headless import (exports as a genuine Cylinder primitive, confirming the geometry). |
 
 ## Bridges
 
@@ -125,7 +132,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Category | Planned | Done | Needs revisit | In progress |
 |---|---|---|---|---|
 | Residential buildings | 17 | 11 | 0 | 0 |
-| Commercial/civic/farm buildings | 27 | 14 | 0 | 0 |
+| Commercial/civic/farm buildings | 27 | 21 | 0 | 0 |
 | Bridges | 6 | 0 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |

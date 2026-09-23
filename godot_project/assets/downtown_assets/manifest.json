@@ -393,6 +393,142 @@
           "height": 2.1
         }
       ]
+    },
+    {
+      "id": "warehouse",
+      "archetype": "warehouse",
+      "stories": 1,
+      "wall_h": 5.124,
+      "width": 18.0,
+      "depth": 40.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -20.0,
+          "hinge_x": -0.5,
+          "hinge_y": -20.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "small_factory_mill",
+      "archetype": "small_factory_mill",
+      "stories": 2,
+      "wall_h": 5.856000000000001,
+      "width": 22.0,
+      "depth": 45.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -22.5,
+          "hinge_x": -0.5,
+          "hinge_y": -22.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "auto_repair_shop",
+      "archetype": "auto_repair_shop",
+      "stories": 1,
+      "wall_h": 4.392,
+      "width": 15.0,
+      "depth": 20.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -10.0,
+          "hinge_x": -0.5,
+          "hinge_y": -10.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "gas_station",
+      "archetype": "gas_station",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 9.0,
+      "depth": 12.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -6.0,
+          "hinge_x": -0.5,
+          "hinge_y": -6.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "grain_elevator_small",
+      "archetype": "grain_elevator_small",
+      "stories": 3,
+      "wall_h": 10.972800000000001,
+      "width": 7.9248,
+      "depth": 7.9248,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -3.9624,
+          "hinge_x": -0.5,
+          "hinge_y": -3.9624,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "grain_elevator_large",
+      "archetype": "grain_elevator_large",
+      "stories": 8,
+      "wall_h": 28.956000000000003,
+      "width": 9.0,
+      "depth": 9.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -4.5,
+          "hinge_x": -0.5,
+          "hinge_y": -4.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "water_tower",
+      "archetype": "water_tower",
+      "stories": 0,
+      "wall_h": 32.0,
+      "width": 10.0,
+      "depth": 10.0,
+      "openings": [],
+      "landmark_no_interior": true
     }
   ]
 }
