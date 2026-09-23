@@ -847,6 +847,93 @@
     },
     {
       "id": "silage_unloader_auger"
+    },
+    {
+      "id": "area_rug"
+    },
+    {
+      "id": "books_shelf_fill"
+    },
+    {
+      "id": "family_photos_wall_decor"
+    },
+    {
+      "id": "religious_cultural_iconography"
+    },
+    {
+      "id": "potted_plant"
+    },
+    {
+      "id": "rag_rug"
+    },
+    {
+      "id": "wall_clock_thermometer"
+    },
+    {
+      "id": "magazine_newspaper_rack"
+    },
+    {
+      "id": "decorative_wall_mirror"
+    },
+    {
+      "id": "taxidermy_wall_mount"
+    },
+    {
+      "id": "wall_art_framed"
+    },
+    {
+      "id": "historical_portrait_plaque"
+    },
+    {
+      "id": "wall_menu_board_chalkboard"
+    },
+    {
+      "id": "servants_call_bell_box"
+    },
+    {
+      "id": "canned_goods_pantry_stock"
+    },
+    {
+      "id": "flour_grain_bin_small"
+    },
+    {
+      "id": "root_vegetable_basket"
+    },
+    {
+      "id": "boot_tray"
+    },
+    {
+      "id": "coat_hook_row"
+    },
+    {
+      "id": "storage_boxes_trunks"
+    },
+    {
+      "id": "dress_form"
+    },
+    {
+      "id": "home_gym_equipment"
+    },
+    {
+      "id": "hobbyist_workshop_buildout"
+    },
+    {
+      "id": "sewing_machine"
+    },
+    {
+      "id": "garment_steamer"
+    },
+    {
+      "id": "pin_cushion_notions_shelf"
+    },
+    {
+      "id": "small_desk_flag"
+    },
+    {
+      "id": "belfry_bell"
+    },
+    {
+      "id": "barn_cat_pigeon_roost"
     }
   ]
 }
