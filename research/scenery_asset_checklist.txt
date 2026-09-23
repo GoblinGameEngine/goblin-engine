@@ -1,0 +1,208 @@
+SCENERY / ASSET CHECKLIST — for the map-generation model-building phase (Phase 2, not started)
+Derived from research/generator_rules.md and research/building_catalog/. Working reference
+only — check off items as models are built. [EXISTING] = already in
+godot_project/assets/editor_assets or *_assets (confirmed via a repo scan on 2026-09-22).
+Everything else is [NEW] and not yet modeled.
+
+================================================================================
+1. RESIDENTIAL BUILDINGS  (full templates: research/building_catalog/residential/)
+================================================================================
+[EXISTING] house1.glb, house2.glb, house3.glb — generic starter-home-scale houses
+[EXISTING] farmhouse_foursquare.glb
+[EXISTING] farmhouse_gable.glb  (gable-front vernacular farmhouse)
+
+[NEW] Shotgun house (small-city, dense/industrial infill)
+[NEW] Bungalow / Craftsman
+[NEW] Ranch house (single-story, postwar)
+[NEW] Split-level / split-foyer
+[NEW] Cape Cod
+[NEW] Victorian / Queen Anne (large, historic-core)
+[NEW] Mobile / manufactured home (single-wide)
+[NEW] Mobile / manufactured home (double-wide)
+[NEW] Small starter home (Minimal Traditional, distinct from existing house1-3 if those don't
+      already cover this footprint — verify overlap before building)
+[NEW] Colonial Revival
+[NEW] Tudor Revival cottage
+[NEW] Duplex — stacked variant
+[NEW] Duplex — side-by-side variant
+[NEW] Rowhouse / townhouse (small-city only, built as an attached unit — needs a party-wall
+      variant so units can be placed contiguously)
+[NEW] Small apartment building (2-3 story walk-up, 6-16 units)
+[NEW] Garden-style apartment complex (multi-building site, 2-3 story each)
+[NEW] Larger city apartment block (4-6 story mid-rise, elevator — rare/landmark, 1-3 max per
+      settlement)
+
+================================================================================
+2. COMMERCIAL / CIVIC / FARM BUILDINGS  (full templates:
+   research/building_catalog/commercial_civic_farm/)
+================================================================================
+[EXISTING] storefront_bank.glb
+[EXISTING] storefront_diner.glb
+[EXISTING] storefront_general.glb
+[EXISTING] storefront_hardware.glb
+[EXISTING] post_office.glb
+[EXISTING] barn.glb  (covers barn_dairy)
+[EXISTING] pole_building.glb  (covers pole_building_machine_shed)
+
+--- Downtown retail/commercial [NEW] ---
+[NEW] Small grocery
+[NEW] Pharmacy / drugstore
+[NEW] Clothing store
+[NEW] Barber shop / salon
+[NEW] Bar / tavern
+[NEW] Movie theater (single-screen)
+[NEW] Small hotel / inn
+[NEW] Restaurant (sit-down)
+
+--- Civic / institutional [NEW] ---
+[NEW] Town hall / municipal building
+[NEW] Library (Carnegie-style small-town/village variant + larger small-city variant)
+[NEW] Church — build as one flexible template with denominational variants (Catholic/
+      Lutheran/Episcopal larger-nave proportions vs. Baptist/Methodist/nondenominational)
+[NEW] School — one-room rural schoolhouse (village tier)
+[NEW] School — consolidated/larger school (town/city tier)
+[NEW] Volunteer fire department
+[NEW] Police station (city tier; reduced-scale variant folded into town_hall for town tier)
+[NEW] Courthouse (county-seat only — generate ONCE per station/region, not per settlement)
+
+--- Industrial / utility-adjacent [NEW] ---
+[NEW] Grain elevator (small — 26x26 ft class, village/town scale)
+[NEW] Grain elevator (larger — town/city scale, 70-125 ft tall)
+[NEW] Gas station (1920s-30s "domestic style" cottage form, canopy over pump island)
+[NEW] Auto repair shop
+[NEW] Warehouse
+[NEW] Small factory / mill
+[NEW] Water tower (landmark structure, no interior)
+
+--- Farm structures [NEW] ---
+[NEW] Grain silo (farm-scale, landmark/non-walkable)
+[NEW] Chicken coop
+[NEW] Corn crib (double-crib style)
+[NEW] Farm equipment shed (open-sided; mutually exclusive with pole_building per farmstead)
+
+================================================================================
+3. BRIDGES  [ALL NEW]
+================================================================================
+[NEW] Downtown river-crossing bridge (Main Street over the ~45 m river channel — needs to
+      read as the town's primary bridge, per Charles City-style "Main Street crosses the
+      river" pattern found in research)
+[NEW] Secondary/residential street river-crossing bridge (narrower than the Main St bridge)
+[NEW] Farm-road river/creek-crossing bridge (rural, narrower, possibly single-lane)
+[NEW] Footbridge (park/riverwalk pedestrian crossing over a tributary creek or narrow point)
+[NEW] Small culvert/creek crossing (road passes over a 4-10 m tributary creek without a full
+      bridge — needed for every farm-ditch-to-creek and creek-to-pond road crossing)
+[NEW] Rail crossing / trestle if a rail corridor is later added (flagged as optional — the
+      rail-corridor downtown archetype and grain-elevator placement both imply a rail line)
+
+================================================================================
+4. ROAD SECTIONS / INTERSECTIONS  [ALL NEW unless noted]
+================================================================================
+[EXISTING] Downtown street, cross-street, alley (StationRingBuilder / DowntownGenerator)
+[EXISTING] Residential local street (ResidentialGenerator)
+[EXISTING] Farm main road / connector road (FarmGenerator)
+
+[NEW] River-following road segment (road runs parallel/adjacent to a meander bend rather than
+      straight — needed anywhere a street or farm road tracks the river's curve)
+[NEW] Angled on-street parking street cross-section (Main Street variant with painted/curbed
+      angled stalls both sides, per the small-town parking research)
+[NEW] Courthouse-square intersection (4-way intersection framing a full civic block, with
+      storefronts facing inward on all sides — a distinct special-case intersection, not a
+      standard 4-way)
+[NEW] T-intersection (standard, residential/farm grid)
+[NEW] 4-way intersection (standard, downtown/residential grid)
+[NEW] Cul-de-sac turnaround (postwar residential subdivision edge)
+[NEW] Curvilinear residential street segment (postwar subdivision, non-grid)
+[NEW] Rail-corridor-parallel commercial street segment (rail-spine downtown archetype)
+[NEW] Narrow no-curb rural/village residential street segment (16-24 ft, gravel shoulder)
+[NEW] Farm access lane (unpaved/gravel, connects farmstead to main farm road)
+[NEW] Road-over-drainage-ditch crossing (simple culvert pipe under a farm road, distinct from
+      the creek-crossing culvert above — much smaller ditch scale, 2-4 m)
+
+================================================================================
+5. WATER FEATURES  [ALL NEW]
+================================================================================
+[NEW] Meandering river channel (mesh/shader system implementing the closed-loop harmonic
+      geometry in generator_rules.md §10 — the single most structurally novel new asset)
+[NEW] River bank / shoreline transition (cut-bank / high-bank variant for the outside of bends)
+[NEW] River bank / shoreline transition (point-bar / low, sandy variant for the inside of bends)
+[NEW] Lake (1,000 x 300 m, straddling the river, with inlet/outlet necking) — extends the
+      existing lake water system (LakeSetup.gd/LakeWater.gd) to a new shape/scale
+[NEW] Pond (oxbow-remnant style, crescent-shaped, hugs a bend's outer edge)
+[NEW] Pond (rounder, tributary-fed style, sits back in the floodplain)
+[NEW] Tributary creek segment (4-10 m wide, connects pond to river)
+[NEW] Farm drainage ditch segment (2-4 m wide, rectilinear farm-grid aligned)
+[NEW] Ditch-to-creek confluence piece
+[NEW] Creek-to-river/pond confluence piece
+[NEW] Optional: floodplain/relict-channel ground texture or decal (marks park/undevelopable
+      land near the river, per the floodplain-as-park rule)
+
+================================================================================
+6. TREES / VEGETATION
+================================================================================
+[EXISTING] tree_autumn.glb, tree_bare_dead.glb, tree_conifer.glb, tree_round.glb,
+           tree_shrubby_small.glb, tree_tall_narrow.glb, tree_weeping.glb
+[EXISTING] bush_flowering.glb, bush_low_spread.glb, bush_round.glb, bush_spiky.glb
+[EXISTING] flowers.glb, weeds.glb
+[EXISTING] Crop stalks (corn/soy, per NeighborhoodGenerator plan's CropFieldGenerator.gd —
+           check whether this was ever completed; the plan notes it was blocked on the
+           SceneryOptimizer MultiMesh bug)
+
+[NEW] Riparian/waterside tree cluster or variant (willow-type or similar overhanging-bank tree
+      — existing tree_weeping.glb may already cover this; verify before modeling new)
+[NEW] Windbreak tree row (farm-zone shelterbelt — a straight planted row, distinct placement
+      pattern from scattered yard/park trees)
+[NEW] Orchard tree (regularly-gridded, distinct from windbreak row) — optional, only if the
+      generator wants an orchard as a farm-zone variant
+
+================================================================================
+7. FENCES
+================================================================================
+[EXISTING] fence_chain_short.glb, fence_chain_tall.glb, fence_picket.glb, fence_privacy.glb
+
+[NEW] Farm field fence (woven-wire or barbed-wire style, long straight rural runs — distinct
+      from the existing suburban-scale fence set)
+[NEW] Corral / livestock pen fence (barnyard-adjacent, near barn_dairy/chicken_coop)
+[NEW] Split-rail fence (optional rural/farmhouse-yard variant)
+
+================================================================================
+8. STREET FURNITURE / MISC SCENERY
+================================================================================
+[EXISTING] lamp_post.glb (with light emission per DaySkySystem), fire_hydrant.glb
+[EXISTING] Vehicles: car.glb, minivan.glb, pickup.glb, police_car.glb
+
+[NEW] Angled-parking curb/striping detail piece (for the Main Street angled-parking cross-
+      section above)
+[NEW] Municipal parking lot signage/small lot paving decal (village/small-town scale — "at
+      most 1-2 small lots," should read as modest, not a big-box-scale lot)
+[NEW] Grain elevator rail siding detail (short spur track piece, since elevators sit near a
+      rail corridor per the research)
+[NEW] Rail depot building (historic, often adaptively reused as museum/trail HQ — could be
+      modeled as its own small building type; not yet in either building catalog, flagged here
+      as a gap)
+[NEW] Founder's-mansion-style large house (optional, one-per-settlement-max flavor building —
+      distinguish from the Victorian/Queen Anne archetype by being deliberately oversized/
+      unique rather than a repeatable template)
+[NEW] Farm equipment prop set (tractor, implements — referenced in the barn/pole-building
+      interior content pools as scatter props, not full building-scale assets)
+[NEW] Courthouse-square civic monument/flagpole (small set-dressing piece for the courthouse-
+      square intersection variant)
+[NEW] Tile-drainage crop-striping ground texture (optional, close-up/overhead-view-only detail
+      per generator_rules.md §10 — low priority)
+
+================================================================================
+NOTES
+================================================================================
+- This list is derived entirely from the research phase; nothing here has been modeled yet
+  except the items explicitly marked [EXISTING].
+- The [EXISTING] marks came from a repo scan of godot_project/assets/ (editor_assets,
+  downtown_assets, farm_assets manifests + all .glb files present) on 2026-09-22 — re-verify
+  before starting Phase 2 in case assets changed since.
+- Rail depot and founder's-mansion are gaps discovered while writing this checklist — they
+  came up in the village-tier research (research/population_tiers/villages_500_5000/
+  _tier_summary.md) but weren't included in either building_catalog pass. Worth a small
+  follow-up research/template pass before Phase 2, or can be treated as one-off unique builds
+  since both are explicitly "at most one per settlement" per the research.
+- Priority suggestion for Phase 2 (not a research finding, just a practical ordering note):
+  the river/lake/pond water-feature system and the bridge set are the highest-leverage new
+  work, since almost everything else (road sections, drainage, town-siting rules) depends on
+  the river's geometry existing first.
