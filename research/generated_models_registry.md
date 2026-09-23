@@ -48,6 +48,10 @@ to touch it.
 | Small Starter Home (Minimal Traditional) | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/starter_home_minimal_traditional.glb` | `wall_tinted_0.png`, `roof_tinted_3.png` (reused existing) | 2026-09-22 | 7.5m x 8.5m, single story, 25° gable, smallest footprint in the batch. Verified: clean headless Godot import. Not yet wired into a generator. |
 | Colonial Revival | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/colonial_revival.glb` | `wall_tinted_9.png`, `roof_tinted_1.png` (reused existing) | 2026-09-22 | 11m x 9.5m, 2 stories (5.2m wall height), 32° gable. Verified: clean headless Godot import. Not yet wired into a generator. |
 | Tudor Revival Cottage | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/tudor_revival_cottage.glb` | `wall_tinted_10.png`, `roof_tinted_2.png` (reused existing) | 2026-09-22 | 10m x 9.5m, 1.5-2 story (4.4m wall height), steep 52° gable (defining Tudor trait, steeper than Cape Cod). Verified: clean headless Godot import. Not yet wired into a generator. |
+| Shotgun House | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/shotgun.glb` | `wall_tinted_1.png`, `roof_tinted_0.png` (reused existing) | 2026-09-22 | 4m x 15m, single story. Uses NEW `build_gable_roof_frontfacing` helper (added to `building_helpers.py`) — gable end faces the door wall instead of the eave, the archetype's defining trait. Verified: clean headless Godot import. Not yet wired into a generator. |
+| Mobile/Manufactured Home (single-wide) | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/mobile_home.glb` | `wall_tinted_2.png`, `roof_tinted_3.png` (reused existing) | 2026-09-22 | 4.6m x 18m, single story, very shallow 6° pitch (near-flat, the defining low-profile silhouette vs. shotgun's steep front gable despite similar narrow-long footprint). Verified: clean headless Godot import. Double-wide variant not yet built. |
+| Duplex (side-by-side) | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/duplex_side_by_side.glb` | `wall_tinted_5.png`, `roof_tinted_1.png` (reused existing) | 2026-09-22 | 13m x 9.5m (2 units x 6.5m), single shell w/ 2 front doors via NEW `build_multiunit_building` helper — one building, two units, not two separate buildings. Flat parapet roof. Verified: clean headless import, 2 doors confirmed in manifest. Stacked duplex variant not yet built. |
+| Rowhouse/Townhouse | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/rowhouse_townhouse.glb` | `wall_tinted_6.png`, `roof_tinted_2.png` (reused existing) | 2026-09-22 | 18m x 13m (3 units x 6m), 2-story, flat parapet roof, 3 front doors via `build_multiunit_building`. Verified: clean headless import, 3 doors confirmed in manifest. |
 
 ## Commercial / civic / farm buildings
 
@@ -105,7 +109,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 
 | Category | Planned | Done | Needs revisit | In progress |
 |---|---|---|---|---|
-| Residential buildings | 17 | 6 | 0 | 0 |
+| Residential buildings | 17 | 10 | 0 | 0 |
 | Commercial/civic/farm buildings | 27 | 0 | 0 | 0 |
 | Bridges | 6 | 0 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |

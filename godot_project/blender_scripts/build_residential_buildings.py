@@ -28,13 +28,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from building_helpers import (
 	FT, REPO, clear_scene, load_material, cube_uv, join_objects,
 	build_shell, cut_front_door, register_front_door,
-	build_gable_roof, export_glb, DOOR_HEIGHT,
+	build_gable_roof, build_gable_roof_frontfacing, build_parapet,
+	export_glb, DOOR_HEIGHT, DOOR_WIDTH,
 )
 
 OUT_DIR = os.path.join(REPO, "assets", "residential_assets")
 
 
-def build_building(building_id, width, depth, wall_h, roof_pitch_deg, roof_overhang, wall_tex, roof_tex, door_x_frac=0.5):
+def build_building(building_id, width, depth, wall_h, roof_pitch_deg, roof_overhang, wall_tex, roof_tex,
+		door_x_frac=0.5, roof_fn=build_gable_roof, stories=1):
 	openings = []
 	shell = build_shell(width, depth, wall_h)
 	door_x = (door_x_frac - 0.5) * width
@@ -46,7 +48,7 @@ def build_building(building_id, width, depth, wall_h, roof_pitch_deg, roof_overh
 	cube_uv(shell)
 
 	roof_mat = load_material(building_id + "_roof", roof_tex)
-	roof = build_gable_roof(width, depth, wall_h, pitch_deg=roof_pitch_deg, overhang=roof_overhang, material=roof_mat)
+	roof = roof_fn(width, depth, wall_h, pitch_deg=roof_pitch_deg, overhang=roof_overhang, material=roof_mat)
 
 	combined = join_objects([shell, roof])
 	# "-col" is Godot's glTF-import node-name-suffix convention for real
@@ -59,10 +61,54 @@ def build_building(building_id, width, depth, wall_h, roof_pitch_deg, roof_overh
 	return {
 		"id": building_id,
 		"archetype": building_id,
-		"stories": 1,
+		"stories": stories,
 		"wall_h": wall_h,
 		"width": width,
 		"depth": depth,
+		"openings": openings,
+	}
+
+
+def build_multiunit_building(building_id, unit_width, depth, wall_h, unit_count, wall_tex, roof_tex,
+		roof_height=1.2, parapet_thickness=0.2, stories=1):
+	"""Duplex/rowhouse-style block: ONE shell spanning `unit_count` units
+	side by side, with one front door per unit rather than one door for
+	the whole footprint -- a duplex or rowhouse genuinely IS a single
+	building with several units, not several separately-placeable
+	buildings glued together, so this builds it as such rather than
+	trying to make individual units independently attachable. Flat
+	parapet roofline (via build_parapet, already proven for downtown
+	storefronts) rather than a pitched gable -- the common real
+	rowhouse/duplex roofline, and simpler to get right across an
+	arbitrary unit count than replicating one gable per unit."""
+	width = unit_width * unit_count
+	openings = []
+	shell = build_shell(width, depth, wall_h)
+
+	for i in range(unit_count):
+		unit_center_x = (i + 0.5) * unit_width - width / 2.0
+		cut_front_door(shell, unit_center_x, depth, DOOR_HEIGHT / 2.0)
+		register_front_door(openings, unit_center_x, depth)
+
+	wall_mat = load_material(building_id + "_wall", wall_tex)
+	shell.data.materials.append(wall_mat)
+	cube_uv(shell)
+
+	roof_mat = load_material(building_id + "_roof", roof_tex)
+	roof = build_parapet(width, depth, wall_h, height=roof_height, thickness=parapet_thickness, material=roof_mat)
+
+	combined = join_objects([shell, roof])
+	combined.name = building_id + "-col"
+
+	export_glb(combined, OUT_DIR, building_id + ".glb")
+	return {
+		"id": building_id,
+		"archetype": building_id,
+		"stories": stories,
+		"wall_h": wall_h,
+		"width": width,
+		"depth": depth,
+		"unit_count": unit_count,
 		"openings": openings,
 	}
 
@@ -125,6 +171,45 @@ def main():
 		"tudor_revival_cottage", width=10.0, depth=9.5, wall_h=4.4,
 		roof_pitch_deg=52.0, roof_overhang=0.35,
 		wall_tex="wall_tinted_10.png", roof_tex="roof_tinted_2.png"))
+
+	# Shotgun house: narrow street-facing footprint, one room wide --
+	# researched 3.7-4.3m x 12-18m range. Uses the FRONT-FACING gable
+	# roof (gable end toward the door wall), the archetype's defining
+	# silhouette trait, unlike every house above which is eave-front.
+	clear_scene()
+	manifest["residential_buildings"].append(build_building(
+		"shotgun", width=4.0, depth=15.0, wall_h=2.5,
+		roof_pitch_deg=28.0, roof_overhang=0.35,
+		wall_tex="wall_tinted_1.png", roof_tex="roof_tinted_0.png",
+		roof_fn=build_gable_roof_frontfacing))
+
+	# Mobile/manufactured home (single-wide): narrow, elongated, very
+	# shallow near-flat roof pitch (the defining low-profile silhouette,
+	# distinct from the shotgun's steep front gable despite a similar
+	# narrow-long footprint) -- researched 4.3-9.8m x 17-24m range,
+	# single-wide end.
+	clear_scene()
+	manifest["residential_buildings"].append(build_building(
+		"mobile_home", width=4.6, depth=18.0, wall_h=2.4,
+		roof_pitch_deg=6.0, roof_overhang=0.3,
+		wall_tex="wall_tinted_2.png", roof_tex="roof_tinted_3.png"))
+
+	# Duplex (side-by-side variant): ONE shell, two units, two front
+	# doors -- researched per-building 12.2-15.2m x 8.5-10.4m range.
+	clear_scene()
+	manifest["residential_buildings"].append(build_multiunit_building(
+		"duplex_side_by_side", unit_width=6.5, depth=9.5, wall_h=2.6, unit_count=2,
+		wall_tex="wall_tinted_5.png", roof_tex="roof_tinted_1.png"))
+
+	# Rowhouse/townhouse block: three attached units, flat parapet
+	# roofline -- researched per-unit 5.5-6.7m x 12.2-15.2m range,
+	# 2-3 stories (approximated here as a single taller wall height
+	# rather than distinct floor slabs, consistent with how the existing
+	# 2-story archetypes above are built).
+	clear_scene()
+	manifest["residential_buildings"].append(build_multiunit_building(
+		"rowhouse_townhouse", unit_width=6.0, depth=13.0, wall_h=2 * 2.7, unit_count=3,
+		wall_tex="wall_tinted_6.png", roof_tex="roof_tinted_2.png", stories=2))
 
 	with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
 		json.dump(manifest, f, indent=2)

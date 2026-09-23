@@ -201,6 +201,43 @@ def build_gambrel_roof(width, depth, base_z, lower_pitch_deg, upper_pitch_deg, l
 	return obj
 
 
+def build_gable_roof_frontfacing(width, depth, base_z, pitch_deg, overhang, material):
+	"""Like build_gable_roof but with the ridge running along the DEPTH
+	(Y) axis instead of width (X) -- puts a triangular gable end facing
+	the front-door wall (y=-depth/2, per cut_front_door/register_front_
+	door's convention) instead of an eave/gutter line. This is the
+	defining silhouette trait of front-gabled styles (shotgun house
+	above all -- "one room wide, gable end to the street"), as opposed
+	to build_gable_roof's eave-front orientation, which is correct for
+	the ranch/colonial/etc. styles already using it."""
+	hw = width / 2.0 + overhang
+	hd = depth / 2.0 + overhang
+	rise = (width / 2.0) * math.tan(math.radians(pitch_deg))
+	ridge_z = base_z + rise
+
+	bm = bmesh.new()
+	fl = bm.verts.new((-hw, -hd, base_z))
+	bl = bm.verts.new((-hw, hd, base_z))
+	fr = bm.verts.new((hw, -hd, base_z))
+	br = bm.verts.new((hw, hd, base_z))
+	rf = bm.verts.new((0.0, -hd, ridge_z))
+	rb = bm.verts.new((0.0, hd, ridge_z))
+	bm.faces.new((fl, rf, rb, bl))   # left slope
+	bm.faces.new((rf, fr, br, rb))   # right slope
+	bm.faces.new((fl, fr, rf))       # front gable end -- faces the door wall
+	bm.faces.new((bl, rb, br))       # back gable end (winding mirrored)
+	bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+
+	mesh = bpy.data.meshes.new("roof_mesh")
+	bm.to_mesh(mesh)
+	bm.free()
+	obj = bpy.data.objects.new("roof", mesh)
+	bpy.context.collection.objects.link(obj)
+	obj.data.materials.append(material)
+	cube_uv(obj)
+	return obj
+
+
 def build_parapet(width, depth, base_z, height, thickness, material):
 	"""A flat-roofed storefront's own low parapet lip -- a thin hollow
 	rectangular ring standing proud of the roofline (built the same

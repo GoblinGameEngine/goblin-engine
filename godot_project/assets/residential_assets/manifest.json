@@ -125,6 +125,125 @@
           "height": 2.1
         }
       ]
+    },
+    {
+      "id": "shotgun",
+      "archetype": "shotgun",
+      "stories": 1,
+      "wall_h": 2.5,
+      "width": 4.0,
+      "depth": 15.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -7.5,
+          "hinge_x": -0.5,
+          "hinge_y": -7.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "mobile_home",
+      "archetype": "mobile_home",
+      "stories": 1,
+      "wall_h": 2.4,
+      "width": 4.6,
+      "depth": 18.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -9.0,
+          "hinge_x": -0.5,
+          "hinge_y": -9.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "duplex_side_by_side",
+      "archetype": "duplex_side_by_side",
+      "stories": 1,
+      "wall_h": 2.6,
+      "width": 13.0,
+      "depth": 9.5,
+      "unit_count": 2,
+      "openings": [
+        {
+          "kind": "door",
+          "x": -3.25,
+          "y": -4.75,
+          "hinge_x": -3.75,
+          "hinge_y": -4.75,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        },
+        {
+          "kind": "door",
+          "x": 3.25,
+          "y": -4.75,
+          "hinge_x": 2.75,
+          "hinge_y": -4.75,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "rowhouse_townhouse",
+      "archetype": "rowhouse_townhouse",
+      "stories": 2,
+      "wall_h": 5.4,
+      "width": 18.0,
+      "depth": 13.0,
+      "unit_count": 3,
+      "openings": [
+        {
+          "kind": "door",
+          "x": -6.0,
+          "y": -6.5,
+          "hinge_x": -6.5,
+          "hinge_y": -6.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        },
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -6.5,
+          "hinge_x": -0.5,
+          "hinge_y": -6.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        },
+        {
+          "kind": "door",
+          "x": 6.0,
+          "y": -6.5,
+          "hinge_x": 5.5,
+          "hinge_y": -6.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
     }
   ]
 }
