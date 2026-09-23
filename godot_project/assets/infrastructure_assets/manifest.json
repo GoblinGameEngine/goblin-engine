@@ -275,5 +275,37 @@
     {
       "id": "intersection_courthouse_square"
     }
+  ],
+  "animals": [
+    {
+      "id": "animal_cow"
+    },
+    {
+      "id": "animal_chicken"
+    },
+    {
+      "id": "animal_pig"
+    },
+    {
+      "id": "animal_horse"
+    },
+    {
+      "id": "animal_dog"
+    },
+    {
+      "id": "animal_cat"
+    },
+    {
+      "id": "animal_bird_flock"
+    },
+    {
+      "id": "animal_deer"
+    },
+    {
+      "id": "animal_squirrel"
+    },
+    {
+      "id": "animal_canada_goose"
+    }
   ]
 }

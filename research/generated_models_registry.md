@@ -198,10 +198,11 @@ to touch it.
 | Industrial/Farm Equipment (30) | Interior Props | [DONE] | `blender_scripts/build_farm_equipment.py` | `assets/interior_props_assets/{tractor,combine_large_implement,plow,disc,planter,mower,baler,farm_wagon,hay_bale_stack,stanchion_stall_partition,feed_trough,water_bowl_bucket_livestock,harness_rack,saddle_stand,milking_stanchion,milk_can_bulk_tank,nest_box_row,roosting_bar_perch,poultry_feeder_waterer,corn_hook_husking_peg,grain_scoop_corn_fork,coiled_fence_wire_post_stack,welding_equipment,vise,production_floor_machinery,conveyor_line,overhead_lineshaft_crane_track,truck_scale,bucket_elevator_leg,silage_unloader_auger}.glb` | reused `wall_tinted_N.png` throughout | 2026-09-23 | Completes Industrial/Farm Equipment (30/30). New `build_tractor` (body+cabin+4 wheels) and `build_implement` (frame+hitch arm, reused for plow/disc/planter/mower/baler) functions. Verified: clean headless import, 30 confirmed in manifest, no duplicates. **Interior props: 234/265 — 31 remain, all in Small Props/Decor.** |
 | Small Props/Decor (30 listed → 29 models) | Interior Props | [DONE] | `blender_scripts/build_decor.py` | `assets/interior_props_assets/{area_rug,books_shelf_fill,family_photos_wall_decor,religious_cultural_iconography,potted_plant,rag_rug,wall_clock_thermometer,magazine_newspaper_rack,decorative_wall_mirror,taxidermy_wall_mount,wall_art_framed,historical_portrait_plaque,wall_menu_board_chalkboard,servants_call_bell_box,canned_goods_pantry_stock,flour_grain_bin_small,root_vegetable_basket,boot_tray,coat_hook_row,storage_boxes_trunks,dress_form,home_gym_equipment,hobbyist_workshop_buildout,sewing_machine,garment_steamer,pin_cushion_notions_shelf,small_desk_flag,belfry_bell,barn_cat_pigeon_roost}.glb` | reused `wall_tinted_N.png` throughout | 2026-09-23 | Completes Small Props/Decor and the ENTIRE 265-item interior props master list. Item 5 ("plastic furniture slipcover") intentionally not modeled as a separate mesh — the master list itself flags it as a material/render-state variant to apply to the existing sofa/armchair models, a future shader/texture-variant task, not a geometry task. New `build_potted_plant` function (pot cylinder + cone foliage). Verified: clean headless import, 263 total interior props confirmed in manifest (reconciles against 265 listed: −2 for vehicles already covered by pre-existing editor_assets, −1 for the non-mesh slipcover item, +1 from the civic-fixtures split). **INTERIOR PROPS MASTER LIST: COMPLETE.** |
 
-## Vehicles, animals, and other categories from the expansion pass
+## Expansion-pass items (`scenery_asset_checklist_expansion.md`, 94 items)
 
-*(sections to be added once `scenery_asset_checklist_expansion.md` is finalized and folded in —
-placeholder so this file's structure doesn't need to be redesigned when that happens)*
+| Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
+|---|---|---|---|---|---|---|---|
+| Animals/Wildlife (B5, 10) | Expansion — Animals | [DONE] | `blender_scripts/build_animals.py` | `assets/infrastructure_assets/{animal_cow,animal_chicken,animal_pig,animal_horse,animal_dog,animal_cat,animal_bird_flock,animal_deer,animal_squirrel,animal_canada_goose}.glb` | reused `wall_tinted_N.png` throughout | 2026-09-23 | Completes Part B5 (10/10) — a previously completely-absent category despite barns/coops/farms/lake implying livestock and wildlife throughout. New `build_quadruped` (body+head+4 legs), `build_small_pet`, and `build_bird` (body+head+2 legs) functions. Verified: clean headless import, 10 confirmed in manifest. |
 
 ---
 
@@ -213,14 +214,28 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Commercial/civic/farm buildings | 27 | 27 | 0 | 0 |
 | Bridges | 10 (core types) | 10 | 0 | 0 |
 | Road sections/intersections | 11 (4 modelable + 6 generator-logic + 1 river-following) | 4 | 0 | 0 |
-| Water features | 11 | 0 | 0 | 0 |
+| Water features | 11 | 0 (procedural mesh/shader system, not static models — see note below) | 0 | 0 |
 | Trees/vegetation | ~24 | 21 | 0 | 0 |
 | Fences | ~11 | 9 | 0 | 0 |
-| Street furniture/misc | 8 | 0 | 0 | 0 |
-| Yard/lot props | 26 | 11 (+1 bonus) | 0 | 0 |
-| Interior props | 265 | 263 (effectively complete) | 0 | 0 |
-| Expansion-pass items (`scenery_asset_checklist_expansion.md`, 94 items) | 94 | 0 | 0 | 0 |
-| **Total** | **505** (240 exterior/infra [146 original + 94 expansion] + 265 interior) | **3** | **0** | **0** |
+| Street furniture/misc | 8 | 0 (covered instead under Yard/lot props — see note below) | 0 | 0 |
+| Yard/lot props | 26 | 12 (11 + 1 bonus propane tank) | 0 | 0 |
+| Interior props | 265 | 263 (effectively complete — 2 covered by pre-existing assets, 1 is a material variant) | 0 | 0 |
+| Expansion-pass items (94 total: 23 Part A + 71 Part B) | 94 | 10 (Animals, Part B5) | 0 | 0 |
+| **Total (all categories)** | **~505** | **373** | **0** | **0** |
+
+**Notes on the totals table:**
+- **Water features**: the 11 checklist items (meandering river, lake, ponds, tributary creeks,
+  farm ditches, bank/shoreline transitions) are the closed-loop harmonic geometry researched in
+  `generator_rules.md` §10 — these need to be implemented as GDScript procedural mesh/shader
+  code (extending `StationRingBuilder.gd`'s own pattern), not authored as static Blender assets.
+  Correctly 0 in this registry; tracked as a future code task, not a modeling task.
+- **Street furniture/misc**: several items from this original checklist section (park bench,
+  bike rack, trash/recycling bin) were built as part of the broader `build_yard_props.py` batch
+  and are counted under "Yard/lot props" above rather than double-counted here.
+- The "Total" row sums actual distinct models built (373) against the loose combined ~505
+  planning figure; the two numbers use different accounting (e.g. water features and some road
+  segments are deliberately excluded from the model count as non-modeling tasks), so don't expect
+  them to converge to exactly 505 — treat 373 as the authoritative "models that exist" count.
 
 Already-existing assets (house1-3, farmhouse_foursquare/gable, 4 storefronts,
 post_office, barn, pole_building, lamp_post, fire_hydrant, 4 fence types, 7 tree types, 4
