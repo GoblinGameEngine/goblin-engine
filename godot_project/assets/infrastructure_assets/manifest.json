@@ -113,5 +113,67 @@
       "segment_length": 3.0,
       "height": 1.0
     }
+  ],
+  "yard_props": [
+    {
+      "id": "shed_storage",
+      "width": 2.4,
+      "depth": 3.0,
+      "height": 2.4
+    },
+    {
+      "id": "workshop_detached",
+      "width": 4.0,
+      "depth": 5.0,
+      "height": 2.9
+    },
+    {
+      "id": "deck_backyard",
+      "width": 4.0,
+      "depth": 3.0,
+      "height": 0.5
+    },
+    {
+      "id": "fire_pit",
+      "radius": 0.5,
+      "height": 0.35
+    },
+    {
+      "id": "doghouse",
+      "width": 0.8,
+      "depth": 1.0,
+      "height": 0.9079999999999999
+    },
+    {
+      "id": "mailbox_post_curbside",
+      "height": 1.25
+    },
+    {
+      "id": "trash_bin",
+      "radius": 0.3,
+      "height": 0.95
+    },
+    {
+      "id": "recycling_bin",
+      "radius": 0.3,
+      "height": 0.95
+    },
+    {
+      "id": "park_bench",
+      "width": 1.8
+    },
+    {
+      "id": "bike_rack",
+      "width": 2.0
+    },
+    {
+      "id": "basketball_hoop_driveway",
+      "height": 3.05
+    },
+    {
+      "id": "propane_tank_farm",
+      "radius": 0.35,
+      "height": 2.0
+    }
   ]
 }

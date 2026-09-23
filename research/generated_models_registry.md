@@ -144,6 +144,18 @@ to touch it.
 
 | Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
 |---|---|---|---|---|---|---|---|
+| Storage shed | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/shed_storage.glb` | `wall_tinted_3.png` (reused) | 2026-09-23 | 2.4m x 3m, small lean-to roof. NEW `build_shed` function. Verified: clean headless import. |
+| Detached workshop | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/workshop_detached.glb` | `wall_tinted_7.png` (reused) | 2026-09-23 | 4m x 5m, larger than the storage shed. Verified: clean headless import. |
+| Deck (backyard) | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/deck_backyard.glb` | `wall_tinted_2.png` (reused) | 2026-09-23 | 4m x 3m platform, 0.5m off-grade, 2 side rails. NEW `build_deck` function. Verified: clean headless import. |
+| Fire pit | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/fire_pit.glb` | `roof_tinted_3.png` (reused) | 2026-09-23 | 0.5m radius cylinder. Verified: clean headless import. |
+| Doghouse | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/doghouse.glb` | `wall_tinted_5.png` (reused) | 2026-09-23 | 0.8m x 1m, simple gable roof via bmesh apex ridge. NEW `build_doghouse` function. Verified: clean headless import. |
+| Mailbox (post-mounted curbside) | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/mailbox_post_curbside.glb` | `wall_tinted_9.png` (reused) | 2026-09-23 | USPS-standard-height post + box. Wall/porch-mounted and cluster-box-unit variants not yet built. Verified: clean headless import. |
+| Trash bin | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/trash_bin.glb` | `wall_tinted_6.png` (reused) | 2026-09-23 | 0.3m radius cylinder. Verified: clean headless import. Same-day/collection-day-only visibility state (per the Bloomington IN ordinance finding) is a placement-time behavior, not a modeling concern. |
+| Recycling bin | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/recycling_bin.glb` | `wall_tinted_8.png` (reused) | 2026-09-23 | Same geometry as trash_bin, distinct texture. Verified: clean headless import. |
+| Park bench | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/park_bench.glb` | `wall_tinted_4.png` (reused) | 2026-09-23 | 1.8m wide, seat+back+2 legs. NEW `build_bench` function. Verified: clean headless import. |
+| Bike rack | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/bike_rack.glb` | `wall_tinted_10.png` (reused) | 2026-09-23 | 4-hoop rack, 2m wide. NEW `build_bike_rack` function. Verified: clean headless import. |
+| Basketball hoop (driveway) | Yard/Lot Props | [DONE] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/basketball_hoop_driveway.glb` | `wall_tinted_0.png` (reused) | 2026-09-23 | Post + backboard + torus rim (bpy's `primitive_torus_add`, first use of that primitive type this session). Verified: clean headless import. |
+| Propane tank (farm) | Yard/Lot Props | [DONE, bonus item] | `blender_scripts/build_yard_props.py` | `assets/infrastructure_assets/propane_tank_farm.glb` | `wall_tinted_1.png` (reused) | 2026-09-23 | 0.35m radius cylinder — not in the original checklist, added as a reasonable farm-adjacent prop while building this batch. Verified: clean headless import. |
 
 ## Interior props / furniture
 
@@ -169,7 +181,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Trees/vegetation | ~24 | 0 | 0 | 0 |
 | Fences | ~11 | 9 | 0 | 0 |
 | Street furniture/misc | 8 | 0 | 0 | 0 |
-| Yard/lot props | 26 | 0 | 0 | 0 |
+| Yard/lot props | 26 | 11 (+1 bonus) | 0 | 0 |
 | Interior props | 265 | 0 | 0 | 0 |
 | Expansion-pass items (`scenery_asset_checklist_expansion.md`, 94 items) | 94 | 0 | 0 | 0 |
 | **Total** | **505** (240 exterior/infra [146 original + 94 expansion] + 265 interior) | **3** | **0** | **0** |
