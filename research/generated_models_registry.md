@@ -161,6 +161,25 @@ to touch it.
 
 | Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
 |---|---|---|---|---|---|---|---|
+| Sofa/couch | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/sofa.glb` | `wall_tinted_3.png` (reused) | 2026-09-23 | Seat+back+2 arms. NEW `build_sofa` function. Verified: clean headless import. |
+| Armchair | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/armchair.glb` | `wall_tinted_5.png` (reused) | 2026-09-23 | Verified: clean headless import. |
+| Coffee table | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/coffee_table.glb` | `wall_tinted_7.png` (reused) | 2026-09-23 | Simple box. Verified: clean headless import. |
+| Dining table + chairs | Interior Props [UNIVERSAL] | [DONE, table only] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/dining_table.glb` | `wall_tinted_2.png` (reused) | 2026-09-23 | 1.5m x 0.9m top + 4 legs, NEW `build_table_with_legs` function. Chairs not yet modeled — table only for this pass. Verified: clean headless import. |
+| Kitchen/breakfast table + chairs | Interior Props [UNIVERSAL] | [DONE, table only] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/kitchen_table.glb` | `wall_tinted_2.png` (reused) | 2026-09-23 | 1m x 0.8m top, same function. Chairs not yet modeled. Verified: clean headless import. |
+| Bed frame | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/bed_frame.glb` | `wall_tinted_6.png` (reused) | 2026-09-23 | Base+mattress+headboard, NEW `build_bed_frame` function. Verified: clean headless import. |
+| Nightstand | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/nightstand.glb` | `wall_tinted_4.png` (reused) | 2026-09-23 | Simple box. Verified: clean headless import. |
+| Dresser | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/dresser.glb` | `wall_tinted_4.png` (reused) | 2026-09-23 | Simple box. Verified: clean headless import. |
+| Refrigerator | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/refrigerator.glb` | `wall_tinted_9.png` (reused) | 2026-09-23 | Simple box. Verified: clean headless import. |
+| Stove/range | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/stove_range.glb` | `wall_tinted_10.png` (reused) | 2026-09-23 | Simple box. Verified: clean headless import. |
+| Kitchen sink | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/kitchen_sink.glb` | `wall_tinted_0.png` (reused) | 2026-09-23 | Simple box, counter height. Verified: clean headless import. |
+| Toilet | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/toilet.glb` | `wall_tinted_0.png` (reused) | 2026-09-23 | Cylinder bowl + box tank, NEW `build_toilet` function. Verified: clean headless import. |
+| Bathroom sink/vanity | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/bathroom_sink_vanity.glb` | `wall_tinted_1.png` (reused) | 2026-09-23 | Simple box. Verified: clean headless import. |
+| Tub/shower | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/tub_shower.glb` | `wall_tinted_0.png` (reused) | 2026-09-23 | Simple box, NEW `build_tub` function. Verified: clean headless import. |
+| Mirror | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/mirror.glb` | `wall_tinted_8.png` (reused) | 2026-09-23 | Thin wall-mounted box. Verified: clean headless import. |
+| Towel rack | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/towel_rack.glb` | `wall_tinted_1.png` (reused) | 2026-09-23 | Bar + 2 brackets, NEW `build_towel_rack` function. Verified: clean headless import. |
+| TV + entertainment stand | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/tv_entertainment_stand.glb` | `wall_tinted_6.png` (reused) | 2026-09-23 | Stand + screen box, NEW `build_tv_stand` function. Verified: clean headless import. |
+| Cash register | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/cash_register.glb` | `wall_tinted_9.png` (reused) | 2026-09-23 | Body + display, NEW `build_cash_register` function. Verified: clean headless import. |
+| Bookshelf | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/bookshelf.glb` | `wall_tinted_7.png` (reused) | 2026-09-23 | Frame + 4 shelves, NEW `build_bookshelf` function. Verified: clean headless import. **All 19 [UNIVERSAL] (build-first) interior items now complete** — 246 of the 265-item master list remain, all lower-reuse/archetype-specific items. |
 
 ## Vehicles, animals, and other categories from the expansion pass
 
@@ -182,7 +201,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Fences | ~11 | 9 | 0 | 0 |
 | Street furniture/misc | 8 | 0 | 0 | 0 |
 | Yard/lot props | 26 | 11 (+1 bonus) | 0 | 0 |
-| Interior props | 265 | 0 | 0 | 0 |
+| Interior props | 265 | 19 | 0 | 0 |
 | Expansion-pass items (`scenery_asset_checklist_expansion.md`, 94 items) | 94 | 0 | 0 | 0 |
 | **Total** | **505** (240 exterior/infra [146 original + 94 expansion] + 265 interior) | **3** | **0** | **0** |
 

@@ -1,0 +1,101 @@
+{
+  "interior_props": [
+    {
+      "id": "sofa",
+      "width": 1.8
+    },
+    {
+      "id": "armchair"
+    },
+    {
+      "id": "coffee_table",
+      "size": [
+        0.9,
+        0.5,
+        0.4
+      ]
+    },
+    {
+      "id": "dining_table",
+      "top_w": 1.5,
+      "top_d": 0.9
+    },
+    {
+      "id": "kitchen_table",
+      "top_w": 1.0,
+      "top_d": 0.8
+    },
+    {
+      "id": "bed_frame"
+    },
+    {
+      "id": "nightstand",
+      "size": [
+        0.45,
+        0.4,
+        0.55
+      ]
+    },
+    {
+      "id": "dresser",
+      "size": [
+        1.0,
+        0.5,
+        0.9
+      ]
+    },
+    {
+      "id": "refrigerator",
+      "size": [
+        0.7,
+        0.7,
+        1.7
+      ]
+    },
+    {
+      "id": "stove_range",
+      "size": [
+        0.75,
+        0.65,
+        0.9
+      ]
+    },
+    {
+      "id": "kitchen_sink",
+      "size": [
+        0.7,
+        0.55,
+        0.2
+      ]
+    },
+    {
+      "id": "toilet"
+    },
+    {
+      "id": "bathroom_sink_vanity",
+      "size": [
+        0.6,
+        0.45,
+        0.85
+      ]
+    },
+    {
+      "id": "tub_shower"
+    },
+    {
+      "id": "mirror"
+    },
+    {
+      "id": "towel_rack"
+    },
+    {
+      "id": "tv_entertainment_stand"
+    },
+    {
+      "id": "cash_register"
+    },
+    {
+      "id": "bookshelf"
+    }
+  ]
+}
