@@ -1,0 +1,64 @@
+{
+  "bridges": [
+    {
+      "id": "bridge_main_downtown",
+      "span": 45.0,
+      "deck_width": 20.0,
+      "clearance": 0.3
+    },
+    {
+      "id": "bridge_main_residential",
+      "span": 45.0,
+      "deck_width": 10.0,
+      "clearance": 0.3
+    },
+    {
+      "id": "bridge_main_farmroad",
+      "span": 45.0,
+      "deck_width": 6.0,
+      "clearance": 0.3
+    },
+    {
+      "id": "bridge_small_residential",
+      "span": 7.0,
+      "deck_width": 8.0,
+      "clearance": 0.3
+    },
+    {
+      "id": "bridge_small_downtown_sidestreet",
+      "span": 7.0,
+      "deck_width": 12.0,
+      "clearance": 0.3
+    },
+    {
+      "id": "bridge_small_farm_lane",
+      "span": 6.0,
+      "deck_width": 4.0,
+      "clearance": 0.3
+    },
+    {
+      "id": "footbridge",
+      "span": 8.0,
+      "deck_width": 2.0,
+      "clearance": 0.3
+    },
+    {
+      "id": "bridge_minor_spur",
+      "span": 4.0,
+      "deck_width": 3.0,
+      "clearance": 0.3
+    }
+  ],
+  "culverts": [
+    {
+      "id": "culvert_creek",
+      "road_width": 8.0,
+      "ditch_width": 6.0
+    },
+    {
+      "id": "culvert_ditch",
+      "road_width": 6.0,
+      "ditch_width": 3.0
+    }
+  ]
+}

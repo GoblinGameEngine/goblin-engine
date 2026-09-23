@@ -95,6 +95,16 @@ to touch it.
 
 | Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
 |---|---|---|---|---|---|---|---|
+| Downtown river-crossing bridge | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/bridge_main_downtown.glb` | `road_tinted.png`, `wall_tinted_0.png` (reused) | 2026-09-23 | 45m span (main channel), 20m deck width. Generic `build_bridge` function — flat deck + 2 side rails — reusable across every span/width combo. Verified: clean headless import. |
+| Secondary/residential river-crossing bridge | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/bridge_main_residential.glb` | `road_tinted.png`, `wall_tinted_2.png` (reused) | 2026-09-23 | 45m span, 10m deck width. Verified: clean headless import. |
+| Farm-road river-crossing bridge | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/bridge_main_farmroad.glb` | `road_tinted.png`, `wall_tinted_4.png` (reused) | 2026-09-23 | 45m span, 6m deck width (narrowest big bridge). Verified: clean headless import. |
+| Residential local-street tributary bridge | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/bridge_small_residential.glb` | `road_tinted.png`, `wall_tinted_3.png` (reused) | 2026-09-23 | 7m span (tributary scale), 8m deck. This is the most-repeated bridge type per generator_rules.md §10's ≥2-crossings-per-tributary rule. Verified: clean headless import. |
+| Downtown side-street/alley tributary bridge | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/bridge_small_downtown_sidestreet.glb` | `road_tinted.png`, `wall_tinted_5.png` (reused) | 2026-09-23 | 7m span, 12m deck (wider, urban). Verified: clean headless import. |
+| Farm access-lane tributary bridge | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/bridge_small_farm_lane.glb` | `road_tinted.png`, `wall_tinted_6.png` (reused) | 2026-09-23 | 6m span, 4m deck (narrow rural single-lane). Verified: clean headless import. |
+| Footbridge | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/footbridge.glb` | `road_tinted.png`, `wall_tinted_7.png` (reused) | 2026-09-23 | 8m span, 2m deck (pedestrian scale). Verified: clean headless import. |
+| Minor unnamed drainage-spur crossing | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/bridge_minor_spur.glb` | `road_tinted.png`, `wall_tinted_8.png` (reused) | 2026-09-23 | 4m span, 3m deck — smallest bridge, for the new drainage-spur crossing-density filler from generator_rules.md §10. Verified: clean headless import. |
+| Creek culvert | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/culvert_creek.glb` | `wall_tinted_9.png` (reused) | 2026-09-23 | 8m road width, 6m ditch width. NEW `build_culvert` function — a simplified low headwall box (the road surface itself stays continuous over a real culvert; only the headwall end is visible). Verified: clean headless import. |
+| Farm ditch culvert | Bridges | [DONE] | `blender_scripts/build_bridges.py` | `assets/infrastructure_assets/culvert_ditch.glb` | `wall_tinted_10.png` (reused) | 2026-09-23 | 6m road width, 3m ditch width — the most numerous single crossing type given the 120-200m farm ditch grid spacing. Verified: clean headless import. **Bridges/crossings: 10/10 core types complete** (rail crossing/trestle intentionally deferred — flagged optional in the checklist, contingent on a rail corridor being added). |
 
 ## Road sections / intersections
 
@@ -144,7 +154,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 |---|---|---|---|---|
 | Residential buildings | 17 | 17 | 0 | 0 |
 | Commercial/civic/farm buildings | 27 | 27 | 0 | 0 |
-| Bridges | 6 | 0 | 0 | 0 |
+| Bridges | 10 (core types) | 10 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |
 | Trees/vegetation | ~24 | 0 | 0 | 0 |
