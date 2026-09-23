@@ -66,6 +66,12 @@ to touch it.
 | Movie Theater (single-screen) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/movie_theater.glb` | `wall_tinted_3.png`, `roof_tinted_2.png` (reused) | 2026-09-23 | 16m x 35m, 1.5-story-equivalent tall front facade (5.5m wall height). Verified: clean headless import. Marquee/signage not modeled — flavor prop for a later pass. |
 | Small Hotel/Inn | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/hotel_inn_small.glb` | `wall_tinted_9.png`, `roof_tinted_3.png` (reused) | 2026-09-23 | 15m x 24m, 2.5 stories (9.15m wall height). Verified: clean headless import. |
 | Restaurant (sit-down) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/restaurant.glb` | `wall_tinted_10.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 11m x 20m, 1 story. Verified: clean headless import. |
+| Town Hall/Municipal Building | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/town_hall.glb` | `wall_tinted_9.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 14m x 20m, 2 stories, flat parapet. Verified: clean headless import. |
+| Library | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/library.glb` | `wall_tinted_0.png`, `roof_tinted_2.png` (reused) | 2026-09-23 | 16m x 22m, 1.3-story-equivalent. Verified: clean headless import. |
+| Volunteer Fire Department | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/fire_department.glb` | `wall_tinted_4.png`, `roof_tinted_3.png` (reused) | 2026-09-23 | 16m x 20m, taller for apparatus bay. Verified: clean headless import. Apparatus-bay door (distinct from the regular front door) not modeled — flavor detail for a later pass. |
+| Police Station | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/police_station.glb` | `wall_tinted_10.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 18m x 25m, 1.5 stories. Verified: clean headless import. |
+| Courthouse | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/courthouse.glb` | `wall_tinted_2.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 28m x 35m, 3 stories — largest civic building built so far. Verified: clean headless import. Reminder: generate-once-per-county-seat per generator_rules.md §9/§11, a placement rule for the future generator, not a modeling constraint. |
+| Church (multi-denominational template) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_civic_buildings.py` | `assets/downtown_assets/church.glb` | `wall_tinted_6.png`, `roof_tinted_2.png` (reused) | 2026-09-23 | 14m x 30m nave (6m wall height) + 3m x 3m steeple tower (8m tall) with a simple pyramidal cap, NEW `build_church` function using a bmesh apex construction (4 triangles to one point) for the cap. Verified: clean headless import. Denominational proportion variants (per interior_contents_why's church "why" research) not modeled — one shared template for now. |
 
 ## Bridges
 
@@ -119,7 +125,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Category | Planned | Done | Needs revisit | In progress |
 |---|---|---|---|---|
 | Residential buildings | 17 | 11 | 0 | 0 |
-| Commercial/civic/farm buildings | 27 | 8 | 0 | 0 |
+| Commercial/civic/farm buildings | 27 | 14 | 0 | 0 |
 | Bridges | 6 | 0 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |
