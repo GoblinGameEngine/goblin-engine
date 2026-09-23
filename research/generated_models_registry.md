@@ -58,6 +58,14 @@ to touch it.
 
 | Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
 |---|---|---|---|---|---|---|---|
+| Small Grocery | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/small_grocery.glb` | `wall_tinted_2.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 15m x 25m, 1 story, flat parapet roof. Verified: clean headless import. |
+| Pharmacy/Drugstore | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/pharmacy_drugstore.glb` | `wall_tinted_5.png`, `roof_tinted_2.png` (reused) | 2026-09-23 | 10m x 18m, 1 story. Verified: clean headless import. |
+| Clothing Store | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/clothing_store.glb` | `wall_tinted_6.png`, `roof_tinted_3.png` (reused) | 2026-09-23 | 9m x 18m, 1 story. Verified: clean headless import. |
+| Barber Shop/Salon | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/barber_salon.glb` | `wall_tinted_7.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 5.5m x 10m, 1 story, narrowest storefront built so far. Verified: clean headless import. |
+| Bar/Tavern | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/bar_tavern.glb` | `wall_tinted_8.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 8m x 15m, 1 story. Verified: clean headless import. |
+| Movie Theater (single-screen) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/movie_theater.glb` | `wall_tinted_3.png`, `roof_tinted_2.png` (reused) | 2026-09-23 | 16m x 35m, 1.5-story-equivalent tall front facade (5.5m wall height). Verified: clean headless import. Marquee/signage not modeled — flavor prop for a later pass. |
+| Small Hotel/Inn | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/hotel_inn_small.glb` | `wall_tinted_9.png`, `roof_tinted_3.png` (reused) | 2026-09-23 | 15m x 24m, 2.5 stories (9.15m wall height). Verified: clean headless import. |
+| Restaurant (sit-down) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_downtown_buildings_2.py` | `assets/downtown_assets/restaurant.glb` | `wall_tinted_10.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 11m x 20m, 1 story. Verified: clean headless import. |
 
 ## Bridges
 
@@ -111,7 +119,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Category | Planned | Done | Needs revisit | In progress |
 |---|---|---|---|---|
 | Residential buildings | 17 | 11 | 0 | 0 |
-| Commercial/civic/farm buildings | 27 | 0 | 0 | 0 |
+| Commercial/civic/farm buildings | 27 | 8 | 0 | 0 |
 | Bridges | 6 | 0 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |

@@ -99,6 +99,174 @@
           "height": 2.1
         }
       ]
+    },
+    {
+      "id": "small_grocery",
+      "archetype": "small_grocery",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 15.0,
+      "depth": 25.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -12.5,
+          "hinge_x": -0.5,
+          "hinge_y": -12.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "pharmacy_drugstore",
+      "archetype": "pharmacy_drugstore",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 10.0,
+      "depth": 18.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -9.0,
+          "hinge_x": -0.5,
+          "hinge_y": -9.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "clothing_store",
+      "archetype": "clothing_store",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 9.0,
+      "depth": 18.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -9.0,
+          "hinge_x": -0.5,
+          "hinge_y": -9.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "barber_salon",
+      "archetype": "barber_salon",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 5.5,
+      "depth": 10.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -5.0,
+          "hinge_x": -0.5,
+          "hinge_y": -5.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "bar_tavern",
+      "archetype": "bar_tavern",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 8.0,
+      "depth": 15.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -7.5,
+          "hinge_x": -0.5,
+          "hinge_y": -7.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "movie_theater",
+      "archetype": "movie_theater",
+      "stories": 2,
+      "wall_h": 5.49,
+      "width": 16.0,
+      "depth": 35.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -17.5,
+          "hinge_x": -0.5,
+          "hinge_y": -17.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "hotel_inn_small",
+      "archetype": "hotel_inn_small",
+      "stories": 3,
+      "wall_h": 9.15,
+      "width": 15.0,
+      "depth": 24.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -12.0,
+          "hinge_x": -0.5,
+          "hinge_y": -12.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "restaurant",
+      "archetype": "restaurant",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 11.0,
+      "depth": 20.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -10.0,
+          "hinge_x": -0.5,
+          "hinge_y": -10.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
     }
   ]
 }
