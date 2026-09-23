@@ -637,6 +637,126 @@
     },
     {
       "id": "wanted_poster_notice_board"
+    },
+    {
+      "id": "clothing_rack"
+    },
+    {
+      "id": "mannequin"
+    },
+    {
+      "id": "glass_display_case_retail"
+    },
+    {
+      "id": "period_barrel"
+    },
+    {
+      "id": "grain_feed_bin_display"
+    },
+    {
+      "id": "hanging_goods_rack"
+    },
+    {
+      "id": "barber_pole"
+    },
+    {
+      "id": "directory_board"
+    },
+    {
+      "id": "buzzer_intercom_panel"
+    },
+    {
+      "id": "bulletin_notice_board"
+    },
+    {
+      "id": "guest_book_stand"
+    },
+    {
+      "id": "fitting_room_set"
+    },
+    {
+      "id": "poster_display_case"
+    },
+    {
+      "id": "ticket_taker_podium"
+    },
+    {
+      "id": "box_office_kiosk"
+    },
+    {
+      "id": "concession_stand_counter"
+    },
+    {
+      "id": "gas_pump_island"
+    },
+    {
+      "id": "farm_fuel_tank_stand"
+    },
+    {
+      "id": "hydraulic_lift"
+    },
+    {
+      "id": "tire_changer_balancer"
+    },
+    {
+      "id": "tire_rack_stack"
+    },
+    {
+      "id": "air_compressor"
+    },
+    {
+      "id": "engine_hoist"
+    },
+    {
+      "id": "bank_teller_cage_window"
+    },
+    {
+      "id": "bank_vault_door"
+    },
+    {
+      "id": "velvet_rope_stanchion"
+    },
+    {
+      "id": "standing_writing_counter"
+    },
+    {
+      "id": "shopping_cart"
+    },
+    {
+      "id": "cart_corral"
+    },
+    {
+      "id": "produce_bin_table"
+    },
+    {
+      "id": "misting_rack"
+    },
+    {
+      "id": "endcap_display"
+    },
+    {
+      "id": "forklift"
+    },
+    {
+      "id": "hand_truck_dolly_pallet_jack"
+    },
+    {
+      "id": "loading_dock_leveler"
+    },
+    {
+      "id": "paint_mixer_can_display"
+    },
+    {
+      "id": "fastener_bin_wall"
+    },
+    {
+      "id": "rolling_display_ladder"
+    },
+    {
+      "id": "key_cutting_station"
+    },
+    {
+      "id": "tool_pegboard_wall"
     }
   ]
 }
