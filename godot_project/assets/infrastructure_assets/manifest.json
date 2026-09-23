@@ -175,5 +175,91 @@
       "radius": 0.35,
       "height": 2.0
     }
+  ],
+  "trees": [
+    {
+      "id": "tree_honeylocust",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_littleleaf_linden",
+      "canopy_type": "cone"
+    },
+    {
+      "id": "tree_london_planetree",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_red_maple",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_kentucky_coffeetree",
+      "canopy_type": "oval"
+    },
+    {
+      "id": "tree_american_elm_legacy",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_oak_mature",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_sugar_norway_maple",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_dead_ash_stump",
+      "canopy_type": "none"
+    },
+    {
+      "id": "tree_white_pine_blue_spruce",
+      "canopy_type": "cone"
+    },
+    {
+      "id": "tree_eastern_redcedar",
+      "canopy_type": "cone"
+    },
+    {
+      "id": "tree_norway_white_spruce",
+      "canopy_type": "cone"
+    },
+    {
+      "id": "tree_osage_orange_relic",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_apple_orchard",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_cherry_orchard",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_black_walnut",
+      "canopy_type": "oval"
+    },
+    {
+      "id": "tree_black_willow",
+      "canopy_type": "oval"
+    },
+    {
+      "id": "tree_eastern_cottonwood",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_american_sycamore",
+      "canopy_type": "round"
+    },
+    {
+      "id": "tree_storm_damaged",
+      "canopy_type": "oval"
+    },
+    {
+      "id": "tree_young_replacement_sapling",
+      "canopy_type": "round"
+    }
   ]
 }

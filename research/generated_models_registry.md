@@ -120,6 +120,7 @@ to touch it.
 
 | Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
 |---|---|---|---|---|---|---|---|
+| 21 new tree species/variants | Trees/Vegetation | [DONE] | `blender_scripts/build_trees.py` | `assets/infrastructure_assets/{tree_honeylocust,tree_littleleaf_linden,tree_london_planetree,tree_red_maple,tree_kentucky_coffeetree,tree_american_elm_legacy,tree_oak_mature,tree_sugar_norway_maple,tree_dead_ash_stump,tree_white_pine_blue_spruce,tree_eastern_redcedar,tree_norway_white_spruce,tree_osage_orange_relic,tree_apple_orchard,tree_cherry_orchard,tree_black_walnut,tree_black_willow,tree_eastern_cottonwood,tree_american_sycamore,tree_storm_damaged,tree_young_replacement_sapling}.glb` | reused `wall_tinted_N.png`/`roof_tinted_N.png` throughout | 2026-09-23 | Covers all 21 species/variants from `research/lot_contents/expanded_trees_and_fences.md` Part 1 (downtown street trees, residential yard trees, farm zone, riparian, seasonal/condition variants). NEW `build_tree` function — trunk cylinder + parameterized canopy (round/cone/oval/none), consistent with the existing 7 tree assets' trunk+canopy geometry (not the flat-sprite billboard technique used for MultiMesh-batched crop fields). `tree_dead_ash_stump` uses `canopy_type="none"` (trunk only, the condition-variant prop). Verified: clean headless import, 21 confirmed in manifest. |
 
 ## Fences
 
@@ -208,7 +209,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Bridges | 10 (core types) | 10 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |
-| Trees/vegetation | ~24 | 0 | 0 | 0 |
+| Trees/vegetation | ~24 | 21 | 0 | 0 |
 | Fences | ~11 | 9 | 0 | 0 |
 | Street furniture/misc | 8 | 0 | 0 | 0 |
 | Yard/lot props | 26 | 11 (+1 bonus) | 0 | 0 |
