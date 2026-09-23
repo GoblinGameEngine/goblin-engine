@@ -463,5 +463,55 @@
     {
       "id": "vehicle_municipal_snowplow_dump_truck"
     }
+  ],
+  "part_a_gaps": [
+    {
+      "id": "industrial_harbor_freight_dock"
+    },
+    {
+      "id": "fuel_dock"
+    },
+    {
+      "id": "boat_slip_dock_pier"
+    },
+    {
+      "id": "pierhead_lighthouse"
+    },
+    {
+      "id": "lift_drawbridge"
+    },
+    {
+      "id": "rail_corridor_track_segment"
+    },
+    {
+      "id": "railroad_grade_crossing_signal"
+    },
+    {
+      "id": "hand_cranked_chain_ferry"
+    },
+    {
+      "id": "ferry_landing_dock"
+    },
+    {
+      "id": "fairground_livestock_judging_barn"
+    },
+    {
+      "id": "fairground_grandstand"
+    },
+    {
+      "id": "fairground_midway_ride_ferris_wheel"
+    },
+    {
+      "id": "fair_judging_tent_pavilion"
+    },
+    {
+      "id": "plywood_boarded_storefront_panel"
+    },
+    {
+      "id": "for_lease_closed_signage_decal"
+    },
+    {
+      "id": "modernized_storefront_awning_set"
+    }
   ]
 }

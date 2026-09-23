@@ -802,6 +802,153 @@
           "height": 2.1
         }
       ]
+    },
+    {
+      "id": "rural_hospital",
+      "archetype": "rural_hospital",
+      "stories": 2,
+      "wall_h": 7.32,
+      "width": 30.0,
+      "depth": 40.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -20.0,
+          "hinge_x": -0.5,
+          "hinge_y": -20.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "marina_harbormaster_office",
+      "archetype": "marina_harbormaster_office",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 6.0,
+      "depth": 8.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -4.0,
+          "hinge_x": -0.5,
+          "hinge_y": -4.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "chandlery_marine_supply_store",
+      "archetype": "chandlery_marine_supply_store",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 8.0,
+      "depth": 14.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -7.0,
+          "hinge_x": -0.5,
+          "hinge_y": -7.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "rail_depot",
+      "archetype": "rail_depot",
+      "stories": 1,
+      "wall_h": 3.5,
+      "width": 8.0,
+      "depth": 25.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -12.5,
+          "hinge_x": -0.5,
+          "hinge_y": -12.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "founders_mansion",
+      "archetype": "founders_mansion",
+      "stories": 1,
+      "wall_h": 6.5,
+      "width": 16.0,
+      "depth": 15.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -7.5,
+          "hinge_x": -0.5,
+          "hinge_y": -7.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "cemetery_grounds_chapel",
+      "archetype": "cemetery_grounds_chapel",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 8.0,
+      "depth": 10.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -5.0,
+          "hinge_x": -0.5,
+          "hinge_y": -5.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "fairground_exhibition_hall_4h",
+      "archetype": "fairground_exhibition_hall_4h",
+      "stories": 1,
+      "wall_h": 4.758,
+      "width": 20.0,
+      "depth": 35.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -17.5,
+          "hinge_x": -0.5,
+          "hinge_y": -17.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
     }
   ]
 }
