@@ -51,7 +51,7 @@ static func build(root: Node3D, radius: float, segments: int) -> void:
 	water_volume.set_script(load("res://scripts/world/WaterVolume.gd"))
 	root.add_child(water_volume)
 
-	var lake_rng := TerrainHeight._lake_s_range(radius, segments)
+	var lake_rng := TerrainHeight._lake_s_range(radius)
 	var lake_s0: float = lake_rng.x
 	var lake_s1: float = lake_rng.y
 
@@ -210,31 +210,31 @@ static func _build_ribbon_quad(st: SurfaceTool, volume: Area3D, radius: float, s
 	if not TerrainHeight._is_under_road(radius, segments, mid_s, mid_x):
 		_add_trigger_box(volume, radius, segments, mid_s, mid_x, half_w * 2.0, dir.length() * 1.1, drop)
 
-## Decorative bridge props at Farm's 4 axial connector roads -- the
-## cleanest crossing case in the whole ring: a connector spans the
-## FULL zone width at a fixed s, so it always crosses the river's own
-## x(s) somewhere along it (unlike a tangential road, which the river
-## only crosses where its meander happens to sweep across that road's
-## fixed x). Every other zone's crossings are left un-decorated this
-## pass (the ground there is already flat/intact via _is_under_road(),
-## just without a bridge model on top) -- a deliberate scope cut, not
-## an oversight: getting a tangential road's bridge oriented correctly
-## needs the crossing ANGLE (the meander sweeps across at a shallow,
-## varying angle, not a clean perpendicular), which is a follow-up.
+## Decorative bridge props wherever a settlement's own Main Street
+## (SettlementLayout's axial "main row") crosses the river -- the
+## cleanest crossing case available: Main Street runs axially (along x,
+## fixed s), so the crossing point is just wherever river_x() at that
+## fixed s falls, and the bridge deck naturally needs to span along x,
+## matching an axially-placed bridge model's own long axis. Every other
+## crossing (a settlement's other rows, cross streets) is left
+## undecorated this pass (the ground there is already flat/intact via
+## TerrainHeight._is_under_road(), just without a bridge model on top)
+## -- a deliberate scope cut, not an oversight.
 static func _place_farm_connector_bridges(root: Node3D, radius: float, segments: int) -> void:
 	var scene: PackedScene = load("res://assets/infrastructure_assets/bridge_main_farmroad.glb")
 	if scene == null:
 		return
-	var zones := NeighborhoodGenerator.zone_ranges(radius, segments)
-	var farm: Dictionary = zones[3]
-	var buffer := (TAU / segments) * radius
-	var farm_s0: float = farm["s_start"] + buffer
-	var farm_s1: float = farm["s_end"] - buffer
-	var zone_len := farm_s1 - farm_s0
-	for i in range(1, FarmGenerator.N_CONNECTORS + 1):
-		var s_conn: float = farm_s0 + zone_len * float(i) / float(FarmGenerator.N_CONNECTORS + 1)
-		var x_conn := TerrainHeight.river_x(radius, s_conn)
+	var i := 0
+	for entry in SettlementLayout.build_layout(radius):
+		var main_i := SettlementLayout.main_row_index(entry["tier"])
+		var rows := SettlementLayout.axial_row_positions(entry)
+		var main_s: float = rows[main_i]
+		var x_conn := TerrainHeight.river_x(radius, main_s)
+		var main_range := SettlementLayout.main_street_x_range(entry)
+		if x_conn < main_range.x or x_conn > main_range.y:
+			continue  # this settlement's Main Street doesn't actually reach the river
 		var inst := scene.instantiate()
-		inst.name = "FarmRiverBridge_%d" % i
-		RingCoords.place_on_ring(inst, radius, segments, s_conn, x_conn, PI * 0.5)
+		inst.name = "SettlementRiverBridge_%d" % i
+		RingCoords.place_on_ring(inst, radius, segments, main_s, x_conn, PI * 0.5)
 		root.add_child(inst)
+		i += 1

@@ -45,24 +45,13 @@ static func _quad(st: SurfaceTool, a: Vector3, b: Vector3, c: Vector3, d: Vector
 		st.set_uv(pair[1])
 		st.add_vertex(pair[0])
 
-## Builds the ring's mesh (3 surfaces -- floor/ceiling/wall, one material
-## each) and a matching trimesh collision shape, as new children of
-## `ring_body`. `radius` is the floor's distance from the spin axis;
-## `ceiling_height` is floor-to-ceiling (so ceiling sits at
-## radius - ceiling_height); `width` is the full wall-to-wall span along
-## the spin axis (local X).
-static func build(ring_body: Node3D, radius: float, ceiling_height: float,
-		width: float, segments: int,
-		floor_material: Material, wall_material: Material, ceiling_material: Material) -> void:
-	# TerrainHeight can't reference SpaceStation.WIDTH directly (that would
-	# cycle: SpaceStation -> StationRingBuilder -> TerrainHeight -> back to
-	# SpaceStation -- see TerrainHeight.gd's header) -- this one-way write
-	# is how it learns the ring's width instead.
-	TerrainHeight.RING_WIDTH = width
-	var ceiling_radius := radius - ceiling_height
-	var half_w := width / 2.0
-	var mesh := ArrayMesh.new()
-
+## Commits the floor surface (adaptively x-sliced per TerrainHeight's
+## carved/raised terrain breakpoints) into `mesh` as a new surface.
+## Factored out of build() so FlatMapRenderer.gd can build just the
+## floor (with RingCoords.FLAT_MODE unrolling it instead of wrapping it
+## around the cylinder) without the ceiling/walls, which are built in
+## real, non-flat 3D space and aren't part of the overhead map.
+static func build_floor_surface(mesh: ArrayMesh, radius: float, segments: int, half_w: float, floor_material: Material) -> void:
 	var st_floor := SurfaceTool.new()
 	st_floor.begin(Mesh.PRIMITIVE_TRIANGLES)
 	for i in range(segments):
@@ -71,7 +60,10 @@ static func build(ring_body: Node3D, radius: float, ceiling_height: float,
 		var s0 := a0 * radius
 		var s1 := a1 * radius
 		var mid := (a0 + a1) * 0.5
-		var floor_normal := Vector3(0, -cos(mid), -sin(mid))  # points toward the spin axis -- "up" from the floor
+		# In RingCoords.FLAT_MODE (FlatMapRenderer.gd only) the mesh itself
+		# is unrolled flat -- Vector3.UP is the correct normal there, not
+		# this per-segment cylindrical one.
+		var floor_normal := Vector3.UP if RingCoords.FLAT_MODE else Vector3(0, -cos(mid), -sin(mid))
 		# Adaptive per-segment x-slicing instead of one flat quad spanning
 		# the whole width: TerrainHeight.critical_x_values() returns this
 		# segment's true feature breakpoints (river/lake/pond/creek/ditch
@@ -97,6 +89,26 @@ static func build(ring_body: Node3D, radius: float, ceiling_height: float,
 				Vector2(u0, v0), Vector2(u1, v0), Vector2(u1, v1), Vector2(u0, v1))
 	st_floor.set_material(floor_material)
 	st_floor.commit(mesh)
+
+## Builds the ring's mesh (3 surfaces -- floor/ceiling/wall, one material
+## each) and a matching trimesh collision shape, as new children of
+## `ring_body`. `radius` is the floor's distance from the spin axis;
+## `ceiling_height` is floor-to-ceiling (so ceiling sits at
+## radius - ceiling_height); `width` is the full wall-to-wall span along
+## the spin axis (local X).
+static func build(ring_body: Node3D, radius: float, ceiling_height: float,
+		width: float, segments: int,
+		floor_material: Material, wall_material: Material, ceiling_material: Material) -> void:
+	# TerrainHeight can't reference SpaceStation.WIDTH directly (that would
+	# cycle: SpaceStation -> StationRingBuilder -> TerrainHeight -> back to
+	# SpaceStation -- see TerrainHeight.gd's header) -- this one-way write
+	# is how it learns the ring's width instead.
+	TerrainHeight.RING_WIDTH = width
+	var ceiling_radius := radius - ceiling_height
+	var half_w := width / 2.0
+	var mesh := ArrayMesh.new()
+
+	build_floor_surface(mesh, radius, segments, half_w, floor_material)
 
 	var st_ceiling := SurfaceTool.new()
 	st_ceiling.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -146,16 +158,49 @@ static func build(ring_body: Node3D, radius: float, ceiling_height: float,
 
 	_add_collision_segments(ring_body, radius, ceiling_height, width, segments)
 
-## Collision as per-segment BoxShape3D pieces (floor/ceiling/2 walls each)
-## rather than a single trimesh from create_trimesh_shape(). Tried the
-## trimesh first (far less code) but confirmed live via a direct
-## intersect_ray() test that it collides from only ONE side (solid
-## approached from outside the ring, completely passable from the
-## interior where the player actually stands) -- a real behavior of
-## Godot's ConcavePolygonShape3D on a rotating AnimatableBody3D here,
-## not a fluke. Boxes are convex primitives, solid from every side, so
-## this sidesteps the question entirely instead of chasing the exact
-## winding convention that would fix the trimesh. Same 96-segment
+## Floor collision: one thin convex prism per visual floor TRIANGLE --
+## the exact same p0..p3 corners and (a,b,c)/(a,c,d) split build_floor_
+## surface()/_quad() render, extruded FLOOR_COLLISION_DEPTH "down" (away
+## from the axis). The top face IS the visible ground, so collision can't
+## drift off it anywhere.
+##
+## History, so neither dead end gets retried: (1) a single
+## ConcavePolygonShape3D trimesh of the floor passed ray queries but was
+## never detected by the player's CharacterBody3D.move_and_slide() -- it
+## fell straight through. (2) Flat BoxShape3D "staircase" slices, one per
+## segment per x-slice, sat at the segment MIDPOINT's elevation and were
+## centered ON the surface: ~0.5m high everywhere, and up to ~4m low
+## wherever the terrain rose or fell along a ~33m segment (confirmed live
+## at the spawn point, on the river bank at s=0). Convex prisms keep (2)'s
+## reliability with move_and_slide() and (1)'s exact fit.
+const FLOOR_COLLISION_DEPTH := 1.0
+
+static func _add_floor_collision_slices(ring_body: Node3D, radius: float, segments: int,
+		seg_index: int, half_w: float, _chord: float) -> void:
+	var d_theta := TAU / segments
+	var s0 := d_theta * seg_index * radius
+	var s1 := d_theta * (seg_index + 1) * radius
+	var down := -RingCoords.floor_basis(radius, segments, (s0 + s1) * 0.5).y * FLOOR_COLLISION_DEPTH
+	var xs: Array = TerrainHeight.critical_x_values(radius, segments, s0, s1, half_w)
+	for k in range(xs.size() - 1):
+		var xl: float = xs[k]
+		var xr: float = xs[k + 1]
+		var p0 := RingCoords.floor_point(radius, segments, s0, xl)
+		var p1 := RingCoords.floor_point(radius, segments, s0, xr)
+		var p2 := RingCoords.floor_point(radius, segments, s1, xr)
+		var p3 := RingCoords.floor_point(radius, segments, s1, xl)
+		_add_prism(ring_body, p0, p1, p2, down)
+		_add_prism(ring_body, p0, p2, p3, down)
+
+static func _add_prism(ring_body: Node3D, a: Vector3, b: Vector3, c: Vector3, down: Vector3) -> void:
+	var cs := CollisionShape3D.new()
+	var shape := ConvexPolygonShape3D.new()
+	shape.points = PackedVector3Array([a, b, c, a + down, b + down, c + down])
+	cs.shape = shape
+	ring_body.add_child(cs)
+
+## Ceiling + wall collision as per-segment BoxShape3D pieces, plus the
+## floor (see _add_floor_collision_slices() above). Same 96-segment
 ## granularity as the visual mesh; `margin` overlaps each box slightly
 ## along the chord direction so adjacent segments don't leave a seam gap.
 static func _add_collision_segments(ring_body: Node3D, radius: float, ceiling_height: float,
@@ -180,35 +225,6 @@ static func _add_collision_segments(ring_body: Node3D, radius: float, ceiling_he
 		var wall_size := Vector3(1.0, ceiling_height + 1.0, chord)
 		_add_box(ring_body, wall_center + Vector3(half_w, 0, 0), n_out, tangent, wall_size)
 		_add_box(ring_body, wall_center + Vector3(-half_w, 0, 0), n_out, tangent, wall_size)
-
-## Floor collision for one segment, sliced across x at the SAME
-## TerrainHeight breakpoints the visual mesh uses (see build()'s floor
-## loop) -- one flat BoxShape3D per slice, each at that slice's own
-## midpoint depth. A flat box can't represent a sloped bank within
-## itself, so this is a "staircase" approximation of the true slope
-## (steps at each slice boundary) rather than a perfectly smooth ramp --
-## same convention as this file's own segment-faceted ring already
-## uses for the walls/ceiling ("reads as smoothly round at this scale"
-## rather than a true curve), and far lower-risk than introducing this
-## project's first HeightMapShape3D. `chord` and the local
-## RingCoords.floor_basis() orientation are shared with the ceiling/
-## wall boxes right above -- only the per-slice center/width differ.
-static func _add_floor_collision_slices(ring_body: Node3D, radius: float, segments: int,
-		seg_index: int, half_w: float, chord: float) -> void:
-	var d_theta := TAU / segments
-	var s0 := d_theta * seg_index * radius
-	var s1 := d_theta * (seg_index + 1) * radius
-	var mid_s := (s0 + s1) * 0.5
-	var basis := RingCoords.floor_basis(radius, segments, mid_s)
-	var xs: Array = TerrainHeight.critical_x_values(radius, segments, s0, s1, half_w)
-	for k in range(xs.size() - 1):
-		var xl: float = xs[k]
-		var xr: float = xs[k + 1]
-		var xm := (xl + xr) * 0.5
-		var center := RingCoords.floor_point(radius, segments, mid_s, xm)
-		# floor_basis()'s own z-column is -tangent (see its doc comment),
-		# matching this file's original floor box's z_axis=-tangent exactly.
-		_add_box(ring_body, center, basis.y, basis.z, Vector3((xr - xl) * 1.05, 1.0, chord))
 
 ## `size` is expressed along the local axes (RIGHT, y_axis, z_axis) in
 ## that order -- e.g. for the floor, size.x is the wall-to-wall width

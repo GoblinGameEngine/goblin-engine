@@ -46,8 +46,7 @@ const COLOR_KEYFRAMES := [
 ]
 
 var time_of_day: float = 0.27  # start mid-morning, already light out
-var ceiling_material: ShaderMaterial
-var wall_material: ShaderMaterial
+var ceiling_material: StandardMaterial3D
 var sun: DirectionalLight3D
 var station: Node3D
 var env: Environment
@@ -72,23 +71,22 @@ func setup(p_station: Node3D, p_sun: DirectionalLight3D, ring_mesh: MeshInstance
 	sun = p_sun
 	env = p_env
 
-	var width: float = SpaceStation.WIDTH
-
-	ceiling_material = ShaderMaterial.new()
-	ceiling_material.shader = CEILING_SKY_SHADER
-	ceiling_material.set_shader_parameter("sky_day_texture", SKY_DAY_TEX)
-	ceiling_material.set_shader_parameter("sky_night_texture", SKY_NIGHT_TEX)
-	ceiling_material.set_shader_parameter("station_width", width)
+	# Ceiling: a plain flat sky-blue material, not the cloud-photo shader
+	# ("The texture above the cliffs will just be sky blue instead of the
+	# cloud texture") -- no day/night texture swap on the ceiling itself;
+	# the real day/night cycle (sun/moon DirectionalLight sweep, ambient
+	# light) below still runs for actual gameplay lighting, just without
+	# a shader-driven ceiling visual tied to it.
+	ceiling_material = StandardMaterial3D.new()
+	ceiling_material.albedo_color = Color(0.45, 0.68, 0.92)
+	ceiling_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	ring_mesh.set_surface_override_material(1, ceiling_material)
 
-	wall_material = ShaderMaterial.new()
-	wall_material.shader = WALL_CLIFF_SKY_SHADER
-	wall_material.set_shader_parameter("cliff_texture", CLIFF_TEX)
-	wall_material.set_shader_parameter("sky_day_texture", SKY_DAY_TEX)
-	wall_material.set_shader_parameter("sky_night_texture", SKY_NIGHT_TEX)
-	wall_material.set_shader_parameter("wall_v_max", ceiling_height / wall_tile)
-	wall_material.set_shader_parameter("station_width", width)
-	ring_mesh.set_surface_override_material(2, wall_material)
+	# Walls: explicitly NOT given the sky/cliff blend shader ("We do not
+	# need it on the walls") -- surface 2 is left as whatever SpaceStation.
+	# gd's _build_ring() already applied (station_metal_wall.png, already
+	# cel-shaded by ToonShading.apply_to_world() before this setup() call
+	# runs), so this function doesn't touch it at all.
 
 	_apply(0.0)  # first frame's worth, before _process() runs
 
@@ -176,19 +174,10 @@ func _apply(_delta: float) -> void:
 	var sun_color := Color(tint.r, tint.g * 0.95, tint.b * 0.85)
 	var moon_color := Color(0.75, 0.8, 0.95)  # pale, cool moonlight -- distinct from the sun's warm arc
 
-	ceiling_material.set_shader_parameter("night_mix", night_mix)
-	ceiling_material.set_shader_parameter("day_tint", tint)
-	ceiling_material.set_shader_parameter("band_color", sun_color)
-	ceiling_material.set_shader_parameter("band_center", sun_center)
-	ceiling_material.set_shader_parameter("band_half_width", half_width)
-	ceiling_material.set_shader_parameter("band_intensity", sun_intensity)
-	ceiling_material.set_shader_parameter("moon_color", moon_color)
-	ceiling_material.set_shader_parameter("moon_center", moon_center)
-	ceiling_material.set_shader_parameter("moon_half_width", half_width)
-	ceiling_material.set_shader_parameter("moon_intensity", moon_intensity)
-
-	wall_material.set_shader_parameter("night_mix", night_mix)
-	wall_material.set_shader_parameter("day_tint", tint)
+	# Ceiling is a plain flat StandardMaterial3D now (see setup()) -- no
+	# shader parameters to drive; night_mix/tint/sun_center/etc. above are
+	# still computed since the real sun/moon DirectionalLight + ambient
+	# light below use them for actual gameplay lighting.
 
 	if sun:
 		# ONE real light standing in for whichever celestial body is up --

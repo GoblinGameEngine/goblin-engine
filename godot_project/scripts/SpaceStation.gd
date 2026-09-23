@@ -52,8 +52,8 @@ class_name SpaceStation
 # precision starts breaking CharacterBody3D's own collision/floor-snap
 # math (confirmed live, independent of whether anything is rotating).
 static var RADIUS := 500.0          # floor's distance from the axis -- also the "wall" gravity_at() ramps up to
-static var CEILING_HEIGHT := 150.0  # floor to ceiling
-static var WIDTH := 1000.0          # wall-to-wall, along the axis -- confirmed live (Phase E follow-up) that the ring/streaming/batching pipeline holds up fine at this scale; made the permanent default
+static var CEILING_HEIGHT := 450.0  # floor to ceiling -- narrows the central shaft to a 50m radius from the axis, per direct instruction ("narrow the central cylinder ceiling to a radius of 50m")
+static var WIDTH := 3000.0          # wall-to-wall, along the axis -- 3x the earlier 1000m default, per direct instruction, to fit the 9-settlement layout (SettlementLayout.gd) with real research-derived block/lot scale
 static var SEGMENTS := 96           # angular subdivision -- TAU/segments per facet, independent of radius
 
 static var TARGET_G := 9.8
@@ -83,7 +83,6 @@ const STATION_PLAYER_SCENE := preload("res://scenes/StationPlayer.tscn")
 
 @onready var ring_body: AnimatableBody3D = $RingBody
 var player: StationPlayer
-var zone_streamer: ZoneStreamer
 var sky_system: DaySkySystem
 var sun: DirectionalLight3D
 var environment: Environment
@@ -205,60 +204,50 @@ func _build_ring() -> void:
 		add_child(sky_system)
 	sky_system.setup(self, sun, ring_mesh, CEILING_HEIGHT, StationRingBuilder.TILE_WALL, environment)
 
-	# The procedural Midwestern neighborhood (see the plan file / Phase
-	# A-E commits) -- a separate "Neighborhood" node under ring_body, not
+	# The procedural settlement layout (SettlementLayout.gd: 2 cities, 4
+	# towns, 3 villages, farmland between every one -- see that file's
+	# header) -- a separate "Neighborhood" node under ring_body, not
 	# ring_body's direct children like RingMesh above, so
 	# NeighborhoodGenerator's own SceneryOptimizer/ToonShading passes only
-	# ever walk the neighborhood's own content, not the ring shell +
-	# light fixtures too. Still a child of ring_body, so rebuild_ring()'s
-	# child-free loop above tears it down and regenerates it in place
-	# along with everything else, same as always.
+	# ever walk its own content, not the ring shell + light fixtures too.
+	# Still a child of ring_body, so rebuild_ring()'s child-free loop above
+	# tears it down and regenerates it in place along with everything else.
 	#
-	# Only the road/sidewalk SKELETON builds eagerly here -- requested
-	# directly ("do we need to keep so much of the ring in memory... a
-	# background pre-loading system"): buildings/crops/furniture are the
-	# expensive part (node count, collision generation), and now stream
-	# in/out per zone via ZoneStreamer.gd, driven by the player's own
-	# arc-length position, instead of every zone's full detail existing
-	# for the whole ring's lifetime regardless of where the player is.
+	# build_skeleton() (roads only) runs synchronously here -- cheap.
+	# build_detail_async() (buildings + crop fields, the expensive part)
+	# is fired WITHOUT awaiting, same "quiet background stream-in" pattern
+	# the old 4-zone system's ZoneStreamer.gd used -- confirmed live that
+	# awaiting it here (or making it non-async) blocks the main thread for
+	# minutes building all 9 settlements' buildings' collision at once.
 	var neighborhood := Node3D.new()
 	neighborhood.name = "Neighborhood"
 	ring_body.add_child(neighborhood)
-	var zone_info := NeighborhoodGenerator.build_skeleton(neighborhood, RADIUS, SEGMENTS, WIDTH)
+	NeighborhoodGenerator.build_skeleton(neighborhood, RADIUS, SEGMENTS, WIDTH)
+	NeighborhoodGenerator.build_detail_async(neighborhood, RADIUS, SEGMENTS, WIDTH)
 	# Called from here, not from inside NeighborhoodGenerator.build_skeleton()
-	# -- RiverGenerator needs NeighborhoodGenerator.zone_ranges() for its
-	# bridge placement, and GDScript can't resolve two class_name scripts
-	# calling each other's static functions (confirmed empirically). See
-	# TerrainHeight.gd's header for this project's dependency-direction rule.
+	# -- RiverGenerator needs SettlementLayout for its bridge placement, and
+	# GDScript can't resolve two class_name scripts calling each other's
+	# static functions (confirmed empirically). See TerrainHeight.gd's
+	# header for this project's dependency-direction rule.
 	RiverGenerator.build(neighborhood, RADIUS, SEGMENTS)
-
-	if zone_streamer == null:
-		zone_streamer = ZoneStreamer.new()
-		zone_streamer.name = "ZoneStreamer"
-		add_child(zone_streamer)
-	zone_streamer.init(neighborhood, self, RADIUS, SEGMENTS, zone_info, player)
 
 ## Angle=0 spawn point, standing on the floor, facing along the loop --
 ## shared by initial spawn and by rebuild_ring()'s post-rebuild respawn
 ## so the two can't drift out of sync with each other.
 func _floor_spawn_transform() -> Transform3D:
-	# The floor's collision box (see StationRingBuilder._add_collision_segments)
-	# is centered AT radius with 1.0 of radial thickness, so its actual
-	# walkable surface -- the inner face the player stands on -- is at
-	# radius - 0.5, not radius itself. Spawning feet at the raw radius
-	# (as this used to) buries them 0.5m into the box's solid interior.
-	# Confirmed live at the 100km scale: it turned the very next physics
-	# frames into a depenetration explosion, launching the player at
-	# ~2900 m/s -- the same 0.5m overlap was presumably always there at
-	# the original 200m test radius too and just wasn't violent enough
-	# to notice. A small clearance above the true surface, rather than
-	# landing exactly on it, avoids spawning already-touching and
-	# relying on exact float equality to mean "not overlapping."
+	# Spawn on the TRUE terrain-aware surface (river/lake/bluff/tilt
+	# elevation baked in) at (s=0, x=0), via RingCoords.floor_point()/
+	# floor_basis() -- the floor collision's top face is that exact same
+	# surface (StationRingBuilder._add_floor_collision_slices()). Those are
+	# pure functions of RADIUS/SEGMENTS, so calling them before
+	# _build_ring() runs is safe. A spawn embedded past the collision
+	# surface turns the next physics frames into a depenetration explosion
+	# (confirmed live at the 100km scale: ~2900 m/s launch).
 	const SURFACE_CLEARANCE := 0.05
-	var surface_radial := RADIUS - 0.5 - SURFACE_CLEARANCE
-	var floor_pos := Vector3(0, surface_radial, 0)
-	var up_dir := Vector3(0, -1, 0)
-	var forward := Vector3(0, 0, 1)
+	var basis := RingCoords.floor_basis(RADIUS, SEGMENTS, 0.0)
+	var up_dir := basis.y
+	var forward := -basis.z  # floor_basis()'s own z-column is -tangent (see its doc comment); forward = +tangent = direction of increasing s
+	var floor_pos := RingCoords.floor_point(RADIUS, SEGMENTS, 0.0, 0.0) + up_dir * SURFACE_CLEARANCE
 	# 1.43m eye-to-foot offset, same capsule as Player.tscn (radius
 	# 0.18, height 1.45, collision shape offset -0.705 -> feet sit
 	# 1.43m "down" from the body origin).

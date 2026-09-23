@@ -22,90 +22,85 @@ class_name TerrainHeight
 # research doc's own words: "my own engineering proposal, not a cited
 # real-world fact"). Channel width/depth/meander-wavelength numbers ARE
 # from that doc's cited research. PHI1..PHI4 (the phase offsets) are
-# NOT researched -- they're solved here so the primary meander's WIDEST
-# bend lands exactly at the existing Lake zone's arc midpoint at x=0,
-# which is exactly where LakeGenerator.gd's already-built, already-
-# tested shore-road loop (LAKE_HALF_WIDTH=65, centered x=0) sits. That
-# means the lake's road skeleton needed zero changes -- the river was
-# tuned to flow through the lake that was already there, not the other
-# way around. Verified numerically (see the job's tmp/ scratch scripts
-# this was derived with): river_x(lake zone midpoint) == 0 to 1e-13,
-# and the A1 envelope peaks (widest bend) at that exact same point.
+# NOT researched -- they're solved so the primary meander's WIDEST bend
+# lands exactly at theta=LAKE_CENTER_THETA (45 degrees), which
+# SettlementLayout.gd sites the water-founded settlement's own center
+# on -- so the lake/river math never has to move to meet wherever a
+# settlement ends up; the settlement layout moves to meet the water
+# instead. Verified numerically (see the job's tmp/ scratch scripts
+# this was derived with): river_x() == 0 to 1e-13 there, and the A1
+# envelope peaks (widest bend) at that exact same point.
 #
-# Wherever a carved feature would run under an EXISTING road, depth is
-# gated to 0 by _is_under_road() -- expected and BY DESIGN, not a bug
-# ("we will need smaller bridges for the side roads crossing over
-# creeks and tributaries" was the original brief). Downtown is the one
-# zone where the river's ~220m excursion amplitude spends most of its
-# time inside downtown's much narrower (~115m half-corridor) built
-# footprint -- rather than trying to carve a river through streets and
-# storefronts that were never built river-aware, the WHOLE downtown
-# corridor is treated as one no-carve zone (see _is_under_road()):
-# the river reads as flowing past/alongside downtown, visibly carved
-# right up to the built corridor's edge and resuming just past it, the
-# same way a real downtown's waterfront blocks sit at grade up to the
-# bank rather than showing a carved ravine mid-street. Residential and
-# Farm don't need this -- their built areas sit further out than the
-# river's excursion reaches there (verified numerically), so ordinary
-# per-road-line gating there leaves the carved river fully visible.
+# The 9-settlement distribution (2 cities, 4 towns, 3 villages,
+# farmland between every one) lives in SettlementLayout.gd, NOT here --
+# this file only needs each settlement's own road SHAPE (for the
+# road-flatten gating below) and its center (for siting the lake/bluff-
+# tilt trough), both exposed as pure functions there.
+#
+# Wherever a carved water feature would run under an already-built
+# settlement road, depth is gated to 0 by _is_under_road() -- expected
+# and BY DESIGN, not a bug ("we will need smaller bridges for the side
+# roads crossing over creeks and tributaries" was the original brief
+# for the river; the same reasoning now applies to every settlement's
+# own street grid). The raised bluff/tilt terrain (bluff_height()/
+# zone_tilt() below) is deliberately NOT gated the same way -- it's
+# smooth by construction (tanh/cosine, no sharp edges), so a road
+# climbing the bluff just follows its grade, the way a real hillside
+# road would.
 #
 # DEPENDENCY RULE (load-bearing, confirmed empirically -- not a style
-# preference): this file calls into NO other class_name script.
-# RingCoords.floor_point() -- the one function every single placement
-# in the game goes through (streets, buildings, the player, water) --
-# calls TerrainHeight.depth_at() for every point. That makes RingCoords
-# a hard dependent of this file. RingCoords is itself a dependency of
-# every zone generator (Downtown/Residential/Farm/Lake) and of
-# StationRingBuilder, which SpaceStation.gd calls. If TerrainHeight
-# called back into ANY of those (which it needs data from -- zone
-# s-ranges, road widths, the lake's own taper shape) it would form a
-# two-file cycle, and GDScript's class_name resolution genuinely cannot
-# parse that (verified directly with a minimal 2-file repro: two
-# class_name scripts calling each other's static funcs fail to compile
-# with "Identifier ... not declared in the current scope", even though
-# neither `extends` the other). So every constant/formula TerrainHeight
-# needs from those other files is duplicated below instead, each
-# commented with which file it must be kept in sync with by hand. The
-# one exception is RING_WIDTH: a static var WRITTEN by StationRingBuilder.
-# build() (which already receives `width` as a parameter) rather than
-# read from SpaceStation.WIDTH directly -- that's a one-way write, not a
-# reference back, so it doesn't reintroduce the cycle.
+# preference): this file calls into NO other class_name script except
+# SettlementLayout.gd, which is itself a pure leaf with no dependencies
+# of its own (same rule, one level removed). RingCoords.floor_point()
+# -- the one function every single placement in the game goes through
+# (streets, buildings, the player, water) -- calls TerrainHeight.
+# elevation_at() for every point. That makes RingCoords a hard
+# dependent of this file, and RingCoords is itself a dependency of
+# every settlement-building script and of StationRingBuilder, which
+# SpaceStation.gd calls. If TerrainHeight called back into ANY of those
+# it would form a two-file cycle, and GDScript's class_name resolution
+# genuinely cannot parse that (verified directly with a minimal 2-file
+# repro: two class_name scripts calling each other's static funcs fail
+# to compile with "Identifier ... not declared in the current scope",
+# even though neither `extends` the other). So every constant/formula
+# TerrainHeight needs beyond SettlementLayout.gd's own pure data is
+# duplicated below instead. The one exception is RING_WIDTH: a static
+# var WRITTEN by StationRingBuilder.build() (which already receives
+# `width` as a parameter) rather than read from SpaceStation.WIDTH
+# directly -- that's a one-way write, not a reference back, so it
+# doesn't reintroduce the cycle.
 
 const FT := 0.3048
 
 static var RING_WIDTH := 1000.0  # set by StationRingBuilder.build()'s first line -- see this file's header
 
-# --- Lake -- mirrors LakeGenerator.gd's own LAKE_HALF_WIDTH/SHORE_GAP/
-# RING_ROAD_WIDTH/SIDEWALK_WIDTH/END_CAP_LEN consts and _lake_half_width(). ---
+# --- Lake -- now just a widened stretch of the river centered on the
+# water-founded settlement (SettlementLayout.WATER_SETTLEMENT_INDEX),
+# not a dedicated zone with its own shore-road loop (that whole concept
+# is gone along with the old 4-zone system). Half-span chosen to
+# roughly match the old lake's own extent; independent of any
+# settlement's own (much smaller) arc-depth, since a lake reasonably
+# extends into the surrounding farmland gaps either side.
 const LAKE_HALF_WIDTH := 65.0
-const LAKE_SHORE_GAP := 12.0
-const LAKE_RING_ROAD_WIDTH := 34.0 * FT
-const LAKE_SIDEWALK_WIDTH := 5.0 * FT
+const LAKE_HALF_SPAN := 350.0
 const LAKE_END_CAP_LEN := 40.0
 
-# --- Downtown -- mirrors DowntownGenerator.gd's own consts/BAND_DEPTH. ---
-const DOWNTOWN_ST_WIDTH := 30.0 * FT
-const DOWNTOWN_SIDEWALK_WIDTH := 10.0 * FT
-const DOWNTOWN_HALF_ST := DOWNTOWN_ST_WIDTH * 0.5 + DOWNTOWN_SIDEWALK_WIDTH
-const DOWNTOWN_BAND_DEPTH := DOWNTOWN_HALF_ST + 3.0 + 28.0 + 2.0 + (DOWNTOWN_ST_WIDTH * 0.75) + 2.0 + DOWNTOWN_HALF_ST
-
-# --- Residential -- mirrors ResidentialGenerator.gd's own consts/_meander_x()/_curve_x_at(). ---
-const RES_N_SECTIONS := 9
-const RES_MEANDER_AMPLITUDE := 20.0
-const RES_MEANDER_FREQ := 0.9
-const RES_LOCAL_ST_WIDTH := 34.0 * FT * 2.0
-const RES_VERGE_WIDTH := 4.0 * FT
-const RES_SIDEWALK_WIDTH := 5.0 * FT
-
-# --- Farm -- mirrors FarmGenerator.gd's own consts. ---
-const FARM_MAIN_ROAD_WIDTH := 24.0 * FT * 2.0
-const FARM_CONNECTOR_WIDTH := 20.0 * FT * 2.0
-const FARM_N_CONNECTORS := 4
+# --- Bluff/relief terrain (generator_rules.md §16) -- reuses the
+# river's own k=6 harmonic/phase (PHI1, PHI4 below) so cut-bank (high)
+# and point-bar (low) sides stay automatically correlated with the
+# river's bends, per that section's own "core trick." Numbers are
+# straight from that section's table.
+const H_BLUFF_BASE := 18.0   # bluff height, compressed from real 21-55m town relief for buildable grades
+const D0 := 80.0             # flat low-terrace setback before the climb starts
+const L_BLUFF := 75.0        # transition run (~24% max grade, easing flat within ~3xL_BLUFF)
+const BLUFF_FLIP_SHARPNESS := 1.5  # see bluff_height() -- lower = longer, gentler high/low bank swap along s
+const Z1 := 10.0             # gentle k=1 regional tilt, troughs at the water-settlement's center
 
 const A1_BASE := 150.0
 const A2 := 45.0
 const A3 := 25.0
-# Solved so theta_mid (the Lake zone's own arc midpoint) simultaneously
+# Solved so LAKE_CENTER_THETA (theta=PI/4, where the water-founded
+# settlement's own center sits -- see SettlementLayout.gd) simultaneously
 # zeroes all three sine terms AND sits at the A1 envelope's peak -- see
 # this file's header comment.
 const PHI1 := PI * 0.5
@@ -214,24 +209,19 @@ static func river_channel_depth(radius: float, s: float, x: float) -> float:
 	var au := absf(x - river_x(radius, s))
 	return _trapezoid_depth(au, CHANNEL_BED_HALF_WIDTH, CHANNEL_BANK_WIDTH, CHANNEL_DEPTH)
 
-## The 4 zones' [s_start, s_end] (lake/downtown/residential/farm, in that
-## order), already trimmed by the one-segment buffer -- mirrors
-## NeighborhoodGenerator.zone_ranges() + build_skeleton()'s own buffer
-## trim exactly (same formula), so this never drifts from where those
-## zones' roads were actually built.
-static func _zone_s_ranges(radius: float, segments: int) -> Array:
-	var zone_segments := segments / 4
-	var seg_arc := (TAU / segments) * radius
-	var buffer := seg_arc
-	var out: Array = []
-	for i in range(4):
-		var s0 := float(i * zone_segments) * seg_arc + buffer
-		var s1 := float((i + 1) * zone_segments) * seg_arc - buffer
-		out.append(Vector2(s0, s1))
-	return out
+## theta where PHI1..PHI4 were solved so the river's widest bend sits at
+## x=0 (see this file's header) -- the water-founded settlement's own
+## center (SettlementLayout.LAKE_CENTER_S, a duplicated copy of
+## LAKE_CENTER_THETA*radius for the same leaf-dependency reason as
+## everything else duplicated in that file).
+const LAKE_CENTER_THETA := PI * 0.25
 
-static func _lake_s_range(radius: float, segments: int) -> Vector2:
-	return _zone_s_ranges(radius, segments)[0]
+static func lake_center_s(radius: float) -> float:
+	return LAKE_CENTER_THETA * radius
+
+static func _lake_s_range(radius: float) -> Vector2:
+	var c := lake_center_s(radius)
+	return Vector2(c - LAKE_HALF_SPAN, c + LAKE_HALF_SPAN)
 
 ## Mirrors LakeGenerator._lake_half_width() exactly.
 static func _lake_half_width_local(s: float, s_start: float, s_end: float, straight_s0: float, straight_s1: float) -> float:
@@ -248,7 +238,7 @@ static func _lake_half_width_local(s: float, s_start: float, s_end: float, strai
 ## necked ends -- shallower necking, deeper open water, exactly the
 ## "lake is lower than the river that feeds it" the ask called for.
 static func lake_depth(radius: float, segments: int, s: float, x: float) -> float:
-	var rng := _lake_s_range(radius, segments)
+	var rng := _lake_s_range(radius)
 	var lake_s0: float = rng.x
 	var lake_s1: float = rng.y
 	if s < lake_s0 or s > lake_s1:
@@ -298,97 +288,34 @@ static func ditches_depth(s: float, x: float) -> float:
 		best = maxf(best, d)
 	return best
 
-## Mirrors ResidentialGenerator._meander_x().
-static func _res_meander_x(base: float, k: int, phase: float) -> float:
-	return base + RES_MEANDER_AMPLITUDE * sin(float(k) * RES_MEANDER_FREQ + phase)
-
-## Mirrors StreetBuilder._curved_x() at curviness=1.0 -- the only value
-## ResidentialGenerator's own build_curved_road() calls use.
-static func _curved_x_local(x_start: float, x_end: float, s_start: float, span: float, s: float) -> float:
-	if span <= 0.0:
-		return x_start
-	var t := (s - s_start) / span
-	return lerpf(x_start, x_end, smoothstep(0.0, 1.0, t))
-
-## Mirrors ResidentialGenerator._curve_x_at().
-static func _res_curve_x_at(waypoints: Array, s: float) -> float:
-	for i in range(waypoints.size() - 1):
-		var a: Vector2 = waypoints[i]
-		var b: Vector2 = waypoints[i + 1]
-		if s >= a.x and s <= b.x:
-			return _curved_x_local(a.y, b.y, a.x, b.x - a.x, s)
-	var last: Vector2 = waypoints[waypoints.size() - 1]
-	return last.y
-
-## True if (s,x) falls under an already-built road (any zone) -- gates
-## carving to 0 there so roads stay flat/intact; see this file's header
-## for the downtown-specific whole-corridor exemption and the top-of-file
-## dependency rule for why this duplicates each zone's own road-shape
-## formula instead of calling into it.
+## True if (s,x) falls under an already-built settlement road -- gates
+## carving to 0 there so roads stay flat/intact. Iterates SettlementLayout.
+## build_layout()'s 9 settlements and checks each one's own road formula
+## (SettlementLayout.is_under_settlement_road()) -- that file is a pure
+## leaf (no dependencies of its own), so this stays consistent with this
+## file's top-of-file dependency rule despite needing settlement-shaped
+## data. Cheap to call unconditionally (9 settlements, most immediately
+## rejected by their own s-range check).
 static func _is_under_road(radius: float, segments: int, s: float, x: float) -> bool:
-	var width := RING_WIDTH
-	var zones := _zone_s_ranges(radius, segments)
-
-	var lake_s0: float = zones[0].x
-	var lake_s1: float = zones[0].y
-	if s >= lake_s0 and s <= lake_s1:
-		var half: float = LAKE_RING_ROAD_WIDTH * 0.5 + LAKE_SIDEWALK_WIDTH + ROAD_CLEARANCE
-		var lx := LAKE_HALF_WIDTH + LAKE_SHORE_GAP
-		if absf(x - lx) < half or absf(x + lx) < half:
+	for entry in SettlementLayout.build_layout(radius):
+		var s_start: float = entry["s_start"]
+		var s_end: float = entry["s_end"]
+		if s < s_start - ROAD_CLEARANCE or s > s_end + ROAD_CLEARANCE:
+			continue
+		if SettlementLayout.is_under_settlement_road(entry, s, x, ROAD_CLEARANCE):
 			return true
-
-	# Downtown: the WHOLE built corridor (all 4 building bands + all 5
-	# streets), not individual street lines -- see this file's header for
-	# why (the river spends most of its downtown presence inside a
-	# corridor narrower than its own excursion amplitude).
-	var dt_s0: float = zones[1].x
-	var dt_s1: float = zones[1].y
-	if s >= dt_s0 and s <= dt_s1:
-		var corridor_half: float = 2.0 * DOWNTOWN_BAND_DEPTH + DOWNTOWN_HALF_ST + ROAD_CLEARANCE
-		if absf(x) < corridor_half:
-			return true
-
-	var res_s0: float = zones[2].x
-	var res_s1: float = zones[2].y
-	if s >= res_s0 and s <= res_s1:
-		var half_width_margin: float = width * 0.5 - 15.0
-		var base_a := -half_width_margin * 0.5
-		var base_b := half_width_margin * 0.5
-		var wp_a: Array = []
-		var wp_b: Array = []
-		for k in range(RES_N_SECTIONS + 1):
-			var ws: float = res_s0 + (res_s1 - res_s0) * float(k) / float(RES_N_SECTIONS)
-			wp_a.append(Vector2(ws, _res_meander_x(base_a, k, 0.0)))
-			wp_b.append(Vector2(ws, _res_meander_x(base_b, k, PI * 0.5)))
-		var half: float = RES_LOCAL_ST_WIDTH * 0.5 + RES_VERGE_WIDTH + RES_SIDEWALK_WIDTH + ROAD_CLEARANCE
-		if absf(x - _res_curve_x_at(wp_a, s)) < half:
-			return true
-		if absf(x - _res_curve_x_at(wp_b, s)) < half:
-			return true
-
-	var farm_s0: float = zones[3].x
-	var farm_s1: float = zones[3].y
-	if s >= farm_s0 and s <= farm_s1:
-		var x_a := -width * 0.25
-		var x_b := width * 0.25
-		var half: float = FARM_MAIN_ROAD_WIDTH * 0.5 + ROAD_CLEARANCE
-		if absf(x - x_a) < half or absf(x - x_b) < half:
-			return true
-		var zone_len := farm_s1 - farm_s0
-		var half_w := width * 0.5
-		if x >= -half_w and x <= half_w:
-			for i in range(1, FARM_N_CONNECTORS + 1):
-				var s_conn: float = farm_s0 + zone_len * float(i) / float(FARM_N_CONNECTORS + 1)
-				if absf(s - s_conn) < FARM_CONNECTOR_WIDTH * 0.5 + ROAD_CLEARANCE:
-					return true
-
 	return false
 
-## Combined recess depth at (s, x) -- the single entry point RingCoords.
-## floor_point() calls. Deepest feature wins (max, not sum) so
-## confluences (a creek meeting the river, a ditch meeting a creek)
-## blend instead of double-carving; gated to exactly 0 under any
-## existing road so those stay flat and intact.
+## Combined recess depth (water features only, non-negative) at (s, x)
+## -- kept separate from elevation_at() below because LakeGenerator.gd/
+## RiverGenerator.gd need this specific "how deep is the water here"
+## number for their own water-surface placement (WATER_SURFACE_DROP
+## etc.), unaffected by the bluff feature (spatially separate anyway --
+## bluffs only start D0=80m out, water features cap out well under
+## that). Deepest feature wins (max, not sum) so confluences (a creek
+## meeting the river, a ditch meeting a creek) blend instead of double-
+## carving; gated to exactly 0 under any existing road so those stay
+## flat and intact.
 static func depth_at(radius: float, segments: int, s: float, x: float) -> float:
 	if _is_under_road(radius, segments, s, x):
 		return 0.0
@@ -398,6 +325,49 @@ static func depth_at(radius: float, segments: int, s: float, x: float) -> float:
 	d = maxf(d, creeks_depth(radius, s, x))
 	d = maxf(d, ditches_depth(s, x))
 	return d
+
+## Raised bluff terrain (generator_rules.md §16): reuses the river's own
+## k=6 harmonic/phase (same PHI1/PHI4 as river_x()/its envelope) so
+## cut-bank (high) and point-bar (low) sides stay automatically
+## correlated with the river's bends everywhere around the loop -- "any
+## smooth function of (x-y(theta)) is automatically periodic in theta
+## too," the same trick the water features already rely on. Flat within
+## D0 of the river (the low terrace buildings/roads actually sit on),
+## rising over the next L_BLUFF via tanh (chosen for genuinely flat
+## upland shoulders -- a sine would roll back down instead), clamped to
+## 0 on the near side so it never goes negative before the climb starts.
+static func bluff_height(radius: float, s: float, x: float) -> float:
+	var theta := river_theta(radius, s)
+	var envelope := H_BLUFF_BASE * (1.0 + 0.3 * sin(2.0 * theta + PHI4))
+	# Smoothed sign, not signf(): a hard sign flipped the bluff from +H to
+	# -H in zero distance at 12 points around the ring -- a ~36m cliff no
+	# 33m floor segment can follow (confirmed live: 12.5% of the floor was
+	# >5m off this function, so anything placed via floor_point() floated
+	# or sank there). Normalized tanh still reaches exactly +-1 at the
+	# peaks, but eases through zero over ~120m of s.
+	var sign_val := tanh(BLUFF_FLIP_SHARPNESS * sin(6.0 * theta + PHI1)) / tanh(BLUFF_FLIP_SHARPNESS)
+	var u := absf(x - river_x(radius, s))
+	var step := maxf(0.0, tanh((u - D0) / L_BLUFF))
+	return envelope * sign_val * step
+
+## Gentle k=1 regional tilt, troughing at the water-founded settlement's
+## own center -- "real lakes often have one bluffier and one flat/marshy
+## shore." Lowest available harmonic, kept well under H_BLUFF_BASE so it
+## reads as background, not competing relief.
+static func zone_tilt(radius: float, s: float) -> float:
+	var theta := river_theta(radius, s)
+	return -Z1 * cos(theta - LAKE_CENTER_THETA)
+
+## Combined SIGNED elevation offset -- positive raises (bluff/tilt),
+## negative recesses (water features, via depth_at() which already
+## gates itself to 0 under roads). This is what RingCoords.floor_point()
+## actually applies to every point on the ring; bluff/tilt are smooth by
+## construction (tanh/cosine, no sharp edges) so they're deliberately
+## NOT gated under roads the way the water features are -- a road
+## climbing the bluff just follows its grade, same as a real hillside
+## road would.
+static func elevation_at(radius: float, segments: int, s: float, x: float) -> float:
+	return bluff_height(radius, s, x) + zone_tilt(radius, s) - depth_at(radius, segments, s, x)
 
 ## Critical x-breakpoints for one ring segment (its two s-edges) --
 ## guarantees the adaptive floor mesh/collision always samples exactly
@@ -414,7 +384,7 @@ static func critical_x_values(radius: float, segments: int, seg_s0: float, seg_s
 		for off in [-CHANNEL_BED_HALF_WIDTH - CHANNEL_BANK_WIDTH, -CHANNEL_BED_HALF_WIDTH,
 				CHANNEL_BED_HALF_WIDTH, CHANNEL_BED_HALF_WIDTH + CHANNEL_BANK_WIDTH]:
 			xs.append(clampf(rc + off, -half_width, half_width))
-		var lake_rng := _lake_s_range(radius, segments)
+		var lake_rng := _lake_s_range(radius)
 		if s >= lake_rng.x and s <= lake_rng.y:
 			var lake_s0: float = lake_rng.x
 			var lake_s1: float = lake_rng.y
@@ -444,6 +414,24 @@ static func critical_x_values(radius: float, segments: int, seg_s0: float, seg_s
 			if absf(s - s_c) < 30.0:
 				xs.append(clampf(ditch[1], -half_width, half_width))
 				xs.append(clampf(ditch[2], -half_width, half_width))
+		# Bluff transition (smooth tanh, no sharp edge -- a handful of
+		# samples across the run is enough, not exact breakpoints like
+		# the water features' trapezoid corners need).
+		for frac: float in [0.0, 0.5, 1.0, 1.5, 2.0, 3.0]:
+			var u := D0 + frac * L_BLUFF
+			xs.append(clampf(rc + u, -half_width, half_width))
+			xs.append(clampf(rc - u, -half_width, half_width))
+		# Settlement road edges -- so a settlement's own street grid gets
+		# a real breakpoint at each road, not just wherever it happens to
+		# land relative to the water/bluff breakpoints above.
+		for entry in SettlementLayout.build_layout(radius):
+			if s < entry["s_start"] - 2.0 or s > entry["s_end"] + 2.0:
+				continue
+			for cx in SettlementLayout.cross_street_x_positions(entry):
+				xs.append(clampf(cx, -half_width, half_width))
+			var res_extent := SettlementLayout.residential_x_extent(entry)
+			xs.append(clampf(-res_extent, -half_width, half_width))
+			xs.append(clampf(res_extent, -half_width, half_width))
 	xs.sort()
 	var out: Array = []
 	for v in xs:

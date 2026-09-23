@@ -84,7 +84,25 @@ static func _texture_has_real_alpha(tex: Texture2D) -> bool:
 ## tint) -- everything else about the original PBR material (roughness,
 ## metallic, normal maps) is deliberately dropped, since a banded toon
 ## surface doesn't use any of it.
+##
+## Cached per (source material, billboard_y): the station streams in
+## ~122k surfaces that share only a handful of source materials, and one
+## fresh ShaderMaterial + a GPU texture readback (_texture_has_real_alpha)
+## per surface froze the game for ~4 minutes and pushed it past 2.8GB
+## (confirmed live). Nothing mutates these per instance, so sharing is
+## safe.
+## A source that is ALREADY a toon material passes straight through, so
+## re-running apply_to_world() over a subtree it already converted
+## (NeighborhoodGenerator's skeleton pass, then its detail pass) doesn't
+## re-wrap it into an untextured white copy.
+static var _toon_cache := {}
+
 static func _toon_material_for(src: Material, billboard_y: bool = false) -> ShaderMaterial:
+	if src is ShaderMaterial and (src as ShaderMaterial).shader == TOON_SHADER:
+		return src
+	var key := [src, billboard_y]
+	if _toon_cache.has(key):
+		return _toon_cache[key]
 	var mat := ShaderMaterial.new()
 	mat.shader = TOON_SHADER
 	var tex: Texture2D = null
@@ -98,6 +116,7 @@ static func _toon_material_for(src: Material, billboard_y: bool = false) -> Shad
 	mat.set_shader_parameter("albedo_color", color)
 	mat.set_shader_parameter("has_alpha", _texture_has_real_alpha(tex))
 	mat.set_shader_parameter("billboard_y", billboard_y)
+	_toon_cache[key] = mat
 	return mat
 
 ## Recursively walks `root`, replacing every MeshInstance3D surface

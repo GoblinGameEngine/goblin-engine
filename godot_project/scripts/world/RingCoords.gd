@@ -22,6 +22,21 @@ class_name RingCoords
 # position (local X, the ring's width direction, unaffected by which
 # segment `s` falls in).
 
+## When true, floor_point()/floor_basis() unroll the ring into a flat
+## plane instead of wrapping it around the cylinder -- s maps directly
+## to world Z, x to world X, elevation to world Y, with a fixed (not
+## per-segment) up-is-+Y basis. Used ONLY by FlatMapRenderer.gd to build
+## a second, throwaway copy of the world laid out flat for the overhead
+## map image ("make a copy and roll it out flat with all the assets
+## rendered... take a picture of it") -- every other caller (the live
+## game) always runs with this false. A plain static var, not threaded
+## through every function signature, since FlatMapRenderer.gd runs as
+## its own dedicated process/scene (never toggled mid-session inside the
+## actual playable game), matching this project's existing "static var
+## for something set once at a well-defined point, not per-call" pattern
+## (e.g. TerrainHeight.RING_WIDTH).
+static var FLAT_MODE := false
+
 ## Which segment index `s` falls in, after wrapping into [0, TAU*radius).
 static func _segment_index(segments: int, theta: float) -> int:
 	var d_theta := TAU / segments
@@ -31,15 +46,18 @@ static func _segment_index(segments: int, theta: float) -> int:
 ## A point on the floor's actual flat quad at arc length `s`, axial
 ## position `x`. Matches StationRingBuilder.build()'s floor corners
 ## exactly at segment boundaries, and lerps between them elsewhere (the
-## real, flat, built surface -- not the idealized circle) -- then, if
-## TerrainHeight carves anything here (river/lake/pond/creek/ditch),
-## recesses the point radially outward (away from the spin axis) by
-## that depth. Every existing caller (streets, buildings, the player,
-## water) gets terrain-aware placement for free through this one
-## function, and is completely unaffected wherever nothing is carved.
+## real, flat, built surface -- not the idealized circle) -- then applies
+## TerrainHeight's signed elevation here (bluff/tilt raise, river/lake/
+## pond/creek/ditch recess), moving the point along "up" by that amount.
+## Every existing caller (streets, buildings, the player, water) gets
+## terrain-aware placement for free through this one function, and is
+## completely unaffected wherever the elevation is 0.
 static func floor_point(radius: float, segments: int, s: float, x: float) -> Vector3:
-	var d_theta := TAU / segments
 	var theta := fposmod(s / radius, TAU)
+	var elevation := TerrainHeight.elevation_at(radius, segments, theta * radius, x)
+	if FLAT_MODE:
+		return Vector3(x, elevation, s)
+	var d_theta := TAU / segments
 	var i := _segment_index(segments, theta)
 	var a0 := d_theta * i
 	var a1 := d_theta * (i + 1)
@@ -47,11 +65,10 @@ static func floor_point(radius: float, segments: int, s: float, x: float) -> Vec
 	var p0 := Vector3(x, radius * cos(a0), radius * sin(a0))
 	var p1 := Vector3(x, radius * cos(a1), radius * sin(a1))
 	var p := p0.lerp(p1, t)
-	var depth := TerrainHeight.depth_at(radius, segments, theta * radius, x)
-	if depth > 0.0:
+	if elevation != 0.0:
 		var mid := (a0 + a1) * 0.5
 		var up := Vector3(0, -cos(mid), -sin(mid))
-		p -= up * depth
+		p += up * elevation
 	return p
 
 ## The (right/axial, up/radial-inward, forward/tangential) basis at arc
@@ -62,6 +79,11 @@ static func floor_point(radius: float, segments: int, s: float, x: float) -> Vec
 ## matching StationPlayer's up_direction convention); "forward" is the
 ## direction of increasing s.
 static func floor_basis(radius: float, segments: int, s: float) -> Basis:
+	if FLAT_MODE:
+		# Fixed, not per-segment -- flat mode has no curvature: up=+Y
+		# (matching floor_point()'s elevation->Y mapping), forward=+Z
+		# (matching its s->Z mapping).
+		return Basis(Vector3.RIGHT, Vector3.UP, Vector3(0, 0, -1))
 	var d_theta := TAU / segments
 	var theta := fposmod(s / radius, TAU)
 	var i := _segment_index(segments, theta)
@@ -126,7 +148,17 @@ static func s_from_position(radius: float, pos: Vector3) -> float:
 ## that a concave trimesh shape collides from only one side on a MOVING/
 ## rotating body; nothing this is used for moves after being placed, so
 ## that failure mode doesn't apply here.
+## FlatMapRenderer.gd's one-shot batch render has no gameplay, so its
+## copy of the world doesn't need collision at all -- and generating it
+## anyway (every storefront across 9 settlements) was a real, measured
+## contributor to that process ballooning to 7GB+ RSS and forcing this
+## whole machine into swap thrashing. Sibling flag to FLAT_MODE, same
+## "never toggled inside the live game" rule.
+static var SKIP_COLLISION := false
+
 static func add_trimesh_collision(root: Node3D) -> void:
+	if SKIP_COLLISION:
+		return
 	# Collect first, mutate after -- create_trimesh_collision()
 	# reparents its MeshInstance3D under a new StaticBody3D, which would
 	# corrupt an in-progress tree walk if done during the walk itself.
