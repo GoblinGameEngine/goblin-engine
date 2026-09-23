@@ -30,6 +30,16 @@ const END_CAP_LEN := 40.0              # arc length each rounded end-cap connect
 
 const UV_TILE := 8.0
 
+## Shallow "forced-perspective" water depth (reference/memory.txt's
+## documented shore trick): the shared ring floor (built once, whole-ring,
+## by StationRingBuilder with no zone awareness) is reused as-is for the
+## lake bed rather than carving a real basin into it -- an opaque water
+## plane sitting this far above the ordinary floor reads as a real lake
+## from outside while staying fully walkable/swimmable underneath.
+const WATER_HEIGHT := 1.8
+const WATER_TRIGGER_MARGIN := 0.6  # extra headroom above the surface the swim volume still counts as "in water"
+const UV_TILE_WATER := 12.0
+
 static func build_roads(parent: Node3D, radius: float, segments: int,
 		s_start: float, s_end: float, width: float) -> Dictionary:
 	var mesh := ArrayMesh.new()
@@ -101,11 +111,105 @@ static func build_roads(parent: Node3D, radius: float, segments: int,
 	# shape, on purpose).
 	return {"entry_x": [], "exit_x": []}
 
-## No detail content exists yet for this zone (the lake's own water/sand/
-## shore geometry was never built -- see this file's own header comment
-## and reference/memory.txt) -- a real gap from earlier phases, not
-## something ZoneStreamer.gd's arrival changes. Kept as a real (if empty)
-## async function so ZoneStreamer.gd can call every zone's
-## build_detail_async() uniformly instead of special-casing the lake.
+## No streamed BUILDING/prop detail exists yet for this zone (docks,
+## fishing shacks, etc. would go here later) -- the water itself is
+## intentionally NOT built here; see build_water() below and its call
+## site's comment for why. Kept as a real (if empty) async function so
+## ZoneStreamer.gd can call every zone's build_detail_async() uniformly
+## instead of special-casing the lake.
 static func build_detail_async(_parent: Node3D, _radius: float, _segments: int, _width: float) -> void:
 	await RingCoords.yield_frame()
+
+## Builds the lake's water surface + swimmable volume. Called once from
+## NeighborhoodGenerator.build_skeleton() (NOT from build_detail_async
+## above) -- water is a permanent landmark like the roads, not streamed
+## buildings/crops the player has to walk up to first; see that call
+## site's own comment. Water plane sits a shallow WATER_HEIGHT above the
+## ordinary shared floor (see the constant's own comment) and tapers to
+## 0 width at both ends of [s_start, s_end] over END_CAP_LEN, echoing the
+## road loop's own rounded end caps.
+static func build_water(root: Node3D, radius: float, segments: int, s_start: float, s_end: float) -> void:
+	var straight_s0 := s_start + END_CAP_LEN
+	var straight_s1 := s_end - END_CAP_LEN
+
+	var water_mat := StandardMaterial3D.new()
+	water_mat.albedo_texture = load("res://assets/textures/water_tinted_0.png")
+	water_mat.cull_mode = BaseMaterial3D.CULL_DISABLED  # visible from below while submerged, not just from above
+	water_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	water_mat.albedo_color = Color(1.0, 1.0, 1.0, 0.92)
+
+	var st_water := SurfaceTool.new()
+	st_water.begin(Mesh.PRIMITIVE_TRIANGLES)
+
+	var water_volume := Area3D.new()
+	water_volume.name = "LakeWaterVolume"
+	water_volume.set_script(load("res://scripts/world/WaterVolume.gd"))
+	root.add_child(water_volume)
+
+	var seg_arc := (TAU / segments) * radius
+	var i0 := int(floor(s_start / seg_arc))
+	var i1 := int(ceil(s_end / seg_arc))
+	for i in range(i0, i1):
+		var seg_s0: float = max(s_start, float(i) * seg_arc)
+		var seg_s1: float = min(s_end, float(i + 1) * seg_arc)
+		if seg_s1 <= seg_s0:
+			continue
+		var hw_a := _lake_half_width(seg_s0, s_start, s_end, straight_s0, straight_s1)
+		var hw_b := _lake_half_width(seg_s1, s_start, s_end, straight_s0, straight_s1)
+		if hw_a <= 0.1 and hw_b <= 0.1:
+			continue
+		var mid_s := (seg_s0 + seg_s1) * 0.5
+		var up := RingCoords.floor_basis(radius, segments, mid_s).y
+		var offset := up * WATER_HEIGHT
+		var p0 := RingCoords.floor_point(radius, segments, seg_s0, -hw_a) + offset
+		var p1 := RingCoords.floor_point(radius, segments, seg_s0, hw_a) + offset
+		var p2 := RingCoords.floor_point(radius, segments, seg_s1, hw_b) + offset
+		var p3 := RingCoords.floor_point(radius, segments, seg_s1, -hw_b) + offset
+		var v0 := seg_s0 / UV_TILE_WATER
+		var v1 := seg_s1 / UV_TILE_WATER
+		StationRingBuilder._quad(st_water, p0, p1, p2, p3, up,
+			Vector2(-hw_a / UV_TILE_WATER, v0), Vector2(hw_a / UV_TILE_WATER, v0),
+			Vector2(hw_b / UV_TILE_WATER, v1), Vector2(-hw_b / UV_TILE_WATER, v1))
+
+		var box_hw: float = max(hw_a, hw_b)
+		if box_hw > 0.1:
+			_add_water_trigger_box(water_volume, radius, segments, mid_s, seg_s1 - seg_s0, box_hw)
+
+	st_water.set_material(water_mat)
+	var water_mesh := ArrayMesh.new()
+	st_water.commit(water_mesh)
+	var water_instance := MeshInstance3D.new()
+	water_instance.name = "lake_water_surface"  # LakeSetup._find() matches this prefix
+	water_instance.mesh = water_mesh
+	root.add_child(water_instance)
+
+	LakeSetup.setup(root)  # attaches LakeWater.gd's cosmetic UV-scroll to the mesh just built above
+
+## Half-width of the water polygon at arc length `s`: full LAKE_HALF_WIDTH
+## in the straight middle section, smoothstepped down to 0 over the last
+## END_CAP_LEN at each end so the lake reads as a rounded oval rather than
+## a sharp-cornered rectangle.
+static func _lake_half_width(s: float, s_start: float, s_end: float, straight_s0: float, straight_s1: float) -> float:
+	if s < straight_s0:
+		return LAKE_HALF_WIDTH * smoothstep(0.0, 1.0, clamp((s - s_start) / (straight_s0 - s_start), 0.0, 1.0))
+	if s > straight_s1:
+		return LAKE_HALF_WIDTH * smoothstep(0.0, 1.0, clamp((s_end - s) / (s_end - straight_s1), 0.0, 1.0))
+	return LAKE_HALF_WIDTH
+
+## One convex swim-trigger box for one ring segment's worth of lake,
+## spanning from the shared floor up through WATER_TRIGGER_MARGIN above
+## the water surface. `chord` and `half_width` bound the box's footprint;
+## `radius`/`segments`/`mid_s` place and orient it via the same flat-quad
+## floor math everything else on the ring uses (RingCoords), so it never
+## floats off the real segment the way an idealized-circle placement would.
+static func _add_water_trigger_box(parent: Node3D, radius: float, segments: int,
+		mid_s: float, chord: float, half_width: float) -> void:
+	var basis := RingCoords.floor_basis(radius, segments, mid_s)
+	var col_h := WATER_HEIGHT + WATER_TRIGGER_MARGIN
+	var center := RingCoords.floor_point(radius, segments, mid_s, 0.0) + basis.y * (col_h * 0.5)
+	var cs := CollisionShape3D.new()
+	var box := BoxShape3D.new()
+	box.size = Vector3(half_width * 2.0, col_h, chord * 1.08)
+	cs.shape = box
+	cs.transform = Transform3D(basis, center)
+	parent.add_child(cs)

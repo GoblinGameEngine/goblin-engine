@@ -51,6 +51,14 @@ static var JUMP_VELOCITY := 4.5
 static var MOUSE_SENSITIVITY := 0.0025
 static var PITCH_LIMIT := deg_to_rad(85)
 
+# Swimming: neutrally buoyant, no current/flow force -- see WaterVolume.gd
+# and this file's _physics_process() swim branch. "jump"/"swim_down" (Ctrl,
+# project.godot's [input]) give vertical control in place of land's
+# gravity+jump; letting go decays toward hovering in place rather than
+# sinking or drifting.
+static var SWIM_SPEED := 3.2
+static var SWIM_VERTICAL_SPEED := 2.6
+
 @export var faction_id: String = "player"
 
 var spawn_transform: Transform3D
@@ -65,6 +73,23 @@ var _prev_up_valid := false
 @onready var health: Health = $Health
 
 var _skip_next_mouse_delta := true
+
+# Which WaterVolume(s) the player is currently overlapping -- an Array,
+# not a bool, so two overlapping volumes (e.g. a future river/lake
+# junction) don't prematurely end swim state when only one is exited.
+var _water_volumes: Array[Area3D] = []
+
+func is_swimming() -> bool:
+	return not _water_volumes.is_empty()
+
+## WaterVolume.gd's own contract -- called via has_method(), not a typed
+## signal connection, so any body (not just this class) can opt in.
+func enter_water(volume: Area3D) -> void:
+	if not _water_volumes.has(volume):
+		_water_volumes.append(volume)
+
+func exit_water(volume: Area3D) -> void:
+	_water_volumes.erase(volume)
 
 func get_faction() -> String:
 	return faction_id
@@ -177,25 +202,40 @@ func _physics_process(delta: float) -> void:
 	_prev_up = up
 
 	var up_speed := velocity.dot(up)
-	if not is_on_floor():
-		# Stepped radial gradient (0G at the axis, TARGET_G at the wall)
-		# instead of a flat pull or omega^2*radial_len -- see
-		# SpaceStation.gravity_at(). Using radial_len here (not just
-		# whatever gravity_at() was for the floor you took off from)
-		# means a jump/fall that drifts toward the axis genuinely gets
-		# lighter as it goes, same as it would get lighter walking
-		# inward through the bands on foot.
-		up_speed -= SpaceStation.gravity_at(radial_len) * delta
+	var swimming := is_swimming()
+	if swimming:
+		# Neutrally buoyant -- no gravity pull, and explicitly no current/
+		# flow force applied here or anywhere in WaterVolume.gd ("I don't
+		# want the water to flow, just make it so the play character can
+		# swim in it"). Vertical control replaces jump/gravity: hold jump
+		# to rise, swim_down to sink, let go to coast toward a hover
+		# instead of falling.
+		if Input.is_action_pressed("jump"):
+			up_speed = move_toward(up_speed, SWIM_VERTICAL_SPEED, SWIM_VERTICAL_SPEED * 6.0 * delta)
+		elif Input.is_action_pressed("swim_down"):
+			up_speed = move_toward(up_speed, -SWIM_VERTICAL_SPEED, SWIM_VERTICAL_SPEED * 6.0 * delta)
+		else:
+			up_speed = move_toward(up_speed, 0.0, SWIM_VERTICAL_SPEED * 3.0 * delta)
+	else:
+		if not is_on_floor():
+			# Stepped radial gradient (0G at the axis, TARGET_G at the wall)
+			# instead of a flat pull or omega^2*radial_len -- see
+			# SpaceStation.gravity_at(). Using radial_len here (not just
+			# whatever gravity_at() was for the floor you took off from)
+			# means a jump/fall that drifts toward the axis genuinely gets
+			# lighter as it goes, same as it would get lighter walking
+			# inward through the bands on foot.
+			up_speed -= SpaceStation.gravity_at(radial_len) * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		up_speed = JUMP_VELOCITY
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			up_speed = JUMP_VELOCITY
 
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y))
 	if move_dir.length_squared() > 0.0001:
 		move_dir = move_dir.normalized()
 
-	var speed := SPRINT_SPEED if Input.is_action_pressed("sprint") else WALK_SPEED
+	var speed := SWIM_SPEED if swimming else (SPRINT_SPEED if Input.is_action_pressed("sprint") else WALK_SPEED)
 	velocity = up * up_speed + move_dir * speed
 	move_and_slide()
 
@@ -203,6 +243,7 @@ func _on_died(_attacker: Node) -> void:
 	print("StationPlayer died -- respawning.")
 	global_transform = spawn_transform
 	velocity = Vector3.ZERO
+	_water_volumes.clear()  # a mid-swim death would otherwise respawn the player still "swimming" on dry land
 	health.heal(health.max_health)
 	# _prev_up tracks "up" continuously frame-to-frame to co-rotate the
 	# body with the ring (see _physics_process). This teleport is a

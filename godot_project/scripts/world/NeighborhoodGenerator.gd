@@ -126,12 +126,11 @@ static func build_skeleton(root: Node3D, radius: float, segments: int, width: fl
 		connector_instance.mesh = connector_mesh
 		root.add_child(connector_instance)
 
-	# No-op today: the lake zone's water/sand/shore geometry itself was
-	# never built (see LakeGenerator.gd's own comment) -- a real gap left
-	# from earlier phases. Scoped to the skeleton, not per-zone-detail:
-	# water/terrain belongs with the always-on roads, not the streamed
-	# buildings/crops, once it exists.
-	LakeSetup.setup(root)
+	# Water/terrain belongs with the always-on roads, not the streamed
+	# buildings/crops (LakeGenerator.build_water() attaches LakeSetup's
+	# cosmetic UV-scroll itself once the mesh exists -- see its own
+	# comment for why this used to be a no-op here).
+	LakeGenerator.build_water(root, radius, segments, lake_s0, lake_s1)
 
 	# Backface-culling fix, same reasoning as before: a freshly built
 	# StandardMaterial3D mesh here is backface-culled under cull_back
