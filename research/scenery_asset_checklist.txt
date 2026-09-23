@@ -190,19 +190,70 @@ Everything else is [NEW] and not yet modeled.
       per generator_rules.md §10 — low priority)
 
 ================================================================================
+9. YARD / LOT PROPS  [ALL NEW]
+================================================================================
+Full source: research/lot_contents/ — see generator_rules.md §13 for the weighted-pool
+summary and the building-archetype-to-lot-file cross-reference. Distinct from building models
+(section 1-2 above) and from street furniture (section 8) — these are the individual props a
+generator scatters onto a residential lot once its era/setting/income layers are rolled.
+
+[NEW] Detached garage (rear-alley variant, pre-war in-town lots)
+[NEW] Attached garage as facade element (postwar suburban lots — needs to read as part of the
+      house's front elevation, not a separate outbuilding, per the garage/driveway-flip finding)
+[NEW] Driveway variants: gravel strip, concrete ribbon strip (pre-war alley apron), asphalt
+      apron, stamped concrete/paver apron (upper-middle-income only)
+[NEW] Storage shed (small, rear-lot-line placement)
+[NEW] Detached workshop (larger than a shed, upper-middle-income/hobbyist lots)
+[NEW] Greenhouse (small, backyard-scale — distinct from any farm-zone greenhouse)
+[NEW] Vegetable garden plot (row-garden style — rural/low-income) and raised-bed "kitchen
+      garden" style (upper-middle-income hobbyist variant)
+[NEW] Foundation planting / hedge landscaping set (era-appropriate ornamental planting)
+[NEW] Swing set / playset
+[NEW] Above-ground pool + code-required self-latching fence
+[NEW] In-ground pool + code-required self-latching fence (upper-middle-income)
+[NEW] Deck (postwar-era backyard feature)
+[NEW] Patio (alternate/older backyard feature)
+[NEW] Fire pit / fire ring
+[NEW] Basketball hoop (driveway-mounted)
+[NEW] Snowblower / snow-removal equipment (visible in garage or driveway-adjacent, Great Lakes
+      climate item)
+[NEW] Salt/sand storage container (climate item)
+[NEW] Clothesline (income/era-dial item — see generator_rules.md §13)
+[NEW] Woodpile (rural/farm-adjacent supplemental-heat item)
+[NEW] Storm cellar/basement entrance detail (Midwest storm-prep culture)
+[NEW] Boat / RV / camper / utility trailer (outdoor-stored, rural/income-correlated)
+[NEW] Doghouse / dog run / kennel
+[NEW] Backyard chicken coop (small, in-town scale — distinct from the farm-zone chicken_coop
+      already in building_catalog/commercial_civic_farm/)
+[NEW] Trash/recycling bin (with a same-day/collection-day-only visibility state per the
+      Bloomington IN ordinance finding — not a permanently visible prop)
+[NEW] Mailbox: wall/porch-mounted (pre-war in-town), single post-mounted curbside (postwar
+      suburban, USPS-standard height), roadside post box, cluster box unit/CBU (rural)
+[NEW] Lawn ornament / seasonal decoration set (low-confidence/flavor-only per the research —
+      sample sparingly, skew seasonal rather than permanent)
+
+================================================================================
 NOTES
 ================================================================================
 - This list is derived entirely from the research phase; nothing here has been modeled yet
   except the items explicitly marked [EXISTING].
 - The [EXISTING] marks came from a repo scan of godot_project/assets/ (editor_assets,
   downtown_assets, farm_assets manifests + all .glb files present) on 2026-09-22 — re-verify
-  before starting Phase 2 in case assets changed since.
+  before starting Phase 2 in case assets changed since. Section 9 (added after a second
+  research pass) was not re-checked against the asset scan since it's a wholly new category
+  (individual yard props, not buildings) with no plausible existing overlap.
 - Rail depot and founder's-mansion are gaps discovered while writing this checklist — they
   came up in the village-tier research (research/population_tiers/villages_500_5000/
   _tier_summary.md) but weren't included in either building_catalog pass. Worth a small
   follow-up research/template pass before Phase 2, or can be treated as one-off unique builds
   since both are explicitly "at most one per settlement" per the research.
+- Marina/harbor infrastructure (docks, harbormaster building, fuel dock, chandlery-type retail)
+  and a hand-cranked pedestrian chain ferry are two more building/prop gaps surfaced by the
+  Great Lakes demographic-expansion research (research/demographics/_great_lakes_expansion_notes.md,
+  items 3-4) — not in either building catalog, worth a follow-up pass alongside rail
+  depot/founder's-mansion above if the station ever models a resort-village-style zone variant.
 - Priority suggestion for Phase 2 (not a research finding, just a practical ordering note):
   the river/lake/pond water-feature system and the bridge set are the highest-leverage new
-  work, since almost everything else (road sections, drainage, town-siting rules) depends on
-  the river's geometry existing first.
+  work, since almost everything else (road sections, drainage, town-siting rules, and now the
+  elevation/bluff system in generator_rules.md §16) depends on the river's geometry existing
+  first.
