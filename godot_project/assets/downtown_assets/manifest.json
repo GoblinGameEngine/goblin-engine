@@ -571,6 +571,237 @@
           "height": 2.1
         }
       ]
+    },
+    {
+      "id": "dollar_store",
+      "archetype": "dollar_store",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 14.0,
+      "depth": 22.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -11.0,
+          "hinge_x": -0.5,
+          "hinge_y": -11.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "feed_store",
+      "archetype": "feed_store",
+      "stories": 1,
+      "wall_h": 4.392,
+      "width": 16.0,
+      "depth": 28.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -14.0,
+          "hinge_x": -0.5,
+          "hinge_y": -14.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "veterinary_clinic",
+      "archetype": "veterinary_clinic",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 12.0,
+      "depth": 18.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -9.0,
+          "hinge_x": -0.5,
+          "hinge_y": -9.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "newspaper_office",
+      "archetype": "newspaper_office",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 9.0,
+      "depth": 16.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -8.0,
+          "hinge_x": -0.5,
+          "hinge_y": -8.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "local_radio_station",
+      "archetype": "local_radio_station",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 10.0,
+      "depth": 14.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -7.0,
+          "hinge_x": -0.5,
+          "hinge_y": -7.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "funeral_home",
+      "archetype": "funeral_home",
+      "stories": 1,
+      "wall_h": 4.758,
+      "width": 15.0,
+      "depth": 20.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -10.0,
+          "hinge_x": -0.5,
+          "hinge_y": -10.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "law_office",
+      "archetype": "law_office",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 8.0,
+      "depth": 14.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -7.0,
+          "hinge_x": -0.5,
+          "hinge_y": -7.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "insurance_agency",
+      "archetype": "insurance_agency",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 7.0,
+      "depth": 12.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -6.0,
+          "hinge_x": -0.5,
+          "hinge_y": -6.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "real_estate_office",
+      "archetype": "real_estate_office",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 7.0,
+      "depth": 12.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -6.0,
+          "hinge_x": -0.5,
+          "hinge_y": -6.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "laundromat",
+      "archetype": "laundromat",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 9.0,
+      "depth": 16.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -8.0,
+          "hinge_x": -0.5,
+          "hinge_y": -8.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "medical_dental_clinic",
+      "archetype": "medical_dental_clinic",
+      "stories": 1,
+      "wall_h": 3.66,
+      "width": 11.0,
+      "depth": 17.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -8.5,
+          "hinge_x": -0.5,
+          "hinge_y": -8.5,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
     }
   ]
 }
