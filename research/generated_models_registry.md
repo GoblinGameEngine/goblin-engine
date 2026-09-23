@@ -110,6 +110,11 @@ to touch it.
 
 | Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
 |---|---|---|---|---|---|---|---|
+| T-intersection | Road Sections | [DONE] | `blender_scripts/build_intersections.py` | `assets/infrastructure_assets/intersection_t.glb` | `road_tinted.png` (reused) | 2026-09-23 | Flat paved patch (cross-shape, one arm capped), NEW `build_flat_patch` bmesh function. Verified: clean headless import. |
+| 4-way intersection | Road Sections | [DONE] | `blender_scripts/build_intersections.py` | `assets/infrastructure_assets/intersection_4way.glb` | `road_tinted.png` (reused) | 2026-09-23 | Flat paved plus-shaped patch, all 4 arms open. Verified: clean headless import. |
+| Cul-de-sac turnaround | Road Sections | [DONE] | `blender_scripts/build_intersections.py` | `assets/infrastructure_assets/cul_de_sac_turnaround.glb` | `road_tinted.png` (reused) | 2026-09-23 | Circular pad (24-sided) fed by one straight arm. Verified: clean headless import. |
+| Courthouse-square intersection | Road Sections | [DONE] | `blender_scripts/build_intersections.py` | `assets/infrastructure_assets/intersection_courthouse_square.glb` | `road_tinted.png` (reused) | 2026-09-23 | Larger plus-shaped plaza patch framing the civic block. Verified: clean headless import. |
+| River-following, curvilinear, rail-corridor-parallel, narrow no-curb, farm access lane, and minor drainage-spur road **segments** | Road Sections | **[NOT A MODELING TASK]** | — | — | — | 2026-09-23 | These 6 checklist items are path-following/curve-generation LOGIC, not discrete static models — they describe how `StreetBuilder.gd` should route a street along a curve or through a different cross-section, the same way the currently-`[EXISTING]` straight street types are implemented as generator code (StationRingBuilder/DowntownGenerator/ResidentialGenerator/FarmGenerator), not standalone assets. Correctly out of scope for Blender asset production — flagged here as a future GDScript task instead of being modeled as arbitrary props. |
 
 ## Water features
 
@@ -207,7 +212,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Residential buildings | 17 | 17 | 0 | 0 |
 | Commercial/civic/farm buildings | 27 | 27 | 0 | 0 |
 | Bridges | 10 (core types) | 10 | 0 | 0 |
-| Road sections/intersections | 11 | 0 | 0 | 0 |
+| Road sections/intersections | 11 (4 modelable + 6 generator-logic + 1 river-following) | 4 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |
 | Trees/vegetation | ~24 | 21 | 0 | 0 |
 | Fences | ~11 | 9 | 0 | 0 |

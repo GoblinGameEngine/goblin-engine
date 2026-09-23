@@ -261,5 +261,19 @@
       "id": "tree_young_replacement_sapling",
       "canopy_type": "round"
     }
+  ],
+  "intersections": [
+    {
+      "id": "intersection_t"
+    },
+    {
+      "id": "intersection_4way"
+    },
+    {
+      "id": "cul_de_sac_turnaround"
+    },
+    {
+      "id": "intersection_courthouse_square"
+    }
   ]
 }
