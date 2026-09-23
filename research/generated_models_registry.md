@@ -79,6 +79,10 @@ to touch it.
 | Grain Elevator (small) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/grain_elevator_small.glb` | `wall_tinted_2.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | ~7.9m x 7.9m footprint, ~11m tall. NEW `build_grain_elevator` function — simplified as a tall narrow tower, a reasonably accurate silhouette even without silo-cluster/headhouse detail. Verified: clean headless import. |
 | Grain Elevator (large) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/grain_elevator_large.glb` | `wall_tinted_2.png`, `roof_tinted_0.png` (reused) | 2026-09-23 | 9m x 9m footprint, ~29m tall (95ft, top of researched range). Verified: clean headless import. |
 | Water Tower | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_industrial_buildings.py` | `assets/downtown_assets/water_tower.glb` | `wall_tinted_9.png` (reused) | 2026-09-23 | NEW `build_water_tower` function — cylindrical tank (5m radius, 7m tall) on a single support column (1.2m radius, 25m tall), "standpipe" style chosen over spider-leg style for build simplicity. Landmark/non-walkable per the checklist — no door, no interior, no manifest opening entries, `landmark_no_interior: true` flag added. Verified: clean headless import (exports as a genuine Cylinder primitive, confirming the geometry). |
+| Chicken Coop | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_farm_structures_2.py` | `assets/farm_assets/chicken_coop.glb` | `wall_tinted_0.png`, `roof_tinted_2.png` (reused) | 2026-09-23 | 4m x 5.5m, small gable shed. Verified: clean headless import. |
+| Corn Crib (double-crib style) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_farm_structures_2.py` | `assets/farm_assets/corn_crib.glb` | `wall_tinted_4.png`, `roof_tinted_1.png` (reused) | 2026-09-23 | 8.5m x 10m gable shed. Verified: clean headless import. Slatted/ventilated crib walls (real corn cribs are open-slat, not solid) not modeled — solid-wall simplification for this pass. |
+| Farm Equipment Shed | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_farm_structures_2.py` | `assets/farm_assets/farm_equipment_shed.glb` | `wall_tinted_6.png`, `roof_tinted_3.png` (reused) | 2026-09-23 | 7.5m x 12m gable shed. Verified: clean headless import. Built fully-walled; open-sided visual variant (real equipment sheds are often open-sided) is a later refinement. Reminder: mutually exclusive with pole_building per farmstead (generator_rules.md §11), not both. |
+| Grain Silo (farm-scale) | Commercial/Civic/Farm | [DONE] | `blender_scripts/build_farm_structures_2.py` | `assets/farm_assets/grain_silo.glb` | `wall_tinted_2.png` (reused) | 2026-09-23 | 3m radius, 16m tall cylinder, same technique as the water tower. Landmark/non-walkable — no door, no interior, `landmark_no_interior: true`. Verified: clean headless import, exports as a genuine Cylinder primitive. |
 
 ## Bridges
 
@@ -132,7 +136,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Category | Planned | Done | Needs revisit | In progress |
 |---|---|---|---|---|
 | Residential buildings | 17 | 11 | 0 | 0 |
-| Commercial/civic/farm buildings | 27 | 21 | 0 | 0 |
+| Commercial/civic/farm buildings | 27 | 25 | 0 | 0 |
 | Bridges | 6 | 0 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |
