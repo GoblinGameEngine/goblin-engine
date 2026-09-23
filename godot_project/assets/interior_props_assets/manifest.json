@@ -256,6 +256,42 @@
         2.0,
         2.2
       ]
+    },
+    {
+      "id": "pedestal_sink"
+    },
+    {
+      "id": "clawfoot_tub"
+    },
+    {
+      "id": "standalone_shower_stall"
+    },
+    {
+      "id": "medicine_cabinet"
+    },
+    {
+      "id": "utility_sink"
+    },
+    {
+      "id": "floor_lamp"
+    },
+    {
+      "id": "table_lamp"
+    },
+    {
+      "id": "pendant_chandelier_dining"
+    },
+    {
+      "id": "wall_sconce"
+    },
+    {
+      "id": "decorative_grand_chandelier"
+    },
+    {
+      "id": "marquee_blade_sign"
+    },
+    {
+      "id": "neon_signage"
     }
   ]
 }

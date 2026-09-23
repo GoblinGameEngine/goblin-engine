@@ -181,6 +181,7 @@ to touch it.
 | Cash register | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/cash_register.glb` | `wall_tinted_9.png` (reused) | 2026-09-23 | Body + display, NEW `build_cash_register` function. Verified: clean headless import. |
 | Bookshelf | Interior Props [UNIVERSAL] | [DONE] | `blender_scripts/build_interior_props.py` | `assets/interior_props_assets/bookshelf.glb` | `wall_tinted_7.png` (reused) | 2026-09-23 | Frame + 4 shelves, NEW `build_bookshelf` function. Verified: clean headless import. **All 19 [UNIVERSAL] (build-first) interior items now complete.** |
 | Appliances category (20 items) | Interior Props | [DONE] | `blender_scripts/build_appliances.py` | `assets/interior_props_assets/{icebox,dishwasher_residential,microwave,washer,dryer,chest_freezer,small_kitchen_appliance_cluster,stand_mixer_airfryer_winefridge,institutional_range_oven,steam_table,griddle_flattop,deep_fryer,large_coffee_urn,standard_coffee_machine,malt_mixer_syrup_dispenser,popcorn_machine,vending_machine,commercial_dishwasher,boiler_unit,walkin_cooler_freezer}.glb` | reused `wall_tinted_N.png` variants throughout | 2026-09-23 | Completes the master list's Appliances category (22 total — refrigerator + stove_range were already built as [UNIVERSAL] items in the first batch; washer/dryer/small-kitchen-appliance-cluster are ALSO [UNIVERSAL] but were missed in that first pass, caught and included here). All box-primitive geometry via `build_box_prop`. Verified: clean headless import, all 20 confirmed in manifest, no duplicates. **Interior props: 39/265 complete (Appliances category: 22/22).** |
+| Kitchen/Bath fixtures remainder (5) + Lighting (7) | Interior Props | [DONE] | `blender_scripts/build_fixtures.py` | `assets/interior_props_assets/{pedestal_sink,clawfoot_tub,standalone_shower_stall,medicine_cabinet,utility_sink,floor_lamp,table_lamp,pendant_chandelier_dining,wall_sconce,decorative_grand_chandelier,marquee_blade_sign,neon_signage}.glb` | reused `wall_tinted_N.png` throughout | 2026-09-23 | Completes Fixtures—Kitchen/Bath (11/11: 6 were already [UNIVERSAL] items) and all of Fixtures—Lighting (7/7). New `build_lamp` (base+pole+cone shade), `build_ceiling_fixture` (chain+cone shade, used for both pendant and grand chandelier at different scale), and `build_wall_sign` functions. Verified: clean headless import, 12 confirmed in manifest, no duplicates. **Interior props: 51/265.** |
 
 ## Vehicles, animals, and other categories from the expansion pass
 
@@ -202,7 +203,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Fences | ~11 | 9 | 0 | 0 |
 | Street furniture/misc | 8 | 0 | 0 | 0 |
 | Yard/lot props | 26 | 11 (+1 bonus) | 0 | 0 |
-| Interior props | 265 | 39 | 0 | 0 |
+| Interior props | 265 | 51 | 0 | 0 |
 | Expansion-pass items (`scenery_asset_checklist_expansion.md`, 94 items) | 94 | 0 | 0 | 0 |
 | **Total** | **505** (240 exterior/infra [146 original + 94 expansion] + 265 interior) | **3** | **0** | **0** |
 
