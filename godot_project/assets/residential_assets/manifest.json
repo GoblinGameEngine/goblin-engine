@@ -62,6 +62,69 @@
           "height": 2.1
         }
       ]
+    },
+    {
+      "id": "starter_home_minimal_traditional",
+      "archetype": "starter_home_minimal_traditional",
+      "stories": 1,
+      "wall_h": 2.5,
+      "width": 7.5,
+      "depth": 8.5,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -4.25,
+          "hinge_x": -0.5,
+          "hinge_y": -4.25,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "colonial_revival",
+      "archetype": "colonial_revival",
+      "stories": 1,
+      "wall_h": 5.2,
+      "width": 11.0,
+      "depth": 9.5,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -4.75,
+          "hinge_x": -0.5,
+          "hinge_y": -4.75,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "tudor_revival_cottage",
+      "archetype": "tudor_revival_cottage",
+      "stories": 1,
+      "wall_h": 4.4,
+      "width": 10.0,
+      "depth": 9.5,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -4.75,
+          "hinge_x": -0.5,
+          "hinge_y": -4.75,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
     }
   ]
 }

@@ -45,6 +45,9 @@ to touch it.
 | Ranch house | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/ranch.glb` | `wall_tinted_3.png`, `roof_tinted_1.png` (reused existing generic tints, no new texture needed) | 2026-09-22 | 14m x 10m, single story, 18° gable, 1 front door. Verified: clean headless Godot import, no errors. Not yet wired into ResidentialGenerator.gd or manifest-driven placement — geometry/import only so far. Garage/driveway (per generator_rules.md §13) not modeled — separate yard-prop item. |
 | Bungalow/Craftsman | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/bungalow_craftsman.glb` | `wall_tinted_7.png`, `roof_tinted_2.png` (reused existing) | 2026-09-22 | 9.5m x 10.5m, single story, 20° gable w/ wide 0.7m overhang (Craftsman eave). Verified: clean headless Godot import. Not yet wired into a generator. |
 | Cape Cod | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/cape_cod.glb` | `wall_tinted_4.png`, `roof_tinted_0.png` (reused existing) | 2026-09-22 | 8.5m x 8m, single story, steep 45° gable (defining Cape Cod trait). Verified: clean headless Godot import. Not yet wired into a generator. |
+| Small Starter Home (Minimal Traditional) | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/starter_home_minimal_traditional.glb` | `wall_tinted_0.png`, `roof_tinted_3.png` (reused existing) | 2026-09-22 | 7.5m x 8.5m, single story, 25° gable, smallest footprint in the batch. Verified: clean headless Godot import. Not yet wired into a generator. |
+| Colonial Revival | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/colonial_revival.glb` | `wall_tinted_9.png`, `roof_tinted_1.png` (reused existing) | 2026-09-22 | 11m x 9.5m, 2 stories (5.2m wall height), 32° gable. Verified: clean headless Godot import. Not yet wired into a generator. |
+| Tudor Revival Cottage | Residential Buildings | [DONE] | `blender_scripts/build_residential_buildings.py` | `assets/residential_assets/tudor_revival_cottage.glb` | `wall_tinted_10.png`, `roof_tinted_2.png` (reused existing) | 2026-09-22 | 10m x 9.5m, 1.5-2 story (4.4m wall height), steep 52° gable (defining Tudor trait, steeper than Cape Cod). Verified: clean headless Godot import. Not yet wired into a generator. |
 
 ## Commercial / civic / farm buildings
 
@@ -102,7 +105,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 
 | Category | Planned | Done | Needs revisit | In progress |
 |---|---|---|---|---|
-| Residential buildings | 17 | 3 | 0 | 0 |
+| Residential buildings | 17 | 6 | 0 | 0 |
 | Commercial/civic/farm buildings | 27 | 0 | 0 | 0 |
 | Bridges | 6 | 0 | 0 | 0 |
 | Road sections/intersections | 11 | 0 | 0 | 0 |

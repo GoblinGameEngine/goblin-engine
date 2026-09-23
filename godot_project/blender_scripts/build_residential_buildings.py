@@ -100,6 +100,32 @@ def main():
 		roof_pitch_deg=45.0, roof_overhang=0.4,
 		wall_tex="wall_tinted_4.png", roof_tex="roof_tinted_0.png"))
 
+	# Small starter home (Minimal Traditional): smallest single-story
+	# footprint in this batch, modest roof pitch, plain massing --
+	# researched 7.3-9.1m x 7.6-9.8m range, toward the compact end.
+	clear_scene()
+	manifest["residential_buildings"].append(build_building(
+		"starter_home_minimal_traditional", width=7.5, depth=8.5, wall_h=2.5,
+		roof_pitch_deg=25.0, roof_overhang=0.4,
+		wall_tex="wall_tinted_0.png", roof_tex="roof_tinted_3.png"))
+
+	# Colonial Revival: 2-story symmetric massing, moderate roof pitch --
+	# researched 9.8-13.7m x 9.1-11m range.
+	clear_scene()
+	manifest["residential_buildings"].append(build_building(
+		"colonial_revival", width=11.0, depth=9.5, wall_h=2 * 2.6,
+		roof_pitch_deg=32.0, roof_overhang=0.45,
+		wall_tex="wall_tinted_9.png", roof_tex="roof_tinted_1.png"))
+
+	# Tudor Revival cottage: 1.5-2 story, distinctively STEEP gable (the
+	# defining Tudor trait, steeper even than Cape Cod) -- researched
+	# 9.1-11.6m x 8.5-10.4m range.
+	clear_scene()
+	manifest["residential_buildings"].append(build_building(
+		"tudor_revival_cottage", width=10.0, depth=9.5, wall_h=4.4,
+		roof_pitch_deg=52.0, roof_overhang=0.35,
+		wall_tex="wall_tinted_10.png", roof_tex="roof_tinted_2.png"))
+
 	with open(os.path.join(OUT_DIR, "manifest.json"), "w") as f:
 		json.dump(manifest, f, indent=2)
 	print("build_residential_buildings: wrote %d buildings to %s" % (len(manifest["residential_buildings"]), OUT_DIR))
