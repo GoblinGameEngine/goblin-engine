@@ -60,5 +60,58 @@
       "road_width": 6.0,
       "ditch_width": 3.0
     }
+  ],
+  "fences": [
+    {
+      "id": "fence_split_rail",
+      "segment_length": 3.0,
+      "height": 1.1
+    },
+    {
+      "id": "fence_farm_field_post_line",
+      "segment_length": 3.0,
+      "height": 1.2
+    },
+    {
+      "id": "fence_field_woven_wire",
+      "segment_length": 3.0,
+      "height": 1.3,
+      "cutout_texture": true
+    },
+    {
+      "id": "fence_corral_livestock",
+      "segment_length": 3.0,
+      "height": 1.5,
+      "cutout_texture": true
+    },
+    {
+      "id": "fence_industrial_chainlink_razor",
+      "segment_length": 3.0,
+      "height": 2.4,
+      "cutout_texture": true
+    },
+    {
+      "id": "fence_deer",
+      "segment_length": 3.0,
+      "height": 2.2,
+      "cutout_texture": true
+    },
+    {
+      "id": "fence_high_tensile_electric",
+      "segment_length": 3.0,
+      "height": 1.1,
+      "cutout_texture": true
+    },
+    {
+      "id": "fence_snow_plastic",
+      "segment_length": 3.0,
+      "height": 1.2,
+      "cutout_texture": true
+    },
+    {
+      "id": "fence_ornamental_aluminum",
+      "segment_length": 3.0,
+      "height": 1.0
+    }
   ]
 }

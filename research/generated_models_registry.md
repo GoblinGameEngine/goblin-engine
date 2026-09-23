@@ -125,6 +125,15 @@ to touch it.
 
 | Model | Category | Status | Build script | Output file(s) | Textures | Date | Notes |
 |---|---|---|---|---|---|---|---|
+| Split-rail fence | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_split_rail.glb` | `wall_tinted_6.png` (reused) | 2026-09-23 | 3m repeatable segment, NEW `build_post_rail_fence` function (posts + horizontal rails). Verified: clean headless import. |
+| Farm field fence (post line) | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_farm_field_post_line.glb` | `wall_tinted_4.png` (reused) | 2026-09-23 | 3m segment, closer post spacing, 1 rail. Verified: clean headless import. |
+| Farm field fence (woven wire) | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_field_woven_wire.glb` | `wall_tinted_5.png` (reused) | 2026-09-23 | 3m segment, NEW `build_mesh_panel_fence` function — 2 end posts + a single thin panel quad meant to carry an alpha-cutout mesh texture (this project's established hard-cutout convention, not yet painted — `cutout_texture: true` flag in manifest as a reminder). Verified: clean headless import. |
+| Corral/livestock pen fence | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_corral_livestock.glb` | `wall_tinted_8.png` (reused) | 2026-09-23 | 3m segment, mesh-panel style, 1.5m tall. Verified: clean headless import. |
+| Chain-link security fence w/ razor wire (industrial) | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_industrial_chainlink_razor.glb` | `wall_tinted_9.png` (reused) | 2026-09-23 | 3m segment, 2.4m tall (tallest fence built). Verified: clean headless import. Razor-wire topping detail not modeled separately — part of the cutout texture, not modeled. |
+| Deer fencing (orchard/vineyard) | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_deer.glb` | `wall_tinted_0.png` (reused) | 2026-09-23 | 3m segment, 2.2m tall mesh panel. Verified: clean headless import. |
+| High-tensile electric fence | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_high_tensile_electric.glb` | `wall_tinted_2.png` (reused) | 2026-09-23 | 3m segment, thin posts, 1.1m tall. Verified: clean headless import. |
+| Snow fence (plastic) | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_snow_plastic.glb` | `wall_tinted_1.png` (reused) | 2026-09-23 | 3m segment, mesh panel. Wood-slat variant not yet built (same geometry, different texture — quick follow-up). Verified: clean headless import. |
+| Ornamental aluminum/wrought-iron fence | Fences | [DONE] | `blender_scripts/build_fences.py` | `assets/infrastructure_assets/fence_ornamental_aluminum.glb` | `wall_tinted_10.png` (reused) | 2026-09-23 | 3m segment, post+rail style, thin posts, 1m tall. Verified: clean headless import. **Fences: 9/9 core new types complete** (existing 4 + farm field/corral/split-rail from the original checklist already covered; cemetery fence and snow-fence wood-slat variant deferred as lower priority per the research's own note). |
 
 ## Street furniture / misc scenery
 
@@ -158,7 +167,7 @@ placeholder so this file's structure doesn't need to be redesigned when that hap
 | Road sections/intersections | 11 | 0 | 0 | 0 |
 | Water features | 11 | 0 | 0 | 0 |
 | Trees/vegetation | ~24 | 0 | 0 | 0 |
-| Fences | ~11 | 0 | 0 | 0 |
+| Fences | ~11 | 9 | 0 | 0 |
 | Street furniture/misc | 8 | 0 | 0 | 0 |
 | Yard/lot props | 26 | 0 | 0 | 0 |
 | Interior props | 265 | 0 | 0 | 0 |
