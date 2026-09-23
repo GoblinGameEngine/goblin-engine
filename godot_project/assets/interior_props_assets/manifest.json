@@ -96,6 +96,166 @@
     },
     {
       "id": "bookshelf"
+    },
+    {
+      "id": "icebox",
+      "size": [
+        0.55,
+        0.5,
+        1.1
+      ]
+    },
+    {
+      "id": "dishwasher_residential",
+      "size": [
+        0.6,
+        0.6,
+        0.85
+      ]
+    },
+    {
+      "id": "microwave",
+      "size": [
+        0.5,
+        0.35,
+        0.3
+      ]
+    },
+    {
+      "id": "washer",
+      "size": [
+        0.65,
+        0.65,
+        0.9
+      ]
+    },
+    {
+      "id": "dryer",
+      "size": [
+        0.65,
+        0.65,
+        0.9
+      ]
+    },
+    {
+      "id": "chest_freezer",
+      "size": [
+        1.4,
+        0.7,
+        0.85
+      ]
+    },
+    {
+      "id": "small_kitchen_appliance_cluster",
+      "size": [
+        0.8,
+        0.35,
+        0.35
+      ]
+    },
+    {
+      "id": "stand_mixer_airfryer_winefridge",
+      "size": [
+        0.9,
+        0.4,
+        0.5
+      ]
+    },
+    {
+      "id": "institutional_range_oven",
+      "size": [
+        1.8,
+        0.9,
+        1.0
+      ]
+    },
+    {
+      "id": "steam_table",
+      "size": [
+        1.5,
+        0.7,
+        0.9
+      ]
+    },
+    {
+      "id": "griddle_flattop",
+      "size": [
+        1.0,
+        0.6,
+        0.35
+      ]
+    },
+    {
+      "id": "deep_fryer",
+      "size": [
+        0.5,
+        0.6,
+        0.9
+      ]
+    },
+    {
+      "id": "large_coffee_urn",
+      "size": [
+        0.35,
+        0.35,
+        0.6
+      ]
+    },
+    {
+      "id": "standard_coffee_machine",
+      "size": [
+        0.3,
+        0.25,
+        0.4
+      ]
+    },
+    {
+      "id": "malt_mixer_syrup_dispenser",
+      "size": [
+        0.4,
+        0.3,
+        0.5
+      ]
+    },
+    {
+      "id": "popcorn_machine",
+      "size": [
+        0.5,
+        0.45,
+        0.8
+      ]
+    },
+    {
+      "id": "vending_machine",
+      "size": [
+        0.9,
+        0.8,
+        1.8
+      ]
+    },
+    {
+      "id": "commercial_dishwasher",
+      "size": [
+        0.9,
+        0.8,
+        1.5
+      ]
+    },
+    {
+      "id": "boiler_unit",
+      "size": [
+        1.0,
+        0.8,
+        1.6
+      ]
+    },
+    {
+      "id": "walkin_cooler_freezer",
+      "size": [
+        2.4,
+        2.0,
+        2.2
+      ]
     }
   ]
 }
