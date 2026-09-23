@@ -1,8 +1,17 @@
-SCENERY / ASSET CHECKLIST — for the map-generation model-building phase (Phase 2, not started)
+SCENERY / ASSET CHECKLIST — for the map-generation model-building phase (Phase 2, now underway)
 Derived from research/generator_rules.md and research/building_catalog/. Working reference
 only — check off items as models are built. [EXISTING] = already in
 godot_project/assets/editor_assets or *_assets (confirmed via a repo scan on 2026-09-22).
 Everything else is [NEW] and not yet modeled.
+
+PRODUCTION STATUS: see research/generated_models_registry.md for what's actually been built
+(this file only tracks what's PLANNED). ALSO SEE research/scenery_asset_checklist_expansion.md
+— a 94-item additive supplement (hospital, harbor/marina infrastructure, rail depot,
+founder's-mansion, cemetery, fairground, downtown building-condition props, plus whole new
+categories: more business archetypes, vehicles, street/park furniture, park/rec equipment,
+animals/wildlife, cemetery props, downtown seasonal decor) found in a completeness audit after
+this file was first written — not yet merged in, check both files. Combined total: 505
+exterior/infrastructure + interior items (146 original + 94 expansion + 265 interior).
 
 ================================================================================
 1. RESIDENTIAL BUILDINGS  (full templates: research/building_catalog/residential/)

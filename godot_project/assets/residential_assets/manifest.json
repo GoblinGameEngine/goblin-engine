@@ -1,0 +1,67 @@
+{
+  "residential_buildings": [
+    {
+      "id": "ranch",
+      "archetype": "ranch",
+      "stories": 1,
+      "wall_h": 2.6,
+      "width": 14.0,
+      "depth": 10.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -5.0,
+          "hinge_x": -0.5,
+          "hinge_y": -5.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "bungalow_craftsman",
+      "archetype": "bungalow_craftsman",
+      "stories": 1,
+      "wall_h": 2.8,
+      "width": 9.5,
+      "depth": 10.5,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -5.25,
+          "hinge_x": -0.5,
+          "hinge_y": -5.25,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    },
+    {
+      "id": "cape_cod",
+      "archetype": "cape_cod",
+      "stories": 1,
+      "wall_h": 2.6,
+      "width": 8.5,
+      "depth": 8.0,
+      "openings": [
+        {
+          "kind": "door",
+          "x": 0.0,
+          "y": -4.0,
+          "hinge_x": -0.5,
+          "hinge_y": -4.0,
+          "plane_rot": 0.0,
+          "z": 0.0,
+          "width": 1.0,
+          "height": 2.1
+        }
+      ]
+    }
+  ]
+}
