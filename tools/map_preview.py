@@ -1369,6 +1369,26 @@ if "--inventory" in sys.argv:
                                      "s": round(s_m, 1), "x": round(x_m, 1),
                                      "span_m": round(math.dist(a, b_), 1), "over": over or "farm ditch",
                                      "ends": [[round(a[0], 1), round(a[1], 1)], [round(b_[0], 1), round(b_[1], 1)]]})
+    if "--terrain" in sys.argv:
+        # the terrain model's data for the game (MapTerrain.gd): its closed-form parameters, and the
+        # water features this preview draws from polylines -- creeks, spurs, ponds, oxbows, ditches
+        ter = {"R": R, "W": W,
+               "river": {"A": [A1, A2, A3], "phi": [PHI1, PHI2, PHI3, PHI4], "ch_half": CH_HALF, "bed_half": 12.0, "depth": 2.5},
+               "lake": {"s": LAKE_S, "half_len": LAKE_HALF_LEN, "hw": LAKE_HW, "neck": LAKE_NECK, "depth": 4.5, "shelf": 20.0},
+               "bluff": {"H": H_BLUFF, "Z1": Z1},
+               "creeks": [{"name": n, "hw": 3.5, "depth": 1.1, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in path]}
+                          for n, path, pond in CREEK_PATHS]
+                         + [{"name": "spur", "hw": 2.0, "depth": 0.7, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in sp]}
+                            for sp in SPUR_PATHS],
+               "ponds": [{"name": n, "s": pond[0], "x": pond[1], "a": pond[2] / 2, "b": pond[3], "rot": 0.25, "depth": 1.8}
+                         for n, path, pond in CREEK_PATHS if pond],
+               "oxbows": [{"name": n, "depth": 1.5, "poly": [[round(a, 1), round(b_, 1)] for a, b_ in poly]} for n, poly in OXBOW_POLYS],
+               "ditches": [{"s0": round(min(p_[0] for p_ in run), 1), "s1": round(max(p_[0] for p_ in run), 1),
+                            "x": round(run[0][1], 1), "hw": 1.5, "depth": 0.6} for run in DITCHES]}
+        with open(sys.argv[sys.argv.index("--terrain") + 1], "w") as f:
+            json.dump(ter, f, indent=0)
+        print(f"terrain: {len(ter['creeks'])} creeks/spurs, {len(ter['ponds'])} ponds, {len(ter['oxbows'])} oxbows, "
+              f"{len(ter['ditches'])} ditches")
     out_inv = sys.argv[sys.argv.index("--inventory") + 1]
     with open(out_inv, "w") as f:
         json.dump(inv, f, indent=1)

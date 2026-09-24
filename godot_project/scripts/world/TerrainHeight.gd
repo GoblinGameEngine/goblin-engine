@@ -72,6 +72,9 @@ class_name TerrainHeight
 
 const FT := 0.3048
 
+## The remake world: the terrain is the map's (MapTerrain.gd, ported from tools/map_preview.py) --
+## elevation_at()/depth_at() delegate to it; everything below is the earlier layout's model.
+static var USE_MAP := false
 static var RING_WIDTH := 1000.0  # set by StationRingBuilder.build()'s first line -- see this file's header
 
 # --- Lake -- now just a widened stretch of the river centered on the
@@ -317,6 +320,8 @@ static func _is_under_road(radius: float, segments: int, s: float, x: float) -> 
 ## carving; gated to exactly 0 under any existing road so those stay
 ## flat and intact.
 static func depth_at(radius: float, segments: int, s: float, x: float) -> float:
+	if USE_MAP:
+		return MapTerrain.water_depth(s, x)
 	if _is_under_road(radius, segments, s, x):
 		return 0.0
 	var d := river_channel_depth(radius, s, x)
@@ -367,6 +372,8 @@ static func zone_tilt(radius: float, s: float) -> float:
 ## climbing the bluff just follows its grade, same as a real hillside
 ## road would.
 static func elevation_at(radius: float, segments: int, s: float, x: float) -> float:
+	if USE_MAP:
+		return MapTerrain.elevation(s, x)
 	return bluff_height(radius, s, x) + zone_tilt(radius, s) - depth_at(radius, segments, s, x)
 
 ## Critical x-breakpoints for one ring segment (its two s-edges) --

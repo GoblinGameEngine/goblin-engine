@@ -115,24 +115,30 @@ func setup(p_radius: float, p_segments: int, width: float, p_target: Node3D) -> 
 	target = p_target
 	_mats["face"] = _material("bedrock")
 	_mats["scree"] = _material("scree")
-	var tile_s := TAU * radius / float(segments) * TILE_SEGS
+	# the tiles build a few per frame (see _process), nothing here
 	for end in [-1, 1]:
 		for i in range(0, segments / TILE_SEGS):
-			var s0 := i * tile_s
-			# LOD1: detailed on a 6 m grid (hidden while this tile's LOD0 is loaded)
-			var mid := _build_mesh(end, s0, s0 + tile_s, 6.0, 6.0, true)
-			mid.name = "cliff_mid_%d_%d" % [end, i]
-			mid.visibility_range_end = MID
-			mid.visibility_range_end_margin = MID * 0.08
-			add_child(mid)
-			_mid["%d:%d" % [end, i]] = mid
-			# LOD2: the smooth surface, just the texture and the strata bands
-			var far := _build_mesh(end, s0, s0 + tile_s, tile_s / 4.0, HEIGHT / 10.0, false)
-			far.name = "cliff_far_%d_%d" % [end, i]
-			far.visibility_range_begin = MID
-			far.visibility_range_begin_margin = MID * 0.08
-			add_child(far)
-	set_process(target != null)
+			_todo.append([end, i])
+	set_process(true)
+
+
+func _build_tile(end: int, i: int) -> void:
+	var tile_s := TAU * radius / float(segments) * TILE_SEGS
+	var s0 := i * tile_s
+	# LOD1: detailed on a 6 m grid (hidden while this tile's LOD0 is loaded)
+	var mid := _build_mesh(end, s0, s0 + tile_s, 6.0, 6.0, true)
+	mid.name = "cliff_mid_%d_%d" % [end, i]
+	mid.visibility_range_end = MID
+	mid.visibility_range_end_margin = MID * 0.08
+	mid.visible = not _lod0.has("%d:%d" % [end, i])
+	add_child(mid)
+	_mid["%d:%d" % [end, i]] = mid
+	# LOD2: the smooth surface, just the texture and the strata bands
+	var far := _build_mesh(end, s0, s0 + tile_s, tile_s / 4.0, HEIGHT / 10.0, false)
+	far.name = "cliff_far_%d_%d" % [end, i]
+	far.visibility_range_begin = MID
+	far.visibility_range_begin_margin = MID * 0.08
+	add_child(far)
 
 
 func _material(tex: String) -> StandardMaterial3D:
@@ -213,8 +219,12 @@ func _build_mesh(end: int, s0: float, s1: float, ds: float, dh: float, detailed:
 # ------------------------------------------------------------------ LOD0 streaming
 var _t := 0.0
 var _mid := {}
+var _todo := []                     # [end, tile] still to build (mid + far)
 
 func _process(delta: float) -> void:
+	if not _todo.is_empty():
+		var job: Array = _todo.pop_front()
+		_build_tile(job[0], job[1])
 	_t -= delta
 	if _t > 0.0 or target == null:
 		return
@@ -233,7 +243,8 @@ func _process(delta: float) -> void:
 		if not want.has(key):
 			_lod0[key].queue_free()
 			_lod0.erase(key)
-			_mid[key].visible = true
+			if _mid.has(key):
+				_mid[key].visible = true
 	for key in want:
 		if _lod0.has(key):
 			continue
@@ -243,10 +254,13 @@ func _process(delta: float) -> void:
 		tile.name = "cliff_near_%d_%d" % [end, i]
 		var body := StaticBody3D.new()
 		var cs := CollisionShape3D.new()
-		cs.shape = tile.mesh.create_trimesh_shape()
+		var shape := tile.mesh.create_trimesh_shape()
+		shape.backface_collision = true
+		cs.shape = shape
 		body.add_child(cs)
 		tile.add_child(body)
 		add_child(tile)
 		_lod0[key] = tile
-		_mid[key].visible = false
+		if _mid.has(key):
+			_mid[key].visible = false
 		return                       # one tile per tick

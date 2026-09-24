@@ -25,7 +25,7 @@ const MARGIN := 0.08                 # hysteresis at each switch, a fraction of 
 ## entries: Array of Dictionaries {id: String, xform: Transform3D (in parent's space),
 ##   key2: Variant, key3: Variant (cell keys: buildings with equal keys merge)}.
 ## full: build each building's LOD0 too (false when a streamer loads LOD0 on demand).
-## Returns {"buildings": n, "cells2": n, "cells3": n, "landmarks": n}.
+## A coroutine (one building per frame) -- await it; returns {"buildings", "cells2", "cells3", "landmarks"}.
 static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 	var lod_scenes := {}
 	var cells2 := {}
@@ -73,6 +73,7 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 				root.add_child(inst)
 				RemakeBuilding.prepare_lod(inst, "res://remake/buildings/%s.lod%d.glb" % [id, l])
 				_ranges(inst, (D2 if l == 2 else D3) * k, D3 * k if l == 2 else 0.0)
+			await (Engine.get_main_loop() as SceneTree).process_frame
 			continue
 		_ranges(lod1, D1 * k, 0.0)
 		for pair in [[cells2, e.key2, 1], [cells3, e.key3, 2]]:
@@ -88,6 +89,8 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 		if not lod1_of_cell2.has(e.key2):
 			lod1_of_cell2[e.key2] = []
 		lod1_of_cell2[e.key2].append(lod1)
+		# one building per frame: the game keeps running while a settlement fills in
+		await (Engine.get_main_loop() as SceneTree).process_frame
 	# the merged meshes, and the visibility chain LOD1 -> cell LOD2 -> cell LOD3
 	var nodes3 := {}
 	for key in cells3:

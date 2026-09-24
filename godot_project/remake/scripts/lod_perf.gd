@@ -65,7 +65,7 @@ func _ready() -> void:
 				add_child(b)
 				b.load_building(load("res://remake/buildings/%s.glb" % e.id))
 		else:
-			report["hlod"] = RemakeLodClusters.build(self, entries, args.get("full", "1") == "1")
+			report["hlod"] = await RemakeLodClusters.build(self, entries, args.get("full", "1") == "1")
 		report["build_ms"] = Time.get_ticks_msec() - t0
 		n = 0
 		pm.size = Vector2(3200, 3200)
@@ -79,7 +79,7 @@ func _ready() -> void:
 				"key2": Vector2i(floori(p.x / RemakeLodClusters.CELL2), floori(p.z / RemakeLodClusters.CELL2)),
 				"key3": Vector2i(floori(p.x / RemakeLodClusters.CELL3), floori(p.z / RemakeLodClusters.CELL3))})
 		var t0 := Time.get_ticks_msec()
-		var info := RemakeLodClusters.build(self, entries)
+		var info: Dictionary = await RemakeLodClusters.build(self, entries)
 		report["hlod_build_ms"] = Time.get_ticks_msec() - t0
 		report["hlod"] = info
 	for i in (n if mode != "hlod" else 0):

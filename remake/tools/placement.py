@@ -8,7 +8,8 @@ Joins remake/inventory/map_inventory.json (where everything stands on the ring: 
 axial position x, facing) with the built glbs (godot_project/remake/buildings/<ID>.glb) and writes
 one entry per placeable structure:
 
-  {"id", "kind", "settlement", "glb", "s", "x", "yaw", "min": [x, y, z], "max": [x, y, z]}
+  {"id", "kind", "settlement", "glb", "s", "x", "yaw", "min": [x, y, z], "max": [x, y, z],
+   "fmin": [x, z], "fmax": [x, z]}      (fmin/fmax: the massing footprint, from the LOD2)
 
 yaw (radians) turns the building about the floor's up axis so its front (glb local -z, Blender +y)
 faces the right way: forward on the ring is +s, right is +x, so a front pointing along (ds, dx)
@@ -39,15 +40,16 @@ ALIAS = {"P-001": ["P-STORE", "P-TAVERN"], "P-002": ["P-CHURCH"], "P-003": ["P-P
          "P-005": ["P-HOUSE2"], "P-006": ["P-HOUSE3"], "P-007": ["P-HOUSE4"], "P-008": ["P-ELEV"], "P-009": ["P-DEPOT"]}
 
 
-def glb_bounds(path):
-    """Bounds of the *_visual mesh (union of its primitives' POSITION accessors), glb frame."""
+def glb_bounds(path, any_mesh=False):
+    """Bounds of the *_visual mesh (union of its primitives' POSITION accessors), glb frame; with
+    any_mesh, of every mesh (a .lod2.glb's single massing mesh)."""
     with open(path, "rb") as f:
         data = f.read()
     n = struct.unpack("<I", data[12:16])[0]
     j = json.loads(data[20:20 + n])
     lo, hi = [1e9] * 3, [-1e9] * 3
     for node in j["nodes"]:
-        if "mesh" not in node or not node.get("name", "").endswith("_visual"):
+        if "mesh" not in node or not (any_mesh or node.get("name", "").endswith("_visual")):
             continue
         t = node.get("translation", [0, 0, 0])
         for prim in j["meshes"][node["mesh"]]["primitives"]:
@@ -89,9 +91,14 @@ def main():
         if b is None:
             missing.append(rid + " (no _visual mesh)")
             return
+        # the footprint the building stands on: its massing (LOD2, no yard props), else the visual bounds
+        lod2 = os.path.join(BLD, f"{rid}.lod2.glb")
+        f = glb_bounds(lod2, any_mesh=True) if os.path.exists(lod2) else None
+        f = f or b
         out.append({"id": rid, "kind": kind, "settlement": settlement, "glb": f"res://remake/buildings/{rid}.glb",
                     "s": round(s, 2), "x": round(x, 2), "yaw": round(yaw, 4),
-                    "min": [round(v, 2) for v in b[0]], "max": [round(v, 2) for v in b[1]]})
+                    "min": [round(v, 2) for v in b[0]], "max": [round(v, 2) for v in b[1]],
+                    "fmin": [round(f[0][0], 2), round(f[0][2], 2)], "fmax": [round(f[1][0], 2), round(f[1][2], 2)]})
 
     for st in inv["structures"]:
         (a0, a1), (b0, b1) = st["front_edge"] if st.get("front_edge") else ((st["s"], st["x"]), (st["s"], st["x"] + 1))

@@ -53,6 +53,13 @@ class_name SpaceStation
 # math (confirmed live, independent of whether anything is rotating).
 static var RADIUS := 500.0          # floor's distance from the axis -- also the "wall" gravity_at() ramps up to
 static var CEILING_HEIGHT := 450.0  # floor to ceiling -- narrows the central shaft to a 50m radius from the axis, per direct instruction ("narrow the central cylinder ceiling to a radius of 50m")
+## The remake world (the map from tools/map_preview.py): its terrain (MapTerrain), water, cliffs
+## and the built structures of REMAKE_SETTLEMENTS (placement.json names; [] = everything), instead
+## of the earlier procedural layout.  The player starts at (SPAWN_S, SPAWN_X).
+static var REMAKE_WORLD := true
+static var REMAKE_SETTLEMENTS: Array = ["Harrow Falls"]
+static var SPAWN_S := 395.0          # Harrow Falls, Main Street
+static var SPAWN_X := 283.0
 static var WIDTH := 3000.0          # wall-to-wall, along the axis -- 3x the earlier 1000m default, per direct instruction, to fit the 9-settlement layout (SettlementLayout.gd) with real research-derived block/lot scale
 static var SEGMENTS := 96           # angular subdivision -- TAU/segments per facet, independent of radius
 
@@ -94,6 +101,7 @@ var environment: Environment
 
 func _ready() -> void:
 	add_to_group("space_station")
+	TerrainHeight.USE_MAP = REMAKE_WORLD
 	_setup_environment()
 	# Player spawns BEFORE the ring builds now (reordered from build-then-
 	# spawn): _build_ring() below wires up ZoneStreamer.gd, which needs a
@@ -185,7 +193,7 @@ func _build_ring() -> void:
 	ceiling_mat.albedo_texture = load("res://assets/textures/station_ceiling_panel.png")
 
 	StationRingBuilder.build(ring_body, RADIUS, CEILING_HEIGHT, WIDTH, SEGMENTS,
-		floor_mat, wall_mat, ceiling_mat)
+		floor_mat, wall_mat, ceiling_mat, not REMAKE_WORLD)
 	StationRingBuilder.add_light_fixtures(ring_body, RADIUS, CEILING_HEIGHT, WIDTH, SEGMENTS, 4)
 
 	# Cel-shade just the floor/wall/ceiling mesh, matching the rest of
@@ -224,6 +232,9 @@ func _build_ring() -> void:
 	# the old 4-zone system's ZoneStreamer.gd used -- confirmed live that
 	# awaiting it here (or making it non-async) blocks the main thread for
 	# minutes building all 9 settlements' buildings' collision at once.
+	if REMAKE_WORLD:
+		_build_remake_world(floor_mat)
+		return
 	var neighborhood := Node3D.new()
 	neighborhood.name = "Neighborhood"
 	ring_body.add_child(neighborhood)
@@ -241,6 +252,31 @@ func _build_ring() -> void:
 	ring_body.add_child(cliffs)
 	cliffs.setup(RADIUS, SEGMENTS, WIDTH, player)
 
+## The remake world: the map's terrain streamed round the player, its river and lake, the end-cap
+## cliffs, and REMAKE_SETTLEMENTS' structures (RemakeWorld.gd).
+func _build_remake_world(floor_mat: StandardMaterial3D) -> void:
+	floor_mat.vertex_color_use_as_albedo = true         # MapTerrainMesh tints grass / mud / bed / earth
+	var terrain := MapTerrainMesh.new()
+	terrain.name = "MapTerrain"
+	ring_body.add_child(terrain)
+	terrain.setup(RADIUS, SEGMENTS, WIDTH, player, floor_mat)
+	MapWater.build(ring_body, RADIUS, SEGMENTS)
+	var cliffs := CliffWalls.new()
+	cliffs.name = "CliffWalls"
+	ring_body.add_child(cliffs)
+	cliffs.setup(RADIUS, SEGMENTS, WIDTH, player)
+	var world := Node3D.new()
+	world.name = "RemakeWorld"
+	ring_body.add_child(world)
+	_place_remake_structures(world)
+
+
+## Not awaited by _build_remake_world(): the structures fill in a building per frame while the
+## game runs (the terrain and cliffs stream the same way).
+func _place_remake_structures(world: Node3D) -> void:
+	var info: Dictionary = await RemakeWorld.build(world, RADIUS, SEGMENTS, REMAKE_SETTLEMENTS)
+	print("SpaceStation: remake world placed ", info)
+
 ## Angle=0 spawn point, standing on the floor, facing along the loop --
 ## shared by initial spawn and by rebuild_ring()'s post-rebuild respawn
 ## so the two can't drift out of sync with each other.
@@ -254,10 +290,12 @@ func _floor_spawn_transform() -> Transform3D:
 	# surface turns the next physics frames into a depenetration explosion
 	# (confirmed live at the 100km scale: ~2900 m/s launch).
 	const SURFACE_CLEARANCE := 0.05
-	var basis := RingCoords.floor_basis(RADIUS, SEGMENTS, 0.0)
+	var sp_s := SPAWN_S if REMAKE_WORLD else 0.0
+	var sp_x := SPAWN_X if REMAKE_WORLD else 0.0
+	var basis := RingCoords.floor_basis(RADIUS, SEGMENTS, sp_s)
 	var up_dir := basis.y
 	var forward := -basis.z  # floor_basis()'s own z-column is -tangent (see its doc comment); forward = +tangent = direction of increasing s
-	var floor_pos := RingCoords.floor_point(RADIUS, SEGMENTS, 0.0, 0.0) + up_dir * SURFACE_CLEARANCE
+	var floor_pos := RingCoords.floor_point(RADIUS, SEGMENTS, sp_s, sp_x) + up_dir * SURFACE_CLEARANCE
 	# 1.43m eye-to-foot offset, same capsule as Player.tscn (radius
 	# 0.18, height 1.45, collision shape offset -0.705 -> feet sit
 	# 1.43m "down" from the body origin).

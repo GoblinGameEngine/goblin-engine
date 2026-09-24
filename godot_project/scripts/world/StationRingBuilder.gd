@@ -97,7 +97,7 @@ static func build_floor_surface(mesh: ArrayMesh, radius: float, segments: int, h
 ## the spin axis (local X).
 static func build(ring_body: Node3D, radius: float, ceiling_height: float,
 		width: float, segments: int,
-		floor_material: Material, wall_material: Material, ceiling_material: Material) -> void:
+		floor_material: Material, wall_material: Material, ceiling_material: Material, with_floor := true) -> void:
 	# TerrainHeight can't reference SpaceStation.WIDTH directly (that would
 	# cycle: SpaceStation -> StationRingBuilder -> TerrainHeight -> back to
 	# SpaceStation -- see TerrainHeight.gd's header) -- this one-way write
@@ -107,7 +107,8 @@ static func build(ring_body: Node3D, radius: float, ceiling_height: float,
 	var half_w := width / 2.0
 	var mesh := ArrayMesh.new()
 
-	build_floor_surface(mesh, radius, segments, half_w, floor_material)
+	if with_floor:              # the remake world streams its own terrain (MapTerrainMesh.gd)
+		build_floor_surface(mesh, radius, segments, half_w, floor_material)
 
 	var st_ceiling := SurfaceTool.new()
 	st_ceiling.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -155,7 +156,7 @@ static func build(ring_body: Node3D, radius: float, ceiling_height: float,
 	mesh_instance.mesh = mesh
 	ring_body.add_child(mesh_instance)
 
-	_add_collision_segments(ring_body, radius, ceiling_height, width, segments)
+	_add_collision_segments(ring_body, radius, ceiling_height, width, segments, with_floor)
 
 ## Floor collision: one thin convex prism per visual floor TRIANGLE --
 ## the exact same p0..p3 corners and (a,b,c)/(a,c,d) split build_floor_
@@ -203,7 +204,7 @@ static func _add_prism(ring_body: Node3D, a: Vector3, b: Vector3, c: Vector3, do
 ## granularity as the visual mesh; `margin` overlaps each box slightly
 ## along the chord direction so adjacent segments don't leave a seam gap.
 static func _add_collision_segments(ring_body: Node3D, radius: float, ceiling_height: float,
-		width: float, segments: int) -> void:
+		width: float, segments: int, with_floor := true) -> void:
 	var ceiling_radius := radius - ceiling_height
 	var half_w := width / 2.0
 	var d_theta := TAU / segments
@@ -217,7 +218,8 @@ static func _add_collision_segments(ring_body: Node3D, radius: float, ceiling_he
 		var tangent := Vector3(0, -sin(mid), cos(mid))
 		var chord: float = radius * d_theta * margin
 
-		_add_floor_collision_slices(ring_body, radius, segments, i, half_w, chord)
+		if with_floor:
+			_add_floor_collision_slices(ring_body, radius, segments, i, half_w, chord)
 		_add_box(ring_body, n_out * ceiling_radius, n_out, tangent, Vector3(width, 1.0, chord))
 
 		var wall_center := n_out * ((radius + ceiling_radius) * 0.5)
