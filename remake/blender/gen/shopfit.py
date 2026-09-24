@@ -544,7 +544,8 @@ def shoe_repair(ctx):
 def movie_theater(ctx):
     x0, y0, x1, y1 = ctx.rect
     # screen on the rear wall facing the street end; rows face it
-    ctx.p.box((x0 + 0.5, y0 + 0.05, ctx.fz + 1.0), (x1 - 0.5, y0 + 0.1, ctx.fz + min(4.0, ctx.cz - ctx.fz - 0.3)), "screen")
+    # hung above door height: the shop's back door is in that wall
+    ctx.p.box((x0 + 0.5, y0 + 0.05, ctx.fz + 2.3), (x1 - 0.5, y0 + 0.1, ctx.fz + max(2.9, min(4.0, ctx.cz - ctx.fz - 0.3))), "screen")
     theater_rows_back(ctx)
 
 
@@ -560,6 +561,8 @@ def theater_rows_back(ctx):
             n = int((c - a) / 0.55)
             for i in range(n):
                 sx = a + (i + 0.5) * (c - a) / n
+                if ctx.h._hits_swing(sx - 0.25, y - 0.25, sx + 0.25, y + 0.3, ctx.fl):
+                    continue
                 f = fu.F((sx, y, ctx.fz), 0)
                 ctx.p.obox(f, (-0.24, -0.25, 0.0), (0.24, 0.25, 0.45), "black")
                 ctx.p.obox(f, (-0.22, -0.2, 0.4), (0.22, 0.25, 0.5), "vinyl_red")
@@ -769,6 +772,8 @@ def auditorium(ctx):
             n = int((c - a) / 0.55)
             for i in range(n):
                 sx = a + (i + 0.5) * (c - a) / n
+                if ctx.h._hits_swing(sx - 0.25, y - 0.25, sx + 0.25, y + 0.3, ctx.fl):
+                    continue
                 f = fu.F((sx, y, ctx.fz), 0)
                 ctx.p.obox(f, (-0.24, -0.25, 0.0), (0.24, 0.25, 0.45), "black")
                 ctx.p.obox(f, (-0.22, -0.2, 0.4), (0.22, 0.25, 0.5), "vinyl_red")

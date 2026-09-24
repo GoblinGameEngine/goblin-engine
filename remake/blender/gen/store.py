@@ -248,6 +248,8 @@ def build(rec, vacant=False):
             if r.get("floor", 0) > 0 and r.get("type") is not None:
                 r["type"] = None
                 r.pop("fitout", None)
+            elif r.get("floor", 0) == 0:
+                r["locked"] = True           # behind the locked shop doors (the reach check skips light_locked_*)
     house = gh.House(b, spec)
     house.build()
     if vacant:

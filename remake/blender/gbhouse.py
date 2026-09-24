@@ -296,11 +296,12 @@ class House:
             flights = [dict(start=a_start, d=d, side=side, width=w, n=n1, run=run, z0=z0, z1=zl),
                        dict(start=b_start, d=-d, side=-side, width=w, n=n2, run=run, z0=zl, z1=z1)]
             landing = (zone(L1, L1 + land, s_lo, s_hi), zl)
-            hole = zone(min(0.0, L1 - L2), L1 + land, s_lo, s_hi)
+            # flight B tops out L1 - L2 (0 or one run) past the start: the floor reaches out to meet it
+            hole = zone(L1 - L2, L1 + land, s_lo, s_hi)
             b_lo, b_hi = (w + gap, 2 * w + gap) if sg > 0 else (-(w + gap), -gap)
             foot = zone(-0.9, 0.0, 0.0, w)
             head = zone(L1 - L2 - 0.9, L1 - L2, b_lo, b_hi)
-            footprint = hole
+            footprint = zone(0.0, L1 + land, s_lo, s_hi)
             arrival = ("B", b_lo, b_hi)
             span = (s_lo, s_hi, L1 + land)
         else:
@@ -779,6 +780,42 @@ class House:
         return any(x0 < zx1 and zx0 < x1 and y0 < zy1 and zy0 < y1
                    for (zx0, zy0, zx1, zy1, zf) in self.swing_zones if zf == fl)
 
+    def _walkways(self, r, half=0.45):
+        """Plan rects (x0, y0, x1, y1) of a clear walk between every pair of the room's doorways: out
+        from each door square to its wall, then an L (doors on adjacent walls) or a Z (opposite walls)."""
+        x0, y0, x1, y1 = r["rect"]
+        fl = r.get("floor", 0)
+        ends = []
+        for d in self.s.get("doors", []):
+            if d.get("floor", 0) != fl:
+                continue
+            ax, ay = d["at"]
+            if abs(ax - x0) < 0.02 or abs(ax - x1) < 0.02:
+                if y0 - 0.01 <= ay <= y1 + 0.01:
+                    ends.append(("v", ax, ay))
+            elif abs(ay - y0) < 0.02 or abs(ay - y1) < 0.02:
+                if x0 - 0.01 <= ax <= x1 + 0.01:
+                    ends.append(("h", ax, ay))
+        out = []
+
+        def seg(p, q):
+            out.append((min(p[0], q[0]) - half, min(p[1], q[1]) - half, max(p[0], q[0]) + half, max(p[1], q[1]) + half))
+        for i in range(len(ends)):
+            for j in range(i + 1, len(ends)):
+                (ka, ax, ay), (kb, bx, by) = ends[i], ends[j]
+                if ka == "v" and kb == "v":
+                    mx = (ax + bx) / 2
+                    seg((ax, ay), (mx, ay)); seg((mx, ay), (mx, by)); seg((mx, by), (bx, by))
+                elif ka == "h" and kb == "h":
+                    my = (ay + by) / 2
+                    seg((ax, ay), (ax, my)); seg((ax, my), (bx, my)); seg((bx, my), (bx, by))
+                elif ka == "v":
+                    seg((ax, ay), (bx, ay)); seg((bx, ay), (bx, by))
+                else:
+                    seg((ax, ay), (ax, by)); seg((ax, by), (bx, by))
+        # clipped to the room, so they only keep this room's furniture out of the way
+        return [(max(a, x0), max(b_, y0), min(c, x1), min(e, y1)) for (a, b_, c, e) in out]
+
     def _clear_centre(self, cx, cy, hw, hd, fl, room):
         """Shift a free-standing group (half-extents hw, hd) off any door swing, staying inside room."""
         x0, y0, x1, y1 = room
@@ -809,6 +846,7 @@ class House:
             x0, y0, x1, y1 = self._clear(r)
             cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
             p = b.part(f"furn_{r['name']}-col")
+            self.swing_zones += [w_ + (r.get("floor", 0),) for w_ in self._walkways(r)]
             slots = self._wall_slots(r)
             used = {}
 
@@ -904,7 +942,7 @@ class House:
                 against(cw, 0.4, False, lambda pos, yaw: fu.shelves(p, pos, yaw, cw, 0.4, sh, 3, fm), h=sh)
             if not r.get("no_light"):
                 lz = min(cz, self.roof_under(bl, cx, cy)) - 0.25
-                b.empty(f"light_{typ}", (cx, cy, lz))
+                b.empty(f"light_locked_{typ}" if r.get("locked") else f"light_{typ}", (cx, cy, lz))
 
     def build(self):
         self.build_exterior()

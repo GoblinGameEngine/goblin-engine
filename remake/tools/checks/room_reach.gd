@@ -63,7 +63,7 @@ for b in s.get_children():
 	var skipped = 0
 	for l in lights:
 		var nmn = str(l.name)
-		if 'fire' in nmn or 'cupola' in nmn or 'gallery' in nmn or 'canopy' in nmn or 'street' in nmn or 'loft' in nmn:
+		if 'fire' in nmn or 'cupola' in nmn or 'gallery' in nmn or 'canopy' in nmn or 'street' in nmn or 'loft' in nmn or 'locked' in nmn:
 			skipped += 1
 			continue
 		var p = l.global_position
