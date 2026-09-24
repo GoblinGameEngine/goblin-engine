@@ -38,6 +38,7 @@ class_name RemakeAirVehicle
 @export var ceiling_h := 350.0       # m above the floor: the highest it will fly
 @export var cabin_box := AABB(Vector3(-1.2, 0.0, -1.8), Vector3(2.4, 2.5, 3.6))   # local: who's aboard
 @export var seat_eye := 0.72         # m from seat_pilot up to the pilot's eye node origin
+@export var seat_forward := 0.0      # m the pilot's eye sits ahead of seat_pilot (toward the nose)
 @export var stand_point := Vector3.ZERO   # local: where the pilot stands on leaving the seat
 
 var model: Node3D
@@ -183,7 +184,7 @@ func leave_seat() -> void:
 
 func pilot_transform() -> Transform3D:
 	## Where the seated pilot's body goes: on the seat, facing the nose.
-	return global_transform * Transform3D(Basis(), _seat_local + Vector3(0, seat_eye, 0))
+	return global_transform * Transform3D(Basis(), _seat_local + Vector3(0, seat_eye, -seat_forward))
 
 
 # ------------------------------------------------------------------ flight
@@ -224,7 +225,7 @@ func _physics_process(delta: float) -> void:
 	_carry(delta)
 	if pilot:
 		pilot.global_transform = Transform3D(global_transform.basis, pilot_transform().origin)
-		_update_hud(h)
+		_update_hud(h - MapTerrain.elevation(StationGeo.s_of(global_position), global_position.x))
 
 
 func _move(from: Transform3D, motion: Vector3) -> void:
@@ -313,4 +314,4 @@ func _show_hud(on: bool) -> void:
 
 func _update_hud(h: float) -> void:
 	if _hud:
-		_hud.text = "SPD %4.1f m/s   ALT %4.0f m\nW/S thrust   A/D turn   Space/Ctrl climb/descend   E leave seat" % [-_lv.z, h]
+		_hud.text = "SPD %4.1f m/s   ALT %4.0f m (above ground)\nW/S thrust   A/D turn   Space/Ctrl climb/descend   E leave seat" % [-_lv.z, h]

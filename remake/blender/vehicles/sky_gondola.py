@@ -15,7 +15,7 @@ Nodes the game drives (the vehicle rig -- names are the contract with the flight
   exit_{R,L}           empties outside each doorway, where a player steps out
 Everything else is merged per material.
 
-  cabin   2.4 m wide x 3.6 m long x 2.45 m tall: a rounded-rectangle (superellipse) shell -- slate
+  cabin   2.4 m wide x 4.6 m long x 2.45 m tall: a rounded-rectangle (superellipse) shell -- slate
           blue belly, white band, a wrap-round window band, a silver roof -- with a sliding double
           pocket door each side; inside, the pilot's seat (right) with dash, screen and yoke, a
           passenger seat, a rear bench, grab rails, a ceiling light
@@ -36,7 +36,7 @@ argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 OUT = argv[0] if argv else "/tmp/sky_gondola.glb"
 RENDER = argv[1] if len(argv) > 1 else None
 
-A, B, N = 1.2, 1.8, 4.0              # plan half-width (x), half-length (y), superellipse exponent
+A, B, N = 1.2, 2.3, 4.0              # plan half-width (x), half-length (y), superellipse exponent
 H = 2.45                             # cabin height
 FLOOR = 0.35
 BELLY_TOP = 0.78                     # slate blue below
@@ -44,11 +44,15 @@ BAND_TOP = 1.02                      # white band, then the window band
 WIN_TOP = 2.05
 ROOF0 = 2.12                         # the roof starts curving in
 DOOR_HW = 0.65                       # half the door opening
+DOOR_Y = -0.15                       # its centre, a little aft: the front seats sit clear ahead of it
+CHIN_Y = DOOR_Y + DOOR_HW + 0.1      # from here to the nose the floor and belly are clear acrylic
+SEAT_Y = 1.05                        # the front seats' centre: wholly ahead of the doorway
+REAR_Y = -1.75                       # the rear bench's
 DOOR_SLIDE = 0.62                    # how far a leaf slides open (into its pocket behind a side window)
 BALLOON_R = 2.4
 BALLOON_C = Vector((0.0, 0.0, H + 0.62 + BALLOON_R))
 FAN_R = 0.62
-FAN_C = [("FR", 1.8, 1.38), ("FL", -1.8, 1.38), ("BR", 1.8, -1.38), ("BL", -1.8, -1.38)]
+FAN_C = [("FR", 1.8, 1.75), ("FL", -1.8, 1.75), ("BR", 1.8, -1.75), ("BL", -1.8, -1.75)]
 FAN_Z = 0.16                         # duct bottom
 FAN_H = 0.46                         # duct height; the pivot is at its middle
 
@@ -148,6 +152,7 @@ M = {
     # satin, not mirror: the station has no sky for a full metal to reflect, and renders it black
     "silver": mat("silver", (0.8, 0.81, 0.83), rough=0.3, metal=0.35),
     "glass": mat("glass", (0.03, 0.05, 0.07), rough=0.05, alpha=0.32),
+    "acrylic": mat("acrylic", (0.7, 0.8, 0.85), rough=0.05, alpha=0.14),      # the clear floor and chin
     "seat": mat("seat_leather", (0.03, 0.03, 0.035), rough=0.55),
     "floor": mat("floor", (0.18, 0.19, 0.2), rough=0.8),
     "dash": mat("dash", (0.72, 0.73, 0.75), rough=0.35),
@@ -275,13 +280,13 @@ def wrap(t):
 PILLAR = 0.05
 glass_iv, door_iv = [], []
 for right in (True, False):
-    door_iv.append(sorted([t_side(-DOOR_HW, right), t_side(DOOR_HW, right)]))
-    for sgn in (1, -1):
-        glass_iv.append(sorted([t_side(sgn * (DOOR_HW + 0.12), right), t_side(sgn * 1.28, right)]))
+    door_iv.append(sorted([t_side(DOOR_Y - DOOR_HW, right), t_side(DOOR_Y + DOOR_HW, right)]))
+    glass_iv.append(sorted([t_side(DOOR_Y + DOOR_HW + 0.12, right), t_side(B - 0.55, right)]))
+    glass_iv.append(sorted([t_side(DOOR_Y - DOOR_HW - 0.12, right), t_side(-(B - 0.55), right)]))
 for front in (True, False):
     for sx in (1, -1):
         glass_iv.append(sorted([t_end(sx * PILLAR, front), t_end(sx * 0.9, front)]))           # the big panes
-        side_t = t_side((1 if front else -1) * 1.36, sx > 0)
+        side_t = t_side((1 if front else -1) * (B - 0.47), sx > 0)
         glass_iv.append(sorted([t_end(sx * 0.98, front), side_t], key=lambda a: a) if abs(wrap(t_end(sx * 0.98, front) - side_t)) < 1.0 else [0, 0])
 glass_iv = [[wrap(a), wrap(b)] for a, b in glass_iv]
 door_iv = [[wrap(a), wrap(b)] for a, b in door_iv]
@@ -304,6 +309,8 @@ ts = {round(wrap(TAU * k / 160.0), 6) for k in range(160)}
 for a, b in glass_iv + door_iv:
     ts.add(round(a, 6))
     ts.add(round(b, 6))
+for right in (True, False):                             # where the chin glazing starts
+    ts.add(round(wrap(t_side(CHIN_Y, right)), 6))
 ts = sorted(ts)
 zs = sorted({round(z, 4) for z in list(np.linspace(0.0, BELLY_TOP + 0.12, 14)) + list(np.linspace(BELLY_TOP + 0.12, ROOF0, 18))
              + list(np.linspace(ROOF0, H, 10)) + [FLOOR, BELLY_TOP, BAND_TOP, WIN_TOP]})
@@ -324,6 +331,9 @@ for i in range(len(zs) - 1):
         if BAND_TOP <= zc <= WIN_TOP and in_iv(tc, glass_iv):
             glass.face(q, "glass")
             continue
+        if zc < BELLY_TOP and zs[i] >= 0.05 and sum(v.y for v in q) / 4.0 > CHIN_Y:
+            glass.face(q, "acrylic")                        # the chin: see down past your feet
+            continue
         m = "blue" if zc < BELLY_TOP else ("white" if zc < ROOF0 else "silver")
         body.face(q, m)
 # the underside cap
@@ -338,20 +348,21 @@ for right in (True, False):
     sx = 1 if right else -1
     xo = plan(0.0)[0] + 0.01                                    # the hull's side
     lo_x, hi_x = sorted([sx * (LEAF_X - 0.04), sx * xo])
-    for y in (-DOOR_HW, DOOR_HW):                               # jambs: a portal from hull to track
-        trim.box((lo_x, y - 0.04 if y > 0 else y, FLOOR), (hi_x, y if y > 0 else y + 0.04, WIN_TOP), "silver")
-    trim.box((lo_x, -DOOR_HW, WIN_TOP - 0.04), (hi_x, DOOR_HW, WIN_TOP + 0.02), "silver")                  # head
+    for e in (-1, 1):                                           # jambs: a portal from hull to track
+        y = DOOR_Y + e * DOOR_HW
+        trim.box((lo_x, y - 0.04 if e > 0 else y, FLOOR), (hi_x, y if e > 0 else y + 0.04, WIN_TOP), "silver")
+    trim.box((lo_x, DOOR_Y - DOOR_HW, WIN_TOP - 0.04), (hi_x, DOOR_Y + DOOR_HW, WIN_TOP + 0.02), "silver")  # head
     s_lo, s_hi = sorted([sx * 0.88, sx * (xo + 0.02)])
-    trim.box((s_lo, -DOOR_HW, FLOOR - 0.03), (s_hi, DOOR_HW, FLOOR + 0.005), "silver")                     # step plate
+    trim.box((s_lo, DOOR_Y - DOOR_HW, FLOOR - 0.03), (s_hi, DOOR_Y + DOOR_HW, FLOOR + 0.005), "silver")     # step plate
     # a boarding step outside the doorway, on two brackets (the game walks it as a ramp)
     p_lo, p_hi = sorted([sx * (xo - 0.02), sx * (xo + 0.34)])
-    trim.box((p_lo, -0.5, 0.15), (p_hi, 0.5, 0.19), "silver")
-    for by in (-0.4, 0.4):
+    trim.box((p_lo, DOOR_Y - 0.5, 0.15), (p_hi, DOOR_Y + 0.5, 0.19), "silver")
+    for by in (DOOR_Y - 0.4, DOOR_Y + 0.4):
         trim.box((min(sx * (xo - 0.02), sx * (xo + 0.06)), by - 0.02, 0.15),
                  (max(sx * (xo - 0.02), sx * (xo + 0.06)), by + 0.02, FLOOR - 0.02), "silver")
     # the track the leaves hang from, running back into both pockets
     t_lo, t_hi = sorted([sx * (LEAF_X - 0.05), sx * (LEAF_X + 0.05)])
-    trim.box((t_lo, -1.24, WIN_TOP + 0.02), (t_hi, 1.24, WIN_TOP + 0.06), "dark")
+    trim.box((t_lo, DOOR_Y - 1.24, WIN_TOP + 0.02), (t_hi, DOOR_Y + 1.24, WIN_TOP + 0.06), "dark")
 # a silver strip along the window band's sill and head, all round the outside
 for z in (BAND_TOP, WIN_TOP):
     k = profile(z) + 0.004
@@ -391,14 +402,38 @@ for right in (True, False):
         hy = (hi_y - 0.12) if ys > 0 else (lo_y + 0.12)
         leaf.tube(Vector((-sx * 0.03, hy, FLOOR + 0.9)), Vector((-sx * 0.03, hy, FLOOR + 1.3)), 0.014, "silver", n=6)
         ob = leaf.obj(smooth=False)
-        ob.location = (sx * LEAF_X, 0.0, 0.0)
+        ob.location = (sx * LEAF_X, DOOR_Y, 0.0)
 
 # ------------------------------------------------------------------ interior
 inner = Mesh("interior")
-fl = [Vector((*plan(t, profile(FLOOR) - 0.02), FLOOR)) for t in ts]
-inner.face(fl, "floor")
-for yy in np.arange(-1.4, 1.45, 0.12):                      # ribs on the floor mat
-    inner.box((-0.8, yy - 0.012, FLOOR), (0.8, yy + 0.012, FLOOR + 0.006), "dark")
+def floor_half_width(y):
+    k = profile(FLOOR) - 0.02
+    return A * k * max(0.0, 1.0 - (abs(y) / (B * k)) ** N) ** (1.0 / N)
+
+
+# the floor in strips across the cabin: a ribbed mat aft of CHIN_Y, acrylic ahead of it
+yk = B * (profile(FLOOR) - 0.02)
+ys_ = sorted(set(list(np.linspace(-yk, yk, 40)) + [CHIN_Y]))
+for y0, y1 in zip(ys_[:-1], ys_[1:]):
+    w0, w1 = floor_half_width(y0), floor_half_width(y1)
+    m = "acrylic" if y0 >= CHIN_Y - 1e-6 else "floor"
+    inner.face([Vector((-w0, y0, FLOOR)), Vector((w0, y0, FLOOR)), Vector((w1, y1, FLOOR)), Vector((-w1, y1, FLOOR))], m)
+for yy in np.arange(-yk + 0.3, CHIN_Y - 0.05, 0.12):          # ribs on the mat
+    w = floor_half_width(yy) - 0.1
+    inner.box((-w, yy - 0.012, FLOOR), (w, yy + 0.012, FLOOR + 0.006), "dark")
+# the acrylic's frame: a sill across at the chin line, ribs across and along, and a keel
+fy1 = yk - 0.05
+inner.box((-floor_half_width(CHIN_Y), CHIN_Y - 0.03, FLOOR - 0.01), (floor_half_width(CHIN_Y), CHIN_Y + 0.03, FLOOR + 0.02), "silver")
+for yy in np.arange(CHIN_Y + 0.45, fy1, 0.45):
+    w = floor_half_width(yy)
+    inner.box((-w, yy - 0.02, FLOOR - 0.01), (w, yy + 0.02, FLOOR + 0.015), "silver")
+for xx in (-0.5, 0.0, 0.5):
+    inner.box((xx - 0.02, CHIN_Y, FLOOR - 0.01), (xx + 0.02, fy1, FLOOR + 0.015), "silver")
+# small rubber pads for the front sitters' feet, on the frame ahead of each seat
+for sx_ in (-0.5, 0.5):
+    for fx in (-0.13, 0.13):
+        inner.box((sx_ + fx - 0.075, SEAT_Y + 0.5, FLOOR + 0.015), (sx_ + fx + 0.075, SEAT_Y + 0.78, FLOOR + 0.04), "rubber")
+        inner.box((sx_ + fx - 0.02, SEAT_Y + 0.5, FLOOR - 0.01), (sx_ + fx + 0.02, SEAT_Y + 0.78, FLOOR + 0.015), "silver")
 
 
 def bucket_seat(m, x, y, xf_yaw=0.0):
@@ -418,13 +453,13 @@ def bucket_seat(m, x, y, xf_yaw=0.0):
         m.box((sxs * 0.3 - 0.015, -0.05, 0.4), (sxs * 0.3 + 0.015, 0.0, 0.6), "silver", xf=base)
 
 
-bucket_seat(inner, 0.5, 0.25)                               # the pilot's, on the right as in the reference
-bucket_seat(inner, -0.5, 0.25)
+bucket_seat(inner, 0.5, SEAT_Y)                             # the pilot's, on the right as in the reference
+bucket_seat(inner, -0.5, SEAT_Y)
 # the rear bench: three cushions, three back pads
-inner.box((-0.9, -1.58, FLOOR), (0.9, -1.12, FLOOR + 0.38), "dark")
-for cx in (-0.6, 0.0, 0.6):
-    inner.box((cx - 0.28, -1.56, FLOOR + 0.38), (cx + 0.28, -1.1, FLOOR + 0.52), "seat")
-    rot = Matrix.Translation((cx, -1.56, FLOOR + 0.52)) @ Matrix.Rotation(math.radians(10), 4, "X")
+inner.box((-0.85, REAR_Y - 0.23, FLOOR), (0.85, REAR_Y + 0.23, FLOOR + 0.38), "dark")
+for cx in (-0.56, 0.0, 0.56):
+    inner.box((cx - 0.27, REAR_Y - 0.21, FLOOR + 0.38), (cx + 0.27, REAR_Y + 0.25, FLOOR + 0.52), "seat")
+    rot = Matrix.Translation((cx, REAR_Y - 0.21, FLOOR + 0.52)) @ Matrix.Rotation(math.radians(10), 4, "X")
     inner.box((-0.27, -0.06, 0.02), (0.27, 0.08, 0.66), "seat", xf=rot)
 # the dash: a curved top across the nose, a dark fascia under it
 dash_z1 = BAND_TOP + 0.1
@@ -435,7 +470,7 @@ for j in range(nt):
     k0 = profile(BAND_TOP) - 0.04
     a0, a1 = Vector((*plan(t0, k0), dash_z1)), Vector((*plan(t1, k0), dash_z1))
     b0, b1 = Vector((*plan(t0, k0 - 0.2), dash_z1 - 0.02)), Vector((*plan(t1, k0 - 0.2), dash_z1 - 0.02))
-    c0, c1 = Vector((b0.x, b0.y, FLOOR + 0.25)), Vector((b1.x, b1.y, FLOOR + 0.25))
+    c0, c1 = Vector((b0.x, b0.y, dash_z1 - 0.3)), Vector((b1.x, b1.y, dash_z1 - 0.3))
     inner.face([b1, b0, a0, a1], "dash")
     inner.face([c1, c0, b0, b1], "liner")
 sy = plan(math.pi / 2, profile(BAND_TOP) - 0.24)[1]
@@ -460,27 +495,27 @@ for sxs in (-1, 1):
     inner.box((-0.025, -0.025, 0.0), (0.025, 0.025, 0.03), "dark", xf=Matrix.Translation(yc + Vector((0.23 * sxs, -0.02, 0.16))))
 # ceiling: a light panel, the hatch's inner frame, grab rails along both sides
 cz = H - 0.2
-inner.box((-0.42, -0.85, cz), (0.42, 0.85, cz + 0.03), "liner")
-inner.face([Vector((-0.38, -0.8, cz - 0.001)), Vector((-0.38, 0.8, cz - 0.001)), Vector((0.38, 0.8, cz - 0.001)),
-            Vector((0.38, -0.8, cz - 0.001))], "lamp")
+inner.box((-0.42, -1.25, cz), (0.42, 1.25, cz + 0.03), "liner")
+inner.face([Vector((-0.38, -1.2, cz - 0.001)), Vector((-0.38, 1.2, cz - 0.001)), Vector((0.38, 1.2, cz - 0.001)),
+            Vector((0.38, -1.2, cz - 0.001))], "lamp")
 for sxs in (-1, 1):
     x = sxs * 0.82
-    inner.tube(Vector((x, -1.0, WIN_TOP - 0.02)), Vector((x, 1.0, WIN_TOP - 0.02)), 0.018, "silver", n=8)
-    for yy in (-0.9, 0.0, 0.9):
+    inner.tube(Vector((x, -1.5, WIN_TOP - 0.02)), Vector((x, 1.5, WIN_TOP - 0.02)), 0.018, "silver", n=8)
+    for yy in (-1.4, 0.0, 1.4):
         inner.tube(Vector((x, yy, WIN_TOP - 0.02)), Vector((x * 0.93, yy, H - 0.12)), 0.012, "silver", n=6)
 inner.obj(smooth=False)
 
 # seat and exit points for the game
-for name, loc in (("seat_pilot", (0.5, 0.25, FLOOR + 0.5)), ("seat_passenger", (-0.5, 0.25, FLOOR + 0.5)),
-                  ("seat_rear_L", (-0.6, -1.33, FLOOR + 0.52)), ("seat_rear_C", (0.0, -1.33, FLOOR + 0.52)),
-                  ("seat_rear_R", (0.6, -1.33, FLOOR + 0.52)), ("exit_R", (1.75, 0.0, 0.0)), ("exit_L", (-1.75, 0.0, 0.0))):
+for name, loc in (("seat_pilot", (0.5, SEAT_Y, FLOOR + 0.5)), ("seat_passenger", (-0.5, SEAT_Y, FLOOR + 0.5)),
+                  ("seat_rear_L", (-0.56, REAR_Y, FLOOR + 0.52)), ("seat_rear_C", (0.0, REAR_Y, FLOOR + 0.52)),
+                  ("seat_rear_R", (0.56, REAR_Y, FLOOR + 0.52)), ("exit_R", (1.75, DOOR_Y, 0.0)), ("exit_L", (-1.75, DOOR_Y, 0.0))):
     e = bpy.data.objects.new(name, None)
     e.location = loc
     col.objects.link(e)
 
 # ------------------------------------------------------------------ roof frame, A-frame, balloon
 rig = Mesh("rig")
-RX, RY, RZ = 0.72, 1.12, H - 0.06
+RX, RY, RZ = 0.72, 1.5, H - 0.06
 corners = [Vector((sx * RX, sy_ * RY, RZ)) for sx, sy_ in ((1, 1), (-1, 1), (-1, -1), (1, -1))]
 for k in range(4):
     rig.tube(corners[k], corners[(k + 1) % 4], 0.03, "silver")
@@ -619,12 +654,12 @@ if RENDER:
     L.location = (0, 0, H - 0.5)
     col.objects.link(L)
     cam.data.lens = 16
-    cam.location = (0.5, 0.18, FLOOR + 1.22)
+    cam.location = (0.5, SEAT_Y - 0.05, FLOOR + 1.22)
     cam.rotation_euler = (math.radians(80), 0, 0)
     bg.inputs[0].default_value = (0.55, 0.72, 0.92, 1)
     sc.render.filepath = "%s_pilot.png" % RENDER
     bpy.ops.render.render(write_still=True)
-    cam.location = (0.0, -1.25, FLOOR + 1.35)
+    cam.location = (0.0, REAR_Y + 0.4, FLOOR + 1.35)
     cam.rotation_euler = (math.radians(76), 0, 0)
     sc.render.filepath = "%s_cabin.png" % RENDER
     bpy.ops.render.render(write_still=True)
