@@ -16,7 +16,7 @@ class_name CliffWalls
 ## The deepest point stays within ~30 m of the wall, the map's no-build margin.
 ##
 ## Distance versions:
-## all tiled alike, TILE_SEGS ring segments (~131 m) per tile:
+## all tiled alike, TILES_ROUND tiles (~131 m) round each end:
 ##   LOD0 (< NEAR m)  2 m x 1.5 m grid, built on demand near the player (one tile per 0.5 s), with
 ##                    collision (the scree is walkable, the face isn't climbable); hides the tile's
 ##                    LOD1 while it's loaded
@@ -36,9 +36,7 @@ const SCREE_TEX_M := 4.0
 const NEAR := 180.0                 # LOD0 within this of the player (built/freed as they move)
 const MID := 700.0                  # LOD1 -> LOD2
 
-var radius: float
-var segments: int
-var half_w: float
+var half_w := StationGeo.HALF_LEN
 var target: Node3D                  # the player; LOD0 tiles follow it
 var _mats := {}
 var _lod0 := {}                     # key "end:seg" -> Node3D
@@ -106,24 +104,21 @@ static func _hash(end: int, k: int, salt: int) -> float:
 
 
 # ------------------------------------------------------------------ building
-const TILE_SEGS := 4                # ring segments per tile (all three versions share the tiling)
+const TILES_ROUND := 24             # tiles round each end (131 m each; all three versions share them)
 
-func setup(p_radius: float, p_segments: int, width: float, p_target: Node3D) -> void:
-	radius = p_radius
-	segments = p_segments
-	half_w = width * 0.5
+func setup(p_target: Node3D) -> void:
 	target = p_target
 	_mats["face"] = _material("bedrock")
 	_mats["scree"] = _material("scree")
 	# the tiles build a few per frame (see _process), nothing here
 	for end in [-1, 1]:
-		for i in range(0, segments / TILE_SEGS):
+		for i in range(TILES_ROUND):
 			_todo.append([end, i])
 	set_process(true)
 
 
 func _build_tile(end: int, i: int) -> void:
-	var tile_s := TAU * radius / float(segments) * TILE_SEGS
+	var tile_s := StationGeo.CIRC / TILES_ROUND
 	var s0 := i * tile_s
 	# LOD1: detailed on a 6 m grid (hidden while this tile's LOD0 is loaded)
 	var mid := _build_mesh(end, s0, s0 + tile_s, 6.0, 6.0, true)
@@ -154,19 +149,6 @@ func _material(tex: String) -> StandardMaterial3D:
 	return m
 
 
-func _flat_point(s: float, x: float) -> Vector3:
-	## RingCoords.floor_point() without the terrain (the ring's own polygonal floor).
-	var theta := fposmod(s / radius, TAU)
-	if RingCoords.FLAT_MODE:
-		return Vector3(x, 0.0, s)
-	var d_theta := TAU / segments
-	var i := mini(int(floor(theta / d_theta)), segments - 1)
-	var t := (theta - d_theta * i) / d_theta
-	var p0 := Vector3(x, radius * cos(d_theta * i), radius * sin(d_theta * i))
-	var p1 := Vector3(x, radius * cos(d_theta * (i + 1)), radius * sin(d_theta * (i + 1)))
-	return p0.lerp(p1, t)
-
-
 func _build_mesh(end: int, s0: float, s1: float, ds: float, dh: float, detailed: bool) -> MeshInstance3D:
 	var cols := maxi(1, ceili((s1 - s0) / ds))
 	var rows := maxi(1, ceili((HEIGHT + 1.0) / dh))
@@ -178,8 +160,7 @@ func _build_mesh(end: int, s0: float, s1: float, ds: float, dh: float, detailed:
 	var col_info := []
 	for c in cols + 1:
 		var s := s0 + (s1 - s0) * c / float(cols)
-		col_info.append([s, RingCoords.floor_basis(radius, segments, s).y,
-			TerrainHeight.elevation_at(radius, segments, s, end * (half_w - 1.0))])
+		col_info.append([s, MapTerrain.elevation(s, end * (half_w - 1.0))])
 	var grid := []
 	for r in rows + 1:
 		var h := -1.0 + (HEIGHT + 1.0) * r / float(rows)
@@ -187,9 +168,8 @@ func _build_mesh(end: int, s0: float, s1: float, ds: float, dh: float, detailed:
 		for c in cols + 1:
 			var s: float = col_info[c][0]
 			var u := surface_u(end, s, h, detailed) if h >= 0.0 else surface_u(end, s, 0.0, detailed) + 1.2
-			var up: Vector3 = col_info[c][1]
-			var e_foot: float = col_info[c][2]
-			var p: Vector3 = _flat_point(s, end * (half_w - u)) + up * (e_foot + h)
+			var e_foot: float = col_info[c][1]
+			var p := StationGeo.point(s, end * (half_w - u), e_foot + h)
 			row.append([p, s, h, tone(end, s, h)])
 		grid.append(row)
 	for r in rows:
@@ -230,9 +210,9 @@ func _process(delta: float) -> void:
 		return
 	_t = 0.5
 	var p := target.global_position
-	var s_here := RingCoords.s_from_position(radius, p)
-	var tile_s := TAU * radius / float(segments) * TILE_SEGS
-	var n_tiles := segments / TILE_SEGS
+	var s_here := StationGeo.s_of(p)
+	var tile_s := StationGeo.CIRC / TILES_ROUND
+	var n_tiles := TILES_ROUND
 	var want := {}
 	for end in [-1, 1]:
 		if absf(p.x - end * half_w) > NEAR + 40.0:

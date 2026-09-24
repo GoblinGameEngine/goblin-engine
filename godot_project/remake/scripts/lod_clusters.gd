@@ -24,7 +24,8 @@ const MARGIN := 0.08                 # hysteresis at each switch, a fraction of 
 
 ## entries: Array of Dictionaries {id: String, xform: Transform3D (in parent's space),
 ##   key2: Variant, key3: Variant (cell keys: buildings with equal keys merge)}.
-## full: build each building's LOD0 too (false when a streamer loads LOD0 on demand).
+## full: build each building's LOD0 too; false: LOD1 draws from 0 m and the returned "records"
+## ({id, root, lod1, k}) go to a RemakeDetailStreamer, which loads LOD0 near the player.
 ## A coroutine (one building per frame) -- await it; returns {"buildings", "cells2", "cells3", "landmarks"}.
 static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 	var lod_scenes := {}
@@ -32,6 +33,7 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 	var cells3 := {}
 	var lod1_of_cell2 := {}
 	var landmarks := 0
+	var records := []
 	for e in entries:
 		var id: String = e.id
 		if not lod_scenes.has(id):
@@ -62,10 +64,13 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 			b.load_building(load("res://remake/buildings/%s.glb" % id))
 			_ranges(b, 0.0, D1 * k)
 			_light_fade(b)
+		else:
+			records.append({"id": id, "root": root, "lod1": lod1, "k": k})
+		var lod1_begin := D1 * k if full else 0.0          # no full detail yet: LOD1 from 0 m (the streamer swaps it)
 		if landmark:
 			# its own chain all the way out
 			landmarks += 1
-			_ranges(lod1, D1 * k, D2 * k)
+			_ranges(lod1, lod1_begin, D2 * k)
 			for l in [2, 3]:
 				var inst: Node3D = l2 if l == 2 else (sc[2].instantiate() if sc[2] else null)
 				if inst == null:
@@ -75,7 +80,7 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 				_ranges(inst, (D2 if l == 2 else D3) * k, D3 * k if l == 2 else 0.0)
 			await (Engine.get_main_loop() as SceneTree).process_frame
 			continue
-		_ranges(lod1, D1 * k, 0.0)
+		_ranges(lod1, lod1_begin, 0.0)
 		for pair in [[cells2, e.key2, 1], [cells3, e.key3, 2]]:
 			var cells: Dictionary = pair[0]
 			if sc[pair[2]] == null:
@@ -111,7 +116,8 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 			mi.visibility_parent = mi.get_path_to(p3)
 		for lod1 in lod1_of_cell2.get(key, []):
 			_parent_all(lod1, mi)
-	return {"buildings": entries.size(), "cells2": cells2.size(), "cells3": cells3.size(), "landmarks": landmarks}
+	return {"buildings": entries.size(), "cells2": cells2.size(), "cells3": cells3.size(), "landmarks": landmarks,
+		"records": records}
 
 
 static func _append(st: SurfaceTool, inst: Node, xform: Transform3D) -> void:

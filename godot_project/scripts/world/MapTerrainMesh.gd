@@ -2,7 +2,7 @@ extends Node3D
 class_name MapTerrainMesh
 
 ## The ring floor drawn from MapTerrain (the map's terrain), streamed in tiers round the player:
-##   T0  chunk (CHUNK_SEGS ring segments x CHUNK_X m), 2 m grid, with collision -- within NEAR
+##   T0  chunk (1/CHUNKS_ROUND of the ring x CHUNK_X m), 2 m grid, with collision -- within NEAR
 ##   T1  the same chunk on an 8 m grid                               -- the rest of a near group
 ##   T2  a group (GROUP x GROUP chunks) merged, 8 m grid              -- groups within MID
 ##   T3  the group on a 32 m grid                                    -- everything else
@@ -11,7 +11,7 @@ class_name MapTerrainMesh
 ## Vertex colours tint the ground: grass, bank mud and river bed by carved depth, bare earth on
 ## steep slopes.  Water surfaces (river, lake) are built alongside (build_water).
 
-const CHUNK_SEGS := 2
+const CHUNKS_ROUND := 48             # chunks round the ring (65.4 m each)
 const CHUNK_X := 100.0
 const GROUP := 4
 const NEAR := 220.0
@@ -19,9 +19,7 @@ const MID := 650.0
 const SKIRT := 1.5
 const TEX_M := 8.0
 
-var radius: float
-var segments: int
-var half_w: float
+var half_w := StationGeo.HALF_LEN
 var target: Node3D
 var material: Material
 var _n_cs: int                        # chunks round the ring
@@ -35,14 +33,11 @@ var _far_todo: Array = []             # groups whose far tier isn't built yet
 var _t := 0.0
 
 
-func setup(p_radius: float, p_segments: int, width: float, p_target: Node3D, p_material: Material) -> void:
-	radius = p_radius
-	segments = p_segments
-	half_w = width * 0.5
+func setup(p_target: Node3D, p_material: Material) -> void:
 	target = p_target
 	material = p_material
-	_n_cs = segments / CHUNK_SEGS
-	_n_cx = ceili(width / CHUNK_X)
+	_n_cs = CHUNKS_ROUND
+	_n_cx = ceili(StationGeo.LENGTH / CHUNK_X)
 	# nothing big here: only the chunks right under the player are built now (they stand on them);
 	# the rest -- near tiers nearest first, then every group's far tier -- builds a few per frame
 	for gs in range(0, _n_cs, GROUP):
@@ -58,13 +53,9 @@ func setup(p_radius: float, p_segments: int, width: float, p_target: Node3D, p_m
 
 
 # ------------------------------------------------------------------ geometry
-func _seg_s() -> float:
-	return TAU * radius / float(segments)
-
-
 func _chunk_rect(c: Vector2i) -> Rect2:
 	## (s0, x0, ds, dx) of chunk c
-	var cs := _seg_s() * CHUNK_SEGS
+	var cs := StationGeo.CIRC / CHUNKS_ROUND
 	return Rect2(c.x * cs, -half_w + c.y * CHUNK_X, cs, minf(CHUNK_X, half_w - (-half_w + c.y * CHUNK_X)))
 
 
@@ -72,19 +63,6 @@ func _group_rect(g: Vector2i) -> Rect2:
 	var a := _chunk_rect(Vector2i(g.x * GROUP, g.y * GROUP))
 	var b := _chunk_rect(Vector2i(mini(g.x * GROUP + GROUP, _n_cs) - 1, mini(g.y * GROUP + GROUP, _n_cx) - 1))
 	return Rect2(a.position, b.end - a.position)
-
-
-func _flat_point(s: float, x: float) -> Vector3:
-	## RingCoords.floor_point() without the terrain (the ring's own polygonal floor).
-	var theta := fposmod(s / radius, TAU)
-	if RingCoords.FLAT_MODE:
-		return Vector3(x, 0.0, s)
-	var d_theta := TAU / segments
-	var i := mini(int(floor(theta / d_theta)), segments - 1)
-	var t := (theta - d_theta * i) / d_theta
-	var p0 := Vector3(x, radius * cos(d_theta * i), radius * sin(d_theta * i))
-	var p1 := Vector3(x, radius * cos(d_theta * (i + 1)), radius * sin(d_theta * (i + 1)))
-	return p0.lerp(p1, t)
 
 
 func _tint(depth: float, slope: float) -> Color:
@@ -101,18 +79,17 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 	var nx := maxi(1, roundi(r.size.y / step))
 	var ups := []
 	for i in ns + 1:
-		ups.append(RingCoords.floor_basis(radius, segments, r.position.x + r.size.x * i / float(ns)).y)
+		ups.append(StationGeo.up(r.position.x + r.size.x * i / float(ns)))
 	var pts := []
 	var hs := []
 	for i in ns + 1:
 		var s := r.position.x + r.size.x * i / float(ns)
-		var up: Vector3 = ups[i]
 		var row_p := []
 		var row_h := []
 		for j in nx + 1:
 			var x := r.position.y + r.size.y * j / float(nx)
 			var smp := MapTerrain.sample(s, x)
-			row_p.append(_flat_point(s, x) + up * smp.x)
+			row_p.append(StationGeo.point(s, x, smp.x))
 			row_h.append([smp.x, smp.y])
 		pts.append(row_p)
 		hs.append(row_h)
@@ -197,9 +174,9 @@ func _process(delta: float) -> void:
 
 func _update() -> void:
 	var p := target.global_position
-	var s_here := RingCoords.s_from_position(radius, p)
+	var s_here := StationGeo.s_of(p)
 	var x_here := p.x
-	var cs := _seg_s() * CHUNK_SEGS
+	var cs := StationGeo.CIRC / CHUNKS_ROUND
 	var want0 := {}
 	var want_near_groups := {}
 	var want2 := {}
@@ -266,8 +243,7 @@ func _jobdist(j: Array, s_here: float, x_here: float) -> float:
 
 
 func _wrap_s(ds: float) -> float:
-	var circ := TAU * radius
-	return fposmod(ds + circ * 0.5, circ) - circ * 0.5
+	return StationGeo.wrap_ds(ds)
 
 
 func _do(job: Array) -> void:
