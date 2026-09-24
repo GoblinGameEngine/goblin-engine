@@ -1,8 +1,8 @@
 """
-sky_gondola.py -- the station's air vehicle: a gondola cabin slung under a fabric lift balloon, with
+aerostat.py -- the station's air vehicle: an aerostat, a cabin slung under a fabric lift balloon, with
 four ducted fans at the corners (from the user's reference sheet, ~/Downloads/grok-image-*.jpg).
 
-  flatpak run org.blender.Blender -b --factory-startup --python <abs sky_gondola.py> -- OUT_GLB [RENDER_PREFIX]
+  flatpak run org.blender.Blender -b --factory-startup --python <abs aerostat.py> -- OUT_GLB [RENDER_PREFIX]
 
 Blender Z up, the nose toward +Y (glTF -Z, Godot's forward).  Metres; the cabin floor is at FLOOR.
 Nodes the game drives (the vehicle rig -- names are the contract with the flight controller):
@@ -33,7 +33,7 @@ import numpy as np
 from mathutils import Matrix, Vector
 
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
-OUT = argv[0] if argv else "/tmp/sky_gondola.glb"
+OUT = argv[0] if argv else "/tmp/aerostat.glb"
 RENDER = argv[1] if len(argv) > 1 else None
 
 A, B, N = 1.2, 2.3, 4.0              # plan half-width (x), half-length (y), superellipse exponent
@@ -593,13 +593,13 @@ for name, fx, fy in FAN_C:
     rob.location = (0, 0, z0 + 0.28)
 
 # ------------------------------------------------------------------ export
-root = bpy.data.objects.new("sky_gondola", None)
+root = bpy.data.objects.new("aerostat", None)
 col.objects.link(root)
 for ob in list(col.objects):
     if ob is not root and ob.parent is None:
         ob.parent = root
 bpy.ops.export_scene.gltf(filepath=OUT, export_format="GLB", export_apply=True, export_yup=True)
-print("GONDOLA_EXPORTED", OUT)
+print("AEROSTAT_EXPORTED", OUT)
 
 # ------------------------------------------------------------------ preview renders (optional)
 if RENDER:
@@ -663,4 +663,4 @@ if RENDER:
     cam.rotation_euler = (math.radians(76), 0, 0)
     sc.render.filepath = "%s_cabin.png" % RENDER
     bpy.ops.render.render(write_still=True)
-    print("GONDOLA_RENDERED")
+    print("AEROSTAT_RENDERED")

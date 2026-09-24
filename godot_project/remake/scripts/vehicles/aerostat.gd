@@ -1,12 +1,12 @@
 extends RemakeAirVehicle
-class_name RemakeSkyGondola
+class_name RemakeAerostat
 
-## The sky gondola (remake/blender/vehicles/sky_gondola.py): a cabin under a lift balloon, four
+## The aerostat (remake/blender/vehicles/aerostat.py): a cabin under a lift balloon, four
 ## tilting ducted fans.  Flies as every RemakeAirVehicle does; this gives its model and hull.
 ## Local frame (glTF): x right, y up (0 = the casters' contact), -z the nose.  4.6 m long: the
 ## front seats sit wholly ahead of the doorways; the cockpit floor and chin are clear acrylic.
 
-const MODEL := "res://remake/vehicles/sky_gondola.glb"
+const MODEL := "res://remake/vehicles/aerostat.glb"
 const FLOOR := 0.35
 const H := 2.45
 

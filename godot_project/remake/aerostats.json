@@ -1,0 +1,270 @@
+{
+	"aerostats": [
+		{
+			"id": "AERO-Bellhaven-1",
+			"s": 1092.67,
+			"where": "Bellhaven",
+			"x": 608.33,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Bellhaven-2",
+			"s": 1033.56,
+			"where": "Bellhaven",
+			"x": 520.21,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-CedarFord-1",
+			"s": 1117.71,
+			"where": "Cedar Ford",
+			"x": -118.8,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-DunmoreCrossing-1",
+			"s": 629.14,
+			"where": "Dunmore Crossing",
+			"x": -816.38,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Fenwick-1",
+			"s": 2188.33,
+			"where": "Fenwick",
+			"x": -734.06,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Fenwick-2",
+			"s": 2300.2,
+			"where": "Fenwick",
+			"x": -735.15,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-HarrowFalls-1",
+			"s": 545.99,
+			"where": "Harrow Falls",
+			"x": 265.75,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-HarrowFalls-2",
+			"s": 607.93,
+			"where": "Harrow Falls",
+			"x": 263.06,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-HarrowFalls-3",
+			"s": 407.96,
+			"where": "Harrow Falls",
+			"x": 500.33,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-HarrowFalls-4",
+			"s": 136.2,
+			"where": "Harrow Falls",
+			"x": 519.51,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-HaskinsCorner-1",
+			"s": 3027.17,
+			"where": "Haskins Corner",
+			"x": -791.5,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-HaskinsCorner-2",
+			"s": 2889,
+			"where": "Haskins Corner",
+			"x": -587.73,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Kessler-1",
+			"s": 1837.31,
+			"where": "Kessler",
+			"x": 528.97,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Kessler-2",
+			"s": 1963.27,
+			"where": "Kessler",
+			"x": 738.94,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Kessler-3",
+			"s": 2074.02,
+			"where": "Kessler",
+			"x": 408.97,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-LoomisGrove-1",
+			"s": 2476.65,
+			"where": "Loomis Grove",
+			"x": -848.68,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Marlowe-1",
+			"s": 1567.41,
+			"where": "Marlowe",
+			"x": -879.73,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Marlowe-2",
+			"s": 1721.54,
+			"where": "Marlowe",
+			"x": -720.59,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Pruett-1",
+			"s": 1840.52,
+			"where": "Pruett",
+			"x": 725.96,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Tamarack-1",
+			"s": 2881.64,
+			"where": "Tamarack",
+			"x": 472.11,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-Tamarack-2",
+			"s": 2660.72,
+			"where": "Tamarack",
+			"x": 451.28,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-01",
+			"s": 1582.59,
+			"where": "FARM-01",
+			"x": 512.47,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-03",
+			"s": 562.88,
+			"where": "FARM-03",
+			"x": 1366.96,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-05",
+			"s": 2954.57,
+			"where": "FARM-05",
+			"x": -1204.95,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-07",
+			"s": 2906.07,
+			"where": "FARM-07",
+			"x": 383.86,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-09",
+			"s": 1544.63,
+			"where": "FARM-09",
+			"x": 1433.97,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-11",
+			"s": 2965.3,
+			"where": "FARM-11",
+			"x": 1358.9,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-13",
+			"s": 2485.99,
+			"where": "FARM-13",
+			"x": 1383.59,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-15",
+			"s": 134.59,
+			"where": "FARM-15",
+			"x": -1155.47,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-17",
+			"s": 1512.98,
+			"where": "FARM-17",
+			"x": -1183.96,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-19",
+			"s": 2117.67,
+			"where": "FARM-19",
+			"x": 1243.88,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-21",
+			"s": 2947.41,
+			"where": "FARM-21",
+			"x": -1310.1,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-23",
+			"s": 2203.21,
+			"where": "FARM-23",
+			"x": -357.21,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-25",
+			"s": 2640.04,
+			"where": "FARM-25",
+			"x": -292.11,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-27",
+			"s": 1024.71,
+			"where": "FARM-27",
+			"x": 394.64,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-29",
+			"s": 908.4,
+			"where": "FARM-29",
+			"x": -372.78,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-31",
+			"s": 2981.66,
+			"where": "FARM-31",
+			"x": -267.71,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-FARM-33",
+			"s": 2597.87,
+			"where": "FARM-33",
+			"x": 439.59,
+			"yaw": 0
+		}
+	]
+}

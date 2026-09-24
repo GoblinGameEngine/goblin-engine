@@ -59,6 +59,7 @@ func _ready() -> void:
 	process_physics_priority = -10                     # before the players it carries
 	_build_hull()
 	_rig()
+	_ranges()
 
 
 func _build_hull() -> void:
@@ -69,6 +70,22 @@ func load_model(path: String) -> void:
 	model = (load(path) as PackedScene).instantiate()
 	model.name = "Model"
 	add_child(model)
+
+
+const DETAIL_R := 150.0               # interior, doors and rotors draw within this
+const BODY_R := 1000.0               # the cabin, fans and rigging within this; the balloon everywhere
+
+
+func _ranges() -> void:
+	## Draw distances: the insides only near, the hull further, the envelope from anywhere.
+	for m in find_children("*", "GeometryInstance3D", true, false):
+		var gi := m as GeometryInstance3D
+		var nm := str(gi.name)
+		if nm == "balloon":
+			continue
+		var fine := nm.begins_with("interior") or nm.begins_with("door_") or nm.begins_with("rotor_") or nm.ends_with("glass")
+		gi.visibility_range_end = DETAIL_R if fine else BODY_R
+		gi.visibility_range_end_margin = gi.visibility_range_end * 0.1
 
 
 func _rig() -> void:
@@ -189,6 +206,14 @@ func pilot_transform() -> Transform3D:
 
 # ------------------------------------------------------------------ flight
 func _physics_process(delta: float) -> void:
+	# parked and still, with nobody near: nothing to do (dozens of these stand about the map)
+	if pilot == null and _lv.length_squared() < 1e-6 and absf(_yaw_rate) < 1e-5 and _spin == 0.0 and _riders.is_empty():
+		var near := false
+		for p in get_tree().get_nodes_in_group("player"):
+			if (p as Node3D).global_position.distance_squared_to(global_position) < 900.0:
+				near = true
+		if not near:
+			return
 	var fwd_in := 0.0
 	var turn_in := 0.0
 	var lift_in := 0.0

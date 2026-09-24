@@ -82,44 +82,25 @@ func _ready() -> void:
 	streamer.name = "DetailStreamer"
 	add_child(streamer)
 	_place_structures()
-	_park_gondola()
+	_place_aerostats()
 
 
-func _park_gondola() -> void:
-	## The sky gondola, parked on the nearest open, level field or meadow to the spawn point (clear
-	## of roads, water, buildings and trees), nose east.
-	var best := Vector2(SPAWN_S + 60.0, SPAWN_X)
-	var found := false
-	for ring in range(4, 40):
-		var r := ring * 8.0
-		var n := maxi(8, int(TAU * r / 8.0))
-		for k in n:
-			var a := TAU * k / n
-			var s := SPAWN_S + r * cos(a)
-			var x := SPAWN_X + r * sin(a)
-			var lc := MapTerrain.landcover(s, x)
-			if lc.x != 2 and lc.x != 4:
-				continue
-			if MapTerrain.area_kind(s, x) != "" or MapTerrain.road_weight(s, x) > 0.0:
-				continue
-			var h0 := MapTerrain.elevation(s, x)
-			var level := true
-			for d in [Vector2(6, 6), Vector2(-6, 6), Vector2(6, -6), Vector2(-6, -6), Vector2(10, 0), Vector2(-10, 0)]:
-				if absf(MapTerrain.elevation(s + d.x, x + d.y) - h0) > 0.5 or MapTerrain.water_depth(s + d.x, x + d.y) > 0.0 \
-						or MapTerrain.landcover(s + d.x, x + d.y).x == 1:
-					level = false
-					break
-			if level:
-				best = Vector2(s, x)
-				found = true
-				break
-		if found:
-			break
-	var g := RemakeSkyGondola.new()
-	g.name = "SkyGondola"
-	add_child(g)
-	g.global_transform = Transform3D(StationGeo.basis(best.x), StationGeo.point(best.x, best.y, MapTerrain.elevation(best.x, best.y)))
-	print("RemakeStation: sky gondola parked at s=%.0f x=%.0f" % [best.x, best.y])
+func _place_aerostats() -> void:
+	## The aerostats, where remake/tools/place_aerostats.gd parked them (remake/aerostats.json):
+	## some in every town by its size, one at every other farmstead.  One per frame.
+	var d: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://remake/aerostats.json"))
+	var root := Node3D.new()
+	root.name = "Aerostats"
+	add_child(root)
+	for a in d.aerostats:
+		var s: float = a.s
+		var x: float = a.x
+		var v := RemakeAerostat.new()
+		v.name = a.id
+		root.add_child(v)
+		v.global_transform = Transform3D(StationGeo.basis(s, a.yaw), StationGeo.point(s, x, MapTerrain.elevation(s, x)))
+		await get_tree().process_frame
+	print("RemakeStation: %d aerostats parked" % d.aerostats.size())
 
 
 func compass_bearing(at: Vector3, dir: Vector3) -> float:
