@@ -1,0 +1,36 @@
+{
+  "id": "FARM-33-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "James and Margaret Greer farmstead, house, 6315 202nd",
+    "place": "Alvo vicinity, Cass County, NE",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Greer_farmstead_(Cass_County,_Nebraska)_house_from_NE_1.JPG",
+    "photos": ["commons_Greer_farmstead_Cass_County_Nebraska_house_from_NE_1.JPG", "commons_Greer_farmstead_Cass_County_Nebraska_house_from_SE_1.JPG", "commons_Greer_farmstead_Cass_County_Nebraska_house_from_NE_2.JPG"],
+    "drawings": []
+  },
+  "brief": "Well-kept one-and-a-half-storey Craftsman bungalow in tan lap siding with window frames and doors picked out in barn red, under a broad side-gable roof of brown asphalt shingle with deep eaves and exposed rafter tails. A wide hip-roofed dormer with a ribbon of small windows faces the front, and a gabled entry porch sits off-centre on square columns rising from stone piers, reached by concrete steps; a glazed red front door with sidelights. Paired windows, a basement with small windows, foundation shrubs and a few small flags along the walk; big shade trees and a mown lawn surround it off a gravel lane.",
+  "traits": {
+    "archetype": "bungalow",
+    "storeys": 1.5,
+    "main_w_ft": 30,
+    "main_d_ft": 36,
+    "wing": null,
+    "roof": {"type": "gable", "pitch_deg": 35, "material": "asphalt_shingle"},
+    "dormers": [{"type": "hip", "side": "front"}],
+    "porch": {"type": "front_partial", "posts": "tapered_on_piers", "rail": "none"},
+    "walls": "clapboard",
+    "foundation": "poured_concrete",
+    "colors": {"body": "#c8bc9e", "trim": "#8e3a34", "accent": "#8e3a34", "roof": "#6a5a4a"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["rear"],
+    "garage": "detached_2",
+    "yard": {"fence": "none", "extras": ["flagpole"]},
+    "condition": "kept",
+    "year_built": 1920
+  },
+  "names": {"family": "Hallgren", "house_number": "6315", "street": "202nd St"}
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-28-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Rebarchek Farm, silos (HABS AK-140)",
+    "place": "Palmer, Matanuska-Susitna Borough, AK",
+    "year": 1936,
+    "source": "HABS AK-140",
+    "url": "https://www.loc.gov/item/ak0372/",
+    "photos": ["loc_ak0372_photos_033155pv.jpg", "loc_ak0372_photos_033152pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Plain poured-concrete silo about 14 ft across and 34 ft high, the shaft marked by pale horizontal pour-lift bands and water stains, open at the top with no roof. It is one of a pair standing tight against the board-sided gable end of a gambrel dairy barn, with a steel silage blower pipe and ladder cage propped against it and an old feed trough and implements in the grass at its foot; a vegetable garden and the farmhouse lie across the yard. (Poured concrete; nearest vocabulary type is concrete_stave.)",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 14,
+    "height_ft": 34,
+    "roof": "none",
+    "chute": false,
+    "hoops": false,
+    "colors": {"body": "#b4b0a6", "trim": "#6e6a62", "accent": "#5a5650", "roof": "#b4b0a6"},
+    "condition": "worn"
+  },
+  "names": {"family": "Stoltenberg"}
+}

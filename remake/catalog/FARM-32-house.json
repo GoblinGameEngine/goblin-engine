@@ -1,0 +1,36 @@
+{
+  "id": "FARM-32-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Brookside Farm (Gridley-Howe-Faden-Atkins Farmstead), stone house",
+    "place": "Kimball vicinity, Kimball County, NE",
+    "year": 1899,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Brookside_Farm_house_from_SE.JPG",
+    "photos": ["commons_Brookside_Farm_house_from_SE.JPG", "commons_Brookside_Farm_house_from_S.JPG", "commons_Brookside_Farm_from_SE_1.JPG", "commons_Brookside_Farm_from_SE_2.JPG", "commons_Brookside_Farm_from_SE_3.JPG"],
+    "drawings": []
+  },
+  "brief": "Low one-storey stone farmhouse built 1899 of squared pale buff stone blocks, under a broad hipped roof of dark grey asphalt shingle with deep eaves, tall one-over-one windows in dark frames and a small gabled frame porch at the east end. A later one-storey frame wing in pale lap siding with a big picture window extends the west end. It sits deep in the shade of huge old cottonwoods behind a low wire-and-iron yard fence, with a white gambrel barn, a grey metal machine shed and small white garages spread across the grass beyond. (Hipped one-storey stone cottage; nearest archetype is workers_cottage.)",
+  "traits": {
+    "archetype": "workers_cottage",
+    "storeys": 1,
+    "main_w_ft": 36,
+    "main_d_ft": 30,
+    "wing": {"side": "left", "w_ft": 18, "d_ft": 20, "storeys": 1},
+    "roof": {"type": "hip", "pitch_deg": 28, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "side", "posts": "square", "rail": "none"},
+    "walls": "stone",
+    "foundation": "cut_stone",
+    "colors": {"body": "#cfc4ae", "trim": "#e6e2d6", "accent": "#3a3a36", "roof": "#3e4042"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "detached_1",
+    "yard": {"fence": "iron", "extras": ["garden"]},
+    "condition": "kept",
+    "year_built": 1899
+  },
+  "names": {"family": "Wendling", "house_number": "4120", "street": "Hwy 71"}
+}

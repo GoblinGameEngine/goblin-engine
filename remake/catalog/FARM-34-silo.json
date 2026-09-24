@@ -1,0 +1,27 @@
+{
+  "id": "FARM-34-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "\"The Silos\", Silo Road",
+    "place": "Townsend vicinity, Broadwater County, MT",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Townsend_silos.jpg",
+    "photos": ["commons_Townsend_silos.jpg"],
+    "drawings": []
+  },
+  "brief": "Red-orange common-brick silo about 14 ft across and 36 ft high, laid in running bond with a scatter of darker overburnt bricks and a faint iron ladder up one side, open at the top with no roof. It stands joined to a slightly shorter twin, and a roofless ruin of a low brick feed room with a log lintel over its doorway clings to their base. Alone in open sagebrush range behind a buck-and-rail fence, with pronghorn in the grass and blue mountains beyond.",
+  "traits": {
+    "type": "brick",
+    "diameter_ft": 14,
+    "height_ft": 36,
+    "roof": "none",
+    "chute": false,
+    "hoops": false,
+    "colors": {"body": "#c0583e", "trim": "#8a3e2e", "accent": "#5a4a44", "roof": "#c0583e"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Pechacek"}
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-32-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Knud Anderson Farmstead, garage",
+    "place": "Douglas County, KS",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Garage_south_and_east_facades.jpg",
+    "photos": ["commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Garage_south_and_east_facades.jpg", "commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Garage_west_and_south_facades.jpg", "commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Garage_north_and_west_facades.jpg"],
+    "drawings": []
+  },
+  "brief": "Small wood-framed garage 12 ft by 18 ft in board-and-batten siding painted barn red and weathered to grey in streaks, on a low concrete sill, under a newer gable roof of dark green ribbed metal. Double plank doors on long strap hinges fill the north gable end; a small window with a board shelf and a narrow door are on the east side. Bare oaks and elms lean over it, and weathered grey granaries and the barn stand close by. (Small garage; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 18,
+    "d_ft": 12,
+    "height_ft": 12,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 30, "material": "metal"},
+    "colors": {"body": "#a8403a", "trim": "#9a948c", "accent": "#8a8680", "roof": "#2e5a44"},
+    "condition": "worn"
+  },
+  "names": {"family": "Wendling"}
+}

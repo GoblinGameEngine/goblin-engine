@@ -1,0 +1,27 @@
+{
+  "id": "FARM-32-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Calvin Neff Round Barn (HABS PA-6736)",
+    "place": "Centre Hall, Centre County, PA",
+    "year": 1910,
+    "source": "HABS PA-6736",
+    "url": "https://www.loc.gov/item/pa4052/",
+    "photos": ["loc_pa4052_photos_222992pv.jpg", "loc_pa4052_photos_222993pv.jpg", "loc_pa4052_photos_222994pv.jpg", "loc_pa4052_photos_222995pv.jpg", "loc_pa4052_photos_222996pv.jpg"],
+    "drawings": []
+  },
+  "brief": "True round barn built 1910 by a farmer and his carpenter, about 64 ft across, sided in dark barn-red vertical boards over a low stone base, with tall narrow white-framed windows and louvered vents spaced around the drum and white sliding doors at ground level. The shallow conical shingle roof has a ring of small gabled dormers with round-topped vents and a louvered cupola at the centre. A long gable-roofed shed wing and a small outbuilding join one side; white board fences, a gravel lane and tall spruces surround it, with the gable-roofed farm buildings of the rest of the farm below. (Conical roof; nearest vocabulary roof type is pyramid.)",
+  "traits": {
+    "type": "round_barn",
+    "w_ft": 64,
+    "d_ft": 64,
+    "height_ft": 44,
+    "walls": "board_and_batten",
+    "roof": {"type": "pyramid", "pitch_deg": 30, "material": "asphalt_shingle"},
+    "colors": {"body": "#7a2a24", "trim": "#f0ece2", "accent": "#5a4a40", "roof": "#6a6660"},
+    "condition": "kept"
+  },
+  "names": {"family": "Wendling", "sign": "WENDLING ROUND BARN 1910"}
+}

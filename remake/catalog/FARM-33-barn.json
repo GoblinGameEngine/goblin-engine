@@ -1,0 +1,28 @@
+{
+  "id": "FARM-33-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Shaker Church Family Round Barn (HABS MA-674)",
+    "place": "Hancock, Berkshire County, MA",
+    "year": 1826,
+    "source": "HABS MA-674",
+    "url": "https://www.loc.gov/item/ma0103/",
+    "photos": ["loc_ma0103_photos_077572pv.jpg", "loc_ma0103_photos_077573pv.jpg", "loc_ma0103_photos_077575pv.jpg", "loc_ma0103_photos_077576pv.jpg", "loc_ma0103_photos_077577pv.jpg", "loc_ma0103_photos_077580pv.jpg", "loc_ma0103_photos_077581pv.jpg", "loc_ma0103_photos_077582pv.jpg", "loc_ma0103_photos_077583pv.jpg"],
+    "drawings": ["loc_ma0103_sheet_00001a.png", "loc_ma0103_sheet_00002a.png"]
+  },
+  "brief": "Great round stone dairy barn about 90 ft across, its drum of grey split-face fieldstone laid in rough courses with stone-arched wagon doorways and plank doors, small six-pane windows and a bank ramp to the upper level on one side. The low conical roof rises to a white-painted clapboard clerestory ring with a band of small windows (rebuilt 1864 after a fire), topped by a second smaller drum and a lantern cupola with a weather vane. Inside, stalls ring a central timber hay mow. Long gable-roofed board-sided cow sheds on posts join it to one side, with a wooden twin-stave silo tower beyond. (Conical roof; nearest vocabulary roof type is pyramid.)",
+  "traits": {
+    "type": "round_barn",
+    "w_ft": 90,
+    "d_ft": 90,
+    "height_ft": 55,
+    "walls": "stone",
+    "roof": {"type": "pyramid", "pitch_deg": 22, "material": "wood_shingle"},
+    "cupola": true,
+    "colors": {"body": "#9c968a", "trim": "#f0ece2", "accent": "#6a5e52", "roof": "#6a6660"},
+    "condition": "kept"
+  },
+  "names": {"family": "Hallgren", "sign": "HALLGREN DAIRY"}
+}

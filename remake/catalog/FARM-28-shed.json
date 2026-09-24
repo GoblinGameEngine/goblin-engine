@@ -1,0 +1,27 @@
+{
+  "id": "FARM-28-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "John and Anna O'Sullivan Farmstead, granary",
+    "place": "Douglas County, KS",
+    "year": 1880,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:John_and_Anna_O%E2%80%99Sullivan_Farmstead_Douglas_Co_KS_granary_south_and_east_facades.jpg",
+    "photos": ["commons_John_and_Anna_O_Sullivan_Farmstead_Douglas_Co_KS_granary_south_and_east_facades.jpg", "commons_John_and_Anna_O_Sullivan_Farmstead_Douglas_Co_KS_granary_and_stone_barn_ruin_east_facade.jpg", "commons_John_and_Anna_O_Sullivan_Farmstead_Douglas_Co_KS_granary_and_stone_barn_ruin_looking_northwest.jpg"],
+    "drawings": []
+  },
+  "brief": "Small frame granary 20 ft by 16 ft built as a lean-to against the side of a limestone barn, sided in vertical boards nailed to girts, weathered silver-grey with ghosts of red paint and rotting along the bottom. A shallow shed roof of rusty corrugated metal slopes away from the barn wall; a plank door near the barn and small square hinged-panel openings in the other walls. The floor is raised on round timber piers; dead weeds, stacked rusty pipe and roofing tin lie around it. (Granary lean-to; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 20,
+    "d_ft": 16,
+    "height_ft": 12,
+    "walls": "board_and_batten",
+    "roof": {"type": "shed", "pitch_deg": 10, "material": "metal"},
+    "colors": {"body": "#8a8480", "trim": "#6a5a52", "accent": "#8a3a2e", "roof": "#7a4a32"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Stoltenberg"}
+}

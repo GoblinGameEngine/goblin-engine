@@ -1,0 +1,38 @@
+{
+ "structure": "FARM-29-silo",
+ "files": [
+  {
+   "file": "commons_Miles_Ranch_Richardson_Co_NE_silos_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miles_Ranch_(Richardson_Co,_NE)_silos_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Miles_Ranch_%28Richardson_Co%2C_NE%29_silos_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Miles Ranch (Richardson Co, NE) silos 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Miles Ranch, located southwest of Dawson in rural Richardson County, Nebraska, at the point where southbound 638 Ave bends west and becomes 708 Tr.  Silos south of ranch house."
+  },
+  {
+   "file": "commons_Miles_Ranch_Richardson_Co_NE_from_SW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miles_Ranch_(Richardson_Co,_NE)_from_SW_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Miles_Ranch_%28Richardson_Co%2C_NE%29_from_SW_1.JPG/1920px-Miles_Ranch_%28Richardson_Co%2C_NE%29_from_SW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Miles Ranch (Richardson Co, NE) from SW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Miles Ranch, located southwest of Dawson in rural Richardson County, Nebraska, at the point where southbound 638 Ave bends west and becomes 708 Tr.  View is from the southwest; the barn and house are left of center, beyond the cornfield; two red-brick silos are further to the right."
+  },
+  {
+   "file": "commons_Miles_Ranch_Richardson_Co_NE_from_WNW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miles_Ranch_(Richardson_Co,_NE)_from_WNW_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Miles_Ranch_%28Richardson_Co%2C_NE%29_from_WNW_1.JPG/1920px-Miles_Ranch_%28Richardson_Co%2C_NE%29_from_WNW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Miles Ranch (Richardson Co, NE) from WNW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Miles Ranch, located southwest of Dawson in rural Richardson County, Nebraska, at the point where southbound 638 Ave bends west and becomes 708 Tr.  Camera is facing east-southeast from 708 Tr near the bend."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-33-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Windler Farm, silos (HABS CO-84)",
+    "place": "Aurora vicinity, Adams County, CO",
+    "year": 1920,
+    "source": "HABS CO-84",
+    "url": "https://www.loc.gov/item/co0210/",
+    "photos": ["loc_co0210_photos_020594pv.jpg", "loc_co0210_photos_020592pv.jpg", "loc_co0210_photos_020593pv.jpg", "loc_co0210_photos_020597pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Pale concrete stave silo about 16 ft across and 40 ft high, the staves gridded by close-set dark steel hoops, with a column of small round door openings up one side and no roof. It is one of a matched pair standing shoulder to shoulder at the end of a long low gable-roofed dairy barn of weathered boards with a metal roof and rooftop ventilators; a steel windmill, pole corrals, an old disc harrow and dry prairie grass surround them.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 16,
+    "height_ft": 40,
+    "roof": "none",
+    "chute": false,
+    "hoops": true,
+    "colors": {"body": "#d4d0c6", "trim": "#5a5650", "accent": "#7a6e62", "roof": "#d4d0c6"},
+    "condition": "worn"
+  },
+  "names": {"family": "Hallgren"}
+}

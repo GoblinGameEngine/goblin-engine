@@ -1,0 +1,27 @@
+{
+  "id": "FARM-29-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Miles Ranch, silos",
+    "place": "Dawson vicinity, Richardson County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Miles_Ranch_(Richardson_Co,_NE)_silos_1.JPG",
+    "photos": ["commons_Miles_Ranch_Richardson_Co_NE_silos_1.JPG", "commons_Miles_Ranch_Richardson_Co_NE_from_SW_1.JPG", "commons_Miles_Ranch_Richardson_Co_NE_from_WNW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Squat red-brick silo about 16 ft across and 30 ft high, the brick laid in a mottled checker of red and salmon tones, capped by a low conical roof of weathered grey shingles with a slight overhang; a narrow vertical row of door openings runs up one side. It is one of a pair standing at the edge of a dense belt of oak and elm woods, with a center-pivot irrigation line crossing the bare field in front; the white ranch house and barn are across the road.",
+  "traits": {
+    "type": "brick",
+    "diameter_ft": 16,
+    "height_ft": 30,
+    "roof": "cone",
+    "chute": false,
+    "hoops": false,
+    "colors": {"body": "#a45a46", "trim": "#c8886a", "accent": "#6a3a2e", "roof": "#8a847a"},
+    "condition": "worn"
+  },
+  "names": {"family": "Brockhoff"}
+}

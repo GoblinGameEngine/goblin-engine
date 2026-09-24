@@ -1,0 +1,68 @@
+{
+ "structure": "FARM-32-barn",
+ "files": [
+  {
+   "file": "loc_pa4052_photos_222992pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa4052/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa4000/pa4052/photos/222992pv.jpg",
+   "title": "Calvin Neff Round Barn, PA Route 45, Centre Hall, Centre County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa4052_photos_222993pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa4052/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa4000/pa4052/photos/222993pv.jpg",
+   "title": "Calvin Neff Round Barn, PA Route 45, Centre Hall, Centre County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa4052_photos_222994pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa4052/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa4000/pa4052/photos/222994pv.jpg",
+   "title": "Calvin Neff Round Barn, PA Route 45, Centre Hall, Centre County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa4052_photos_222995pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa4052/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa4000/pa4052/photos/222995pv.jpg",
+   "title": "Calvin Neff Round Barn, PA Route 45, Centre Hall, Centre County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa4052_photos_222996pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa4052/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa4000/pa4052/photos/222996pv.jpg",
+   "title": "Calvin Neff Round Barn, PA Route 45, Centre Hall, Centre County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa4052_data_pa4052data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa4052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa4000/pa4052/data/pa4052data.pdf",
+   "title": "Calvin Neff Round Barn, PA Route 45, Centre Hall, Centre County, PA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa4052_data_pa4052cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa4052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa4000/pa4052/data/pa4052cap.pdf",
+   "title": "Calvin Neff Round Barn, PA Route 45, Centre Hall, Centre County, PA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

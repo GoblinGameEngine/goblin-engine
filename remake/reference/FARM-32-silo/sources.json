@@ -1,0 +1,77 @@
+{
+ "structure": "FARM-32-silo",
+ "files": [
+  {
+   "file": "loc_pa3964_photos_202882pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3964/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa3900/pa3964/photos/202882pv.jpg",
+   "title": "Lincoln Highway Farm, Schellsburg, Bedford County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3964_photos_202883pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3964/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa3900/pa3964/photos/202883pv.jpg",
+   "title": "Lincoln Highway Farm, Schellsburg, Bedford County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3964_photos_202884pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3964/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa3900/pa3964/photos/202884pv.jpg",
+   "title": "Lincoln Highway Farm, Schellsburg, Bedford County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3964_photos_202885pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3964/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa3900/pa3964/photos/202885pv.jpg",
+   "title": "Lincoln Highway Farm, Schellsburg, Bedford County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3964_photos_202886pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3964/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa3900/pa3964/photos/202886pv.jpg",
+   "title": "Lincoln Highway Farm, Schellsburg, Bedford County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3964_photos_202887pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3964/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/pa/pa3900/pa3964/photos/202887pv.jpg",
+   "title": "Lincoln Highway Farm, Schellsburg, Bedford County, PA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3964_data_pa3964data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3964/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa3900/pa3964/data/pa3964data.pdf",
+   "title": "Lincoln Highway Farm, Schellsburg, Bedford County, PA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3964_data_pa3964cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3964/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa3900/pa3964/data/pa3964cap.pdf",
+   "title": "Lincoln Highway Farm, Schellsburg, Bedford County, PA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-31-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Kansas Homestead of Thomas McQuill(i)an, barn",
+    "place": "Willow Springs vicinity, Douglas County, KS",
+    "year": 1870,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Kansas_Homestead_of_Thomas_McQuill(i)an_Douglas_Co_KS_barn_south_and_east_elevations.jpg",
+    "photos": ["commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_barn_south_and_east_elevations.jpg", "commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_barn_north_and_east_elevations.jpg", "commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_barn_southwest_corner.jpg", "commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_barn_west_elevation.jpg"],
+    "drawings": []
+  },
+  "brief": "Tall two-storey gable barn about 30 ft by 35 ft, pegged walnut frame on a stone foundation, sided in wide vertical boards weathered to silver-grey, under a steep standing-seam metal roof from the 1950s gone rusty in streaks. A one-storey shed-roofed extension about 20 ft long runs off the west gable end, clad partly in corrugated metal with rust-red roofing. The long sides have board sliding doors on a pipe track, two sets of Dutch doors and a pair of hinged barn doors with yellowed battens; only a small square loft opening in each gable. Red steel pipe gates and panel corrals enclose the lot around it. (Gable barn with lean-to; nearest vocabulary type is english_three_bay.)",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 35,
+    "d_ft": 30,
+    "height_ft": 32,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 45, "material": "metal"},
+    "colors": {"body": "#9a9690", "trim": "#b89a6a", "accent": "#a4502e", "roof": "#8a8a88"},
+    "condition": "worn"
+  },
+  "names": {"family": "Dunleavy", "sign": "DUNLEAVY FARM EST. 1856"}
+}

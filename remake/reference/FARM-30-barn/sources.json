@@ -1,0 +1,38 @@
+{
+ "structure": "FARM-30-barn",
+ "files": [
+  {
+   "file": "commons_Geo._Cather_Farmstead_barn_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_barn_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Geo._Cather_Farmstead_barn_1.JPG/1920px-Geo._Cather_Farmstead_barn_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Geo. Cather Farmstead barn 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "George Cather farmstead, located at 552 Road T in Webster County, Nebraska: barn."
+  },
+  {
+   "file": "commons_Geo._Cather_Farmstead_barn_and_bins.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_barn_and_bins.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Geo._Cather_Farmstead_barn_and_bins.JPG/1920px-Geo._Cather_Farmstead_barn_and_bins.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Geo. Cather Farmstead barn and bins.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "George Cather farmstead, located at 552 Road T in Webster County, Nebraska: barn and grain bins."
+  },
+  {
+   "file": "commons_Geo._Cather_Farmstead_barn_and_equipment.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_barn_and_equipment.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Geo._Cather_Farmstead_barn_and_equipment.JPG/1920px-Geo._Cather_Farmstead_barn_and_equipment.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Geo. Cather Farmstead barn and equipment.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "George Cather farmstead, located at 552 Road T in Webster County, Nebraska: barn and equipment."
+  }
+ ]
+}

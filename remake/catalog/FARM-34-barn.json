@@ -1,0 +1,28 @@
+{
+  "id": "FARM-34-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "John Frydrych farmstead, barn",
+    "place": "Tyndall vicinity, Bon Homme County, SD",
+    "year": 1900,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:John_Frydrych_farmstead_barn_from_SE_1.JPG",
+    "photos": ["commons_John_Frydrych_farmstead_barn_from_SE_1.JPG", "commons_John_Frydrych_farmstead_from_SE_1.JPG", "commons_John_Frydrych_farmstead_from_S_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Very long gable-roofed stock barn about 36 ft wide and 100 ft long whose ground storey is a thick wall of grey and tan granite fieldstone with small square stall windows and doorways, topped by a frame upper storey of horizontal boards with a row of small windows, the white paint peeled almost to bare grey wood. The broad steep roof of dark asphalt shingle is sagging with a few holes, and a small louvered cupola with a pyramidal cap sits near one end. Black Angus cattle graze the fenced pasture in front; big elms and cottonwoods shelter the farmstead behind. (Stone-walled stock barn; nearest vocabulary type is bank_barn.)",
+  "traits": {
+    "type": "bank_barn",
+    "w_ft": 36,
+    "d_ft": 100,
+    "height_ft": 32,
+    "walls": "stone",
+    "roof": {"type": "gable", "pitch_deg": 40, "material": "asphalt_shingle"},
+    "cupola": true,
+    "colors": {"body": "#8a847a", "trim": "#dcdad4", "accent": "#9a9288", "roof": "#46464a"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Pechacek", "sign": "PECHACEK"}
+}

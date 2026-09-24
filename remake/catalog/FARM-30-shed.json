@@ -1,0 +1,27 @@
+{
+  "id": "FARM-30-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Pray Farmstead, Granary",
+    "place": "Dickinson County, KS",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pray_Farmstead_Dickinson_Co_KS_Granary_southeast_elevation.jpg",
+    "photos": ["commons_Pray_Farmstead_Dickinson_Co_KS_Granary_southeast_elevation.jpg", "commons_Pray_Farmstead_Dickinson_Co_KS_Granary_north_elevation.jpg"],
+    "drawings": []
+  },
+  "brief": "Neat gable-roofed frame granary about 26 ft by 32 ft in freshly painted white lap siding with white corner boards and downspouts, on a low limestone foundation. Each gable end has a big white plank sliding door on an overhead track and a small four-pane window high in the peak; inside, a central drive runs between triple grain bays with wood floors on each side. Dark grey asphalt shingle roof, an old cast-iron hand pump on a concrete pad in front and mown lawn around it. (Drive-through granary; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 26,
+    "d_ft": 32,
+    "height_ft": 18,
+    "walls": "clapboard",
+    "roof": {"type": "gable", "pitch_deg": 34, "material": "asphalt_shingle"},
+    "colors": {"body": "#f0f0ec", "trim": "#f6f6f4", "accent": "#3a3a3a", "roof": "#4e5054"},
+    "condition": "kept"
+  },
+  "names": {"family": "Kuehl"}
+}

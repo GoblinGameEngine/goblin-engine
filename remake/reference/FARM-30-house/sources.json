@@ -1,0 +1,49 @@
+{
+ "structure": "FARM-30-house",
+ "files": [
+  {
+   "file": "commons_Geo._Cather_Farmstead_house_from_ESE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_house_from_ESE_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Geo._Cather_Farmstead_house_from_ESE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Geo. Cather Farmstead house from ESE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "George Cather farmstead, located at 552 Road T in Webster County, Nebraska: house, seen from east-southeast."
+  },
+  {
+   "file": "commons_Geo._Cather_Farmstead_house_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_house_from_SE_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Geo._Cather_Farmstead_house_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Geo. Cather Farmstead house from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "George Cather farmstead, located at 552 Road T in Webster County, Nebraska: house, seen from southeast."
+  },
+  {
+   "file": "commons_Geo._Cather_Farmstead_from_ESE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_from_ESE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Geo._Cather_Farmstead_from_ESE_1.JPG/1920px-Geo._Cather_Farmstead_from_ESE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Geo. Cather Farmstead from ESE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "George Cather farmstead, located at 552 Road T in Webster County, Nebraska: view from east-southeast.  T runs east-west in the foreground."
+  },
+  {
+   "file": "commons_Geo._Cather_Farmstead_from_ESE_2.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_from_ESE_2.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Geo._Cather_Farmstead_from_ESE_2.JPG/1920px-Geo._Cather_Farmstead_from_ESE_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Geo. Cather Farmstead from ESE 2.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "George Cather farmstead, located at 552 Road T in Webster County, Nebraska: view from east-southeast."
+  }
+ ]
+}

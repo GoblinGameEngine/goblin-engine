@@ -1,0 +1,27 @@
+{
+  "id": "FARM-30-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "George Cather Farmstead, barn, 552 Road T",
+    "place": "Bladen vicinity, Webster County, NE",
+    "year": 1900,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_barn_1.JPG",
+    "photos": ["commons_Geo._Cather_Farmstead_barn_1.JPG", "commons_Geo._Cather_Farmstead_barn_and_bins.JPG", "commons_Geo._Cather_Farmstead_barn_and_equipment.JPG"],
+    "drawings": []
+  },
+  "brief": "Old gable-roofed barn about 36 ft wide and 48 ft long, its walls clad entirely in wood shingles weathered to dark silver-brown, with a small square loft window high in the gable and a steep wood-shingle roof going mossy and ragged at the eaves. Along the long side a low shed-roofed lean-to on posts forms an open machinery bay the full length of the barn, now filled with a green grain drill and wagons. The barnyard around it is crowded with old implements, disc harrows and a yellow grain auger; four corrugated steel grain bins with conical roofs and dark cedars stand nearby. (Wood-shingled gable barn with open-front lean-to; nearest vocabulary type is english_three_bay.)",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 36,
+    "d_ft": 48,
+    "height_ft": 30,
+    "walls": "wood_shingle",
+    "roof": {"type": "gable", "pitch_deg": 42, "material": "wood_shingle"},
+    "colors": {"body": "#6e645a", "trim": "#8a8076", "accent": "#4a4038", "roof": "#6a6660"},
+    "condition": "worn"
+  },
+  "names": {"family": "Kuehl", "sign": "KUEHL FARM"}
+}

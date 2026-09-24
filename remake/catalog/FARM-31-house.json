@@ -1,0 +1,36 @@
+{
+  "id": "FARM-31-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Kansas Homestead of Thomas McQuill(i)an, farmhouse",
+    "place": "Willow Springs vicinity, Douglas County, KS",
+    "year": 1869,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Kansas_Homestead_of_Thomas_McQuill(i)an_Douglas_Co_KS_farmhouse_south_elevation.jpg",
+    "photos": ["commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_farmhouse_south_elevation.jpg", "commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_farmhouse_southwest_corner.jpg", "commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_farmhouse_west_elevation_looking_east.jpg", "commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_farmhouse_northeast_corner_looking_southwest.jpg"],
+    "drawings": []
+  },
+  "brief": "Symmetrical two-storey I-house of rough-faced buff limestone laid in irregular courses, with a small centre wall gable over the upstairs window and a side-gable roof in tan-brown asphalt shingle. A little gabled entry porch on two white Doric columns set on stone piers shelters the door, with bright green-painted steps; one-over-one windows in green-painted frames. A massive rubble-stone chimney climbs the outside of the west gable end, and a two-storey frame addition from 1900 in cream siding with its own brick chimney extends from the rear. Gravel drip strip, white downspouts, a flag on the porch post and a weathered barn beyond the yard.",
+  "traits": {
+    "archetype": "i_house",
+    "storeys": 2,
+    "main_w_ft": 32,
+    "main_d_ft": 18,
+    "wing": {"side": "rear", "w_ft": 16, "d_ft": 18, "storeys": 2},
+    "roof": {"type": "cross_gable", "pitch_deg": 38, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "stoop", "posts": "columns", "rail": "none"},
+    "walls": "stone",
+    "foundation": "fieldstone",
+    "colors": {"body": "#c4a47a", "trim": "#f2eee2", "accent": "#2e7a3e", "roof": "#8a6a52"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["exterior_left", "rear"],
+    "garage": "detached_1",
+    "yard": {"fence": "none", "extras": ["flagpole"]},
+    "condition": "kept",
+    "year_built": 1869
+  },
+  "names": {"family": "Dunleavy", "house_number": "1142", "street": "N 200 Rd"}
+}

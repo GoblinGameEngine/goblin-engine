@@ -1,0 +1,27 @@
+{
+  "id": "FARM-31-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Kansas Homestead of Thomas McQuill(i)an, garage",
+    "place": "Willow Springs vicinity, Douglas County, KS",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Kansas_Homestead_of_Thomas_McQuill(i)an_Douglas_Co_KS_garage_southeast_corner_looking_northwest.jpg",
+    "photos": ["commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_garage_southeast_corner_looking_northwest.jpg", "commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_garage_south_elevation_looking_north.jpg", "commons_Kansas_Homestead_of_Thomas_McQuill_i_an_Douglas_Co_KS_garage_northwest_corner_looking_southeast.jpg"],
+    "drawings": []
+  },
+  "brief": "Small one-storey gable-roofed frame garage about 15 ft by 18 ft under a big bur oak. The north, east and west walls are sheathed in corrugated metal, part bright galvanized and part rusted through to red-brown, while the south gable end is tongue-and-groove vertical boards with flaking white paint and a wide board door hung from a rusty rail. Rusty corrugated metal roof with exposed rafter tails, a loose stack of roofing sheets against the wall and a sagging wire fence and post at the corner. (Garage-shed; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 18,
+    "d_ft": 15,
+    "height_ft": 13,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 30, "material": "metal"},
+    "colors": {"body": "#e2ded0", "trim": "#b0b4b6", "accent": "#8a4a2e", "roof": "#7a4a32"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Dunleavy"}
+}

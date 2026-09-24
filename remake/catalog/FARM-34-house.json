@@ -1,0 +1,37 @@
+{
+  "id": "FARM-34-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Jens N. and Anna Junker farmstead, house, 45248 316 St",
+    "place": "Gayville vicinity, Clay County, SD",
+    "year": 1905,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Jens_and_Anna_Junker_farmstead_(Clay_Co_SD)_house_from_SE_1.JPG",
+    "photos": ["commons_Jens_and_Anna_Junker_farmstead_Clay_Co_SD_house_from_SE_1.JPG", "commons_Jens_and_Anna_Junker_farmstead_Clay_Co_SD_from_SE_2.JPG", "commons_Jens_and_Anna_Junker_farmstead_Clay_Co_SD_from_SE_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Tall two-storey Queen Anne farmhouse in white clapboard standing on the open prairie: a square corner tower rises a half storey above the eaves under a steep pyramidal roof with a tall finial, and the cross gables are filled with grey-blue fishscale shingles and small attic windows. Dark grey asphalt roofs, a red brick chimney at the centre, tall narrow one-over-one windows. Small hip-roofed porches on slim turned posts sit at the front corner by the tower and at the far end. A white gable-front garage with a blue metal roof stands alongside, and a white board-and-post rail fence runs in front, between the house and a ploughed field.",
+  "traits": {
+    "archetype": "queen_anne",
+    "storeys": 2,
+    "main_w_ft": 40,
+    "main_d_ft": 30,
+    "wing": null,
+    "roof": {"type": "cross_gable", "pitch_deg": 42, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "front_partial", "posts": "turned", "rail": "spindle"},
+    "walls": "clapboard",
+    "foundation": "concrete_block",
+    "colors": {"body": "#eeeeea", "trim": "#f6f6f4", "accent": "#7e8c9a", "roof": "#46484a"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "detached_1",
+    "yard": {"fence": "split_rail", "extras": []},
+    "turret": true,
+    "condition": "kept",
+    "year_built": 1905
+  },
+  "names": {"family": "Pechacek", "house_number": "45248", "street": "316th St"}
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-28-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "James H. Lane Ranch, Barn (HABS ID-113-A)",
+    "place": "Richfield vicinity, Lincoln County, ID",
+    "year": 1918,
+    "source": "HABS ID-113-A",
+    "url": "https://www.loc.gov/item/id0290/",
+    "photos": ["loc_id0290_photos_184774pv.jpg", "loc_id0290_photos_184775pv.jpg", "loc_id0290_photos_184776pv.jpg", "loc_id0290_photos_184777pv.jpg", "loc_id0290_photos_184778pv.jpg", "loc_id0290_photos_184779pv.jpg", "loc_id0290_photos_184780pv.jpg", "loc_id0290_photos_184783pv.jpg", "loc_id0290_photos_184785pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Long gambrel-roofed barn whose ground storey is built of rough dark basalt fieldstone laid with thick pale mortar, with dressed concrete lintels and quoin piers, a row of small square stall windows along each long side and a big central drive opening in the gable end. Above the stone the gambrel gable is sided in vertical boards with a hinged hay door and a small loft window, and the long wood-shingle roof is weathered grey and sagging. The HABS barn has one gable end fallen open; here it is intact but old and patched. Board corral fences and a stock gate run off the corner into dry sagebrush pasture.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 40,
+    "d_ft": 100,
+    "height_ft": 34,
+    "walls": "stone",
+    "roof": {"type": "gambrel", "pitch_deg": 55, "material": "wood_shingle"},
+    "colors": {"body": "#4e4a46", "trim": "#c8c2b4", "accent": "#6a5a4a", "roof": "#6e6a64"},
+    "condition": "worn"
+  },
+  "names": {"family": "Stoltenberg", "sign": "STOLTENBERG RANCH EST. 1918"}
+}

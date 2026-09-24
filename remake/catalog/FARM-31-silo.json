@@ -1,0 +1,27 @@
+{
+  "id": "FARM-31-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Huffine Homestead, Silo (HABS MT-191-B)",
+    "place": "Bozeman, Gallatin County, MT",
+    "year": 1920,
+    "source": "HABS MT-191-B",
+    "url": "https://www.loc.gov/item/mt0734/",
+    "photos": [],
+    "drawings": ["loc_mt0734_sheet_00001a.png", "loc_mt0734_sheet_00002a.png"]
+  },
+  "brief": "Wooden silo built between 1913 and 1926: a 21-sided polygon 14 ft across inside, framed on 4x6 uprights and sheathed outside in horizontal 1x6 tongue-and-groove siding, with flat bands at each floor level, 26 ft to the eave. It carries a 21-sided conical roof of asphalt shingles on self-supporting rafters, about 31 ft to the peak, with a small gabled dormer; a column of hinged plank silo doors with steel ladder rungs runs up one side, and a gabled entry vestibule with a pair of board doors sits at the foot. Plank-roofed feed sheds join it on both sides. Measured drawings only, no photos. (Polygonal wood-sided silo; nearest vocabulary type is wood_stave.)",
+  "traits": {
+    "type": "wood_stave",
+    "diameter_ft": 15,
+    "height_ft": 31,
+    "roof": "cone",
+    "chute": true,
+    "hoops": false,
+    "colors": {"body": "#a8a296", "trim": "#e8e4da", "accent": "#6e645a", "roof": "#5a5854"},
+    "condition": "worn"
+  },
+  "names": {"family": "Dunleavy"}
+}

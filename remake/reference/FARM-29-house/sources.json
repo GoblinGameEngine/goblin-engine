@@ -1,0 +1,49 @@
+{
+ "structure": "FARM-29-house",
+ "files": [
+  {
+   "file": "commons_Midway_Ranch_House_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Midway_Ranch_House_from_SE_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Midway_Ranch_House_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Midway Ranch House from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Midway Ranch House, located in Dawson County, Nebraska; seen from the southeast.  (The house faces northeast.)  It is listed in the National Register of Historic Places."
+  },
+  {
+   "file": "commons_Midway_Ranch_House_from_NE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Midway_Ranch_House_from_NE_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Midway_Ranch_House_from_NE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Midway Ranch House from NE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Midway Ranch House, located in Dawson County, Nebraska; seen from the northeast.  (The house faces northeast.)  It is listed in the National Register of Historic Places."
+  },
+  {
+   "file": "commons_Midway_Ranch_House_from_N_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Midway_Ranch_House_from_N_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Midway_Ranch_House_from_N_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Midway Ranch House from N 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Midway Ranch House, located in Dawson County, Nebraska; seen from the north.  (The house faces northeast.)  It is listed in the National Register of Historic Places."
+  },
+  {
+   "file": "commons_Midway_Ranch_House_from_SE_2.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Midway_Ranch_House_from_SE_2.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Midway_Ranch_House_from_SE_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Midway Ranch House from SE 2.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Midway Ranch House, located in Dawson County, Nebraska; seen from the southeast.  (The house faces northeast.)  It is listed in the National Register of Historic Places."
+  }
+ ]
+}

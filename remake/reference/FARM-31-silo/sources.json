@@ -1,0 +1,32 @@
+{
+ "structure": "FARM-31-silo",
+ "files": [
+  {
+   "file": "loc_mt0734_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mt0734/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mt/mt0700/mt0734/sheet/00001a.tif",
+   "title": "Huffine Homestead, Silo, 8507 Huffine Lane, Bozeman, Gallatin County, MT",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mt0734_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mt0734/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mt/mt0700/mt0734/sheet/00002a.tif",
+   "title": "Huffine Homestead, Silo, 8507 Huffine Lane, Bozeman, Gallatin County, MT",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mt0734_data_mt0734data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mt0734/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mt/mt0700/mt0734/data/mt0734data.pdf",
+   "title": "Huffine Homestead, Silo, 8507 Huffine Lane, Bozeman, Gallatin County, MT",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

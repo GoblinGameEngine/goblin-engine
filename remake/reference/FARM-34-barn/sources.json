@@ -1,0 +1,38 @@
+{
+ "structure": "FARM-34-barn",
+ "files": [
+  {
+   "file": "commons_John_Frydrych_farmstead_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:John_Frydrych_farmstead_from_SE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/John_Frydrych_farmstead_from_SE_1.JPG/1920px-John_Frydrych_farmstead_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:John Frydrych farmstead from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "John Frydrych farmstead, located northwest of the junction of state highway 50 and county road 421, about four miles east of Tyndall in rural Bon Homme County, South Dakota; seen from the southeast, from 421."
+  },
+  {
+   "file": "commons_John_Frydrych_farmstead_from_S_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:John_Frydrych_farmstead_from_S_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/John_Frydrych_farmstead_from_S_1.JPG/1920px-John_Frydrych_farmstead_from_S_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:John Frydrych farmstead from S 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "John Frydrych farmstead, located northwest of the junction of state highway 50 and county road 421, about four miles east of Tyndall in rural Bon Homme County, South Dakota; seen from the south.."
+  },
+  {
+   "file": "commons_John_Frydrych_farmstead_barn_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:John_Frydrych_farmstead_barn_from_SE_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Frydrych_farmstead_barn_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:John Frydrych farmstead barn from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Large barn on John Frydrych farmstead, located northwest of the junction of state highway 50 and county road 421, about four miles east of Tyndall in rural Bon Homme County, South Dakota; seen from the southeast, from 421."
+  }
+ ]
+}

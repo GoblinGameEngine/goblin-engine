@@ -1,0 +1,36 @@
+{
+  "id": "FARM-30-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "George Cather Farmstead, house, 552 Road T",
+    "place": "Bladen vicinity, Webster County, NE",
+    "year": 1890,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Geo._Cather_Farmstead_house_from_ESE_1.JPG",
+    "photos": ["commons_Geo._Cather_Farmstead_house_from_ESE_1.JPG", "commons_Geo._Cather_Farmstead_house_from_SE_1.JPG", "commons_Geo._Cather_Farmstead_from_ESE_1.JPG", "commons_Geo._Cather_Farmstead_from_ESE_2.JPG"],
+    "drawings": []
+  },
+  "brief": "Rambling two-storey white clapboard farmhouse with a cross-gabled roof in rust-brown asphalt shingle and three tall cream-painted chimneys; each front gable carries a small oval window set in a panel of decorative shingles. A hip-roofed wraparound porch on round white columns runs along the front and side, and its roof forms an upper deck with a white spindle balustrade reached from a pair of glazed doors. Big blue spruces and cedars crowd the front, bare cottonwoods behind; a steel windmill, round grain bins and a small white shed stand off across a ploughed field and a gravel road.",
+  "traits": {
+    "archetype": "queen_anne",
+    "storeys": 2,
+    "main_w_ft": 36,
+    "main_d_ft": 30,
+    "wing": {"side": "left", "w_ft": 16, "d_ft": 20, "storeys": 2},
+    "roof": {"type": "cross_gable", "pitch_deg": 38, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "wrap", "posts": "columns", "rail": "spindle"},
+    "walls": "clapboard",
+    "foundation": "concrete_block",
+    "colors": {"body": "#f2f0ea", "trim": "#f6f6f2", "accent": "#3a3a3a", "roof": "#9a5a3e"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["left_end", "center", "right_end"],
+    "garage": "none",
+    "yard": {"fence": "none", "extras": ["garden"]},
+    "condition": "kept",
+    "year_built": 1890
+  },
+  "names": {"family": "Kuehl", "house_number": "552", "street": "Rd T"}
+}

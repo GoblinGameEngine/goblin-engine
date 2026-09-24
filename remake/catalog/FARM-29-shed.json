@@ -1,0 +1,27 @@
+{
+  "id": "FARM-29-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Pray Farmstead, Joseph Pray Granary",
+    "place": "Dickinson County, KS",
+    "year": 1900,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pray_Farmstead_Dickinson_Co_KS_Joseph_Pray_Granary_northwest_elevation.jpg",
+    "photos": ["commons_Pray_Farmstead_Dickinson_Co_KS_Joseph_Pray_Granary_northwest_elevation.jpg", "commons_Pray_Farmstead_Dickinson_Co_KS_Joseph_Pray_Granary_southwest_elevation.jpg", "commons_Pray_Farmstead_Dickinson_Co_KS_Joseph_Pray_Granary_southeast_elevation.jpg", "commons_Pray_Farmstead_Dickinson_Co_KS_Joseph_Pray_Granary_northeast_elevation.jpg"],
+    "drawings": []
+  },
+  "brief": "Two-storey frame granary about 24 ft by 36 ft with a gable roof of weathered grey diamond shingles and a long shed-roofed lean-to added on the east side, open at the end for machinery. The north and west walls are clad in pale grey-blue pressed-metal sheets stamped in a brick pattern, with rust blooms, while the rest is silvered vertical and horizontal board siding on a limestone foundation. A big sliding door hangs off a sagging timber frame on the south end; small plank doors and a steel windmill stand nearby in the tall grass. (Granary with pressed-metal siding; nearest vocabulary type is frame_machine_shed and nearest wall is board_and_batten.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 36,
+    "d_ft": 24,
+    "height_ft": 20,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 30, "material": "wood_shingle"},
+    "colors": {"body": "#9aa4ac", "trim": "#8a847c", "accent": "#a8643e", "roof": "#8e8a84"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Brockhoff"}
+}

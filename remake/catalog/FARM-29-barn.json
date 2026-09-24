@@ -1,0 +1,27 @@
+{
+  "id": "FARM-29-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Swan Land & Cattle Company, Barn (HABS WY-71-A)",
+    "place": "Chugwater, Platte County, WY",
+    "year": 1880,
+    "source": "HABS WY-71-A",
+    "url": "https://www.loc.gov/item/wy0022/",
+    "photos": ["loc_wy0022_color_572514cv.jpg", "loc_wy0022_photos_174390pv.jpg", "loc_wy0022_photos_174391pv.jpg", "loc_wy0022_photos_174392pv.jpg", "loc_wy0022_photos_174393pv.jpg", "loc_wy0022_photos_174395pv.jpg", "loc_wy0022_photos_174396pv.jpg", "loc_wy0022_photos_174397pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Long ranch horse barn about 40 ft wide and 80 ft deep in barn-red drop siding with white-framed six-over-six windows, under a low gable roof of weathered wood shingles that breaks to a flatter pitch over lean-to side aisles. The gable front has a big central opening with a pair of plank sliding doors on an overhead track, small loft windows and a hay door above, and a finial at the peak. Inside a central alley runs between rows of plank horse stalls with harness pegs. Heavy pole corrals, a plank stock trough and tumbleweeds surround it on bare dirt, with cottonwoods beyond.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 40,
+    "d_ft": 80,
+    "height_ft": 28,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 32, "material": "wood_shingle"},
+    "colors": {"body": "#8e3226", "trim": "#e8e2d4", "accent": "#5a4a3a", "roof": "#6e665e"},
+    "condition": "worn"
+  },
+  "names": {"family": "Brockhoff", "sign": "BROCKHOFF RANCH"}
+}

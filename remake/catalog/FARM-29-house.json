@@ -1,0 +1,36 @@
+{
+  "id": "FARM-29-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Midway Ranch House",
+    "place": "Cozad vicinity, Dawson County, NE",
+    "year": 1912,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Midway_Ranch_House_from_NE_1.JPG",
+    "photos": ["commons_Midway_Ranch_House_from_NE_1.JPG", "commons_Midway_Ranch_House_from_N_1.JPG", "commons_Midway_Ranch_House_from_SE_1.JPG", "commons_Midway_Ranch_House_from_SE_2.JPG"],
+    "drawings": []
+  },
+  "brief": "Big two-and-a-half-storey front-gabled ranch house in chocolate-brown painted clapboard with crisp white trim: a broad front gable with a banded cornice return and a four-light attic window under a little shelf roof, cross gables on both sides and a tall red brick chimney up the south wall. A shed-roofed front porch on plain white columns runs across the ground floor with leaded-glass sidelights at the door; windows are multi-pane upper sashes over one. A one-storey gable-roofed garage wing in matching brown hangs off the rear corner. The house sits alone on a bare grassy knoll with foundation shrubs and the paint peeling on the weather side.",
+  "traits": {
+    "archetype": "gable_front",
+    "storeys": 2.5,
+    "main_w_ft": 32,
+    "main_d_ft": 40,
+    "wing": {"side": "right", "w_ft": 20, "d_ft": 22, "storeys": 1},
+    "roof": {"type": "cross_gable", "pitch_deg": 45, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "front_full", "posts": "columns", "rail": "none"},
+    "walls": "clapboard",
+    "foundation": "poured_concrete",
+    "colors": {"body": "#6a3428", "trim": "#f2f0ea", "accent": "#2e3a30", "roof": "#5a5650"},
+    "windows": {"type": "3over1_craftsman", "shutters": false},
+    "chimneys": ["exterior_left"],
+    "garage": "attached_1",
+    "yard": {"fence": "none", "extras": []},
+    "condition": "worn",
+    "year_built": 1912
+  },
+  "names": {"family": "Brockhoff", "house_number": "74220", "street": "Rd 426"}
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-30-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Pray Farmstead, East Silo",
+    "place": "Dickinson County, KS",
+    "year": 1940,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pray_Farmstead_Dickinson_Co_KS_East_Silo.jpg",
+    "photos": ["commons_Pray_Farmstead_Dickinson_Co_KS_East_Silo.jpg", "commons_Pray_Farmstead_Dickinson_Co_KS_East_Silo_south_elevation.jpg"],
+    "drawings": []
+  },
+  "brief": "Precast concrete stave silo 30 ft tall and about 14 ft across, the pale grey staves gridded by dark close-set steel hoops, with no roof. Up the south side runs an enclosed unloading chute of curved corrugated metal sections, painted pale blue and badly rusted, beside a rusty silage fill pipe that hooks over the rim; two round steel hatch covers sit at the bottom of the door column. Mown grass all round, a small blue-grey shed and shade trees behind.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 14,
+    "height_ft": 30,
+    "roof": "none",
+    "chute": true,
+    "hoops": true,
+    "colors": {"body": "#b8b6a8", "trim": "#9ab0b8", "accent": "#a8622e", "roof": "#b8b6a8"},
+    "condition": "worn"
+  },
+  "names": {"family": "Kuehl"}
+}

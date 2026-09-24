@@ -1,0 +1,68 @@
+{
+ "structure": "FARM-28-silo",
+ "files": [
+  {
+   "file": "loc_ak0372_photos_033151pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ak0372/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ak/ak0300/ak0372/photos/033151pv.jpg",
+   "title": "Rebarchek Farm, Rebarcheck Road, Palmer, Matanuska-Susitna Borough, AK",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ak0372_photos_033152pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ak0372/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ak/ak0300/ak0372/photos/033152pv.jpg",
+   "title": "Rebarchek Farm, Rebarcheck Road, Palmer, Matanuska-Susitna Borough, AK",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ak0372_photos_033153pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ak0372/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ak/ak0300/ak0372/photos/033153pv.jpg",
+   "title": "Rebarchek Farm, Rebarcheck Road, Palmer, Matanuska-Susitna Borough, AK",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ak0372_photos_033154pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ak0372/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ak/ak0300/ak0372/photos/033154pv.jpg",
+   "title": "Rebarchek Farm, Rebarcheck Road, Palmer, Matanuska-Susitna Borough, AK",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ak0372_photos_033155pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ak0372/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ak/ak0300/ak0372/photos/033155pv.jpg",
+   "title": "Rebarchek Farm, Rebarcheck Road, Palmer, Matanuska-Susitna Borough, AK",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ak0372_data_ak0372data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ak0372/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ak/ak0300/ak0372/data/ak0372data.pdf",
+   "title": "Rebarchek Farm, Rebarcheck Road, Palmer, Matanuska-Susitna Borough, AK",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ak0372_data_ak0372cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ak0372/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ak/ak0300/ak0372/data/ak0372cap.pdf",
+   "title": "Rebarchek Farm, Rebarcheck Road, Palmer, Matanuska-Susitna Borough, AK",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

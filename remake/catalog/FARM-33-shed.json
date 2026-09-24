@@ -1,0 +1,27 @@
+{
+  "id": "FARM-33-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Mount Mitchell Heritage Prairie Historic District, Captain Mitchell Farmstead corncrib",
+    "place": "Wamego vicinity, Wabaunsee County, KS",
+    "year": 1900,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Mount_Mitchell_Heritage_Prairie_Historic_District_Captain_Mitchell_Farmstead_corncrib.jpg",
+    "photos": ["commons_Mount_Mitchell_Heritage_Prairie_Historic_District_Captain_Mitchell_Farmstead_corncrib.jpg", "commons_Mount_Mitchell_Heritage_Prairie_Historic_District_Captain_Mitchell_Farmstead_railroad_car_and_corncrib.jpg"],
+    "drawings": []
+  },
+  "brief": "Long drive-through double corncrib about 26 ft by 36 ft, its two cribs built of widely spaced horizontal slats weathered silver-grey on a frame of heavy posts, with a central drive bay under the ridge and a plank door patched into the front. The gable roof of rusty red corrugated metal overhangs the ends; the whole thing sits up on a low concrete sill and piers, sagging a little. An old wooden railroad boxcar used for storage stands beside it among bare cottonwoods, with a garden hose and buckets in the grass.",
+  "traits": {
+    "type": "corn_crib",
+    "w_ft": 36,
+    "d_ft": 26,
+    "height_ft": 16,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 28, "material": "metal"},
+    "colors": {"body": "#8e8880", "trim": "#6e6860", "accent": "#7a5a42", "roof": "#9a4a30"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Hallgren"}
+}

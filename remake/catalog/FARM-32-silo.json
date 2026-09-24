@@ -1,0 +1,27 @@
+{
+  "id": "FARM-32-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Lincoln Highway Farm, silo (HAER PA-603)",
+    "place": "Schellsburg, Bedford County, PA",
+    "year": 1930,
+    "source": "HAER PA-603",
+    "url": "https://www.loc.gov/item/pa3964/",
+    "photos": ["loc_pa3964_photos_202883pv.jpg", "loc_pa3964_photos_202882pv.jpg", "loc_pa3964_photos_202884pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Pale concrete stave silo about 14 ft across and 42 ft high, bound by thin steel hoops, capped by a ribbed galvanized-metal dome. An enclosed chute runs up the side where it meets the barn, and an open steel ladder scaffold stands against the back. It rises beside the stone lower wall of a big red-sided bank barn with a white-lettered gable end, a vegetable garden and wire fence in front, along a two-lane highway.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 14,
+    "height_ft": 42,
+    "roof": "dome",
+    "chute": true,
+    "hoops": true,
+    "colors": {"body": "#d8d4c8", "trim": "#a8a8a4", "accent": "#7a2a24", "roof": "#b0b2b0"},
+    "condition": "kept"
+  },
+  "names": {"family": "Wendling"}
+}
