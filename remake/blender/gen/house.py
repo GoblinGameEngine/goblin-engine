@@ -443,8 +443,12 @@ def _build(rec):
     storeys = tr.get("storeys") or d_storeys
     roof_tr = dget(tr, "roof")
     rtype = roof_tr.get("type") or d_roof
+    cross_gables = 0
     if rtype in ("cross_gable",):
         rtype = "gable"
+        cross_gables = 2 if arch == "tudor_revival" else 1
+    elif arch == "queen_anne" and rtype in ("gable", "hip"):
+        cross_gables = 1
     if rtype == "pyramid":
         rtype = "hip"
     pitch = clamp(roof_tr.get("pitch_deg") or d_pitch, 14, 55)
@@ -485,6 +489,14 @@ def _build(rec):
     x0 = -W / 2
     if gar_w and garage != "none":
         x0 = -W / 2 - (gar_w + 0.4) / 2 * (1 if not mirror else -1)
+    else:
+        wing_tr = tr.get("wing") if isinstance(tr.get("wing"), dict) else {}
+        if wing_tr.get("side") in ("left", "right"):
+            # a side wing: slide the main block toward the far side of the lot (down to a 0.6 m side yard)
+            # just enough to make room for the wing
+            need = max(2.8, ft(wing_tr.get("w_ft") or 12))
+            shift = clamp(need - (lot_w / 2 - W / 2 - 0.6), 0.0, lot_w / 2 - W / 2 - 0.6)
+            x0 = -W / 2 + (shift if wing_tr["side"] == "left" else -shift)
     x1 = x0 + W
     b = lib_building(rid)
     house_materials(b, tr, cond)
@@ -514,8 +526,12 @@ def _build(rec):
             roof["pitch"] = max(pitch, 42)
     if rtype == "shed":
         roof["high"] = "N"
-    if rtype == "flat":
-        roof["parapet"] = 0.3
+    if rtype == "flat" and arch in ("ranch", "prairie_box"):
+        roof.update(eave_oh=1.1, thick=0.3)             # Prairie / Usonian: a thin slab cantilevered out deep
+    elif rtype == "flat":
+        roof.update(parapet=0.3, eave_oh=0.0)            # Moderne and the rest: a parapet, no overhang
+    elif arch == "prairie_box" or (arch == "ranch" and pitch <= 22):
+        roof["eave_oh"] = 1.0                            # the deep eaves that make the low Prairie/ranch outline
     spec = dict(t_ext=TE, t_int=TI, era="old" if tr.get("year_built", 1920) < 1940 else "modern",
                 mats=dict(ext="siding", int="plaster", roof="roof", roof_under="roof_under", found="found", floor="floor",
                           ceiling="plaster", trim="trim", door="door", fascia="trim", porch="porch", post="trim", furn="furniture"),
@@ -573,11 +589,11 @@ def _build(rec):
             spec["doors"] = [d_ for d_ in spec["doors"] if d_["name"] != "back" or not (wx0 - 0.6 <= d_["at"][0] <= wx0 + ww + 0.6)]
             spec["doors"].append(dict(name="wing_out", at=(wx0 + (0.6 if not mirror else ww - 0.6) + 0.3, y0 - wd), w=0.85, ext=True,
                                       glazed=(0.15, 0.5, 0.85, 0.9)))
-        elif wside in ("left", "right") and (lot_w / 2 - max(abs(x0), abs(x1))) > 1.0:
+        elif wside in ("left", "right"):
             sgn = -1 if wside == "left" else 1
             if (garage.startswith("attached") or garage == "carport") and sgn == (1 if not mirror else -1):
                 sgn = -sgn                  # that side is the garage's
-            room_side = (lot_w / 2 - 0.8) - (abs(x0) if sgn < 0 else abs(x1))
+            room_side = (x0 + lot_w / 2 - 0.6) if sgn < 0 else (lot_w / 2 - 0.6 - x1)
             ww2 = clamp(ft(wing.get("w_ft") or 12), 2.8, max(2.8, room_side))
             if room_side >= 2.8:
                 wx0, wx1 = (x0 - ww2, x0) if sgn < 0 else (x1, x1 + ww2)
@@ -636,6 +652,23 @@ def _build(rec):
         # stoop: a small landing with steps at the front door
         spec["porches"].append(dict(rect=(fd[0] - 0.8, yf, fd[0] + 0.8, yf + 1.0), z=pz, post_top=pz, posts=[], beam=False,
                                     steps=dict(at=(fd[0], yf + 1.0), dir=(0, 1), width=1.2, mat="concrete"), skirt_mat="found"))
+    # upright-and-wing: a "side" porch sits in the angle, across the front of a set-back side wing, with
+    # the wing's own door onto it
+    side_wing = next((bl for bl in spec["blocks"] if bl["name"] == "wing" and bl["rect"][3] < yf - 0.3
+                      and (bl["rect"][2] <= x0 + 0.01 or bl["rect"][0] >= x1 - 0.01)), None)
+    if ptype == "side" and side_wing:
+        wx0_, wy0_, wx1_, wy1_ = side_wing["rect"]
+        prect = (wx0_, wy1_, wx1_, wy1_ + 1.9)
+        top = fl1 + min(h - 0.1, 2.5)
+        post_style = {"turned": "square", "square": "square", "tapered_on_piers": "battered", "iron": "square",
+                      "columns": "tuscan"}.get(porch_tr.get("posts", "square"), "square")
+        posts = [(wx0_ + 0.15, prect[3] - 0.15), (wx1_ - 0.15, prect[3] - 0.15)]
+        spec["porches"].append(dict(rect=prect, z=pz, post_top=top, posts=posts, rails=[], post_style=post_style,
+                                    pedestal=0.9, pedestal_mat="found",
+                                    steps=dict(at=((wx0_ + wx1_) / 2 + (0.8 if wx0_ >= x1 - 0.01 else -0.8), prect[3]),
+                                               dir=(0, 1), width=1.1, mat="porch"),
+                                    roof=dict(type="shed", high="S", high_z=top + 0.45, low_z=top + 0.12, oh=0.25)))
+        spec["doors"].append(dict(name="wing_front", at=((wx0_ + wx1_) / 2, wy1_), w=0.85, ext=True, glazed=(0.2, 0.55, 0.8, 0.9)))
     bd = info["back_door"]
     back_on_main = any(d_["name"] == "back" for d_ in spec["doors"])
     if back_on_main:
@@ -715,18 +748,47 @@ def _build(rec):
     # ---- build the house
     house = gh.House(b, spec)
     house.build()
+    # ---- front cross gables (Tudor / Queen Anne): steep gables flush with the front wall, their
+    # ridges running back into the main roof
+    if cross_gables and (roof["type"] == "hip" or roof.get("ridge") == "x"):
+        cp = b.part("cross_gables-col")
+        tw_side = (x1 if not mirror else x0) if (tr.get("turret") or (isinstance(tr.get("tower"), dict)
+                                                  and tr["tower"].get("position", "front_corner") == "front_corner")) else None
+        for k in range(cross_gables):
+            gw = min(4.2, (x1 - x0) * (0.42 if cross_gables == 1 else 0.3))
+            # one gable: off-centre, away from a corner turret; two: a big and a small one
+            t = 0.3 if (tw_side is None or tw_side == x1) else 0.7
+            if cross_gables == 2:
+                t, gw = (0.28, gw) if k == 0 else (0.72, gw * 0.75)
+            gcx = x0 + (x1 - x0) * (t if not mirror else 1 - t)
+            gx0, gx1 = gcx - gw / 2, gcx + gw / 2
+            gp = min(62.0, roof["pitch"] + (15.0 if arch == "tudor_revival" else 5.0))
+            depth = min((yf - y0) / 2, gw / 2 * math.tan(math.radians(gp)) / max(0.3, math.tan(math.radians(roof["pitch"]))))
+            peak = wall_top + gw / 2 * math.tan(math.radians(gp))
+            for fy in (yf + 0.001, yf + 0.002):
+                tri = [(gx0, fy, wall_top), (gx1, fy, wall_top), (gcx, fy, peak)]
+                cp.face(tri if fy < yf + 0.0015 else list(reversed(tri)), "siding")
+            g.gable_roof(cp, gx0, gx1, yf - depth, yf, wall_top, gp, 0.3, 0.3, 0.12, "roof", "roof_under",
+                         ridge_axis="y", fascia="trim")
     # ---- towers, turrets and cupolas (exterior: above the porch roof and the eaves, clear of the rooms)
     towers(b, tr, x0, x1, y0, yf, floors, wall_top, roof, fl1 + min(h - 0.1, 2.5) + 0.55, mirror)
     # ---- dormers (exterior: small gabled boxes on the roof)
-    for dm in (tr.get("dormers") or [])[:3]:
+    dms = [(dm.get("side", "front") if isinstance(dm, dict) else "front") for dm in (tr.get("dormers") or [])[:3]]
+    tw_c = isinstance(tr.get("tower"), dict) and tr["tower"].get("position") == "front_center"
+    for k_dm, side in enumerate(dms):
         if roof["type"] not in ("gable", "gambrel", "hip"):
             break
-        side = dm.get("side", "front") if isinstance(dm, dict) else "front"
         if side not in ("front", "rear"):
             continue
+        # spread evenly along the side (a front-centre tower takes the middle)
+        same = [i for i, s_ in enumerate(dms) if s_ == side]
+        n_dm, i_dm = len(same), same.index(k_dm)
+        slots = [(x0 + (x1 - x0) * (j + 1) / (n_dm + 1)) for j in range(n_dm)]
+        if tw_c and side == "front":
+            slots = [x0 + (x1 - x0) * t for t in (0.2, 0.8, 0.35)][:n_dm]
         yy = yf if side == "front" else y0
         zb = wall_top + 0.4
-        dx0 = (x0 + x1) / 2 - 0.8
+        dx0 = slots[i_dm] - 0.8
         inset = 0.9 * (1 if side == "front" else -1)
         dp = b.part("dormers-col")
         yA, yB = sorted((yy - inset, yy - inset * 0.1))
