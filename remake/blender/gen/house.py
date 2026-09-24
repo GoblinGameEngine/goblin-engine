@@ -543,6 +543,14 @@ def _build(rec):
         info = plan_attic(spec, W, D, x0, y0, floors, ridge_, rnd, mirror)
     else:
         info = plan_one_storey(spec, W, D, x0, y0, rnd, tr, mirror)
+    # ---- a double house (units: 2) gets its second family's door beside the first, into the next front room
+    if tr.get("units") == 2:
+        fx = info["front_door"][0]
+        for x2 in (fx + 1.5, fx - 1.5):
+            if any(r.get("floor", 0) == 0 and r.get("type") not in ("hall", None) and abs(r["rect"][3] - yf) < 0.01
+                   and r["rect"][0] + 0.6 <= x2 <= r["rect"][2] - 0.6 for r in spec["rooms"]):
+                spec["doors"].append(dict(name="front2", at=(x2, yf), w=0.9, ext=True, glazed=(0.2, 0.55, 0.8, 0.9)))
+                break
     # ---- rear or side wing (one storey, kitchen/den)
     wing = tr.get("wing")
     if wing and isinstance(wing, dict):
@@ -699,9 +707,16 @@ def _build(rec):
         at = (c, at[1]) if along_x else (at[0], c)
         spec["windows"] = [w_ for w_ in spec["windows"] if math.dist(w_["at"], at) > 0.9]
         spec["chimneys"].append(dict(at=at, w=0.55, d=0.55, z0=0.0, top=top_z))
+    # a corner turret hides the upstairs windows it stands over
+    tw_tr = tr.get("tower") if isinstance(tr.get("tower"), dict) else ({"position": "front_corner"} if tr.get("turret") else None)
+    if tw_tr and tw_tr.get("position", "front_corner") == "front_corner":
+        tcx, tcy, tr_ = turret_at(x0, x1, yf, mirror)
+        spec["windows"] = [w_ for w_ in spec["windows"] if w_.get("floor", 0) == 0 or math.dist(w_["at"], (tcx, tcy)) > tr_ + 0.6]
     # ---- build the house
     house = gh.House(b, spec)
     house.build()
+    # ---- towers, turrets and cupolas (exterior: above the porch roof and the eaves, clear of the rooms)
+    towers(b, tr, x0, x1, y0, yf, floors, wall_top, roof, fl1 + min(h - 0.1, 2.5) + 0.55, mirror)
     # ---- dormers (exterior: small gabled boxes on the roof)
     for dm in (tr.get("dormers") or [])[:3]:
         if roof["type"] not in ("gable", "gambrel", "hip"):
@@ -727,6 +742,90 @@ def _build(rec):
     yback = min(bl["rect"][1] for bl in spec["blocks"])       # a rear wing pushes the back yard back
     yard(b, rec, tr, names, lot_w, lot_d, x0, x1, yback, yf, porch_d, fd, garage, gar_w, mirror, rnd, fl1, fenced)
     return b
+
+
+def _pyramid(p, cx, cy, hw, z0, z1, mat):
+    """Square pyramid roof (half-width hw at the eave z0, apex at z1)."""
+    q = [(cx - hw, cy - hw, z0), (cx + hw, cy - hw, z0), (cx + hw, cy + hw, z0), (cx - hw, cy + hw, z0)]
+    apex = (cx, cy, z1)
+    for k in range(4):
+        p.face([q[k], q[(k + 1) % 4], apex], mat)
+    p.face(list(reversed(q)), mat)
+
+
+def _windows_around(p, c, r, n, z0, z1, every=2):
+    """Tall glazed panes on every `every`-th face of an n-sided tower of radius r (flat-to-flat)."""
+    for k in range(0, n, every):
+        a = 2 * math.pi * (k + 0.5) / n
+        f = (g.Vector((c[0] + math.cos(a) * (r + 0.01), c[1] + math.sin(a) * (r + 0.01), 0)),
+             g.Vector((-math.sin(a), math.cos(a), 0)), g.Vector((math.cos(a), math.sin(a), 0)), g.Vector((0, 0, 1)))
+        pw = min(0.7, 2 * r * math.tan(math.pi / n) - 0.25)
+        p.obox(f, (-pw / 2 - 0.05, 0.0, z0 - 0.05), (pw / 2 + 0.05, 0.04, z1 + 0.05), "trim")
+        p.obox(f, (-pw / 2, 0.04, z0), (pw / 2, 0.06, z1), "glass")
+
+
+def turret_at(x0, x1, yf, mirror):
+    """Centre and radius of a front-corner turret (the corner away from the entry side)."""
+    return (x1 - 0.35 if not mirror else x0 + 0.35), yf - 0.35, 1.15
+
+
+def towers(b, tr, x0, x1, y0, yf, floors, wall_top, roof, porch_roof_z, mirror):
+    """Queen Anne corner turrets, Italianate front towers and rooftop cupolas (traits tower / turret /
+    cupola).  Exterior only: a corner turret is corbelled out above the porch roof, a front tower rises
+    from the eave on the front wall, a cupola sits on the roof's peak -- none reaches into a room."""
+    tw = tr.get("tower") if isinstance(tr.get("tower"), dict) else ({"position": "front_corner", "top": "spire"}
+                                                                    if tr.get("turret") else None)
+    tan_p = math.tan(math.radians(roof.get("pitch", 35)))
+    peak = wall_top + (min(x1 - x0, yf - y0) / 2) * tan_p
+    if tw:
+        p = b.part("tower-col")
+        if tw.get("position", "front_corner") == "front_corner":
+            # octagonal turret engaging the front corner away from the entry side
+            cx, cy, r = turret_at(x0, x1, yf, mirror)
+            z0 = max(porch_roof_z, floors[1][0] - 0.4 if len(floors) > 1 else wall_top - 1.2)
+            z1 = max(wall_top + 1.2, peak - 0.6)
+            p.cylinder((cx, cy), r * 0.55, z0 - 0.7, z0, "trim", n=8, r1=r)          # corbel
+            p.cylinder((cx, cy), r, z0, z1, "siding", n=8)
+            p.cylinder((cx, cy), r + 0.08, z1, z1 + 0.18, "trim", n=8)
+            if tw.get("top", "spire") == "spire":
+                p.cylinder((cx, cy), r + 0.2, z1 + 0.18, z1 + 0.18 + 2.8 * r, "roof", n=8, r1=0.03)
+            else:
+                p.cylinder((cx, cy), r + 0.2, z1 + 0.18, z1 + 0.18 + 0.9 * r, "roof", n=8, r1=0.3)
+            _windows_around(p, (cx, cy), r * math.cos(math.pi / 8), 8, z0 + 0.5, min(z0 + 1.9, z1 - 0.3))
+        else:
+            # square tower centred on the front wall, rising from the eave
+            hw = 1.2
+            cx = (x0 + x1) / 2
+            z0, z1 = wall_top - 0.3, max(peak + 1.0, wall_top + 3.0)
+            p.box((cx - hw, yf - 2 * hw + 0.1, z0), (cx + hw, yf + 0.1, z1), "siding")
+            p.box((cx - hw - 0.12, yf - 2 * hw, z1), (cx + hw + 0.12, yf + 0.22, z1 + 0.25), "trim")
+            for sx in (-1, 1):
+                pf = (g.Vector((cx + sx * 0.5, yf + 0.11, 0)), g.Vector((1, 0, 0)), g.Vector((0, 1, 0)), g.Vector((0, 0, 1)))
+                p.obox(pf, (-0.3, 0.0, z1 - 1.6), (0.3, 0.04, z1 - 0.4), "trim")
+                p.obox(pf, (-0.25, 0.04, z1 - 1.55), (0.25, 0.06, z1 - 0.45), "glass")
+            top = tw.get("top", "flat")
+            if top == "gable":
+                g.gable_roof(p, cx - hw - 0.2, cx + hw + 0.2, yf - 2 * hw - 0.1, yf + 0.3, z1 + 0.25, 45, 0.1, 0.1, 0.1,
+                             "roof", "trim", ridge_axis="y", fascia="trim")
+            elif top == "spire":
+                p.prism([(cx - hw - 0.15, yf - 2 * hw - 0.05), (cx + hw + 0.15, yf - 2 * hw - 0.05),
+                         (cx + hw + 0.15, yf + 0.25), (cx - hw - 0.15, yf + 0.25)], z1 + 0.25, z1 + 0.3, "trim")
+                _pyramid(p, cx, yf - hw + 0.1, hw + 0.15, z1 + 0.3, z1 + 0.3 + 3.2, "roof")
+            else:
+                p.box((cx - hw - 0.25, yf - 2 * hw - 0.15, z1 + 0.25), (cx + hw + 0.25, yf + 0.35, z1 + 0.4), "trim")
+    if tr.get("cupola") and roof.get("type") in ("hip", "gable", "gambrel"):
+        # square belvedere on the peak, glazed all round under a low hip
+        p = b.part("cupola-col")
+        cx, cy = (x0 + x1) / 2, (y0 + yf) / 2
+        hw = min(1.4, (min(x1 - x0, yf - y0)) * 0.2)
+        z0, z1 = peak - 0.9, peak + 1.3
+        p.box((cx - hw, cy - hw, z0), (cx + hw, cy + hw, z1), "siding")
+        for (fx, fy, ux, uy) in ((0, 1, 1, 0), (0, -1, -1, 0), (1, 0, 0, -1), (-1, 0, 0, 1)):
+            pf = (g.Vector((cx + fx * (hw + 0.01), cy + fy * (hw + 0.01), 0)), g.Vector((ux, uy, 0)),
+                  g.Vector((fx, fy, 0)), g.Vector((0, 0, 1)))
+            p.obox(pf, (-hw + 0.25, 0.0, peak + 0.1), (hw - 0.25, 0.04, z1 - 0.2), "glass")
+        p.box((cx - hw - 0.25, cy - hw - 0.25, z1), (cx + hw + 0.25, cy + hw + 0.25, z1 + 0.15), "trim")
+        _pyramid(p, cx, cy, hw + 0.3, z1 + 0.15, z1 + 0.75, "roof")
 
 
 def yard(b, rec, tr, names, lot_w, lot_d, x0, x1, y0, yf, porch_d, fd, garage, gar_w, mirror, rnd, fl1, fenced):
