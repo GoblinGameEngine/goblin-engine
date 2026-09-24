@@ -443,6 +443,10 @@ def _build(rec):
     pitch = clamp(roof_tr.get("pitch_deg") or d_pitch, 14, 55)
     lot = rec.get("lot", {"w": 12.0, "d": 10.0})
     lot_w, lot_d = lot["w"], lot["d"]
+    if rid.startswith("FARM-"):
+        # a farmstead's barn and shed stand ~12 m off the house's sides (map_preview.farmstead_polys):
+        # keep the house's own yard inside that
+        lot_w, lot_d = min(lot_w, 22.0), min(lot_d, 22.0)
     porch_tr = dget(tr, "porch") or {"type": "stoop"}
     ptype = porch_tr.get("type", "stoop")
     porch_d = {"none": 1.0, "stoop": 1.0, "front_full": 2.2, "front_partial": 2.0, "wrap": 2.2, "enclosed": 2.0,

@@ -26,7 +26,10 @@ for b in s.get_children():
 				box = box.merge(ab)
 	box = box.grow(6.0)
 	box.position.y = b.global_position.y - 3.0
-	box.size.y = 20.0
+	# tall enough for the highest room (a 5-storey works' top floor is ~18 m up)
+	var top = 20.0
+	for l in lights: top = max(top, l.global_position.y - b.global_position.y + 6.0)
+	box.size.y = top
 	var nm = NavigationMesh.new()
 	nm.agent_radius = 0.25
 	nm.agent_height = 1.7

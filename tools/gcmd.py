@@ -180,7 +180,7 @@ def cmd_run_like(cmd_name):
         if args.file:
             with open(args.file) as f:
                 code = f.read()
-        print_result(send({"cmd": cmd_name, "code": code}))
+        print_result(send({"cmd": cmd_name, "code": code}, timeout=args.timeout))
         return 0
     return handler
 
@@ -209,6 +209,7 @@ def main():
         r = sub.add_parser(name, help=help_text)
         r.add_argument("code", nargs="?", default="", help="GDScript source (omit if using --file)")
         r.add_argument("--file", help="read the code from this file instead")
+        r.add_argument("--timeout", type=float, default=10.0, help="seconds to wait for the reply (long bakes)")
         r.set_defaults(func=cmd_run_like(name))
 
     sh = sub.add_parser("screenshot", help="save the current rendered frame to a PNG path")

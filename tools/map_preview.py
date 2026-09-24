@@ -1116,8 +1116,10 @@ BCOL = {"house": (118, 100, 84), "store": (165, 70, 58), "vacant": (222, 212, 20
 for t in TOWNS:
     for poly, kind, _ in t.bldgs:
         draw_poly(dr, poly, fill=BCOL[kind], outline=(40, 30, 25) if kind != "vacant" else (140, 70, 60))
+FS_POLYS = []          # what was drawn, per farmstead (farmstead_polys draws its side at random)
 for c in FARMSTEADS:
-    for poly, kind in farmstead_polys(c):
+    FS_POLYS.append(farmstead_polys(c))
+    for poly, kind in FS_POLYS[-1]:
         draw_poly(dr, poly, fill=BCOL[kind], outline=(40, 30, 25))
 
 # ------------------------------------------------------------------ labels (on the layer)
@@ -1345,8 +1347,14 @@ if "--inventory" in sys.argv:
             inv["structures"].append({"id": sid, "settlement": t.name, "kind": kind, "label": label,
                                       **info, "parts": parts})
     for k, c in enumerate(FARMSTEADS, 1):
+        parts = []
+        for poly, kind in FS_POLYS[k - 1]:
+            ss, xs = [q[0] for q in poly], [q[1] for q in poly]
+            parts.append({"part": {"house": "house", "barn": "barn", "silo": "silo", "shed": "shed"}[kind],
+                          "s": round((min(ss) + max(ss)) / 2, 1), "x": round((min(xs) + max(xs)) / 2, 1),
+                          "w": round(max(ss) - min(ss), 1), "d": round(max(xs) - min(xs), 1)})
         inv["farmsteads"].append({"id": f"FARM-{k:02d}", "s": round(c[0], 1), "x": round(c[1], 1),
-                                  "structures": ["farmhouse", "barn", "silo", "machine shed"]})
+                                  "structures": ["farmhouse", "barn", "silo", "machine shed"], "parts": parts})
     for kind in ("major", "small", "culvert", "rail"):
         for k, item in enumerate(BRIDGES[kind], 1):
             a, b_ = item[0], item[1]
@@ -1359,7 +1367,8 @@ if "--inventory" in sys.argv:
                 over = CREEK_PATHS[cid - 1][0]
             inv["crossings"].append({"id": f"{kind.upper()}-{k:02d}", "type": kind, "road_class": cls,
                                      "s": round(s_m, 1), "x": round(x_m, 1),
-                                     "span_m": round(math.dist(a, b_), 1), "over": over or "farm ditch"})
+                                     "span_m": round(math.dist(a, b_), 1), "over": over or "farm ditch",
+                                     "ends": [[round(a[0], 1), round(a[1], 1)], [round(b_[0], 1), round(b_[1], 1)]]})
     out_inv = sys.argv[sys.argv.index("--inventory") + 1]
     with open(out_inv, "w") as f:
         json.dump(inv, f, indent=1)

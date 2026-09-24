@@ -24,4 +24,4 @@ if [ -n "$ONLY" ]; then NAMES="$ONLY"; else
 for b in root.get_tree().current_scene.get_children():
 	if b is RemakeBuilding: out.append(str(b.name))
 return out" | python3 -c "import json,sys; print(' '.join(json.load(sys.stdin).get('result') or []))"); fi
-for B in $NAMES; do $G run "$(sed "s/ONLY_BUILDING/'$B'/" $D/room_reach.gd)" | show; done
+for B in $NAMES; do $G run --timeout 240 "$(sed "s/ONLY_BUILDING/'$B'/" $D/room_reach.gd)" | show; done
