@@ -27,6 +27,7 @@ var shell_mesh: MeshInstance3D
 var terrain: MapTerrainMesh
 var world: Node3D
 var streamer: RemakeDetailStreamer
+var far_side: RemakeFarSide
 
 
 func _ready() -> void:
@@ -41,6 +42,10 @@ func _ready() -> void:
 	terrain = MapTerrainMesh.new()
 	terrain.name = "Terrain"
 	add_child(terrain)
+	far_side = RemakeFarSide.new()
+	far_side.name = "FarSide"
+	add_child(far_side)
+	far_side.setup(player, terrain, floor_mat.albedo_texture)
 	terrain.setup(player, floor_mat)
 	MapWater.build(self)
 	MapWater.build_small(self)
@@ -56,6 +61,9 @@ func _ready() -> void:
 	cliffs.name = "CliffWalls"
 	add_child(cliffs)
 	cliffs.setup(player)
+	for c in get_children():
+		if c.name.begins_with("map_water_") or c.name.begins_with("map_small_water_"):
+			far_side.add_node(c)
 	sky_system = DaySkySystem.new()
 	sky_system.name = "DaySkySystem"
 	add_child(sky_system)
@@ -94,6 +102,17 @@ func _place_structures() -> void:
 	## Not awaited: the structures fill in a building per frame while the game runs.
 	var info: Dictionary = await RemakeWorld.build(world, SETTLEMENTS)
 	streamer.setup(player, info.records)
+	# the far side draws them flat (RemakeFarSide): every merged district mesh and ordinary
+	# building, the trees and roads -- not the landmarks
+	var landmarks := {}
+	for r in info.records:
+		if r.landmark:
+			landmarks[r.root] = true
+	far_side.add_children_of(world, func(n: Node) -> bool: return landmarks.has(n))
+	while get_node("Trees").is_processing() or get_node("Roads").is_processing():
+		await get_tree().process_frame
+	far_side.add_children_of(get_node("Trees"))
+	far_side.add_children_of(get_node("Roads"))
 	info.erase("records")
 	print("RemakeStation: placed ", info)
 

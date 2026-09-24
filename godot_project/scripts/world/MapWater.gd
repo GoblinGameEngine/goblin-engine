@@ -11,9 +11,16 @@ const STEP := 4.0
 const OVERLAP := 1.5                 # past the rim, under the bank
 
 
-static func build(root: Node3D, s0 := 0.0, s1 := -1.0) -> MeshInstance3D:
-	if s1 < 0.0:
-		s1 = StationGeo.CIRC
+const CHUNKS := 24                   # the river / lake surface in this many pieces round the ring
+
+
+static func build(root: Node3D) -> void:
+	## The river / lake surface, in CHUNKS pieces (the far side hides its own).
+	for i in CHUNKS:
+		_build_range(root, StationGeo.CIRC * i / CHUNKS, StationGeo.CIRC * (i + 1) / CHUNKS).name = "map_water_%d" % i
+
+
+static func _build_range(root: Node3D, s0: float, s1: float) -> MeshInstance3D:
 	var mat := StandardMaterial3D.new()
 	mat.albedo_texture = load("res://assets/textures/water_tinted_0.png")
 	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
@@ -50,11 +57,14 @@ static func build(root: Node3D, s0 := 0.0, s1 := -1.0) -> MeshInstance3D:
 const FILL := 0.75                   # the small water stands at this fraction of its carved depth
 
 
-static func build_small(root: Node3D) -> MeshInstance3D:
+const SMALL_CELL := 400.0
+
+
+static func build_small(root: Node3D) -> void:
+	## The small water, merged per SMALL_CELL m of s (the far side hides its own).
 	var d: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(MapTerrain.PATH))
 	MapTerrain.elevation(0.0, 0.0)                        # loads the terrain data
-	var st := SurfaceTool.new()
-	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var cells := {}
 	# creeks and spurs: a ribbon along the line at the bank-full level; broken where a road crosses
 	# (it runs through a culvert under the road there)
 	for cr in d.creeks:
@@ -74,7 +84,7 @@ static func build_small(root: Node3D) -> MeshInstance3D:
 				var r := c - side * hw
 				row = [StationGeo.point(l.x, l.y, lvl), StationGeo.point(r.x, r.y, lvl), c, StationGeo.up(c.x)]
 			if not prev.is_empty() and not row.is_empty():
-				_quad(st, prev[0], row[0], row[1], prev[1], prev[3], row[3], prev[2], row[2])
+				_quad(_cell_st(cells, c.x), prev[0], row[0], row[1], prev[1], prev[3], row[3], prev[2], row[2])
 			prev = row
 	# ponds: filled ellipses
 	for p in d.ponds:
@@ -87,7 +97,7 @@ static func build_small(root: Node3D) -> MeshInstance3D:
 			var ds: float = u * cos(float(p.rot)) - v * sin(float(p.rot))
 			var dx: float = u * sin(float(p.rot)) + v * cos(float(p.rot))
 			ring.append(Vector2(p.s + ds, p.x + dx))
-		_fan(st, Vector2(p.s, p.x), ring, lvl)
+		_fan(_cell_st(cells, p.s), Vector2(p.s, p.x), ring, lvl)
 	# oxbow lakes: their outlines, triangulated
 	for ox in d.oxbows:
 		var poly := PackedVector2Array()
@@ -100,19 +110,31 @@ static func build_small(root: Node3D) -> MeshInstance3D:
 			cen += q
 		cen /= poly.size()
 		lo = MapTerrain.elevation(cen.x, cen.y) + FILL * float(ox.depth)
+		var st := _cell_st(cells, cen.x)
 		for i in range(0, tris.size(), 3):
 			for j in [0, 2, 1]:
 				var q: Vector2 = poly[tris[i + j]]
 				st.set_normal(StationGeo.up(q.x))
 				st.set_uv(q / 20.0)
 				st.add_vertex(StationGeo.point(q.x, q.y, lo))
-	st.set_material(_small_material())
-	var mi := MeshInstance3D.new()
-	mi.name = "map_small_water"
-	mi.mesh = st.commit()
-	mi.set_script(load("res://scripts/world/LakeWater.gd"))
-	root.add_child(mi)
-	return mi
+	var mat := _small_material()
+	for key in cells:
+		var st: SurfaceTool = cells[key]
+		st.set_material(mat)
+		var mi := MeshInstance3D.new()
+		mi.name = "map_small_water_%d" % key
+		mi.mesh = st.commit()
+		mi.set_script(load("res://scripts/world/LakeWater.gd"))
+		root.add_child(mi)
+
+
+static func _cell_st(cells: Dictionary, s: float) -> SurfaceTool:
+	var key := floori(fposmod(s, StationGeo.CIRC) / SMALL_CELL)
+	if not cells.has(key):
+		var st := SurfaceTool.new()
+		st.begin(Mesh.PRIMITIVE_TRIANGLES)
+		cells[key] = st
+	return cells[key]
 
 
 static func _quad(st: SurfaceTool, a: Vector3, b: Vector3, c: Vector3, d: Vector3, n0: Vector3, n1: Vector3, m0: Vector2, m1: Vector2) -> void:

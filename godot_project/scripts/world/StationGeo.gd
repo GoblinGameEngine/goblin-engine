@@ -53,3 +53,14 @@ static func h_of(p: Vector3) -> float:
 
 static func wrap_ds(ds: float) -> float:
 	return fposmod(ds + CIRC * 0.5, CIRC) - CIRC * 0.5
+
+
+## The far-side image (remake/farside.png, baked by remake/scenes/FarsideBake.tscn): 1 m / px,
+## FARSIDE_W m of s across (the circumference, padded), FARSIDE_H m of x down from -FARSIDE_H/2.
+const FARSIDE_W := 3200.0
+const FARSIDE_H := 3072.0
+
+
+static func farside_uv(s: float, x: float) -> Vector2:
+	return Vector2(fposmod(s, CIRC) / FARSIDE_W, (x + FARSIDE_H * 0.5) / FARSIDE_H)
+

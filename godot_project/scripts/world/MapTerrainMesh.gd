@@ -6,6 +6,9 @@ class_name MapTerrainMesh
 ##   T1  the same chunk on an 8 m grid                               -- the rest of a near group
 ##   T2  a group (GROUP x GROUP chunks) merged, 8 m grid              -- groups within MID
 ##   T3  the group on a 32 m grid                                    -- everything else
+## Tiles are generated on worker threads (MAX_TASKS at a time; MapTerrain is read-only once
+## loaded) and only turned into nodes on the main thread, at most one per frame -- a near tile's
+## 1,650 height samples take ~130 ms, which would otherwise stall a frame each.
 ## Every tier samples the exact height function; coarse grids' points are a subset of the fine
 ## ones, and each mesh hangs a short skirt below its edges so tier seams never show a crack.
 ## Vertex colours tint the ground: grass, bank mud and river bed by carved depth, bare earth on
@@ -18,10 +21,13 @@ const NEAR := 220.0
 const MID := 650.0
 const SKIRT := 1.5
 const TEX_M := 8.0
+const MAX_TASKS := 2
+const COL_PARTS := 4                 # a streamed near tile's collision goes in this many pieces, a frame each
 
 var half_w := StationGeo.HALF_LEN
 var target: Node3D
 var material: Material
+var far_material: Material            # for the far tier (T3), if set: RemakeFarSide's flat far side
 var _n_cs: int                        # chunks round the ring
 var _n_cx: int                        # chunks across
 var _t0 := {}                         # Vector2i chunk -> MeshInstance3D (with collision)
@@ -30,6 +36,11 @@ var _t2 := {}                         # Vector2i group -> MeshInstance3D
 var _t3 := {}                         # Vector2i group -> MeshInstance3D
 var _queue: Array = []                # pending builds: [tier, key]
 var _far_todo: Array = []             # groups whose far tier isn't built yet
+var _tasks := {}                      # WorkerThreadPool task id -> [tier, key]
+var _done: Array = []                 # finished generations: [tier, key, arrays]
+var _done_lock := Mutex.new()
+var _col_queue: Array = []            # [MeshInstance3D, faces]: collision pieces still to add
+var _pending := {}                    # [tier, key] being generated, so they aren't queued twice
 var _t := 0.0
 
 
@@ -97,6 +108,11 @@ func _tint(depth: float, slope: float, area: String = "", lc := Vector2i.ZERO) -
 
 
 func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3D:
+	return _make(_gen(r, step), collide, name)
+
+
+func _gen(r: Rect2, step: float) -> Array:
+	## The tile's surface arrays (thread-safe: touches no nodes or servers).
 	var ns := maxi(1, roundi(r.size.x / step))
 	var nx := maxi(1, roundi(r.size.y / step))
 	var ups := []
@@ -139,6 +155,7 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 				var b: int = q[k][1]
 				st.set_color(_tint(hs[a][b][1], slope, hs[a][b][2], hs[a][b][3]))
 				st.set_normal(nrm[a][b])
+				st.set_uv2(StationGeo.farside_uv(r.position.x + r.size.x * a / float(ns), r.position.y + r.size.y * b / float(nx)))
 				st.set_uv(Vector2((r.position.y + r.size.y * b / float(nx)) / TEX_M, (r.position.x + r.size.x * a / float(ns)) / TEX_M))
 				st.add_vertex(pts[a][b])
 	# skirts: hang each border edge SKIRT m down (along -up), hiding cracks against coarser tiers
@@ -163,35 +180,146 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 			st.set_normal(v[1])
 			st.set_uv(Vector2.ZERO)
 			st.add_vertex(v[0])
-	st.set_material(material)
+	return st.commit_to_arrays()
+
+
+func _make(arrays: Array, collide: bool, name: String, streamed := false) -> MeshInstance3D:
+	## streamed: the collision is added over the next COL_PARTS frames (building it is ~10 ms).
+	var mesh := ArrayMesh.new()
+	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+	mesh.surface_set_material(0, material)
 	var mi := MeshInstance3D.new()
 	mi.name = name
-	mi.mesh = st.commit()
+	mi.mesh = mesh
 	add_child(mi)
 	if collide:
-		var body := StaticBody3D.new()
-		var cs := CollisionShape3D.new()
-		var shape := mi.mesh.create_trimesh_shape()
-		shape.backface_collision = true          # a ground you can't fall through from either side
-		cs.shape = shape
-		body.add_child(cs)
-		mi.add_child(body)
+		var faces: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]   # unindexed triangles: the vertices are the faces
+		if not streamed:
+			_add_collision(mi, faces)
+		else:
+			var tris := faces.size() / 3
+			for k in COL_PARTS:
+				_col_queue.append([mi, faces.slice(tris * k / COL_PARTS * 3, tris * (k + 1) / COL_PARTS * 3)])
 	return mi
+
+
+func _add_collision(mi: MeshInstance3D, faces: PackedVector3Array) -> void:
+	var body := StaticBody3D.new()
+	var cs := CollisionShape3D.new()
+	var shape := ConcavePolygonShape3D.new()
+	shape.set_faces(faces)
+	shape.backface_collision = true          # a ground you can't fall through from either side
+	cs.shape = shape
+	body.add_child(cs)
+	mi.add_child(body)
 
 
 # ------------------------------------------------------------------ streaming
 func _process(delta: float) -> void:
+	_ground_under_target()
 	_t -= delta
 	if _t <= 0.0:
 		_t = 0.5
 		_update()
-	# a build per frame, nearest first; the far tier fills in when the near work is done
-	if not _queue.is_empty():
-		_do(_queue.pop_front())
-	elif not _far_todo.is_empty():
-		var g: Vector2i = _far_todo.pop_front()
-		_t3[g] = _build(_group_rect(g), 32.0, false, "t3_%d_%d" % [g.x, g.y])
+	# a piece of a near tile's collision, or else a finished tile becomes a node -- one per frame
+	if not _col_queue.is_empty():
+		var c: Array = _col_queue.pop_front()
+		if is_instance_valid(c[0]):
+			_add_collision(c[0], c[1])
+	else:
+		_done_lock.lock()
+		var res: Array = _done.pop_front() if not _done.is_empty() else []
+		_done_lock.unlock()
+		if not res.is_empty():
+			_pending.erase([res[0], res[1]])
+			_finish(res[0], res[1], res[2])
+	for id in _tasks.keys():
+		if WorkerThreadPool.is_task_completed(id):
+			WorkerThreadPool.wait_for_task_completion(id)
+			_tasks.erase(id)
+	# start more, nearest first; the far tier fills in when the near work is done
+	while _tasks.size() < MAX_TASKS:
+		var job: Array = []
+		if not _queue.is_empty():
+			job = _queue.pop_front()
+		elif not _far_todo.is_empty():
+			job = [3, _far_todo.pop_front()]
+		else:
+			break
+		var jk := [job[0], job[1]]
+		if _pending.has(jk) or _has_tile(job[0], job[1]):
+			continue
+		_pending[jk] = true
+		var r: Rect2 = _chunk_rect(job[1]) if job[0] <= 1 else _group_rect(job[1])
+		var step: float = [2.0, 8.0, 8.0, 32.0][job[0]]
+		var id := WorkerThreadPool.add_task(_gen_task.bind(job[0], job[1], r, step), false, "terrain tile")
+		_tasks[id] = jk
+
+
+func _ground_under_target() -> void:
+	## The tile the player is over must be solid now -- after a teleport, or if streaming fell
+	## behind -- so it's built here and then, collision and all (a one-off ~130 ms).
+	var p := target.global_position
+	var key := Vector2i(posmod(floori(StationGeo.s_of(p) / (StationGeo.CIRC / CHUNKS_ROUND)), _n_cs),
+		clampi(floori((p.x + half_w) / CHUNK_X), 0, _n_cx - 1))
+	if not _t0.has(key):
+		_t0[key] = _build(_chunk_rect(key), 2.0, true, "t0_%d_%d" % [key.x, key.y])
 		_apply_visibility(_vis_state[0], _vis_state[1], _vis_state[2])
+		return
+	var mi: MeshInstance3D = _t0[key]
+	var rest := []
+	for c in _col_queue:
+		if c[0] == mi:
+			_add_collision(mi, c[1])
+		else:
+			rest.append(c)
+	_col_queue = rest
+
+
+func _gen_task(tier: int, key: Vector2i, r: Rect2, step: float) -> void:
+	var arrays := _gen(r, step)
+	_done_lock.lock()
+	_done.append([tier, key, arrays])
+	_done_lock.unlock()
+
+
+func busy() -> bool:
+	## Anything still to build or being built (the far-side bake waits on this).
+	return not _queue.is_empty() or not _tasks.is_empty() or not _pending.is_empty() or not _col_queue.is_empty()
+
+
+func _has_tile(tier: int, key: Vector2i) -> bool:
+	return [_t0, _t1, _t2, _t3][tier].has(key)
+
+
+func _finish(tier: int, key: Vector2i, arrays: Array) -> void:
+	## A generated tile, if it's still wanted (the player may have moved on).
+	if _has_tile(tier, key):
+		return
+	var want0: Dictionary = _vis_state[0]
+	var near_groups: Dictionary = _vis_state[1]
+	var want2: Dictionary = _vis_state[2]
+	match tier:
+		0:
+			if want0.has(key):
+				_t0[key] = _make(arrays, true, "t0_%d_%d" % [key.x, key.y], true)
+		1:
+			if near_groups.has(Vector2i(key.x / GROUP, key.y / GROUP)):
+				_t1[key] = _make(arrays, false, "t1_%d_%d" % [key.x, key.y])
+		2:
+			if want2.has(key):
+				_t2[key] = _make(arrays, false, "t2_%d_%d" % [key.x, key.y])
+		3:
+			_t3[key] = _make(arrays, false, "t3_%d_%d" % [key.x, key.y])
+			if far_material:
+				_t3[key].material_override = far_material
+	_apply_visibility(want0, near_groups, want2)
+
+
+func _exit_tree() -> void:
+	for id in _tasks:
+		WorkerThreadPool.wait_for_task_completion(id)
+	_tasks.clear()
 
 
 func _update() -> void:

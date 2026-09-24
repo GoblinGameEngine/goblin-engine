@@ -65,7 +65,7 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 			_ranges(b, 0.0, D1 * k)
 			_light_fade(b)
 		else:
-			records.append({"id": id, "root": root, "lod1": lod1, "k": k})
+			records.append({"id": id, "root": root, "lod1": lod1, "k": k, "landmark": landmark})
 		var lod1_begin := D1 * k if full else 0.0          # no full detail yet: LOD1 from 0 m (the streamer swaps it)
 		if landmark:
 			# its own chain all the way out
