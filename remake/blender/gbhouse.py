@@ -945,6 +945,8 @@ class House:
                 b.empty(f"light_locked_{typ}" if r.get("locked") else f"light_{typ}", (cx, cy, lz))
 
     def build(self):
+        for bl in self.s["blocks"]:
+            self.b.massing.append(dict(rect=bl["rect"], top=bl["wall_top"], mat=bl.get("ext", self.m["ext"])))
         self.build_exterior()
         self.build_partitions()
         self.fit_openings()

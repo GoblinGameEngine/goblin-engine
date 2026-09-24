@@ -51,6 +51,8 @@ class Building:
         self.mats = {}
         self.tile = {}          # material -> metres per texture repeat (for UV projection)
         self.objs = {}
+        self.massing = []                # solid blocks for the distance versions (gbhouse registers them)
+        self.lods = True                 # export <id>.lod1/2/3.glb beside the glb (gblod)
         self.root = bpy.data.objects.new(name, None)
         bpy.context.scene.collection.objects.link(self.root)
 
@@ -131,6 +133,10 @@ class Building:
         for p in list(self.objs.values()):
             p.sink_ground_contacts()
             p.to_object()
+        if self.lods:
+            import gblod
+            self.lod_tris = gblod.export_lods(self, out_glb)
+            print(f"LODS {os.path.basename(out_glb)} {self.lod_tris}")
         self.merge_meshes()
         os.makedirs(os.path.dirname(out_glb), exist_ok=True)
         bpy.ops.object.select_all(action="SELECT")

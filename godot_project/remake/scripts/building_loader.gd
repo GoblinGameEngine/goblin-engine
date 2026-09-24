@@ -124,10 +124,45 @@ func _make_door(n: Node3D) -> void:
 	doors.append(body)
 
 
+## A distance version (<id>.lodN.glb from gblod): its textured surfaces use the building's own
+## sidecar, everything else the shared vertex-colour material (one material for every LOD2/3 mesh,
+## so a district's worth of them can be merged into a single draw call).
+static func prepare_lod(inst: Node, glb_path: String) -> void:
+	var sidecar := glb_path.get_basename().get_basename() + ".mats.json"
+	var defs: Dictionary = {}
+	if FileAccess.file_exists(sidecar):
+		defs = JSON.parse_string(FileAccess.get_file_as_string(sidecar))
+	_apply_defs(inst, defs)
+	# these ARE the level-of-detail chain: keep Godot's import-time automatic LOD from decimating
+	# them further (it strips exactly the thin truss outlines and small panes they keep on purpose)
+	var stack: Array[Node] = [inst]
+	while stack.size() > 0:
+		var n: Node = stack.pop_back()
+		stack.append_array(n.get_children())
+		if n is GeometryInstance3D:
+			(n as GeometryInstance3D).lod_bias = 1000.0
+
+
+static var _lod_vc: StandardMaterial3D = null
+
+
+static func lod_vc_material() -> StandardMaterial3D:
+	if _lod_vc == null:
+		_lod_vc = StandardMaterial3D.new()
+		_lod_vc.resource_name = "LOD_VC"
+		_lod_vc.vertex_color_use_as_albedo = true
+		_lod_vc.vertex_color_is_srgb = false
+		_lod_vc.roughness = 0.9
+	return _lod_vc
+
+
 func _apply_materials(inst: Node, sidecar: String) -> void:
 	if not FileAccess.file_exists(sidecar):
 		return
-	var defs: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(sidecar))
+	_apply_defs(inst, JSON.parse_string(FileAccess.get_file_as_string(sidecar)))
+
+
+static func _apply_defs(inst: Node, defs: Dictionary) -> void:
 	var stack: Array[Node] = [inst]
 	while stack.size() > 0:
 		var n: Node = stack.pop_back()
@@ -137,7 +172,9 @@ func _apply_materials(inst: Node, sidecar: String) -> void:
 			continue
 		for i in mi.mesh.get_surface_count():
 			var m := mi.mesh.surface_get_material(i)
-			if m and defs.has(m.resource_name):
+			if m and m.resource_name == "LOD_VC":
+				mi.set_surface_override_material(i, lod_vc_material())
+			elif m and defs.has(m.resource_name):
 				mi.set_surface_override_material(i, library_material(m.resource_name, defs[m.resource_name]))
 
 
