@@ -35,8 +35,9 @@ func _ready() -> void:
 	_build_shell()
 	_spawn_player()
 	var floor_mat := StandardMaterial3D.new()
-	floor_mat.albedo_texture = load("res://assets/textures/grass_tinted.png")
-	floor_mat.vertex_color_use_as_albedo = true          # MapTerrainMesh tints grass / mud / bed / earth
+	floor_mat.albedo_texture = _neutral_detail("res://assets/textures/grass_tinted.png")
+	floor_mat.vertex_color_use_as_albedo = true          # MapTerrainMesh colours the ground by land cover
+	floor_mat.vertex_color_is_srgb = true
 	terrain = MapTerrainMesh.new()
 	terrain.name = "Terrain"
 	add_child(terrain)
@@ -61,6 +62,27 @@ func _ready() -> void:
 	streamer.name = "DetailStreamer"
 	add_child(streamer)
 	_place_structures()
+
+
+static func _neutral_detail(path: String) -> ImageTexture:
+	## A texture's grain without its colour: greyscale, scaled so its mean is 1 -- the vertex colour
+	## is then the colour you see.
+	var img: Image = (load(path) as Texture2D).get_image()
+	img.decompress()
+	img.convert(Image.FORMAT_RGB8)
+	var total := 0.0
+	var n := 0
+	for y in range(0, img.get_height(), 4):
+		for x in range(0, img.get_width(), 4):
+			total += img.get_pixel(x, y).get_luminance()
+			n += 1
+	var mean := maxf(0.05, total / n)
+	for y in img.get_height():
+		for x in img.get_width():
+			var l := clampf(img.get_pixel(x, y).get_luminance() / mean, 0.0, 1.0)
+			img.set_pixel(x, y, Color(l, l, l))
+	img.generate_mipmaps()
+	return ImageTexture.create_from_image(img)
 
 
 func _place_structures() -> void:

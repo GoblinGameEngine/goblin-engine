@@ -65,19 +65,35 @@ func _group_rect(g: Vector2i) -> Rect2:
 	return Rect2(a.position, b.end - a.position)
 
 
-const AREA_TINT := {"lawn": Color(1.08, 1.12, 0.95), "park": Color(1.05, 1.1, 0.95), "campus": Color(1.08, 1.12, 0.95),
-	"schoolground": Color(1.05, 1.08, 0.95), "sportsfield": Color(1.0, 1.15, 0.9), "cemetery": Color(0.85, 0.95, 0.85),
-	"square": Color(0.95, 0.93, 0.88), "promenade": Color(1.0, 0.95, 0.85),
-	"parking": Color(0.42, 0.42, 0.42), "lot": Color(0.5, 0.48, 0.45), "culdesac": Color(0.45, 0.45, 0.45)}
+## Ground colours (sRGB; the terrain texture is a neutral detail with mean 1, so these are the
+## colours you see).  Town areas, then the map's land cover, then water banks and steep ground.
+const GRASS := Color(0.42, 0.53, 0.27)
+const AREA_TINT := {"lawn": Color(0.45, 0.6, 0.3), "park": Color(0.43, 0.58, 0.29), "campus": Color(0.45, 0.6, 0.3),
+	"schoolground": Color(0.44, 0.57, 0.3), "sportsfield": Color(0.4, 0.6, 0.27), "cemetery": Color(0.36, 0.5, 0.27),
+	"square": Color(0.62, 0.6, 0.55), "promenade": Color(0.66, 0.6, 0.5),
+	"parking": Color(0.28, 0.28, 0.28), "lot": Color(0.4, 0.38, 0.34), "culdesac": Color(0.3, 0.3, 0.3)}
+## farm fields by field id: corn, soybeans, wheat stubble, hay, fallow, pasture
+const FIELD_TINT := [Color(0.3, 0.46, 0.17), Color(0.4, 0.54, 0.2), Color(0.68, 0.6, 0.32), Color(0.56, 0.58, 0.3),
+	Color(0.46, 0.39, 0.27), Color(0.44, 0.57, 0.29)]
+const MUD := Color(0.4, 0.34, 0.25)
+const BED := Color(0.3, 0.27, 0.22)
+const EARTH := Color(0.5, 0.43, 0.32)
 
 
-func _tint(depth: float, slope: float, area: String = "") -> Color:
-	var grass: Color = AREA_TINT.get(area, Color(1.0, 1.0, 1.0))
-	var mud := Color(0.55, 0.47, 0.36)
-	var bed := Color(0.42, 0.38, 0.32)
-	var c := grass.lerp(mud, clampf(depth / 0.6, 0.0, 1.0))
-	c = c.lerp(bed, clampf((depth - 0.6) / 1.5, 0.0, 1.0))
-	return c.lerp(Color(0.7, 0.6, 0.45), clampf((slope - 0.35) / 0.3, 0.0, 1.0))
+func _cover_tint(lc: Vector2i) -> Color:
+	match lc.x:
+		2: return Color(0.46, 0.6, 0.32)           # floodplain meadow
+		3: return Color(0.2, 0.32, 0.14)           # woods (the floor under the trees)
+		4: return FIELD_TINT[lc.y % 6]             # farm fields, by field
+		5: return Color(0.22, 0.34, 0.15)          # windbreak grove
+	return GRASS
+
+
+func _tint(depth: float, slope: float, area: String = "", lc := Vector2i.ZERO) -> Color:
+	var c: Color = AREA_TINT.get(area, _cover_tint(lc))
+	c = c.lerp(MUD, clampf(depth / 0.6, 0.0, 1.0))
+	c = c.lerp(BED, clampf((depth - 0.6) / 1.5, 0.0, 1.0))
+	return c.lerp(EARTH, clampf((slope - 0.35) / 0.3, 0.0, 1.0))
 
 
 func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3D:
@@ -96,7 +112,7 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 			var x := r.position.y + r.size.y * j / float(nx)
 			var smp := MapTerrain.sample(s, x)
 			row_p.append(StationGeo.point(s, x, smp.x))
-			row_h.append([smp.x, smp.y, MapTerrain.area_kind(s, x) if step <= 8.0 else ""])
+			row_h.append([smp.x, smp.y, MapTerrain.area_kind(s, x) if step <= 8.0 else "", MapTerrain.landcover(s, x)])
 		pts.append(row_p)
 		hs.append(row_h)
 	# normals from the grid itself (central differences), so a skirt can carry the ground's normal:
@@ -121,7 +137,7 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 			for k in [0, 1, 2, 0, 2, 3]:            # counter-clockwise seen from above (toward the axis)
 				var a: int = q[k][0]
 				var b: int = q[k][1]
-				st.set_color(_tint(hs[a][b][1], slope, hs[a][b][2]))
+				st.set_color(_tint(hs[a][b][1], slope, hs[a][b][2], hs[a][b][3]))
 				st.set_normal(nrm[a][b])
 				st.set_uv(Vector2((r.position.y + r.size.y * b / float(nx)) / TEX_M, (r.position.x + r.size.x * a / float(ns)) / TEX_M))
 				st.add_vertex(pts[a][b])
@@ -143,7 +159,7 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 		var na: Vector3 = nrm[a[0]][a[1]]
 		var nb: Vector3 = nrm[b[0]][b[1]]
 		for v in [[pa, na], [pb - db, nb], [pb, nb], [pa, na], [pa - da, na], [pb - db, nb]]:
-			st.set_color(Color(0.55, 0.47, 0.36))
+			st.set_color(MUD)
 			st.set_normal(v[1])
 			st.set_uv(Vector2.ZERO)
 			st.add_vertex(v[0])

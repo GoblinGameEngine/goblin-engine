@@ -358,6 +358,21 @@ static func pad_height(id: String) -> float:
 	return _pad_by_id.get(id, NAN)
 
 
+static var _lc: Image = null
+
+
+static func landcover(s: float, x: float) -> Vector2i:
+	## (class, field id) of the map's land cover at (s, x) -- remake/landcover.png, 2 m / px:
+	## 1 built-up, 2 floodplain meadow, 3 woods, 4 farm field (id picks its crop), 5 windbreak grove,
+	## 0 anything else.
+	if _lc == null:
+		_lc = load("res://remake/landcover.png")
+	var px := clampi(floori(fposmod(s, C) / 2.0), 0, _lc.get_width() - 1)
+	var py := clampi(floori((x + 1500.0) / 2.0), 0, _lc.get_height() - 1)
+	var c := _lc.get_pixel(px, py)
+	return Vector2i(roundi(c.r * 255.0), roundi(c.g * 255.0))
+
+
 static func area_kind(s: float, x: float) -> String:
 	## The town area at (s, x) -- "lawn", "parking", "square", "schoolground"... -- or "".
 	_load()

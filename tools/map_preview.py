@@ -17,6 +17,7 @@ Usage:  python3 tools/map_preview.py OUT.png      (needs pillow + numpy)
 """
 
 import math
+import os
 import random
 import sys
 
@@ -1394,8 +1395,25 @@ if "--inventory" in sys.argv:
                "rail": {"w": 8, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in RAIL]},
                "areas": [{"kind": kind, "town": t.name, "poly": [[round(a, 1), round(b_, 1)] for a, b_ in poly]}
                          for t in TOWNS for poly, kind in t.areas]}
-        with open(sys.argv[sys.argv.index("--terrain") + 1], "w") as f:
+        ter_path = sys.argv[sys.argv.index("--terrain") + 1]
+        with open(ter_path, "w") as f:
             json.dump(ter, f, indent=0)
+        # land cover at 2 m / px (s across, x down from -HW): R = class, G = field id (farm fields)
+        #   1 built-up (settlement footprint)  2 floodplain meadow  3 woods  4 farm field
+        #   5 farmstead windbreak grove        0 anything else (grass, rough)
+        cls_ = np.zeros((WH, CW), np.uint8)
+        cls_[FARM] = 4
+        cls_[FLOOD] = 2
+        cls_[WOODS] = 3
+        cls_[FP] = 1
+        wb = Image.new("L", (CW, WH), 0)
+        wbd = ImageDraw.Draw(wb)
+        for c in FARMSTEADS:
+            draw_ellipse(wbd, c[0] - 8, c[1], 26, fill=1)
+        cls_[np.array(wb) > 0] = 5
+        cls_[WCAT > 0] = 0
+        lc = np.stack([cls_, (fid % 97).astype(np.uint8), np.zeros_like(cls_)], -1)[::2, ::2]
+        Image.fromarray(lc, "RGB").save(os.path.join(os.path.dirname(ter_path), "landcover.png"), optimize=True)
         print(f"terrain: {len(ter['creeks'])} creeks/spurs, {len(ter['ponds'])} ponds, {len(ter['oxbows'])} oxbows, "
               f"{len(ter['ditches'])} ditches")
     out_inv = sys.argv[sys.argv.index("--inventory") + 1]
