@@ -1,0 +1,41 @@
+{
+ "structure": "HF-120",
+ "files": [
+  {
+   "file": "loc_il0787_photos_334875pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0787/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0700/il0787/photos/334875pv.jpg",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Destroyer Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0787_photos_334876pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0787/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0700/il0787/photos/334876pv.jpg",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Destroyer Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0787_data_il0787data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0787/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0700/il0787/data/il0787data.pdf",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Destroyer Street, Rantoul, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0787_data_il0787cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0787/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0700/il0787/data/il0787cap.pdf",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Destroyer Street, Rantoul, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "structure": "HF-114",
+ "files": [
+  {
+   "file": "loc_in0370_photos_048705pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0370/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0370/photos/048705pv.jpg",
+   "title": "Lustron House, 103 Lake Front Drive, Beverly Shores, Porter County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0370_photos_048706pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0370/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0370/photos/048706pv.jpg",
+   "title": "Lustron House, 103 Lake Front Drive, Beverly Shores, Porter County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0370_photos_048707pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0370/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0370/photos/048707pv.jpg",
+   "title": "Lustron House, 103 Lake Front Drive, Beverly Shores, Porter County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0370_photos_048708pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0370/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0370/photos/048708pv.jpg",
+   "title": "Lustron House, 103 Lake Front Drive, Beverly Shores, Porter County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0370_data_in0370data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0370/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0300/in0370/data/in0370data.pdf",
+   "title": "Lustron House, 103 Lake Front Drive, Beverly Shores, Porter County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0370_data_in0370cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0370/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0300/in0370/data/in0370cap.pdf",
+   "title": "Lustron House, 103 Lake Front Drive, Beverly Shores, Porter County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

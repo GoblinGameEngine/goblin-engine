@@ -1,0 +1,50 @@
+{
+ "structure": "HF-122",
+ "files": [
+  {
+   "file": "loc_il0792_photos_334895pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0792/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0700/il0792/photos/334895pv.jpg",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Galaxy Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0792_photos_334896pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0792/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0700/il0792/photos/334896pv.jpg",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Galaxy Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0792_photos_334897pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0792/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0700/il0792/photos/334897pv.jpg",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Galaxy Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0792_data_il0792data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0792/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0700/il0792/data/il0792data.pdf",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Galaxy Street, Rantoul, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0792_data_il0792cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0792/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0700/il0792/data/il0792cap.pdf",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Galaxy Street, Rantoul, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

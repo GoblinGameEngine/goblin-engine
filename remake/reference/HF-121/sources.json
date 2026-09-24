@@ -1,0 +1,50 @@
+{
+ "structure": "HF-121",
+ "files": [
+  {
+   "file": "loc_il0788_photos_334877pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0788/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0700/il0788/photos/334877pv.jpg",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Curtiss Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0788_photos_334878pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0788/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0700/il0788/photos/334878pv.jpg",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Curtiss Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0788_photos_334879pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0788/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0700/il0788/photos/334879pv.jpg",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Curtiss Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0788_data_il0788data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0788/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0700/il0788/data/il0788data.pdf",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Curtiss Street, Rantoul, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0788_data_il0788cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0788/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0700/il0788/data/il0788cap.pdf",
+   "title": "Chanute Air Force Base, Non-Commissioned Officer Housing, Curtiss Street, Rantoul, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
