@@ -1,0 +1,95 @@
+{
+ "structure": "HF-050",
+ "files": [
+  {
+   "file": "loc_oh0217_photos_129200pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0200/oh0217/photos/129200pv.jpg",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/sheet/00000a.tif",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/sheet/00001a.tif",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/sheet/00002a.tif",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/sheet/00003a.tif",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/sheet/00004a.tif",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/sheet/00005a.tif",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/sheet/00006a.tif",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_sheet_00007a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/sheet/00007a.tif",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0217_data_oh0217data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0217/data/oh0217data.pdf",
+   "title": "Golden Lamb Hotel, Main Street, Lebanon, Warren County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
