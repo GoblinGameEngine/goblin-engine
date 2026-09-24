@@ -30,11 +30,10 @@ func _build_hull() -> void:
 	# boarding ramps up to each doorway (the model's step; the player can't climb a 35 cm sill)
 	for sx in [-1.0, 1.0]:
 		add_box(Vector3(0.72, 0.05, 1.0), Vector3(sx * 1.45, FLOOR * 0.5, 0.0), -sx * atan2(FLOOR, 0.6))
-	# furniture: the dash, the two front seats, the console, the rear bench
+	# furniture: the dash, the two front seats, the rear bench
 	add_box(Vector3(2.0, 0.78, 0.38), Vector3(0, FLOOR + 0.39, -1.5))
 	for sx in [-0.5, 0.5]:
 		add_box(Vector3(0.56, 0.55, 0.52), Vector3(sx, FLOOR + 0.27, -0.25))
-	add_box(Vector3(0.28, 0.66, 0.95), Vector3(0, FLOOR + 0.33, -0.475))
 	add_box(Vector3(1.8, 0.52, 0.48), Vector3(0, FLOOR + 0.26, 1.34))
 	# the fans (as upright cylinders) and the balloon
 	for sx in [-1.0, 1.0]:

@@ -25,3 +25,8 @@ void fragment() {
 	}
 	ROUGHNESS = 0.95;
 }
+
+void light() {
+	// lit from either side: the sun is set overhead at the viewer, which is beneath the far side
+	DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * abs(dot(NORMAL, LIGHT)) / PI;
+}

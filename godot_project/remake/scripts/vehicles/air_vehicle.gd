@@ -87,6 +87,7 @@ func _rig() -> void:
 		var tag := str(n.name).substr(5)                 # "R1"
 		var d := RemakeSlideDoor.new()
 		d.name = "DoorBody_" + tag
+		d.sync_to_physics = false                      # else the physics state overwrites the placement below
 		add_child(d)
 		d.transform = _local(n)
 		n.get_parent().remove_child(n)

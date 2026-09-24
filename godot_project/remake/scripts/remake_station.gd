@@ -67,6 +67,9 @@ func _ready() -> void:
 	sky_system = DaySkySystem.new()
 	sky_system.name = "DaySkySystem"
 	add_child(sky_system)
+	# the sun is always overhead where the player is (one directional light can't be, everywhere on
+	# a cylinder: elsewhere it would shine up through the ground)
+	sky_system.sun_frame = func() -> Basis: return StationGeo.basis(StationGeo.s_of(player.global_position))
 	sky_system.setup(self, sun, shell_mesh, StationGeo.R - StationGeo.SHAFT_R, WALL_TILE, environment)
 	var clouds := RemakeClouds.new()
 	clouds.name = "Clouds"

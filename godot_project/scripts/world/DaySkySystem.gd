@@ -48,6 +48,11 @@ const COLOR_KEYFRAMES := [
 var time_of_day: float = 0.27  # start mid-morning, already light out
 var ceiling_material: StandardMaterial3D
 var sun: DirectionalLight3D
+## Optional: returns the frame (right, up, back) the sun's angles are taken in. A
+## cylinder station passes the local floor frame at the player -- one directional
+## light can't be "overhead" everywhere on a curved floor, so it follows the
+## viewer and is always overhead there. Unset: the world frame (a flat world).
+var sun_frame: Callable
 var station: Node3D
 var env: Environment
 
@@ -195,7 +200,11 @@ func _apply(_delta: float) -> void:
 		var active_pos: float = moon_pos if use_moon else sun_pos
 		var active_intensity: float = maxf(sun_intensity, moon_intensity)
 		var sweep_deg: float = lerp(-55.0, 55.0, active_pos)
-		sun.rotation_degrees = Vector3(-35.0, 40.0 + sweep_deg, 0.0)
+		var local_rot := Basis.from_euler(Vector3(deg_to_rad(-35.0), deg_to_rad(40.0 + sweep_deg), 0.0))
+		if sun_frame.is_valid():
+			sun.global_transform.basis = (sun_frame.call() as Basis) * local_rot
+		else:
+			sun.rotation_degrees = Vector3(-35.0, 40.0 + sweep_deg, 0.0)
 		if use_moon:
 			sun.light_color = moon_color
 			sun.light_energy = 0.4 + moon_intensity * 0.9  # a real, working moonlight -- not near-off

@@ -18,7 +18,7 @@ Everything else is merged per material.
   cabin   2.4 m wide x 3.6 m long x 2.45 m tall: a rounded-rectangle (superellipse) shell -- slate
           blue belly, white band, a wrap-round window band, a silver roof -- with a sliding double
           pocket door each side; inside, the pilot's seat (right) with dash, screen and yoke, a
-          passenger seat, a throttle console between them, a rear bench, grab rails, a ceiling light
+          passenger seat, a rear bench, grab rails, a ceiling light
   lift    a 4.8 m fabric balloon, gores meeting at a rosette on the nose axis, on an A-frame and
           four cables from the roof rails
   fans    four ducted fans at the belly corners, each tilting on a trunnion at the end of its arm,
@@ -426,14 +426,6 @@ for cx in (-0.6, 0.0, 0.6):
     inner.box((cx - 0.28, -1.56, FLOOR + 0.38), (cx + 0.28, -1.1, FLOOR + 0.52), "seat")
     rot = Matrix.Translation((cx, -1.56, FLOOR + 0.52)) @ Matrix.Rotation(math.radians(10), 4, "X")
     inner.box((-0.27, -0.06, 0.02), (0.27, 0.08, 0.66), "seat", xf=rot)
-# the throttle console between the front seats
-inner.box((-0.13, 0.0, FLOOR), (0.13, 0.95, FLOOR + 0.62), "dark")
-inner.box((-0.14, 0.0, FLOOR + 0.62), (0.14, 0.95, FLOOR + 0.66), "dash")
-inner.box((-0.05, 0.35, FLOOR + 0.66), (0.05, 0.6, FLOOR + 0.68), "silver")                 # the throttle's gate
-inner.tube(Vector((0.0, 0.47, FLOOR + 0.66)), Vector((0.0, 0.52, FLOOR + 0.84)), 0.014, "silver", n=6)
-inner.box((-0.05, 0.49, FLOOR + 0.84), (0.05, 0.56, FLOOR + 0.89), "dark")                   # its grip
-for bx in (-0.08, -0.03, 0.03, 0.08):                                                       # switches
-    inner.box((bx - 0.015, 0.75, FLOOR + 0.66), (bx + 0.015, 0.8, FLOOR + 0.68), "screen")
 # the dash: a curved top across the nose, a dark fascia under it
 dash_z1 = BAND_TOP + 0.1
 for j in range(nt):
