@@ -1,0 +1,68 @@
+{
+ "structure": "K-032",
+ "files": [
+  {
+   "file": "loc_oh1813_photos_353582pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1813/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1813/photos/353582pv.jpg",
+   "title": "722 Innisfallen Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1813_photos_353583pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1813/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1813/photos/353583pv.jpg",
+   "title": "722 Innisfallen Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1813_photos_353584pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1813/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1813/photos/353584pv.jpg",
+   "title": "722 Innisfallen Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1813_photos_353585pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1813/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1813/photos/353585pv.jpg",
+   "title": "722 Innisfallen Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1813_photos_353586pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1813/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1813/photos/353586pv.jpg",
+   "title": "722 Innisfallen Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1813_data_oh1813data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1813/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1813/data/oh1813data.pdf",
+   "title": "722 Innisfallen Avenue (house), Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1813_data_oh1813cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1813/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1813/data/oh1813cap.pdf",
+   "title": "722 Innisfallen Avenue (house), Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

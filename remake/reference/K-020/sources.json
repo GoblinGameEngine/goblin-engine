@@ -1,0 +1,50 @@
+{
+ "structure": "K-020",
+ "files": [
+  {
+   "file": "loc_oh1553_photos_128544pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1553/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1553/photos/128544pv.jpg",
+   "title": "Kirby's Flower Shop, 923 Gallia Street, Portsmouth, Scioto County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1553_photos_128545pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1553/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1553/photos/128545pv.jpg",
+   "title": "Kirby's Flower Shop, 923 Gallia Street, Portsmouth, Scioto County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1553_photos_128546pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1553/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1553/photos/128546pv.jpg",
+   "title": "Kirby's Flower Shop, 923 Gallia Street, Portsmouth, Scioto County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1553_data_oh1553data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1553/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1553/data/oh1553data.pdf",
+   "title": "Kirby's Flower Shop, 923 Gallia Street, Portsmouth, Scioto County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1553_data_oh1553cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1553/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1553/data/oh1553cap.pdf",
+   "title": "Kirby's Flower Shop, 923 Gallia Street, Portsmouth, Scioto County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

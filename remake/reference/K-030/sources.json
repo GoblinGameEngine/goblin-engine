@@ -1,0 +1,68 @@
+{
+ "structure": "K-030",
+ "files": [
+  {
+   "file": "loc_oh1801_photos_353528pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1801/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1801/photos/353528pv.jpg",
+   "title": "705 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1801_photos_353529pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1801/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1801/photos/353529pv.jpg",
+   "title": "705 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1801_photos_353530pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1801/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1801/photos/353530pv.jpg",
+   "title": "705 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1801_photos_353531pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1801/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1801/photos/353531pv.jpg",
+   "title": "705 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1801_photos_353532pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1801/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1801/photos/353532pv.jpg",
+   "title": "705 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1801_data_oh1801data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1801/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1801/data/oh1801data.pdf",
+   "title": "705 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1801_data_oh1801cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1801/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1801/data/oh1801cap.pdf",
+   "title": "705 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

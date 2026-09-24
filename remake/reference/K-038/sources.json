@@ -1,0 +1,68 @@
+{
+ "structure": "K-038",
+ "files": [
+  {
+   "file": "loc_oh1831_photos_353679pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1831/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1831/photos/353679pv.jpg",
+   "title": "531-533 Gallagher Street (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1831_photos_353680pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1831/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1831/photos/353680pv.jpg",
+   "title": "531-533 Gallagher Street (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1831_photos_353681pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1831/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1831/photos/353681pv.jpg",
+   "title": "531-533 Gallagher Street (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1831_photos_353682pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1831/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1831/photos/353682pv.jpg",
+   "title": "531-533 Gallagher Street (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1831_photos_353683pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1831/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1831/photos/353683pv.jpg",
+   "title": "531-533 Gallagher Street (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1831_data_oh1831data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1831/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1831/data/oh1831data.pdf",
+   "title": "531-533 Gallagher Street (house), Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1831_data_oh1831cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1831/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1831/data/oh1831cap.pdf",
+   "title": "531-533 Gallagher Street (house), Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "structure": "K-056",
+ "files": [
+  {
+   "file": "loc_oh1799_photos_353518pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1799/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1700/oh1799/photos/353518pv.jpg",
+   "title": "Samuel B. Clemens House, 724 South Center Street, Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1799_photos_353519pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1799/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1700/oh1799/photos/353519pv.jpg",
+   "title": "Samuel B. Clemens House, 724 South Center Street, Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1799_photos_353520pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1799/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1700/oh1799/photos/353520pv.jpg",
+   "title": "Samuel B. Clemens House, 724 South Center Street, Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1799_photos_353521pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1799/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1700/oh1799/photos/353521pv.jpg",
+   "title": "Samuel B. Clemens House, 724 South Center Street, Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1799_photos_353522pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1799/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1700/oh1799/photos/353522pv.jpg",
+   "title": "Samuel B. Clemens House, 724 South Center Street, Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1799_data_oh1799data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1799/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1700/oh1799/data/oh1799data.pdf",
+   "title": "Samuel B. Clemens House, 724 South Center Street, Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1799_data_oh1799cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1799/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1700/oh1799/data/oh1799cap.pdf",
+   "title": "Samuel B. Clemens House, 724 South Center Street, Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

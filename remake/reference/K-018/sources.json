@@ -1,0 +1,41 @@
+{
+ "structure": "K-018",
+ "files": [
+  {
+   "file": "loc_oh1564_photos_128601pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1564/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1564/photos/128601pv.jpg",
+   "title": "19-21 South Washington Street (Commercial Building), Tiffin, Seneca County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1564_photos_128602pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1564/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1564/photos/128602pv.jpg",
+   "title": "19-21 South Washington Street (Commercial Building), Tiffin, Seneca County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1564_data_oh1564data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1564/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1564/data/oh1564data.pdf",
+   "title": "19-21 South Washington Street (Commercial Building), Tiffin, Seneca County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1564_data_oh1564cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1564/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1564/data/oh1564cap.pdf",
+   "title": "19-21 South Washington Street (Commercial Building), Tiffin, Seneca County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

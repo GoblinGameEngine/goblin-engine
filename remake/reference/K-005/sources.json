@@ -1,0 +1,59 @@
+{
+ "structure": "K-005",
+ "files": [
+  {
+   "file": "loc_oh1843_photos_353728pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1843/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1843/photos/353728pv.jpg",
+   "title": "Commercial Block, 551-555 Salem Avenue, Dayton, Montgomery County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1843_photos_353729pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1843/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1843/photos/353729pv.jpg",
+   "title": "Commercial Block, 551-555 Salem Avenue, Dayton, Montgomery County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1843_photos_353730pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1843/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1843/photos/353730pv.jpg",
+   "title": "Commercial Block, 551-555 Salem Avenue, Dayton, Montgomery County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1843_photos_353731pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1843/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1843/photos/353731pv.jpg",
+   "title": "Commercial Block, 551-555 Salem Avenue, Dayton, Montgomery County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1843_data_oh1843data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1843/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1843/data/oh1843data.pdf",
+   "title": "Commercial Block, 551-555 Salem Avenue, Dayton, Montgomery County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1843_data_oh1843cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1843/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1843/data/oh1843cap.pdf",
+   "title": "Commercial Block, 551-555 Salem Avenue, Dayton, Montgomery County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

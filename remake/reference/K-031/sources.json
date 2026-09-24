@@ -1,0 +1,68 @@
+{
+ "structure": "K-031",
+ "files": [
+  {
+   "file": "loc_oh1802_photos_353533pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1802/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1802/photos/353533pv.jpg",
+   "title": "711 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1802_photos_353534pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1802/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1802/photos/353534pv.jpg",
+   "title": "711 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1802_photos_353535pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1802/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1802/photos/353535pv.jpg",
+   "title": "711 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1802_photos_353536pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1802/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1802/photos/353536pv.jpg",
+   "title": "711 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1802_photos_353537pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1802/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1800/oh1802/photos/353537pv.jpg",
+   "title": "711 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1802_data_oh1802data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1802/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1802/data/oh1802data.pdf",
+   "title": "711 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1802_data_oh1802cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1802/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1800/oh1802/data/oh1802cap.pdf",
+   "title": "711 Wiley Avenue (house), Springfield, Clark County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

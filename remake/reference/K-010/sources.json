@@ -1,0 +1,59 @@
+{
+ "structure": "K-010",
+ "files": [
+  {
+   "file": "loc_in0297_photos_064410pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0297/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0200/in0297/photos/064410pv.jpg",
+   "title": "111 West Jackson Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0297_photos_064411pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0297/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0200/in0297/photos/064411pv.jpg",
+   "title": "111 West Jackson Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0297_photos_064412pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0297/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0200/in0297/photos/064412pv.jpg",
+   "title": "111 West Jackson Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0297_photos_064413pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0297/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0200/in0297/photos/064413pv.jpg",
+   "title": "111 West Jackson Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0297_data_in0297data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0297/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0297/data/in0297data.pdf",
+   "title": "111 West Jackson Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0297_data_in0297cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0297/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0297/data/in0297cap.pdf",
+   "title": "111 West Jackson Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

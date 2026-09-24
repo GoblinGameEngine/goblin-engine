@@ -1,0 +1,50 @@
+{
+ "structure": "K-009",
+ "files": [
+  {
+   "file": "loc_in0295_photos_064403pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0295/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0200/in0295/photos/064403pv.jpg",
+   "title": "105 South Main Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0295_photos_064404pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0295/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0200/in0295/photos/064404pv.jpg",
+   "title": "105 South Main Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0295_photos_064405pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0295/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0200/in0295/photos/064405pv.jpg",
+   "title": "105 South Main Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0295_data_in0295data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0295/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0295/data/in0295data.pdf",
+   "title": "105 South Main Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0295_data_in0295cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0295/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0295/data/in0295cap.pdf",
+   "title": "105 South Main Street (Commercial Building), Elkhart, Elkhart County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
