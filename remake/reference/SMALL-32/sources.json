@@ -1,0 +1,89 @@
+{
+ "structure": "SMALL-32",
+ "files": [
+  {
+   "file": "loc_md1336_data_md1336data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/md1336/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/md/md1300/md1336/data/md1336data.pdf",
+   "title": "md1336",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_md1336_data_md1336cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/md1336/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/md/md1300/md1336/data/md1336cap.pdf",
+   "title": "md1336",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_md1336_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_EAST,_WEST_ELEVATION_AND_SETTING_-_Hagerstown_Road_Bridge,_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road,_Middletown,_Frederick_County,_MD_HAER_MD,11-MIDTO.V,2-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/VIEW_EAST%2C_WEST_ELEVATION_AND_SETTING_-_Hagerstown_Road_Bridge%2C_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road%2C_Middletown%2C_Frederick_County%2C_MD_HAER_MD%2C11-MIDTO.V%2C2-1.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW EAST, WEST ELEVATION AND SETTING - Hagerstown Road Bridge, Spanning Little Cotoctin Creek at Old Hagerstown Road, Middletown, Frederick County, MD HAER MD,11-MIDTO.V,2-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_md1336_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_WEST,_EAST_ELEVATION_-_Hagerstown_Road_Bridge,_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road,_Middletown,_Frederick_County,_MD_HAER_MD,11-MIDTO.V,2-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/VIEW_WEST%2C_EAST_ELEVATION_-_Hagerstown_Road_Bridge%2C_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road%2C_Middletown%2C_Frederick_County%2C_MD_HAER_MD%2C11-MIDTO.V%2C2-3.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW WEST, EAST ELEVATION - Hagerstown Road Bridge, Spanning Little Cotoctin Creek at Old Hagerstown Road, Middletown, Frederick County, MD HAER MD,11-MIDTO.V,2-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_md1336_photo_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_NORTHWEST,_EAST_SIDE,_SOUTH_ABUTMENT_-_Hagerstown_Road_Bridge,_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road,_Middletown,_Frederick_County,_MD_HAER_MD,11-MIDTO.V,2-6.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/VIEW_NORTHWEST%2C_EAST_SIDE%2C_SOUTH_ABUTMENT_-_Hagerstown_Road_Bridge%2C_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road%2C_Middletown%2C_Frederick_County%2C_MD_HAER_MD%2C11-MIDTO.V%2C2-6.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW NORTHWEST, EAST SIDE, SOUTH ABUTMENT - Hagerstown Road Bridge, Spanning Little Cotoctin Creek at Old Hagerstown Road, Middletown, Frederick County, MD HAER MD,11-MIDTO.V,2-6.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_md1336_photo_08.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL,_EAST_SIDE,_BOTTOM_CHORD_CONNECTION_AND_ABUTMENT_-_Hagerstown_Road_Bridge,_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road,_Middletown,_Frederick_County,_MD_HAER_MD,11-MIDTO.V,2-8.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/DETAIL%2C_EAST_SIDE%2C_BOTTOM_CHORD_CONNECTION_AND_ABUTMENT_-_Hagerstown_Road_Bridge%2C_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road%2C_Middletown%2C_Frederick_County%2C_MD_HAER_MD%2C11-MIDTO.V%2C2-8.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL, EAST SIDE, BOTTOM CHORD CONNECTION AND ABUTMENT - Hagerstown Road Bridge, Spanning Little Cotoctin Creek at Old Hagerstown Road, Middletown, Frederick County, MD HAER MD,11-MIDTO.V,2-8.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_md1336_photo_11.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL,_TRUSS_SEATING_ON_ABUTMENT_-_Hagerstown_Road_Bridge,_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road,_Middletown,_Frederick_County,_MD_HAER_MD,11-MIDTO.V,2-11.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/DETAIL%2C_TRUSS_SEATING_ON_ABUTMENT_-_Hagerstown_Road_Bridge%2C_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road%2C_Middletown%2C_Frederick_County%2C_MD_HAER_MD%2C11-MIDTO.V%2C2-11.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL, TRUSS SEATING ON ABUTMENT - Hagerstown Road Bridge, Spanning Little Cotoctin Creek at Old Hagerstown Road, Middletown, Frederick County, MD HAER MD,11-MIDTO.V,2-11.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_md1336_photo_13.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL,_TRAFFIC_DECK_SUPPORT_SYSTEM_-_Hagerstown_Road_Bridge,_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road,_Middletown,_Frederick_County,_MD_HAER_MD,11-MIDTO.V,2-13.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/DETAIL%2C_TRAFFIC_DECK_SUPPORT_SYSTEM_-_Hagerstown_Road_Bridge%2C_Spanning_Little_Cotoctin_Creek_at_Old_Hagerstown_Road%2C_Middletown%2C_Frederick_County%2C_MD_HAER_MD%2C11-MIDTO.V%2C2-13.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL, TRAFFIC DECK SUPPORT SYSTEM - Hagerstown Road Bridge, Spanning Little Cotoctin Creek at Old Hagerstown Road, Middletown, Frederick County, MD HAER MD,11-MIDTO.V,2-13.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  }
+ ]
+}

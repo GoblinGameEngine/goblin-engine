@@ -1,0 +1,36 @@
+{
+  "id": "FARM-12-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Miller homestead, house, 2913 Kansas Highway 4",
+    "place": "La Crosse vicinity, Rush County, KS",
+    "year": 1885,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Miller_homestead_(Rush_Co_KS),_house_from_SE_1.JPG",
+    "photos": ["commons_Miller_homestead_Rush_Co_KS_house_from_SE_1.JPG", "commons_Miller_homestead_Rush_Co_KS_house_from_SW_1.JPG", "commons_Miller_homestead_Rush_Co_KS_house_and_buildings_from_SE_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Rambling upright-and-wing farmhouse: a two-storey front-gabled upright in white clapboard, joined to a section of rough tan post-rock limestone with a steep wall gable, and a long one-and-a-half-storey side wing, all under bright green standing-seam metal roofs. Dark green louvered shutters on tall two-over-two windows; a small hip-roofed front porch on slender white turned posts with a green metal roof; two brick chimneys. Tall arborvitae against the stone, big elms and a hedge around a mown yard.",
+  "traits": {
+    "archetype": "upright_and_wing",
+    "storeys": 2,
+    "main_w_ft": 22,
+    "main_d_ft": 30,
+    "wing": {"side": "right", "w_ft": 30, "d_ft": 20, "storeys": 1.5},
+    "roof": {"type": "cross_gable", "pitch_deg": 42, "material": "metal"},
+    "dormers": [],
+    "porch": {"type": "front_partial", "posts": "turned", "rail": "none"},
+    "walls": "clapboard",
+    "foundation": "cut_stone",
+    "colors": {"body": "#f2f2ee", "trim": "#f2f2ee", "accent": "#2f5a38", "roof": "#4f8a5c"},
+    "windows": {"type": "2over2", "shutters": true},
+    "chimneys": ["left_end", "rear"],
+    "garage": "detached_1",
+    "yard": {"fence": "hedge", "extras": ["garden", "clothesline", "woodpile"]},
+    "condition": "kept",
+    "year_built": 1885
+  },
+  "names": {"family": "Brandauer", "house_number": "2977", "street": "Highway 4"}
+}

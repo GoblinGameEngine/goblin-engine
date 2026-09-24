@@ -1,0 +1,38 @@
+{
+ "structure": "CF-008",
+ "files": [
+  {
+   "file": "commons_HABS_WIS_25-MINPO_2-1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cornish_Miner%27s_House_No._2,_Mineral_Point,_Iowa_County,_WI_HABS_WIS,25-MINPO,2-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Cornish_Miner%27s_House_No._2%2C_Mineral_Point%2C_Iowa_County%2C_WI_HABS_WIS%2C25-MINPO%2C2-1.tif/lossy-page1-1920px-Cornish_Miner%27s_House_No._2%2C_Mineral_Point%2C_Iowa_County%2C_WI_HABS_WIS%2C25-MINPO%2C2-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cornish Miner's House No. 2, Mineral Point, Iowa County, WI HABS WIS,25-MINPO,2-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "commons_HABS_WIS_25-MINPO_2-_sheet_0_of_1_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cornish_Miner%27s_House_No._2,_Mineral_Point,_Iowa_County,_WI_HABS_WIS,25-MINPO,2-_(sheet_0_of_1).tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Cornish_Miner%27s_House_No._2%2C_Mineral_Point%2C_Iowa_County%2C_WI_HABS_WIS%2C25-MINPO%2C2-_%28sheet_0_of_1%29.tif/lossy-page1-1920px-Cornish_Miner%27s_House_No._2%2C_Mineral_Point%2C_Iowa_County%2C_WI_HABS_WIS%2C25-MINPO%2C2-_%28sheet_0_of_1%29.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cornish Miner's House No. 2, Mineral Point, Iowa County, WI HABS WIS,25-MINPO,2- (sheet 0 of 1).tif",
+   "kind": "drawing",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "commons_HABS_WIS_25-MINPO_2-_sheet_1_of_1_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cornish_Miner%27s_House_No._2,_Mineral_Point,_Iowa_County,_WI_HABS_WIS,25-MINPO,2-_(sheet_1_of_1).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Cornish_Miner%27s_House_No._2%2C_Mineral_Point%2C_Iowa_County%2C_WI_HABS_WIS%2C25-MINPO%2C2-_%28sheet_1_of_1%29.png/1920px-Cornish_Miner%27s_House_No._2%2C_Mineral_Point%2C_Iowa_County%2C_WI_HABS_WIS%2C25-MINPO%2C2-_%28sheet_1_of_1%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cornish Miner's House No. 2, Mineral Point, Iowa County, WI HABS WIS,25-MINPO,2- (sheet 1 of 1).png",
+   "kind": "drawing",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  }
+ ]
+}

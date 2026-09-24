@@ -1,0 +1,29 @@
+{
+  "id": "FARM-14-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Carl Penke Farm, corn crib",
+    "place": "Douglas County, NE",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Carl_Penke_Farm_Douglas_Co_NE_Corn_Crib_west_and_south_facades.jpg",
+    "photos": ["commons_Carl_Penke_Farm_Douglas_Co_NE_Corn_Crib_west_and_south_facades.jpg", "commons_Carl_Penke_Farm_Douglas_Co_NE_Corn_Crib_east_facade.jpg", "commons_Carl_Penke_Farm_Douglas_Co_NE_Corn_Crib_north_facade.jpg"],
+    "drawings": []
+  },
+  "brief": "Enclosed drive-through corn crib about 24 ft by 36 ft, sided in wide horizontal boards painted barn red, set up on concrete block piers; two small white-framed four-pane windows on the long side, a tall sliding door and a small round window high in the gable end. Grey asphalt-shingle gable roof with white-edged eaves. An old walking plow and farm implements rest by the doorway; bare cottonwoods overhead.",
+  "traits": {
+    "type": "corn_crib",
+    "w_ft": 24,
+    "d_ft": 36,
+    "height_ft": 20,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 34, "material": "asphalt_shingle"},
+    "drive_through": true,
+    "raised_on_piers": true,
+    "colors": {"body": "#a3302c", "trim": "#f4f4f0", "accent": "#f4f4f0", "roof": "#5c5a58"},
+    "condition": "kept"
+  },
+  "names": {"family": "Kruckenberg"}
+}

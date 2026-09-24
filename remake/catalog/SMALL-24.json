@@ -1,0 +1,47 @@
+{
+  "id": "SMALL-24",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 7.1,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "Six Penny Bridge, School Street (Old Schuylkill Road) over Sixpenny Creek",
+    "place": "Monocacy, Berks County, PA",
+    "year": 1907,
+    "source": "HAER PA-625",
+    "url": "https://www.loc.gov/item/pa3993/",
+    "photos": [
+      "haer_pa3993_photo_01.jpg",
+      "haer_pa3993_photo_02.jpg",
+      "haer_pa3993_photo_03.jpg",
+      "haer_pa3993_photo_04.jpg",
+      "haer_pa3993_photo_05.jpg",
+      "haer_pa3993_photo_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single-span reinforced-concrete closed-spandrel deck arch in a small village, 1907: about 66 ft long and 20 ft wide with a 32 ft clear span and 17 ft roadway, a low smooth barrel springing about 1 ft above ground and rising 6.5 ft. Incised outline of the arch ring, a 9-inch corbelled belt course along each face, 3.5 ft recessed-panel solid concrete parapets, and curved wing walls. An inscribed stone set in the parapet names the bridge, the year, the county commissioners, engineer, inspector and contractor.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "spans": 1,
+    "year": 1907,
+    "railing": "open_parapet",
+    "railing_detail": "solid recessed-panel concrete parapet 3.5 ft high",
+    "span_ft": 32,
+    "overall_ft": 66,
+    "width_ft": 20,
+    "roadway_ft": 17,
+    "height_ft": 6.5,
+    "arch_form": "segmental, closed spandrel",
+    "wingwalls": "curved",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "inscribed stone: SCHOOL STREET BRIDGE · BUILT 1907 · J. M. YODER, J. F. FIELDS, COUNTY COMMISSIONERS · C. B. CARVER, ENGINEER · HARTMAN & REESE, CONTRACTORS",
+    "sign": "MILL CREEK"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "MAJOR-04",
+  "settlement": "rural (near Kessler)",
+  "kind": "crossing",
+  "crossing": {"type": "major", "road_class": "county", "span_m": 44.5, "over": "Kettle River"},
+  "example": {
+    "title": "Nimrod Bridge (Wallace Bridge), County Road 18 over the Fourche LaFave River",
+    "place": "Nimrod, Perry County, AR",
+    "year": 1908,
+    "source": "HAER AR-66",
+    "url": "https://www.loc.gov/item/ar0138/",
+    "photos": ["haer_ar0138_photo_01.jpg", "haer_ar0138_photo_03.jpg", "haer_ar0138_photo_05.jpg", "haer_ar0138_photo_06.jpg", "haer_ar0138_photo_08.jpg", "haer_ar0138_photo_10.jpg"],
+    "drawings": ["haer_ar0138_sheet_01.jpg", "haer_ar0138_sheet_05.jpg", "haer_ar0138_sheet_07.jpg", "haer_ar0138_sheet_08.jpg"]
+  },
+  "brief": "Single-span, ten-panel pin-connected camelback (Parker family) through truss, 180 ft span and 222 ft overall with a short steel-stringer approach at each end, on concrete-filled steel cylinder piers. Upper chord of five straight segments rising from 17.5 ft at the portals to 26 ft at mid-span; laced built-up chords and posts, forged eyebar lower chords, loop-ended rod diagonals with turnbuckle counters in the four centre panels; trusses 17 ft apart with a 15 ft roadway of transverse timber planks with running boards on wood stringers, and a plain steel rail along each side. Crosses a slow, tree-lined river on a gravel county road (Southwestern Bridge Co. fabricator; measured drawings included).",
+  "traits": {
+    "bridge_type": "through_truss_parker",
+    "truss_variant": "camelback",
+    "spans": 1,
+    "year": 1908,
+    "railing": "pipe_rail",
+    "span_ft": 180,
+    "width_ft": 15,
+    "height_ft": 26,
+    "portal_height_ft": 17.5,
+    "clearance_ft": 14.2,
+    "panels": 10,
+    "abutments": "concrete-filled steel cylinder piers",
+    "deck": "timber plank with running boards",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "1908 · KETTLE RIVER BRIDGE · KESSLER TOWNSHIP · PRAIRIE STATE BRIDGE CO. · BUILDERS",
+    "sign": "KETTLE RIVER"
+  }
+}

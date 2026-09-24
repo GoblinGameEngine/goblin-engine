@@ -1,0 +1,27 @@
+{
+  "id": "FARM-12-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Miller homestead, silo, 2913 Kansas Highway 4",
+    "place": "La Crosse vicinity, Rush County, KS",
+    "year": 1935,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Miller_homestead_(Rush_Co_KS),_silo_and_buildings_from_S_1.JPG",
+    "photos": ["commons_Miller_homestead_Rush_Co_KS_silo_and_buildings_from_S_1.JPG", "commons_Miller_homestead_Rush_Co_KS_silo_and_horse_barn_from_SE_1.JPG", "commons_Miller_homested_Rush_Co_KS_silo_and_buildings_from_SW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Slender concrete stave silo about 14 ft across and 50 ft high, the short staves faded to chalky white-grey with a faint grid of joints and thin steel hoops, open-topped with a small weathervane on a rod at the rim. It rises out of a dense stand of cedars and elms at the edge of the farmyard, with a small red gable-front brooder house, corrugated-steel sheds and the grey horse barn nearby.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 14,
+    "height_ft": 50,
+    "roof": "none",
+    "chute": false,
+    "hoops": true,
+    "colors": {"body": "#d9d7d0", "trim": "#6c6a66", "accent": "#6c6a66", "roof": "#d9d7d0"},
+    "condition": "worn"
+  },
+  "names": {"family": "Brandauer"}
+}

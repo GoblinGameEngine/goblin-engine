@@ -1,0 +1,33 @@
+{
+  "id": "SMALL-17",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {"type": "small", "road_class": "street", "span_m": 15.1, "over": "Sauk Creek"},
+  "example": {
+    "title": "Patch Street Bridge, Patch Street over Kohanza Brook",
+    "place": "Danbury, Fairfield County, CT",
+    "year": 1885,
+    "source": "HAER CT-30",
+    "url": "https://www.loc.gov/item/ct0415/",
+    "photos": ["haer_ct0415_photo_01.jpg", "haer_ct0415_photo_02.jpg", "haer_ct0415_photo_03.jpg", "haer_ct0415_photo_04.jpg", "haer_ct0415_photo_05.jpg", "haer_ct0415_photo_06.jpg"],
+    "drawings": []
+  },
+  "brief": "Single segmental stone arch of 32 ft span built by a local stonemason for the city after an 1869 flood: split-granite rubble spandrels and approach walls, a ring of long thin dressed voussoirs, and a low rubble parapet that is only a course or two above the roadway. The street runs flat over it with a sidewalk on each side behind chain-link fences, with drains and a brick sewer let through the arch. Set in a working-class residential neighbourhood of frame houses, in a shallow stony brook between rubble-walled banks.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1885,
+    "railing": "pipe_rail",
+    "span_ft": 32,
+    "width_ft": 36,
+    "height_ft": 12,
+    "arch_form": "segmental",
+    "masonry": "granite rubble spandrels, dressed voussoirs",
+    "sidewalks": true,
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "date stone: SAUK ST. BRIDGE · 1885 · T. MORAN, MASON",
+    "sign": "SAUK CREEK"
+  }
+}

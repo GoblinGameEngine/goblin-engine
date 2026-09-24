@@ -1,0 +1,41 @@
+{
+ "structure": "FARM-14-silo",
+ "files": [
+  {
+   "file": "loc_tx1243_photos_398302pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx1243/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/tx/tx1200/tx1243/photos/398302pv.jpg",
+   "title": "F.L. Hawkins Tenant Farmstead, Silo, 0.65 miles northeast of the intersection of Arrowhead and Old Buena Vista Roads, Waxahachie, Ellis County, TX",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_tx1243_photos_398303pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx1243/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/tx/tx1200/tx1243/photos/398303pv.jpg",
+   "title": "F.L. Hawkins Tenant Farmstead, Silo, 0.65 miles northeast of the intersection of Arrowhead and Old Buena Vista Roads, Waxahachie, Ellis County, TX",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_tx1243_data_tx1243data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx1243/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/tx/tx1200/tx1243/data/tx1243data.pdf",
+   "title": "F.L. Hawkins Tenant Farmstead, Silo, 0.65 miles northeast of the intersection of Arrowhead and Old Buena Vista Roads, Waxahachie, Ellis County, TX",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_tx1243_data_tx1243cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx1243/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/tx/tx1200/tx1243/data/tx1243cap.pdf",
+   "title": "F.L. Hawkins Tenant Farmstead, Silo, 0.65 miles northeast of the intersection of Arrowhead and Old Buena Vista Roads, Waxahachie, Ellis County, TX",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

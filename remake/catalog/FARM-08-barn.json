@@ -1,0 +1,29 @@
+{
+  "id": "FARM-08-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Bethphage Village dairy barn",
+    "place": "Axtell, Kearney County, NE",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Bethphage_(Axtell,_Nebraska)_barn_from_WSW_1.JPG",
+    "photos": ["commons_Bethphage_Axtell_Nebraska_barn_from_WSW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Long dairy barn about 36 ft by 100 ft: a low milking storey of whitewashed brick and hollow tile, stepped with shallow pilasters between a row of small square stall windows and plank doors, under a tall rounded gambrel (near gothic-arch) hayloft roof of bright galvanized corrugated metal with two round metal ridge ventilators. The gable end shows bare red brick where whitewash has worn off, a hay hood at the peak and a weathered plank lean-to. Plank board fence along the cow yard, corn right up to the fence.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 36,
+    "d_ft": 100,
+    "height_ft": 34,
+    "walls": "brick",
+    "roof": {"type": "gambrel", "pitch_deg": 60, "material": "metal"},
+    "cupolas": 2,
+    "lean_to": "right",
+    "colors": {"body": "#ece9e1", "trim": "#8e4a3a", "accent": "#b25a44", "roof": "#c7ccd0"},
+    "condition": "kept"
+  },
+  "names": {"family": "Rasmussen", "sign": "RASMUSSEN DAIRY EST. 1884"}
+}

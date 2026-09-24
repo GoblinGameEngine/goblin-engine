@@ -1,0 +1,27 @@
+{
+  "id": "FARM-09-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Elm Creek Silo (HAER TX-15)",
+    "place": "Voss vicinity, Coleman County, TX",
+    "year": 1914,
+    "source": "HAER TX-15",
+    "url": "https://www.loc.gov/item/tx0628/",
+    "photos": ["loc_tx0628_photos_156784pv.jpg", "loc_tx0628_photos_156785pv.jpg", "loc_tx0628_photos_156786pv.jpg", "loc_tx0628_photos_156787pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Roofless poured-in-place concrete silo built 1914 for a land-development scheme on old ranch land, about 14 ft across and 36 ft high, the shaft banded by uneven horizontal pour lifts and blotched with lichen and water stains, the top rim crumbling. A full-height flat-faced chute enclosure is cast onto one side, open at the bottom as a narrow doorway. Stands alone in brush and prickly pear, long unused. (Poured concrete; nearest vocabulary type is concrete_stave.)",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 14,
+    "height_ft": 36,
+    "roof": "none",
+    "chute": true,
+    "hoops": false,
+    "colors": {"body": "#a9a397", "trim": "#6c675e", "accent": "#5e6a4e", "roof": "#a9a397"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Oberholtzer"}
+}

@@ -1,0 +1,89 @@
+{
+ "structure": "MAJOR-03",
+ "files": [
+  {
+   "file": "loc_in0431_data_in0431data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0431/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0431/data/in0431data.pdf",
+   "title": "in0431",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0431_data_in0431cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0431/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0431/data/in0431cap.pdf",
+   "title": "in0431",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_in0431_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:A_LONG_VIEW,_LOOKING_NORTH_FROM_THE_WEST_BANK_OF_LITTLE_WALNUT_CREEK_TOWARD_THE_SOUTH_(DOWNSTREAM)_SIDE_OF_THE_BRIDGE_-_Putnam_County_Bridge_No._111,_Spanning_Little_Walnut_HAER_IND,67-GREC.V,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/A_LONG_VIEW%2C_LOOKING_NORTH_FROM_THE_WEST_BANK_OF_LITTLE_WALNUT_CREEK_TOWARD_THE_SOUTH_%28DOWNSTREAM%29_SIDE_OF_THE_BRIDGE_-_Putnam_County_Bridge_No._111%2C_Spanning_Little_Walnut_HAER_IND%2C67-GREC.V%2C1-1.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:A LONG VIEW, LOOKING NORTH FROM THE WEST BANK OF LITTLE WALNUT CREEK TOWARD THE SOUTH (DOWNSTREAM) SIDE OF THE BRIDGE - Putnam County Bridge No. 111, Spanning Little Walnut HAER IND,67-GREC.V,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nFife, Camille",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0431_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:A_LONG_VIEW,_LOOKING_SOUTHEAST_FROM_THE_SAME_LOCATION_AS_THE_PREVIOUS_PHOTO,_SHOWING_THE_EAST_HALF_OF_THE_NORTH_SIDE_OF_THE_BRIDGE_-_Putnam_County_Bridge_No._111,_Spanning_HAER_IND,67-GREC.V,1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/A_LONG_VIEW%2C_LOOKING_SOUTHEAST_FROM_THE_SAME_LOCATION_AS_THE_PREVIOUS_PHOTO%2C_SHOWING_THE_EAST_HALF_OF_THE_NORTH_SIDE_OF_THE_BRIDGE_-_Putnam_County_Bridge_No._111%2C_Spanning_HAER_IND%2C67-GREC.V%2C1-3.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:A LONG VIEW, LOOKING SOUTHEAST FROM THE SAME LOCATION AS THE PREVIOUS PHOTO, SHOWING THE EAST HALF OF THE NORTH SIDE OF THE BRIDGE - Putnam County Bridge No. 111, Spanning HAER IND,67-GREC.V,1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nFife, Camille",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0431_photo_08.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:A_MEDIUM_RANGE_VIEW,_LOOKING_SOUTHEAST,_OF_THE_UNDER_SIDE_OF_THE_EAST_SPAN_AND_THE_EAST_ABUTMENT._-_Putnam_County_Bridge_No._111,_Spanning_Little_Walnut_Creek_on_County_Road_50,_HAER_IND,67-GREC.V,1-8.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/A_MEDIUM_RANGE_VIEW%2C_LOOKING_SOUTHEAST%2C_OF_THE_UNDER_SIDE_OF_THE_EAST_SPAN_AND_THE_EAST_ABUTMENT._-_Putnam_County_Bridge_No._111%2C_Spanning_Little_Walnut_Creek_on_County_Road_50%2C_HAER_IND%2C67-GREC.V%2C1-8.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:A MEDIUM RANGE VIEW, LOOKING SOUTHEAST, OF THE UNDER SIDE OF THE EAST SPAN AND THE EAST ABUTMENT. - Putnam County Bridge No. 111, Spanning Little Walnut Creek on County Road 50, HAER IND,67-GREC.V,1-8.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nFife, Camille",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0431_photo_11.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:A_VIEW_LOOKING_EAST_ALONG_THE_SOUTH_SIDE_OF_THE_BRIDGE._THE_SOLID_WALL_ON_THE_ABUTMENT,_AND_THE_REPAIRS_TO_THE_SPANDREL_ARE_VISIBLE._-_Putnam_County_Bridge_No._111,_Spanning_HAER_IND,67-GREC.V,1-11.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/A_VIEW_LOOKING_EAST_ALONG_THE_SOUTH_SIDE_OF_THE_BRIDGE._THE_SOLID_WALL_ON_THE_ABUTMENT%2C_AND_THE_REPAIRS_TO_THE_SPANDREL_ARE_VISIBLE._-_Putnam_County_Bridge_No._111%2C_Spanning_HAER_IND%2C67-GREC.V%2C1-11.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:A VIEW LOOKING EAST ALONG THE SOUTH SIDE OF THE BRIDGE. THE SOLID WALL ON THE ABUTMENT, AND THE REPAIRS TO THE SPANDREL ARE VISIBLE. - Putnam County Bridge No. 111, Spanning HAER IND,67-GREC.V,1-11.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nFife, Camille",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0431_photo_14.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:A_VIEW_LOOKING_WEST_FROM_THE_EAST_ENTRY,_ALONG_THE_ROADBED._THE_BRIDGE_HAS_BEEN_CLOSED_TO_TRAFFIC_AT_THIS_TIME._-_Putnam_County_Bridge_No._111,_Spanning_Little_Walnut_Creek_on_HAER_IND,67-GREC.V,1-14.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/A_VIEW_LOOKING_WEST_FROM_THE_EAST_ENTRY%2C_ALONG_THE_ROADBED._THE_BRIDGE_HAS_BEEN_CLOSED_TO_TRAFFIC_AT_THIS_TIME._-_Putnam_County_Bridge_No._111%2C_Spanning_Little_Walnut_Creek_on_HAER_IND%2C67-GREC.V%2C1-14.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:A VIEW LOOKING WEST FROM THE EAST ENTRY, ALONG THE ROADBED. THE BRIDGE HAS BEEN CLOSED TO TRAFFIC AT THIS TIME. - Putnam County Bridge No. 111, Spanning Little Walnut Creek on HAER IND,67-GREC.V,1-14.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nFife, Camille",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0431_photo_19.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:A_CLOSE-UP_VIEW_OF_THE_EAST_ABUTMENT_OF_THE_BRIDGE,_LOOKING_NORTH._SEAM_AND_FORM_LINES_ARE_VISIBLE_IN_THE_CONCRETE._-_Putnam_County_Bridge_No._111,_Spanning_Little_Walnut_Creek_HAER_IND,67-GREC.V,1-19.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/A_CLOSE-UP_VIEW_OF_THE_EAST_ABUTMENT_OF_THE_BRIDGE%2C_LOOKING_NORTH._SEAM_AND_FORM_LINES_ARE_VISIBLE_IN_THE_CONCRETE._-_Putnam_County_Bridge_No._111%2C_Spanning_Little_Walnut_Creek_HAER_IND%2C67-GREC.V%2C1-19.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:A CLOSE-UP VIEW OF THE EAST ABUTMENT OF THE BRIDGE, LOOKING NORTH. SEAM AND FORM LINES ARE VISIBLE IN THE CONCRETE. - Putnam County Bridge No. 111, Spanning Little Walnut Creek HAER IND,67-GREC.V,1-19.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nFife, Camille",
+   "caption": ""
+  }
+ ]
+}

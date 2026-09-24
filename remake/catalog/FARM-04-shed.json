@@ -1,0 +1,27 @@
+{
+  "id": "FARM-04-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Barnes-Hoskinson Farmstead, Pole Barn",
+    "place": "Douglas County, KS",
+    "year": 1960,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Barnes-Hoskinson_Farmstead_Douglas_Co_KS_Pole_Barn_south_and_east_facades.jpg",
+    "photos": ["commons_Barnes-Hoskinson_Farmstead_Douglas_Co_KS_Pole_Barn_south_and_east_facades.jpg", "commons_Barnes-Hoskinson_Farmstead_Douglas_Co_KS_Pole_Barn_east_facade.jpg", "commons_Barnes-Hoskinson_Farmstead_Douglas_Co_KS_Pole_Barn_south_facade.jpg"],
+    "drawings": []
+  },
+  "brief": "Circa-1960 pole barn, 72 x 34 ft, low wood frame clad in unpainted corrugated steel with a rusty corrugated gable roof; large central openings in both gable ends, one closed by a green steel pipe gate. The long walls bow and the panels are dented and loose at the bottom; weeds and bare trees around it.",
+  "traits": {
+    "type": "pole_shed",
+    "w_ft": 34,
+    "d_ft": 72,
+    "height_ft": 16,
+    "walls": "metal",
+    "roof": {"type": "gable", "pitch_deg": 18, "material": "metal"},
+    "colors": {"body": "#a7abab", "trim": "#a7abab", "accent": "#3f6b4a", "roof": "#9a5a3c"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Tolliver"}
+}

@@ -1,0 +1,28 @@
+{
+  "id": "FARM-13-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Knud Anderson Farmstead, Anderson Barn",
+    "place": "Douglas County, KS",
+    "year": 1885,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Barn_south_and_east_facades.jpg",
+    "photos": ["commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Barn_south_and_east_facades.jpg", "commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Barn_east_facade.jpg", "commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Barn_north_and_west_facades.jpg"],
+    "drawings": []
+  },
+  "brief": "Gable-roofed barn about 30 ft by 40 ft set into a gentle slope on a coursed tan sandstone basement, so the lower stable level opens at grade on the downhill side. Wide vertical boards painted a faded barn red, weathered bare grey on the long side, with a louvered vent high in the gable, a small slatted opening low down and a tall hinged loft door on the side wall. Green-trimmed corrugated metal roof; bare hardwoods and dry prairie grass around.",
+  "traits": {
+    "type": "bank_barn",
+    "w_ft": 30,
+    "d_ft": 40,
+    "height_ft": 28,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 38, "material": "metal"},
+    "foundation": "fieldstone",
+    "colors": {"body": "#9a2e2a", "trim": "#3e7a4e", "accent": "#7a7068", "roof": "#8e9294"},
+    "condition": "worn"
+  },
+  "names": {"family": "Lindgaard", "sign": "LINDGAARD FARM EST. 1871"}
+}

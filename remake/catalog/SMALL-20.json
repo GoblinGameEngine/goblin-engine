@@ -1,0 +1,44 @@
+{
+  "id": "SMALL-20",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 82.4,
+    "over": "Sauk Creek"
+  },
+  "example": {
+    "title": "Wells Street Bridge (Allen County Bridge No. 542), Wells Street over Spy Run Creek",
+    "place": "Fort Wayne, Allen County, IN",
+    "year": 1914,
+    "source": "HAER IN-84",
+    "url": "https://www.loc.gov/item/in0381/",
+    "photos": [
+      "haer_in0381_photo_01.jpg",
+      "haer_in0381_photo_04.jpg",
+      "haer_in0381_photo_07.jpg",
+      "haer_in0381_photo_13.jpg",
+      "haer_in0381_photo_16.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single-span, 88 ft reinforced-concrete arch on a city street, built 1914 on the Melan system (a light latticed steel arch rib cast inside the concrete, visible where the soffit has spalled). A flat segmental arch ring with a projecting archivolt band, earth-filled spandrels, 32.2 ft deck with a 29.9 ft two-lane asphalt roadway and no sidewalks. The concrete railing is a balustrade of short turned balusters between panelled posts, with a solid central panel on each side holding a granite plaque: one lists the year, contractor and engineer, the other the county commissioners and auditor. Residential street with street lights and overhead wires, a wooded creek bottom below.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "arch_system": "Melan (embedded steel lattice rib)",
+    "spans": 1,
+    "year": 1914,
+    "railing": "concrete_balustrade",
+    "span_ft": 88,
+    "width_ft": 32.2,
+    "roadway_ft": 29.9,
+    "height_ft": 14,
+    "sidewalks": false,
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "granite plaques: \"ERECTED 1914 · HALVORSEN CONSTRUCTION CO. · R. T. MAYNE, ENGINEER\" and \"COUNTY COMMISSIONERS J. D. BRANT · W. G. SCHULTE · A. J. BLACKWOOD · C. H. BROOKS, AUDITOR\"",
+    "sign": "SAUK CREEK"
+  }
+}

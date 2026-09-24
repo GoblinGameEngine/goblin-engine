@@ -1,0 +1,36 @@
+{
+  "id": "FARM-14-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Carl Penke Farm, house",
+    "place": "Douglas County, NE",
+    "year": 1905,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Carl_Penke_Farm_Douglas_Co_NE_House_south_and_east_facades.jpg",
+    "photos": ["commons_Carl_Penke_Farm_Douglas_Co_NE_House_south_and_east_facades.jpg", "commons_Carl_Penke_Farm_Douglas_Co_NE_House_south_facade.jpg", "commons_Carl_Penke_Farm_Douglas_Co_NE_House_north_and_west_facades.jpg"],
+    "drawings": []
+  },
+  "brief": "Two-storey turn-of-the-century farmhouse, a hipped block with projecting gabled bays on two sides and boxed, returned eaves, re-sided in crisp white narrow-lap vinyl with white trim and a new charcoal architectural-shingle roof. A small recessed corner porch under a low hipped roof carried on one round white column, with a porch swing. Modern touches: satellite dish on the porch roof, patio with Adirondack chairs and a cast-iron chiminea; a red gambrel barn peeks in behind.",
+  "traits": {
+    "archetype": "foursquare",
+    "storeys": 2,
+    "main_w_ft": 30,
+    "main_d_ft": 32,
+    "wing": {"side": "right", "w_ft": 14, "d_ft": 16, "storeys": 2},
+    "roof": {"type": "cross_gable", "pitch_deg": 32, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "recessed", "posts": "columns", "rail": "none"},
+    "walls": "vinyl",
+    "foundation": "brick",
+    "colors": {"body": "#f1f1ec", "trim": "#fafaf7", "accent": "#8a5a3a", "roof": "#4a4c50"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "detached_2",
+    "yard": {"fence": "none", "extras": ["garden", "swing_set"]},
+    "condition": "kept",
+    "year_built": 1905
+  },
+  "names": {"family": "Kruckenberg", "house_number": "18820", "street": "Fort St"}
+}

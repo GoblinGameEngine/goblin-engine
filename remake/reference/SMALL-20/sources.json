@@ -1,0 +1,78 @@
+{
+ "structure": "SMALL-20",
+ "files": [
+  {
+   "file": "loc_in0381_data_in0381data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0381/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0300/in0381/data/in0381data.pdf",
+   "title": "in0381",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0381_data_in0381cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0381/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0300/in0381/data/in0381cap.pdf",
+   "title": "in0381",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_in0381_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_THE_NORTH_APPROACH,_LOOKING_SOUTH_-_Wells_Street_Bridge,_Spanning_Spy_Run_Creek_at_Wells_Street,_Fort_Wayne,_Allen_County,_IN_HAER_IND,2-FOWA,5-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/VIEW_OF_THE_NORTH_APPROACH%2C_LOOKING_SOUTH_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-1.tif/lossy-page1-1920px-VIEW_OF_THE_NORTH_APPROACH%2C_LOOKING_SOUTH_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF THE NORTH APPROACH, LOOKING SOUTH - Wells Street Bridge, Spanning Spy Run Creek at Wells Street, Fort Wayne, Allen County, IN HAER IND,2-FOWA,5-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0381_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_THE_WEST_ELEVATION,_LOOKING_EAST_-_Wells_Street_Bridge,_Spanning_Spy_Run_Creek_at_Wells_Street,_Fort_Wayne,_Allen_County,_IN_HAER_IND,2-FOWA,5-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/VIEW_OF_THE_WEST_ELEVATION%2C_LOOKING_EAST_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-4.tif/lossy-page1-1920px-VIEW_OF_THE_WEST_ELEVATION%2C_LOOKING_EAST_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-4.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF THE WEST ELEVATION, LOOKING EAST - Wells Street Bridge, Spanning Spy Run Creek at Wells Street, Fort Wayne, Allen County, IN HAER IND,2-FOWA,5-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0381_photo_07.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:OBLIQUE_VIEW,_LOOKING_SOUTHWEST_-_Wells_Street_Bridge,_Spanning_Spy_Run_Creek_at_Wells_Street,_Fort_Wayne,_Allen_County,_IN_HAER_IND,2-FOWA,5-7.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/OBLIQUE_VIEW%2C_LOOKING_SOUTHWEST_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-7.tif/lossy-page1-1920px-OBLIQUE_VIEW%2C_LOOKING_SOUTHWEST_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-7.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:OBLIQUE VIEW, LOOKING SOUTHWEST - Wells Street Bridge, Spanning Spy Run Creek at Wells Street, Fort Wayne, Allen County, IN HAER IND,2-FOWA,5-7.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0381_photo_13.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:COMMISSIONER%27S_PLAQUE,_WEST_SIDE_OF_BRIDGE_-_Wells_Street_Bridge,_Spanning_Spy_Run_Creek_at_Wells_Street,_Fort_Wayne,_Allen_County,_IN_HAER_IND,2-FOWA,5-13.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/COMMISSIONER%27S_PLAQUE%2C_WEST_SIDE_OF_BRIDGE_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-13.tif/lossy-page1-1920px-COMMISSIONER%27S_PLAQUE%2C_WEST_SIDE_OF_BRIDGE_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-13.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:COMMISSIONER'S PLAQUE, WEST SIDE OF BRIDGE - Wells Street Bridge, Spanning Spy Run Creek at Wells Street, Fort Wayne, Allen County, IN HAER IND,2-FOWA,5-13.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0381_photo_16.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ARCH_DETAIL,_SOUTHWEST_CORNER_OF_BRIDGE_-_Wells_Street_Bridge,_Spanning_Spy_Run_Creek_at_Wells_Street,_Fort_Wayne,_Allen_County,_IN_HAER_IND,2-FOWA,5-16.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/ARCH_DETAIL%2C_SOUTHWEST_CORNER_OF_BRIDGE_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-16.tif/lossy-page1-1920px-ARCH_DETAIL%2C_SOUTHWEST_CORNER_OF_BRIDGE_-_Wells_Street_Bridge%2C_Spanning_Spy_Run_Creek_at_Wells_Street%2C_Fort_Wayne%2C_Allen_County%2C_IN_HAER_IND%2C2-FOWA%2C5-16.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ARCH DETAIL, SOUTHWEST CORNER OF BRIDGE - Wells Street Bridge, Spanning Spy Run Creek at Wells Street, Fort Wayne, Allen County, IN HAER IND,2-FOWA,5-16.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "structure": "SMALL-17",
+ "files": [
+  {
+   "file": "loc_ct0415_data_ct0415data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ct0415/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ct/ct0400/ct0415/data/ct0415data.pdf",
+   "title": "ct0415",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ct0415_data_ct0415cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ct0415/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ct/ct0400/ct0415/data/ct0415cap.pdf",
+   "title": "ct0415",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_ct0415_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_SOUTH_ELEVATION_-_Patch_Street_Bridge,_Spanning_Kohanza_Brook_on_Patch_Street,_Danbury,_Fairfield_County,_CT_HAER_CONN,1-DA,2-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/VIEW_OF_SOUTH_ELEVATION_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-1.tif/lossy-page1-1920px-VIEW_OF_SOUTH_ELEVATION_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF SOUTH ELEVATION - Patch Street Bridge, Spanning Kohanza Brook on Patch Street, Danbury, Fairfield County, CT HAER CONN,1-DA,2-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_ct0415_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_NORTH_ELEVATION_-_Patch_Street_Bridge,_Spanning_Kohanza_Brook_on_Patch_Street,_Danbury,_Fairfield_County,_CT_HAER_CONN,1-DA,2-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/VIEW_OF_NORTH_ELEVATION_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-2.tif/lossy-page1-1920px-VIEW_OF_NORTH_ELEVATION_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-2.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF NORTH ELEVATION - Patch Street Bridge, Spanning Kohanza Brook on Patch Street, Danbury, Fairfield County, CT HAER CONN,1-DA,2-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_ct0415_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_ROAD_SURFACE_AND_SOUTH_FACE,_LOOKING_EAST_-_Patch_Street_Bridge,_Spanning_Kohanza_Brook_on_Patch_Street,_Danbury,_Fairfield_County,_CT_HAER_CONN,1-DA,2-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/VIEW_OF_ROAD_SURFACE_AND_SOUTH_FACE%2C_LOOKING_EAST_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-3.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF ROAD SURFACE AND SOUTH FACE, LOOKING EAST - Patch Street Bridge, Spanning Kohanza Brook on Patch Street, Danbury, Fairfield County, CT HAER CONN,1-DA,2-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_ct0415_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_ROAD_SURFACE_AND_NORTH_FACE,_LOOKING_WEST_-_Patch_Street_Bridge,_Spanning_Kohanza_Brook_on_Patch_Street,_Danbury,_Fairfield_County,_CT_HAER_CONN,1-DA,2-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/VIEW_OF_ROAD_SURFACE_AND_NORTH_FACE%2C_LOOKING_WEST_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-4.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF ROAD SURFACE AND NORTH FACE, LOOKING WEST - Patch Street Bridge, Spanning Kohanza Brook on Patch Street, Danbury, Fairfield County, CT HAER CONN,1-DA,2-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_ct0415_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_EAST_ARCH_UNDERSIDE,_LOOKING_EAST_-_Patch_Street_Bridge,_Spanning_Kohanza_Brook_on_Patch_Street,_Danbury,_Fairfield_County,_CT_HAER_CONN,1-DA,2-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/VIEW_OF_EAST_ARCH_UNDERSIDE%2C_LOOKING_EAST_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-5.tif/lossy-page1-1920px-VIEW_OF_EAST_ARCH_UNDERSIDE%2C_LOOKING_EAST_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-5.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF EAST ARCH UNDERSIDE, LOOKING EAST - Patch Street Bridge, Spanning Kohanza Brook on Patch Street, Danbury, Fairfield County, CT HAER CONN,1-DA,2-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_ct0415_photo_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_WEST_ARCH_UNDERSIDE_AND_SOUTH_FACE_VOUSSOIRS,_LOOKING_NORTHWEST_-_Patch_Street_Bridge,_Spanning_Kohanza_Brook_on_Patch_Street,_Danbury,_Fairfield_County,_CT_HAER_CONN,1-DA,2-6.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/VIEW_OF_WEST_ARCH_UNDERSIDE_AND_SOUTH_FACE_VOUSSOIRS%2C_LOOKING_NORTHWEST_-_Patch_Street_Bridge%2C_Spanning_Kohanza_Brook_on_Patch_Street%2C_Danbury%2C_Fairfield_County%2C_CT_HAER_CONN%2C1-DA%2C2-6.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF WEST ARCH UNDERSIDE AND SOUTH FACE VOUSSOIRS, LOOKING NORTHWEST - Patch Street Bridge, Spanning Kohanza Brook on Patch Street, Danbury, Fairfield County, CT HAER CONN,1-DA,2-6.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  }
+ ]
+}

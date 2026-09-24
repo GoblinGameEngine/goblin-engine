@@ -1,0 +1,28 @@
+{
+  "id": "FARM-01-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Gottfried Gustav Pitz barn, US Highway 34",
+    "place": "Plattsmouth vicinity, Cass County, NE",
+    "year": 1880,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Gottfried_Gustav_Pitz_barn_from_SW_1.JPG",
+    "photos": ["commons_Gottfried_Gustav_Pitz_barn_from_SW_1.JPG", "commons_Gottfried_Gustav_Pitz_barn_from_NW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Small German-built bank barn: a soft red-brick lower storey with small square stable windows and a plank door, carrying a tall steep-gabled upper storey of weathered vertical board siding with a rusted corrugated metal roof. Gable ends face the lane; vines and volunteer trees crowd its walls. Houses the Voeltz hogs below and hay above.",
+  "traits": {
+    "type": "bank_barn",
+    "w_ft": 30,
+    "d_ft": 42,
+    "height_ft": 32,
+    "lower_walls": "brick",
+    "upper_walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 45, "material": "metal"},
+    "colors": {"body": "#7a6450", "trim": "#7a6450", "accent": "#a0553c", "roof": "#7d5a44"},
+    "condition": "worn"
+  },
+  "names": {"family": "Voeltz", "sign": "VOELTZ FARM EST. 1884"}
+}

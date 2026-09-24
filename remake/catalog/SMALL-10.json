@@ -1,0 +1,35 @@
+{
+  "id": "SMALL-10",
+  "settlement": "rural (near Loomis Grove)",
+  "kind": "crossing",
+  "crossing": {"type": "small", "road_class": "gravel", "span_m": 8.0, "over": "Brush Creek"},
+  "example": {
+    "title": "Cunningham Lane Bridge, Cunningham Lane over the Pine River",
+    "place": "Rockbridge vicinity, Richland County, WI",
+    "year": 1895,
+    "source": "HAER WI-51",
+    "url": "https://www.loc.gov/item/wi0217/",
+    "photos": ["haer_wi0217_photo_01.jpg", "haer_wi0217_photo_02.jpg", "haer_wi0217_photo_03.jpg", "haer_wi0217_photo_05.jpg", "haer_wi0217_photo_07.jpg"],
+    "drawings": []
+  },
+  "brief": "Tiny three-panel, pin-connected Pratt full-slope pony truss (the end posts slope all the way to the centre panel), 41 ft 3 in long and 12 ft 11 in wide with trusses about 6 ft high, serving two farms off a dirt lane. Deck of uneven sawn planks on five wooden joists carried by iron I-beam floor struts; lower lateral rods; seated on cylindrical concrete footings in steel forms with plank retaining walls at the banks. No separate railing: the low truss is the rail. A WEIGHT LIMIT 6 TONS sign stands at the approach; the lane is dirt and gravel between grass banks and bare trees.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt full-slope",
+    "spans": 1,
+    "year": 1895,
+    "railing": "pipe_rail",
+    "span_ft": 41.25,
+    "width_ft": 12.9,
+    "height_ft": 6.25,
+    "panels": 3,
+    "abutments": "concrete cylinder footings with timber retaining walls",
+    "deck": "timber plank on timber joists",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "MIDLAND BRIDGE & IRON CO. · 1895",
+    "sign": "BRUSH CREEK",
+    "extra_signs": ["WEIGHT LIMIT 6 TONS"]
+  }
+}

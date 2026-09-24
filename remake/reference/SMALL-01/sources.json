@@ -1,0 +1,67 @@
+{
+ "structure": "SMALL-01",
+ "files": [
+  {
+   "file": "loc_wi0208_data_wi0208data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0208/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0200/wi0208/data/wi0208data.pdf",
+   "title": "wi0208",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0208_data_wi0208cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0208/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0200/wi0208/data/wi0208cap.pdf",
+   "title": "wi0208",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_wi0208_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_ELEVATION,_LOOKING_EAST_-_Bear_Creek_Bridge,_Spanning_Bear_Creek_on_St._Killian_Road,_Sextonville,_Richland_County,_WI_HAER_WIS,52-BUVI,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/VIEW_OF_ELEVATION%2C_LOOKING_EAST_-_Bear_Creek_Bridge%2C_Spanning_Bear_Creek_on_St._Killian_Road%2C_Sextonville%2C_Richland_County%2C_WI_HAER_WIS%2C52-BUVI%2C1-1.tif/lossy-page1-1920px-VIEW_OF_ELEVATION%2C_LOOKING_EAST_-_Bear_Creek_Bridge%2C_Spanning_Bear_Creek_on_St._Killian_Road%2C_Sextonville%2C_Richland_County%2C_WI_HAER_WIS%2C52-BUVI%2C1-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF ELEVATION, LOOKING EAST - Bear Creek Bridge, Spanning Bear Creek on St. Killian Road, Sextonville, Richland County, WI HAER WIS,52-BUVI,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPenn Bridge Works"
+  },
+  {
+   "file": "haer_wi0208_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_SOUTH_TRUSS,_LOOKING_NORTH_-_Bear_Creek_Bridge,_Spanning_Bear_Creek_on_St._Killian_Road,_Sextonville,_Richland_County,_WI_HAER_WIS,52-BUVI,1-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/VIEW_OF_SOUTH_TRUSS%2C_LOOKING_NORTH_-_Bear_Creek_Bridge%2C_Spanning_Bear_Creek_on_St._Killian_Road%2C_Sextonville%2C_Richland_County%2C_WI_HAER_WIS%2C52-BUVI%2C1-2.tif/lossy-page1-1920px-VIEW_OF_SOUTH_TRUSS%2C_LOOKING_NORTH_-_Bear_Creek_Bridge%2C_Spanning_Bear_Creek_on_St._Killian_Road%2C_Sextonville%2C_Richland_County%2C_WI_HAER_WIS%2C52-BUVI%2C1-2.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF SOUTH TRUSS, LOOKING NORTH - Bear Creek Bridge, Spanning Bear Creek on St. Killian Road, Sextonville, Richland County, WI HAER WIS,52-BUVI,1-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPenn Bridge Works"
+  },
+  {
+   "file": "haer_wi0208_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_CENTER_PANEL,_SHOWING_SOUTH_TRUSS_-_Bear_Creek_Bridge,_Spanning_Bear_Creek_on_St._Killian_Road,_Sextonville,_Richland_County,_WI_HAER_WIS,52-BUVI,1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/VIEW_OF_CENTER_PANEL%2C_SHOWING_SOUTH_TRUSS_-_Bear_Creek_Bridge%2C_Spanning_Bear_Creek_on_St._Killian_Road%2C_Sextonville%2C_Richland_County%2C_WI_HAER_WIS%2C52-BUVI%2C1-3.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF CENTER PANEL, SHOWING SOUTH TRUSS - Bear Creek Bridge, Spanning Bear Creek on St. Killian Road, Sextonville, Richland County, WI HAER WIS,52-BUVI,1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPenn Bridge Works"
+  },
+  {
+   "file": "haer_wi0208_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_BRIDGE_PLATE_-_Bear_Creek_Bridge,_Spanning_Bear_Creek_on_St._Killian_Road,_Sextonville,_Richland_County,_WI_HAER_WIS,52-BUVI,1-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/VIEW_OF_BRIDGE_PLATE_-_Bear_Creek_Bridge%2C_Spanning_Bear_Creek_on_St._Killian_Road%2C_Sextonville%2C_Richland_County%2C_WI_HAER_WIS%2C52-BUVI%2C1-4.tif/lossy-page1-1920px-VIEW_OF_BRIDGE_PLATE_-_Bear_Creek_Bridge%2C_Spanning_Bear_Creek_on_St._Killian_Road%2C_Sextonville%2C_Richland_County%2C_WI_HAER_WIS%2C52-BUVI%2C1-4.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF BRIDGE PLATE - Bear Creek Bridge, Spanning Bear Creek on St. Killian Road, Sextonville, Richland County, WI HAER WIS,52-BUVI,1-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPenn Bridge Works"
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-32",
+  "settlement": "rural (near Harrow Falls)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "county",
+    "span_m": 7.6,
+    "over": "Heron Creek"
+  },
+  "example": {
+    "title": "Hagerstown Road Bridge, Old Hagerstown Road over Little Catoctin Creek",
+    "place": "Middletown vicinity, Frederick County, MD",
+    "year": 1920,
+    "source": "HAER MD-89",
+    "url": "https://www.loc.gov/item/md1336/",
+    "photos": [
+      "haer_md1336_photo_01.jpg",
+      "haer_md1336_photo_03.jpg",
+      "haer_md1336_photo_06.jpg",
+      "haer_md1336_photo_08.jpg",
+      "haer_md1336_photo_11.jpg",
+      "haer_md1336_photo_13.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single-span five-panel steel Pratt pony truss, 68 ft 10 in long, panels 13 ft 8 in and trusses 8.5 ft high, on stone abutments and long flared wingwalls parged with concrete. Hollow box top chord of four bolted pieces, verticals infilled with flat lattice webbing, rod diagonals crossing as an X in the centre panel; a horizontal band of crossed lattice along each truss forms the rail. 13 ft 3 in deck of 3-inch planks on eight steel I-beam stringers (replacing timber stringers in 1945) over six deep floor beams. Sits on a curving county road beside a cluster of old stone and frame houses at a former mill seat, with a rocky riffle below.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt",
+    "spans": 1,
+    "year": 1920,
+    "railing": "lattice",
+    "span_ft": 68.8,
+    "width_ft": 13.25,
+    "height_ft": 8.5,
+    "panels": 5,
+    "abutments": "stone parged with concrete, flared wingwalls",
+    "deck": "timber plank on steel stringers",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "BOARD OF COUNTY COMMISSIONERS · 1920 · HERON CREEK",
+    "sign": "HERON CREEK"
+  }
+}

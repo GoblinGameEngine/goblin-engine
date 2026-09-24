@@ -1,0 +1,36 @@
+{
+  "id": "FARM-15-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Way Side Stock Farm, house, 64480 718 Rd",
+    "place": "Stella vicinity, Richardson County, NE",
+    "year": 1905,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Way_Side_Stock_Farm_house_from_SE_1.JPG",
+    "photos": ["commons_Way_Side_Stock_Farm_house_from_SE_1.JPG", "commons_Way_Side_Stock_Farm_house_from_SSE_1.JPG", "commons_Way_Side_Stock_Farm_house_from_SW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Showy two-storey stock farmer's house: a big hipped white clapboard block with hipped dormers and a tall brick chimney, fronted by a wraparound one-storey porch whose solid clapboard walls are pierced by broad round arches and round oculus openings, with a spindled balustrade running along the porch roof as a second-floor deck. A projecting bay in the middle of the porch is flanked by two little pointed cedar-shingle turret caps. Grey asphalt roofs, lattice skirting, brick piers; windbreak cedars and fields around, a gravel drive sweeping past.",
+  "traits": {
+    "archetype": "queen_anne",
+    "storeys": 2,
+    "main_w_ft": 36,
+    "main_d_ft": 34,
+    "wing": {"side": "rear", "w_ft": 16, "d_ft": 14, "storeys": 2},
+    "roof": {"type": "hip", "pitch_deg": 34, "material": "asphalt_shingle"},
+    "dormers": [{"type": "hip", "side": "front"}, {"type": "hip", "side": "right"}],
+    "porch": {"type": "wrap", "posts": "square", "rail": "spindle"},
+    "walls": "clapboard",
+    "foundation": "brick",
+    "colors": {"body": "#f3f3ef", "trim": "#fbfbf8", "accent": "#b8743e", "roof": "#57585a"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "detached_2",
+    "yard": {"fence": "none", "extras": ["garden", "flagpole", "birdbath"]},
+    "condition": "kept",
+    "year_built": 1905
+  },
+  "names": {"family": "Tremaine", "house_number": "64410", "street": "718 Rd"}
+}

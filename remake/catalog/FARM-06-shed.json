@@ -1,0 +1,26 @@
+{
+  "id": "FARM-06-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Quonset building, Powers Lake",
+    "place": "Powers Lake, Burke County, ND",
+    "year": 1948,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Powers_Lake,_North_Dakota-13.jpg",
+    "photos": ["commons_Powers_Lake_North_Dakota-13.jpg"],
+    "drawings": []
+  },
+  "brief": "Post-war steel Quonset: a semicircular arch of corrugated galvanized sheets painted silver-white, about 40 ft wide and 70 ft long, with a flat framed end wall holding a man door and a strip of small red-sashed windows, more windows let into the curved side. The example sits in a small North Dakota town; here it is the wheat farm's machine and grain-truck shed, with white propane tanks lying in the grass beside it.",
+  "traits": {
+    "type": "quonset",
+    "w_ft": 40,
+    "d_ft": 70,
+    "height_ft": 20,
+    "walls": "metal",
+    "colors": {"body": "#dfe3e6", "trim": "#8e2f2a", "accent": "#8e2f2a", "roof": "#dfe3e6"},
+    "condition": "kept"
+  },
+  "names": {"family": "Kaltenbach"}
+}

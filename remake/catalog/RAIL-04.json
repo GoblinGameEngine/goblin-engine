@@ -1,0 +1,34 @@
+{
+  "id": "RAIL-04",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {"type": "rail", "road_class": "rail", "span_m": 7.1, "over": "Sauk Creek"},
+  "example": {
+    "title": "Philadelphia & Reading Railroad, Mill Creek Bridge",
+    "place": "Gladwyne vicinity, Montgomery County, PA",
+    "year": 1863,
+    "source": "HAER PA-536",
+    "url": "https://www.loc.gov/item/pa3746/",
+    "photos": ["haer_pa3746_photo_01.jpg", "haer_pa3746_photo_03.jpg", "haer_pa3746_photo_04.jpg", "haer_pa3746_photo_06.jpg", "haer_pa3746_photo_07.jpg", "haer_pa3746_photo_09.jpg"],
+    "drawings": []
+  },
+  "brief": "Five-span segmental stone arch railway bridge on a slight curve, spans of 27 ft 9 in to 30 ft 4 in rising 7 ft (inner) to 11 ft (end arches), the three middle arches over the creek and the two end arches over local lanes, separated by wide pilasters. Rectangular cut stone: smooth-faced in the barrels, heavy rock-faced on piers, pilasters and spandrels, with projecting rock-faced voussoirs; cobbled creek bed under the arches. A 1917 concrete deck 24 ft wide with steel pipe railings replaced the coping, and utility pipes run along the fascia. For the 7 m Sauk Creek crossing use one arch of this family (about 28 ft, 7 ft rise) with a pilaster at each end.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 5,
+    "model_spans": 1,
+    "year": 1863,
+    "railing": "pipe_rail",
+    "span_ft": 28,
+    "width_ft": 24,
+    "height_ft": 7,
+    "arch_form": "segmental",
+    "masonry": "rock-faced ashlar spandrels, smooth barrel",
+    "deck": "concrete (1917) with ballast",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "date stone: K. & W. R.R. 1863",
+    "sign": "SAUK CREEK"
+  }
+}

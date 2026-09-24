@@ -1,0 +1,98 @@
+{
+ "structure": "RAIL-01",
+ "files": [
+  {
+   "file": "loc_ut0389_data_ut0389cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ut0389/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ut/ut0300/ut0389/data/ut0389cap.pdf",
+   "title": "ut0389",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_ut0389_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:TRESTLE_788B._SOUTH_SIDE_-_Promontory_Route_Railroad_Trestles,_Trestle_788B,_11_miles_west_of_Corrine,_Corinne,_Box_Elder_County,_UT_HAER_UTAH,2-CORI.V,1A-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/TRESTLE_788B._SOUTH_SIDE_-_Promontory_Route_Railroad_Trestles%2C_Trestle_788B%2C_11_miles_west_of_Corrine%2C_Corinne%2C_Box_Elder_County%2C_UT_HAER_UTAH%2C2-CORI.V%2C1A-1.tif/lossy-page1-1920px-TRESTLE_788B._SOUTH_SIDE_-_Promontory_Route_Railroad_Trestles%2C_Trestle_788B%2C_11_miles_west_of_Corrine%2C_Corinne%2C_Box_Elder_County%2C_UT_HAER_UTAH%2C2-CORI.V%2C1A-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:TRESTLE 788B. SOUTH SIDE - Promontory Route Railroad Trestles, Trestle 788B, 11 miles west of Corrine, Corinne, Box Elder County, UT HAER UTAH,2-CORI.V,1A-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPacific Railroad; Reyes, Luisa, transmitter"
+  },
+  {
+   "file": "haer_ut0389_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:East-southeast_view,_railroad_grade,_east_of_trestle_788B_-_Promontory_Route_Railroad_Trestles,_11_miles_west_of_Corrine,_Corinne,_Box_Elder_County,_UT_HAER_UT-64-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/East-southeast_view%2C_railroad_grade%2C_east_of_trestle_788B_-_Promontory_Route_Railroad_Trestles%2C_11_miles_west_of_Corrine%2C_Corinne%2C_Box_Elder_County%2C_UT_HAER_UT-64-2.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:East-southeast view, railroad grade, east of trestle 788B - Promontory Route Railroad Trestles, 11 miles west of Corrine, Corinne, Box Elder County, UT HAER UT-64-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPacific Railroad; Sagebrush Archaeological Consultants, contractor; Cooper/Roberts Architects, Incorporated, contractor; Reyes, Luisa, transmitter; Bradshaw, Michael J, photographer; Polk, Michael R, photographer; Polk, Michael R, historian; Roberts, Allen C, delineator"
+  },
+  {
+   "file": "haer_ut0389_photo_02_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:TRESTLE_788B._NORTH_SIDE_-_Promontory_Route_Railroad_Trestles,_Trestle_788B,_11_miles_west_of_Corrine,_Corinne,_Box_Elder_County,_UT_HAER_UTAH,2-CORI.V,1A-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/TRESTLE_788B._NORTH_SIDE_-_Promontory_Route_Railroad_Trestles%2C_Trestle_788B%2C_11_miles_west_of_Corrine%2C_Corinne%2C_Box_Elder_County%2C_UT_HAER_UTAH%2C2-CORI.V%2C1A-2.tif/lossy-page1-1920px-TRESTLE_788B._NORTH_SIDE_-_Promontory_Route_Railroad_Trestles%2C_Trestle_788B%2C_11_miles_west_of_Corrine%2C_Corinne%2C_Box_Elder_County%2C_UT_HAER_UTAH%2C2-CORI.V%2C1A-2.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:TRESTLE 788B. NORTH SIDE - Promontory Route Railroad Trestles, Trestle 788B, 11 miles west of Corrine, Corinne, Box Elder County, UT HAER UTAH,2-CORI.V,1A-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPacific Railroad; Reyes, Luisa, transmitter"
+  },
+  {
+   "file": "haer_ut0389_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:TRESTLE_788B._WEST_VIEW,_DECK_-_Promontory_Route_Railroad_Trestles,_Trestle_788B,_11_miles_west_of_Corrine,_Corinne,_Box_Elder_County,_UT_HAER_UTAH,2-CORI.V,1A-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/TRESTLE_788B._WEST_VIEW%2C_DECK_-_Promontory_Route_Railroad_Trestles%2C_Trestle_788B%2C_11_miles_west_of_Corrine%2C_Corinne%2C_Box_Elder_County%2C_UT_HAER_UTAH%2C2-CORI.V%2C1A-4.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:TRESTLE 788B. WEST VIEW, DECK - Promontory Route Railroad Trestles, Trestle 788B, 11 miles west of Corrine, Corinne, Box Elder County, UT HAER UTAH,2-CORI.V,1A-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPacific Railroad; Reyes, Luisa, transmitter"
+  },
+  {
+   "file": "haer_ut0389_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:TRESTLE_788B._NORTH-NORTHEAST_VIEW_OF_CENTRAL_PILE_SUPPORTS_AND_CHEVRON_PIPELINE_-_Promontory_Route_Railroad_Trestles,_Trestle_788B,_11_miles_west_of_Corrine,_Corinne,_Box_HAER_UTAH,2-CORI.V,1A-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/TRESTLE_788B._NORTH-NORTHEAST_VIEW_OF_CENTRAL_PILE_SUPPORTS_AND_CHEVRON_PIPELINE_-_Promontory_Route_Railroad_Trestles%2C_Trestle_788B%2C_11_miles_west_of_Corrine%2C_Corinne%2C_Box_HAER_UTAH%2C2-CORI.V%2C1A-5.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:TRESTLE 788B. NORTH-NORTHEAST VIEW OF CENTRAL PILE SUPPORTS AND CHEVRON PIPELINE - Promontory Route Railroad Trestles, Trestle 788B, 11 miles west of Corrine, Corinne, Box HAER UTAH,2-CORI.V,1A-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPacific Railroad; Reyes, Luisa, transmitter"
+  },
+  {
+   "file": "haer_ut0389_photo_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:TRESTLE_788B._NORTH-NORTHWEST_VIEW,_SOUTH_SIDE_-_Promontory_Route_Railroad_Trestles,_Trestle_788B,_11_miles_west_of_Corrine,_Corinne,_Box_Elder_County,_UT_HAER_UTAH,2-CORI.V,1A-6.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/TRESTLE_788B._NORTH-NORTHWEST_VIEW%2C_SOUTH_SIDE_-_Promontory_Route_Railroad_Trestles%2C_Trestle_788B%2C_11_miles_west_of_Corrine%2C_Corinne%2C_Box_Elder_County%2C_UT_HAER_UTAH%2C2-CORI.V%2C1A-6.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:TRESTLE 788B. NORTH-NORTHWEST VIEW, SOUTH SIDE - Promontory Route Railroad Trestles, Trestle 788B, 11 miles west of Corrine, Corinne, Box Elder County, UT HAER UTAH,2-CORI.V,1A-6.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nPacific Railroad; Reyes, Luisa, transmitter"
+  },
+  {
+   "file": "loc_ut0315_data_ut0315cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ut0315/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ut/ut0300/ut0315/data/ut0315cap.pdf",
+   "title": "ut0315",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ut0315_data_ut0315data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ut0315/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ut/ut0300/ut0315/data/ut0315data.pdf",
+   "title": "Promontory Route Railroad Trestles (HAER UT-64) overview report",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

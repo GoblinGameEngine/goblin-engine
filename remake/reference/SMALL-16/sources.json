@@ -1,0 +1,100 @@
+{
+ "structure": "SMALL-16",
+ "files": [
+  {
+   "file": "loc_ia0072_data_ia0072data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0072/data/ia0072data.pdf",
+   "title": "ia0072",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0072_data_ia0072cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0072/data/ia0072cap.pdf",
+   "title": "ia0072",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_ia0072_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ELEVATION_FROM_SOUTH_-_Melan_Arch_Bridge,_Emma_Slater_Park_(Moved_from_Dry_Run_Creek),_Rock_Rapids,_Lyon_County,_IA_HAER_IOWA,60-ROCRA.V,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/ELEVATION_FROM_SOUTH_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-1.tif/lossy-page1-1920px-ELEVATION_FROM_SOUTH_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ELEVATION FROM SOUTH - Melan Arch Bridge, Emma Slater Park (Moved from Dry Run Creek), Rock Rapids, Lyon County, IA HAER IOWA,60-ROCRA.V,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nvon Emberger",
+   "caption": ""
+  },
+  {
+   "file": "haer_ia0072_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:BARREL_VIEW_FROM_WEST_-_Melan_Arch_Bridge,_Emma_Slater_Park_(Moved_from_Dry_Run_Creek),_Rock_Rapids,_Lyon_County,_IA_HAER_IOWA,60-ROCRA.V,1-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/BARREL_VIEW_FROM_WEST_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-2.tif/lossy-page1-1920px-BARREL_VIEW_FROM_WEST_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-2.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:BARREL VIEW FROM WEST - Melan Arch Bridge, Emma Slater Park (Moved from Dry Run Creek), Rock Rapids, Lyon County, IA HAER IOWA,60-ROCRA.V,1-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nvon Emberger",
+   "caption": ""
+  },
+  {
+   "file": "haer_ia0072_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:3-4_VIEW_FROM_SOUTHWEST_-_Melan_Arch_Bridge,_Emma_Slater_Park_(Moved_from_Dry_Run_Creek),_Rock_Rapids,_Lyon_County,_IA_HAER_IOWA,60-ROCRA.V,1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/3-4_VIEW_FROM_SOUTHWEST_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-3.tif/lossy-page1-1920px-3-4_VIEW_FROM_SOUTHWEST_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-3.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:3-4 VIEW FROM SOUTHWEST - Melan Arch Bridge, Emma Slater Park (Moved from Dry Run Creek), Rock Rapids, Lyon County, IA HAER IOWA,60-ROCRA.V,1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nvon Emberger",
+   "caption": ""
+  },
+  {
+   "file": "haer_ia0072_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL_OF_SOUTHWEST_CORNER,_FROM_SOUTHEAST_-_Melan_Arch_Bridge,_Emma_Slater_Park_(Moved_from_Dry_Run_Creek),_Rock_Rapids,_Lyon_County,_IA_HAER_IOWA,60-ROCRA.V,1-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/DETAIL_OF_SOUTHWEST_CORNER%2C_FROM_SOUTHEAST_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-4.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL OF SOUTHWEST CORNER, FROM SOUTHEAST - Melan Arch Bridge, Emma Slater Park (Moved from Dry Run Creek), Rock Rapids, Lyon County, IA HAER IOWA,60-ROCRA.V,1-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nvon Emberger",
+   "caption": ""
+  },
+  {
+   "file": "haer_ia0072_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL_OF_BUILDERS_PLATE,_FROM_NORTH_-_Melan_Arch_Bridge,_Emma_Slater_Park_(Moved_from_Dry_Run_Creek),_Rock_Rapids,_Lyon_County,_IA_HAER_IOWA,60-ROCRA.V,1-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/DETAIL_OF_BUILDERS_PLATE%2C_FROM_NORTH_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-5.tif/lossy-page1-1920px-DETAIL_OF_BUILDERS_PLATE%2C_FROM_NORTH_-_Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-5.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL OF BUILDERS PLATE, FROM NORTH - Melan Arch Bridge, Emma Slater Park (Moved from Dry Run Creek), Rock Rapids, Lyon County, IA HAER IOWA,60-ROCRA.V,1-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nvon Emberger",
+   "caption": ""
+  },
+  {
+   "file": "haer_ia0072_sheet_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Melan_Arch_Bridge,_Emma_Slater_Park_(Moved_from_Dry_Run_Creek),_Rock_Rapids,_Lyon_County,_IA_HAER_IOWA,60-ROCRA.V,1-_(sheet_1_of_2).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-_%28sheet_1_of_2%29.png/1920px-Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-_%28sheet_1_of_2%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Melan Arch Bridge, Emma Slater Park (Moved from Dry Run Creek), Rock Rapids, Lyon County, IA HAER IOWA,60-ROCRA.V,1- (sheet 1 of 2).png",
+   "kind": "drawing",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nvon Emberger",
+   "caption": ""
+  },
+  {
+   "file": "haer_ia0072_sheet_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Melan_Arch_Bridge,_Emma_Slater_Park_(Moved_from_Dry_Run_Creek),_Rock_Rapids,_Lyon_County,_IA_HAER_IOWA,60-ROCRA.V,1-_(sheet_2_of_2).png",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-_%28sheet_2_of_2%29.png/1920px-Melan_Arch_Bridge%2C_Emma_Slater_Park_%28Moved_from_Dry_Run_Creek%29%2C_Rock_Rapids%2C_Lyon_County%2C_IA_HAER_IOWA%2C60-ROCRA.V%2C1-_%28sheet_2_of_2%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Melan Arch Bridge, Emma Slater Park (Moved from Dry Run Creek), Rock Rapids, Lyon County, IA HAER IOWA,60-ROCRA.V,1- (sheet 2 of 2).png",
+   "kind": "drawing",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nvon Emberger",
+   "caption": ""
+  }
+ ]
+}

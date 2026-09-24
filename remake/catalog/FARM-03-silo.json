@@ -1,0 +1,26 @@
+{
+  "id": "FARM-03-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Pray Farmstead, West Silo",
+    "place": "Dickinson County, KS",
+    "year": 1955,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pray_Farmstead_Dickinson_Co_KS_West_Silo.jpg",
+    "photos": ["commons_Pray_Farmstead_Dickinson_Co_KS_West_Silo.jpg", "commons_Pray_Farmstead_Dickinson_Co_KS_West_Silo_south_elevation.jpg"],
+    "drawings": []
+  },
+  "brief": "Tall precast concrete stave silo, 60 ft high and about 18 ft across, weathered gray staves bound by closely spaced steel hoops, capped with a galvanized metal dome. A round galvanized unloading chute runs full height down the east side to a small feed room at the base. Stands at the edge of a corn field beside the feedlot.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 18,
+    "height_ft": 60,
+    "roof": "dome_metal",
+    "chute": true,
+    "colors": {"body": "#b7b3a8", "trim": "#9fa7ab", "accent": "#9fa7ab", "roof": "#b4bcc0"},
+    "condition": "worn"
+  },
+  "names": {"family": "Brunnemer"}
+}

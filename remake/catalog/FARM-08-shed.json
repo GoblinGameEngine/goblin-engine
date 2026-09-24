@@ -1,0 +1,29 @@
+{
+  "id": "FARM-08-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Ben Bonderson Farm, drive-in crib barn",
+    "place": "Emerson vicinity, Dakota County, NE",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Bonderson_Farm_crib_barn_and_cow_shed.JPG",
+    "photos": ["commons_Bonderson_Farm_crib_barn_and_cow_shed.JPG", "commons_Bonderson_Farm_crib_barn_and_cow_shed_2.JPG"],
+    "drawings": []
+  },
+  "brief": "Drive-in double corn crib painted barn red with white corner boards and verge trim: two slatted crib bays with diagonal ventilation slats flank a tall central driveway open through the building, with a plank loft above and a square cupola-like elevator housing rising from the rear of the ridge. A lower gable-roofed side bin with a small white window adjoins at right; wood-shingle roofs. Behind it a long red cow shed with a grey metal roof and white windows, board fences and cattle panels around the yard, a steel grain bin at the corner.",
+  "traits": {
+    "type": "corn_crib",
+    "w_ft": 30,
+    "d_ft": 32,
+    "height_ft": 30,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 40, "material": "wood_shingle"},
+    "cupolas": 1,
+    "drive_through": true,
+    "colors": {"body": "#a3252b", "trim": "#f2f2ee", "accent": "#f2f2ee", "roof": "#6e6258"},
+    "condition": "kept"
+  },
+  "names": {"family": "Rasmussen"}
+}

@@ -1,0 +1,33 @@
+{
+  "id": "RAIL-05",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {"type": "rail", "road_class": "rail", "span_m": 3.1, "over": "Sauk Creek"},
+  "example": {
+    "title": "Chicago and North Western Railroad Stone Culvert, Railroad Milepost 514.23",
+    "place": "Keeline vicinity, Niobrara County, WY",
+    "year": 1901,
+    "source": "HAER WY-53",
+    "url": "https://www.loc.gov/item/wy0233/",
+    "photos": ["haer_wy0233_photo_01.jpg", "haer_wy0233_photo_02.jpg", "haer_wy0233_photo_03.jpg", "haer_wy0233_photo_04.jpg", "haer_wy0233_photo_05.jpg"],
+    "drawings": []
+  },
+  "brief": "Single-barrel semicircular stone arch culvert through a high railway embankment, 67 ft long from face to face: the barrel is 6 ft 1 in wide and 8 ft high, built of quarried, squared sandstone blocks in cement mortar with a dated keystone (1901) in a ring of radiating voussoirs. Each portal has flared wing walls about 12 ft long of double rows of smaller blocks, capped with big stepped sandstone slabs that climb the embankment slope. Sits low in a grassy fill with the track on top; no railing, the embankment and ties pass over it.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1901,
+    "railing": "open_parapet",
+    "span_ft": 6.1,
+    "width_ft": 67,
+    "height_ft": 8,
+    "barrel_length_ft": 67,
+    "wingwalls": "flared, stepped coping",
+    "material": "squared sandstone ashlar",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "keystone: C&NW 1901",
+    "sign": "SAUK CREEK"
+  }
+}

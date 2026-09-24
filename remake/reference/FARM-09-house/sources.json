@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-09-house",
+ "files": [
+  {
+   "file": "commons_Herboldsheimer_ranch_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Herboldsheimer_ranch_05.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Herboldsheimer_ranch_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Herboldsheimer ranch 05.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "House at Herboldsheimer Ranch, located in rural Cheyenne County, Nebraska northeast of Potter, Nebraska, at the intersection of county roads 40 and 87."
+  },
+  {
+   "file": "commons_Herboldsheimer_ranch_12.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Herboldsheimer_ranch_12.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Herboldsheimer_ranch_12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Herboldsheimer ranch 12.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "House at Herboldsheimer Ranch, located in rural Cheyenne County, Nebraska northeast of Potter, Nebraska, at the intersection of county roads 40 and 87."
+  }
+ ]
+}

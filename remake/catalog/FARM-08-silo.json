@@ -1,0 +1,27 @@
+{
+  "id": "FARM-08-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "South Dakota farm silos (center concrete stave silo)",
+    "place": "South Dakota",
+    "year": 1955,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:South_Dakota_Farm_Silos.jpg",
+    "photos": ["commons_South_Dakota_Farm_Silos.jpg"],
+    "drawings": []
+  },
+  "brief": "Tall concrete stave silo, about 20 ft across and 70 ft high, its short staves laid in a tight brick-like grid weathered to olive-tan with dark streaks, bound by close-spaced steel hoops; a rusty caged ladder and chute run up one side, a grey steel blower pipe climbs the other to a small domed metal cap. In the example it stands between a newer dark-blue glass-lined storage tank and a white steel tank; here it serves the dairy barn.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 20,
+    "height_ft": 70,
+    "roof": "dome",
+    "chute": true,
+    "hoops": true,
+    "colors": {"body": "#9c8f5e", "trim": "#7a3a24", "accent": "#a6a9aa", "roof": "#9aa0a4"},
+    "condition": "worn"
+  },
+  "names": {"family": "Rasmussen"}
+}

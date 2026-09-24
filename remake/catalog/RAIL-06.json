@@ -1,0 +1,35 @@
+{
+  "id": "RAIL-06",
+  "settlement": "rural (near Tamarack)",
+  "kind": "crossing",
+  "crossing": {"type": "rail", "road_class": "rail", "span_m": 8.1, "over": "Heron Creek"},
+  "example": {
+    "title": "Promontory Route Railroad Trestles, Trestle 790A (Trestle D)",
+    "place": "Corinne vicinity, Box Elder County, UT",
+    "year": 1872,
+    "source": "HAER UT-64-D",
+    "url": "https://www.loc.gov/item/ut0392/",
+    "photos": ["loc_ut0392_photos_367534pv.jpg", "loc_ut0392_photos_367535pv.jpg", "loc_ut0392_photos_367537pv.jpg", "loc_ut0392_photos_367538pv.jpg", "loc_ut0392_photos_367540pv.jpg", "loc_ut0392_photos_367541pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Very low five-span open-deck timber trestle, 81 ft 5 in long and only 3.5 ft from water to base of rail, with four-post pile bents under 12x12 in caps topped by short 10x12 in corbels; two sets of three 8x16 in stringers, bolted together with collared spacers, run under each rail and carry the ties, with a timber guard rail on the ties. Bulkheads of 2x12 planks set on edge at 45 degrees retain the fill at both ends, with 8x10 posts on the wings. Built 1872 by the railway, deck renewed 1921, caps 1936-40; by 1991 it carried twin pipelines over a salt flat and was partly burned. Model it in service over Heron Creek: about 16 ft spans, ties, rails and guard timbers.",
+  "traits": {
+    "bridge_type": "timber_trestle",
+    "spans": 5,
+    "year": 1872,
+    "railing": "open_parapet",
+    "span_ft": 16,
+    "overall_ft": 81.4,
+    "width_ft": 12,
+    "height_ft": 3.5,
+    "bents": "4 timber posts, 12x12 cap with 10x12 corbel",
+    "stringers": "2 sets of 3 x 8x16 in",
+    "abutments": "45-degree plank bulkheads",
+    "deck": "open ties with guard timber",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "bridge number board: B. 377.9",
+    "sign": "HERON CREEK"
+  }
+}

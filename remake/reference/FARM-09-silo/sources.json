@@ -1,0 +1,59 @@
+{
+ "structure": "FARM-09-silo",
+ "files": [
+  {
+   "file": "loc_tx0628_photos_156784pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx0628/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/tx/tx0600/tx0628/photos/156784pv.jpg",
+   "title": "Elm Creek Silo, 2.9 miles Southeast of Leaday Townsite, Voss, Coleman County, TX",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_tx0628_photos_156785pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx0628/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/tx/tx0600/tx0628/photos/156785pv.jpg",
+   "title": "Elm Creek Silo, 2.9 miles Southeast of Leaday Townsite, Voss, Coleman County, TX",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_tx0628_photos_156786pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx0628/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/tx/tx0600/tx0628/photos/156786pv.jpg",
+   "title": "Elm Creek Silo, 2.9 miles Southeast of Leaday Townsite, Voss, Coleman County, TX",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_tx0628_photos_156787pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx0628/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/tx/tx0600/tx0628/photos/156787pv.jpg",
+   "title": "Elm Creek Silo, 2.9 miles Southeast of Leaday Townsite, Voss, Coleman County, TX",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_tx0628_data_tx0628data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx0628/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/tx/tx0600/tx0628/data/tx0628data.pdf",
+   "title": "Elm Creek Silo, 2.9 miles Southeast of Leaday Townsite, Voss, Coleman County, TX",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_tx0628_data_tx0628cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/tx0628/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/tx/tx0600/tx0628/data/tx0628cap.pdf",
+   "title": "Elm Creek Silo, 2.9 miles Southeast of Leaday Townsite, Voss, Coleman County, TX",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

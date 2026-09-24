@@ -1,0 +1,89 @@
+{
+ "structure": "SMALL-24",
+ "files": [
+  {
+   "file": "loc_pa3993_data_pa3993data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3993/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa3900/pa3993/data/pa3993data.pdf",
+   "title": "pa3993",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3993_data_pa3993cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3993/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa3900/pa3993/data/pa3993cap.pdf",
+   "title": "pa3993",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_pa3993_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:PERSPECTIVE_VIEW_OF_SITE,_EAST_NORTHEAST_BY_75_DEGREES._-_Six_Penny_Bridge,_Spanning_Sixpenny_Creek,_Monocacy,_Berks_County,_PA_HAER_PA-625-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/PERSPECTIVE_VIEW_OF_SITE%2C_EAST_NORTHEAST_BY_75_DEGREES._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-1.tif/lossy-page1-1920px-PERSPECTIVE_VIEW_OF_SITE%2C_EAST_NORTHEAST_BY_75_DEGREES._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:PERSPECTIVE VIEW OF SITE, EAST NORTHEAST BY 75 DEGREES. - Six Penny Bridge, Spanning Sixpenny Creek, Monocacy, Berks County, PA HAER PA-625-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet, creator",
+   "caption": "\nDavis, Nevin M; Ferro Concrete Company; Luten, Daniel B; Wilkinson, William; Monier, Joseph; Ransome, Ernest L; Christianson, Justine, transmitter; Pennsylvania Department of Transportation, sponsor"
+  },
+  {
+   "file": "haer_pa3993_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:PERSPECTIVE,_NORTH_SIDE._DETAIL_OF_DECORATIVE_CASTING_AND_UNDERSIDE_OF_BARREL_ARCH._-_Six_Penny_Bridge,_Spanning_Sixpenny_Creek,_Monocacy,_Berks_County,_PA_HAER_PA-625-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/PERSPECTIVE%2C_NORTH_SIDE._DETAIL_OF_DECORATIVE_CASTING_AND_UNDERSIDE_OF_BARREL_ARCH._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-2.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:PERSPECTIVE, NORTH SIDE. DETAIL OF DECORATIVE CASTING AND UNDERSIDE OF BARREL ARCH. - Six Penny Bridge, Spanning Sixpenny Creek, Monocacy, Berks County, PA HAER PA-625-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet, creator",
+   "caption": "\nDavis, Nevin M; Ferro Concrete Company; Luten, Daniel B; Wilkinson, William; Monier, Joseph; Ransome, Ernest L; Christianson, Justine, transmitter; Pennsylvania Department of Transportation, sponsor"
+  },
+  {
+   "file": "haer_pa3993_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ELEVATION,_SOUTH_BY_210_DEGREES._-_Six_Penny_Bridge,_Spanning_Sixpenny_Creek,_Monocacy,_Berks_County,_PA_HAER_PA-625-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/ELEVATION%2C_SOUTH_BY_210_DEGREES._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-3.tif/lossy-page1-1920px-ELEVATION%2C_SOUTH_BY_210_DEGREES._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-3.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ELEVATION, SOUTH BY 210 DEGREES. - Six Penny Bridge, Spanning Sixpenny Creek, Monocacy, Berks County, PA HAER PA-625-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet",
+   "caption": "\nDavis, Nevin M; Ferro Concrete Company; Luten, Daniel B; Wilkinson, William; Monier, Joseph; Ransome, Ernest L; Christianson, Justine, transmitter; Pennsylvania Department of Transportation, sponsor"
+  },
+  {
+   "file": "haer_pa3993_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ELEVATION,_WEST_BY_310_DEGREES._VIEW_ALONG_ROADWAY_AND_APPROACH._-_Six_Penny_Bridge,_Spanning_Sixpenny_Creek,_Monocacy,_Berks_County,_PA_HAER_PA-625-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/ELEVATION%2C_WEST_BY_310_DEGREES._VIEW_ALONG_ROADWAY_AND_APPROACH._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-4.tif/lossy-page1-1920px-ELEVATION%2C_WEST_BY_310_DEGREES._VIEW_ALONG_ROADWAY_AND_APPROACH._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-4.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ELEVATION, WEST BY 310 DEGREES. VIEW ALONG ROADWAY AND APPROACH. - Six Penny Bridge, Spanning Sixpenny Creek, Monocacy, Berks County, PA HAER PA-625-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet",
+   "caption": "\nDavis, Nevin M; Ferro Concrete Company; Luten, Daniel B; Wilkinson, William; Monier, Joseph; Ransome, Ernest L; Christianson, Justine, transmitter; Pennsylvania Department of Transportation, sponsor"
+  },
+  {
+   "file": "haer_pa3993_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:EAST_PORTAL_IN_PERSPECTIVE,_WEST_BY_305_DEGREES._-_Six_Penny_Bridge,_Spanning_Sixpenny_Creek,_Monocacy,_Berks_County,_PA_HAER_PA-625-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/EAST_PORTAL_IN_PERSPECTIVE%2C_WEST_BY_305_DEGREES._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-5.tif/lossy-page1-1920px-EAST_PORTAL_IN_PERSPECTIVE%2C_WEST_BY_305_DEGREES._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-5.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:EAST PORTAL IN PERSPECTIVE, WEST BY 305 DEGREES. - Six Penny Bridge, Spanning Sixpenny Creek, Monocacy, Berks County, PA HAER PA-625-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet",
+   "caption": "\nDavis, Nevin M; Ferro Concrete Company; Luten, Daniel B; Wilkinson, William; Monier, Joseph; Ransome, Ernest L; Christianson, Justine, transmitter; Pennsylvania Department of Transportation, sponsor"
+  },
+  {
+   "file": "haer_pa3993_photo_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:BUILDERS_PLATE,_NORTH_WALL_(INTERIOR)._-_Six_Penny_Bridge,_Spanning_Sixpenny_Creek,_Monocacy,_Berks_County,_PA_HAER_PA-625-6.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/BUILDERS_PLATE%2C_NORTH_WALL_%28INTERIOR%29._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-6.tif/lossy-page1-1920px-BUILDERS_PLATE%2C_NORTH_WALL_%28INTERIOR%29._-_Six_Penny_Bridge%2C_Spanning_Sixpenny_Creek%2C_Monocacy%2C_Berks_County%2C_PA_HAER_PA-625-6.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:BUILDERS PLATE, NORTH WALL (INTERIOR). - Six Penny Bridge, Spanning Sixpenny Creek, Monocacy, Berks County, PA HAER PA-625-6.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet",
+   "caption": "\nDavis, Nevin M; Ferro Concrete Company; Luten, Daniel B; Wilkinson, William; Monier, Joseph; Ransome, Ernest L; Christianson, Justine, transmitter; Pennsylvania Department of Transportation, sponsor"
+  }
+ ]
+}

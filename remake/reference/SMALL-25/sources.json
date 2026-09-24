@@ -1,0 +1,89 @@
+{
+ "structure": "SMALL-25",
+ "files": [
+  {
+   "file": "loc_il0413_data_il0413data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0413/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0413/data/il0413data.pdf",
+   "title": "il0413",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0413_data_il0413cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0413/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0413/data/il0413cap.pdf",
+   "title": "il0413",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_il0413_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Facing_South_-_London_Mills_Bridge,_Spanning_Spoon_River,_London_Mills,_Fulton_County,_IL_HAER_ILL,48-LONMI,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Facing_South_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-1.tif/lossy-page1-1920px-Facing_South_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Facing South - London Mills Bridge, Spanning Spoon River, London Mills, Fulton County, IL HAER ILL,48-LONMI,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nVoorhees, Clay\nKing Iron and Bridge Company",
+   "caption": ""
+  },
+  {
+   "file": "haer_il0413_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Facing_North_-_London_Mills_Bridge,_Spanning_Spoon_River,_London_Mills,_Fulton_County,_IL_HAER_ILL,48-LONMI,1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Facing_North_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-3.tif/lossy-page1-1920px-Facing_North_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-3.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Facing North - London Mills Bridge, Spanning Spoon River, London Mills, Fulton County, IL HAER ILL,48-LONMI,1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nVoorhees, Clay\nKing Iron and Bridge Company",
+   "caption": ""
+  },
+  {
+   "file": "haer_il0413_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Facing_South_-_London_Mills_Bridge,_Spanning_Spoon_River,_London_Mills,_Fulton_County,_IL_HAER_ILL,48-LONMI,1-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Facing_South_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-5.tif/lossy-page1-1920px-Facing_South_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-5.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Facing South - London Mills Bridge, Spanning Spoon River, London Mills, Fulton County, IL HAER ILL,48-LONMI,1-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nVoorhees, Clay\nKing Iron and Bridge Company",
+   "caption": ""
+  },
+  {
+   "file": "haer_il0413_photo_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Facing_South_-_London_Mills_Bridge,_Spanning_Spoon_River,_London_Mills,_Fulton_County,_IL_HAER_ILL,48-LONMI,1-6.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Facing_South_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-6.tif/lossy-page1-1920px-Facing_South_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-6.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Facing South - London Mills Bridge, Spanning Spoon River, London Mills, Fulton County, IL HAER ILL,48-LONMI,1-6.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nVoorhees, Clay\nKing Iron and Bridge Company",
+   "caption": ""
+  },
+  {
+   "file": "haer_il0413_photo_08.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Facing_Southeast_-_London_Mills_Bridge,_Spanning_Spoon_River,_London_Mills,_Fulton_County,_IL_HAER_ILL,48-LONMI,1-8.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Facing_Southeast_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-8.tif/lossy-page1-1920px-Facing_Southeast_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-8.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Facing Southeast - London Mills Bridge, Spanning Spoon River, London Mills, Fulton County, IL HAER ILL,48-LONMI,1-8.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nVoorhees, Clay\nKing Iron and Bridge Company",
+   "caption": ""
+  },
+  {
+   "file": "haer_il0413_photo_10.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Facing_Southeast_-_London_Mills_Bridge,_Spanning_Spoon_River,_London_Mills,_Fulton_County,_IL_HAER_ILL,48-LONMI,1-10.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Facing_Southeast_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-10.tif/lossy-page1-1920px-Facing_Southeast_-_London_Mills_Bridge%2C_Spanning_Spoon_River%2C_London_Mills%2C_Fulton_County%2C_IL_HAER_ILL%2C48-LONMI%2C1-10.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Facing Southeast - London Mills Bridge, Spanning Spoon River, London Mills, Fulton County, IL HAER ILL,48-LONMI,1-10.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nVoorhees, Clay\nKing Iron and Bridge Company",
+   "caption": ""
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "SMALL-04",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {"type": "small", "road_class": "gravel", "span_m": 70.0, "over": "Mill Creek"},
+  "example": {
+    "title": "Tiskilwa Bridge, Township Road 236 over Bureau Creek",
+    "place": "Tiskilwa vicinity, Arispie Township, Bureau County, IL",
+    "year": 1884,
+    "source": "HAER IL-108",
+    "url": "https://www.loc.gov/item/il0702/",
+    "photos": ["haer_il0702_photo_01.jpg", "haer_il0702_photo_03.jpg", "haer_il0702_photo_08.jpg", "haer_il0702_photo_10.jpg", "haer_il0702_photo_12.jpg"],
+    "drawings": []
+  },
+  "brief": "Three-span township-road crossing, 194 ft overall: a 119 ft, eight-panel pin-connected Pratt through truss (1884) in the middle, a later 60 ft Pratt pony truss on the north and a short 15 ft timber-stringer span on the south. Trusses 15.5 ft apart with 14 ft clear between the rails, 16.75 ft chord-to-chord and 13.7 ft portal clearance; laced channel top chords with cover plates, eyebar bottom chords; transverse timber plank deck with steel tread-plate wheel runners; the main span sits on riveted iron caissons (tube piers) with 1930s concrete caps, and one end rests on a cut-stone abutment. Wide, shallow, stony creek in bare-tree bottomland on a gravel country road.",
+  "traits": {
+    "bridge_type": "through_truss_pratt",
+    "secondary_spans": ["pony_truss", "steel_stringer"],
+    "spans": 3,
+    "year": 1884,
+    "railing": "pipe_rail",
+    "span_ft": 119,
+    "overall_ft": 194,
+    "pony_span_ft": 60,
+    "width_ft": 14,
+    "height_ft": 16.75,
+    "clearance_ft": 13.7,
+    "panels": 8,
+    "abutments": "cut stone and iron caisson piers with concrete caps",
+    "deck": "timber plank with steel tread-plate runners",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "BUILT BY THE HARLAN BRIDGE CO. · CORBIN FALLS · 1884",
+    "sign": "MILL CREEK"
+  }
+}

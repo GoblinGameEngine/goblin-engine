@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-11",
+  "settlement": "rural (near Harrow Falls)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 6.0,
+    "over": "Cole Creek"
+  },
+  "example": {
+    "title": "Stauffer Road Bridge (Bridge No. F26-06), Stauffer Road over Israel Creek",
+    "place": "Walkersville vicinity, Frederick County, MD",
+    "year": 1930,
+    "source": "HAER MD-82",
+    "url": "https://www.loc.gov/item/md1463/",
+    "photos": [
+      "haer_md1463_photo_01.jpg",
+      "haer_md1463_photo_04.jpg",
+      "haer_md1463_photo_06.jpg",
+      "haer_md1463_photo_09.jpg",
+      "haer_md1463_photo_11.jpg",
+      "haer_md1463_photo_14.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single-span, four-panel riveted steel Pratt full-slope pony truss of about 1930, 62 ft 10 in long with a 13 ft roadway: two 16 ft end panels and two 15 ft interior panels, wide solid rolled chords and end posts, latticed main ties and slim paired-rod counters, steel floor beams and stringers under a thin reinforced-concrete deck. Latticed handrails with latticed intermediate posts run inside the trusses; concrete abutments with stone wingwalls, badly spalled. Stands in open, flat dairy country on a narrow two-lane farm road, with barns and a row of concrete silos in the distance and a curve-warning sign on the approach.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt full-slope",
+    "spans": 1,
+    "year": 1930,
+    "railing": "lattice",
+    "span_ft": 62.8,
+    "width_ft": 13,
+    "height_ft": 7,
+    "panels": 4,
+    "abutments": "concrete with stone wingwalls",
+    "deck": "reinforced concrete",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "COUNTY BRIDGE No. C-114",
+    "sign": "COLE CREEK"
+  }
+}

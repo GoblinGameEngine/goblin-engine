@@ -1,0 +1,50 @@
+{
+ "structure": "T-028",
+ "files": [
+  {
+   "file": "loc_wi0099_photos_171382pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0099/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/wi/wi0000/wi0099/photos/171382pv.jpg",
+   "title": "Immaculate Conception Church, Burlington, Racine County, WI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0099_photos_171383pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0099/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/wi/wi0000/wi0099/photos/171383pv.jpg",
+   "title": "Immaculate Conception Church, Burlington, Racine County, WI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0099_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0099/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0000/wi0099/sheet/00000a.tif",
+   "title": "Immaculate Conception Church, Burlington, Racine County, WI",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0099_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0099/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0000/wi0099/sheet/00001a.tif",
+   "title": "Immaculate Conception Church, Burlington, Racine County, WI",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0099_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0099/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0000/wi0099/sheet/00002a.tif",
+   "title": "Immaculate Conception Church, Burlington, Racine County, WI",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

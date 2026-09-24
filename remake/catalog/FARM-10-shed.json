@@ -1,0 +1,28 @@
+{
+  "id": "FARM-10-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "George Spangerberger Farmstead, Pole Building (HABS KS-77-H)",
+    "place": "South Hutchinson, Reno County, KS",
+    "year": 1960,
+    "source": "HABS KS-77-H",
+    "url": "https://www.loc.gov/item/ks0188/",
+    "photos": ["loc_ks0188_photos_209893pv.jpg", "loc_ks0188_photos_209894pv.jpg", "loc_ks0188_photos_209895pv.jpg", "loc_ks0188_photos_209896pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Open-fronted pole shed of about 1960, roughly 40 ft long and 16 ft deep: a single-slope corrugated metal roof on round wooden poles with short knee braces to a plank header, the back and ends closed with horizontal wooden planks, the front wide open to a dirt yard. Used for parking the tractor, disc and hog feeders out of the weather; a board-fenced lot runs off one end and a corrugated-tin building and big shade trees crowd the other.",
+  "traits": {
+    "type": "pole_shed",
+    "w_ft": 40,
+    "d_ft": 16,
+    "height_ft": 11,
+    "walls": "board_and_batten",
+    "roof": {"type": "shed", "pitch_deg": 8, "material": "metal"},
+    "open_front": true,
+    "colors": {"body": "#7f776c", "trim": "#5d574f", "accent": "#5d574f", "roof": "#a6a8a8"},
+    "condition": "worn"
+  },
+  "names": {"family": "Castellane"}
+}

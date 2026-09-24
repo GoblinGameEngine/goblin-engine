@@ -1,0 +1,34 @@
+{
+  "id": "MAJOR-02",
+  "settlement": "rural (near Cedar Ford)",
+  "kind": "crossing",
+  "crossing": {"type": "major", "road_class": "county", "span_m": 43.9, "over": "Kettle River"},
+  "example": {
+    "title": "Ninabuck Road Bridge, Ninabuck Road over the Crawfish River",
+    "place": "Danville vicinity, Town of Elba, Dodge County, WI",
+    "year": 1907,
+    "source": "HAER WI-93",
+    "url": "https://www.loc.gov/item/wi0372/",
+    "photos": ["haer_wi0372_photo_01.jpg", "haer_wi0372_photo_03.jpg", "haer_wi0372_photo_04.jpg", "haer_wi0372_photo_06.jpg", "haer_wi0372_photo_07.jpg", "haer_wi0372_photo_09.jpg"],
+    "drawings": []
+  },
+  "brief": "Single-lane, eight-panel pin-connected Pratt through truss, 123.5 ft span (154.5 ft with approaches) and 16 ft deck, standing on four concrete-filled steel cylinder piers instead of masonry abutments. Top chords and inclined end posts are laced channels with cover plates, verticals laced double channels, diagonals paired eyebars; portal struts of latticed angles; open metal-grate deck on nine I-beam floor beams; a simple two-line rail on posts inside the trusses and black-and-white hazard boards at each portal. Sits low over a quiet rural river on a narrow blacktop town road flanked by grass and bare trees (truss height estimated).",
+  "traits": {
+    "bridge_type": "through_truss_pratt",
+    "spans": 1,
+    "year": 1907,
+    "railing": "pipe_rail",
+    "span_ft": 123.5,
+    "width_ft": 16,
+    "height_ft": 18,
+    "panels": 8,
+    "abutments": "concrete-filled steel cylinder piers",
+    "deck": "open steel grate",
+    "approach_rail": "none",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "1907 · KETTLE RIVER BRIDGE · CEDAR FORD TOWNSHIP · NORTHWEST IRON & BRIDGE WORKS, BUILDERS",
+    "sign": "KETTLE RIVER"
+  }
+}

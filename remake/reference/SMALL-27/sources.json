@@ -1,0 +1,67 @@
+{
+ "structure": "SMALL-27",
+ "files": [
+  {
+   "file": "loc_pa3998_data_pa3998data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3998/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa3900/pa3998/data/pa3998data.pdf",
+   "title": "pa3998",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3998_data_pa3998cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3998/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa3900/pa3998/data/pa3998cap.pdf",
+   "title": "pa3998",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_pa3998_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:PERSPECTIVE_VIEW_ON_SOUTH_ELEVATION._-_Big_Chickies_Bridge,_Spanning_Big_Chickies_Creek,_Lancaster_Junction,_Lancaster_County,_PA_HAER_PA-630-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/PERSPECTIVE_VIEW_ON_SOUTH_ELEVATION._-_Big_Chickies_Bridge%2C_Spanning_Big_Chickies_Creek%2C_Lancaster_Junction%2C_Lancaster_County%2C_PA_HAER_PA-630-1.tif/lossy-page1-1920px-PERSPECTIVE_VIEW_ON_SOUTH_ELEVATION._-_Big_Chickies_Bridge%2C_Spanning_Big_Chickies_Creek%2C_Lancaster_Junction%2C_Lancaster_County%2C_PA_HAER_PA-630-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:PERSPECTIVE VIEW ON SOUTH ELEVATION. - Big Chickies Bridge, Spanning Big Chickies Creek, Lancaster Junction, Lancaster County, PA HAER PA-630-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet, creator",
+   "caption": "\nFirm of Frank H. Shaw; Shaw, Percy; Shaw, Frank; McMellen, Elias; Corvin, William; Snavely, Henry; Kaufman, H S; Helman, Peter; Bruder, JAmes; Eshleman, J Miller; Monier, Jean; Wunsch, R; Melan, Joseph; von Emperger, Fritz; Luten, Daniel B; Jones, Howard M; Considere, M A; Marsh, James B; Croteau, Todd, project manager; Pennsylvania Department of Transportation (PENNDOT), sponsor; Pennsylvania Historical and Museum Commission, sponsor; Christianson, Justine, transmitter; Lowe, Jet, photographer"
+  },
+  {
+   "file": "haer_pa3998_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:PORTAL_WITH_APPROACH_ROAD._-_Big_Chickies_Bridge,_Spanning_Big_Chickies_Creek,_Lancaster_Junction,_Lancaster_County,_PA_HAER_PA-630-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/PORTAL_WITH_APPROACH_ROAD._-_Big_Chickies_Bridge%2C_Spanning_Big_Chickies_Creek%2C_Lancaster_Junction%2C_Lancaster_County%2C_PA_HAER_PA-630-3.tif/lossy-page1-1920px-PORTAL_WITH_APPROACH_ROAD._-_Big_Chickies_Bridge%2C_Spanning_Big_Chickies_Creek%2C_Lancaster_Junction%2C_Lancaster_County%2C_PA_HAER_PA-630-3.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:PORTAL WITH APPROACH ROAD. - Big Chickies Bridge, Spanning Big Chickies Creek, Lancaster Junction, Lancaster County, PA HAER PA-630-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet, creator",
+   "caption": "\nFirm of Frank H. Shaw; Shaw, Percy; Shaw, Frank; McMellen, Elias; Corvin, William; Snavely, Henry; Kaufman, H S; Helman, Peter; Bruder, JAmes; Eshleman, J Miller; Monier, Jean; Wunsch, R; Melan, Joseph; von Emperger, Fritz; Luten, Daniel B; Jones, Howard M; Considere, M A; Marsh, James B; Croteau, Todd, project manager; Pennsylvania Department of Transportation (PENNDOT), sponsor; Pennsylvania Historical and Museum Commission, sponsor; Christianson, Justine, transmitter; Lowe, Jet, photographer"
+  },
+  {
+   "file": "haer_pa3998_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:PORTAL._NOTE_GALVANIZED_PIPE_RAIL_EXTENDING_THE_LENGTH_OF_THE_ARCH._-_Big_Chickies_Bridge,_Spanning_Big_Chickies_Creek,_Lancaster_Junction,_Lancaster_County,_PA_HAER_PA-630-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/PORTAL._NOTE_GALVANIZED_PIPE_RAIL_EXTENDING_THE_LENGTH_OF_THE_ARCH._-_Big_Chickies_Bridge%2C_Spanning_Big_Chickies_Creek%2C_Lancaster_Junction%2C_Lancaster_County%2C_PA_HAER_PA-630-4.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:PORTAL. NOTE GALVANIZED PIPE RAIL EXTENDING THE LENGTH OF THE ARCH. - Big Chickies Bridge, Spanning Big Chickies Creek, Lancaster Junction, Lancaster County, PA HAER PA-630-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet, creator",
+   "caption": "\nFirm of Frank H. Shaw; Shaw, Percy; Shaw, Frank; McMellen, Elias; Corvin, William; Snavely, Henry; Kaufman, H S; Helman, Peter; Bruder, JAmes; Eshleman, J Miller; Monier, Jean; Wunsch, R; Melan, Joseph; von Emperger, Fritz; Luten, Daniel B; Jones, Howard M; Considere, M A; Marsh, James B; Croteau, Todd, project manager; Pennsylvania Department of Transportation (PENNDOT), sponsor; Pennsylvania Historical and Museum Commission, sponsor; Christianson, Justine, transmitter; Lowe, Jet, photographer"
+  },
+  {
+   "file": "haer_pa3998_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_UNDERSIDE_AND_CONCRETE_ABUTMENT._-_Big_Chickies_Bridge,_Spanning_Big_Chickies_Creek,_Lancaster_Junction,_Lancaster_County,_PA_HAER_PA-630-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/VIEW_OF_UNDERSIDE_AND_CONCRETE_ABUTMENT._-_Big_Chickies_Bridge%2C_Spanning_Big_Chickies_Creek%2C_Lancaster_Junction%2C_Lancaster_County%2C_PA_HAER_PA-630-5.tif/lossy-page1-1920px-VIEW_OF_UNDERSIDE_AND_CONCRETE_ABUTMENT._-_Big_Chickies_Bridge%2C_Spanning_Big_Chickies_Creek%2C_Lancaster_Junction%2C_Lancaster_County%2C_PA_HAER_PA-630-5.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF UNDERSIDE AND CONCRETE ABUTMENT. - Big Chickies Bridge, Spanning Big Chickies Creek, Lancaster Junction, Lancaster County, PA HAER PA-630-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nLowe, Jet, creator",
+   "caption": "\nFirm of Frank H. Shaw; Shaw, Percy; Shaw, Frank; McMellen, Elias; Corvin, William; Snavely, Henry; Kaufman, H S; Helman, Peter; Bruder, JAmes; Eshleman, J Miller; Monier, Jean; Wunsch, R; Melan, Joseph; von Emperger, Fritz; Luten, Daniel B; Jones, Howard M; Considere, M A; Marsh, James B; Croteau, Todd, project manager; Pennsylvania Department of Transportation (PENNDOT), sponsor; Pennsylvania Historical and Museum Commission, sponsor; Christianson, Justine, transmitter; Lowe, Jet, photographer"
+  }
+ ]
+}

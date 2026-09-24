@@ -1,0 +1,38 @@
+{
+ "structure": "FARM-06-house",
+ "files": [
+  {
+   "file": "commons_Schwartz_farm_Lane_Co_KS_house_from_SW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Schwartz_farm_(Lane_Co_KS)_house_from_SW_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Schwartz_farm_%28Lane_Co_KS%29_house_from_SW_1.JPG/1920px-Schwartz_farm_%28Lane_Co_KS%29_house_from_SW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Schwartz farm (Lane Co KS) house from SW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Alexander and Anna Schwartz farm, located at northwest corner of East Road 70 and Quantum Road, southeast of Dighton in rural Lane County, Kansas.  House, seen from the southwest."
+  },
+  {
+   "file": "commons_Schwartz_farm_Lane_Co_KS_house_and_windmill_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Schwartz_farm_(Lane_Co_KS)_house_and_windmill_from_SE_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Schwartz_farm_%28Lane_Co_KS%29_house_and_windmill_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Schwartz farm (Lane Co KS) house and windmill from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Alexander and Anna Schwartz farm, located at northwest corner of East Road 70 and Quantum Road, southeast of Dighton in rural Lane County, Kansas.  House and windmill, seen from the southeast."
+  },
+  {
+   "file": "commons_Schwartz_farm_Lane_Co_KS_house_smokehouse_windmill_from_SW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Schwartz_farm_(Lane_Co_KS)_house_smokehouse_windmill_from_SW_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Schwartz_farm_%28Lane_Co_KS%29_house_smokehouse_windmill_from_SW_1.JPG/1920px-Schwartz_farm_%28Lane_Co_KS%29_house_smokehouse_windmill_from_SW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Schwartz farm (Lane Co KS) house smokehouse windmill from SW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Alexander and Anna Schwartz farm, located at northwest corner of East Road 70 and Quantum Road, southeast of Dighton in rural Lane County, Kansas.  House, smokehouse, and windmill, seen from the southwest."
+  }
+ ]
+}

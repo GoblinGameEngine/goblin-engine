@@ -1,0 +1,36 @@
+{
+  "id": "FARM-10-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Furney Farm, farmhouse",
+    "place": "Morris County, KS",
+    "year": 1925,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Furney_Farmhouse_front_view_Morris_County_Kansas.jpg",
+    "photos": ["commons_Furney_Farmhouse_front_view_Morris_County_Kansas.jpg", "commons_Furney_Farm_back_view_Morris_County_Kansas.jpg"],
+    "drawings": []
+  },
+  "brief": "Rare Tudor Revival farmhouse of about 1925: one-and-a-half storeys of dark red-brown tapestry brick under a steep side-gabled roof of red pressed-metal tile, clipped at the ends, with two big cream stucco wall dormers edged in red arched trim. A small projecting brick entry vestibule with a steep gable, a round-arched door and brick-piered steps topped by concrete urns; multi-light casement-style windows with red frames, a tall brick end chimney. Columnar evergreens flank the entry; a big bare elm at the side.",
+  "traits": {
+    "archetype": "tudor_revival",
+    "storeys": 1.5,
+    "main_w_ft": 36,
+    "main_d_ft": 28,
+    "wing": null,
+    "roof": {"type": "cross_gable", "pitch_deg": 55, "material": "tile"},
+    "dormers": [{"type": "gable", "side": "front"}, {"type": "gable", "side": "front"}],
+    "porch": {"type": "stoop", "posts": "square", "rail": "solid"},
+    "walls": "brick",
+    "foundation": "poured_concrete",
+    "colors": {"body": "#7a3e2e", "trim": "#8e2a22", "accent": "#e8dfc0", "roof": "#8a2f24"},
+    "windows": {"type": "casement", "shutters": false},
+    "chimneys": ["right_end"],
+    "garage": "detached_2",
+    "yard": {"fence": "none", "extras": ["garden", "birdbath"]},
+    "condition": "kept",
+    "year_built": 1925
+  },
+  "names": {"family": "Castellane", "house_number": "1340", "street": "V Avenue"}
+}

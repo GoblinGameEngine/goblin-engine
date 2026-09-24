@@ -1,0 +1,28 @@
+{
+  "id": "FARM-10-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Furney Farm, gambrel barn",
+    "place": "Morris County, KS",
+    "year": 1925,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Furney_Farm_barn_Morris_County_Kansas.jpg",
+    "photos": ["commons_Furney_Farm_barn_Morris_County_Kansas.jpg", "commons_Furney_Farm_barn_side_view_Morris_County_Kansas.jpg"],
+    "drawings": []
+  },
+  "brief": "Compact gambrel-roofed barn about 30 ft by 50 ft, sided in barn-red vertical ribbed siding with a few small white-framed four-pane windows, a sliding track door on the long side and a hinged plank door. The rusty-streaked galvanized metal roof projects far out at the gable peak as a pointed hay hood over a boarded loft door. Stands on open prairie with a lone bare tree; plain and well-maintained.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 30,
+    "d_ft": 50,
+    "height_ft": 32,
+    "walls": "board_and_batten",
+    "roof": {"type": "gambrel", "pitch_deg": 55, "material": "metal"},
+    "hay_hood": true,
+    "colors": {"body": "#b0392e", "trim": "#f1f1ee", "accent": "#f1f1ee", "roof": "#b89a82"},
+    "condition": "kept"
+  },
+  "names": {"family": "Castellane", "sign": "CASTELLANE HOG & GRAIN EST. 1898"}
+}

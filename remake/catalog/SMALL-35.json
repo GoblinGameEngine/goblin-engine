@@ -1,0 +1,52 @@
+{
+  "id": "SMALL-35",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "main",
+    "span_m": 5.1,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "Glen Gardner Bridge (Mill Street Bridge / Spruce Run Bridge), Mill Street over Spruce Run",
+    "place": "Glen Gardner, Hunterdon County, NJ",
+    "year": 1870,
+    "source": "HAER NJ-92",
+    "url": "https://www.loc.gov/item/nj1521/",
+    "photos": [
+      "loc_nj1521_color_572314cv.jpg",
+      "loc_nj1521_photos_347453pv.jpg",
+      "loc_nj1521_photos_347456pv.jpg",
+      "loc_nj1521_photos_347459pv.jpg",
+      "loc_nj1521_photos_347462pv.jpg",
+      "loc_nj1521_photos_347465pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Composite cast- and wrought-iron Pratt pony truss of 1870, originally a railway span, reused on a village mill street: cast-iron posts shaped like small classical columns with moulded capitals and bases, tall cast-iron newel posts at the four corners, wrought-iron rod diagonals and flat bar chords, and a latticed rail between the posts, all painted green. One lane, on stone abutments over a rocky, tree-shaded creek beside frame houses; a small weight-limit sign on the corner post. (Span estimated at about 50 ft from photos.)",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt, cast-iron posts",
+    "spans": 1,
+    "year": 1870,
+    "railing": "lattice",
+    "span_ft": 50,
+    "width_ft": 14,
+    "height_ft": 6,
+    "panels": 6,
+    "abutments": "coursed stone",
+    "deck": "asphalt on timber",
+    "colors": {
+      "truss": "#3f6b4a"
+    },
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "cast name plate: MILL STREET BRIDGE · 1870 · W. COWDEN, FABRICATOR",
+    "sign": "MILL CREEK",
+    "extra_signs": [
+      "WEIGHT LIMIT 3 TONS"
+    ]
+  }
+}

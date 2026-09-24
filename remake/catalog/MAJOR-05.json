@@ -1,0 +1,33 @@
+{
+  "id": "MAJOR-05",
+  "settlement": "rural (near Kessler)",
+  "kind": "crossing",
+  "crossing": {"type": "major", "road_class": "county", "span_m": 44.0, "over": "Kettle River"},
+  "example": {
+    "title": "Tull Bridge (Brown's Ferry / Pryor's Ford Bridge), County Road 5 over the Saline River",
+    "place": "Tull, Grant County, AR",
+    "year": 1916,
+    "source": "HAER AR-77",
+    "url": "https://www.loc.gov/item/ar0149/",
+    "photos": ["haer_ar0149_photo_01.jpg", "haer_ar0149_photo_02.jpg", "haer_ar0149_photo_03.jpg", "haer_ar0149_photo_05.jpg", "haer_ar0149_photo_06.jpg", "haer_ar0149_photo_07.jpg"],
+    "drawings": []
+  },
+  "brief": "Single-span, seven-panel pin-connected steel Pratt through truss, 130 ft long, trusses 22 ft high and 15 ft apart over a 14 ft roadway, standing on pairs of concrete-filled steel cylinder piers with a short steel-stringer approach span at each end. Parallel chords; laced channel top chord and end posts, forged eyebar bottom chords, loop-ended bar diagonals and turnbuckled counters in the centre panel, laced-angle overhead struts; floor beams hung from the pins on U-bolts under five lines of stringers and a transverse plank deck, with a light angle rail along the trusses. By 2007 it was bypassed by a newer concrete bridge alongside, planks missing and the portal barricaded with a hazard board (the model should show it in service, planked).",
+  "traits": {
+    "bridge_type": "through_truss_pratt",
+    "spans": 1,
+    "year": 1916,
+    "railing": "pipe_rail",
+    "span_ft": 130,
+    "width_ft": 14,
+    "height_ft": 22,
+    "panels": 7,
+    "abutments": "concrete-filled steel cylinder piers",
+    "deck": "transverse timber plank",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "1916 · KETTLE RIVER · BUILT BY THE OKLAHOMA-PLAINS BRIDGE CO. · COUNTY COURT",
+    "sign": "KETTLE RIVER"
+  }
+}

@@ -1,0 +1,23 @@
+{
+ "structure": "LG-013",
+ "files": [
+  {
+   "file": "loc_mi0319_color_572203cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0319/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0300/mi0319/color/572203cv.jpg",
+   "title": "Lawr Farm, House, Port Oneida, Glen Arbor, Leelanau County, MI",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0319_photos_089288pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0319/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0300/mi0319/photos/089288pv.jpg",
+   "title": "Lawr Farm, House, Port Oneida, Glen Arbor, Leelanau County, MI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

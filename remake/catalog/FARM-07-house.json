@@ -1,0 +1,36 @@
+{
+  "id": "FARM-07-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Cather farm, house, Kansas Highway 14",
+    "place": "Beloit vicinity, Mitchell County, KS",
+    "year": 1905,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Cather_farm_(Mitchell_Co_KS)_house_from_WSW_1.JPG",
+    "photos": ["commons_Cather_farm_Mitchell_Co_KS_house_from_WSW_1.JPG", "commons_Cather_farm_Mitchell_Co_KS_house_from_W_1.JPG", "commons_Cather_farm_Mitchell_Co_KS_house_from_WNW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "One-storey hip-roofed farm cottage painted bubblegum pink with a butter-yellow frieze band and window casings and magenta trim, small scroll brackets under the eaves. A tiny hipped entry hood on angled braces over the front door with solid pink side walls; asphalt-shingle roof with one brick chimney. Sits on a coursed tan post-rock limestone foundation, lattice-skirted back stoop, a stack of limestone fence posts in the yard, big cottonwoods around it.",
+  "traits": {
+    "archetype": "workers_cottage",
+    "storeys": 1,
+    "main_w_ft": 34,
+    "main_d_ft": 28,
+    "wing": null,
+    "roof": {"type": "hip", "pitch_deg": 28, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "stoop", "posts": "square", "rail": "solid"},
+    "walls": "clapboard",
+    "foundation": "cut_stone",
+    "colors": {"body": "#ec9cc8", "trim": "#9c2a78", "accent": "#efe08c", "roof": "#6e6a60"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "none",
+    "yard": {"fence": "none", "extras": ["clothesline", "birdbath"]},
+    "condition": "kept",
+    "year_built": 1905
+  },
+  "names": {"family": "Pettibone", "house_number": "1882", "street": "Highway 14"}
+}

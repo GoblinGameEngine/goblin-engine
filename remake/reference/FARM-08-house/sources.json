@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-08-house",
+ "files": [
+  {
+   "file": "commons_Guhl_farmhouse_Burt_Co_NE_from_ENE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Guhl_farmhouse_(Burt_Co,_NE)_from_ENE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Guhl_farmhouse_%28Burt_Co%2C_NE%29_from_ENE_1.JPG/1920px-Guhl_farmhouse_%28Burt_Co%2C_NE%29_from_ENE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Guhl farmhouse (Burt Co, NE) from ENE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "William and Emma Guhl farmhouse, located at 1560 Highway 77 in rural Burt County, Nebraska; seen from the east-northeast."
+  },
+  {
+   "file": "commons_Guhl_farmhouse_Burt_Co_NE_from_NE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Guhl_farmhouse_(Burt_Co,_NE)_from_NE_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Guhl_farmhouse_%28Burt_Co%2C_NE%29_from_NE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Guhl farmhouse (Burt Co, NE) from NE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "William and Emma Guhl farmhouse, located at 1560 Highway 77 in rural Burt County, Nebraska; seen from the northeast."
+  }
+ ]
+}

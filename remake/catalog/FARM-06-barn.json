@@ -1,0 +1,27 @@
+{
+  "id": "FARM-06-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Alexander and Anna Schwartz farm, barn",
+    "place": "Dighton vicinity, Lane County, KS",
+    "year": 1925,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Schwartz_farm_(Lane_Co_KS)_barn_from_SW_1.JPG",
+    "photos": ["commons_Schwartz_farm_Lane_Co_KS_barn_from_SW_1.JPG", "commons_Schwartz_farm_Lane_Co_KS_smokehouse_and_barn_from_SE_1.JPG", "commons_Schwartz_farm_Lane_Co_KS_from_S_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Low gambrel-roofed barn with a single storey of red brick walls (patched and uneven, lighter mortar) and a gambrel loft roofed in rust-streaked corrugated metal that also sheathes the gambrel ends. Two pairs of gray plank doors on the long side, a small metal-clad loft door in the gable end. Stands out alone on the wheat plains behind a barbed-wire fence with an oil drum and cedars at the corner.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 50,
+    "d_ft": 30,
+    "height_ft": 24,
+    "lower_walls": "brick",
+    "roof": {"type": "gambrel", "pitch_deg": 50, "material": "metal"},
+    "colors": {"body": "#a44a38", "trim": "#8e8b84", "accent": "#b8bcbe", "roof": "#a7704f"},
+    "condition": "worn"
+  },
+  "names": {"family": "Kaltenbach", "sign": "KALTENBACH WHEAT FARM EST. 1906"}
+}

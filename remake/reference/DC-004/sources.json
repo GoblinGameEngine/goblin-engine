@@ -1,0 +1,27 @@
+{
+ "structure": "DC-004",
+ "files": [
+  {
+   "file": "commons_Arkdale_Wisconsin_Post_Office_June_2014.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Arkdale_Wisconsin_Post_Office_June_2014.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Arkdale_Wisconsin_Post_Office_June_2014.jpg/1920px-Arkdale_Wisconsin_Post_Office_June_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Arkdale Wisconsin Post Office June 2014.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Royalbroil",
+   "caption": "The post office for w:Arkdale, Wisconsin."
+  },
+  {
+   "file": "commons_Arkdale_Wisconsin_Post_Office.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Arkdale_Wisconsin_Post_Office.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Arkdale_Wisconsin_Post_Office.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Arkdale Wisconsin Post Office.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "I, the copyright holder of this work, hereby publish it under the following license:",
+   "caption": "Looking at the post office for w:Arkdale, Wisconsin. \u00a0This   file was uploaded  with Commonist."
+  }
+ ]
+}

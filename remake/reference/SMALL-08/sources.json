@@ -1,0 +1,100 @@
+{
+ "structure": "SMALL-08",
+ "files": [
+  {
+   "file": "loc_wi0183_data_wi0183data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0183/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0100/wi0183/data/wi0183data.pdf",
+   "title": "wi0183",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0183_data_wi0183cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0183/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0100/wi0183/data/wi0183cap.pdf",
+   "title": "wi0183",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_wi0183_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:LONG_VIEW_FROM_BELOW,_LOOKING_SOUTH_-_Range_Line_Road_Bridge,_Spanning_West_Branch_of_Eau_Claire_River,_on_Range_Line_Road,_Antigo,_Langlade_County,_WI_HAER_WIS,34-ACK,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/LONG_VIEW_FROM_BELOW%2C_LOOKING_SOUTH_-_Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_County%2C_WI_HAER_WIS%2C34-ACK%2C1-1.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:LONG VIEW FROM BELOW, LOOKING SOUTH - Range Line Road Bridge, Spanning West Branch of Eau Claire River, on Range Line Road, Antigo, Langlade County, WI HAER WIS,34-ACK,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nHall, J C; Wisconsin Bridge and Iron Company; Weinhagen, Frederick"
+  },
+  {
+   "file": "haer_wi0183_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_SOUTH_TRUSS_FROM_DECK,_LOOKING_SOUTHEAST_-_Range_Line_Road_Bridge,_Spanning_West_Branch_of_Eau_Claire_River,_on_Range_Line_Road,_Antigo,_Langlade_County,_WI_HAER_WIS,34-ACK,1-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/VIEW_OF_SOUTH_TRUSS_FROM_DECK%2C_LOOKING_SOUTHEAST_-_Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_County%2C_WI_HAER_WIS%2C34-ACK%2C1-2.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF SOUTH TRUSS FROM DECK, LOOKING SOUTHEAST - Range Line Road Bridge, Spanning West Branch of Eau Claire River, on Range Line Road, Antigo, Langlade County, WI HAER WIS,34-ACK,1-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nHall, J C; Wisconsin Bridge and Iron Company; Weinhagen, Frederick"
+  },
+  {
+   "file": "haer_wi0183_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL_VIEW_OF_ABUTMENT_AND_NORTH_TRUSS_CONNECTION,_LOOKING_NORTHEAST_-_Range_Line_Road_Bridge,_Spanning_West_Branch_of_Eau_Claire_River,_on_Range_Line_Road,_Antigo,_Langlade_HAER_WIS,34-ACK,1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/DETAIL_VIEW_OF_ABUTMENT_AND_NORTH_TRUSS_CONNECTION%2C_LOOKING_NORTHEAST_-_Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_HAER_WIS%2C34-ACK%2C1-3.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL VIEW OF ABUTMENT AND NORTH TRUSS CONNECTION, LOOKING NORTHEAST - Range Line Road Bridge, Spanning West Branch of Eau Claire River, on Range Line Road, Antigo, Langlade HAER WIS,34-ACK,1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nHall, J C; Wisconsin Bridge and Iron Company; Weinhagen, Frederick"
+  },
+  {
+   "file": "haer_wi0183_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ELEVATION,_WEST_END,_LOOKING_EAST_-_Range_Line_Road_Bridge,_Spanning_West_Branch_of_Eau_Claire_River,_on_Range_Line_Road,_Antigo,_Langlade_County,_WI_HAER_WIS,34-ACK,1-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/ELEVATION%2C_WEST_END%2C_LOOKING_EAST_-_Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_County%2C_WI_HAER_WIS%2C34-ACK%2C1-4.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ELEVATION, WEST END, LOOKING EAST - Range Line Road Bridge, Spanning West Branch of Eau Claire River, on Range Line Road, Antigo, Langlade County, WI HAER WIS,34-ACK,1-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nHall, J C; Wisconsin Bridge and Iron Company; Weinhagen, Frederick"
+  },
+  {
+   "file": "haer_wi0183_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL_VIEW_OF_NORTH_TRUSS_BRACING_-_Range_Line_Road_Bridge,_Spanning_West_Branch_of_Eau_Claire_River,_on_Range_Line_Road,_Antigo,_Langlade_County,_WI_HAER_WIS,34-ACK,1-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/DETAIL_VIEW_OF_NORTH_TRUSS_BRACING_-_Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_County%2C_WI_HAER_WIS%2C34-ACK%2C1-5.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL VIEW OF NORTH TRUSS BRACING - Range Line Road Bridge, Spanning West Branch of Eau Claire River, on Range Line Road, Antigo, Langlade County, WI HAER WIS,34-ACK,1-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nHall, J C; Wisconsin Bridge and Iron Company; Weinhagen, Frederick"
+  },
+  {
+   "file": "haer_wi0183_sheet_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Range_Line_Road_Bridge,_Spanning_West_Branch_of_Eau_Claire_River,_on_Range_Line_Road,_Antigo,_Langlade_County,_WI_HAER_WIS,34-ACK,1-_(sheet_1_of_2).tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_County%2C_WI_HAER_WIS%2C34-ACK%2C1-_%28sheet_1_of_2%29.tif/lossy-page1-1920px-Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_County%2C_WI_HAER_WIS%2C34-ACK%2C1-_%28sheet_1_of_2%29.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Range Line Road Bridge, Spanning West Branch of Eau Claire River, on Range Line Road, Antigo, Langlade County, WI HAER WIS,34-ACK,1- (sheet 1 of 2).tif",
+   "kind": "drawing",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nHall, J C; Wisconsin Bridge and Iron Company; Weinhagen, Frederick"
+  },
+  {
+   "file": "haer_wi0183_sheet_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Range_Line_Road_Bridge,_Spanning_West_Branch_of_Eau_Claire_River,_on_Range_Line_Road,_Antigo,_Langlade_County,_WI_HAER_WIS,34-ACK,1-_(sheet_2_of_2).tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_County%2C_WI_HAER_WIS%2C34-ACK%2C1-_%28sheet_2_of_2%29.tif/lossy-page1-1920px-Range_Line_Road_Bridge%2C_Spanning_West_Branch_of_Eau_Claire_River%2C_on_Range_Line_Road%2C_Antigo%2C_Langlade_County%2C_WI_HAER_WIS%2C34-ACK%2C1-_%28sheet_2_of_2%29.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Range Line Road Bridge, Spanning West Branch of Eau Claire River, on Range Line Road, Antigo, Langlade County, WI HAER WIS,34-ACK,1- (sheet 2 of 2).tif",
+   "kind": "drawing",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nHall, J C; Wisconsin Bridge and Iron Company; Weinhagen, Frederick"
+  }
+ ]
+}

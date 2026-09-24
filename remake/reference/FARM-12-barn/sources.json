@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-12-barn",
+ "files": [
+  {
+   "file": "commons_Miller_homestead_Rush_Co_KS_horse_barn_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miller_homestead_(Rush_Co_KS),_horse_barn_from_SE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Miller_homestead_%28Rush_Co_KS%29%2C_horse_barn_from_SE_1.JPG/1920px-Miller_homestead_%28Rush_Co_KS%29%2C_horse_barn_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Miller homestead (Rush Co KS), horse barn from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Miller homestead, at 2913 Kansas Highway 4, east of La Crosse, Kansas.  Horse barn, seen from the southeast."
+  },
+  {
+   "file": "commons_Miller_homestead_Rush_Co_KS_horse_barn_from_S_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miller_homestead_(Rush_Co_KS),_horse_barn_from_S_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Miller_homestead_%28Rush_Co_KS%29%2C_horse_barn_from_S_1.JPG/1920px-Miller_homestead_%28Rush_Co_KS%29%2C_horse_barn_from_S_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Miller homestead (Rush Co KS), horse barn from S 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Miller homestead, at 2913 Kansas Highway 4, east of La Crosse, Kansas.  Horse barn, seen from the south."
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "structure": "SMALL-10",
+ "files": [
+  {
+   "file": "loc_wi0217_data_wi0217data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0200/wi0217/data/wi0217data.pdf",
+   "title": "wi0217",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0217_data_wi0217cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0217/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0200/wi0217/data/wi0217cap.pdf",
+   "title": "wi0217",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_wi0217_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:GENERAL_SETTING._WEST_BANK_LOOKING_SOUTHEAST._-_Cunningham_Lane_Bridge,_Spanning_Pine_River_on_Cunningham_Lane_near_Highway_80,_Rockbridge,_Richland_County,_WI_HAER_WIS,52-ROBR,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/GENERAL_SETTING._WEST_BANK_LOOKING_SOUTHEAST._-_Cunningham_Lane_Bridge%2C_Spanning_Pine_River_on_Cunningham_Lane_near_Highway_80%2C_Rockbridge%2C_Richland_County%2C_WI_HAER_WIS%2C52-ROBR%2C1-1.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:GENERAL SETTING. WEST BANK LOOKING SOUTHEAST. - Cunningham Lane Bridge, Spanning Pine River on Cunningham Lane near Highway 80, Rockbridge, Richland County, WI HAER WIS,52-ROBR,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nChicago Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0217_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ROAD_VIEW_SHOWING_LUMBER_DECK._EAST_BANK_LOOKING_WEST._-_Cunningham_Lane_Bridge,_Spanning_Pine_River_on_Cunningham_Lane_near_Highway_80,_Rockbridge,_Richland_County,_WI_HAER_WIS,52-ROBR,1-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/ROAD_VIEW_SHOWING_LUMBER_DECK._EAST_BANK_LOOKING_WEST._-_Cunningham_Lane_Bridge%2C_Spanning_Pine_River_on_Cunningham_Lane_near_Highway_80%2C_Rockbridge%2C_Richland_County%2C_WI_HAER_WIS%2C52-ROBR%2C1-2.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ROAD VIEW SHOWING LUMBER DECK. EAST BANK LOOKING WEST. - Cunningham Lane Bridge, Spanning Pine River on Cunningham Lane near Highway 80, Rockbridge, Richland County, WI HAER WIS,52-ROBR,1-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nChicago Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0217_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_OF_CENTER_PANEL_SHOWING_DIAGONAL_TENSION_MEMBERS_AND_LOWER_CHORD_CONNECTIONS._EAST_BANK_LOOKING_SOUTHWEST._-_Cunningham_Lane_Bridge,_Spanning_Pine_River_on_Cunningham_Lane_HAER_WIS,52-ROBR,1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/VIEW_OF_CENTER_PANEL_SHOWING_DIAGONAL_TENSION_MEMBERS_AND_LOWER_CHORD_CONNECTIONS._EAST_BANK_LOOKING_SOUTHWEST._-_Cunningham_Lane_Bridge%2C_Spanning_Pine_River_on_Cunningham_Lane_HAER_WIS%2C52-ROBR%2C1-3.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW OF CENTER PANEL SHOWING DIAGONAL TENSION MEMBERS AND LOWER CHORD CONNECTIONS. EAST BANK LOOKING SOUTHWEST. - Cunningham Lane Bridge, Spanning Pine River on Cunningham Lane HAER WIS,52-ROBR,1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nChicago Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0217_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:UPPER_CHORD_UNDERSIDE_VIEW_SHOWING_CHANNEL_IRON_AND_LATTICE_WORK_CONSTRUCTION_AND_TENSION_MEMBER_CONNECTION._DECK_VIEW_LOOKING_EAST._-_Cunningham_Lane_Bridge,_Spanning_Pine_River_HAER_WIS,52-ROBR,1-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/UPPER_CHORD_UNDERSIDE_VIEW_SHOWING_CHANNEL_IRON_AND_LATTICE_WORK_CONSTRUCTION_AND_TENSION_MEMBER_CONNECTION._DECK_VIEW_LOOKING_EAST._-_Cunningham_Lane_Bridge%2C_Spanning_Pine_River_HAER_WIS%2C52-ROBR%2C1-5.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:UPPER CHORD UNDERSIDE VIEW SHOWING CHANNEL IRON AND LATTICE WORK CONSTRUCTION AND TENSION MEMBER CONNECTION. DECK VIEW LOOKING EAST. - Cunningham Lane Bridge, Spanning Pine River HAER WIS,52-ROBR,1-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nChicago Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0217_photo_07.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:BOTTOM_CHORD_PIN_CONNECTION._EAST_BANK_LOOKING_SOUTHWEST._-_Cunningham_Lane_Bridge,_Spanning_Pine_River_on_Cunningham_Lane_near_Highway_80,_Rockbridge,_Richland_County,_WI_HAER_WIS,52-ROBR,1-7.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/BOTTOM_CHORD_PIN_CONNECTION._EAST_BANK_LOOKING_SOUTHWEST._-_Cunningham_Lane_Bridge%2C_Spanning_Pine_River_on_Cunningham_Lane_near_Highway_80%2C_Rockbridge%2C_Richland_County%2C_WI_HAER_WIS%2C52-ROBR%2C1-7.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:BOTTOM CHORD PIN CONNECTION. EAST BANK LOOKING SOUTHWEST. - Cunningham Lane Bridge, Spanning Pine River on Cunningham Lane near Highway 80, Rockbridge, Richland County, WI HAER WIS,52-ROBR,1-7.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nChicago Bridge and Iron Company"
+  }
+ ]
+}

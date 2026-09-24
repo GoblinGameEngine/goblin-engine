@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-09-barn",
+ "files": [
+  {
+   "file": "commons_Menter_farmstead_Big_Springs_NE_3.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Menter_farmstead_(Big_Springs,_NE)_3.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Menter_farmstead_%28Big_Springs%2C_NE%29_3.JPG/1920px-Menter_farmstead_%28Big_Springs%2C_NE%29_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Menter farmstead (Big Springs, NE) 3.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Menter farmstead, located on North Fork Road northwest of Big Springs, Nebraska.  Barn and granary, seen from the northeast."
+  },
+  {
+   "file": "commons_Menter_farmstead_Big_Springs_NE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Menter_farmstead_(Big_Springs,_NE)_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Menter_farmstead_%28Big_Springs%2C_NE%29_1.JPG/1920px-Menter_farmstead_%28Big_Springs%2C_NE%29_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Menter farmstead (Big Springs, NE) 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Menter farmstead, located on North Fork Road northwest of Big Springs, Nebraska.  View is from the east."
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "structure": "FARM-10-shed",
+ "files": [
+  {
+   "file": "loc_ks0188_photos_209893pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0188/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ks/ks0100/ks0188/photos/209893pv.jpg",
+   "title": "George Spangerberger Farmstead, Pole Building, 2012 West Illinois Avenue, South Hutchinson, Reno County, KS",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0188_photos_209894pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0188/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ks/ks0100/ks0188/photos/209894pv.jpg",
+   "title": "George Spangerberger Farmstead, Pole Building, 2012 West Illinois Avenue, South Hutchinson, Reno County, KS",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0188_photos_209895pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0188/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ks/ks0100/ks0188/photos/209895pv.jpg",
+   "title": "George Spangerberger Farmstead, Pole Building, 2012 West Illinois Avenue, South Hutchinson, Reno County, KS",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0188_photos_209896pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0188/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ks/ks0100/ks0188/photos/209896pv.jpg",
+   "title": "George Spangerberger Farmstead, Pole Building, 2012 West Illinois Avenue, South Hutchinson, Reno County, KS",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0188_data_ks0188data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0188/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ks/ks0100/ks0188/data/ks0188data.pdf",
+   "title": "George Spangerberger Farmstead, Pole Building, 2012 West Illinois Avenue, South Hutchinson, Reno County, KS",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0188_data_ks0188cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0188/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ks/ks0100/ks0188/data/ks0188cap.pdf",
+   "title": "George Spangerberger Farmstead, Pole Building, 2012 West Illinois Avenue, South Hutchinson, Reno County, KS",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

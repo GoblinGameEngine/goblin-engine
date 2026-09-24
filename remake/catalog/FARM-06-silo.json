@@ -1,0 +1,27 @@
+{
+  "id": "FARM-06-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Ira E. Lloyd Stock Farm, silo",
+    "place": "Ellsworth County, KS",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Ira_E._Lloyd_Stock_Farm_Ellsworth_Co_KS_Silo.jpg",
+    "photos": ["commons_Ira_E._Lloyd_Stock_Farm_Ellsworth_Co_KS_Silo.jpg"],
+    "drawings": []
+  },
+  "brief": "Tall monolithic poured-concrete silo, about 14 ft across and 44 ft high, its surface banded by the horizontal lift lines of the slip forms and stained tan-gray; open top with no roof, and a narrow concrete chute enclosure running up one side. Stands roofless in a pasture of fence posts and board cattle pens. (Poured rather than stave: builder should hide the stave joints/hoops of the nearest type.)",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 14,
+    "height_ft": 44,
+    "roof": "none",
+    "chute": true,
+    "hoops": false,
+    "colors": {"body": "#b3a894", "trim": "#9c937f", "accent": "#9c937f", "roof": "#b3a894"},
+    "condition": "worn"
+  },
+  "names": {"family": "Kaltenbach"}
+}

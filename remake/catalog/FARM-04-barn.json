@@ -1,0 +1,28 @@
+{
+  "id": "FARM-04-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Luther Severy & Son Stock Farm, barn",
+    "place": "Osage County, KS",
+    "year": 1885,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Luther_Severy_%26_Son_Stock_Farm_Osage_Co_KS_barn_south_and_east_facade.jpg",
+    "photos": ["commons_Luther_Severy_Son_Stock_Farm_Osage_Co_KS_barn_south_and_east_facade.jpg", "commons_Luther_Severy_Son_Stock_Farm_Osage_Co_KS_barn_south_and_west_facade.jpg", "commons_Luther_Severy_Son_Stock_Farm_Osage_Co_KS_barn_southeast_facade.jpg", "commons_Luther_Severy_Son_Stock_Farm_Osage_Co_KS_barn_southeast_facade_detail.jpg"],
+    "drawings": []
+  },
+  "brief": "Long red board-and-batten stock barn on a rubble-stone foundation, side-gable asphalt-shingle roof with a small louvered cupola at the ridge and white-trimmed eaves. Two open stall bays along the long side are sheltered by little shed-roofed door hoods; small louvered vents under the eaves, a hay door in the white-trimmed gable end. White pipe-rail paddock fences run off the corners, gravel drive in front.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 70,
+    "d_ft": 34,
+    "height_ft": 30,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 30, "material": "asphalt_shingle"},
+    "cupola": true,
+    "colors": {"body": "#b23a36", "trim": "#f1efe8", "accent": "#f1efe8", "roof": "#7c7d7b"},
+    "condition": "worn"
+  },
+  "names": {"family": "Tolliver", "sign": "TOLLIVER & SON HEREFORDS EST. 1880"}
+}

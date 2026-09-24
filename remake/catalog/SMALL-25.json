@@ -1,0 +1,54 @@
+{
+  "id": "SMALL-25",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 78.9,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "London Mills Bridge, Knox County Highway 39 over the Spoon River",
+    "place": "London Mills, Fulton and Knox Counties, IL",
+    "year": 1883,
+    "source": "HAER IL-11",
+    "url": "https://www.loc.gov/item/il0413/",
+    "photos": [
+      "haer_il0413_photo_01.jpg",
+      "haer_il0413_photo_03.jpg",
+      "haer_il0413_photo_05.jpg",
+      "haer_il0413_photo_06.jpg",
+      "haer_il0413_photo_08.jpg",
+      "haer_il0413_photo_10.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Village river bridge of 1883: a 130 ft, eight-panel (16.25 ft) pin-connected Pratt through truss with eyebar chords, 13 ft clear roadway on a wooden plank floor and 20 ft truss height, carried on two coursed-stone piers, plus a 27.5 ft Pratt pony-truss approach span on the south and (originally) a 100 ft run of five 20 ft steel I-beam trestle spans on the north, later replaced by fill. Lattice railing inside the trusses; latticed portal with a plate; 6-TON load-limit and hazard boards at the portals. Leads straight into the edge of a small river village, with bare riverbank trees and a muddy bank.",
+  "traits": {
+    "bridge_type": "through_truss_pratt",
+    "secondary_spans": [
+      "pony_truss",
+      "steel_stringer"
+    ],
+    "spans": 3,
+    "year": 1883,
+    "railing": "lattice",
+    "span_ft": 130,
+    "overall_ft": 257,
+    "pony_span_ft": 27.5,
+    "width_ft": 13,
+    "height_ft": 20,
+    "panels": 8,
+    "abutments": "coursed stone piers and abutments",
+    "deck": "timber plank",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "CEDAR FORD BRIDGE · 1883 · BUILT BY BRANDT IRON & BRIDGE CO.",
+    "sign": "MILL CREEK",
+    "extra_signs": [
+      "LOAD LIMIT 6 TONS"
+    ]
+  }
+}

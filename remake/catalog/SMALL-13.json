@@ -1,0 +1,36 @@
+{
+  "id": "SMALL-13",
+  "settlement": "rural (near Pruett)",
+  "kind": "crossing",
+  "crossing": {"type": "small", "road_class": "gravel", "span_m": 6.0, "over": "Deer Creek"},
+  "example": {
+    "title": "Middle Creek Bridge, Ventura Road over Middle Creek",
+    "place": "Rose Hill vicinity, Mahaska County, IA",
+    "year": 1898,
+    "source": "HAER IA-66",
+    "url": "https://www.loc.gov/item/ia0442/",
+    "photos": ["haer_ia0442_photo_01.jpg", "haer_ia0442_photo_03.jpg", "haer_ia0442_photo_05.jpg", "haer_ia0442_photo_07.jpg", "haer_ia0442_photo_09.jpg", "haer_ia0442_photo_10.jpg"],
+    "drawings": ["haer_ia0442_sheet_01.jpg", "haer_ia0442_sheet_02.jpg", "haer_ia0442_sheet_03.jpg"],
+    "photo_note": "photo_10 is a colour transparency"
+  },
+  "brief": "Four-panel Pratt pony truss of a local maker's patent 'pipe truss' type: round steel-pipe top chords and end posts joined by cast-iron hip blocks and bearing shoes, square wrought-iron eyebar bottom chords and round eye-rod diagonals, pin-connected. 50 ft truss span plus a timber-trestle approach span (93 ft overall), 12 ft 9 in roadway of weathered transverse planks with a plank wheel-guard/rail along each side, on timber pile bents. Deep shade of creek-bank trees on a gravel county road; measured drawings of the pipe connections are included.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt, pipe top chord",
+    "spans": 2,
+    "year": 1898,
+    "railing": "guardrail",
+    "span_ft": 50,
+    "overall_ft": 93,
+    "width_ft": 12.75,
+    "height_ft": 6,
+    "panels": 4,
+    "abutments": "timber pile bents",
+    "deck": "timber plank",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "PATENT PIPE TRUSS · J. HOLLISTER MFG. CO. · 1898",
+    "sign": "DEER CREEK"
+  }
+}

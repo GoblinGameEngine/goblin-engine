@@ -1,0 +1,28 @@
+{
+  "id": "FARM-09-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Menter farmstead, barn, North Fork Road",
+    "place": "Big Springs vicinity, Deuel County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Menter_farmstead_(Big_Springs,_NE)_3.JPG",
+    "photos": ["commons_Menter_farmstead_Big_Springs_NE_3.JPG", "commons_Menter_farmstead_Big_Springs_NE_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Weathered plains stock barn: a tall central gable block with a hay door and small loft window, flanked by long lean-to aisles whose roofs break in pitch below the main eaves (a broken-gable western barn profile). Vertical boards weathered silver-grey with traces of old red paint low on the walls, wood-shingle roofs gone brown with moss and gaps. Beside it stands a hip-roofed grey granary with an open drive shed and a tall elevator head; short-grass pasture, barbed wire and bare cottonwoods around.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 48,
+    "d_ft": 40,
+    "height_ft": 30,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 42, "material": "wood_shingle"},
+    "lean_to": "both_sides",
+    "colors": {"body": "#8e8a84", "trim": "#7a3a30", "accent": "#9b4a3c", "roof": "#6a5646"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Oberholtzer", "sign": "OBERHOLTZER RANCH EST. 1886"}
+}

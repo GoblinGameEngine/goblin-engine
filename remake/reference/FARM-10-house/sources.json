@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-10-house",
+ "files": [
+  {
+   "file": "commons_Furney_Farmhouse_front_view_Morris_County_Kansas.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Furney_Farmhouse_front_view_Morris_County_Kansas.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Furney_Farmhouse_front_view_Morris_County_Kansas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Furney Farmhouse front view Morris County Kansas.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Furney Farmhouse front view Morris County Kansas"
+  },
+  {
+   "file": "commons_Furney_Farm_back_view_Morris_County_Kansas.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Furney_Farm_back_view_Morris_County_Kansas.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Furney_Farm_back_view_Morris_County_Kansas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Furney Farm back view Morris County Kansas.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "The Furney Farm (c. 1925) is as an excellent and rare example of a Tudor Revival-style farmhouse."
+  }
+ ]
+}

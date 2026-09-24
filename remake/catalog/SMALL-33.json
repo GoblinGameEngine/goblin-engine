@@ -1,0 +1,34 @@
+{
+  "id": "SMALL-33",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {"type": "small", "road_class": "county", "span_m": 14.5, "over": "Mill Creek"},
+  "example": {
+    "title": "Harmony Road Bridge, Harmony Road over Little Catoctin Creek",
+    "place": "Myersville vicinity, Frederick County, MD",
+    "year": 1918,
+    "source": "HAER MD-120",
+    "url": "https://www.loc.gov/item/md1462/",
+    "photos": ["haer_md1462_photo_01.jpg", "haer_md1462_photo_04.jpg", "haer_md1462_photo_06.jpg", "haer_md1462_photo_09.jpg", "haer_md1462_photo_11.jpg", "haer_md1462_photo_14.jpg"],
+    "drawings": []
+  },
+  "brief": "Single-span, four-panel, pin-connected steel Pratt half-hip pony truss, 63 ft long with a 12 ft roadway, on reinforced-concrete abutments and wingwalls. Wide solid-web rolled chords and end posts with riveted gussets, slim rod ties and bottom laterals; latticed handrails with latticed intermediate posts run along the inside of the trusses; timber deck boards and curbs on mixed steel and timber stringers. A cast-iron plaque on the handrail lists the year, the county commissioners, clerk, attorney and contractor; yellow-and-black hazard boards mark the ends. Two-lane-wide blacktop county road passing farm buildings at the edge of a small village.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt half-hip",
+    "spans": 1,
+    "year": 1918,
+    "railing": "lattice",
+    "span_ft": 63,
+    "width_ft": 12,
+    "height_ft": 8,
+    "panels": 4,
+    "abutments": "reinforced concrete with wingwalls",
+    "deck": "timber plank",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "1918 · COUNTY COMMISSIONERS: H. ALDRICH, W. T. BOYER, S. KEMPF · CLERK J. L. MOSER · ATTORNEY R. HANLEY · F. E. DORSETT, CONTRACTOR",
+    "sign": "MILL CREEK"
+  }
+}

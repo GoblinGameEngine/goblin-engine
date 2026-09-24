@@ -1,0 +1,28 @@
+{
+  "id": "FARM-12-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Miller homestead, horse barn, 2913 Kansas Highway 4",
+    "place": "La Crosse vicinity, Rush County, KS",
+    "year": 1900,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Miller_homestead_(Rush_Co_KS),_horse_barn_from_SE_1.JPG",
+    "photos": ["commons_Miller_homestead_Rush_Co_KS_horse_barn_from_SE_1.JPG", "commons_Miller_homestead_Rush_Co_KS_horse_barn_from_S_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Front-gabled horse barn about 40 ft wide and 50 ft deep, re-sided in pale grey shingle siding with bright red doors and window trim: a red Dutch door and red board doors at ground level, a red hinged hay door in the gable with a big white initial painted on it, and a red-framed loft window above. The galvanized metal roof, streaked with rust, sweeps down on one side over a long lean-to aisle (saltbox profile), and a low shed-roofed pen addition runs off the other side. Heavy pole-and-plank corral fences, cedars and cottonwoods around it.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 40,
+    "d_ft": 50,
+    "height_ft": 30,
+    "walls": "asbestos_shingle",
+    "roof": {"type": "gable", "pitch_deg": 40, "material": "metal"},
+    "lean_to": "right",
+    "colors": {"body": "#a9aaa8", "trim": "#b3272c", "accent": "#f4f4f0", "roof": "#b9aa94"},
+    "condition": "kept"
+  },
+  "names": {"family": "Brandauer", "sign": "BRANDAUER CATTLE CO. EST. 1878", "loft_letter": "B"}
+}

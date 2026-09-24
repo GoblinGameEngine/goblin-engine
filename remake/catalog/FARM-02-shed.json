@@ -1,0 +1,28 @@
+{
+  "id": "FARM-02-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Deister Farmstead, Pole Barn, Route 442",
+    "place": "Stull vicinity, Douglas County, KS",
+    "year": 1950,
+    "source": "HABS KS-36-F",
+    "url": "https://commons.wikimedia.org/wiki/File:EXTERIOR,_EAST_FRONT_-_Deister_Farmstead,_Pole_Barn,_Route_442,_Stull,_Douglas_County,_KS_HABS_KANS,23-STUL.V,1-F-2.tif",
+    "photos": ["commons_EXTERIOR_EAST_FRONT_-_Deister_Farmstead_Pole_Barn_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-F-2.jpg", "commons_EXTERIOR_NORTH_SIDE_-_Deister_Farmstead_Pole_Barn_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-F-1.jpg", "commons_EXTERIOR_SOUTH_SIDE_-_Deister_Farmstead_Pole_Barn_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-F-3.jpg", "commons_EXTERIOR_WEST_REAR_-_Deister_Farmstead_Pole_Barn_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-F-4.jpg"],
+    "drawings": []
+  },
+  "brief": "Mid-century pole shed clad all over in unpainted galvanized corrugated steel: a front-gable main bay with a tall open vehicle door and a big board sliding door on a track, plus a lower shed-roofed side aisle with its own lift-up board door. Plain, gray and low, standing in mown grass at the edge of the farmyard.",
+  "traits": {
+    "type": "pole_shed",
+    "w_ft": 40,
+    "d_ft": 32,
+    "height_ft": 17,
+    "walls": "metal",
+    "roof": {"type": "gable", "pitch_deg": 25, "material": "metal"},
+    "side_aisle": "left",
+    "colors": {"body": "#a9aca8", "trim": "#a9aca8", "accent": "#c9c7bd", "roof": "#9ea19e"},
+    "condition": "worn"
+  },
+  "names": {"family": "Aufdemberg"}
+}

@@ -1,0 +1,41 @@
+{
+ "structure": "FARM-11-silo",
+ "files": [
+  {
+   "file": "loc_md1786_photos_362011pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/md1786/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/md/md1700/md1786/photos/362011pv.jpg",
+   "title": "Thomas Farm, Silo, 4632 Araby Church Road, Frederick, Frederick County, MD",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_md1786_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/md1786/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/md/md1700/md1786/sheet/00001a.tif",
+   "title": "Thomas Farm, Silo, 4632 Araby Church Road, Frederick, Frederick County, MD",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_md1786_data_md1786data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/md1786/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/md/md1700/md1786/data/md1786data.pdf",
+   "title": "Thomas Farm, Silo, 4632 Araby Church Road, Frederick, Frederick County, MD",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_md1786_data_md1786cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/md1786/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/md/md1700/md1786/data/md1786cap.pdf",
+   "title": "Thomas Farm, Silo, 4632 Araby Church Road, Frederick, Frederick County, MD",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "SMALL-16",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 6.0,
+    "over": "Sauk Creek"
+  },
+  "example": {
+    "title": "Melan Arch Bridge (Reinforced Concrete Bridge), moved from Dry Run Creek to Emma Slater Park",
+    "place": "Rock Rapids, Lyon County, IA",
+    "year": 1893,
+    "source": "HAER IA-15",
+    "url": "https://www.loc.gov/item/ia0072/",
+    "photos": [
+      "haer_ia0072_photo_01.jpg",
+      "haer_ia0072_photo_02.jpg",
+      "haer_ia0072_photo_03.jpg",
+      "haer_ia0072_photo_04.jpg",
+      "haer_ia0072_photo_05.jpg"
+    ],
+    "drawings": [
+      "haer_ia0072_sheet_01.jpg",
+      "haer_ia0072_sheet_02.jpg"
+    ]
+  },
+  "brief": "One of the first reinforced-concrete bridges in the United States (1893): a very flat 30 ft Melan-system arch, rising only 3 ft, 6 in thick at the crown with five embedded 4-inch I-beam ribs, on a 16 ft roadway. Spandrel and wing walls are faced with rock-faced reddish quartzite ashlar; square quartzite end posts carry a two-line gas-pipe hand rail. Later moved into a town park and grassed over. For the Kessler street the model keeps the stone-faced spandrels, pipe rail and stone posts on a paved deck with curbs.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "arch_system": "Melan (embedded I-beams)",
+    "spans": 1,
+    "year": 1893,
+    "railing": "pipe_rail",
+    "span_ft": 30,
+    "width_ft": 16,
+    "height_ft": 3,
+    "arch_form": "very flat segmental",
+    "facing": "rock-faced quartzite ashlar",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "cast plaque: 1893 · E. R. HOLLOWAY, CONTRACTOR · KESSLER",
+    "sign": "SAUK CREEK"
+  }
+}

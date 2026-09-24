@@ -1,0 +1,47 @@
+{
+  "id": "SMALL-34",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "main",
+    "span_m": 6.0,
+    "over": "Sauk Creek"
+  },
+  "example": {
+    "title": "Branch River Bridge, Main Street (NH Route 12) over the Branch River (Otter Brook)",
+    "place": "Keene, Cheshire County, NH",
+    "year": 1935,
+    "source": "HAER NH-21",
+    "url": "https://www.loc.gov/item/nh0236/",
+    "photos": [
+      "loc_nh0236_photos_346419pv.jpg",
+      "loc_nh0236_photos_346421pv.jpg",
+      "loc_nh0236_photos_346422pv.jpg",
+      "loc_nh0236_photos_346424pv.jpg",
+      "loc_nh0236_photos_346425pv.jpg",
+      "loc_nh0236_photos_346427pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Two-span continuous reinforced-concrete T-beam bridge on a city main street, built 1935 in a Public Works road-widening: 122 ft long with two 54.5 ft clear spans, beams of variable depth with a curved outer fascia sweeping down to the central pier, cantilever abutments on timber piles with square-return wingwalls, 14 ft clearance over the river. Overall width 34 ft 4 in with a 24 ft asphalt roadway between curbs and a concrete sidewalk each side; the original concrete guard rail is an open parapet of short rectangular openings between posts, with plain end blocks. Street lights on tall poles, overhead wires and a BRIDGE / weight sign at the ends; bare riverbank trees below.",
+  "traits": {
+    "bridge_type": "concrete_t_beam",
+    "spans": 2,
+    "model_spans": 1,
+    "year": 1935,
+    "railing": "open_parapet",
+    "span_ft": 54.5,
+    "overall_ft": 122,
+    "width_ft": 34.3,
+    "roadway_ft": 24,
+    "height_ft": 14,
+    "sidewalks": true,
+    "abutments": "concrete cantilever on timber piles",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "SAUK CREEK BRIDGE · CITY OF KESSLER · 1935",
+    "sign": "SAUK CREEK"
+  }
+}

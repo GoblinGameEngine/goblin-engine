@@ -1,0 +1,36 @@
+{
+  "id": "FARM-13-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Knud Anderson Farmstead, Anderson House",
+    "place": "Douglas County, KS",
+    "year": 1872,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_House_south_and_east_facades.jpg",
+    "photos": ["commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_House_south_and_east_facades.jpg", "commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_House_south_facade.jpg", "commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_House_west_facade.jpg"],
+    "drawings": []
+  },
+  "brief": "Plain one-and-a-half-storey side-gabled stone farmhouse of the 1870s, built of squared honey-tan and rust-streaked sandstone blocks in rough courses with stone sills and lintels, small low attic windows under the eaves on the long side, and six-over-six windows in the gable end. Brown asphalt roof with a brick end chimney, two iron star anchor plates on the wall. A shabby board-and-tarpaper frame kitchen lean-to at the rear; loose building stones stacked in the yard during repairs, big bare oaks behind.",
+  "traits": {
+    "archetype": "side_gable_cottage",
+    "storeys": 1.5,
+    "main_w_ft": 30,
+    "main_d_ft": 18,
+    "wing": {"side": "rear", "w_ft": 14, "d_ft": 10, "storeys": 1},
+    "roof": {"type": "gable", "pitch_deg": 38, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "stoop", "posts": "square", "rail": "none"},
+    "walls": "stone",
+    "foundation": "cut_stone",
+    "colors": {"body": "#c8a46a", "trim": "#f2f0ea", "accent": "#8a4a2a", "roof": "#6a5a4a"},
+    "windows": {"type": "6over6", "shutters": false},
+    "chimneys": ["left_end"],
+    "garage": "none",
+    "yard": {"fence": "none", "extras": ["woodpile", "garden"]},
+    "condition": "worn",
+    "year_built": 1872
+  },
+  "names": {"family": "Lindgaard", "house_number": "1592", "street": "E 1100 Rd"}
+}

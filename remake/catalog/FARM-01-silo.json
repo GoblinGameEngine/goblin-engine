@@ -1,0 +1,26 @@
+{
+  "id": "FARM-01-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Barnes-Hoskinson Farmstead, silo",
+    "place": "Douglas County, KS",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Barnes-Hoskinson_Farmstead_Douglas_Co_KS_Silo_west_facade.jpg",
+    "photos": ["commons_Barnes-Hoskinson_Farmstead_Douglas_Co_KS_Silo_west_facade.jpg", "commons_Barnes-Hoskinson_Farmstead_Douglas_Co_KS_Silo_northeast_facade.jpg"],
+    "drawings": []
+  },
+  "brief": "Squat red glazed-clay-tile silo about 15 ft across and 32 ft tall, with visible mortar grid and steel hoop rods, open top with no roof, and a galvanized sheet-metal unloading chute running up one side. Stands in a pipe-rail hog/cattle pen with a stock tank at its foot, vines climbing it.",
+  "traits": {
+    "type": "tile",
+    "diameter_ft": 15,
+    "height_ft": 32,
+    "roof": "none",
+    "chute": true,
+    "colors": {"body": "#b5503a", "trim": "#9aa0a3", "accent": "#9aa0a3", "roof": "#b5503a"},
+    "condition": "worn"
+  },
+  "names": {"family": "Voeltz"}
+}

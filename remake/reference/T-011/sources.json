@@ -1,0 +1,38 @@
+{
+ "structure": "T-011",
+ "files": [
+  {
+   "file": "commons_2009-0620-Shawano-PO.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:2009-0620-Shawano-PO.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/2009-0620-Shawano-PO.jpg/1920px-2009-0620-Shawano-PO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:2009-0620-Shawano-PO.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Bobak Ha'Eri",
+   "caption": "The Shawano Post Office is on the NRHP,  Shawano, Wisconsin, USA."
+  },
+  {
+   "file": "commons_Shawano_Post_Office_54166_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Shawano_Post_Office_54166_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Shawano_Post_Office_54166_-_panoramio.jpg/1920px-Shawano_Post_Office_54166_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Shawano Post Office 54166 - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Corey Coyle",
+   "caption": "Shawano Post Office 54166"
+  },
+  {
+   "file": "commons_ShawanoWisconsinPostOfficeWIS22.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ShawanoWisconsinPostOfficeWIS22.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/ShawanoWisconsinPostOfficeWIS22.jpg/1920px-ShawanoWisconsinPostOfficeWIS22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ShawanoWisconsinPostOfficeWIS22.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Royalbroil",
+   "caption": "The post office for w:Shawano, Wisconsin along w:Wisconsin Highway 22, listed on the National Register of Historic Places."
+  }
+ ]
+}

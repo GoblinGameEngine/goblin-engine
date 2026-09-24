@@ -1,0 +1,28 @@
+{
+  "id": "FARM-07-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Cather farm, barn, Kansas Highway 14",
+    "place": "Beloit vicinity, Mitchell County, KS",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Cather_farm_(Mitchell_Co_KS)_barn_from_NNW_1.JPG",
+    "photos": ["commons_Cather_farm_Mitchell_Co_KS_barn_from_NNW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Plain front-gabled red barn in horizontal drop siding with crisp white corner boards and verge trim, and a bright red ribbed-metal roof whose rear slope sweeps down lower over a lean-to aisle (saltbox profile). A big white-outlined ranch brand is painted high on the gable; three small white-framed stall windows low on the wall. A row of pale post-rock limestone fence posts stands in front along the field edge.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 36,
+    "d_ft": 44,
+    "height_ft": 26,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 38, "material": "metal"},
+    "lean_to": "rear",
+    "colors": {"body": "#a8302c", "trim": "#f3f3ef", "accent": "#f3f3ef", "roof": "#b8322e"},
+    "condition": "kept"
+  },
+  "names": {"family": "Pettibone", "sign": "PETTIBONE FARM EST. 1905", "brand": "P-bar"}
+}

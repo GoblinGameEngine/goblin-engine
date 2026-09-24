@@ -1,0 +1,78 @@
+{
+ "structure": "SMALL-04",
+ "files": [
+  {
+   "file": "loc_il0702_data_il0702data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0702/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0700/il0702/data/il0702data.pdf",
+   "title": "il0702",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0702_data_il0702cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0702/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0700/il0702/data/il0702cap.pdf",
+   "title": "il0702",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_il0702_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DISTANT_VIEW_TO_EAST_-_Tiskilwa_Bridge,_Toconship_Road_236_over_Bureau_Creek,_Tiskilwa,_Bureau_County,_IL_HAER_ILL,_6-TSK._V,_1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/DISTANT_VIEW_TO_EAST_-_Tiskilwa_Bridge%2C_Toconship_Road_236_over_Bureau_Creek%2C_Tiskilwa%2C_Bureau_County%2C_IL_HAER_ILL%2C_6-TSK._V%2C_1-1.tif/lossy-page1-1920px-DISTANT_VIEW_TO_EAST_-_Tiskilwa_Bridge%2C_Toconship_Road_236_over_Bureau_Creek%2C_Tiskilwa%2C_Bureau_County%2C_IL_HAER_ILL%2C_6-TSK._V%2C_1-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DISTANT VIEW TO EAST - Tiskilwa Bridge, Toconship Road 236 over Bureau Creek, Tiskilwa, Bureau County, IL HAER ILL, 6-TSK. V, 1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nWegman-French, Lysa, transmitter"
+  },
+  {
+   "file": "haer_il0702_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_TO_WEST_-_Tiskilwa_Bridge,_Toconship_Road_236_over_Bureau_Creek,_Tiskilwa,_Bureau_County,_IL_HAER_ILL,_6-TSK._V,_1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/VIEW_TO_WEST_-_Tiskilwa_Bridge%2C_Toconship_Road_236_over_Bureau_Creek%2C_Tiskilwa%2C_Bureau_County%2C_IL_HAER_ILL%2C_6-TSK._V%2C_1-3.tif/lossy-page1-1920px-VIEW_TO_WEST_-_Tiskilwa_Bridge%2C_Toconship_Road_236_over_Bureau_Creek%2C_Tiskilwa%2C_Bureau_County%2C_IL_HAER_ILL%2C_6-TSK._V%2C_1-3.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW TO WEST - Tiskilwa Bridge, Toconship Road 236 over Bureau Creek, Tiskilwa, Bureau County, IL HAER ILL, 6-TSK. V, 1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nWegman-French, Lysa, transmitter"
+  },
+  {
+   "file": "haer_il0702_photo_08.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:INTERIOR_VIEW_TO_SOUTH_OF_THROUGH_TRUSS_-_Tiskilwa_Bridge,_Toconship_Road_236_over_Bureau_Creek,_Tiskilwa,_Bureau_County,_IL_HAER_ILL,_6-TSK._V,_1-8.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/INTERIOR_VIEW_TO_SOUTH_OF_THROUGH_TRUSS_-_Tiskilwa_Bridge%2C_Toconship_Road_236_over_Bureau_Creek%2C_Tiskilwa%2C_Bureau_County%2C_IL_HAER_ILL%2C_6-TSK._V%2C_1-8.tif/lossy-page1-1920px-INTERIOR_VIEW_TO_SOUTH_OF_THROUGH_TRUSS_-_Tiskilwa_Bridge%2C_Toconship_Road_236_over_Bureau_Creek%2C_Tiskilwa%2C_Bureau_County%2C_IL_HAER_ILL%2C_6-TSK._V%2C_1-8.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:INTERIOR VIEW TO SOUTH OF THROUGH TRUSS - Tiskilwa Bridge, Toconship Road 236 over Bureau Creek, Tiskilwa, Bureau County, IL HAER ILL, 6-TSK. V, 1-8.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nWegman-French, Lysa, transmitter"
+  },
+  {
+   "file": "haer_il0702_photo_10.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_TO_NORTHWEST_AND_UNDERNEATH_OF_EAST_PONY_TRUSS,_NORTHERN_PORTION_OF_THROUGH_TRUSS,_AND_BENT_-_Tiskilwa_Bridge,_Toconship_Road_236_over_Bureau_Creek,_Tiskilwa,_Bureau_HAER_ILL,_6-TSK._V,_1-10.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/VIEW_TO_NORTHWEST_AND_UNDERNEATH_OF_EAST_PONY_TRUSS%2C_NORTHERN_PORTION_OF_THROUGH_TRUSS%2C_AND_BENT_-_Tiskilwa_Bridge%2C_Toconship_Road_236_over_Bureau_Creek%2C_Tiskilwa%2C_Bureau_HAER_ILL%2C_6-TSK._V%2C_1-10.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW TO NORTHWEST AND UNDERNEATH OF EAST PONY TRUSS, NORTHERN PORTION OF THROUGH TRUSS, AND BENT - Tiskilwa Bridge, Toconship Road 236 over Bureau Creek, Tiskilwa, Bureau HAER ILL, 6-TSK. V, 1-10.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nWegman-French, Lysa, transmitter"
+  },
+  {
+   "file": "haer_il0702_photo_12.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:SOUTH_ABUTMENT_AND_PORTION_OF_FLOOR,_THROUGH_TRUSS_-_Tiskilwa_Bridge,_Toconship_Road_236_over_Bureau_Creek,_Tiskilwa,_Bureau_County,_IL_HAER_ILL,_6-TSK._V,_1-12.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/SOUTH_ABUTMENT_AND_PORTION_OF_FLOOR%2C_THROUGH_TRUSS_-_Tiskilwa_Bridge%2C_Toconship_Road_236_over_Bureau_Creek%2C_Tiskilwa%2C_Bureau_County%2C_IL_HAER_ILL%2C_6-TSK._V%2C_1-12.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:SOUTH ABUTMENT AND PORTION OF FLOOR, THROUGH TRUSS - Tiskilwa Bridge, Toconship Road 236 over Bureau Creek, Tiskilwa, Bureau County, IL HAER ILL, 6-TSK. V, 1-12.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nWegman-French, Lysa, transmitter"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-11-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Pavelka farmstead, shed",
+    "place": "Bladen vicinity, Webster County, NE",
+    "year": 1930,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pavelka_farmstead_shed_from_SE.jpg",
+    "photos": ["commons_Pavelka_farmstead_shed_from_SE.jpg", "commons_Pavelka_farmstead_barn_and_sheds_from_E.jpg"],
+    "drawings": []
+  },
+  "brief": "Plain single-slope implement shed about 16 ft by 28 ft, framed in wood and skinned entirely in vertical corrugated galvanized steel weathered to a dull blue-grey with rust bloom, the roof also corrugated steel with exposed rafter tails along the high eave. A narrow plank door on the gable end and one small empty square window opening on the long side. Stands in tall weeds and thistles beside a cedar windbreak, wheat and milo fields beyond.",
+  "traits": {
+    "type": "pole_shed",
+    "w_ft": 28,
+    "d_ft": 16,
+    "height_ft": 12,
+    "walls": "metal",
+    "roof": {"type": "shed", "pitch_deg": 10, "material": "metal"},
+    "colors": {"body": "#7f8e96", "trim": "#8a7a64", "accent": "#8a5a3a", "roof": "#8d9699"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Wedel"}
+}

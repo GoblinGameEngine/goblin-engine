@@ -1,0 +1,32 @@
+{
+ "structure": "LG-009",
+ "files": [
+  {
+   "file": "loc_mi0310_color_572200cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0310/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0300/mi0310/color/572200cv.jpg",
+   "title": "Charles Olsen Farm, House, Port Oneida, Glen Arbor, Leelanau County, MI",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0310_photos_035180pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0310/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0300/mi0310/photos/035180pv.jpg",
+   "title": "Charles Olsen Farm, House, Port Oneida, Glen Arbor, Leelanau County, MI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0310_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0310/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mi/mi0300/mi0310/sheet/00001a.tif",
+   "title": "Charles Olsen Farm, House, Port Oneida, Glen Arbor, Leelanau County, MI",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

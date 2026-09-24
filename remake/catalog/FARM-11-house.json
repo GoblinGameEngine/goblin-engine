@@ -1,0 +1,36 @@
+{
+  "id": "FARM-11-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "George Spangerberger Farmstead, Residence (HABS KS-77-A)",
+    "place": "South Hutchinson, Reno County, KS",
+    "year": 1878,
+    "source": "HABS KS-77-A",
+    "url": "https://www.loc.gov/item/ks0181/",
+    "photos": ["loc_ks0181_photos_209799pv.jpg", "loc_ks0181_photos_209800pv.jpg", "loc_ks0181_photos_209801pv.jpg", "loc_ks0181_photos_209802pv.jpg", "loc_ks0181_photos_209803pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Small one-storey Folk Victorian farm cottage of 1878: a hipped roof with a steep centered front cross gable carrying a little spindled gable truss and a louvered attic vent, white weatherboard walls with plain corner boards and flat-headed tall one-over-one windows. The centered front door has only a concrete stoop and a tiny striped metal awning; a TV antenna mast stands on the roof. Low round shrubs flank the steps, large old shade trees close around it, lawn in front.",
+  "traits": {
+    "archetype": "workers_cottage",
+    "storeys": 1,
+    "main_w_ft": 28,
+    "main_d_ft": 26,
+    "wing": {"side": "rear", "w_ft": 14, "d_ft": 12, "storeys": 1},
+    "roof": {"type": "hip", "pitch_deg": 32, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "stoop", "posts": "iron", "rail": "none"},
+    "walls": "clapboard",
+    "foundation": "brick",
+    "colors": {"body": "#efeee8", "trim": "#f8f8f4", "accent": "#3c6a48", "roof": "#4f4d4a"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["rear"],
+    "garage": "detached_1",
+    "yard": {"fence": "none", "extras": ["clothesline", "garden"]},
+    "condition": "worn",
+    "year_built": 1878
+  },
+  "names": {"family": "Wedel", "house_number": "718", "street": "Illinois Rd"}
+}

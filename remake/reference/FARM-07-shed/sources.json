@@ -1,0 +1,38 @@
+{
+ "structure": "FARM-07-shed",
+ "files": [
+  {
+   "file": "commons_Abram_Click_farmstead_granary_and_machinery_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Abram_Click_farmstead_granary_and_machinery_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Abram_Click_farmstead_granary_and_machinery_1.JPG/1920px-Abram_Click_farmstead_granary_and_machinery_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Abram Click farmstead granary and machinery 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Granary at Abraham Click farmstead, at 2030 Independence Avenue on the northern edge of Beloit, Kansas.  Old farm machinery in left foreground."
+  },
+  {
+   "file": "commons_Abram_Click_farmstead_granary_from_W_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Abram_Click_farmstead_granary_from_W_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Abram_Click_farmstead_granary_from_W_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Abram Click farmstead granary from W 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Granary at Abraham Click farmstead, at 2030 Independence Avenue on the northern edge of Beloit, Kansas; seen from the west."
+  },
+  {
+   "file": "commons_Abram_Click_farmstead_granary_and_barn_from_W_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Abram_Click_farmstead_granary_and_barn_from_W_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Abram_Click_farmstead_granary_and_barn_from_W_1.JPG/1920px-Abram_Click_farmstead_granary_and_barn_from_W_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Abram Click farmstead granary and barn from W 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Granary (red frame building at left) and stone barn remains (right) on Abraham Click farmstead, at 2030 Independence Avenue on the northern edge of Beloit, Kansas; seen from the west."
+  }
+ ]
+}

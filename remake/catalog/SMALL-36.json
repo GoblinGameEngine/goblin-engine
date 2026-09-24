@@ -1,0 +1,34 @@
+{
+  "id": "SMALL-36",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {"type": "small", "road_class": "hwy", "span_m": 8.0, "over": "Mill Creek"},
+  "example": {
+    "title": "Dubois County Bridge No. 3002, State Road 64 over Hunley Creek",
+    "place": "Huntingburg vicinity, Dubois County, IN",
+    "year": 1940,
+    "source": "HAER IN-98",
+    "url": "https://www.loc.gov/item/in0428/",
+    "photos": ["loc_in0428_photos_318708pv.jpg", "loc_in0428_photos_318710pv.jpg", "loc_in0428_photos_318713pv.jpg", "loc_in0428_photos_318715pv.jpg", "loc_in0428_photos_318718pv.jpg", "loc_in0428_photos_318720pv.jpg"],
+    "drawings": []
+  },
+  "brief": "State-highway continuous reinforced-concrete T-beam bridge, 1939-40: three skewed spans of 40, 50 and 40 ft with five variable-depth T-beams that haunch down over the piers, giving elliptical soffit curves; each pier is a square lintel on three tapered square columns. A projecting band marks the deck edge, and the 28 ft roadway is lined with the state's standard solid concrete rail of long recessed panels between low pedestals, barely higher than the coping. Crosses a small wooded creek in bottomland scrub on a two-lane state highway, a railway line running parallel close by. For the 8 m crossing use one short span of this design with the same parapet and end pedestals.",
+  "traits": {
+    "bridge_type": "concrete_t_beam",
+    "spans": 3,
+    "model_spans": 1,
+    "year": 1940,
+    "railing": "open_parapet",
+    "railing_detail": "solid concrete parapet with recessed panels and low end pedestals",
+    "span_ft": 40,
+    "overall_ft": 130,
+    "width_ft": 28,
+    "height_ft": 10,
+    "piers": "lintel on three tapered square columns",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "STATE HIGHWAY COMMISSION · 1940",
+    "sign": "MILL CREEK"
+  }
+}

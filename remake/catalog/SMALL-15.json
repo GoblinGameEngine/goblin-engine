@@ -1,0 +1,47 @@
+{
+  "id": "SMALL-15",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 7.0,
+    "over": "Sauk Creek"
+  },
+  "example": {
+    "title": "Boston Street Bridge (Lakewood Avenue Drain Headwall and Bridge), Boston Street over the Harris Creek Sewer outlet",
+    "place": "Canton, Baltimore (Independent City), MD",
+    "year": 1902,
+    "source": "HAER MD-110",
+    "url": "https://www.loc.gov/item/md1402/",
+    "photos": [
+      "loc_md1402_photos_320073pv.jpg",
+      "loc_md1402_photos_320076pv.jpg",
+      "loc_md1402_photos_320079pv.jpg",
+      "loc_md1402_photos_320082pv.jpg",
+      "loc_md1402_photos_320085pv.jpg",
+      "loc_md1402_photos_320088pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "City-built masonry arch of 1901-02: a 26.5 ft clear-span segmental arch about 70 ft long through the fill, with a barrel of several concentric brick rings, a ring of articulated granite voussoirs with a keystone chiselled with the date, and rock-faced granite ashlar headwalls and abutments on timber grillage and piles. It carries a wide industrial street (two 14 ft sidewalks, a 42 ft roadway and once a railway siding); the low stone parapet originally had an iron railing, later raised with a plain concrete parapet. Brick mill and warehouse buildings and a smokestack line the waterfront around it; one 1901 construction photo shows the brick rings on timber centering.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1902,
+    "railing": "open_parapet",
+    "railing_detail": "low granite parapet raised with plain concrete (originally iron railing)",
+    "span_ft": 26.5,
+    "width_ft": 70,
+    "roadway_ft": 42,
+    "height_ft": 9,
+    "arch_form": "segmental",
+    "masonry": "brick barrel, granite voussoirs and rock-faced ashlar facing",
+    "sidewalks": true,
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "keystone: 1902",
+    "sign": "SAUK CREEK"
+  }
+}

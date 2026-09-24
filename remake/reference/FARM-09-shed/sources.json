@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-09-shed",
+ "files": [
+  {
+   "file": "commons_Herboldsheimer_ranch_09.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Herboldsheimer_ranch_09.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Herboldsheimer_ranch_09.jpg/1920px-Herboldsheimer_ranch_09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Herboldsheimer ranch 09.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Stone shed at Herboldsheimer Ranch, located in rural Cheyenne County, Nebraska northeast of Potter, Nebraska, at the intersection of county roads 40 and 87."
+  },
+  {
+   "file": "commons_Herboldsheimer_ranch_08.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Herboldsheimer_ranch_08.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Herboldsheimer_ranch_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Herboldsheimer ranch 08.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Stone shed at Herboldsheimer Ranch, located in rural Cheyenne County, Nebraska northeast of Potter, Nebraska, at the intersection of county roads 40 and 87."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-10-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Nunes Dairy, Clay Tile Silo (HABS CA-2713-B)",
+    "place": "Elk Grove, Sacramento County, CA",
+    "year": 1916,
+    "source": "HABS CA-2713-B",
+    "url": "https://www.loc.gov/item/ca3042/",
+    "photos": ["loc_ca3042_photos_206615pv.jpg", "loc_ca3042_photos_206616pv.jpg", "loc_ca3042_photos_206617pv.jpg", "loc_ca3042_photos_206618pv.jpg", "loc_ca3042_photos_206619pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Hollow clay tile silo of 1916, about 16 ft across and 40 ft high: glazed buff-to-brown tile blocks laid in running bond with mottled color, no external hoops, a plain flat-topped rim with a thin coping band and no roof. Tall narrow vertical strip of door openings up one side. In the example it stands at the edge of a dirt livestock yard with board fences, low white-walled sheds and a big gable-roofed hay barn beyond.",
+  "traits": {
+    "type": "tile",
+    "diameter_ft": 16,
+    "height_ft": 40,
+    "roof": "none",
+    "chute": false,
+    "hoops": false,
+    "colors": {"body": "#a8764e", "trim": "#7a5236", "accent": "#c9a27a", "roof": "#a8764e"},
+    "condition": "worn"
+  },
+  "names": {"family": "Castellane"}
+}

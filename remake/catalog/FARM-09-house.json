@@ -1,0 +1,36 @@
+{
+  "id": "FARM-09-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Herboldsheimer Ranch, house",
+    "place": "Potter vicinity, Cheyenne County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Herboldsheimer_ranch_05.jpg",
+    "photos": ["commons_Herboldsheimer_ranch_05.jpg", "commons_Herboldsheimer_ranch_12.jpg"],
+    "drawings": []
+  },
+  "brief": "Squat one-and-a-half-storey ranch house of rock-faced stone blocks whitewashed bright white, under a big steep hipped roof of weathered brown wood-look shingles with a front gable and hipped side gables breaking through it; small white-trimmed six-over-six windows, a plain door with no porch, only a low concrete step. A lower hip-roofed rear addition, a corrugated steel shed right against the left side, a lone pine and scrubby shrubs in a dry short-grass yard.",
+  "traits": {
+    "archetype": "gable_front",
+    "storeys": 1.5,
+    "main_w_ft": 32,
+    "main_d_ft": 28,
+    "wing": {"side": "rear", "w_ft": 16, "d_ft": 12, "storeys": 1},
+    "roof": {"type": "cross_gable", "pitch_deg": 40, "material": "wood_shingle"},
+    "dormers": [],
+    "porch": {"type": "stoop", "posts": "square", "rail": "none"},
+    "walls": "stone",
+    "foundation": "cut_stone",
+    "colors": {"body": "#f1f0ec", "trim": "#f1f0ec", "accent": "#5a5a58", "roof": "#8a7b68"},
+    "windows": {"type": "6over6", "shutters": false},
+    "chimneys": [],
+    "garage": "none",
+    "yard": {"fence": "none", "extras": ["shed"]},
+    "condition": "worn",
+    "year_built": 1915
+  },
+  "names": {"family": "Oberholtzer", "house_number": "4471", "street": "Road 93"}
+}

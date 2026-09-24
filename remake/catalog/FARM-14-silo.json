@@ -1,0 +1,27 @@
+{
+  "id": "FARM-14-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "F.L. Hawkins Tenant Farmstead, Silo (HABS TX-3384-F)",
+    "place": "Waxahachie, Ellis County, TX",
+    "year": 1925,
+    "source": "HABS TX-3384-F",
+    "url": "https://www.loc.gov/item/tx1243/",
+    "photos": ["loc_tx1243_photos_398302pv.jpg", "loc_tx1243_photos_398303pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Plain 1920s concrete stave silo about 14 ft across and 45 ft high, its light-grey staves laid in a neat brick-like grid with closely spaced steel hoop bands and small hoop lugs, open at the top with no roof or chute left. A narrow unpainted plank lean-to shed stands at its base, and an overgrown fence row of volunteer trees and a weathered frame barn crowd in behind; the mown hay meadow comes right up to it.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 14,
+    "height_ft": 45,
+    "roof": "none",
+    "chute": false,
+    "hoops": true,
+    "colors": {"body": "#c4c0b6", "trim": "#5a5650", "accent": "#7c7468", "roof": "#c4c0b6"},
+    "condition": "worn"
+  },
+  "names": {"family": "Kruckenberg"}
+}

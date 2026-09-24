@@ -1,0 +1,23 @@
+{
+ "structure": "T-043",
+ "files": [
+  {
+   "file": "loc_mn0349_photos_091988pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0349/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mn/mn0300/mn0349/photos/091988pv.jpg",
+   "title": "Morgan Park Historic District, Eighty-seventh Avenue, Duluth, St. Louis County, MN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mn0349_photos_091989pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0349/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mn/mn0300/mn0349/photos/091989pv.jpg",
+   "title": "Morgan Park Historic District, Eighty-seventh Avenue, Duluth, St. Louis County, MN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

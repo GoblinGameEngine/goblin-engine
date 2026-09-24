@@ -1,0 +1,28 @@
+{
+  "id": "FARM-09-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Herboldsheimer Ranch, stone shed",
+    "place": "Potter vicinity, Cheyenne County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Herboldsheimer_ranch_09.jpg",
+    "photos": ["commons_Herboldsheimer_ranch_09.jpg", "commons_Herboldsheimer_ranch_08.jpg"],
+    "drawings": []
+  },
+  "brief": "Long low one-storey machine shed of rough-coursed tan limestone about 60 ft by 22 ft under a shallow gable roof of dark weathered shingles. The left third is a vehicle bay with a wide white sliding plank door (one leaf open onto a dark interior); a section of the wall is patched with stacked squared timbers, then a white plank man door and a boarded window in the stone. Two corrugated steel grain bins with conical roofs rise just behind it; bare dirt yard and dry grass. (Stone walls; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 60,
+    "d_ft": 22,
+    "height_ft": 14,
+    "walls": "stone",
+    "roof": {"type": "gable", "pitch_deg": 22, "material": "wood_shingle"},
+    "doors": "sliding",
+    "colors": {"body": "#c9b894", "trim": "#eeeeea", "accent": "#6a6258", "roof": "#4e4a46"},
+    "condition": "worn"
+  },
+  "names": {"family": "Oberholtzer"}
+}

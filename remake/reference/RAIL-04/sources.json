@@ -1,0 +1,89 @@
+{
+ "structure": "RAIL-04",
+ "files": [
+  {
+   "file": "loc_pa3746_data_pa3746data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3746/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa3700/pa3746/data/pa3746data.pdf",
+   "title": "pa3746",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_pa3746_data_pa3746cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/pa3746/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/pa/pa3700/pa3746/data/pa3746cap.pdf",
+   "title": "pa3746",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_pa3746_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:3-4_VIEW,_LOOKING_SW._-_Philadelphia_and_Reading_Railroad,_Mill_Creek_Bridge,_Spanning_Mill_Creek,_east_of_Schuylkill_Expressway_(I-76),_Gladwyne,_Montgomery_County,_PA_HAER_PA,46-GLAWY.V,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/3-4_VIEW%2C_LOOKING_SW._-_Philadelphia_and_Reading_Railroad%2C_Mill_Creek_Bridge%2C_Spanning_Mill_Creek%2C_east_of_Schuylkill_Expressway_%28I-76%29%2C_Gladwyne%2C_Montgomery_County%2C_PA_HAER_PA%2C46-GLAWY.V%2C1-1.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:3-4 VIEW, LOOKING SW. - Philadelphia and Reading Railroad, Mill Creek Bridge, Spanning Mill Creek, east of Schuylkill Expressway (I-76), Gladwyne, Montgomery County, PA HAER PA,46-GLAWY.V,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nConsolidated Rail Corporation (Conrail)\nConsolidated Rail Corporation (Conrail), sponsor",
+   "caption": "\nNicolls, Gustavus A; Steele, J Dutton; Philadelphia and Reading Railroad; Consolidated Rail Corporation (Conrail); Norfolk Southern Railroad; DeLony, Eric N, project manager; Pennsylvania Historical and Museum Commission, sponsor; Consolidated Rail Corporation (Conrail), sponsor; Spivey, Justin M, historian; Elliott, Joseph E, B, photographer"
+  },
+  {
+   "file": "haer_pa3746_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:3-4_VIEW_OF_SOUTHERNMOST_ARCH,_LOOKING_NW._-_Philadelphia_and_Reading_Railroad,_Mill_Creek_Bridge,_Spanning_Mill_Creek,_east_of_Schuylkill_Expressway_(I-76),_Gladwyne,_HAER_PA,46-GLAWY.V,1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/3-4_VIEW_OF_SOUTHERNMOST_ARCH%2C_LOOKING_NW._-_Philadelphia_and_Reading_Railroad%2C_Mill_Creek_Bridge%2C_Spanning_Mill_Creek%2C_east_of_Schuylkill_Expressway_%28I-76%29%2C_Gladwyne%2C_HAER_PA%2C46-GLAWY.V%2C1-3.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:3-4 VIEW OF SOUTHERNMOST ARCH, LOOKING NW. - Philadelphia and Reading Railroad, Mill Creek Bridge, Spanning Mill Creek, east of Schuylkill Expressway (I-76), Gladwyne, HAER PA,46-GLAWY.V,1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nConsolidated Rail Corporation (Conrail)\nConsolidated Rail Corporation (Conrail), sponsor",
+   "caption": "\nNicolls, Gustavus A; Steele, J Dutton; Philadelphia and Reading Railroad; Consolidated Rail Corporation (Conrail); Norfolk Southern Railroad; DeLony, Eric N, project manager; Pennsylvania Historical and Museum Commission, sponsor; Consolidated Rail Corporation (Conrail), sponsor; Spivey, Justin M, historian; Elliott, Joseph E, B, photographer"
+  },
+  {
+   "file": "haer_pa3746_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:UNDERSIDE_OF_SOUTH_ARCH,_LOOKING_EAST._-_Philadelphia_and_Reading_Railroad,_Mill_Creek_Bridge,_Spanning_Mill_Creek,_east_of_Schuylkill_Expressway_(I-76),_Gladwyne,_Montgomery_HAER_PA,46-GLAWY.V,1-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/UNDERSIDE_OF_SOUTH_ARCH%2C_LOOKING_EAST._-_Philadelphia_and_Reading_Railroad%2C_Mill_Creek_Bridge%2C_Spanning_Mill_Creek%2C_east_of_Schuylkill_Expressway_%28I-76%29%2C_Gladwyne%2C_Montgomery_HAER_PA%2C46-GLAWY.V%2C1-4.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:UNDERSIDE OF SOUTH ARCH, LOOKING EAST. - Philadelphia and Reading Railroad, Mill Creek Bridge, Spanning Mill Creek, east of Schuylkill Expressway (I-76), Gladwyne, Montgomery HAER PA,46-GLAWY.V,1-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nNicolls, Gustavus A; Steele, J Dutton; Philadelphia and Reading Railroad; Consolidated Rail Corporation (Conrail); Norfolk Southern Railroad; DeLony, Eric N, project manager; Pennsylvania Historical and Museum Commission, sponsor; Consolidated Rail Corporation (Conrail), sponsor; Spivey, Justin M, historian; Elliott, Joseph E, B, photographer"
+  },
+  {
+   "file": "haer_pa3746_photo_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:NORTHERNMOST_ARCH,_LOOKING_SE._-_Philadelphia_and_Reading_Railroad,_Mill_Creek_Bridge,_Spanning_Mill_Creek,_east_of_Schuylkill_Expressway_(I-76),_Gladwyne,_Montgomery_County,_PA_HAER_PA,46-GLAWY.V,1-6.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/NORTHERNMOST_ARCH%2C_LOOKING_SE._-_Philadelphia_and_Reading_Railroad%2C_Mill_Creek_Bridge%2C_Spanning_Mill_Creek%2C_east_of_Schuylkill_Expressway_%28I-76%29%2C_Gladwyne%2C_Montgomery_County%2C_PA_HAER_PA%2C46-GLAWY.V%2C1-6.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:NORTHERNMOST ARCH, LOOKING SE. - Philadelphia and Reading Railroad, Mill Creek Bridge, Spanning Mill Creek, east of Schuylkill Expressway (I-76), Gladwyne, Montgomery County, PA HAER PA,46-GLAWY.V,1-6.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nNicolls, Gustavus A; Steele, J Dutton; Philadelphia and Reading Railroad; Consolidated Rail Corporation (Conrail); Norfolk Southern Railroad; DeLony, Eric N, project manager; Pennsylvania Historical and Museum Commission, sponsor; Consolidated Rail Corporation (Conrail), sponsor; Spivey, Justin M, historian; Elliott, Joseph E, B, photographer"
+  },
+  {
+   "file": "haer_pa3746_photo_07.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:3-4_VIEW,_LOOKING_SE._-_Philadelphia_and_Reading_Railroad,_Mill_Creek_Bridge,_Spanning_Mill_Creek,_east_of_Schuylkill_Expressway_(I-76),_Gladwyne,_Montgomery_County,_PA_HAER_PA,46-GLAWY.V,1-7.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/3-4_VIEW%2C_LOOKING_SE._-_Philadelphia_and_Reading_Railroad%2C_Mill_Creek_Bridge%2C_Spanning_Mill_Creek%2C_east_of_Schuylkill_Expressway_%28I-76%29%2C_Gladwyne%2C_Montgomery_County%2C_PA_HAER_PA%2C46-GLAWY.V%2C1-7.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:3-4 VIEW, LOOKING SE. - Philadelphia and Reading Railroad, Mill Creek Bridge, Spanning Mill Creek, east of Schuylkill Expressway (I-76), Gladwyne, Montgomery County, PA HAER PA,46-GLAWY.V,1-7.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nConsolidated Rail Corporation (Conrail)\nConsolidated Rail Corporation (Conrail), sponsor",
+   "caption": "\nNicolls, Gustavus A; Steele, J Dutton; Philadelphia and Reading Railroad; Consolidated Rail Corporation (Conrail); Norfolk Southern Railroad; DeLony, Eric N, project manager; Pennsylvania Historical and Museum Commission, sponsor; Consolidated Rail Corporation (Conrail), sponsor; Spivey, Justin M, historian; Elliott, Joseph E, B, photographer"
+  },
+  {
+   "file": "haer_pa3746_photo_09.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL_OF_STONEWORK_AT_SW_CORNER._-_Philadelphia_and_Reading_Railroad,_Mill_Creek_Bridge,_Spanning_Mill_Creek,_east_of_Schuylkill_Expressway_(I-76),_Gladwyne,_Montgomery_County,_HAER_PA,46-GLAWY.V,1-9.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/DETAIL_OF_STONEWORK_AT_SW_CORNER._-_Philadelphia_and_Reading_Railroad%2C_Mill_Creek_Bridge%2C_Spanning_Mill_Creek%2C_east_of_Schuylkill_Expressway_%28I-76%29%2C_Gladwyne%2C_Montgomery_County%2C_HAER_PA%2C46-GLAWY.V%2C1-9.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL OF STONEWORK AT SW CORNER. - Philadelphia and Reading Railroad, Mill Creek Bridge, Spanning Mill Creek, east of Schuylkill Expressway (I-76), Gladwyne, Montgomery County, HAER PA,46-GLAWY.V,1-9.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nConsolidated Rail Corporation (Conrail)\nConsolidated Rail Corporation (Conrail), sponsor",
+   "caption": "\nNicolls, Gustavus A; Steele, J Dutton; Philadelphia and Reading Railroad; Consolidated Rail Corporation (Conrail); Norfolk Southern Railroad; DeLony, Eric N, project manager; Pennsylvania Historical and Museum Commission, sponsor; Consolidated Rail Corporation (Conrail), sponsor; Spivey, Justin M, historian; Elliott, Joseph E, B, photographer"
+  }
+ ]
+}

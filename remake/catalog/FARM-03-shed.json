@@ -1,0 +1,28 @@
+{
+  "id": "FARM-03-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Kandt-Domann Farmstead, Machine Shed, State Route 3",
+    "place": "Hope vicinity, Dickinson County, KS",
+    "year": 1910,
+    "source": "HABS KS-42-G",
+    "url": "https://commons.wikimedia.org/wiki/File:WEST_FRONT_-_Kandt-Domann_Farmstead,_Machine_Shed,_State_Route_3,_Hope,_Dickinson_County,_KS_HABS_KANS,21-HOPE.V,1-G-2.tif",
+    "photos": ["commons_WEST_FRONT_-_Kandt-Domann_Farmstead_Machine_Shed_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-G-2.jpg", "commons_NORTH_SIDE_-_Kandt-Domann_Farmstead_Machine_Shed_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-G-3.jpg", "commons_DETAIL_WEST_FRONT_DOOR_-_Kandt-Domann_Farmstead_Machine_Shed_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-G-4.jpg", "commons_DETAIL_OF_SOUTHWEST_CORNER_-_Kandt-Domann_Farmstead_Machine_Shed_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-G-5.jpg"],
+    "drawings": []
+  },
+  "brief": "Low one-storey machine shed with a shallow gable roof of rusty corrugated steel running parallel to the yard. The left third is an enclosed room of rough-cut limestone blocks with a plank door; the middle is two open drive-in bays on rough log posts holding a hay wagon; the right end is a corrugated-steel-sheathed frame bay. A windmill tower and yard light pole stand nearby.",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 44,
+    "d_ft": 20,
+    "height_ft": 12,
+    "open_bays": 2,
+    "walls": "stone_and_metal",
+    "roof": {"type": "gable", "pitch_deg": 15, "material": "metal"},
+    "colors": {"body": "#cfc6b2", "trim": "#8e8d88", "accent": "#a4a6a3", "roof": "#8a7666"},
+    "condition": "worn"
+  },
+  "names": {"family": "Brunnemer"}
+}

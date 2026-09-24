@@ -1,0 +1,27 @@
+{
+  "id": "FARM-13-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Wheatland Farm Historic District, silo",
+    "place": "Kansas",
+    "year": 1940,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Wheatland_Farm_Historic_District_Kansas_Silo.jpg",
+    "photos": ["commons_Wheatland_Farm_Historic_District_Kansas_Silo.jpg", "commons_Wheatland_Farm_Historic_District_House_Kansas_Pole_Barn_and_Silo.jpg"],
+    "drawings": []
+  },
+  "brief": "Roofless concrete stave silo about 16 ft across and 55 ft high, pale grey-tan staves in a tight grid bound by thin hoops, with a single full-height column of round open door ports stacked one above another up the front (the chute and its doors long gone, a couple of rusty port covers left). Only a ring of bent hoop-rod stubs at the top, lined with perching birds. It stands inside a lot of rusty pipe cattle panels with black cattle around its base and a low stone wall behind.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 16,
+    "height_ft": 55,
+    "roof": "none",
+    "chute": false,
+    "hoops": true,
+    "colors": {"body": "#bab09c", "trim": "#1e1c1a", "accent": "#8a4a2e", "roof": "#bab09c"},
+    "condition": "worn"
+  },
+  "names": {"family": "Lindgaard"}
+}

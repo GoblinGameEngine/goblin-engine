@@ -1,0 +1,36 @@
+{
+  "id": "FARM-08-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "William and Emma Guhl farmhouse, 1560 Highway 77",
+    "place": "Burt County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Guhl_farmhouse_(Burt_Co,_NE)_from_ENE_1.JPG",
+    "photos": ["commons_Guhl_farmhouse_Burt_Co_NE_from_ENE_1.JPG", "commons_Guhl_farmhouse_Burt_Co_NE_from_NE_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Well-kept two-storey American foursquare in slate-blue-grey clapboard with white trim, a hipped asphalt roof with a broad hipped front dormer holding paired windows, and a tall brick chimney. A full-width hip-roofed front porch stands on stout square red-brick piers with a solid brick knee wall and concrete caps and steps, lace curtains hung between the piers. Big shade trees and a lawn; a grey steel-roofed machine shed shows behind at left.",
+  "traits": {
+    "archetype": "foursquare",
+    "storeys": 2,
+    "main_w_ft": 30,
+    "main_d_ft": 30,
+    "wing": {"side": "rear", "w_ft": 14, "d_ft": 12, "storeys": 1},
+    "roof": {"type": "hip", "pitch_deg": 30, "material": "asphalt_shingle"},
+    "dormers": [{"type": "hip", "side": "front"}],
+    "porch": {"type": "front_full", "posts": "square", "rail": "solid"},
+    "walls": "clapboard",
+    "foundation": "brick",
+    "colors": {"body": "#5e6a74", "trim": "#f1f1ec", "accent": "#a4432f", "roof": "#6d6d6a"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "detached_2",
+    "yard": {"fence": "none", "extras": ["garden", "clothesline", "birdbath"]},
+    "condition": "kept",
+    "year_built": 1915
+  },
+  "names": {"family": "Rasmussen", "house_number": "2210", "street": "County Road 17"}
+}

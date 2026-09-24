@@ -1,0 +1,28 @@
+{
+  "id": "FARM-05-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Mathias S. Sowers II Barn, Sowers-Crawford Farms Historic District",
+    "place": "Douglas County, KS",
+    "year": 1900,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:39_Sowers,_Mathias_S._ll_Barn_Sowers,_Mathias_S.ll_Barn_south_and_west_facades_Sowers_-_Crawford_Farms_Historic_District_Douglas_Co_KS.jpg",
+    "photos": ["commons_39_Sowers_Mathias_S._ll_Barn_Sowers_Mathias_S.ll_Barn_south_and_west_facades_Sowers_-_Crawford_Farms_Historic_District_Douglas_Co_KS.jpg", "commons_38_Sowers_Mathias_S._ll_Barn_north_and_east_facades_Sowers_-_Crawford_Farms_Historic_District_Douglas_Co_KS.jpg", "commons_40_Sowers_Mathias_S._ll_Barn_west_facade_Sowers_-_Crawford_Farms_Historic_District_Douglas_Co_KS.jpg", "commons_45_Sowers_Mathias_S.ll_Barn_south_facade_Sowers_-_Crawford_Farms_Historic_District_Douglas_Co_KS.jpg", "commons_43_barn_detail_Sowers_Mathias_S_ll_-_Crawford_Farms_Historic_District_Douglas_Co_KS.jpg"],
+    "drawings": []
+  },
+  "brief": "Two-storey post-and-beam gable barn, 30 x 40 ft, in faded red vertical shiplap siding with a decorative sawtooth-cut board course across the gable end where the upper boards overlap the lower. Newer silver standing-seam metal roof; a long shed-roofed addition down one side with an open stall bay. A large white painted number 7 on the wall, steel pipe corral gates and a slatted cattle panel crowd the entrance. Still used by the neighbor who rents the pasture.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 40,
+    "d_ft": 30,
+    "height_ft": 34,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 42, "material": "metal"},
+    "lean_to": "side",
+    "colors": {"body": "#a63a33", "trim": "#a63a33", "accent": "#f2f2f2", "roof": "#c8cbcc"},
+    "condition": "worn"
+  },
+  "names": {"family": "Harlan", "sign": "HARLAN HOMESTEAD EST. 1868"}
+}

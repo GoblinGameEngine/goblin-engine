@@ -1,0 +1,27 @@
+{
+  "id": "FARM-05-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Hans Ehlers Farm, Corncrib, F Street",
+    "place": "Millard vicinity, Douglas County, NE",
+    "year": 1900,
+    "source": "HABS NE-42-E",
+    "url": "https://www.loc.gov/item/ne0064/",
+    "photos": ["loc_ne0064_photos_103415pv.jpg", "loc_ne0064_photos_103416pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Drive-through double corn crib under one wood-shingled gable roof: a central wagon alley entered through a pair of board sliding doors on an iron track in the gable end, flanked by slatted cribs whose widely spaced horizontal boards let air through, with solid weathered clapboard at the front bay. Unpainted gray wood, a small loft door high in the gable, a NO HUNTING sign tacked by the door, weeds grown up around the sills.",
+  "traits": {
+    "type": "corn_crib",
+    "w_ft": 28,
+    "d_ft": 36,
+    "height_ft": 20,
+    "drive_through": true,
+    "roof": {"type": "gable", "pitch_deg": 38, "material": "wood_shingle"},
+    "colors": {"body": "#a39e93", "trim": "#a39e93", "accent": "#6c665d", "roof": "#6d6962"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Harlan", "sign": "NO HUNTING"}
+}

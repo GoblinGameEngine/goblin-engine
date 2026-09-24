@@ -1,0 +1,28 @@
+{
+  "id": "FARM-02-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Deister Farmstead, Stone Barn, Route 442",
+    "place": "Stull vicinity, Douglas County, KS",
+    "year": 1875,
+    "source": "HABS KS-36-B",
+    "url": "https://commons.wikimedia.org/wiki/File:EXTERIOR,_NORTH_ELEVATION_-_Deister_Farmstead,_Stone_Barn,_Route_442,_Stull,_Douglas_County,_KS_HABS_KANS,23-STUL.V,1-B-1.tif",
+    "photos": ["commons_EXTERIOR_NORTH_ELEVATION_-_Deister_Farmstead_Stone_Barn_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-B-1.jpg", "commons_EXTERIOR_EAST_ELEVATION_-_Deister_Farmstead_Stone_Barn_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-B-2.jpg", "commons_EXTERIOR_SOUTH_ELEVATION_SHOWING_SHED_-_Deister_Farmstead_Stone_Barn_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-B-3.jpg", "commons_EXTERIOR_WEST_ELEVATION_-_Deister_Farmstead_Stone_Barn_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-B-4.jpg"],
+    "drawings": []
+  },
+  "brief": "Long rubble-limestone barn, a full storey of thick stone walls under a broad side-gable roof of weathered wood shingles with a slight sag. A segmental stone arch frames the central wagon threshing bay on the long side, closed by two white board sliding doors; small six-light windows and plank doors to the stables either side, and a low shed-roofed frame lean-to along the south wall. The silo stands against it.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 64,
+    "d_ft": 36,
+    "height_ft": 30,
+    "walls": "stone",
+    "roof": {"type": "gable", "pitch_deg": 35, "material": "wood_shingle"},
+    "lean_to": "south",
+    "colors": {"body": "#b8ad98", "trim": "#eeeae0", "accent": "#eeeae0", "roof": "#5e5850"},
+    "condition": "kept"
+  },
+  "names": {"family": "Aufdemberg", "sign": "AUFDEMBERG STOCK FARM EST. 1872"}
+}

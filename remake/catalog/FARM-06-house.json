@@ -1,0 +1,36 @@
+{
+  "id": "FARM-06-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Alexander and Anna Schwartz farm, house, East Road 70 and Quantum Road",
+    "place": "Dighton vicinity, Lane County, KS",
+    "year": 1925,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Schwartz_farm_(Lane_Co_KS)_house_from_SW_1.JPG",
+    "photos": ["commons_Schwartz_farm_Lane_Co_KS_house_from_SW_1.JPG", "commons_Schwartz_farm_Lane_Co_KS_house_and_windmill_from_SE_1.JPG", "commons_Schwartz_farm_Lane_Co_KS_house_smokehouse_windmill_from_SW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "One-storey High Plains farm bungalow: a broad, nearly square block of tan stucco under a low hipped roof of plain corrugated metal, with a small front-gabled entry porch on two stubby tapered posts set on square stucco piers and a shingled gable. Double-hung windows, one boarded, a screen door hanging off; a red-brick water table line at the base. Stands alone in short-grass wheat country with a windmill and smokehouse behind and a few cedars for a windbreak.",
+  "traits": {
+    "archetype": "bungalow",
+    "storeys": 1,
+    "main_w_ft": 36,
+    "main_d_ft": 30,
+    "wing": null,
+    "roof": {"type": "hip", "pitch_deg": 22, "material": "metal"},
+    "dormers": [],
+    "porch": {"type": "front_partial", "posts": "tapered_on_piers", "rail": "none"},
+    "walls": "stucco",
+    "foundation": "poured_concrete",
+    "colors": {"body": "#d8b98c", "trim": "#6f6f6a", "accent": "#8a3a2c", "roof": "#8f9ba3"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "none",
+    "yard": {"fence": "none", "extras": ["woodpile"]},
+    "condition": "shabby",
+    "year_built": 1925
+  },
+  "names": {"family": "Kaltenbach", "house_number": "7018", "street": "Road 70"}
+}

@@ -1,0 +1,34 @@
+{
+  "id": "SMALL-01",
+  "settlement": "rural (near Dunmore Crossing)",
+  "kind": "crossing",
+  "crossing": {"type": "small", "road_class": "gravel", "span_m": 9.0, "over": "Lost Creek"},
+  "example": {
+    "title": "Bear Creek Bridge, St. Killian Road over Bear Creek",
+    "place": "Town of Buena Vista (Sextonville vicinity), Richland County, WI",
+    "year": 1886,
+    "source": "HAER WI-42",
+    "url": "https://www.loc.gov/item/wi0208/",
+    "photos": ["haer_wi0208_photo_01.jpg", "haer_wi0208_photo_02.jpg", "haer_wi0208_photo_03.jpg", "haer_wi0208_photo_04.jpg"],
+    "drawings": []
+  },
+  "brief": "Single-span wrought-iron Pratt half-hip pony truss, 41 ft by 13.5 ft, pin-connected: V-laced double-channel top chords, looped eyebar bottom chords and diagonals, X-laced angle verticals, turnbuckle counters and fish-belly floor beams hung on U-bolts, on a concrete deck and abutments. W-beam guardrail is bolted along the inside of both trusses and striped hazard boards stand at the four corners. Carries a one-lane blacktop country road through open farmland over a narrow, reedy creek; a cast builder's plate is bolted to the top chord.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt half-hip",
+    "spans": 1,
+    "year": 1886,
+    "railing": "guardrail",
+    "span_ft": 41,
+    "width_ft": 13.5,
+    "height_ft": 7,
+    "panels": 4,
+    "abutments": "concrete",
+    "deck": "concrete",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "LANGDON & SWIFT BRIDGE WORKS · BUILDERS · MERIDEN FALLS · 1886",
+    "sign": "LOST CREEK"
+  }
+}

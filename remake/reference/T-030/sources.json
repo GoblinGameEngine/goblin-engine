@@ -1,0 +1,41 @@
+{
+ "structure": "T-030",
+ "files": [
+  {
+   "file": "loc_wi0168_photos_170095pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0168/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/wi/wi0100/wi0168/photos/170095pv.jpg",
+   "title": "Henry G. & Frances Kleinfelter House, 312 North Pinckney Street, Madison, Dane County, WI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0168_photos_170096pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0168/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/wi/wi0100/wi0168/photos/170096pv.jpg",
+   "title": "Henry G. & Frances Kleinfelter House, 312 North Pinckney Street, Madison, Dane County, WI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0168_photos_170097pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0168/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/wi/wi0100/wi0168/photos/170097pv.jpg",
+   "title": "Henry G. & Frances Kleinfelter House, 312 North Pinckney Street, Madison, Dane County, WI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0168_photos_170098pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0168/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/wi/wi0100/wi0168/photos/170098pv.jpg",
+   "title": "Henry G. & Frances Kleinfelter House, 312 North Pinckney Street, Madison, Dane County, WI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "structure": "FARM-05-shed",
+ "files": [
+  {
+   "file": "loc_ne0064_photos_103415pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0064/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ne/ne0000/ne0064/photos/103415pv.jpg",
+   "title": "Hans Ehlers Farm, Corncrib, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0064_photos_103416pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0064/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ne/ne0000/ne0064/photos/103416pv.jpg",
+   "title": "Hans Ehlers Farm, Corncrib, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0064_data_ne0064data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0064/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0064/data/ne0064data.pdf",
+   "title": "Hans Ehlers Farm, Corncrib, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0064_data_ne0064cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0064/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0064/data/ne0064cap.pdf",
+   "title": "Hans Ehlers Farm, Corncrib, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "structure": "SMALL-26",
+ "files": [
+  {
+   "file": "loc_wi0227_data_wi0227data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0227/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0200/wi0227/data/wi0227data.pdf",
+   "title": "wi0227",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0227_data_wi0227cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0227/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0200/wi0227/data/wi0227cap.pdf",
+   "title": "wi0227",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_wi0227_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ROADWAY_VIEW_LOOKING_EAST_-_Sprague_Bridge,_Over_Yellow_River_between_Armenia_and_Necedah,_Necedah,_Juneau_County,_WI_HAER_WIS,29-ARM,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/ROADWAY_VIEW_LOOKING_EAST_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-1.tif/lossy-page1-1920px-ROADWAY_VIEW_LOOKING_EAST_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-1.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ROADWAY VIEW LOOKING EAST - Sprague Bridge, Over Yellow River between Armenia and Necedah, Necedah, Juneau County, WI HAER WIS,29-ARM,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nGifford, Willis; Elkhart Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0227_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DISTANT_BRIDGE_ELEVATION_LOOKING_SOUTH_-_Sprague_Bridge,_Over_Yellow_River_between_Armenia_and_Necedah,_Necedah,_Juneau_County,_WI_HAER_WIS,29-ARM,1-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/DISTANT_BRIDGE_ELEVATION_LOOKING_SOUTH_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-2.tif/lossy-page1-1920px-DISTANT_BRIDGE_ELEVATION_LOOKING_SOUTH_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-2.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DISTANT BRIDGE ELEVATION LOOKING SOUTH - Sprague Bridge, Over Yellow River between Armenia and Necedah, Necedah, Juneau County, WI HAER WIS,29-ARM,1-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nGifford, Willis; Elkhart Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0227_photo_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:SINGLE_SPAN_ELEVATION_LOOKING_NORTH_-_Sprague_Bridge,_Over_Yellow_River_between_Armenia_and_Necedah,_Necedah,_Juneau_County,_WI_HAER_WIS,29-ARM,1-3.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/SINGLE_SPAN_ELEVATION_LOOKING_NORTH_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-3.tif/lossy-page1-1920px-SINGLE_SPAN_ELEVATION_LOOKING_NORTH_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-3.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:SINGLE SPAN ELEVATION LOOKING NORTH - Sprague Bridge, Over Yellow River between Armenia and Necedah, Necedah, Juneau County, WI HAER WIS,29-ARM,1-3.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nGifford, Willis; Elkhart Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0227_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DECK_UNDERSIDE_VIEW_SHOWING_CENTRAL_PIER_AND_STEEL_TUBE_ABUTMENTS._LOOKING_EAST_-_Sprague_Bridge,_Over_Yellow_River_between_Armenia_and_Necedah,_Necedah,_Juneau_County,_WI_HAER_WIS,29-ARM,1-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/DECK_UNDERSIDE_VIEW_SHOWING_CENTRAL_PIER_AND_STEEL_TUBE_ABUTMENTS._LOOKING_EAST_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-5.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DECK UNDERSIDE VIEW SHOWING CENTRAL PIER AND STEEL TUBE ABUTMENTS. LOOKING EAST - Sprague Bridge, Over Yellow River between Armenia and Necedah, Necedah, Juneau County, WI HAER WIS,29-ARM,1-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nGifford, Willis; Elkhart Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0227_photo_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:PINNED_TOP_CHORD-ENDPOST_CONNECTION_-_Sprague_Bridge,_Over_Yellow_River_between_Armenia_and_Necedah,_Necedah,_Juneau_County,_WI_HAER_WIS,29-ARM,1-6.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/PINNED_TOP_CHORD-ENDPOST_CONNECTION_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-6.tif/lossy-page1-1920px-PINNED_TOP_CHORD-ENDPOST_CONNECTION_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-6.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:PINNED TOP CHORD-ENDPOST CONNECTION - Sprague Bridge, Over Yellow River between Armenia and Necedah, Necedah, Juneau County, WI HAER WIS,29-ARM,1-6.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nGifford, Willis; Elkhart Bridge and Iron Company"
+  },
+  {
+   "file": "haer_wi0227_photo_07.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:BOTTOM_CHORD_AND_LATTICE_BRACED_VERTICAL_PINNED_CONNECTION_-_Sprague_Bridge,_Over_Yellow_River_between_Armenia_and_Necedah,_Necedah,_Juneau_County,_WI_HAER_WIS,29-ARM,1-7.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/BOTTOM_CHORD_AND_LATTICE_BRACED_VERTICAL_PINNED_CONNECTION_-_Sprague_Bridge%2C_Over_Yellow_River_between_Armenia_and_Necedah%2C_Necedah%2C_Juneau_County%2C_WI_HAER_WIS%2C29-ARM%2C1-7.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:BOTTOM CHORD AND LATTICE BRACED VERTICAL PINNED CONNECTION - Sprague Bridge, Over Yellow River between Armenia and Necedah, Necedah, Juneau County, WI HAER WIS,29-ARM,1-7.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nGifford, Willis; Elkhart Bridge and Iron Company"
+  }
+ ]
+}

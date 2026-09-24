@@ -1,0 +1,34 @@
+{
+  "id": "RAIL-01",
+  "settlement": "Bellhaven",
+  "kind": "crossing",
+  "crossing": {"type": "rail", "road_class": "rail", "span_m": 6.0, "over": "Cole Creek"},
+  "example": {
+    "title": "Promontory Route Railroad Trestles, Trestle 788B (Trestle A)",
+    "place": "Corinne vicinity, Box Elder County, UT",
+    "year": 1872,
+    "source": "HAER UT-64-A",
+    "url": "https://www.loc.gov/item/ut0389/",
+    "photos": ["haer_ut0389_photo_01.jpg", "haer_ut0389_photo_02.jpg", "haer_ut0389_photo_02_2.jpg", "haer_ut0389_photo_04.jpg", "haer_ut0389_photo_05.jpg", "haer_ut0389_photo_06.jpg"],
+    "drawings": []
+  },
+  "brief": "Short, low open-deck timber pile trestle, 28 ft long and about 6 ft high, on the 1869 transcontinental grade: bents of four untreated timber piles with a squared timber cap, four 7x16 in stringers per span, and ties laid directly on the stringers with no ballast deck and no railing. Rebuilt by the railway in 1872 and repaired until the line was abandoned in 1942; the 1991 photos show it tie-less and weathered in a grassy flat, a pipeline slung across it. For Cole Creek model it in service: two 14 ft spans, three bents, ties, rails and guard timbers, set in a low embankment.",
+  "traits": {
+    "bridge_type": "timber_trestle",
+    "spans": 2,
+    "year": 1872,
+    "railing": "open_parapet",
+    "span_ft": 14,
+    "overall_ft": 28,
+    "width_ft": 12,
+    "height_ft": 6,
+    "bents": "4 timber piles with timber cap",
+    "stringers": "4 x 7x16 in per span",
+    "deck": "open ties",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "bridge number board: B. 212.4",
+    "sign": "COLE CREEK"
+  }
+}

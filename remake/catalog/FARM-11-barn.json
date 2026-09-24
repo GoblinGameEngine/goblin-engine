@@ -1,0 +1,27 @@
+{
+  "id": "FARM-11-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "George Spangerberger Farmstead, Barn (HABS KS-77-I)",
+    "place": "South Hutchinson, Reno County, KS",
+    "year": 1890,
+    "source": "HABS KS-77-I",
+    "url": "https://www.loc.gov/item/ks0189/",
+    "photos": ["loc_ks0189_photos_209897pv.jpg", "loc_ks0189_photos_209898pv.jpg", "loc_ks0189_photos_209899pv.jpg", "loc_ks0189_photos_209900pv.jpg", "loc_ks0189_photos_209901pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Modest white-painted gambrel barn of about 1880-1900, roughly 32 ft wide and 36 ft deep, sided in horizontal drop siding with narrow corner boards and a shallow-kicked eave line. The gable end has a centered plank ground-floor door, a hinged plank hay door above it, and a second tall plank door at one corner; no windows on that face. Sits in a mown wheat-stubble field with a small white gable-front garage and a tree line behind.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 32,
+    "d_ft": 36,
+    "height_ft": 28,
+    "walls": "drop_siding",
+    "roof": {"type": "gambrel", "pitch_deg": 50, "material": "asphalt_shingle"},
+    "colors": {"body": "#efefea", "trim": "#efefea", "accent": "#8e8e8a", "roof": "#5a5a58"},
+    "condition": "worn"
+  },
+  "names": {"family": "Wedel", "sign": "WEDEL WHEAT FARM EST. 1878"}
+}

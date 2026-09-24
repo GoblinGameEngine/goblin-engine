@@ -1,0 +1,41 @@
+{
+ "structure": "T-038",
+ "files": [
+  {
+   "file": "loc_mi0178_photos_089803pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0178/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0100/mi0178/photos/089803pv.jpg",
+   "title": "404 East Ferry Avenue (House), Detroit, MI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0178_photos_089804pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0178/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0100/mi0178/photos/089804pv.jpg",
+   "title": "404 East Ferry Avenue (House), Detroit, MI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0178_photos_089805pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0178/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0100/mi0178/photos/089805pv.jpg",
+   "title": "404 East Ferry Avenue (House), Detroit, MI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0178_photos_089806pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0178/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0100/mi0178/photos/089806pv.jpg",
+   "title": "404 East Ferry Avenue (House), Detroit, MI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

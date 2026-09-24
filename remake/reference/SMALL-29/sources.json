@@ -1,0 +1,89 @@
+{
+ "structure": "SMALL-29",
+ "files": [
+  {
+   "file": "loc_in0426_data_in0426data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0426/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0426/data/in0426data.pdf",
+   "title": "in0426",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0426_data_in0426cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0426/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0426/data/in0426cap.pdf",
+   "title": "in0426",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_in0426_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:SOUTH_APPROACH,_LOOKING_NORTH_-_Vermillion_County_Bridge_No._120,_Spanning_Little_Vermillion_River_at_Main_Street,_Newport,_Vermillion_County,_IN_HAER_IND,83-NEWP,2-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/SOUTH_APPROACH%2C_LOOKING_NORTH_-_Vermillion_County_Bridge_No._120%2C_Spanning_Little_Vermillion_River_at_Main_Street%2C_Newport%2C_Vermillion_County%2C_IN_HAER_IND%2C83-NEWP%2C2-1.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:SOUTH APPROACH, LOOKING NORTH - Vermillion County Bridge No. 120, Spanning Little Vermillion River at Main Street, Newport, Vermillion County, IN HAER IND,83-NEWP,2-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0426_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ELEVATION,_LOOKING_EAST,_NORTH_1-3_-_Vermillion_County_Bridge_No._120,_Spanning_Little_Vermillion_River_at_Main_Street,_Newport,_Vermillion_County,_IN_HAER_IND,83-NEWP,2-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/ELEVATION%2C_LOOKING_EAST%2C_NORTH_1-3_-_Vermillion_County_Bridge_No._120%2C_Spanning_Little_Vermillion_River_at_Main_Street%2C_Newport%2C_Vermillion_County%2C_IN_HAER_IND%2C83-NEWP%2C2-4.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ELEVATION, LOOKING EAST, NORTH 1-3 - Vermillion County Bridge No. 120, Spanning Little Vermillion River at Main Street, Newport, Vermillion County, IN HAER IND,83-NEWP,2-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0426_photo_07.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ELEVATION,_LOOKING_WEST_-_Vermillion_County_Bridge_No._120,_Spanning_Little_Vermillion_River_at_Main_Street,_Newport,_Vermillion_County,_IN_HAER_IND,83-NEWP,2-7.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/ELEVATION%2C_LOOKING_WEST_-_Vermillion_County_Bridge_No._120%2C_Spanning_Little_Vermillion_River_at_Main_Street%2C_Newport%2C_Vermillion_County%2C_IN_HAER_IND%2C83-NEWP%2C2-7.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:ELEVATION, LOOKING WEST - Vermillion County Bridge No. 120, Spanning Little Vermillion River at Main Street, Newport, Vermillion County, IN HAER IND,83-NEWP,2-7.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0426_photo_11.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:SOUTH_ABUTMENT,_EAST_SIDE,_LOOKING_SOUTH_-_Vermillion_County_Bridge_No._120,_Spanning_Little_Vermillion_River_at_Main_Street,_Newport,_Vermillion_County,_IN_HAER_IND,83-NEWP,2-11.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/SOUTH_ABUTMENT%2C_EAST_SIDE%2C_LOOKING_SOUTH_-_Vermillion_County_Bridge_No._120%2C_Spanning_Little_Vermillion_River_at_Main_Street%2C_Newport%2C_Vermillion_County%2C_IN_HAER_IND%2C83-NEWP%2C2-11.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:SOUTH ABUTMENT, EAST SIDE, LOOKING SOUTH - Vermillion County Bridge No. 120, Spanning Little Vermillion River at Main Street, Newport, Vermillion County, IN HAER IND,83-NEWP,2-11.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0426_photo_14.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:CENTER_PIER,_LOOKING_SOUTHWEST_-_Vermillion_County_Bridge_No._120,_Spanning_Little_Vermillion_River_at_Main_Street,_Newport,_Vermillion_County,_IN_HAER_IND,83-NEWP,2-14.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/CENTER_PIER%2C_LOOKING_SOUTHWEST_-_Vermillion_County_Bridge_No._120%2C_Spanning_Little_Vermillion_River_at_Main_Street%2C_Newport%2C_Vermillion_County%2C_IN_HAER_IND%2C83-NEWP%2C2-14.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:CENTER PIER, LOOKING SOUTHWEST - Vermillion County Bridge No. 120, Spanning Little Vermillion River at Main Street, Newport, Vermillion County, IN HAER IND,83-NEWP,2-14.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "haer_in0426_photo_17.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:RAILING,_DECK_DETAILS,_SOUTHWEST_CORNER_-_Vermillion_County_Bridge_No._120,_Spanning_Little_Vermillion_River_at_Main_Street,_Newport,_Vermillion_County,_IN_HAER_IND,83-NEWP,2-17.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/RAILING%2C_DECK_DETAILS%2C_SOUTHWEST_CORNER_-_Vermillion_County_Bridge_No._120%2C_Spanning_Little_Vermillion_River_at_Main_Street%2C_Newport%2C_Vermillion_County%2C_IN_HAER_IND%2C83-NEWP%2C2-17.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:RAILING, DECK DETAILS, SOUTHWEST CORNER - Vermillion County Bridge No. 120, Spanning Little Vermillion River at Main Street, Newport, Vermillion County, IN HAER IND,83-NEWP,2-17.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  }
+ ]
+}

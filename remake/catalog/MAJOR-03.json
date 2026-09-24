@@ -1,0 +1,33 @@
+{
+  "id": "MAJOR-03",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {"type": "major", "road_class": "county", "span_m": 43.5, "over": "Kettle River"},
+  "example": {
+    "title": "Putnam County Bridge No. 111 (Dills Ford Bridge), County Road 50 over Little Walnut Creek",
+    "place": "Greencastle vicinity, Putnam County, IN",
+    "year": 1909,
+    "source": "HAER IN-100",
+    "url": "https://www.loc.gov/item/in0431/",
+    "photos": ["haer_in0431_photo_01.jpg", "haer_in0431_photo_03.jpg", "haer_in0431_photo_08.jpg", "haer_in0431_photo_11.jpg", "haer_in0431_photo_14.jpg", "haer_in0431_photo_19.jpg"],
+    "drawings": []
+  },
+  "brief": "Two-span Daniel Luten filled-spandrel reinforced-concrete arch, 170 ft overall with two low, flat elliptical arches of about 81 ft each, a narrow bull-nosed centre pier with an upstream cutwater, and plain board-formed spandrel walls holding earth fill under a one-lane asphalt road. The original concrete railings were pierced with pointed-arch openings; by 1998 only stubs of solid parapet remained at the pier and abutments, the spandrels were cracking away and were strapped with short vertical I-beams on tie rods. Wooded riverbank setting with bare trees and a snowy lane on the approach (width and deck height estimated).",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "spans": 2,
+    "year": 1909,
+    "railing": "concrete_balustrade",
+    "span_ft": 81,
+    "overall_ft": 170,
+    "width_ft": 16,
+    "height_ft": 14,
+    "arch_form": "filled spandrel, low elliptical",
+    "pier": "bull-nosed with upstream cutwater",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "CEDAR FORD BRIDGE · 1909 · COUNTY COMMISSIONERS · CONRAD & HALE, CONTRACTORS",
+    "sign": "KETTLE RIVER"
+  }
+}

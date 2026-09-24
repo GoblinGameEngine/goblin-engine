@@ -1,0 +1,29 @@
+{
+  "id": "FARM-03-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Kandt-Domann Farmstead, Barn, State Route 3",
+    "place": "Hope vicinity, Dickinson County, KS",
+    "year": 1890,
+    "source": "HABS KS-42-B",
+    "url": "https://commons.wikimedia.org/wiki/File:SOUTH_FRONT_AND_EAST_SIDE_-_Kandt-Domann_Farmstead,_Barn,_State_Route_3,_Hope,_Dickinson_County,_KS_HABS_KANS,21-HOPE.V,1-B-2.tif",
+    "photos": ["commons_SOUTH_FRONT_AND_EAST_SIDE_-_Kandt-Domann_Farmstead_Barn_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-B-2.jpg", "commons_SOUTH_FRONT_-_Kandt-Domann_Farmstead_Barn_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-B-1.jpg", "commons_NORTH_REAR_AND_WEST_SIDE_-_Kandt-Domann_Farmstead_Barn_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-B-3.jpg", "commons_INTERIOR_-_ROOF_DETAIL_AND_HAY_RAIL_-_Kandt-Domann_Farmstead_Barn_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-B-10.jpg"],
+    "drawings": []
+  },
+  "brief": "Long, low gable-roofed stock barn: a chest-high base of whitewashed rough limestone blocks carrying a frame upper storey of weathered vertical boards patched with strips of corrugated steel, under a standing-seam metal roof. The gable end facing the yard has a projecting hay hood over the loft door and a wagon door below; plank stable doors along the long side open to wooden feedlot pens. (Entry is at the gable end, not the side; builder should treat it as a three-bay barn turned end-on.)",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 34,
+    "d_ft": 72,
+    "height_ft": 28,
+    "lower_walls": "stone",
+    "upper_walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 35, "material": "metal"},
+    "hay_hood": true,
+    "colors": {"body": "#8d8578", "trim": "#8d8578", "accent": "#e2ddd0", "roof": "#a3a6a4"},
+    "condition": "worn"
+  },
+  "names": {"family": "Brunnemer", "sign": "BRUNNEMER BROS. WHEAT & CATTLE EST. 1884"}
+}

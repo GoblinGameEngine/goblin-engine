@@ -1,0 +1,38 @@
+{
+ "structure": "FARM-12-house",
+ "files": [
+  {
+   "file": "commons_Miller_homestead_Rush_Co_KS_house_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miller_homestead_(Rush_Co_KS),_house_from_SE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Miller_homestead_%28Rush_Co_KS%29%2C_house_from_SE_1.JPG/1920px-Miller_homestead_%28Rush_Co_KS%29%2C_house_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Miller homestead (Rush Co KS), house from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Miller homestead, at 2913 Kansas Highway 4, east of La Crosse, Kansas.  House, seen from the southeast."
+  },
+  {
+   "file": "commons_Miller_homestead_Rush_Co_KS_house_from_SW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miller_homestead_(Rush_Co_KS),_house_from_SW_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Miller_homestead_%28Rush_Co_KS%29%2C_house_from_SW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Miller homestead (Rush Co KS), house from SW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Miller homestead, at 2913 Kansas Highway 4, east of La Crosse, Kansas.  House, seen from the southwest."
+  },
+  {
+   "file": "commons_Miller_homestead_Rush_Co_KS_house_and_buildings_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miller_homestead_(Rush_Co_KS),_house_and_buildings_from_SE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Miller_homestead_%28Rush_Co_KS%29%2C_house_and_buildings_from_SE_1.JPG/1920px-Miller_homestead_%28Rush_Co_KS%29%2C_house_and_buildings_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Miller homestead (Rush Co KS), house and buildings from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Miller homestead, at 2913 Kansas Highway 4, east of La Crosse, Kansas.  House and buildings, seen from the southeast."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "F-002",
+ "files": [
+  {
+   "file": "commons_St._Mary_s_Episcopal_Church_Fayette_Missouri_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:St._Mary%E2%80%99s_Episcopal_Church_(Fayette,_Missouri).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/St._Mary%E2%80%99s_Episcopal_Church_%28Fayette%2C_Missouri%29.jpg/1920px-St._Mary%E2%80%99s_Episcopal_Church_%28Fayette%2C_Missouri%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:St. Mary\u2019s Episcopal Church (Fayette, Missouri).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Jim Roberts",
+   "caption": "St. Mary's Episcopal Church"
+  },
+  {
+   "file": "commons_Original_St._Mary_s_Episcopal_Church_Fayette_Missouri_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Original_St._Mary%E2%80%99s_Episcopal_Church_(Fayette,_Missouri).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Original_St._Mary%E2%80%99s_Episcopal_Church_%28Fayette%2C_Missouri%29.jpg/1920px-Original_St._Mary%E2%80%99s_Episcopal_Church_%28Fayette%2C_Missouri%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Original St. Mary\u2019s Episcopal Church (Fayette, Missouri).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Jim Roberts",
+   "caption": "St. Mary's Episcopal Church"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "structure": "DC-002",
+ "files": [
+  {
+   "file": "loc_mi0329_photos_035161pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0329/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0300/mi0329/photos/035161pv.jpg",
+   "title": "D.H. Day Store, Route 209, Glen Arbor, Leelanau County, MI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0329_photos_035162pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0329/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mi/mi0300/mi0329/photos/035162pv.jpg",
+   "title": "D.H. Day Store, Route 209, Glen Arbor, Leelanau County, MI",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0329_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0329/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mi/mi0300/mi0329/sheet/00001a.tif",
+   "title": "D.H. Day Store, Route 209, Glen Arbor, Leelanau County, MI",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0329_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0329/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mi/mi0300/mi0329/sheet/00002a.tif",
+   "title": "D.H. Day Store, Route 209, Glen Arbor, Leelanau County, MI",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mi0329_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mi0329/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mi/mi0300/mi0329/sheet/00003a.tif",
+   "title": "D.H. Day Store, Route 209, Glen Arbor, Leelanau County, MI",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

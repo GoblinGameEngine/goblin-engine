@@ -1,0 +1,36 @@
+{
+  "id": "FARM-03-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Kandt-Domann Farmstead, Stone House, State Route 3",
+    "place": "Hope vicinity, Dickinson County, KS",
+    "year": 1884,
+    "source": "HABS KS-42-A",
+    "url": "https://commons.wikimedia.org/wiki/File:WEST_FRONT_AND_SOUTH_SIDE_-_Kandt-Domann_Farmstead,_Stone_House,_State_Route_3,_Hope,_Dickinson_County,_KS_HABS_KANS,21-HOPE.V,1-A-2.tif",
+    "photos": ["commons_WEST_FRONT_AND_SOUTH_SIDE_-_Kandt-Domann_Farmstead_Stone_House_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-A-2.jpg", "commons_WEST_FRONT_-_Kandt-Domann_Farmstead_Stone_House_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-A-3.jpg", "commons_EAST_BACK_AND_NORTH_SIDE_-_Kandt-Domann_Farmstead_Stone_House_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-A-4.jpg", "commons_WEST_DATE_STONE_-_Kandt-Domann_Farmstead_Stone_House_State_Route_3_Hope_Dickinson_County_KS_HABS_KANS_21-HOPE.V_1-A-10.jpg"],
+    "drawings": []
+  },
+  "brief": "Prosperous two-storey limestone farmhouse of squared, rock-faced blocks with dressed sills and lintels, side-gable roof with a centered front cross gable, and brick chimneys at both ends. A small two-tier entry porch at the center front carries a spindle-railed balcony at the second floor. Later one-storey frame kitchen and sleeping-porch wing at the rear right; TV antenna on the ridge, clipped evergreens along the front. Date stone in the gable.",
+  "traits": {
+    "archetype": "i_house",
+    "storeys": 2,
+    "main_w_ft": 36,
+    "main_d_ft": 24,
+    "wing": {"side": "rear", "w_ft": 20, "d_ft": 16, "storeys": 1},
+    "roof": {"type": "cross_gable", "pitch_deg": 38, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "front_partial", "posts": "square", "rail": "spindle"},
+    "walls": "stone",
+    "foundation": "cut_stone",
+    "colors": {"body": "#d4cbb6", "trim": "#f4f2ec", "accent": "#2f3b33", "roof": "#8c8c88"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["left_end", "right_end"],
+    "garage": "detached_1",
+    "yard": {"fence": "none", "extras": ["clothesline", "garden", "flagpole"]},
+    "condition": "kept",
+    "year_built": 1884
+  },
+  "names": {"family": "Brunnemer", "house_number": "2310", "street": "State Route 3"}
+}

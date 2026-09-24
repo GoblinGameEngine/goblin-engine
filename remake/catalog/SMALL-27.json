@@ -1,0 +1,45 @@
+{
+  "id": "SMALL-27",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 11.1,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "Big Chickies Bridge, over Big Chickies Creek",
+    "place": "Lancaster Junction (Manheim vicinity), Lancaster County, PA",
+    "year": 1916,
+    "source": "HAER PA-630",
+    "url": "https://www.loc.gov/item/pa3998/",
+    "photos": [
+      "haer_pa3998_photo_01.jpg",
+      "haer_pa3998_photo_03.jpg",
+      "haer_pa3998_photo_04.jpg",
+      "haer_pa3998_photo_05.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single-span reinforced-concrete tied through arch of the rainbow type, 1916, about 58-62 ft long and 16-20 ft wide: two concrete arch ribs rise above the deck on either side and are tied to the deck girders by diagonal concrete hangers, forming an open, triangulated web in each rib. Heavy square concrete end posts and solid parapet walls on the approaches and wingwalls; a narrow one-lane asphalt road with a weight-limit sign, under dense shade trees by a mill-race-like creek with a small weir. Its exact twin (Weaverland Bridge) has surviving drawings in HAER PA-589.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "arch_system": "rainbow tied through arch with diagonal hangers",
+    "spans": 1,
+    "year": 1916,
+    "railing": "open_parapet",
+    "railing_detail": "arch ribs act as rail; solid parapets on approaches with square end posts",
+    "span_ft": 58,
+    "width_ft": 16,
+    "height_ft": 10,
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "1916 · MILL STREET BRIDGE · SHANK & ROHRER, BUILDERS",
+    "sign": "MILL CREEK",
+    "extra_signs": [
+      "WEIGHT LIMIT 10 TONS"
+    ]
+  }
+}

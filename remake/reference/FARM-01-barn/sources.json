@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-01-barn",
+ "files": [
+  {
+   "file": "commons_Gottfried_Gustav_Pitz_barn_from_SW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Gottfried_Gustav_Pitz_barn_from_SW_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Gottfried_Gustav_Pitz_barn_from_SW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Gottfried Gustav Pitz barn from SW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Gottfried Gustav Pitz barn, located on US Highway 34 at eastern outskirts of Plattsmouth, Nebraska; seen from the southwest."
+  },
+  {
+   "file": "commons_Gottfried_Gustav_Pitz_barn_from_NW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Gottfried_Gustav_Pitz_barn_from_NW_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Gottfried_Gustav_Pitz_barn_from_NW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Gottfried Gustav Pitz barn from NW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Gottfried Gustav Pitz barn, located on US Highway 34 at eastern outskirts of Plattsmouth, Nebraska; seen from the northwest."
+  }
+ ]
+}

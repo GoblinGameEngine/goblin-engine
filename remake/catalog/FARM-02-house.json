@@ -1,0 +1,36 @@
+{
+  "id": "FARM-02-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Deister Farmstead, House, Route 442",
+    "place": "Stull vicinity, Douglas County, KS",
+    "year": 1872,
+    "source": "HABS KS-36-A",
+    "url": "https://commons.wikimedia.org/wiki/File:EXTERIOR,_EAST_FRONT_-_Deister_Farmstead,_House,_Route_442,_Stull,_Douglas_County,_KS_HABS_KANS,23-STUL.V,1-A-1.tif",
+    "photos": ["commons_EXTERIOR_EAST_FRONT_-_Deister_Farmstead_House_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-A-1.jpg", "commons_EXTERIOR_SOUTH_SIDE_-_Deister_Farmstead_House_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-A-3.jpg", "commons_EXTERIOR_NORTH_SIDE_-_Deister_Farmstead_House_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-A-2.jpg", "commons_EXTERIOR_SOUTH_ENTRANCE_-_Deister_Farmstead_House_Route_442_Stull_Douglas_County_KS_HABS_KANS_23-STUL.V_1-A-4.jpg"],
+    "drawings": []
+  },
+  "brief": "Solid two-storey German-settler farmhouse of coursed rough-faced limestone with dressed quoins and flat stone lintels, under a plain side-gable wood-shingle roof with a brick end chimney. Tall 1-over-1 windows, a small gabled hood over a concrete stoop with iron pipe railing, and a later one-storey frame kitchen wing in white siding at the side. Picket fence and big lilac bushes in the yard.",
+  "traits": {
+    "archetype": "i_house",
+    "storeys": 2,
+    "main_w_ft": 30,
+    "main_d_ft": 20,
+    "wing": {"side": "right", "w_ft": 14, "d_ft": 18, "storeys": 1},
+    "roof": {"type": "gable", "pitch_deg": 35, "material": "wood_shingle"},
+    "dormers": [],
+    "porch": {"type": "stoop", "posts": "iron", "rail": "none"},
+    "walls": "stone",
+    "foundation": "cut_stone",
+    "colors": {"body": "#c9b99a", "trim": "#f2efe6", "accent": "#3d4a3a", "roof": "#6b6358"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["right_end"],
+    "garage": "detached_1",
+    "yard": {"fence": "picket", "extras": ["garden", "clothesline", "birdbath"]},
+    "condition": "kept",
+    "year_built": 1872
+  },
+  "names": {"family": "Aufdemberg", "house_number": "1406", "street": "County Road 442"}
+}

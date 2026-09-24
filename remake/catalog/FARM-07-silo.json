@@ -1,0 +1,27 @@
+{
+  "id": "FARM-07-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Ira E. Lloyd Stock Farm, water tank silo",
+    "place": "Ellsworth County, KS",
+    "year": 1916,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Ira_E._Lloyd_Stock_Farm_Ellsworth_Co_KS_Water_Tank_Silo.jpg",
+    "photos": ["commons_Ira_E._Lloyd_Stock_Farm_Ellsworth_Co_KS_Water_Tank_Silo.jpg"],
+    "drawings": []
+  },
+  "brief": "Tall poured-concrete silo about 13 ft across and 48 ft high, formerly topped by a water tank: a flared concrete lip ring at the top, horizontal pour lines up the shaft, and a flat pilaster-like chute enclosure running full height on the front ending in an arched opening at the base. One small square window high up. Stands in a mown pasture with cedars behind. (Poured concrete; nearest vocabulary type is concrete_stave.)",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 13,
+    "height_ft": 48,
+    "roof": "none",
+    "chute": true,
+    "hoops": false,
+    "colors": {"body": "#bcae93", "trim": "#5a5048", "accent": "#5a5048", "roof": "#bcae93"},
+    "condition": "worn"
+  },
+  "names": {"family": "Pettibone"}
+}

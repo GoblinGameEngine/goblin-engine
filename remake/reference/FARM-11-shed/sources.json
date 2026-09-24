@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-11-shed",
+ "files": [
+  {
+   "file": "commons_Pavelka_farmstead_shed_from_SE.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pavelka_farmstead_shed_from_SE.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Pavelka_farmstead_shed_from_SE.jpg/1920px-Pavelka_farmstead_shed_from_SE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pavelka farmstead shed from SE.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Shed at Pavelka farmstead, located southeast of Bladen, Nebraska; seen from southeast."
+  },
+  {
+   "file": "commons_Pavelka_farmstead_barn_and_sheds_from_E.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pavelka_farmstead_barn_and_sheds_from_E.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Pavelka_farmstead_barn_and_sheds_from_E.jpg/1920px-Pavelka_farmstead_barn_and_sheds_from_E.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pavelka farmstead barn and sheds from E.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Barn and sheds on Pavelka farmstead, located southeast of Bladen, Nebraska; camera is facing west."
+  }
+ ]
+}

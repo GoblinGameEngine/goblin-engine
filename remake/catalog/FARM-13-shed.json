@@ -1,0 +1,28 @@
+{
+  "id": "FARM-13-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Knud Anderson Farmstead, Anderson Granary 2",
+    "place": "Douglas County, KS",
+    "year": 1880,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Granary_2_south_and_west_facades.jpg",
+    "photos": ["commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Granary_2_south_and_west_facades.jpg", "commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Granary_2_west_and_north_facades.jpg", "commons_Knud_Anderson_Farmstead_Douglas_Co_KS_Anderson_Garage_Granaries_and_Barn.jpg"],
+    "drawings": []
+  },
+  "brief": "Small unpainted frame granary about 14 ft by 22 ft raised on stone and wood block piers, its wide horizontal boards weathered silver-grey and split, a plank door in the gable end reached by loose wooden steps, and two small square bin openings high under the eave of the long side. Rusty red corrugated metal roof. An iron implement wheel leans against it; the red barn stands just beside it. (A granary; nearest vocabulary type is corn_crib.)",
+  "traits": {
+    "type": "corn_crib",
+    "w_ft": 14,
+    "d_ft": 22,
+    "height_ft": 13,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 30, "material": "metal"},
+    "raised_on_piers": true,
+    "colors": {"body": "#8e877c", "trim": "#6a645c", "accent": "#6a645c", "roof": "#a0582e"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Lindgaard"}
+}

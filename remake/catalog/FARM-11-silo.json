@@ -1,0 +1,28 @@
+{
+  "id": "FARM-11-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Thomas Farm, Silo (HABS MD-1251-D)",
+    "place": "Frederick, Frederick County, MD",
+    "year": 1900,
+    "source": "HABS MD-1251-D",
+    "url": "https://www.loc.gov/item/md1786/",
+    "photos": ["loc_md1786_photos_362011pv.jpg"],
+    "drawings": ["loc_md1786_sheet_00001a.png"]
+  },
+  "brief": "Squat early brick silo, about 14 ft across and only 22 ft high, of dark common brick in running bond, capped by a steep gable-roofed timber canopy with a plank-sheathed gable, the whole braced by an outside frame of heavy timber posts, rails and diagonal braces. It stands tight against the long side of the barn; in the example a later, much taller concrete stave silo rises behind it. Here the brick silo is the farm's only silo, a relic of an early silage experiment on a wheat farm.",
+  "traits": {
+    "type": "brick",
+    "diameter_ft": 14,
+    "height_ft": 22,
+    "roof": "gable",
+    "chute": false,
+    "hoops": false,
+    "braced_frame": true,
+    "colors": {"body": "#7a4a3a", "trim": "#8a7c68", "accent": "#8a7c68", "roof": "#4c4c4a"},
+    "condition": "worn"
+  },
+  "names": {"family": "Wedel"}
+}

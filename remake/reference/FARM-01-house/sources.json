@@ -1,0 +1,86 @@
+{
+ "structure": "FARM-01-house",
+ "files": [
+  {
+   "file": "loc_ne0060_photos_103405pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ne/ne0000/ne0060/photos/103405pv.jpg",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0060_photos_103406pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ne/ne0000/ne0060/photos/103406pv.jpg",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0060_photos_103407pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ne/ne0000/ne0060/photos/103407pv.jpg",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0060_photos_103408pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ne/ne0000/ne0060/photos/103408pv.jpg",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0060_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0060/sheet/00001a.tif",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0060_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0060/sheet/00002a.tif",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0060_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0060/sheet/00003a.tif",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0060_data_ne0060data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0060/data/ne0060data.pdf",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0060_data_ne0060cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0060/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0060/data/ne0060cap.pdf",
+   "title": "Hans Ehlers Farm, Main House, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "structure": "T-034",
+ "files": [
+  {
+   "file": "loc_mn0131_photos_091929pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0131/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mn/mn0100/mn0131/photos/091929pv.jpg",
+   "title": "O. E. Rolvaag House, 311 Manitou Street, Northfield, Rice County, MN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mn0131_photos_091930pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0131/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mn/mn0100/mn0131/photos/091930pv.jpg",
+   "title": "O. E. Rolvaag House, 311 Manitou Street, Northfield, Rice County, MN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mn0131_photos_091931pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0131/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mn/mn0100/mn0131/photos/091931pv.jpg",
+   "title": "O. E. Rolvaag House, 311 Manitou Street, Northfield, Rice County, MN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mn0131_photos_091932pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0131/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/mn/mn0100/mn0131/photos/091932pv.jpg",
+   "title": "O. E. Rolvaag House, 311 Manitou Street, Northfield, Rice County, MN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

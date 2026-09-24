@@ -1,0 +1,27 @@
+{
+  "id": "FARM-07-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Abram Click farmstead, granary and machinery",
+    "place": "Beloit, Mitchell County, KS",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Abram_Click_farmstead_granary_and_machinery_1.JPG",
+    "photos": ["commons_Abram_Click_farmstead_granary_and_machinery_1.JPG", "commons_Abram_Click_farmstead_granary_from_W_1.JPG", "commons_Abram_Click_farmstead_granary_and_barn_from_W_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Long low gable-roofed frame granary and implement shed, about 24 ft by 44 ft, in faded barn-red vertical boards weathered to grey at the base, with a sagging wood-shingle roof gone silver and patchy with missing shingles. A small ventilator opening in the gable. Around it sits a row of retired machinery: a steel threshing separator with its long straw-stacker pipe, iron-wheeled seed drill and a rusty orange tractor, all in unmown grass.",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 24,
+    "d_ft": 44,
+    "height_ft": 18,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 35, "material": "wood_shingle"},
+    "colors": {"body": "#b0413e", "trim": "#d8d2c4", "accent": "#8a8478", "roof": "#8c8579"},
+    "condition": "worn"
+  },
+  "names": {"family": "Pettibone"}
+}

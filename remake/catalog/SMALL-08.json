@@ -1,0 +1,48 @@
+{
+  "id": "SMALL-08",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 6.0,
+    "over": "Willow Run"
+  },
+  "example": {
+    "title": "Range Line Road Bridge (Hall Farm Bridge), Range Line Road over the West Branch of the Eau Claire River",
+    "place": "Antigo vicinity, Ackley Township, Langlade County, WI",
+    "year": 1908,
+    "source": "HAER WI-17",
+    "url": "https://www.loc.gov/item/wi0183/",
+    "photos": [
+      "haer_wi0183_photo_01.jpg",
+      "haer_wi0183_photo_02.jpg",
+      "haer_wi0183_photo_03.jpg",
+      "haer_wi0183_photo_04.jpg",
+      "haer_wi0183_photo_05.jpg"
+    ],
+    "drawings": [
+      "haer_wi0183_sheet_01.jpg",
+      "haer_wi0183_sheet_02.jpg"
+    ]
+  },
+  "brief": "Single-span riveted steel Warren pony truss with verticals and an unusual 'continuous' top chord: the end posts curve into the top chord without a hip joint (the chord is spliced from three pieces, heavier in the middle). 61 ft long with a 16 ft roadway; riveted angles with gusset plates, the deck (corrugated metal under gravel) hung above the bottom chord on steel floor beams. No separate railing beyond the truss web and a light rail at mid-height. Carries a crowned gravel township road across a small rocky river among fields and a farmhouse; striped hazard boards at the corners. Measured drawings included.",
+  "traits": {
+    "bridge_type": "warren_pony",
+    "truss_variant": "warren with verticals, curved end post",
+    "spans": 1,
+    "year": 1908,
+    "railing": "pipe_rail",
+    "span_ft": 61,
+    "width_ft": 16,
+    "height_ft": 7,
+    "panels": 6,
+    "abutments": "fieldstone",
+    "deck": "corrugated steel with gravel",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "BADGER STATE BRIDGE & IRON CO. · 1908",
+    "sign": "WILLOW RUN"
+  }
+}

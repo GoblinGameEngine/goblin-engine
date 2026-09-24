@@ -1,0 +1,47 @@
+{
+  "id": "SMALL-26",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 52.6,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "Sprague Bridge (9th Street Bridge), Ninth Street East over the Yellow River",
+    "place": "between Armenia and Necedah, Juneau County, WI",
+    "year": 1913,
+    "source": "HAER WI-57",
+    "url": "https://www.loc.gov/item/wi0227/",
+    "photos": [
+      "haer_wi0227_photo_01.jpg",
+      "haer_wi0227_photo_02.jpg",
+      "haer_wi0227_photo_03.jpg",
+      "haer_wi0227_photo_05.jpg",
+      "haer_wi0227_photo_06.jpg",
+      "haer_wi0227_photo_07.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Two-span pin-connected steel Pratt half-hip pony truss, 1913, each span 58 ft 8 in (121 ft 7 in overall), 15 ft roadway and 5 ft 4 in web height, built-up angle and channel members with riveted gussets. Bituminous surface on a corrugated metal deck over rolled I-beam floor beams and stringers; the trusses bear on metal-capped steel tube piers inside steel sheet retaining walls at the abutments and the central pier. Low lattice-and-angle rail along the trusses; striped hazard boards at the ends. Crosses a shallow sandy river in open woods on a narrow town street.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt half-hip",
+    "spans": 2,
+    "year": 1913,
+    "railing": "lattice",
+    "span_ft": 58.7,
+    "overall_ft": 121.6,
+    "width_ft": 15,
+    "height_ft": 5.3,
+    "panels": 5,
+    "abutments": "steel tube piers with steel sheet retaining walls",
+    "deck": "asphalt on corrugated steel",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "LAKESHORE BRIDGE & IRON CO. · 1913 · W. E. GAINES, CONTRACTOR",
+    "sign": "MILL CREEK"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "FARM-01-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "C. C. Hampton homestead, machine shed, 2170 Road 40",
+    "place": "Banner County, NE",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:C._C._Hampton_homestead_machine_shed_from_NW_1.JPG",
+    "photos": ["commons_C._C._Hampton_homestead_machine_shed_from_NW_1.JPG", "commons_C._C._Hampton_homestead_machine_shed_from_NW_2.JPG", "commons_C._C._Hampton_homestead_machine_shed_from_NW_3.JPG"],
+    "drawings": []
+  },
+  "brief": "Long low frame machine shed with a medium-pitch gable roof of rusty corrugated metal, faded red drop siding and white trim, a row of small vertical four-light windows along the side, and a wide sheet-metal sliding door on a track across the gable end plus a man door. Board windbreak fences and pipe gates abut it.",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 26,
+    "d_ft": 48,
+    "height_ft": 18,
+    "roof": {"type": "gable", "pitch_deg": 28, "material": "metal"},
+    "door": "sliding_gable_end",
+    "colors": {"body": "#9c3a34", "trim": "#e8e4dc", "accent": "#b9bcbc", "roof": "#9a8a7a"},
+    "condition": "worn"
+  },
+  "names": {"family": "Voeltz"}
+}

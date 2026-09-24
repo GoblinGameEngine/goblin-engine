@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-07",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 7.0,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "Wells County Bridge No. 74, County Road 400 West over Rock Creek Ditch",
+    "place": "Bluffton vicinity, Liberty Township, Wells County, IN",
+    "year": 1903,
+    "source": "HAER IN-94",
+    "url": "https://www.loc.gov/item/in0417/",
+    "photos": [
+      "haer_in0417_photo_01.jpg",
+      "haer_in0417_photo_03.jpg",
+      "haer_in0417_photo_05.jpg",
+      "haer_in0417_photo_08.jpg",
+      "haer_in0417_photo_10.jpg",
+      "haer_in0417_photo_12.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single-span, five-panel pin-connected steel Pratt pony truss, 72 ft long with a 14 ft plank deck, set on cut-stone abutments over a straightened drainage creek with steep grassy banks. Riveted I-section top chord, T-section verticals of two angles laced with flat bar, paired drawn-bar diagonals crossing in the centre panel, stirrup hangers carrying I-beam floor beams and five stringers; portal posts land on cast-iron shoes. Latticed guard rails run about 3 ft above the deck on the inner faces; hazard boards mark the corners. Carries a narrow broken-asphalt/gravel county road past a farmstead with a gable-roofed barn on the bluff beside it, flat ploughed fields all round.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt",
+    "spans": 1,
+    "year": 1903,
+    "railing": "lattice",
+    "span_ft": 72,
+    "width_ft": 14,
+    "height_ft": 8,
+    "panels": 5,
+    "abutments": "cut stone",
+    "deck": "timber plank on steel stringers",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "WABASH VALLEY BRIDGE CO. · BUILDERS · 1903",
+    "sign": "MILL CREEK"
+  }
+}

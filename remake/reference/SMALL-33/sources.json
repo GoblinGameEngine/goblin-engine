@@ -1,0 +1,89 @@
+{
+ "structure": "SMALL-33",
+ "files": [
+  {
+   "file": "loc_md1462_data_md1462data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/md1462/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/md/md1400/md1462/data/md1462data.pdf",
+   "title": "md1462",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_md1462_data_md1462cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/md1462/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/md/md1400/md1462/data/md1462cap.pdf",
+   "title": "md1462",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_md1462_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_NORTHEAST,_GENERAL_VIEW_WITHIN_SETTING_-_Harmony_Road_Bridge,_Harmony_Road_spanning_Little_Catoctin_Creek,_Myersville,_Frederick_County,_MD_HAER_MD,11-MYRV.V,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/VIEW_NORTHEAST%2C_GENERAL_VIEW_WITHIN_SETTING_-_Harmony_Road_Bridge%2C_Harmony_Road_spanning_Little_Catoctin_Creek%2C_Myersville%2C_Frederick_County%2C_MD_HAER_MD%2C11-MYRV.V%2C1-1.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW NORTHEAST, GENERAL VIEW WITHIN SETTING - Harmony Road Bridge, Harmony Road spanning Little Catoctin Creek, Myersville, Frederick County, MD HAER MD,11-MYRV.V,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nSmalling, Walter, creator",
+   "caption": "\nPorman, M D; Lampl, Elizabeth Jo, contractor; Smalling, Walter, photographer"
+  },
+  {
+   "file": "haer_md1462_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_WEST,_SOUTHEAST_ELEVATION_-_Harmony_Road_Bridge,_Harmony_Road_spanning_Little_Catoctin_Creek,_Myersville,_Frederick_County,_MD_HAER_MD,11-MYRV.V,1-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/VIEW_WEST%2C_SOUTHEAST_ELEVATION_-_Harmony_Road_Bridge%2C_Harmony_Road_spanning_Little_Catoctin_Creek%2C_Myersville%2C_Frederick_County%2C_MD_HAER_MD%2C11-MYRV.V%2C1-4.tif/lossy-page1-1920px-VIEW_WEST%2C_SOUTHEAST_ELEVATION_-_Harmony_Road_Bridge%2C_Harmony_Road_spanning_Little_Catoctin_Creek%2C_Myersville%2C_Frederick_County%2C_MD_HAER_MD%2C11-MYRV.V%2C1-4.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW WEST, SOUTHEAST ELEVATION - Harmony Road Bridge, Harmony Road spanning Little Catoctin Creek, Myersville, Frederick County, MD HAER MD,11-MYRV.V,1-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nPorman, M D\nLampl, Elizabeth Jo, contractor\nSmalling, Walter, photographer",
+   "caption": ""
+  },
+  {
+   "file": "haer_md1462_photo_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_NORTHEAST,_TRAFFIC_LEVEL_VIEW_-_Harmony_Road_Bridge,_Harmony_Road_spanning_Little_Catoctin_Creek,_Myersville,_Frederick_County,_MD_HAER_MD,11-MYRV.V,1-6.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/VIEW_NORTHEAST%2C_TRAFFIC_LEVEL_VIEW_-_Harmony_Road_Bridge%2C_Harmony_Road_spanning_Little_Catoctin_Creek%2C_Myersville%2C_Frederick_County%2C_MD_HAER_MD%2C11-MYRV.V%2C1-6.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW NORTHEAST, TRAFFIC LEVEL VIEW - Harmony Road Bridge, Harmony Road spanning Little Catoctin Creek, Myersville, Frederick County, MD HAER MD,11-MYRV.V,1-6.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nSmalling, Walter, creator",
+   "caption": "\nPorman, M D; Lampl, Elizabeth Jo, contractor; Smalling, Walter, photographer"
+  },
+  {
+   "file": "haer_md1462_photo_09.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_SOUTHWEST,_DETAIL_OF_SUBSTRUCTURE_AND_POST_CONNECTION_-_Harmony_Road_Bridge,_Harmony_Road_spanning_Little_Catoctin_Creek,_Myersville,_Frederick_County,_MD_HAER_MD,11-MYRV.V,1-9.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/VIEW_SOUTHWEST%2C_DETAIL_OF_SUBSTRUCTURE_AND_POST_CONNECTION_-_Harmony_Road_Bridge%2C_Harmony_Road_spanning_Little_Catoctin_Creek%2C_Myersville%2C_Frederick_County%2C_MD_HAER_MD%2C11-MYRV.V%2C1-9.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW SOUTHWEST, DETAIL OF SUBSTRUCTURE AND POST CONNECTION - Harmony Road Bridge, Harmony Road spanning Little Catoctin Creek, Myersville, Frederick County, MD HAER MD,11-MYRV.V,1-9.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nSmalling, Walter, creator",
+   "caption": "\nPorman, M D; Lampl, Elizabeth Jo, contractor; Smalling, Walter, photographer"
+  },
+  {
+   "file": "haer_md1462_photo_11.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL_OF_PIN_CONNECTION_AT_TOP_CHORD,_SOUTHEAST_ELEVATION_-_Harmony_Road_Bridge,_Harmony_Road_spanning_Little_Catoctin_Creek,_Myersville,_Frederick_County,_MD_HAER_MD,11-MYRV.V,1-11.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/DETAIL_OF_PIN_CONNECTION_AT_TOP_CHORD%2C_SOUTHEAST_ELEVATION_-_Harmony_Road_Bridge%2C_Harmony_Road_spanning_Little_Catoctin_Creek%2C_Myersville%2C_Frederick_County%2C_MD_HAER_MD%2C11-MYRV.V%2C1-11.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL OF PIN CONNECTION AT TOP CHORD, SOUTHEAST ELEVATION - Harmony Road Bridge, Harmony Road spanning Little Catoctin Creek, Myersville, Frederick County, MD HAER MD,11-MYRV.V,1-11.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nSmalling, Walter",
+   "caption": "\nPorman, M D; Lampl, Elizabeth Jo, contractor; Smalling, Walter, photographer"
+  },
+  {
+   "file": "haer_md1462_photo_14.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL_OF_MANUFACTURERS%27_PLAQUE,_SOUTHEAST_ELEVATION_NEAR_SOUTH_END_POST_-_Harmony_Road_Bridge,_Harmony_Road_spanning_Little_Catoctin_Creek,_Myersville,_Frederick_County,_MD_HAER_MD,11-MYRV.V,1-14.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/DETAIL_OF_MANUFACTURERS%27_PLAQUE%2C_SOUTHEAST_ELEVATION_NEAR_SOUTH_END_POST_-_Harmony_Road_Bridge%2C_Harmony_Road_spanning_Little_Catoctin_Creek%2C_Myersville%2C_Frederick_County%2C_MD_HAER_MD%2C11-MYRV.V%2C1-14.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL OF MANUFACTURERS' PLAQUE, SOUTHEAST ELEVATION NEAR SOUTH END POST - Harmony Road Bridge, Harmony Road spanning Little Catoctin Creek, Myersville, Frederick County, MD HAER MD,11-MYRV.V,1-14.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nSmalling, Walter",
+   "caption": "\nPorman, M D; Lampl, Elizabeth Jo, contractor; Smalling, Walter, photographer"
+  }
+ ]
+}

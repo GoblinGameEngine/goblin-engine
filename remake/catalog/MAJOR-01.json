@@ -1,0 +1,34 @@
+{
+  "id": "MAJOR-01",
+  "settlement": "rural (near Harrow Falls)",
+  "kind": "crossing",
+  "crossing": {"type": "major", "road_class": "county", "span_m": 44.1, "over": "Kettle River"},
+  "example": {
+    "title": "Abbott's Parker Through Truss Bridge, Abbott Road (CR 33) over the Sandusky River",
+    "place": "Tiffin vicinity, Pleasant Township, Seneca County, OH",
+    "year": 1897,
+    "source": "HAER OH-48",
+    "url": "https://www.loc.gov/item/oh1479/",
+    "photos": ["haer_oh1479_photo_01.jpg", "haer_oh1479_photo_02.jpg", "haer_oh1479_photo_03.jpg", "haer_oh1479_photo_05.jpg", "haer_oh1479_photo_06.jpg", "haer_oh1479_photo_07.jpg"],
+    "drawings": []
+  },
+  "brief": "Single-span, pin-connected Parker through truss with a polygonal (curved-profile) top chord, 184 ft clear span (218 ft with approaches) and a 15 ft one-lane roadway, on concrete-capped Berea sandstone abutments. Top chords and end posts are laced channels with cover plates, bottom chords and diagonals flat eyebars, portal and sway bracing of laced angles; a low lattice railing runs inside the trusses, W-beam guardrail on the approaches. Stands alone in open cornfields on a gravel-shouldered county road with trees along the riverbank (photos are HAER 1986 via Wikimedia Commons; truss height and panel count estimated from photo 2).",
+  "traits": {
+    "bridge_type": "through_truss_parker",
+    "spans": 1,
+    "year": 1897,
+    "railing": "lattice",
+    "span_ft": 184,
+    "width_ft": 15,
+    "height_ft": 26,
+    "panels": 10,
+    "abutments": "stone with concrete caps",
+    "deck": "concrete over steel stringers",
+    "approach_rail": "guardrail",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "KETTLE RIVER BRIDGE · TAMSIN COUNTY COMMISSIONERS · 1897 · BUILT BY THE BRIGHTWATER BRIDGE & IRON CO.",
+    "sign": "KETTLE RIVER"
+  }
+}

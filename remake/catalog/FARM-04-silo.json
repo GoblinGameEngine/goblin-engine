@@ -1,0 +1,25 @@
+{
+  "id": "FARM-04-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Banner Hereford Farm, silo",
+    "place": "Osage County, KS",
+    "year": 1918,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Banner_Hereford_Farm_silo_Osage_County,_KS.jpg",
+    "photos": ["commons_Banner_Hereford_Farm_silo_Osage_County_KS.jpg"],
+    "drawings": []
+  },
+  "brief": "Glazed hollow-clay-tile silo about 16 ft across and 40 ft tall, the blocks fired in a shimmering mix of rust-brown, purple and blue glazes laid in running bond; open top, no roof or chute. Rises out of a cattle lot with pipe gates, hay bales and a low stone wall at its foot.",
+  "traits": {
+    "type": "tile",
+    "diameter_ft": 16,
+    "height_ft": 40,
+    "roof": "none",
+    "colors": {"body": "#8a4e3a", "trim": "#4a4a78", "accent": "#4a4a78", "roof": "#8a4e3a"},
+    "condition": "worn"
+  },
+  "names": {"family": "Tolliver"}
+}

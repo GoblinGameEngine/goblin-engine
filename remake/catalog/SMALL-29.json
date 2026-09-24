@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-29",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 47.5,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "Vermillion County Bridge No. 120, Main Street over the Little Vermilion River",
+    "place": "Newport, Vermillion County, IN",
+    "year": 1913,
+    "source": "HAER IN-96",
+    "url": "https://www.loc.gov/item/in0426/",
+    "photos": [
+      "haer_in0426_photo_01.jpg",
+      "haer_in0426_photo_04.jpg",
+      "haer_in0426_photo_07.jpg",
+      "haer_in0426_photo_11.jpg",
+      "haer_in0426_photo_14.jpg",
+      "haer_in0426_photo_17.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Two-span reinforced-concrete filled-spandrel arch carrying a small town's Main Street out over the river, 1913, 208 ft long and only 20.8 ft wide out to out with a single 18.7 ft lane. Two flat segmental arches on a central pier with a rounded cutwater, solid spandrel walls, and a paneled solid concrete parapet; tall square concrete standards (lamp-post pedestals) stand at the end posts. Guardrail was added at both ends in 1980. Woodland and a few houses at the town edge, a gravel side road meeting the approach.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "spans": 2,
+    "year": 1913,
+    "railing": "open_parapet",
+    "railing_detail": "solid paneled concrete parapet with tall end standards",
+    "span_ft": 100,
+    "overall_ft": 208,
+    "width_ft": 20.8,
+    "roadway_ft": 18.7,
+    "height_ft": 16,
+    "arch_form": "filled spandrel, segmental",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "MAIN STREET BRIDGE · 1913 · COUNTY COMMISSIONERS · MARSH & NOLAN, CONTRACTORS",
+    "sign": "MILL CREEK"
+  }
+}

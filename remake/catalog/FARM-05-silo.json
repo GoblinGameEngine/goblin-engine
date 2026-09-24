@@ -1,0 +1,26 @@
+{
+  "id": "FARM-05-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Mathias S. Sowers II Silo (grain bin), Sowers-Crawford Farms Historic District",
+    "place": "Douglas County, KS",
+    "year": 1965,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:53_Sowers,_Mathias_S._ll_Silo_Sowers_-_Crawford_Farms_Historic_District_Douglas_Co_KS.jpg",
+    "photos": ["commons_53_Sowers_Mathias_S._ll_Silo_Sowers_-_Crawford_Farms_Historic_District_Douglas_Co_KS.jpg"],
+    "drawings": []
+  },
+  "brief": "Squat corrugated galvanized-steel grain bin (listed as the farm's silo), about 21 ft across and 18 ft to the eave, bolted ring panels with vertical stiffener seams, a shallow conical ribbed steel roof with a round vent cap, and a small curved-top access hatch near the ground. Stands in long grass beside the red barn. NOTE: the vocabulary has no steel grain bin; typed as the nearest metal silo, builder should use the dimensions/colors (short, wide, corrugated, conical roof).",
+  "traits": {
+    "type": "harvestore_blue",
+    "diameter_ft": 21,
+    "height_ft": 18,
+    "roof": "cone_metal",
+    "corrugated": true,
+    "colors": {"body": "#b9bdbf", "trim": "#9da1a3", "accent": "#9da1a3", "roof": "#c9cbcc"},
+    "condition": "worn"
+  },
+  "names": {"family": "Harlan"}
+}

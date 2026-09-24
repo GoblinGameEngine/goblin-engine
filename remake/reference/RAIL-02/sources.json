@@ -1,0 +1,89 @@
+{
+ "structure": "RAIL-02",
+ "files": [
+  {
+   "file": "loc_wi0579_data_wi0579data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0579/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0500/wi0579/data/wi0579data.pdf",
+   "title": "wi0579",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_wi0579_data_wi0579cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0579/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/wi/wi0500/wi0579/data/wi0579cap.pdf",
+   "title": "wi0579",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "haer_wi0579_photo_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_TO_NORTH_NORTHEAST._SUBJECT_BRIDGE_AND_ITS_SETTING._-_Chicago_and_Northwestern_Railroad_Bridge,_Spanning_Eagle_River,_Eagle_River,_Vilas_County,_WI_HAER_WIS,63-EAGR,1-1.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/VIEW_TO_NORTH_NORTHEAST._SUBJECT_BRIDGE_AND_ITS_SETTING._-_Chicago_and_Northwestern_Railroad_Bridge%2C_Spanning_Eagle_River%2C_Eagle_River%2C_Vilas_County%2C_WI_HAER_WIS%2C63-EAGR%2C1-1.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW TO NORTH NORTHEAST. SUBJECT BRIDGE AND ITS SETTING. - Chicago and Northwestern Railroad Bridge, Spanning Eagle River, Eagle River, Vilas County, WI HAER WIS,63-EAGR,1-1.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nAmerican Bridge Company; CNW Railway"
+  },
+  {
+   "file": "haer_wi0579_photo_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_TO_NORTHWEST._-_Chicago_and_Northwestern_Railroad_Bridge,_Spanning_Eagle_River,_Eagle_River,_Vilas_County,_WI_HAER_WIS,63-EAGR,1-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/VIEW_TO_NORTHWEST._-_Chicago_and_Northwestern_Railroad_Bridge%2C_Spanning_Eagle_River%2C_Eagle_River%2C_Vilas_County%2C_WI_HAER_WIS%2C63-EAGR%2C1-2.tif/lossy-page1-1920px-VIEW_TO_NORTHWEST._-_Chicago_and_Northwestern_Railroad_Bridge%2C_Spanning_Eagle_River%2C_Eagle_River%2C_Vilas_County%2C_WI_HAER_WIS%2C63-EAGR%2C1-2.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW TO NORTHWEST. - Chicago and Northwestern Railroad Bridge, Spanning Eagle River, Eagle River, Vilas County, WI HAER WIS,63-EAGR,1-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nAmerican Bridge Company; CNW Railway"
+  },
+  {
+   "file": "haer_wi0579_photo_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_TO_NORTH_NORTHWEST._-_Chicago_and_Northwestern_Railroad_Bridge,_Spanning_Eagle_River,_Eagle_River,_Vilas_County,_WI_HAER_WIS,63-EAGR,1-4.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/VIEW_TO_NORTH_NORTHWEST._-_Chicago_and_Northwestern_Railroad_Bridge%2C_Spanning_Eagle_River%2C_Eagle_River%2C_Vilas_County%2C_WI_HAER_WIS%2C63-EAGR%2C1-4.tif/lossy-page1-1920px-VIEW_TO_NORTH_NORTHWEST._-_Chicago_and_Northwestern_Railroad_Bridge%2C_Spanning_Eagle_River%2C_Eagle_River%2C_Vilas_County%2C_WI_HAER_WIS%2C63-EAGR%2C1-4.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW TO NORTH NORTHWEST. - Chicago and Northwestern Railroad Bridge, Spanning Eagle River, Eagle River, Vilas County, WI HAER WIS,63-EAGR,1-4.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nAmerican Bridge Company; CNW Railway"
+  },
+  {
+   "file": "haer_wi0579_photo_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_TO_NORTHWEST._THREE_PIERS_ANCHORED_TO_RIVER_BOTTOM._-_Chicago_and_Northwestern_Railroad_Bridge,_Spanning_Eagle_River,_Eagle_River,_Vilas_County,_WI_HAER_WIS,63-EAGR,1-5.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/VIEW_TO_NORTHWEST._THREE_PIERS_ANCHORED_TO_RIVER_BOTTOM._-_Chicago_and_Northwestern_Railroad_Bridge%2C_Spanning_Eagle_River%2C_Eagle_River%2C_Vilas_County%2C_WI_HAER_WIS%2C63-EAGR%2C1-5.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW TO NORTHWEST. THREE PIERS ANCHORED TO RIVER BOTTOM. - Chicago and Northwestern Railroad Bridge, Spanning Eagle River, Eagle River, Vilas County, WI HAER WIS,63-EAGR,1-5.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nAmerican Bridge Company; CNW Railway"
+  },
+  {
+   "file": "haer_wi0579_photo_07.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_TO_EAST_NORTHEAST._TYPICAL_APPROACH_SPAN_BENT_TO_RIGHT._SOUTHERNMOST,_GIRDER_SPAN_PIER_TO_LEFT._-_Chicago_and_Northwestern_Railroad_Bridge,_Spanning_Eagle_River,_Eagle_River,_HAER_WIS,63-EAGR,1-7.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/VIEW_TO_EAST_NORTHEAST._TYPICAL_APPROACH_SPAN_BENT_TO_RIGHT._SOUTHERNMOST%2C_GIRDER_SPAN_PIER_TO_LEFT._-_Chicago_and_Northwestern_Railroad_Bridge%2C_Spanning_Eagle_River%2C_Eagle_River%2C_HAER_WIS%2C63-EAGR%2C1-7.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW TO EAST NORTHEAST. TYPICAL APPROACH SPAN BENT TO RIGHT. SOUTHERNMOST, GIRDER SPAN PIER TO LEFT. - Chicago and Northwestern Railroad Bridge, Spanning Eagle River, Eagle River, HAER WIS,63-EAGR,1-7.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nAmerican Bridge Company; CNW Railway"
+  },
+  {
+   "file": "haer_wi0579_photo_08.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:VIEW_TO_NORTHWEST._INTERIOR_BRACING_BETWEEN_STEEL_GIRDERS._-_Chicago_and_Northwestern_Railroad_Bridge,_Spanning_Eagle_River,_Eagle_River,_Vilas_County,_WI_HAER_WIS,63-EAGR,1-8.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/VIEW_TO_NORTHWEST._INTERIOR_BRACING_BETWEEN_STEEL_GIRDERS._-_Chicago_and_Northwestern_Railroad_Bridge%2C_Spanning_Eagle_River%2C_Eagle_River%2C_Vilas_County%2C_WI_HAER_WIS%2C63-EAGR%2C1-8.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:VIEW TO NORTHWEST. INTERIOR BRACING BETWEEN STEEL GIRDERS. - Chicago and Northwestern Railroad Bridge, Spanning Eagle River, Eagle River, Vilas County, WI HAER WIS,63-EAGR,1-8.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": "\nAmerican Bridge Company; CNW Railway"
+  }
+ ]
+}

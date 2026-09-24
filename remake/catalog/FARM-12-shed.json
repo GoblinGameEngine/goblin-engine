@@ -1,0 +1,27 @@
+{
+  "id": "FARM-12-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Knapp Ranch, sheep shed, 13168 450th Avenue",
+    "place": "Roberts County, SD",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Knapp_Ranch_from_SW,_shop,_granary,_chicken_house,_and_sheep_shed.jpg",
+    "photos": ["commons_Knapp_Ranch_from_SW_shop_granary_chicken_house_and_sheep_shed.jpg"],
+    "drawings": []
+  },
+  "brief": "Long low frame shed about 30 ft by 80 ft, the rightmost building in the example view: unpainted horizontal wood siding weathered to brown-grey, a new pale-grey steel gable roof, a large open drive-in doorway in the gable end and a regular row of small square windows along the long side. Reused here as the machine and hay-rack shed. It sits on a grassy rise beside a smaller broken-gable granary, a chicken house and a red-and-white shop, prairie grass all around.",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 30,
+    "d_ft": 80,
+    "height_ft": 16,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 28, "material": "metal"},
+    "colors": {"body": "#7a6e62", "trim": "#5e554c", "accent": "#5e554c", "roof": "#a9aaa8"},
+    "condition": "worn"
+  },
+  "names": {"family": "Brandauer"}
+}
