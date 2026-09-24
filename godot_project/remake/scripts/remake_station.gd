@@ -42,6 +42,10 @@ func _ready() -> void:
 	add_child(terrain)
 	terrain.setup(player, floor_mat)
 	MapWater.build(self)
+	var roads := MapRoads.new()
+	roads.name = "Roads"
+	add_child(roads)
+	roads.setup()
 	var cliffs := CliffWalls.new()
 	cliffs.name = "CliffWalls"
 	add_child(cliffs)

@@ -1384,7 +1384,16 @@ if "--inventory" in sys.argv:
                          for n, path, pond in CREEK_PATHS if pond],
                "oxbows": [{"name": n, "depth": 1.5, "poly": [[round(a, 1), round(b_, 1)] for a, b_ in poly]} for n, poly in OXBOW_POLYS],
                "ditches": [{"s0": round(min(p_[0] for p_ in run), 1), "s1": round(max(p_[0] for p_ in run), 1),
-                            "x": round(run[0][1], 1), "hw": 1.5, "depth": 0.6} for run in DITCHES]}
+                            "x": round(run[0][1], 1), "hw": 1.5, "depth": 0.6} for run in DITCHES],
+               # roads and streets as drawn (width = the map's ROAD_W), the railway, and the towns'
+               # areas (lawns, parking, squares...) -- the game grades and surfaces them
+               "roads": [{"cls": cls, "w": ROAD_W[cls], "name": nm, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in pts]}
+                         for pts, cls, nm in ROADS]
+                        + [{"cls": cls, "w": ROAD_W[cls], "town": t.name, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in pts]}
+                           for t in TOWNS for pts, cls in t.streets],
+               "rail": {"w": 8, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in RAIL]},
+               "areas": [{"kind": kind, "town": t.name, "poly": [[round(a, 1), round(b_, 1)] for a, b_ in poly]}
+                         for t in TOWNS for poly, kind in t.areas]}
         with open(sys.argv[sys.argv.index("--terrain") + 1], "w") as f:
             json.dump(ter, f, indent=0)
         print(f"terrain: {len(ter['creeks'])} creeks/spurs, {len(ter['ponds'])} ponds, {len(ter['oxbows'])} oxbows, "

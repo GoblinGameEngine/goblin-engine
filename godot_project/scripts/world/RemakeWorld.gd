@@ -26,8 +26,13 @@ static func build(root: Node3D, settlements: Array) -> Dictionary:
 		var x: float = e.x
 		var yaw: float = e.yaw
 		var basis := StationGeo.basis(s, yaw)
-		# the highest ground under the footprint: corners, edge midpoints and centre
-		var h := -1e9
+		# its pad (MapTerrain levels the lot to it); a crossing, which has none: the highest ground
+		# under its footprint -- corners, edge midpoints and centre
+		var h := MapTerrain.pad_height(e.id)
+		if not is_nan(h):
+			entries.append(_entry(e, s, x, basis, h))
+			continue
+		h = -1e9
 		var c := cos(yaw)
 		var sn := sin(yaw)
 		for lx in [e.fmin[0], (e.fmin[0] + e.fmax[0]) * 0.5, e.fmax[0]]:
@@ -36,13 +41,16 @@ static func build(root: Node3D, settlements: Array) -> Dictionary:
 				var dx: float = lx * c + lz * sn
 				var ds: float = lx * sn - lz * c
 				h = maxf(h, MapTerrain.elevation(s + ds, x + dx))
-		var pos := StationGeo.point(s, x, h)
-		var cell2 := RemakeLodClusters.CELL2
-		var cell3 := RemakeLodClusters.CELL3
-		entries.append({"id": e.id, "xform": Transform3D(basis, pos),
-			"key2": Vector2i(floori(s / cell2), floori(x / cell2)),
-			"key3": Vector2i(floori(s / cell3), floori(x / cell3))})
+		entries.append(_entry(e, s, x, basis, h))
 	var t0 := Time.get_ticks_msec()
 	var info: Dictionary = await RemakeLodClusters.build(root, entries, false)      # full detail streams (RemakeDetailStreamer)
 	info["ms"] = Time.get_ticks_msec() - t0
 	return info
+
+
+static func _entry(e: Dictionary, s: float, x: float, basis: Basis, h: float) -> Dictionary:
+	var cell2 := RemakeLodClusters.CELL2
+	var cell3 := RemakeLodClusters.CELL3
+	return {"id": e.id, "xform": Transform3D(basis, StationGeo.point(s, x, h)),
+		"key2": Vector2i(floori(s / cell2), floori(x / cell2)),
+		"key3": Vector2i(floori(s / cell3), floori(x / cell3))}

@@ -65,8 +65,14 @@ func _group_rect(g: Vector2i) -> Rect2:
 	return Rect2(a.position, b.end - a.position)
 
 
-func _tint(depth: float, slope: float) -> Color:
-	var grass := Color(1.0, 1.0, 1.0)
+const AREA_TINT := {"lawn": Color(1.08, 1.12, 0.95), "park": Color(1.05, 1.1, 0.95), "campus": Color(1.08, 1.12, 0.95),
+	"schoolground": Color(1.05, 1.08, 0.95), "sportsfield": Color(1.0, 1.15, 0.9), "cemetery": Color(0.85, 0.95, 0.85),
+	"square": Color(0.95, 0.93, 0.88), "promenade": Color(1.0, 0.95, 0.85),
+	"parking": Color(0.42, 0.42, 0.42), "lot": Color(0.5, 0.48, 0.45), "culdesac": Color(0.45, 0.45, 0.45)}
+
+
+func _tint(depth: float, slope: float, area: String = "") -> Color:
+	var grass: Color = AREA_TINT.get(area, Color(1.0, 1.0, 1.0))
 	var mud := Color(0.55, 0.47, 0.36)
 	var bed := Color(0.42, 0.38, 0.32)
 	var c := grass.lerp(mud, clampf(depth / 0.6, 0.0, 1.0))
@@ -90,7 +96,7 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 			var x := r.position.y + r.size.y * j / float(nx)
 			var smp := MapTerrain.sample(s, x)
 			row_p.append(StationGeo.point(s, x, smp.x))
-			row_h.append([smp.x, smp.y])
+			row_h.append([smp.x, smp.y, MapTerrain.area_kind(s, x) if step <= 8.0 else ""])
 		pts.append(row_p)
 		hs.append(row_h)
 	# normals from the grid itself (central differences), so a skirt can carry the ground's normal:
@@ -115,7 +121,7 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 			for k in [0, 1, 2, 0, 2, 3]:            # counter-clockwise seen from above (toward the axis)
 				var a: int = q[k][0]
 				var b: int = q[k][1]
-				st.set_color(_tint(hs[a][b][1], slope))
+				st.set_color(_tint(hs[a][b][1], slope, hs[a][b][2]))
 				st.set_normal(nrm[a][b])
 				st.set_uv(Vector2((r.position.y + r.size.y * b / float(nx)) / TEX_M, (r.position.x + r.size.x * a / float(ns)) / TEX_M))
 				st.add_vertex(pts[a][b])

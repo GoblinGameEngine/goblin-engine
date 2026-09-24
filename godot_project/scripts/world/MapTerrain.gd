@@ -13,14 +13,23 @@ class_name MapTerrain
 ##                                  a k=1 regional tilt; gentle noise (periodic here -- the
 ##                                  preview's isn't, and would step 2 m at s = 0)
 ## Data (res://remake/terrain.json, written by map_preview.py --terrain): creeks and spurs
-## (polylines), ponds (ellipses), oxbow lakes (polygons), field ditches (runs along s).
+## (polylines), ponds (ellipses), oxbow lakes (polygons), field ditches (runs along s), roads and
+## streets, the railway, the towns' areas; and each placed structure's lot (placement.json) --
+## the terrain is graded to the roads and levelled under every building.
 ##
 ## elevation(s, x) = base_elev - water_depth: + up (toward the axis), metres.
 
 const PATH := "res://remake/terrain.json"
 const CELL := 64.0                   # spatial grid for the polyline/polygon features
 
+const ROAD_BLEND := 5.0             # a road's grade blends back into the terrain over this, past its shoulder
+const PAD_MARGIN := 1.0             # a lot is levelled this far past the building's bounds...
+const PAD_BLEND := 4.0              # ...then blends back into the terrain over this
+const PLACEMENT := "res://remake/placement.json"
+
 static var _d: Dictionary = {}
+static var _pads: Array = []         # [s, x, cos yaw, sin yaw, min x, min z, max x, max z, height]
+static var _pad_by_id: Dictionary = {}
 static var _grid: Dictionary = {}    # Vector2i -> Array of [kind, index]
 static var R := 500.0
 static var C := TAU * 500.0
@@ -52,6 +61,22 @@ static func _load() -> void:
 	for i in _d.ditches.size():
 		var dt: Dictionary = _d.ditches[i]
 		_index(["ditch", i], dt.s0, dt.x, dt.s1, dt.x, dt.hw + 2.0)
+	# the railway is graded like a road (its bed), drawn apart (MapRoads)
+	_d.roads.append({"cls": "rail", "w": 6.0, "pts": _d.rail.pts})
+	for i in _d.roads.size():
+		var rd: Dictionary = _d.roads[i]
+		var rp: Array = rd.pts
+		for k in rp.size() - 1:
+			_index(["road", i, k], rp[k][0], rp[k][1], rp[k + 1][0], rp[k + 1][1], rd.w * 0.5 + ROAD_BLEND)
+	for i in _d.areas.size():
+		var ap: Array = _d.areas[i].poly
+		var lo := Vector2(1e9, 1e9)
+		var hi := Vector2(-1e9, -1e9)
+		for q in ap:
+			lo = Vector2(minf(lo.x, q[0]), minf(lo.y, q[1]))
+			hi = Vector2(maxf(hi.x, q[0]), maxf(hi.y, q[1]))
+		_index(["area", i], lo.x, lo.y, hi.x, hi.y, 1.0)
+	_load_pads()
 
 
 static func _index(item: Array, s0: float, x0: float, s1: float, x1: float, grow: float) -> void:
@@ -195,17 +220,114 @@ static func _small_depth(s: float, x: float) -> float:
 
 
 static func sample(s: float, x: float) -> Vector2:
-	## (elevation, carved depth below the undisturbed terrain) at (s, x).  Inside the river /
-	## lake depression the bed is cut down from the bank-full water level, not from the rolling
-	## terrain, so the water fills it everywhere with no dry islands or bare banks.
+	## (elevation, carved depth below the undisturbed terrain) at (s, x).  The terrain is graded
+	## first -- each building's lot levelled to its pad, then flat across every road at its
+	## centreline's height -- then the small water is carved (not under a road: that's a culvert), then the
+	## river / lake: inside its depression the bed is cut down from the bank-full water level, so
+	## the water fills it to the brim (and a road meets it at a bridge).
 	_load()
 	s = fposmod(s, C)
 	var base := base_elev(s, x)
-	var h := base - _small_depth(s, x)
+	# lots first, then the roads over them: a carriageway is exactly at its own grade even where a
+	# neighbouring lot's pad blends up to it
+	var rg := _road_grade(s, x, _pad_grade(s, x, base))
+	var h := rg.x
+	if rg.y < 0.5:
+		h -= _small_depth(s, x)
 	var bp := _body_profile(s, x)
 	if bp > 0.0:
 		h = minf(h, water_level(s) - bp)
-	return Vector2(h, base - h)
+	return Vector2(h, maxf(0.0, base - h))
+
+
+static func _road_grade(s: float, x: float, base: float) -> Vector2:
+	## (terrain graded to the nearest road, that road's weight 0..1): flat across the carriageway
+	## and a 0.5 m shoulder at the centreline's height, blending back over ROAD_BLEND.
+	var best_w := 0.0
+	var best_h := base
+	for it in _grid.get(Vector2i(floori(s / CELL), floori(x / CELL)), []):
+		if it[0] != "road":
+			continue
+		var rd: Dictionary = _d.roads[it[1]]
+		var a: Array = rd.pts[it[2]]
+		var bq: Array = rd.pts[it[2] + 1]
+		var pr := _seg_proj(s, x, a[0], a[1], bq[0], bq[1])
+		var hw: float = rd.w * 0.5
+		var w := 1.0 - smoothstep(hw + 0.5, hw + 0.5 + ROAD_BLEND, pr.x)
+		if w > best_w:
+			best_w = w
+			best_h = base_elev(a[0] + _wrap(bq[0] - a[0]) * pr.y, a[1] + (bq[1] - a[1]) * pr.y)
+	return Vector2(lerpf(base, best_h, best_w), best_w)
+
+
+static func _pad_grade(s: float, x: float, h: float) -> float:
+	## The terrain levelled to the pad of the nearest building's lot.
+	var best_w := 0.0
+	var best_h := h
+	for it in _grid.get(Vector2i(floori(s / CELL), floori(x / CELL)), []):
+		if it[0] != "pad":
+			continue
+		var pd: Array = _pads[it[1]]
+		var ds := _wrap(s - pd[0])
+		var dx: float = x - pd[1]
+		var lx: float = dx * pd[2] + ds * pd[3]             # into the building's own frame
+		var lz: float = dx * pd[3] - ds * pd[2]
+		var ox := maxf(0.0, maxf(pd[4] - PAD_MARGIN - lx, lx - pd[6] - PAD_MARGIN))
+		var oz := maxf(0.0, maxf(pd[5] - PAD_MARGIN - lz, lz - pd[7] - PAD_MARGIN))
+		var w := 1.0 - smoothstep(0.0, PAD_BLEND, Vector2(ox, oz).length())
+		if w > best_w:
+			best_w = w
+			best_h = pd[8]
+	return lerpf(h, best_h, best_w)
+
+
+static func _load_pads() -> void:
+	## Every placed structure's lot (its visual bounds, turned by its yaw) and pad height (the height
+	## RemakeWorld stands it at).  Crossings have no pad (a bridge spans its water).
+	if not FileAccess.file_exists(PLACEMENT):
+		return
+	var pl: Array = JSON.parse_string(FileAccess.get_file_as_string(PLACEMENT)).structures
+	for e in pl:
+		if e.kind == "crossing":
+			continue
+		var s0: float = e.s
+		var x0: float = e.x
+		var c := cos(float(e.yaw))
+		var sn := sin(float(e.yaw))
+		# the pad: the graded ground at the middle of the massing's front edge (local -z, the street
+		# side) -- a building on a slope keeps its front at street grade and cuts its lot into the
+		# hill behind, as hill towns do, instead of standing on the slope's high corner
+		var lx: float = (e.fmin[0] + e.fmax[0]) * 0.5
+		var lz: float = e.fmin[1]
+		var ss: float = s0 + lx * sn - lz * c
+		var xx: float = x0 + lx * c + lz * sn
+		var hpad := _road_grade(fposmod(ss, C), xx, base_elev(ss, xx)).x
+		var pd := [s0, x0, c, sn, e.min[0], e.min[2], e.max[0], e.max[2], hpad]
+		_pad_by_id[e.id] = hpad
+		_pads.append(pd)
+		var reach := Vector2(maxf(absf(e.min[0]), absf(e.max[0])), maxf(absf(e.min[2]), absf(e.max[2]))).length()
+		_index(["pad", _pads.size() - 1], s0 - reach, x0 - reach, s0 + reach, x0 + reach, PAD_MARGIN + PAD_BLEND)
+
+
+static func pad_height(id: String) -> float:
+	## The height a placed structure stands at (its pad), or NAN when it has none (crossings).
+	_load()
+	return _pad_by_id.get(id, NAN)
+
+
+static func area_kind(s: float, x: float) -> String:
+	## The town area at (s, x) -- "lawn", "parking", "square", "schoolground"... -- or "".
+	_load()
+	s = fposmod(s, C)
+	for it in _grid.get(Vector2i(floori(s / CELL), floori(x / CELL)), []):
+		if it[0] == "area" and _poly_inside_dist(_d.areas[it[1]].poly, s, x) > 0.0:
+			return _d.areas[it[1]].kind
+	return ""
+
+
+static func road_weight(s: float, x: float) -> float:
+	_load()
+	return _road_grade(fposmod(s, C), x, 0.0).y
 
 
 static func water_depth(s: float, x: float) -> float:
@@ -226,6 +348,17 @@ static func _seg_dist(s: float, x: float, s0: float, x0: float, s1: float, x1: f
 	var l2 := bs * bs + bx * bx
 	var t := 0.0 if l2 < 1e-6 else clampf((ps * bs + px * bx) / l2, 0.0, 1.0)
 	return Vector2(ps - bs * t, px - bx * t).length()
+
+
+static func _seg_proj(s: float, x: float, s0: float, x0: float, s1: float, x1: float) -> Vector2:
+	## (distance to the segment, parameter 0..1 of the nearest point on it)
+	var ps := _wrap(s - s0)
+	var bs := _wrap(s1 - s0)
+	var px := x - x0
+	var bx := x1 - x0
+	var l2 := bs * bs + bx * bx
+	var t := 0.0 if l2 < 1e-6 else clampf((ps * bs + px * bx) / l2, 0.0, 1.0)
+	return Vector2(Vector2(ps - bs * t, px - bx * t).length(), t)
 
 
 static func _poly_inside_dist(poly: Array, s: float, x: float) -> float:
