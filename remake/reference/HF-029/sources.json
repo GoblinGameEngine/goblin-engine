@@ -1,0 +1,95 @@
+{
+ "structure": "HF-029",
+ "files": [
+  {
+   "file": "loc_in0052_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/sheet/00001a.tif",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/sheet/00002a.tif",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/sheet/00003a.tif",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/sheet/00004a.tif",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/sheet/00005a.tif",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/sheet/00006a.tif",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_sheet_00007a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/sheet/00007a.tif",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_sheet_00008a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/sheet/00008a.tif",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_data_in0052data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/data/in0052data.pdf",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0052_file_in0052supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0052/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0052/supp/in0052supp.pdf",
+   "title": "Despa House, 538  Lockerbie Street, Indianapolis, Marion County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

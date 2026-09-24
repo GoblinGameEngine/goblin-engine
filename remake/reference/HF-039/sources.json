@@ -1,0 +1,68 @@
+{
+ "structure": "HF-039",
+ "files": [
+  {
+   "file": "loc_oh0180_photos_128484pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0180/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0100/oh0180/photos/128484pv.jpg",
+   "title": "Vernon Barret House, Chillicothe, Ross County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0180_photos_128485pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0180/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0100/oh0180/photos/128485pv.jpg",
+   "title": "Vernon Barret House, Chillicothe, Ross County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0180_photos_128486pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0180/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0100/oh0180/photos/128486pv.jpg",
+   "title": "Vernon Barret House, Chillicothe, Ross County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0180_photos_128487pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0180/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0100/oh0180/photos/128487pv.jpg",
+   "title": "Vernon Barret House, Chillicothe, Ross County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0180_photos_128488pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0180/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0100/oh0180/photos/128488pv.jpg",
+   "title": "Vernon Barret House, Chillicothe, Ross County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0180_data_oh0180data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0180/data/oh0180data.pdf",
+   "title": "Vernon Barret House, Chillicothe, Ross County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0180_data_oh0180cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0180/data/oh0180cap.pdf",
+   "title": "Vernon Barret House, Chillicothe, Ross County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "structure": "HF-093",
+ "files": [
+  {
+   "file": "loc_in0241_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00001a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00002a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00003a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00004a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00005a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00006a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_sheet_00007a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00007a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_sheet_00008a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00008a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_sheet_00009a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/sheet/00009a.tif",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0241_data_in0241data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0241/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0241/data/in0241data.pdf",
+   "title": "Hartford City Public Library, 314 North High Street, Hartford City, Blackford County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "commons_Hartford_City_Public_Library.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hartford_City_Public_Library.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Hartford_City_Public_Library.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Hartford City Public Library.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Nyttend",
+   "caption": "Front of the Hartford City Public Library, located at 314 N. High Street in Hartford City, Indiana, United States.  Built in 1903, it is a Carnegie library.  Library website."
+  },
+  {
+   "file": "commons_Hartford_Carnegie_Library_PB030047.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hartford_Carnegie_Library_PB030047.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Hartford_Carnegie_Library_PB030047.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Hartford Carnegie Library PB030047.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Hartford City Carnegie Library, Indiana"
+  },
+  {
+   "file": "commons_Hartford_Carnegie_Library_PB030049.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hartford_Carnegie_Library_PB030049.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Hartford_Carnegie_Library_PB030049.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Hartford Carnegie Library PB030049.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Entrnace to the Hartford City Carnegie Library, Indiana"
+  }
+ ]
+}

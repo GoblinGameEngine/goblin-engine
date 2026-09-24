@@ -1,0 +1,59 @@
+{
+ "structure": "HF-034",
+ "files": [
+  {
+   "file": "loc_in0225_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0225/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0225/sheet/00001a.tif",
+   "title": "James Ward House, 1116 Columbia Street, Lafayette, Tippecanoe County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0225_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0225/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0225/sheet/00002a.tif",
+   "title": "James Ward House, 1116 Columbia Street, Lafayette, Tippecanoe County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0225_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0225/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0225/sheet/00003a.tif",
+   "title": "James Ward House, 1116 Columbia Street, Lafayette, Tippecanoe County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0225_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0225/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0225/sheet/00004a.tif",
+   "title": "James Ward House, 1116 Columbia Street, Lafayette, Tippecanoe County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0225_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0225/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0225/sheet/00005a.tif",
+   "title": "James Ward House, 1116 Columbia Street, Lafayette, Tippecanoe County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0225_data_in0225data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0225/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0225/data/in0225data.pdf",
+   "title": "James Ward House, 1116 Columbia Street, Lafayette, Tippecanoe County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "structure": "HF-041",
+ "files": [
+  {
+   "file": "loc_il0375_photos_063443pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0375/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0300/il0375/photos/063443pv.jpg",
+   "title": "Louis Hammerschmidt House, 817 Charter Street, Monticello, Piatt County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0375_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0375/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0375/sheet/00000a.tif",
+   "title": "Louis Hammerschmidt House, 817 Charter Street, Monticello, Piatt County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0375_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0375/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0375/sheet/00001a.tif",
+   "title": "Louis Hammerschmidt House, 817 Charter Street, Monticello, Piatt County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0375_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0375/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0375/sheet/00002a.tif",
+   "title": "Louis Hammerschmidt House, 817 Charter Street, Monticello, Piatt County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0375_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0375/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0375/sheet/00003a.tif",
+   "title": "Louis Hammerschmidt House, 817 Charter Street, Monticello, Piatt County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0375_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0375/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0375/sheet/00004a.tif",
+   "title": "Louis Hammerschmidt House, 817 Charter Street, Monticello, Piatt County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0375_data_il0375data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0375/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0375/data/il0375data.pdf",
+   "title": "Louis Hammerschmidt House, 817 Charter Street, Monticello, Piatt County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0375_file_il0375supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0375/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0375/supp/il0375supp.pdf",
+   "title": "Louis Hammerschmidt House, 817 Charter Street, Monticello, Piatt County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

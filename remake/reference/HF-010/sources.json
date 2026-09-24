@@ -1,0 +1,104 @@
+{
+ "structure": "HF-010",
+ "files": [
+  {
+   "file": "loc_in0032_color_572114cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0032/color/572114cv.jpg",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_photos_064717pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0032/photos/064717pv.jpg",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_photos_064718pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0032/photos/064718pv.jpg",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0032/sheet/00001a.tif",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0032/sheet/00002a.tif",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0032/sheet/00003a.tif",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0032/sheet/00004a.tif",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0032/sheet/00005a.tif",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0032/sheet/00006a.tif",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_data_in0032data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0032/data/in0032data.pdf",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0032_data_in0032cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0032/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0032/data/in0032cap.pdf",
+   "title": "Richard Talbott House, 301 West Second Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

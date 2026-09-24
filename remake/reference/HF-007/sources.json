@@ -1,0 +1,32 @@
+{
+ "structure": "HF-007",
+ "files": [
+  {
+   "file": "loc_il0254_photos_062246pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0254/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0254/photos/062246pv.jpg",
+   "title": "Galena Doorways, Sisters of Mercy Convent, 226 North Bench Street, Galena, Jo Daviess County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0254_data_il0254data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0254/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0254/data/il0254data.pdf",
+   "title": "Galena Doorways, Sisters of Mercy Convent, 226 North Bench Street, Galena, Jo Daviess County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0254_file_il0254supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0254/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0254/supp/il0254supp.pdf",
+   "title": "Galena Doorways, Sisters of Mercy Convent, 226 North Bench Street, Galena, Jo Daviess County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+{
+ "structure": "HF-008",
+ "files": [
+  {
+   "file": "loc_in0033_color_572115cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0033/color/572115cv.jpg",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_photos_064697pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0033/photos/064697pv.jpg",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_photos_064698pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0033/photos/064698pv.jpg",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/sheet/00001a.tif",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/sheet/00002a.tif",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/sheet/00003a.tif",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/sheet/00004a.tif",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/sheet/00005a.tif",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/sheet/00006a.tif",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_sheet_00007a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/sheet/00007a.tif",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_sheet_00008a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/sheet/00008a.tif",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_data_in0033data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/data/in0033data.pdf",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0033_data_in0033cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0033/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0033/data/in0033cap.pdf",
+   "title": "Jacob Shuh House, 718 West Main Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

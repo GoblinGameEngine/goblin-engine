@@ -1,0 +1,59 @@
+{
+ "structure": "HF-038",
+ "files": [
+  {
+   "file": "loc_oh0252_photos_125673pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0252/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0200/oh0252/photos/125673pv.jpg",
+   "title": "H. Mould House, 2637 Cedar Avenue, Cleveland, Cuyahoga County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0252_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0252/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0252/sheet/00000a.tif",
+   "title": "H. Mould House, 2637 Cedar Avenue, Cleveland, Cuyahoga County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0252_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0252/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0252/sheet/00001a.tif",
+   "title": "H. Mould House, 2637 Cedar Avenue, Cleveland, Cuyahoga County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0252_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0252/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0252/sheet/00002a.tif",
+   "title": "H. Mould House, 2637 Cedar Avenue, Cleveland, Cuyahoga County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0252_data_oh0252data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0252/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0252/data/oh0252data.pdf",
+   "title": "H. Mould House, 2637 Cedar Avenue, Cleveland, Cuyahoga County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0252_file_oh0252supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0252/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0252/supp/oh0252supp.pdf",
+   "title": "H. Mould House, 2637 Cedar Avenue, Cleveland, Cuyahoga County, OH",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

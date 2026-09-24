@@ -1,0 +1,77 @@
+{
+ "structure": "HF-040",
+ "files": [
+  {
+   "file": "loc_il0374_photos_063439pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0374/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0300/il0374/photos/063439pv.jpg",
+   "title": "Bryant House, 146 Wilson Street, Bement, Piatt County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0374_photos_063440pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0374/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0300/il0374/photos/063440pv.jpg",
+   "title": "Bryant House, 146 Wilson Street, Bement, Piatt County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0374_photos_063441pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0374/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0300/il0374/photos/063441pv.jpg",
+   "title": "Bryant House, 146 Wilson Street, Bement, Piatt County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0374_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0374/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0374/sheet/00000a.tif",
+   "title": "Bryant House, 146 Wilson Street, Bement, Piatt County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0374_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0374/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0374/sheet/00001a.tif",
+   "title": "Bryant House, 146 Wilson Street, Bement, Piatt County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0374_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0374/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0374/sheet/00002a.tif",
+   "title": "Bryant House, 146 Wilson Street, Bement, Piatt County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0374_data_il0374data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0374/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0374/data/il0374data.pdf",
+   "title": "Bryant House, 146 Wilson Street, Bement, Piatt County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0374_file_il0374supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0374/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0374/supp/il0374supp.pdf",
+   "title": "Bryant House, 146 Wilson Street, Bement, Piatt County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
