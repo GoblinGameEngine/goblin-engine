@@ -1,0 +1,77 @@
+{
+ "structure": "HF-111",
+ "files": [
+  {
+   "file": "loc_il0070_photos_064270pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0070/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0070/photos/064270pv.jpg",
+   "title": "Dennison Green House, Main Street, Plainfield, Will County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0070_photos_064271pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0070/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0070/photos/064271pv.jpg",
+   "title": "Dennison Green House, Main Street, Plainfield, Will County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0070_photos_064272pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0070/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0070/photos/064272pv.jpg",
+   "title": "Dennison Green House, Main Street, Plainfield, Will County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0070_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0070/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0070/sheet/00000a.tif",
+   "title": "Dennison Green House, Main Street, Plainfield, Will County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0070_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0070/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0070/sheet/00001a.tif",
+   "title": "Dennison Green House, Main Street, Plainfield, Will County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0070_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0070/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0070/sheet/00002a.tif",
+   "title": "Dennison Green House, Main Street, Plainfield, Will County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0070_data_il0070data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0070/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0070/data/il0070data.pdf",
+   "title": "Dennison Green House, Main Street, Plainfield, Will County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0070_file_il0070supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0070/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0070/supp/il0070supp.pdf",
+   "title": "Dennison Green House, Main Street, Plainfield, Will County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

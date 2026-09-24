@@ -1,0 +1,95 @@
+{
+ "structure": "HF-077",
+ "files": [
+  {
+   "file": "loc_in0015_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/sheet/00001a.tif",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/sheet/00002a.tif",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/sheet/00003a.tif",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/sheet/00004a.tif",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/sheet/00005a.tif",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/sheet/00006a.tif",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_sheet_00007a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/sheet/00007a.tif",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_data_in0015data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/data/in0015data.pdf",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_data_in0015cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/data/in0015cap.pdf",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0015_file_in0015supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0015/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0015/supp/in0015supp.pdf",
+   "title": "Bachman House, Lonesome Hollow, Madison, Jefferson County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

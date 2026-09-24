@@ -1,0 +1,59 @@
+{
+ "structure": "HF-083",
+ "files": [
+  {
+   "file": "loc_in0010_photos_064589pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0010/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0010/photos/064589pv.jpg",
+   "title": "William Conner House, Highway 234, Noblesville, Hamilton County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0010_photos_064590pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0010/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0010/photos/064590pv.jpg",
+   "title": "William Conner House, Highway 234, Noblesville, Hamilton County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0010_photos_064591pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0010/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0010/photos/064591pv.jpg",
+   "title": "William Conner House, Highway 234, Noblesville, Hamilton County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0010_photos_064592pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0010/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0010/photos/064592pv.jpg",
+   "title": "William Conner House, Highway 234, Noblesville, Hamilton County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0010_data_in0010data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0010/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0010/data/in0010data.pdf",
+   "title": "William Conner House, Highway 234, Noblesville, Hamilton County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0010_file_in0010supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0010/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0010/supp/in0010supp.pdf",
+   "title": "William Conner House, Highway 234, Noblesville, Hamilton County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

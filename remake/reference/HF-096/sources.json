@@ -1,0 +1,77 @@
+{
+ "structure": "HF-096",
+ "files": [
+  {
+   "file": "loc_il0281_photos_062019pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0281/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0281/photos/062019pv.jpg",
+   "title": "Knowles House, Fourth Street, Oquawka, Henderson County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0281_photos_062020pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0281/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0281/photos/062020pv.jpg",
+   "title": "Knowles House, Fourth Street, Oquawka, Henderson County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0281_photos_062021pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0281/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0281/photos/062021pv.jpg",
+   "title": "Knowles House, Fourth Street, Oquawka, Henderson County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0281_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0281/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0281/sheet/00000a.tif",
+   "title": "Knowles House, Fourth Street, Oquawka, Henderson County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0281_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0281/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0281/sheet/00001a.tif",
+   "title": "Knowles House, Fourth Street, Oquawka, Henderson County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0281_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0281/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0281/sheet/00002a.tif",
+   "title": "Knowles House, Fourth Street, Oquawka, Henderson County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0281_data_il0281data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0281/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0281/data/il0281data.pdf",
+   "title": "Knowles House, Fourth Street, Oquawka, Henderson County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0281_file_il0281supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0281/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0281/supp/il0281supp.pdf",
+   "title": "Knowles House, Fourth Street, Oquawka, Henderson County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "structure": "HF-091",
+ "files": [
+  {
+   "file": "loc_il0193_photos_062328pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0193/photos/062328pv.jpg",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0193_photos_062329pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0193/photos/062329pv.jpg",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0193_photos_062330pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0193/photos/062330pv.jpg",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0193_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0193/sheet/00000a.tif",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0193_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0193/sheet/00001a.tif",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0193_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0193/sheet/00002a.tif",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0193_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0193/sheet/00003a.tif",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0193_data_il0193data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0193/data/il0193data.pdf",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0193_file_il0193supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0193/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0193/supp/il0193supp.pdf",
+   "title": "Louis Chetlain House, Galena, Jo Daviess County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

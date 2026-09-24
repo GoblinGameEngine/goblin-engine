@@ -1,0 +1,68 @@
+{
+ "structure": "HF-104",
+ "files": [
+  {
+   "file": "loc_oh0292_photos_127902pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0292/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0200/oh0292/photos/127902pv.jpg",
+   "title": "Hardwick House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0292_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0292/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0292/sheet/00000a.tif",
+   "title": "Hardwick House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0292_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0292/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0292/sheet/00001a.tif",
+   "title": "Hardwick House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0292_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0292/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0292/sheet/00002a.tif",
+   "title": "Hardwick House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0292_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0292/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0292/sheet/00003a.tif",
+   "title": "Hardwick House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0292_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0292/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0292/sheet/00004a.tif",
+   "title": "Hardwick House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0292_data_oh0292data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0292/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0292/data/oh0292data.pdf",
+   "title": "Hardwick House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

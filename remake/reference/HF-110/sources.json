@@ -1,0 +1,59 @@
+{
+ "structure": "HF-110",
+ "files": [
+  {
+   "file": "loc_oh0244_photos_126515pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0244/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0200/oh0244/photos/126515pv.jpg",
+   "title": "Blackman House, Pettibone Road, Solon, Cuyahoga County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0244_photos_126516pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0244/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0200/oh0244/photos/126516pv.jpg",
+   "title": "Blackman House, Pettibone Road, Solon, Cuyahoga County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0244_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0244/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0244/sheet/00000a.tif",
+   "title": "Blackman House, Pettibone Road, Solon, Cuyahoga County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0244_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0244/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0244/sheet/00001a.tif",
+   "title": "Blackman House, Pettibone Road, Solon, Cuyahoga County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0244_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0244/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0244/sheet/00002a.tif",
+   "title": "Blackman House, Pettibone Road, Solon, Cuyahoga County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0244_data_oh0244data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0244/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0244/data/oh0244data.pdf",
+   "title": "Blackman House, Pettibone Road, Solon, Cuyahoga County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "structure": "HF-089",
+ "files": [
+  {
+   "file": "loc_in0184_photos_065890pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0184/photos/065890pv.jpg",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0184_photos_065891pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0184/photos/065891pv.jpg",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0184_photos_065892pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0184/photos/065892pv.jpg",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0184_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0184/sheet/00000a.tif",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0184_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0184/sheet/00001a.tif",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0184_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0184/sheet/00002a.tif",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0184_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0184/sheet/00003a.tif",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0184_data_in0184data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0184/data/in0184data.pdf",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0184_file_in0184supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0184/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0184/supp/in0184supp.pdf",
+   "title": "Ferry House, Ohio River Vicinity, Vevay, Switzerland County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "structure": "HF-086",
+ "files": [
+  {
+   "file": "loc_in0080_photos_065648pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0080/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0080/photos/065648pv.jpg",
+   "title": "Rappite House, Granary Street, New Harmony, Posey County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0080_photos_065649pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0080/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0080/photos/065649pv.jpg",
+   "title": "Rappite House, Granary Street, New Harmony, Posey County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0080_photos_065650pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0080/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0080/photos/065650pv.jpg",
+   "title": "Rappite House, Granary Street, New Harmony, Posey County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0080_photos_065651pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0080/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0080/photos/065651pv.jpg",
+   "title": "Rappite House, Granary Street, New Harmony, Posey County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0080_data_in0080data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0080/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0080/data/in0080data.pdf",
+   "title": "Rappite House, Granary Street, New Harmony, Posey County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0080_file_in0080supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0080/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0080/supp/in0080supp.pdf",
+   "title": "Rappite House, Granary Street, New Harmony, Posey County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

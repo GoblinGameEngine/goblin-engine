@@ -1,0 +1,86 @@
+{
+ "structure": "HF-090",
+ "files": [
+  {
+   "file": "loc_oh0240_photos_126948pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0200/oh0240/photos/126948pv.jpg",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0240_photos_126949pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0200/oh0240/photos/126949pv.jpg",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0240_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0240/sheet/00000a.tif",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0240_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0240/sheet/00001a.tif",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0240_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0240/sheet/00002a.tif",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0240_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0240/sheet/00003a.tif",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0240_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0240/sheet/00004a.tif",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0240_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0240/sheet/00005a.tif",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0240_data_oh0240data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0240/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0200/oh0240/data/oh0240data.pdf",
+   "title": "Treat House, Route 43, Aurora, Portage County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

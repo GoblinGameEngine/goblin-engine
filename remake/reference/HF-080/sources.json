@@ -1,0 +1,68 @@
+{
+ "structure": "HF-080",
+ "files": [
+  {
+   "file": "loc_in0073_photos_065458pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0073/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0073/photos/065458pv.jpg",
+   "title": "Wylie House, Second & Lincoln Streets, Bloomington, Monroe County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0073_photos_065459pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0073/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0073/photos/065459pv.jpg",
+   "title": "Wylie House, Second & Lincoln Streets, Bloomington, Monroe County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0073_photos_065460pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0073/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0073/photos/065460pv.jpg",
+   "title": "Wylie House, Second & Lincoln Streets, Bloomington, Monroe County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0073_photos_065461pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0073/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0073/photos/065461pv.jpg",
+   "title": "Wylie House, Second & Lincoln Streets, Bloomington, Monroe County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0073_photos_065462pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0073/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0073/photos/065462pv.jpg",
+   "title": "Wylie House, Second & Lincoln Streets, Bloomington, Monroe County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0073_data_in0073data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0073/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0073/data/in0073data.pdf",
+   "title": "Wylie House, Second & Lincoln Streets, Bloomington, Monroe County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0073_file_in0073supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0073/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0073/supp/in0073supp.pdf",
+   "title": "Wylie House, Second & Lincoln Streets, Bloomington, Monroe County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

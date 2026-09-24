@@ -1,0 +1,77 @@
+{
+ "structure": "HF-102",
+ "files": [
+  {
+   "file": "loc_il0289_photos_061953pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0289/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0289/photos/061953pv.jpg",
+   "title": "Baumert House, Mulhollen & Fifteenth Streets, Nauvoo, Hancock County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0289_photos_061954pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0289/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0289/photos/061954pv.jpg",
+   "title": "Baumert House, Mulhollen & Fifteenth Streets, Nauvoo, Hancock County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0289_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0289/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0289/sheet/00000a.tif",
+   "title": "Baumert House, Mulhollen & Fifteenth Streets, Nauvoo, Hancock County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0289_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0289/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0289/sheet/00001a.tif",
+   "title": "Baumert House, Mulhollen & Fifteenth Streets, Nauvoo, Hancock County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0289_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0289/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0289/sheet/00002a.tif",
+   "title": "Baumert House, Mulhollen & Fifteenth Streets, Nauvoo, Hancock County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0289_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0289/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0289/sheet/00003a.tif",
+   "title": "Baumert House, Mulhollen & Fifteenth Streets, Nauvoo, Hancock County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0289_data_il0289data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0289/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0289/data/il0289data.pdf",
+   "title": "Baumert House, Mulhollen & Fifteenth Streets, Nauvoo, Hancock County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0289_file_il0289supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0289/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0289/supp/il0289supp.pdf",
+   "title": "Baumert House, Mulhollen & Fifteenth Streets, Nauvoo, Hancock County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

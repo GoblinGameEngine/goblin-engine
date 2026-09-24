@@ -1,0 +1,86 @@
+{
+ "structure": "HF-105",
+ "files": [
+  {
+   "file": "loc_il0261_photos_061715pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0261/photos/061715pv.jpg",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0261_photos_061716pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0261/photos/061716pv.jpg",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0261_photos_061717pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0261/photos/061717pv.jpg",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0261_photos_061718pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0261/photos/061718pv.jpg",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0261_photos_061719pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0261/photos/061719pv.jpg",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0261_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0261/sheet/00000a.tif",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0261_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0261/sheet/00001a.tif",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0261_data_il0261data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0261/data/il0261data.pdf",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0261_file_il0261supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0261/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0261/supp/il0261supp.pdf",
+   "title": "Julius Albright House, Hohfelder Road, Glencoe, Cook County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

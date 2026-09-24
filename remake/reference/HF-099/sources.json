@@ -1,0 +1,95 @@
+{
+ "structure": "HF-099",
+ "files": [
+  {
+   "file": "loc_il0174_photos_062807pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0174/photos/062807pv.jpg",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_photos_062808pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0174/photos/062808pv.jpg",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_photos_062809pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0174/photos/062809pv.jpg",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0174/sheet/00000a.tif",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0174/sheet/00001a.tif",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0174/sheet/00002a.tif",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0174/sheet/00003a.tif",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0174/sheet/00004a.tif",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_data_il0174data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0174/data/il0174data.pdf",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0174_file_il0174supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0174/supp/il0174supp.pdf",
+   "title": "Swartout House, 414 Sheridan Road, Waukegan, Lake County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

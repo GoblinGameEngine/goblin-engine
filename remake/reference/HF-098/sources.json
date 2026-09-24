@@ -1,0 +1,86 @@
+{
+ "structure": "HF-098",
+ "files": [
+  {
+   "file": "loc_oh0139_photos_127857pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0100/oh0139/photos/127857pv.jpg",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0139_photos_127858pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0100/oh0139/photos/127858pv.jpg",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0139_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0139/sheet/00000a.tif",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0139_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0139/sheet/00001a.tif",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0139_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0139/sheet/00002a.tif",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0139_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0139/sheet/00003a.tif",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0139_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0139/sheet/00004a.tif",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0139_data_oh0139data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0139/data/oh0139data.pdf",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0139_file_oh0139supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0139/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0139/supp/oh0139supp.pdf",
+   "title": "Sweet House, Detroit Road, Avon, Lorain County, OH",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

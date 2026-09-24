@@ -1,0 +1,104 @@
+{
+ "structure": "HF-112",
+ "files": [
+  {
+   "file": "loc_in0133_photos_064284pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0133/photos/064284pv.jpg",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_photos_064285pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0133/photos/064285pv.jpg",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/sheet/00000a.tif",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/sheet/00001a.tif",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/sheet/00002a.tif",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/sheet/00003a.tif",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/sheet/00004a.tif",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/sheet/00005a.tif",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/sheet/00006a.tif",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_data_in0133data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/data/in0133data.pdf",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0133_file_in0133supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0133/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0133/supp/in0133supp.pdf",
+   "title": "Grisamore House, 111-113 West Chestnut, Jeffersonville, Clark County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
