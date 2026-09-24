@@ -191,19 +191,28 @@ def build(rec):
         cell = clamp(total if total < 4.0 else total / 2, 1.2, 3.6)
         cells = 1 if total < 4.0 else 2
         if btype == "box_culvert":
-            gbr.box_culvert(b, cells, cell, min(cell, -bed - 0.5), width + 6.0, bed)
+            # barrel along x (under the road's full width + shoulders), cells side by side along y
+            gbr.box_culvert(b, cells, cell, min(cell, -bed - 0.5), width + 6.0, width, bed)
         else:
+            # pipes carry the stream along x under the road (which runs along y); headwalls at the
+            # pipe ends face +-x.  (They used to run along y, parallel to the road.)
             cp = b.part("pipe-col")
             r = clamp(cell / 2, 0.5, 1.5)
+            xe = (width + 6.0) / 2
             for c in range(cells):
-                cx = (c - (cells - 1) / 2) * (2 * r + 0.8)
+                cy = (c - (cells - 1) / 2) * (2 * r + 0.8)
                 for i in range(16):
                     a0, a1 = 2 * math.pi * i / 16, 2 * math.pi * (i + 1) / 16
-                    P = lambda a, x, rr: (cx + rr * math.cos(a), x, bed + r + rr * math.sin(a))
-                    for (y0_, y1_) in ((-(width + 6.0) / 2, (width + 6.0) / 2),):
-                        cp.face([P(a1, y0_, r), P(a0, y0_, r), P(a0, y1_, r), P(a1, y1_, r)], "concrete_old")
+                    P = lambda a, x, rr: (x, cy + rr * math.cos(a), bed + r + rr * math.sin(a))
+                    cp.face([P(a0, -xe, r), P(a1, -xe, r), P(a1, xe, r), P(a0, xe, r)], "concrete_old")
+            hw = cells * r + (cells - 1) * 0.4 + 1.2
+            cys = [(c - (cells - 1) / 2) * (2 * r + 0.8) for c in range(cells)]
             for s in (-1, 1):
-                cp.box((-cells * r - 1.2, s * (width + 6.0) / 2 - 0.2, bed), (cells * r + 1.2, s * (width + 6.0) / 2 + 0.2, 0.2), "concrete")
+                x_a, x_b = s * xe - 0.2, s * xe + 0.2
+                cp.box((x_a, -hw, bed + 2 * r), (x_b, hw, 0.2), "concrete")          # over the pipe mouths
+                edges = [-hw] + [e for cy_ in cys for e in (cy_ - r, cy_ + r)] + [hw]
+                for k in range(0, len(edges), 2):                                    # beside / between them
+                    cp.box((x_a, edges[k], bed), (x_b, edges[k + 1], bed + 2 * r), "concrete")
         gbr.guardrail(b, [(-width / 2 - 0.6, -8.0), (-width / 2 - 0.6, 8.0)], name="gr_w")
         gbr.guardrail(b, [(width / 2 + 0.6, -8.0), (width / 2 + 0.6, 8.0)], name="gr_e")
     elif btype == "timber_trestle":
