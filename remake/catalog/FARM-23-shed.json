@@ -1,0 +1,26 @@
+{
+  "id": "FARM-23-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Frank Pisar (Pisar-Kastanek) farmstead, Quonset machine shed",
+    "place": "Pleasant Hill vicinity, Saline County, NE",
+    "year": 1950,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pisar-Kastanek_farmstead_from_WNW_1.JPG",
+    "photos": ["commons_Pisar-Kastanek_farmstead_from_WNW_1.JPG", "commons_Pisar-Kastanek_farmstead_from_WNW_2.JPG"],
+    "drawings": []
+  },
+  "brief": "Post-war Quonset machine shed about 32 ft wide and 60 ft long, a half-round arch of corrugated steel painted white with a flat framed white end wall holding a big vehicle door and a small window. It stands at the edge of the farmyard next to a round corrugated steel grain bin with an elevator head and a low shed-roofed crib, beyond the 1950s white farmhouse, with shelterbelt trees and plowed fields around.",
+  "traits": {
+    "type": "quonset",
+    "w_ft": 32,
+    "d_ft": 60,
+    "height_ft": 16,
+    "walls": "metal",
+    "colors": {"body": "#f0f0ec", "trim": "#9aa0a2", "accent": "#9aa0a2", "roof": "#f0f0ec"},
+    "condition": "kept"
+  },
+  "names": {"family": "Bartos"}
+}

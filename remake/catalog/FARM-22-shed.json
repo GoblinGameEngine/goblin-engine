@@ -1,0 +1,28 @@
+{
+  "id": "FARM-22-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Knapp Ranch, granary, 13168 450th Avenue",
+    "place": "Roberts County, SD",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Knapp_Ranch_from_SSW,_Harvestore,_Big_Barn,_granary,_and_sheep_shed.jpg",
+    "photos": ["commons_Knapp_Ranch_from_SSW_Harvestore_Big_Barn_granary_and_sheep_shed.jpg"],
+    "drawings": []
+  },
+  "brief": "Large drive-in granary and implement building about 30 ft by 40 ft (the middle building of the example view): unpainted vertical boards weathered silver-brown, a tall central gable with a steep pale-grey steel roof that breaks to a shallower pitch over lean-to aisles on both sides (a broken-gable plains granary profile), a small window high in the gable and wide doors at grade. It stands between the red gambrel barn and a long grey sheep shed on a grassy hilltop. (Granary used as machine storage; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 30,
+    "d_ft": 40,
+    "height_ft": 26,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 40, "material": "metal"},
+    "lean_to": "both_sides",
+    "colors": {"body": "#7e7468", "trim": "#5e564c", "accent": "#5e564c", "roof": "#b4b6b6"},
+    "condition": "worn"
+  },
+  "names": {"family": "Lindahl"}
+}

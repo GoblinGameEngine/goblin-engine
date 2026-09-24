@@ -1,0 +1,29 @@
+{
+ "structure": "CULVERT-10",
+ "files": [
+  {
+   "file": "commons_chickenck_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Chicken_Creek_Bridge_-_Lone_Star_KS_-_NRHP_90000298.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Chicken_Creek_Bridge_-_Lone_Star_KS_-_NRHP_90000298.jpg/1920px-Chicken_Creek_Bridge_-_Lone_Star_KS_-_NRHP_90000298.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Chicken Creek Bridge - Lone Star KS - NRHP 90000298.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "WhatIsHip",
+   "caption": "Chicken Creek Bridge in Lone Star, Kansas. The bridge was built in 1913 by B. F. Metsker and I. Babb. with a single arch structure using locally quarried stone.",
+   "category": "Category:Chicken Creek Bridge"
+  },
+  {
+   "file": "commons_chickenck_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Chicken_Creek_Bridge.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Chicken_Creek_Bridge.JPG/1920px-Chicken_Creek_Bridge.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Chicken Creek Bridge.JPG",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Bhall87 at en.wikipedia",
+   "caption": "Author=Brian Hall, Chicken Creek Bridge near Lone Star, Kansas.",
+   "category": "Category:Chicken Creek Bridge"
+  }
+ ]
+}

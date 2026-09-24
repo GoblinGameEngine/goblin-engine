@@ -1,0 +1,29 @@
+{
+  "id": "FARM-22-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Knapp Ranch, Big Barn, 13168 450th Avenue",
+    "place": "Roberts County, SD",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Knapp_Ranch_from_SSW,_Harvestore,_Big_Barn,_and_granary.jpg",
+    "photos": ["commons_Knapp_Ranch_from_SSW_Harvestore_Big_Barn_and_granary.jpg"],
+    "drawings": []
+  },
+  "brief": "Very long gambrel stock barn about 40 ft wide and 110 ft long, low red walls with a regular row of small white-framed stall windows under a huge weathered brown wood-shingle gambrel roof carrying two metal ventilator cupolas with weathervanes. At mid-length a projecting gambrel-roofed entry bay with white trim and big red double doors is reached by an earthen ramp, so the hayloft can be driven into (bank-barn style). A blue glass-lined storage silo stands at one end and a big weathered grey gable-roofed granary at the other, on a grassy hillside of pasture.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 40,
+    "d_ft": 110,
+    "height_ft": 36,
+    "walls": "drop_siding",
+    "roof": {"type": "gambrel", "pitch_deg": 55, "material": "wood_shingle"},
+    "cupolas": 2,
+    "ramp_bay": true,
+    "colors": {"body": "#b0262e", "trim": "#f4f4f0", "accent": "#f4f4f0", "roof": "#6e5a4a"},
+    "condition": "kept"
+  },
+  "names": {"family": "Lindahl", "sign": "LINDAHL RANCH EST. 1883"}
+}

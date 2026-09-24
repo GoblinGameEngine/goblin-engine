@@ -2,52 +2,28 @@
  "structure": "CULVERT-03",
  "files": [
   {
-   "file": "commons_claycreek_01.jpg",
+   "file": "commons_cemeteryrd_01.jpg",
    "source": "Wikimedia Commons",
-   "record": "https://commons.wikimedia.org/wiki/File:SD_bridge_14-088-170_detail_1.JPG",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/SD_bridge_14-088-170_detail_1.JPG/1920px-SD_bridge_14-088-170_detail_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "title": "File:SD bridge 14-088-170 detail 1.JPG",
+   "record": "https://commons.wikimedia.org/wiki/File:Cemetery_Road_Bridge,_Washington,_IL.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Cemetery_Road_Bridge%2C_Washington%2C_IL.jpg/1920px-Cemetery_Road_Bridge%2C_Washington%2C_IL.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cemetery Road Bridge, Washington, IL.jpg",
    "kind": "photo",
-   "license": "CC0",
-   "author": "Ammodramus",
-   "caption": "Bridge 14-088-170, carrying county road 314 Rd across Clay Creek Ditch, northwest of Vermillion in rural Clay County, South Dakota.  Detail of west end of truss.",
-   "category": "Category:Clay Creek Ditch bridge, 314 Rd (Clay County, South Dakota)"
+   "license": "CC BY-SA 4.0",
+   "author": "Khancrete",
+   "caption": "The bridge on Cemetery Road in Washington, Illinois. #98000467 on the National Register of Historic Places. Taken this morning (10/12/24). Photo taken from Farm Creek, over which it crosses. Western side (left) appears to be crumbling somewhat, and the road over it is blocked off to vehicle traffic.",
+   "category": "Category:Cemetery Road Bridge"
   },
   {
-   "file": "commons_claycreek_03.jpg",
+   "file": "commons_cemeteryrd_02.jpg",
    "source": "Wikimedia Commons",
-   "record": "https://commons.wikimedia.org/wiki/File:SD_bridge_14-088-170_from_E_1.JPG",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/SD_bridge_14-088-170_from_E_1.JPG/1920px-SD_bridge_14-088-170_from_E_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "title": "File:SD bridge 14-088-170 from E 1.JPG",
+   "record": "https://commons.wikimedia.org/wiki/File:Image_Cemetery_Road_Bridge.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Image_Cemetery_Road_Bridge.jpeg/1920px-Image_Cemetery_Road_Bridge.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Image Cemetery Road Bridge.jpeg",
    "kind": "photo",
-   "license": "CC0",
-   "author": "Ammodramus",
-   "caption": "Bridge 14-088-170, carrying county road 314 Rd across Clay Creek Ditch, northwest of Vermillion in rural Clay County, South Dakota.  Camera is facing west down 314.",
-   "category": "Category:Clay Creek Ditch bridge, 314 Rd (Clay County, South Dakota)"
-  },
-  {
-   "file": "commons_claycreek_04.jpg",
-   "source": "Wikimedia Commons",
-   "record": "https://commons.wikimedia.org/wiki/File:SD_bridge_14-088-170_from_E_2.JPG",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/SD_bridge_14-088-170_from_E_2.JPG/1920px-SD_bridge_14-088-170_from_E_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "title": "File:SD bridge 14-088-170 from E 2.JPG",
-   "kind": "photo",
-   "license": "CC0",
-   "author": "Ammodramus",
-   "caption": "Bridge 14-088-170, carrying county road 314 Rd across Clay Creek Ditch, northwest of Vermillion in rural Clay County, South Dakota; seen from the east.",
-   "category": "Category:Clay Creek Ditch bridge, 314 Rd (Clay County, South Dakota)"
-  },
-  {
-   "file": "commons_claycreek_05.jpg",
-   "source": "Wikimedia Commons",
-   "record": "https://commons.wikimedia.org/wiki/File:SD_bridge_14-088-170_from_NW_1.JPG",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/SD_bridge_14-088-170_from_NW_1.JPG/1920px-SD_bridge_14-088-170_from_NW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "title": "File:SD bridge 14-088-170 from NW 1.JPG",
-   "kind": "photo",
-   "license": "CC0",
-   "author": "Ammodramus",
-   "caption": "Bridge 14-088-170, carrying county road 314 Rd across Clay Creek Ditch, northwest of Vermillion in rural Clay County, South Dakota; seen from the northwest.",
-   "category": "Category:Clay Creek Ditch bridge, 314 Rd (Clay County, South Dakota)"
+   "license": "CC BY-SA 3.0",
+   "author": "Boscophotos",
+   "caption": "Cemetery Road Bridge",
+   "category": "Category:Cemetery Road Bridge"
   }
  ]
 }

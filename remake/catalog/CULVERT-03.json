@@ -1,0 +1,41 @@
+{
+  "id": "CULVERT-03",
+  "settlement": "rural (near Dunmore Crossing)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Cemetery Road Bridge (NRHP)",
+    "place": "Washington, Tazewell County, IL",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Cemetery Road Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Cemetery_Road_Bridge",
+    "photos": [
+      "commons_cemeteryrd_01.jpg",
+      "commons_cemeteryrd_02.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Twin-arch stone culvert-bridge on a narrow country road: two semicircular arches of rough-dressed buff limestone voussoirs in coursed rubble walls with a central pier and square end piers, a low solid stone parapet with a heavy coping, and later steel guardrail attached behind. Heavily wooded ravine, dark stream with fallen timber. Only two distinct photos are available on Commons.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 2,
+    "year": 1890,
+    "year_note": "estimated, late 19th century",
+    "railing": "open_parapet",
+    "railing_detail": "low solid stone parapet with coping, guardrail behind",
+    "span_ft": 8,
+    "width_ft": 20,
+    "height_ft": 8,
+    "masonry": "coursed limestone rubble",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-23-shed",
+ "files": [
+  {
+   "file": "commons_Pisar-Kastanek_farmstead_from_WNW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pisar-Kastanek_farmstead_from_WNW_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Pisar-Kastanek_farmstead_from_WNW_1.JPG/1920px-Pisar-Kastanek_farmstead_from_WNW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pisar-Kastanek farmstead from WNW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Frank Pisar farmstead, located about 2 1/2 miles south of Pleasant Hill  in central Saline County, Nebraska.  View is from the west-northwest.  Note the pile of stone and wood rubble to the right of the 1950s frame house; this may represent the remains of an 1877 stone house."
+  },
+  {
+   "file": "commons_Pisar-Kastanek_farmstead_from_WNW_2.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pisar-Kastanek_farmstead_from_WNW_2.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Pisar-Kastanek_farmstead_from_WNW_2.JPG/1920px-Pisar-Kastanek_farmstead_from_WNW_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pisar-Kastanek farmstead from WNW 2.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Buildings on Frank Pisar farmstead, located about 2 1/2 miles south of Pleasant Hill  in central Saline County, Nebraska.  View is from the west-northwest."
+  }
+ ]
+}

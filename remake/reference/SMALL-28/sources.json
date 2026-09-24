@@ -1,0 +1,41 @@
+{
+ "structure": "SMALL-28",
+ "files": [
+  {
+   "file": "commons_beechwold_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:100-year-old%2B_stone_arch_bridge_(4636936984).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/100-year-old%2B_stone_arch_bridge_%284636936984%29.jpg/1920px-100-year-old%2B_stone_arch_bridge_%284636936984%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:100-year-old+ stone arch bridge (4636936984).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Don O'Brien from Piketon, Ohio, United States",
+   "caption": "Built  during the early 1900's, the stone arch bridge is on the site of the original Columbus Zoo in Old Beechwold, west of US23 at the north edge of Columbus, Ohio.   \nStone arch bridges lost longer that any other type and I found this a perfect  example.\n\nThe bridge is on Rustic Bridge Road, located here: 40.059987, -83.022336.",
+   "category": "Category:Rustic Bridge (Old Beechwold)"
+  },
+  {
+   "file": "commons_beechwold_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Old_Beechwold_bridge.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Old_Beechwold_bridge.jpg/1920px-Old_Beechwold_bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Old Beechwold bridge.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "\u2c6e",
+   "caption": "Bridge at the Old Beechwold Historic District.",
+   "category": "Category:Rustic Bridge (Old Beechwold)"
+  },
+  {
+   "file": "commons_beechwold_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Photo_JD_Healy_Old_Beechwold_Historic_9213.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Photo_JD_Healy_Old_Beechwold_Historic_9213.jpg/1920px-Photo_JD_Healy_Old_Beechwold_Historic_9213.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Photo JD Healy Old Beechwold Historic 9213.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "AlphaChiBuckeye",
+   "caption": "Old Beechwold Historic District, Roughly bounded by W. Jeffrey Pl., N. High, River Park Dr., and Olentangy Boulevard",
+   "category": "Category:Rustic Bridge (Old Beechwold)"
+  }
+ ]
+}

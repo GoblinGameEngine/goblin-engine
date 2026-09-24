@@ -1,0 +1,41 @@
+{
+ "structure": "SMALL-30",
+ "files": [
+  {
+   "file": "commons_champsford_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Champ%27s_Ford_Bridge,_downstream_side.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Champ%27s_Ford_Bridge%2C_downstream_side.jpg/1920px-Champ%27s_Ford_Bridge%2C_downstream_side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Champ's Ford Bridge, downstream side.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Nyttend",
+   "caption": "Southern (downstream) side of the Champ's Ford Bridge, which carries Road 100S over Clifty Creek west of Burney in Clay Township, Decatur County, Indiana, United States.  Built in 1904, it is listed on the National Register of Historic Places.",
+   "category": "Category:Champ's Ford Bridge"
+  },
+  {
+   "file": "commons_champsford_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Champ%27s_Ford_Bridge,_top_looking_eastward.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Champ%27s_Ford_Bridge%2C_top_looking_eastward.jpg/1920px-Champ%27s_Ford_Bridge%2C_top_looking_eastward.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Champ's Ford Bridge, top looking eastward.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Nyttend",
+   "caption": "Looking eastward atop the Champ's Ford Bridge, which carries Road 100S over Clifty Creek west of Burney in Clay Township, Decatur County, Indiana, United States.  Built in 1904, it is listed on the National Register of Historic Places.",
+   "category": "Category:Champ's Ford Bridge"
+  },
+  {
+   "file": "commons_champsford_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Champ%27s_Ford_Bridge,_upstream_side.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Champ%27s_Ford_Bridge%2C_upstream_side.jpg/1920px-Champ%27s_Ford_Bridge%2C_upstream_side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Champ's Ford Bridge, upstream side.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Nyttend",
+   "caption": "Northern (upstream) side of the Champ's Ford Bridge, which carries Road 100S over Clifty Creek west of Burney in Clay Township, Decatur County, Indiana, United States.  Built in 1904, it is listed on the National Register of Historic Places.",
+   "category": "Category:Champ's Ford Bridge"
+  }
+ ]
+}

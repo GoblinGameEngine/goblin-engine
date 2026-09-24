@@ -1,0 +1,42 @@
+{
+  "id": "SMALL-28",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 0.0,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "Rustic Bridge, Old Beechwold Historic District",
+    "place": "Columbus, Franklin County, OH",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Rustic Bridge (Old Beechwold))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Rustic_Bridge_(Old_Beechwold)",
+    "photos": [
+      "commons_beechwold_01.jpg",
+      "commons_beechwold_02.jpg",
+      "commons_beechwold_03.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Rustic stone arch bridge of the early 1900s on a residential street: a single semicircular arch of rough split fieldstone voussoirs in random-rubble spandrels, topped by a rubble parapet with an irregular 'rustic' crenellated top of upright stones, carrying a narrow lane through a wooded ravine in a leafy historic neighbourhood. (Inventory span 0 m: this and SMALL-30 sit at the same spot, a mill-race crossing in the village.)",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1905,
+    "year_note": "estimated, early 1900s",
+    "railing": "open_parapet",
+    "railing_detail": "rustic rubble parapet with upright-stone top",
+    "span_ft": 10,
+    "width_ft": 20,
+    "height_ft": 8,
+    "masonry": "random rubble fieldstone",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "MILL RACE"
+  }
+}

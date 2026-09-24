@@ -1,0 +1,28 @@
+{
+  "id": "FARM-21-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Ponfeigh Farm, silo",
+    "place": "Northampton Township, Somerset County, PA",
+    "year": 1940,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Ponfeigh_Farm_barn_and_silo.jpg",
+    "photos": ["commons_Ponfeigh_Farm_barn_and_silo.jpg"],
+    "drawings": []
+  },
+  "brief": "Concrete stave silo about 18 ft across and 50 ft high standing against the end of a white gambrel dairy barn, its grey staves and hoops almost entirely overgrown by climbing Virginia creeper turning red and bronze, capped by a shiny galvanized steel dome. A square enclosed chute column of white metal runs up the side next to the barn. Mown grass at its foot and a small stone gatepost wall nearby.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 18,
+    "height_ft": 50,
+    "roof": "dome",
+    "chute": true,
+    "hoops": true,
+    "vines": true,
+    "colors": {"body": "#9a9486", "trim": "#f2f2ee", "accent": "#6a4a2a", "roof": "#c9ccce"},
+    "condition": "worn"
+  },
+  "names": {"family": "Hruska"}
+}

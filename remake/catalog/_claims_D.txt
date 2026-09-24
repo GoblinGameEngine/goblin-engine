@@ -73,3 +73,10 @@ nh0260
 mo1807
 commons:Shepard_Bridge_(Indiana)
 commons:Spring_Creek_bridge,_458_Avenue_(Clay_County,_South_Dakota)
+haer:NV-41
+haer:NV-28
+nv0350
+commons:Cemetery_Road_Bridge
+commons:Chicken_Creek_Bridge
+commons:Rustic_Bridge_(Old_Beechwold)
+commons:Champ's_Ford_Bridge

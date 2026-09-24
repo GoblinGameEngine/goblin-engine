@@ -1,0 +1,27 @@
+{
+  "id": "FARM-23-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Hanna Farm, brick silo",
+    "place": "Pennsylvania",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Silos,_Hanna_Farm,_Pennsylvania,_September,_2019.jpg",
+    "photos": ["commons_Silos_Hanna_Farm_Pennsylvania_September_2019.jpg"],
+    "drawings": []
+  },
+  "brief": "Hand-laid red brick silo about 14 ft across and 38 ft high, in mottled red and orange brick with pale mortar, reinforced by thin iron bands set into the mortar joints every few courses. A column of square door openings with concrete frames climbs one side, most doors gone, a pair of weathered chute boards still pinned along the upper openings; the top is open and slightly ragged. A roofless brick companion silo stump stands beside it, with brush and weeds all around and an old yellow implement in the grass.",
+  "traits": {
+    "type": "brick",
+    "diameter_ft": 14,
+    "height_ft": 38,
+    "roof": "none",
+    "chute": false,
+    "hoops": true,
+    "colors": {"body": "#a4523e", "trim": "#bdb4a4", "accent": "#7a6a58", "roof": "#a4523e"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Bartos"}
+}

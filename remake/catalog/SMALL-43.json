@@ -1,0 +1,44 @@
+{
+  "id": "SMALL-43",
+  "settlement": "Bellhaven",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 1.1,
+    "over": "Cole Creek"
+  },
+  "example": {
+    "title": "Victory Highway, One Mile Segment West of West Wendover: culverts (Features 8 and 9)",
+    "place": "West Wendover, Elko County, NV",
+    "year": 1925,
+    "source": "HAER NV-41 (via Wikimedia Commons)",
+    "url": "https://commons.wikimedia.org/w/index.php?search=%22Victory+Highway%2C+One+Mile+Segment%22+HAER",
+    "photos": [
+      "haer_victoryhwy_photo_11.jpg",
+      "haer_victoryhwy_photo_19.jpg",
+      "haer_victoryhwy_photo_20.jpg",
+      "haer_victoryhwy_photo_21.jpg",
+      "haer_victoryhwy_photo_22.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Early 1920s transcontinental-highway culverts: a paired culvert of two round concrete pipes about 2 ft in diameter set side by side in a low, plain cast-concrete headwall flush with the road shoulder, and a single-pipe culvert with a small concrete headwall, both half-buried in sandy fill under the old two-lane roadbed in sagebrush desert. Very plain and low; no railing. For the Bellhaven highway crossing, set the same paired-pipe headwall in a grassy ditch.",
+  "traits": {
+    "bridge_type": "pipe_culvert",
+    "spans": 2,
+    "year": 1925,
+    "year_note": "estimated, 1920s highway",
+    "railing": "open_parapet",
+    "railing_detail": "none; low concrete headwall",
+    "span_ft": 2,
+    "width_ft": 24,
+    "height_ft": 2.5,
+    "material": "concrete pipe in cast-concrete headwall",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "COLE CREEK"
+  }
+}

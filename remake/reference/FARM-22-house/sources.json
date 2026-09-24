@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-22-house",
+ "files": [
+  {
+   "file": "commons_George_and_Mary_Koch_farm--house_from_E_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:George_and_Mary_Koch_farm--house_from_E_1.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/George_and_Mary_Koch_farm--house_from_E_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:George and Mary Koch farm--house from E 1.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "House on George and Mary Koch farm, at 14849 474th Avenue in rural Grant County, South Dakota; seen from the east."
+  },
+  {
+   "file": "commons_George_and_Mary_Koch_farm--house_from_NE_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:George_and_Mary_Koch_farm--house_from_NE_1.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/George_and_Mary_Koch_farm--house_from_NE_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:George and Mary Koch farm--house from NE 1.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "House on George and Mary Koch farm, at 14849 474th Avenue in rural Grant County, South Dakota; seen from the northeast."
+  }
+ ]
+}

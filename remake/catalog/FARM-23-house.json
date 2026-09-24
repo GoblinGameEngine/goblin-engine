@@ -1,0 +1,36 @@
+{
+  "id": "FARM-23-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Frank Pisar (Pisar-Kastanek) farmstead, 1950s farmhouse",
+    "place": "Pleasant Hill vicinity, Saline County, NE",
+    "year": 1952,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pisar-Kastanek_farmstead_1950s_house_from_W_1.JPG",
+    "photos": ["commons_Pisar-Kastanek_farmstead_1950s_house_from_W_1.JPG", "commons_Pisar-Kastanek_farmstead_from_W_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Plain post-war one-and-a-half-storey farmhouse: a steep side-gabled roof of grey asphalt shingles with one wide shed dormer holding a triple window, white aluminum lap siding, paired one-over-one windows with little aluminum awning brackets, and a brick chimney on the ridge. A small shed-roofed back porch on thin pipe posts at one end. A silver propane tank sits in the weeds against the wall; a white steel machine shed on one side and the old stone barn on the other, fields right up to the yard.",
+  "traits": {
+    "archetype": "cape_cod",
+    "storeys": 1.5,
+    "main_w_ft": 34,
+    "main_d_ft": 26,
+    "wing": null,
+    "roof": {"type": "gable", "pitch_deg": 48, "material": "asphalt_shingle"},
+    "dormers": [{"type": "shed", "side": "front"}],
+    "porch": {"type": "side", "posts": "iron", "rail": "none"},
+    "walls": "aluminum",
+    "foundation": "concrete_block",
+    "colors": {"body": "#f0f0ec", "trim": "#f6f6f3", "accent": "#7a3a3a", "roof": "#7c7e80"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "none",
+    "yard": {"fence": "none", "extras": ["clothesline"]},
+    "condition": "worn",
+    "year_built": 1952
+  },
+  "names": {"family": "Bartos", "house_number": "2395", "street": "County Rd 1900"}
+}

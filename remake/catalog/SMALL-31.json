@@ -11,20 +11,22 @@
   "example": {
     "title": "Box culvert carrying Spring Creek under 458 Avenue",
     "place": "northeast of Wakonda, Clay County, SD",
-    "year": null,
+    "year": 2009,
     "source": "Wikimedia Commons (Category:Spring Creek bridge, 458 Avenue (Clay County, South Dakota))",
     "url": "https://commons.wikimedia.org/wiki/Category:Spring_Creek_bridge,_458_Avenue_(Clay_County,_South_Dakota)",
     "photos": [
-      "commons_springck458_04.jpg"
+      "commons_springck458_02.jpg",
+      "commons_springck458_03.jpg",
+      "commons_springck458_04.jpg",
+      "commons_springck458_05.jpg"
     ],
     "drawings": []
   },
-  "brief": "Modern twin-cell precast/cast reinforced-concrete box culvert under a paved county road: two square cells side by side with a plain concrete headwall and flared concrete wing walls with sloped tops, delineator posts at the road edge. Shown in winter snow in open farm country. Fits a growing exurban street crossing (only one photo was retrievable).",
+  "brief": "Modern twin-cell cast-in-place reinforced-concrete box culvert of 2009 under a paved county road: two square cells separated by a centre wall with a haunched top, a plain headwall with the year cast in a recessed panel, and flared concrete wing walls with sloped tops; delineator posts at the road edge. It replaced an older concrete arch bridge commemorated by a roadside historical marker. Winter snow, open farm country. Fits a growing exurban street crossing.",
   "traits": {
     "bridge_type": "box_culvert",
     "spans": 2,
-    "year": 1995,
-    "year_note": "estimated, modern",
+    "year": 2009,
     "railing": "open_parapet",
     "railing_detail": "none; delineator posts",
     "span_ft": 8,
@@ -34,7 +36,7 @@
     "condition": "kept"
   },
   "names": {
-    "plate": "none",
+    "plate": "cast year panel: 2009",
     "sign": "BRUSH CREEK"
   }
 }

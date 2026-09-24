@@ -1,0 +1,45 @@
+{
+  "id": "SMALL-42",
+  "settlement": "Bellhaven",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 4.3,
+    "over": "Cole Creek"
+  },
+  "example": {
+    "title": "Route No. 1-Overton-Lake Mead Road, Culverts and Headwalls",
+    "place": "6 miles south of Overton, Clark County, NV",
+    "year": 1935,
+    "source": "HAER NV-40-A (via Wikimedia Commons)",
+    "url": "https://www.loc.gov/item/nv0350/",
+    "photos": [
+      "haer_overton_photo_01.jpg",
+      "haer_overton_photo_07.jpg",
+      "haer_overton_photo_13.jpg",
+      "haer_overton_photo_18.jpg",
+      "haer_overton_photo_24.jpg",
+      "haer_overton_photo_30.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Park-road culverts of the 1930s: corrugated steel pipes about 3 ft in diameter with hand-laid masonry headwalls of flat red and brown sandstone slabs in three styles, straight headwalls, 'special' headwalls with stepped ends, and winged headwalls with splayed wing walls and a stone apron, each set at the toe of a gravel fill under a two-lane highway. Arid wash setting. For the Bellhaven highway, use the winged headwall type in local grey fieldstone.",
+  "traits": {
+    "bridge_type": "pipe_culvert",
+    "spans": 1,
+    "year": 1935,
+    "year_note": "estimated, 1930s",
+    "railing": "open_parapet",
+    "railing_detail": "none; stone headwall top",
+    "span_ft": 3,
+    "width_ft": 28,
+    "height_ft": 4,
+    "material": "corrugated steel pipe, dry-laid/mortared sandstone headwalls",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "COLE CREEK"
+  }
+}

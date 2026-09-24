@@ -1,0 +1,40 @@
+{
+  "id": "CULVERT-10",
+  "settlement": "rural (near Haskins Corner)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Chicken Creek Bridge (NRHP 90000298)",
+    "place": "near Lone Star, Douglas County, KS",
+    "year": 1913,
+    "source": "Wikimedia Commons (Category:Chicken Creek Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Chicken_Creek_Bridge",
+    "photos": [
+      "commons_chickenck_01.jpg",
+      "commons_chickenck_02.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single stone arch of 1913 built by two local builders of local limestone on a country road: a semicircular arch of dressed voussoirs in squared, coursed limestone walls with a low solid parapet and coping, straight wing walls, and a wooden/steel rail on top on one side. Grassy, overgrown creek banks with trees; only two photos available.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1913,
+    "railing": "open_parapet",
+    "railing_detail": "low solid stone parapet",
+    "span_ft": 12,
+    "width_ft": 20,
+    "height_ft": 9,
+    "masonry": "coursed local limestone",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "date stone: 1913",
+    "sign": "none"
+  }
+}

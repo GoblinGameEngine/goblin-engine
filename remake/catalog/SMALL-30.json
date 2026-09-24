@@ -1,0 +1,43 @@
+{
+  "id": "SMALL-30",
+  "settlement": "Cedar Ford",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 0.0,
+    "over": "Mill Creek"
+  },
+  "example": {
+    "title": "Champ's Ford Bridge, Road 100S over Clifty Creek",
+    "place": "west of Burney, Clay Township, Decatur County, IN",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Champ's Ford Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Champ's_Ford_Bridge",
+    "photos": [
+      "commons_champsford_01.jpg",
+      "commons_champsford_02.jpg",
+      "commons_champsford_03.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Multi-span stone arch bridge (three to four semicircular arches) of coursed limestone rubble with rock-faced voussoirs and a low, flat-topped stone parapet, carrying a narrow one-lane paved road straight across a wide shallow creek; wooded banks and a farmhouse at the end. 19th/early-20th-century county work (date not in the sources). Inventory span 0 m, sharing the spot with SMALL-28: model a single arch of this type.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 3,
+    "model_spans": 1,
+    "year": 1890,
+    "year_note": "estimated",
+    "railing": "open_parapet",
+    "railing_detail": "low flat stone parapet",
+    "span_ft": 25,
+    "width_ft": 18,
+    "height_ft": 12,
+    "masonry": "coursed limestone rubble",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "MILL CREEK"
+  }
+}

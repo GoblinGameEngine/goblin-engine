@@ -1,0 +1,36 @@
+{
+  "id": "FARM-22-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "George and Mary Koch farm, house, 14849 474th Avenue",
+    "place": "Grant County, SD",
+    "year": 1912,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:George_and_Mary_Koch_farm--house_from_E_1.jpg",
+    "photos": ["commons_George_and_Mary_Koch_farm--house_from_E_1.jpg", "commons_George_and_Mary_Koch_farm--house_from_NE_1.jpg"],
+    "drawings": []
+  },
+  "brief": "Two-storey hip-roofed foursquare farmhouse in white clapboard with dark green window casings and trim, a grey asphalt roof and a front gable dormer holding a small multi-pane window flanked by diamond-lattice sash. A full-width front porch on round white columns with a solid clapboard knee wall and lattice skirting, its flat roof railed with white turned balusters as an upstairs deck. A flagpole with an American flag on the lawn, tall arborvitae and big maples shading the yard.",
+  "traits": {
+    "archetype": "foursquare",
+    "storeys": 2,
+    "main_w_ft": 30,
+    "main_d_ft": 30,
+    "wing": {"side": "rear", "w_ft": 14, "d_ft": 12, "storeys": 1},
+    "roof": {"type": "hip", "pitch_deg": 30, "material": "asphalt_shingle"},
+    "dormers": [{"type": "gable", "side": "front"}],
+    "porch": {"type": "front_full", "posts": "columns", "rail": "solid"},
+    "walls": "clapboard",
+    "foundation": "poured_concrete",
+    "colors": {"body": "#f2f2ee", "trim": "#2e5a3e", "accent": "#f8f8f5", "roof": "#6a6c6c"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "detached_2",
+    "yard": {"fence": "none", "extras": ["flagpole", "garden"]},
+    "condition": "kept",
+    "year_built": 1912
+  },
+  "names": {"family": "Lindahl", "house_number": "14920", "street": "474th Ave"}
+}

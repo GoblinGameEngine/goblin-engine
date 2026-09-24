@@ -1,0 +1,45 @@
+{
+  "id": "SMALL-47",
+  "settlement": "Tamarack",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 2.2,
+    "over": "Heron Creek"
+  },
+  "example": {
+    "title": "Lincoln Highway, 3 mile segment south of Business I-80 and ALT 93: concrete bridge and double culvert",
+    "place": "West Wendover, Elko County, NV",
+    "year": 1925,
+    "source": "HAER NV-28 (via Wikimedia Commons)",
+    "url": "https://commons.wikimedia.org/w/index.php?search=%22Lincoln+Highway%2C+3+mile+segment%22+HAER",
+    "photos": [
+      "haer_lincolnhwy_photo_01.jpg",
+      "haer_lincolnhwy_photo_03.jpg",
+      "haer_lincolnhwy_photo_05.jpg",
+      "haer_lincolnhwy_photo_08.jpg",
+      "haer_lincolnhwy_photo_10.jpg",
+      "haer_lincolnhwy_photo_12.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Early 1920s Lincoln Highway drainage structures on an abandoned two-lane concrete/asphalt roadbed: a small reinforced-concrete box bridge (short slab span on vertical abutments) with a thin projecting slab edge and splayed concrete wing walls, and a double pipe culvert in a rubble-and-mortar headwall; a small concrete post marked 'N' stands by the road. Flat desert flats with distant mountains. Model the slab-span box with its splayed wings on the Tamarack highway.",
+  "traits": {
+    "bridge_type": "box_culvert",
+    "spans": 1,
+    "year": 1925,
+    "year_note": "estimated, 1920s highway",
+    "railing": "open_parapet",
+    "railing_detail": "none; slab edge and low wing walls",
+    "span_ft": 8,
+    "width_ft": 20,
+    "height_ft": 4,
+    "material": "reinforced concrete",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "concrete marker post: N",
+    "sign": "HERON CREEK"
+  }
+}

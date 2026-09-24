@@ -1,0 +1,27 @@
+{
+  "id": "FARM-23-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Frank Pisar (Pisar-Kastanek) farmstead, stone barn",
+    "place": "Pleasant Hill vicinity, Saline County, NE",
+    "year": 1890,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pisar-Kastanek_farmstead_stone_barn_from_W_1.JPG",
+    "photos": ["commons_Pisar-Kastanek_farmstead_stone_barn_from_W_1.JPG", "commons_Pisar-Kastanek_farmstead_barn_and_pile_from_SW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Czech immigrant's barn about 40 ft wide and 60 ft long: low walls of rough-coursed buff limestone only one storey tall, with a centered opening framed by faded red plank doors and a red boarded hay door above, under an enormous, steep gable roof re-covered in grey ribbed steel that runs down almost to the tops of the stone walls. The roof ridge sags slightly; a two-track lane runs through tall grass to the door, a volunteer tree grows against one corner, and a pile of fallen stone lies nearby.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 40,
+    "d_ft": 60,
+    "height_ft": 34,
+    "walls": "stone",
+    "roof": {"type": "gable", "pitch_deg": 52, "material": "metal"},
+    "colors": {"body": "#cfc2a0", "trim": "#b23a3a", "accent": "#b23a3a", "roof": "#8e9498"},
+    "condition": "worn"
+  },
+  "names": {"family": "Bartos", "sign": "BARTOS FARM EST. 1874"}
+}

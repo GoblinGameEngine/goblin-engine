@@ -1,0 +1,28 @@
+{
+  "id": "FARM-21-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Christian Kupke farmstead (Farm at Long Lane), red outbuilding",
+    "place": "Murray vicinity, Cass County, NE",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Christian_Kupke_farmstead_bldg_2.JPG",
+    "photos": ["commons_Christian_Kupke_farmstead_bldg_2.JPG"],
+    "drawings": []
+  },
+  "brief": "Compact frame granary-and-tool shed about 20 ft by 24 ft, sided in barn-red horizontal drop siding with some peeling paint, a single white-painted plank door on the long side, a steep gable roof of silver corrugated metal and a low whitewashed stone foundation. Tall grass and weeds grow up around it at the edge of a soybean field with a dense deciduous windbreak behind. (Granary/tool shed; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 24,
+    "d_ft": 20,
+    "height_ft": 16,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 38, "material": "metal"},
+    "foundation": "fieldstone",
+    "colors": {"body": "#a02a30", "trim": "#f2f2ee", "accent": "#f2f2ee", "roof": "#c6c9cb"},
+    "condition": "worn"
+  },
+  "names": {"family": "Hruska"}
+}

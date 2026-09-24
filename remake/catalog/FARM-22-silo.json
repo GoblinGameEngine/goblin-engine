@@ -1,0 +1,28 @@
+{
+  "id": "FARM-22-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Knapp Ranch, glass-lined storage silo, 13168 450th Avenue",
+    "place": "Roberts County, SD",
+    "year": 1970,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Knapp_Ranch_from_SSW_1.jpg",
+    "photos": ["commons_Knapp_Ranch_from_SSW_1.jpg"],
+    "drawings": []
+  },
+  "brief": "Glass-fused steel oxygen-limiting silo of the 1970s, about 20 ft across and 60 ft high: dark navy-blue bolted steel rings with faint horizontal seams, a shallow blue domed roof, a small white maker's panel near the top (render as a plain white placard) and a galvanized fill pipe arcing up and over from the ground to the roof. It stands at the end of the long red gambrel barn on a hilltop farmstead ringed by a spruce windbreak, with gravel road and rolling pasture below.",
+  "traits": {
+    "type": "harvestore_blue",
+    "diameter_ft": 20,
+    "height_ft": 60,
+    "roof": "dome",
+    "chute": false,
+    "hoops": false,
+    "fill_pipe": true,
+    "colors": {"body": "#1f2e5a", "trim": "#f2f2ee", "accent": "#b8bcbe", "roof": "#1f2e5a"},
+    "condition": "kept"
+  },
+  "names": {"family": "Lindahl"}
+}
