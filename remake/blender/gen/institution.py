@@ -216,6 +216,113 @@ def program(kind, use, storeys, W, D):
     return [([off, off], [off, (0.8, "bath", None), off])] + [([off, off], [off, off]) for _ in range(1, storeys)], None
 
 
+def is_mission(tr):
+    return "mission" in str(tr.get("style_note") or "").lower() or tr.get("style") == "mission_revival"
+
+
+def flat_roofed(tr):
+    """The record gives a flat roof, or a style that always has one behind a parapet."""
+    return dget(tr, "roof").get("type") == "flat" or is_mission(tr)
+
+
+def mission_parapet(p, x0, x1, y, z, t=0.3):
+    """A Mission Revival curvilinear front parapet above the wall top z on the front wall y: low
+    at the corners, curving up over each shoulder to a raised centre with a small arched crest,
+    outlined by a cast-stone coping.  Built as vertical strips so any profile shape works."""
+    W = x1 - x0
+    prof = []                                   # (x, height above z), left to right
+    n = 28
+    for i in range(n + 1):
+        u = i / n                                # 0..1 across the front
+        d = abs(u - 0.5) * 2                     # 0 at centre, 1 at corners
+        rise = clamp(W * 0.08, 1.2, 2.4)        # the shoulders' rise above the corner parapet
+        if d > 0.55:                             # corners, level with the roof's own parapet
+            hgt = 0.9
+        elif d > 0.3:                            # the curved shoulder
+            q = (0.55 - d) / 0.25
+            hgt = 0.9 + rise * math.sin(q * math.pi / 2)
+        else:                                    # raised centre with an arched crest
+            hgt = 0.9 + rise + (0.7 * math.cos(d / 0.18 * math.pi / 2) if d < 0.18 else 0.0)
+        prof.append((x0 + W * u, hgt))
+    for (xa, ha), (xb, hb) in zip(prof, prof[1:]):
+        p.face([(xa, y + t, z), (xb, y + t, z), (xb, y + t, z + hb), (xa, y + t, z + ha)], "ext")      # street face
+        p.face([(xb, y, z), (xa, y, z), (xa, y, z + ha), (xb, y, z + hb)], "ext")                      # back face
+        p.face([(xa, y, z + ha + 0.2), (xb, y, z + hb + 0.2), (xb, y + t + 0.06, z + hb + 0.2), (xa, y + t + 0.06, z + ha + 0.2)],
+               "trim")                                                                                    # cast-stone coping top
+        p.face([(xa, y + t + 0.06, z + ha - 0.05), (xb, y + t + 0.06, z + hb - 0.05), (xb, y + t + 0.06, z + hb + 0.2),
+                (xa, y + t + 0.06, z + ha + 0.2)], "trim")                                                # its white street edge
+
+
+def build_bandstand(b, rec, tr, names, lot_w, lot_d, rnd):
+    """An octagonal park bandstand: a raised concrete base with a storage door and porthole vents,
+    slender iron columns with scroll brackets, a balustrade round the stage, a low spreading
+    octagonal roof to a ribbed dome and flagpole, and an iron stair up one side."""
+    R = clamp(min(lot_w, lot_d) / 2 - 1.8, 3.0, 6.0)
+    base_h = 1.2
+    roof_z = base_h + 3.2
+    oct_ = [(R * math.cos(math.pi / 8 + k * math.pi / 4), R * math.sin(math.pi / 8 + k * math.pi / 4)) for k in range(8)]
+    p = b.part("bandstand-col")
+    p.prism(oct_, 0.0, base_h, "ext")                                              # the raised base / stage
+    v = b.part("bandstand_trim")
+    front = 2                                                                      # the side facing +y (k = 2)
+    for k in range(8):
+        (ax, ay), (bx_, by_) = oct_[k], oct_[(k + 1) % 8]
+        mx, my = (ax + bx_) / 2, (ay + by_) / 2
+        nx, ny = mx / math.hypot(mx, my), my / math.hypot(mx, my)
+        tx, ty = -ny, nx
+        if k == (front + 4) % 8:                                                   # storage door under the stage (rear)
+            v.face([(mx + nx * 0.02 - tx * 0.4, my + ny * 0.02 - ty * 0.4, 0.05), (mx + nx * 0.02 + tx * 0.4, my + ny * 0.02 + ty * 0.4, 0.05),
+                    (mx + nx * 0.02 + tx * 0.4, my + ny * 0.02 + ty * 0.4, 1.05), (mx + nx * 0.02 - tx * 0.4, my + ny * 0.02 - ty * 0.4, 1.05)],
+                   "door")
+        elif k != front:
+            pv = [(math.cos(a) * 0.13, math.sin(a) * 0.13) for a in (j * math.pi / 4 for j in range(8))]
+            v.face([(mx + nx * 0.02 + tx * u, my + ny * 0.02 + ty * u, 0.6 + w_) for (u, w_) in pv], "black")   # porthole vent
+    # columns at the corners, with brackets under the roof
+    for (cx, cy) in oct_:
+        ix, iy = cx * 0.92, cy * 0.92
+        p.cylinder((ix, iy), 0.07, base_h, roof_z, "iron", n=8)
+        v.box((ix - 0.25, iy - 0.25, roof_z - 0.45), (ix + 0.25, iy + 0.25, roof_z - 0.05), "iron")
+    # balustrade between the columns, open where the stair arrives (front)
+    for k in range(8):
+        if k == front:
+            continue
+        (ax, ay), (bx_, by_) = [(q[0] * 0.92, q[1] * 0.92) for q in (oct_[k], oct_[(k + 1) % 8])]
+        nb = int(math.hypot(bx_ - ax, by_ - ay) / 0.12)
+        for j in range(1, nb):                                                    # balusters
+            x_, y_ = ax + (bx_ - ax) * j / nb, ay + (by_ - ay) * j / nb
+            p.box((x_ - 0.015, y_ - 0.015, base_h), (x_ + 0.015, y_ + 0.015, base_h + 1.0), "iron")
+        p.face([(ax, ay, base_h + 0.95), (bx_, by_, base_h + 0.95), (bx_, by_, base_h + 1.02), (ax, ay, base_h + 1.02)], "iron")
+        p.face([(bx_, by_, base_h + 0.95), (ax, ay, base_h + 0.95), (ax, ay, base_h + 1.02), (bx_, by_, base_h + 1.02)], "iron")
+    # the spreading octagonal roof, ribbed dome and flagpole
+    rr = b.part("bandstand_roof")
+    ro = [(q[0] * 1.12, q[1] * 1.12) for q in oct_]
+    apex = roof_z + R * 0.25
+    for k in range(8):
+        (ax, ay), (bx_, by_) = ro[k], ro[(k + 1) % 8]
+        rr.face([(ax, ay, roof_z), (bx_, by_, roof_z), (bx_ * 0.3, by_ * 0.3, apex), (ax * 0.3, ay * 0.3, apex)], "roof")
+        rr.face([(bx_, by_, roof_z - 0.08), (ax, ay, roof_z - 0.08), (ax * 0.3, ay * 0.3, apex - 0.08), (bx_ * 0.3, by_ * 0.3, apex - 0.08)], "trim")
+    for k in range(6):
+        r0 = R * 0.34 * math.cos(k / 6 * math.pi / 2)
+        r1 = R * 0.34 * math.cos((k + 1) / 6 * math.pi / 2)
+        rr.cylinder((0.0, 0.0), r0 + 0.02, apex + R * 0.3 * math.sin(k / 6 * math.pi / 2),
+                    apex + R * 0.3 * math.sin((k + 1) / 6 * math.pi / 2), "roof", n=16, r1=r1 + 0.02)
+    rr.cylinder((0.0, 0.0), 0.04, apex + R * 0.3, apex + R * 0.3 + 3.0, "steel", n=6)
+    rr.box((0.05, -0.02, apex + R * 0.3 + 2.2), (0.95, 0.02, apex + R * 0.3 + 2.8), "flag_red")
+    # iron stair up the front side, with rails
+    ax, ay = oct_[front]
+    bx_, by_ = oct_[(front + 1) % 8]
+    mx, my = (ax + bx_) / 2, (ay + by_) / 2
+    nst = int(math.ceil(base_h / 0.17))
+    st = b.part("bandstand_stair-col")
+    for k in range(nst):
+        z = base_h - k * base_h / nst
+        st.box((mx - 0.75, my + k * 0.3, 0.0), (mx + 0.75, my + (k + 1) * 0.3, z), "iron")
+    for s in (-0.8, 0.8):
+        st.box((mx + s - 0.02, my, base_h + 0.95), (mx + s + 0.02, my + nst * 0.3, base_h + 1.0), "iron")
+    b.empty("light_stage", (0.0, 0.0, roof_z - 0.3))
+    return b
+
+
 def build(rec):
     rid = rec["id"]
     kind = rec.get("kind", "civic")
@@ -228,6 +335,8 @@ def build(rec):
     materials(b, tr)
     if kind == "church":
         return build_church(b, rec, tr, names, lot_w, lot_d, rnd)
+    if "bandstand" in str(tr.get("use") or rec.get("label") or "").lower() or tr.get("plan") == "octagon" and kind == "civic":
+        return build_bandstand(b, rec, tr, names, lot_w, lot_d, rnd)
     use = (tr.get("use") or (rec.get("label") or "office")).lower().replace(" ", "_").replace("/", "_").replace(".", "")
     use = {"fire___police": "fire_police", "post_office": "post_office", "library": "library", "carnegie_library": "library",
            "city_hall": "city_hall", "town_hall": "town_hall", "courthouse": "courthouse", "depot": "depot"}.get(use, use)
@@ -266,7 +375,7 @@ def build(rec):
         fz = floors[-1][1] + 0.4
         floors.append((fz, fz + H))
     wall_top = floors[-1][1] + 0.35
-    flat = style in ("classical_revival", "beaux_arts", "art_deco", "modern") or kind == "school" and year > 1915
+    flat = style in ("classical_revival", "beaux_arts", "art_deco", "modern") or kind == "school" and year > 1915 or flat_roofed(tr)
     roof = dict(type="flat", thick=0.35, parapet=0.9, coping="stone") if flat else dict(type="hip", pitch=30, eave_oh=0.6, thick=0.2)
     if style == "prairie":
         roof = dict(type="hip", pitch=18, eave_oh=1.2, thick=0.2)
@@ -319,7 +428,7 @@ def build_hall(b, rec, tr, names, use, W, D, lot_w, lot_d, storeys, rnd):
     FL = 0.9 if year < 1940 else 0.45
     H = 4.2 if year < 1940 else 3.6
     floors = [(FL, FL + H)]
-    flat = style in ("classical_revival", "beaux_arts", "art_deco", "modern")
+    flat = style in ("classical_revival", "beaux_arts", "art_deco", "modern") or flat_roofed(tr)
     roof = dict(type="flat", thick=0.35, parapet=0.9, coping="stone") if flat else dict(type="hip", pitch=28, eave_oh=0.6, thick=0.2)
     front_type = {"post_office": ("po_lobby", "po_lobby"), "library": ("library", "library"),
                   "depot": ("waiting_room", "waiting_room")}.get(use, ("office", "office"))
@@ -382,6 +491,8 @@ def exterior(b, rec, tr, names, rect, floors, wall_top, flat, style, lot_d, rnd,
             p.face([(0.0, y1, top + 0.6 + ph), (0.0, y1 + 1.9, top + 0.6 + ph), (s * (pw / 2 + 0.1), y1 + 1.9, top + 0.6),
                     (s * (pw / 2 + 0.1), y1, top + 0.6)][::s], "stone")
         p.box((-pw / 2 + 0.1, y1, 0.0), (pw / 2 - 0.1, y1 + 1.9, FL), "stone")  # the portico's plinth (landing)
+    elif is_mission(tr):
+        mission_parapet(p, x0, x1, y1 - 0.3, wall_top - 0.05)
     elif style == "romanesque":
         p.box((-2.2, y1, FL), (-1.6, y1 + 0.5, FL + 3.4), "stone")
         p.box((1.6, y1, FL), (2.2, y1 + 0.5, FL + 3.4), "stone")
@@ -490,15 +601,22 @@ def build_church(b, rec, tr, names, lot_w, lot_d, rnd):
     elif pos == "side" and x1 + ts < lot_w / 2:
         trect = (x1, y0 + D * 0.55, x1 + ts, y0 + D * 0.55 + ts)
     entry_y = y1
-    if trect:
-        spec["blocks"].append(dict(name="tower", rect=trect, floors=[(FL, FL + 3.4)], wall_top=th, found_top=FL - 0.05,
+    trects = [trect] if trect else []
+    # twin towers: the front-corner tower mirrored to the other corner, the entrance between them
+    if trect and tr.get("twin_towers") and pos in ("front_corner", "front_center") and abs((trect[0] + trect[2]) / 2) > 0.01:
+        mirror = (-trect[2], trect[1], -trect[0], trect[3])
+        if mirror[0] > -lot_w / 2 + 0.2:
+            trects.append(mirror)
+    for ti, tr_ in enumerate(trects):
+        tname = "TOWER" if ti == 0 else f"TOWER{ti + 1}"
+        spec["blocks"].append(dict(name=tname.lower(), rect=tr_, floors=[(FL, FL + 3.4)], wall_top=th, found_top=FL - 0.05,
                                    roof=dict(type="flat", thick=0.3, parapet=0.0)))
-        tx0, ty0, tx1, ty1 = trect
+        tx0, ty0, tx1, ty1 = tr_
         if pos == "side":
-            spec["rooms"].append(dict(name="TOWER", rect=trect, type=None))
-            spec["doors"].append(dict(name="tower_nave", at=(x1, (ty0 + ty1) / 2), w=0.95, swing_into="TOWER"))
+            spec["rooms"].append(dict(name=tname, rect=tr_, type=None))
+            spec["doors"].append(dict(name="tower_nave", at=(x1, (ty0 + ty1) / 2), w=0.95, swing_into=tname))
         else:
-            spec["rooms"].append(dict(name="TOWER", rect=trect, type=None, open_plan_to="NARTHEX"))
+            spec["rooms"].append(dict(name=tname, rect=tr_, type=None, open_plan_to="NARTHEX"))
             if pos == "front_center" and abs((tx0 + tx1) / 2) < 0.01:
                 # the main entrance moves to the tower's front face
                 spec["doors"] = [d for d in spec["doors"] if d["name"] != "main_entry"]
@@ -506,11 +624,11 @@ def build_church(b, rec, tr, names, lot_w, lot_d, rnd):
                                           panels=[(0.1, 0.08, 0.9, 0.92)]))
                 entry_y = ty1
             else:
-                spec["doors"].append(dict(name="tower_door", at=((tx0 + tx1) / 2, ty1), w=0.95, ext=True))
+                spec["doors"].append(dict(name=f"tower_door{ti or ''}", at=((tx0 + tx1) / 2, ty1), w=0.95, ext=True))
     add_stoops(spec, FL)
     gh.House(b, spec).build()
     p = b.part("church_trim-col")
-    if trect:
+    for trect in trects:
         tx, ty = (trect[0] + trect[2]) / 2, (trect[1] + trect[3]) / 2
         for sx, sy in ((0, 1), (0, -1), (1, 0), (-1, 0)):
             ox, oy = sx * (ts / 2 + 0.01), sy * (ts / 2 + 0.01)
