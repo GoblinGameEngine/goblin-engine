@@ -32,7 +32,7 @@ for d in doors:
 		var from = centre + nrm * (0.75 * s) + Vector3.UP * 1.2
 		var hit = space.intersect_ray(PhysicsRayQueryParameters3D.create(from, from + Vector3.DOWN * 2.5))
 		floors.append(hit.position.y if hit else base - 1.0)
-	var z = base + 0.03
+	var z = base + 0.07
 	var a = Vector3(centre.x, z, centre.z) + nrm * -0.75 + Vector3.UP * (1.75 / 2.0)
 	var q = PhysicsShapeQueryParameters3D.new()
 	q.shape = cap

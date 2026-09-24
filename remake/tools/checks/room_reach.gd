@@ -1,4 +1,4 @@
-var s = root.get_node('PruettTest')
+var s = root.get_tree().current_scene
 var only = ONLY_BUILDING
 var space = root.get_world_3d().direct_space_state
 var out = []
@@ -13,9 +13,18 @@ for b in s.get_children():
 		for c in n.get_children():
 			stack.append(c)
 			if str(c.name).begins_with('light_') and not (c is OmniLight3D): lights.append(c)
+	# bake around the whole building (its merged visual mesh), not just the rooms' lights
 	var box = AABB(b.global_position, Vector3.ZERO)
 	for l in lights: box = box.expand(l.global_position)
-	box = box.grow(8.0)
+	var ms = [b]
+	while ms.size() > 0:
+		var n2 = ms.pop_back()
+		for c in n2.get_children():
+			ms.append(c)
+			if c is MeshInstance3D and str(c.name).ends_with("_visual"):
+				var ab = c.global_transform * c.get_aabb()
+				box = box.merge(ab)
+	box = box.grow(6.0)
 	box.position.y = b.global_position.y - 3.0
 	box.size.y = 20.0
 	var nm = NavigationMesh.new()
@@ -59,7 +68,7 @@ for b in s.get_children():
 				var rad = 0.6 if k <= 8 else 1.2
 				off = Vector3(cos(ang), 0, sin(ang)) * rad
 			var q = p + off
-			var hit = space.intersect_ray(PhysicsRayQueryParameters3D.create(q, q + Vector3.DOWN * 6.0))
+			var hit = space.intersect_ray(PhysicsRayQueryParameters3D.create(q, q + Vector3.DOWN * 14.0))
 			if not hit: continue
 			var fp = hit.position
 			var tgt = NavigationServer3D.map_get_closest_point(map, fp)

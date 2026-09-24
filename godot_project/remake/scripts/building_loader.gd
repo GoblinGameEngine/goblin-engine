@@ -152,7 +152,7 @@ static func library_material(key: String, d: Dictionary) -> StandardMaterial3D:
 		var base: String = TEX_ROOT + tex
 		m.albedo_texture = load(base + "_albedo.webp")
 		var tint = d.get("tint")
-		m.albedo_color = Color(tint[0], tint[1], tint[2]) if tint else Color.WHITE
+		m.albedo_color = Color(tint[0], tint[1], tint[2]) if tint else Color.WHITE   # tints are stored sRGB
 		if ResourceLoader.exists(base + "_rough.webp"):
 			m.roughness_texture = load(base + "_rough.webp")
 			m.roughness_texture_channel = BaseMaterial3D.TEXTURE_CHANNEL_RED
@@ -162,7 +162,8 @@ static func library_material(key: String, d: Dictionary) -> StandardMaterial3D:
 			m.normal_texture = load(base + "_normal.webp")
 	else:
 		var c = d.get("color", [0.8, 0.8, 0.8])
-		m.albedo_color = Color(c[0], c[1], c[2])
+		# Blender colours are linear; albedo_color is sRGB
+		m.albedo_color = Color(c[0], c[1], c[2]).linear_to_srgb()
 	var a = d.get("alpha")
 	if a != null:
 		m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA

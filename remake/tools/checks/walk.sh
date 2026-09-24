@@ -2,7 +2,7 @@
 # walk.sh BUILDING x y z yaw seconds [action]  -- place the player (feet at z, building-local), hold an action
 B=$1; X=$2; Y=$3; Z=$4; YAW=$5; T=$6; A=${7:-move_forward}
 G="python3 $(dirname "$0")/../../../tools/gcmd.py"
-$G run "var s = root.get_node('PruettTest')
+$G run "var s = root.get_tree().current_scene
 var b = s.get_node('$B')
 var pl = s.get_node('TestPlayer')
 pl.set_physics_process(true)
@@ -14,7 +14,7 @@ Input.action_press('$A')
 return 1" >/dev/null
 python3 -c "import time; time.sleep($T)"
 $G run "Input.action_release('$A')
-var s = root.get_node('PruettTest')
+var s = root.get_tree().current_scene
 var b = s.get_node('$B')
 var pl = s.get_node('TestPlayer')
 var l = b.global_transform.affine_inverse() * pl.global_position

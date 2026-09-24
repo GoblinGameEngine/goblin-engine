@@ -1,4 +1,4 @@
-var s = root.get_node('PruettTest')
+var s = root.get_tree().current_scene
 var b = s.get_node(BNAME)
 var box = AABB(b.global_position, Vector3.ZERO).grow(14.0)
 box.position.y = b.global_position.y - 3.0

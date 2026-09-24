@@ -89,7 +89,7 @@ class Building:
                 mul.blend_type = "MULTIPLY"
                 mul.inputs["Factor"].default_value = 1.0
                 nt.links.new(img.outputs["Color"], mul.inputs[6])
-                mul.inputs[7].default_value = (*tint, 1.0)
+                mul.inputs[7].default_value = (*[srgb_to_linear(c) for c in tint], 1.0)     # tint is sRGB
                 nt.links.new(mul.outputs[2], bsdf.inputs["Base Color"])
             else:
                 nt.links.new(img.outputs["Color"], bsdf.inputs["Base Color"])
@@ -147,6 +147,16 @@ class Building:
         os.makedirs(os.path.dirname(blend), exist_ok=True)
         bpy.ops.wm.save_as_mainfile(filepath=blend)
         print(f"EXPORTED {out_glb}")
+
+
+def srgb_to_linear(c):
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+
+def hex_rgb(h):
+    """'#rrggbb' -> sRGB floats."""
+    h = h.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) / 255 for i in (0, 2, 4))
 
 
 def _is_special(ob):

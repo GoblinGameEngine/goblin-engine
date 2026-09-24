@@ -1,7 +1,7 @@
 #!/bin/bash
 # view.sh BUILDING lx ly lz yaw_deg pitch_deg out.png   (building-local Blender coords; yaw 0 = looking +Y north)
 B=$1; X=$2; Y=$3; Z=$4; YAW=$5; P=$6; OUT=$7
-python3 $(dirname "$0")/../../../tools/gcmd.py run "var s = root.get_node('PruettTest')
+python3 $(dirname "$0")/../../../tools/gcmd.py run "var s = root.get_tree().current_scene
 var b = s.get_node('$B')
 var pl = s.get_node('TestPlayer')
 pl.set_physics_process(false)

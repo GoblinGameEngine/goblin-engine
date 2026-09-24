@@ -31,7 +31,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 REF = os.path.join(ROOT, "reference")
 UA = "GoblinEngineRemake/0.1 (reference research; contact via github.com/GoblinGameEngine)"
 LOC_COLL = "https://www.loc.gov/collections/historic-american-buildings-landscapes-and-engineering-records/"
-MAX_W = 2048
+MAX_W = 1920          # a standard Wikimedia thumbnail width (others are rendered on demand and rate-limited)
 
 
 _last = [0.0]
@@ -167,7 +167,9 @@ def commons_fetch(title, sid):
     os.makedirs(dest, exist_ok=True)
     path = os.path.join(dest, name)
     if not os.path.exists(path):
-        open(path, "wb").write(get(url, binary=True))
+        data = get(url, binary=True)          # fetch first: a failed download must not leave a 0-byte file
+        with open(path, "wb") as f:
+            f.write(data)
     manifest_add(sid, {"file": name, "source": "Wikimedia Commons", "record": ii.get("descriptionurl"),
                        "url": url, "title": title, "kind": "photo",
                        "license": md.get("LicenseShortName", {}).get("value"),

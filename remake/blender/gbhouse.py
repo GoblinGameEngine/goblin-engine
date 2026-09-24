@@ -87,14 +87,18 @@ class House:
         if not rf:
             return 1e9
         x0, y0, x1, y1 = bl["rect"]
-        tn = math.tan(math.radians(rf["pitch"]))
-        th = rf.get("thick", 0.15) / math.cos(math.radians(rf["pitch"]))
+        tn = math.tan(math.radians(rf.get("pitch", 0)))
+        th = rf.get("thick", 0.15) / math.cos(math.radians(rf.get("pitch", 0)))
         wt = bl["wall_top"]
-        if rf["type"] == "gable":
+        if rf["type"] == "flat":
+            return wt - rf.get("thick", 0.25)
+        if rf["type"] in ("gable", "gambrel"):
             if rf["ridge"] == "x":
                 d = min(y - y0, y1 - y)
             else:
                 d = min(x - x0, x1 - x)
+            if rf["type"] == "gambrel":
+                return wt + gambrel_rise(d, (y1 - y0) if rf["ridge"] == "x" else (x1 - x0), rf) - th
             return wt + d * tn - th
         if rf["type"] == "hip":
             d = min(x - x0, x1 - x, y - y0, y1 - y)
@@ -171,6 +175,8 @@ class House:
                     continue
                 if exterior and not (-0.05 <= off <= t + 0.05):
                     continue
+                if it.get("floor", 0) >= len(floors_z):
+                    continue            # an upper-floor opening on a line a lower block shares
                 fz = floors_z[it.get("floor", 0)]
                 w = it["w"]
                 if kind == "windows":
@@ -192,8 +198,8 @@ class House:
             for side, (a, c) in self._block_edges(bl).items():
                 L = math.dist(a, c)
                 keep = _subtract((0.0, L), self._shared(bl, side))
-                gable_end = rf.get("type") == "gable" and ((rf["ridge"] == "x" and side in "EW") or
-                                                            (rf["ridge"] == "y" and side in "NS"))
+                gable_end = rf.get("type") in ("gable", "gambrel") and ((rf["ridge"] == "x" and side in "EW") or
+                                                                         (rf["ridge"] == "y" and side in "NS"))
                 shed_rise = rf.get("type") == "shed" and side not in (rf["high"], {"N": "S", "S": "N", "E": "W", "W": "E"}[rf["high"]])
                 for (s0, s1) in keep:
                     u = Vector((c[0] - a[0], c[1] - a[1], 0)) / L
@@ -248,22 +254,77 @@ class House:
                     for (p0, p1) in _subtract((s0, s1), _union(ext)):
                         self._partition(axis, c, p0, p1, fl)
 
+    def _stair_geom(self, st):
+        """Normalise a stair spec.  type 'straight' (default): one flight from start along dir.
+        type 'dogleg': flight A from start along dir to a half landing, flight B back beside it on
+        the `turn` side ('left' = +side, the default) -- a compact stair for shallow plans.
+        Returns flights (start, d, side, width, n, run, z0, z1), the landing box, the upper-floor hole,
+        the foot / head landing zones and the footprint (all plan rects x0, y0, x1, y1)."""
+        d = Vector((st["dir"][0], st["dir"][1], 0)).normalized()
+        side = Vector((-d.y, d.x, 0))
+        p0 = Vector((st["start"][0], st["start"][1], 0))
+        fl, tf = st.get("floor", 0), st.get("to_floor", st.get("floor", 0) + 1)
+        bl = self.block_of(p0.x + d.x * 0.5 + side.x * 0.3, p0.y + d.y * 0.5 + side.y * 0.3) or self.block_of(p0.x, p0.y)
+        z0 = bl["floors"][fl][0] if fl >= 0 else st["z0"]
+        z1 = bl["floors"][tf][0] if "z1" not in st else st["z1"]
+        w, n, run = st["width"], st["n"], st["run"]
+
+        def rect(pts):
+            return (min(q.x for q in pts), min(q.y for q in pts), max(q.x for q in pts), max(q.y for q in pts))
+
+        def zone(a0, a1, s0, s1):
+            return rect([p0 + d * a + side * c for a in (a0, a1) for c in (s0, s1)])
+        if st.get("type", "straight") == "dogleg":
+            sg = 1.0 if st.get("turn", "left") == "left" else -1.0
+            gap, land = st.get("gap", 0.08), st.get("landing", 1.0)
+            n1 = n // 2
+            n2 = n - n1
+            L1, L2 = n1 * run, n2 * run
+            zl = z0 + (z1 - z0) * n1 / n
+            s_lo, s_hi = (0.0, 2 * w + gap) if sg > 0 else (-(w + gap), w)
+            a_start = p0
+            # B climbs back from the landing's near edge; g.stairs' start is the flight's left edge
+            b_start = p0 + d * L1 + side * ((2 * w + gap) if sg > 0 else -gap)
+            flights = [dict(start=a_start, d=d, side=side, width=w, n=n1, run=run, z0=z0, z1=zl),
+                       dict(start=b_start, d=-d, side=-side, width=w, n=n2, run=run, z0=zl, z1=z1)]
+            landing = (zone(L1, L1 + land, s_lo, s_hi), zl)
+            hole = zone(min(0.0, L1 - L2), L1 + land, s_lo, s_hi)
+            b_lo, b_hi = (w + gap, 2 * w + gap) if sg > 0 else (-(w + gap), -gap)
+            foot = zone(-0.9, 0.0, 0.0, w)
+            head = zone(L1 - L2 - 0.9, L1 - L2, b_lo, b_hi)
+            footprint = hole
+            arrival = ("B", b_lo, b_hi)
+            span = (s_lo, s_hi, L1 + land)
+        else:
+            L = n * run
+            flights = [dict(start=p0, d=d, side=side, width=w, n=n, run=run, z0=z0, z1=z1)]
+            landing = None
+            hole = zone(0.0, L, 0.0, w)
+            foot = zone(-0.9, 0.0, 0.0, w)
+            head = zone(L, L + 0.9, 0.0, w)
+            footprint = hole
+            arrival = None
+            span = (0.0, w, L)
+        return dict(flights=flights, landing=landing, hole=hole, foot=foot, head=head, footprint=footprint,
+                    floor=fl, to_floor=tf, z0=z0, z1=z1, d=d, side=side, p0=p0, arrival=arrival, span=span)
+
     def _stair_under(self, x, y, fl):
         """Underside of any flight rising from floor fl over (x, y) -- partitions stop below it."""
         z = 1e9
         for st in self.s.get("stairs", []):
             if st.get("floor", 0) != fl:
                 continue
-            d = Vector((st["dir"][0], st["dir"][1], 0)).normalized()
-            side = Vector((-d.y, d.x, 0))
-            rel = Vector((x - st["start"][0], y - st["start"][1], 0))
-            L = st["n"] * st["run"]
-            along, across = rel.dot(d), rel.dot(side)
-            if -0.1 <= along <= L + 0.1 and -0.1 <= across <= st["width"] + 0.1:
-                bl = self.block_of(st["start"][0], st["start"][1])
-                z0 = bl["floors"][fl][0]
-                z1 = bl["floors"][st.get("to_floor", fl + 1)][0]
-                z = min(z, z0 + (z1 - z0) * max(0.0, along) / L - 0.08)
+            G = self._stair_geom(st)
+            for f in G["flights"]:
+                rel = Vector((x, y, 0)) - f["start"]
+                L = f["n"] * f["run"]
+                along, across = rel.dot(f["d"]), rel.dot(f["side"])
+                if -0.1 <= along <= L + 0.1 and -0.1 <= across <= f["width"] + 0.1:
+                    z = min(z, f["z0"] + (f["z1"] - f["z0"]) * max(0.0, along) / L - 0.08)
+            if G["landing"]:
+                (lx0, ly0, lx1, ly1), zl = G["landing"]
+                if lx0 - 0.1 <= x <= lx1 + 0.1 and ly0 - 0.1 <= y <= ly1 + 0.1:
+                    z = min(z, zl - 0.25)
         return z
 
     def _partition(self, axis, c, p0, p1, fl):
@@ -327,7 +388,7 @@ class House:
                     if not it.get("cased"):
                         # record the swept quarter-circles (as their bounding box) so furnish() keeps them clear
                         n_leaves = it.get("leaves", 1)
-                        reach = (op["w"] - 0.07) / n_leaves + 0.1
+                        reach = (op["w"] - 0.07) / n_leaves + 0.7      # leaf + a 0.6 m clear landing beyond it
                         face = o + w_in * f["t"] if swing_in else o
                         side = w_in if swing_in else -w_in
                         pts = [face + u * (op["off"] - 0.05) , face + u * (op["off"] + op["w"] + 0.05)]
@@ -373,15 +434,9 @@ class House:
         te = self.te
         holes_by_floor = {}
         for st in self.s.get("stairs", []):
-            d = Vector((st["dir"][0], st["dir"][1], 0)).normalized()
-            side = Vector((-d.y, d.x, 0))
-            p0 = Vector((st["start"][0], st["start"][1], 0))
-            p1 = p0 + d * st["n"] * st["run"] + side * st["width"]
-            hx0, hx1 = sorted((p0.x, p1.x))
-            hy0, hy1 = sorted((p0.y, p1.y))
-            holes_by_floor.setdefault(st.get("to_floor", st.get("floor", 0) + 1), []).append((hx0, hx1, hy0, hy1))
-            if st.get("floor", 0) < 0:
-                pass
+            G = self._stair_geom(st)
+            hx0, hy0, hx1, hy1 = G["hole"]
+            holes_by_floor.setdefault(G["to_floor"], []).append((hx0, hx1, hy0, hy1))
         for bl in self.s["blocks"]:
             x0, y0, x1, y1 = bl["rect"]
             for i, (fz, cz) in enumerate(bl["floors"]):
@@ -397,22 +452,20 @@ class House:
                     continue
                 rf = bl.get("roof", {})
                 cx0, cy0, cx1, cy1 = x0 + te, y0 + te, x1 - te, y1 - te
-                if rf.get("type") == "gable" and bl.get("habitable_attic", False):
-                    tn = math.tan(math.radians(rf["pitch"]))
-                    th = rf.get("thick", 0.15) / math.cos(math.radians(rf["pitch"]))
+                if rf.get("type") in ("gable", "gambrel") and bl.get("habitable_attic", False):
+                    # the flat ceiling covers only the middle, where the roof underside is above it;
+                    # out toward the eaves the sloped roof underside is the ceiling
+                    span = (y1 - y0) if rf["ridge"] == "x" else (x1 - x0)
+                    d_in = 0.0
+                    while d_in < span / 2 and (self.roof_under(bl, x0 + d_in, (y0 + y1) / 2) if rf["ridge"] == "y"
+                                               else self.roof_under(bl, (x0 + x1) / 2, y0 + d_in)) < cz:
+                        d_in += 0.02
                     if rf["ridge"] == "x":
-                        half = (y1 - y0) / 2 - max(0.0, (cz - bl["wall_top"] + th) / tn)
-                        mid = (y0 + y1) / 2
-                        cy0, cy1 = max(cy0, mid - half), min(cy1, mid + half)
+                        cy0, cy1 = max(cy0, y0 + d_in), min(cy1, y1 - d_in)
                     else:
-                        half = (x1 - x0) / 2 - max(0.0, (cz - bl["wall_top"] + th) / tn)
-                        mid = (x0 + x1) / 2
-                        cx0, cx1 = max(cx0, mid - half), min(cx1, mid + half)
+                        cx0, cx1 = max(cx0, x0 + d_in), min(cx1, x1 - d_in)
                 if cx1 > cx0 and cy1 > cy0:
                     fl_part.box((cx0, cy0, cz), (cx1, cy1, cz + 0.02), self.m["ceiling"], sides="z")
-                if not (rf.get("type") == "gable" and bl.get("habitable_attic", False)):
-                    # attic closed off: ceiling over the whole top floor
-                    pass
             # intermediate ceilings under upper floors are the undersides of the floor slabs (built above)
             for i, (fz, cz) in enumerate(bl["floors"][:-1]):
                 nfz = bl["floors"][i + 1][0]
@@ -435,29 +488,50 @@ class House:
             bl = self.block_of(*rl["pts"][0])
             g.spindle_rail(self.b.part("well_rails-col"), rl["pts"], bl["floors"][rl.get("floor", 1)][0], 0.9, 0.12, self.m["door"])
         for i, st in enumerate(self.s.get("stairs", [])):
-            bl = self.block_of(*st["start"])
-            fz = bl["floors"][st.get("floor", 0)][0] if st.get("floor", 0) >= 0 else st["z0"]
-            tz = bl["floors"][st.get("to_floor", st.get("floor", 0) + 1)][0] if "z1" not in st else st["z1"]
-            g.stairs(self.b, f"stair_{i}", (st["start"][0], st["start"][1], fz), st["dir"], st["width"], tz - fz, st["n"],
-                     st["run"], self.m["floor"], self.m["trim"])
-            if st.get("rail", True):
-                d = Vector((st["dir"][0], st["dir"][1], 0)).normalized()
-                side = Vector((-d.y, d.x, 0))
-                edge = Vector((st["start"][0], st["start"][1], 0)) + (side * st["width"] if st.get("rail_side", "right") == "left" else Vector())
-                rp = self.b.part("stair_rail-col")
-                rh = (tz - fz) / st["n"]
-                # two square balusters per tread under one raking handrail, newel at the foot
-                for k in range(st["n"]):
-                    z = fz + (k + 1) * rh
-                    for f in (0.25, 0.75):
-                        p = edge + d * ((k + f) * st["run"])
-                        top = fz + rh + 0.88 + ((k + f) * st["run"]) * (tz - fz - rh) / (st["n"] * st["run"])
-                        rp.box((p.x - 0.016, p.y - 0.016, z), (p.x + 0.016, p.y + 0.016, top), self.m["door"])
-                L = st["n"] * st["run"]
-                e0 = edge + Vector((0, 0, fz + rh + 0.9))
-                e1 = edge + d * L + Vector((0, 0, tz + 0.9))
-                g.raking_rail(rp, e0, e1, self.m["door"])
-                rp.box((edge.x - 0.05, edge.y - 0.05, fz), (edge.x + 0.05, edge.y + 0.05, fz + rh + 0.98), self.m["door"])
+            G = self._stair_geom(st)
+            rp = self.b.part("stair_rail-col")
+            for j, f in enumerate(G["flights"]):
+                o = f["start"]
+                g.stairs(self.b, f"stair_{i}_{j}", (o.x, o.y, f["z0"]), (f["d"].x, f["d"].y), f["width"], f["z1"] - f["z0"],
+                         f["n"], f["run"], self.m["floor"], self.m["trim"])
+            if G["landing"]:
+                (lx0, ly0, lx1, ly1), zl = G["landing"]
+                self.b.part(f"stair_{i}_landing-col").box((lx0, ly0, zl - 0.2), (lx1, ly1, zl), self.m["floor"],
+                                                          mats={"z": self.m["ceiling"]})
+            if not st.get("rail", True):
+                continue
+            # the open side of a straight flight (rail_side, default right); both outer sides of a dogleg
+            if len(G["flights"]) == 1:
+                f = G["flights"][0]
+                sides = [f["width"] if st.get("rail_side", "right") == "left" else 0.0]
+                rails = [(f, c) for c in sides]
+            else:
+                fa, fb = G["flights"]
+                rails = [(fa, 0.0 if st.get("turn", "left") == "left" else fa["width"]),
+                         (fb, 0.0 if st.get("turn", "left") == "left" else fb["width"])]
+            for f, c in rails:
+                self._flight_rail(rp, f, c)
+            if G["landing"]:
+                # guard the far edge of the half landing
+                zl = G["landing"][1]
+                s_lo, s_hi, a_far = G["span"]
+                far = [G["p0"] + G["d"] * a_far + G["side"] * t_ for t_ in (s_lo, s_hi)]
+                g.spindle_rail(rp, [(q.x, q.y) for q in far], zl, 0.9, 0.12, self.m["door"])
+
+    def _flight_rail(self, rp, f, c):
+        """Balusters + raking handrail along one side (offset c across the flight) of a flight."""
+        d, side = f["d"], f["side"]
+        edge = f["start"] + side * c
+        rh = (f["z1"] - f["z0"]) / f["n"]
+        L = f["n"] * f["run"]
+        for k in range(f["n"]):
+            z = f["z0"] + (k + 1) * rh
+            for fr in (0.25, 0.75):
+                p = edge + d * ((k + fr) * f["run"])
+                top = f["z0"] + rh + 0.88 + ((k + fr) * f["run"]) * (f["z1"] - f["z0"] - rh) / L
+                rp.box((p.x - 0.016, p.y - 0.016, z), (p.x + 0.016, p.y + 0.016, top), self.m["door"])
+        g.raking_rail(rp, edge + Vector((0, 0, f["z0"] + rh + 0.9)), edge + d * L + Vector((0, 0, f["z1"] + 0.9)), self.m["door"])
+        rp.box((edge.x - 0.05, edge.y - 0.05, f["z0"]), (edge.x + 0.05, edge.y + 0.05, f["z0"] + rh + 0.98), self.m["door"])
 
     # ---------------------------------------------------------------- roofs, porches, chimneys
     def build_roofs(self):
@@ -482,6 +556,22 @@ class House:
             elif rf["type"] == "hip":
                 hip_roof(p, x0, x1, y0, y1, bl["wall_top"], rf["pitch"], rf.get("eave_oh", 0.4), rf.get("thick", 0.15),
                          self.m["roof"], under, self.m["fascia"])
+            elif rf["type"] == "flat":
+                wt, th, oh = bl["wall_top"], rf.get("thick", 0.25), rf.get("eave_oh", 0.0)
+                p.box((x0 - oh, y0 - oh, wt - th), (x1 + oh, y1 + oh, wt), rf.get("membrane", self.m["roof"]),
+                      mats={"z": under, **{k: self.m["fascia"] for k in "xXyY"}})
+                ph = rf.get("parapet", 0.0)
+                if ph > 0:
+                    pm = rf.get("parapet_mat", bl.get("ext", self.m["ext"]))
+                    t = self.te
+                    for (a, c) in (((x0, y0), (x1, y0 + t)), ((x0, y1 - t), (x1, y1)), ((x0, y0), (x0 + t, y1)), ((x1 - t, y0), (x1, y1))):
+                        p.box((a[0], a[1], wt), (c[0], c[1], wt + ph), pm)
+                    cp = rf.get("coping", self.m["trim"])
+                    for (a, c) in (((x0 - 0.04, y0 - 0.04), (x1 + 0.04, y0 + t + 0.04)), ((x0 - 0.04, y1 - t - 0.04), (x1 + 0.04, y1 + 0.04)),
+                                   ((x0 - 0.04, y0 - 0.04), (x0 + t + 0.04, y1 + 0.04)), ((x1 - t - 0.04, y0 - 0.04), (x1 + 0.04, y1 + 0.04))):
+                        p.box((a[0], a[1], wt + ph), (c[0], c[1], wt + ph + 0.06), cp)
+            elif rf["type"] == "gambrel":
+                gambrel_roof(p, x0, x1, y0, y1, bl["wall_top"], rf, self.m["roof"], under, self.m["fascia"])
             elif rf["type"] == "shed":
                 shed_roof(p, x0, x1, y0, y1, bl["wall_top"], rf["pitch"], rf["high"], rf.get("eave_oh", 0.3), rf.get("thick", 0.12),
                           self.m["roof"], under, self.m["fascia"])
@@ -542,7 +632,6 @@ class House:
                     if hs == "S":
                         q = [(x0 - oh, y1 + oh, zl), (x1 + oh, y1 + oh, zl), (x1 + oh, y0, zh), (x0 - oh, y0, zh)]
                     elif hs == "N":
-                        q = [(x0 - oh, y0 - oh, zl), (x0 - oh, y1, zh), (x1 + oh, y1, zh), (x1 + oh, y0 - oh, zl)][::-1]
                         q = [(x1 + oh, y0 - oh, zl), (x0 - oh, y0 - oh, zl), (x0 - oh, y1, zh), (x1 + oh, y1, zh)][::-1]
                     elif hs == "E":
                         q = [(x0 - oh, y0 - oh, zl), (x1, y0 - oh, zh), (x1, y1 + oh, zh), (x0 - oh, y1 + oh, zl)]
@@ -583,7 +672,7 @@ class House:
             F = (base, s, n, Vector((0, 0, 1)))
             p.obox(F, (-0.42, 0.0, fz), (0.42, 0.05, fz + 0.82), fp.get("firebox", "chimney"))
             yaw = math.degrees(math.atan2(-n.x, n.y)) + 180
-            fu.mantel(p, tuple(base + n * bd) + (fz,) if False else (base.x + n.x * bd, base.y + n.y * bd, fz), yaw, 1.6,
+            fu.mantel(p, (base.x + n.x * bd, base.y + n.y * bd, fz), yaw, 1.6,
                       self.m["trim"], fp.get("firebox", "chimney"), h=1.3, d=0.1, opening=(0.84, 0.82))
             self.b.empty("light_fire", (base.x + n.x * (bd + 0.2), base.y + n.y * (bd + 0.2), fz + 0.3))
 
@@ -627,8 +716,6 @@ class House:
                     if dist < 0.6:
                         along = (px - p0[0]) * d[0] + (py - p0[1]) * d[1]
                         blocked.append((along - 1.1, along + 1.1, "fireplace", fp))
-            for st in self.s.get("stairs", []):
-                pass
             out[k] = dict(p0=Vector((p0[0], p0[1], 0)), d=Vector((d[0], d[1], 0)), n=Vector((n[0], n[1], 0)), L=L, blocked=blocked)
         return out
 
@@ -651,33 +738,30 @@ class House:
         return None, None
 
     def _stair_zones(self, landings_only=False):
-        """Plan rects (x0, y0, x1, y1, floor) of each flight plus its 0.9 m landings (foot on the lower
-        floor, head on the upper).  landings_only: just the two landings."""
+        """Plan rects (x0, y0, x1, y1, floor): each stair's foot landing (lower floor) and head landing
+        (upper floor), plus its footprint on both floors unless landings_only."""
         out = []
+        pad = 0.05
         for st in self.s.get("stairs", []):
-            d = Vector((st["dir"][0], st["dir"][1], 0)).normalized()
-            side = Vector((-d.y, d.x, 0))
-            p0 = Vector((st["start"][0], st["start"][1], 0))
-            L = st["n"] * st["run"]
-            spans = ((st.get("floor", 0), -0.9, 0.0 if landings_only else L),
-                     (st.get("to_floor", st.get("floor", 0) + 1), L if landings_only else 0.0, L + 0.9))
-            for fl, a, c in spans:
-                pts = [p0 + d * t_ + side * s_ for t_ in (a, c) for s_ in (-0.05, st["width"] + 0.05)]
-                out.append((min(q.x for q in pts), min(q.y for q in pts), max(q.x for q in pts), max(q.y for q in pts), fl))
+            G = self._stair_geom(st)
+            items = [(G["foot"], G["floor"]), (G["head"], G["to_floor"])]
+            if not landings_only:
+                items += [(G["footprint"], G["floor"]), (G["footprint"], G["to_floor"])]
+            for (x0, y0, x1, y1), fl in items:
+                out.append((x0 - pad, y0 - pad, x1 + pad, y1 + pad, fl))
         return out
 
     def check_stairs(self):
-        """Warn when a flight's foot has less than 0.85 m of floor in front of it (inside the walls)."""
+        """Warn when a stair's foot or head landing (0.9 m) isn't clear floor inside the walls."""
         for st in self.s.get("stairs", []):
-            d = Vector((st["dir"][0], st["dir"][1], 0)).normalized()
-            side = Vector((-d.y, d.x, 0))
-            for s_ in (0.1, st["width"] - 0.1):
-                q = Vector((st["start"][0], st["start"][1], 0)) - d * 0.85 + side * s_
-                bl = self.block_of(q.x, q.y)
-                x0, y0, x1, y1 = bl["rect"] if bl else (0, 0, 0, 0)
-                if not bl or not (x0 + self.te <= q.x <= x1 - self.te and y0 + self.te <= q.y <= y1 - self.te):
-                    print(f"WARNING stair at {st['start']}: less than 0.85 m of landing at its foot")
-                    break
+            G = self._stair_geom(st)
+            for name, (x0, y0, x1, y1) in (("foot", G["foot"]), ("head", G["head"])):
+                for q in ((x0 + 0.1, y0 + 0.1), (x1 - 0.1, y1 - 0.1), (x0 + 0.1, y1 - 0.1), (x1 - 0.1, y0 + 0.1)):
+                    bl = self.block_of(*q)
+                    if not bl or not (bl["rect"][0] + self.te - 0.02 <= q[0] <= bl["rect"][2] - self.te + 0.02 and
+                                      bl["rect"][1] + self.te - 0.02 <= q[1] <= bl["rect"][3] - self.te + 0.02):
+                        print(f"WARNING stair at {st['start']}: its {name} landing runs outside the walls")
+                        break
 
     def _stair_keepouts(self):
         """Keep furniture off each flight and its landings."""
@@ -710,7 +794,7 @@ class House:
         fm = m["furn"]
         for r in self.s["rooms"]:
             typ = r.get("type")
-            if not typ or r.get("no_furnish"):
+            if (not typ and not callable(r.get("fitout"))) or r.get("no_furnish"):
                 continue
             bl = self.block_of((r["rect"][0] + r["rect"][2]) / 2, (r["rect"][1] + r["rect"][3]) / 2)
             fz, cz = bl["floors"][r.get("floor", 0)]
@@ -744,7 +828,10 @@ class House:
 
             era = self.s.get("era", "modern")
             low = min(cz, self.roof_under(bl, cx, cy)) - fz < 2.0
-            if typ == "bed":
+            if callable(r.get("fitout")):
+                # custom fit-out (shops, offices, halls...): gets the same placement helpers
+                r["fitout"](self, r, p, against, (x0, y0, x1, y1), fz, cz)
+            elif typ == "bed":
                 bw = 1.4 if (x1 - x0) * (y1 - y0) > 9 else 1.0
                 res = against(bw + 0.9, 2.05, False, lambda pos, yaw: (fu.bed(p, pos, yaw, bw, 1.95, fm, r.get("linen", "quilt")),))
                 against(1.0, 0.5, not low, lambda pos, yaw: fu.dresser(p, pos, yaw, 1.0, 0.5, 0.85, fm, m["brass"],
@@ -828,6 +915,51 @@ class House:
 
 
 # ------------------------------------------------------------------ roof helpers
+def gambrel_rise(d, span, rf):
+    """Height of a gambrel roof's top above the wall plate at distance d in from an eave:
+    a steep lower slope (pitch_lower, default 60) to the knee (knee_frac of the half span, default
+    0.45), then the shallow upper slope (pitch, default 25) to the ridge."""
+    half = span / 2
+    a = half * rf.get("knee_frac", 0.45)
+    t1, t2 = math.tan(math.radians(rf.get("pitch_lower", 60))), math.tan(math.radians(rf.get("pitch", 25)))
+    d = max(0.0, min(d, half))
+    return d * t1 if d <= a else a * t1 + (d - a) * t2
+
+
+def gambrel_roof(p, x0, x1, y0, y1, wt, rf, mat_top, mat_under, fascia):
+    """Gambrel (barn) roof over the rectangle; ridge along rf['ridge'] ('x' or 'y')."""
+    ridge = rf.get("ridge", "y")
+    span = (x1 - x0) if ridge == "y" else (y1 - y0)
+    oh, rake, th = rf.get("eave_oh", 0.3), rf.get("rake_oh", 0.25), rf.get("thick", 0.15)
+    half = span / 2
+    knee = half * rf.get("knee_frac", 0.45)
+    t1 = math.tan(math.radians(rf.get("pitch_lower", 60)))
+    prof = [(-oh, -oh * t1), (knee, gambrel_rise(knee, span, rf)), (half, gambrel_rise(half, span, rf))]
+    prof = prof + [(span - u, z) for (u, z) in reversed(prof[:-1])]
+    a0, a1 = ((y0, y1) if ridge == "y" else (x0, x1))
+    a0, a1 = a0 - rake, a1 + rake
+    c0 = x0 if ridge == "y" else y0
+
+    def P(u, a, z):
+        return (c0 + u, a, wt + z) if ridge == "y" else (a, c0 + u, wt + z)
+    for (u0, z0), (u1, z1) in zip(prof, prof[1:]):
+        top = [P(u0, a0, z0), P(u1, a0, z1), P(u1, a1, z1), P(u0, a1, z0)]
+        if ridge == "y":
+            top = top[::-1]
+        p.face(top if ridge == "y" else top, mat_top)
+        bot = [(q[0], q[1], q[2] - th) for q in top]
+        p.face(bot[::-1], mat_under)
+    for a, flip in ((a0, ridge == "y"), (a1, ridge != "y")):
+        outer = [P(u, a, z) for (u, z) in prof]
+        inner = [P(u, a, z - th) for (u, z) in prof]
+        for q0, q1, r0, r1 in zip(outer, outer[1:], inner, inner[1:]):
+            quad = [q0, q1, r1, r0]
+            p.face(quad[::-1] if flip else quad, fascia)
+    for u, z in (prof[0], prof[-1]):
+        q = [P(u, a0, z), P(u, a1, z), P(u, a1, z - th), P(u, a0, z - th)]
+        p.face(q if (u < half) == (ridge == "y") else q[::-1], fascia)
+
+
 def hip_roof(p, x0, x1, y0, y1, z_eave, pitch, oh, thick, mat_top, mat_under, fascia):
     tn = math.tan(math.radians(pitch))
     X0, X1, Y0, Y1 = x0 - oh, x1 + oh, y0 - oh, y1 + oh
@@ -932,7 +1064,7 @@ def base_cabinets(p, pos, yaw, length, body_mat, top_mat, d=0.62):
 def tub(p, pos, yaw, mat):
     f = fu.F(pos, yaw)
     p.obox(f, (-0.75, -0.37, 0), (0.75, 0.37, 0.55), mat)
-    p.obox(f, (-0.65, -0.27, 0.2), (0.65, 0.27, 0.551), "water" if False else mat)
+    p.obox(f, (-0.65, -0.27, 0.2), (0.65, 0.27, 0.551), mat)
 
 
 def vanity(p, pos, yaw, mat, basin_mat, tap_mat):
@@ -978,7 +1110,7 @@ def picket_fence(b, pts, h, mat, name="fence", gate=None, spacing=0.11):
                 p.obox(F, (post - 0.045, -0.02, 0), (post + 0.045, 0.09, h + 0.1), mat)
         if gap:
             hinge = A + u * (gap[0] + 0.03)
-            leaf = b.part(f"door_{name}_gate__{'p' if True else 'n'}")
+            leaf = b.part(f"door_{name}_gate__p")
             leaf.origin = Vector((0, 0, 0))
             Fl = (Vector((0, 0, 0)), Vector((1, 0, 0)), Vector((0, 1, 0)), Vector((0, 0, 1)))
             gw = gate[2] - 0.06
@@ -1016,7 +1148,7 @@ def std_house_materials(b, textures, tiles=None):
     """Register a house texture set (texgen names) + the plain materials every house uses."""
     tiles = tiles or {}
     default_tile = {"floor": 2.0, "plaster": 2.0, "porch": 2.0, "found": 1.2, "foundation": 1.2, "lino": 0.9144,
-                    "hextile": 0.3048, "iron": 0.5, "wallpaper_a": 0.9144, "siding": 1.0 if True else 1.0}
+                    "hextile": 0.3048, "iron": 0.5, "wallpaper_a": 0.9144, "siding": 1.0}
     for name in textures:
         b.mat(name, tex=name, tile_m=tiles.get(name, default_tile.get(name, 1.0)))
     for k, c, r in (("brass", (0.75, 0.6, 0.28), 0.3), ("threshold", (0.5, 0.48, 0.44), 0.8), ("enamel", (0.93, 0.93, 0.9), 0.3),

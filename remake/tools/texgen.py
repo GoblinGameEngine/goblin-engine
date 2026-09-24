@@ -13,6 +13,7 @@ Each material writes  <out>/<name>_albedo.png, _normal.png, _rough.png
   texgen.py OUT_DIR SET          -- SET is a named recipe list in RECIPES below
 """
 
+import inspect
 import json
 import math
 import os
@@ -490,7 +491,148 @@ def grass(out, name, base="#4f6b2c", seed=270):
     save(out, name, albedo, blades * 0.5 + n2 * 0.2, np.full((N, N), 0.95), 4)
 
 
+
+# ------------------------------------------------------------------ library-only recipes
+def carpet(out, name, base="#8a8478", seed=300, loop=0.5):
+    n = fbm(seed, 300) * 0.6 + fbm(seed + 1, 60) * 0.4
+    albedo = col(base)[None, None, :] * (0.85 + 0.25 * n[..., None])
+    save(out, name, albedo, n * loop, np.full((N, N), 0.95), 3)
+
+
+def board_batten(out, name, base="#f2f2f2", board_m=0.3048, batten_m=0.0635, tile_m=1.2192, seed=301, weather=0.25):
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    t = (x / board_m) % 1.0
+    bat = t < batten_m / board_m
+    grain = stretch_noise(seed, 120, 2)
+    wear = fbm(seed + 1, 80) * weather
+    v = (0.9 + 0.1 * grain) * np.where(bat, 1.0, 0.93) * (1 - 0.3 * wear)
+    albedo = col(base)[None, None, :] * v[..., None]
+    edge = np.exp(-((t - batten_m / board_m) / 0.01) ** 2) + np.exp(-(t / 0.01) ** 2)
+    h = np.where(bat, 1.0, 0.0) + 0.05 * grain
+    albedo = albedo * (1 - 0.3 * edge[..., None])
+    save(out, name, np.broadcast_to(albedo, (N, N, 3)), np.broadcast_to(h, (N, N)), 0.6 + 0.2 * wear, 6)
+
+
+def concrete_block(out, name, base="#a9a69e", mortar="#8f8c84", tile_m=1.2192, seed=302):
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    bh, bw = 0.2032, 0.4064
+    row = np.floor(y / bh)
+    tx = ((x + (row % 2) * bw / 2) / bw) % 1.0
+    ty = (y / bh) % 1.0
+    joint = (tx < 0.025) | (ty < 0.05)
+    n = fbm(seed, 200)
+    albedo = np.where(joint[..., None], col(mortar)[None, None, :], col(base)[None, None, :] * (0.88 + 0.2 * n[..., None]))
+    h = np.where(joint, 0.0, 1.0) + 0.1 * n
+    save(out, name, albedo, h, 0.9 + 0.05 * n, 5)
+
+
+def stucco(out, name, base="#f0ede6", seed=303):
+    n = fbm(seed, 350) * 0.7 + fbm(seed + 1, 40) * 0.3
+    albedo = col(base)[None, None, :] * (0.9 + 0.12 * n[..., None])
+    save(out, name, albedo, n, 0.9 + 0.05 * n, 8)
+
+
+def log_wall(out, name, base="#7a5a3a", chink="#cfc6b0", log_m=0.3, tile_m=1.2, seed=304):
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    t = (y / log_m) % 1.0
+    round_ = np.sqrt(np.clip(1 - (2 * t - 1) ** 2, 0, 1))
+    grain = stretch_noise(seed, 2, 90)
+    ch = round_ < 0.35
+    albedo = np.where(ch[..., None], col(chink)[None, None, :],
+                      col(base)[None, None, :] * (0.6 + 0.4 * round_[..., None]) * (0.85 + 0.2 * grain[..., None]))
+    save(out, name, np.broadcast_to(albedo, (N, N, 3)), np.broadcast_to(round_ + 0.05 * grain, (N, N)), np.full((N, N), 0.8), 10)
+
+
+def tin_ceiling(out, name, base="#e9e6de", tile_m=0.6096, seed=305):
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    u, v = (x / (tile_m / 2)) % 1.0, (y / (tile_m / 2)) % 1.0
+    d = np.maximum(np.abs(u - 0.5), np.abs(v - 0.5))
+    ring = np.exp(-((d - 0.42) / 0.02) ** 2) + 0.6 * np.exp(-((d - 0.3) / 0.02) ** 2)
+    dome = np.exp(-(((u - 0.5) ** 2 + (v - 0.5) ** 2) / 0.02))
+    h = ring + dome
+    n = fbm(seed, 50)
+    albedo = col(base)[None, None, :] * (0.9 + 0.08 * n[..., None]) * (1 - 0.15 * ring[..., None])
+    save(out, name, albedo, h, 0.4 + 0.1 * n, 8)
+
+
+def upholstery(out, name, base="#9a8e7c", seed=306, weave_m=0.004):
+    y = (np.arange(N) + 0.5)[:, None] / N * 0.5
+    x = (np.arange(N) + 0.5)[None, :] / N * 0.5
+    w = np.sin(x / weave_m * np.pi) * np.sin(y / weave_m * np.pi)
+    n = fbm(seed, 80)
+    albedo = col(base)[None, None, :] * (0.85 + 0.1 * w[..., None] + 0.1 * n[..., None])
+    save(out, name, albedo, 0.5 + 0.5 * w, np.full((N, N), 0.95), 2)
+
 RECIPES = {
+    # shared library for the catalog builders: neutral (near-white) paintable surfaces are tinted
+    # per building (Building.mat(tint=...)); natural finishes carry their own colour
+    "lib": [
+        (clapboard, "clapboard", dict(paint="#f2f2f2", seed=401, weather=0.25)),
+        (clapboard, "clapboard_wide", dict(paint="#f2f2f2", exposure_m=0.1524, seed=402, weather=0.2)),
+        (clapboard, "drop_siding", dict(paint="#f2f2f2", exposure_m=0.1397, seed=403, weather=0.3)),
+        (vinyl_siding, "vinyl", dict(base="#f4f4f4", seed=404)),
+        (vinyl_siding, "aluminum", dict(base="#f4f4f4", exposure_m=0.2032, seed=405)),
+        (cedar_shingles, "wall_shingle", dict(base="#e8e8e8", seed=406)),
+        (asbestos_shingle, "asbestos", dict(base="#f0f0f0", seed=407)),
+        (board_batten, "board_batten", dict(seed=408)),
+        (stucco, "stucco", dict(seed=409)),
+        (paint_flat, "paint", dict(base="#f4f4f4", rough=0.5, seed=410)),
+        (paint_flat, "paint_gloss", dict(base="#f4f4f4", rough=0.25, seed=411)),
+        (plaster, "plaster", dict(base="#f4f2ee", seed=412, stains=0.06)),
+        (paint_flat, "drywall", dict(base="#f6f6f4", rough=0.8, seed=413, var=0.015)),
+        (beadboard, "beadboard", dict(base="#f0f0f0", seed=414)),
+        (asphalt_shingles, "roof_asphalt", dict(base="#9a9a98", seed=415)),
+        (cedar_shingles, "roof_wood", dict(base="#8a7c6a", seed=416)),
+        (cedar_shingles, "roof_slate", dict(base="#4a4e55", exposure_m=0.2032, seed=417)),
+        (corrugated, "metal_roof", dict(base="#dcdcdc", pitch_m=0.4572, rust=0.1, seed=418)),
+        (corrugated, "corrugated", dict(base="#b8bcbd", rust=0.3, seed=419)),
+        (corrugated, "corrugated_rusty", dict(base="#9c9a94", rust=0.8, seed=420)),
+        (brick, "brick_red", dict(base="#8e4a36", seed=421)),
+        (brick, "brick_brown", dict(base="#6e4634", mortar="#b9ae9c", seed=422)),
+        (brick, "brick_buff", dict(base="#c9aa7c", mortar="#d8cfbf", seed=423)),
+        (brick, "brick_cream", dict(base="#ddd0ae", mortar="#e6dfcf", seed=424)),
+        (brick, "brick_dark", dict(base="#4e3028", mortar="#9a9080", seed=425)),
+        (brick, "brick_common", dict(base="#9c5a42", mortar="#b0a590", header_every=6, seed=426)),
+        (brick, "brick_painted", dict(base="#e6e2da", mortar="#dedad2", seed=427)),
+        (fieldstone, "fieldstone", dict(seed=428)),
+        (ashlar, "limestone", dict(base="#c2b69a", mortar="#a89d86", seed=429)),
+        (ashlar, "sandstone", dict(base="#a8805e", mortar="#8e7058", seed=430)),
+        (concrete, "concrete", dict(seed=431)),
+        (concrete_block, "block", dict(seed=432)),
+        (log_wall, "logs", dict(seed=433)),
+        (planks, "floor_oak", dict(base="#a57c52", seed=434)),
+        (planks, "floor_pine", dict(base="#b98e5c", worn=0.45, seed=435)),
+        (planks, "floor_maple", dict(base="#c9a57a", board_m=0.057, worn=0.2, seed=436)),
+        (planks, "floor_painted", dict(base="#f0f0f0", painted="#e8e8e8", worn=0.5, seed=437)),
+        (planks, "barn_board", dict(base="#f0f0f0", painted="#e8e8e8", board_m=0.254, worn=0.7, seed=438, tile_m=2.4)),
+        (planks, "weathered_board", dict(base="#8a8278", board_m=0.254, worn=0.8, seed=439, tile_m=2.4)),
+        (wood_varnish, "wood_dark", dict(base="#4e3220", seed=440)),
+        (wood_varnish, "wood_medium", dict(base="#7a5234", seed=441)),
+        (wood_varnish, "wood_light", dict(base="#b08a60", seed=442)),
+        (checker_lino, "lino_checker", dict(seed=443)),
+        (checker_lino, "lino_red", dict(a="#e8e2d0", b_="#8a2a22", seed=444)),
+        (vct, "vct", dict(seed=445)),
+        (vct, "terrazzo", dict(base="#d8d2c6", fleck="#6a6258", tile=1.2192, seed=446)),
+        (hex_tile, "hex_tile", dict(seed=447)),
+        (acoustic_tile, "acoustic", dict(seed=448)),
+        (tin_ceiling, "tin_ceiling", dict(seed=449)),
+        (carpet, "carpet", dict(base="#f0f0f0", seed=450)),
+        (upholstery, "fabric", dict(base="#f0f0f0", seed=451)),
+        (wallpaper, "wallpaper_floral", dict(seed=452)),
+        (wallpaper, "wallpaper_blue", dict(ground="#d9dfe6", ink="#5a6f8c", stripe="#c9d2dc", seed=453)),
+        (wallpaper, "wallpaper_green", dict(ground="#dfe3cf", ink="#6b7a4a", stripe="#cfd6bc", seed=454)),
+        (wallpaper, "wallpaper_rose", dict(ground="#ecdcd6", ink="#9a5a5a", stripe="#e0cbc4", seed=455)),
+        (wallpaper, "wallpaper_stripe", dict(ground="#e9e2cc", ink="#e9e2cc", stripe="#b89f7a", motif="none", seed=456)),
+        (cast_iron, "cast_iron", dict(seed=457)),
+        (paint_flat, "chrome", dict(base="#d8dadc", rough=0.15, seed=458, var=0.02)),
+        (asphalt, "asphalt", dict(seed=459)),
+        (gravel, "gravel", dict(seed=460)),
+        (concrete, "sidewalk", dict(base="#b3aea3", seed=461)),
+        (grass, "grass", dict(seed=462)),
+        (dirt, "dirt", dict(seed=463)),
+    ],
     "p-site": [
         (grass, "grass", dict(seed=271)),
         (asphalt, "asphalt", dict(seed=272, patches=0.4)),
@@ -692,12 +834,15 @@ def main():
                 main()
         return
     out, setname = sys.argv[1], sys.argv[2]
-    made = []
+    made, tiles = [], {}
     for fn, name, kw in RECIPES[setname]:
-        fn(out, name, **kw)
+        if not os.path.exists(os.path.join(out, name + "_rough.png")):      # resume a partly generated set
+            fn(out, name, **kw)
         made.append(name)
+        p = inspect.signature(fn).parameters
+        tiles[name] = kw.get("tile_m", p["tile_m"].default if "tile_m" in p else 2.0)
         print("  ", name, flush=True)
-    json.dump({"set": setname, "materials": made}, open(os.path.join(out, "set.json"), "w"))
+    json.dump({"set": setname, "materials": made, "tile_m": tiles}, open(os.path.join(out, "set.json"), "w"), indent=0)
 
 
 if __name__ == "__main__":
