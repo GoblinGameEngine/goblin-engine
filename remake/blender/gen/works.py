@@ -264,13 +264,25 @@ def build_grain_elevator(rec, tr, boarded=False):
     b.empty("light_gallery", (x0 + 1.5, 0.0, gallery_z + 2.0))
     # steel bins (inventory parts / components) beside the elevator
     nbin = 3 if steel or "bin" in comps else 0
+    # slip-formed concrete bins (walls "concrete" / "concrete bin" components) are taller, plain
+    # cylinders with a flat cap and a gallery house along the top; steel bins get the cone roof
+    concrete = tr.get("walls") == "concrete" or "concrete bin" in comps
     for i in range(nbin):
         cx, cy = x0 - 6.0, y0 + 5.0 + (i - 1) * 11.0
         r = 5.0
+        if concrete:
+            p.cylinder((cx, cy), r, 0.0, EAVE + 4.0, "concrete", n=28)
+            p.cylinder((cx, cy), r + 0.15, EAVE + 4.0, EAVE + 4.3, "concrete", n=28)
+            continue
         p.cylinder((cx, cy), r, 0.0, 12.0, "bin_metal", n=28)
         for k in range(8):
             rr = r * (1 - k / 8)
             p.cylinder((cx, cy), rr + 0.05, 12.0 + k * 0.45, 12.0 + (k + 1) * 0.45, "bin_metal", n=28)
+    if concrete and nbin:
+        # the enclosed gallery over the bins, carrying grain from the head house
+        gy0, gy1 = y0 + 5.0 - 11.0 - 1.2, y0 + 5.0 + 11.0 + 1.2
+        p.box((x0 - 7.3, gy0, EAVE + 4.3), (x0 - 4.7, gy1, EAVE + 6.5), "ext")
+        gh.hip_roof(p, x0 - 7.5, x0 - 4.5, gy0 - 0.2, gy1 + 0.2, EAVE + 6.5, 18, 0.15, 0.1, "roof", "trim", "trim")
     # company sign on the elevator's street face
     nm = (names.get("sign") or names.get("name") or "").upper()
     parts_ = [t.strip() for t in nm.replace("·", "-").split(" - ") if t.strip()]
