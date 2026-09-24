@@ -37,6 +37,8 @@ func load_building(ps: PackedScene) -> void:
 	for n in door_nodes:
 		_make_door(n)
 	for l in light_nodes:
+		if l.name.begins_with("light_locked_"):
+			continue            # a closed-up room (vacant store): no power
 		var lamp := OmniLight3D.new()
 		lamp.omni_range = 7.0
 		lamp.light_energy = light_energy

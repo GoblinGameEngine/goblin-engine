@@ -271,8 +271,11 @@ def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
                   dict(name="hall_kit", at=(hx0, (y0 + ym) / 2), w=0.85, swing_into="KIT"),
                   dict(name="br1", at=(hx1, (yb + y1) / 2), w=0.8, swing_into="BR1"),
                   dict(name="bath", at=(hx1, (y0 + yb) / 2), w=0.75, swing_into="BATH"),
-                  dict(name="br2", floor=1, at=(hx0, y0 + D * 0.3), w=0.75, h=adh, swing_into="BR2"),
-                  dict(name="br3", floor=1, at=(hx1, y0 + D * 0.3), w=0.75, h=adh, swing_into="BR3")]
+                  # the room on the flight's side opens off the head landing (the well fills the hall beside it)
+                  dict(name="br2", floor=1, at=(hx0, start_y - L - 0.45 if not mirror else y0 + D * 0.3), w=0.75, h=adh,
+                       swing_into="BR2"),
+                  dict(name="br3", floor=1, at=(hx1, start_y - L - 0.45 if mirror else y0 + D * 0.3), w=0.75, h=adh,
+                       swing_into="BR3")]
         wx = sx + STAIR_W + 0.03 if not mirror else sx - 0.03
         spec["rails"].append(dict(floor=1, pts=[(wx, start_y - L + 0.05), (wx, start_y - 0.05)]))
         front, back = (corr, y1), ((x0 + hx0) / 2, y0)
@@ -447,8 +450,12 @@ def _build(rec):
     side_room = lot_w - 2.0 - (gar_w + 0.8 if garage.startswith("attached") or garage == "carport" else 0.0)
     W = clamp(ft(tr.get("main_w_ft") or 26), 5.2, max(5.2, side_room))
     fl1, h = storey_heights(tr)
-    # front band: the porch steps' run (0.28 m per 0.18 m riser), a 0.9 m landing at their foot, the fence
-    band = max(1.6, max(1, round(fl1 / 0.18)) * 0.28 + 1.3)
+    # front band: the porch steps' run (0.28 m per 0.18 m riser), a 0.9 m landing at their foot and a
+    # front fence; a lot too shallow for that (a 2-storey house needs 5.8 m) gets no fence
+    run = max(1, round(fl1 / 0.18)) * 0.28
+    fenced = (dget(tr, "yard").get("fence", "none") not in ("none", None)
+              and lot_d - porch_d - (run + 1.3) - 1.2 >= (5.8 if storeys >= 1.5 else 5.5))
+    band = max(1.6, run + (1.3 if fenced else 0.4))
     D = clamp(ft(tr.get("main_d_ft") or 30), 5.5, max(5.5, lot_d - porch_d - band - 1.2))
     if garage.startswith("detached") and lot_d - (D + porch_d + band) < 6.2 + 3.6 + 0.4:
         garage = "carport" if lot_w - W - 2.0 >= 3.4 else "none"
@@ -546,6 +553,8 @@ def _build(rec):
                                       glazed=(0.15, 0.5, 0.85, 0.9)))
         elif wside in ("left", "right") and (lot_w / 2 - max(abs(x0), abs(x1))) > 1.0:
             sgn = -1 if wside == "left" else 1
+            if (garage.startswith("attached") or garage == "carport") and sgn == (1 if not mirror else -1):
+                sgn = -sgn                  # that side is the garage's
             room_side = (lot_w / 2 - 0.8) - (abs(x0) if sgn < 0 else abs(x1))
             ww2 = clamp(ft(wing.get("w_ft") or 12), 2.8, max(2.8, room_side))
             if room_side >= 2.8:
@@ -664,8 +673,16 @@ def _build(rec):
             at = ((x0 + x1) / 2 + (1.2 if not mirror else -1.2), y0 - 0.2)
         else:
             at = ((x0 + x1) / 2 + (0.8 if i_ch else -0.8), y0 - 0.2)
-        if any(math.dist(at, d_["at"]) < 1.3 for d_ in spec["doors"]):
-            at = (at[0] + 1.4, at[1]) if at[1] < y0 else (at[0], at[1] - 1.4)
+        # slide along its wall to the nearest spot 1.3 m clear of every door (and its stoop); none: no chimney
+        along_x = at[1] < y0
+        lo, hi = (x0 + 0.5, x1 - 0.5) if along_x else (y0 + 0.5, yf - 0.5)
+        c0 = at[0] if along_x else at[1]
+        spots = sorted((lo + 0.1 * k for k in range(int((hi - lo) / 0.1) + 1)), key=lambda c: abs(c - c0))
+        c = next((c for c in spots if all(math.dist((c, at[1]) if along_x else (at[0], c), d_["at"]) >= 1.3
+                                          for d_ in spec["doors"] if d_.get("floor", 0) == 0)), None)
+        if c is None:
+            continue
+        at = (c, at[1]) if along_x else (at[0], c)
         spec["windows"] = [w_ for w_ in spec["windows"] if math.dist(w_["at"], at) > 0.9]
         spec["chimneys"].append(dict(at=at, w=0.55, d=0.55, z0=0.0, top=top_z))
     # ---- build the house
@@ -694,11 +711,11 @@ def _build(rec):
         g.gable_roof(dp, dx0 - 0.1, dx0 + 1.7, yA - 0.1, yB + 0.1, zb + 1.2, 40, 0.1, 0.05, 0.1, "roof", "trim", ridge_axis="y", fascia="trim")
     # ---- yard: walk, steps to the street, mailbox with the family name, fence, garage, extras
     yback = min(bl["rect"][1] for bl in spec["blocks"])       # a rear wing pushes the back yard back
-    yard(b, rec, tr, names, lot_w, lot_d, x0, x1, yback, yf, porch_d, fd, garage, gar_w, mirror, rnd, fl1)
+    yard(b, rec, tr, names, lot_w, lot_d, x0, x1, yback, yf, porch_d, fd, garage, gar_w, mirror, rnd, fl1, fenced)
     return b
 
 
-def yard(b, rec, tr, names, lot_w, lot_d, x0, x1, y0, yf, porch_d, fd, garage, gar_w, mirror, rnd, fl1):
+def yard(b, rec, tr, names, lot_w, lot_d, x0, x1, y0, yf, porch_d, fd, garage, gar_w, mirror, rnd, fl1, fenced):
     front = lot_d / 2
     walk = b.part("walk-col")
     walk.box((fd[0] - 0.55, yf + porch_d + 0.9, -0.02), (fd[0] + 0.55, front, 0.03), "sidewalk", sides="Z")
@@ -710,7 +727,7 @@ def yard(b, rec, tr, names, lot_w, lot_d, x0, x1, y0, yf, porch_d, fd, garage, g
     g.text_mesh(b, "sign_house_number", num, 0.12, (fd[0] + 0.75, yf + 0.02, fl1 + 1.7), math.pi, "black_text", extrude=0.01,
                 font=FONT_SANS)
     yd = dget(tr, "yard")
-    fence = yd.get("fence", "none")
+    fence = yd.get("fence", "none") if fenced else "none"
     fy = front - 0.25
     if fence == "picket":
         gh.picket_fence(b, [(-lot_w / 2 + 0.2, fy), (lot_w / 2 - 0.2, fy)], 1.0, "trim", name="front_fence",
