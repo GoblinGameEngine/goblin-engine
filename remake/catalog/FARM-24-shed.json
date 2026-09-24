@@ -1,0 +1,29 @@
+{
+  "id": "FARM-24-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Deister Farmstead, Boxcar Shed (HABS KS-36-G)",
+    "place": "Stull vicinity, Douglas County, KS",
+    "year": 1940,
+    "source": "HABS KS-36-G",
+    "url": "https://www.loc.gov/item/ks0068/",
+    "photos": ["loc_ks0068_photos_069468pv.jpg", "loc_ks0068_photos_069469pv.jpg", "loc_ks0068_photos_069470pv.jpg", "loc_ks0068_photos_069471pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Thrifty farm-made machine shed built around a retired wooden railroad boxcar: the white-painted plank boxcar body (about 9 ft by 36 ft, with its iron strap hardware and a boarded end door) sits on the ground as a lockable tool room, and a shallow shed roof of corrugated metal extends off one long side on a row of round wooden posts to make an open implement bay about 16 ft deep, its fascia patched with vertical metal panels. Tall grass, a volunteer shrub growing in the bay, white outbuildings behind.",
+  "traits": {
+    "type": "pole_shed",
+    "w_ft": 38,
+    "d_ft": 26,
+    "height_ft": 13,
+    "walls": "board_and_batten",
+    "roof": {"type": "shed", "pitch_deg": 8, "material": "metal"},
+    "open_front": true,
+    "boxcar_core": true,
+    "colors": {"body": "#e4e2dc", "trim": "#3e3a36", "accent": "#7a3a2e", "roof": "#a2a6a8"},
+    "condition": "worn"
+  },
+  "names": {"family": "Nyquist"}
+}

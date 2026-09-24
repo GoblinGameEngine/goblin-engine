@@ -1,0 +1,30 @@
+{
+  "id": "FARM-24-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Brenstrom farmstead, white barn, 10417 Westside Road",
+    "place": "Phelps County, NE",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Brenstrom_farmstead_(Phelps_Co,_Nebraska)_3.JPG",
+    "photos": ["commons_Brenstrom_farmstead_Phelps_Co_Nebraska_3.JPG", "commons_Brenstrom_farmstead_Phelps_Co_Nebraska_1.JPG"],
+    "drawings": []
+  },
+  "brief": "White-painted gambrel barn about 34 ft wide and 50 ft long with a silver standing-seam metal roof, a hay hood at the gable peak over a loft door and small loft windows, and a squat square ventilator on the ridge. A lower white gable-roofed wing with a grey roof projects from the front as a calf and machinery shed. On the same farmstead stands an older weathered-grey gambrel barn with a long shed-roofed lean-to lined with small windows; dry grass lot and cornfields around.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 34,
+    "d_ft": 50,
+    "height_ft": 32,
+    "walls": "drop_siding",
+    "roof": {"type": "gambrel", "pitch_deg": 55, "material": "metal"},
+    "cupolas": 1,
+    "hay_hood": true,
+    "lean_to": "front",
+    "colors": {"body": "#f0f0ec", "trim": "#f6f6f2", "accent": "#6a6a68", "roof": "#c4c8cc"},
+    "condition": "kept"
+  },
+  "names": {"family": "Nyquist", "sign": "NYQUIST FARM EST. 1885"}
+}

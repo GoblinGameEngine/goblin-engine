@@ -1,0 +1,28 @@
+{
+  "id": "FARM-25-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Pray Farmstead, loafing / machine shed",
+    "place": "Dickinson County, KS",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Pray_Farmstead_Dickinson_Co_KS_Loafing_Machine_Shed_south_elevation.jpg",
+    "photos": ["commons_Pray_Farmstead_Dickinson_Co_KS_Loafing_Machine_Shed_south_elevation.jpg", "commons_Pray_Farmstead_Dickinson_Co_KS_Loafing_Machine_Shed_southeast_elevation.jpg"],
+    "drawings": []
+  },
+  "brief": "Open-front post-and-beam loafing and machine shed, about 39 ft by 16 ft: the south side is entirely open, its low eave carried on six crooked peeled hedge-apple (Osage orange) posts, while the back and ends are closed with weathered grey boards patched with corrugated metal. A new dark charcoal asphalt-shingle gable roof. Inside: old tires, a steel barrel, a harrow, a walking cultivator and rusty implements on a dirt floor; mown grass in front and big shade trees behind.",
+  "traits": {
+    "type": "pole_shed",
+    "w_ft": 39,
+    "d_ft": 16,
+    "height_ft": 12,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 30, "material": "asphalt_shingle"},
+    "open_front": true,
+    "colors": {"body": "#8a8276", "trim": "#6a6258", "accent": "#9a9c9c", "roof": "#3e4044"},
+    "condition": "worn"
+  },
+  "names": {"family": "Kettering"}
+}

@@ -1,0 +1,28 @@
+{
+  "id": "FARM-25-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Farm silo at Hill Farm Inn (night view)",
+    "place": "Sunderland, Bennington County, VT",
+    "year": 1940,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Night_Silo.jpg",
+    "photos": ["commons_Night_Silo.jpg"],
+    "drawings": []
+  },
+  "brief": "Concrete stave silo about 16 ft across and 55 ft high photographed at night under stars (the photo's blue cast is lighting, not paint): pale grey staves in a regular grid, one band of alternating light and dark staves about a quarter of the way up, a segmented galvanized steel dome roof with a small dormer hatch, a caged steel ladder beside the door column and a thin unloader pipe running full height. Give it daylight colors: weathered grey staves, dull galvanized dome.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 16,
+    "height_ft": 55,
+    "roof": "dome",
+    "chute": true,
+    "hoops": true,
+    "checkered_band": true,
+    "colors": {"body": "#b4b0a6", "trim": "#6a6a68", "accent": "#e4e2dc", "roof": "#b8bcbe"},
+    "condition": "kept"
+  },
+  "names": {"family": "Kettering"}
+}

@@ -1,0 +1,28 @@
+{
+  "id": "FARM-25-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Wohlers Homestead, barn",
+    "place": "Crawford vicinity, Dawes County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Wohlers_homestead_3.jpg",
+    "photos": ["commons_Wohlers_homestead_3.jpg", "commons_Wohlers_homestead_4.jpg", "commons_Wohlers_homestead_1.jpg", "commons_Wohlers_homestead_2.jpg"],
+    "drawings": []
+  },
+  "brief": "Big gambrel horse and cattle barn about 40 ft wide and 70 ft long in faded barn-red drop siding with white trim, crowned by a bright forest-green standing-seam metal gambrel roof. The gable end has a centered white sliding door, a white hay door and a round-arched white loft door above it, a louvered arched vent at the peak and small white-framed windows. A long lower red wing with its own green roof and white sliding door runs off one side. Pole and plank corrals, a windmill and ponderosa pines of the Pine Ridge around.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 40,
+    "d_ft": 70,
+    "height_ft": 36,
+    "walls": "drop_siding",
+    "roof": {"type": "gambrel", "pitch_deg": 58, "material": "metal"},
+    "lean_to": "left",
+    "colors": {"body": "#b0413e", "trim": "#f4f4f0", "accent": "#f4f4f0", "roof": "#1f6a3a"},
+    "condition": "kept"
+  },
+  "names": {"family": "Kettering", "sign": "KETTERING RANCH EST. 1886"}
+}

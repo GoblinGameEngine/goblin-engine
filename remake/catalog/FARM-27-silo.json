@@ -1,0 +1,27 @@
+{
+  "id": "FARM-27-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Barn and silo in Frankfort",
+    "place": "Frankfort, Franklin County, KY",
+    "year": 1930,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Barn_in_Frankfort_-_October_2023_-_Sarah_Stierch.jpg",
+    "photos": ["commons_Barn_in_Frankfort_-_October_2023_-_Sarah_Stierch.jpg"],
+    "drawings": []
+  },
+  "brief": "Concrete stave silo about 16 ft across and 45 ft high, the staves weathered to a mottled grey-beige with dark water streaks and lichen, bound by rusty close-set hoops, capped by a low conical roof of rusty dark metal. It stands tight against the gable end of a long weathered-grey plank barn with a small cupola and an arched drive-through opening; pasture and fence posts in front, autumn woods behind.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 16,
+    "height_ft": 45,
+    "roof": "cone",
+    "chute": false,
+    "hoops": true,
+    "colors": {"body": "#a8a192", "trim": "#6a4a38", "accent": "#6a4a38", "roof": "#5a4a42"},
+    "condition": "worn"
+  },
+  "names": {"family": "Dahlgren"}
+}

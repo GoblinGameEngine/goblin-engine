@@ -1,0 +1,27 @@
+{
+  "id": "FARM-24-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Old silo along the Spanish Fork River Trail",
+    "place": "Utah County, UT",
+    "year": 1925,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Old_silo_along_Spanish_Fork_River_Trail,_Jul_15.jpg",
+    "photos": ["commons_Old_silo_along_Spanish_Fork_River_Trail_Jul_15.jpg"],
+    "drawings": []
+  },
+  "brief": "Whitewashed poured-concrete silo about 16 ft across and 42 ft high, the lime wash flaking in grey patches and faint horizontal form lines showing, open-topped with a thin rough rim; a plain flat concrete chute enclosure runs up one side, ending short of the ground on concrete legs. It stands at the edge of a pasture behind a wire fence, with a weathered plank shed and willows behind. (Poured concrete; nearest vocabulary type is concrete_stave.)",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 16,
+    "height_ft": 42,
+    "roof": "none",
+    "chute": true,
+    "hoops": false,
+    "colors": {"body": "#eeede8", "trim": "#9c9a94", "accent": "#9c9a94", "roof": "#eeede8"},
+    "condition": "worn"
+  },
+  "names": {"family": "Nyquist"}
+}

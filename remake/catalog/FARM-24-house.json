@@ -1,0 +1,36 @@
+{
+  "id": "FARM-24-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Brenstrom farmstead, house, 10417 Westside Road",
+    "place": "Phelps County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:House_on_Brenstrom_farmstead_(Phelps_Co,_Nebraska)_7.JPG",
+    "photos": ["commons_House_on_Brenstrom_farmstead_Phelps_Co_Nebraska_7.JPG"],
+    "drawings": []
+  },
+  "brief": "Two-storey Craftsman farmhouse, all white narrow clapboard with a pale grey shingle roof: a steep front gable and two wall gables on the long side, every gable end trimmed with decorative stick-work trusses and exposed knee-brace brackets under wide eaves. A gabled enclosed front porch with ranks of tall multi-pane windows and a glazed door on a concrete stoop, a small shed-roofed bay on the side, one-over-one windows elsewhere. Freshly restored; big cottonwoods behind and dry prairie grass around.",
+  "traits": {
+    "archetype": "gable_front",
+    "storeys": 2,
+    "main_w_ft": 28,
+    "main_d_ft": 34,
+    "wing": {"side": "right", "w_ft": 14, "d_ft": 18, "storeys": 2},
+    "roof": {"type": "cross_gable", "pitch_deg": 45, "material": "asphalt_shingle"},
+    "dormers": [{"type": "gable", "side": "right"}, {"type": "gable", "side": "right"}],
+    "porch": {"type": "enclosed", "posts": "square", "rail": "solid"},
+    "walls": "clapboard",
+    "foundation": "poured_concrete",
+    "colors": {"body": "#f4f4f1", "trim": "#fafaf8", "accent": "#2a2a2a", "roof": "#b4b4b0"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": [],
+    "garage": "detached_1",
+    "yard": {"fence": "none", "extras": ["clothesline"]},
+    "condition": "kept",
+    "year_built": 1915
+  },
+  "names": {"family": "Nyquist", "house_number": "10522", "street": "Westside Rd"}
+}

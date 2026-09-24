@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-27-house",
+ "files": [
+  {
+   "file": "commons_Herter_farmstead_house_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Herter_farmstead_house_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Herter_farmstead_house_1.JPG/1920px-Herter_farmstead_house_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Herter farmstead house 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "House on Herter farmstead, located at 4949 S. 148th Street, east of Lincoln in rural Lancaster County, Nebraska.  The farmstead is listed in the National Register of Historic Places."
+  },
+  {
+   "file": "commons_Herter_farmstead_house_2.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Herter_farmstead_house_2.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Herter_farmstead_house_2.JPG/1920px-Herter_farmstead_house_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Herter farmstead house 2.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "House on Herter farmstead, located at 4949 S. 148th Street, east of Lincoln in rural Lancaster County, Nebraska.  The farmstead is listed in the National Register of Historic Places."
+  }
+ ]
+}

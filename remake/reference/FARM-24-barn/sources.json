@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-24-barn",
+ "files": [
+  {
+   "file": "commons_Brenstrom_farmstead_Phelps_Co_Nebraska_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Brenstrom_farmstead_(Phelps_Co,_Nebraska)_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Brenstrom_farmstead_%28Phelps_Co%2C_Nebraska%29_1.JPG/1920px-Brenstrom_farmstead_%28Phelps_Co%2C_Nebraska%29_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Brenstrom farmstead (Phelps Co, Nebraska) 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Brenstrom farmstead, located at 10417 Westside Road in rural Phelps County, Nebraska."
+  },
+  {
+   "file": "commons_Brenstrom_farmstead_Phelps_Co_Nebraska_3.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Brenstrom_farmstead_(Phelps_Co,_Nebraska)_3.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Brenstrom_farmstead_%28Phelps_Co%2C_Nebraska%29_3.JPG/1920px-Brenstrom_farmstead_%28Phelps_Co%2C_Nebraska%29_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Brenstrom farmstead (Phelps Co, Nebraska) 3.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Buildings on Brenstrom farmstead, located at 10417 Westside Road in rural Phelps County, Nebraska."
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "structure": "FARM-24-shed",
+ "files": [
+  {
+   "file": "loc_ks0068_photos_069468pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0068/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ks/ks0000/ks0068/photos/069468pv.jpg",
+   "title": "Deister Farmstead, Boxcar Shed, Route 442, Stull, Douglas County, KS",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0068_photos_069469pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0068/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ks/ks0000/ks0068/photos/069469pv.jpg",
+   "title": "Deister Farmstead, Boxcar Shed, Route 442, Stull, Douglas County, KS",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0068_photos_069470pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0068/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ks/ks0000/ks0068/photos/069470pv.jpg",
+   "title": "Deister Farmstead, Boxcar Shed, Route 442, Stull, Douglas County, KS",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0068_photos_069471pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0068/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ks/ks0000/ks0068/photos/069471pv.jpg",
+   "title": "Deister Farmstead, Boxcar Shed, Route 442, Stull, Douglas County, KS",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0068_data_ks0068data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0068/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ks/ks0000/ks0068/data/ks0068data.pdf",
+   "title": "Deister Farmstead, Boxcar Shed, Route 442, Stull, Douglas County, KS",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ks0068_data_ks0068cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ks0068/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ks/ks0000/ks0068/data/ks0068cap.pdf",
+   "title": "Deister Farmstead, Boxcar Shed, Route 442, Stull, Douglas County, KS",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

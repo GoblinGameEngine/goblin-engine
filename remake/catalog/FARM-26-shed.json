@@ -1,0 +1,28 @@
+{
+  "id": "FARM-26-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Morris Harris Farmstead, granary",
+    "place": "Jefferson County, KS",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Morris_Harris_Farmstead_Jefferson_Co_KS_Granary_south_and_east_elevations.jpg",
+    "photos": ["commons_Morris_Harris_Farmstead_Jefferson_Co_KS_Granary_south_and_east_elevations.jpg", "commons_Morris_Harris_Farmstead_Jefferson_Co_KS_Granary_north_and_west_elevations.jpg", "commons_Morris_Harris_Farmstead_Jefferson_Co_KS_Granary_north_elevation.jpg"],
+    "drawings": []
+  },
+  "brief": "Long wood-frame granary and machine building about 36 ft wide and 90 ft long, re-clad in white-painted vertical corrugated steel, under a low side-gabled roof of grey standing-seam metal with deep eaves. A central drive aisle runs through with wide open doorways in both gable ends; along the side a ragged open bay, a man door with steel steps and pipe rails, and a few small windows. It stands on short rubble-stone piers on the downhill side, with old wheels, doors and scrap stacked around it on a gravel yard.",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 90,
+    "d_ft": 36,
+    "height_ft": 20,
+    "walls": "metal",
+    "roof": {"type": "gable", "pitch_deg": 18, "material": "metal"},
+    "drive_through": true,
+    "colors": {"body": "#e8e8e4", "trim": "#7a5a42", "accent": "#9a9c9c", "roof": "#9ea2a4"},
+    "condition": "worn"
+  },
+  "names": {"family": "Whitcomb"}
+}

@@ -1,0 +1,37 @@
+{
+  "id": "FARM-27-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Herter farmstead, house, 4949 S. 148th Street",
+    "place": "Lincoln vicinity, Lancaster County, NE",
+    "year": 1900,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Herter_farmstead_house_1.JPG",
+    "photos": ["commons_Herter_farmstead_house_1.JPG", "commons_Herter_farmstead_house_2.JPG"],
+    "drawings": []
+  },
+  "brief": "Two-storey late-Victorian farmhouse in pale cream clapboard with green-painted window sash, a front gable and a square two-storey corner tower topped by a pyramidal roof with a finial, the tower windows filled with decorative green lattice-pattern sash. Rust-brown asphalt roofs and a red brick chimney. A wraparound hip-roofed porch on round white columns with a spindle frieze; the house is half hidden by spruces, elder bushes in bloom and a chain-link yard fence.",
+  "traits": {
+    "archetype": "queen_anne",
+    "storeys": 2,
+    "main_w_ft": 30,
+    "main_d_ft": 32,
+    "wing": {"side": "right", "w_ft": 12, "d_ft": 12, "storeys": 2},
+    "roof": {"type": "cross_gable", "pitch_deg": 40, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "wrap", "posts": "columns", "rail": "none"},
+    "walls": "clapboard",
+    "foundation": "brick",
+    "colors": {"body": "#ece6d4", "trim": "#f6f4ec", "accent": "#2e6a4a", "roof": "#8a4a32"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["rear"],
+    "garage": "detached_1",
+    "yard": {"fence": "chainlink", "extras": ["garden"]},
+    "turret": true,
+    "condition": "kept",
+    "year_built": 1900
+  },
+  "names": {"family": "Dahlgren", "house_number": "5010", "street": "S 148th St"}
+}

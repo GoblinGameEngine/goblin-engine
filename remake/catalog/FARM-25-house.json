@@ -1,0 +1,77 @@
+{
+  "id": "FARM-25-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {
+    "w": 40.0,
+    "d": 40.0
+  },
+  "example": {
+    "title": "Wohlers Homestead, house",
+    "place": "Crawford vicinity, Dawes County, NE",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Wohlers_homestead_6.jpg",
+    "photos": [
+      "commons_Wohlers_homestead_6.jpg",
+      "commons_Wohlers_Homestead_Crawford_Nebraska.JPG",
+      "commons_Wohlers_Homestead_house_from_behind..JPG"
+    ],
+    "drawings": []
+  },
+  "brief": "Two-storey hip-roofed ranch house in pale sage-grey clapboard with white trim, under a forest-green metal hipped roof with a red brick chimney, fronted by a two-tier white porch with a railed upper deck. Attached at the side is an older, front-gabled one-and-a-half-storey red brick wing with its own green metal gable roof and a white side porch. Matches the green-roofed barn; a windmill, pole corrals and ponderosa pines around, a weathered plank outhouse in the tall grass behind.",
+  "traits": {
+    "archetype": "foursquare",
+    "storeys": 2,
+    "main_w_ft": 28,
+    "main_d_ft": 28,
+    "wing": {
+      "side": "right",
+      "w_ft": 24,
+      "d_ft": 20,
+      "storeys": 1.5
+    },
+    "roof": {
+      "type": "hip",
+      "pitch_deg": 30,
+      "material": "metal"
+    },
+    "dormers": [],
+    "porch": {
+      "type": "front_full",
+      "posts": "square",
+      "rail": "spindle"
+    },
+    "porch_storeys": 2,
+    "walls": "clapboard",
+    "foundation": "concrete_block",
+    "colors": {
+      "body": "#c8ccbc",
+      "trim": "#f4f4f0",
+      "accent": "#a8523e",
+      "roof": "#1f6a3a"
+    },
+    "windows": {
+      "type": "1over1",
+      "shutters": false
+    },
+    "chimneys": [
+      "center"
+    ],
+    "garage": "none",
+    "yard": {
+      "fence": "split_rail",
+      "extras": [
+        "woodpile",
+        "clothesline"
+      ]
+    },
+    "condition": "kept",
+    "year_built": 1910
+  },
+  "names": {
+    "family": "Kettering",
+    "house_number": "1128",
+    "street": "Pine Ridge Rd"
+  }
+}

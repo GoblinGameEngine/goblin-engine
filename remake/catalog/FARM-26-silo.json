@@ -1,0 +1,27 @@
+{
+  "id": "FARM-26-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Ruins of barn and silo, Derwood",
+    "place": "Derwood (Rockville), Montgomery County, MD",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Derwood_ruins_of_barn_and_silo.jpg",
+    "photos": ["commons_Derwood_ruins_of_barn_and_silo.jpg"],
+    "drawings": []
+  },
+  "brief": "Abandoned glazed hollow clay tile silo about 14 ft across and 36 ft high, the glazed blocks mottled plum, rust and brown and glinting in the sun, a vertical door slot up one side and a ragged open top. The barn it served has collapsed into a low rubble mound of stone foundation and timbers at its foot; a grove of bare young trees and brush has grown up around it beside a roadside field. (Here the silo still stands beside the working barn but is long disused.)",
+  "traits": {
+    "type": "tile",
+    "diameter_ft": 14,
+    "height_ft": 36,
+    "roof": "none",
+    "chute": false,
+    "hoops": false,
+    "colors": {"body": "#7a4e44", "trim": "#9a8c7c", "accent": "#5a3e3a", "roof": "#7a4e44"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Whitcomb"}
+}

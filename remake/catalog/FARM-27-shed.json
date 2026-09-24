@@ -1,0 +1,27 @@
+{
+  "id": "FARM-27-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "John and Anna O'Sullivan Farmstead, shed 2",
+    "place": "Douglas County, KS",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:John_and_Anna_O%E2%80%99Sullivan_Farmstead_Douglas_Co_KS_shed_2_north_and_west_facades.jpg",
+    "photos": ["commons_John_and_Anna_O_Sullivan_Farmstead_Douglas_Co_KS_shed_2_north_and_west_facades.jpg"],
+    "drawings": []
+  },
+  "brief": "Plain frame tool and implement shed about 18 ft by 28 ft, sided in narrow vertical boards with peeling white paint weathered to grey, with boarded-up window openings on the gable end and long side, exposed rafter tails under the eaves and a gable roof of rusty corrugated metal. Loose limestone blocks, a rusty wheelbarrow and a red implement sit against the wall; a big shade tree and the farmhouse just behind. (Small frame shed; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 28,
+    "d_ft": 18,
+    "height_ft": 15,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 32, "material": "metal"},
+    "colors": {"body": "#dcd8cc", "trim": "#9a948a", "accent": "#9a948a", "roof": "#8a5a3e"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Dahlgren"}
+}

@@ -1,0 +1,49 @@
+{
+ "structure": "FARM-25-barn",
+ "files": [
+  {
+   "file": "commons_Wohlers_homestead_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wohlers_homestead_1.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Wohlers_homestead_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Wohlers homestead 1.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Wohlers Homestead, now Pine Ridge Hunting and Lodging, located southeast of Crawford, Nebraska."
+  },
+  {
+   "file": "commons_Wohlers_homestead_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wohlers_homestead_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Wohlers_homestead_2.jpg/1920px-Wohlers_homestead_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wohlers homestead 2.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Wohlers Homestead, now Pine Ridge Hunting and Lodging, located southeast of Crawford, Nebraska."
+  },
+  {
+   "file": "commons_Wohlers_homestead_3.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wohlers_homestead_3.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Wohlers_homestead_3.jpg/1920px-Wohlers_homestead_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wohlers homestead 3.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Barn at Wohlers Homestead, now Pine Ridge Hunting and Lodging, located southeast of Crawford, Nebraska."
+  },
+  {
+   "file": "commons_Wohlers_homestead_4.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wohlers_homestead_4.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Wohlers_homestead_4.jpg/1920px-Wohlers_homestead_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wohlers homestead 4.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Wohlers Homestead, now Pine Ridge Hunting and Lodging, located southeast of Crawford, Nebraska."
+  }
+ ]
+}

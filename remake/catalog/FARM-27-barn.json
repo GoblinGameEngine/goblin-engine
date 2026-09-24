@@ -1,0 +1,27 @@
+{
+  "id": "FARM-27-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Herter farmstead, barn, 4949 S. 148th Street",
+    "place": "Lincoln vicinity, Lancaster County, NE",
+    "year": 1895,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Herter_farmstead_barn_1.JPG",
+    "photos": ["commons_Herter_farmstead_barn_1.JPG", "commons_Herter_farmstead_barn_2.JPG", "commons_Herter_farmstead_barn_3.JPG"],
+    "drawings": []
+  },
+  "brief": "Large old gambrel barn about 40 ft wide and 60 ft long, sided in horizontal drop siding that has weathered to brown-grey with only ghosts of red paint, under a weathered grey wood-shingle gambrel roof. The long side has a pair of big sliding plank doors on an overhead track, a hinged stall door, two small white-framed windows and a round wreath-like ornament hung on the wall; white-painted boards at the corner. Huge old cottonwoods stand in front of it along a gravel drive, a board fence runs off to the pasture.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 40,
+    "d_ft": 60,
+    "height_ft": 34,
+    "walls": "drop_siding",
+    "roof": {"type": "gambrel", "pitch_deg": 55, "material": "wood_shingle"},
+    "colors": {"body": "#7e6e62", "trim": "#e8e6e0", "accent": "#8a3a30", "roof": "#7a746c"},
+    "condition": "worn"
+  },
+  "names": {"family": "Dahlgren", "sign": "DAHLGREN FARM EST. 1872"}
+}

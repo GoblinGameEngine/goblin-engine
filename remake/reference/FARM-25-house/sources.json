@@ -1,0 +1,38 @@
+{
+ "structure": "FARM-25-house",
+ "files": [
+  {
+   "file": "commons_Wohlers_Homestead_Crawford_Nebraska.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wohlers_Homestead,_Crawford,_Nebraska.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Wohlers_Homestead%2C_Crawford%2C_Nebraska.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Wohlers Homestead, Crawford, Nebraska.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "SkybirdForever",
+   "caption": "Original brick homestead house built in the 1890's. Two-story frame addition built in 1910.  The barn was built, without blueprints, from lumber cut and hewn on the property."
+  },
+  {
+   "file": "commons_Wohlers_Homestead_house_from_behind..JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wohlers_Homestead_house_from_behind..JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Wohlers_Homestead_house_from_behind..JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Wohlers Homestead house from behind..JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "SkybirdForever",
+   "caption": "Just to show that Ye Olde Outhouse really is part of the homestead!"
+  },
+  {
+   "file": "commons_Wohlers_homestead_6.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wohlers_homestead_6.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Wohlers_homestead_6.jpg/1920px-Wohlers_homestead_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wohlers homestead 6.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "House at Wohlers Homestead, now Pine Ridge Hunting and Lodging, located southeast of Crawford, Nebraska."
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "FARM-26-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Gunnarson Farmstead, Barn (HABS ID-112-D)",
+    "place": "New Sweden, Idaho Falls vicinity, Bonneville County, ID",
+    "year": 1920,
+    "source": "HABS ID-112-D",
+    "url": "https://www.loc.gov/item/id0284/",
+    "photos": ["loc_id0284_photos_184768pv.jpg", "loc_id0284_photos_184769pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Big weathered stock barn about 44 ft wide and 70 ft long with an unusually steep, tall gable roof of patchy grey wood shingles sweeping down low over long side aisles lined with small stall windows, and a small louvered square cupola with a peaked cap mid-ridge. At one end a tall three-storey gabled grain-elevator tower of unpainted horizontal boards rises through the roof line, with a hinged plank door off its track and a boarded window. Unpainted siding weathered grey throughout; pole corral gates at the corner, open sagebrush-flat farmland behind.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 44,
+    "d_ft": 70,
+    "height_ft": 38,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 50, "material": "wood_shingle"},
+    "cupolas": 1,
+    "lean_to": "both_sides",
+    "elevator_tower": true,
+    "colors": {"body": "#8a8378", "trim": "#6a645a", "accent": "#6a645a", "roof": "#8e8a84"},
+    "condition": "worn"
+  },
+  "names": {"family": "Whitcomb", "sign": "WHITCOMB GRAIN FARM EST. 1882"}
+}

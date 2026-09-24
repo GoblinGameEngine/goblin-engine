@@ -1,0 +1,41 @@
+{
+ "structure": "FARM-26-barn",
+ "files": [
+  {
+   "file": "loc_id0284_photos_184768pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/id0284/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/id/id0200/id0284/photos/184768pv.jpg",
+   "title": "Gunnarson Farmstead, Barn, U.S. Highway 20 at New Sweden, Idaho Falls, Bonneville County, ID",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_id0284_photos_184769pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/id0284/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/id/id0200/id0284/photos/184769pv.jpg",
+   "title": "Gunnarson Farmstead, Barn, U.S. Highway 20 at New Sweden, Idaho Falls, Bonneville County, ID",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_id0284_data_id0284data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/id0284/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/id/id0200/id0284/data/id0284data.pdf",
+   "title": "Gunnarson Farmstead, Barn, U.S. Highway 20 at New Sweden, Idaho Falls, Bonneville County, ID",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_id0284_data_id0284cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/id0284/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/id/id0200/id0284/data/id0284cap.pdf",
+   "title": "Gunnarson Farmstead, Barn, U.S. Highway 20 at New Sweden, Idaho Falls, Bonneville County, ID",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
