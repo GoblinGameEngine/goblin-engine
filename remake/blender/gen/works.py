@@ -19,6 +19,30 @@ import gbhouse as gh
 import gbfurn as fu
 import shopfit
 import store
+import json
+import os
+from common import INVENTORY
+
+
+def inventory_parts(rid):
+    """The record's extra inventory footprints (e.g. an elevator's bin annexes), in building-local
+    coordinates: local +y faces the front edge, local x runs along s.  Placement puts the glb origin
+    at the structure's (s, x) and turns local +y toward front_edge, so a part at (s + ds, x + dx) on
+    the map is at local (ds, dx) rotated by -angle_deg."""
+    try:
+        with open(INVENTORY) as f:
+            inv = json.load(f)
+    except OSError:
+        return []
+    st = next((s for s in inv.get("structures", []) if s["id"] == rid), None)
+    if not st or not st.get("parts"):
+        return []
+    a = -math.radians(st.get("angle_deg") or 0.0)
+    out = []
+    for pt in st["parts"]:
+        ds, dx = pt["s"] - st["s"], pt["x"] - st["x"]
+        out.append((ds * math.cos(a) - dx * math.sin(a), ds * math.sin(a) + dx * math.cos(a), pt["w"], pt["d"]))
+    return out
 
 TE = 0.35
 
@@ -229,13 +253,15 @@ def build_grain_elevator(rec, tr, boarded=False):
                 blocks=[dict(name="elev", rect=(x0, y0, x1, y1), floors=[(FL, 4.2)], wall_top=EAVE, found_top=0.0,
                              roof=dict(type="gable", ridge="y", pitch=35, eave_oh=0.3, rake_oh=0.2, thick=0.15))],
                 rooms=rooms, doors=doors, windows=[], stairs=[], rails=[], porches=[], chimneys=[], fireplaces=[])
-    # scale office annex on the east side
-    ox0, ox1, oy0, oy1 = x1, x1 + 4.2, y0 + 1.0, y0 + 6.0
+    # scale office annex on the east side, or the west when the bin parts stand to the east
+    parts = inventory_parts(rid)
+    east = not (parts and sum(pp[0] for pp in parts) > 0)
+    ox0, ox1, oy0, oy1 = (x1, x1 + 4.2, y0 + 1.0, y0 + 6.0) if east else (x0 - 4.2, x0, y0 + 1.0, y0 + 6.0)
     spec["blocks"].append(dict(name="office", rect=(ox0, oy0, ox1, oy1), floors=[(0.35, 2.9)], wall_top=3.1, found_top=0.3,
-                               roof=dict(type="shed", high="W", pitch=12, eave_oh=0.3, thick=0.12)))
+                               roof=dict(type="shed", high="W" if east else "E", pitch=12, eave_oh=0.3, thick=0.12)))
     rooms.append(dict(name="SCALEOFF", rect=(ox0, oy0, ox1, oy1), type="office", fitout=shopfit.fitout_for("office", rnd)))
     doors.append(dict(name="office", at=((ox0 + ox1) / 2, oy1), w=0.9, ext=True, locked=boarded))
-    spec["windows"].append(dict(at=(ox1, (oy0 + oy1) / 2), w=1.0, sill=1.0, h=1.2, kind="dh", cols=2))
+    spec["windows"].append(dict(at=(ox1 if east else ox0, (oy0 + oy1) / 2), w=1.0, sill=1.0, h=1.2, kind="dh", cols=2))
     stoops(spec, 0.35, skip=("drive_n", "drive_s"))
     gh.House(b, spec).build()
     p = b.part("elevator-col")
@@ -263,13 +289,19 @@ def build_grain_elevator(rec, tr, boarded=False):
     b.empty("light_drive", (0.0, 0.0, 3.8))
     b.empty("light_gallery", (x0 + 1.5, 0.0, gallery_z + 2.0))
     # steel bins (inventory parts / components) beside the elevator
-    nbin = 3 if steel or "bin" in comps else 0
+    # bins stand on the record's inventory parts when it has them (their footprints beside the
+    # elevator on the map); otherwise three beside the -x wall
+    if parts:
+        spots = [(px, py, clamp(min(pw, pd) / 2 - 0.2, 2.5, 6.0)) for (px, py, pw, pd) in parts]
+    elif steel or "bin" in comps:
+        spots = [(x0 - 6.0, y0 + 5.0 + (i - 1) * 11.0, 5.0) for i in range(3)]
+    else:
+        spots = []
+    nbin = len(spots)
     # slip-formed concrete bins (walls "concrete" / "concrete bin" components) are taller, plain
     # cylinders with a flat cap and a gallery house along the top; steel bins get the cone roof
     concrete = tr.get("walls") == "concrete" or "concrete bin" in comps
-    for i in range(nbin):
-        cx, cy = x0 - 6.0, y0 + 5.0 + (i - 1) * 11.0
-        r = 5.0
+    for (cx, cy, r) in spots:
         if concrete:
             p.cylinder((cx, cy), r, 0.0, EAVE + 4.0, "concrete", n=28)
             p.cylinder((cx, cy), r + 0.15, EAVE + 4.0, EAVE + 4.3, "concrete", n=28)
@@ -279,10 +311,15 @@ def build_grain_elevator(rec, tr, boarded=False):
             rr = r * (1 - k / 8)
             p.cylinder((cx, cy), rr + 0.05, 12.0 + k * 0.45, 12.0 + (k + 1) * 0.45, "bin_metal", n=28)
     if concrete and nbin:
-        # the enclosed gallery over the bins, carrying grain from the head house
-        gy0, gy1 = y0 + 5.0 - 11.0 - 1.2, y0 + 5.0 + 11.0 + 1.2
-        p.box((x0 - 7.3, gy0, EAVE + 4.3), (x0 - 4.7, gy1, EAVE + 6.5), "ext")
-        gh.hip_roof(p, x0 - 7.5, x0 - 4.5, gy0 - 0.2, gy1 + 0.2, EAVE + 6.5, 18, 0.15, 0.1, "roof", "trim", "trim")
+        # the enclosed gallery over the bins (and on to the head house), carrying the grain
+        xs = [c[0] for c in spots] + [0.0]
+        ys = [c[1] for c in spots] + [0.0]
+        if max(xs) - min(xs) >= max(ys) - min(ys):           # bins in a row along x
+            gx0, gx1, gy0, gy1 = min(xs) - 1.2, max(xs) + 1.2, sum(ys[:-1]) / nbin - 1.3, sum(ys[:-1]) / nbin + 1.3
+        else:
+            gx0, gx1, gy0, gy1 = sum(xs[:-1]) / nbin - 1.3, sum(xs[:-1]) / nbin + 1.3, min(ys) - 1.2, max(ys) + 1.2
+        p.box((gx0, gy0, EAVE + 4.3), (gx1, gy1, EAVE + 6.5), "ext")
+        gh.hip_roof(p, gx0 - 0.2, gx1 + 0.2, gy0 - 0.2, gy1 + 0.2, EAVE + 6.5, 18, 0.15, 0.1, "roof", "trim", "trim")
     # company sign on the elevator's street face
     nm = (names.get("sign") or names.get("name") or "").upper()
     parts_ = [t.strip() for t in nm.replace("·", "-").split(" - ") if t.strip()]
