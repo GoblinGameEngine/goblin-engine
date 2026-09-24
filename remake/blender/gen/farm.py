@@ -158,7 +158,9 @@ def build_round_barn(rec, tr, rnd):
     b = lib_building(rec["id"])
     pal = materials(b, tr)
     r = clamp(ft(tr.get("w_ft") or 60) / 2, 6.0, 12.0)
-    wall_h = 5.0
+    conical = dget(tr, "roof").get("type") in ("pyramid", "conical", "cone")
+    # a low drum under a tall bowed roof; cone-roofed barns put most of their height in the drum
+    wall_h = clamp(ft(tr.get("height_ft") or 30) * 0.5, 5.0, 9.0) if conical else 5.0
     n = 24
     door_w, door_h = 3.6, 3.4
     p = b.part("round_barn-col")
@@ -172,26 +174,72 @@ def build_round_barn(rec, tr, rnd):
         p.face([P(a1, r - 0.2, zb), P(a0, r - 0.2, zb), P(a0, r - 0.2, wall_h), P(a1, r - 0.2, wall_h)], "wood")
         if gap:
             p.face([P(a1, r, zb), P(a0, r, zb), P(a0, r - 0.2, zb), P(a1, r - 0.2, zb)], "wood")
-        elif i % 2 == 0:                                                   # ring of small square windows
+        elif i % 2 == 0:                                                   # ring(s) of small square windows
             w = b.part("round_windows")
             wx, wy, _ = P(am, r + 0.02, 0.0)
             tx, ty = -math.sin(am), math.cos(am)
-            w.face([(wx - tx * 0.35, wy - ty * 0.35, 2.3), (wx + tx * 0.35, wy + ty * 0.35, 2.3),
-                    (wx + tx * 0.35, wy + ty * 0.35, 3.0), (wx - tx * 0.35, wy - ty * 0.35, 3.0)], "silo_glass")
+            for zw in ((2.3, wall_h - 2.2) if wall_h > 6.5 else (2.3,)):
+                w.face([(wx - tx * 0.35, wy - ty * 0.35, zw), (wx + tx * 0.35, wy + ty * 0.35, zw),
+                        (wx + tx * 0.35, wy + ty * 0.35, zw + 0.7), (wx - tx * 0.35, wy - ty * 0.35, zw + 0.7)], "silo_glass")
     p.cylinder((0.0, 0.0), r - 0.1, -0.05, 0.1, "floor", n=n)
-    # bowed roof: steep lower ring to the knee, shallow upper ring to the cupola; outer and inner skins
-    rk = r * 0.6
-    zk = wall_h + (r + 0.5 - rk) * math.tan(math.radians(60)) * 0.7
-    ra = 1.0
-    za = zk + (rk - ra) * math.tan(math.radians(25))
+    # the roof: a bowed two-pitch dome (the default), or a straight cone at the record's pitch
+    # (roof type pyramid / conical); very large barns (80 ft+) carry a clerestory drum on the
+    # cone with a band of windows, then a smaller cone to the lantern
     rf = b.part("round_roof-col")
-    for (ro0, z0, ro1, z1) in ((r + 0.5, wall_h - 0.2, rk, zk), (rk, zk, ra, za)):
+    ra = 1.0
+    rings = []
+    if conical:
+        tp = math.tan(math.radians(clamp(dget(tr, "roof").get("pitch_deg") or 30, 15, 50)))
+        z0 = wall_h - 0.2
+        if ft(tr.get("w_ft") or 60) >= ft(80):
+            rc = r * 0.38
+            z1 = z0 + (r + 0.5 - rc) * tp
+            rings.append((r + 0.5, z0, rc, z1))
+            drum = b.part("round_clerestory-col")
+            drum.cylinder((0.0, 0.0), rc, z1 - 0.1, z1 + 2.2, "trim", n=n, caps=False)
+            for i in range(0, n, 2):                                        # band of small windows
+                a0, a1 = 2 * math.pi * (i + 0.25) / n, 2 * math.pi * (i + 0.75) / n
+                drum.face([P(a0, rc + 0.02, z1 + 0.7), P(a1, rc + 0.02, z1 + 0.7), P(a1, rc + 0.02, z1 + 1.5), P(a0, rc + 0.02, z1 + 1.5)],
+                          "silo_glass")
+            z2 = z1 + 2.2
+            za = z2 + (rc + 0.3 - ra) * tp
+            rings.append((rc + 0.3, z2, ra, za))
+        else:
+            za = z0 + (r + 0.5 - ra) * tp
+            rings.append((r + 0.5, z0, ra, za))
+    else:
+        rk = r * 0.6
+        zk = wall_h + (r + 0.5 - rk) * math.tan(math.radians(60)) * 0.7
+        za = zk + (rk - ra) * math.tan(math.radians(25))
+        rings = [(r + 0.5, wall_h - 0.2, rk, zk), (rk, zk, ra, za)]
+    for (ro0, z0, ro1, z1) in rings:
         for i in range(n):
             a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
             rf.face([P(a0, ro0, z0), P(a1, ro0, z0), P(a1, ro1, z1), P(a0, ro1, z1)], "roof")
             rf.face([P(a1, ro0 - 0.15, z0 - 0.12), P(a0, ro0 - 0.15, z0 - 0.12), P(a0, ro1 - 0.15, z1 - 0.12), P(a1, ro1 - 0.15, z1 - 0.12)],
                     "roof_under")
-    # round ventilator cupola at the peak
+    # a ring of small gabled dormers on the lower roof (the records carry these only in the brief)
+    if tr.get("dormers") or "dormer" in (rec.get("brief") or "").lower():
+        ro0, z0, ro1, z1 = rings[0]
+        dm = b.part("round_dormers")
+        for k in range(8):
+            am = math.pi / 2 + math.pi / 8 + k * math.pi / 4                  # clear of the door (+y)
+            rr = ro0 - (ro0 - ro1) * 0.35
+            zr = z0 + (z1 - z0) * 0.35
+            cx, cy = rr * math.cos(am), rr * math.sin(am)
+            tx, ty = -math.sin(am), math.cos(am)
+            nx, ny = math.cos(am), math.sin(am)
+            fb = [(cx + nx * 0.35 + tx * s * 0.5, cy + ny * 0.35 + ty * s * 0.5) for s in (-1, 1)]
+            dm.face([(fb[0][0], fb[0][1], zr - 0.2), (fb[1][0], fb[1][1], zr - 0.2), (fb[1][0], fb[1][1], zr + 0.6), (fb[0][0], fb[0][1], zr + 0.6)], "trim")
+            dm.face([(fb[1][0], fb[1][1], zr + 0.6), (fb[0][0], fb[0][1], zr + 0.6), (cx + nx * 0.35, cy + ny * 0.35, zr + 1.0)], "trim")
+            dm.face([(cx + nx * 0.36 + tx * 0.2, cy + ny * 0.36 + ty * 0.2, zr), (cx + nx * 0.36 - tx * 0.2, cy + ny * 0.36 - ty * 0.2, zr),
+                     (cx + nx * 0.36 - tx * 0.2, cy + ny * 0.36 - ty * 0.2, zr + 0.45), (cx + nx * 0.36 + tx * 0.2, cy + ny * 0.36 + ty * 0.2, zr + 0.45)],
+                    "roof_under")                                          # louvred vent
+            for s in (-1, 1):                                              # little gable roof
+                e = (cx + nx * 0.4 + tx * s * 0.6, cy + ny * 0.4 + ty * s * 0.6)
+                dm.face([(cx + nx * 0.4, cy + ny * 0.4, zr + 1.05), (e[0], e[1], zr + 0.55), (e[0] - nx * 1.0, e[1] - ny * 1.0, zr + 0.85),
+                         (cx - nx * 0.6, cy - ny * 0.6, zr + 1.1)][::s], "roof")
+    # round ventilator cupola / lantern at the peak
     cp = b.part("round_cupola")
     cp.cylinder((0.0, 0.0), ra + 0.05, za - 0.1, za + 0.9, "trim", n=16)
     cp.cylinder((0.0, 0.0), ra + 0.25, za + 0.9, za + 1.6, "roof", n=16, r1=0.05)
