@@ -7,6 +7,8 @@ for d in root.get_tree().get_nodes_in_group('remake_door'):
 	var box = BoxShape3D.new()
 	box.size = cs.shape.size * Vector3(0.8, 0.9, 0.5)
 	var excl = [d.get_rid()]
+	var player = root.get_tree().current_scene.get_node_or_null('TestPlayer')
+	if player: excl.append(player.get_rid())
 	for p in d.partners: excl.append(p.get_rid())
 	var bld = d.get_parent()
 	while bld and not (bld is RemakeBuilding): bld = bld.get_parent()

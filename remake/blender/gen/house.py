@@ -246,6 +246,7 @@ def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
     n = max(12, math.ceil(rise / 0.195))
     hw = HALL_W / 2
     adh = attic_door_height(spec, fl, ridge, W, D)
+    back_out = False
     if ridge == "y":
         L_avail = D - 2 * TE - 1.9
         run = clamp(L_avail / n, 0.205, 0.24)
@@ -281,7 +282,13 @@ def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
                        swing_into="BR3")]
         wx = sx + STAIR_W + 0.03 if not mirror else sx - 0.03
         spec["rails"].append(dict(floor=1, pts=[(wx, start_y - L + 0.05), (wx, start_y - 0.05)]))
+        # unmirrored, hall_kit opens off the band behind the flight, near the back wall: the back door
+        # goes to the kitchen's far side, clear of that leaf -- or, in a kitchen too narrow for both,
+        # out of the hall's own back end (swinging out onto the stoop)
         front, back = (corr, y1), ((x0 + hx0) / 2, y0)
+        if not mirror:
+            back = (x0 + TE + 0.55, y0) if hx0 - x0 >= 2.6 else ((hx0 + hx1) / 2, y0)
+            back_out = hx0 - x0 < 2.6
     else:
         L_avail = W - 2 * TE - 1.9
         run = clamp(L_avail / n, 0.205, 0.24)
@@ -327,7 +334,7 @@ def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
                                                 (max(start[0], start[0] + sd[0] * L) - 0.05, wy)]))
         front, back = (((lr[0] + lr[2]) / 2 + 0.6), y1), ((kit[0] + kit[2]) / 2, y0)
     doors.append(dict(name="front", at=front, w=0.9, ext=True, glazed=(0.2, 0.55, 0.8, 0.9) if rnd.random() < 0.6 else None))
-    doors.append(dict(name="back", at=back, w=0.85, ext=True, glazed=(0.15, 0.5, 0.85, 0.9)))
+    doors.append(dict(name="back", at=back, w=0.85, ext=True, glazed=(0.15, 0.5, 0.85, 0.9), out=back_out))
     return dict(front_door=front, back_door=back)
 
 

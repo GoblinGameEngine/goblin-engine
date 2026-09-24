@@ -655,6 +655,7 @@ RECIPES = {
         (gravel, "creekbed", dict(base="#6d6453", seed=259, size=20)),
         (dirt, "bank", dict(base="#5a5236", seed=260)),
         (paint_flat, "guardrail", dict(base="#b7bbbd", rough=0.35, seed=261)),
+        (grass, "grass", dict(seed=271)),      # p-site's grass (same seed), so crossings meet the site seamlessly
     ],
     "p-depot": [
         (asbestos_shingle, "siding", dict(base="#dcd6c3", seed=221)),

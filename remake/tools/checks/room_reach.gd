@@ -39,9 +39,19 @@ for b in s.get_children():
 	nm.cell_height = 0.025
 	nm.geometry_parsed_geometry_type = NavigationMesh.PARSED_GEOMETRY_STATIC_COLLIDERS
 	nm.filter_baking_aabb = box
+	# only this building and its own ground patch (in a batch, neighbours' yards and elevator bins can
+	# reach into the box): both go in a bake group for the parse
+	nm.geometry_source_geometry_mode = NavigationMesh.SOURCE_GEOMETRY_GROUPS_WITH_CHILDREN
+	nm.geometry_source_group_name = &"reach_bake"
+	b.add_to_group(&"reach_bake")
+	for gp in s.get_children():
+		if gp is StaticBody3D and not (gp is RemakeBuilding) and Vector2(gp.global_position.x - b.global_position.x, gp.global_position.z - b.global_position.z).length() < 0.5:
+			gp.add_to_group(&"reach_bake")
 	var src = NavigationMeshSourceGeometryData3D.new()
 	var t0 = Time.get_ticks_msec()
 	NavigationServer3D.parse_source_geometry_data(nm, src, s)
+	for gn in root.get_tree().get_nodes_in_group(&"reach_bake"):
+		gn.remove_from_group(&"reach_bake")
 	NavigationServer3D.bake_from_source_geometry_data(nm, src)
 	var map = NavigationServer3D.map_create()
 	NavigationServer3D.map_set_cell_size(map, 0.05)

@@ -1,5 +1,6 @@
 var space = root.get_world_3d().direct_space_state
 var doors = root.get_tree().get_nodes_in_group('remake_door')
+var player = root.get_tree().current_scene.get_node_or_null('TestPlayer')
 var cap = CapsuleShape3D.new()
 cap.radius = 0.25
 cap.height = 1.75
@@ -38,6 +39,7 @@ for d in doors:
 	q.shape = cap
 	q.transform = Transform3D(Basis(), a)
 	q.motion = nrm * 1.5
+	if player: q.exclude = [player.get_rid()]      # it spawns behind the first building's back door
 	var r = space.cast_motion(q)
 	var bld = d.get_parent()
 	while bld and not (bld is RemakeBuilding): bld = bld.get_parent()
