@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-20-barn",
+ "files": [
+  {
+   "file": "commons_Snoke-Tate_farmstead_barn_from_S_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Snoke-Tate_farmstead_barn_from_S_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Snoke-Tate_farmstead_barn_from_S_1.JPG/1920px-Snoke-Tate_farmstead_barn_from_S_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Snoke-Tate farmstead barn from S 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Snoke-Tate farmstead, located at 23416 O Street, east of Eagle in rural Cass County, Nebraska.  Barn, seen from the south."
+  },
+  {
+   "file": "commons_Snoke-Tate_farmstead_barn_from_SW_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Snoke-Tate_farmstead_barn_from_SW_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Snoke-Tate_farmstead_barn_from_SW_1.JPG/1920px-Snoke-Tate_farmstead_barn_from_SW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Snoke-Tate farmstead barn from SW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Snoke-Tate farmstead, located at 23416 O Street, east of Eagle in rural Cass County, Nebraska.  Barn, seen from the southwest."
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "FARM-20-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Farm silo along the Columbia River Highway",
+    "place": "Deer Island, Columbia County, OR",
+    "year": 1960,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Deer_Island_Oregon_Farm_Silo_Columbia_River_Highway_(18165173542).jpg",
+    "photos": ["commons_Deer_Island_Oregon_Farm_Silo_Columbia_River_Highway_18165173542_.jpg"],
+    "drawings": []
+  },
+  "brief": "Wide concrete stave silo about 22 ft across and 60 ft high, built of large pale-grey rectangular staves with crisp joint lines and a grid of thin steel hoops. A shallow conical roof of rust-red corrugated metal with a small cap, a caged steel ladder and door chute column running up the front, and a galvanized fill pipe that climbs the side and arcs over in a big gooseneck into the roof, guyed by cables.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 22,
+    "height_ft": 60,
+    "roof": "cone",
+    "chute": true,
+    "hoops": true,
+    "fill_pipe": true,
+    "colors": {"body": "#b9bcbc", "trim": "#6c3a30", "accent": "#9a9ea0", "roof": "#7a3a30"},
+    "condition": "kept"
+  },
+  "names": {"family": "Ashby"}
+}

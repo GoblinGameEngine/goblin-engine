@@ -1,0 +1,41 @@
+{
+  "id": "CULVERT-08",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Creek crossing culvert on Nuckolls County Road AA (replacement for the Stewart Bridge)",
+    "place": "east of County Road 4600, Nuckolls/Clay county line, NE",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Culvert on Rd AA (Nuckolls County, Nebraska))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Culvert_on_Rd_AA_(Nuckolls_County,_Nebraska)",
+    "photos": [
+      "commons_rdaa_01.jpg",
+      "commons_rdaa_02.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Modern county-road replacement culvert: two parallel corrugated galvanized-steel pipes of about 5 ft diameter laid side by side under a gravel county line road, with short projecting ends and no headwalls, set in a grassy, snow-dusted ditch with dead weeds. Yellow object markers on posts at the road edges, a green road-name sign and utility poles; flat farmland and a farmstead with grain bins beyond. Only two photos exist.",
+  "traits": {
+    "bridge_type": "pipe_culvert",
+    "spans": 2,
+    "year": 2000,
+    "year_note": "estimated, modern",
+    "railing": "open_parapet",
+    "railing_detail": "none; yellow object markers",
+    "span_ft": 5,
+    "width_ft": 32,
+    "height_ft": 5,
+    "material": "corrugated galvanized steel pipe",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

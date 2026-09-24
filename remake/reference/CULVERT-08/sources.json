@@ -1,0 +1,29 @@
+{
+ "structure": "CULVERT-08",
+ "files": [
+  {
+   "file": "commons_rdaa_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Stewart_Bridge_(Nuckolls_County,_NE)_replacement_culvert_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Stewart_Bridge_%28Nuckolls_County%2C_NE%29_replacement_culvert_1.JPG/1920px-Stewart_Bridge_%28Nuckolls_County%2C_NE%29_replacement_culvert_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Stewart Bridge (Nuckolls County, NE) replacement culvert 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Creek crossing by Nuckolls County Rd AA (Nuckolls-Clay county line road) just east of Nuckolls County Rd 4600; seen from the southwest.",
+   "category": "Category:Culvert on Rd AA (Nuckolls County, Nebraska)"
+  },
+  {
+   "file": "commons_rdaa_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Stewart_Bridge_(Nuckolls_County,_NE)_replacement_culvert_2.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Stewart_Bridge_%28Nuckolls_County%2C_NE%29_replacement_culvert_2.JPG/1920px-Stewart_Bridge_%28Nuckolls_County%2C_NE%29_replacement_culvert_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Stewart Bridge (Nuckolls County, NE) replacement culvert 2.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Creek crossing by Nuckolls County Rd AA (Nuckolls-Clay county line road) just east of Nuckolls County Rd 4600; seen from the southwest.",
+   "category": "Category:Culvert on Rd AA (Nuckolls County, Nebraska)"
+  }
+ ]
+}

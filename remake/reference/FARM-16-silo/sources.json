@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-16-silo",
+ "files": [
+  {
+   "file": "commons_Nelson_Farm_Merrick_County_Nebraska_from_SE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Nelson_Farm_(Merrick_County,_Nebraska)_from_SE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Nelson_Farm_%28Merrick_County%2C_Nebraska%29_from_SE_1.JPG/1920px-Nelson_Farm_%28Merrick_County%2C_Nebraska%29_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Nelson Farm (Merrick County, Nebraska) from SE 1.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "commons_Nelson_Farm_Merrick_County_Nebraska_from_SW_2.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Nelson_Farm_(Merrick_County,_Nebraska)_from_SW_2.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Nelson_Farm_%28Merrick_County%2C_Nebraska%29_from_SW_2.JPG/1920px-Nelson_Farm_%28Merrick_County%2C_Nebraska%29_from_SW_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Nelson Farm (Merrick County, Nebraska) from SW 2.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "",
+   "caption": ""
+  }
+ ]
+}

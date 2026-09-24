@@ -1,0 +1,43 @@
+{
+  "id": "CULVERT-05",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Keim Stone Arch Bridge, 624 Avenue south of 729 Road",
+    "place": "Johnson County, NE",
+    "year": 1916,
+    "source": "Wikimedia Commons (Category:Keim Stone Arch Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Keim_Stone_Arch_Bridge",
+    "photos": [
+      "commons_keim_01.jpg",
+      "commons_keim_02.jpg",
+      "commons_keim_03.jpg",
+      "commons_keim_04.jpg",
+      "commons_keim_05.jpg",
+      "commons_keim_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Small rubble-stone arch culvert of 1916 under a gravel county road in a wooded draw: a single semicircular arch of rough-split grey limestone voussoirs in random-rubble headwalls and wing walls, with stone end blocks and a two-line iron pipe rail between them on each side. A cast plaque set in the west parapet lists the three county commissioners and the year. Overgrown with brush and small trees.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1916,
+    "railing": "pipe_rail",
+    "span_ft": 8,
+    "width_ft": 20,
+    "height_ft": 7,
+    "masonry": "random rubble limestone",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "G. BRUNSTETTER · G. D. ROWELL · E. B. PLATTNER · COMS. 1916",
+    "sign": "none"
+  }
+}

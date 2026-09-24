@@ -1,0 +1,41 @@
+{
+ "structure": "CULVERT-17",
+ "files": [
+  {
+   "file": "commons_springck_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Spring_Creek_Tributary_Bridge_Lincoln_Kansas_road_view.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Spring_Creek_Tributary_Bridge_Lincoln_Kansas_road_view.jpg/1920px-Spring_Creek_Tributary_Bridge_Lincoln_Kansas_road_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Spring Creek Tributary Bridge Lincoln Kansas road view.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Spring Creek Tributary Bridge",
+   "category": "Category:Spring Creek Tributary Bridge"
+  },
+  {
+   "file": "commons_springck_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Spring_Creek_Tributary_Bridge_Lincoln_Kansas_west_view.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Spring_Creek_Tributary_Bridge_Lincoln_Kansas_west_view.jpg/1920px-Spring_Creek_Tributary_Bridge_Lincoln_Kansas_west_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Spring Creek Tributary Bridge Lincoln Kansas west view.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Spring Creek Tributary Bridge",
+   "category": "Category:Spring Creek Tributary Bridge"
+  },
+  {
+   "file": "commons_springck_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Spring_Creek_Tributary_Bridge_Lincoln_Kansas.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Spring_Creek_Tributary_Bridge_Lincoln_Kansas.jpg/1920px-Spring_Creek_Tributary_Bridge_Lincoln_Kansas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Spring Creek Tributary Bridge Lincoln Kansas.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Spring Creek Tributary Bridge",
+   "category": "Category:Spring Creek Tributary Bridge"
+  }
+ ]
+}

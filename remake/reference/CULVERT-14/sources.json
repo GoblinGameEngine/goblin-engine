@@ -1,0 +1,65 @@
+{
+ "structure": "CULVERT-14",
+ "files": [
+  {
+   "file": "commons_bullfoot_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bullfoot_Creek_Bridge_Lincoln_County,_Kansas_northwest_view.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Bullfoot_Creek_Bridge_Lincoln_County%2C_Kansas_northwest_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Bullfoot Creek Bridge Lincoln County, Kansas northwest view.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Bullfoot Creek Bridge",
+   "category": "Category:Bullfoot Creek Bridge"
+  },
+  {
+   "file": "commons_bullfoot_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bullfoot_Creek_Bridge_Lincoln_County,_Kansas_railing.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Bullfoot_Creek_Bridge_Lincoln_County%2C_Kansas_railing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Bullfoot Creek Bridge Lincoln County, Kansas railing.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Bullfoot Creek Bridge",
+   "category": "Category:Bullfoot Creek Bridge"
+  },
+  {
+   "file": "commons_bullfoot_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bullfoot_Creek_Bridge_Lincoln_County,_Kansas_view_from_road.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Bullfoot_Creek_Bridge_Lincoln_County%2C_Kansas_view_from_road.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Bullfoot Creek Bridge Lincoln County, Kansas view from road.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Bullfoot Creek Bridge",
+   "category": "Category:Bullfoot Creek Bridge"
+  },
+  {
+   "file": "commons_bullfoot_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bullfoot_Creek_Bridge_Lincoln_County,_Kansas_view_of_arch.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Bullfoot_Creek_Bridge_Lincoln_County%2C_Kansas_view_of_arch.jpg/1920px-Bullfoot_Creek_Bridge_Lincoln_County%2C_Kansas_view_of_arch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Bullfoot Creek Bridge Lincoln County, Kansas view of arch.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Bullfoot Creek Bridge",
+   "category": "Category:Bullfoot Creek Bridge"
+  },
+  {
+   "file": "commons_bullfoot_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bullfoot_Creek_Bridge_Lincoln_County,_Kansas.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Bullfoot_Creek_Bridge_Lincoln_County%2C_Kansas.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Bullfoot Creek Bridge Lincoln County, Kansas.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SharonPapierdreams",
+   "caption": "Bullfoot Creek Bridge",
+   "category": "Category:Bullfoot Creek Bridge"
+  }
+ ]
+}

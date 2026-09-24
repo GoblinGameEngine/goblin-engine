@@ -1,0 +1,49 @@
+{
+  "id": "SMALL-39",
+  "settlement": "Haskins Corner",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 5.1,
+    "over": "Brush Creek"
+  },
+  "example": {
+    "title": "Kentucky 1013 Bridge, KY 1013 over Sand Lick Creek",
+    "place": "Plummers Landing, Fleming County, KY",
+    "year": 1893,
+    "source": "HAER KY-29",
+    "url": "https://www.loc.gov/item/ky0316/",
+    "photos": [
+      "loc_ky0316_photos_195869pv.jpg",
+      "loc_ky0316_photos_195871pv.jpg",
+      "loc_ky0316_photos_195873pv.jpg",
+      "loc_ky0316_photos_195875pv.jpg",
+      "loc_ky0316_photos_195877pv.jpg",
+      "loc_ky0316_photos_195879pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Pin-connected steel Pratt half-hip pony truss of 1893, one lane, on cut-stone abutments, still carrying a minor state route in a green valley: laced top chords, built-up verticals with lattice, eyebar diagonals, floor beams and stringers under a transverse-plank deck with running boards. A diamond-shaped cast builder's plate on the end post gives the maker and year; a WEIGHT LIMIT 10 TONS sign stands at the approach. (Span about 60 ft, estimated from photos.)",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt half-hip",
+    "spans": 1,
+    "year": 1893,
+    "railing": "lattice",
+    "span_ft": 60,
+    "width_ft": 14,
+    "height_ft": 7,
+    "panels": 5,
+    "abutments": "cut stone",
+    "deck": "timber plank with running boards",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "diamond plate: ALLEGHENY BRIDGE CO. · PITTSBURGH · 1893",
+    "sign": "BRUSH CREEK",
+    "extra_signs": [
+      "WEIGHT LIMIT 10 TONS"
+    ]
+  }
+}

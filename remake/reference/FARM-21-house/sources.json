@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-21-house",
+ "files": [
+  {
+   "file": "commons_Zavadil_Farmstead_brick_house_from_E.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Zavadil_Farmstead_brick_house_from_E.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Zavadil_Farmstead_brick_house_from_E.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Zavadil Farmstead brick house from E.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Ammodramus",
+   "caption": "Franz Zavadil Farmstead in Cedar County, Nebraska: brick house, seen from the east."
+  },
+  {
+   "file": "commons_Zavadil_Farmstead_from_SE.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Zavadil_Farmstead_from_SE.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Zavadil_Farmstead_from_SE.JPG/1920px-Zavadil_Farmstead_from_SE.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Zavadil Farmstead from SE.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Ammodramus",
+   "caption": "Franz Zavadil Farmstead in Cedar County, Nebraska; seen from the southeast."
+  }
+ ]
+}

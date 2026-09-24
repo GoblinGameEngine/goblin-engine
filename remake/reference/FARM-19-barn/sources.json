@@ -1,0 +1,32 @@
+{
+ "structure": "FARM-19-barn",
+ "files": [
+  {
+   "file": "loc_vt0150_photos_223053pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/vt0150/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/vt/vt0100/vt0150/photos/223053pv.jpg",
+   "title": "Grassland Stock Farm Barn, Hewitts Corners, Windsor County, VT",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_vt0150_data_vt0150data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/vt0150/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/vt/vt0100/vt0150/data/vt0150data.pdf",
+   "title": "Grassland Stock Farm Barn, Hewitts Corners, Windsor County, VT",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_vt0150_data_vt0150cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/vt0150/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/vt/vt0100/vt0150/data/vt0150cap.pdf",
+   "title": "Grassland Stock Farm Barn, Hewitts Corners, Windsor County, VT",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

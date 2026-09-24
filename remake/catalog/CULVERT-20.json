@@ -1,0 +1,48 @@
+{
+  "id": "CULVERT-20",
+  "settlement": "rural (near Haskins Corner)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "hwy",
+    "span_m": 12.2,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Allegheny Portage Railroad, Lilly Culvert, State Route 53 over Burgoon Run",
+    "place": "Lilly, Cambria County, PA",
+    "year": 1832,
+    "source": "HAER PA-452",
+    "url": "https://www.loc.gov/item/pa3626/",
+    "photos": [
+      "loc_pa3626_color_572412cv.jpg",
+      "loc_pa3626_photos_361377pv.jpg",
+      "loc_pa3626_photos_361378pv.jpg",
+      "loc_pa3626_photos_361379pv.jpg",
+      "loc_pa3626_photos_361380pv.jpg",
+      "loc_pa3626_photos_361381pv.jpg",
+      "loc_pa3626_photos_361382pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Stone arch culvert of 1832 built for the Allegheny Portage Railroad and now under a state highway: an elliptical arch of 18 ft span and 6.5 ft rise in squared sandstone ashlar with a well-defined voussoir ring, headwalls 27 ft wide and 19 ft high between curving wing walls (42 ft overall), a timber-plank invert paving the stream bed through the barrel, and a simple timber post-and-rail fence along the road on top. Set deep in a wooded stream valley at the edge of a small town.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1832,
+    "railing": "pipe_rail",
+    "railing_detail": "timber post-and-rail fence on headwall",
+    "span_ft": 18,
+    "width_ft": 27,
+    "height_ft": 19,
+    "arch_rise_ft": 6.5,
+    "arch_form": "elliptical",
+    "masonry": "squared sandstone ashlar",
+    "wingwalls": "curved",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "date stone: 1832",
+    "sign": "none"
+  }
+}

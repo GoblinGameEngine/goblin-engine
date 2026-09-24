@@ -1,0 +1,29 @@
+{
+  "id": "FARM-18-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Peter Peterson farmstead, barn",
+    "place": "Davey vicinity, Lancaster County, NE",
+    "year": 1905,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Peter_Peterson_farmstead_barn_from_NE_1.JPG",
+    "photos": ["commons_Peter_Peterson_farmstead_barn_from_NE_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Large showpiece gambrel barn about 40 ft wide and 80 ft long in barn-red drop siding with white corner boards and trim, a grey shingle gambrel roof crowned by two tall red cupolas with white-trimmed arched louvered belfries and steep grey pyramidal spire caps with finials. The gable end has a white-framed double hinged door, stacked white-cased windows and a small hay door; the long side has a neat row of small white-framed stall windows. A low grey-roofed red shed addition extends from the far end; barbed-wire fence and a big bare elm.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 40,
+    "d_ft": 80,
+    "height_ft": 36,
+    "walls": "drop_siding",
+    "roof": {"type": "gambrel", "pitch_deg": 58, "material": "wood_shingle"},
+    "cupolas": 2,
+    "lean_to": "rear",
+    "colors": {"body": "#a82a2e", "trim": "#f6f6f2", "accent": "#f6f6f2", "roof": "#8e8e8a"},
+    "condition": "kept"
+  },
+  "names": {"family": "Soderquist", "sign": "SODERQUIST STOCK FARM EST. 1882"}
+}

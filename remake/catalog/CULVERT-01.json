@@ -1,0 +1,45 @@
+{
+  "id": "CULVERT-01",
+  "settlement": "rural (near Dunmore Crossing)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Benson culvert, county road M over an ephemeral stream west of county road 28",
+    "place": "rural Gove County, KS",
+    "year": null,
+    "source": "Wikimedia Commons (NRHP-listed structure; Category:Benson culvert (Gove County, Kansas))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Benson_culvert_(Gove_County,_Kansas)",
+    "photos": [
+      "commons_benson_01.jpg",
+      "commons_benson_02.jpg",
+      "commons_benson_03.jpg",
+      "commons_benson_04.jpg",
+      "commons_benson_05.jpg",
+      "commons_benson_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Twin-barrel masonry arch culvert under a gravel section-line road on the open High Plains: two semicircular arches of about 6 ft span side by side, voussoirs of dressed buff limestone, walls of squared limestone blocks laid in even courses with a plain coping, and a low solid parapet only a couple of courses above the road on each side, running straight with the road. Grass and weeds fill the dry channel; the road is crowned gravel with grassy ditches and wheat stubble to the horizon. Typical 1930s county/relief-work construction (date not in the sources).",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 2,
+    "year": 1935,
+    "year_note": "estimated",
+    "railing": "open_parapet",
+    "railing_detail": "low solid stone parapet with flat coping",
+    "span_ft": 6,
+    "width_ft": 26,
+    "height_ft": 5,
+    "masonry": "squared limestone ashlar",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none (unnamed ditch)"
+  }
+}

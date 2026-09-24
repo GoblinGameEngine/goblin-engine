@@ -1,0 +1,30 @@
+{
+  "id": "FARM-20-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Snoke-Tate farmstead, barn",
+    "place": "Eagle vicinity, Cass County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Snoke-Tate_farmstead_barn_from_S_1.JPG",
+    "photos": ["commons_Snoke-Tate_farmstead_barn_from_S_1.JPG", "commons_Snoke-Tate_farmstead_barn_from_SW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "All-white gambrel barn about 36 ft wide and 64 ft long: white vertical siding on the low walls with a few sliding track doors, and a big gambrel roof in light grey diamond-pattern asphalt shingles, projecting in a pointed hay hood at the gable peak. A galvanized metal ventilator cupola with a stacked bell-shaped cap sits mid-ridge, with lightning rods along the ridge. A small weathered-shingle lean-to addition at one end; corn grows up to its walls.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 36,
+    "d_ft": 64,
+    "height_ft": 34,
+    "walls": "board_and_batten",
+    "roof": {"type": "gambrel", "pitch_deg": 58, "material": "asphalt_shingle"},
+    "cupolas": 1,
+    "hay_hood": true,
+    "lightning_rods": true,
+    "colors": {"body": "#eeeeea", "trim": "#f8f8f5", "accent": "#b8bcbe", "roof": "#b6b6b2"},
+    "condition": "kept"
+  },
+  "names": {"family": "Ashby", "sign": "ASHBY FARMS EST. 1876"}
+}

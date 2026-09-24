@@ -1,0 +1,59 @@
+{
+ "structure": "SMALL-41",
+ "files": [
+  {
+   "file": "loc_ga0736_photos_184178pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ga0736/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ga/ga0700/ga0736/photos/184178pv.jpg",
+   "title": "McFarland Gap Road, Culvert, Fort Oglethorpe, Catoosa County, GA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ga0736_photos_184179pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ga0736/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ga/ga0700/ga0736/photos/184179pv.jpg",
+   "title": "McFarland Gap Road, Culvert, Fort Oglethorpe, Catoosa County, GA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ga0736_photos_184180pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ga0736/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ga/ga0700/ga0736/photos/184180pv.jpg",
+   "title": "McFarland Gap Road, Culvert, Fort Oglethorpe, Catoosa County, GA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ga0736_photos_184181pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ga0736/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ga/ga0700/ga0736/photos/184181pv.jpg",
+   "title": "McFarland Gap Road, Culvert, Fort Oglethorpe, Catoosa County, GA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ga0736_data_ga0736data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ga0736/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ga/ga0700/ga0736/data/ga0736data.pdf",
+   "title": "McFarland Gap Road, Culvert, Fort Oglethorpe, Catoosa County, GA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ga0736_data_ga0736cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ga0736/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ga/ga0700/ga0736/data/ga0736cap.pdf",
+   "title": "McFarland Gap Road, Culvert, Fort Oglethorpe, Catoosa County, GA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

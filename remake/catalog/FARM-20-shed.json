@@ -1,0 +1,27 @@
+{
+  "id": "FARM-20-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Gottsch Farmstead, pig barn shelter",
+    "place": "Washington County, NE",
+    "year": 1940,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Gottsch_Farmstead_Washington_Co_Nebraska_pig_barn_shelter.jpg",
+    "photos": ["commons_Gottsch_Farmstead_Washington_Co_Nebraska_pig_barn_shelter.jpg"],
+    "drawings": []
+  },
+  "brief": "Long low single-slope shed about 16 ft deep and 40 ft long, walls of barn-red vertical boards with a worn white fascia, and a shallow red-painted corrugated metal roof with rust patches; the low side faces the lot and the open high side faces away from the wind. Rusty pipe gates and woven-wire hog panels pen the yard in front, with a second red shed of the same kind behind and open fields beyond. On this farm it shelters hogs at one end and the disc and planter at the other.",
+  "traits": {
+    "type": "pole_shed",
+    "w_ft": 40,
+    "d_ft": 16,
+    "height_ft": 9,
+    "walls": "board_and_batten",
+    "roof": {"type": "shed", "pitch_deg": 8, "material": "metal"},
+    "colors": {"body": "#b0383a", "trim": "#e6e2da", "accent": "#8a4a30", "roof": "#a8403a"},
+    "condition": "worn"
+  },
+  "names": {"family": "Ashby"}
+}

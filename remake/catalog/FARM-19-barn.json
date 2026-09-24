@@ -1,0 +1,28 @@
+{
+  "id": "FARM-19-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Grassland Stock Farm Barn (HABS VT-115)",
+    "place": "Hewitts Corners, Windsor County, VT",
+    "year": 1890,
+    "source": "HABS VT-115",
+    "url": "https://www.loc.gov/item/vt0150/",
+    "photos": ["loc_vt0150_photos_223053pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Tidy gable-front stock barn about 32 ft wide and 56 ft long, sided in pale painted board-and-batten, set into a slight slope so a few basement stall windows show low on the downhill side. The gable end carries the farm's name hand-painted in big dark shaded letters with a scroll flourish between the lines, under a strip of small transom lights; a plain door flanked by two six-over-six windows below. Standing-seam metal roof, six-pane stall windows in white casings along the side; it sits right at the roadside with weeds along the foundation and evergreens behind.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 32,
+    "d_ft": 56,
+    "height_ft": 30,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 38, "material": "metal"},
+    "painted_sign": "gable",
+    "colors": {"body": "#dedbd2", "trim": "#f4f4f0", "accent": "#2a2a2a", "roof": "#b9bcbe"},
+    "condition": "kept"
+  },
+  "names": {"family": "Haverkamp", "sign": "HAVERKAMP STOCK FARM EST. 1888"}
+}

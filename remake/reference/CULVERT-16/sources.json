@@ -1,0 +1,77 @@
+{
+ "structure": "CULVERT-16",
+ "files": [
+  {
+   "file": "commons_sandck_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sand_Creek,_CR_230_bridge,_Rush_Co_KS,_N_span_from_E_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_N_span_from_E_1.JPG/1920px-Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_N_span_from_E_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sand Creek, CR 230 bridge, Rush Co KS, N span from E 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Northern of two spans of bridge carrying county road 230 across a tributary of Sand Creek northwest of La Crosse in rural Rush County, Kansas; seen from the east.",
+   "category": "Category:Sand Creek tributary bridge, county road 230 (Rush County, Kansas)"
+  },
+  {
+   "file": "commons_sandck_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sand_Creek,_CR_230_bridge,_Rush_Co_KS,_W_railing_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_W_railing_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Sand Creek, CR 230 bridge, Rush Co KS, W railing 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Guardrail on west side of bridge carrying county road 230 across a tributary of Sand Creek northwest of La Crosse in rural Rush County, Kansas.",
+   "category": "Category:Sand Creek tributary bridge, county road 230 (Rush County, Kansas)"
+  },
+  {
+   "file": "commons_sandck_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sand_Creek,_CR_230_bridge,_Rush_Co_KS,_from_E_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_from_E_1.JPG/1920px-Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_from_E_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sand Creek, CR 230 bridge, Rush Co KS, from E 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Bridge carrying county road 230 across a tributary of Sand Creek northwest of La Crosse in rural Rush County, Kansas; seen from the east.",
+   "category": "Category:Sand Creek tributary bridge, county road 230 (Rush County, Kansas)"
+  },
+  {
+   "file": "commons_sandck_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sand_Creek,_CR_230_bridge,_Rush_Co_KS,_from_S_2_long.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_from_S_2_long.JPG/1920px-Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_from_S_2_long.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sand Creek, CR 230 bridge, Rush Co KS, from S 2 long.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Bridge carrying county road 230 across a tributary of Sand Creek northwest of La Crosse in rural Rush County, Kansas; seen from the south.",
+   "category": "Category:Sand Creek tributary bridge, county road 230 (Rush County, Kansas)"
+  },
+  {
+   "file": "commons_sandck_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sand_Creek,_CR_230_bridge,_Rush_Co_KS,_from_SE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_from_SE_1.JPG/1920px-Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_from_SE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sand Creek, CR 230 bridge, Rush Co KS, from SE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Bridge carrying county road 230 across a tributary of Sand Creek northwest of La Crosse in rural Rush County, Kansas; seen from the southeast.",
+   "category": "Category:Sand Creek tributary bridge, county road 230 (Rush County, Kansas)"
+  },
+  {
+   "file": "commons_sandck_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sand_Creek,_CR_230_bridge,_Rush_Co_KS,_from_SW_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Sand_Creek%2C_CR_230_bridge%2C_Rush_Co_KS%2C_from_SW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Sand Creek, CR 230 bridge, Rush Co KS, from SW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Bridge carrying county road 230 across a tributary of Sand Creek northwest of La Crosse in rural Rush County, Kansas; seen from the southwest.",
+   "category": "Category:Sand Creek tributary bridge, county road 230 (Rush County, Kansas)"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "CULVERT-15",
+  "settlement": "rural (near Bellhaven)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "county",
+    "span_m": 1.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Pawnee River tributary bridge, county road DD",
+    "place": "8.8 miles south of Kansas Highway 96, Ness County, KS",
+    "year": 1935,
+    "source": "Wikimedia Commons (Category:Pawnee River tributary bridge, county road DD (Ness County, Kansas))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Pawnee_River_tributary_bridge,_county_road_DD_(Ness_County,_Kansas)",
+    "photos": [
+      "commons_pawnee_01.jpg",
+      "commons_pawnee_02.jpg",
+      "commons_pawnee_03.jpg",
+      "commons_pawnee_04.jpg",
+      "commons_pawnee_05.jpg",
+      "commons_pawnee_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Twin-barrel stone arch culvert on a county road: two semicircular arches separated by a central pier, the headwalls and long flared, stair-stepped wing walls built of buff limestone blocks in even courses with thick stepped coping. The parapets are low and the road edge is protected by W-beam guardrail with yellow-and-black hazard markers at each corner. Dead-flat treeless plains with a farmstead and power poles on the horizon.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 2,
+    "year": 1935,
+    "railing": "guardrail",
+    "railing_detail": "W-beam guardrail over low stone parapet",
+    "span_ft": 6,
+    "width_ft": 26,
+    "height_ft": 6,
+    "masonry": "squared limestone, stepped wing walls",
+    "condition": "worn",
+    "year_note": "estimated, 1930s"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

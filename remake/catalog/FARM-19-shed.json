@@ -1,0 +1,29 @@
+{
+  "id": "FARM-19-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Christian Kupke farmstead (Farm at Long Lane), crib barn",
+    "place": "Murray vicinity, Cass County, NE",
+    "year": 1910,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Christian_Kupke_farmstead_bldg_1.JPG",
+    "photos": ["commons_Christian_Kupke_farmstead_bldg_1.JPG", "commons_Christian_Kupke_farmstead_bldg_3.JPG"],
+    "drawings": []
+  },
+  "brief": "Drive-through corn crib and implement barn about 26 ft wide and 34 ft deep: a tall gable front with a dark open driveway in the center, flanking crib walls of horizontal boards with peeling white paint over grey wood, a large white-boarded loft door above, and a small square gabled cupola with a louvered side on the ridge. Silver corrugated metal roof, white-painted concrete foundation. Sits at the bend of a grassy farm lane with spruce and cedar windbreaks behind and soybean fields around.",
+  "traits": {
+    "type": "corn_crib",
+    "w_ft": 26,
+    "d_ft": 34,
+    "height_ft": 26,
+    "walls": "drop_siding",
+    "roof": {"type": "gable", "pitch_deg": 38, "material": "metal"},
+    "cupolas": 1,
+    "drive_through": true,
+    "colors": {"body": "#e4e2dc", "trim": "#8e8a82", "accent": "#8e8a82", "roof": "#c2c6c8"},
+    "condition": "worn"
+  },
+  "names": {"family": "Haverkamp"}
+}

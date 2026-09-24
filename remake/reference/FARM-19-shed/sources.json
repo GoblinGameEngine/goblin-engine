@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-19-shed",
+ "files": [
+  {
+   "file": "commons_Christian_Kupke_farmstead_bldg_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Christian_Kupke_farmstead_bldg_1.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Christian_Kupke_farmstead_bldg_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Christian Kupke farmstead bldg 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Building at Christian Kupke farmstead, a.k.a. Farm at Long Lane, located at 32618 Church Road near Murray in rural Cass County, Nebraska.  The farmhouse is out of frame to the right (east).  View is from the  southeast."
+  },
+  {
+   "file": "commons_Christian_Kupke_farmstead_bldg_3.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Christian_Kupke_farmstead_bldg_3.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Christian_Kupke_farmstead_bldg_3.JPG/1920px-Christian_Kupke_farmstead_bldg_3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Christian Kupke farmstead bldg 3.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Buildings at Christian Kupke farmstead, a.k.a. Farm at Long Lane, located at 32618 Church Road near Murray in rural Cass County, Nebraska.  View is from the southeast.  The farmhouse is out of frame to the right (east)."
+  }
+ ]
+}

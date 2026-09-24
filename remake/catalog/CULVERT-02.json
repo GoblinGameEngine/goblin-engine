@@ -1,0 +1,44 @@
+{
+  "id": "CULVERT-02",
+  "settlement": "rural (near Dunmore Crossing)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Jenkins culvert, county road M over an ephemeral stream east of county road 22",
+    "place": "rural Gove County, KS",
+    "year": 1938,
+    "source": "Wikimedia Commons (Category:Jenkins culvert (Gove County, Kansas))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Jenkins_culvert_(Gove_County,_Kansas)",
+    "photos": [
+      "commons_jenkins_01.jpg",
+      "commons_jenkins_02.jpg",
+      "commons_jenkins_03.jpg",
+      "commons_jenkins_04.jpg",
+      "commons_jenkins_05.jpg",
+      "commons_jenkins_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Three-barrel WPA stone arch culvert of 1938 under a gravel section-line road: three semicircular arches of about 5-6 ft span with alternating buff and pink limestone voussoirs, squared-block limestone walls in even courses, and a low solid parapet with plain coping level with the road on both sides; the end post of the parapet is cut 'WPA 1938'. Yellow-and-black hazard markers stand at the parapet ends. Open short-grass prairie and fields, dry grassy channel.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 3,
+    "year": 1938,
+    "railing": "open_parapet",
+    "railing_detail": "low solid stone parapet with coping",
+    "span_ft": 5.5,
+    "width_ft": 26,
+    "height_ft": 5,
+    "masonry": "squared limestone, two-tone voussoirs",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "end-post inscription: WPA 1938",
+    "sign": "none"
+  }
+}

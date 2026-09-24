@@ -1,0 +1,28 @@
+{
+  "id": "FARM-16-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Nelson Farm, silo",
+    "place": "Merrick County, NE",
+    "year": 1925,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Nelson_Farm_(Merrick_County,_Nebraska)_from_SE_1.JPG",
+    "photos": ["commons_Nelson_Farm_Merrick_County_Nebraska_from_SE_1.JPG", "commons_Nelson_Farm_Merrick_County_Nebraska_from_SW_2.JPG"],
+    "drawings": []
+  },
+  "brief": "Concrete stave silo about 18 ft across and 50 ft high standing just behind the big red dairy barn: weathered buff-grey staves with dark joint lines, the top ring of staves left white to make a crisp checkered band under the open rim, and a tall round galvanized steel unloader chute tube running up the side. Corrugated steel grain bins with conical roofs cluster at its foot, a steel windmill beside it, pasture with grazing black cattle in front.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 18,
+    "height_ft": 50,
+    "roof": "none",
+    "chute": true,
+    "hoops": true,
+    "checkered_top": true,
+    "colors": {"body": "#b3aa98", "trim": "#f1f1ec", "accent": "#b8bcbf", "roof": "#b3aa98"},
+    "condition": "kept"
+  },
+  "names": {"family": "Engstrom"}
+}

@@ -1,0 +1,38 @@
+{
+ "structure": "FARM-18-house",
+ "files": [
+  {
+   "file": "commons_Peter_Peterson_farmstead_house_from_NE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Peter_Peterson_farmstead_house_from_NE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Peter_Peterson_farmstead_house_from_NE_1.JPG/1920px-Peter_Peterson_farmstead_house_from_NE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Peter Peterson farmstead house from NE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Peter Peterson farmstead, located southeast of Davey, Nebraska, in rural Lancaster County, Nebraska: house, seen from the northeast."
+  },
+  {
+   "file": "commons_Peter_Peterson_farmstead_house_from_NE_2.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Peter_Peterson_farmstead_house_from_NE_2.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Peter_Peterson_farmstead_house_from_NE_2.JPG/1920px-Peter_Peterson_farmstead_house_from_NE_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Peter Peterson farmstead house from NE 2.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Peter Peterson farmstead, located southeast of Davey, Nebraska, in rural Lancaster County, Nebraska: house, seen from the northeast."
+  },
+  {
+   "file": "commons_Peter_Peterson_farmstead_from_NE_1.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Peter_Peterson_farmstead_from_NE_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Peter_Peterson_farmstead_from_NE_1.JPG/1920px-Peter_Peterson_farmstead_from_NE_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Peter Peterson farmstead from NE 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Peter Peterson farmstead, located southeast of Davey, Nebraska, in rural Lancaster County, Nebraska; seen from the northeast."
+  }
+ ]
+}

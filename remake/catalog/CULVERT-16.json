@@ -1,0 +1,45 @@
+{
+  "id": "CULVERT-16",
+  "settlement": "rural (near Bellhaven)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "county",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Sand Creek tributary bridge, county road 230",
+    "place": "northwest of La Crosse, Rush County, KS",
+    "year": 1935,
+    "source": "Wikimedia Commons (Category:Sand Creek tributary bridge, county road 230 (Rush County, Kansas))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Sand_Creek_tributary_bridge,_county_road_230_(Rush_County,_Kansas)",
+    "photos": [
+      "commons_sandck_01.jpg",
+      "commons_sandck_02.jpg",
+      "commons_sandck_03.jpg",
+      "commons_sandck_04.jpg",
+      "commons_sandck_05.jpg",
+      "commons_sandck_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Two-span segmental stone arch culvert on a county road: long, low arches of squared limestone with smooth voussoirs, walls of even buff courses and a solid parapet about three courses high capped with a smooth coping, stepping down at the ends; timber guardrail posts on one side. Short-grass prairie, sandy channel.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 2,
+    "year": 1935,
+    "railing": "open_parapet",
+    "railing_detail": "low solid stone parapet with coping",
+    "span_ft": 10,
+    "width_ft": 24,
+    "height_ft": 6,
+    "masonry": "squared limestone ashlar",
+    "condition": "worn",
+    "year_note": "estimated, 1930s"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

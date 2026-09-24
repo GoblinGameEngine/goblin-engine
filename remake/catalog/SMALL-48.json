@@ -1,0 +1,44 @@
+{
+  "id": "SMALL-48",
+  "settlement": "rural (near Tamarack)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 12.2,
+    "over": "Heron Creek"
+  },
+  "example": {
+    "title": "Harp Creek Bridge, State Highway 7 over Harp Creek",
+    "place": "Harrison vicinity, Boone/Newton County, AR",
+    "year": 1928,
+    "source": "HAER AR-9",
+    "url": "https://www.loc.gov/item/ar0067/",
+    "photos": [
+      "loc_ar0067_photos_010348pv.jpg",
+      "loc_ar0067_photos_010349pv.jpg",
+      "loc_ar0067_photos_010351pv.jpg",
+      "loc_ar0067_photos_010352pv.jpg",
+      "loc_ar0067_photos_010354pv.jpg",
+      "loc_ar0067_photos_010355pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "State-highway open-spandrel reinforced-concrete deck arch of 1928, a 65 ft arch with a short deck-girder approach span at each end: two slender arch ribs carry the deck on thin spandrel columns, the approach spans sit on column bents, and the railing is a concrete parapet pierced by a row of small round-arched openings between posts. Bronze plaque on an end post names the creek, the arch contractor, the state highway department and 1928; black-and-white striped end markers. Two-lane highway through wooded hill country over a brushy creek.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "arch_system": "open spandrel ribbed deck arch",
+    "spans": 3,
+    "model_spans": 1,
+    "year": 1928,
+    "railing": "open_parapet",
+    "span_ft": 65,
+    "width_ft": 24,
+    "height_ft": 20,
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "HERON CREEK · MIDWEST CONCRETE ARCH CO. · STATE HIGHWAY DEPARTMENT · 1928",
+    "sign": "HERON CREEK"
+  }
+}

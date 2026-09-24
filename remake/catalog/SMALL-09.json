@@ -1,0 +1,48 @@
+{
+  "id": "SMALL-09",
+  "settlement": "rural (near Loomis Grove)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 3.0,
+    "over": "Tanner Creek"
+  },
+  "example": {
+    "title": "Bridge on Sage Road over Sicily Creek",
+    "place": "half a mile east of Nebraska Highway 112, rural Gage County, NE",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Sicily Creek Sage Road bridge (Gage County, Nebraska))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Sicily_Creek_Sage_Road_bridge_(Gage_County,_Nebraska)",
+    "photos": [
+      "commons_sicilysage_01.jpg",
+      "commons_sicilysage_02.jpg",
+      "commons_sicilysage_03.jpg",
+      "commons_sicilysage_04.jpg",
+      "commons_sicilysage_05.jpg",
+      "commons_sicilysage_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "One-lane riveted steel Warren pony truss (with verticals) on a gravel county road in open farm country: channel top chord and end posts with gusset plates, angle web members, a plank deck of transverse boards, and angle rails through the truss web. Yellow-and-black hazard markers at all four corners and a WEIGHT LIMIT sign on the approach; flat fields and a farmstead nearby.",
+  "traits": {
+    "bridge_type": "warren_pony",
+    "spans": 1,
+    "year": 1920,
+    "year_note": "estimated",
+    "railing": "pipe_rail",
+    "span_ft": 45,
+    "width_ft": 15,
+    "height_ft": 6,
+    "panels": 5,
+    "deck": "timber plank",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "TANNER CREEK",
+    "extra_signs": [
+      "WEIGHT LIMIT 10 TONS"
+    ]
+  }
+}

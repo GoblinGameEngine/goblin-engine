@@ -1,0 +1,27 @@
+{
+ "structure": "FARM-16-shed",
+ "files": [
+  {
+   "file": "commons_SDSU_rammed-earth_machine_shed_from_SE_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:SDSU_rammed-earth_machine_shed_from_SE_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/SDSU_rammed-earth_machine_shed_from_SE_1.jpg/1920px-SDSU_rammed-earth_machine_shed_from_SE_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:SDSU rammed-earth machine shed from SE 1.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Experimental rammed-earth machine shed, building number 0606, on the campus of South Dakota State University in Brookings, South Dakota; seen from the southeast."
+  },
+  {
+   "file": "commons_SDSU_rammed-earth_machine_shed_from_NE_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:SDSU_rammed-earth_machine_shed_from_NE_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/SDSU_rammed-earth_machine_shed_from_NE_1.jpg/1920px-SDSU_rammed-earth_machine_shed_from_NE_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:SDSU rammed-earth machine shed from NE 1.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Experimental rammed-earth machine shed, building number 0606, on the campus of South Dakota State University in Brookings, South Dakota; seen from the northeast."
+  }
+ ]
+}

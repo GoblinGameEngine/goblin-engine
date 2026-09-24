@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-37",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 6.5,
+    "over": "Willow Run"
+  },
+  "example": {
+    "title": "Mill Creek Bridge (Delaware Bridge No. 9A), State Route 6 over Mill Creek",
+    "place": "Smyrna vicinity, Kent County, DE",
+    "year": 1936,
+    "source": "HAER DE-39",
+    "url": "https://www.loc.gov/item/de0418/",
+    "photos": [
+      "loc_de0418_photos_317672pv.jpg",
+      "loc_de0418_photos_317674pv.jpg",
+      "loc_de0418_photos_317676pv.jpg",
+      "loc_de0418_photos_317678pv.jpg",
+      "loc_de0418_photos_317680pv.jpg",
+      "loc_de0418_photos_317682pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Low multi-span state-highway trestle bridge of 1936 across a wide, flat tidal creek: a reinforced-concrete deck and curbs carried on timber pile bents with cross-bracing and squared timber caps, with a concrete post-and-double-rail railing (square posts with capped tops, two rectangular rails) along both sides and W-beam guardrail on the approaches. Two-lane rural highway through flat farmland and marsh. HAER record is photographs and field notes only (no dimensions); deck height about 8 ft above the water, spans about 15 ft (estimated from photos).",
+  "traits": {
+    "bridge_type": "concrete_slab",
+    "substructure": "timber pile bents",
+    "spans": 7,
+    "model_spans": 1,
+    "year": 1936,
+    "railing": "open_parapet",
+    "railing_detail": "concrete posts with two concrete rails",
+    "span_ft": 15,
+    "width_ft": 30,
+    "height_ft": 8,
+    "approach_rail": "guardrail",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "STATE HIGHWAY DEPARTMENT · BRIDGE No. 9-A · 1936",
+    "sign": "WILLOW RUN"
+  }
+}

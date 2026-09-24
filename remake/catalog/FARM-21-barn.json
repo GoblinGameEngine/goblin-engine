@@ -1,0 +1,28 @@
+{
+  "id": "FARM-21-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "T. A. Leonard Barn (HABS WA-168)",
+    "place": "Pullman vicinity, Whitman County, WA",
+    "year": 1917,
+    "source": "HABS WA-168",
+    "url": "https://www.loc.gov/item/wa0188/",
+    "photos": ["loc_wa0188_photos_169461pv.jpg", "loc_wa0188_photos_169462pv.jpg", "loc_wa0188_photos_169463pv.jpg", "loc_wa0188_photos_169464pv.jpg", "loc_wa0188_photos_169465pv.jpg"],
+    "drawings": ["loc_wa0188_sheet_00001a.png", "loc_wa0188_sheet_00002a.png", "loc_wa0188_sheet_00003a.png"]
+  },
+  "brief": "True round barn about 60 ft in diameter, built on a wheat farm as an experiment in efficient feeding: a low cylindrical wall of pale-painted horizontal siding with a ring of small square windows and a pair of white-braced X-pattern hinged doors, under a tall self-supporting bell-shaped (bowed gambrel) dome roof of dark wood shingles rising to a small round ventilator cupola at the peak. It sits at the bottom of a curving plowed slope below the farmstead's gable-roofed house, sheds and a windbreak of spruce.",
+  "traits": {
+    "type": "round_barn",
+    "w_ft": 60,
+    "d_ft": 60,
+    "height_ft": 44,
+    "walls": "drop_siding",
+    "roof": {"type": "gambrel", "pitch_deg": 55, "material": "wood_shingle"},
+    "cupolas": 1,
+    "colors": {"body": "#dcd8cc", "trim": "#f4f4f0", "accent": "#f4f4f0", "roof": "#4e4a44"},
+    "condition": "kept"
+  },
+  "names": {"family": "Hruska", "sign": "HRUSKA FARM EST. 1884"}
+}

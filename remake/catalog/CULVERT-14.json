@@ -1,0 +1,44 @@
+{
+  "id": "CULVERT-14",
+  "settlement": "rural (near Tamarack)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Bullfoot Creek Bridge",
+    "place": "Lincoln County, KS",
+    "year": 1936,
+    "source": "Wikimedia Commons (Category:Bullfoot Creek Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Bullfoot_Creek_Bridge",
+    "photos": [
+      "commons_bullfoot_01.jpg",
+      "commons_bullfoot_02.jpg",
+      "commons_bullfoot_03.jpg",
+      "commons_bullfoot_04.jpg",
+      "commons_bullfoot_05.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single stone arch on a shaded gravel road: a wide segmental arch of dressed limestone voussoirs in squared-block walls, topped by a distinctive crenellated (castellated) parapet of alternating raised blocks along both sides and stepping down the wing walls. Heavily overgrown with shrubs, in a belt of trees along the creek between open fields.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1936,
+    "railing": "open_parapet",
+    "railing_detail": "crenellated stone parapet (alternating raised blocks)",
+    "span_ft": 14,
+    "width_ft": 22,
+    "height_ft": 7,
+    "masonry": "squared limestone blocks",
+    "condition": "worn",
+    "year_note": "estimated, 1930s county/WPA work"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

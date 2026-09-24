@@ -1,0 +1,44 @@
+{
+  "id": "CULVERT-11",
+  "settlement": "rural (near Haskins Corner)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Antelope Creek Masonry Arch Bridge",
+    "place": "Mitchell County, KS",
+    "year": 1940,
+    "source": "Wikimedia Commons (Category:Antelope Creek Masonry Arch Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Antelope_Creek_Masonry_Arch_Bridge",
+    "photos": [
+      "commons_antelope_01.jpg",
+      "commons_antelope_02.jpg",
+      "commons_antelope_03.jpg",
+      "commons_antelope_04.jpg",
+      "commons_antelope_05.jpg",
+      "commons_antelope_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "WPA masonry arch of 1940 on a gravel county road: three semicircular arches of Post Rock limestone quarried locally, laid in an ashlar pattern mixing rusticated and smooth-faced blocks, smooth voussoirs with rusticated keystones, a course of smooth stone at road level, a low solid parapet with tall rusticated end posts, and flared wing walls. Pasture and crop land all round; a dated stone records the year.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 3,
+    "year": 1940,
+    "railing": "open_parapet",
+    "railing_detail": "low solid parapet with tall rusticated end posts",
+    "span_ft": 8,
+    "width_ft": 24,
+    "height_ft": 6,
+    "masonry": "Post Rock limestone ashlar, rusticated and smooth",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "date stone: W.P.A. 1940",
+    "sign": "none"
+  }
+}

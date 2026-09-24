@@ -1,0 +1,28 @@
+{
+  "id": "FARM-15-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Keystone Ranch, shed",
+    "place": "Marion County, KS",
+    "year": 1920,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Keystone_Ranch_Marion_Co_KS_Shed.jpg",
+    "photos": ["commons_Keystone_Ranch_Marion_Co_KS_Shed.jpg"],
+    "drawings": []
+  },
+  "brief": "Small frame implement shed about 20 ft by 30 ft, faded and peeling barn-red vertical boards, a low gable roof of galvanized corrugated steel. The long side is half open as a wide wagon bay with a leaning prop post, the rest closed with a hinged plank door and a slatted opening. Tall dry bluestem grows up to the walls, white pipe corral panels and a stone wall beside it. (Open-bay implement shed; nearest vocabulary type is frame_machine_shed.)",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 30,
+    "d_ft": 20,
+    "height_ft": 14,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 22, "material": "metal"},
+    "open_front": true,
+    "colors": {"body": "#a4444a", "trim": "#d8d2c8", "accent": "#d8d2c8", "roof": "#a9adb0"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Tremaine"}
+}

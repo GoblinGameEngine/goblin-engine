@@ -1,0 +1,36 @@
+{
+  "id": "FARM-19-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Rinne Farm, house, 71075 617 Avenue",
+    "place": "Pawnee County, NE",
+    "year": 1895,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Rinne_Farm_house_from_SE_1.JPG",
+    "photos": ["commons_Rinne_Farm_house_from_SE_1.JPG", "commons_Rinne_Farm_house_and_garage_from_SE_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Two-storey gabled-ell farmhouse in white clapboard: a front-facing gable with decorative scroll-cut bargeboard trim and a cross-gabled rear block, grey asphalt roof and a brick chimney. A wide hip-roofed front porch with a gingerbread spandrel frieze and fretwork brackets on slender turned posts, lattice skirting and a concrete step; a one-storey shed-roofed kitchen addition at the back with a diamond window. Lived-in and a little worn: a grill and a barrel on the side lawn, big elms and cedars around.",
+  "traits": {
+    "archetype": "upright_and_wing",
+    "storeys": 2,
+    "main_w_ft": 24,
+    "main_d_ft": 32,
+    "wing": {"side": "left", "w_ft": 20, "d_ft": 18, "storeys": 2},
+    "roof": {"type": "cross_gable", "pitch_deg": 45, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "front_full", "posts": "turned", "rail": "none"},
+    "walls": "clapboard",
+    "foundation": "brick",
+    "colors": {"body": "#f1f1ee", "trim": "#f8f8f5", "accent": "#6a6a6a", "roof": "#7a7a78"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center"],
+    "garage": "detached_1",
+    "yard": {"fence": "none", "extras": ["clothesline", "woodpile"]},
+    "condition": "worn",
+    "year_built": 1895
+  },
+  "names": {"family": "Haverkamp", "house_number": "71140", "street": "617 Ave"}
+}

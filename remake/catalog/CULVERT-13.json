@@ -1,0 +1,44 @@
+{
+  "id": "CULVERT-13",
+  "settlement": "rural (near Tamarack)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Brown's Creek Tributary Masonry Arch Bridge",
+    "place": "Mitchell County, KS",
+    "year": 1938,
+    "source": "Wikimedia Commons (Category:Brown's Creek Tributary Masonry Arch Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Brown's_Creek_Tributary_Masonry_Arch_Bridge",
+    "photos": [
+      "commons_brownsck_01.jpg",
+      "commons_brownsck_03.jpg",
+      "commons_brownsck_04.jpg",
+      "commons_brownsck_05.jpg",
+      "commons_brownsck_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Three-span WPA stone arch bridge-culvert on a gravel county road, each arch 12 ft, built of local Post Rock limestone in an ashlar pattern mixing rusticated and smooth faces; the walls rise three courses above the roadway as the rails, wing walls splay at 45 degrees and stair-step down, and a date stone in the north rail names the county and the WPA. Tree-lined creek in pasture and cropland.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 3,
+    "year": 1938,
+    "railing": "open_parapet",
+    "railing_detail": "walls three courses above the road as rails",
+    "span_ft": 12,
+    "width_ft": 24,
+    "height_ft": 7,
+    "masonry": "Post Rock limestone ashlar, rusticated and smooth",
+    "condition": "worn",
+    "year_note": "WPA era, exact year not given"
+  },
+  "names": {
+    "plate": "rail date stone: COUNTY W.P.A.",
+    "sign": "none"
+  }
+}

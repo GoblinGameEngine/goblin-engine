@@ -1,0 +1,45 @@
+{
+  "id": "SMALL-22",
+  "settlement": "Tamarack",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 6.0,
+    "over": "Heron Creek"
+  },
+  "example": {
+    "title": "Red Bridge (State Highway Bridge No. 809), Union Street over the Broadkill River",
+    "place": "Milton, Sussex County, DE",
+    "year": 1916,
+    "source": "HAER DE-30",
+    "url": "https://www.loc.gov/item/de0360/",
+    "photos": [
+      "loc_de0360_photos_317767pv.jpg",
+      "loc_de0360_photos_317768pv.jpg",
+      "loc_de0360_photos_317770pv.jpg",
+      "loc_de0360_photos_317771pv.jpg",
+      "loc_de0360_photos_317773pv.jpg",
+      "loc_de0360_photos_317774pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single-span town-centre bridge of 1916, 24 ft 7 in long and 34 ft wide, carrying two traffic lanes and a sidewalk each side on concrete-encased steel girders under a concrete slab. Highly embellished: white rock-faced (rusticated) concrete end pylons carry bronze plaques (the bridge name and year with the county levy court and engineer; a later state rebuilding), and a diamond-lattice metal railing runs between them. Lined by two- and three-storey stucco commercial buildings with hipped tile-style roofs, street lights and a flagpole; the river is walled in concrete between buildings.",
+  "traits": {
+    "bridge_type": "steel_stringer",
+    "deck": "concrete slab on concrete-encased steel girders",
+    "spans": 1,
+    "year": 1916,
+    "railing": "lattice",
+    "span_ft": 24.6,
+    "width_ft": 34,
+    "height_ft": 8,
+    "sidewalks": true,
+    "end_posts": "rusticated concrete pylons with plaques",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "HERON BRIDGE · THIS BRIDGE BUILT 1916 BY THE COUNTY BOARD · A. L. MORRIS, ENGINEER",
+    "sign": "HERON CREEK"
+  }
+}

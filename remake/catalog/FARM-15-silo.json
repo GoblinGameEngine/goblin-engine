@@ -1,0 +1,27 @@
+{
+  "id": "FARM-15-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Keystone Ranch, silo",
+    "place": "Marion County, KS",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Keystone_Ranch_Marion_Co_KS_Silo.jpg",
+    "photos": ["commons_Keystone_Ranch_Marion_Co_KS_Silo.jpg"],
+    "drawings": []
+  },
+  "brief": "Glazed hollow clay tile silo about 18 ft across and 40 ft high: shiny tile blocks in running bond glazed in mottled plum, slate-blue and rust-brown tones that glint in the sun. A continuous vertical door slot runs the full height on the front with iron ladder rungs across it, a few grey plank door boards still in place and a weathered wooden chute board leaning at the base; broken timbers stick up at the open top. Stands in tall dry grass at the edge of bare woods.",
+  "traits": {
+    "type": "tile",
+    "diameter_ft": 18,
+    "height_ft": 40,
+    "roof": "none",
+    "chute": false,
+    "hoops": false,
+    "colors": {"body": "#6e6478", "trim": "#9a9690", "accent": "#8a5a44", "roof": "#6e6478"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Tremaine"}
+}

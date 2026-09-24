@@ -1,0 +1,25 @@
+{
+ "structure": "HC-027",
+ "files": [
+  {
+   "file": "loc_wi0819_color_582363cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/wi0819/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/wi/wi0800/wi0819/color/582363cv.jpg",
+   "title": "Bernard Schwartz House, 3425 Adams Street, Two Rivers, Manitowoc County, WI",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "commons_Bernard_Schwartz_House-_Two_Rivers_WI_-_Flickr_-_MichaelSteeber_4_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bernard_Schwartz_House-_Two_Rivers,_WI_-_Flickr_-_MichaelSteeber_(4).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Bernard_Schwartz_House-_Two_Rivers%2C_WI_-_Flickr_-_MichaelSteeber_%284%29.jpg/1920px-Bernard_Schwartz_House-_Two_Rivers%2C_WI_-_Flickr_-_MichaelSteeber_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Bernard Schwartz House- Two Rivers, WI - Flickr - MichaelSteeber (4).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Michael Steeber from USA",
+   "caption": "Frank Lloyd Wright-designed Bernard Schwartz house in Two Rivers, WI. This home is also known as \"Still Bend.\""
+  }
+ ]
+}

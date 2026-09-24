@@ -1,0 +1,37 @@
+{
+  "id": "FARM-18-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Peter Peterson farmstead, house",
+    "place": "Davey vicinity, Lancaster County, NE",
+    "year": 1900,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Peter_Peterson_farmstead_house_from_NE_1.JPG",
+    "photos": ["commons_Peter_Peterson_farmstead_house_from_NE_1.JPG", "commons_Peter_Peterson_farmstead_house_from_NE_2.JPG", "commons_Peter_Peterson_farmstead_from_NE_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Two-storey Queen Anne farmhouse in olive-green clapboard with cream corner boards, window casings and frieze, a tall conical-roofed round corner turret clad in olive fish-scale shingles on its upper stage, and a big flared hipped roof of weathered grey shingles with a little eyebrow dormer and two red brick chimneys. A full-width hipped front porch on turned cream posts with small scroll brackets; a one-storey side wing at left. A steel windmill, a lamp post, low shrubs and a small white shed round out the yard.",
+  "traits": {
+    "archetype": "queen_anne",
+    "storeys": 2,
+    "main_w_ft": 34,
+    "main_d_ft": 32,
+    "wing": {"side": "left", "w_ft": 14, "d_ft": 18, "storeys": 1},
+    "roof": {"type": "hip", "pitch_deg": 40, "material": "wood_shingle"},
+    "dormers": [{"type": "eyebrow", "side": "front"}],
+    "porch": {"type": "front_full", "posts": "turned", "rail": "none"},
+    "walls": "clapboard",
+    "foundation": "brick",
+    "colors": {"body": "#a6a47a", "trim": "#efe8cc", "accent": "#8a3a2e", "roof": "#6e6e68"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": ["center", "rear"],
+    "garage": "detached_1",
+    "yard": {"fence": "none", "extras": ["shed", "garden"]},
+    "turret": true,
+    "condition": "kept",
+    "year_built": 1900
+  },
+  "names": {"family": "Soderquist", "house_number": "3150", "street": "W Davey Rd"}
+}

@@ -1,0 +1,28 @@
+{
+  "id": "FARM-17-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Hans Ehlers Farm, Shed (HABS NE-42-F)",
+    "place": "Millard, Douglas County, NE",
+    "year": 1915,
+    "source": "HABS NE-42-F",
+    "url": "https://www.loc.gov/item/ne0065/",
+    "photos": ["loc_ne0065_photos_103417pv.jpg", "loc_ne0065_photos_103418pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Square one-storey frame shed about 28 ft by 28 ft under a pyramidal hipped roof of weathered cedar shingles with exposed rafter tails and a small brick flue chimney at the back. Unpainted shiplap siding weathered grey, two small four-light windows per side, a pair of sliding doors on the north side, cement-block foundation and poured concrete floor. Used as the farm's shop and implement shed; brush and bare trees crowd around it.",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 28,
+    "d_ft": 28,
+    "height_ft": 18,
+    "walls": "drop_siding",
+    "roof": {"type": "pyramid", "pitch_deg": 30, "material": "wood_shingle"},
+    "doors": "sliding",
+    "colors": {"body": "#948a7c", "trim": "#6c645a", "accent": "#8a4a3a", "roof": "#6a625a"},
+    "condition": "worn"
+  },
+  "names": {"family": "Pfannenstiel"}
+}

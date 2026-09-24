@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-40",
+  "settlement": "rural (near Haskins Corner)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 6.2,
+    "over": "Lost Creek"
+  },
+  "example": {
+    "title": "Kelleyville Bridge (Bridge No. 085/101), NH Routes 11/103 over the Sugar River",
+    "place": "Kelleyville, Newport, Sullivan County, NH",
+    "year": 1933,
+    "source": "HAER NH-27",
+    "url": "https://www.loc.gov/item/nh0260/",
+    "photos": [
+      "loc_nh0260_photos_346528pv.jpg",
+      "loc_nh0260_photos_346531pv.jpg",
+      "loc_nh0260_photos_346534pv.jpg",
+      "loc_nh0260_photos_346538pv.jpg",
+      "loc_nh0260_photos_346541pv.jpg",
+      "loc_nh0260_photos_346544pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Two-lane state-highway concrete bridge of 1933, 314.5 ft long: a 120 ft open-spandrel twin-rib arch over the river plus five reinforced-concrete T-beam deck spans of 31.6-35 ft on multi-column bents with haunched cap beams and flared column heads; 10-inch deck with deep cross beams, no sidewalks. The original concrete open-balustrade railings were replaced by aluminium horizontal rails. For the 6.2 m highway crossing use one T-beam approach span of this design with the same bent and railing detail.",
+  "traits": {
+    "bridge_type": "concrete_t_beam",
+    "spans": 6,
+    "model_spans": 1,
+    "year": 1933,
+    "railing": "concrete_balustrade",
+    "railing_detail": "original open concrete balustrade (later aluminium rails)",
+    "span_ft": 33,
+    "overall_ft": 314.5,
+    "width_ft": 30,
+    "height_ft": 20,
+    "piers": "multi-column bents with haunched caps",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "STATE HIGHWAY DEPT · BRIDGE No. 212/044 · 1933",
+    "sign": "LOST CREEK"
+  }
+}

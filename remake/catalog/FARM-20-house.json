@@ -1,0 +1,37 @@
+{
+  "id": "FARM-20-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Snoke-Tate farmstead, house, 23416 O Street",
+    "place": "Eagle vicinity, Cass County, NE",
+    "year": 1905,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Snoke-Tate_farmstead_house_from_S_1.JPG",
+    "photos": ["commons_Snoke-Tate_farmstead_house_from_S_1.JPG", "commons_Snoke-Tate_farmstead_house_from_SW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Broad two-storey white farmhouse under a hipped roof of pale grey shingles with a centered front gable holding a pair of small attic windows. The whole front is a two-tier full-width porch on square white posts, with white spindle balustrades on both levels, lattice skirting and wide red-painted wood steps; paired one-over-one windows behind. A big American flag hangs from the upper porch. Mown lawn, big shade trees and a long low white outbuilding off to one side.",
+  "traits": {
+    "archetype": "i_house",
+    "storeys": 2,
+    "main_w_ft": 38,
+    "main_d_ft": 28,
+    "wing": {"side": "rear", "w_ft": 16, "d_ft": 14, "storeys": 1},
+    "roof": {"type": "hip", "pitch_deg": 30, "material": "asphalt_shingle"},
+    "dormers": [{"type": "gable", "side": "front"}],
+    "porch": {"type": "front_full", "posts": "square", "rail": "spindle"},
+    "porch_storeys": 2,
+    "walls": "clapboard",
+    "foundation": "poured_concrete",
+    "colors": {"body": "#f4f4f1", "trim": "#fafaf8", "accent": "#8e3a2c", "roof": "#c9c9c6"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": [],
+    "garage": "detached_2",
+    "yard": {"fence": "none", "extras": ["flagpole", "garden"]},
+    "condition": "kept",
+    "year_built": 1905
+  },
+  "names": {"family": "Ashby", "house_number": "23510", "street": "O St"}
+}

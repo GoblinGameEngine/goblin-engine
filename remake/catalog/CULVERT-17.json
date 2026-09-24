@@ -1,0 +1,42 @@
+{
+  "id": "CULVERT-17",
+  "settlement": "rural (near Bellhaven)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "county",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Spring Creek Tributary Bridge",
+    "place": "Lincoln County, KS",
+    "year": 1936,
+    "source": "Wikimedia Commons (Category:Spring Creek Tributary Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Spring_Creek_Tributary_Bridge",
+    "photos": [
+      "commons_springck_02.jpg",
+      "commons_springck_03.jpg",
+      "commons_springck_04.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Twin-arch stone culvert on a narrow county road in a creek-side grove: two segmental arches of dressed limestone in a squared-block wall with a crenellated parapet (alternating raised merlon blocks) on both sides. Overgrown banks and trees; gravel road with a grass centre strip. Only three photos survive on Commons.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 2,
+    "year": 1936,
+    "railing": "open_parapet",
+    "railing_detail": "crenellated stone parapet",
+    "span_ft": 8,
+    "width_ft": 20,
+    "height_ft": 6,
+    "masonry": "squared limestone blocks",
+    "condition": "worn",
+    "year_note": "estimated, 1930s"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

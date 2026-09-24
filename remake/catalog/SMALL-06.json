@@ -1,0 +1,49 @@
+{
+  "id": "SMALL-06",
+  "settlement": "rural (near Dunmore Crossing)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 6.0,
+    "over": "Lost Creek"
+  },
+  "example": {
+    "title": "State Bridge No. 177, Brackenville Road over Mill Creek",
+    "place": "Hockessin vicinity, New Castle County, DE",
+    "year": 1846,
+    "source": "HAER DE-51",
+    "url": "https://www.loc.gov/item/de0477/",
+    "photos": [
+      "loc_de0477_photos_384081pv.jpg",
+      "loc_de0477_photos_384082pv.jpg",
+      "loc_de0477_photos_384083pv.jpg",
+      "loc_de0477_photos_384085pv.jpg",
+      "loc_de0477_photos_384086pv.jpg",
+      "loc_de0477_photos_384087pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Mid-19th-century single stone arch wagon bridge built with local labour and stone: a 20 ft segmental arch of rough split-stone voussoirs in coursed rubble spandrels and wing walls, with a carved date stone set in the face. The original stone parapet was removed in 1965 and replaced by a wider concrete deck with a concrete post-and-rail railing; W-beam guardrail on the approaches and a weight-limit sign. Narrow country road in dense woods over a rocky, boulder-strewn creek.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1846,
+    "railing": "open_parapet",
+    "railing_detail": "concrete posts and rails (1965) on stone arch",
+    "span_ft": 20,
+    "width_ft": 24,
+    "height_ft": 8,
+    "arch_form": "segmental",
+    "masonry": "coursed rubble",
+    "approach_rail": "guardrail",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "date stone: T.C.C. 1846",
+    "sign": "LOST CREEK",
+    "extra_signs": [
+      "WEIGHT LIMIT 10 TONS"
+    ]
+  }
+}

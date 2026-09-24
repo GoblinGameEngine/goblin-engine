@@ -1,0 +1,44 @@
+{
+  "id": "CULVERT-19",
+  "settlement": "rural (near Fenwick)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "county",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Stone Arch Bridge, Bicycle Bridge Road over the Wabash and Erie Canal",
+    "place": "Delphi, Carroll County, IN",
+    "year": 1901,
+    "source": "Wikimedia Commons (Category:Stone Arch Bridge (Delphi, Indiana))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Stone_Arch_Bridge_(Delphi,_Indiana)",
+    "photos": [
+      "commons_delphi_01.jpg",
+      "commons_delphi_02.jpg",
+      "commons_delphi_03.jpg",
+      "commons_delphi_04.jpg",
+      "commons_delphi_05.jpg",
+      "commons_delphi_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single segmental stone arch of 1901 carrying a county road over a small watercourse (the abandoned canal): rock-faced limestone voussoirs and coursed rubble spandrels, a low solid stone parapet with a flat coping, and short wing walls, with a striped hazard marker and historical-marker sign at the end. Grass banks, towpath trail and trees; small-town edge setting.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1901,
+    "railing": "open_parapet",
+    "railing_detail": "low solid stone parapet",
+    "span_ft": 14,
+    "width_ft": 20,
+    "height_ft": 8,
+    "masonry": "coursed limestone rubble, rock-faced voussoirs",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

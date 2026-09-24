@@ -1,0 +1,53 @@
+{
+ "structure": "CULVERT-06",
+ "files": [
+  {
+   "file": "commons_middletown_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Middletown_Bridge_deck_looking_eastward.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Middletown_Bridge_deck_looking_eastward.jpg/1920px-Middletown_Bridge_deck_looking_eastward.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Middletown Bridge deck looking eastward.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Nyttend",
+   "caption": "Looking eastward atop the Middletown Bridge, which carries the old route of Michigan Road over Conn's Creek just northwest of Middletown in Liberty Township, Shelby County, Indiana, United States.  Built in 1903, it is listed on the National Register of Historic Places.",
+   "category": "Category:Middletown Bridge"
+  },
+  {
+   "file": "commons_middletown_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Middletown_Bridge_deck_looking_westward.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Middletown_Bridge_deck_looking_westward.jpg/1920px-Middletown_Bridge_deck_looking_westward.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Middletown Bridge deck looking westward.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Nyttend",
+   "caption": "Looking westward atop the Middletown Bridge, which carries the old route of Michigan Road over Conn's Creek just northwest of Middletown in Liberty Township, Shelby County, Indiana, United States.  Built in 1903, it is listed on the National Register of Historic Places.",
+   "category": "Category:Middletown Bridge"
+  },
+  {
+   "file": "commons_middletown_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Middletown_Bridge_southern_side.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Middletown_Bridge_southern_side.jpg/1920px-Middletown_Bridge_southern_side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Middletown Bridge southern side.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Nyttend",
+   "caption": "Southern (downstream) side of the Middletown Bridge, which carries the old route of Michigan Road over Conn's Creek just northwest of Middletown in Liberty Township, Shelby County, Indiana, United States.  Built in 1903, it is listed on the National Register of Historic Places.",
+   "category": "Category:Middletown Bridge"
+  },
+  {
+   "file": "commons_middletown_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Middletown_Bridge_stonework_detail.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Middletown_Bridge_stonework_detail.jpg/1920px-Middletown_Bridge_stonework_detail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Middletown Bridge stonework detail.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Nyttend",
+   "caption": "Detail of the stonework on the northern wall of the Middletown Bridge, which carries the old route of Michigan Road over Conn's Creek just northwest of Middletown in Liberty Township, Shelby County, Indiana, United States.  Built in 1903, it is listed on the National Register of Historic Places.",
+   "category": "Category:Middletown Bridge"
+  }
+ ]
+}

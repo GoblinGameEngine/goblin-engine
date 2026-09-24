@@ -1,0 +1,36 @@
+{
+  "id": "FARM-17-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Teske Farmstead, farmhouse",
+    "place": "Onaga vicinity, Pottawatomie County, KS",
+    "year": 1880,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Teske_Farmstead_farmhouse_Onaga_Kansas.jpg",
+    "photos": ["commons_Teske_Farmstead_farmhouse_Onaga_Kansas.jpg"],
+    "drawings": []
+  },
+  "brief": "Formal, symmetrical two-storey stone farmhouse, five bays wide, of squared buff and grey limestone in regular courses with dressed sills and lintels, under a low hipped roof of silver standing-seam metal with a plain boxed cornice. A small white entry portico on slender posts with a scroll-sawn frieze carries a white-railed balcony reached by a second-floor door; black louvered shutters on the ground-floor six-over-six windows, black iron star anchors. A round bed of daylilies and a clipped shrub in a flagstone circle in front, big shade trees at the sides.",
+  "traits": {
+    "archetype": "i_house",
+    "storeys": 2,
+    "main_w_ft": 40,
+    "main_d_ft": 30,
+    "wing": {"side": "rear", "w_ft": 18, "d_ft": 14, "storeys": 1},
+    "roof": {"type": "hip", "pitch_deg": 22, "material": "metal"},
+    "dormers": [],
+    "porch": {"type": "stoop", "posts": "square", "rail": "spindle"},
+    "walls": "stone",
+    "foundation": "cut_stone",
+    "colors": {"body": "#c2b294", "trim": "#f4f4f0", "accent": "#1e1e1e", "roof": "#c6cacc"},
+    "windows": {"type": "6over6", "shutters": true},
+    "chimneys": [],
+    "garage": "detached_2",
+    "yard": {"fence": "none", "extras": ["garden", "birdbath"]},
+    "condition": "kept",
+    "year_built": 1880
+  },
+  "names": {"family": "Pfannenstiel", "house_number": "13440", "street": "Onaga Rd"}
+}

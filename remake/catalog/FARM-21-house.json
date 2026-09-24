@@ -1,0 +1,36 @@
+{
+  "id": "FARM-21-house",
+  "settlement": "rural farmstead",
+  "kind": "house",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Franz Zavadil Farmstead, brick house",
+    "place": "Cedar County, NE",
+    "year": 1890,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Zavadil_Farmstead_brick_house_from_E.JPG",
+    "photos": ["commons_Zavadil_Farmstead_brick_house_from_E.JPG", "commons_Zavadil_Farmstead_from_SE.JPG"],
+    "drawings": []
+  },
+  "brief": "Two-storey red brick gabled-ell farmhouse: a front-gabled brick upright with tall segmental-arched one-over-one windows in white frames and wide white eave returns, joined to a side wing whose upper storey was re-sided in white vinyl, all under a brown-red asphalt roof. A one-storey hip-roofed enclosed sun porch with big screened windows fills the corner of the ell; an older buff brick section and small back porch at the rear. A row of bare lilac bushes in front, big elms, a white propane tank and red farm buildings behind.",
+  "traits": {
+    "archetype": "upright_and_wing",
+    "storeys": 2,
+    "main_w_ft": 22,
+    "main_d_ft": 30,
+    "wing": {"side": "left", "w_ft": 26, "d_ft": 18, "storeys": 2},
+    "roof": {"type": "cross_gable", "pitch_deg": 42, "material": "asphalt_shingle"},
+    "dormers": [],
+    "porch": {"type": "enclosed", "posts": "square", "rail": "solid"},
+    "walls": "brick",
+    "foundation": "fieldstone",
+    "colors": {"body": "#9a4a36", "trim": "#f4f4f0", "accent": "#e8e8e2", "roof": "#6e3a30"},
+    "windows": {"type": "1over1", "shutters": false},
+    "chimneys": [],
+    "garage": "detached_2",
+    "yard": {"fence": "hedge", "extras": ["garden", "clothesline"]},
+    "condition": "kept",
+    "year_built": 1890
+  },
+  "names": {"family": "Hruska", "house_number": "87512", "street": "561 Ave"}
+}

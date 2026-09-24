@@ -1,0 +1,43 @@
+{
+  "id": "CULVERT-04",
+  "settlement": "rural (near Dunmore Crossing)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "WPA bridge on county road 9 over an ephemeral watercourse north of county road Y",
+    "place": "rural Morton County, KS",
+    "year": 1938,
+    "source": "Wikimedia Commons (Category:Morton County WPA bridge (Kansas))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Morton_County_WPA_bridge_(Kansas)",
+    "photos": [
+      "commons_morton_02.jpg",
+      "commons_morton_04.jpg",
+      "commons_morton_05.jpg",
+      "commons_morton_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Five-barrel WPA stone culvert on a county road across a shallow dry draw: a long low headwall of squared buff limestone blocks with rock faces, divided by plain pilaster strips, each small arched opening now lined with an inserted corrugated steel pipe set in concrete; low parapet with a smooth coping flush with the road edge and hazard markers at the ends. Endless flat short-grass plain.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 5,
+    "year": 1938,
+    "year_note": "WPA era, estimated",
+    "railing": "open_parapet",
+    "railing_detail": "low stone parapet with coping",
+    "span_ft": 4,
+    "width_ft": 24,
+    "height_ft": 4,
+    "masonry": "squared limestone with pilasters; corrugated pipe liners",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

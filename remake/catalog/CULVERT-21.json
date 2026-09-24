@@ -1,0 +1,46 @@
+{
+  "id": "CULVERT-21",
+  "settlement": "rural (near Haskins Corner)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "hwy",
+    "span_m": 14.6,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Allegheny Portage Railroad, Bens Creek Culvert, State Route 53 over Bens Creek",
+    "place": "Cassandra, Cambria County, PA",
+    "year": 1832,
+    "source": "HAER PA-453",
+    "url": "https://www.loc.gov/item/pa3571/",
+    "photos": [
+      "loc_pa3571_color_314430cv.jpg",
+      "loc_pa3571_photos_361078pv.jpg",
+      "loc_pa3571_photos_361079pv.jpg",
+      "loc_pa3571_photos_361080pv.jpg",
+      "loc_pa3571_photos_361081pv.jpg",
+      "loc_pa3571_photos_361082pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Long stone arch culvert under a high highway fill: the original 1832 railway culvert, an 18 ft elliptical arch of squared sandstone with a clear voussoir ring and straight headwall, was extended in 1855 into a 114 ft barrel that climbs with the stream bed so the inlet is only 9 ft high. Timber-plank invert inside, boulder rip-rap at the outlet, trees and brush growing on the embankment above. For the 14.6 m highway crossing, use the long barrel with a headwall at each end.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1832,
+    "railing": "open_parapet",
+    "railing_detail": "none; embankment with roadside guardrail above",
+    "span_ft": 18,
+    "width_ft": 114,
+    "height_ft": 12,
+    "barrel_length_ft": 114,
+    "arch_form": "elliptical",
+    "masonry": "squared sandstone ashlar",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

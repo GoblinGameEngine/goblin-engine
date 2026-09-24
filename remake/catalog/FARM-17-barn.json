@@ -1,0 +1,30 @@
+{
+  "id": "FARM-17-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Teske Farmstead, barn",
+    "place": "Onaga vicinity, Pottawatomie County, KS",
+    "year": 1890,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Teske_Farmstead_barn_Onaga_Kansas.jpg",
+    "photos": ["commons_Teske_Farmstead_barn_Onaga_Kansas.jpg"],
+    "drawings": []
+  },
+  "brief": "Restored white board-and-batten gable barn about 36 ft by 50 ft on a low rubble limestone foundation, with a lean-to aisle along the far side that holds an open garage bay. Natural-wood double sliding doors on the gable end under a gooseneck barn light, a small loft window high in the gable, small four-pane windows with natural wood casings along the side. The steep metal roof is weathered to a patchy rust-red, topped by a louvered square cupola with a tall pointed spire cap.",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 36,
+    "d_ft": 50,
+    "height_ft": 32,
+    "walls": "board_and_batten",
+    "roof": {"type": "gable", "pitch_deg": 42, "material": "metal"},
+    "cupolas": 1,
+    "lean_to": "left",
+    "foundation": "fieldstone",
+    "colors": {"body": "#f1f1ec", "trim": "#b89468", "accent": "#b89468", "roof": "#a35a3c"},
+    "condition": "kept"
+  },
+  "names": {"family": "Pfannenstiel", "sign": "PFANNENSTIEL ANGUS EST. 1879"}
+}

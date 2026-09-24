@@ -1,0 +1,45 @@
+{
+  "id": "CULVERT-23",
+  "settlement": "rural (near Tamarack)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "hwy",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Meridian Highway culverts, 552 Avenue at 852 Road",
+    "place": "north of Nebraska Highway 13, Pierce County, NE",
+    "year": 1925,
+    "source": "Wikimedia Commons (Category:Meridian Highway culverts (Pierce County, Nebraska))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Meridian_Highway_culverts_(Pierce_County,_Nebraska)",
+    "photos": [
+      "commons_meridian_01.jpg",
+      "commons_meridian_02.jpg",
+      "commons_meridian_03.jpg",
+      "commons_meridian_04.jpg",
+      "commons_meridian_05.jpg",
+      "commons_meridian_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Early state-highway reinforced-concrete culverts on the old Meridian Highway alignment: a twin-barrel concrete box/arch culvert with a plain concrete headwall and short flared wings, and single-barrel culverts whose headwalls end in tall square concrete pillars (highway marker posts) at the road edge. Shown in winter snow on a rural road junction with farm buildings and a feedlot nearby.",
+  "traits": {
+    "bridge_type": "box_culvert",
+    "spans": 2,
+    "year": 1925,
+    "year_note": "estimated, 1920s highway era",
+    "railing": "open_parapet",
+    "railing_detail": "concrete headwall with tall square end pillars",
+    "span_ft": 4,
+    "width_ft": 30,
+    "height_ft": 4,
+    "material": "reinforced concrete",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "pillar lettering: STATE HWY",
+    "sign": "none"
+  }
+}

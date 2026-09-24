@@ -1,0 +1,28 @@
+{
+  "id": "FARM-16-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "SDSU experimental rammed-earth machine shed (building 0606)",
+    "place": "Brookings, Brookings County, SD",
+    "year": 1940,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:SDSU_rammed-earth_machine_shed_from_SE_1.jpg",
+    "photos": ["commons_SDSU_rammed-earth_machine_shed_from_SE_1.jpg", "commons_SDSU_rammed-earth_machine_shed_from_NE_1.jpg"],
+    "drawings": []
+  },
+  "brief": "Long one-storey machine shed about 30 ft by 80 ft with thick rammed-earth walls finished in cream stucco, the wall surface divided into shallow panels by faint vertical form joints; a few small multi-pane wood windows set deep in the walls and a white sliding track door at one end of the long side. Steep gable roof of red asphalt shingles, the gable ends sheathed in weathered grey wood siding. Built as an experiment in cheap farm building; mown grass around, a green utility cabinet at the corner.",
+  "traits": {
+    "type": "frame_machine_shed",
+    "w_ft": 80,
+    "d_ft": 30,
+    "height_ft": 20,
+    "walls": "stucco",
+    "roof": {"type": "gable", "pitch_deg": 38, "material": "asphalt_shingle"},
+    "doors": "sliding",
+    "colors": {"body": "#e2dccb", "trim": "#f2f2ee", "accent": "#8c8c88", "roof": "#8a2e2c"},
+    "condition": "worn"
+  },
+  "names": {"family": "Engstrom"}
+}

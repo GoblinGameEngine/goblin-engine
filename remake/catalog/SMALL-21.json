@@ -1,0 +1,47 @@
+{
+  "id": "SMALL-21",
+  "settlement": "Fenwick",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 6.0,
+    "over": "Tanner Creek"
+  },
+  "example": {
+    "title": "Jowler Creek Bridge, Interurban Road over Jowler Creek",
+    "place": "Camden Point vicinity, Platte County, MO",
+    "year": 1913,
+    "source": "HAER MO-92",
+    "url": "https://www.loc.gov/item/mo1807/",
+    "photos": [
+      "loc_mo1807_photos_197280pv.jpg",
+      "loc_mo1807_photos_197282pv.jpg",
+      "loc_mo1807_photos_197285pv.jpg",
+      "loc_mo1807_photos_197287pv.jpg",
+      "loc_mo1807_photos_197290pv.jpg",
+      "loc_mo1807_photos_197292pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Two-span filled-spandrel reinforced-concrete arch of the Luten design, built 1912-13 for an electric interurban railway and later turned into a road: two flat segmental arches of 47.5 ft each (95 ft overall) on a central pier, 18.1 ft wide with a 16.4 ft roadway, 23 ft above a wooded creek bottom. Plain board-formed spandrel walls, projecting coping and low solid concrete parapets; striped hazard markers at the ends of a gravel road, farmstead nearby.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "spans": 2,
+    "model_spans": 1,
+    "year": 1913,
+    "railing": "open_parapet",
+    "railing_detail": "low solid concrete parapet",
+    "span_ft": 47.5,
+    "overall_ft": 95,
+    "width_ft": 18.1,
+    "roadway_ft": 16.4,
+    "height_ft": 23,
+    "arch_form": "filled spandrel, flat segmental",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "1913",
+    "sign": "TANNER CREEK"
+  }
+}

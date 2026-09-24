@@ -1,0 +1,41 @@
+{
+ "structure": "FARM-17-shed",
+ "files": [
+  {
+   "file": "loc_ne0065_photos_103417pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0065/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ne/ne0000/ne0065/photos/103417pv.jpg",
+   "title": "Hans Ehlers Farm, Shed, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0065_photos_103418pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0065/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ne/ne0000/ne0065/photos/103418pv.jpg",
+   "title": "Hans Ehlers Farm, Shed, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0065_data_ne0065data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0065/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0065/data/ne0065data.pdf",
+   "title": "Hans Ehlers Farm, Shed, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ne0065_data_ne0065cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ne0065/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ne/ne0000/ne0065/data/ne0065cap.pdf",
+   "title": "Hans Ehlers Farm, Shed, F Street, Papillon 18 Damsite, Millard, Douglas County, NE",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

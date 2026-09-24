@@ -1,0 +1,28 @@
+{
+  "id": "FARM-17-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Farmstead silo (\"Checkered Silo\"), Washington Township",
+    "place": "Washington Township, Erie County, PA",
+    "year": 1930,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Flickr_-_Nicholas_T_-_Checkered_Silo.jpg",
+    "photos": ["commons_Flickr_-_Nicholas_T_-_Checkered_Silo.jpg"],
+    "drawings": []
+  },
+  "brief": "Concrete stave silo about 14 ft across and 45 ft high whose staves were painted in alternating white and brick-red checks, now chalky and rust-streaked so the pattern reads as a patchy red-and-white checkerboard, bound with steel hoops. Topped by a bright galvanized steel dome roof with a small hatch; a white vertical pipe climbs the front and a small white block silo room stands at its foot. It rises against the gable of a weathered grey plank barn with a green roof.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 14,
+    "height_ft": 45,
+    "roof": "dome",
+    "chute": true,
+    "hoops": true,
+    "checkered": true,
+    "colors": {"body": "#d8d4cc", "trim": "#a8442e", "accent": "#a8442e", "roof": "#c9ccce"},
+    "condition": "worn"
+  },
+  "names": {"family": "Pfannenstiel"}
+}

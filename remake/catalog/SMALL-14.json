@@ -1,0 +1,45 @@
+{
+  "id": "SMALL-14",
+  "settlement": "rural (near Tamarack)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 3.0,
+    "over": "Heron Creek"
+  },
+  "example": {
+    "title": "Rattlesnake Creek Bridge, County Road 22 over Rattlesnake Creek",
+    "place": "northwest of Bancroft, Cuming County, NE",
+    "year": 1903,
+    "source": "Wikimedia Commons (Category:Rattlesnake Creek Bridge (Cuming County, Nebraska))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Rattlesnake_Creek_Bridge_(Cuming_County,_Nebraska)",
+    "photos": [
+      "commons_rattlesnake_01.jpg",
+      "commons_rattlesnake_02.jpg",
+      "commons_rattlesnake_03.jpg",
+      "commons_rattlesnake_04.jpg",
+      "commons_rattlesnake_05.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "NRHP-listed pinned Pratt half-hip pony truss of 1903 on a minimum-maintenance gravel county road: latticed channel top chord, eyebar diagonals, a lattice railing panel with a cast 'CAPACITY 10 TONS' plate in it, steel floor beams and a plank deck, on steel pile piers with X-bracing and timber-planked abutments. Grassy, eroded creek banks and cottonwoods in open farmland.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt half-hip",
+    "spans": 1,
+    "year": 1903,
+    "railing": "lattice",
+    "span_ft": 60,
+    "width_ft": 14,
+    "height_ft": 7,
+    "panels": 5,
+    "abutments": "steel pile bents with timber lagging",
+    "deck": "timber plank",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "railing plate: CAPACITY 10 TONS",
+    "sign": "HERON CREEK"
+  }
+}

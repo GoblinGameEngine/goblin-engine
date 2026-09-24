@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-46",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 5.2,
+    "over": "Sauk Creek"
+  },
+  "example": {
+    "title": "Cohas Brook Bridge, NH Route 28 (South Willow Street) over Cohas Brook",
+    "place": "Manchester, Hillsborough County, NH",
+    "year": 1929,
+    "source": "HAER NH-9",
+    "url": "https://www.loc.gov/item/nh0181/",
+    "photos": [
+      "loc_nh0181_photos_105027pv.jpg",
+      "loc_nh0181_photos_105030pv.jpg",
+      "loc_nh0181_photos_105033pv.jpg",
+      "loc_nh0181_photos_105037pv.jpg",
+      "loc_nh0181_photos_105040pv.jpg",
+      "loc_nh0181_photos_105043pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Open-spandrel reinforced-concrete parabolic arch of 1929 on a city-edge state highway: twin arch ribs 6 ft wide at 20 ft centres, 61 ft 4 in main span with a 16.7 ft rise, carrying the deck on slender spandrel columns, plus concrete slab approach spans (139 ft 8 in overall), 27 ft 4 in wide with a 24 ft roadway. Ribs spring from abutments braced by a horizontal concrete shear panel; paneled concrete railing with square posts. Wooded ravine with birches and rip-rapped banks under power lines; original construction drawings are among the photos.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "arch_system": "open spandrel twin ribs",
+    "spans": 4,
+    "model_spans": 1,
+    "year": 1929,
+    "railing": "open_parapet",
+    "span_ft": 61.3,
+    "overall_ft": 139.7,
+    "width_ft": 27.3,
+    "roadway_ft": 24,
+    "height_ft": 23,
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "SAUK CREEK · CITY OF KESSLER · 1929",
+    "sign": "SAUK CREEK"
+  }
+}

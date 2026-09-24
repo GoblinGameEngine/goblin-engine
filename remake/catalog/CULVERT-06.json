@@ -1,0 +1,44 @@
+{
+  "id": "CULVERT-06",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Middletown Bridge, old Michigan Road over Conn's Creek",
+    "place": "northwest of Middletown, Liberty Township, Shelby County, IN",
+    "year": 1903,
+    "source": "Wikimedia Commons (Category:Middletown Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Middletown_Bridge",
+    "photos": [
+      "commons_middletown_01.jpg",
+      "commons_middletown_02.jpg",
+      "commons_middletown_03.jpg",
+      "commons_middletown_04.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Multi-arch rough-stone bridge of 1903 on the old alignment of an early state road, now a quiet one-lane gravel lane: a row of small semicircular arches (four to five) in coursed limestone rubble walls, capped by a low solid stone parapet with flat coping on each side, W-beam guardrail and black-and-white hazard boards added at the ends. Creek in scrub woodland with houses nearby.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 4,
+    "model_spans": 1,
+    "year": 1903,
+    "railing": "open_parapet",
+    "railing_detail": "low solid rubble parapet with coping",
+    "span_ft": 8,
+    "width_ft": 18,
+    "height_ft": 7,
+    "masonry": "coursed limestone rubble",
+    "approach_rail": "guardrail",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

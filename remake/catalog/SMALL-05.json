@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-05",
+  "settlement": "rural (near Kessler)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 5.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "State Bridge No. 424, Wiggins Mill Road over the Wiggins Mill Pond outlet",
+    "place": "Townsend vicinity, New Castle County, DE",
+    "year": 1884,
+    "source": "HAER DE-48",
+    "url": "https://www.loc.gov/item/de0461/",
+    "photos": [
+      "loc_de0461_photos_384088pv.jpg",
+      "loc_de0461_photos_384090pv.jpg",
+      "loc_de0461_photos_384092pv.jpg",
+      "loc_de0461_photos_384093pv.jpg",
+      "loc_de0461_photos_384095pv.jpg",
+      "loc_de0461_photos_384097pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "One-lane riveted iron lattice pony truss, 34 ft long and 14 ft 8 in wide on a 15-degree skew, at an old mill seat: the low trusses are close-latticed iron and double as the railing; the plank deck of 4x8s rests on a pair of iron girders and doubled 4x10 timber beams. Semi-coursed rubble abutments and flared wing walls with big cut-granite coping slabs; a plaque in the coping reads the rebuild year and the county commissioner. Gravel farm road between fields and a mill pond outlet.",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "riveted lattice",
+    "spans": 1,
+    "year": 1884,
+    "railing": "lattice",
+    "span_ft": 34,
+    "width_ft": 14.7,
+    "height_ft": 5,
+    "skew_deg": 15,
+    "abutments": "rubble masonry with granite coping",
+    "deck": "timber plank on iron girders",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "coping plaque: REBUILT 1884 · H. W. MOSELEY, COUNTY COMM.",
+    "sign": "FARM DITCH"
+  }
+}

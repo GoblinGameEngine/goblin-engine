@@ -1,0 +1,44 @@
+{
+  "id": "CULVERT-18",
+  "settlement": "rural (near Fenwick)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "county",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "North Rock Creek Masonry Arch Bridge",
+    "place": "Mitchell County, KS",
+    "year": 1935,
+    "source": "Wikimedia Commons (Category:North Rock Creek Masonry Arch Bridge)",
+    "url": "https://commons.wikimedia.org/wiki/Category:North_Rock_Creek_Masonry_Arch_Bridge",
+    "photos": [
+      "commons_northrock_01.jpg",
+      "commons_northrock_02.jpg",
+      "commons_northrock_03.jpg",
+      "commons_northrock_05.jpg",
+      "commons_northrock_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Double stone arch county-road bridge-culvert of local limestone (date unknown, by comparison probably 1930s): smooth-faced arch stones each with a rusticated keystone, rock-faced blocks in the walls, stone foundations, and a low solid parapet. Set in a creek bottom of cottonwoods between pasture and cropland; a wooden cross stands on the roadside nearby.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 2,
+    "year": 1935,
+    "railing": "open_parapet",
+    "railing_detail": "low solid stone parapet",
+    "span_ft": 10,
+    "width_ft": 22,
+    "height_ft": 7,
+    "masonry": "limestone, smooth voussoirs with rusticated keystones",
+    "condition": "worn",
+    "year_note": "unknown, estimated 1930s"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

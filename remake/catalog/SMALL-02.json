@@ -1,0 +1,45 @@
+{
+  "id": "SMALL-02",
+  "settlement": "rural (near Dunmore Crossing)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 0.0,
+    "over": "Lost Creek"
+  },
+  "example": {
+    "title": "Georgia DOT Bridge No. 151-00144-X-00055S, Springdale Road over Little Cotton Indian Creek",
+    "place": "Henry County, GA",
+    "year": 1930,
+    "source": "HAER GA-85",
+    "url": "https://www.loc.gov/item/ga0659/",
+    "photos": [
+      "loc_ga0659_photos_184157pv.jpg",
+      "loc_ga0659_photos_184158pv.jpg",
+      "loc_ga0659_photos_184159pv.jpg",
+      "loc_ga0659_photos_184160pv.jpg",
+      "loc_ga0659_photos_184161pv.jpg",
+      "loc_ga0659_photos_184162pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Small riveted steel Warren pony truss with verticals, 1930, a single 41 ft span 18 ft wide, on masonry rubble abutments with steel intermediate piles and caps, steel beams and a timber plank deck. Low trusses with a plain angle top rail; carries a gravel county road through pine woods and pasture over a narrow muddy creek. (Inventory span is 0 m, so this sits right beside SMALL-01 on the same creek; model it as the second, shorter crossing.)",
+  "traits": {
+    "bridge_type": "warren_pony",
+    "spans": 1,
+    "year": 1930,
+    "railing": "pipe_rail",
+    "span_ft": 41,
+    "width_ft": 18,
+    "height_ft": 6,
+    "panels": 4,
+    "abutments": "rubble masonry with steel pile bents",
+    "deck": "timber plank",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "COUNTY BRIDGE No. 144 · 1930",
+    "sign": "LOST CREEK"
+  }
+}

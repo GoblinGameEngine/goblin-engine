@@ -1,0 +1,27 @@
+{
+  "id": "FARM-18-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Granite Hill Plantation, Silo (HABS GA-2396-B)",
+    "place": "Sparta vicinity, Hancock County, GA",
+    "year": 1915,
+    "source": "HABS GA-2396-B",
+    "url": "https://www.loc.gov/item/ga1006/",
+    "photos": ["loc_ga1006_photos_577088pv.jpg", "loc_ga1006_photos_577089pv.jpg", "loc_ga1006_photos_577090pv.jpg", "loc_ga1006_photos_577091pv.jpg", "loc_ga1006_photos_577092pv.jpg"],
+    "drawings": []
+  },
+  "brief": "Squat masonry silo of the early 1900s dairy era, about 16 ft across and 30 ft high, built of rough granite rubble with a thin weathered stucco skin, roofless, with a stack of rectangular door openings one above another up one side (a few rotted door boards left) and a small rim ledge at the top. Long abandoned: saplings and brush have grown up around it so it stands in a young woodlot at the edge of the farmyard. (Stone masonry; nearest vocabulary type is brick.)",
+  "traits": {
+    "type": "brick",
+    "diameter_ft": 16,
+    "height_ft": 30,
+    "roof": "none",
+    "chute": false,
+    "hoops": false,
+    "colors": {"body": "#a8a296", "trim": "#5e5a52", "accent": "#5e5a52", "roof": "#a8a296"},
+    "condition": "shabby"
+  },
+  "names": {"family": "Soderquist"}
+}

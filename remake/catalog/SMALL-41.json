@@ -1,0 +1,42 @@
+{
+  "id": "SMALL-41",
+  "settlement": "Bellhaven",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 2.1,
+    "over": "Cole Creek"
+  },
+  "example": {
+    "title": "McFarland Gap Road Culvert",
+    "place": "Chickamauga and Chattanooga National Military Park, Fort Oglethorpe, Catoosa County, GA",
+    "year": 1863,
+    "source": "HAER GA-88-A",
+    "url": "https://www.loc.gov/item/ga0736/",
+    "photos": [
+      "loc_ga0736_photos_184178pv.jpg",
+      "loc_ga0736_photos_184179pv.jpg",
+      "loc_ga0736_photos_184180pv.jpg",
+      "loc_ga0736_photos_184181pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Low twin-barrel masonry culvert under a two-lane paved road: two small segmental arches of about 5 ft span side by side in a long, straight headwall of squared, dressed stone blocks with a flat coping just above road level, and short wing walls. No railing: the coping is the only edge. Dry, leaf-filled channel in open hardwood forest. The structure dates from the road of 1863 and was refaced when the park roads were improved.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 2,
+    "year": 1863,
+    "railing": "open_parapet",
+    "railing_detail": "flat stone coping at road level",
+    "span_ft": 5,
+    "width_ft": 30,
+    "height_ft": 4,
+    "masonry": "squared ashlar headwall",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "COLE CREEK"
+  }
+}

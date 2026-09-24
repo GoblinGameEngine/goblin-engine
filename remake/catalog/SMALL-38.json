@@ -1,0 +1,45 @@
+{
+  "id": "SMALL-38",
+  "settlement": "Fenwick",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "hwy",
+    "span_m": 6.2,
+    "over": "Tanner Creek"
+  },
+  "example": {
+    "title": "Curry Creek Bridge (GDOT Bridge 157/00015/012.80N), State Route 15 over Curry Creek",
+    "place": "Jefferson, Jackson County, GA",
+    "year": 1926,
+    "source": "HAER GA-67",
+    "url": "https://www.loc.gov/item/ga0552/",
+    "photos": [
+      "loc_ga0552_photos_057456pv.jpg",
+      "loc_ga0552_photos_057458pv.jpg",
+      "loc_ga0552_photos_057459pv.jpg",
+      "loc_ga0552_photos_057461pv.jpg",
+      "loc_ga0552_photos_057462pv.jpg",
+      "loc_ga0552_photos_057464pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "State-highway filled-spandrel (\"solid\") reinforced-concrete arch of 1926 at the edge of a small town: three segmental arches of increasing size toward the middle on wide piers, plain solid spandrel walls, a projecting deck band and a concrete balustrade of short square balusters between panelled posts, with W-beam guardrail on the approaches and route shields at the ends. Two-lane highway crossing a grassy creek bottom with scattered trees; no builder's plate.",
+  "traits": {
+    "bridge_type": "concrete_arch",
+    "spans": 3,
+    "model_spans": 1,
+    "year": 1926,
+    "railing": "concrete_balustrade",
+    "span_ft": 40,
+    "width_ft": 26,
+    "height_ft": 14,
+    "arch_form": "filled spandrel, segmental",
+    "approach_rail": "guardrail",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "STATE HIGHWAY DEPT · 1926",
+    "sign": "TANNER CREEK"
+  }
+}

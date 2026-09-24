@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-03",
+  "settlement": "rural (near Harrow Falls)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 3.0,
+    "over": "Cole Creek"
+  },
+  "example": {
+    "title": "Bridge on PWF Road over Sicily Creek (abandoned)",
+    "place": "west of SW 32 Rd, rural Gage County, NE",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Sicily Creek PWF Rd bridge (Gage County, Nebraska))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Sicily_Creek_PWF_Rd_bridge_(Gage_County,_Nebraska)",
+    "photos": [
+      "commons_sicilypwf_02.jpg",
+      "commons_sicilypwf_03.jpg",
+      "commons_sicilypwf_04.jpg",
+      "commons_sicilypwf_05.jpg",
+      "commons_sicilypwf_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Small riveted steel Pratt pony truss on an abandoned section of a gravel section-line road: channel end posts and top chord with riveted gusset plates at the hips, angle verticals and diagonals, steel floor beams under a transverse plank deck with longitudinal running planks, on timber/steel pile abutments. Now derelict, deck planks rotting and the whole span swallowed by trees and vines over a muddy creek. Model it in service: plank deck, low truss as the only rail. (Date not given; early 20th century.)",
+  "traits": {
+    "bridge_type": "pony_truss",
+    "truss_variant": "pratt",
+    "spans": 1,
+    "year": 1915,
+    "year_note": "estimated",
+    "railing": "pipe_rail",
+    "railing_detail": "no separate rail; low truss",
+    "span_ft": 40,
+    "width_ft": 14,
+    "height_ft": 6,
+    "panels": 4,
+    "deck": "timber plank with running boards",
+    "condition": "shabby"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "COLE CREEK"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "CULVERT-09",
+  "settlement": "rural (near Fenwick)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Culvert on county road 522 Avenue between 868 and 869 Roads",
+    "place": "Antelope County, NE",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Culvert on 522 Ave (Antelope County, Nebraska))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Culvert_on_522_Ave_(Antelope_County,_Nebraska)",
+    "photos": [
+      "commons_ave522_01.jpg",
+      "commons_ave522_02.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single corrugated galvanized-steel pipe-arch culvert (about 4 ft span) under a gravel county road, its mitred end projecting from the grassy embankment with no headwall, in a small wooded draw with a barbed-wire fence and a delineator post. Only two photos exist (east and west ends).",
+  "traits": {
+    "bridge_type": "pipe_culvert",
+    "spans": 1,
+    "year": 1980,
+    "year_note": "estimated",
+    "railing": "open_parapet",
+    "railing_detail": "none; delineator post",
+    "span_ft": 4,
+    "width_ft": 30,
+    "height_ft": 3,
+    "material": "corrugated galvanized steel pipe-arch",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

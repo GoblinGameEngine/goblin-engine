@@ -1,0 +1,43 @@
+{
+  "id": "SMALL-12",
+  "settlement": "rural (near Pruett)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "gravel",
+    "span_m": 0.0,
+    "over": "Deer Creek"
+  },
+  "example": {
+    "title": "Bridges carrying SW 45th Road over Sicily Creek and a small tributary",
+    "place": "rural Gage County, NE",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Sicily Creek SW 45th Rd bridges (Gage County, Nebraska))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Sicily_Creek_SW_45th_Rd_bridges_(Gage_County,_Nebraska)",
+    "photos": [
+      "commons_sicily45_01.jpg",
+      "commons_sicily45_02.jpg",
+      "commons_sicily45_03.jpg",
+      "commons_sicily45_04.jpg",
+      "commons_sicily45_05.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "A pair of short steel-stringer county bridges a few yards apart where a gravel road crosses a creek and, just beyond, a small tributary: rolled steel I-beam stringers painted red-brown on concrete abutments, a timber or concrete deck under gravel, and simple steel guardrail on posts along both edges, with hazard markers at the corners. Flat cropland with tree lines along the creeks. Fits SMALL-12/SMALL-13, which also sit 5 m apart on Deer Creek; this record is the shorter of the two.",
+  "traits": {
+    "bridge_type": "steel_stringer",
+    "spans": 1,
+    "year": 1950,
+    "year_note": "estimated",
+    "railing": "guardrail",
+    "span_ft": 20,
+    "width_ft": 20,
+    "height_ft": 6,
+    "deck": "timber deck under gravel",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "DEER CREEK"
+  }
+}

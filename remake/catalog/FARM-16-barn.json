@@ -1,0 +1,29 @@
+{
+  "id": "FARM-16-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Nelson Farm, barn",
+    "place": "Merrick County, NE",
+    "year": 1915,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Nelson_Farm_(Merrick_County,_Nebraska)_barn_from_SE_1.JPG",
+    "photos": ["commons_Nelson_Farm_Merrick_County_Nebraska_barn_from_SE_1.JPG", "commons_Nelson_Farm_Merrick_County_Nebraska_barn_from_SW_1.JPG"],
+    "drawings": []
+  },
+  "brief": "Big, immaculate gambrel dairy barn about 44 ft wide and 90 ft long, painted bright barn red with white trim: rows of small white-cased six-pane stall windows and several white-framed doors along the ground floor, a large hay door outlined in white under the gable peak with a small hay hood, and white outlined square panels on the gable. Weathered grey shingle gambrel roof with two metal ventilator cupolas with pointed caps and a weathervane. A concrete stave silo, corrugated grain bins and an steel-bladed windmill stand behind.",
+  "traits": {
+    "type": "gambrel_dairy",
+    "w_ft": 44,
+    "d_ft": 90,
+    "height_ft": 38,
+    "walls": "drop_siding",
+    "roof": {"type": "gambrel", "pitch_deg": 58, "material": "wood_shingle"},
+    "cupolas": 2,
+    "hay_hood": true,
+    "colors": {"body": "#b0232b", "trim": "#f6f6f2", "accent": "#f6f6f2", "roof": "#7c776e"},
+    "condition": "kept"
+  },
+  "names": {"family": "Engstrom", "sign": "ENGSTROM DAIRY EST. 1886"}
+}

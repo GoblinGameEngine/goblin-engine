@@ -1,0 +1,28 @@
+{
+  "id": "FARM-18-shed",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Brookings County Museum, farm equipment building",
+    "place": "Volga, Brookings County, SD",
+    "year": 1975,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Brookings_County_Machine_Shed_01_(549737084).jpg",
+    "photos": ["commons_Brookings_County_Machine_Shed_01_549737084_.jpg"],
+    "drawings": []
+  },
+  "brief": "Post-frame steel machine shed about 36 ft wide and 48 ft deep, sheathed in barn-red ribbed steel with white corner and eave trim and a low gable roof of galvanized steel. A big white ribbed-steel sliding door fills most of the gable end, beside a white steel man door; a newer lean-to runs down one long side. On the farm it holds the tractor and combine head; the example carries a museum sign board, which here would be a plain farm name board. An old iron hay-rack frame lies in the grass beside it.",
+  "traits": {
+    "type": "pole_shed",
+    "w_ft": 36,
+    "d_ft": 48,
+    "height_ft": 18,
+    "walls": "metal",
+    "roof": {"type": "gable", "pitch_deg": 18, "material": "metal"},
+    "doors": "sliding",
+    "colors": {"body": "#a3252b", "trim": "#f2f2ee", "accent": "#e6e8e8", "roof": "#c4c8ca"},
+    "condition": "kept"
+  },
+  "names": {"family": "Soderquist", "board": "SODERQUIST"}
+}

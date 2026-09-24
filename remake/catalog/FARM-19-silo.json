@@ -1,0 +1,28 @@
+{
+  "id": "FARM-19-silo",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "South Dakota farm: red barn with tall silo",
+    "place": "South Dakota",
+    "year": 1950,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Ic1513_(2471487232).jpg",
+    "photos": ["commons_Ic1513_2471487232_.jpg"],
+    "drawings": []
+  },
+  "brief": "Tall slender concrete stave silo, about 16 ft across and 65 ft high, the staves weathered grey-brown with a band of white-painted checker staves around the top, capped by a bright white hemispherical steel dome. A shorter, older stave silo with a grey dome stands at its foot, both behind a red gambrel barn with white trim; a red gable-front granary with a white-framed loft window and a mown green farmyard in front.",
+  "traits": {
+    "type": "concrete_stave",
+    "diameter_ft": 16,
+    "height_ft": 65,
+    "roof": "dome",
+    "chute": true,
+    "hoops": true,
+    "checkered_top": true,
+    "colors": {"body": "#8e8676", "trim": "#f2f2ee", "accent": "#f2f2ee", "roof": "#f4f4f2"},
+    "condition": "kept"
+  },
+  "names": {"family": "Haverkamp"}
+}

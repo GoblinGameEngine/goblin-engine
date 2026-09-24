@@ -1,0 +1,29 @@
+{
+ "structure": "CULVERT-09",
+ "files": [
+  {
+   "file": "commons_ave522_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Crossing_on_522_Av_N_of_868_Rd_-_E_side.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Crossing_on_522_Av_N_of_868_Rd_-_E_side.JPG/1920px-Crossing_on_522_Av_N_of_868_Rd_-_E_side.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Crossing on 522 Av N of 868 Rd - E side.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Ammodramus",
+   "caption": "Crossing of unnamed stream on county road 522 Avenue between 868 and 869 Roads in Antelope County, Nebraska; east end of culvert.  The stream was formerly crossed by a kingpost pony truss bridge built in 1911, designated NEHBS No. AP00-252, which is listed in the National Register of Historic Places.  No such bridge is now visible in the area.",
+   "category": "Category:Culvert on 522 Ave (Antelope County, Nebraska)"
+  },
+  {
+   "file": "commons_ave522_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Crossing_on_522_Av_N_of_868_Rd_-_W_side.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Crossing_on_522_Av_N_of_868_Rd_-_W_side.JPG/1920px-Crossing_on_522_Av_N_of_868_Rd_-_W_side.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Crossing on 522 Av N of 868 Rd - W side.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Ammodramus",
+   "caption": "Crossing of unnamed stream on county road 522 Avenue between 868 and 869 Roads in Antelope County, Nebraska; west end of culvert.  The stream was formerly crossed by a kingpost pony truss bridge built in 1911, designated NEHBS No. AP00-252, which is listed in the National Register of Historic Places.  No such bridge is now visible in the area.",
+   "category": "Category:Culvert on 522 Ave (Antelope County, Nebraska)"
+  }
+ ]
+}

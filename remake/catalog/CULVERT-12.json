@@ -1,0 +1,44 @@
+{
+  "id": "CULVERT-12",
+  "settlement": "rural (near Cedar Ford)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Beaver Creek bridge, county road NE 50 Ave over upper Beaver Creek",
+    "place": "south of 230 Rd (Russell County line), Barton County, KS",
+    "year": 1941,
+    "source": "Wikimedia Commons (Category:Beaver Creek bridge, Barton County rd NE 50 Ave)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Beaver_Creek_bridge,_Barton_County_rd_NE_50_Ave",
+    "photos": [
+      "commons_beaverck_01.jpg",
+      "commons_beaverck_02.jpg",
+      "commons_beaverck_03.jpg",
+      "commons_beaverck_04.jpg",
+      "commons_beaverck_05.jpg",
+      "commons_beaverck_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single semicircular WPA stone arch culvert of 1941 under a gravel county road on the open plains: rock-faced buff limestone blocks in even courses, rough-faced voussoirs with a smooth keystone cut 'WPA' on one face and '1941' on the other, and a low parapet a few courses high capped with a smooth coping, stepping down at the ends. A barbed-wire fence runs up to the headwall; dry grassy channel.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1941,
+    "railing": "open_parapet",
+    "railing_detail": "low solid stone parapet with coping",
+    "span_ft": 7,
+    "width_ft": 24,
+    "height_ft": 7,
+    "masonry": "rock-faced limestone ashlar",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "keystones: WPA / 1941",
+    "sign": "none"
+  }
+}

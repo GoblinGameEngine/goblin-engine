@@ -1,0 +1,43 @@
+{
+  "id": "SMALL-23",
+  "settlement": "Tamarack",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 2.0,
+    "over": "Heron Creek"
+  },
+  "example": {
+    "title": "Grant Road Bridge, Grant Road over Broad Branch Creek",
+    "place": "Rock Creek Park, Washington, DC",
+    "year": 1898,
+    "source": "HAER DC-17",
+    "url": "https://www.loc.gov/item/dc0630/",
+    "photos": [
+      "loc_dc0630_photos_030242pv.jpg",
+      "loc_dc0630_photos_030243pv.jpg",
+      "loc_dc0630_photos_030244pv.jpg",
+      "loc_dc0630_photos_030245pv.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Small single-arch rubble-stone road bridge of about 1898: a semicircular barrel of roughly 8-10 ft span with a ring of long rough-split voussoirs set in random rubble spandrel and wing walls of the same grey stone, topped by a low rubble parapet with no rail. Carries a narrow two-lane asphalt street through steep wooded ground over a boulder-strewn stream. (Span estimated from photos.)",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1898,
+    "railing": "open_parapet",
+    "railing_detail": "low solid rubble parapet",
+    "span_ft": 9,
+    "width_ft": 24,
+    "height_ft": 8,
+    "arch_form": "semicircular",
+    "masonry": "random rubble, split-stone voussoirs",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "HERON CREEK"
+  }
+}

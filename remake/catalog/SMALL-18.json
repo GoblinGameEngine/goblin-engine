@@ -1,0 +1,46 @@
+{
+  "id": "SMALL-18",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 6.0,
+    "over": "Sauk Creek"
+  },
+  "example": {
+    "title": "Shepard Bridge, old Michigan Road",
+    "place": "north of U.S. 421, Indiana",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Shepard Bridge (Indiana))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Shepard_Bridge_(Indiana)",
+    "photos": [
+      "commons_shepard_01.jpg",
+      "commons_shepard_02.jpg",
+      "commons_shepard_03.jpg",
+      "commons_shepard_04.jpg",
+      "commons_shepard_05.jpg",
+      "commons_shepard_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Two-arch stone bridge on the old alignment of an early state road: two segmental arches of coursed grey limestone with rock-faced voussoir rings, a central pier with cutwater, and a solid rubble-stone parapet with flat coping along both sides that continues as low wing walls along the lane, with a striped hazard marker at one end. Narrow paved road in rolling, well-kept grounds with a tree-lined creek. (Construction date not in the sources; late 19th / early 20th century.)",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 2,
+    "model_spans": 1,
+    "year": 1900,
+    "year_note": "estimated",
+    "railing": "open_parapet",
+    "railing_detail": "solid coursed-stone parapet with coping",
+    "span_ft": 18,
+    "width_ft": 20,
+    "height_ft": 9,
+    "masonry": "coursed limestone, rock-faced voussoirs",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "SAUK CREEK"
+  }
+}

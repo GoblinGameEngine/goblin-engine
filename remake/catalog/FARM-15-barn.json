@@ -1,0 +1,29 @@
+{
+  "id": "FARM-15-barn",
+  "settlement": "rural farmstead",
+  "kind": "farm",
+  "lot": {"w": 40.0, "d": 40.0},
+  "example": {
+    "title": "Keystone Ranch, sheep and hog barn",
+    "place": "Marion County, KS",
+    "year": 1885,
+    "source": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Keystone_Ranch_Marion_Co_KS_Sheep_Hog_Barn.jpg",
+    "photos": ["commons_Keystone_Ranch_Marion_Co_KS_Sheep_Hog_Barn.jpg", "commons_Keystone_Ranch_Marion_Co_KS_Sheep_Hog_Barn_south_view.jpg"],
+    "drawings": []
+  },
+  "brief": "Very long, low one-storey stock barn for sheep and hogs, about 36 ft wide and 180 ft long, of rough-coursed pale limestone with a plain gable end holding one narrow plank door and a tiny vent, a row of small square pen windows along the side. A shallow galvanized metal gable roof runs the whole length with a line of small round metal ridge vents, and a horse-and-rider weathervane on a rod over the gable. A dry-laid stone corral wall juts out from the side; gravel ranch lane and short prairie grass in front. (Long livestock shed barn; nearest vocabulary type is english_three_bay.)",
+  "traits": {
+    "type": "english_three_bay",
+    "w_ft": 36,
+    "d_ft": 180,
+    "height_ft": 20,
+    "walls": "stone",
+    "roof": {"type": "gable", "pitch_deg": 24, "material": "metal"},
+    "roof_vents": 9,
+    "weathervane": true,
+    "colors": {"body": "#c9bfa6", "trim": "#5a4e40", "accent": "#5a4e40", "roof": "#a9adb0"},
+    "condition": "kept"
+  },
+  "names": {"family": "Tremaine", "sign": "TREMAINE STOCK FARM EST. 1873"}
+}

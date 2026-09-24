@@ -1,0 +1,40 @@
+{
+  "id": "SMALL-31",
+  "settlement": "Haskins Corner",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 2.4,
+    "over": "Brush Creek"
+  },
+  "example": {
+    "title": "Box culvert carrying Spring Creek under 458 Avenue",
+    "place": "northeast of Wakonda, Clay County, SD",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Spring Creek bridge, 458 Avenue (Clay County, South Dakota))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Spring_Creek_bridge,_458_Avenue_(Clay_County,_South_Dakota)",
+    "photos": [
+      "commons_springck458_04.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Modern twin-cell precast/cast reinforced-concrete box culvert under a paved county road: two square cells side by side with a plain concrete headwall and flared concrete wing walls with sloped tops, delineator posts at the road edge. Shown in winter snow in open farm country. Fits a growing exurban street crossing (only one photo was retrievable).",
+  "traits": {
+    "bridge_type": "box_culvert",
+    "spans": 2,
+    "year": 1995,
+    "year_note": "estimated, modern",
+    "railing": "open_parapet",
+    "railing_detail": "none; delineator posts",
+    "span_ft": 8,
+    "width_ft": 40,
+    "height_ft": 6,
+    "material": "reinforced concrete",
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "BRUSH CREEK"
+  }
+}

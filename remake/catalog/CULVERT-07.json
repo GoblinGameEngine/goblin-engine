@@ -1,0 +1,42 @@
+{
+  "id": "CULVERT-07",
+  "settlement": "rural (near Marlowe)",
+  "kind": "crossing",
+  "crossing": {
+    "type": "culvert",
+    "road_class": "gravel",
+    "span_m": 2.0,
+    "over": "farm ditch"
+  },
+  "example": {
+    "title": "Old Enon Road Stone Arch Culvert, Rocky Point Road over Mud Run",
+    "place": "Mad River Township (east of Enon), Clark County, OH",
+    "year": null,
+    "source": "Wikimedia Commons (Category:Old Enon Road Stone Arch Culvert)",
+    "url": "https://commons.wikimedia.org/wiki/Category:Old_Enon_Road_Stone_Arch_Culvert",
+    "photos": [
+      "commons_enon_01.jpg",
+      "commons_enon_02.jpg",
+      "commons_enon_03.jpg",
+      "commons_enon_04.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Single semicircular stone arch culvert of perhaps 6 ft span through a deep rubble-and-block headwall, carrying a narrow one-lane country road over a small wooded run. Rough-coursed grey limestone with a squared voussoir ring, stepped wing walls; the parapets are replaced by W-beam guardrail on timber posts with striped end markers, and a weight-limit sign stands at the approach. 19th-century masonry (date not given in the sources); shown in winter snow among bare trees.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1880,
+    "year_note": "estimated, 19th century",
+    "railing": "guardrail",
+    "span_ft": 6,
+    "width_ft": 20,
+    "height_ft": 7,
+    "masonry": "coursed limestone rubble, squared voussoirs",
+    "condition": "worn"
+  },
+  "names": {
+    "plate": "none",
+    "sign": "none"
+  }
+}

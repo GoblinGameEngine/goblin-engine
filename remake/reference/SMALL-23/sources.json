@@ -1,0 +1,59 @@
+{
+ "structure": "SMALL-23",
+ "files": [
+  {
+   "file": "loc_dc0630_photos_030242pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/dc0630/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/dc/dc0600/dc0630/photos/030242pv.jpg",
+   "title": "Grant Road Bridge, Spanning Broad Branch Creek on Grant Road, Washington, District of Columbia, DC",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_dc0630_photos_030243pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/dc0630/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/dc/dc0600/dc0630/photos/030243pv.jpg",
+   "title": "Grant Road Bridge, Spanning Broad Branch Creek on Grant Road, Washington, District of Columbia, DC",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_dc0630_photos_030244pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/dc0630/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/dc/dc0600/dc0630/photos/030244pv.jpg",
+   "title": "Grant Road Bridge, Spanning Broad Branch Creek on Grant Road, Washington, District of Columbia, DC",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_dc0630_photos_030245pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/dc0630/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/dc/dc0600/dc0630/photos/030245pv.jpg",
+   "title": "Grant Road Bridge, Spanning Broad Branch Creek on Grant Road, Washington, District of Columbia, DC",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_dc0630_data_dc0630data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/dc0630/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/dc/dc0600/dc0630/data/dc0630data.pdf",
+   "title": "Grant Road Bridge, Spanning Broad Branch Creek on Grant Road, Washington, District of Columbia, DC",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_dc0630_data_dc0630cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/dc0630/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/dc/dc0600/dc0630/data/dc0630cap.pdf",
+   "title": "Grant Road Bridge, Spanning Broad Branch Creek on Grant Road, Washington, District of Columbia, DC",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

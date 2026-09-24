@@ -1,0 +1,53 @@
+{
+ "structure": "CULVERT-04",
+ "files": [
+  {
+   "file": "commons_morton_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Morton_County_WPA_bridge_facing_DS_therefrom.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Morton_County_WPA_bridge_facing_DS_therefrom.JPG/1920px-Morton_County_WPA_bridge_facing_DS_therefrom.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Morton County WPA bridge facing DS therefrom.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "View facing east (downstream) from WPA bridge carrying county road 9 across an ephemeral watercourse just north of county road Y in rural Morton County, Kansas.",
+   "category": "Category:Morton County WPA bridge (Kansas)"
+  },
+  {
+   "file": "commons_morton_04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Morton_County_WPA_bridge_from_SW_1.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Morton_County_WPA_bridge_from_SW_1.JPG/1920px-Morton_County_WPA_bridge_from_SW_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Morton County WPA bridge from SW 1.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "WPA bridge carrying county road 9 across an ephemeral watercourse just north of county road Y in rural Morton County, Kansas.  West (upstream) side of bridge, seen from the southwest.",
+   "category": "Category:Morton County WPA bridge (Kansas)"
+  },
+  {
+   "file": "commons_morton_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Morton_County_WPA_bridge_from_W_2.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Morton_County_WPA_bridge_from_W_2.JPG/1920px-Morton_County_WPA_bridge_from_W_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Morton County WPA bridge from W 2.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "WPA bridge carrying county road 9 across an ephemeral watercourse just north of county road Y in rural Morton County, Kansas; seen from the west (from upstream).",
+   "category": "Category:Morton County WPA bridge (Kansas)"
+  },
+  {
+   "file": "commons_morton_06.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Morton_County_WPA_bridge_span_3_of_5.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Morton_County_WPA_bridge_span_3_of_5.JPG/1920px-Morton_County_WPA_bridge_span_3_of_5.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Morton County WPA bridge span 3 of 5.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Ammodramus",
+   "caption": "Middle of give spans of WPA bridge carrying county road 9 across an ephemeral watercourse just north of county road Y in rural Morton County, Kansas.  View is from the west (upstream).",
+   "category": "Category:Morton County WPA bridge (Kansas)"
+  }
+ ]
+}

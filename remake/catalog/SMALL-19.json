@@ -1,0 +1,42 @@
+{
+  "id": "SMALL-19",
+  "settlement": "Kessler",
+  "kind": "crossing",
+  "crossing": {
+    "type": "small",
+    "road_class": "street",
+    "span_m": 2.0,
+    "over": "Sauk Creek"
+  },
+  "example": {
+    "title": "Stone Arch Bridge, Second Street at Springfield Avenue over Boneyard Creek",
+    "place": "Champaign, Champaign County, IL",
+    "year": 1860,
+    "source": "Wikimedia Commons (Category:Stone Arch Bridge (Champaign, Illinois))",
+    "url": "https://commons.wikimedia.org/wiki/Category:Stone_Arch_Bridge_(Champaign,_Illinois)",
+    "photos": [
+      "commons_champaign_04.jpg",
+      "commons_champaign_05.jpg",
+      "commons_champaign_06.jpg"
+    ],
+    "drawings": []
+  },
+  "brief": "Small single stone arch of 1860 in a city centre, rebuilt around 2010 into the Boneyard Creek Second Street park: a semicircular arch of rough buff limestone voussoirs and rubble spandrels, now carrying a paved path/street edge with an ornamental black steel arched-picket railing between square cut-stone piers, with cascades and big limestone boulders along the channel and tall downtown buildings behind.",
+  "traits": {
+    "bridge_type": "stone_arch",
+    "spans": 1,
+    "year": 1860,
+    "railing": "pipe_rail",
+    "railing_detail": "ornamental steel picket railing between stone piers",
+    "span_ft": 8,
+    "width_ft": 30,
+    "height_ft": 7,
+    "masonry": "rubble limestone",
+    "sidewalks": true,
+    "condition": "kept"
+  },
+  "names": {
+    "plate": "STONE ARCH · 1860",
+    "sign": "SAUK CREEK"
+  }
+}
