@@ -111,10 +111,9 @@ func _build(r: Rect2, step: float, collide: bool, name: String) -> MeshInstance3
 		var row_h := []
 		for j in nx + 1:
 			var x := r.position.y + r.size.y * j / float(nx)
-			var wd := MapTerrain.water_depth(s, x)
-			var h := MapTerrain.base_elev(s, x) - wd
-			row_p.append(_flat_point(s, x) + up * h)
-			row_h.append([h, wd])
+			var smp := MapTerrain.sample(s, x)
+			row_p.append(_flat_point(s, x) + up * smp.x)
+			row_h.append([smp.x, smp.y])
 		pts.append(row_p)
 		hs.append(row_h)
 	# normals from the grid itself (central differences), so a skirt can carry the ground's normal:

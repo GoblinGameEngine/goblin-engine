@@ -131,22 +131,41 @@ static func _trap(au: float, bed_hw: float, bank_w: float, depth: float) -> floa
 	return depth * (1.0 - f * f * (3.0 - 2.0 * f))
 
 
-static func water_depth(s: float, x: float) -> float:
-	## How far the floor is carved down at (s, x) by any water feature (0 on dry land).
-	_load()
-	s = fposmod(s, C)
+const BANK := 4.0                   # the carved depression reaches this far past the mapped water edge
+
+static func outline(s: float) -> Vector2:
+	## (-x rim, +x rim) of the river / lake depression at s: the mapped water edges plus BANK.
+	var e := water_edges(s)
+	return Vector2(e.x - BANK, e.y + BANK)
+
+
+static func water_level(s: float) -> float:
+	## The river / lake surface at s: bank-full (the rainy-season water table) -- just under the
+	## lower of the depression's two rims, so the water fills it right to the brim.
+	var o := outline(s)
+	return minf(base_elev(s, o.x - 1.5), base_elev(s, o.y + 1.5)) - 0.12
+
+
+static func _body_profile(s: float, x: float) -> float:
+	## Depth below the water level of the river / lake bed at (s, x): the channel's trapezoid (bed
+	## 12 m either side of the line, sloping to 0 at the rim) and the lake's shelving floor; 0
+	## outside the depression.
 	var r: Dictionary = _d.river
 	var lp := lake_params(s)
-	var dep := 0.0
-	# river channel (it runs through the lake too, as the deepest line)
-	dep = maxf(dep, _trap(absf(x - lp.y), r.bed_half, r.ch_half - r.bed_half + 4.0, r.depth))
+	var dep := _trap(absf(x - lp.y), r.bed_half, r.ch_half - r.bed_half + BANK, r.depth)
 	if lp.x > 0.0:
 		var lk: Dictionary = _d.lake
 		var lo := lp.y - lp.z
 		var hi := lp.y + lp.w
-		if x > lo - 6.0 and x < hi + 6.0:
-			var inside := minf(x - lo, hi - x)                  # metres in from the shore (<0 outside)
-			dep = maxf(dep, lk.depth * lp.x * smoothstep(-6.0, lk.shelf, inside))
+		if x > lo - BANK and x < hi + BANK:
+			var inside := minf(x - lo, hi - x)                  # metres in from the mapped shore
+			dep = maxf(dep, lk.depth * lp.x * smoothstep(-BANK, lk.shelf, inside))
+	return dep
+
+
+static func _small_depth(s: float, x: float) -> float:
+	## Carved depth of the small water (creeks, spurs, ponds, oxbows, ditches) below the terrain.
+	var dep := 0.0
 	var key := Vector2i(floori(s / CELL), floori(x / CELL))
 	for it in _grid.get(key, []):
 		match it[0]:
@@ -175,14 +194,27 @@ static func water_depth(s: float, x: float) -> float:
 	return dep
 
 
+static func sample(s: float, x: float) -> Vector2:
+	## (elevation, carved depth below the undisturbed terrain) at (s, x).  Inside the river /
+	## lake depression the bed is cut down from the bank-full water level, not from the rolling
+	## terrain, so the water fills it everywhere with no dry islands or bare banks.
+	_load()
+	s = fposmod(s, C)
+	var base := base_elev(s, x)
+	var h := base - _small_depth(s, x)
+	var bp := _body_profile(s, x)
+	if bp > 0.0:
+		h = minf(h, water_level(s) - bp)
+	return Vector2(h, base - h)
+
+
+static func water_depth(s: float, x: float) -> float:
+	## How far the floor is carved down at (s, x) by any water feature (0 on dry land).
+	return sample(s, x).y
+
+
 static func elevation(s: float, x: float) -> float:
-	return base_elev(s, x) - water_depth(s, x)
-
-
-static func water_level(s: float) -> float:
-	## Height of the river / lake surface at s: just below the lower bank.
-	var e := water_edges(s)
-	return minf(base_elev(s, e.x - 1.0), base_elev(s, e.y + 1.0)) - 0.35
+	return sample(s, x).x
 
 
 # ------------------------------------------------------------------ geometry helpers
