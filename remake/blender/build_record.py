@@ -32,6 +32,15 @@ def generator(kind):
         elif kind in ("civic", "school", "church"):
             import institution
             GENERATORS[kind] = institution.build
+        elif kind in ("industrial", "tower", "bigbox", "strip", "vacant"):
+            import works
+            GENERATORS[kind] = works.build
+        elif kind == "farm":
+            import farm
+            GENERATORS[kind] = farm.build
+        elif kind == "crossing":
+            import bridges
+            GENERATORS[kind] = bridges.build
         else:
             raise NotImplementedError(f"no generator for kind '{kind}' yet")
     return GENERATORS[kind]
@@ -42,6 +51,8 @@ def kind_of(rec):
     if rid.startswith("FARM-"):
         part = rid.rsplit("-", 1)[-1]
         return {"house": "farmhouse"}.get(part, "farm")
+    if rid.split("-")[0] in ("MAJOR", "SMALL", "CULVERT", "RAIL"):
+        return "crossing"
     return rec.get("kind", "house")
 
 

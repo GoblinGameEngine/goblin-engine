@@ -55,11 +55,15 @@ def facade_materials(b, tr, cond):
     return pal
 
 
-def build(rec):
+def build(rec, vacant=False):
+    """vacant: a closed store (the record's `former` traits): display windows boarded, shop doors
+    locked, stock rooms and upstairs emptied; the alley doors still open."""
     rid = rec["id"]
     tr = rec.get("traits", {}) or {}
     rnd = rng(rid)
     cond = tr.get("condition", "kept")
+    if vacant:
+        cond = rec.get("traits_condition", "boarded")
     lot = rec.get("lot", {"w": 19.3, "d": 23.6})
     lot_w, lot_d = lot["w"], lot["d"]
     fronts = (tr.get("storefronts") or [])[:3] or [{"business": "Main Street Mercantile", "type": "variety_store",
@@ -124,7 +128,8 @@ def build(rec):
         bx1 = bx0 + bw
         name = f"SHOP{i}"
         btype = sf.get("type", "variety_store")
-        rooms.append(dict(name=name, rect=(bx0, ys, bx1, y1), type="shop", fitout=shopfit.fitout_for(btype, rnd)))
+        rooms.append(dict(name=name, rect=(bx0, ys, bx1, y1), type="shop",
+                          fitout=shopfit.fitout_for("vacant_storefront" if vacant else btype, rnd)))
         # stock room behind, with a WC in one rear corner: the stock room is the bay minus a 1.6 m
         # column; that column is an alcove open to it, with the WC at its alley end
         wc_w = 1.6
@@ -145,7 +150,7 @@ def build(rec):
         dcx = (bx0 + bx1) / 2
         dw = 1.6 if bw >= 6.0 else 0.95
         doors.append(dict(name=f"front{i}", at=(dcx, y1), w=dw, h=2.3, ext=True, leaves=2 if dw > 1.2 else 1,
-                          glazed=(0.1, 0.3, 0.9, 0.92), panels=[(0.1, 0.06, 0.9, 0.26)], transom=0.5))
+                          glazed=(0.1, 0.3, 0.9, 0.92), panels=[(0.1, 0.06, 0.9, 0.26)], transom=0.5, locked=vacant))
         side_w = (bw - dw) / 2 - 0.55
         if side_w > 0.8:
             for sx in (-1, 1):
@@ -237,8 +242,21 @@ def build(rec):
     # rear ground-floor windows (small, high)
     for (sf, bx0, bx1, dcx, dw) in fronts_info:
         wins.append(dict(at=((bx0 + bx1) / 2 + (1.0 if bx1 - bx0 > 5 else 0.0), y0), w=0.9, sill=1.4, h=1.0, kind="dh", cols=2))
+    if vacant:
+        # boarded: plywood over the display windows and the upper sashes, the upstairs emptied
+        for r in rooms:
+            if r.get("floor", 0) > 0 and r.get("type") is not None:
+                r["type"] = None
+                r.pop("fitout", None)
     house = gh.House(b, spec)
     house.build()
+    if vacant:
+        ply = b.part("boards-col")
+        for w_ in wins:
+            if abs(w_["at"][1] - y1) < 0.01:
+                fz = floors[w_.get("floor", 0)][0]
+                cx_, hw_ = w_["at"][0], w_["w"] / 2 + 0.06
+                ply.box((cx_ - hw_, y1 + 0.01, fz + w_["sill"] - 0.05), (cx_ + hw_, y1 + 0.05, fz + w_["sill"] + w_["h"] + 0.05), "plywood")
     facade_dressing(b, tr, rec, fronts_info, x0, x1, y0, y1, floors, wall_top, parapet, sb if has_up else None, rnd)
     site(b, lot_w, lot_d, x0, x1, y0, y1, rnd, [d["at"][0] for d in spec["doors"] if d.get("ext") and d["at"][1] < y0 + 0.01])
     return b

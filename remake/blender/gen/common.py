@@ -46,6 +46,12 @@ def rng(rid, salt=""):
     return random.Random(int(hashlib.sha1((rid + salt).encode()).hexdigest()[:12], 16))
 
 
+def dget(tr, key):
+    """A trait that should be an object; tolerate records that give a bare word (e.g. roof: "dome")."""
+    v = (tr or {}).get(key)
+    return v if isinstance(v, dict) else ({"type": v} if isinstance(v, str) else {})
+
+
 def clamp(v, lo, hi):
     return max(lo, min(hi, v))
 
@@ -138,6 +144,7 @@ def std_materials(pal, trim="#f2efe6", door="#5a3a26"):
     pal.surf("sidewalk", "sidewalk", rough=0.9)
     pal.surf("asphalt", "asphalt", rough=0.9)
     pal.surf("gravel", "gravel", rough=0.95)
+    pal.surf("stone", "limestone", rough=0.85)
 
 
 def sign_board(b, part, frame, text_lines, board_w, board_h, board_mat, text_mat, name, depth=0.04, font=None):
