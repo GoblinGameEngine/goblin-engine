@@ -68,6 +68,10 @@ func _ready() -> void:
 	sky_system.name = "DaySkySystem"
 	add_child(sky_system)
 	sky_system.setup(self, sun, shell_mesh, StationGeo.R - StationGeo.SHAFT_R, WALL_TILE, environment)
+	var clouds := RemakeClouds.new()
+	clouds.name = "Clouds"
+	add_child(clouds)
+	clouds.setup(player.get_node("Head/Camera3D"), environment)
 	world = Node3D.new()
 	world.name = "World"
 	add_child(world)
@@ -75,6 +79,14 @@ func _ready() -> void:
 	streamer.name = "DetailStreamer"
 	add_child(streamer)
 	_place_structures()
+
+
+func compass_bearing(at: Vector3, dir: Vector3) -> float:
+	## The compass heading (degrees clockwise from north) of dir at a point on the floor, for the
+	## HUD.  North is the Marlowe end cap (-x), south the Kessler end; east and west run round
+	## the ring -- east is +s, to your right as you face north with the axis overhead.
+	var east := StationGeo.forward(StationGeo.s_of(at))
+	return rad_to_deg(atan2(dir.dot(east), dir.dot(Vector3.LEFT)))
 
 
 static func _neutral_detail(path: String) -> ImageTexture:

@@ -205,12 +205,12 @@ func _apply(_delta: float) -> void:
 		sun.shadow_enabled = active_intensity > 0.05
 
 	if env:
-		# 2.0 by day, 1.0 by night -- back down from 2.8 / 1.6 at the
-		# user's request (2026-09-24); still well above the original
+		# 2.3 by day, 1.15 by night -- down from 2.8 / 1.6, then 2.0 / 1.0
+		# was too dark (user, 2026-09-24); still well above the original
 		# near-black 0.6 default that caused an earlier session's
 		# "shadow problem", and on top of a real moonlight/daylight
 		# DirectionalLight3D rather than carrying the whole scene alone.
-		env.ambient_light_energy = lerp(1.0, 2.0, 1.0 - night_mix)
+		env.ambient_light_energy = lerp(1.15, 2.3, 1.0 - night_mix)
 
 	var should_lights_be_on := night_mix > 0.5
 	if should_lights_be_on != lamp_light_on:

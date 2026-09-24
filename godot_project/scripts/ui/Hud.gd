@@ -155,6 +155,9 @@ func _player_heading() -> float:
 	var player := get_tree().get_first_node_in_group("player") as Node3D
 	if player == null:
 		return 0.0
+	var station := get_tree().get_first_node_in_group("space_station")
+	if station and station.has_method("compass_bearing"):   # a station with its own north (the remake)
+		return station.compass_bearing(player.global_position, -player.global_transform.basis.z)
 	var fwd := _compass_basis() * (-player.global_transform.basis.z)
 	return rad_to_deg(atan2(fwd.x, -fwd.z))
 
@@ -162,6 +165,9 @@ func _bearing_to(pos: Vector3) -> float:
 	var player := get_tree().get_first_node_in_group("player") as Node3D
 	if player == null:
 		return 0.0
+	var station := get_tree().get_first_node_in_group("space_station")
+	if station and station.has_method("compass_bearing"):
+		return station.compass_bearing(player.global_position, pos - player.global_position)
 	var d := _compass_basis() * (pos - player.global_position)
 	return rad_to_deg(atan2(d.x, -d.z))
 
