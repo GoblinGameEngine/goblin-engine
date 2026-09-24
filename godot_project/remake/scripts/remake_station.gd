@@ -44,6 +44,10 @@ func _ready() -> void:
 	terrain.setup(player, floor_mat)
 	MapWater.build(self)
 	MapWater.build_small(self)
+	var trees := MapTrees.new()
+	trees.name = "Trees"
+	add_child(trees)
+	trees.setup()
 	var roads := MapRoads.new()
 	roads.name = "Roads"
 	add_child(roads)
