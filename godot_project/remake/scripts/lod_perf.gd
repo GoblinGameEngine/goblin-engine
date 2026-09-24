@@ -1,7 +1,8 @@
 extends Node3D
 ## LOD stress test: N buildings (cycling through `ids`) on a grid, drawn either at full detail
 ## everywhere (mode=full) or through the distance chain (mode=lod: full -> lod1 -> lod2 -> lod3 by
-## visibility range, the ranges scaled by each building's size).  Reports frame time, draw calls and
+## visibility range, the ranges scaled by each building's size) or mode=hlod (RemakeLodClusters:
+## LOD2/LOD3 merged per cell).  Reports frame time, draw calls and
 ## primitives after it settles.
 ##   godot4 --path . res://remake/scenes/lod_perf.tscn -- ids=HF-037,B-004 n=700 spacing=45 mode=lod
 ##
@@ -46,7 +47,42 @@ func _ready() -> void:
 		scenes[id] = [load("res://remake/buildings/%s.glb" % id)]
 		for l in [1, 2, 3]:
 			scenes[id].append(load("res://remake/buildings/%s.lod%d.glb" % [id, l]))
-	for i in n:
+	if mode == "map":
+		# every placed structure at its map position, laid flat (x across the ring, s along it = -z)
+		var pl: Array = JSON.parse_string(FileAccess.get_file_as_string("res://remake/placement.json")).structures
+		var entries := []
+		for e in pl:
+			var p := Vector3(e.x, 0, -e.s)
+			entries.append({"id": e.id, "xform": Transform3D(Basis(Vector3.UP, e.yaw), p),
+				"key2": Vector2i(floori(p.x / RemakeLodClusters.CELL2), floori(p.z / RemakeLodClusters.CELL2)),
+				"key3": Vector2i(floori(p.x / RemakeLodClusters.CELL3), floori(p.z / RemakeLodClusters.CELL3))})
+		var t0 := Time.get_ticks_msec()
+		if args.get("lod", "1") == "0":
+			# baseline: every structure at full detail
+			for e in entries:
+				var b := RemakeBuilding.new()
+				b.transform = e.xform
+				add_child(b)
+				b.load_building(load("res://remake/buildings/%s.glb" % e.id))
+		else:
+			report["hlod"] = RemakeLodClusters.build(self, entries, args.get("full", "1") == "1")
+		report["build_ms"] = Time.get_ticks_msec() - t0
+		n = 0
+		pm.size = Vector2(3200, 3200)
+		ground.position = Vector3(0, -0.05, -1570)
+	if mode == "hlod":
+		# the full hierarchy: per-building LOD0/LOD1, LOD2/LOD3 merged per cell (RemakeLodClusters)
+		var entries := []
+		for i in n:
+			var p := Vector3((i % side - side / 2.0) * spacing, 0, (i / side - side / 2.0) * spacing)
+			entries.append({"id": ids[i % ids.size()], "xform": Transform3D(Basis(Vector3.UP, (i % 4) * PI / 2), p),
+				"key2": Vector2i(floori(p.x / RemakeLodClusters.CELL2), floori(p.z / RemakeLodClusters.CELL2)),
+				"key3": Vector2i(floori(p.x / RemakeLodClusters.CELL3), floori(p.z / RemakeLodClusters.CELL3))})
+		var t0 := Time.get_ticks_msec()
+		var info := RemakeLodClusters.build(self, entries)
+		report["hlod_build_ms"] = Time.get_ticks_msec() - t0
+		report["hlod"] = info
+	for i in (n if mode != "hlod" else 0):
 		var id: String = ids[i % ids.size()]
 		var pos := Vector3((i % side - side / 2.0) * spacing, 0, (i / side - side / 2.0) * spacing)
 		var root := Node3D.new()
@@ -73,10 +109,14 @@ func _ready() -> void:
 	add_child(cam)
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 	Engine.max_fps = 0
-	report = {"n": n, "mode": mode, "ids": ids.size()}
+	report.merge({"n": n, "mode": mode, "ids": ids.size()})
 	# street level, then an overview that sees the whole grid (the ring's far side overhead)
 	var views := {"street": [Vector3(3, 1.7, 3), Vector3(spacing * side, 1.7, spacing * side * 0.6)],
 				  "overview": [Vector3(-spacing * side * 0.7, spacing * side * 0.35, -spacing * side * 0.7), Vector3.ZERO]}
+	if mode == "map":
+		# downtown Harrow Falls at street level; the whole map from 1 km up (the far side overhead)
+		views = {"street": [Vector3(200, 1.7, -180), Vector3(300, 3.0, -280)],
+				 "overview": [Vector3(0, 1000, -1570 + 700), Vector3(0, 0, -1570)]}
 	for v in views:
 		cam.position = views[v][0]
 		cam.look_at(views[v][1])
