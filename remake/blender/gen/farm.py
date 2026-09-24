@@ -103,12 +103,120 @@ def stall_row(p, x0, x1, y, fz, depth=2.4, pitch=1.6, mat="wood"):
     p.box((x0, y - 0.1, fz), (x1, y + 0.4, fz + 0.6), mat)
 
 
+def cupola(b, cx, cy, z, s=1.3, name="cupola"):
+    """A louvred ventilator cupola with a pyramid cap, standing on the ridge at z."""
+    p = b.part(name)
+    p.box((cx - s / 2, cy - s / 2, z - 0.3), (cx + s / 2, cy + s / 2, z + s), "trim")
+    for k in range(4):                                                     # louvre shadow bands
+        zz = z + 0.2 + k * 0.22
+        p.box((cx - s / 2 - 0.01, cy - s / 2 - 0.01, zz), (cx + s / 2 + 0.01, cy + s / 2 + 0.01, zz + 0.06), "roof_under")
+    g.pyramid_roof(p, cx, cy, s / 2 + 0.15, z + s, z + s + 0.9, 0.0, "roof", "roof_under")
+
+
+def ridge_height(half, pitch, gambrel):
+    """Rise of the roof above the wall top for a gable (pitch) or gambrel (60 deg lower slope over
+    45% of the half-span, 25 deg above) roof."""
+    if gambrel:
+        return 0.45 * half * math.tan(math.radians(60)) + 0.55 * half * math.tan(math.radians(25))
+    return half * math.tan(math.radians(pitch))
+
+
+def lean_to(b, side, span, x0, x1, y0, y1, depth=3.6, h_in=3.0, h_out=2.4):
+    """An open-fronted shed-roof lean-to on posts along one side of the barn (side '+x', '-x' or
+    '-y'), between span = (a, b) along that wall; its back is the barn wall."""
+    a, c = span
+    if c - a < 2.5:
+        return
+    p = b.part("lean_to-col")
+    v = b.part("lean_to_roof")
+    n = max(1, int((c - a) / 3.0))
+    for k in range(n + 1):
+        u = a + (c - a) * k / n
+        if side == "+x":
+            p.box((x1 + depth - 0.25, u - 0.1, 0.0), (x1 + depth - 0.05, u + 0.1, h_out), "wood")
+        elif side == "-x":
+            p.box((x0 - depth + 0.05, u - 0.1, 0.0), (x0 - depth + 0.25, u + 0.1, h_out), "wood")
+        else:
+            p.box((u - 0.1, y0 - depth + 0.05, 0.0), (u + 0.1, y0 - depth + 0.25, h_out), "wood")
+    if side == "+x":
+        top = [(x1, a, h_in), (x1, c, h_in), (x1 + depth + 0.3, c, h_out - 0.1), (x1 + depth + 0.3, a, h_out - 0.1)]
+    elif side == "-x":
+        top = [(x0 - depth - 0.3, a, h_out - 0.1), (x0 - depth - 0.3, c, h_out - 0.1), (x0, c, h_in), (x0, a, h_in)]
+    else:
+        top = [(a, y0, h_in), (a, y0 - depth - 0.3, h_out - 0.1), (c, y0 - depth - 0.3, h_out - 0.1), (c, y0, h_in)]
+    v.face(top, "roof")
+    v.face([(q[0], q[1], q[2] - 0.08) for q in reversed(top)], "roof_under")
+
+
+LEAN_SIDE = {"east": "+x", "right": "+x", "west": "-x", "left": "-x", "south": "-y", "north": "-y", "rear": "-y", "back": "-y"}
+
+
+def build_round_barn(rec, tr, rnd):
+    """A true round barn: a low cylindrical wall, a bowed (two-pitch) conical roof to a ventilator
+    cupola at the peak, a ring of small windows and a big doorway on the front with its X-braced
+    leaves swung open."""
+    b = lib_building(rec["id"])
+    pal = materials(b, tr)
+    r = clamp(ft(tr.get("w_ft") or 60) / 2, 6.0, 12.0)
+    wall_h = 5.0
+    n = 24
+    door_w, door_h = 3.6, 3.4
+    p = b.part("round_barn-col")
+    P = lambda a, rr, z: (rr * math.cos(a), rr * math.sin(a), z)
+    for i in range(n):
+        a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+        am = (a0 + a1) / 2
+        gap = abs(math.atan2(math.sin(am - math.pi / 2), math.cos(am - math.pi / 2))) < (door_w / 2) / r
+        zb = door_h if gap else 0.0
+        p.face([P(a0, r, zb), P(a1, r, zb), P(a1, r, wall_h), P(a0, r, wall_h)], "ext")
+        p.face([P(a1, r - 0.2, zb), P(a0, r - 0.2, zb), P(a0, r - 0.2, wall_h), P(a1, r - 0.2, wall_h)], "wood")
+        if gap:
+            p.face([P(a1, r, zb), P(a0, r, zb), P(a0, r - 0.2, zb), P(a1, r - 0.2, zb)], "wood")
+        elif i % 2 == 0:                                                   # ring of small square windows
+            w = b.part("round_windows")
+            wx, wy, _ = P(am, r + 0.02, 0.0)
+            tx, ty = -math.sin(am), math.cos(am)
+            w.face([(wx - tx * 0.35, wy - ty * 0.35, 2.3), (wx + tx * 0.35, wy + ty * 0.35, 2.3),
+                    (wx + tx * 0.35, wy + ty * 0.35, 3.0), (wx - tx * 0.35, wy - ty * 0.35, 3.0)], "silo_glass")
+    p.cylinder((0.0, 0.0), r - 0.1, -0.05, 0.1, "floor", n=n)
+    # bowed roof: steep lower ring to the knee, shallow upper ring to the cupola; outer and inner skins
+    rk = r * 0.6
+    zk = wall_h + (r + 0.5 - rk) * math.tan(math.radians(60)) * 0.7
+    ra = 1.0
+    za = zk + (rk - ra) * math.tan(math.radians(25))
+    rf = b.part("round_roof-col")
+    for (ro0, z0, ro1, z1) in ((r + 0.5, wall_h - 0.2, rk, zk), (rk, zk, ra, za)):
+        for i in range(n):
+            a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+            rf.face([P(a0, ro0, z0), P(a1, ro0, z0), P(a1, ro1, z1), P(a0, ro1, z1)], "roof")
+            rf.face([P(a1, ro0 - 0.15, z0 - 0.12), P(a0, ro0 - 0.15, z0 - 0.12), P(a0, ro1 - 0.15, z1 - 0.12), P(a1, ro1 - 0.15, z1 - 0.12)],
+                    "roof_under")
+    # round ventilator cupola at the peak
+    cp = b.part("round_cupola")
+    cp.cylinder((0.0, 0.0), ra + 0.05, za - 0.1, za + 0.9, "trim", n=16)
+    cp.cylinder((0.0, 0.0), ra + 0.25, za + 0.9, za + 1.6, "roof", n=16, r1=0.05)
+    # the pair of X-braced leaves, swung open against the wall either side of the doorway
+    lv = b.part("round_doors")
+    for s in (-1, 1):
+        x_in = s * door_w / 2
+        x_out = s * (door_w / 2 + door_w / 2)
+        yy = math.sqrt(max(0.0, r * r - x_out * x_out)) + 0.15
+        lv.box((min(x_in, x_out), yy, 0.05), (max(x_in, x_out), yy + 0.06, door_h - 0.05), "trim")
+        for (za_, zb_) in ((0.2, door_h - 0.2),):
+            lv.face([(x_in, yy + 0.07, za_), (x_out, yy + 0.07, zb_), (x_out, yy + 0.07, zb_ - 0.12), (x_in, yy + 0.07, za_ + 0.12)], "roof_under")
+            lv.face([(x_out, yy + 0.07, za_), (x_in, yy + 0.07, zb_), (x_in, yy + 0.07, zb_ - 0.12), (x_out, yy + 0.07, za_ + 0.12)], "roof_under")
+    b.empty("light_barn", (0.0, 0.0, 3.0))
+    return b
+
+
 # ------------------------------------------------------------------ barn
 def build_barn(rec, tr, rnd):
     b = lib_building(rec["id"])
     materials(b, tr)
     names = rec.get("names") or {}
     typ = tr.get("type", "english_three_bay")
+    if typ == "round_barn":
+        return build_round_barn(rec, tr, rnd)
     W = clamp(ft(tr.get("w_ft") or 40), 8.0, 24.0)
     D = clamp(ft(tr.get("d_ft") or 30), 7.0, 26.0)
     H = clamp(ft(tr.get("height_ft") or 30), 7.0, 14.0)
@@ -183,6 +291,28 @@ def build_barn(rec, tr, rnd):
         ramp.face(q, "gravel")
         for s in (-2.0, 2.0):
             ramp.face([(s, y0 - 6.0, 0.0), (s, y0, 0.0), (s, y0, loft)] if s > 0 else [(s, y0, loft), (s, y0, 0.0), (s, y0 - 6.0, 0.0)], "lower")
+    # ventilator cupolas along the ridge
+    ncup = int(tr.get("cupolas") or (1 if tr.get("cupola") else 0))
+    if ncup and typ != "pole_barn":
+        half = (D if ridge == "x" else W) / 2
+        rz = wall_top + ridge_height(half, 25 if gambrel else pitch, gambrel) - 0.1
+        L_r = W if ridge == "x" else D
+        for k in range(min(ncup, 4)):
+            u = -L_r / 2 + L_r * (k + 1) / (ncup + 1)
+            cupola(b, u if ridge == "x" else 0.0, 0.0 if ridge == "x" else u, rz, name=f"cupola{k}")
+    # an open lean-to shed along one side (clear of the side doors and the bank ramp)
+    lt = tr.get("lean_to")
+    if lt:
+        side = LEAN_SIDE.get(str(lt).lower(), "+x")
+        if side == "-y" and typ == "bank_barn":
+            side = "+x"
+        if side == "+x":
+            span = (y0 + D * 0.3 + 1.0, y1 - 0.3)
+        elif side == "-x":
+            span = (y0 + 0.3, y1 - D * 0.3 - 1.0)
+        else:
+            span = (min(3.2, W * 0.3) / 2 + 0.6, x1 - 0.3)
+        lean_to(b, side, span, x0, x1, y0, y1, h_in=min(3.0, wall_top - 0.3))
     # the farm name on the front gable
     sign = (names.get("sign") or names.get("family") or "").upper()
     if sign:
@@ -225,13 +355,35 @@ def build_silo(rec, tr, rnd):
         hp = b.part("silo_hoops")
         for k in range(int(h / 0.8)):
             hp.cylinder((0.0, 0.0), r + 0.03, k * 0.8 + 0.4, k * 0.8 + 0.45, "steel", n=n, caps=False)
-    # domed / conical roof
+    # domed / conical roof; a painted checkerboard dome (and/or band) when the record has one
+    checked_top = tr.get("checkered_top") or tr.get("checkered")
+    checked_band = tr.get("checkered_band") or (tr.get("checkered") and not tr.get("checkered_top"))
+    if checked_top or checked_band:
+        pal.solid("check_red", (0.72, 0.1, 0.08), rough=0.6)
+        pal.solid("check_white", (0.93, 0.91, 0.87), rough=0.6)
     for k in range(6):
         rr0 = r * math.cos(k / 6 * math.pi / 2)
         rr1 = r * math.cos((k + 1) / 6 * math.pi / 2)
         z0 = h + r * 0.8 * math.sin(k / 6 * math.pi / 2)
-        p.cylinder((0.0, 0.0), max(rr0, rr1) + 0.05, z0, h + r * 0.8 * math.sin((k + 1) / 6 * math.pi / 2),
-                   "silo_wall" if typ == "harvestore_blue" else "roof", n=n, r1=rr1 + 0.05)
+        z1 = h + r * 0.8 * math.sin((k + 1) / 6 * math.pi / 2)
+        if checked_top:
+            Q = lambda a, rr, z: ((rr + 0.05) * math.cos(a), (rr + 0.05) * math.sin(a), z)
+            for i in range(n):
+                a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+                p.face([Q(a0, rr0, z0), Q(a1, rr0, z0), Q(a1, rr1, z1), Q(a0, rr1, z1)],
+                       "check_red" if (i // 2 + k) % 2 == 0 else "check_white")
+        else:
+            p.cylinder((0.0, 0.0), max(rr0, rr1) + 0.05, z0, z1, "silo_wall" if typ == "harvestore_blue" else "roof", n=n, r1=rr1 + 0.05)
+    if checked_band:
+        bnd = b.part("silo_band")
+        for row in range(2):
+            zz = h - 1.6 + row * 0.6
+            for i in range(n):
+                a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+                if abs(math.atan2(math.sin((a0 + a1) / 2), math.cos((a0 + a1) / 2))) < 0.35:
+                    continue                                                # behind the chute (+x) stays plain
+                Q = lambda a, z: ((r + 0.04) * math.cos(a), (r + 0.04) * math.sin(a), z)
+                bnd.face([Q(a0, zz), Q(a1, zz), Q(a1, zz + 0.6), Q(a0, zz + 0.6)], "check_red" if (i + row) % 2 == 0 else "check_white")
     p.cylinder((0.0, 0.0), r - 0.05, -0.05, 0.1, "concrete", n=n)
     # a feed room against the base (as on real silos): an ordinary hinged door to the yard, and a
     # cased opening through its back wall into the silo's doorway gap
