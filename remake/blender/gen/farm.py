@@ -120,6 +120,8 @@ def build_barn(rec, tr, rnd):
     # gable end.  The front (+y) is where the doors are, so the ridge runs along x or y to match.
     ridge = "x" if typ in ("english_three_bay", "bank_barn", "crib_barn", "tobacco") else "y"
     wall_top = loft + 2.2 if not gambrel else loft + 0.9
+    if typ == "bank_barn" and not gambrel:
+        wall_top = loft + 4.2        # the upper (threshing) floor is a full storey: its ramp doors need the height
     pitch = dget(tr, "roof").get("pitch_deg") or 42
     if typ == "pole_barn":
         wall_top, pitch = 4.2, 18
@@ -134,6 +136,11 @@ def build_barn(rec, tr, rnd):
                   panels=[(0.08, 0.08, 0.92, 0.92)]),
              dict(name="side_e", at=(x1, y0 + D * 0.3), w=0.95, ext=True, out=True),
              dict(name="side_w", at=(x0, y1 - D * 0.3), w=0.95, ext=True, out=True)]
+    if typ == "bank_barn":
+        # the earth bank buries the back of the ground floor: the rear big doors open onto the
+        # ramp top at loft level instead (a ground-level door there opened into a dead end under the ramp,
+        # and the ramp top met a blank wall)
+        doors[1].update(floor=1, h=min(3.4, wall_top - loft - 0.3))
     rooms = [dict(name="FLOOR", rect=(x0, y0, x1, y1), type=None, no_furnish=True)]
     if typ != "pole_barn":
         rooms.append(dict(name="LOFT", floor=1, rect=(x0, y0, x1, y1), type=None, no_furnish=True))
