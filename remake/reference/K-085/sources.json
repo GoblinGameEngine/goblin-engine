@@ -1,0 +1,41 @@
+{
+ "structure": "K-085",
+ "files": [
+  {
+   "file": "loc_oh0387_photos_126698pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0387/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0387/photos/126698pv.jpg",
+   "title": "270 South Twenty-first Street (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0387_photos_126699pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0387/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0387/photos/126699pv.jpg",
+   "title": "270 South Twenty-first Street (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0387_data_oh0387data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0387/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0387/data/oh0387data.pdf",
+   "title": "270 South Twenty-first Street (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0387_data_oh0387cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0387/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0387/data/oh0387cap.pdf",
+   "title": "270 South Twenty-first Street (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "structure": "K-074",
+ "files": [
+  {
+   "file": "loc_oh1510_photos_126781pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1510/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1510/photos/126781pv.jpg",
+   "title": "1041 East Whittier (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1510_photos_126782pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1510/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1510/photos/126782pv.jpg",
+   "title": "1041 East Whittier (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1510_data_oh1510data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1510/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1510/data/oh1510data.pdf",
+   "title": "1041 East Whittier (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1510_data_oh1510cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1510/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1510/data/oh1510cap.pdf",
+   "title": "1041 East Whittier (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

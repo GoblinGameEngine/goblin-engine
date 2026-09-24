@@ -1,0 +1,59 @@
+{
+ "structure": "M-005",
+ "files": [
+  {
+   "file": "loc_in0197_color_572133cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0197/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0197/color/572133cv.jpg",
+   "title": "217-229 East Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0197_photos_064725pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0197/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0197/photos/064725pv.jpg",
+   "title": "217-229 East Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0197_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0197/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0197/sheet/00001a.tif",
+   "title": "217-229 East Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0197_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0197/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0197/sheet/00002a.tif",
+   "title": "217-229 East Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0197_data_in0197data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0197/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0197/data/in0197data.pdf",
+   "title": "217-229 East Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0197_data_in0197cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0197/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0197/data/in0197cap.pdf",
+   "title": "217-229 East Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

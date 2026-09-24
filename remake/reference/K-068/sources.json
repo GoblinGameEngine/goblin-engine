@@ -1,0 +1,41 @@
+{
+ "structure": "K-068",
+ "files": [
+  {
+   "file": "loc_oh1613_photos_352310pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1613/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1600/oh1613/photos/352310pv.jpg",
+   "title": "1858 East Rich Street (house), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1613_photos_352311pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1613/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1600/oh1613/photos/352311pv.jpg",
+   "title": "1858 East Rich Street (house), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1613_data_oh1613data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1613/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1600/oh1613/data/oh1613data.pdf",
+   "title": "1858 East Rich Street (house), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1613_data_oh1613cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1613/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1600/oh1613/data/oh1613cap.pdf",
+   "title": "1858 East Rich Street (house), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

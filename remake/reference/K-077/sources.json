@@ -1,0 +1,41 @@
+{
+ "structure": "K-077",
+ "files": [
+  {
+   "file": "loc_oh1591_photos_126881pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1591/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1591/photos/126881pv.jpg",
+   "title": "461 North Monroe Street (House), 461 North Monroe Avenue, Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1591_photos_126882pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1591/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1591/photos/126882pv.jpg",
+   "title": "461 North Monroe Street (House), 461 North Monroe Avenue, Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1591_data_oh1591data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1591/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1591/data/oh1591data.pdf",
+   "title": "461 North Monroe Street (House), 461 North Monroe Avenue, Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1591_data_oh1591cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1591/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1591/data/oh1591cap.pdf",
+   "title": "461 North Monroe Street (House), 461 North Monroe Avenue, Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

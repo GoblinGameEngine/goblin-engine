@@ -1,0 +1,68 @@
+{
+ "structure": "M-012",
+ "files": [
+  {
+   "file": "loc_oh0316_photos_129051pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0316/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0316/photos/129051pv.jpg",
+   "title": "Elliott Building, Route 14, Twinsburg, Summit County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0316_photos_129052pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0316/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0316/photos/129052pv.jpg",
+   "title": "Elliott Building, Route 14, Twinsburg, Summit County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0316_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0316/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0316/sheet/00000a.tif",
+   "title": "Elliott Building, Route 14, Twinsburg, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0316_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0316/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0316/sheet/00001a.tif",
+   "title": "Elliott Building, Route 14, Twinsburg, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0316_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0316/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0316/sheet/00002a.tif",
+   "title": "Elliott Building, Route 14, Twinsburg, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0316_data_oh0316data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0316/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0316/data/oh0316data.pdf",
+   "title": "Elliott Building, Route 14, Twinsburg, Summit County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0316_file_oh0316supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0316/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0316/supp/oh0316supp.pdf",
+   "title": "Elliott Building, Route 14, Twinsburg, Summit County, OH",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

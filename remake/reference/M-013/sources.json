@@ -1,0 +1,59 @@
+{
+ "structure": "M-013",
+ "files": [
+  {
+   "file": "loc_il0485_color_571513cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0485/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0400/il0485/color/571513cv.jpg",
+   "title": "Newspaper Office & Print Shop, Nauvoo, Hancock County, IL",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0485_color_571514cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0485/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0400/il0485/color/571514cv.jpg",
+   "title": "Newspaper Office & Print Shop, Nauvoo, Hancock County, IL",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0485_photos_061934pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0485/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0400/il0485/photos/061934pv.jpg",
+   "title": "Newspaper Office & Print Shop, Nauvoo, Hancock County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0485_photos_061935pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0485/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0400/il0485/photos/061935pv.jpg",
+   "title": "Newspaper Office & Print Shop, Nauvoo, Hancock County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0485_data_il0485data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0485/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0485/data/il0485data.pdf",
+   "title": "Newspaper Office & Print Shop, Nauvoo, Hancock County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0485_data_il0485cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0485/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0485/data/il0485cap.pdf",
+   "title": "Newspaper Office & Print Shop, Nauvoo, Hancock County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

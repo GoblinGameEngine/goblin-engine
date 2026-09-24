@@ -1,0 +1,68 @@
+{
+ "structure": "K-089",
+ "files": [
+  {
+   "file": "loc_in0116_photos_065634pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0116/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0116/photos/065634pv.jpg",
+   "title": "Cannelton Cotton Mill, Worker's Housing Type B, Fifth Street, Cannelton, Perry County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0116_photos_065635pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0116/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0116/photos/065635pv.jpg",
+   "title": "Cannelton Cotton Mill, Worker's Housing Type B, Fifth Street, Cannelton, Perry County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0116_photos_065636pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0116/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0116/photos/065636pv.jpg",
+   "title": "Cannelton Cotton Mill, Worker's Housing Type B, Fifth Street, Cannelton, Perry County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0116_photos_065637pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0116/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0116/photos/065637pv.jpg",
+   "title": "Cannelton Cotton Mill, Worker's Housing Type B, Fifth Street, Cannelton, Perry County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0116_data_in0116data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0116/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0116/data/in0116data.pdf",
+   "title": "Cannelton Cotton Mill, Worker's Housing Type B, Fifth Street, Cannelton, Perry County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0116_data_in0116cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0116/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0116/data/in0116cap.pdf",
+   "title": "Cannelton Cotton Mill, Worker's Housing Type B, Fifth Street, Cannelton, Perry County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0116_file_in0116supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0116/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0116/supp/in0116supp.pdf",
+   "title": "Cannelton Cotton Mill, Worker's Housing Type B, Fifth Street, Cannelton, Perry County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

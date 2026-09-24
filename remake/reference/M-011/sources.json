@@ -1,0 +1,77 @@
+{
+ "structure": "M-011",
+ "files": [
+  {
+   "file": "loc_oh0352_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0352/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0352/sheet/00001a.tif",
+   "title": "First National Bank of Hudson, Aurora & Main Streets, Hudson, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0352_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0352/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0352/sheet/00002a.tif",
+   "title": "First National Bank of Hudson, Aurora & Main Streets, Hudson, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0352_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0352/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0352/sheet/00003a.tif",
+   "title": "First National Bank of Hudson, Aurora & Main Streets, Hudson, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0352_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0352/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0352/sheet/00004a.tif",
+   "title": "First National Bank of Hudson, Aurora & Main Streets, Hudson, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0352_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0352/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0352/sheet/00005a.tif",
+   "title": "First National Bank of Hudson, Aurora & Main Streets, Hudson, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0352_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0352/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0352/sheet/00006a.tif",
+   "title": "First National Bank of Hudson, Aurora & Main Streets, Hudson, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0352_sheet_00007a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0352/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0352/sheet/00007a.tif",
+   "title": "First National Bank of Hudson, Aurora & Main Streets, Hudson, Summit County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0352_data_oh0352data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0352/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0352/data/oh0352data.pdf",
+   "title": "First National Bank of Hudson, Aurora & Main Streets, Hudson, Summit County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

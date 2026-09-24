@@ -1,0 +1,41 @@
+{
+ "structure": "K-081",
+ "files": [
+  {
+   "file": "loc_oh0381_photos_126933pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0381/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0381/photos/126933pv.jpg",
+   "title": "250-252 Kelton Avenue (Houses), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0381_photos_126934pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0381/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0381/photos/126934pv.jpg",
+   "title": "250-252 Kelton Avenue (Houses), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0381_data_oh0381data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0381/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0381/data/oh0381data.pdf",
+   "title": "250-252 Kelton Avenue (Houses), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0381_data_oh0381cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0381/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0381/data/oh0381cap.pdf",
+   "title": "250-252 Kelton Avenue (Houses), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "structure": "K-071",
+ "files": [
+  {
+   "file": "loc_oh1592_photos_126879pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1592/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1592/photos/126879pv.jpg",
+   "title": "374 Kendall Place (House), 374 Kendall Place, Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1592_photos_126880pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1592/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1592/photos/126880pv.jpg",
+   "title": "374 Kendall Place (House), 374 Kendall Place, Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1592_data_oh1592data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1592/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1592/data/oh1592data.pdf",
+   "title": "374 Kendall Place (House), 374 Kendall Place, Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1592_data_oh1592cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1592/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1592/data/oh1592cap.pdf",
+   "title": "374 Kendall Place (House), 374 Kendall Place, Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

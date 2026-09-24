@@ -1,0 +1,41 @@
+{
+ "structure": "K-078",
+ "files": [
+  {
+   "file": "loc_oh0384_photos_126687pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0384/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0384/photos/126687pv.jpg",
+   "title": "29 South Monroe Avenue (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0384_photos_126688pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0384/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0384/photos/126688pv.jpg",
+   "title": "29 South Monroe Avenue (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0384_data_oh0384data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0384/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0384/data/oh0384data.pdf",
+   "title": "29 South Monroe Avenue (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0384_data_oh0384cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0384/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0384/data/oh0384cap.pdf",
+   "title": "29 South Monroe Avenue (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

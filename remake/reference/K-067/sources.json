@@ -1,0 +1,41 @@
+{
+ "structure": "K-067",
+ "files": [
+  {
+   "file": "loc_oh1612_photos_352308pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1612/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1600/oh1612/photos/352308pv.jpg",
+   "title": "1354-1356 Fair Avenue (house), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1612_photos_352309pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1612/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1600/oh1612/photos/352309pv.jpg",
+   "title": "1354-1356 Fair Avenue (house), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1612_data_oh1612data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1612/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1600/oh1612/data/oh1612data.pdf",
+   "title": "1354-1356 Fair Avenue (house), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1612_data_oh1612cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1612/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1600/oh1612/data/oh1612cap.pdf",
+   "title": "1354-1356 Fair Avenue (house), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

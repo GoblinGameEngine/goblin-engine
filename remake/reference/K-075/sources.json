@@ -1,0 +1,41 @@
+{
+ "structure": "K-075",
+ "files": [
+  {
+   "file": "loc_oh0386_photos_126692pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0386/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0386/photos/126692pv.jpg",
+   "title": "1310 Oak Street (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0386_photos_126693pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0386/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0386/photos/126693pv.jpg",
+   "title": "1310 Oak Street (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0386_data_oh0386data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0386/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0386/data/oh0386data.pdf",
+   "title": "1310 Oak Street (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0386_data_oh0386cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0386/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0386/data/oh0386cap.pdf",
+   "title": "1310 Oak Street (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

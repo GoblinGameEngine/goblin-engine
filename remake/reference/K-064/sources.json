@@ -1,0 +1,41 @@
+{
+ "structure": "K-064",
+ "files": [
+  {
+   "file": "loc_oh1621_photos_352319pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1621/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1600/oh1621/photos/352319pv.jpg",
+   "title": "1469 Summit Street (house), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1621_photos_352320pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1621/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1600/oh1621/photos/352320pv.jpg",
+   "title": "1469 Summit Street (house), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1621_data_oh1621data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1621/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1600/oh1621/data/oh1621data.pdf",
+   "title": "1469 Summit Street (house), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1621_data_oh1621cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1621/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1600/oh1621/data/oh1621cap.pdf",
+   "title": "1469 Summit Street (house), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "structure": "K-073",
+ "files": [
+  {
+   "file": "loc_oh1509_photos_126869pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1509/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1509/photos/126869pv.jpg",
+   "title": "156 Wilson Avenue (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1509_photos_126870pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1509/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1509/photos/126870pv.jpg",
+   "title": "156 Wilson Avenue (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1509_data_oh1509data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1509/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1509/data/oh1509data.pdf",
+   "title": "156 Wilson Avenue (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1509_data_oh1509cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1509/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1509/data/oh1509cap.pdf",
+   "title": "156 Wilson Avenue (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

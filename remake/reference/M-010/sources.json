@@ -1,0 +1,41 @@
+{
+ "structure": "M-010",
+ "files": [
+  {
+   "file": "loc_in0335_color_361579cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0335/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0335/color/361579cv.jpg",
+   "title": "300 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0335_photos_064845pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0335/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0335/photos/064845pv.jpg",
+   "title": "300 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0335_data_in0335data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0335/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0300/in0335/data/in0335data.pdf",
+   "title": "300 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0335_data_in0335cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0335/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0300/in0335/data/in0335cap.pdf",
+   "title": "300 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

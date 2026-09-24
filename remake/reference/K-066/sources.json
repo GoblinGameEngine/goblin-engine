@@ -1,0 +1,41 @@
+{
+ "structure": "K-066",
+ "files": [
+  {
+   "file": "loc_oh1523_photos_126873pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1523/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1523/photos/126873pv.jpg",
+   "title": "257-259 Kelton Street (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1523_photos_126874pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1523/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1523/photos/126874pv.jpg",
+   "title": "257-259 Kelton Street (House), Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1523_data_oh1523data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1523/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1523/data/oh1523data.pdf",
+   "title": "257-259 Kelton Street (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1523_data_oh1523cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1523/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1523/data/oh1523cap.pdf",
+   "title": "257-259 Kelton Street (House), Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "structure": "M-008",
+ "files": [
+  {
+   "file": "loc_in0334_photos_064841pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0334/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0334/photos/064841pv.jpg",
+   "title": "200 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0334_photos_064842pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0334/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0334/photos/064842pv.jpg",
+   "title": "200 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0334_photos_064843pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0334/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0334/photos/064843pv.jpg",
+   "title": "200 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0334_photos_064844pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0334/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0300/in0334/photos/064844pv.jpg",
+   "title": "200 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0334_data_in0334data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0334/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0300/in0334/data/in0334data.pdf",
+   "title": "200 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0334_data_in0334cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0334/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0300/in0334/data/in0334cap.pdf",
+   "title": "200 Block Main Street (Commercial Buildings), Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "structure": "M-016",
+ "files": [
+  {
+   "file": "loc_il0140_photos_061822pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0140/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0140/photos/061822pv.jpg",
+   "title": "Store Building, 509 Commercial Avenue, Cairo, Alexander County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0140_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0140/sheet/00000a.tif",
+   "title": "Store Building, 509 Commercial Avenue, Cairo, Alexander County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0140_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0140/sheet/00001a.tif",
+   "title": "Store Building, 509 Commercial Avenue, Cairo, Alexander County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0140_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0140/sheet/00002a.tif",
+   "title": "Store Building, 509 Commercial Avenue, Cairo, Alexander County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0140_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0140/sheet/00003a.tif",
+   "title": "Store Building, 509 Commercial Avenue, Cairo, Alexander County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0140_data_il0140data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0140/data/il0140data.pdf",
+   "title": "Store Building, 509 Commercial Avenue, Cairo, Alexander County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0140_file_il0140supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0140/supp/il0140supp.pdf",
+   "title": "Store Building, 509 Commercial Avenue, Cairo, Alexander County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

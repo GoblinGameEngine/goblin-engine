@@ -1,0 +1,32 @@
+{
+ "structure": "M-017",
+ "files": [
+  {
+   "file": "loc_il0238_photos_061985pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0238/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0238/photos/061985pv.jpg",
+   "title": "407-413, 421-429 Main Street (Commercial Buildings), Warsaw, Hancock County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0238_photos_061986pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0238/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0238/photos/061986pv.jpg",
+   "title": "407-413, 421-429 Main Street (Commercial Buildings), Warsaw, Hancock County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0238_data_il0238data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0238/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0238/data/il0238data.pdf",
+   "title": "407-413, 421-429 Main Street (Commercial Buildings), Warsaw, Hancock County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

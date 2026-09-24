@@ -1,0 +1,41 @@
+{
+ "structure": "K-076",
+ "files": [
+  {
+   "file": "loc_oh1589_photos_126877pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1589/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1589/photos/126877pv.jpg",
+   "title": "1635-1637 Oak Street (House), 1635-1637 Oak Street, Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1589_photos_126878pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1589/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh1500/oh1589/photos/126878pv.jpg",
+   "title": "1635-1637 Oak Street (House), 1635-1637 Oak Street, Columbus, Franklin County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1589_data_oh1589data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1589/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1589/data/oh1589data.pdf",
+   "title": "1635-1637 Oak Street (House), 1635-1637 Oak Street, Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh1589_data_oh1589cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh1589/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh1500/oh1589/data/oh1589cap.pdf",
+   "title": "1635-1637 Oak Street (House), 1635-1637 Oak Street, Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "structure": "K-087",
+ "files": [
+  {
+   "file": "loc_oh0072_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0000/oh0072/sheet/00001a.tif",
+   "title": "Corzelius House, 85 Deshler Avenue, Columbus, Franklin County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0072_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0000/oh0072/sheet/00002a.tif",
+   "title": "Corzelius House, 85 Deshler Avenue, Columbus, Franklin County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0072_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0000/oh0072/sheet/00003a.tif",
+   "title": "Corzelius House, 85 Deshler Avenue, Columbus, Franklin County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0072_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0000/oh0072/sheet/00004a.tif",
+   "title": "Corzelius House, 85 Deshler Avenue, Columbus, Franklin County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0072_data_oh0072data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0000/oh0072/data/oh0072data.pdf",
+   "title": "Corzelius House, 85 Deshler Avenue, Columbus, Franklin County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
