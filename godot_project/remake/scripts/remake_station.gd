@@ -132,6 +132,7 @@ func _setup_environment() -> void:
 	sun.light_energy = 1.3
 	sun.light_color = Color(1.0, 0.98, 0.92)
 	sun.shadow_enabled = true
+	sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS   # 4 splits drew every caster twice more
 	add_child(sun)
 
 
