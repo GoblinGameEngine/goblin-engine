@@ -20,6 +20,8 @@ Conventions (what the Godot side -- remake/godot scripts -- relies on):
   * Textures come from remake/textures/<set>/<name>_{albedo,normal,rough}.png.
 """
 
+import hashlib
+import json
 import math
 import os
 
@@ -28,6 +30,9 @@ import bpy
 from mathutils import Matrix, Vector
 
 FT = 0.3048
+# foundations, porch skirts, steps and piers run this far below grade (z = 0) so a building set
+# on sloping or elevated terrain never shows a gap under it: the low side just buries less
+FOUND_DEPTH = 4.0
 IN = 0.0254
 
 
@@ -41,6 +46,8 @@ class Building:
         bpy.ops.wm.read_factory_settings(use_empty=True)
         self.name = name
         self.texdir = texdir
+        self.sink_ground = True          # see Part.sink_ground_contacts (off for site/terrain pieces)
+        self.mat_defs = {}               # blender material name -> definition (the .mats.json sidecar)
         self.mats = {}
         self.tile = {}          # material -> metres per texture repeat (for UV projection)
         self.objs = {}
@@ -49,10 +56,23 @@ class Building:
 
     # -- materials --------------------------------------------------------
     def mat(self, key, tex=None, color=(0.8, 0.8, 0.8), rough=0.6, metal=0.0, tile_m=1.0,
-            alpha=None, emission=None):
+            alpha=None, emission=None, tint=None):
+        """tex: texture name in this building's texture set; tint multiplies a texture (a neutral
+        library texture painted any colour); color is used when there is no texture."""
         if key in self.mats:
             return key
-        m = bpy.data.materials.new(key)
+        # materials are shared across every building: the glb carries only a content-derived name,
+        # and Godot builds the material once from the definition in <building>.mats.json and the
+        # shared texture library (godot_project/remake/textures/<set>/<tex>_*.webp)
+        tex_rel = None
+        if tex:
+            tex_rel = os.path.basename(os.path.normpath(self.texdir)) + "/" + tex
+        d = {"tex": tex_rel, "tint": [round(c, 4) for c in tint] if tint else None,
+             "color": None if tex else [round(c, 4) for c in color], "rough": round(rough, 3), "metal": round(metal, 3),
+             "alpha": alpha, "emission": [round(c, 4) for c in emission] if emission else None}
+        mname = "M_" + hashlib.sha1(json.dumps(d, sort_keys=True).encode()).hexdigest()[:12]
+        self.mat_defs[mname] = d
+        m = bpy.data.materials.new(mname)
         m.use_nodes = True
         nt = m.node_tree
         bsdf = nt.nodes["Principled BSDF"]
@@ -63,7 +83,16 @@ class Building:
             base = os.path.join(self.texdir, tex)
             img = nt.nodes.new("ShaderNodeTexImage")
             img.image = bpy.data.images.load(base + "_albedo.png")
-            nt.links.new(img.outputs["Color"], bsdf.inputs["Base Color"])
+            if tint:
+                mul = nt.nodes.new("ShaderNodeMix")
+                mul.data_type = "RGBA"
+                mul.blend_type = "MULTIPLY"
+                mul.inputs["Factor"].default_value = 1.0
+                nt.links.new(img.outputs["Color"], mul.inputs[6])
+                mul.inputs[7].default_value = (*tint, 1.0)
+                nt.links.new(mul.outputs[2], bsdf.inputs["Base Color"])
+            else:
+                nt.links.new(img.outputs["Color"], bsdf.inputs["Base Color"])
             rimg = nt.nodes.new("ShaderNodeTexImage")
             rimg.image = bpy.data.images.load(base + "_rough.png")
             rimg.image.colorspace_settings.name = "Non-Color"
@@ -100,12 +129,17 @@ class Building:
 
     def finish(self, out_glb):
         for p in list(self.objs.values()):
+            p.sink_ground_contacts()
             p.to_object()
+        self.merge_meshes()
         os.makedirs(os.path.dirname(out_glb), exist_ok=True)
         bpy.ops.object.select_all(action="SELECT")
+        # no images in the glb: textures come from the shared library (see mat())
         bpy.ops.export_scene.gltf(filepath=out_glb, export_format="GLB", export_yup=True,
-                                  export_apply=True, export_extras=True, export_image_format="WEBP",
-                                  export_image_quality=88)
+                                  export_apply=True, export_extras=True, export_image_format="NONE")
+        used = {m.name for ob in bpy.data.objects if ob.type == "MESH" for m in ob.data.materials if m}
+        with open(os.path.splitext(out_glb)[0] + ".mats.json", "w") as f:
+            json.dump({k: v for k, v in sorted(self.mat_defs.items()) if k in used}, f, indent=0)
         # the working .blend stays OUT of godot_project: Godot 4.3 tries to import .blend files
         # through an external Blender and stalls the whole import when it can't find one
         blend = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out",
@@ -113,6 +147,68 @@ class Building:
         os.makedirs(os.path.dirname(blend), exist_ok=True)
         bpy.ops.wm.save_as_mainfile(filepath=blend)
         print(f"EXPORTED {out_glb}")
+
+
+def _is_special(ob):
+    """Objects Godot wires by name (door leaves, ladders, lights) stay separate, with their subtree."""
+    while ob is not None:
+        n = ob.name
+        if n.startswith("door_") or n.startswith("ladder_") or n.startswith("light_"):
+            return True
+        ob = ob.parent
+    return False
+
+
+def _join(obs, name):
+    obs = [o for o in obs if o.type == "MESH" and len(o.data.polygons)]
+    if not obs:
+        return None
+    keep = obs[0]
+    with bpy.context.temp_override(active_object=keep, selected_editable_objects=obs, selected_objects=obs):
+        bpy.ops.object.join()
+    keep.name = name
+    keep.data.name = name
+    return keep
+
+
+def _merge_meshes(self):
+    """One visual mesh (one surface per material) + one collision-only mesh per building: a few
+    draw calls and one static body instead of a node per part.  '-col' parts are both visual and
+    collision; '-colonly' parts are collision only."""
+    root = self.root
+    vis, col = [], []
+    for ob in list(bpy.data.objects):
+        if ob.type != "MESH" or _is_special(ob):
+            continue
+        if ob.name.endswith("-colonly"):
+            col.append(ob)
+            continue
+        if ob.name.endswith("-col"):
+            dup = ob.copy()
+            dup.data = ob.data.copy()
+            bpy.context.scene.collection.objects.link(dup)
+            dup.name = ob.name[:-4] + "_c"
+            col.append(dup)
+            ob.name = ob.name[:-4]
+        vis.append(ob)
+    for ob in vis + col:                      # bake parenting into world transforms before joining
+        mw = ob.matrix_world.copy()
+        ob.parent = None
+        ob.matrix_world = mw
+    v = _join(vis, self.name + "_visual")
+    c = _join(col, self.name + "_collision-colonly")
+    for ob in (v, c):
+        if ob:
+            mw = ob.matrix_world.copy()
+            ob.parent = root
+            ob.matrix_world = mw
+    if c:
+        c.data.materials.clear()
+        while c.data.uv_layers:                # collision needs positions only
+            c.data.uv_layers.remove(c.data.uv_layers[0])
+
+
+Building.merge_meshes = _merge_meshes
 
 
 class Part:
@@ -220,6 +316,18 @@ class Part:
         if caps:
             self.face([(p[0], p[1], z0) for p in reversed(pts2d)], mat)
             self.face([(p[0], p[1], z1) for p in pts2d], mat)
+
+    def sink_ground_contacts(self):
+        """Whatever stands on grade (box bottoms, step and platform sides, posts, skirts) is carried
+        down to -FOUND_DEPTH, so the building can sit on uneven or raised ground with no gap.  Only
+        vertices at z ~ 0 that touch no upward-facing face move: ground and terrain surfaces stay."""
+        if not self.b.sink_ground:
+            return
+        self.bm.normal_update()
+        for v in self.bm.verts:
+            wz = v.co.z + self.origin.z
+            if abs(wz) < 0.03 and v.link_faces and not any(f.normal.z > 0.5 for f in v.link_faces):
+                v.co.z = -FOUND_DEPTH - self.origin.z
 
     def to_object(self):
         me = bpy.data.meshes.new(self.name)

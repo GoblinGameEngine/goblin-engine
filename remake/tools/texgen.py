@@ -679,6 +679,18 @@ RECIPES = {
 
 
 def main():
+    """texgen.py OUTDIR SET  -- one set;  texgen.py --missing  -- every set not generated yet
+    (into remake/textures/<set>)."""
+    if sys.argv[1] == "--missing":
+        root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "textures")
+        for setname in RECIPES:
+            out = os.path.join(root, setname)
+            if not os.path.exists(os.path.join(out, "set.json")):
+                os.makedirs(out, exist_ok=True)
+                print("texgen", setname, flush=True)
+                sys.argv = [sys.argv[0], out, setname]
+                main()
+        return
     out, setname = sys.argv[1], sys.argv[2]
     made = []
     for fn, name, kw in RECIPES[setname]:

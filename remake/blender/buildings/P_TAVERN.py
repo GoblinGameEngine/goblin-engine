@@ -86,7 +86,7 @@ DOOR_HEAD = FL1 + 2.35                                 # leaves 2.0 m + transom 
 
 shell = b.part("shell-col")
 # fieldstone base course, brick above
-shell.box((X0 - 0.02, Y0 - 0.02, -0.3), (X1 + 0.02, Y1 + 0.02, 0.45), "found", sides="xXyY")
+shell.box((X0 - 0.02, Y0 - 0.02, -g.FOUND_DEPTH), (X1 + 0.02, Y1 + 0.02, 0.45), "found", sides="xXyY")
 
 
 def ops_from_west(lefts_ft, w, sill, head, total_w=W):
@@ -421,7 +421,7 @@ KL = ft(22, 1.5)
 kx0, kx1, ky0, ky1 = X1, X1 + KW, Y0, Y0 + KL
 K_EAVE = FL1 + 2.6
 kw = b.part("wing-col")
-kw.box((kx0, ky0, -0.2), (kx1, ky1, FL1 - 0.25), "found", sides="xXyY")
+kw.box((kx0, ky0, -g.FOUND_DEPTH), (kx1, ky1, FL1 - 0.25), "found", sides="xXyY")
 kops = {
     "S": [dict(off=0.7, w=0.9, sill=FL1, head=FL1 + 2.05), dict(off=2.6, w=0.9, sill=FL1 + 0.95, head=FL1 + 2.05)],
     "E": [dict(off=1.2, w=0.9, sill=FL1 + 0.95, head=FL1 + 2.05), dict(off=4.2, w=0.9, sill=FL1 + 0.95, head=FL1 + 2.05)],

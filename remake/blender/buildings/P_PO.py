@@ -61,7 +61,7 @@ PITCH = 18.4                          # 4/12
 CEIL = FL + 2.6
 
 shell = b.part("shell-col")
-shell.box((X0 - 0.01, Y0 - 0.01, -0.2), (X1 + 0.01, Y1 + 0.01, FL), "concrete", sides="xXyY")
+shell.box((X0 - 0.01, Y0 - 0.01, -g.FOUND_DEPTH), (X1 + 0.01, Y1 + 0.01, FL), "concrete", sides="xXyY")
 wx = lambda px: X0 + (px - 190) * MPX          # Harvel photo x (px) -> +X
 front_ops = [dict(off=X1 - wx(380), w=(380 - 215) * MPX, sill=FL + 0.42, head=FL + 2.55),        # storefront window
              dict(off=T + 0.15, w=0.95, sill=FL, head=FL + 2.55)]                         # door + transom

@@ -76,7 +76,7 @@ S1 = FL1 + ft(2, 2)           # 1st floor window sill
 S2 = S1 + WH + ft(2, 7.25)    # 2nd floor window sill
 
 shell = b.part("shell-col")
-shell.box((X0 - 0.03, Y0 - 0.03, -0.25), (X1 + 0.03, Y1 + 0.03, FL1 - 0.05), "found", sides="xXyY")
+shell.box((X0 - 0.03, Y0 - 0.03, -g.FOUND_DEPTH), (X1 + 0.03, Y1 + 0.03, FL1 - 0.05), "found", sides="xXyY")
 
 # -- walls.  N = shop front (built separately below the cornice, clapboard above)
 bay_w = ft(8, 2.25)
@@ -303,7 +303,7 @@ ax0, ax1 = X0 - AW, X0
 A_EAVE = FL1 + 2.95
 a_pitch = 28.0
 ad = b.part("addition-col")
-ad.box((ax0, ay0, -0.2), (ax1, ay1, FL1 - 0.05), "found", sides="xyY")
+ad.box((ax0, ay0, -g.FOUND_DEPTH), (ax1, ay1, FL1 - 0.05), "found", sides="xyY")
 PX = g.FT / 21.5                          # plan px -> m (1st floor plan, 1/8" scale crop)
 axp = lambda px: X0 - (px - 1090) * PX      # plan x px -> +X (west is +px on this plan)
 aops = {

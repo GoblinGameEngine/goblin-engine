@@ -55,7 +55,7 @@ HH_RIDGE = g.ft(67, 10)
 HH_FLOOR = HH_EAVE - 3.0           # head-pulley floor in the cupola
 
 sh = b.part("shell-col")
-sh.box((X0 - 0.05, Y0 - 0.05, -0.3), (X1 + 0.05, Y1 + 0.05, 0.05), "concrete", sides="xXyY")
+sh.box((X0 - 0.05, Y0 - 0.05, -g.FOUND_DEPTH), (X1 + 0.05, Y1 + 0.05, 0.05), "concrete", sides="xXyY")
 # upper foundation band stops at the drive-through and scale-shed doors (driveway is at grade)
 for (xa, xb) in ((X0 - 0.05, -DRV + 0.1), (DRV - 0.1, X1 + 0.05)):
     for (ya, yb) in ((Y0 - 0.05, Y0), (Y1, Y1 + 0.05)):

@@ -64,7 +64,7 @@ DOOR_W, DOOR_HEAD = ft(4, 0), FLOOR + ft(7, 10)
 
 shell = b.part("shell-col")
 # fieldstone foundation (visible band grade -> floor), slightly proud of the siding
-shell.box((X0 - 0.03, Y0 - 0.03, -0.25), (X1 + 0.03, Y1 + 0.03, FLOOR), "found", sides="xXyY")
+shell.box((X0 - 0.03, Y0 - 0.03, -g.FOUND_DEPTH), (X1 + 0.03, Y1 + 0.03, FLOOR), "found", sides="xXyY")
 
 # --- walls: counter-clockwise so the interior is always on the left --------
 west_w = [ft(5, 8), ft(5, 8) + WIN_W + ft(5, 6), ft(5, 8) + 2 * WIN_W + ft(5, 6) + ft(5, 6.375)]   # from N corner
@@ -113,7 +113,7 @@ g.door(b, "doorframe", frames["S"], door_off, DOOR_W, DOOR_HEAD, T, "front", swi
 dx0 = X0 + door_off - 0.18
 shell.box((dx0, Y0 - 0.1, DOOR_HEAD + 0.1), (dx0 + DOOR_W + 0.36, Y0, DOOR_HEAD + 0.2), "trim")
 # stone step (sheet 1 elev.: one stone below the sill)
-shell.box((X0 + door_off - 0.35, Y0 - 0.65, -0.1), (X0 + door_off + DOOR_W + 0.35, Y0, FLOOR - 0.02), "found")
+shell.box((X0 + door_off - 0.35, Y0 - 0.65, -g.FOUND_DEPTH), (X0 + door_off + DOOR_W + 0.35, Y0, FLOOR - 0.02), "found")
 
 # --- belfry (sheet 1: 7'-11" above ridge; sheet 2: 3'-8" in from the S gable) -----
 bel = b.part("belfry-col")

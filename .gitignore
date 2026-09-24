@@ -26,3 +26,8 @@ remake/previews/
 builds/
 godot_project/remake/buildings/*.webp
 godot_project/remake/buildings/*.webp.import
+# remake build products (remake/tools/build_all.sh regenerates them)
+godot_project/remake/buildings/*.glb
+godot_project/remake/buildings/*.glb.import
+godot_project/remake/buildings/*.mats.json
+godot_project/remake/textures/

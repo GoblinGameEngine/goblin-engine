@@ -18,9 +18,16 @@ func _ready() -> void:
 		load_building(scene)
 
 
+## Shared material library: the glbs carry no images, each surface's material is named by the hash
+## of its definition (<building>.mats.json, written by gblib) and built here once for every building.
+static var _mat_cache := {}
+const TEX_ROOT := "res://remake/textures/"
+
+
 func load_building(ps: PackedScene) -> void:
 	var inst := ps.instantiate()
 	add_child(inst)
+	_apply_materials(inst, ps.resource_path.get_basename() + ".mats.json")
 	var door_nodes: Array[Node3D] = []
 	var light_nodes: Array[Node3D] = []
 	var ladder_nodes: Array[Node3D] = []
@@ -113,3 +120,57 @@ func _make_door(n: Node3D) -> void:
 		body.add_child(cs)
 	body.setup(id, sign, is_locked)
 	doors.append(body)
+
+
+func _apply_materials(inst: Node, sidecar: String) -> void:
+	if not FileAccess.file_exists(sidecar):
+		return
+	var defs: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(sidecar))
+	var stack: Array[Node] = [inst]
+	while stack.size() > 0:
+		var n: Node = stack.pop_back()
+		stack.append_array(n.get_children())
+		var mi := n as MeshInstance3D
+		if mi == null or mi.mesh == null:
+			continue
+		for i in mi.mesh.get_surface_count():
+			var m := mi.mesh.surface_get_material(i)
+			if m and defs.has(m.resource_name):
+				mi.set_surface_override_material(i, library_material(m.resource_name, defs[m.resource_name]))
+
+
+static func library_material(key: String, d: Dictionary) -> StandardMaterial3D:
+	if _mat_cache.has(key):
+		return _mat_cache[key]
+	var m := StandardMaterial3D.new()
+	m.resource_name = key
+	m.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS_ANISOTROPIC
+	m.roughness = d.get("rough", 0.6)
+	m.metallic = d.get("metal", 0.0)
+	var tex = d.get("tex")
+	if tex:
+		var base: String = TEX_ROOT + tex
+		m.albedo_texture = load(base + "_albedo.webp")
+		var tint = d.get("tint")
+		m.albedo_color = Color(tint[0], tint[1], tint[2]) if tint else Color.WHITE
+		if ResourceLoader.exists(base + "_rough.webp"):
+			m.roughness_texture = load(base + "_rough.webp")
+			m.roughness_texture_channel = BaseMaterial3D.TEXTURE_CHANNEL_RED
+			m.roughness = 1.0
+		if ResourceLoader.exists(base + "_normal.webp"):
+			m.normal_enabled = true
+			m.normal_texture = load(base + "_normal.webp")
+	else:
+		var c = d.get("color", [0.8, 0.8, 0.8])
+		m.albedo_color = Color(c[0], c[1], c[2])
+	var a = d.get("alpha")
+	if a != null:
+		m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+		m.albedo_color.a = a
+	var e = d.get("emission")
+	if e:
+		m.emission_enabled = true
+		m.emission = Color(e[0], e[1], e[2])
+		m.emission_energy_multiplier = 2.0
+	_mat_cache[key] = m
+	return m

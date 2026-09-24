@@ -188,7 +188,7 @@ class House:
             z0 = bl.get("found_top", fz[0] - 0.05)
             x0, y0, x1, y1 = bl["rect"]
             # foundation band
-            self.shell.box((x0 - 0.02, y0 - 0.02, -0.3), (x1 + 0.02, y1 + 0.02, z0), self.m["found"], sides="xXyY")
+            self.shell.box((x0 - 0.02, y0 - 0.02, -g.FOUND_DEPTH), (x1 + 0.02, y1 + 0.02, z0), self.m["found"], sides="xXyY")
             for side, (a, c) in self._block_edges(bl).items():
                 L = math.dist(a, c)
                 keep = _subtract((0.0, L), self._shared(bl, side))
@@ -493,7 +493,7 @@ class House:
             z = po["z"]
             p.box((x0, y0, z - 0.15), (x1, y1, z), self.m["porch"], mats={k: self.m["trim"] for k in "xXyY"})
             if po.get("skirt", True):
-                p.box((x0 + 0.05, y0 + 0.05, 0), (x1 - 0.05, y1 - 0.05, z - 0.15), po.get("skirt_mat", self.m["trim"]), sides="xXyY")
+                p.box((x0 + 0.05, y0 + 0.05, -g.FOUND_DEPTH), (x1 - 0.05, y1 - 0.05, z - 0.15), po.get("skirt_mat", self.m["trim"]), sides="xXyY")
             top = po["post_top"]
             for (px, py) in po.get("posts", []):
                 style = po.get("post_style", "square")
@@ -531,7 +531,7 @@ class House:
                     zz = z - (k + 1) * z / n
                     c0 = Vector((st["at"][0], st["at"][1], 0)) + d * (k * 0.28) - side * st["width"] / 2
                     c1 = c0 + d * 0.28 + side * st["width"]
-                    p.box((min(c0.x, c1.x), min(c0.y, c1.y), 0), (max(c0.x, c1.x), max(c0.y, c1.y), zz + z / n), st.get("mat", self.m["porch"]))
+                    p.box((min(c0.x, c1.x), min(c0.y, c1.y), -g.FOUND_DEPTH), (max(c0.x, c1.x), max(c0.y, c1.y), zz + z / n), st.get("mat", self.m["porch"]))
             rf = po.get("roof")
             if rf:
                 rp = self.b.part(f"porch_{i}_roof-col")

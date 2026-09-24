@@ -19,6 +19,7 @@ import gblib as g  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
 b = g.Building("P-SITE", os.path.join(ROOT, "remake", "textures", "p-site"))
+b.sink_ground = False               # the site is ground itself (and a flat stand-in for map terrain)
 for n, t in (("grass", 4.0), ("asphalt", 3.0), ("gravel_road", 3.0), ("sidewalk", 2.0), ("ballast", 2.0), ("ties", 2.6),
              ("bark", 1.0), ("leaves", 1.5)):
     b.mat(n, tex=n, tile_m=t)
