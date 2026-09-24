@@ -1,0 +1,59 @@
+{
+ "structure": "M-039",
+ "files": [
+  {
+   "file": "loc_oh0140_photos_127856pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0140/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0100/oh0140/photos/127856pv.jpg",
+   "title": "Lewis House, Avon Center Road, Avon, Lorain County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0140_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0140/sheet/00000a.tif",
+   "title": "Lewis House, Avon Center Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0140_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0140/sheet/00001a.tif",
+   "title": "Lewis House, Avon Center Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0140_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0140/sheet/00002a.tif",
+   "title": "Lewis House, Avon Center Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0140_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0140/sheet/00003a.tif",
+   "title": "Lewis House, Avon Center Road, Avon, Lorain County, OH",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0140_data_oh0140data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0140/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0100/oh0140/data/oh0140data.pdf",
+   "title": "Lewis House, Avon Center Road, Avon, Lorain County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

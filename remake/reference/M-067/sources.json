@@ -1,0 +1,59 @@
+{
+ "structure": "M-067",
+ "files": [
+  {
+   "file": "loc_il0094_photos_062186pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0094/photos/062186pv.jpg",
+   "title": "Hale House, State Route 5, Cherry Valley, Winnebago County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0094_photos_062187pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0094/photos/062187pv.jpg",
+   "title": "Hale House, State Route 5, Cherry Valley, Winnebago County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0094_photos_062188pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0094/photos/062188pv.jpg",
+   "title": "Hale House, State Route 5, Cherry Valley, Winnebago County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0094_photos_062189pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0094/photos/062189pv.jpg",
+   "title": "Hale House, State Route 5, Cherry Valley, Winnebago County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0094_data_il0094data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0094/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0094/data/il0094data.pdf",
+   "title": "Hale House, State Route 5, Cherry Valley, Winnebago County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0094_data_il0094cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0094/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0094/data/il0094cap.pdf",
+   "title": "Hale House, State Route 5, Cherry Valley, Winnebago County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

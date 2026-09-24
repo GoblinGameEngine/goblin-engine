@@ -1,0 +1,77 @@
+{
+ "structure": "M-058",
+ "files": [
+  {
+   "file": "loc_il0273_photos_064053pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0273/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0273/photos/064053pv.jpg",
+   "title": "Priest's House, State Route 157, Cahokia, St. Clair County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0273_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0273/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0273/sheet/00000a.tif",
+   "title": "Priest's House, State Route 157, Cahokia, St. Clair County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0273_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0273/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0273/sheet/00001a.tif",
+   "title": "Priest's House, State Route 157, Cahokia, St. Clair County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0273_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0273/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0273/sheet/00002a.tif",
+   "title": "Priest's House, State Route 157, Cahokia, St. Clair County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0273_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0273/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0273/sheet/00003a.tif",
+   "title": "Priest's House, State Route 157, Cahokia, St. Clair County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0273_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0273/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0273/sheet/00004a.tif",
+   "title": "Priest's House, State Route 157, Cahokia, St. Clair County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0273_data_il0273data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0273/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0273/data/il0273data.pdf",
+   "title": "Priest's House, State Route 157, Cahokia, St. Clair County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0273_file_il0273supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0273/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0273/supp/il0273supp.pdf",
+   "title": "Priest's House, State Route 157, Cahokia, St. Clair County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

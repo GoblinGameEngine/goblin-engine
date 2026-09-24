@@ -1,0 +1,86 @@
+{
+ "structure": "M-049",
+ "files": [
+  {
+   "file": "loc_il0293_photos_061888pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0293/photos/061888pv.jpg",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0293_photos_061889pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0293/photos/061889pv.jpg",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0293_photos_061890pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0293/photos/061890pv.jpg",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0293_photos_061891pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0293/photos/061891pv.jpg",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0293_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0293/sheet/00000a.tif",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0293_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0293/sheet/00001a.tif",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0293_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0293/sheet/00002a.tif",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0293_data_il0293data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0293/data/il0293data.pdf",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0293_file_il0293supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0293/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0293/supp/il0293supp.pdf",
+   "title": "Major Newton Walker House, Main Street, Lewistown, Fulton County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

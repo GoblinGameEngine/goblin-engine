@@ -1,0 +1,104 @@
+{
+ "structure": "M-033",
+ "files": [
+  {
+   "file": "loc_in0094_color_572122cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0094/color/572122cv.jpg",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_photos_066115pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0094/photos/066115pv.jpg",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_photos_066116pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0094/photos/066116pv.jpg",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_photos_066117pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0094/photos/066117pv.jpg",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_photos_066118pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0094/photos/066118pv.jpg",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_photos_066119pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0094/photos/066119pv.jpg",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_photos_066120pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0094/photos/066120pv.jpg",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_photos_066121pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0094/photos/066121pv.jpg",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_data_in0094data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0094/data/in0094data.pdf",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_data_in0094cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0094/data/in0094cap.pdf",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0094_file_in0094supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0094/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0094/supp/in0094supp.pdf",
+   "title": "Andrew Scott House, 126 North Tenth Street, Richmond, Wayne County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

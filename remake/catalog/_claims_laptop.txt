@@ -268,3 +268,52 @@ oh1878
 commons-set:Middletown DPLA: 1200 First Avenue
 commons-set:Fire Barn No. 5, Elgin, IL
 commons-set:First Lutheran Church, Moline, IL
+commons-set:Pomeroy Post Office, 2nd Street, Pomeroy, OH
+commons-set:Sorg Opera House, Main Street, Middletown, OH
+commons-set:Middletown DPLA: 229 North Miami Street, Trenton
+il0304
+in0152
+il0138
+in0079
+oh0234
+oh0263
+il0293
+il0183
+in0252
+oh1557
+il0072
+in0460
+oh0317
+il0283
+oh0243
+il0146
+in0020
+oh0228
+il0149
+in0094
+oh0281
+il0178
+in0412
+oh0140
+il0221
+in0168
+oh0287
+oh0264
+il0154
+il0182
+in0090
+oh0256
+in0145
+oh0313
+il0273
+in0386
+oh0216
+il0265
+in0191
+oh0159
+il0226
+in0042
+oh0146
+il0094
+in0036
+commons-set:Middletown DPLA: 503 South Main Street

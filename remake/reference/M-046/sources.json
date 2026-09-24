@@ -1,0 +1,95 @@
+{
+ "structure": "M-046",
+ "files": [
+  {
+   "file": "loc_il0304_photos_061879pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0300/il0304/photos/061879pv.jpg",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_photos_061880pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0300/il0304/photos/061880pv.jpg",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0304/sheet/00000a.tif",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0304/sheet/00001a.tif",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0304/sheet/00002a.tif",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0304/sheet/00003a.tif",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0304/sheet/00004a.tif",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0304/sheet/00005a.tif",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_data_il0304data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0304/data/il0304data.pdf",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0304_file_il0304supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0304/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0300/il0304/supp/il0304supp.pdf",
+   "title": "George French House, State Route 130, Albion, Edwards County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

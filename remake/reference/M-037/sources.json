@@ -1,0 +1,77 @@
+{
+ "structure": "M-037",
+ "files": [
+  {
+   "file": "loc_in0412_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0412/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0412/sheet/00001a.tif",
+   "title": "Condit House, Terre Haute, Vigo County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0412_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0412/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0412/sheet/00002a.tif",
+   "title": "Condit House, Terre Haute, Vigo County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0412_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0412/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0412/sheet/00003a.tif",
+   "title": "Condit House, Terre Haute, Vigo County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0412_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0412/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0412/sheet/00004a.tif",
+   "title": "Condit House, Terre Haute, Vigo County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0412_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0412/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0412/sheet/00005a.tif",
+   "title": "Condit House, Terre Haute, Vigo County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0412_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0412/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0412/sheet/00006a.tif",
+   "title": "Condit House, Terre Haute, Vigo County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0412_sheet_00007a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0412/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0412/sheet/00007a.tif",
+   "title": "Condit House, Terre Haute, Vigo County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0412_data_in0412data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0412/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0412/data/in0412data.pdf",
+   "title": "Condit House, Terre Haute, Vigo County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

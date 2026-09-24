@@ -1,0 +1,86 @@
+{
+ "structure": "M-052",
+ "files": [
+  {
+   "file": "loc_il0072_photos_064163pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0072/photos/064163pv.jpg",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0072_photos_064164pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0072/photos/064164pv.jpg",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0072_photos_064165pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0072/photos/064165pv.jpg",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0072_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0072/sheet/00000a.tif",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0072_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0072/sheet/00001a.tif",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0072_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0072/sheet/00002a.tif",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0072_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0072/sheet/00003a.tif",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0072_data_il0072data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0072/data/il0072data.pdf",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0072_file_il0072supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0072/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0072/supp/il0072supp.pdf",
+   "title": "Johnson House, 300 East Archer Avenue, Monmouth, Warren County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

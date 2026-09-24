@@ -1,0 +1,104 @@
+{
+ "structure": "M-029",
+ "files": [
+  {
+   "file": "loc_il0146_photos_061869pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0146/photos/061869pv.jpg",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_photos_061870pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0146/photos/061870pv.jpg",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_photos_061871pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0146/photos/061871pv.jpg",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0146/sheet/00000a.tif",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0146/sheet/00001a.tif",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0146/sheet/00002a.tif",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0146/sheet/00003a.tif",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0146/sheet/00004a.tif",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0146/sheet/00005a.tif",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_data_il0146data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0146/data/il0146data.pdf",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0146_file_il0146supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0146/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0146/supp/il0146supp.pdf",
+   "title": "Colonel Warren House, Warrenville Road, Warrenville, DuPage County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

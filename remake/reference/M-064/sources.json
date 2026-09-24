@@ -1,0 +1,77 @@
+{
+ "structure": "M-064",
+ "files": [
+  {
+   "file": "loc_il0226_photos_063353pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0226/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0226/photos/063353pv.jpg",
+   "title": "James Lemen House, State Highway 3, Waterloo, Monroe County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0226_photos_063354pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0226/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0226/photos/063354pv.jpg",
+   "title": "James Lemen House, State Highway 3, Waterloo, Monroe County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0226_photos_063355pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0226/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0226/photos/063355pv.jpg",
+   "title": "James Lemen House, State Highway 3, Waterloo, Monroe County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0226_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0226/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0226/sheet/00000a.tif",
+   "title": "James Lemen House, State Highway 3, Waterloo, Monroe County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0226_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0226/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0226/sheet/00001a.tif",
+   "title": "James Lemen House, State Highway 3, Waterloo, Monroe County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0226_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0226/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0226/sheet/00002a.tif",
+   "title": "James Lemen House, State Highway 3, Waterloo, Monroe County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0226_data_il0226data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0226/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0226/data/il0226data.pdf",
+   "title": "James Lemen House, State Highway 3, Waterloo, Monroe County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0226_file_il0226supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0226/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0226/supp/il0226supp.pdf",
+   "title": "James Lemen House, State Highway 3, Waterloo, Monroe County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

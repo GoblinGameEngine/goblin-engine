@@ -1,0 +1,77 @@
+{
+ "structure": "M-061",
+ "files": [
+  {
+   "file": "loc_il0265_photos_064129pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0265/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0265/photos/064129pv.jpg",
+   "title": "Horace Billings House, Lafayette & Third Streets, Beardstown, Cass County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0265_photos_064130pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0265/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0265/photos/064130pv.jpg",
+   "title": "Horace Billings House, Lafayette & Third Streets, Beardstown, Cass County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0265_photos_064131pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0265/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0265/photos/064131pv.jpg",
+   "title": "Horace Billings House, Lafayette & Third Streets, Beardstown, Cass County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0265_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0265/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0265/sheet/00000a.tif",
+   "title": "Horace Billings House, Lafayette & Third Streets, Beardstown, Cass County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0265_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0265/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0265/sheet/00001a.tif",
+   "title": "Horace Billings House, Lafayette & Third Streets, Beardstown, Cass County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0265_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0265/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0265/sheet/00002a.tif",
+   "title": "Horace Billings House, Lafayette & Third Streets, Beardstown, Cass County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0265_data_il0265data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0265/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0265/data/il0265data.pdf",
+   "title": "Horace Billings House, Lafayette & Third Streets, Beardstown, Cass County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0265_file_il0265supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0265/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0265/supp/il0265supp.pdf",
+   "title": "Horace Billings House, Lafayette & Third Streets, Beardstown, Cass County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

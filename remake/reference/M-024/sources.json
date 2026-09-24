@@ -1,0 +1,59 @@
+{
+ "structure": "M-024",
+ "files": [
+  {
+   "file": "loc_in0460_photos_209606pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0460/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0400/in0460/photos/209606pv.jpg",
+   "title": "Thomas Gaff House, 213 Fifth Street, Aurora, Dearborn County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0460_photos_209607pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0460/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0400/in0460/photos/209607pv.jpg",
+   "title": "Thomas Gaff House, 213 Fifth Street, Aurora, Dearborn County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0460_photos_209608pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0460/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0400/in0460/photos/209608pv.jpg",
+   "title": "Thomas Gaff House, 213 Fifth Street, Aurora, Dearborn County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0460_photos_209609pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0460/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0400/in0460/photos/209609pv.jpg",
+   "title": "Thomas Gaff House, 213 Fifth Street, Aurora, Dearborn County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0460_data_in0460data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0460/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0460/data/in0460data.pdf",
+   "title": "Thomas Gaff House, 213 Fifth Street, Aurora, Dearborn County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0460_data_in0460cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0460/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0400/in0460/data/in0460cap.pdf",
+   "title": "Thomas Gaff House, 213 Fifth Street, Aurora, Dearborn County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

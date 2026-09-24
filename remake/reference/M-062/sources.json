@@ -1,0 +1,68 @@
+{
+ "structure": "M-062",
+ "files": [
+  {
+   "file": "loc_in0191_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0191/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0191/sheet/00001a.tif",
+   "title": "Solomon Fussell House, State Route 38, Pendleton, Madison County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0191_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0191/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0191/sheet/00002a.tif",
+   "title": "Solomon Fussell House, State Route 38, Pendleton, Madison County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0191_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0191/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0191/sheet/00003a.tif",
+   "title": "Solomon Fussell House, State Route 38, Pendleton, Madison County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0191_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0191/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0191/sheet/00004a.tif",
+   "title": "Solomon Fussell House, State Route 38, Pendleton, Madison County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0191_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0191/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0191/sheet/00005a.tif",
+   "title": "Solomon Fussell House, State Route 38, Pendleton, Madison County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0191_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0191/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0191/sheet/00006a.tif",
+   "title": "Solomon Fussell House, State Route 38, Pendleton, Madison County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0191_data_in0191data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0191/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0191/data/in0191data.pdf",
+   "title": "Solomon Fussell House, State Route 38, Pendleton, Madison County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
