@@ -72,7 +72,7 @@ def deck(b, L, width, z=0.0, mat="asphalt", thick=0.3, name="deck"):
     return p
 
 
-def railing(b, L, width, style, z=0.0, name="rail"):
+def railing(b, L, width, style, z=0.0, name="rail", mat="concrete"):
     p = b.part(f"{name}-col")
     for sx in (-1, 1):
         x = sx * (width / 2 - 0.15)
@@ -85,6 +85,9 @@ def railing(b, L, width, style, z=0.0, name="rail"):
                 k += 0.3
         elif style == "open_parapet":
             p.box((x - 0.15, -L / 2, z + 0.25), (x + 0.15, L / 2, z + 1.0), "concrete")
+        elif style == "solid_parapet":
+            p.box((x - 0.2, -L / 2, z), (x + 0.2, L / 2, z + 0.85), mat)                           # solid wall
+            p.box((x - 0.26, -L / 2 - 0.1, z + 0.85), (x + 0.26, L / 2 + 0.1, z + 1.0), "concrete")   # coping
         elif style == "lattice":
             for zz in (z + 0.3, z + 1.05):
                 p.box((x - 0.05, -L / 2, zz), (x + 0.05, L / 2, zz + 0.08), "truss")
@@ -102,6 +105,28 @@ def railing(b, L, width, style, z=0.0, name="rail"):
                 k += 2.0
         else:
             gbr.guardrail(b, [(x, -L / 2), (x, L / 2)], z=z, name=f"{name}_{'e' if sx > 0 else 'w'}")
+
+
+def sign_text(v):
+    """A record's sign / plate text for display: '' for placeholders ('none', 'none (unnamed
+    ditch)', 'n/a'), and without parenthetical notes ('Pine Creek (stenciled on headwall)')."""
+    if not v:
+        return ""
+    s = str(v).strip()
+    if s.lower().startswith(("none", "no ", "n/a", "unknown", "unmarked")):
+        return ""
+    import re
+    return re.sub(r"\s*\([^)]*\)", "", s).strip()
+
+
+def railing_style(tr, default):
+    """The railing trait, refined by railing_detail: the vocabulary has no solid-parapet word, so
+    solid parapets / headwalls are recorded as open_parapet with a detail saying 'solid'."""
+    style = tr.get("railing") or default
+    det = str(tr.get("railing_detail") or "").lower()
+    if style == "open_parapet" and ("solid" in det or "headwall" in det or "wall" in det and "open" not in det):
+        return "solid_parapet"
+    return style
 
 
 def build(rec):
@@ -174,7 +199,7 @@ def build(rec):
             railing(b, L, width, "pipe_rail")
         else:
             deck(b, L, width)
-            railing(b, L, width, tr.get("railing") or ("concrete_balustrade" if btype.startswith("concrete") else "guardrail"))
+            railing(b, L, width, railing_style(tr, "concrete_balustrade" if btype.startswith("concrete") else "guardrail"))
     elif btype in ("stone_arch", "concrete_arch"):
         rise = clamp(span_each / 2, 1.2, 12.0)
         # one barrel per span (arch_barrel builds it centred on y = 0: shift each to its span)
@@ -188,7 +213,7 @@ def build(rec):
                     for v in b.part(part).bm.verts:
                         v.co.y += yc
         deck(b, L, width, mat="asphalt" if not is_rail else "ballast")
-        railing(b, L, width, tr.get("railing") or "open_parapet")
+        railing(b, L, width, railing_style(tr, "open_parapet"), mat="ashlar" if btype == "stone_arch" else "concrete")
         if is_rail:
             gbr.track(b, -L / 2 - 6.0, L / 2 + 6.0, 0.0)
     elif btype in ("box_culvert", "pipe_culvert"):
@@ -243,14 +268,27 @@ def build(rec):
         y = s * L / 2
         if not is_rail:
             ap.box((-width / 2, min(y, y + s * 8.0), -0.3), (width / 2, max(y, y + s * 8.0), 0.0), "asphalt", mats={"z": "concrete_old"})
-    over = inv.get("over") or names.get("sign") or ""
-    sign = (names.get("sign") or over).upper()
+    over = sign_text(inv.get("over")) or sign_text(names.get("sign"))
+    sign = (sign_text(names.get("sign")) or over).upper()
     if sign and not is_rail:
         for s in (-1, 1):
             gbr.post_sign(b, f"namesign_{'n' if s > 0 else 's'}", s * (width / 2 + 1.2), s * (L / 2 + 6.0), 0.0 if s < 0 else math.pi,
                           [(sign[:22], 0.16)], board=(max(1.2, len(sign[:22]) * 0.11), 0.4), board_mat="sign_blue",
                           text_mat="sign_white", height=1.6)
-    plate = names.get("plate")
+    # regulatory signs from the record (e.g. WEIGHT LIMIT 10 TONS), white boards at both approaches
+    extra = [sign_text(e).upper() for e in (names.get("extra_signs") or []) if sign_text(e)]
+    if extra and not is_rail:
+        for s in (-1, 1):
+            gbr.post_sign(b, f"extrasign_{'n' if s > 0 else 's'}", -s * (width / 2 + 1.2), s * (L / 2 + 4.5), 0.0 if s < 0 else math.pi,
+                          [(e[:20], 0.12) for e in extra[:3]], board=(max(0.9, max(len(e[:20]) for e in extra[:3]) * 0.085), 0.25 + 0.2 * len(extra[:3])),
+                          board_mat="sign_white", text_mat="sign_black", height=1.6)
+    # raised sidewalks with a curb along both edges of the deck
+    if tr.get("sidewalks") and not is_rail:
+        sw = b.part("sidewalks-col")
+        for sx in (-1, 1):
+            xa, xb = sorted((sx * (width / 2 - 0.3), sx * (width / 2 - 1.8)))
+            sw.box((xa, -L / 2, 0.0), (xb, L / 2, 0.18), "concrete")
+    plate = sign_text(names.get("plate"))
     if plate:
         parts = [t.strip() for t in str(plate).replace("·", "-").split(" - ") if t.strip()][:3]
         pp = b.part("plate-col")
