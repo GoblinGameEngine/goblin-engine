@@ -12,7 +12,7 @@ Stairs always keep 0.9 m clear landings at foot and head (gbhouse.check_stairs w
 """
 import math
 
-from common import (FT, WALL_TEX, ROOF_TEX, FOUND_TEX, Palette, brick_for, clamp, hexcol, lib_building, rng,
+from common import (dget, FT, WALL_TEX, ROOF_TEX, FOUND_TEX, Palette, brick_for, clamp, hexcol, lib_building, rng,
                     std_materials, ft, lum, darken, g, FONT_SANS)
 import gbhouse as gh
 
@@ -37,7 +37,7 @@ def house_materials(b, tr, cond):
     wear = {"kept": 1.0, "worn": 0.9, "shabby": 0.78, "boarded": 0.7}.get(cond, 1.0)
     tint = darken(hexcol(body), wear)
     pal.surf("siding", tex, tint, rough=0.7)
-    rtex = ROOF_TEX.get((tr.get("roof") or {}).get("material", "asphalt_shingle"), "roof_asphalt")
+    rtex = ROOF_TEX.get(dget(tr, "roof").get("material", "asphalt_shingle"), "roof_asphalt")
     pal.surf("roof", rtex, darken(hexcol(roofc), wear), rough=0.85)
     pal.surf("found", FOUND_TEX.get(tr.get("foundation", "concrete_block"), "block"), rough=0.9)
     pal.surf("shutter", "paint", accent, rough=0.5)
@@ -104,8 +104,14 @@ def split(a0, a1, fracs):
 def plan_side_hall(spec, W, D, x0, y0, fl, st, mirror, rnd, tr):
     """Two-level side-hall plan in the block [x0, x0+W] x [y0, y0+D]."""
     x1, y1 = x0 + W, y0 + D
+    # will a straight flight fit front-to-back?  If not, a dog-leg (2 x 0.95 m) goes in a wider hall
+    # so a 1.2 m corridor still runs beside it to every room
+    rise0 = fl[1][0] - fl[0][0]
+    n0 = max(12, math.ceil(rise0 / 0.195))
+    dog = n0 * 0.205 + 1.9 > D - 2 * TE
+    hall_w = 3.25 if dog else HALL_W
     # hall on the left (mirror: right)
-    hx0, hx1 = (x0, x0 + HALL_W) if not mirror else (x1 - HALL_W, x1)
+    hx0, hx1 = (x0, x0 + hall_w) if not mirror else (x1 - hall_w, x1)
     rx0, rx1 = (hx1, x1) if not mirror else (x0, hx0)
     two_cols = (rx1 - rx0) >= 7.2
     cx = (rx0 + rx1) / 2
@@ -133,8 +139,16 @@ def plan_side_hall(spec, W, D, x0, y0, fl, st, mirror, rnd, tr):
         stair_kind = "straight"
     else:
         start_y = y1 - TE - 1.0
-        stair = dict(type="dogleg", start=(hx0 + TE + 0.02 if not mirror else hx1 - TE - 0.02 - 2 * 0.95 - 0.08, start_y),
-                     dir=(0, -1), width=0.95, n=n, run=0.25, landing=1.0, turn="left", floor=0, to_floor=1, rail=True)
+        # lanes [outer wall | B arrival | gap | A departure | corridor]: for dir (0,-1) flight A spans
+        # start..start+0.95 along +x; B lies on the `turn` side (left = +x, right = -x) past a 0.08 gap
+        if not mirror:
+            sx_d = hx0 + TE + 0.02 + 0.95 + 0.08          # B on the -x (wall) side
+            turn = "right"
+        else:
+            sx_d = hx1 - TE - 0.02 - 2 * 0.95 - 0.08      # B on the +x (wall) side
+            turn = "left"
+        stair = dict(type="dogleg", start=(sx_d, start_y), dir=(0, -1), width=0.95, n=n, run=0.25, landing=1.0, turn=turn,
+                     floor=0, to_floor=1, rail=True)
         stair_kind = "dogleg"
     spec["stairs"].append(stair)
     # --- ground floor rooms
@@ -143,7 +157,7 @@ def plan_side_hall(spec, W, D, x0, y0, fl, st, mirror, rnd, tr):
     deep = D >= 8.5
     ym = y0 + D * (0.45 if not deep else 0.55)
     ym2 = y0 + D * 0.28
-    corridor_x = (hx1 - 0.6) if not mirror else (hx0 + 0.6)        # a point in the hall corridor
+    corridor_x = (hx1 - 0.6) if not mirror else (hx0 + 0.6)        # a point in the hall corridor (beside the stair)
     part_x = hx1 if not mirror else hx0                               # hall | rooms partition
     if two_cols:
         rooms += [dict(name="LR", rect=(col_a[0], ym, col_a[1], y1), type="living"),
@@ -204,7 +218,23 @@ def plan_side_hall(spec, W, D, x0, y0, fl, st, mirror, rnd, tr):
         # guard the upstairs edge of the well on the corridor side
         wx = sx + STAIR_W + 0.03 if not mirror else sx - 0.03
         spec["rails"].append(dict(floor=1, pts=[(wx, start_y - L + 0.05), (wx, start_y - 0.05)]))
+    else:
+        # the dog-leg's well edge along the corridor (flight A's open side)
+        well = (n + 1) // 2 * 0.25 + 1.0
+        wx = sx_d + 0.95 + 0.03 if not mirror else sx_d - 0.03
+        spec["rails"].append(dict(floor=1, pts=[(wx, start_y - well + 0.05), (wx, start_y - 0.05)]))
     return dict(front_door=(corridor_x, y1), back_door=(back_x, y0), part_x=part_x, stair=stair, up_attic=up_attic)
+
+
+def attic_door_height(spec, fl, ridge, W, D):
+    """Leaf height for attic doors that swing out under the slope: the roof must clear the leaf's
+    whole sweep (hall edge + 0.8 m toward the eave)."""
+    bl = spec["blocks"][0]
+    rf = bl["roof"]
+    half = (D if ridge == "x" else W) / 2
+    d_eave = half - (HALL_W / 2 + 0.8)
+    under = bl["wall_top"] + d_eave * math.tan(math.radians(rf["pitch"])) - rf.get("thick", 0.15) / math.cos(math.radians(rf["pitch"]))
+    return clamp(under - fl[1][0] - 0.08, 1.9, 2.03)
 
 
 def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
@@ -215,6 +245,7 @@ def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
     rise = fl[1][0] - fl[0][0]
     n = max(12, math.ceil(rise / 0.195))
     hw = HALL_W / 2
+    adh = attic_door_height(spec, fl, ridge, W, D)
     if ridge == "y":
         L_avail = D - 2 * TE - 1.9
         run = clamp(L_avail / n, 0.205, 0.24)
@@ -240,8 +271,8 @@ def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
                   dict(name="hall_kit", at=(hx0, (y0 + ym) / 2), w=0.85, swing_into="KIT"),
                   dict(name="br1", at=(hx1, (yb + y1) / 2), w=0.8, swing_into="BR1"),
                   dict(name="bath", at=(hx1, (y0 + yb) / 2), w=0.75, swing_into="BATH"),
-                  dict(name="br2", floor=1, at=(hx0, y0 + D * 0.3), w=0.8, swing_into="BR2"),
-                  dict(name="br3", floor=1, at=(hx1, y0 + D * 0.3), w=0.8, swing_into="BR3")]
+                  dict(name="br2", floor=1, at=(hx0, y0 + D * 0.3), w=0.75, h=adh, swing_into="BR2"),
+                  dict(name="br3", floor=1, at=(hx1, y0 + D * 0.3), w=0.75, h=adh, swing_into="BR3")]
         wx = sx + STAIR_W + 0.03 if not mirror else sx - 0.03
         spec["rails"].append(dict(floor=1, pts=[(wx, start_y - L + 0.05), (wx, start_y - 0.05)]))
         front, back = (corr, y1), ((x0 + hx0) / 2, y0)
@@ -277,12 +308,12 @@ def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
         # doors off the hall band stay clear of the flight (which occupies its rear half)
         doors += [dict(name="hall_lr", at=((lr[0] + lr[2]) / 2, hy1), w=1.2, cased=True),
                   dict(name="br1", at=((br1[0] + br1[2]) / 2, hy1), w=0.8, swing_into="BR1"),
-                  dict(name="br3", floor=1, at=((x0 + x1) / 2 + (1.2 if not mirror else -1.2), hy1), w=0.8, swing_into="BR3")]
+                  dict(name="br3", floor=1, at=((x0 + x1) / 2 + (1.2 if not mirror else -1.2), hy1), w=0.75, h=adh, swing_into="BR3")]
         # rear rooms open off the hall beyond the stair's foot/head ends
         foot_x = x0 + TE + 0.5 if not mirror else x1 - TE - 0.5
         head_x = start[0] + sd[0] * (L + 0.5)
         doors += [dict(name="hall_kit", at=(foot_x, hy0), w=0.85, swing_into="KIT"),
-                  dict(name="br4", floor=1, at=(head_x, hy0), w=0.8, swing_into="BR4"),
+                  dict(name="br4", floor=1, at=(head_x, hy0), w=0.75, h=adh, swing_into="BR4"),
                   dict(name="bath", at=((bath[0] + bath[2]) / 2, hy0), w=0.75, swing_into="BATH"),
                   dict(name="br2", at=((br2[0] + br2[2]) / 2, hy0), w=0.8, swing_into="BR2")]
         wy = hy0 + 0.03 + STAIR_W + 0.03
@@ -397,7 +428,7 @@ def _build(rec):
     arch = tr.get("archetype", "gable_front")
     d_storeys, d_roof, d_ridge, d_pitch = ARCH.get(arch, ARCH["gable_front"])
     storeys = tr.get("storeys") or d_storeys
-    roof_tr = tr.get("roof") or {}
+    roof_tr = dget(tr, "roof")
     rtype = roof_tr.get("type") or d_roof
     if rtype in ("cross_gable",):
         rtype = "gable"
@@ -406,27 +437,29 @@ def _build(rec):
     pitch = clamp(roof_tr.get("pitch_deg") or d_pitch, 14, 55)
     lot = rec.get("lot", {"w": 12.0, "d": 10.0})
     lot_w, lot_d = lot["w"], lot["d"]
-    porch_tr = tr.get("porch") or {"type": "stoop"}
+    porch_tr = dget(tr, "porch") or {"type": "stoop"}
     ptype = porch_tr.get("type", "stoop")
-    porch_d = {"none": 0.0, "stoop": 1.0, "front_full": 2.2, "front_partial": 2.0, "wrap": 2.2, "enclosed": 2.0,
-               "side": 0.0, "recessed": 1.4}.get(ptype, 1.2)
+    porch_d = {"none": 1.0, "stoop": 1.0, "front_full": 2.2, "front_partial": 2.0, "wrap": 2.2, "enclosed": 2.0,
+               "side": 1.0, "recessed": 1.4}.get(ptype, 1.2)      # none/side: the front door still gets a stoop
     garage = tr.get("garage", "none") or "none"
     gar_w = {"detached_1": 3.8, "detached_2": 6.2, "attached_1": 3.6, "attached_2": 6.0, "carport": 3.2}.get(garage, 0.0)
-    # footprint: fit the lot (1 m side yards, the porch + a 1.8 m walk/steps band in front, 1.5 m behind)
+    # footprint: fit the lot (1 m side yards, the porch + a walk/steps band in front, 1.5 m behind)
     side_room = lot_w - 2.0 - (gar_w + 0.8 if garage.startswith("attached") or garage == "carport" else 0.0)
     W = clamp(ft(tr.get("main_w_ft") or 26), 5.2, max(5.2, side_room))
-    D = clamp(ft(tr.get("main_d_ft") or 30), 5.5, max(5.5, lot_d - porch_d - 1.6 - 1.2))
-    if garage.startswith("detached") and lot_d - (D + porch_d + 3.0) < 6.5:
+    fl1, h = storey_heights(tr)
+    # front band: the porch steps' run (0.28 m per 0.18 m riser), a 0.9 m landing at their foot, the fence
+    band = max(1.6, max(1, round(fl1 / 0.18)) * 0.28 + 1.3)
+    D = clamp(ft(tr.get("main_d_ft") or 30), 5.5, max(5.5, lot_d - porch_d - band - 1.2))
+    if garage.startswith("detached") and lot_d - (D + porch_d + band) < 6.2 + 3.6 + 0.4:
         garage = "carport" if lot_w - W - 2.0 >= 3.4 else "none"
         gar_w = 3.2 if garage == "carport" else 0.0
     if garage.startswith("attached") and lot_w - 2.0 - W < gar_w + 0.3:
         garage = "none"
-    fl1, h = storey_heights(tr)
     if storeys >= 1.5 and D < 5.8:
-        D = min(max(D, 5.8), lot_d - porch_d - 2.2)
+        D = min(max(D, 5.8), lot_d - porch_d - band - 0.6)
     mirror = rnd.random() < 0.5
     # main block rectangle: centred, shifted away from an attached garage; front at yf
-    yf = lot_d / 2 - porch_d - 1.6
+    yf = lot_d / 2 - porch_d - band
     y0 = yf - D
     x0 = -W / 2
     if gar_w and garage != "none":
@@ -479,6 +512,13 @@ def _build(rec):
         if (W if ridge_ == "x" else D) < need:
             raise ValueError("footprint too small for a 1.5-storey attic stair")      # caller retries as 1 storey
         roof["ridge"] = ridge_
+        if rtype in ("gable", "gambrel"):
+            # raise the knee wall until the slope clears a 1.9 m attic door's sweep (see attic_door_height)
+            half = (D if ridge_ == "x" else W) / 2
+            tp = math.tan(math.radians(roof["pitch"]))
+            knee = fz1 + 1.98 - (half - (HALL_W / 2 + 0.8)) * tp + roof["thick"] / math.cos(math.radians(roof["pitch"]))
+            wall_top = max(wall_top, min(knee, fz1 + 1.8))
+            spec["blocks"][0]["wall_top"] = wall_top
         info = plan_attic(spec, W, D, x0, y0, floors, ridge_, rnd, mirror)
     else:
         info = plan_one_storey(spec, W, D, x0, y0, rnd, tr, mirror)
@@ -490,12 +530,18 @@ def _build(rec):
         wside = wing.get("side", "rear")
         if wside == "rear" and y0 - wd > -lot_d / 2 + 0.8:
             wx0 = x0 + (0.0 if not mirror else W - ww)
-            spec["blocks"].append(dict(name="wing", rect=(wx0, y0 - wd, wx0 + ww, y0), floors=[(fl1, fl1 + h - 0.2)],
-                                       wall_top=fl1 + h - 0.05, found_top=fl1 - 0.05,
+            spec["blocks"].append(dict(name="wing", rect=(wx0, y0 - wd, wx0 + ww, y0), floors=[(fl1, fl1 + h)],
+                                       wall_top=fl1 + h + 0.12, found_top=fl1 - 0.05,
                                        roof=dict(type="gable", ridge="y", pitch=min(pitch, 35), eave_oh=0.3, rake_oh=0.2, thick=0.14)))
             spec["rooms"].append(dict(name="WING", rect=(wx0, y0 - wd, wx0 + ww, y0), type="laundry" if rnd.random() < 0.5 else "sitting"))
-            spec["doors"].append(dict(name="wing", at=(wx0 + ww / 2, y0), w=0.85, swing_into="WING"))
-            spec["doors"] = [d_ for d_ in spec["doors"] if d_["name"] != "back" or abs(d_["at"][0] - (wx0 + ww / 2)) > 1.2]
+            # the door through to the wing: nearest the wing's middle, clear of the main stair and its landings
+            zones = [z for zs in gh.stair_zones(spec) for z in zs[:3] if zs[3] == 0]
+            cands = sorted((wx0 + 0.6 + 0.1 * k for k in range(int((ww - 1.2) / 0.1) + 1)), key=lambda x: abs(x - (wx0 + ww / 2)))
+            wdx = next((x for x in cands if all(x + 0.55 < z[0] or x - 0.55 > z[2] or y0 + 1.0 < z[1] or y0 - 0.1 > z[3]
+                                                    for z in zones)), wx0 + ww / 2)
+            spec["doors"].append(dict(name="wing", at=(wdx, y0), w=0.85, swing_into="WING"))
+            # the main back door goes if the wing now covers its spot (the wing has its own door out)
+            spec["doors"] = [d_ for d_ in spec["doors"] if d_["name"] != "back" or not (wx0 - 0.6 <= d_["at"][0] <= wx0 + ww + 0.6)]
             spec["doors"].append(dict(name="wing_out", at=(wx0 + (0.6 if not mirror else ww - 0.6) + 0.3, y0 - wd), w=0.85, ext=True,
                                       glazed=(0.15, 0.5, 0.85, 0.9)))
         elif wside in ("left", "right") and (lot_w / 2 - max(abs(x0), abs(x1))) > 1.0:
@@ -505,15 +551,21 @@ def _build(rec):
             if room_side >= 2.8:
                 wx0, wx1 = (x0 - ww2, x0) if sgn < 0 else (x1, x1 + ww2)
                 wy0 = y0 + D * 0.25
-                spec["blocks"].append(dict(name="wing", rect=(wx0, wy0, wx1, yf - 0.6), floors=[(fl1, fl1 + h - 0.2)],
-                                           wall_top=fl1 + h - 0.05, found_top=fl1 - 0.05,
+                spec["blocks"].append(dict(name="wing", rect=(wx0, wy0, wx1, yf - 0.6), floors=[(fl1, fl1 + h)],
+                                           wall_top=fl1 + h + 0.12, found_top=fl1 - 0.05,
                                            roof=dict(type="gable", ridge="x", pitch=min(pitch, 38), eave_oh=0.3, rake_oh=0.2, thick=0.14)))
                 spec["rooms"].append(dict(name="WING", rect=(wx0, wy0, wx1, yf - 0.6), type="sitting"))
                 jx = x0 if sgn < 0 else x1
-                target = [r for r in spec["rooms"] if r.get("floor", 0) == 0 and r["rect"][0] - 0.01 <= jx <= r["rect"][2] + 0.01
-                          and r["rect"][1] <= (wy0 + yf - 0.6) / 2 <= r["rect"][3] and r["name"] != "WING"]
-                if target:
-                    spec["doors"].append(dict(name="wing", at=(jx, (wy0 + yf - 0.6) / 2), w=0.9, swing_into="WING"))
+                # the door through: nearest the wing's middle, into a ground-floor room, clear of the stair
+                zones = [z for zs in gh.stair_zones(spec) for z in zs[:3] if zs[3] == 0]
+                wl = yf - 0.6 - wy0
+                cands = sorted((wy0 + 0.6 + 0.1 * k for k in range(int((wl - 1.2) / 0.1) + 1)), key=lambda y: abs(y - (wy0 + wl / 2)))
+                jy = next((y for y in cands
+                           if any(r.get("floor", 0) == 0 and r["name"] != "WING" and r["rect"][0] - 0.01 <= jx <= r["rect"][2] + 0.01
+                                  and r["rect"][1] + 0.55 <= y <= r["rect"][3] - 0.55 for r in spec["rooms"])
+                           and all(y + 0.55 < z[1] or y - 0.55 > z[3] or jx + 1.0 < z[0] or jx - 1.0 > z[2] for z in zones)), None)
+                if jy is not None:
+                    spec["doors"].append(dict(name="wing", at=(jx, jy), w=0.9, swing_into="WING"))
                 else:
                     spec["blocks"].pop()
                     spec["rooms"].pop()
@@ -564,8 +616,8 @@ def _build(rec):
                                         posts=[], beam=False, steps=dict(at=(d_["at"][0], d_["at"][1] - 1.0), dir=(0, -1), width=1.1,
                                                                          mat="concrete"), skirt_mat="found"))
     # ---- windows: every exterior wall segment of every block (ground floor + upper floor when full height)
-    wtype = (tr.get("windows") or {}).get("type", "1over1")
-    shutters = bool((tr.get("windows") or {}).get("shutters", False))
+    wtype = dget(tr, "windows").get("type", "1over1")
+    shutters = bool(dget(tr, "windows").get("shutters", False))
     cols = 1 if wtype in ("1over1", "picture", "sliding", "casement") else (2 if wtype in ("2over2",) else 3)
     doors_pts = [d_["at"] for d_ in spec["doors"]]
     for bl in spec["blocks"]:
@@ -641,7 +693,8 @@ def _build(rec):
                  sash_rows=2, sash_cols=1, glass_name="glass", mats={"trim": "trim"})
         g.gable_roof(dp, dx0 - 0.1, dx0 + 1.7, yA - 0.1, yB + 0.1, zb + 1.2, 40, 0.1, 0.05, 0.1, "roof", "trim", ridge_axis="y", fascia="trim")
     # ---- yard: walk, steps to the street, mailbox with the family name, fence, garage, extras
-    yard(b, rec, tr, names, lot_w, lot_d, x0, x1, y0, yf, porch_d, fd, garage, gar_w, mirror, rnd, fl1)
+    yback = min(bl["rect"][1] for bl in spec["blocks"])       # a rear wing pushes the back yard back
+    yard(b, rec, tr, names, lot_w, lot_d, x0, x1, yback, yf, porch_d, fd, garage, gar_w, mirror, rnd, fl1)
     return b
 
 
@@ -656,7 +709,7 @@ def yard(b, rec, tr, names, lot_w, lot_d, x0, x1, y0, yf, porch_d, fd, garage, g
     # house number beside the front door
     g.text_mesh(b, "sign_house_number", num, 0.12, (fd[0] + 0.75, yf + 0.02, fl1 + 1.7), math.pi, "black_text", extrude=0.01,
                 font=FONT_SANS)
-    yd = tr.get("yard") or {}
+    yd = dget(tr, "yard")
     fence = yd.get("fence", "none")
     fy = front - 0.25
     if fence == "picket":
@@ -674,11 +727,13 @@ def yard(b, rec, tr, names, lot_w, lot_d, x0, x1, y0, yf, porch_d, fd, garage, g
             if sx1 - sx0 > 0.4:
                 hp.box((sx0, fy - 0.35, 0.0), (sx1, fy + 0.25, 0.95), "green_leaf")
     # garage
+    gd = 6.2
+    if garage.startswith("detached") and y0 - 4.0 - gd < -lot_d / 2 + 0.4:
+        garage = "none"
     if garage.startswith("detached"):
         gw = 3.6 if garage == "detached_1" else 6.0
-        gd = 6.2
         gx0 = (x1 - gw) if not mirror else x0
-        gy1 = y0 - 1.5
+        gy1 = max(y0 - 4.2, -lot_d / 2 + 0.4 + gd)      # clear of the back stoop and the carriage doors' swing
         garage_building(b, (gx0, gy1 - gd, gx0 + gw, gy1), 2 if garage == "detached_2" else 1, rnd)
         dp = b.part("driveway-col")
         dx0, dx1 = gx0 + 0.3, gx0 + gw - 0.3
@@ -698,19 +753,36 @@ def yard(b, rec, tr, names, lot_w, lot_d, x0, x1, y0, yf, porch_d, fd, garage, g
                 cp.box((px - 0.06, py - 0.06, 0.0), (px + 0.06, py + 0.06, 2.4), "steel")
             cp.box((gx0 - 0.1, yf - 5.3, 2.4), (gx0 + gw + 0.1, yf, 2.5), "trim")
         else:
-            garage_building(b, (gx0, yf - 6.4, gx0 + gw, yf - 0.4), 2 if garage == "attached_2" else 1, rnd, attached=True)
+            garage_building(b, (gx0, yf - 6.4, gx0 + gw, yf - 0.4), 2 if garage == "attached_2" else 1, rnd,
+                            side_door_x=gx0 + gw if not mirror else gx0)
         b.part("driveway-col").box((gx0 + 0.2, yf - 0.4, -0.02), (gx0 + gw - 0.2, front, 0.03), "concrete", sides="Z")
-    # extras in the back yard
+    # extras in the back yard: a row clear of the back stoops (and their doors' swing) and the garage
     extras = yd.get("extras") or []
-    by = y0 - 1.6
-    ex_x = [(-lot_w / 2 + 1.2), (lot_w / 2 - 1.2), 0.0]
-    for i, ex in enumerate(extras[:3]):
-        ex_at = (ex_x[i % 3], max(-lot_d / 2 + 1.0, by - 0.8 * (i // 3)))
-        yard_extra(b, ex, ex_at, rnd)
+    taken = []
+    if garage.startswith("detached"):      # the garage, its apron and a side-yard driveway
+        taken.append((gx0 - 0.5 if not mirror else -lot_w / 2, gy1 - gd - 0.5, gx0 + gw + 0.5 if mirror else lot_w / 2, gy1 + 1.8))
+    for ex in extras[:3]:
+        hx, hy = EXTRA_HALF.get(ex, (0.8, 0.8))
+        cy = min(y0 - 3.2 - hy, -lot_d / 2 + 0.6 + hy + rnd.uniform(0.0, 1.5))
+        if cy - hy < -lot_d / 2 + 0.3 or cy + hy > y0 - 3.2:
+            continue
+        for cx in (-lot_w / 2 + 0.6 + hx, lot_w / 2 - 0.6 - hx, 0.0):
+            r = (cx - hx, cy - hy, cx + hx, cy + hy)
+            if all(r[2] < t[0] or r[0] > t[2] or r[3] < t[1] or r[1] > t[3] for t in taken):
+                taken.append(r)
+                yard_extra(b, ex, (cx, cy), rnd)
+                break
 
 
-def garage_building(b, rect, bays, rnd, attached=False):
-    """A frame garage with hinged carriage doors (one pair per bay) and a side service door."""
+# half extents (x, y) of the yard extras, for placing them
+EXTRA_HALF = {"shed": (1.1, 1.0), "clothesline": (2.05, 0.5), "swing_set": (1.35, 0.75), "garden": (1.5, 1.0),
+              "doghouse": (0.55, 0.65), "flagpole": (0.1, 0.1), "birdbath": (0.1, 0.1), "woodpile": (1.0, 0.3),
+              "tire_swing": (0.4, 0.8), "above_ground_pool": (1.8, 1.8)}
+
+
+def garage_building(b, rect, bays, rnd, side_door_x=None):
+    """A frame garage with hinged carriage doors (one pair per bay) and a side service door (in the
+    wall at side_door_x; an attached garage passes its outer side)."""
     gx0, gy0, gx1, gy1 = rect
     spec = dict(t_ext=0.12, t_int=0.1, era="modern",
                 mats=dict(ext="siding", int="siding", roof="roof", roof_under="roof_under", found="concrete", floor="concrete",
@@ -723,7 +795,7 @@ def garage_building(b, rect, bays, rnd, attached=False):
     for k in range(bays):
         spec["doors"].append(dict(name=f"garage_{k}", at=(gx0 + bw * (k + 0.5), gy1), w=min(2.6, bw - 0.4), h=2.15, ext=True, leaves=2,
                                   out=True, panels=[(0.1, 0.55, 0.9, 0.9), (0.1, 0.1, 0.9, 0.5)]))
-    spec["doors"].append(dict(name="garage_side", at=(gx1 if not attached else gx0, (gy0 + gy1) / 2), w=0.8, ext=True))
+    spec["doors"].append(dict(name="garage_side", at=(gx1 if side_door_x is None else side_door_x, (gy0 + gy1) / 2), w=0.8, ext=True))
     spec["windows"].append(dict(at=((gx0 + gx1) / 2, gy0), w=0.8, sill=1.2, h=0.7, kind="dh", cols=2))
     gh.House(b, spec).build()
 

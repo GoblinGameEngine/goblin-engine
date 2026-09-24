@@ -49,6 +49,14 @@ def _subtract(interval, cuts):
     return [p for p in pieces if p[1] - p[0] > 0.05]
 
 
+def stair_zones(spec):
+    """Plan rects (footprint, foot, head) of every stair in a spec, before the House is built --
+    for generators placing doors added after the floor plan."""
+    h = House.__new__(House)
+    h.s = spec
+    return [(G["footprint"], G["foot"], G["head"], G["floor"]) for G in (h._stair_geom(st) for st in spec.get("stairs", []))]
+
+
 class House:
     def __init__(self, b, spec):
         self.b, self.s = b, spec
@@ -277,7 +285,7 @@ class House:
         if st.get("type", "straight") == "dogleg":
             sg = 1.0 if st.get("turn", "left") == "left" else -1.0
             gap, land = st.get("gap", 0.08), st.get("landing", 1.0)
-            n1 = n // 2
+            n1 = (n + 1) // 2           # the lower flight takes an odd riser, so flight B lands at/behind the start
             n2 = n - n1
             L1, L2 = n1 * run, n2 * run
             zl = z0 + (z1 - z0) * n1 / n
@@ -760,7 +768,7 @@ class House:
                     bl = self.block_of(*q)
                     if not bl or not (bl["rect"][0] + self.te - 0.02 <= q[0] <= bl["rect"][2] - self.te + 0.02 and
                                       bl["rect"][1] + self.te - 0.02 <= q[1] <= bl["rect"][3] - self.te + 0.02):
-                        print(f"WARNING stair at {st['start']}: its {name} landing runs outside the walls")
+                        print(f"WARNING stair in {self.b.name} at {st['start']}: its {name} landing runs outside the walls")
                         break
 
     def _stair_keepouts(self):

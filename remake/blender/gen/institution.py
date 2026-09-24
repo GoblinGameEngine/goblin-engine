@@ -12,7 +12,7 @@ Plans (x across the lot, +y = street, origin at the lot centre):
 """
 import math
 
-from common import (Palette, WALL_TEX, brick_for, clamp, hexcol, lib_building, rng, std_materials, darken, g, FONT_SANS,
+from common import (dget, Palette, WALL_TEX, brick_for, clamp, hexcol, lib_building, rng, std_materials, darken, g, FONT_SANS,
                     FONT_SERIF, sign_board)
 import gbhouse as gh
 import shopfit
@@ -34,7 +34,7 @@ def materials(b, tr):
         tex = brick_for(hexcol(body))
     pal.surf("ext", tex, hexcol(body), rough=0.85)
     pal.surf("stone", "limestone", rough=0.85)
-    pal.surf("roof", "roof_slate" if (tr.get("roof") or {}).get("material") == "slate" else "roof_asphalt",
+    pal.surf("roof", "roof_slate" if dget(tr, "roof").get("material") == "slate" else "roof_asphalt",
              hexcol(col.get("roof") or "#5a5a58"), rough=0.85)
     pal.surf("roof_m", "concrete", rough=0.95)
     pal.surf("floor", "terrazzo" if tr.get("year_built", tr.get("era", 1920)) > 1925 else "floor_oak", rough=0.4)
@@ -431,7 +431,7 @@ def build_church(b, rec, tr, names, lot_w, lot_d, rnd):
     x0, x1 = -W / 2, W / 2
     FL = 0.9
     wall_top = FL + (6.0 if style not in ("modern_a_frame",) else 1.2)
-    pitch = (tr.get("roof") or {}).get("pitch_deg") or (52 if style in ("gothic_revival", "carpenter_gothic") else 38)
+    pitch = dget(tr, "roof").get("pitch_deg") or (52 if style in ("gothic_revival", "carpenter_gothic") else 38)
     narthex = 3.0
     spec = dict(t_ext=0.3, t_int=0.15, era="old" if year < 1940 else "modern",
                 mats=dict(ext="ext", int="plaster", roof="roof", roof_under="furn_dark", found="found", floor="floor",
@@ -465,7 +465,7 @@ def build_church(b, rec, tr, names, lot_w, lot_d, rnd):
             spec["doors"].append(dict(name="nave_hall", at=(x0, y0 + hw * 0.5), w=0.95, swing_into="HALL"))
             spec["doors"].append(dict(name="hall_out", at=((hx0 + hx1) / 2, y0), w=0.95, ext=True))
     # tower: a real block (walls, doors), belfry and steeple dressed on top of its shaft
-    tw = tr.get("tower") or {"position": "front_center", "top": "spire"}
+    tw = dget(tr, "tower") or {"position": "front_center", "top": "spire"}
     pos = tw.get("position", "front_center")
     ts = 3.4
     th = wall_top + W / 2 * math.tan(math.radians(pitch)) + 2.5

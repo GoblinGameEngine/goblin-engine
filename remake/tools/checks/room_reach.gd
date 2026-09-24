@@ -48,14 +48,22 @@ for b in s.get_children():
 	NavigationServer3D.region_set_map(reg, map)
 	NavigationServer3D.region_set_navigation_mesh(reg, nm)
 	NavigationServer3D.map_force_update(map)
-	# start: open ground at the corner of the search box
-	var start = NavigationServer3D.map_get_closest_point(map, Vector3(box.position.x + 2.0, b.global_position.y, box.position.z + 2.0))
+	# start: the street, 3 m in front of the building's visual mesh (its +y face is Godot -z)
+	var vis_box = AABB(b.global_position, Vector3.ZERO)
+	var ms2 = [b]
+	while ms2.size() > 0:
+		var n3 = ms2.pop_back()
+		for c in n3.get_children():
+			ms2.append(c)
+			if c is MeshInstance3D and str(c.name).ends_with("_visual"):
+				vis_box = c.global_transform * c.get_aabb()
+	var start = NavigationServer3D.map_get_closest_point(map, Vector3(vis_box.get_center().x, b.global_position.y + 0.1, vis_box.position.z - 3.0))
 	var bad = []
 	var inv = b.global_transform.affine_inverse()
 	var skipped = 0
 	for l in lights:
 		var nmn = str(l.name)
-		if 'fire' in nmn or 'cupola' in nmn or 'gallery' in nmn or 'canopy' in nmn or 'street' in nmn:
+		if 'fire' in nmn or 'cupola' in nmn or 'gallery' in nmn or 'canopy' in nmn or 'street' in nmn or 'loft' in nmn:
 			skipped += 1
 			continue
 		var p = l.global_position
