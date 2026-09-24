@@ -1,0 +1,45 @@
+{
+ "structure": "P-CULVERT",
+ "files": [
+  {
+   "file": "loc_mn0624_data_mn0624data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0624/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mn/mn0600/mn0624/data/mn0624data.pdf",
+   "title": "Bridge 5722, Carries North Section Street (U.S. HIghway 63/Trunk Highway 1) over Spring Valley Creek, Spring Valley, Fillmore County, MN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mn0624_data_mn0624cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0624/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mn/mn0600/mn0624/data/mn0624cap.pdf",
+   "title": "Bridge 5722, Carries North Section Street (U.S. HIghway 63/Trunk Highway 1) over Spring Valley Creek, Spring Valley, Fillmore County, MN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "commons_Bridge_No._5722.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bridge_No._5722.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Bridge_No._5722.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Bridge No. 5722.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "McGhiever",
+   "caption": "Bridge No. 5722 carrying U.S. Route 63 over Spring Valley Creek, Spring Valley, Minnesota, USA \n\n\n\n\n\nThis is an image of a place or building that is listed on the National Register of Historic Places in the United States of America. Its reference number is 11000467 (Wikidata).\n\n"
+  },
+  {
+   "file": "commons_DETAIL_OF_CULVERT_IN_BRIDGE_NORTH_APPROACH._vIEW_TO_WEST._-_Okoboji_Bridge_Spanning_Strait_betweent_East_and_West_Okoboji_Lakes_U.S.Highway_71_Okoboji_Dickinson_County_IA_HAER_IOWA_30-OKOB_1-12.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DETAIL_OF_CULVERT_IN_BRIDGE_NORTH_APPROACH._vIEW_TO_WEST._-_Okoboji_Bridge,_Spanning_Strait_betweent_East_and_West_Okoboji_Lakes,_U.S.Highway_71,_Okoboji,_Dickinson_County,_IA_HAER_IOWA,30-OKOB,1-12.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/DETAIL_OF_CULVERT_IN_BRIDGE_NORTH_APPROACH._vIEW_TO_WEST._-_Okoboji_Bridge%2C_Spanning_Strait_betweent_East_and_West_Okoboji_Lakes%2C_U.S.Highway_71%2C_Okoboji%2C_Dickinson_County%2C_IA_HAER_IOWA%2C30-OKOB%2C1-12.tif/lossy-page1-3840px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DETAIL OF CULVERT IN BRIDGE NORTH APPROACH. vIEW TO WEST. - Okoboji Bridge, Spanning Strait betweent East and West Okoboji Lakes, U.S.Highway 71, Okoboji, Dickinson County, IA HAER IOWA,30-OKOB,1-12.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nRelated names:\n\nWegman-French, Lysa, transmitter",
+   "caption": ""
+  }
+ ]
+}

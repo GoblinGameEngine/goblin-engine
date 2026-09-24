@@ -1,0 +1,32 @@
+{
+ "structure": "cand-UTICA",
+ "files": [
+  {
+   "file": "loc_il0660_photos_037252pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0660/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0600/il0660/photos/037252pv.jpg",
+   "title": "Rock Island Railroad, Utica Passenger Depot, East of Clark Street, North of Grove Street, Utica, La Salle County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0660_data_il0660data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0660/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0600/il0660/data/il0660data.pdf",
+   "title": "Rock Island Railroad, Utica Passenger Depot, East of Clark Street, North of Grove Street, Utica, La Salle County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0660_data_il0660cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0660/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0600/il0660/data/il0660cap.pdf",
+   "title": "Rock Island Railroad, Utica Passenger Depot, East of Clark Street, North of Grove Street, Utica, La Salle County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

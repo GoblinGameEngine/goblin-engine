@@ -1,0 +1,49 @@
+{
+ "structure": "P-PO",
+ "files": [
+  {
+   "file": "commons_Elliott_Illinois_Post_Office.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Elliott_Illinois_Post_Office.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Elliott_Illinois_Post_Office.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Elliott Illinois Post Office.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.5",
+   "author": "Dual Freq",
+   "caption": "Elliott_Illinois_Post_Office"
+  },
+  {
+   "file": "commons_Harvel_post_office_2026-06-19.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Harvel_post_office_2026-06-19.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Harvel_post_office_2026-06-19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Harvel post office 2026-06-19.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "User:Visviva",
+   "caption": "Post office of Harvel, Illinois, in the Harvel Township, Montgomery County, Illinois portion of the village."
+  },
+  {
+   "file": "commons_Melvin_Illinois_Bank_and_Post_Office.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Melvin_Illinois_Bank_and_Post_Office.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Melvin_Illinois_Bank_and_Post_Office.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Melvin Illinois Bank and Post Office.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.5",
+   "author": "Dual Freq",
+   "caption": "Melvin_Illinois_Bank_and_Post_Office"
+  },
+  {
+   "file": "commons_Harvel_skyline_2026-06-19.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Harvel_skyline_2026-06-19.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Harvel_skyline_2026-06-19.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Harvel skyline 2026-06-19.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "User:Visviva",
+   "caption": "Skyline of Harvel, Illinois, featuring Central Commodity FS grain elevator and Village of Harvel water tower. Photo taken from Harvel Township, Montgomery County, Illinois but the grain elevator and water tower are located in w:en:King Township, Christian County, Illinois."
+  }
+ ]
+}

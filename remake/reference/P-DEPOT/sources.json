@@ -1,0 +1,52 @@
+{
+ "structure": "P-DEPOT",
+ "files": [
+  {
+   "file": "loc_il0609_photos_037018pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0609/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0600/il0609/photos/037018pv.jpg",
+   "title": "Rock Island Railroad, Seneca Passenger Depot, Main & Cash Streets, Seneca, La Salle County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0609_photos_037019pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0609/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0600/il0609/photos/037019pv.jpg",
+   "title": "Rock Island Railroad, Seneca Passenger Depot, Main & Cash Streets, Seneca, La Salle County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0609_data_il0609data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0609/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0600/il0609/data/il0609data.pdf",
+   "title": "Rock Island Railroad, Seneca Passenger Depot, Main & Cash Streets, Seneca, La Salle County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0609_data_il0609cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0609/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0600/il0609/data/il0609cap.pdf",
+   "title": "Rock Island Railroad, Seneca Passenger Depot, Main & Cash Streets, Seneca, La Salle County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "commons_Seneca_Station_Illinois_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seneca_Station_(Illinois).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Seneca_Station_%28Illinois%29.jpg/3840px-Seneca_Station_%28Illinois%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seneca Station (Illinois).jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Jet Lowe",
+   "caption": "South and east facades of depot looking northwest."
+  }
+ ]
+}

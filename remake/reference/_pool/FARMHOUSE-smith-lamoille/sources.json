@@ -1,0 +1,86 @@
+{
+ "structure": "P-HOUSE4b",
+ "files": [
+  {
+   "file": "loc_il0152_photos_062916pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0152/photos/062916pv.jpg",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0152_photos_062917pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0152/photos/062917pv.jpg",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0152_photos_062918pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0152/photos/062918pv.jpg",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0152_photos_062919pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0152/photos/062919pv.jpg",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0152_photos_062920pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0152/photos/062920pv.jpg",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0152_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0152/sheet/00000a.tif",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0152_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0152/sheet/00001a.tif",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0152_data_il0152data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0152/data/il0152data.pdf",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0152_file_il0152supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0152/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0152/supp/il0152supp.pdf",
+   "title": "Smith Farmhouse, U.S. Route 34, La Moille, Bureau County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

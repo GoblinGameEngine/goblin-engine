@@ -1,0 +1,77 @@
+{
+ "structure": "P-STORE",
+ "files": [
+  {
+   "file": "loc_il0169_photos_062872pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0169/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0169/photos/062872pv.jpg",
+   "title": "Thompson Store, 109 West Grant Highway, Marengo, McHenry County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0169_photos_062873pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0169/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0169/photos/062873pv.jpg",
+   "title": "Thompson Store, 109 West Grant Highway, Marengo, McHenry County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0169_photos_062874pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0169/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0169/photos/062874pv.jpg",
+   "title": "Thompson Store, 109 West Grant Highway, Marengo, McHenry County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0169_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0169/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0169/sheet/00000a.tif",
+   "title": "Thompson Store, 109 West Grant Highway, Marengo, McHenry County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0169_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0169/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0169/sheet/00001a.tif",
+   "title": "Thompson Store, 109 West Grant Highway, Marengo, McHenry County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0169_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0169/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0169/sheet/00002a.tif",
+   "title": "Thompson Store, 109 West Grant Highway, Marengo, McHenry County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0169_data_il0169data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0169/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0169/data/il0169data.pdf",
+   "title": "Thompson Store, 109 West Grant Highway, Marengo, McHenry County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0169_file_il0169supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0169/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0169/supp/il0169supp.pdf",
+   "title": "Thompson Store, 109 West Grant Highway, Marengo, McHenry County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

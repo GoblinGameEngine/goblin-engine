@@ -1,0 +1,77 @@
+{
+ "structure": "P-TAVERN",
+ "files": [
+  {
+   "file": "loc_il0262_photos_062910pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0262/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0262/photos/062910pv.jpg",
+   "title": "Hassler Tavern, U.S. Route 6, DePue, Bureau County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0262_photos_062911pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0262/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0262/photos/062911pv.jpg",
+   "title": "Hassler Tavern, U.S. Route 6, DePue, Bureau County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0262_photos_062912pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0262/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0200/il0262/photos/062912pv.jpg",
+   "title": "Hassler Tavern, U.S. Route 6, DePue, Bureau County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0262_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0262/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0262/sheet/00000a.tif",
+   "title": "Hassler Tavern, U.S. Route 6, DePue, Bureau County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0262_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0262/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0262/sheet/00001a.tif",
+   "title": "Hassler Tavern, U.S. Route 6, DePue, Bureau County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0262_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0262/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0262/sheet/00002a.tif",
+   "title": "Hassler Tavern, U.S. Route 6, DePue, Bureau County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0262_data_il0262data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0262/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0262/data/il0262data.pdf",
+   "title": "Hassler Tavern, U.S. Route 6, DePue, Bureau County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0262_file_il0262supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0262/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0200/il0262/supp/il0262supp.pdf",
+   "title": "Hassler Tavern, U.S. Route 6, DePue, Bureau County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,692 @@
+#!/usr/bin/env python3
+"""
+texgen.py -- procedural, tileable PBR textures for the clean-sheet remake.
+
+Nothing here is derived from the old asset set: every texture is generated from
+code (numpy noise + explicit construction geometry: board exposure, brick bond,
+shingle coursing ...) so each building can get its own variant (paint colour,
+weathering, board width) by changing parameters, not by copying files.
+
+Each material writes  <out>/<name>_albedo.png, _normal.png, _rough.png
+(1024^2, tileable; normal map is OpenGL/glTF convention, +Y up).
+
+  texgen.py OUT_DIR SET          -- SET is a named recipe list in RECIPES below
+"""
+
+import json
+import math
+import os
+import sys
+
+import numpy as np
+from PIL import Image
+
+N = 1024
+
+
+def rng(seed):
+    return np.random.default_rng(seed)
+
+
+def fbm(seed, scale, octaves=4, size=N):
+    """Periodic fractal noise in [0,1]: white noise low-passed in frequency space."""
+    r = rng(seed)
+    out = np.zeros((size, size))
+    amp, tot = 1.0, 0.0
+    fy = np.fft.fftfreq(size)[:, None]
+    fx = np.fft.fftfreq(size)[None, :]
+    f = np.sqrt(fx * fx + fy * fy)
+    for o in range(octaves):
+        cut = (2 ** o) / scale
+        spec = np.fft.fft2(r.standard_normal((size, size)))
+        spec *= np.exp(-(f / cut) ** 2)
+        layer = np.real(np.fft.ifft2(spec))
+        layer = (layer - layer.min()) / (np.ptp(layer) + 1e-9)
+        out += amp * layer
+        tot += amp
+        amp *= 0.5
+    return out / tot
+
+
+def stretch_noise(seed, sx, sy, size=N):
+    """Anisotropic periodic noise (wood grain): long in x, short in y."""
+    r = rng(seed)
+    fy = np.fft.fftfreq(size)[:, None]
+    fx = np.fft.fftfreq(size)[None, :]
+    spec = np.fft.fft2(r.standard_normal((size, size)))
+    spec *= np.exp(-((fx * sx) ** 2 + (fy * sy) ** 2))
+    n = np.real(np.fft.ifft2(spec))
+    return (n - n.min()) / (np.ptp(n) + 1e-9)
+
+
+def normal_from_height(h, strength):
+    gx = (np.roll(h, -1, 1) - np.roll(h, 1, 1)) * 0.5 * strength
+    gy = (np.roll(h, -1, 0) - np.roll(h, 1, 0)) * 0.5 * strength
+    nx, ny, nz = -gx, gy, np.ones_like(h)
+    L = np.sqrt(nx * nx + ny * ny + nz * nz)
+    n = np.stack([nx / L, ny / L, nz / L], -1)
+    return ((n * 0.5 + 0.5) * 255).astype(np.uint8)
+
+
+def save(out, name, albedo, height, rough, nstrength=6.0):
+    os.makedirs(out, exist_ok=True)
+    a = np.clip(albedo, 0, 1)
+    Image.fromarray((a * 255).astype(np.uint8), "RGB").save(f"{out}/{name}_albedo.png", optimize=True)
+    Image.fromarray(normal_from_height(height, nstrength * N / 1024), "RGB").save(f"{out}/{name}_normal.png", optimize=True)
+    Image.fromarray((np.clip(rough, 0, 1) * 255).astype(np.uint8), "L").save(f"{out}/{name}_rough.png", optimize=True)
+
+
+def col(hexs):
+    hexs = hexs.lstrip("#")
+    return np.array([int(hexs[i:i + 2], 16) / 255 for i in (0, 2, 4)])
+
+
+def tint(base, var):
+    return base[None, None, :] * var[..., None]
+
+
+# ------------------------------------------------------------------ recipes
+def clapboard(out, name, paint="#f2efe6", exposure_m=0.1016, tile_m=1.0, weather=0.35, seed=1):
+    """Lap siding: each course is a wedge (thin top, thick butt) with a shadow line."""
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    courses = tile_m / exposure_m
+    t = (y / exposure_m) % 1.0                        # 0 = top of course, 1 = butt
+    h = t * 0.8 + 0.0 * x                             # wedge
+    shadow = np.clip((t - 0.93) / 0.07, 0, 1)
+    grain = stretch_noise(seed, 3, 60)
+    paint_c = col(paint)
+    wear = fbm(seed + 1, 90) ** 2 * weather
+    streak = stretch_noise(seed + 2, 400, 4).T ** 3 * weather       # vertical run-off streaks
+    # board butt joints, staggered per course
+    ci = np.floor(y / exposure_m)
+    joint_x = (ci * 0.37 % 1.0) * tile_m
+    joint = np.exp(-((((x - joint_x) + tile_m / 2) % tile_m - tile_m / 2) / 0.003) ** 2)
+    v = 1.0 - 0.10 * grain * weather - 0.35 * shadow - 0.08 * joint - 0.25 * wear - 0.3 * streak
+    albedo = tint(paint_c, v) * (1 - wear[..., None] * 0.5) + wear[..., None] * 0.5 * col("#8a7a66")[None, None, :]
+    h = h - 0.6 * shadow - 0.12 * joint + 0.05 * grain
+    rough = 0.55 + 0.35 * wear + 0.05 * grain
+    save(out, name, albedo, h, rough, 10)
+    assert courses > 0
+
+
+def cedar_shingles(out, name, base="#7d7468", exposure_m=0.127, tile_m=1.0, seed=2):
+    """Sawn cedar shingles, weathered silver-grey, random widths, staggered keyways."""
+    r = rng(seed)
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    ci = np.floor(y / exposure_m).astype(int)
+    t = (y / exposure_m) % 1.0
+    ncourse = int(round(tile_m / exposure_m))
+    shade = np.zeros((N, N))
+    gap = np.zeros((N, N))
+    for c in range(ncourse + 1):
+        edges, s = [], r.uniform(0, 0.2)
+        while s < tile_m:
+            edges.append(s)
+            s += r.uniform(0.08, 0.25)
+        rows = ci[:, 0] == (c % ncourse)
+        if not rows.any():
+            continue
+        e = np.array(edges)
+        idxs = np.searchsorted(e, x[0], side="right")
+        sh = r.uniform(0.75, 1.05, len(e) + 1)[idxs]
+        dist = np.min(np.abs(((x[0][None, :] - e[:, None]) + tile_m / 2) % tile_m - tile_m / 2), 0)
+        shade[rows, :] = sh[None, :]
+        gap[rows, :] = np.exp(-(dist / 0.004) ** 2)[None, :]
+    grain = stretch_noise(seed + 3, 4, 90).T
+    butt = np.clip((t - 0.9) / 0.1, 0, 1)
+    moss = np.clip(fbm(seed + 4, 60) - 0.62, 0, 1) * 2.5
+    v = shade * (0.85 + 0.2 * grain) * (1 - 0.45 * butt) * (1 - 0.7 * gap)
+    albedo = tint(col(base), v) * (1 - moss[..., None]) + moss[..., None] * col("#5d6b45")[None, None, :] * v[..., None]
+    h = t * 0.6 + 0.15 * grain - 0.5 * gap - 0.4 * butt
+    save(out, name, albedo, h, 0.85 + 0.1 * grain, 8)
+
+
+def fieldstone(out, name, base="#8f8676", mortar="#b8b0a0", tile_m=1.0, seed=3):
+    """Rubble fieldstone foundation: Voronoi stones in mortar."""
+    r = rng(seed)
+    pts = r.uniform(0, 1, (38, 2))
+    yy, xx = np.mgrid[0:N, 0:N] / N
+    d1 = np.full((N, N), 9.0)
+    d2 = np.full((N, N), 9.0)
+    idx = np.zeros((N, N), int)
+    for k, (px, py) in enumerate(pts):
+        for ox in (-1, 0, 1):
+            for oy in (-1, 0, 1):
+                d = np.hypot((xx - px - ox) * 1.0, (yy - py - oy) * 1.3)
+                closer = d < d1
+                d2 = np.where(closer, d1, np.minimum(d2, d))
+                idx = np.where(closer, k, idx)
+                d1 = np.where(closer, d, d1)
+    edge = d2 - d1
+    stone_v = r.uniform(0.7, 1.15, len(pts))[idx]
+    n = fbm(seed + 1, 40)
+    is_mortar = edge < 0.012
+    v = stone_v * (0.8 + 0.4 * n)
+    warm = r.uniform(-0.06, 0.06, len(pts))[idx]
+    tints = np.stack([1 + warm, 1 + warm * 0.4, 1 - warm * 0.6], -1)
+    albedo = np.where(is_mortar[..., None], col(mortar)[None, None, :] * (0.85 + 0.2 * n[..., None]),
+                      col(base)[None, None, :] * v[..., None] * tints)
+    h = np.clip(edge * 25, 0, 1) ** 0.5 + 0.2 * n
+    save(out, name, albedo, h, np.where(is_mortar, 0.95, 0.8), 14)
+
+
+def brick(out, name, base="#8e4a36", mortar="#c9bfae", course_m=0.0667, brick_m=0.2032, tile_m=1.0,
+          header_every=6, seed=4):
+    """Common bond brick: stretcher courses with a header course every Nth."""
+    r = rng(seed)
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    ci = np.floor(y / course_m).astype(int)
+    unit = np.where(ci % header_every == 0, brick_m / 2, brick_m)
+    off = np.where(ci % 2 == 0, 0.0, unit / 2)
+    bx = (x + off) / unit
+    bi = np.floor(bx).astype(int)
+    tx, ty = bx % 1.0, (y / course_m) % 1.0
+    mj = 0.01 / unit / 1.0
+    joint = (tx < mj) | (ty < 0.15)
+    key = (bi * 7919 + ci * 104729) % 997
+    bv = r.uniform(0.75, 1.15, 997)[key]
+    burn = r.uniform(0, 1, 997)[key] > 0.9
+    n = fbm(seed + 1, 30)
+    brickc = col(base)[None, None, :] * (bv * (0.85 + 0.25 * n))[..., None]
+    brickc = np.where(burn[..., None], brickc * 0.6, brickc)
+    albedo = np.where(joint[..., None], col(mortar)[None, None, :] * (0.9 + 0.1 * n[..., None]), brickc)
+    h = np.where(joint, 0.0, 1.0) + 0.1 * n
+    save(out, name, albedo, h, np.where(joint, 0.95, 0.85), 10)
+
+
+def planks(out, name, base="#a67c4e", board_m=0.1397, tile_m=2.0, worn=0.3, seed=5, painted=None):
+    """Tongue-and-groove pine floor: boards along x, random end joints, grain, traffic wear."""
+    r = rng(seed)
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    bi = np.floor(y / board_m).astype(int)
+    nb = int(round(tile_m / board_m)) + 1
+    lens = r.uniform(0.9, 2.4, nb)
+    offs = r.uniform(0, 2, nb)
+    seg = np.floor((x + offs[bi % nb]) / lens[bi % nb]).astype(int)
+    key = (bi * 131 + seg * 17) % 499
+    bv = r.uniform(0.78, 1.12, 499)[key]
+    t = (y / board_m) % 1.0
+    endpos = ((x + offs[bi % nb]) / lens[bi % nb]) % 1.0
+    seam = (t < 0.035) | (endpos < 0.004)
+    grain = stretch_noise(seed + 1, 2, 120)
+    rings = 0.5 + 0.5 * np.sin(grain * 40 + key * 0.3)
+    wear = fbm(seed + 2, 200) * worn
+    c = col(painted) if painted else col(base)
+    v = bv * (0.82 + 0.18 * rings) * (1 + 0.25 * wear)
+    albedo = c[None, None, :] * v[..., None]
+    albedo = np.where(seam[..., None], albedo * 0.45, albedo)
+    h = np.where(seam, 0.0, 1.0) + 0.15 * rings
+    save(out, name, albedo, h, 0.55 + 0.25 * wear + 0.1 * rings, 5)
+
+
+def plaster(out, name, base="#ece6d8", seed=6, stains=0.15):
+    n = fbm(seed, 25)
+    s = np.clip(fbm(seed + 1, 300) - 0.55, 0, 1) * stains * 4
+    albedo = col(base)[None, None, :] * (0.95 + 0.05 * n[..., None]) * (1 - 0.3 * s[..., None])
+    save(out, name, albedo, n * 0.2, 0.9 + 0.05 * n, 2)
+
+
+def beadboard(out, name, base="#8a6a44", board_m=0.0889, tile_m=1.0, seed=7, vertical=True):
+    """Beaded tongue-and-groove wainscot."""
+    u = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    t = (u / board_m) % 1.0
+    bead = np.exp(-((t - 0.5) / 0.03) ** 2)
+    joint = t < 0.03
+    grain = stretch_noise(seed, 120, 2) if vertical else stretch_noise(seed, 2, 120)
+    v = (0.85 + 0.2 * grain) * (1 - 0.35 * bead) * np.where(joint, 0.5, 1.0)
+    albedo = col(base)[None, None, :] * v[..., None]
+    h = np.where(joint, 0.0, 1.0) - 0.4 * bead + 0.05 * grain
+    if not vertical:
+        albedo, h = albedo.transpose(1, 0, 2), h.T
+    save(out, name, np.broadcast_to(albedo, (N, N, 3)), np.broadcast_to(h, (N, N)), 0.45 + 0.1 * grain, 6)
+
+
+def paint_flat(out, name, base, rough=0.5, seed=8, var=0.04):
+    n = fbm(seed, 40)
+    albedo = col(base)[None, None, :] * (1 - var + var * 2 * n[..., None])
+    save(out, name, albedo, n * 0.1, rough + 0.05 * n, 1)
+
+
+def wood_varnish(out, name, base="#6b4428", seed=9):
+    grain = stretch_noise(seed, 2, 160)
+    rings = 0.5 + 0.5 * np.sin(grain * 55)
+    albedo = col(base)[None, None, :] * (0.75 + 0.3 * rings[..., None])
+    save(out, name, albedo, rings * 0.2, 0.35 + 0.1 * rings, 2)
+
+
+def cast_iron(out, name, seed=10):
+    n = fbm(seed, 20)
+    rust = np.clip(fbm(seed + 1, 60) - 0.6, 0, 1) * 2
+    albedo = col("#2a2a2a")[None, None, :] * (0.8 + 0.4 * n[..., None]) * (1 - rust[..., None]) + \
+        rust[..., None] * col("#6e3b22")[None, None, :]
+    save(out, name, albedo, n * 0.3, 0.6 + 0.3 * rust, 3)
+
+
+def checker_lino(out, name, a="#e8e2d0", b_="#2f3a4a", tile=0.2286, tile_m=0.9144, seed=22):
+    """9-inch linoleum/VCT checkerboard with scuffing."""
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    c = ((np.floor(x / tile) + np.floor(y / tile)) % 2).astype(bool)
+    n = fbm(seed, 50)
+    sc = np.clip(fbm(seed + 1, 300) - 0.6, 0, 1) * 1.5
+    joint = ((x / tile) % 1 < 0.006) | ((y / tile) % 1 < 0.006)
+    albedo = np.where(c[..., None], col(b_)[None, None, :], col(a)[None, None, :]) * (0.92 + 0.1 * n[..., None]) * (1 - 0.25 * sc[..., None])
+    albedo = np.where(joint[..., None], albedo * 0.7, albedo)
+    save(out, name, albedo, np.where(joint, 0, 1.0), 0.35 + 0.3 * sc, 2)
+
+
+def dirt(out, name, base="#5e4a36", seed=23):
+    n = fbm(seed, 30)
+    pebbles = np.clip(fbm(seed + 1, 400) - 0.7, 0, 1) * 3
+    albedo = col(base)[None, None, :] * (0.75 + 0.4 * n[..., None]) + pebbles[..., None] * 0.15
+    save(out, name, albedo, n + pebbles * 0.5, 0.95 - 0.1 * pebbles, 5)
+
+
+def vinyl_siding(out, name, base="#f2f2ee", exposure_m=0.1016, tile_m=1.0, seed=70):
+    """Double-4" vinyl lap siding: crisp, uniform, faint woodgrain emboss, no paint wear."""
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    t = (y / exposure_m) % 1.0
+    grain = stretch_noise(seed, 2, 80)
+    shadow = np.clip((t - 0.95) / 0.05, 0, 1)
+    v = 1.0 - 0.3 * shadow - 0.03 * grain + 0 * y
+    albedo = np.broadcast_to(tint(col(base), v), (N, N, 3))
+    save(out, name, albedo, np.broadcast_to(t * 0.5 - shadow + 0.03 * grain, (N, N)), np.full((N, N), 0.45), 8)
+
+
+def asphalt_shingles(out, name, base="#3b3a38", exposure_m=0.127, tab_m=0.3048, tile_m=1.0, seed=71):
+    """3-tab asphalt shingles with granule noise and tab keyways."""
+    r = rng(seed)
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    ci = np.floor(y / exposure_m).astype(int)
+    t = (y / exposure_m) % 1.0
+    off = (ci % 2) * tab_m / 2
+    key = (((x + off) / tab_m) % 1.0) < 0.02
+    tabv = r.uniform(0.85, 1.12, 997)[((np.floor((x + off) / tab_m).astype(int) * 31 + ci * 17) % 997)]
+    gran = rng(seed + 1).random((N, N))
+    v = tabv * (0.85 + 0.25 * gran) * np.where(key & (t > 0.35), 0.4, 1.0) * (1 - 0.35 * np.clip((t - 0.9) / 0.1, 0, 1))
+    albedo = tint(col(base), v)
+    h = t * 0.5 + 0.2 * gran - np.where(key & (t > 0.35), 0.5, 0)
+    save(out, name, albedo, h, 0.9 + 0.05 * gran, 6)
+
+
+def acoustic_tile(out, name, base="#ecebe6", tile=0.6096, tile_m=1.2192, seed=72):
+    """2x4 lay-in ceiling tile with fissured pattern and a white T-bar grid."""
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    grid = ((x / tile) % 1 < 0.02) | ((y / (tile * 2)) % 1 < 0.01)
+    fis = np.clip(fbm(seed, 180) - 0.55, 0, 1) * 3
+    albedo = col(base)[None, None, :] * (1 - 0.35 * fis[..., None])
+    albedo = np.where(grid[..., None], col("#f7f7f5")[None, None, :], albedo)
+    save(out, name, albedo, np.where(grid, 1.0, 0.6 - fis * 0.3), np.where(grid, 0.4, 0.95), 4)
+
+
+def vct(out, name, base="#cbbfa6", fleck="#8c8070", tile=0.3048, tile_m=1.2192, seed=73):
+    """12" vinyl composition tile with directional flecks."""
+    r = rng(seed)
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    joint = ((x / tile) % 1 < 0.004) | ((y / tile) % 1 < 0.004)
+    tv = r.uniform(0.94, 1.06, 99)[(np.floor(x / tile) * 7 + np.floor(y / tile) * 13).astype(int) % 99]
+    fl = stretch_noise(seed + 1, 30, 3) > 0.68
+    albedo = np.where(fl[..., None], col(fleck)[None, None, :], col(base)[None, None, :]) * tv[..., None]
+    albedo = np.where(joint[..., None], albedo * 0.8, albedo)
+    save(out, name, albedo, np.where(joint, 0, 1.0), 0.35 + 0.1 * fl, 2)
+
+
+def concrete(out, name, base="#a7a49c", seed=74):
+    n = fbm(seed, 60)
+    pits = np.clip(fbm(seed + 1, 500) - 0.72, 0, 1) * 3
+    albedo = col(base)[None, None, :] * (0.88 + 0.2 * n[..., None]) * (1 - 0.3 * pits[..., None])
+    save(out, name, albedo, n * 0.3 - pits * 0.3, 0.85 + 0.1 * n, 3)
+
+
+def wallpaper(out, name, ground="#e8dfc8", ink="#9a7f62", stripe="#d9cdb0", repeat_m=0.4572, tile_m=0.9144, seed=100,
+              motif="floral"):
+    """Period wallpaper: stripes + a repeating sprig/floral motif (drawn with Gaussian blobs)."""
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    base = np.broadcast_to(col(ground)[None, None, :], (N, N, 3)).copy()
+    st = (((x / (repeat_m / 2)) % 1.0) < 0.12)
+    base = np.where(np.broadcast_to(st[..., None], (N, N, 3)), col(stripe)[None, None, :], base)
+    ink_c = col(ink)
+    m = np.zeros((N, N))
+    rep = repeat_m
+    for (cx, cy, sc) in ((0.25, 0.25, 1.0), (0.75, 0.75, 1.0)):
+        for (dx, dy, r) in ((0, 0, 0.05), (0.07, 0.03, 0.03), (-0.06, 0.04, 0.03), (0.0, -0.08, 0.025), (0.03, 0.09, 0.02)):
+            px, py = (cx + dx * sc) * rep, (cy + dy * sc) * rep
+            dxv = ((x - px + rep / 2) % rep) - rep / 2
+            dyv = ((y - py + rep / 2) % rep) - rep / 2
+            m = np.maximum(m, np.exp(-((dxv ** 2 + dyv ** 2) / (r * rep) ** 2)))
+    if motif == "none":
+        m *= 0
+    age = fbm(seed, 40)
+    albedo = base * (1 - 0.6 * m[..., None]) + ink_c[None, None, :] * 0.6 * m[..., None]
+    albedo *= (0.93 + 0.08 * age[..., None])
+    save(out, name, albedo, m * 0.1, np.full((N, N), 0.8), 1)
+
+
+def hex_tile(out, name, a="#f2f1ec", grout="#b9b6ad", size=0.0254, tile_m=0.3048, seed=101):
+    """1" hexagonal mosaic floor tile (period bathrooms)."""
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m / size
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m / size
+    # axial hex grid distance
+    q = x * 2 / 3
+    r_ = -x / 3 + np.sqrt(3) / 3 * y
+    # cube round
+    cx_, cz = q, r_
+    cy_ = -cx_ - cz
+    rx_, ry_, rz = np.round(cx_), np.round(cy_), np.round(cz)
+    dx, dy, dz = np.abs(rx_ - cx_), np.abs(ry_ - cy_), np.abs(rz - cz)
+    d = np.maximum(np.maximum(dx, dy), dz)
+    grout_m = d > 0.42
+    n = fbm(seed, 50)
+    albedo = np.where(grout_m[..., None], col(grout)[None, None, :], col(a)[None, None, :] * (0.95 + 0.05 * n[..., None]))
+    save(out, name, albedo, np.where(grout_m, 0.0, 1.0), np.where(grout_m, 0.9, 0.2), 3)
+
+
+def asbestos_shingle(out, name, base="#d9d6cc", course_m=0.2921, width_m=0.6096, tile_m=1.2192, seed=130):
+    """Asbestos-cement siding shingles (12"x24", ~11.5" exposure): wavy butt edge, stipple, staggered."""
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    ci = np.floor(y / course_m).astype(int)
+    off = (ci % 2) * width_m / 2
+    t = (y / course_m) % 1.0
+    wave = 0.02 * np.sin((x + off) / width_m * 2 * np.pi * 6)
+    butt = np.clip((t + wave - 0.94) / 0.06, 0, 1)
+    joint = (((x + off) / width_m) % 1.0) < 0.004
+    stip = rng(seed).random((N, N))
+    tv = rng(seed + 1).uniform(0.92, 1.05, 997)[(np.floor((x + off) / width_m).astype(int) * 13 + ci * 7) % 997]
+    v = tv * (0.9 + 0.12 * stip) * (1 - 0.35 * butt) * np.where(joint, 0.6, 1.0)
+    albedo = tint(col(base), v)
+    save(out, name, albedo, t * 0.4 - butt * 0.4 + 0.1 * stip - joint * 0.3, 0.8 + 0.1 * stip, 7)
+
+
+def corrugated(out, name, base="#9ea3a4", pitch_m=0.0762, sheet_w=0.66, sheet_h=2.44, tile_m=2.44, rust=0.35, seed=200,
+               vertical=True):
+    """Galvanised corrugated sheet: sine corrugation, lapped sheet seams, nail rows, rust run-off."""
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    wave = np.sin(x / pitch_m * 2 * np.pi)
+    seam_v = ((x / sheet_w) % 1.0) < 0.012
+    seam_h = ((y / sheet_h) % 1.0) < 0.01
+    nails = (((x / pitch_m) % 1.0) < 0.12) & ((((y / (sheet_h / 4)) % 1.0) < 0.012))
+    spang = fbm(seed, 30)
+    streak = stretch_noise(seed + 1, 3, 200).T if False else stretch_noise(seed + 1, 200, 3)
+    rs = np.clip(streak - (1 - rust), 0, 1) * 2.5 + np.clip(fbm(seed + 2, 120) - 0.75, 0, 1) * 2 * rust
+    rs = np.clip(rs, 0, 1)
+    v = (0.82 + 0.18 * (0.5 + 0.5 * wave)) * (0.9 + 0.15 * spang)
+    albedo = tint(col(base), v) * (1 - rs[..., None]) + rs[..., None] * col("#7a4a2a")[None, None, :] * v[..., None]
+    albedo = np.where((seam_v | seam_h)[..., None], albedo * 0.7, albedo)
+    albedo = np.where(nails[..., None], albedo * 0.5, albedo)
+    h = 0.5 + 0.5 * wave
+    if not vertical:
+        albedo, h, rs = albedo.transpose(1, 0, 2), h.T, rs.T
+    save(out, name, albedo, h, 0.45 + 0.4 * rs, 14)
+
+
+def ashlar(out, name, base="#a89a82", mortar="#8d8578", tile_m=2.0, seed=240):
+    """Random-coursed rock-faced ashlar (railroad arch masonry)."""
+    r = rng(seed)
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    heights = []
+    t = 0.0
+    while t < tile_m - 0.1:
+        h = r.choice([0.3, 0.4, 0.5])
+        heights.append((t, min(tile_m, t + h)))
+        t += h
+    stone_id = np.zeros((N, N), int)
+    joint = np.zeros((N, N), bool)
+    sid = 0
+    for (c0, c1) in heights:
+        rows = (y[:, 0] >= c0) & (y[:, 0] < c1)
+        edges, s_ = [0.0], r.uniform(0.0, 0.3)
+        while s_ < tile_m:
+            edges.append(s_)
+            s_ += r.uniform(0.5, 1.2)
+        e = np.array(edges)
+        idx = np.searchsorted(e, x[0], side="right") + sid
+        sid += len(e) + 2
+        stone_id[rows, :] = idx[None, :]
+        dist = np.min(np.abs(((x[0][None, :] - e[:, None]) + tile_m / 2) % tile_m - tile_m / 2), 0)
+        joint[rows, :] = (dist < 0.012)[None, :]
+        joint[rows & ((np.abs(y[:, 0] - c0) < 0.012) | (np.abs(y[:, 0] - c1) < 0.012)), :] = True
+    sv = r.uniform(0.8, 1.15, sid + 10)[stone_id]
+    rock = fbm(seed + 1, 25)
+    albedo = np.where(joint[..., None], col(mortar)[None, None, :], col(base)[None, None, :] * (sv * (0.8 + 0.35 * rock))[..., None])
+    h = np.where(joint, 0.0, 0.6 + 0.4 * rock)
+    save(out, name, albedo, h, np.where(joint, 0.95, 0.85), 16)
+
+
+def gravel(out, name, base="#7c7870", seed=241, size=35):
+    n1 = fbm(seed, size, octaves=2)
+    n2 = rng(seed + 1).random((N, N))
+    pebble = np.clip(fbm(seed + 2, size * 2) - 0.45, 0, 1) * 2
+    albedo = col(base)[None, None, :] * (0.7 + 0.35 * n1[..., None] + 0.15 * n2[..., None])
+    save(out, name, albedo, pebble + 0.2 * n2, 0.9 + 0.05 * n2, 10)
+
+
+def asphalt(out, name, base="#3c3b3a", seed=242, patches=0.3):
+    n = rng(seed).random((N, N))
+    f = fbm(seed + 1, 80)
+    patch = np.clip(fbm(seed + 2, 250) - (1 - patches), 0, 1) * 2
+    cracks = np.clip(stretch_noise(seed + 3, 200, 2) - 0.93, 0, 1) * 10
+    albedo = col(base)[None, None, :] * (0.85 + 0.2 * n[..., None] + 0.15 * f[..., None]) * (1 - 0.25 * patch[..., None]) * (1 - 0.5 * np.clip(cracks, 0, 1)[..., None])
+    save(out, name, albedo, n * 0.2 - cracks * 0.3, 0.88 + 0.05 * n, 4)
+
+
+def grass(out, name, base="#4f6b2c", seed=270):
+    n1 = fbm(seed, 60)
+    n2 = rng(seed + 1).random((N, N))
+    blades = stretch_noise(seed + 2, 1.5, 12)
+    dry = np.clip(fbm(seed + 3, 200) - 0.6, 0, 1) * 1.5
+    albedo = col(base)[None, None, :] * (0.75 + 0.35 * n1[..., None] + 0.12 * n2[..., None] + 0.1 * blades[..., None])
+    albedo = albedo * (1 - dry[..., None]) + dry[..., None] * col("#8a8045")[None, None, :]
+    save(out, name, albedo, blades * 0.5 + n2 * 0.2, np.full((N, N), 0.95), 4)
+
+
+RECIPES = {
+    "p-site": [
+        (grass, "grass", dict(seed=271)),
+        (asphalt, "asphalt", dict(seed=272, patches=0.4)),
+        (gravel, "gravel_road", dict(base="#8f8672", seed=273, size=25)),
+        (concrete, "sidewalk", dict(base="#b3aea3", seed=274)),
+        (gravel, "ballast", dict(seed=275)),
+        (planks, "ties", dict(base="#4d3f33", worn=0.6, seed=276, board_m=0.23, tile_m=2.6)),
+        (wood_varnish, "bark", dict(base="#4a3a2c", seed=277)),
+        (grass, "leaves", dict(base="#3f5a22", seed=278)),
+    ],
+    "p-bridges": [
+        (paint_flat, "truss", dict(base="#5f6b63", rough=0.55, seed=251, var=0.08)),
+        (concrete, "concrete", dict(base="#a9a498", seed=252)),
+        (concrete, "concrete_old", dict(base="#9a968c", seed=253)),
+        (ashlar, "ashlar", dict(seed=254)),
+        (brick, "arch_brick", dict(base="#7e3f2c", seed=255)),
+        (gravel, "ballast", dict(seed=256)),
+        (asphalt, "asphalt", dict(seed=257)),
+        (planks, "ties", dict(base="#4d3f33", worn=0.6, seed=258, board_m=0.23, tile_m=2.6)),
+        (gravel, "creekbed", dict(base="#6d6453", seed=259, size=20)),
+        (dirt, "bank", dict(base="#5a5236", seed=260)),
+        (paint_flat, "guardrail", dict(base="#b7bbbd", rough=0.35, seed=261)),
+    ],
+    "p-depot": [
+        (asbestos_shingle, "siding", dict(base="#dcd6c3", seed=221)),
+        (asphalt_shingles, "roof", dict(base="#4f4a44", seed=222)),
+        (brick, "platform", dict(base="#8a4632", mortar="#a79d8b", course_m=0.1, brick_m=0.2032, header_every=99, seed=223)),
+        (concrete, "found", dict(seed=224)),
+        (paint_flat, "trim", dict(base="#e4dccb", rough=0.5, seed=225)),
+        (paint_flat, "rr_red", dict(base="#7a2a1e", rough=0.5, seed=226)),
+        (planks, "floor", dict(base="#8c6a45", worn=0.7, seed=227, board_m=0.0889)),
+        (planks, "freight_floor", dict(base="#7a6552", worn=0.9, seed=228, board_m=0.1524)),
+        (beadboard, "beadboard", dict(base="#a8875c", seed=229)),
+        (plaster, "plaster", dict(base="#ded5bc", seed=230, stains=0.25)),
+        (wood_varnish, "door", dict(base="#5b3d24", seed=231)),
+        (wood_varnish, "furniture", dict(base="#6b4a2c", seed=232)),
+        (cast_iron, "iron", dict(seed=233)),
+    ],
+    "p-elev": [
+        (corrugated, "metal", dict(seed=201, rust=0.4)),
+        (corrugated, "metal_roof", dict(base="#8f9596", seed=202, rust=0.5, vertical=True)),
+        (planks, "driveway", dict(base="#7d6a52", worn=0.8, seed=203, board_m=0.2032, tile_m=3.0)),
+        (planks, "wood_int", dict(base="#8a6a44", worn=0.4, seed=204, board_m=0.1524)),
+        (concrete, "concrete", dict(seed=205)),
+        (clapboard, "office_siding", dict(paint="#e8e4d6", exposure_m=0.1016, weather=0.5, seed=206)),
+        (asphalt_shingles, "office_roof", dict(base="#4b4540", seed=207)),
+        (paint_flat, "trim", dict(base="#e9e6de", rough=0.5, seed=208)),
+        (paint_flat, "sign_panel", dict(base="#f0ede4", rough=0.6, seed=209)),
+        (plaster, "office_wall", dict(base="#ddd6c2", seed=210, stains=0.3)),
+        (planks, "office_floor", dict(base="#8e6b43", worn=0.7, seed=211, board_m=0.0889)),
+        (wood_varnish, "door", dict(base="#54402c", seed=212)),
+        (wood_varnish, "furniture", dict(base="#5a3f28", seed=213)),
+        (cast_iron, "iron", dict(seed=214)),
+    ],
+    "p-house2": [
+        (clapboard, "siding", dict(paint="#d8cfb4", exposure_m=0.0762, weather=0.25, seed=141)),
+        (asphalt_shingles, "roof", dict(base="#4a3f36", seed=142)),
+        (brick, "found", dict(base="#8b4a34", seed=143)),
+        (paint_flat, "trim", dict(base="#f1ede2", rough=0.45, seed=144)),
+        (planks, "floor", dict(base="#9a6d3c", worn=0.25, seed=145, board_m=0.0572)),
+        (plaster, "plaster", dict(base="#e8e0cc", seed=146)),
+        (checker_lino, "lino", dict(a="#f0ece0", b_="#20242c", seed=147)),
+        (hex_tile, "hextile", dict(seed=148)),
+        (planks, "porch", dict(base="#7d6b58", painted="#6f6a63", worn=0.5, seed=149, board_m=0.0889)),
+        (wood_varnish, "door", dict(base="#5a3c22", seed=150)),
+        (wood_varnish, "furniture", dict(base="#6a4428", seed=151)),
+        (brick, "chimney", dict(base="#8a4833", seed=152)),
+        (cast_iron, "iron", dict(seed=153)),
+    ],
+    "p-house3": [
+        (clapboard, "siding", dict(paint="#eeeeea", exposure_m=0.1143, weather=0.15, seed=161)),
+        (asphalt_shingles, "roof", dict(base="#3c3a39", seed=162)),
+        (concrete, "found", dict(base="#b1ab9f", seed=163)),
+        (paint_flat, "trim", dict(base="#f4f4f0", rough=0.45, seed=164)),
+        (planks, "floor", dict(base="#b38a55", worn=0.2, seed=165, board_m=0.0572)),
+        (plaster, "plaster", dict(base="#ece6d6", seed=166)),
+        (vct, "lino", dict(base="#d6cfbd", fleck="#9a8f7a", seed=167)),
+        (hex_tile, "hextile", dict(a="#ffffff", seed=168)),
+        (planks, "porch", dict(base="#8b8f8e", painted="#6e7577", worn=0.4, seed=169, board_m=0.0889)),
+        (wood_varnish, "door", dict(base="#4e3320", seed=170)),
+        (wood_varnish, "furniture", dict(base="#7b5534", seed=171)),
+        (brick, "chimney", dict(base="#93503a", seed=172)),
+        (cast_iron, "iron", dict(seed=173)),
+    ],
+    "p-house4": [
+        (asbestos_shingle, "siding", dict(base="#dcdad2", seed=181)),
+        (asphalt_shingles, "roof", dict(base="#55504a", seed=182)),
+        (brick, "found", dict(base="#8a4d38", seed=183)),
+        (paint_flat, "trim", dict(base="#ecebe6", rough=0.45, seed=184)),
+        (planks, "floor", dict(base="#a07a4a", worn=0.35, seed=185, board_m=0.0572)),
+        (plaster, "plaster", dict(base="#e6e2d6", seed=186)),
+        (vct, "lino", dict(base="#c9c3b0", fleck="#7c7563", seed=187)),
+        (hex_tile, "hextile", dict(seed=188)),
+        (concrete, "porch", dict(seed=189)),
+        (wood_varnish, "door", dict(base="#6b4a2e", seed=190)),
+        (wood_varnish, "furniture", dict(base="#5d4029", seed=191)),
+        (brick, "chimney", dict(base="#8e4a36", seed=192)),
+        (cast_iron, "iron", dict(seed=193)),
+    ],
+    "p-house1": [
+        (clapboard, "siding", dict(paint="#f3f1e9", exposure_m=0.1016, weather=0.35, seed=111)),
+        (cedar_shingles, "roof", dict(base="#6f675d", seed=112)),
+        (fieldstone, "foundation", dict(base="#958d7e", seed=113)),
+        (paint_flat, "trim", dict(base="#f6f4ee", rough=0.45, seed=114)),
+        (paint_flat, "shutter", dict(base="#2d4632", rough=0.55, seed=115)),
+        (planks, "floor", dict(base="#a8804f", worn=0.4, seed=116, board_m=0.1397)),
+        (plaster, "plaster", dict(base="#efe9da", seed=117, stains=0.1)),
+        (wallpaper, "wallpaper_a", dict(seed=118)),
+        (wallpaper, "wallpaper_b", dict(ground="#dfe3d4", ink="#6f7f63", stripe="#d2d8c4", seed=119)),
+        (wallpaper, "wallpaper_c", dict(ground="#e9dcd4", ink="#9a5f58", stripe="#dfcfc5", seed=120)),
+        (checker_lino, "lino", dict(a="#e7e2d3", b_="#3f5a45", seed=121)),
+        (hex_tile, "hextile", dict(seed=122)),
+        (planks, "porch", dict(base="#8b8f8e", painted="#80878a", worn=0.5, seed=123, board_m=0.0889)),
+        (wood_varnish, "door", dict(base="#6e4b2e", seed=124)),
+        (wood_varnish, "furniture", dict(base="#5f3f26", seed=125)),
+        (brick, "chimney", dict(base="#8e4b35", seed=126)),
+        (cast_iron, "iron", dict(seed=127)),
+    ],
+    "p-po": [
+        (brick, "brick", dict(base="#8f3f2c", mortar="#b9b1a4", course_m=0.0667, brick_m=0.2032, header_every=99, seed=81)),
+        (vinyl_siding, "vinyl", dict(seed=82)),
+        (asphalt_shingles, "roof", dict(seed=83)),
+        (acoustic_tile, "ceiling", dict(seed=84)),
+        (vct, "vct_lobby", dict(seed=85)),
+        (vct, "vct_work", dict(base="#b9b8b2", fleck="#7d7d78", seed=86)),
+        (concrete, "concrete", dict(seed=87)),
+        (plaster, "drywall", dict(base="#e9e6dc", seed=88, stains=0.05)),
+        (paint_flat, "aluminum", dict(base="#c9ccce", rough=0.35, seed=89)),
+        (paint_flat, "trim", dict(base="#f4f4f0", rough=0.45, seed=90)),
+        (wood_varnish, "counter", dict(base="#7a5634", seed=91)),
+        (paint_flat, "steel_door", dict(base="#6a7a86", rough=0.45, seed=92)),
+    ],
+    "p-store": [
+        (clapboard, "siding", dict(paint="#f1eee4", exposure_m=0.1016, weather=0.3, seed=51)),
+        (clapboard, "siding_wing", dict(paint="#e9e6da", exposure_m=0.1143, weather=0.45, seed=52)),
+        (cedar_shingles, "roof", dict(base="#71695f", seed=53)),
+        (fieldstone, "foundation", dict(base="#8d8577", seed=54)),
+        (paint_flat, "trim", dict(base="#f5f3ec", rough=0.45, seed=55)),
+        (paint_flat, "shopfront", dict(base="#2b3f33", rough=0.45, seed=56)),
+        (planks, "floor", dict(base="#9c7446", worn=0.6, seed=57, board_m=0.0889)),
+        (planks, "porch", dict(base="#8b8f8e", painted="#7c8281", worn=0.5, seed=58, board_m=0.0889)),
+        (plaster, "plaster", dict(base="#e9e2cf", seed=59, stains=0.2)),
+        (beadboard, "beadboard", dict(base="#b8a37e", seed=60, board_m=0.0889)),
+        (wood_varnish, "counter", dict(base="#5b3b22", seed=61)),
+        (wood_varnish, "door", dict(base="#4d3321", seed=62)),
+        (wood_varnish, "furniture", dict(base="#6c4a2d", seed=63)),
+        (brick, "chimney", dict(base="#8c4a34", seed=64)),
+        (checker_lino, "lino", dict(a="#e4dcc6", b_="#7a2e26", seed=65)),
+        (cast_iron, "iron", dict(seed=66)),
+        (planks, "ceiling", dict(base="#e8e0cb", painted="#ebe4d0", worn=0.0, seed=67, board_m=0.0889)),
+    ],
+    "p-tavern": [
+        (brick, "brick", dict(base="#9a5238", mortar="#cfc3ad", header_every=7, seed=31)),
+        (brick, "brick_arch", dict(base="#874530", mortar="#cfc3ad", course_m=0.0667, brick_m=0.1016, seed=32)),
+        (cedar_shingles, "roof", dict(base="#6b645c", exposure_m=0.127, seed=33)),
+        (fieldstone, "foundation", dict(base="#9c9486", seed=34)),
+        (paint_flat, "trim", dict(base="#f2efe6", rough=0.5, seed=35)),
+        (planks, "porch", dict(base="#8b8f8e", painted="#7f8584", worn=0.5, seed=36, board_m=0.0889)),
+        (planks, "floor", dict(base="#a07645", worn=0.55, seed=37, board_m=0.1524)),
+        (plaster, "plaster", dict(base="#ede3c8", seed=38, stains=0.3)),
+        (wood_varnish, "bar", dict(base="#4a2c18", seed=39)),
+        (wood_varnish, "door", dict(base="#5c3b24", seed=40)),
+        (paint_flat, "shutter", dict(base="#2f4a35", rough=0.55, seed=41)),
+        (clapboard, "siding", dict(paint="#ece8dc", exposure_m=0.1143, weather=0.45, seed=42)),
+        (checker_lino, "lino", dict(seed=43)),
+        (dirt, "dirt", dict(seed=44)),
+        (cast_iron, "iron", dict(seed=45)),
+        (wood_varnish, "furniture", dict(base="#6e4a2c", seed=46)),
+        (planks, "ceiling", dict(base="#e6dcc4", painted="#e9e0c9", worn=0.0, seed=47, board_m=0.1016)),
+    ],
+    "p-church": [
+        (clapboard, "siding", dict(paint="#f4f2ea", exposure_m=0.1016, weather=0.25, seed=11)),
+        (cedar_shingles, "roof", dict(base="#77716a", seed=12)),
+        (fieldstone, "foundation", dict(seed=13)),
+        (brick, "chimney", dict(base="#8a4632", seed=14)),
+        (planks, "floor", dict(base="#b08850", worn=0.45, seed=15, board_m=0.1397)),
+        (plaster, "wall", dict(base="#efebe0", seed=16)),
+        (beadboard, "wainscot", dict(base="#7a5634", seed=17)),
+        (paint_flat, "trim", dict(base="#f7f5ef", rough=0.45)),
+        (wood_varnish, "pew", dict(base="#6a4526", seed=18)),
+        (wood_varnish, "door", dict(base="#5a3a22", seed=19)),
+        (cast_iron, "iron", dict(seed=20)),
+        (planks, "ceiling", dict(base="#e9e4d6", painted="#ece8dc", worn=0.0, seed=21, board_m=0.0889)),
+    ],
+}
+
+
+def main():
+    out, setname = sys.argv[1], sys.argv[2]
+    made = []
+    for fn, name, kw in RECIPES[setname]:
+        fn(out, name, **kw)
+        made.append(name)
+        print("  ", name, flush=True)
+    json.dump({"set": setname, "materials": made}, open(os.path.join(out, "set.json"), "w"))
+
+
+if __name__ == "__main__":
+    main()

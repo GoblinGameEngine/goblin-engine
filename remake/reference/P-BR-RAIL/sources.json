@@ -1,0 +1,167 @@
+{
+ "structure": "P-BR-RAIL",
+ "files": [
+  {
+   "file": "loc_oh2030_data_oh2030data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh2000/oh2030/data/oh2030data.pdf",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek at Milepost 647.74, Pride, Ross County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh2030_data_oh2030cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh2000/oh2030/data/oh2030cap.pdf",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek at Milepost 647.74, Pride, Ross County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "pdfimg-000.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-001.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-002.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-003.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-004.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-005.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-006.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-007.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-008.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-009.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-010.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-011.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-012.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-013.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-014.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-015.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-016.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  },
+  {
+   "file": "pdfimg-017.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh2030/",
+   "kind": "photo (extracted from HAER data report PDF)",
+   "license": "Public domain (US government work; no known restrictions)",
+   "title": "Norfolk Southern Railroad Bridge N-647.74, Spanning Stony Creek, Pride, Ross County, OH"
+  }
+ ]
+}

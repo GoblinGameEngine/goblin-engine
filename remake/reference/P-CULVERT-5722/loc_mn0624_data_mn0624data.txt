@@ -1,0 +1,600 @@
+BRIDGE 5722                                                        HAER MN-125
+Carries North Section Street (U.S. HIghway 63/Trunk Highway 1)     HAER MN-125
+over Spring Valley Creek
+Spring Valley
+Fillmore County
+Minnesota
+
+
+
+
+                                         PHOTOGRAPHS
+
+                         WRITTEN HISTORICAL AND DESCRIPTIVE DATA
+
+
+
+
+                          HISTORIC AMERICAN ENGINEERING RECORD
+                                     National Park Service
+                                 U.S. Department of the Interior
+                                       1849 C Street NW
+                                  Washington, DC 20240-0001
+                       HISTORIC AMERICAN ENGINEERING RECORD
+                                           BRIDGE NO. 5722
+
+                                            HAER No. MN-125
+
+Location: Carries North Section Street (U.S. Highway 63/Trunk Highway 1) over Spring Valley Creek,
+city of Spring Valley, Fillmore County, Minnesota
+
+Bridge No. 5722 is located at latitude 43.688041, longitude -92.389099. The coordinate represents the
+center of the structure. It was obtained in 2014 by plotting its location in Google Earth. The location has
+no restriction on its release to the public.
+
+Present Owner/ Occupant: Minnesota Department of Transportation.
+
+Present Use: Vehicular and pedestrian traffic.
+
+
+Significance: Bridge No. 5722 is an unusual engineering adaptation of the Minnesota Department of
+Highway’s (MHD) standardized box culvert plan for use on a U.S. Highway to meet site-specific
+conditions normally accommodated by a bridge design. Built in 1936, Bridge No. 5722 is only one of
+three extant examples on U.S. Highways in Minnesota of a concrete box culvert design adapted by the
+MHD to function as a bridge and meet the requirements of both vehicular and pedestrian traffic.
+
+Historian(s): Katherine Haun and Amy Squitieri; Mead & Hunt, Inc.; 2014.
+
+
+Project Information: This documentation was prepared as mitigation for the Advisory Council on Historic
+Preservation (ACHP)’s Program Comment Issued for Streamlining Section 106 Review for Actions
+Affecting Post-1945 Concrete and Steel Bridges, noticed in the Federal Register on November 16, 2012.
+The Federal Highway Administration (FHWA) and the ACHP are the project sponsors and retained the
+team of Louis Berger and Mead & Hunt, Inc. to prepare this document. It was prepared by Katherine
+Haun, Cultural Resources Specialist, Mead & Hunt, Inc. Dietrich Floeter completed the photography.
+                                                                                               BRIDGE NO. 5722
+                                                                                               HAER No. MN-125
+                                                                                                        Page 2
+
+Part I. Historical Information
+
+A. Physical History:
+
+
+          1. Date(s) of construction: 1936.
+
+          2. Engineer: Minnesota Department of Highways.
+
+          3. Builder/Contractor/Supplier: J.S. McLaughlin & Sons, Mankato, Minnesota, contractors;
+          S.O. Koland & Son, [unknown location], subcontractor.
+
+
+          4. Original plans and construction: The original plans, “Special Triple 12 Ft. x 6 Ft Box
+          Culvert,” prepared by the Minnesota Highway Department, are dated June 26, 1936.1
+          Construction was completed the same year. 2
+
+          5. Alterations and additions: Repair work, including repairs to the culvert cells, sidewalks, and
+          deck, has been minor. In 1996 new concrete endposts that replicate the original design were
+          installed, sidewalks and curbs were reconstructed, and the culvert ceilings were repaired.
+          MnDOT repaired cracks in the roadway in 2012. 3 At an unknown time, the southwest wingwall
+          was altered with additional concrete on the diagonal top edge of the wingwall to bring the
+          wingwall to sidewalk height and allow for a power pole to be added. This wingwall now abuts a
+          retaining wall for the south bank of Spring Valley Creek. There have been no other alterations to
+          the culvert or wingwalls.
+
+B. Historical Context:
+
+Development of Trunk Highway 59/U.S. Highway 63 in Spring Valley
+Bridge No. 5722 is located on U.S. Highway (US) 63 (formerly Trunk Highway [TH] 59) in the community
+of Spring Valley in Fillmore County, Minnesota.
+
+
+
+
+     1 While Bridge No. 5722 was designed using the 1932 standard plan, because the bridge was skewed 35
+
+degrees it is known as a “Special Triple 12 Ft. x 6 Ft. Box Culvert.” See sheet 1, “Special Triple 12 Ft x 6 Ft Box
+Culvert,” State of Minnesota Department of Highways, “Bridge 5722 Plans,” 26 June 1936, Minnesota Department of
+Transportation electronic documents,
+http://dotapp7.dot.state.mn.us/cyberdocs_guest/Libraries/Default_Library/Groups/GUESTS/frameset.asp (accessed
+17 February 2014).
+     2 E.J. Miller, photograph of completed Bridge No. 5722, 5 November 1936, in Bridge No. 5722 envelope, Box 4,
+
+Bridge Photographs and Negatives, Minnesota Highway Department Bridge Division, Minnesota State Archives,
+Minnesota Historical Society, St. Paul, Minn.
+     3 Bridge No. 5722 Correspondence File, available at the Bridge Office, Minnesota Department of Transportation,
+
+St. Paul, Minn.
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                                BRIDGE NO. 5722
+                                                                                                HAER No. MN-125
+                                                                                                         Page 3
+
+
+The Minnesota Highway Commission (later known as the Minnesota Department of Highways or MHD)
+implemented the development of the Trunk Highway system in 1921, a state system of improved roads
+that provided efficient automobile transportation between communities. 4 Due to the increased need for
+rural mail delivery and the growing use of roads in the winter, the MHD announced in November 1926
+that winter traffic was “sufficient to fully justify us spending the money” on snow plows, graders, and
+highway improvements in Fillmore County.5 By 1928 two major regional roads ran through Spring Valley:
+the road that would become TH 59 and eventually US 63, which followed a north-south route through the
+center of Spring Valley, and TH 16, which curved through the village at a northwest to southeast angle. 6
+
+
+Ownership and maintenance of the roadway and bridges within Spring Valley were assumed by the MHD
+in 1931. North Section Street was added to the state Trunk Highway system as part of TH 59, with the
+bridge over Spring Valley Creek receiving the state bridge number of M-1125.7 An extension of the
+existing US 63 from Iowa to Rochester, Minnesota, was proposed by the MHD in July 1933. In 1928, only
+a few years earlier, the Mayo Clinic had completed construction of the Plummer Building, now a city
+landmark, symbolizing Rochester’s rise to national, and even international, prominence as a medical
+destination.8 The proposed routing would upgrade TH 59 from the Iowa-Minnesota border north through
+Spring Valley to Rochester.9 TH 59 became US 63 in 1935.
+
+
+With the upgrade of TH 59 to a U.S. Highway, improvements to the road grade and associated bridges
+were necessary to provide greater width and capacity. 10 As was the case of M-1125, many bridges that
+the MHD took over did not meet the highway standards and specifications and were upgraded or
+replaced.11 Though the state owned the road and bridges through Spring Valley on TH 59, improvement
+plans were brought forward by E.W Krueger, MHD Engineer, to the Spring Valley Village Council for
+
+
+
+     4 National Register of Historic Places, Reinforced-Concrete Highway Bridges in Minnesota Multiple Property
+
+Documentation Form, State of Minnesota, National Register #64500291, E-12, G-1, available at Minnesota State
+Historic Preservation Office, St. Paul, Minn.
+     5 Spring Valley Historical Society, Tales of Our Town – Spring Valley Sesquicentennial Stories 1855-2005
+
+(Spring Valley, Minn.: n.p., 2005), 39.
+     6 Webb Publishing Co, Atlas and Farmers’ Directory of Fillmore County, Minnesota: Containing Plats of All
+
+Townships with Owners’ Names (St. Paul, Minn.: Webb Publishing Co., 1928).
+     7 Minnesota Department of Transportation, “Fillmore County, US/TH 63 Construction Project Log, Section 2313,”
+
+Minnesota Department of Transportation roadway data,
+http://www.dot.state.mn.us/roadway/data/docs/projlog/county23/2313.pdf (accessed 16 April 2014).
+     8 David Gebhard and Tom Martinson, A Guide to the Architecture of Minnesota (Minneapolis: University of
+
+Minnesota Press, 1977), 312, 314.
+     9 Spring Valley Historical Society, Tales of Our Town, 40.
+
+     10 Entry for 7 May 1936, Spring Valley City Council Minutes, Book 1934-1936, Spring Valley Records 1928-1980,
+
+Fillmore County, Minnesota State Archives, Minnesota Historical Society, St. Paul, Minn.
+     11 National Register of Historic Places, Reinforced-Concrete Highway Bridges in Minnesota Multiple Property
+
+Documentation Form, E-13.
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                                  BRIDGE NO. 5722
+                                                                                                  HAER No. MN-125
+                                                                                                           Page 4
+
+
+comment and approval on May 7, 1936. 12 The improvements involved widening an important roadway
+that connected the railroad depot to the commercial center of town. Village Council approval indicated
+the community was in agreement with proposed plans.
+
+MHD’s standardization of concrete box culverts and design of Bridge No. 5722
+US 63 improvement plans included the replacement of M-1125, the original 1916 two-span bridge at this
+location, with a concrete box culvert.13 The Minnesota Highway Commission first released standardized
+plans for the construction of concrete box culverts in 1912. 14 By 1936 Minnesota had 375 concrete box
+culverts out of approximately 8,900 bridges and structures inventoried by the MHD. 15 Contemporary
+bridge engineering books, pamphlets, and technical circulars promoted the use of concrete culverts and
+other small structures as having the advantages of economy, stiffness, resistance to temperature and
+shrinkage, and ease of construction.16
+
+The concrete box culvert chosen for this U.S. Highway crossing was not as conventional a choice as
+other bridge designs, such as a reinforced-concrete slab or beam bridge. While a conventional bridge
+design would seem to be appropriate to accomplish essentially the same task, a concrete box culvert
+turns out to have been a more efficient and logical choice for spanning the Spring Valley Creek at this
+particular point on TH 59. A concrete box culvert in its simplest form is a drainage opening beneath a
+roadway that is monolithic in construction, meaning that, unlike a bridge, there is no distinction between
+the substructure and superstructure. One economic benefit of the monolithic construction is that the
+bottom slab (the culvert’s floor) serves as the structure’s footing or foundation and no pilings are required
+as in a bridge to stabilize the structure in the subsoil. Another, and perhaps more important, benefit is
+that the top of culvert serves as the driving surface, without the need for a separate deck structure. In this
+way, the box culvert has a low profile that enables the road to be constructed without significantly raising
+its grade, as would have been required with a conventional bridge. In other words, the concrete box
+culvert was a simple, strong structure that was shallow enough to fit in the space between the existing
+
+
+
+     12 Entry for 7 May 1936, Spring Valley City Council Minutes.
+
+     13 Entry for 10 July 1916, Board of County Commissioners, Fillmore County, Minutes, Book E, 156, Fillmore
+
+County Board of Commissioners Minutes and Agenda, Minnesota State Archives, Minnesota Historical Society, St.
+Paul, Minn.; M-1125 visible in E.J. Miller, photograph of M-1125, 17 April 1935, in Bridge No. 5722 envelope, Box 4,
+Bridge Photographs and Negatives, Minnesota Highway Department Bridge Division, Minnesota State Archives,
+Minnesota Historical Society, St. Paul, Minn.; Bridge No. 5722 is included in the National Inventory of Bridges (NIB)
+as a bridge, while structurally it is a concrete box culvert.
+     14 “Standard Triple 12 Ft x 6 Ft Box Culvert,” approved by the MHD in 1932, was used as the basis for designing
+
+Bridge No. 5722. See “Standard Triple 12 Ft x 6 Ft Box Culvert,” single plan sheet, 15 June 1932, Minnesota
+Highway Department, copy provided by MnDOT, Bridge Office, Oakdale, Minn.; National Register of Historic Places,
+Reinforced-Concrete Highway Bridges in Minnesota Multiple Property Documentation Form, E-12.
+     15 The MHD used Public Road Administration funds to administer the inventory of bridges within the state in
+
+1935-36. See E.J. Miller, “Standard Bridge and Culvert Plans,” Better Roads (June 1947): 23.
+     16 Parsons Brinkerhoff and Engineering and Industrial Heritage, “Context for Common Historic Bridge Types,”
+
+prepared for the National Cooperative Highway Research Program, October 2005, 3-84.
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                                         BRIDGE NO. 5722
+                                                                                                        HAER No. MN-125
+                                                                                                                 Page 5
+
+
+grade of the highway and the creek bed, and used the simplest of foundations, essentially a spread
+footing. In the case of Bridge No. 5722, this also made for a more economical structure to build.
+
+As the MHD engineer’s survey notes for the planned culvert stated, Spring Valley Creek was known to
+flood, indicating flood-related issues for other nearby bridges in the 1930s. A bridge with adequate
+hydrological capacity was necessary, according to the survey plans, because “all bridges upstream are
+too small as high water leaves banks and floods the approach grades.” 17 To meet the hydraulic
+requirements of the Spring Valley Creek site, Bridge No. 5722 was designed as a three-cell culvert,
+notably larger than conventional culverts with one or two cells. 18 Flooding of the streets was common
+during high water situations regardless of a higher profile road and bridge. While the box culvert might
+trap debris around the cell walls (corresponding to piers in a conventional bridge), it would be durable in
+high water situations and not as susceptible to “scour,” or streambed erosion. A conventional bridge
+would have a more complex substructure with abutments and possibly a pier, any of which might be
+subject to scour and undermining. The choice of the three-cell box culvert allowed for a durable structure
+that could accommodate as much water as necessary without having to raise the road and construct an
+expensive, large bridge that would likely flood anyway.
+
+Bridge No. 5722 was designed as a cast-in-place culvert. After World War II cast-in-place structures were
+largely superseded by pre-cast concrete units. Cast-in-place concrete culverts were constructed on-site;
+in comparison, pre-cast concrete culverts were manufactured off-site by a fabricator and brought to a
+particular location. Pre-cast concrete box culverts were not widely available until the 1970s, at which time
+standard designs and plans were developed by the American Society for Testing and Materials (ASTM)
+and the American Association of State Highway and Transportation Officials (AASHTO). The ability to
+use precast box culverts as both a conduit and a bridge-type structure reduced construction time, which
+in turn led to increased use by state departments of transportation.19
+
+Concrete box culverts, like many small and simple structures built repeatedly throughout the state, used
+MHD-designed standard plans for efficiency. If necessary, the standard plans could be economically
+adapted to special circumstances with a minimum of new engineering. Bridge No. 5722 was based on a
+standard plan titled “Standard Triple 12 Ft. x 6 FT. Box Culvert,” adopted by the MHD in June 1932, for a
+straightforward culvert with three cells, each 12’-0” wide and 6’-0” high. When adapted for the Spring
+
+
+
+
+     17 See Sheet 3, “Report of Bridge Survey,” State of Minnesota Department of Highways, “Bridge 5722 Plans,” 26
+
+June 1936.
+     18 The typical box culvert has spans of three to 12 feet.        U.S. Department of Transportation, Bridge Inspectors
+Training Manual/90, 19-4.
+     19 Arlen Ottman, email to Mead & Hunt, Inc. 21 February 2008; Timothy J. McGrath, et al. “Culverts: Hidden
+
+Structures, Critical Infrastructure Elements,” Transportation Research Circular E-C104, (September 2006): 114-115.
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                                    BRIDGE NO. 5722
+                                                                                                    HAER No. MN-125
+                                                                                                             Page 6
+
+
+Valley Creek crossing of US 63, the plan became “Special Triple 12 Ft. x 6 Ft Box Culvert” (also indicated
+as “Special W126T,” culvert-shorthand for 12’-0” wide and 6’-0” tall) that was approved June 26, 1936. 20
+
+This “special” adaptation effectively transformed a standard-plan box culvert into a highway bridge21
+serving the needs of a newly upgraded state highway passing through a flood-prone section of a
+community with requirements for both vehicular and pedestrian traffic. The MHD avoided the engineering
+time and expense of new design that a conventional bridge would have required. As “Special W126T,”
+Bridge No. 5722 included several accommodations to the site. It was skewed 35 degrees to
+accommodate the Spring Valley Creek crossing angle, it used the top of the culvert as the roadway
+surface, and it provided sidewalks and ornamental railings. The addition of a railing and sidewalks is
+unusual for a culvert. Typically, culverts are simple structures, with several feet or more of fill between
+the culvert and the road surface, without ornamentation, and without the need of a railing. The
+ornamental steel “Wisconsin Rail,” as specified on the original survey sheet, and the 8’-0” sidewalks were
+added to meet the community’s more “urban” pedestrian needs, since the structure connected Spring
+Valley’s commercial district west of the highway with the railroad depot to the east.
+
+
+The $172,762 contract for TH 59 improvements through Fillmore County and within Spring Valley,
+including the culvert, was let by the MHD to J.S. McLaughlin & Sons of Mankato, Minnesota, on June 4,
+1936.22 The work was funded under Federal Aid Project No. 409-C.23 The culvert construction was
+subcontracted to S.O. Koland & Son.24 Little attention was paid to the construction of Bridge No. 5722 by
+local news sources as it was simply a routine part of the overall roadwork improvements. The
+construction of the culvert was included in the bidding process with roadway improvements and was
+funded through the same Federal aid work project, so commencement or completion of the culvert was
+included in general news about the highway improvements. Work on road improvements and
+construction of Bridge No. 5722 was completed in November 1936. 25
+
+
+
+     20 While Bridge No. 5722 was designed using the 1932 standard plan, because the bridge was skewed 35
+
+degrees it is known as a “Special Triple 12 Ft. x 6 Ft. Box Culvert.” See sheet 1, “Special Triple 12 Ft x 6 Ft Box
+Culvert,” State of Minnesota Department of Highways, “Bridge 5722 Plans,” 26 June 1936.
+     21 The intermingling of the terms “bridge” and “culvert” in the discussion can be confusing.
+                                                                                              The structure served
+as a “bridge” in function on TH 59 and US 63; thus, the MHD designated it as Bridge No. 5722, but it remained a
+culvert in engineering design and construction.
+     22 The contract work on US 63 and Bridge No. 5722 was one of 10 highway construction projects scheduled in
+
+nine different counties in 1936 included within Federal Aid Project 409-C. See “Let Paving Job For 4 Miles Here,”
+Spring Valley Tribune, 4 June 1936.
+     23 A.E. Palen, District Engineer, to N.W. Elsberg, Commissioner of Highways, 15 December 1936, Bridge No.
+
+5722 Correspondence File, Minnesota Department of Transportation, St. Paul, Minn.
+     24 “Weekly Bridge and Culvert Materials and Progress Report,” 24 July 1936, Bridge No. 5722 Correspondence
+
+File, Minnesota Department of Transportation, St. Paul, Minn.
+     25 E.J. Miller, photograph of completed Bridge No. 5722, 5 November 1936, in Bridge No. 5722 envelope, Box 4,
+
+Bridge Photographs and Negatives, Minnesota Highway Department Bridge Division, Minnesota State Archives,
+Minnesota Historical Society, St. Paul, Minn.
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                                BRIDGE NO. 5722
+                                                                                                HAER No. MN-125
+                                                                                                         Page 7
+
+
+
+In 1993 the Minnesota Department of Transportation (MnDOT) proposed the replacement of Bridge No.
+5722 as part of the road improvement of US 63 through Spring Valley. However, the culvert was not
+replaced because it was evaluated as eligible for the National Register in the “Historic Bridge Survey of
+Fillmore County,” a study occurring concurrently with the MnDOT project, and subsequently determined
+eligible by MnDOT.26 Later, Bridge No. 5722 was one of 24 state-owned bridges in Minnesota identified
+for preservation consideration in a 2005 Programmatic Agreement.27 In 2006 a Historic Bridge
+Management Plan for Bridge No. 5722 was prepared for MnDOT to outline the stabilization, preservation,
+and maintenance treatments of the culvert.28
+
+Comparative analysis
+The adaptation of a standardized concrete box culvert plan as a bridge for combined vehicular and
+pedestrian traffic use on a U.S. Highway is unusual in Minnesota. In 2011 only two other structures on
+U.S. Highways in Minnesota involve a similar adaptation, primarily the use of the culvert top slab as a
+driving surface, neither of which resembles a bridge design and configuration like Bridge No. 5722. 29
+Bridge No. 6568 is a four-cell culvert in Marshall, Minnesota, built in 1950, that carries a large four-lane
+intersection over the Redwood River, which flows diagonally underneath. Its resemblance to Bridge No.
+5722 is limited to its general urban location and use of sidewalks and railings to accommodate pedestrian
+traffic. Structurally, it is a large, complex, custom design based generally on a box culvert configuration
+for this location, rather than being a direct adaptation of an existing standard plan. In that sense, it does
+not represent the same combination of efficiency and economy. It was designed by a consulting engineer
+
+
+
+
+     26 Dennis Gimmestad, Government Programs and Compliance Officer, Minnesota State Historic Preservation
+
+Office, letter to Joseph Hudak, Cultural Resources Unit, Minnesota Department of Transportation, dated 21
+November 1994, Bridge No. 5722 Spring Valley, Fillmore County. Available at Minnesota State Historic Preservation
+Office History/Architecture Inventory Files, State Historic Preservation Office, St. Paul, Minn.; Hess, Roise and
+Company, “Historic Bridge Survey of Fillmore County, Minnesota,” prepared for the Fillmore County Highway
+Department (April 1993). Available at the Minnesota State Historic Preservation Office, Minnesota Historical Society,
+St. Paul, Minn.
+     27 See “Programmatic Agreement among the Federal Highway Administration, the Minnesota State Historic
+
+Preservation Office, the Advisory Council on Historic Preservation, the Department of the Army, Corps of Engineers,
+St. Paul District, and the Minnesota Department of Transportation regarding Implementation of the Federal-Aid
+Highway Program in Minnesota,” executed on June 21, 2005 (2005 Section 106 PA). See also Attachment B:
+“Bridges to Preserve” (including Bridge No. 5722 among the 24 enumerated bridges), in the “Section 106
+Programmatic Agreement Regarding Pre-1956 Historic Bridges in Minnesota,” executed 2008 among the same
+agencies. Available at the Cultural Resources Unit, Minnesota Department of Transportation, St. Paul, Minn., and the
+Minnesota State Historic Preservation Office, Minnesota Historical Society, St. Paul, Minn.
+     28 Historic Bridge Management Plan, Bridge No. 5722, prepared for Minnesota Department of Transportation,
+
+June 2006, available at the Cultural Resources Unit, Minnesota Department of Transportation, St. Paul, Minn.
+     29 Data summary provided from James Pierce, MnDOT, personal communication to Mead & Hunt, Inc., 7
+
+January 2011.
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                                BRIDGE NO. 5722
+                                                                                                HAER No. MN-125
+                                                                                                         Page 8
+
+
+for the MHD and represents the later post-World War II period of MHD bridge specifications rather than
+the 1930s period of Bridge No. 5722.30
+
+Bridge No. 8654, on the other hand, was built in 1936, the same year as Bridge No. 5722, but is a
+diminutive structure—essentially a culvert-type structure intended to function as a pedestrian tunnel or
+walkway beneath US 61 in Lake City, Minnesota. The design is based on a single-cell culvert that is 5’-0”
+wide (as opposed to the three 12’-0” cells of Bridge No. 5722), just wide and high enough for a person to
+walk beneath the highway and avoid the traffic above. It is not a comparable structure to Bridge No.
+5722, having a span of approximately 5’.31
+
+
+
+
+     30 See Bridge No. 6568 Plan Set (10 sheets), prepared by Austin J. Kilgore, Minnesota Registered Engineer,
+
+Approved 1950 by M.O. Giertson, Bridge Engineer, and O.L. Kipp, Chief Engineer, Minnesota Department of
+Highways (including plan for Proposed Street Intersection, 1949), and Bridge No. 6568 Structure Inventory Report, 28
+February 2011; digitized versions of plans and report available through Minnesota Department of Transportation
+Website: http://dotapp3.dot.state.mn.us, or MnDOT Bridge Office, Oakdale, Minnesota.
+     31 See Bridge No. 6568 Structure Inventory Report, 28 February 2011; digitized version available through
+
+Minnesota Department of Transportation Website: http://dotapp3.dot.state.mn.us, or MnDOT Bridge Office, Oakdale,
+Minnesota.
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                                     BRIDGE NO. 5722
+                                                                                                     HAER No. MN-125
+                                                                                                             Page 9
+
+Part II. Structural/Design Information
+
+A. General Statement:
+
+          1. Character: Bridge No. 5722 is a cast-in-place concrete box culvert and is significant for its
+          unusual engineering adaptation of a standardized box culvert plan for use on a U.S. Highway to
+          meet site-specific conditions.
+
+          2. Condition of fabric: Good.
+
+B. Description: Bridge No. 5722 is a three-cell, concrete, cast-in-place box culvert. A culvert is
+traditionally defined as a drainage opening beneath a roadway with a span of less than 20 feet. 32 The
+structural unit or hydraulic opening through which water flows is called a cell; two or more adjacent cells
+are combined to create larger culvert structures. The box culvert is traditionally chosen for moderate
+spans that carry live loads, such as vehicular traffic. Typically, culverts are unadorned, simple structures
+without railings or sidewalks, and in almost all cases with 2 or more feet of fill between the top of the
+structure and the roadway. With less than 2 feet of fill, Bridge No. 5722 is very unusual because the top
+of the culvert structure serves as the highway driving surface.33 Older concrete culverts like Bridge No.
+5722 were cast-in-place concrete, but since World War II these structures have been largely superseded
+by pre-cast concrete units, manufactured off-site. Cast-in-place concrete culverts are monolithic
+structures, poured into a pre-made form so the base, top, and walls of the culvert are formed as a single
+unit and do not have construction joints.
+
+
+Bridge No. 5722 has a 1’-6”-thick concrete base, 0’-10” concrete sidewalls, and a 0’-11” top slab that also
+serves as the driving surface. The top slab is deepest at the driving surface and shallower beneath the
+sidewalks because the sidewalks do not need to support heavy vehicular loads. Each cell is 12’-0” x 6’-0”
+x 67’-0”. The interior concrete surface of the culver has lines and marks reflecting the original wood forms
+when the structure was cast. The culvert floor continues from wingwall to wingwall along a line
+connecting the ends of the extended cell walls, and constitutes an apron that extends 6’-8” from the deck
+width on both sides of the structure. The culvert walls extend the same 6’-8” distance as the culvert floor,
+with their height diminishing diagonally from the top of the culvert to the concrete floor. Reinforced
+concrete wingwalls measuring 6’-0” extend from the four corners of the culvert. The northwest wingwall is
+connected to a retaining wall providing support for the dead end of Courtland Street. The southwest
+wingwall abuts a concrete retaining wall that was added to the southwest bank of Spring Creek.
+
+Bridge No. 5722 has an overall structure length of 49’-5” and an out-to-out deck width of approximately
+67’, equal to the culvert’s length. The deck accommodates a 35’-4” roadway and two 6’-4” sidewalks,
+which are continuations of sidewalks along North Section Street. The culvert is skewed 35 degrees to
+accommodate the angle of the creek as it crosses beneath North Section Street.
+
+
+     32 U.S. Department of Transportation, Bridge Inspectors Training Manual/90, 19-1.
+
+     33 Modern precast culverts, when used with minimal fill below the roadway, employ a “distribution slab” to
+
+distribute the vehicular load across the top of the culvert, a device not used in Bridge No. 5722.
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                         BRIDGE NO. 5722
+                                                                                         HAER No. MN-125
+                                                                                                 Page 10
+
+
+Bridge No. 5722 also features ornamental metal railings along both sidewalks. The railing was specified
+as a “Wisconsin Railing” on the original plans. The overall railing length on each side is 47’-0” and is
+comprised of seven sections that are each approximately 6’ long. The welded steel railing is
+approximately 4’ high with regularly spaced square metal verticals and welded circles. Two 3’-9” concrete
+endposts with recessed center panels terminate the railing. No bridge plates were found on the
+endposts. A modern metal chain-link fence extends off the culvert from the north endpost.
+
+C. Site Information: Bridge 5722 carries North Section Street (US 63/TH 1) over Spring Valley Creek in
+the city of Spring Valley, Fillmore County, Minnesota. It is located in an urban area.
+
+
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                        BRIDGE NO. 5722
+                                                                                        HAER No. MN-125
+                                                                                                Page 11
+
+Part III. Sources of Information
+
+A. Primary Sources:
+
+
+Bridge No. 5722 Correspondence File. Bridge Office. Minnesota Department of Transportation. St.
+        Paul, Minn.
+
+Bridge Photographs and Negatives. Minnesota Highway Department Bridge Division. Minnesota State
+          Archives. Minnesota Historical Society, St. Paul, Minn.
+
+
+Fillmore County. Board of Commissioners Minutes and Agenda. Minnesota State Archives., Minnesota
+          Historical Society, St. Paul, Minn.
+
+“Let Paving Job for 4 Miles Here.” Spring Valley Tribune, 4 June 1936.
+
+Miller, E.J. “Standard Bridge and Culvert Plans.” Better Roads (June 1947): 23-24.
+
+
+Minnesota Department of Transportation. “Fillmore County, U.S./TH 63 Construction Project Log, Section
+          2313.” Minnesota Department of Transportation roadway data.
+          http://www.dot.state.mn.us/roadway/data/docs/projlog/county23/2313.pdf (accessed 16 April
+          2014).
+
+
+State of Minnesota Department of Highways. “Bridge 5722 Plans.” 26 June 1936. Minnesota
+         Department of Transportation electronic documents.
+          http://dotapp3.dot.state.mn.us/cyberdocs_guest/Libraries/Default_Library/Groups/GUESTS/frame
+          set.asp (accessed 17 February 2014).
+
+Webb Publishing Co. Atlas and Farmers’ Directory of Fillmore County, Minnesota: Containing Plats of All
+      Townships with Owners’ Names. St. Paul, Minn.: Webb Publishing Co., 1928.
+
+Wedge, Franklyn Curtiss-Wedge. Fillmore County Minnesota. Chicago: H.C. Cooper, Jr. & Co, 1912.
+
+
+B. Secondary Sources:
+
+
+Bridge No. 5722. Spring Valley. Fillmore County. Minnesota State Historic Preservation Office
+        History/Architecture Inventory Files. State Historic Preservation Office. Minnesota Historical
+          Society, St. Paul, Minn.
+
+Gebhard, David and Tom Martinson. A Guide to the Architecture of Minnesota. Minneapolis: University
+          of Minnesota Press, 1977.
+
+
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+                                                                                           BRIDGE NO. 5722
+                                                                                          HAER No. MN-125
+                                                                                                  Page 12
+
+
+Hess, Roise and Company. “Historic Bridge Survey of Fillmore County, Minnesota.” Prepared for the
+          Fillmore County Highway Department (April 1993). Available at the Minnesota State Historic
+          Preservation Office, St. Paul, Minn.
+
+
+Gimmestad, Dennis, Government Programs and Compliance Officer, Minnesota State Historic
+      Preservation Office. Letter to Joseph Hudak, Cultural Resources Unit, Minnesota Department of
+          Transportation. 21 November 1994. Bridge No. 5722 Spring Valley, Fillmore County. Available
+          at Minnesota State Historic Preservation Office History/Architecture Inventory Files, State Historic
+          Preservation Office, St. Paul, Minn.;
+
+McGrath, Timothy J. et al. "Culverts: Hidden Structures, Critical Infrastructure Elements." Transportation
+          Research Circular E-C104 (September 2006): 109-20.
+          http://onlinepubs.trb.org/onlinepubs/circulars/ec104.pdf (accessed 16 April 2014).
+
+Mead & Hunt, Inc., and HNTB. “Minnesota Department of Transportation Historic Bridge Management
+          Plan, vol. 3, Bridge 5722.” Prepared for Minnesota Department of Transportation (June 2006).
+          Available at the Minnesota State Historic Preservation Office, St. Paul, Minn.
+
+
+National Register of Historic Places, Reinforced-Concrete Highway Bridges in Minnesota Multiple
+        Property Documentation Form, State of Minnesota, National Register #64500291. Available at
+          Minnesota State Historic Preservation Office, St. Paul, Minn.
+
+
+Parsons Brinckerhoff, and Engineering and Industrial Heritage. “A Context for Common Historic Bridge
+       Types.” Prepared for the National Cooperative Highway Research Program (October 2005).
+
+Spring Valley Historical Society. Tales of Our Town – Spring Valley Sesquicentennial Stories 1855-2005.
+          Spring Valley, Minn.: n.p., 2005.
+
+Spring Valley Records 1928-1980. Fillmore County. Minnesota State Archives, Minnesota Historical
+          Society, St. Paul, Minn.
+
+U.S. Department of Transportation. Bridge Inspectors Training Manual/90. Washington D.C.: Federal
+          Highway Administration, 1991.
+
+
+
+
+\\corp.meadhunt.com\sharedfolders\entp\2926300\131935.01\TECH\final\140415A_5722.docx
+

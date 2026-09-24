@@ -1,0 +1,32 @@
+{
+ "structure": "cand-MORRIS",
+ "files": [
+  {
+   "file": "loc_il0646_photos_037228pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0646/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0600/il0646/photos/037228pv.jpg",
+   "title": "Rock Island Railroad, Morris Passenger Depot, East of Liberty Avenue, Morris, Grundy County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0646_data_il0646data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0646/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0600/il0646/data/il0646data.pdf",
+   "title": "Rock Island Railroad, Morris Passenger Depot, East of Liberty Avenue, Morris, Grundy County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0646_data_il0646cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0646/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0600/il0646/data/il0646cap.pdf",
+   "title": "Rock Island Railroad, Morris Passenger Depot, East of Liberty Avenue, Morris, Grundy County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

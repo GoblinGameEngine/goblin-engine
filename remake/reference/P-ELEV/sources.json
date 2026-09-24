@@ -1,0 +1,104 @@
+{
+ "structure": "P-ELEV",
+ "files": [
+  {
+   "file": "loc_il0569_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/sheet/00001a.tif",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0569_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/sheet/00002a.tif",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0569_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/sheet/00003a.tif",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0569_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/sheet/00004a.tif",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0569_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/sheet/00005a.tif",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0569_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/sheet/00006a.tif",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0569_sheet_00007a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/sheet/00007a.tif",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0569_sheet_00008a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/sheet/00008a.tif",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0569_data_il0569data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0569/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0569/data/il0569data.pdf",
+   "title": "Penfield Elevators, East Elevator, Front Street, Penfield, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0476_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0476/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0476/sheet/00001a.tif",
+   "title": "Penfield Elevators, Front Street, Penfield, Champaign County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0476_data_il0476data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0476/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0476/data/il0476data.pdf",
+   "title": "Penfield Elevators, Front Street, Penfield, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

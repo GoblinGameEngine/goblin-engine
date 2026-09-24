@@ -1,0 +1,32 @@
+{
+ "structure": "P-HOUSE2",
+ "files": [
+  {
+   "file": "loc_ia0063_photos_068431pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0063/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0000/ia0063/photos/068431pv.jpg",
+   "title": "Bungalow House, 1506 Thompson Avenue, Des Moines, Polk County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0063_data_ia0063data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0063/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0063/data/ia0063data.pdf",
+   "title": "Bungalow House, 1506 Thompson Avenue, Des Moines, Polk County, IA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0063_data_ia0063cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0063/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0063/data/ia0063cap.pdf",
+   "title": "Bungalow House, 1506 Thompson Avenue, Des Moines, Polk County, IA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

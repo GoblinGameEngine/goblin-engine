@@ -1,0 +1,68 @@
+{
+ "structure": "P-HOUSE3",
+ "files": [
+  {
+   "file": "loc_ia0227_photos_067565pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0227/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0200/ia0227/photos/067565pv.jpg",
+   "title": "Workingmen's Houses, John H. Donahue House, 98 Southern Avenue, Dubuque, Dubuque County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0227_photos_067566pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0227/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0200/ia0227/photos/067566pv.jpg",
+   "title": "Workingmen's Houses, John H. Donahue House, 98 Southern Avenue, Dubuque, Dubuque County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0227_photos_067567pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0227/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0200/ia0227/photos/067567pv.jpg",
+   "title": "Workingmen's Houses, John H. Donahue House, 98 Southern Avenue, Dubuque, Dubuque County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0227_photos_067568pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0227/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0200/ia0227/photos/067568pv.jpg",
+   "title": "Workingmen's Houses, John H. Donahue House, 98 Southern Avenue, Dubuque, Dubuque County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0227_photos_067569pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0227/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0200/ia0227/photos/067569pv.jpg",
+   "title": "Workingmen's Houses, John H. Donahue House, 98 Southern Avenue, Dubuque, Dubuque County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0227_data_ia0227data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0227/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0200/ia0227/data/ia0227data.pdf",
+   "title": "Workingmen's Houses, John H. Donahue House, 98 Southern Avenue, Dubuque, Dubuque County, IA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0227_data_ia0227cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0227/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0200/ia0227/data/ia0227cap.pdf",
+   "title": "Workingmen's Houses, John H. Donahue House, 98 Southern Avenue, Dubuque, Dubuque County, IA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

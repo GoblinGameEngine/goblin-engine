@@ -1,0 +1,97 @@
+{
+ "structure": "P-CHURCH",
+ "files": [
+  {
+   "file": "loc_ia0043_photos_068928pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0000/ia0043/photos/068928pv.jpg",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0043_photos_068929pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0000/ia0043/photos/068929pv.jpg",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0043_photos_068930pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0000/ia0043/photos/068930pv.jpg",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0043_photos_068931pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/ia/ia0000/ia0043/photos/068931pv.jpg",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0043_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0043/sheet/00001a.tif",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0043_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0043/sheet/00002a.tif",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0043_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0043/sheet/00003a.tif",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0043_data_ia0043data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0043/data/ia0043data.pdf",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_ia0043_data_ia0043cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/ia0043/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/ia/ia0000/ia0043/data/ia0043cap.pdf",
+   "title": "First Evangelical Lutheran Church, County Road R-38 & Northwest 166 Avenue, Sheldahl, Polk County, IA",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "commons_Sheldahl_First_Norwegian_Evangelical_Lutheran_Church.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sheldahl_First_Norwegian_Evangelical_Lutheran_Church.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Sheldahl_First_Norwegian_Evangelical_Lutheran_Church.jpg/3840px-Sheldahl_First_Norwegian_Evangelical_Lutheran_Church.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sheldahl First Norwegian Evangelical Lutheran Church.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Unknown authorUnknown author",
+   "caption": "Front and side of the Sheldahl First Norwegian Evangelical Lutheran Church, located at the intersection of Third and Willow in Sheldahl, Iowa, United States.  Built in 1883, the church is listed on the National Register of Historic Places."
+  }
+ ]
+}

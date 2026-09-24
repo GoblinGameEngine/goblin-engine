@@ -1,0 +1,13297 @@
+{
+ "settlements": [
+  {
+   "name": "Harrow Falls",
+   "tier": "City",
+   "pop": 41800,
+   "founding": "Water/mill-founded",
+   "archetype": "Stable county seat (Tamsin Co.)"
+  },
+  {
+   "name": "Kessler",
+   "tier": "City",
+   "pop": 34500,
+   "founding": "Rail-founded",
+   "archetype": "Stable ag / manufacturing"
+  },
+  {
+   "name": "Marlowe",
+   "tier": "Town",
+   "pop": 9100,
+   "founding": "Inland / trail",
+   "archetype": "Stable county seat (Brannock Co.)"
+  },
+  {
+   "name": "Bellhaven",
+   "tier": "Town",
+   "pop": 7200,
+   "founding": "Rail-founded",
+   "archetype": "Stable ag / manufacturing"
+  },
+  {
+   "name": "Fenwick",
+   "tier": "Town",
+   "pop": 6400,
+   "founding": "Inland / trail",
+   "archetype": "College town"
+  },
+  {
+   "name": "Tamarack",
+   "tier": "Town",
+   "pop": 8300,
+   "founding": "Rail-founded",
+   "archetype": "Declining rust-belt"
+  },
+  {
+   "name": "Cedar Ford",
+   "tier": "Village",
+   "pop": 1150,
+   "founding": "Water/mill-founded",
+   "archetype": "Stable ag / manufacturing"
+  },
+  {
+   "name": "Pruett",
+   "tier": "Village",
+   "pop": 820,
+   "founding": "Rail-founded",
+   "archetype": "Stable ag / manufacturing"
+  },
+  {
+   "name": "Dunmore Crossing",
+   "tier": "Village",
+   "pop": 480,
+   "founding": "Inland / crossroads",
+   "archetype": "Stable ag / manufacturing"
+  },
+  {
+   "name": "Loomis Grove",
+   "tier": "Village",
+   "pop": 390,
+   "founding": "Inland / crossroads",
+   "archetype": "Declining rust-belt"
+  },
+  {
+   "name": "Haskins Corner",
+   "tier": "Village",
+   "pop": 2600,
+   "founding": "Inland / trail",
+   "archetype": "Growing exurban"
+  }
+ ],
+ "structures": [
+  {
+   "id": "HF-001",
+   "settlement": "Harrow Falls",
+   "kind": "industrial",
+   "label": null,
+   "s": 195.0,
+   "x": 173.0,
+   "w": 30.0,
+   "d": 25.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     180.0,
+     160.5
+    ],
+    [
+     210.0,
+     160.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-002",
+   "settlement": "Harrow Falls",
+   "kind": "industrial",
+   "label": null,
+   "s": 235.0,
+   "x": 173.0,
+   "w": 30.0,
+   "d": 25.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     220.0,
+     160.5
+    ],
+    [
+     250.0,
+     160.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-003",
+   "settlement": "Harrow Falls",
+   "kind": "industrial",
+   "label": "Old Mill Lofts",
+   "s": 572.5,
+   "x": 172.5,
+   "w": 55.0,
+   "d": 28.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     545.0,
+     158.5
+    ],
+    [
+     600.0,
+     158.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-004",
+   "settlement": "Harrow Falls",
+   "kind": "civic",
+   "label": "City Hall",
+   "s": 213.0,
+   "x": 240.0,
+   "w": 34.0,
+   "d": 30.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     196.0,
+     225.0
+    ],
+    [
+     230.0,
+     225.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-005",
+   "settlement": "Harrow Falls",
+   "kind": "church",
+   "label": "St. Brendan's",
+   "s": 213.0,
+   "x": 334.5,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     205.0,
+     321.5
+    ],
+    [
+     221.0,
+     321.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-006",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": "St. Brendan's",
+   "s": 189.0,
+   "x": 357.3,
+   "w": 11.3,
+   "d": 9.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     183.3,
+     361.8
+    ],
+    [
+     194.7,
+     361.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-007",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": "St. Brendan's",
+   "s": 215.2,
+   "x": 358.8,
+   "w": 11.7,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     209.3,
+     364.3
+    ],
+    [
+     221.1,
+     364.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-008",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 240.7,
+   "x": 357.6,
+   "w": 10.7,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     235.3,
+     362.2
+    ],
+    [
+     246.0,
+     362.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-009",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 185.9,
+   "x": 394.4,
+   "w": 11.9,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     180.0,
+     389.0
+    ],
+    [
+     191.8,
+     389.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-010",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 211.4,
+   "x": 394.5,
+   "w": 10.3,
+   "d": 9.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     206.2,
+     390.0
+    ],
+    [
+     216.6,
+     390.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-011",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 241.7,
+   "x": 395.2,
+   "w": 10.2,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     236.6,
+     389.9
+    ],
+    [
+     246.8,
+     389.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-012",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 187.2,
+   "x": 449.4,
+   "w": 10.3,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     182.0,
+     454.7
+    ],
+    [
+     192.3,
+     454.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-013",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 213.3,
+   "x": 449.2,
+   "w": 11.9,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     207.3,
+     454.5
+    ],
+    [
+     219.2,
+     454.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-014",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 238.1,
+   "x": 448.8,
+   "w": 12.8,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     231.7,
+     453.9
+    ],
+    [
+     244.5,
+     453.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-015",
+   "settlement": "Harrow Falls",
+   "kind": "church",
+   "label": "First Methodist",
+   "s": 213.0,
+   "x": 512.5,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     205.0,
+     499.5
+    ],
+    [
+     221.0,
+     499.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-016",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 273.2,
+   "x": 211.6,
+   "w": 19.4,
+   "d": 20.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     263.5,
+     201.5
+    ],
+    [
+     282.9,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-017",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 293.4,
+   "x": 211.6,
+   "w": 19.4,
+   "d": 20.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     283.8,
+     201.5
+    ],
+    [
+     303.1,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-018",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 313.7,
+   "x": 213.4,
+   "w": 19.4,
+   "d": 23.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     304.0,
+     201.5
+    ],
+    [
+     323.4,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-019",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 333.9,
+   "x": 211.8,
+   "w": 19.4,
+   "d": 20.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     324.2,
+     201.5
+    ],
+    [
+     343.6,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-020",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 273.2,
+   "x": 267.9,
+   "w": 19.4,
+   "d": 21.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     263.5,
+     278.5
+    ],
+    [
+     282.9,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-021",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 293.4,
+   "x": 268.0,
+   "w": 19.4,
+   "d": 21.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     283.8,
+     278.5
+    ],
+    [
+     303.1,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-022",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 313.7,
+   "x": 265.5,
+   "w": 19.4,
+   "d": 26.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     304.0,
+     278.5
+    ],
+    [
+     323.4,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-023",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 333.9,
+   "x": 268.0,
+   "w": 19.4,
+   "d": 21.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     324.2,
+     278.5
+    ],
+    [
+     343.6,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-024",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 273.2,
+   "x": 302.7,
+   "w": 19.4,
+   "d": 20.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     263.5,
+     292.5
+    ],
+    [
+     282.9,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-025",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 293.4,
+   "x": 305.8,
+   "w": 19.4,
+   "d": 26.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     283.8,
+     292.5
+    ],
+    [
+     303.1,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-026",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 313.7,
+   "x": 303.2,
+   "w": 19.4,
+   "d": 21.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     304.0,
+     292.5
+    ],
+    [
+     323.4,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-027",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 333.9,
+   "x": 303.2,
+   "w": 19.4,
+   "d": 21.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     324.2,
+     292.5
+    ],
+    [
+     343.6,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-028",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 275.4,
+   "x": 358.5,
+   "w": 11.2,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     269.8,
+     363.5
+    ],
+    [
+     281.0,
+     363.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-029",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 305.6,
+   "x": 357.4,
+   "w": 11.4,
+   "d": 11.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     299.9,
+     363.1
+    ],
+    [
+     311.3,
+     363.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-030",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 331.9,
+   "x": 357.0,
+   "w": 12.6,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     325.6,
+     362.2
+    ],
+    [
+     338.2,
+     362.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-031",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 279.2,
+   "x": 393.8,
+   "w": 10.9,
+   "d": 9.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     273.8,
+     389.1
+    ],
+    [
+     284.7,
+     389.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-032",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 303.7,
+   "x": 396.3,
+   "w": 10.4,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     298.5,
+     391.0
+    ],
+    [
+     308.9,
+     391.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-033",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 330.3,
+   "x": 395.9,
+   "w": 12.5,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     324.0,
+     390.5
+    ],
+    [
+     336.5,
+     390.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-034",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 276.9,
+   "x": 449.4,
+   "w": 12.1,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     270.8,
+     455.1
+    ],
+    [
+     282.9,
+     455.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-035",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 306.0,
+   "x": 448.3,
+   "w": 10.8,
+   "d": 9.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     300.6,
+     453.0
+    ],
+    [
+     311.4,
+     453.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-036",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 331.4,
+   "x": 450.2,
+   "w": 12.4,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     325.2,
+     455.3
+    ],
+    [
+     337.6,
+     455.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-037",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 277.1,
+   "x": 484.6,
+   "w": 10.1,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     272.1,
+     479.7
+    ],
+    [
+     282.2,
+     479.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-038",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 304.0,
+   "x": 487.5,
+   "w": 10.3,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     298.9,
+     481.6
+    ],
+    [
+     309.2,
+     481.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-039",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 329.4,
+   "x": 484.9,
+   "w": 12.8,
+   "d": 9.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     323.0,
+     480.3
+    ],
+    [
+     335.8,
+     480.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-040",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 275.5,
+   "x": 540.5,
+   "w": 11.3,
+   "d": 9.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     269.9,
+     545.3
+    ],
+    [
+     281.2,
+     545.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-041",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 305.0,
+   "x": 538.8,
+   "w": 12.7,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     298.7,
+     544.1
+    ],
+    [
+     311.4,
+     544.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-042",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 329.6,
+   "x": 539.2,
+   "w": 12.6,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     323.4,
+     544.4
+    ],
+    [
+     335.9,
+     544.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-043",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 364.2,
+   "x": 212.2,
+   "w": 19.4,
+   "d": 21.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     354.5,
+     201.5
+    ],
+    [
+     373.9,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-044",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 384.4,
+   "x": 212.7,
+   "w": 19.4,
+   "d": 22.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     374.8,
+     201.5
+    ],
+    [
+     394.1,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-045",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 404.7,
+   "x": 213.7,
+   "w": 19.4,
+   "d": 24.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     395.0,
+     201.5
+    ],
+    [
+     414.4,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-046",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 424.9,
+   "x": 214.6,
+   "w": 19.4,
+   "d": 26.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     415.2,
+     201.5
+    ],
+    [
+     434.6,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-047",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 364.2,
+   "x": 267.2,
+   "w": 19.4,
+   "d": 22.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     354.5,
+     278.5
+    ],
+    [
+     373.9,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-048",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 384.4,
+   "x": 266.0,
+   "w": 19.4,
+   "d": 25.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     374.8,
+     278.5
+    ],
+    [
+     394.1,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-049",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 404.7,
+   "x": 265.2,
+   "w": 19.4,
+   "d": 26.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     395.0,
+     278.5
+    ],
+    [
+     414.4,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-050",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 424.9,
+   "x": 267.2,
+   "w": 19.4,
+   "d": 22.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     415.2,
+     278.5
+    ],
+    [
+     434.6,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-051",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 364.2,
+   "x": 305.2,
+   "w": 19.4,
+   "d": 25.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     354.5,
+     292.5
+    ],
+    [
+     373.9,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-052",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 384.4,
+   "x": 305.6,
+   "w": 19.4,
+   "d": 26.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     374.8,
+     292.5
+    ],
+    [
+     394.1,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-053",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 404.7,
+   "x": 303.4,
+   "w": 19.4,
+   "d": 21.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     395.0,
+     292.5
+    ],
+    [
+     414.4,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-054",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 424.9,
+   "x": 305.5,
+   "w": 19.4,
+   "d": 25.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     415.2,
+     292.5
+    ],
+    [
+     434.6,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-055",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 370.3,
+   "x": 355.8,
+   "w": 11.1,
+   "d": 11.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     364.7,
+     361.7
+    ],
+    [
+     375.9,
+     361.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-056",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 395.2,
+   "x": 357.3,
+   "w": 12.8,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     388.8,
+     362.5
+    ],
+    [
+     401.6,
+     362.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-057",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 423.1,
+   "x": 359.1,
+   "w": 12.5,
+   "d": 9.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     416.8,
+     363.8
+    ],
+    [
+     429.3,
+     363.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-058",
+   "settlement": "Harrow Falls",
+   "kind": "school",
+   "label": "Lincoln Elem.",
+   "s": 375.2,
+   "x": 402.5,
+   "w": 35.5,
+   "d": 32.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     357.5,
+     386.5
+    ],
+    [
+     393.0,
+     386.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-059",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 368.2,
+   "x": 484.8,
+   "w": 12.6,
+   "d": 9.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     361.9,
+     479.9
+    ],
+    [
+     374.5,
+     479.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-060",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 394.4,
+   "x": 486.9,
+   "w": 10.6,
+   "d": 11.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     389.1,
+     481.3
+    ],
+    [
+     399.7,
+     481.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-061",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 419.1,
+   "x": 487.0,
+   "w": 12.6,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     412.8,
+     481.9
+    ],
+    [
+     425.4,
+     481.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-062",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 367.0,
+   "x": 540.7,
+   "w": 10.9,
+   "d": 9.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     361.5,
+     545.4
+    ],
+    [
+     372.5,
+     545.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-063",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 394.6,
+   "x": 540.1,
+   "w": 12.0,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     388.6,
+     545.3
+    ],
+    [
+     400.7,
+     545.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-064",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 421.2,
+   "x": 539.7,
+   "w": 10.8,
+   "d": 10.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     415.8,
+     544.7
+    ],
+    [
+     426.6,
+     544.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-065",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 455.2,
+   "x": 212.4,
+   "w": 19.4,
+   "d": 21.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     445.5,
+     201.5
+    ],
+    [
+     464.9,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-066",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 475.4,
+   "x": 215.3,
+   "w": 19.4,
+   "d": 27.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     465.8,
+     201.5
+    ],
+    [
+     485.1,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-067",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 495.7,
+   "x": 214.2,
+   "w": 19.4,
+   "d": 25.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     486.0,
+     201.5
+    ],
+    [
+     505.4,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-068",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 515.9,
+   "x": 214.7,
+   "w": 19.4,
+   "d": 26.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     506.2,
+     201.5
+    ],
+    [
+     525.6,
+     201.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-069",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 455.2,
+   "x": 265.9,
+   "w": 19.4,
+   "d": 25.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     445.5,
+     278.5
+    ],
+    [
+     464.9,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-070",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 475.4,
+   "x": 267.1,
+   "w": 19.4,
+   "d": 22.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     465.8,
+     278.5
+    ],
+    [
+     485.1,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-071",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 495.7,
+   "x": 268.3,
+   "w": 19.4,
+   "d": 20.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     486.0,
+     278.5
+    ],
+    [
+     505.4,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-072",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 515.9,
+   "x": 264.9,
+   "w": 19.4,
+   "d": 27.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     506.2,
+     278.5
+    ],
+    [
+     525.6,
+     278.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-073",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 455.2,
+   "x": 306.5,
+   "w": 19.4,
+   "d": 27.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     445.5,
+     292.5
+    ],
+    [
+     464.9,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-074",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 475.4,
+   "x": 306.5,
+   "w": 19.4,
+   "d": 28.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     465.8,
+     292.5
+    ],
+    [
+     485.1,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-075",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 495.7,
+   "x": 305.3,
+   "w": 19.4,
+   "d": 25.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     486.0,
+     292.5
+    ],
+    [
+     505.4,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-076",
+   "settlement": "Harrow Falls",
+   "kind": "store",
+   "label": null,
+   "s": 515.9,
+   "x": 306.3,
+   "w": 19.4,
+   "d": 27.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     506.2,
+     292.5
+    ],
+    [
+     525.6,
+     292.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-077",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 458.1,
+   "x": 358.0,
+   "w": 12.4,
+   "d": 9.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     451.9,
+     362.9
+    ],
+    [
+     464.4,
+     362.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-078",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 486.5,
+   "x": 358.6,
+   "w": 11.0,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     481.0,
+     363.6
+    ],
+    [
+     492.0,
+     363.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-079",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 511.2,
+   "x": 357.5,
+   "w": 12.3,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     505.0,
+     362.9
+    ],
+    [
+     517.3,
+     362.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-080",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 461.3,
+   "x": 393.3,
+   "w": 10.8,
+   "d": 9.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     455.9,
+     388.6
+    ],
+    [
+     466.7,
+     388.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-081",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 483.7,
+   "x": 396.5,
+   "w": 13.0,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     477.2,
+     390.5
+    ],
+    [
+     490.2,
+     390.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-082",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 514.8,
+   "x": 395.2,
+   "w": 11.5,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     509.0,
+     390.1
+    ],
+    [
+     520.6,
+     390.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-083",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 457.5,
+   "x": 448.5,
+   "w": 12.3,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     451.4,
+     453.4
+    ],
+    [
+     463.7,
+     453.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-084",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 488.0,
+   "x": 448.3,
+   "w": 10.7,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     482.7,
+     453.6
+    ],
+    [
+     493.4,
+     453.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-085",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 513.9,
+   "x": 448.8,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     507.9,
+     453.8
+    ],
+    [
+     519.9,
+     453.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-086",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 458.0,
+   "x": 488.3,
+   "w": 11.5,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     452.2,
+     482.4
+    ],
+    [
+     463.7,
+     482.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-087",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 484.2,
+   "x": 485.4,
+   "w": 11.6,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     478.4,
+     480.0
+    ],
+    [
+     490.0,
+     480.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-088",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 514.6,
+   "x": 485.8,
+   "w": 10.7,
+   "d": 9.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     509.2,
+     481.1
+    ],
+    [
+     519.9,
+     481.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-089",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 459.7,
+   "x": 539.8,
+   "w": 12.3,
+   "d": 11.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     453.5,
+     545.6
+    ],
+    [
+     465.9,
+     545.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-090",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 487.0,
+   "x": 539.4,
+   "w": 11.7,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     481.2,
+     544.7
+    ],
+    [
+     492.9,
+     544.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-091",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 512.1,
+   "x": 538.4,
+   "w": 11.1,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     506.5,
+     544.2
+    ],
+    [
+     517.6,
+     544.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-092",
+   "settlement": "Harrow Falls",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 577.0,
+   "x": 240.0,
+   "w": 30.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     562.0,
+     227.0
+    ],
+    [
+     592.0,
+     227.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-093",
+   "settlement": "Harrow Falls",
+   "kind": "civic",
+   "label": "Carnegie Library",
+   "s": 577.0,
+   "x": 331.0,
+   "w": 36.0,
+   "d": 28.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     559.0,
+     317.0
+    ],
+    [
+     595.0,
+     317.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-094",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 551.5,
+   "x": 394.2,
+   "w": 12.7,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     545.2,
+     388.7
+    ],
+    [
+     557.9,
+     388.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-095",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 575.6,
+   "x": 396.4,
+   "w": 12.4,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     569.4,
+     391.4
+    ],
+    [
+     581.8,
+     391.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-096",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 604.3,
+   "x": 393.9,
+   "w": 11.1,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     598.7,
+     388.7
+    ],
+    [
+     609.8,
+     388.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-097",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 550.4,
+   "x": 447.8,
+   "w": 10.2,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     545.3,
+     452.7
+    ],
+    [
+     555.5,
+     452.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-098",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 575.2,
+   "x": 448.0,
+   "w": 12.0,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     569.2,
+     453.5
+    ],
+    [
+     581.3,
+     453.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-099",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 604.8,
+   "x": 449.4,
+   "w": 12.6,
+   "d": 10.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     598.5,
+     454.4
+    ],
+    [
+     611.1,
+     454.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-100",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 549.0,
+   "x": 484.9,
+   "w": 11.9,
+   "d": 9.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     543.1,
+     480.1
+    ],
+    [
+     555.0,
+     480.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-101",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 579.5,
+   "x": 486.6,
+   "w": 11.9,
+   "d": 11.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     573.5,
+     481.0
+    ],
+    [
+     585.4,
+     481.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-102",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 601.5,
+   "x": 485.2,
+   "w": 12.7,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     595.1,
+     479.7
+    ],
+    [
+     607.9,
+     479.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-103",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 552.7,
+   "x": 540.0,
+   "w": 11.4,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     547.0,
+     545.4
+    ],
+    [
+     558.4,
+     545.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-104",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 576.5,
+   "x": 541.7,
+   "w": 12.3,
+   "d": 9.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     570.3,
+     546.5
+    ],
+    [
+     582.7,
+     546.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-105",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 602.4,
+   "x": 540.1,
+   "w": 13.0,
+   "d": 9.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     595.9,
+     544.7
+    ],
+    [
+     608.9,
+     544.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-106",
+   "settlement": "Harrow Falls",
+   "kind": "civic",
+   "label": "Tamsin Co. Courthouse",
+   "s": 395.0,
+   "x": 604.5,
+   "w": 44.0,
+   "d": 44.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     373.0,
+     582.5
+    ],
+    [
+     417.0,
+     582.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-107",
+   "settlement": "Harrow Falls",
+   "kind": "civic",
+   "label": "Mercy Hospital",
+   "s": 213.0,
+   "x": 604.0,
+   "w": 45.0,
+   "d": 62.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     190.5,
+     573.0
+    ],
+    [
+     235.5,
+     573.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-108",
+   "settlement": "Harrow Falls",
+   "kind": "school",
+   "label": "HF High",
+   "s": 489.0,
+   "x": 584.5,
+   "w": 81.0,
+   "d": 32.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     448.5,
+     568.5
+    ],
+    [
+     529.5,
+     568.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-109",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 276.2,
+   "x": 577.5,
+   "w": 11.6,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     270.4,
+     572.1
+    ],
+    [
+     282.0,
+     572.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-110",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 293.2,
+   "x": 578.6,
+   "w": 11.1,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     287.7,
+     572.7
+    ],
+    [
+     298.8,
+     572.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-111",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 314.6,
+   "x": 579.0,
+   "w": 11.4,
+   "d": 11.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     308.9,
+     573.2
+    ],
+    [
+     320.3,
+     573.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-112",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 336.0,
+   "x": 576.2,
+   "w": 11.6,
+   "d": 10.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     330.1,
+     571.1
+    ],
+    [
+     341.8,
+     571.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-113",
+   "settlement": "Harrow Falls",
+   "kind": "tower",
+   "label": "Water Tower",
+   "s": 65.0,
+   "x": 614.5,
+   "w": 16.0,
+   "d": 16.0,
+   "angle_deg": 0.0,
+   "front_edge": null,
+   "parts": []
+  },
+  {
+   "id": "HF-114",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 403.7,
+   "x": 776.8,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 116.0,
+   "front_edge": [
+    [
+     410.9,
+     773.6
+    ],
+    [
+     405.6,
+     784.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-115",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 370.5,
+   "x": 809.5,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 150.3,
+   "front_edge": [
+    [
+     378.2,
+     810.9
+    ],
+    [
+     367.7,
+     816.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-116",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 319.3,
+   "x": 827.4,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 169.2,
+   "front_edge": [
+    [
+     326.2,
+     831.2
+    ],
+    [
+     314.4,
+     833.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-117",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 260.0,
+   "x": 831.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -176.5,
+   "front_edge": [
+    [
+     265.7,
+     836.4
+    ],
+    [
+     253.7,
+     835.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-118",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 203.4,
+   "x": 820.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -160.8,
+   "front_edge": [
+    [
+     207.4,
+     826.9
+    ],
+    [
+     196.1,
+     823.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-119",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 160.0,
+   "x": 795.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -136.1,
+   "front_edge": [
+    [
+     160.9,
+     803.0
+    ],
+    [
+     152.2,
+     794.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-120",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 141.0,
+   "x": 754.5,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -90.0,
+   "front_edge": [
+    [
+     136.0,
+     760.5
+    ],
+    [
+     136.0,
+     748.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-121",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 160.0,
+   "x": 713.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -43.9,
+   "front_edge": [
+    [
+     152.2,
+     714.4
+    ],
+    [
+     160.9,
+     706.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-122",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 203.4,
+   "x": 688.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -19.2,
+   "front_edge": [
+    [
+     196.1,
+     686.1
+    ],
+    [
+     207.4,
+     682.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-123",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 260.0,
+   "x": 678.0,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -3.5,
+   "front_edge": [
+    [
+     253.7,
+     673.4
+    ],
+    [
+     265.7,
+     672.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-124",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 319.3,
+   "x": 681.6,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 10.8,
+   "front_edge": [
+    [
+     314.4,
+     675.6
+    ],
+    [
+     326.2,
+     677.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-125",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 370.5,
+   "x": 699.6,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 29.7,
+   "front_edge": [
+    [
+     367.7,
+     692.3
+    ],
+    [
+     378.2,
+     698.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-126",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 403.7,
+   "x": 732.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 64.0,
+   "front_edge": [
+    [
+     405.6,
+     724.7
+    ],
+    [
+     410.9,
+     735.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-127",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 410.1,
+   "x": 817.7,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -23.8,
+   "front_edge": [
+    [
+     402.6,
+     815.5
+    ],
+    [
+     413.6,
+     810.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-128",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 405.1,
+   "x": 844.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 45.0,
+   "front_edge": [
+    [
+     404.4,
+     836.6
+    ],
+    [
+     412.9,
+     845.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-129",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 378.5,
+   "x": 849.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 113.8,
+   "front_edge": [
+    [
+     385.5,
+     845.9
+    ],
+    [
+     380.6,
+     856.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-130",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 652.9,
+   "x": 773.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 118.2,
+   "front_edge": [
+    [
+     660.1,
+     770.2
+    ],
+    [
+     654.5,
+     780.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-131",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 615.4,
+   "x": 806.0,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 154.6,
+   "front_edge": [
+    [
+     622.9,
+     807.9
+    ],
+    [
+     612.1,
+     813.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-132",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 560.0,
+   "x": 819.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 175.5,
+   "front_edge": [
+    [
+     566.4,
+     824.5
+    ],
+    [
+     554.4,
+     825.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-133",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 500.9,
+   "x": 815.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -166.0,
+   "front_edge": [
+    [
+     505.5,
+     821.6
+    ],
+    [
+     493.9,
+     818.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-134",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 452.8,
+   "x": 792.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -139.6,
+   "front_edge": [
+    [
+     454.1,
+     799.8
+    ],
+    [
+     445.0,
+     792.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-135",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 431.0,
+   "x": 749.5,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -90.0,
+   "front_edge": [
+    [
+     426.0,
+     755.5
+    ],
+    [
+     426.0,
+     743.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-136",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 452.8,
+   "x": 707.0,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -40.4,
+   "front_edge": [
+    [
+     445.0,
+     707.0
+    ],
+    [
+     454.1,
+     699.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-137",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 500.9,
+   "x": 683.8,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -14.0,
+   "front_edge": [
+    [
+     493.9,
+     680.4
+    ],
+    [
+     505.5,
+     677.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-138",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 560.0,
+   "x": 679.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 4.5,
+   "front_edge": [
+    [
+     554.4,
+     673.7
+    ],
+    [
+     566.4,
+     674.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-139",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 615.4,
+   "x": 693.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 25.4,
+   "front_edge": [
+    [
+     612.1,
+     686.0
+    ],
+    [
+     622.9,
+     691.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-140",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 652.9,
+   "x": 725.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 61.8,
+   "front_edge": [
+    [
+     654.5,
+     718.3
+    ],
+    [
+     660.1,
+     728.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-141",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 666.0,
+   "x": 808.5,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -23.8,
+   "front_edge": [
+    [
+     658.5,
+     806.3
+    ],
+    [
+     669.4,
+     801.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-142",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 661.0,
+   "x": 835.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 45.0,
+   "front_edge": [
+    [
+     660.3,
+     827.3
+    ],
+    [
+     668.7,
+     835.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-143",
+   "settlement": "Harrow Falls",
+   "kind": "house",
+   "label": null,
+   "s": 634.3,
+   "x": 840.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 113.8,
+   "front_edge": [
+    [
+     641.3,
+     836.6
+    ],
+    [
+     636.5,
+     847.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-144",
+   "settlement": "Harrow Falls",
+   "kind": "bigbox",
+   "label": null,
+   "s": 717.5,
+   "x": 737.0,
+   "w": 95.0,
+   "d": 65.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     670.0,
+     704.5
+    ],
+    [
+     765.0,
+     704.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-145",
+   "settlement": "Harrow Falls",
+   "kind": "strip",
+   "label": null,
+   "s": 707.5,
+   "x": 565.5,
+   "w": 85.0,
+   "d": 22.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     665.0,
+     554.5
+    ],
+    [
+     750.0,
+     554.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HF-146",
+   "settlement": "Harrow Falls",
+   "kind": "strip",
+   "label": null,
+   "s": 787.5,
+   "x": 627.0,
+   "w": 15.0,
+   "d": 15.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     780.0,
+     619.5
+    ],
+    [
+     795.0,
+     619.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-001",
+   "settlement": "Kessler",
+   "kind": "civic",
+   "label": "Fire / Police",
+   "s": 1948.0,
+   "x": 894.3,
+   "w": 30.0,
+   "d": 24.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1933.0,
+     906.3
+    ],
+    [
+     1963.0,
+     906.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-002",
+   "settlement": "Kessler",
+   "kind": "church",
+   "label": "St. Adalbert's",
+   "s": 1948.0,
+   "x": 814.3,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1940.0,
+     827.3
+    ],
+    [
+     1956.0,
+     827.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-003",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2008.2,
+   "x": 839.9,
+   "w": 19.3,
+   "d": 24.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1998.5,
+     852.3
+    ],
+    [
+     2017.8,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-004",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2028.4,
+   "x": 840.2,
+   "w": 19.3,
+   "d": 24.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2018.8,
+     852.3
+    ],
+    [
+     2038.1,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-005",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2048.7,
+   "x": 839.1,
+   "w": 19.3,
+   "d": 26.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2039.0,
+     852.3
+    ],
+    [
+     2058.3,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-006",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2068.9,
+   "x": 841.9,
+   "w": 19.3,
+   "d": 20.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2059.2,
+     852.3
+    ],
+    [
+     2078.6,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-007",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2011.5,
+   "x": 786.8,
+   "w": 26.1,
+   "d": 23.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1998.5,
+     775.3
+    ],
+    [
+     2024.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-008",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2038.5,
+   "x": 784.7,
+   "w": 26.1,
+   "d": 18.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2025.5,
+     775.3
+    ],
+    [
+     2051.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-009",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2065.6,
+   "x": 785.8,
+   "w": 26.1,
+   "d": 20.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2052.5,
+     775.3
+    ],
+    [
+     2078.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-010",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2099.2,
+   "x": 840.1,
+   "w": 19.3,
+   "d": 24.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2089.5,
+     852.3
+    ],
+    [
+     2108.8,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-011",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2119.4,
+   "x": 840.4,
+   "w": 19.3,
+   "d": 23.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2109.8,
+     852.3
+    ],
+    [
+     2129.1,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-012",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2139.7,
+   "x": 838.6,
+   "w": 19.3,
+   "d": 27.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2130.0,
+     852.3
+    ],
+    [
+     2149.3,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-013",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2159.9,
+   "x": 840.5,
+   "w": 19.3,
+   "d": 23.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2150.2,
+     852.3
+    ],
+    [
+     2169.6,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-014",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2102.6,
+   "x": 785.9,
+   "w": 26.1,
+   "d": 21.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2089.5,
+     775.3
+    ],
+    [
+     2115.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-015",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2129.6,
+   "x": 784.6,
+   "w": 26.1,
+   "d": 18.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2116.5,
+     775.3
+    ],
+    [
+     2142.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-016",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2156.6,
+   "x": 786.1,
+   "w": 26.1,
+   "d": 21.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2143.5,
+     775.3
+    ],
+    [
+     2169.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-017",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2190.2,
+   "x": 839.6,
+   "w": 19.3,
+   "d": 25.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2180.5,
+     852.3
+    ],
+    [
+     2199.8,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-018",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2210.4,
+   "x": 840.9,
+   "w": 19.3,
+   "d": 22.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2200.8,
+     852.3
+    ],
+    [
+     2220.1,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-019",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2230.7,
+   "x": 838.6,
+   "w": 19.3,
+   "d": 27.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2221.0,
+     852.3
+    ],
+    [
+     2240.3,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-020",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2250.9,
+   "x": 838.7,
+   "w": 19.3,
+   "d": 27.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2241.2,
+     852.3
+    ],
+    [
+     2260.6,
+     852.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-021",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2193.6,
+   "x": 787.2,
+   "w": 26.1,
+   "d": 23.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2180.5,
+     775.3
+    ],
+    [
+     2206.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-022",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2220.6,
+   "x": 786.1,
+   "w": 26.1,
+   "d": 21.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2207.5,
+     775.3
+    ],
+    [
+     2233.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-023",
+   "settlement": "Kessler",
+   "kind": "store",
+   "label": null,
+   "s": 2247.6,
+   "x": 787.0,
+   "w": 26.1,
+   "d": 23.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2234.5,
+     775.3
+    ],
+    [
+     2260.6,
+     775.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-024",
+   "settlement": "Kessler",
+   "kind": "industrial",
+   "label": "Grain Elev.",
+   "s": 2286.5,
+   "x": 899.3,
+   "w": 14.0,
+   "d": 18.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2279.5,
+     908.3
+    ],
+    [
+     2293.5,
+     908.3
+    ]
+   ],
+   "parts": [
+    {
+     "s": 2299.5,
+     "x": 899.3,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    },
+    {
+     "s": 2310.5,
+     "x": 899.3,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    },
+    {
+     "s": 2321.5,
+     "x": 899.3,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    }
+   ]
+  },
+  {
+   "id": "K-025",
+   "settlement": "Kessler",
+   "kind": "church",
+   "label": "Trinity Lutheran",
+   "s": 2312.0,
+   "x": 814.3,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2304.0,
+     827.3
+    ],
+    [
+     2320.0,
+     827.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-026",
+   "settlement": "Kessler",
+   "kind": "industrial",
+   "label": "Kessler Works",
+   "s": 2017.5,
+   "x": 1029.3,
+   "w": 145.0,
+   "d": 90.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1945.0,
+     984.3
+    ],
+    [
+     2090.0,
+     984.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-027",
+   "settlement": "Kessler",
+   "kind": "industrial",
+   "label": null,
+   "s": 2227.0,
+   "x": 1006.8,
+   "w": 34.0,
+   "d": 55.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2210.0,
+     979.3
+    ],
+    [
+     2244.0,
+     979.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-028",
+   "settlement": "Kessler",
+   "kind": "industrial",
+   "label": null,
+   "s": 2272.0,
+   "x": 1006.8,
+   "w": 34.0,
+   "d": 55.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2255.0,
+     979.3
+    ],
+    [
+     2289.0,
+     979.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-029",
+   "settlement": "Kessler",
+   "kind": "industrial",
+   "label": null,
+   "s": 2317.0,
+   "x": 1006.8,
+   "w": 34.0,
+   "d": 55.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2300.0,
+     979.3
+    ],
+    [
+     2334.0,
+     979.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-030",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1923.8,
+   "x": 748.8,
+   "w": 11.8,
+   "d": 9.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1917.9,
+     753.5
+    ],
+    [
+     1929.7,
+     753.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-031",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1946.5,
+   "x": 749.6,
+   "w": 11.4,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1940.8,
+     754.8
+    ],
+    [
+     1952.2,
+     754.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-032",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1973.5,
+   "x": 749.3,
+   "w": 10.8,
+   "d": 11.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1968.1,
+     755.1
+    ],
+    [
+     1978.9,
+     755.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-033",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1922.6,
+   "x": 695.0,
+   "w": 11.5,
+   "d": 9.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1916.9,
+     690.2
+    ],
+    [
+     1928.3,
+     690.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-034",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1950.4,
+   "x": 694.7,
+   "w": 12.7,
+   "d": 9.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1944.0,
+     690.0
+    ],
+    [
+     1956.7,
+     690.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-035",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1976.6,
+   "x": 696.0,
+   "w": 12.8,
+   "d": 10.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1970.2,
+     690.9
+    ],
+    [
+     1983.0,
+     690.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-036",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1975.1,
+   "x": 657.7,
+   "w": 12.1,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1969.0,
+     663.0
+    ],
+    [
+     1981.1,
+     663.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-037",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1949.6,
+   "x": 606.1,
+   "w": 11.6,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1943.8,
+     600.3
+    ],
+    [
+     1955.4,
+     600.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-038",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1973.3,
+   "x": 605.5,
+   "w": 12.3,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1967.2,
+     599.8
+    ],
+    [
+     1979.5,
+     599.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-039",
+   "settlement": "Kessler",
+   "kind": "civic",
+   "label": "St. Luke's Hospital",
+   "s": 1948.0,
+   "x": 540.8,
+   "w": 44.0,
+   "d": 60.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1926.0,
+     570.8
+    ],
+    [
+     1970.0,
+     570.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-040",
+   "settlement": "Kessler",
+   "kind": "civic",
+   "label": "Library",
+   "s": 2039.0,
+   "x": 722.8,
+   "w": 32.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2023.0,
+     735.8
+    ],
+    [
+     2055.0,
+     735.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-041",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2010.9,
+   "x": 660.1,
+   "w": 11.1,
+   "d": 9.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2005.3,
+     664.9
+    ],
+    [
+     2016.4,
+     664.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-042",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2038.0,
+   "x": 657.8,
+   "w": 11.5,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2032.3,
+     663.5
+    ],
+    [
+     2043.7,
+     663.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-043",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2064.2,
+   "x": 656.8,
+   "w": 12.8,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2057.8,
+     662.7
+    ],
+    [
+     2070.5,
+     662.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-044",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2012.5,
+   "x": 605.4,
+   "w": 12.6,
+   "d": 9.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2006.2,
+     600.7
+    ],
+    [
+     2018.8,
+     600.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-045",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2037.7,
+   "x": 605.4,
+   "w": 10.7,
+   "d": 9.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2032.3,
+     600.8
+    ],
+    [
+     2043.0,
+     600.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-046",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2066.9,
+   "x": 604.1,
+   "w": 12.5,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2060.7,
+     598.7
+    ],
+    [
+     2073.2,
+     598.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-047",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2012.1,
+   "x": 568.5,
+   "w": 10.7,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2006.8,
+     573.9
+    ],
+    [
+     2017.5,
+     573.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-048",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2037.6,
+   "x": 566.8,
+   "w": 12.2,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2031.5,
+     572.3
+    ],
+    [
+     2043.6,
+     572.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-049",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2065.4,
+   "x": 568.8,
+   "w": 11.0,
+   "d": 9.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2059.9,
+     573.6
+    ],
+    [
+     2070.9,
+     573.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-050",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2012.9,
+   "x": 513.7,
+   "w": 10.1,
+   "d": 10.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2007.9,
+     508.6
+    ],
+    [
+     2018.0,
+     508.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-051",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2039.9,
+   "x": 513.7,
+   "w": 10.0,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2034.9,
+     508.6
+    ],
+    [
+     2044.9,
+     508.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-052",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2067.5,
+   "x": 514.8,
+   "w": 11.9,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2061.6,
+     509.6
+    ],
+    [
+     2073.5,
+     509.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-053",
+   "settlement": "Kessler",
+   "kind": "civic",
+   "label": "City Hall",
+   "s": 2130.0,
+   "x": 722.8,
+   "w": 40.0,
+   "d": 30.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2110.0,
+     737.8
+    ],
+    [
+     2150.0,
+     737.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-054",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2105.0,
+   "x": 659.0,
+   "w": 12.3,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2098.9,
+     664.4
+    ],
+    [
+     2111.2,
+     664.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-055",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2130.5,
+   "x": 659.4,
+   "w": 10.1,
+   "d": 11.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2125.4,
+     664.9
+    ],
+    [
+     2135.5,
+     664.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-056",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2158.7,
+   "x": 658.5,
+   "w": 11.7,
+   "d": 11.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2152.8,
+     664.1
+    ],
+    [
+     2164.5,
+     664.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-057",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2102.2,
+   "x": 604.2,
+   "w": 11.3,
+   "d": 9.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2096.6,
+     599.5
+    ],
+    [
+     2107.9,
+     599.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-058",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2131.8,
+   "x": 606.3,
+   "w": 11.8,
+   "d": 11.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2125.9,
+     600.5
+    ],
+    [
+     2137.7,
+     600.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-059",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2157.8,
+   "x": 603.3,
+   "w": 12.2,
+   "d": 9.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2151.6,
+     598.5
+    ],
+    [
+     2163.9,
+     598.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-060",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2103.1,
+   "x": 568.7,
+   "w": 10.4,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2097.9,
+     574.2
+    ],
+    [
+     2108.3,
+     574.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-061",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2130.0,
+   "x": 568.6,
+   "w": 12.4,
+   "d": 11.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2123.8,
+     574.2
+    ],
+    [
+     2136.2,
+     574.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-062",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2154.1,
+   "x": 567.5,
+   "w": 12.8,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2147.6,
+     572.0
+    ],
+    [
+     2160.5,
+     572.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-063",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2105.6,
+   "x": 514.5,
+   "w": 10.7,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2100.2,
+     509.0
+    ],
+    [
+     2110.9,
+     509.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-064",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2132.0,
+   "x": 513.3,
+   "w": 10.7,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2126.6,
+     508.1
+    ],
+    [
+     2137.3,
+     508.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-065",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2155.9,
+   "x": 512.6,
+   "w": 12.2,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2149.8,
+     507.3
+    ],
+    [
+     2162.0,
+     507.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-066",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2193.6,
+   "x": 748.6,
+   "w": 12.0,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2187.6,
+     754.5
+    ],
+    [
+     2199.6,
+     754.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-067",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2223.1,
+   "x": 748.9,
+   "w": 12.1,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2217.0,
+     754.4
+    ],
+    [
+     2229.1,
+     754.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-068",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2247.9,
+   "x": 749.9,
+   "w": 12.8,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2241.5,
+     755.0
+    ],
+    [
+     2254.2,
+     755.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-069",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2193.9,
+   "x": 696.6,
+   "w": 10.9,
+   "d": 9.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2188.4,
+     692.0
+    ],
+    [
+     2199.3,
+     692.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-070",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2222.7,
+   "x": 695.7,
+   "w": 12.2,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2216.6,
+     690.3
+    ],
+    [
+     2228.8,
+     690.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-071",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2247.5,
+   "x": 696.0,
+   "w": 11.8,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2241.6,
+     690.5
+    ],
+    [
+     2253.4,
+     690.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-072",
+   "settlement": "Kessler",
+   "kind": "school",
+   "label": "Kessler High",
+   "s": 2201.2,
+   "x": 651.3,
+   "w": 35.5,
+   "d": 32.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2183.5,
+     667.3
+    ],
+    [
+     2219.0,
+     667.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-073",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2194.4,
+   "x": 566.9,
+   "w": 10.5,
+   "d": 9.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2189.1,
+     571.6
+    ],
+    [
+     2199.7,
+     571.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-074",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2220.2,
+   "x": 567.8,
+   "w": 11.8,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2214.3,
+     573.7
+    ],
+    [
+     2226.0,
+     573.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-075",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2247.4,
+   "x": 567.8,
+   "w": 11.2,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2241.8,
+     572.8
+    ],
+    [
+     2253.0,
+     572.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-076",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2195.4,
+   "x": 513.7,
+   "w": 12.8,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2188.9,
+     508.3
+    ],
+    [
+     2201.8,
+     508.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-077",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2222.1,
+   "x": 514.8,
+   "w": 11.8,
+   "d": 9.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2216.2,
+     509.9
+    ],
+    [
+     2228.1,
+     509.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-078",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2245.2,
+   "x": 514.3,
+   "w": 12.7,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2238.8,
+     509.1
+    ],
+    [
+     2251.6,
+     509.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-079",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2283.2,
+   "x": 750.6,
+   "w": 10.1,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2278.2,
+     756.0
+    ],
+    [
+     2288.3,
+     756.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-080",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2312.8,
+   "x": 749.8,
+   "w": 12.1,
+   "d": 9.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2306.8,
+     754.6
+    ],
+    [
+     2318.9,
+     754.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-081",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2337.2,
+   "x": 748.2,
+   "w": 12.5,
+   "d": 11.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2330.9,
+     753.8
+    ],
+    [
+     2343.4,
+     753.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-082",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2284.7,
+   "x": 695.6,
+   "w": 12.8,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2278.3,
+     691.0
+    ],
+    [
+     2291.1,
+     691.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-083",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2311.2,
+   "x": 695.2,
+   "w": 11.6,
+   "d": 11.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2305.4,
+     689.6
+    ],
+    [
+     2317.0,
+     689.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-084",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2339.7,
+   "x": 695.0,
+   "w": 12.8,
+   "d": 11.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2333.3,
+     689.3
+    ],
+    [
+     2346.1,
+     689.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-085",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2283.6,
+   "x": 658.9,
+   "w": 12.5,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2277.3,
+     664.3
+    ],
+    [
+     2289.9,
+     664.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-086",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2312.9,
+   "x": 659.8,
+   "w": 12.4,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2306.7,
+     665.2
+    ],
+    [
+     2319.1,
+     665.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-087",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2338.1,
+   "x": 659.3,
+   "w": 10.7,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2332.8,
+     664.3
+    ],
+    [
+     2343.4,
+     664.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-088",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2285.1,
+   "x": 603.2,
+   "w": 12.1,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2279.1,
+     598.7
+    ],
+    [
+     2291.2,
+     598.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-089",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2311.3,
+   "x": 603.7,
+   "w": 12.2,
+   "d": 9.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2305.2,
+     599.1
+    ],
+    [
+     2317.4,
+     599.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-090",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2336.6,
+   "x": 605.1,
+   "w": 11.9,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2330.7,
+     599.8
+    ],
+    [
+     2342.6,
+     599.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-091",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2283.6,
+   "x": 566.6,
+   "w": 12.4,
+   "d": 11.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2277.4,
+     572.3
+    ],
+    [
+     2289.8,
+     572.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-092",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2313.7,
+   "x": 567.7,
+   "w": 11.3,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2308.1,
+     572.7
+    ],
+    [
+     2319.3,
+     572.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-093",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2339.0,
+   "x": 568.2,
+   "w": 11.7,
+   "d": 11.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2333.1,
+     573.8
+    ],
+    [
+     2344.8,
+     573.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-094",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2285.3,
+   "x": 513.5,
+   "w": 11.5,
+   "d": 9.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2279.6,
+     508.8
+    ],
+    [
+     2291.1,
+     508.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-095",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2311.9,
+   "x": 513.1,
+   "w": 11.7,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2306.0,
+     508.1
+    ],
+    [
+     2317.7,
+     508.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-096",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2336.5,
+   "x": 515.3,
+   "w": 10.4,
+   "d": 12.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2331.4,
+     509.3
+    ],
+    [
+     2341.7,
+     509.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-097",
+   "settlement": "Kessler",
+   "kind": "tower",
+   "label": "Water Tower",
+   "s": 2390.0,
+   "x": 709.3,
+   "w": 16.0,
+   "d": 16.0,
+   "angle_deg": 0.0,
+   "front_edge": null,
+   "parts": []
+  },
+  {
+   "id": "K-098",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2223.9,
+   "x": 362.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -151.2,
+   "front_edge": [
+    [
+     2231.5,
+     360.6
+    ],
+    [
+     2221.0,
+     354.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-099",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2177.9,
+   "x": 345.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -166.2,
+   "front_edge": [
+    [
+     2184.9,
+     341.7
+    ],
+    [
+     2173.2,
+     338.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-100",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2120.6,
+   "x": 336.4,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -175.8,
+   "front_edge": [
+    [
+     2127.0,
+     331.9
+    ],
+    [
+     2115.0,
+     331.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-101",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2059.4,
+   "x": 336.4,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 175.8,
+   "front_edge": [
+    [
+     2065.0,
+     331.0
+    ],
+    [
+     2053.0,
+     331.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-102",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2002.1,
+   "x": 345.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 166.2,
+   "front_edge": [
+    [
+     2006.8,
+     338.8
+    ],
+    [
+     1995.1,
+     341.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-103",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1956.1,
+   "x": 362.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 151.2,
+   "front_edge": [
+    [
+     1959.0,
+     354.8
+    ],
+    [
+     1948.5,
+     360.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-104",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1926.2,
+   "x": 389.5,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 118.5,
+   "front_edge": [
+    [
+     1924.6,
+     381.8
+    ],
+    [
+     1918.9,
+     392.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-105",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1926.2,
+   "x": 429.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 61.5,
+   "front_edge": [
+    [
+     1918.9,
+     426.2
+    ],
+    [
+     1924.6,
+     436.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-106",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 1956.1,
+   "x": 456.5,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 28.8,
+   "front_edge": [
+    [
+     1948.5,
+     458.0
+    ],
+    [
+     1959.0,
+     463.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-107",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2002.1,
+   "x": 473.5,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 13.8,
+   "front_edge": [
+    [
+     1995.1,
+     476.9
+    ],
+    [
+     2006.8,
+     479.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-108",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2059.4,
+   "x": 482.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 4.2,
+   "front_edge": [
+    [
+     2053.0,
+     486.7
+    ],
+    [
+     2065.0,
+     487.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-109",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2120.6,
+   "x": 482.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -4.2,
+   "front_edge": [
+    [
+     2115.0,
+     487.6
+    ],
+    [
+     2127.0,
+     486.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-110",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2177.9,
+   "x": 473.5,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -13.8,
+   "front_edge": [
+    [
+     2173.2,
+     479.8
+    ],
+    [
+     2184.9,
+     476.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-111",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2253.8,
+   "x": 429.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -61.5,
+   "front_edge": [
+    [
+     2255.4,
+     436.7
+    ],
+    [
+     2261.1,
+     426.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-112",
+   "settlement": "Kessler",
+   "kind": "house",
+   "label": null,
+   "s": 2218.2,
+   "x": 316.6,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -113.8,
+   "front_edge": [
+    [
+     2225.2,
+     320.1
+    ],
+    [
+     2220.4,
+     309.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "K-113",
+   "settlement": "Kessler",
+   "kind": "bigbox",
+   "label": null,
+   "s": 1746.5,
+   "x": 772.8,
+   "w": 77.0,
+   "d": 63.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1708.0,
+     804.3
+    ],
+    [
+     1785.0,
+     804.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-001",
+   "settlement": "Marlowe",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 1454.5,
+   "x": -896.5,
+   "w": 26.0,
+   "d": 22.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1443.5,
+     -909.5
+    ],
+    [
+     1443.5,
+     -883.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-002",
+   "settlement": "Marlowe",
+   "kind": "church",
+   "label": null,
+   "s": 1545.0,
+   "x": -896.5,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1532.0,
+     -904.5
+    ],
+    [
+     1532.0,
+     -888.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-003",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1479.0,
+   "x": -836.3,
+   "w": 19.4,
+   "d": 27.9,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -846.0
+    ],
+    [
+     1493.0,
+     -826.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-004",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1481.8,
+   "x": -816.1,
+   "w": 19.4,
+   "d": 22.5,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -825.8
+    ],
+    [
+     1493.0,
+     -806.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-005",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1482.4,
+   "x": -795.8,
+   "w": 19.4,
+   "d": 21.2,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -805.5
+    ],
+    [
+     1493.0,
+     -786.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-006",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1518.0,
+   "x": -836.3,
+   "w": 19.4,
+   "d": 22.1,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1507.0,
+     -846.0
+    ],
+    [
+     1507.0,
+     -826.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-007",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1517.2,
+   "x": -816.1,
+   "w": 19.4,
+   "d": 20.4,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1507.0,
+     -825.8
+    ],
+    [
+     1507.0,
+     -806.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-008",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1520.2,
+   "x": -795.8,
+   "w": 19.4,
+   "d": 26.3,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1507.0,
+     -805.5
+    ],
+    [
+     1507.0,
+     -786.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-009",
+   "settlement": "Marlowe",
+   "kind": "civic",
+   "label": "Brannock Co. Courthouse",
+   "s": 1545.0,
+   "x": -714.5,
+   "w": 39.0,
+   "d": 42.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1524.0,
+     -734.0
+    ],
+    [
+     1524.0,
+     -695.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-010",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1479.7,
+   "x": -725.1,
+   "w": 19.4,
+   "d": 26.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -734.8
+    ],
+    [
+     1493.0,
+     -715.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-011",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1480.4,
+   "x": -704.8,
+   "w": 19.4,
+   "d": 25.2,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -714.5
+    ],
+    [
+     1493.0,
+     -695.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-012",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1479.8,
+   "x": -684.6,
+   "w": 19.4,
+   "d": 26.4,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -694.2
+    ],
+    [
+     1493.0,
+     -674.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-013",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1609.7,
+   "x": -725.1,
+   "w": 19.4,
+   "d": 23.3,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1598.0,
+     -734.8
+    ],
+    [
+     1598.0,
+     -715.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-014",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1609.8,
+   "x": -704.8,
+   "w": 19.4,
+   "d": 23.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1598.0,
+     -714.5
+    ],
+    [
+     1598.0,
+     -695.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-015",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1611.8,
+   "x": -684.6,
+   "w": 19.4,
+   "d": 27.7,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1598.0,
+     -694.2
+    ],
+    [
+     1598.0,
+     -674.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-016",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1481.7,
+   "x": -651.0,
+   "w": 26.1,
+   "d": 22.7,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -664.0
+    ],
+    [
+     1493.0,
+     -637.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-017",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1479.2,
+   "x": -624.0,
+   "w": 26.1,
+   "d": 27.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -637.0
+    ],
+    [
+     1493.0,
+     -610.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-018",
+   "settlement": "Marlowe",
+   "kind": "store",
+   "label": null,
+   "s": 1481.4,
+   "x": -597.0,
+   "w": 26.1,
+   "d": 23.2,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1493.0,
+     -610.0
+    ],
+    [
+     1493.0,
+     -583.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-019",
+   "settlement": "Marlowe",
+   "kind": "civic",
+   "label": "Opera House",
+   "s": 1545.5,
+   "x": -623.5,
+   "w": 28.0,
+   "d": 24.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1533.5,
+     -637.5
+    ],
+    [
+     1533.5,
+     -609.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-020",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1337.9,
+   "x": -916.6,
+   "w": 11.2,
+   "d": 11.8,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1332.0,
+     -922.2
+    ],
+    [
+     1332.0,
+     -911.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-021",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1336.8,
+   "x": -878.0,
+   "w": 12.8,
+   "d": 10.8,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1331.4,
+     -884.4
+    ],
+    [
+     1331.4,
+     -871.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-022",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1390.5,
+   "x": -923.5,
+   "w": 11.5,
+   "d": 11.8,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1396.5,
+     -929.3
+    ],
+    [
+     1396.5,
+     -917.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-023",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1388.6,
+   "x": -897.1,
+   "w": 11.4,
+   "d": 11.8,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1394.5,
+     -902.8
+    ],
+    [
+     1394.5,
+     -891.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-024",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1389.2,
+   "x": -868.8,
+   "w": 10.4,
+   "d": 10.1,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1394.2,
+     -874.0
+    ],
+    [
+     1394.2,
+     -863.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-025",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1335.9,
+   "x": -825.7,
+   "w": 11.8,
+   "d": 9.8,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1331.0,
+     -831.6
+    ],
+    [
+     1331.0,
+     -819.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-026",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1337.4,
+   "x": -786.0,
+   "w": 10.9,
+   "d": 11.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1331.9,
+     -791.5
+    ],
+    [
+     1331.9,
+     -780.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-027",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1391.1,
+   "x": -830.3,
+   "w": 12.2,
+   "d": 10.7,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1396.5,
+     -836.4
+    ],
+    [
+     1396.5,
+     -824.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-028",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1391.3,
+   "x": -805.8,
+   "w": 12.3,
+   "d": 10.4,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1396.5,
+     -811.9
+    ],
+    [
+     1396.5,
+     -799.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-029",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1389.0,
+   "x": -779.4,
+   "w": 11.5,
+   "d": 11.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1394.5,
+     -785.1
+    ],
+    [
+     1394.5,
+     -773.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-030",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1335.2,
+   "x": -736.5,
+   "w": 10.9,
+   "d": 9.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1330.4,
+     -741.9
+    ],
+    [
+     1330.4,
+     -731.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-031",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1337.7,
+   "x": -692.6,
+   "w": 11.7,
+   "d": 9.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1332.9,
+     -698.4
+    ],
+    [
+     1332.9,
+     -686.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-032",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1390.3,
+   "x": -739.0,
+   "w": 11.1,
+   "d": 9.9,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1395.3,
+     -744.5
+    ],
+    [
+     1395.3,
+     -733.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-033",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1389.4,
+   "x": -714.8,
+   "w": 11.4,
+   "d": 11.8,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1395.3,
+     -720.5
+    ],
+    [
+     1395.3,
+     -709.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-034",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1389.4,
+   "x": -686.8,
+   "w": 12.9,
+   "d": 9.3,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1394.0,
+     -693.3
+    ],
+    [
+     1394.0,
+     -680.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-035",
+   "settlement": "Marlowe",
+   "kind": "church",
+   "label": null,
+   "s": 1363.5,
+   "x": -623.5,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1350.5,
+     -631.5
+    ],
+    [
+     1350.5,
+     -615.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-036",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1391.9,
+   "x": -640.9,
+   "w": 12.6,
+   "d": 9.3,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1396.6,
+     -647.2
+    ],
+    [
+     1396.6,
+     -634.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-037",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1388.6,
+   "x": -605.6,
+   "w": 11.4,
+   "d": 11.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1394.4,
+     -611.3
+    ],
+    [
+     1394.4,
+     -599.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-038",
+   "settlement": "Marlowe",
+   "kind": "school",
+   "label": "School",
+   "s": 1617.0,
+   "x": -916.2,
+   "w": 35.5,
+   "d": 32.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1601.0,
+     -934.0
+    ],
+    [
+     1601.0,
+     -898.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-039",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1608.7,
+   "x": -834.2,
+   "w": 12.3,
+   "d": 9.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1603.9,
+     -840.4
+    ],
+    [
+     1603.9,
+     -828.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-040",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1611.1,
+   "x": -806.7,
+   "w": 12.7,
+   "d": 10.3,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1605.9,
+     -813.1
+    ],
+    [
+     1605.9,
+     -800.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-041",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1608.8,
+   "x": -780.2,
+   "w": 11.1,
+   "d": 9.7,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1603.9,
+     -785.7
+    ],
+    [
+     1603.9,
+     -774.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-042",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1662.8,
+   "x": -826.7,
+   "w": 10.9,
+   "d": 11.2,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1668.4,
+     -832.2
+    ],
+    [
+     1668.4,
+     -821.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-043",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1663.6,
+   "x": -783.3,
+   "w": 11.6,
+   "d": 11.2,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1669.2,
+     -789.1
+    ],
+    [
+     1669.2,
+     -777.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-044",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1609.6,
+   "x": -738.6,
+   "w": 12.1,
+   "d": 9.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1604.8,
+     -744.6
+    ],
+    [
+     1604.8,
+     -732.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-045",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1610.1,
+   "x": -716.8,
+   "w": 11.0,
+   "d": 10.5,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1604.8,
+     -722.3
+    ],
+    [
+     1604.8,
+     -711.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-046",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1609.6,
+   "x": -688.4,
+   "w": 10.4,
+   "d": 9.2,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1605.0,
+     -693.6
+    ],
+    [
+     1605.0,
+     -683.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-047",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1664.4,
+   "x": -733.6,
+   "w": 11.6,
+   "d": 9.3,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1669.0,
+     -739.4
+    ],
+    [
+     1669.0,
+     -727.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-048",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1662.9,
+   "x": -692.6,
+   "w": 10.8,
+   "d": 11.9,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1668.9,
+     -698.0
+    ],
+    [
+     1668.9,
+     -687.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-049",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1609.8,
+   "x": -650.3,
+   "w": 10.1,
+   "d": 9.7,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1604.9,
+     -655.3
+    ],
+    [
+     1604.9,
+     -645.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-050",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1607.8,
+   "x": -623.2,
+   "w": 12.4,
+   "d": 9.2,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1603.2,
+     -629.4
+    ],
+    [
+     1603.2,
+     -617.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-051",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1610.2,
+   "x": -597.8,
+   "w": 12.2,
+   "d": 10.5,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1604.9,
+     -603.9
+    ],
+    [
+     1604.9,
+     -591.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-052",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1662.6,
+   "x": -645.7,
+   "w": 12.5,
+   "d": 10.9,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1668.0,
+     -652.0
+    ],
+    [
+     1668.0,
+     -639.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-053",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1664.5,
+   "x": -601.9,
+   "w": 12.4,
+   "d": 9.4,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     1669.2,
+     -608.1
+    ],
+    [
+     1669.2,
+     -595.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-054",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1539.8,
+   "x": -950.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -8.0,
+   "front_edge": [
+    [
+     1534.6,
+     -944.3
+    ],
+    [
+     1546.5,
+     -945.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-055",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1593.1,
+   "x": -966.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -27.6,
+   "front_edge": [
+    [
+     1590.1,
+     -959.1
+    ],
+    [
+     1600.7,
+     -964.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-056",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1628.3,
+   "x": -999.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -62.9,
+   "front_edge": [
+    [
+     1630.1,
+     -991.5
+    ],
+    [
+     1635.5,
+     -1002.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-057",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1628.3,
+   "x": -1044.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -117.1,
+   "front_edge": [
+    [
+     1635.5,
+     -1041.8
+    ],
+    [
+     1630.1,
+     -1052.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-058",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1593.1,
+   "x": -1077.7,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -152.4,
+   "front_edge": [
+    [
+     1600.7,
+     -1079.4
+    ],
+    [
+     1590.1,
+     -1084.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-059",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1539.8,
+   "x": -1093.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -172.0,
+   "front_edge": [
+    [
+     1546.5,
+     -1098.1
+    ],
+    [
+     1534.6,
+     -1099.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-060",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1480.2,
+   "x": -1093.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 172.0,
+   "front_edge": [
+    [
+     1485.4,
+     -1099.7
+    ],
+    [
+     1473.5,
+     -1098.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-061",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1426.9,
+   "x": -1077.7,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 152.4,
+   "front_edge": [
+    [
+     1429.9,
+     -1084.9
+    ],
+    [
+     1419.3,
+     -1079.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-062",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1391.7,
+   "x": -1044.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 117.1,
+   "front_edge": [
+    [
+     1389.9,
+     -1052.5
+    ],
+    [
+     1384.5,
+     -1041.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-063",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1391.7,
+   "x": -999.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 62.9,
+   "front_edge": [
+    [
+     1384.5,
+     -1002.2
+    ],
+    [
+     1389.9,
+     -991.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-064",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1426.9,
+   "x": -966.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 27.6,
+   "front_edge": [
+    [
+     1419.3,
+     -964.6
+    ],
+    [
+     1429.9,
+     -959.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-065",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1480.2,
+   "x": -950.1,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 8.0,
+   "front_edge": [
+    [
+     1473.5,
+     -945.9
+    ],
+    [
+     1485.4,
+     -944.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-066",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": "School",
+   "s": 1606.4,
+   "x": -929.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 113.8,
+   "front_edge": [
+    [
+     1604.2,
+     -936.8
+    ],
+    [
+     1599.4,
+     -925.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-067",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": "School",
+   "s": 1633.0,
+   "x": -934.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 45.0,
+   "front_edge": [
+    [
+     1625.3,
+     -935.0
+    ],
+    [
+     1633.7,
+     -926.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-068",
+   "settlement": "Marlowe",
+   "kind": "house",
+   "label": null,
+   "s": 1638.0,
+   "x": -961.0,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -23.8,
+   "front_edge": [
+    [
+     1634.6,
+     -954.0
+    ],
+    [
+     1645.5,
+     -958.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "M-069",
+   "settlement": "Marlowe",
+   "kind": "tower",
+   "label": "Water Tower",
+   "s": 1560.0,
+   "x": -990.0,
+   "w": 16.0,
+   "d": 16.0,
+   "angle_deg": 0.0,
+   "front_edge": null,
+   "parts": []
+  },
+  {
+   "id": "B-001",
+   "settlement": "Bellhaven",
+   "kind": "industrial",
+   "label": "Grain Elev.",
+   "s": 886.0,
+   "x": 852.0,
+   "w": 14.0,
+   "d": 18.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     879.0,
+     861.0
+    ],
+    [
+     893.0,
+     861.0
+    ]
+   ],
+   "parts": [
+    {
+     "s": 899.0,
+     "x": 852.0,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    },
+    {
+     "s": 910.0,
+     "x": 852.0,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    },
+    {
+     "s": 921.0,
+     "x": 852.0,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    }
+   ]
+  },
+  {
+   "id": "B-002",
+   "settlement": "Bellhaven",
+   "kind": "church",
+   "label": null,
+   "s": 913.5,
+   "x": 767.0,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     905.5,
+     780.0
+    ],
+    [
+     921.5,
+     780.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-003",
+   "settlement": "Bellhaven",
+   "kind": "store",
+   "label": null,
+   "s": 993.9,
+   "x": 793.1,
+   "w": 19.4,
+   "d": 23.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     984.2,
+     805.0
+    ],
+    [
+     1003.6,
+     805.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-004",
+   "settlement": "Bellhaven",
+   "kind": "store",
+   "label": null,
+   "s": 1014.2,
+   "x": 794.8,
+   "w": 19.4,
+   "d": 20.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1004.5,
+     805.0
+    ],
+    [
+     1023.9,
+     805.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-005",
+   "settlement": "Bellhaven",
+   "kind": "store",
+   "label": null,
+   "s": 1034.4,
+   "x": 791.5,
+   "w": 19.3,
+   "d": 27.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1024.8,
+     805.0
+    ],
+    [
+     1044.1,
+     805.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-006",
+   "settlement": "Bellhaven",
+   "kind": "store",
+   "label": null,
+   "s": 1064.7,
+   "x": 793.9,
+   "w": 19.3,
+   "d": 22.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1055.0,
+     805.0
+    ],
+    [
+     1074.3,
+     805.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-007",
+   "settlement": "Bellhaven",
+   "kind": "store",
+   "label": null,
+   "s": 1084.9,
+   "x": 791.0,
+   "w": 19.3,
+   "d": 28.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1075.2,
+     805.0
+    ],
+    [
+     1094.6,
+     805.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-008",
+   "settlement": "Bellhaven",
+   "kind": "store",
+   "label": null,
+   "s": 1105.2,
+   "x": 794.8,
+   "w": 19.3,
+   "d": 20.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1095.5,
+     805.0
+    ],
+    [
+     1114.8,
+     805.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-009",
+   "settlement": "Bellhaven",
+   "kind": "store",
+   "label": null,
+   "s": 1125.4,
+   "x": 793.3,
+   "w": 19.3,
+   "d": 23.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1115.8,
+     805.0
+    ],
+    [
+     1135.1,
+     805.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-010",
+   "settlement": "Bellhaven",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 1186.5,
+   "x": 847.0,
+   "w": 26.0,
+   "d": 22.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1173.5,
+     858.0
+    ],
+    [
+     1199.5,
+     858.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-011",
+   "settlement": "Bellhaven",
+   "kind": "civic",
+   "label": "Town Hall",
+   "s": 1186.5,
+   "x": 766.5,
+   "w": 30.0,
+   "d": 24.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1171.5,
+     778.5
+    ],
+    [
+     1201.5,
+     778.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-012",
+   "settlement": "Bellhaven",
+   "kind": "civic",
+   "label": "Depot",
+   "s": 1050.0,
+   "x": 896.0,
+   "w": 30.0,
+   "d": 12.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1035.0,
+     890.0
+    ],
+    [
+     1065.0,
+     890.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-013",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 886.9,
+   "x": 703.0,
+   "w": 13.0,
+   "d": 11.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     880.4,
+     708.9
+    ],
+    [
+     893.4,
+     708.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-014",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 941.9,
+   "x": 702.5,
+   "w": 12.4,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     935.7,
+     707.0
+    ],
+    [
+     948.1,
+     707.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-015",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 894.9,
+   "x": 650.8,
+   "w": 11.0,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     889.4,
+     644.9
+    ],
+    [
+     900.4,
+     644.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-016",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 931.2,
+   "x": 647.3,
+   "w": 10.3,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     926.0,
+     642.1
+    ],
+    [
+     936.3,
+     642.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-017",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 977.7,
+   "x": 701.0,
+   "w": 11.2,
+   "d": 11.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     972.1,
+     706.7
+    ],
+    [
+     983.3,
+     706.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-018",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 984.5,
+   "x": 649.0,
+   "w": 12.9,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     978.0,
+     643.5
+    ],
+    [
+     990.9,
+     643.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-019",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1023.6,
+   "x": 649.6,
+   "w": 11.5,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1017.8,
+     643.7
+    ],
+    [
+     1029.3,
+     643.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-020",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1097.3,
+   "x": 702.5,
+   "w": 10.8,
+   "d": 10.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1091.9,
+     707.6
+    ],
+    [
+     1102.7,
+     707.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-021",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1124.2,
+   "x": 700.4,
+   "w": 10.4,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1119.0,
+     706.4
+    ],
+    [
+     1129.4,
+     706.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-022",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1074.6,
+   "x": 650.5,
+   "w": 12.6,
+   "d": 11.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1068.3,
+     644.6
+    ],
+    [
+     1080.9,
+     644.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-023",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1115.0,
+   "x": 647.2,
+   "w": 11.7,
+   "d": 9.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1109.2,
+     642.3
+    ],
+    [
+     1120.9,
+     642.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-024",
+   "settlement": "Bellhaven",
+   "kind": "church",
+   "label": null,
+   "s": 1186.5,
+   "x": 675.5,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1178.5,
+     688.5
+    ],
+    [
+     1194.5,
+     688.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-025",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1167.1,
+   "x": 648.2,
+   "w": 12.5,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1160.9,
+     643.0
+    ],
+    [
+     1173.4,
+     643.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-026",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1206.4,
+   "x": 648.0,
+   "w": 10.3,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1201.3,
+     642.7
+    ],
+    [
+     1211.6,
+     642.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-027",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 983.3,
+   "x": 610.0,
+   "w": 10.3,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     978.1,
+     615.7
+    ],
+    [
+     988.4,
+     615.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-028",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1025.3,
+   "x": 610.2,
+   "w": 12.6,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1019.1,
+     615.9
+    ],
+    [
+     1031.6,
+     615.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-029",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 983.2,
+   "x": 559.6,
+   "w": 12.5,
+   "d": 12.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     977.0,
+     553.6
+    ],
+    [
+     989.5,
+     553.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-030",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1025.6,
+   "x": 556.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1019.6,
+     551.8
+    ],
+    [
+     1031.5,
+     551.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-031",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1075.8,
+   "x": 612.0,
+   "w": 12.0,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1069.8,
+     616.6
+    ],
+    [
+     1081.8,
+     616.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-032",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1113.0,
+   "x": 610.6,
+   "w": 10.1,
+   "d": 9.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1107.9,
+     615.3
+    ],
+    [
+     1118.0,
+     615.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-033",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1074.1,
+   "x": 557.9,
+   "w": 11.6,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1068.4,
+     552.8
+    ],
+    [
+     1079.9,
+     552.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-034",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1116.8,
+   "x": 556.4,
+   "w": 10.5,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1111.6,
+     551.2
+    ],
+    [
+     1122.1,
+     551.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-035",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1206.1,
+   "x": 611.3,
+   "w": 10.3,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1200.9,
+     616.8
+    ],
+    [
+     1211.2,
+     616.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-036",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1168.9,
+   "x": 558.5,
+   "w": 10.8,
+   "d": 9.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1163.4,
+     553.9
+    ],
+    [
+     1174.3,
+     553.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "B-037",
+   "settlement": "Bellhaven",
+   "kind": "house",
+   "label": null,
+   "s": 1203.9,
+   "x": 558.6,
+   "w": 11.6,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1198.1,
+     553.6
+    ],
+    [
+     1209.7,
+     553.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-001",
+   "settlement": "Fenwick",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 2013.5,
+   "x": -845.5,
+   "w": 26.0,
+   "d": 22.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2000.5,
+     -856.5
+    ],
+    [
+     2026.5,
+     -856.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-002",
+   "settlement": "Fenwick",
+   "kind": "church",
+   "label": null,
+   "s": 2013.5,
+   "x": -755.0,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2005.5,
+     -768.0
+    ],
+    [
+     2021.5,
+     -768.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-003",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2073.7,
+   "x": -817.6,
+   "w": 19.3,
+   "d": 21.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2064.0,
+     -807.0
+    ],
+    [
+     2083.3,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-004",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2093.9,
+   "x": -819.8,
+   "w": 19.3,
+   "d": 25.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2084.2,
+     -807.0
+    ],
+    [
+     2103.6,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-005",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2114.2,
+   "x": -818.3,
+   "w": 19.3,
+   "d": 22.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2104.5,
+     -807.0
+    ],
+    [
+     2123.8,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-006",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2134.4,
+   "x": -818.8,
+   "w": 19.3,
+   "d": 23.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2124.8,
+     -807.0
+    ],
+    [
+     2144.1,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-007",
+   "settlement": "Fenwick",
+   "kind": "civic",
+   "label": null,
+   "s": 2195.5,
+   "x": -755.0,
+   "w": 12.0,
+   "d": 12.0,
+   "angle_deg": 0.0,
+   "front_edge": null,
+   "parts": []
+  },
+  {
+   "id": "F-008",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2164.7,
+   "x": -818.5,
+   "w": 19.3,
+   "d": 23.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2155.0,
+     -807.0
+    ],
+    [
+     2174.3,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-009",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2184.9,
+   "x": -820.6,
+   "w": 19.3,
+   "d": 27.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2175.2,
+     -807.0
+    ],
+    [
+     2194.6,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-010",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2205.2,
+   "x": -820.2,
+   "w": 19.3,
+   "d": 26.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2195.5,
+     -807.0
+    ],
+    [
+     2214.8,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-011",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2225.4,
+   "x": -817.5,
+   "w": 19.3,
+   "d": 21.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2215.8,
+     -807.0
+    ],
+    [
+     2235.1,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-012",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2164.7,
+   "x": -689.2,
+   "w": 19.3,
+   "d": 25.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2155.0,
+     -702.0
+    ],
+    [
+     2174.3,
+     -702.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-013",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2184.9,
+   "x": -690.8,
+   "w": 19.3,
+   "d": 22.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2175.2,
+     -702.0
+    ],
+    [
+     2194.6,
+     -702.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-014",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2205.2,
+   "x": -691.5,
+   "w": 19.3,
+   "d": 21.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2195.5,
+     -702.0
+    ],
+    [
+     2214.8,
+     -702.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-015",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2225.4,
+   "x": -690.8,
+   "w": 19.3,
+   "d": 22.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2215.8,
+     -702.0
+    ],
+    [
+     2235.1,
+     -702.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-016",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2259.1,
+   "x": -818.8,
+   "w": 26.1,
+   "d": 23.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2246.0,
+     -807.0
+    ],
+    [
+     2272.1,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-017",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2286.1,
+   "x": -820.0,
+   "w": 26.1,
+   "d": 26.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2273.0,
+     -807.0
+    ],
+    [
+     2299.1,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-018",
+   "settlement": "Fenwick",
+   "kind": "store",
+   "label": null,
+   "s": 2313.1,
+   "x": -818.7,
+   "w": 26.1,
+   "d": 23.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2300.0,
+     -807.0
+    ],
+    [
+     2326.1,
+     -807.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-019",
+   "settlement": "Fenwick",
+   "kind": "civic",
+   "label": "Library",
+   "s": 2286.5,
+   "x": -754.5,
+   "w": 28.0,
+   "d": 24.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2272.5,
+     -766.5
+    ],
+    [
+     2300.5,
+     -766.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-020",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 1992.8,
+   "x": -963.3,
+   "w": 10.4,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1987.6,
+     -969.0
+    ],
+    [
+     1998.0,
+     -969.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-021",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2031.6,
+   "x": -964.0,
+   "w": 10.6,
+   "d": 9.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2026.3,
+     -968.9
+    ],
+    [
+     2036.9,
+     -968.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-022",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 1988.7,
+   "x": -910.9,
+   "w": 11.9,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1982.7,
+     -905.9
+    ],
+    [
+     1994.7,
+     -905.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-023",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2013.7,
+   "x": -909.3,
+   "w": 10.2,
+   "d": 10.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2008.5,
+     -904.2
+    ],
+    [
+     2018.8,
+     -904.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-024",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2038.5,
+   "x": -908.8,
+   "w": 12.5,
+   "d": 10.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2032.2,
+     -903.8
+    ],
+    [
+     2044.7,
+     -903.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-025",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2082.9,
+   "x": -961.5,
+   "w": 10.4,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2077.7,
+     -967.4
+    ],
+    [
+     2088.1,
+     -967.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-026",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2124.0,
+   "x": -963.7,
+   "w": 11.3,
+   "d": 10.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2118.4,
+     -968.8
+    ],
+    [
+     2129.7,
+     -968.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-027",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2076.0,
+   "x": -908.6,
+   "w": 10.9,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2070.6,
+     -903.2
+    ],
+    [
+     2081.5,
+     -903.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-028",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2102.2,
+   "x": -909.8,
+   "w": 12.1,
+   "d": 9.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2096.2,
+     -905.2
+    ],
+    [
+     2108.3,
+     -905.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-029",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2129.5,
+   "x": -908.8,
+   "w": 10.6,
+   "d": 11.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2124.2,
+     -903.2
+    ],
+    [
+     2134.8,
+     -903.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-030",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2177.0,
+   "x": -963.5,
+   "w": 12.3,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2170.9,
+     -968.9
+    ],
+    [
+     2183.1,
+     -968.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-031",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2213.5,
+   "x": -963.1,
+   "w": 11.3,
+   "d": 9.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2207.8,
+     -967.7
+    ],
+    [
+     2219.1,
+     -967.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-032",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2168.9,
+   "x": -909.7,
+   "w": 11.4,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2163.2,
+     -904.6
+    ],
+    [
+     2174.6,
+     -904.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-033",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2193.7,
+   "x": -911.4,
+   "w": 11.6,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2187.9,
+     -905.4
+    ],
+    [
+     2199.5,
+     -905.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-034",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2220.4,
+   "x": -909.0,
+   "w": 12.9,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2213.9,
+     -903.7
+    ],
+    [
+     2226.8,
+     -903.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-035",
+   "settlement": "Fenwick",
+   "kind": "church",
+   "label": null,
+   "s": 2286.5,
+   "x": -936.5,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2278.5,
+     -949.5
+    ],
+    [
+     2294.5,
+     -949.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-036",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2268.7,
+   "x": -908.0,
+   "w": 10.4,
+   "d": 10.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2263.5,
+     -903.0
+    ],
+    [
+     2273.9,
+     -903.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-037",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2308.0,
+   "x": -910.2,
+   "w": 10.1,
+   "d": 9.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2303.0,
+     -905.5
+    ],
+    [
+     2313.1,
+     -905.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-038",
+   "settlement": "Fenwick",
+   "kind": "school",
+   "label": "School",
+   "s": 1993.8,
+   "x": -683.0,
+   "w": 35.5,
+   "d": 32.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1976.0,
+     -699.0
+    ],
+    [
+     2011.5,
+     -699.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-039",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2080.3,
+   "x": -689.9,
+   "w": 12.3,
+   "d": 9.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2074.1,
+     -694.7
+    ],
+    [
+     2086.4,
+     -694.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-040",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2103.6,
+   "x": -690.4,
+   "w": 11.0,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2098.1,
+     -695.8
+    ],
+    [
+     2109.1,
+     -695.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-041",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2128.7,
+   "x": -688.9,
+   "w": 10.8,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2123.2,
+     -694.3
+    ],
+    [
+     2134.1,
+     -694.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-042",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2084.2,
+   "x": -637.0,
+   "w": 10.4,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2079.0,
+     -632.5
+    ],
+    [
+     2089.4,
+     -632.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-043",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2124.4,
+   "x": -636.0,
+   "w": 10.1,
+   "d": 9.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2119.4,
+     -631.3
+    ],
+    [
+     2129.5,
+     -631.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-044",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2169.9,
+   "x": -689.4,
+   "w": 11.6,
+   "d": 11.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2164.1,
+     -695.3
+    ],
+    [
+     2175.7,
+     -695.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-045",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2197.2,
+   "x": -690.3,
+   "w": 12.5,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2191.0,
+     -695.7
+    ],
+    [
+     2203.4,
+     -695.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-046",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2220.8,
+   "x": -689.4,
+   "w": 10.9,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2215.4,
+     -694.8
+    ],
+    [
+     2226.3,
+     -694.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-047",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2176.9,
+   "x": -636.4,
+   "w": 10.5,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2171.6,
+     -631.1
+    ],
+    [
+     2182.1,
+     -631.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-048",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2215.0,
+   "x": -637.6,
+   "w": 12.8,
+   "d": 12.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2208.6,
+     -631.6
+    ],
+    [
+     2221.4,
+     -631.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-049",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2262.3,
+   "x": -689.3,
+   "w": 11.3,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2256.6,
+     -694.7
+    ],
+    [
+     2267.9,
+     -694.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-050",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2285.2,
+   "x": -691.1,
+   "w": 10.4,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2280.1,
+     -696.4
+    ],
+    [
+     2290.4,
+     -696.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-051",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2315.3,
+   "x": -690.7,
+   "w": 11.8,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2309.4,
+     -696.2
+    ],
+    [
+     2321.2,
+     -696.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-052",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2264.8,
+   "x": -637.0,
+   "w": 12.5,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2258.6,
+     -631.1
+    ],
+    [
+     2271.0,
+     -631.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-053",
+   "settlement": "Fenwick",
+   "kind": "house",
+   "label": null,
+   "s": 2304.2,
+   "x": -636.0,
+   "w": 12.7,
+   "d": 10.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2297.9,
+     -630.9
+    ],
+    [
+     2310.6,
+     -630.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "F-054",
+   "settlement": "Fenwick",
+   "kind": "civic",
+   "label": null,
+   "s": 2444.0,
+   "x": -847.0,
+   "w": 38.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2425.0,
+     -860.0
+    ],
+    [
+     2463.0,
+     -860.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-001",
+   "settlement": "Tamarack",
+   "kind": "industrial",
+   "label": "Grain Elev.",
+   "s": 2656.0,
+   "x": 888.1,
+   "w": 14.0,
+   "d": 18.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2649.0,
+     897.1
+    ],
+    [
+     2663.0,
+     897.1
+    ]
+   ],
+   "parts": [
+    {
+     "s": 2669.0,
+     "x": 888.1,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    },
+    {
+     "s": 2680.0,
+     "x": 888.1,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    },
+    {
+     "s": 2691.0,
+     "x": 888.1,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    }
+   ]
+  },
+  {
+   "id": "T-002",
+   "settlement": "Tamarack",
+   "kind": "church",
+   "label": null,
+   "s": 2683.5,
+   "x": 803.1,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2675.5,
+     816.1
+    ],
+    [
+     2691.5,
+     816.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-003",
+   "settlement": "Tamarack",
+   "kind": "store",
+   "label": null,
+   "s": 2743.7,
+   "x": 827.3,
+   "w": 19.3,
+   "d": 27.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2734.0,
+     841.1
+    ],
+    [
+     2753.3,
+     841.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-004",
+   "settlement": "Tamarack",
+   "kind": "vacant",
+   "label": null,
+   "s": 2763.9,
+   "x": 827.6,
+   "w": 19.3,
+   "d": 26.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2754.2,
+     841.1
+    ],
+    [
+     2773.6,
+     841.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-005",
+   "settlement": "Tamarack",
+   "kind": "store",
+   "label": null,
+   "s": 2784.2,
+   "x": 828.3,
+   "w": 19.3,
+   "d": 25.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2774.5,
+     841.1
+    ],
+    [
+     2793.8,
+     841.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-006",
+   "settlement": "Tamarack",
+   "kind": "vacant",
+   "label": null,
+   "s": 2804.4,
+   "x": 827.3,
+   "w": 19.3,
+   "d": 27.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2794.8,
+     841.1
+    ],
+    [
+     2814.1,
+     841.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-007",
+   "settlement": "Tamarack",
+   "kind": "store",
+   "label": null,
+   "s": 2834.7,
+   "x": 829.1,
+   "w": 19.3,
+   "d": 24.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2825.0,
+     841.1
+    ],
+    [
+     2844.3,
+     841.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-008",
+   "settlement": "Tamarack",
+   "kind": "vacant",
+   "label": null,
+   "s": 2854.9,
+   "x": 828.7,
+   "w": 19.3,
+   "d": 24.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2845.2,
+     841.1
+    ],
+    [
+     2864.6,
+     841.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-009",
+   "settlement": "Tamarack",
+   "kind": "vacant",
+   "label": null,
+   "s": 2875.2,
+   "x": 830.2,
+   "w": 19.3,
+   "d": 21.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2865.5,
+     841.1
+    ],
+    [
+     2884.8,
+     841.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-010",
+   "settlement": "Tamarack",
+   "kind": "vacant",
+   "label": null,
+   "s": 2895.4,
+   "x": 829.3,
+   "w": 19.3,
+   "d": 23.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2885.8,
+     841.1
+    ],
+    [
+     2905.1,
+     841.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-011",
+   "settlement": "Tamarack",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 2956.5,
+   "x": 883.1,
+   "w": 26.0,
+   "d": 22.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2943.5,
+     894.1
+    ],
+    [
+     2969.5,
+     894.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-012",
+   "settlement": "Tamarack",
+   "kind": "civic",
+   "label": "Town Hall",
+   "s": 2956.5,
+   "x": 802.6,
+   "w": 30.0,
+   "d": 24.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2941.5,
+     814.6
+    ],
+    [
+     2971.5,
+     814.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-013",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2657.4,
+   "x": 738.3,
+   "w": 12.2,
+   "d": 11.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2651.3,
+     743.9
+    ],
+    [
+     2663.5,
+     743.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-014",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2683.0,
+   "x": 739.5,
+   "w": 12.6,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2676.7,
+     744.5
+    ],
+    [
+     2689.3,
+     744.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-015",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2709.4,
+   "x": 738.3,
+   "w": 10.0,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2704.4,
+     743.5
+    ],
+    [
+     2714.5,
+     743.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-016",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2664.1,
+   "x": 685.9,
+   "w": 11.0,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2658.6,
+     680.0
+    ],
+    [
+     2669.6,
+     680.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-017",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2703.5,
+   "x": 684.2,
+   "w": 11.1,
+   "d": 11.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2697.9,
+     678.6
+    ],
+    [
+     2709.0,
+     678.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-018",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2749.5,
+   "x": 739.0,
+   "w": 12.8,
+   "d": 11.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2743.1,
+     744.6
+    ],
+    [
+     2755.9,
+     744.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-019",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2775.5,
+   "x": 736.4,
+   "w": 12.9,
+   "d": 11.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2769.1,
+     742.2
+    ],
+    [
+     2781.9,
+     742.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-020",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2802.5,
+   "x": 738.1,
+   "w": 11.0,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2796.9,
+     743.5
+    ],
+    [
+     2808.0,
+     743.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-021",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2752.8,
+   "x": 685.2,
+   "w": 12.7,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2746.4,
+     680.0
+    ],
+    [
+     2759.1,
+     680.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-022",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2795.9,
+   "x": 683.9,
+   "w": 11.3,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2790.2,
+     678.2
+    ],
+    [
+     2801.5,
+     678.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-023",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2838.7,
+   "x": 736.6,
+   "w": 12.9,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2832.3,
+     742.5
+    ],
+    [
+     2845.2,
+     742.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-024",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2865.1,
+   "x": 737.2,
+   "w": 12.1,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2859.0,
+     743.1
+    ],
+    [
+     2871.1,
+     743.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-025",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2892.3,
+   "x": 739.4,
+   "w": 11.0,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2886.9,
+     744.7
+    ],
+    [
+     2897.8,
+     744.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-026",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2844.2,
+   "x": 685.3,
+   "w": 12.4,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2838.0,
+     680.4
+    ],
+    [
+     2850.4,
+     680.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-027",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2887.0,
+   "x": 685.9,
+   "w": 12.1,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2880.9,
+     680.2
+    ],
+    [
+     2893.0,
+     680.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-028",
+   "settlement": "Tamarack",
+   "kind": "church",
+   "label": null,
+   "s": 2956.5,
+   "x": 711.6,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2948.5,
+     724.6
+    ],
+    [
+     2964.5,
+     724.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-029",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2938.5,
+   "x": 685.8,
+   "w": 10.2,
+   "d": 9.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2933.4,
+     680.9
+    ],
+    [
+     2943.7,
+     680.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-030",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2974.6,
+   "x": 685.8,
+   "w": 11.5,
+   "d": 11.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2968.8,
+     680.0
+    ],
+    [
+     2980.3,
+     680.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-031",
+   "settlement": "Tamarack",
+   "kind": "school",
+   "label": "School",
+   "s": 2663.8,
+   "x": 640.1,
+   "w": 35.5,
+   "d": 32.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2646.0,
+     656.1
+    ],
+    [
+     2681.5,
+     656.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-032",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2753.1,
+   "x": 646.1,
+   "w": 10.1,
+   "d": 12.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2748.0,
+     652.1
+    ],
+    [
+     2758.2,
+     652.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-033",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2793.7,
+   "x": 647.6,
+   "w": 12.0,
+   "d": 9.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2787.7,
+     652.2
+    ],
+    [
+     2799.6,
+     652.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-034",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2756.5,
+   "x": 593.1,
+   "w": 11.0,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2751.0,
+     588.1
+    ],
+    [
+     2761.9,
+     588.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-035",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2792.3,
+   "x": 594.3,
+   "w": 11.8,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2786.5,
+     588.8
+    ],
+    [
+     2798.2,
+     588.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-036",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2846.5,
+   "x": 648.7,
+   "w": 11.3,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2840.8,
+     653.9
+    ],
+    [
+     2852.1,
+     653.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-037",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2885.0,
+   "x": 647.1,
+   "w": 11.8,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2879.2,
+     651.6
+    ],
+    [
+     2890.9,
+     651.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-038",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2843.6,
+   "x": 593.2,
+   "w": 11.3,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2837.9,
+     587.3
+    ],
+    [
+     2849.3,
+     587.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-039",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2884.0,
+   "x": 595.5,
+   "w": 12.0,
+   "d": 11.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2878.1,
+     589.7
+    ],
+    [
+     2890.0,
+     589.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-040",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2936.4,
+   "x": 646.4,
+   "w": 10.1,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2931.4,
+     651.7
+    ],
+    [
+     2941.5,
+     651.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-041",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2974.7,
+   "x": 646.6,
+   "w": 12.6,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2968.5,
+     651.6
+    ],
+    [
+     2981.0,
+     651.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-042",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2937.6,
+   "x": 594.1,
+   "w": 10.7,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2932.2,
+     588.7
+    ],
+    [
+     2942.9,
+     588.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-043",
+   "settlement": "Tamarack",
+   "kind": "house",
+   "label": null,
+   "s": 2974.5,
+   "x": 594.0,
+   "w": 12.1,
+   "d": 9.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2968.5,
+     589.4
+    ],
+    [
+     2980.6,
+     589.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "T-044",
+   "settlement": "Tamarack",
+   "kind": "vacant",
+   "label": "Closed foundry",
+   "s": 2957.5,
+   "x": 1010.6,
+   "w": 125.0,
+   "d": 75.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2895.0,
+     973.1
+    ],
+    [
+     3020.0,
+     973.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-001",
+   "settlement": "Cedar Ford",
+   "kind": "store",
+   "label": null,
+   "s": 1173.7,
+   "x": -145.1,
+   "w": 19.3,
+   "d": 20.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1164.0,
+     -134.7
+    ],
+    [
+     1183.3,
+     -134.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-002",
+   "settlement": "Cedar Ford",
+   "kind": "store",
+   "label": null,
+   "s": 1193.9,
+   "x": -148.2,
+   "w": 19.3,
+   "d": 27.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1184.2,
+     -134.7
+    ],
+    [
+     1203.6,
+     -134.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-003",
+   "settlement": "Cedar Ford",
+   "kind": "store",
+   "label": null,
+   "s": 1214.2,
+   "x": -144.9,
+   "w": 19.3,
+   "d": 20.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1204.5,
+     -134.7
+    ],
+    [
+     1223.8,
+     -134.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-004",
+   "settlement": "Cedar Ford",
+   "kind": "church",
+   "label": null,
+   "s": 1295.5,
+   "x": -172.7,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1287.5,
+     -159.7
+    ],
+    [
+     1303.5,
+     -159.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-005",
+   "settlement": "Cedar Ford",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 1295.5,
+   "x": -240.7,
+   "w": 16.0,
+   "d": 14.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1287.5,
+     -233.7
+    ],
+    [
+     1303.5,
+     -233.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-006",
+   "settlement": "Cedar Ford",
+   "kind": "house",
+   "label": null,
+   "s": 1185.6,
+   "x": -199.2,
+   "w": 11.0,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1180.1,
+     -204.2
+    ],
+    [
+     1191.1,
+     -204.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-007",
+   "settlement": "Cedar Ford",
+   "kind": "house",
+   "label": null,
+   "s": 1205.5,
+   "x": -236.8,
+   "w": 12.3,
+   "d": 9.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1199.4,
+     -232.1
+    ],
+    [
+     1211.7,
+     -232.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-008",
+   "settlement": "Cedar Ford",
+   "kind": "house",
+   "label": null,
+   "s": 1203.3,
+   "x": -290.9,
+   "w": 10.1,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1198.3,
+     -296.1
+    ],
+    [
+     1208.4,
+     -296.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-009",
+   "settlement": "Cedar Ford",
+   "kind": "house",
+   "label": null,
+   "s": 1275.4,
+   "x": -199.1,
+   "w": 12.9,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1269.0,
+     -205.0
+    ],
+    [
+     1281.9,
+     -205.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-010",
+   "settlement": "Cedar Ford",
+   "kind": "house",
+   "label": null,
+   "s": 1316.5,
+   "x": -199.9,
+   "w": 10.7,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1311.1,
+     -205.9
+    ],
+    [
+     1321.8,
+     -205.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-011",
+   "settlement": "Cedar Ford",
+   "kind": "store",
+   "label": null,
+   "s": 1183.8,
+   "x": -109.4,
+   "w": 39.6,
+   "d": 22.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1164.0,
+     -120.7
+    ],
+    [
+     1203.6,
+     -120.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "CF-012",
+   "settlement": "Cedar Ford",
+   "kind": "industrial",
+   "label": "Grist Mill",
+   "s": 1286.0,
+   "x": -100.7,
+   "w": 32.0,
+   "d": 30.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1270.0,
+     -115.7
+    ],
+    [
+     1302.0,
+     -115.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "P-001",
+   "settlement": "Pruett",
+   "kind": "store",
+   "label": null,
+   "s": 1433.8,
+   "x": 939.7,
+   "w": 39.6,
+   "d": 26.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1414.0,
+     926.4
+    ],
+    [
+     1453.6,
+     926.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "P-002",
+   "settlement": "Pruett",
+   "kind": "church",
+   "label": null,
+   "s": 1545.5,
+   "x": 874.4,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1537.5,
+     887.4
+    ],
+    [
+     1553.5,
+     887.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "P-003",
+   "settlement": "Pruett",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 1545.5,
+   "x": 941.4,
+   "w": 16.0,
+   "d": 14.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1537.5,
+     948.4
+    ],
+    [
+     1553.5,
+     948.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "P-004",
+   "settlement": "Pruett",
+   "kind": "house",
+   "label": null,
+   "s": 1434.0,
+   "x": 846.8,
+   "w": 11.5,
+   "d": 11.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1428.2,
+     841.2
+    ],
+    [
+     1439.7,
+     841.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "P-005",
+   "settlement": "Pruett",
+   "kind": "house",
+   "label": null,
+   "s": 1472.8,
+   "x": 847.7,
+   "w": 12.3,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1466.6,
+     842.0
+    ],
+    [
+     1478.9,
+     842.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "P-006",
+   "settlement": "Pruett",
+   "kind": "house",
+   "label": null,
+   "s": 1527.4,
+   "x": 847.2,
+   "w": 11.5,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1521.7,
+     841.9
+    ],
+    [
+     1533.1,
+     841.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "P-007",
+   "settlement": "Pruett",
+   "kind": "house",
+   "label": null,
+   "s": 1563.4,
+   "x": 848.5,
+   "w": 12.0,
+   "d": 10.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1557.3,
+     843.3
+    ],
+    [
+     1569.4,
+     843.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "P-008",
+   "settlement": "Pruett",
+   "kind": "industrial",
+   "label": "Grain Elev. (tallest)",
+   "s": 1427.0,
+   "x": 1037.4,
+   "w": 14.0,
+   "d": 18.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1420.0,
+     1046.4
+    ],
+    [
+     1434.0,
+     1046.4
+    ]
+   ],
+   "parts": [
+    {
+     "s": 1440.0,
+     "x": 1037.4,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    },
+    {
+     "s": 1451.0,
+     "x": 1037.4,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    },
+    {
+     "s": 1462.0,
+     "x": 1037.4,
+     "w": 11.0,
+     "d": 11.0,
+     "angle_deg": 0.0,
+     "front_edge": null
+    }
+   ]
+  },
+  {
+   "id": "P-009",
+   "settlement": "Pruett",
+   "kind": "civic",
+   "label": "Depot (museum)",
+   "s": 1500.0,
+   "x": 986.4,
+   "w": 24.0,
+   "d": 10.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     1488.0,
+     981.4
+    ],
+    [
+     1512.0,
+     981.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-001",
+   "settlement": "Dunmore Crossing",
+   "kind": "store",
+   "label": null,
+   "s": 670.8,
+   "x": -866.2,
+   "w": 39.6,
+   "d": 27.7,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     657.0,
+     -886.0
+    ],
+    [
+     657.0,
+     -846.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-002",
+   "settlement": "Dunmore Crossing",
+   "kind": "store",
+   "label": null,
+   "s": 629.9,
+   "x": -846.0,
+   "w": 80.1,
+   "d": 26.2,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     643.0,
+     -886.0
+    ],
+    [
+     643.0,
+     -805.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-003",
+   "settlement": "Dunmore Crossing",
+   "kind": "church",
+   "label": null,
+   "s": 695.0,
+   "x": -754.5,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     682.0,
+     -762.5
+    ],
+    [
+     682.0,
+     -746.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-004",
+   "settlement": "Dunmore Crossing",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 628.0,
+   "x": -754.5,
+   "w": 16.0,
+   "d": 14.0,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     621.0,
+     -762.5
+    ],
+    [
+     621.0,
+     -746.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-005",
+   "settlement": "Dunmore Crossing",
+   "kind": "house",
+   "label": null,
+   "s": 579.4,
+   "x": -864.4,
+   "w": 11.0,
+   "d": 11.3,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     573.7,
+     -869.9
+    ],
+    [
+     573.7,
+     -858.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-006",
+   "settlement": "Dunmore Crossing",
+   "kind": "house",
+   "label": null,
+   "s": 577.6,
+   "x": -827.2,
+   "w": 10.9,
+   "d": 11.6,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     571.8,
+     -832.7
+    ],
+    [
+     571.8,
+     -821.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-007",
+   "settlement": "Dunmore Crossing",
+   "kind": "house",
+   "label": null,
+   "s": 723.5,
+   "x": -867.0,
+   "w": 10.4,
+   "d": 10.5,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     728.8,
+     -872.2
+    ],
+    [
+     728.8,
+     -861.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-008",
+   "settlement": "Dunmore Crossing",
+   "kind": "house",
+   "label": null,
+   "s": 723.1,
+   "x": -824.6,
+   "w": 11.5,
+   "d": 10.3,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     728.3,
+     -830.3
+    ],
+    [
+     728.3,
+     -818.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-009",
+   "settlement": "Dunmore Crossing",
+   "kind": "house",
+   "label": null,
+   "s": 577.5,
+   "x": -735.5,
+   "w": 11.5,
+   "d": 9.8,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     572.6,
+     -741.2
+    ],
+    [
+     572.6,
+     -729.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-010",
+   "settlement": "Dunmore Crossing",
+   "kind": "house",
+   "label": null,
+   "s": 720.7,
+   "x": -774.9,
+   "w": 10.1,
+   "d": 11.4,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     726.4,
+     -780.0
+    ],
+    [
+     726.4,
+     -769.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "DC-011",
+   "settlement": "Dunmore Crossing",
+   "kind": "house",
+   "label": null,
+   "s": 721.5,
+   "x": -734.6,
+   "w": 10.3,
+   "d": 9.1,
+   "angle_deg": 90.0,
+   "front_edge": [
+    [
+     726.0,
+     -739.7
+    ],
+    [
+     726.0,
+     -729.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-001",
+   "settlement": "Loomis Grove",
+   "kind": "store",
+   "label": null,
+   "s": 2513.8,
+   "x": -1229.8,
+   "w": 39.6,
+   "d": 26.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2494.0,
+     -1243.0
+    ],
+    [
+     2533.6,
+     -1243.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-002",
+   "settlement": "Loomis Grove",
+   "kind": "vacant",
+   "label": null,
+   "s": 2554.3,
+   "x": -1232.2,
+   "w": 39.6,
+   "d": 21.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2534.5,
+     -1243.0
+    ],
+    [
+     2574.1,
+     -1243.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-003",
+   "settlement": "Loomis Grove",
+   "kind": "store",
+   "label": null,
+   "s": 2534.1,
+   "x": -1267.6,
+   "w": 80.1,
+   "d": 21.1,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2494.0,
+     -1257.0
+    ],
+    [
+     2574.1,
+     -1257.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-004",
+   "settlement": "Loomis Grove",
+   "kind": "church",
+   "label": null,
+   "s": 2625.5,
+   "x": -1205.0,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2617.5,
+     -1218.0
+    ],
+    [
+     2633.5,
+     -1218.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-005",
+   "settlement": "Loomis Grove",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 2625.5,
+   "x": -1272.0,
+   "w": 16.0,
+   "d": 14.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2617.5,
+     -1279.0
+    ],
+    [
+     2633.5,
+     -1279.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-006",
+   "settlement": "Loomis Grove",
+   "kind": "house",
+   "label": null,
+   "s": 2514.5,
+   "x": -1322.5,
+   "w": 13.0,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2508.0,
+     -1327.7
+    ],
+    [
+     2521.0,
+     -1327.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-007",
+   "settlement": "Loomis Grove",
+   "kind": "house",
+   "label": null,
+   "s": 2553.1,
+   "x": -1321.2,
+   "w": 12.3,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2547.0,
+     -1326.6
+    ],
+    [
+     2559.3,
+     -1326.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-008",
+   "settlement": "Loomis Grove",
+   "kind": "house",
+   "label": null,
+   "s": 2512.8,
+   "x": -1177.8,
+   "w": 10.4,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2507.6,
+     -1172.6
+    ],
+    [
+     2518.1,
+     -1172.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-009",
+   "settlement": "Loomis Grove",
+   "kind": "house",
+   "label": null,
+   "s": 2553.7,
+   "x": -1175.9,
+   "w": 11.0,
+   "d": 9.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2548.2,
+     -1171.1
+    ],
+    [
+     2559.2,
+     -1171.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-010",
+   "settlement": "Loomis Grove",
+   "kind": "house",
+   "label": null,
+   "s": 2607.4,
+   "x": -1321.7,
+   "w": 11.9,
+   "d": 9.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2601.4,
+     -1326.4
+    ],
+    [
+     2613.3,
+     -1326.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-011",
+   "settlement": "Loomis Grove",
+   "kind": "house",
+   "label": null,
+   "s": 2644.9,
+   "x": -1322.4,
+   "w": 11.3,
+   "d": 9.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2639.3,
+     -1327.3
+    ],
+    [
+     2650.6,
+     -1327.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-012",
+   "settlement": "Loomis Grove",
+   "kind": "house",
+   "label": null,
+   "s": 2604.1,
+   "x": -1178.4,
+   "w": 10.9,
+   "d": 11.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2598.7,
+     -1172.6
+    ],
+    [
+     2609.6,
+     -1172.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "LG-013",
+   "settlement": "Loomis Grove",
+   "kind": "house",
+   "label": null,
+   "s": 2647.3,
+   "x": -1176.7,
+   "w": 12.3,
+   "d": 10.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2641.1,
+     -1171.3
+    ],
+    [
+     2653.5,
+     -1171.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-001",
+   "settlement": "Haskins Corner",
+   "kind": "store",
+   "label": null,
+   "s": 2924.2,
+   "x": -620.7,
+   "w": 19.3,
+   "d": 24.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2914.5,
+     -633.0
+    ],
+    [
+     2933.8,
+     -633.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-002",
+   "settlement": "Haskins Corner",
+   "kind": "store",
+   "label": null,
+   "s": 2944.4,
+   "x": -621.7,
+   "w": 19.3,
+   "d": 22.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2934.8,
+     -633.0
+    ],
+    [
+     2954.1,
+     -633.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-003",
+   "settlement": "Haskins Corner",
+   "kind": "store",
+   "label": null,
+   "s": 2964.7,
+   "x": -619.9,
+   "w": 19.3,
+   "d": 26.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2955.0,
+     -633.0
+    ],
+    [
+     2974.3,
+     -633.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-004",
+   "settlement": "Haskins Corner",
+   "kind": "store",
+   "label": null,
+   "s": 2984.9,
+   "x": -621.8,
+   "w": 19.3,
+   "d": 22.3,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2975.2,
+     -633.0
+    ],
+    [
+     2994.6,
+     -633.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-005",
+   "settlement": "Haskins Corner",
+   "kind": "church",
+   "label": null,
+   "s": 2864.0,
+   "x": -595.0,
+   "w": 16.0,
+   "d": 26.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2856.0,
+     -608.0
+    ],
+    [
+     2872.0,
+     -608.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-006",
+   "settlement": "Haskins Corner",
+   "kind": "civic",
+   "label": "Post Office",
+   "s": 3046.0,
+   "x": -618.0,
+   "w": 16.0,
+   "d": 14.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     3038.0,
+     -625.0
+    ],
+    [
+     3054.0,
+     -625.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-007",
+   "settlement": "Haskins Corner",
+   "kind": "civic",
+   "label": "Carnegie Library",
+   "s": 2864.0,
+   "x": -776.5,
+   "w": 22.0,
+   "d": 18.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2853.0,
+     -785.5
+    ],
+    [
+     2875.0,
+     -785.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-008",
+   "settlement": "Haskins Corner",
+   "kind": "school",
+   "label": "Haskins Elem. + Jr. High",
+   "s": 3026.2,
+   "x": -432.0,
+   "w": 35.5,
+   "d": 32.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     3008.5,
+     -448.0
+    ],
+    [
+     3044.0,
+     -448.0
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-009",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2842.7,
+   "x": -713.0,
+   "w": 11.1,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2837.2,
+     -718.7
+    ],
+    [
+     2848.2,
+     -718.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-010",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2885.5,
+   "x": -710.8,
+   "w": 11.7,
+   "d": 11.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2879.6,
+     -716.7
+    ],
+    [
+     2891.3,
+     -716.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-011",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2841.8,
+   "x": -567.6,
+   "w": 10.4,
+   "d": 10.5,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2836.6,
+     -562.3
+    ],
+    [
+     2847.0,
+     -562.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-012",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2881.3,
+   "x": -567.5,
+   "w": 11.8,
+   "d": 11.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2875.4,
+     -561.6
+    ],
+    [
+     2887.1,
+     -561.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-013",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2864.8,
+   "x": -529.0,
+   "w": 11.0,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2859.3,
+     -534.4
+    ],
+    [
+     2870.3,
+     -534.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-014",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2865.8,
+   "x": -476.5,
+   "w": 11.9,
+   "d": 10.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2859.9,
+     -471.4
+    ],
+    [
+     2871.8,
+     -471.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-015",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2956.3,
+   "x": -802.6,
+   "w": 10.2,
+   "d": 10.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2951.2,
+     -808.1
+    ],
+    [
+     2961.4,
+     -808.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-016",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2953.1,
+   "x": -750.6,
+   "w": 12.1,
+   "d": 9.8,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2947.0,
+     -745.7
+    ],
+    [
+     2959.1,
+     -745.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-017",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2936.9,
+   "x": -711.8,
+   "w": 11.4,
+   "d": 11.2,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2931.2,
+     -717.4
+    ],
+    [
+     2942.6,
+     -717.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-018",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2975.5,
+   "x": -710.9,
+   "w": 12.0,
+   "d": 11.0,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2969.5,
+     -716.4
+    ],
+    [
+     2981.5,
+     -716.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-019",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2974.1,
+   "x": -567.7,
+   "w": 10.1,
+   "d": 10.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     2969.0,
+     -562.5
+    ],
+    [
+     2979.2,
+     -562.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-020",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3043.8,
+   "x": -804.3,
+   "w": 10.3,
+   "d": 9.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     3038.7,
+     -809.2
+    ],
+    [
+     3048.9,
+     -809.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-021",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3048.4,
+   "x": -748.0,
+   "w": 10.5,
+   "d": 9.9,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     3043.2,
+     -743.1
+    ],
+    [
+     3053.7,
+     -743.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-022",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3028.3,
+   "x": -712.2,
+   "w": 12.5,
+   "d": 9.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     3022.0,
+     -716.9
+    ],
+    [
+     3034.5,
+     -716.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-023",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3065.7,
+   "x": -710.5,
+   "w": 12.6,
+   "d": 11.4,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     3059.4,
+     -716.2
+    ],
+    [
+     3072.0,
+     -716.2
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-024",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3047.1,
+   "x": -530.8,
+   "w": 11.4,
+   "d": 10.6,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     3041.3,
+     -536.1
+    ],
+    [
+     3052.8,
+     -536.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-025",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3045.5,
+   "x": -478.1,
+   "w": 10.5,
+   "d": 10.7,
+   "angle_deg": 0.0,
+   "front_edge": [
+    [
+     3040.3,
+     -472.8
+    ],
+    [
+     3050.7,
+     -472.8
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-026",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3072.8,
+   "x": -908.0,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 120.4,
+   "front_edge": [
+    [
+     3080.2,
+     -910.6
+    ],
+    [
+     3074.1,
+     -900.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-027",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3037.1,
+   "x": -878.8,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 155.4,
+   "front_edge": [
+    [
+     3044.7,
+     -876.7
+    ],
+    [
+     3033.8,
+     -871.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-028",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2984.5,
+   "x": -864.8,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 173.0,
+   "front_edge": [
+    [
+     2991.0,
+     -860.5
+    ],
+    [
+     2979.1,
+     -859.1
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-029",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2925.5,
+   "x": -864.8,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -173.0,
+   "front_edge": [
+    [
+     2930.9,
+     -859.1
+    ],
+    [
+     2919.0,
+     -860.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-030",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2872.9,
+   "x": -878.8,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -155.4,
+   "front_edge": [
+    [
+     2876.2,
+     -871.7
+    ],
+    [
+     2865.3,
+     -876.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-031",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2837.2,
+   "x": -952.0,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -59.6,
+   "front_edge": [
+    [
+     2829.8,
+     -949.4
+    ],
+    [
+     2835.9,
+     -959.7
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-032",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2872.9,
+   "x": -981.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -24.6,
+   "front_edge": [
+    [
+     2865.3,
+     -983.3
+    ],
+    [
+     2876.2,
+     -988.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-033",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2925.5,
+   "x": -995.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -7.0,
+   "front_edge": [
+    [
+     2919.0,
+     -999.5
+    ],
+    [
+     2930.9,
+     -1000.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-034",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 2984.5,
+   "x": -995.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 7.0,
+   "front_edge": [
+    [
+     2979.1,
+     -1000.9
+    ],
+    [
+     2991.0,
+     -999.5
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-035",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3037.1,
+   "x": -981.2,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 24.6,
+   "front_edge": [
+    [
+     3033.8,
+     -988.3
+    ],
+    [
+     3044.7,
+     -983.3
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-036",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3072.8,
+   "x": -952.0,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 59.6,
+   "front_edge": [
+    [
+     3074.1,
+     -959.7
+    ],
+    [
+     3080.2,
+     -949.4
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-037",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3083.0,
+   "x": -873.9,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": -23.8,
+   "front_edge": [
+    [
+     3075.5,
+     -876.1
+    ],
+    [
+     3086.5,
+     -880.9
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-038",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3078.0,
+   "x": -847.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 45.0,
+   "front_edge": [
+    [
+     3077.3,
+     -855.0
+    ],
+    [
+     3085.8,
+     -846.6
+    ]
+   ],
+   "parts": []
+  },
+  {
+   "id": "HC-039",
+   "settlement": "Haskins Corner",
+   "kind": "house",
+   "label": null,
+   "s": 3051.4,
+   "x": -842.3,
+   "w": 12.0,
+   "d": 10.0,
+   "angle_deg": 113.8,
+   "front_edge": [
+    [
+     3058.4,
+     -845.7
+    ],
+    [
+     3053.6,
+     -834.8
+    ]
+   ],
+   "parts": []
+  }
+ ],
+ "farmsteads": [
+  {
+   "id": "FARM-01",
+   "s": 1527.8,
+   "x": 459.8,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-02",
+   "s": 687.3,
+   "x": -595.7,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-03",
+   "s": 549.1,
+   "x": 1333.7,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-04",
+   "s": 1254.2,
+   "x": -1293.6,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-05",
+   "s": 3037.7,
+   "x": -1192.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-06",
+   "s": 1516.2,
+   "x": -388.6,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-07",
+   "s": 2960.5,
+   "x": 358.6,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-08",
+   "s": 2549.3,
+   "x": 1015.8,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-09",
+   "s": 1602.4,
+   "x": 1391.0,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-10",
+   "s": 2617.1,
+   "x": -598.7,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-11",
+   "s": 2965.3,
+   "x": 1294.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-12",
+   "s": 145.4,
+   "x": -517.7,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-13",
+   "s": 2568.5,
+   "x": 1342.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-14",
+   "s": 1976.4,
+   "x": -1123.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-15",
+   "s": 162.0,
+   "x": -1217.7,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-16",
+   "s": 616.7,
+   "x": -1373.0,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-17",
+   "s": 1515.0,
+   "x": -1219.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-18",
+   "s": 2619.8,
+   "x": -1445.0,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-19",
+   "s": 2049.2,
+   "x": 1210.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-20",
+   "s": 140.9,
+   "x": 1165.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-21",
+   "s": 2965.4,
+   "x": -1457.0,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-22",
+   "s": 2611.3,
+   "x": -895.8,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-23",
+   "s": 2202.2,
+   "x": -437.2,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-24",
+   "s": 1131.3,
+   "x": 1192.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-25",
+   "s": 2611.5,
+   "x": -325.6,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-26",
+   "s": 1974.6,
+   "x": -1463.0,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-27",
+   "s": 1059.0,
+   "x": 340.6,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-28",
+   "s": 618.0,
+   "x": 1018.8,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-29",
+   "s": 844.9,
+   "x": -380.8,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-30",
+   "s": 692.3,
+   "x": -1117.9,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-31",
+   "s": 2959.5,
+   "x": -250.6,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-32",
+   "s": 1051.8,
+   "x": -741.2,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-33",
+   "s": 2614.6,
+   "x": 394.6,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  },
+  {
+   "id": "FARM-34",
+   "s": 1971.8,
+   "x": 1466.0,
+   "structures": [
+    "farmhouse",
+    "barn",
+    "silo",
+    "machine shed"
+   ]
+  }
+ ],
+ "crossings": [
+  {
+   "id": "MAJOR-01",
+   "type": "major",
+   "road_class": "county",
+   "s": -160.0,
+   "x": -20.5,
+   "span_m": 44.1,
+   "over": "Kettle River"
+  },
+  {
+   "id": "MAJOR-02",
+   "type": "major",
+   "road_class": "county",
+   "s": 930.0,
+   "x": -1.5,
+   "span_m": 43.9,
+   "over": "Kettle River"
+  },
+  {
+   "id": "MAJOR-03",
+   "type": "major",
+   "road_class": "county",
+   "s": 1250.0,
+   "x": -43.6,
+   "span_m": 43.5,
+   "over": "Kettle River"
+  },
+  {
+   "id": "MAJOR-04",
+   "type": "major",
+   "road_class": "county",
+   "s": 1582.5,
+   "x": 188.4,
+   "span_m": 44.5,
+   "over": "Kettle River"
+  },
+  {
+   "id": "MAJOR-05",
+   "type": "major",
+   "road_class": "county",
+   "s": 2259.7,
+   "x": -36.1,
+   "span_m": 44.0,
+   "over": "Kettle River"
+  },
+  {
+   "id": "SMALL-01",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 180.0,
+   "x": -1261.4,
+   "span_m": 9.0,
+   "over": "Lost Creek"
+  },
+  {
+   "id": "SMALL-02",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 180.0,
+   "x": -1254.9,
+   "span_m": 0.0,
+   "over": "Lost Creek"
+  },
+  {
+   "id": "SMALL-03",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 650.0,
+   "x": 1051.4,
+   "span_m": 3.0,
+   "over": "Cole Creek"
+  },
+  {
+   "id": "SMALL-04",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 1100.0,
+   "x": -952.8,
+   "span_m": 70.0,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-05",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 2010.0,
+   "x": -42.0,
+   "span_m": 5.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "SMALL-06",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 185.0,
+   "x": -1250.0,
+   "span_m": 6.0,
+   "over": "Lost Creek"
+  },
+  {
+   "id": "SMALL-07",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 1013.7,
+   "x": -1250.0,
+   "span_m": 7.0,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-08",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 1830.3,
+   "x": -1250.0,
+   "span_m": 6.0,
+   "over": "Willow Run"
+  },
+  {
+   "id": "SMALL-09",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 2331.9,
+   "x": -1250.0,
+   "span_m": 3.0,
+   "over": "Tanner Creek"
+  },
+  {
+   "id": "SMALL-10",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 2838.5,
+   "x": -1250.0,
+   "span_m": 8.0,
+   "over": "Brush Creek"
+  },
+  {
+   "id": "SMALL-11",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 710.1,
+   "x": 1300.0,
+   "span_m": 6.0,
+   "over": "Cole Creek"
+  },
+  {
+   "id": "SMALL-12",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 1374.3,
+   "x": 1300.0,
+   "span_m": 0.0,
+   "over": "Deer Creek"
+  },
+  {
+   "id": "SMALL-13",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 1379.3,
+   "x": 1300.0,
+   "span_m": 6.0,
+   "over": "Deer Creek"
+  },
+  {
+   "id": "SMALL-14",
+   "type": "small",
+   "road_class": "gravel",
+   "s": 3032.1,
+   "x": 1300.0,
+   "span_m": 3.0,
+   "over": "Heron Creek"
+  },
+  {
+   "id": "SMALL-15",
+   "type": "small",
+   "road_class": "street",
+   "s": 1969.3,
+   "x": 929.3,
+   "span_m": 7.0,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "SMALL-16",
+   "type": "small",
+   "road_class": "street",
+   "s": 1869.3,
+   "x": 768.3,
+   "span_m": 6.0,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "SMALL-17",
+   "type": "small",
+   "road_class": "street",
+   "s": 1910.0,
+   "x": 677.3,
+   "span_m": 15.1,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "SMALL-18",
+   "type": "small",
+   "road_class": "street",
+   "s": 1889.4,
+   "x": 586.3,
+   "span_m": 6.0,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "SMALL-19",
+   "type": "small",
+   "road_class": "street",
+   "s": 1902.5,
+   "x": 904.2,
+   "span_m": 2.0,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "SMALL-20",
+   "type": "small",
+   "road_class": "street",
+   "s": 1902.5,
+   "x": 650.0,
+   "span_m": 82.4,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "SMALL-21",
+   "type": "small",
+   "road_class": "street",
+   "s": 2388.4,
+   "x": -891.0,
+   "span_m": 6.0,
+   "over": "Tanner Creek"
+  },
+  {
+   "id": "SMALL-22",
+   "type": "small",
+   "road_class": "street",
+   "s": 2971.9,
+   "x": 918.1,
+   "span_m": 6.0,
+   "over": "Heron Creek"
+  },
+  {
+   "id": "SMALL-23",
+   "type": "small",
+   "road_class": "street",
+   "s": 3002.0,
+   "x": 900.0,
+   "span_m": 2.0,
+   "over": "Heron Creek"
+  },
+  {
+   "id": "SMALL-24",
+   "type": "small",
+   "road_class": "street",
+   "s": 1230.3,
+   "x": -218.7,
+   "span_m": 7.1,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-25",
+   "type": "small",
+   "road_class": "street",
+   "s": 1248.0,
+   "x": -309.7,
+   "span_m": 78.9,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-26",
+   "type": "small",
+   "road_class": "street",
+   "s": 1250.0,
+   "x": -154.0,
+   "span_m": 52.6,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-27",
+   "type": "small",
+   "road_class": "street",
+   "s": 1250.0,
+   "x": -304.1,
+   "span_m": 11.1,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-28",
+   "type": "small",
+   "road_class": "street",
+   "s": 1250.0,
+   "x": -400.7,
+   "span_m": 0.0,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-29",
+   "type": "small",
+   "road_class": "street",
+   "s": 1250.0,
+   "x": -333.4,
+   "span_m": 47.5,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-30",
+   "type": "small",
+   "road_class": "street",
+   "s": 1250.0,
+   "x": -400.7,
+   "span_m": 0.0,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-31",
+   "type": "small",
+   "road_class": "street",
+   "s": 2866.2,
+   "x": -904.6,
+   "span_m": 2.4,
+   "over": "Brush Creek"
+  },
+  {
+   "id": "SMALL-32",
+   "type": "small",
+   "road_class": "county",
+   "s": -92.9,
+   "x": 330.9,
+   "span_m": 7.6,
+   "over": "Heron Creek"
+  },
+  {
+   "id": "SMALL-33",
+   "type": "small",
+   "road_class": "county",
+   "s": 1250.0,
+   "x": -120.4,
+   "span_m": 14.5,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-34",
+   "type": "small",
+   "road_class": "main",
+   "s": 1869.2,
+   "x": 859.3,
+   "span_m": 6.0,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "SMALL-35",
+   "type": "small",
+   "road_class": "main",
+   "s": 1250.5,
+   "x": -127.7,
+   "span_m": 5.1,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-36",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 1141.0,
+   "x": -772.0,
+   "span_m": 8.0,
+   "over": "Mill Creek"
+  },
+  {
+   "id": "SMALL-37",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 1822.2,
+   "x": -766.4,
+   "span_m": 6.5,
+   "over": "Willow Run"
+  },
+  {
+   "id": "SMALL-38",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 2388.9,
+   "x": -779.0,
+   "span_m": 6.2,
+   "over": "Tanner Creek"
+  },
+  {
+   "id": "SMALL-39",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 2706.8,
+   "x": -696.3,
+   "span_m": 5.1,
+   "over": "Brush Creek"
+  },
+  {
+   "id": "SMALL-40",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 3460.7,
+   "x": -719.6,
+   "span_m": 6.2,
+   "over": "Lost Creek"
+  },
+  {
+   "id": "SMALL-41",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 819.3,
+   "x": 732.2,
+   "span_m": 2.1,
+   "over": "Cole Creek"
+  },
+  {
+   "id": "SMALL-42",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 820.4,
+   "x": 739.5,
+   "span_m": 4.3,
+   "over": "Cole Creek"
+  },
+  {
+   "id": "SMALL-43",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 821.2,
+   "x": 744.3,
+   "span_m": 1.1,
+   "over": "Cole Creek"
+  },
+  {
+   "id": "SMALL-44",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 838.8,
+   "x": 785.1,
+   "span_m": 13.4,
+   "over": "Cole Creek"
+  },
+  {
+   "id": "SMALL-45",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 1299.6,
+   "x": 853.3,
+   "span_m": 7.6,
+   "over": "Deer Creek"
+  },
+  {
+   "id": "SMALL-46",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 1869.4,
+   "x": 862.2,
+   "span_m": 5.2,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "SMALL-47",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 3035.3,
+   "x": 876.9,
+   "span_m": 2.2,
+   "over": "Heron Creek"
+  },
+  {
+   "id": "SMALL-48",
+   "type": "small",
+   "road_class": "hwy",
+   "s": 3056.5,
+   "x": 869.9,
+   "span_m": 12.2,
+   "over": "Heron Creek"
+  },
+  {
+   "id": "CULVERT-01",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 180.0,
+   "x": -1340.0,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-02",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 180.0,
+   "x": -1019.8,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-03",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 180.0,
+   "x": -859.8,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-04",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 180.0,
+   "x": -539.7,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-05",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 1100.0,
+   "x": -1179.9,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-06",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 1100.0,
+   "x": -1019.8,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-07",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 1100.0,
+   "x": -859.8,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-08",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 1100.0,
+   "x": -539.7,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-09",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 2580.0,
+   "x": -699.7,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-10",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 2580.0,
+   "x": -539.7,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-11",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 2580.0,
+   "x": -379.6,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-12",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 2580.0,
+   "x": -219.6,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-13",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 3000.0,
+   "x": 420.6,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-14",
+   "type": "culvert",
+   "road_class": "gravel",
+   "s": 3000.0,
+   "x": 1220.9,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-15",
+   "type": "culvert",
+   "road_class": "county",
+   "s": 928.1,
+   "x": 260.5,
+   "span_m": 1.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-16",
+   "type": "culvert",
+   "road_class": "county",
+   "s": 923.4,
+   "x": 420.2,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-17",
+   "type": "culvert",
+   "road_class": "county",
+   "s": 1241.9,
+   "x": 260.0,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-18",
+   "type": "culvert",
+   "road_class": "county",
+   "s": 1218.0,
+   "x": 420.1,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-19",
+   "type": "culvert",
+   "road_class": "county",
+   "s": 2249.0,
+   "x": -379.9,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-20",
+   "type": "culvert",
+   "road_class": "hwy",
+   "s": 2693.5,
+   "x": -699.5,
+   "span_m": 12.2,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-21",
+   "type": "culvert",
+   "road_class": "hwy",
+   "s": 3358.6,
+   "x": -699.5,
+   "span_m": 14.6,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-22",
+   "type": "culvert",
+   "road_class": "hwy",
+   "s": 1389.9,
+   "x": 900.1,
+   "span_m": 5.6,
+   "over": "farm ditch"
+  },
+  {
+   "id": "CULVERT-23",
+   "type": "culvert",
+   "road_class": "hwy",
+   "s": 3096.8,
+   "x": 740.5,
+   "span_m": 2.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "RAIL-01",
+   "type": "rail",
+   "road_class": "rail",
+   "s": 868.0,
+   "x": 901.7,
+   "span_m": 6.0,
+   "over": "Cole Creek"
+  },
+  {
+   "id": "RAIL-02",
+   "type": "rail",
+   "road_class": "rail",
+   "s": 934.0,
+   "x": 901.6,
+   "span_m": 116.0,
+   "over": "farm ditch"
+  },
+  {
+   "id": "RAIL-03",
+   "type": "rail",
+   "road_class": "rail",
+   "s": 1296.5,
+   "x": 954.2,
+   "span_m": 7.2,
+   "over": "Deer Creek"
+  },
+  {
+   "id": "RAIL-04",
+   "type": "rail",
+   "road_class": "rail",
+   "s": 1860.5,
+   "x": 1009.9,
+   "span_m": 7.1,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "RAIL-05",
+   "type": "rail",
+   "road_class": "rail",
+   "s": 2036.5,
+   "x": 976.5,
+   "span_m": 3.1,
+   "over": "Sauk Creek"
+  },
+  {
+   "id": "RAIL-06",
+   "type": "rail",
+   "road_class": "rail",
+   "s": 3082.0,
+   "x": 1001.4,
+   "span_m": 8.1,
+   "over": "Heron Creek"
+  }
+ ]
+}

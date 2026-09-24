@@ -18,3 +18,11 @@ godot_project/build_arm64/
 # project code, redundant with the copy under ~/newtons-garden/tools/
 /godot/
 __pycache__/
+
+# remake: generated outputs (regenerate with remake/tools/texgen.py and the Blender builders)
+remake/textures/
+remake/blender/out/
+remake/previews/
+builds/
+godot_project/remake/buildings/*.webp
+godot_project/remake/buildings/*.webp.import

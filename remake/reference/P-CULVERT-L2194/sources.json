@@ -1,0 +1,23 @@
+{
+ "structure": "P-CULVERT-L2194",
+ "files": [
+  {
+   "file": "loc_mn0632_data_mn0632data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0632/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mn/mn0600/mn0632/data/mn0632data.pdf",
+   "title": "Bridge L2194, Carries 200th Avenue over unnamed stream, Magnolia, Rock County, MN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_mn0632_data_mn0632cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/mn0632/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/mn/mn0600/mn0632/data/mn0632cap.pdf",
+   "title": "Bridge L2194, Carries 200th Avenue over unnamed stream, Magnolia, Rock County, MN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
