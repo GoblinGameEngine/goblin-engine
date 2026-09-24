@@ -31,12 +31,18 @@ var far_side: RemakeFarSide
 
 
 func _ready() -> void:
+	_t_mark = Time.get_ticks_msec()
+	print("LOAD ready starts at %d ms after launch" % _t_mark)
 	add_to_group("space_station")
 	_setup_environment()
+	_mark("environment")
 	_build_shell()
+	_mark("shell")
 	_spawn_player()
+	_mark("player")
 	var floor_mat := StandardMaterial3D.new()
 	floor_mat.albedo_texture = _neutral_detail("res://assets/textures/grass_tinted.png")
+	_mark("neutral detail texture")
 	floor_mat.vertex_color_use_as_albedo = true          # MapTerrainMesh colours the ground by land cover
 	floor_mat.vertex_color_is_srgb = true
 	terrain = MapTerrainMesh.new()
@@ -47,20 +53,26 @@ func _ready() -> void:
 	add_child(far_side)
 	far_side.setup(player, terrain, floor_mat.albedo_texture)
 	terrain.setup(player, floor_mat)
+	_mark("terrain setup")
 	MapWater.build(self)
+	_mark("water")
 	MapWater.build_small(self)
+	_mark("small water")
 	var trees := MapTrees.new()
 	trees.name = "Trees"
 	add_child(trees)
 	trees.setup()
+	_mark("trees setup")
 	var roads := MapRoads.new()
 	roads.name = "Roads"
 	add_child(roads)
 	roads.setup()
+	_mark("roads setup")
 	var cliffs := CliffWalls.new()
 	cliffs.name = "CliffWalls"
 	add_child(cliffs)
 	cliffs.setup(player)
+	_mark("cliffs setup")
 	for c in get_children():
 		if c.name.begins_with("map_water_") or c.name.begins_with("map_small_water_"):
 			far_side.add_node(c)
@@ -71,10 +83,12 @@ func _ready() -> void:
 	# a cylinder: elsewhere it would shine up through the ground)
 	sky_system.sun_frame = func() -> Basis: return StationGeo.basis(StationGeo.s_of(player.global_position))
 	sky_system.setup(self, sun, shell_mesh, StationGeo.R - StationGeo.SHAFT_R, WALL_TILE, environment)
+	_mark("sky")
 	var clouds := RemakeClouds.new()
 	clouds.name = "Clouds"
 	add_child(clouds)
 	clouds.setup(player.get_node("Head/Camera3D"), environment)
+	_mark("clouds setup")
 	world = Node3D.new()
 	world.name = "World"
 	add_child(world)
@@ -82,7 +96,46 @@ func _ready() -> void:
 	streamer.name = "DetailStreamer"
 	add_child(streamer)
 	_place_structures()
+	_mark("structures (first slice)")
 	_place_aerostats()
+	_mark("aerostats (first slice)")
+	_watch_load()
+
+
+var _t_mark := 0
+var _aero_done := false
+
+
+func _mark(label: String) -> void:
+	## The load timeline: each startup step's cost (printed; see _watch_load for the rest).
+	var now := Time.get_ticks_msec()
+	print("LOAD %-24s %6d ms   (t=%d)" % [label, now - _t_mark, now])
+	_t_mark = now
+
+
+func _watch_load() -> void:
+	## When each piece built over later frames is done, and the worst frame meanwhile.
+	var t0 := Time.get_ticks_msec()
+	var waiting := {
+		"terrain (all tiers)": func() -> bool: return terrain._far_todo.is_empty() and not terrain.busy(),
+		"trees": func() -> bool: return not get_node("Trees").is_processing(),
+		"roads": func() -> bool: return not get_node("Roads").is_processing(),
+		"cliffs": func() -> bool: return (get_node("CliffWalls") as CliffWalls)._todo.is_empty(),
+		"cloud skins": func() -> bool: return (get_node("Clouds") as RemakeClouds)._skin_task == -1,
+		"structures": func() -> bool: return streamer.records.size() > 0,
+		"aerostats": func() -> bool: return _aero_done,
+	}
+	var worst := 0.0
+	var frames := 0
+	while not waiting.is_empty():
+		await get_tree().process_frame
+		frames += 1
+		worst = maxf(worst, get_process_delta_time())
+		for k in waiting.keys():
+			if waiting[k].call():
+				print("LOAD %-24s done at t=%d  (%d ms after ready)" % [k, Time.get_ticks_msec(), Time.get_ticks_msec() - t0])
+				waiting.erase(k)
+	print("LOAD complete: %d frames, worst frame %.0f ms, t=%d" % [frames, worst * 1000.0, Time.get_ticks_msec()])
 
 
 func _place_aerostats() -> void:
@@ -92,6 +145,7 @@ func _place_aerostats() -> void:
 	var root := Node3D.new()
 	root.name = "Aerostats"
 	add_child(root)
+	var t0 := Time.get_ticks_usec()
 	for a in d.aerostats:
 		var s: float = a.s
 		var x: float = a.x
@@ -99,8 +153,11 @@ func _place_aerostats() -> void:
 		v.name = a.id
 		root.add_child(v)
 		v.global_transform = Transform3D(StationGeo.basis(s, a.yaw), StationGeo.point(s, x, MapTerrain.elevation(s, x)))
-		await get_tree().process_frame
+		if Time.get_ticks_usec() - t0 > 4000:
+			await get_tree().process_frame
+			t0 = Time.get_ticks_usec()
 	print("RemakeStation: %d aerostats parked" % d.aerostats.size())
+	_aero_done = true
 
 
 func compass_bearing(at: Vector3, dir: Vector3) -> float:

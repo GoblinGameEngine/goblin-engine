@@ -6,7 +6,8 @@ class_name MapRoads
 ## Each road is a ribbon of its map width sampled every STEP m, LIFT above the ground; spans over
 ## the river / lake are left out (the crossings' bridges carry the road there).  Ribbons are merged
 ## per CELL m cell and surface -- asphalt (highways, county roads, main streets, streets), gravel,
-## concrete (alleys), ballast (the railway) -- one mesh each, built a few roads per frame.
+## concrete (alleys), ballast (the railway) -- one mesh each.  The ribbons are built on a worker
+## thread; the main thread only makes the mesh nodes, a few a frame.
 
 const STEP := 3.0
 const LIFT := 0.06
@@ -18,7 +19,8 @@ const TEX := {"asphalt": ["lib/asphalt", 6.0], "gravel": ["p-site/gravel_road", 
 	"concrete": ["lib/concrete", 3.0], "ballast": ["p-site/ballast", 3.0]}
 
 var _roads: Array = []
-var _next := 0
+var _task := -1
+var _out: Array = []                 # [cell key, surface arrays] from the worker
 var _cells := {}                     # [cell key, surface] -> SurfaceTool
 var _mats := {}
 
@@ -38,18 +40,32 @@ func setup() -> void:
 		m.cull_mode = BaseMaterial3D.CULL_DISABLED        # a ribbon's winding follows its road's direction
 		_mats[key] = m
 	MapTerrain.elevation(0.0, 0.0)                         # loads the terrain data (_body_profile reads it)
+	_task = WorkerThreadPool.add_task(_build_all, false, "roads")
 	set_process(true)
 
 
+func _build_all() -> void:
+	for rd in _roads:
+		_add_road(rd)
+	var out := []
+	for key in _cells:
+		out.append([key, (_cells[key] as SurfaceTool).commit_to_arrays()])
+	_cells.clear()
+	_out = out
+
+
 func _process(_delta: float) -> void:
-	# a few roads per frame, then commit every cell's meshes
-	for n in 3:
-		if _next >= _roads.size():
-			_commit()
-			set_process(false)
-			return
-		_add_road(_roads[_next])
-		_next += 1
+	if _task < 0 or not WorkerThreadPool.is_task_completed(_task):
+		return
+	WorkerThreadPool.wait_for_task_completion(_task)
+	_task = -1
+	_commit()
+	set_process(false)
+
+
+func _exit_tree() -> void:
+	if _task >= 0:
+		WorkerThreadPool.wait_for_task_completion(_task)
 
 
 func _add_road(rd: Dictionary) -> void:
@@ -96,13 +112,15 @@ func _add_road(rd: Dictionary) -> void:
 
 
 func _commit() -> void:
-	for key in _cells:
-		var st: SurfaceTool = _cells[key]
-		st.set_material(_mats[key[1]])
+	for job in _out:
+		var key: Array = job[0]
+		var mesh := ArrayMesh.new()
+		mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, job[1])
+		mesh.surface_set_material(0, _mats[key[1]])
 		var mi := MeshInstance3D.new()
 		mi.name = "roads_%d_%d_%s" % [key[0].x, key[0].y, key[1]]
-		mi.mesh = st.commit()
+		mi.mesh = mesh
 		mi.visibility_range_end = FAR
 		mi.visibility_range_end_margin = FAR * 0.08
 		add_child(mi)
-	_cells.clear()
+	_out.clear()

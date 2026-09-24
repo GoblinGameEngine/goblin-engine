@@ -21,7 +21,8 @@ const NEAR := 220.0
 const MID := 650.0
 const SKIRT := 1.5
 const TEX_M := 8.0
-const MAX_TASKS := 2
+const BUDGET_USEC := 5000
+static var MAX_TASKS := clampi(OS.get_processor_count() - 2, 2, 6)   # tiles generated at once
 const COL_PARTS := 4                 # a streamed near tile's collision goes in this many pieces, a frame each
 
 var half_w := StationGeo.HALF_LEN
@@ -221,18 +222,24 @@ func _process(delta: float) -> void:
 	if _t <= 0.0:
 		_t = 0.5
 		_update()
-	# a piece of a near tile's collision, or else a finished tile becomes a node -- one per frame
-	if not _col_queue.is_empty():
-		var c: Array = _col_queue.pop_front()
-		if is_instance_valid(c[0]):
-			_add_collision(c[0], c[1])
-	else:
+	# pieces of near tiles' collision, then finished tiles into nodes, within BUDGET_USEC a frame
+	# (always at least one, so a busy frame can't stall it)
+	var t0 := Time.get_ticks_usec()
+	var first := true
+	while first or Time.get_ticks_usec() - t0 < BUDGET_USEC:
+		first = false
+		if not _col_queue.is_empty():
+			var c: Array = _col_queue.pop_front()
+			if is_instance_valid(c[0]):
+				_add_collision(c[0], c[1])
+			continue
 		_done_lock.lock()
 		var res: Array = _done.pop_front() if not _done.is_empty() else []
 		_done_lock.unlock()
-		if not res.is_empty():
-			_pending.erase([res[0], res[1]])
-			_finish(res[0], res[1], res[2])
+		if res.is_empty():
+			break
+		_pending.erase([res[0], res[1]])
+		_finish(res[0], res[1], res[2])
 	for id in _tasks.keys():
 		if WorkerThreadPool.is_task_completed(id):
 			WorkerThreadPool.wait_for_task_completion(id)

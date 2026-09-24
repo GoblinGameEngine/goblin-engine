@@ -27,20 +27,43 @@ const MARGIN := 0.08                 # hysteresis at each switch, a fraction of 
 ## full: build each building's LOD0 too; false: LOD1 draws from 0 m and the returned "records"
 ## ({id, root, lod1, k}) go to a RemakeDetailStreamer, which loads LOD0 near the player.
 ## A coroutine (one building per frame) -- await it; returns {"buildings", "cells2", "cells3", "landmarks"}.
+const BUDGET_USEC := 8000             # main-thread time per frame spent assembling buildings
+const LOOKAHEAD := 64                 # buildings whose LOD files are loading ahead
+
+
 static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
+	# the LOD files load on worker threads, in parallel, LOOKAHEAD buildings ahead of the one being
+	# assembled (queueing all ~2,300 at once blocks for seconds)
+	var ahead := 0
+	var tree := Engine.get_main_loop() as SceneTree
+	var frame_start := Time.get_ticks_usec()
 	var lod_scenes := {}
 	var cells2 := {}
 	var cells3 := {}
 	var lod1_of_cell2 := {}
 	var landmarks := 0
 	var records := []
-	for e in entries:
+	for idx in entries.size():
+		var e: Dictionary = entries[idx]
+		while ahead < mini(entries.size(), idx + LOOKAHEAD):
+			for l in [1, 2, 3]:
+				var ap := "res://remake/buildings/%s.lod%d.glb" % [entries[ahead].id, l]
+				if ResourceLoader.exists(ap):
+					ResourceLoader.load_threaded_request(ap, "", true)
+			ahead += 1
 		var id: String = e.id
 		if not lod_scenes.has(id):
 			lod_scenes[id] = []
 			for l in [1, 2, 3]:
 				var p := "res://remake/buildings/%s.lod%d.glb" % [id, l]
-				lod_scenes[id].append(load(p) if ResourceLoader.exists(p) else null)
+				if not ResourceLoader.exists(p):
+					lod_scenes[id].append(null)
+					continue
+				# not loaded yet: let frames go by rather than block on it
+				while ResourceLoader.load_threaded_get_status(p) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+					await tree.process_frame
+					frame_start = Time.get_ticks_usec()
+				lod_scenes[id].append(ResourceLoader.load_threaded_get(p))
 		var sc: Array = lod_scenes[id]
 		if sc[0] == null:
 			continue
@@ -78,7 +101,9 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 				root.add_child(inst)
 				RemakeBuilding.prepare_lod(inst, "res://remake/buildings/%s.lod%d.glb" % [id, l])
 				_ranges(inst, (D2 if l == 2 else D3) * k, D3 * k if l == 2 else 0.0)
-			await (Engine.get_main_loop() as SceneTree).process_frame
+			if Time.get_ticks_usec() - frame_start > BUDGET_USEC:
+				await tree.process_frame
+				frame_start = Time.get_ticks_usec()
 			continue
 		_ranges(lod1, lod1_begin, 0.0)
 		for pair in [[cells2, e.key2, 1], [cells3, e.key3, 2]]:
@@ -94,8 +119,10 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 		if not lod1_of_cell2.has(e.key2):
 			lod1_of_cell2[e.key2] = []
 		lod1_of_cell2[e.key2].append(lod1)
-		# one building per frame: the game keeps running while a settlement fills in
-		await (Engine.get_main_loop() as SceneTree).process_frame
+		# a few milliseconds of assembly per frame: the game keeps running while the map fills in
+		if Time.get_ticks_usec() - frame_start > BUDGET_USEC:
+			await tree.process_frame
+			frame_start = Time.get_ticks_usec()
 	# the merged meshes, and the visibility chain LOD1 -> cell LOD2 -> cell LOD3
 	var nodes3 := {}
 	for key in cells3:

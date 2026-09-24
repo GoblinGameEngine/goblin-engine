@@ -9,7 +9,8 @@ class_name MapTrees
 ##   near (< NEAR m)  a low-poly deciduous tree, trunk + two-lobed canopy (~130 triangles)
 ##   far  (< FAR m)   one squat blob (~20 triangles)
 ##   beyond            the woods' ground tint alone
-## Built a cell per frame.
+## Placed on worker threads (MapTerrain is read-only once loaded); the main thread only makes the
+## MultiMesh nodes, BUDGET_USEC a frame.
 
 const WOODS_STEP := 6.0
 const GROVE_STEP := 5.0
@@ -17,8 +18,13 @@ const CELL := 200.0
 const NEAR := 320.0
 const FAR := 900.0
 
+const BUDGET_USEC := 4000
+
 var _cells: Array = []
-var _next := 0
+var _task := -1
+var _done: Array = []                # [cell, xforms, cols] from the workers
+var _lock := Mutex.new()
+var _made := 0
 var _near_mesh: ArrayMesh
 var _far_mesh: ArrayMesh
 
@@ -30,18 +36,40 @@ func setup() -> void:
 	for cs in ceili(StationGeo.CIRC / CELL):
 		for cx in ceili(StationGeo.LENGTH / CELL):
 			_cells.append(Vector2i(cs, cx))
+	_task = WorkerThreadPool.add_group_task(_cell_task, _cells.size(), -1, false, "trees")
 	set_process(true)
 
 
+func _cell_task(i: int) -> void:
+	var r := _place(_cells[i])
+	_lock.lock()
+	_done.append([_cells[i], r[0], r[1]])
+	_lock.unlock()
+
+
 func _process(_delta: float) -> void:
-	if _next >= _cells.size():
+	var t0 := Time.get_ticks_usec()
+	while Time.get_ticks_usec() - t0 < BUDGET_USEC:
+		_lock.lock()
+		var job: Array = _done.pop_back() if not _done.is_empty() else []
+		_lock.unlock()
+		if job.is_empty():
+			break
+		_make(job[0], job[1], job[2])
+		_made += 1
+	if _made >= _cells.size():
+		WorkerThreadPool.wait_for_group_task_completion(_task)
+		_task = -1
 		set_process(false)
-		return
-	_build_cell(_cells[_next])
-	_next += 1
 
 
-func _build_cell(c: Vector2i) -> void:
+func _exit_tree() -> void:
+	if _task >= 0:
+		WorkerThreadPool.wait_for_group_task_completion(_task)
+
+
+func _place(c: Vector2i) -> Array:
+	## The cell's trees: [transforms, colours] (thread-safe: touches no nodes).
 	var s0 := c.x * CELL
 	var x0 := -StationGeo.HALF_LEN + c.y * CELL
 	var xforms: Array[Transform3D] = []
@@ -74,6 +102,10 @@ func _build_cell(c: Vector2i) -> void:
 			var g := 0.85 + 0.3 * _hash(floori(s), floori(x), 6)
 			cols.append(Color(g * (0.95 + 0.1 * _hash(floori(s), floori(x), 7)), g, g * 0.9))
 		i += 1
+	return [xforms, cols]
+
+
+func _make(c: Vector2i, xforms: Array, cols: Array) -> void:
 	if xforms.is_empty():
 		return
 	for version in [[_near_mesh, 0.0, NEAR], [_far_mesh, NEAR, FAR]]:

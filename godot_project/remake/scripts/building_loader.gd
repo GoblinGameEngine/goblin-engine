@@ -127,11 +127,14 @@ func _make_door(n: Node3D) -> void:
 ## A distance version (<id>.lodN.glb from gblod): its textured surfaces use the building's own
 ## sidecar, everything else the shared vertex-colour material (one material for every LOD2/3 mesh,
 ## so a district's worth of them can be merged into a single draw call).
+static var _defs_cache := {}
+
+
 static func prepare_lod(inst: Node, glb_path: String) -> void:
 	var sidecar := glb_path.get_basename().get_basename() + ".mats.json"
-	var defs: Dictionary = {}
-	if FileAccess.file_exists(sidecar):
-		defs = JSON.parse_string(FileAccess.get_file_as_string(sidecar))
+	if not _defs_cache.has(sidecar):                    # one read per building, not per LOD
+		_defs_cache[sidecar] = JSON.parse_string(FileAccess.get_file_as_string(sidecar)) if FileAccess.file_exists(sidecar) else {}
+	var defs: Dictionary = _defs_cache[sidecar]
 	_apply_defs(inst, defs)
 	# these ARE the level-of-detail chain: keep Godot's import-time automatic LOD from decimating
 	# them further (it strips exactly the thin truss outlines and small panes they keep on purpose)
