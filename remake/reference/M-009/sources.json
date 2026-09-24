@@ -1,0 +1,59 @@
+{
+ "structure": "M-009",
+ "files": [
+  {
+   "file": "loc_in0174_photos_065545pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0174/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0174/photos/065545pv.jpg",
+   "title": "Orange County Courthouse, State Routes 156 & 37, Paoli, Orange County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0174_photos_065546pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0174/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0174/photos/065546pv.jpg",
+   "title": "Orange County Courthouse, State Routes 156 & 37, Paoli, Orange County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0174_photos_065547pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0174/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0174/photos/065547pv.jpg",
+   "title": "Orange County Courthouse, State Routes 156 & 37, Paoli, Orange County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0174_photos_065548pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0174/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0174/photos/065548pv.jpg",
+   "title": "Orange County Courthouse, State Routes 156 & 37, Paoli, Orange County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0174_data_in0174data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0174/data/in0174data.pdf",
+   "title": "Orange County Courthouse, State Routes 156 & 37, Paoli, Orange County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0174_file_in0174supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0174/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0174/supp/in0174supp.pdf",
+   "title": "Orange County Courthouse, State Routes 156 & 37, Paoli, Orange County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

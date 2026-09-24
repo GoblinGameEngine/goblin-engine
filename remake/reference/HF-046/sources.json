@@ -1,0 +1,59 @@
+{
+ "structure": "HF-046",
+ "files": [
+  {
+   "file": "loc_il0948_color_368231cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0948/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0900/il0948/color/368231cv.jpg",
+   "title": "Commercial Streetscape, Collinsville, Madison County, IL",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0948_color_582192cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0948/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0900/il0948/color/582192cv.jpg",
+   "title": "Commercial Streetscape, Collinsville, Madison County, IL",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0948_photos_363430pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0948/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0900/il0948/photos/363430pv.jpg",
+   "title": "Commercial Streetscape, Collinsville, Madison County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0948_photos_363431pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0948/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0900/il0948/photos/363431pv.jpg",
+   "title": "Commercial Streetscape, Collinsville, Madison County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0948_data_il0948data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0948/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0900/il0948/data/il0948data.pdf",
+   "title": "Commercial Streetscape, Collinsville, Madison County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0948_data_il0948cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0948/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0900/il0948/data/il0948cap.pdf",
+   "title": "Commercial Streetscape, Collinsville, Madison County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

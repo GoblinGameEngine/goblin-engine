@@ -1,0 +1,68 @@
+{
+ "structure": "HF-024",
+ "files": [
+  {
+   "file": "loc_il0547_photos_061742pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0547/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0500/il0547/photos/061742pv.jpg",
+   "title": "Oak Park Theatre, 116-120 South Marion Street, Oak Park, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0547_photos_061743pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0547/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0500/il0547/photos/061743pv.jpg",
+   "title": "Oak Park Theatre, 116-120 South Marion Street, Oak Park, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0547_photos_061744pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0547/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0500/il0547/photos/061744pv.jpg",
+   "title": "Oak Park Theatre, 116-120 South Marion Street, Oak Park, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0547_photos_061745pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0547/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0500/il0547/photos/061745pv.jpg",
+   "title": "Oak Park Theatre, 116-120 South Marion Street, Oak Park, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0547_photos_061746pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0547/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0500/il0547/photos/061746pv.jpg",
+   "title": "Oak Park Theatre, 116-120 South Marion Street, Oak Park, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0547_data_il0547data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0547/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0547/data/il0547data.pdf",
+   "title": "Oak Park Theatre, 116-120 South Marion Street, Oak Park, Cook County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0547_data_il0547cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0547/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0500/il0547/data/il0547cap.pdf",
+   "title": "Oak Park Theatre, 116-120 South Marion Street, Oak Park, Cook County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

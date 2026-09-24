@@ -1,0 +1,68 @@
+{
+ "structure": "HF-025",
+ "files": [
+  {
+   "file": "loc_in0238_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0238/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0238/sheet/00001a.tif",
+   "title": "C. W. Swain Building, 120 North High Street, Muncie, Delaware County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0238_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0238/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0238/sheet/00002a.tif",
+   "title": "C. W. Swain Building, 120 North High Street, Muncie, Delaware County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0238_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0238/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0238/sheet/00003a.tif",
+   "title": "C. W. Swain Building, 120 North High Street, Muncie, Delaware County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0238_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0238/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0238/sheet/00004a.tif",
+   "title": "C. W. Swain Building, 120 North High Street, Muncie, Delaware County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0238_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0238/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0238/sheet/00005a.tif",
+   "title": "C. W. Swain Building, 120 North High Street, Muncie, Delaware County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0238_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0238/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0238/sheet/00006a.tif",
+   "title": "C. W. Swain Building, 120 North High Street, Muncie, Delaware County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0238_data_in0238data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0238/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0200/in0238/data/in0238data.pdf",
+   "title": "C. W. Swain Building, 120 North High Street, Muncie, Delaware County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

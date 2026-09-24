@@ -1,0 +1,86 @@
+{
+ "structure": "M-035",
+ "files": [
+  {
+   "file": "loc_in0180_sheet_00000a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/sheet/00000a.tif",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0180_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/sheet/00001a.tif",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0180_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/sheet/00002a.tif",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0180_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/sheet/00003a.tif",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0180_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/sheet/00004a.tif",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0180_sheet_00005a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/sheet/00005a.tif",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0180_sheet_00006a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/sheet/00006a.tif",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0180_data_in0180data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/data/in0180data.pdf",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0180_file_in0180supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0180/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0180/supp/in0180supp.pdf",
+   "title": "Methodist Episcopal Church, Ruter Chapel, Main & Union Streets, Vevay, Switzerland County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

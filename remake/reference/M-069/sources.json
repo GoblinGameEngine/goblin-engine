@@ -1,0 +1,50 @@
+{
+ "structure": "M-069",
+ "files": [
+  {
+   "file": "loc_il0417_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0417/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0417/sheet/00001a.tif",
+   "title": "Paxton Water Tower, Centre & Market Streets, Paxton, Ford County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0417_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0417/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0417/sheet/00002a.tif",
+   "title": "Paxton Water Tower, Centre & Market Streets, Paxton, Ford County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0417_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0417/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0417/sheet/00003a.tif",
+   "title": "Paxton Water Tower, Centre & Market Streets, Paxton, Ford County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0417_sheet_00004a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0417/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0417/sheet/00004a.tif",
+   "title": "Paxton Water Tower, Centre & Market Streets, Paxton, Ford County, IL",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0417_data_il0417data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0417/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0417/data/il0417data.pdf",
+   "title": "Paxton Water Tower, Centre & Market Streets, Paxton, Ford County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

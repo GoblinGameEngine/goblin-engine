@@ -1,0 +1,41 @@
+{
+ "structure": "K-097",
+ "files": [
+  {
+   "file": "loc_il0806_photos_334930pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0806/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0800/il0806/photos/334930pv.jpg",
+   "title": "Chanute Air Force Base, Water Tower, Extender Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0806_photos_334931pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0806/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0800/il0806/photos/334931pv.jpg",
+   "title": "Chanute Air Force Base, Water Tower, Extender Street, Rantoul, Champaign County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0806_data_il0806data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0806/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0800/il0806/data/il0806data.pdf",
+   "title": "Chanute Air Force Base, Water Tower, Extender Street, Rantoul, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0806_data_il0806cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0806/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0800/il0806/data/il0806cap.pdf",
+   "title": "Chanute Air Force Base, Water Tower, Extender Street, Rantoul, Champaign County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

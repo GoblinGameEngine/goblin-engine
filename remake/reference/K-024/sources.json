@@ -1,0 +1,32 @@
+{
+ "structure": "K-024",
+ "files": [
+  {
+   "file": "loc_il0654_photos_037239pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0654/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0600/il0654/photos/037239pv.jpg",
+   "title": "Farmer's Square Deal Cooperative Grain Elevator, Liberty & Division Streets, Morris, Grundy County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0654_data_il0654data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0654/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0600/il0654/data/il0654data.pdf",
+   "title": "Farmer's Square Deal Cooperative Grain Elevator, Liberty & Division Streets, Morris, Grundy County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0654_data_il0654cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0654/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0600/il0654/data/il0654cap.pdf",
+   "title": "Farmer's Square Deal Cooperative Grain Elevator, Liberty & Division Streets, Morris, Grundy County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

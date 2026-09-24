@@ -1,0 +1,50 @@
+{
+ "structure": "HF-043",
+ "files": [
+  {
+   "file": "loc_oh0379_photos_127665pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0379/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0379/photos/127665pv.jpg",
+   "title": "Woodruff Building, 500 Worthington Avenue, Wyoming, Hamilton County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0379_photos_127666pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0379/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0379/photos/127666pv.jpg",
+   "title": "Woodruff Building, 500 Worthington Avenue, Wyoming, Hamilton County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0379_photos_127667pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0379/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0300/oh0379/photos/127667pv.jpg",
+   "title": "Woodruff Building, 500 Worthington Avenue, Wyoming, Hamilton County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0379_data_oh0379data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0379/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0379/data/oh0379data.pdf",
+   "title": "Woodruff Building, 500 Worthington Avenue, Wyoming, Hamilton County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0379_data_oh0379cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0379/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0300/oh0379/data/oh0379cap.pdf",
+   "title": "Woodruff Building, 500 Worthington Avenue, Wyoming, Hamilton County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

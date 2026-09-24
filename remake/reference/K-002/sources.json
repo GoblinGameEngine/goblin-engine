@@ -1,0 +1,59 @@
+{
+ "structure": "K-002",
+ "files": [
+  {
+   "file": "loc_il0037_photos_061036pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0037/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0037/photos/061036pv.jpg",
+   "title": "St. Gabriel's Church (Roman Catholic), 4522 South Wallace Street, Chicago, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0037_photos_061037pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0037/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0037/photos/061037pv.jpg",
+   "title": "St. Gabriel's Church (Roman Catholic), 4522 South Wallace Street, Chicago, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0037_photos_061038pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0037/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0037/photos/061038pv.jpg",
+   "title": "St. Gabriel's Church (Roman Catholic), 4522 South Wallace Street, Chicago, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0037_photos_061039pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0037/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0000/il0037/photos/061039pv.jpg",
+   "title": "St. Gabriel's Church (Roman Catholic), 4522 South Wallace Street, Chicago, Cook County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0037_data_il0037data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0037/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0037/data/il0037data.pdf",
+   "title": "St. Gabriel's Church (Roman Catholic), 4522 South Wallace Street, Chicago, Cook County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0037_file_il0037supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0037/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0000/il0037/supp/il0037supp.pdf",
+   "title": "St. Gabriel's Church (Roman Catholic), 4522 South Wallace Street, Chicago, Cook County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
