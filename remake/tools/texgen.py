@@ -492,6 +492,90 @@ def grass(out, name, base="#4f6b2c", seed=270):
 
 
 
+def bedrock(out, name, tile_m=12.0, seed=610):
+    """Sedimentary cliff face (the station end-wall bluffs): horizontal strata 0.15-1.6 m thick --
+    buff limestone, tan sandstone, thin dark shale partings -- with bedding-plane cracks, vertical
+    joints that step from bed to bed, ledge lips and weathering.  Periodic both ways (tile_m)."""
+    r = rng(seed)
+    y = (np.arange(N) + 0.5)[:, None] / N * tile_m
+    # beds from the top down until the tile is full (the last one absorbs the remainder)
+    beds, t = [], 0.0
+    while t < tile_m - 0.2:
+        kind = r.choice(["lime", "lime", "sand", "shale"], p=[0.35, 0.25, 0.25, 0.15])
+        th = {"lime": r.uniform(0.4, 1.6), "sand": r.uniform(0.3, 1.2), "shale": r.uniform(0.12, 0.35)}[kind]
+        beds.append((t, min(tile_m, t + th), kind))
+        t += th
+    base_col = {"lime": col("#b9ae95"), "sand": col("#a88a66"), "shale": col("#5f5a52")}
+    albedo = np.zeros((N, N, 3))
+    h = np.zeros((N, N))
+    rough = np.zeros((N, N))
+    wobble = (fbm(seed + 1, 120, octaves=3) - 0.5) * 0.12            # beds aren't ruler-straight
+    yy = y + wobble
+    grain = fbm(seed + 2, 18)
+    pits = np.clip(fbm(seed + 3, 40) - 0.55, 0, 1) * 2
+    for k, (c0, c1, kind) in enumerate(beds):
+        m = (yy >= c0) & (yy < c1)
+        tone = r.uniform(0.85, 1.12)
+        v = (yy - c0) / max(1e-3, c1 - c0)                              # 0 at the bed's top, 1 at its base
+        # each bed is proud at its base (a small ledge lip) and recessed under the next bed's lip
+        prof = {"lime": 0.75 + 0.25 * v, "sand": 0.6 + 0.3 * v, "shale": 0.25 + 0.1 * v}[kind]
+        albedo[m] = (base_col[kind] * tone)[None, :] * (0.78 + 0.3 * grain[m])[:, None]
+        h[m] = prof[m] + 0.15 * grain[m] - 0.25 * pits[m]
+        rough[m] = 0.9 if kind == "shale" else 0.82
+    # vertical joints: sparse (2-6 m), wandering, fading in and out; each bed has its own set, so
+    # they step from bed to bed instead of running through like mortar
+    x = (np.arange(N) + 0.5)[None, :] / N * tile_m
+    xw = x + (fbm(seed + 6, 60, octaves=3) - 0.5) * 0.5                # wander
+    fade = fbm(seed + 7, 90)
+    jdist = np.full((N, N), 9.0)
+    for (c0, c1, kind) in beds:
+        if kind == "shale" or r.random() < 0.5:
+            continue
+        rows = (yy[:, 0] >= c0) & (yy[:, 0] < c1)
+        xs, s_ = [], r.uniform(0, 3.0)
+        while s_ < tile_m:
+            xs.append(s_)
+            s_ += r.uniform(3.0, 9.0)
+        e = np.array(xs)
+        d = np.min(np.abs(((xw[rows, :][None] - e[:, None, None]) + tile_m / 2) % tile_m - tile_m / 2), 0)
+        jdist[rows, :] = np.minimum(jdist[rows, :], d)
+    jw = 0.02 + 0.05 * fade                                          # joint half-width varies 2-7 cm
+    joint = np.clip(1 - jdist / jw, 0, 1) * np.clip(fade * 2 - 0.3, 0, 1)
+    round_j = np.clip(1 - jdist / (jw + 0.12), 0, 1)                    # rounded, darker lips beside it
+    # bedding planes: darkness and width vary along the bed
+    bdist = np.full((N, N), 9.0)
+    for (c0, c1, kind) in beds:
+        bdist = np.minimum(bdist, np.abs(yy - c0))
+    bw = 0.015 + 0.05 * fbm(seed + 8, 70)
+    bed_line = np.clip(1 - bdist / bw, 0, 1) * (0.4 + 0.6 * fbm(seed + 9, 50))
+    round_b = np.clip(1 - bdist / (bw + 0.1), 0, 1)
+    dark = np.clip(np.maximum(joint, bed_line), 0, 1)
+    albedo = albedo * (1 - 0.3 * dark[..., None]) * (1 - 0.1 * np.maximum(round_j, round_b)[..., None])
+    h = h - 0.4 * dark - 0.15 * np.maximum(round_j, round_b)
+    # tonal banding within the beds (fine laminae), then large-scale mottling, weathering streaks
+    # down the face, lichen on the proud limestone
+    lam = stretch_noise(seed + 11, 25, 1.5)
+    albedo = albedo * (0.88 + 0.22 * lam[..., None])
+    mottle = fbm(seed + 10, 350, octaves=3)
+    albedo = albedo * (0.84 + 0.3 * mottle[..., None])
+    streak = np.clip(stretch_noise(seed + 4, 3, 90) - 0.6, 0, 1) * 1.5
+    lichen = np.clip(fbm(seed + 5, 60) - 0.7, 0, 1) * 2.5
+    albedo = albedo * (1 - 0.25 * streak[..., None])
+    albedo = albedo * (1 - lichen[..., None]) + lichen[..., None] * col("#8e9a78")[None, None, :]
+    save(out, name, albedo, h, rough, 22)
+
+
+def scree(out, name, tile_m=4.0, seed=620):
+    """Talus at the cliff foot: broken limestone and sandstone blocks in fine rubble."""
+    n = rng(seed).random((N, N))
+    blocks = fbm(seed + 1, 22, octaves=2)
+    cells = np.clip(blocks - 0.52, 0, 1) * 3
+    tone = np.where(fbm(seed + 2, 90) > 0.5, 1.0, 0.0)
+    base = col("#a99d86")[None, None, :] * (1 - tone[..., None]) + col("#9a8266")[None, None, :] * tone[..., None]
+    albedo = base * (0.62 + 0.4 * cells[..., None] + 0.12 * n[..., None])
+    save(out, name, albedo, cells + 0.15 * n, 0.92 + 0.05 * n, 14)
+
+
 # ------------------------------------------------------------------ library-only recipes
 def carpet(out, name, base="#8a8478", seed=300, loop=0.5):
     n = fbm(seed, 300) * 0.6 + fbm(seed + 1, 60) * 0.4
@@ -642,6 +726,10 @@ RECIPES = {
         (planks, "ties", dict(base="#4d3f33", worn=0.6, seed=276, board_m=0.23, tile_m=2.6)),
         (wood_varnish, "bark", dict(base="#4a3a2c", seed=277)),
         (grass, "leaves", dict(base="#3f5a22", seed=278)),
+    ],
+    "cliff": [
+        (bedrock, "bedrock", dict()),
+        (scree, "scree", dict()),
     ],
     "p-bridges": [
         (paint_flat, "truss", dict(base="#5f6b63", rough=0.55, seed=251, var=0.08)),

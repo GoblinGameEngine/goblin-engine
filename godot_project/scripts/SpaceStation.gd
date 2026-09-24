@@ -235,6 +235,11 @@ func _build_ring() -> void:
 	# static functions (confirmed empirically). See TerrainHeight.gd's
 	# header for this project's dependency-direction rule.
 	RiverGenerator.build(neighborhood, RADIUS, SEGMENTS)
+	# the end caps' 150 m cliffs (CliffWalls.gd), their near tiles following the player
+	var cliffs := CliffWalls.new()
+	cliffs.name = "CliffWalls"
+	ring_body.add_child(cliffs)
+	cliffs.setup(RADIUS, SEGMENTS, WIDTH, player)
 
 ## Angle=0 spawn point, standing on the floor, facing along the loop --
 ## shared by initial spawn and by rebuild_ring()'s post-rebuild respawn
