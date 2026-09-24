@@ -28,7 +28,9 @@ const PAD_BLEND := 4.0              # ...then blends back into the terrain over 
 const PLACEMENT := "res://remake/placement.json"
 
 static var _d: Dictionary = {}
+const RAMP := 40.0                  # roads ramp to a bridge's deck over this, before its abutments
 static var _pads: Array = []         # [s, x, cos yaw, sin yaw, min x, min z, max x, max z, height]
+static var _bridges: Array = []      # the same, for crossings: height = the deck
 static var _pad_by_id: Dictionary = {}
 static var _grid: Dictionary = {}    # Vector2i -> Array of [kind, index]
 static var R := 500.0
@@ -257,7 +259,27 @@ static func _road_grade(s: float, x: float, base: float) -> Vector2:
 		if w > best_w:
 			best_w = w
 			best_h = base_elev(a[0] + _wrap(bq[0] - a[0]) * pr.y, a[1] + (bq[1] - a[1]) * pr.y)
+	if best_w > 0.0 and not _bridges.is_empty():
+		best_h = _ramp_to_bridge(s, x, best_h)
 	return Vector2(lerpf(base, best_h, best_w), best_w)
+
+
+static func _ramp_to_bridge(s: float, x: float, h: float) -> float:
+	## A road near a crossing ramps to its deck over RAMP m (so both approaches meet the deck).
+	for it in _grid.get(Vector2i(floori(s / CELL), floori(x / CELL)), []):
+		if it[0] != "bridge":
+			continue
+		var bd: Array = _bridges[it[1]]
+		var ds := _wrap(s - bd[0])
+		var dx: float = x - bd[1]
+		var lx: float = dx * bd[2] + ds * bd[3]
+		var lz: float = dx * bd[3] - ds * bd[2]
+		var ox := maxf(0.0, maxf(bd[4] - lx, lx - bd[6]))
+		var oz := maxf(0.0, maxf(bd[5] - lz, lz - bd[7]))
+		var w := 1.0 - smoothstep(0.0, RAMP, Vector2(ox, oz).length())
+		if w > 0.0:
+			return lerpf(h, bd[8], w)
+	return h
 
 
 static func _pad_grade(s: float, x: float, h: float) -> float:
@@ -283,12 +305,14 @@ static func _pad_grade(s: float, x: float, h: float) -> float:
 
 static func _load_pads() -> void:
 	## Every placed structure's lot (its visual bounds, turned by its yaw) and pad height (the height
-	## RemakeWorld stands it at).  Crossings have no pad (a bridge spans its water).
+	## RemakeWorld stands it at).  Crossings have no pad (a bridge spans its water): their deck
+	## height instead, which the roads ramp to.
 	if not FileAccess.file_exists(PLACEMENT):
 		return
 	var pl: Array = JSON.parse_string(FileAccess.get_file_as_string(PLACEMENT)).structures
 	for e in pl:
 		if e.kind == "crossing":
+			_load_bridge(e)
 			continue
 		var s0: float = e.s
 		var x0: float = e.x
@@ -309,8 +333,27 @@ static func _load_pads() -> void:
 		_index(["pad", _pads.size() - 1], s0 - reach, x0 - reach, s0 + reach, x0 + reach, PAD_MARGIN + PAD_BLEND)
 
 
+static func _load_bridge(e: Dictionary) -> void:
+	## A crossing's deck: the higher of its two road ends (the road runs along its local z), before
+	## any ramping -- the lower approach then ramps up to it.
+	var s0: float = e.s
+	var x0: float = e.x
+	var c := cos(float(e.yaw))
+	var sn := sin(float(e.yaw))
+	var lx: float = (e.fmin[0] + e.fmax[0]) * 0.5
+	var deck := -1e9
+	for lz in [e.fmin[1] - 2.0, e.fmax[1] + 2.0]:
+		var ss: float = s0 + lx * sn - lz * c
+		var xx: float = x0 + lx * c + lz * sn
+		deck = maxf(deck, _road_grade(fposmod(ss, C), xx, base_elev(ss, xx)).x)
+	_bridges.append([s0, x0, c, sn, e.fmin[0], e.fmin[1], e.fmax[0], e.fmax[1], deck])
+	_pad_by_id[e.id] = deck
+	var reach := Vector2(maxf(absf(e.fmin[0]), absf(e.fmax[0])), maxf(absf(e.fmin[1]), absf(e.fmax[1]))).length()
+	_index(["bridge", _bridges.size() - 1], s0 - reach, x0 - reach, s0 + reach, x0 + reach, RAMP)
+
+
 static func pad_height(id: String) -> float:
-	## The height a placed structure stands at (its pad), or NAN when it has none (crossings).
+	## The height a placed structure stands at (its pad, or a crossing's deck).
 	_load()
 	return _pad_by_id.get(id, NAN)
 

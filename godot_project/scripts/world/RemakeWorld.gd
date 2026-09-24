@@ -5,9 +5,9 @@ class_name RemakeWorld
 ## remake/tools/placement.py) on the ring floor.
 ##
 ## Each structure stands at its map position (s, x), turned by its yaw about the floor's up so
-## its front faces its street (StationGeo convention), at the HIGHEST ground under its massing
-## footprint (fmin/fmax) -- its foundations reach 4 m down, so on a slope they meet the lower
-## ground instead of the building floating or burying its ground floor.  Drawing goes through
+## its front faces its street (StationGeo convention), on its pad -- MapTerrain levels its lot to
+## the graded ground at its front edge -- or, for a crossing, at its deck height, which the roads
+## ramp to.  Its foundations reach 4 m down.  Drawing goes through
 ## RemakeLodClusters (full detail near, LOD1, LOD2/LOD3 merged per cell beyond).
 ##
 ## build(root, settlements) -- a coroutine (a building per frame); settlements: names to place (the inventory's),
@@ -26,21 +26,10 @@ static func build(root: Node3D, settlements: Array) -> Dictionary:
 		var x: float = e.x
 		var yaw: float = e.yaw
 		var basis := StationGeo.basis(s, yaw)
-		# its pad (MapTerrain levels the lot to it); a crossing, which has none: the highest ground
-		# under its footprint -- corners, edge midpoints and centre
+		# its pad (MapTerrain levels the lot to it) or, for a crossing, its deck (the roads ramp to it)
 		var h := MapTerrain.pad_height(e.id)
-		if not is_nan(h):
-			entries.append(_entry(e, s, x, basis, h))
-			continue
-		h = -1e9
-		var c := cos(yaw)
-		var sn := sin(yaw)
-		for lx in [e.fmin[0], (e.fmin[0] + e.fmax[0]) * 0.5, e.fmax[0]]:
-			for lz in [e.fmin[1], (e.fmin[1] + e.fmax[1]) * 0.5, e.fmax[1]]:
-				# local (lx, lz) -> map offsets: local +x turns to (x: cos, s: sin), local +z to (x: sin, s: -cos)
-				var dx: float = lx * c + lz * sn
-				var ds: float = lx * sn - lz * c
-				h = maxf(h, MapTerrain.elevation(s + ds, x + dx))
+		if is_nan(h):
+			h = MapTerrain.elevation(s, x)
 		entries.append(_entry(e, s, x, basis, h))
 	var t0 := Time.get_ticks_msec()
 	var info: Dictionary = await RemakeLodClusters.build(root, entries, false)      # full detail streams (RemakeDetailStreamer)
