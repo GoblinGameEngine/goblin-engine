@@ -25,23 +25,27 @@ from common import INVENTORY
 
 
 def inventory_parts(rid):
-    """The record's extra inventory footprints (e.g. an elevator's bin annexes), in building-local
-    coordinates: local +y faces the front edge, local x runs along s.  Placement puts the glb origin
-    at the structure's (s, x) and turns local +y toward front_edge, so a part at (s + ds, x + dx) on
-    the map is at local (ds, dx) rotated by -angle_deg."""
+    """The record's extra inventory footprints (e.g. an elevator's bin annexes) in building-local
+    coordinates, matching remake/tools/placement.py: the building's front (local +y) points along
+    f = unit vector from the structure's (x, s) to the midpoint of front_edge, and its right (local
+    +x) is r = (x: fs, s: -fx).  So a map offset (dx, ds) is local x = dx*fs - ds*fx, local
+    y = dx*fx + ds*fs.  (front_edge points are (s, x).)"""
     try:
         with open(INVENTORY) as f:
             inv = json.load(f)
     except OSError:
         return []
     st = next((s for s in inv.get("structures", []) if s["id"] == rid), None)
-    if not st or not st.get("parts"):
+    if not st or not st.get("parts") or not st.get("front_edge"):
         return []
-    a = -math.radians(st.get("angle_deg") or 0.0)
+    (s0, x0), (s1, x1) = st["front_edge"]
+    fs, fx = (s0 + s1) / 2 - st["s"], (x0 + x1) / 2 - st["x"]
+    n = math.hypot(fs, fx) or 1.0
+    fs, fx = fs / n, fx / n
     out = []
     for pt in st["parts"]:
         ds, dx = pt["s"] - st["s"], pt["x"] - st["x"]
-        out.append((ds * math.cos(a) - dx * math.sin(a), ds * math.sin(a) + dx * math.cos(a), pt["w"], pt["d"]))
+        out.append((dx * fs - ds * fx, dx * fx + ds * fs, pt["w"], pt["d"]))
     return out
 
 TE = 0.35
