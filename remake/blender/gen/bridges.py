@@ -116,7 +116,8 @@ def build(rec):
     b.mat("black", color=(0.04, 0.04, 0.04), rough=0.5)
     b.mat("timber", tex="ties", tile_m=2.6)
     btype = tr.get("bridge_type", "steel_stringer")
-    spans = int(clamp(tr.get("spans") or 1, 1, 14))
+    # model_spans: the record asks for only part of a longer example to be modelled
+    spans = int(clamp(tr.get("model_spans") or tr.get("spans") or 1, 1, 14))
     span_each = ft(tr.get("span_ft") or 40)
     total = inv.get("span_m") or span_each * spans
     total = clamp(total, 3.0, 120.0)
@@ -144,7 +145,7 @@ def build(rec):
                 p.box((x - 0.15, y - 0.15, bed - 1.0), (x + 0.15, y + 0.15, -0.35), "timber")
             p.box((-2.0, y - 0.2, -0.6), (2.0, y + 0.2, -0.3), "timber")
         else:
-            p.box((-width / 2 - 0.3, y - 0.6, deep), (width / 2 + 0.3, y + 0.6, -0.35), "concrete_old")
+            p.box((-width / 2 - 0.3, y - 0.6, deep), (width / 2 + 0.3, y + 0.6, -0.35), "ashlar" if btype == "stone_arch" else "concrete_old")
     # the structure
     if btype in ("through_truss_pratt", "through_truss_parker", "camelback"):
         h = clamp(ft(tr.get("height_ft") or 22), 5.5, 9.0)
@@ -176,9 +177,16 @@ def build(rec):
             railing(b, L, width, tr.get("railing") or ("concrete_balustrade" if btype.startswith("concrete") else "guardrail"))
     elif btype in ("stone_arch", "concrete_arch"):
         rise = clamp(span_each / 2, 1.2, 12.0)
-        gbr.arch_barrel(b, span_each, 0.0, width + 1.0, bed if rise < -bed else -rise - 0.9,
-                        ring_mat="ashlar" if btype == "stone_arch" else "concrete_old",
-                        face_mat="ashlar" if btype == "stone_arch" else "concrete_old", name="arch")
+        # one barrel per span (arch_barrel builds it centred on y = 0: shift each to its span)
+        for k in range(spans):
+            gbr.arch_barrel(b, span_each, 0.0, width + 1.0, bed if rise < -bed else -rise - 0.9,
+                            ring_mat="ashlar" if btype == "stone_arch" else "concrete_old",
+                            face_mat="ashlar" if btype == "stone_arch" else "concrete_old", name=f"arch{k}")
+            yc = -L / 2 + (k + 0.5) * span_each
+            for part in (f"arch{k}-col", f"arch{k}_face-col"):
+                if part in b.objs:
+                    for v in b.part(part).bm.verts:
+                        v.co.y += yc
         deck(b, L, width, mat="asphalt" if not is_rail else "ballast")
         railing(b, L, width, tr.get("railing") or "open_parapet")
         if is_rail:
