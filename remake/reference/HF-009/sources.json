@@ -1,0 +1,41 @@
+{
+ "structure": "HF-009",
+ "files": [
+  {
+   "file": "loc_in0027_photos_064687pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0027/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0027/photos/064687pv.jpg",
+   "title": "Frevart-Schnaitter House, 740 West Main Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0027_photos_064688pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0027/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0027/photos/064688pv.jpg",
+   "title": "Frevart-Schnaitter House, 740 West Main Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0027_data_in0027data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0027/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0027/data/in0027data.pdf",
+   "title": "Frevart-Schnaitter House, 740 West Main Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0027_file_in0027supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0027/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0027/supp/in0027supp.pdf",
+   "title": "Frevart-Schnaitter House, 740 West Main Street, Madison, Jefferson County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

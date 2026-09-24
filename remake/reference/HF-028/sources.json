@@ -1,0 +1,50 @@
+{
+ "structure": "HF-028",
+ "files": [
+  {
+   "file": "loc_il0189_photos_062260pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0189/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0189/photos/062260pv.jpg",
+   "title": "Specht House, Galena, Jo Daviess County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0189_photos_062261pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0189/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0189/photos/062261pv.jpg",
+   "title": "Specht House, Galena, Jo Daviess County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0189_photos_062262pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0189/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0100/il0189/photos/062262pv.jpg",
+   "title": "Specht House, Galena, Jo Daviess County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0189_data_il0189data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0189/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0189/data/il0189data.pdf",
+   "title": "Specht House, Galena, Jo Daviess County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0189_file_il0189supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0189/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0100/il0189/supp/il0189supp.pdf",
+   "title": "Specht House, Galena, Jo Daviess County, IL",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

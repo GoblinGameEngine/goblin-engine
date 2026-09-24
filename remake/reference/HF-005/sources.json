@@ -1,0 +1,77 @@
+{
+ "structure": "HF-005",
+ "files": [
+  {
+   "file": "loc_in0035_color_572116cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0035/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0035/color/572116cv.jpg",
+   "title": "St. Michael's Catholic Church, 519 East Third Street, Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0035_photos_064865pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0035/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0035/photos/064865pv.jpg",
+   "title": "St. Michael's Catholic Church, 519 East Third Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0035_photos_064866pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0035/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0035/photos/064866pv.jpg",
+   "title": "St. Michael's Catholic Church, 519 East Third Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0035_photos_064867pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0035/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0035/photos/064867pv.jpg",
+   "title": "St. Michael's Catholic Church, 519 East Third Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0035_photos_064868pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0035/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0035/photos/064868pv.jpg",
+   "title": "St. Michael's Catholic Church, 519 East Third Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0035_photos_064869pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0035/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0035/photos/064869pv.jpg",
+   "title": "St. Michael's Catholic Church, 519 East Third Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0035_data_in0035data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0035/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0035/data/in0035data.pdf",
+   "title": "St. Michael's Catholic Church, 519 East Third Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0035_data_in0035cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0035/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0035/data/in0035cap.pdf",
+   "title": "St. Michael's Catholic Church, 519 East Third Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "structure": "HF-004",
+ "files": [
+  {
+   "file": "loc_oh0090_photos_127638pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0090/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0000/oh0090/photos/127638pv.jpg",
+   "title": "Norwood City Hall, Montgomery & Elm, Norwood, Hamilton County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0090_photos_127639pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0090/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0000/oh0090/photos/127639pv.jpg",
+   "title": "Norwood City Hall, Montgomery & Elm, Norwood, Hamilton County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0090_photos_127640pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0090/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/oh/oh0000/oh0090/photos/127640pv.jpg",
+   "title": "Norwood City Hall, Montgomery & Elm, Norwood, Hamilton County, OH",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0090_data_oh0090data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0090/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0000/oh0090/data/oh0090data.pdf",
+   "title": "Norwood City Hall, Montgomery & Elm, Norwood, Hamilton County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_oh0090_data_oh0090cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/oh0090/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/oh/oh0000/oh0090/data/oh0090cap.pdf",
+   "title": "Norwood City Hall, Montgomery & Elm, Norwood, Hamilton County, OH",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

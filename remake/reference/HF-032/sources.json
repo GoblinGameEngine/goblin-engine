@@ -1,0 +1,41 @@
+{
+ "structure": "HF-032",
+ "files": [
+  {
+   "file": "loc_il0473_photos_063445pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0473/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0400/il0473/photos/063445pv.jpg",
+   "title": "865 Rodgers Street (House), Barry, Pike County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0473_photos_063446pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0473/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0400/il0473/photos/063446pv.jpg",
+   "title": "865 Rodgers Street (House), Barry, Pike County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0473_data_il0473data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0473/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0473/data/il0473data.pdf",
+   "title": "865 Rodgers Street (House), Barry, Pike County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0473_data_il0473cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0473/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0473/data/il0473cap.pdf",
+   "title": "865 Rodgers Street (House), Barry, Pike County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "structure": "HF-012",
+ "files": [
+  {
+   "file": "loc_in0018_color_571163cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0018/color/571163cv.jpg",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0018_color_571164cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0018/color/571164cv.jpg",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0018_color_571165cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0018/color/571165cv.jpg",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0018_photos_064740pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0018/photos/064740pv.jpg",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0018_photos_064741pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0018/photos/064741pv.jpg",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0018_photos_064742pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0018/photos/064742pv.jpg",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0018_photos_064743pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0018/photos/064743pv.jpg",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0018_data_in0018data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0018/data/in0018data.pdf",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0018_data_in0018cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0018/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0018/data/in0018cap.pdf",
+   "title": "Colby-Jeffery House, 302 Elm Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

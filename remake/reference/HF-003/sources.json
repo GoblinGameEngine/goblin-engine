@@ -1,0 +1,95 @@
+{
+ "structure": "HF-003",
+ "files": [
+  {
+   "file": "loc_in0120_photos_064618pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0120/photos/064618pv.jpg",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_photos_064619pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0120/photos/064619pv.jpg",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_photos_064620pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0120/photos/064620pv.jpg",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_photos_064621pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0120/photos/064621pv.jpg",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_photos_064622pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0100/in0120/photos/064622pv.jpg",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0120/sheet/00001a.tif",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0120/sheet/00002a.tif",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_data_in0120data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0120/data/in0120data.pdf",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_data_in0120cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0120/data/in0120cap.pdf",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0120_file_in0120supp.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0120/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0100/in0120/supp/in0120supp.pdf",
+   "title": "Cerealine Manufacturing Company, Mill A, Jackson & Brown Streets, Columbus, Bartholomew County, IN",
+   "kind": "file",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

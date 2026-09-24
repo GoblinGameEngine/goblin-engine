@@ -1,0 +1,41 @@
+{
+ "structure": "HF-031",
+ "files": [
+  {
+   "file": "loc_il0470_photos_063447pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0470/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0400/il0470/photos/063447pv.jpg",
+   "title": "809 Rodgers Street (House), Barry, Pike County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0470_photos_063448pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0470/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/il/il0400/il0470/photos/063448pv.jpg",
+   "title": "809 Rodgers Street (House), Barry, Pike County, IL",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0470_data_il0470data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0470/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0470/data/il0470data.pdf",
+   "title": "809 Rodgers Street (House), Barry, Pike County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_il0470_data_il0470cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/il0470/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/il/il0400/il0470/data/il0470cap.pdf",
+   "title": "809 Rodgers Street (House), Barry, Pike County, IL",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}

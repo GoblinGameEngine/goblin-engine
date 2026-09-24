@@ -1,0 +1,77 @@
+{
+ "structure": "HF-011",
+ "files": [
+  {
+   "file": "loc_in0023_color_571515cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0023/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0023/color/571515cv.jpg",
+   "title": "John Eckert House, 510 West Second Street, Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0023_color_571516cv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0023/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0023/color/571516cv.jpg",
+   "title": "John Eckert House, 510 West Second Street, Madison, Jefferson County, IN",
+   "kind": "color",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0023_photos_064699pv.jpg",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0023/",
+   "url": "https://tile.loc.gov/storage-services/service/pnp/habshaer/in/in0000/in0023/photos/064699pv.jpg",
+   "title": "John Eckert House, 510 West Second Street, Madison, Jefferson County, IN",
+   "kind": "photos",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0023_sheet_00001a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0023/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0023/sheet/00001a.tif",
+   "title": "John Eckert House, 510 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0023_sheet_00002a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0023/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0023/sheet/00002a.tif",
+   "title": "John Eckert House, 510 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0023_sheet_00003a.png",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0023/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0023/sheet/00003a.tif",
+   "title": "John Eckert House, 510 West Second Street, Madison, Jefferson County, IN",
+   "kind": "drawing",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0023_data_in0023data.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0023/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0023/data/in0023data.pdf",
+   "title": "John Eckert House, 510 West Second Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  },
+  {
+   "file": "loc_in0023_data_in0023cap.pdf",
+   "source": "Library of Congress HABS/HAER",
+   "record": "https://www.loc.gov/item/in0023/",
+   "url": "https://tile.loc.gov/storage-services/master/pnp/habshaer/in/in0000/in0023/data/in0023cap.pdf",
+   "title": "John Eckert House, 510 West Second Street, Madison, Jefferson County, IN",
+   "kind": "data",
+   "license": "Public domain (US government work; no known restrictions)"
+  }
+ ]
+}
