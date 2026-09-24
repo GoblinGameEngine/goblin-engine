@@ -303,16 +303,29 @@ def build_barn(rec, tr, rnd):
     # an open lean-to shed along one side (clear of the side doors and the bank ramp)
     lt = tr.get("lean_to")
     if lt:
-        side = LEAN_SIDE.get(str(lt).lower(), "+x")
-        if side == "-y" and typ == "bank_barn":
-            side = "+x"
-        if side == "+x":
-            span = (y0 + D * 0.3 + 1.0, y1 - 0.3)
-        elif side == "-x":
-            span = (y0 + 0.3, y1 - D * 0.3 - 1.0)
-        else:
-            span = (min(3.2, W * 0.3) / 2 + 0.6, x1 - 0.3)
-        lean_to(b, side, span, x0, x1, y0, y1, h_in=min(3.0, wall_top - 0.3))
+        sides = ["+x", "-x"] if "both" in str(lt).lower() else [LEAN_SIDE.get(str(lt).lower(), "+x")]
+        for side in sides:
+            if side == "-y" and typ == "bank_barn":
+                side = "+x"
+            if side == "+x":
+                span = (y0 + D * 0.3 + 1.0, y1 - 0.3)
+            elif side == "-x":
+                span = (y0 + 0.3, y1 - D * 0.3 - 1.0)
+            else:
+                span = (min(3.2, W * 0.3) / 2 + 0.6, x1 - 0.3)
+            lean_to(b, side, span, x0, x1, y0, y1, h_in=min(3.0, wall_top - 0.3))
+    # a grain-elevator tower rising through the roof near one end (built from the wall top up, so
+    # the barn's floors and the lean-tos below stay clear)
+    if tr.get("elevator_tower") and typ != "pole_barn":
+        half = (D if ridge == "x" else W) / 2
+        rz = wall_top + ridge_height(half, 25 if gambrel else pitch, gambrel)
+        ts = 3.4
+        ex, ey = (x1 - ts / 2 - 1.0, 0.0) if ridge == "x" else (0.0, y0 + ts / 2 + 1.0)
+        et = b.part("elevator_tower")
+        et.box((ex - ts / 2, ey - ts / 2, wall_top - 0.5), (ex + ts / 2, ey + ts / 2, rz + 4.0), "ext")
+        et.box((ex - 0.5, ey + ts / 2 + 0.01, rz + 1.2), (ex + 0.5, ey + ts / 2 + 0.05, rz + 3.2), "wood")      # hinged plank door
+        gh.hip_roof(et, ex - ts / 2 - 0.25, ex + ts / 2 + 0.25, ey - ts / 2 - 0.25, ey + ts / 2 + 0.25, rz + 4.0, 45, 0.25, 0.1,
+                    "roof", "trim", "trim")
     # the farm name on the front gable
     sign = (names.get("sign") or names.get("family") or "").upper()
     if sign:
@@ -417,6 +430,7 @@ def build_shed(rec, tr, rnd):
     H = clamp(ft(tr.get("height_ft") or 16), 3.2, 7.0)
     x0, x1, y0, y1 = -W / 2, W / 2, -D / 2, D / 2
     FL = 0.05
+    drive = False
     if typ == "quonset":
         p = b.part("quonset-col")
         r = W / 2
@@ -447,7 +461,8 @@ def build_shed(rec, tr, rnd):
             leaf.rot_z = 0.0 if s < 0 else math.pi
         fz = FL
     else:
-        open_front = typ == "pole_shed"
+        open_front = typ == "pole_shed" or bool(tr.get("open_front"))
+        drive = bool(tr.get("drive_through")) and not open_front
         doors = []
         if not open_front:
             nb = max(1, int(W / 5.0))
@@ -464,6 +479,12 @@ def build_shed(rec, tr, rnd):
                     rooms=[dict(name="SHED", rect=(x0, y0, x1, y1), type=None, no_furnish=True)], doors=doors,
                     windows=[dict(at=(x0, 0.0), w=0.8, sill=1.3, h=0.6, kind="dh", cols=2)] if typ != "corn_crib" else [],
                     stairs=[], rails=[], porches=[], chimneys=[], fireplaces=[])
+        if drive:
+            # a drive-through crib / granary: an open wagon alley straight through, front to back
+            dw = min(3.6, W * 0.4)
+            spec["doors"] = [dict(name="drive_f", at=(0.0, y1), w=dw, h=min(3.6, H - 0.3), ext=True, cased=True),
+                             dict(name="drive_b", at=(0.0, y0), w=dw, h=min(3.6, H - 0.3), ext=True, cased=True),
+                             spec["doors"][-1]]
         if open_front:
             # an open-fronted pole shed: wide cased bays across the front, posts between them
             nb = max(2, int(W / 4.0))
@@ -472,8 +493,11 @@ def build_shed(rec, tr, rnd):
         gh.House(b, spec).build()
         fz = FL
     p = b.part("shed_fittings-col")
-    tractor(p, (x0 + W * 0.3, 0.0, fz), 180)
-    wagon(p, (x0 + W * 0.72, -0.5, fz), 180)
+    if typ != "quonset" and drive:
+        tractor(p, (x0 + min(1.3, W * 0.15), 0.0, fz), 90)             # parked beside the alley, which stays clear
+    else:
+        tractor(p, (x0 + W * 0.3, 0.0, fz), 180)
+        wagon(p, (x0 + W * 0.72, -0.5, fz), 180)
     b.empty("light_shed", (0.0, 0.0, H - 0.6))
     return b
 
