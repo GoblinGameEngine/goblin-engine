@@ -359,18 +359,29 @@ def exterior(b, rec, tr, names, rect, floors, wall_top, flat, style, lot_d, rnd,
     portico = style in ("classical_revival", "beaux_arts", "greek_revival")
     # front steps up to the entrance: they start at the portico's front edge (its floor is the landing)
     y_st = y1 + (1.9 if portico else 0.0)
+    hw = clamp((x1 - x0) * 0.45, 6.0, 18.0) / 2 - 0.3 if portico else 2.2    # steps as wide as the portico
     nst = max(1, round(FL / 0.17))
     for k in range(nst):
         z = FL - k * FL / nst
-        p.box((-2.2 - k * 0.1, y_st + k * 0.32, 0.0), (2.2 + k * 0.1, y_st + (k + 1) * 0.32, z), "stone")
+        p.box((-hw - k * 0.1, y_st + k * 0.32, 0.0), (hw + k * 0.1, y_st + (k + 1) * 0.32, z), "stone")
     # classical portico: columns + pediment over the entrance
     if portico:
+        # scaled to the front: a temple front / giant colonnade on the big civic buildings the
+        # records describe (courthouse, city hall), not a porch-sized one on every building
         top = floors[-1][1] if len(floors) > 1 else floors[0][1] + 0.3
-        for cx in (-2.4, -0.8, 0.8, 2.4):
-            g.column(p, cx, y1 + 1.4, FL, top, 0.28, "stone")
-        p.box((-3.0, y1, top), (3.0, y1 + 1.9, top + 0.6), "stone")
-        p.face([(-3.1, y1 + 1.9, top + 0.6), (3.1, y1 + 1.9, top + 0.6), (0.0, y1 + 1.9, top + 1.8)], "stone")
-        p.box((-2.9, y1, 0.0), (2.9, y1 + 1.9, FL), "stone")              # the portico's plinth (landing)
+        pw = clamp((x1 - x0) * 0.45, 6.0, 18.0)
+        ncol = 6 if pw > 11.0 else 4
+        cr = clamp(pw / 40.0, 0.28, 0.42)
+        for i in range(ncol):
+            g.column(p, -pw / 2 + 0.6 + (pw - 1.2) * i / (ncol - 1), y1 + 1.4, FL, top, cr, "stone")
+        ph = clamp(pw * 0.12, 1.2, 2.6)                                    # pediment height
+        p.box((-pw / 2, y1, top), (pw / 2, y1 + 1.9, top + 0.6), "stone")
+        p.face([(-pw / 2 - 0.1, y1 + 1.9, top + 0.6), (pw / 2 + 0.1, y1 + 1.9, top + 0.6), (0.0, y1 + 1.9, top + 0.6 + ph)], "stone")
+        p.face([(pw / 2 + 0.1, y1, top + 0.6), (-pw / 2 - 0.1, y1, top + 0.6), (0.0, y1, top + 0.6 + ph)], "stone")
+        for s in (-1, 1):                                                  # pediment roof slopes
+            p.face([(0.0, y1, top + 0.6 + ph), (0.0, y1 + 1.9, top + 0.6 + ph), (s * (pw / 2 + 0.1), y1 + 1.9, top + 0.6),
+                    (s * (pw / 2 + 0.1), y1, top + 0.6)][::s], "stone")
+        p.box((-pw / 2 + 0.1, y1, 0.0), (pw / 2 - 0.1, y1 + 1.9, FL), "stone")  # the portico's plinth (landing)
     elif style == "romanesque":
         p.box((-2.2, y1, FL), (-1.6, y1 + 0.5, FL + 3.4), "stone")
         p.box((1.6, y1, FL), (2.2, y1 + 0.5, FL + 3.4), "stone")
