@@ -79,8 +79,39 @@ var _skip_next_mouse_delta := true
 # junction) don't prematurely end swim state when only one is exited.
 var _water_volumes: Array[Area3D] = []
 
+# Vehicles (remake/scripts/vehicles/air_vehicle.gd). Seated: the vehicle
+# places the body each tick, the mouse turns only the head, E stands up.
+# Standing in a cabin: the vehicle sets carrier_velocity (its own motion at
+# this point) every tick, added on top of walking, and sheltered (a cabin
+# keeps a cloud's "water" out).
+var carrier_velocity := Vector3.ZERO
+var sheltered := false
+var _vehicle: Node = null
+var _last_carrier := Vector3.ZERO
+const SEATED_YAW_LIMIT := 1.9
+
+func sit_in(vehicle: Node) -> void:
+	_vehicle = vehicle
+	$CollisionShape3D.disabled = true
+	weapon_mount.visible = false            # hands on the controls
+	velocity = Vector3.ZERO
+	carrier_velocity = Vector3.ZERO
+	head.rotation.y = 0.0
+
+func stand_up(at: Vector3, basis_: Basis) -> void:
+	_vehicle = null
+	global_transform = Transform3D(basis_, at)
+	$CollisionShape3D.disabled = false
+	weapon_mount.visible = true
+	head.rotation.y = 0.0
+	velocity = Vector3.ZERO
+	_prev_up_valid = false
+
+func is_seated() -> bool:
+	return _vehicle != null
+
 func is_swimming() -> bool:
-	return not _water_volumes.is_empty()
+	return not _water_volumes.is_empty() and not sheltered and _vehicle == null
 
 ## WaterVolume.gd's own contract -- called via has_method(), not a typed
 ## signal connection, so any body (not just this class) can opt in.
@@ -128,14 +159,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			# walk. Rotating explicitly around the body's own current up
 			# (already expressed in the same space as global_transform)
 			# fixes both.
-			global_transform.basis = global_transform.basis.rotated(global_transform.basis.y, -event.relative.x * sens)
-			head.rotate_x(-event.relative.y * sens)
-			head.rotation.x = clamp(head.rotation.x, -PITCH_LIMIT, PITCH_LIMIT)
+			if _vehicle:
+				# seated: look round the cabin without turning the body in the seat
+				head.rotation.y = clamp(head.rotation.y - event.relative.x * sens, -SEATED_YAW_LIMIT, SEATED_YAW_LIMIT)
+				head.rotation.x = clamp(head.rotation.x - event.relative.y * sens, -PITCH_LIMIT, PITCH_LIMIT)
+			else:
+				global_transform.basis = global_transform.basis.rotated(global_transform.basis.y, -event.relative.x * sens)
+				head.rotate_x(-event.relative.y * sens)
+				head.rotation.x = clamp(head.rotation.x, -PITCH_LIMIT, PITCH_LIMIT)
 
 	if MapEditorUI.active:
 		return
 
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and _vehicle == null:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			WeaponManager.try_use_equipped()
 		else:
@@ -150,7 +186,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			WeaponManager.equip(WeaponManager.owned[i - 1])
 
 	if event.is_action_pressed("interact"):
-		_try_interact()
+		if _vehicle:
+			_vehicle.leave_seat()
+		else:
+			_try_interact()
 
 const INTERACT_RANGE := 3.5
 
@@ -179,6 +218,8 @@ func _radial_vector() -> Vector3:
 	return rel - axis * rel.dot(axis)
 
 func _physics_process(delta: float) -> void:
+	if _vehicle:
+		return                      # the vehicle places us on the seat
 	var radial := _radial_vector()
 	var radial_len := radial.length()
 	var degenerate := radial_len < 0.001
@@ -201,7 +242,7 @@ func _physics_process(delta: float) -> void:
 		global_transform.basis = global_transform.basis.orthonormalized()
 	_prev_up = up
 
-	var up_speed := velocity.dot(up)
+	var up_speed := (velocity - _last_carrier).dot(up)
 	var swimming := is_swimming()
 	if swimming:
 		# Neutrally buoyant -- no gravity pull, and explicitly no current/
@@ -236,11 +277,18 @@ func _physics_process(delta: float) -> void:
 		move_dir = move_dir.normalized()
 
 	var speed := SWIM_SPEED if swimming else (SPRINT_SPEED if Input.is_action_pressed("sprint") else WALK_SPEED)
-	velocity = up * up_speed + move_dir * speed
+	velocity = up * up_speed + move_dir * speed + carrier_velocity
+	# a cabin carries us itself (carrier_velocity); the engine's own platform velocity would double it
+	platform_floor_layers = 0 if carrier_velocity != Vector3.ZERO else 0xFFFFFFFF
+	_last_carrier = carrier_velocity
 	move_and_slide()
 
 func _on_died(_attacker: Node) -> void:
 	print("StationPlayer died -- respawning.")
+	if _vehicle:
+		_vehicle.leave_seat()
+	carrier_velocity = Vector3.ZERO
+	sheltered = false
 	global_transform = spawn_transform
 	velocity = Vector3.ZERO
 	_water_volumes.clear()  # a mid-swim death would otherwise respawn the player still "swimming" on dry land

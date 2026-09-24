@@ -145,7 +145,8 @@ def screen_texture():
 M = {
     "white": mat("body_white", (0.86, 0.87, 0.89), rough=0.3),
     "blue": mat("body_blue", (0.16, 0.24, 0.42), rough=0.35),
-    "silver": mat("silver", (0.78, 0.79, 0.81), rough=0.22, metal=1.0),
+    # satin, not mirror: the station has no sky for a full metal to reflect, and renders it black
+    "silver": mat("silver", (0.8, 0.81, 0.83), rough=0.3, metal=0.35),
     "glass": mat("glass", (0.03, 0.05, 0.07), rough=0.05, alpha=0.32),
     "seat": mat("seat_leather", (0.03, 0.03, 0.035), rough=0.55),
     "floor": mat("floor", (0.18, 0.19, 0.2), rough=0.8),
@@ -153,9 +154,9 @@ M = {
     "dark": mat("dark_trim", (0.05, 0.055, 0.06), rough=0.45),
     "screen": mat("screen", (0.02, 0.02, 0.02), rough=0.2, emit=screen_texture(), emit_strength=1.6),
     "fabric": mat("balloon_fabric", (1, 1, 1), rough=0.7, tex=fabric_texture()),
-    "cable": mat("cable", (0.2, 0.21, 0.22), rough=0.4, metal=0.6),
+    "cable": mat("cable", (0.2, 0.21, 0.22), rough=0.4, metal=0.3),
     "rubber": mat("rubber", (0.02, 0.02, 0.02), rough=0.8),
-    "fan": mat("fan_metal", (0.5, 0.52, 0.55), rough=0.38, metal=1.0),
+    "fan": mat("fan_metal", (0.58, 0.6, 0.63), rough=0.4, metal=0.35),
     "lamp": mat("cabin_lamp", (0.9, 0.9, 0.85), rough=0.3, emit=image("lamp", 4, 4, np.ones((4, 4, 4))), emit_strength=2.0),
     "liner": mat("liner", (0.62, 0.63, 0.65), rough=0.6),
 }
@@ -342,6 +343,12 @@ for right in (True, False):
     trim.box((lo_x, -DOOR_HW, WIN_TOP - 0.04), (hi_x, DOOR_HW, WIN_TOP + 0.02), "silver")                  # head
     s_lo, s_hi = sorted([sx * 0.88, sx * (xo + 0.02)])
     trim.box((s_lo, -DOOR_HW, FLOOR - 0.03), (s_hi, DOOR_HW, FLOOR + 0.005), "silver")                     # step plate
+    # a boarding step outside the doorway, on two brackets (the game walks it as a ramp)
+    p_lo, p_hi = sorted([sx * (xo - 0.02), sx * (xo + 0.34)])
+    trim.box((p_lo, -0.5, 0.15), (p_hi, 0.5, 0.19), "silver")
+    for by in (-0.4, 0.4):
+        trim.box((min(sx * (xo - 0.02), sx * (xo + 0.06)), by - 0.02, 0.15),
+                 (max(sx * (xo - 0.02), sx * (xo + 0.06)), by + 0.02, FLOOR - 0.02), "silver")
     # the track the leaves hang from, running back into both pockets
     t_lo, t_hi = sorted([sx * (LEAF_X - 0.05), sx * (LEAF_X + 0.05)])
     trim.box((t_lo, -1.24, WIN_TOP + 0.02), (t_hi, 1.24, WIN_TOP + 0.06), "dark")
