@@ -267,10 +267,13 @@ def plan_attic(spec, W, D, x0, y0, fl, ridge, rnd, mirror):
                   dict(name="HALL2", floor=1, rect=(hx0, y0, hx1, y1), type=None),
                   dict(name="BR2", floor=1, rect=(x0, y0, hx0, y1), type="bed"),
                   dict(name="BR3", floor=1, rect=(hx1, y0, x1, y1), type="bed")]
-        doors += [dict(name="hall_lr", at=(hx0, (ym + y1) / 2), w=1.2, cased=True),
-                  dict(name="hall_kit", at=(hx0, (y0 + ym) / 2), w=0.85, swing_into="KIT"),
-                  dict(name="br1", at=(hx1, (yb + y1) / 2), w=0.8, swing_into="BR1"),
-                  dict(name="bath", at=(hx1, (y0 + yb) / 2), w=0.75, swing_into="BATH"),
+        # ground-floor doors on the flight's side open off the clear bands in front of its foot and
+        # behind its top end; the other side's open off the corridor
+        y_foot, y_end = start_y + 0.5, (y0 + TE + start_y - L) / 2
+        doors += [dict(name="hall_lr", at=(hx0, y_foot if not mirror else (ym + y1) / 2), w=0.9 if not mirror else 1.2, cased=True),
+                  dict(name="hall_kit", at=(hx0, y_end if not mirror else (y0 + ym) / 2), w=0.85, swing_into="KIT"),
+                  dict(name="br1", at=(hx1, y_foot if mirror else (yb + y1) / 2), w=0.8, swing_into="BR1"),
+                  dict(name="bath", at=(hx1, y_end if mirror else (y0 + yb) / 2), w=0.75, swing_into="BATH"),
                   # the room on the flight's side opens off the head landing (the well fills the hall beside it)
                   dict(name="br2", floor=1, at=(hx0, start_y - L - 0.45 if not mirror else y0 + D * 0.3), w=0.75, h=adh,
                        swing_into="BR2"),
@@ -386,7 +389,7 @@ def plan_one_storey(spec, W, D, x0, y0, rnd, tr, mirror):
               dict(name="BR2", rect=(ra[0], y0, ra[1], yb0), type="bed")]
     if hall_y0 > y0:
         rooms.append(dict(name="CL", rect=(ha[0], y0, ha[1], hall_y0), type="closet"))
-        doors.append(dict(name="cl", at=((ha[0] + ha[1]) / 2, hall_y0), w=0.7, swing_into="HALL"))
+        doors.append(dict(name="cl", at=((ha[0] + ha[1]) / 2, hall_y0), w=0.7, swing_into="CL"))     # out of the narrow hall
     lx = la[1] if not mirror else la[0]
     rx = ra[0] if not mirror else ra[1]
     doors += [dict(name="lr_hall", at=(lx, y1 - 1.2), w=0.9, cased=True),
@@ -519,7 +522,7 @@ def _build(rec):
         if (W if ridge_ == "x" else D) < need:
             raise ValueError("footprint too small for a 1.5-storey attic stair")      # caller retries as 1 storey
         roof["ridge"] = ridge_
-        if rtype in ("gable", "gambrel"):
+        if rtype in ("gable", "gambrel", "hip"):
             # raise the knee wall until the slope clears a 1.9 m attic door's sweep (see attic_door_height)
             half = (D if ridge_ == "x" else W) / 2
             tp = math.tan(math.radians(roof["pitch"]))
