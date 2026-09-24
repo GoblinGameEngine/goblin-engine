@@ -212,10 +212,13 @@ def build_silo(rec, tr, rnd):
             p.face([P(a1, ri, zb), P(a0, ri, zb), P(a0, ri, h), P(a1, ri, h)], "silo_wall")
             if gap:
                 p.face([P(a1, ro, zb), P(a0, ro, zb), P(a0, ri, zb), P(a1, ri, zb)], "silo_wall")
-    # hoops (stave silos) and a domed / conical roof
+    # hoops (stave silos): open bands on a visual-only part.  Capped, each one was a solid disc
+    # across the silo in the collision mesh (the lowest ~0.3 m above the floor), sealing it off.
     if typ in ("concrete_stave", "wood_stave"):
+        hp = b.part("silo_hoops")
         for k in range(int(h / 0.8)):
-            p.cylinder((0.0, 0.0), r + 0.03, k * 0.8 + 0.4, k * 0.8 + 0.45, "steel", n=n)
+            hp.cylinder((0.0, 0.0), r + 0.03, k * 0.8 + 0.4, k * 0.8 + 0.45, "steel", n=n, caps=False)
+    # domed / conical roof
     for k in range(6):
         rr0 = r * math.cos(k / 6 * math.pi / 2)
         rr1 = r * math.cos((k + 1) / 6 * math.pi / 2)
