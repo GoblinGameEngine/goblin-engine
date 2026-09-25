@@ -48,6 +48,19 @@ def cat(c):
         print(m["title"])
 
 
+_groups = {}
+
+
+def resolve(t):
+    """"GROUP:n" -> the title of entry n of research/coastal_communities/cand/GROUP.json"""
+    if t.startswith(("File:", "Category:")) or ":" not in t:
+        return t
+    g, n = t.rsplit(":", 1)
+    if g not in _groups:
+        _groups[g] = json.load(open(os.path.join(HERE, "cand", g + ".json")))
+    return _groups[g][int(n)]["title"]
+
+
 def claimed():
     s = set()
     for p in [CLAIMS] + OTHER_CLAIMS:
@@ -62,12 +75,19 @@ def make(spec_path):
     taken = claimed()
     for r in json.load(open(spec_path)):
         sid = r["id"]
+        r["photos"] = [resolve(t) for t in r["photos"]]
+        if r.get("claim"):
+            base, _, pos = r["claim"].partition("#")
+            r["claim"] = resolve(base) + ("#" + pos if pos else "")
         claim = r.get("claim") or r["photos"][0]
         out = os.path.join(CAT, sid + ".json")
         if claim in taken and not os.path.exists(out):
             print(f"{sid}: REFUSED, {claim} already claimed")
             continue
         s = inv[sid]
+        if r.get("expect") and s["kind"] not in r["expect"]:
+            print(f"{sid}: REFUSED, inventory kind {s['kind']} is not one of {r['expect']}")
+            continue
         files = []
         for t in r["photos"]:
             try:
