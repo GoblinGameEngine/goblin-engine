@@ -1,0 +1,64 @@
+{
+ "id": "XBR-01",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "county",
+  "over": "Miami River",
+  "s": 1313.3,
+  "x": 833.1,
+  "water_span_m": 368.0,
+  "ends": [
+   [
+    1497.0,
+    822.8
+   ],
+   [
+    1129.5,
+    843.5
+   ]
+  ]
+ },
+ "example": {
+  "title": "Dumbarton Bridge (SR 84 over San Francisco Bay)",
+  "place": "Newark - Menlo Park, CA",
+  "year": 1982,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Dumbarton_Bridge_(31569132).jpg",
+  "photos": [
+   "commons_Dumbarton_Bridge_31569132_.jpg",
+   "commons_Dumbarton_Bridge_5167941_.jpg",
+   "commons_DumbartonBridgeCA_and_Towers.jpg",
+   "commons_Under_dumbarton_197036429_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "Lakeshore Rd over the Miami River where it enters Lake Tamsin's western basin. Modelled on the 1982 Dumbarton Bridge: a long, low, pale concrete box-girder causeway on paired column bents across the tidal flats, rising in a smooth hump to a high-level navigation span (104 m, 26 m clearance) and down again, 2.6 km overall, with a separated bike and pedestrian path behind a concrete barrier and tall single-arm street lights. Here: the low girder trestle crosses the marshy basin, humps to a 100 m span over the channel, and comes down again. Foundations: precast concrete piles 25 m below the modelled bed.",
+ "traits": {
+  "type": "girder_trestle",
+  "main_span_m": 100,
+  "towers": null,
+  "hump": true,
+  "approaches": {
+   "type": "concrete_box_girder_trestle",
+   "span_m": 38,
+   "piers": "paired_column_bent"
+  },
+  "clearance_m": 20,
+  "lanes": 2,
+  "shoulders": true,
+  "walkway": true,
+  "color": "#D9CFB8",
+  "year_built": 1982,
+  "foundations": {
+   "type": "precast_piles",
+   "depth_below_bed_m": 25
+  },
+  "lighting": "single_arm_poles"
+ },
+ "names": {
+  "name": "Lakeshore Road Bridge (Miami)",
+  "sign": "LAKESHORE RD"
+ }
+}

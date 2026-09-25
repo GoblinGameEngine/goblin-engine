@@ -1,0 +1,49 @@
+{
+ "structure": "XBR-08",
+ "files": [
+  {
+   "file": "commons_Veterans_Glass_City_Skyway.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Veterans%27_Glass_City_Skyway.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Veterans%27_Glass_City_Skyway.jpg/1920px-Veterans%27_Glass_City_Skyway.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Veterans' Glass City Skyway.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Sergaderg",
+   "caption": "The Veterans' Glass City Skyway and Robert Craig Memorial Bridge as viewed from the Col. James M. Schoonmaker museum ship.\nThree shots taken at 35mm, f/2.5, 1/4000sec, ISO100 and merged to remove vehicles"
+  },
+  {
+   "file": "commons_Veterans_Glass_City_Skyway_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Veterans%27_Glass_City_Skyway_1.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Veterans%27_Glass_City_Skyway_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Veterans' Glass City Skyway 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Wpktsfs at English Wikipedia",
+   "caption": "Photographer: wpktsfs\nWhere: Toledo, Ohio\nDate: Saturday, March 24, 2007\n\nWhat: Veterans Bridge, taken from afar."
+  },
+  {
+   "file": "commons_Skywaybridge.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Skywaybridge.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Skywaybridge.JPG/1920px-Skywaybridge.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Skywaybridge.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Cmedinger (talk)",
+   "caption": "skyway bridge"
+  },
+  {
+   "file": "commons_Aerial_view_of_Veterans_Glass_City_Skyway_and_Craig_Memorial_Bridge_2008_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Veterans%27_Glass_City_Skyway_and_Craig_Memorial_Bridge_(2008).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Aerial_view_of_Veterans%27_Glass_City_Skyway_and_Craig_Memorial_Bridge_%282008%29.jpg/1920px-Aerial_view_of_Veterans%27_Glass_City_Skyway_and_Craig_Memorial_Bridge_%282008%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Aerial view of Veterans' Glass City Skyway and Craig Memorial Bridge (2008).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Kevin Marsh from Toledo, Ohio, USA",
+   "caption": "Veterans' Glass City Skyway, a 2007 cable-stayed bridge in Toledo, Ohio, with the Craig Memorial Bridge, a 1957 bascule bridge, in the foreground."
+  }
+ ]
+}

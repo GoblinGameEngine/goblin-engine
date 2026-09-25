@@ -79,8 +79,9 @@ concrete_piles | steel_screw_piles | rubble_mound; `rail`: none | timber | pipe 
 `lighting`: none | lamp_posts | string; `benches`: bool; `width_m`; `pile_depth_m` (>= 10).
 
 ## Great bridges (remake/catalog/XBR-##.json, XRR-##.json)
-One example each from research/coastal_communities/bridges.md (1970+): `type`: suspension |
-cable_stayed | segmental_trestle | girder_trestle | twin_trestle | rail_trestle; `main_span_m`;
+One example each from research/coastal_communities/bridges.md (1970+, coast-matched like the towns): `type`:
+suspension | cable_stayed | tied_arch | deck_truss | segmental_box | girder_trestle | rail_viaduct_arch;
+`arch` (tied arches): {"material", "rise_m", "hangers"}; `main_span_m`;
 `towers`: {"material": "concrete|steel", "form": "portal|H|A|single_pylon"}; `approaches`:
 {"type": "girder|segmental_box|pile_bent", "span_m": n}; `clearance_m`; `lanes`; `foundations`:
 {"type": "caisson|drilled_shaft|pile_bent", "depth_below_bed_m": n (>= 20)}.

@@ -1,0 +1,66 @@
+{
+ "id": "XBR-07",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "county",
+  "over": "Maumee River",
+  "s": 6359.1,
+  "x": -2892.4,
+  "water_span_m": 442.3,
+  "ends": [
+   [
+    6160.9,
+    -2990.6
+   ],
+   [
+    6557.3,
+    -2794.3
+   ]
+  ]
+ },
+ "example": {
+  "title": "Chesapeake Bay Bridge, westbound span (US 50/301)",
+  "place": "Sandy Point - Kent Island, MD",
+  "year": 1973,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Annapolis_-_Bay_Bridge_2.jpg",
+  "photos": [
+   "commons_Annapolis_-_Bay_Bridge_2.jpg",
+   "commons_20120617_146_Bay_Bridge.jpg",
+   "commons_Annapolisbaybridge.jpg",
+   "commons_20030519BayBridge.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "Ocean Rd over the Maumee's mouth into the North Sea (East Coast). Modelled on the 1973 westbound Chesapeake Bay Bridge: a steel suspension main span of 488 m between two slender steel portal towers with cross-bracing, a stiffening deck truss under the deck, 57 m clearance, reached on steel deck-truss and girder approach spans on concrete piers, the whole painted grey. Here: a 420 m suspension span over the mouth, anchorages on the banks, girder approaches over the dunes and the basin. Foundations: caissons 30 m below the modelled bed under the towers, 25 m elsewhere; anchorages set deep in the headlands.",
+ "traits": {
+  "type": "suspension",
+  "main_span_m": 420,
+  "towers": {
+   "material": "steel",
+   "form": "portal",
+   "height_m": 110
+  },
+  "stiffening": "deck_truss",
+  "approaches": {
+   "type": "deck_truss_and_girder",
+   "span_m": 60
+  },
+  "clearance_m": 40,
+  "lanes": 2,
+  "shoulders": true,
+  "walkway": false,
+  "color": "#9AA0A4",
+  "year_built": 1973,
+  "foundations": {
+   "type": "caisson",
+   "depth_below_bed_m": 30
+  }
+ },
+ "names": {
+  "name": "Maumee Narrows Bridge",
+  "sign": "MAUMEE NARROWS BRIDGE"
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "structure": "XBR-01",
+ "files": [
+  {
+   "file": "commons_Dumbarton_Bridge_31569132_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dumbarton_Bridge_(31569132).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Dumbarton_Bridge_%2831569132%29.jpg/1920px-Dumbarton_Bridge_%2831569132%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dumbarton Bridge (31569132).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Peter Kaminski from San Francisco, California, USA",
+   "caption": "Dumbarton Bridge, California"
+  },
+  {
+   "file": "commons_Dumbarton_Bridge_5167941_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dumbarton_Bridge_(5167941).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Dumbarton_Bridge_%285167941%29.jpg/1920px-Dumbarton_Bridge_%285167941%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dumbarton Bridge (5167941).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Darin Marshall from Oakland, United States",
+   "caption": "The Dumbarton Bridge at sundown in from the Palo Alto side"
+  },
+  {
+   "file": "commons_DumbartonBridgeCA_and_Towers.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:DumbartonBridgeCA_and_Towers.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/DumbartonBridgeCA_and_Towers.jpg/1920px-DumbartonBridgeCA_and_Towers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:DumbartonBridgeCA and Towers.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Darin Marshall from Oakland, California, USA",
+   "caption": "The power towers and the Dumbarton Bridge at sundown. Photo is taken from the north side of the bridge, looking east."
+  },
+  {
+   "file": "commons_Under_dumbarton_197036429_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Under_dumbarton_(197036429).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Under_dumbarton_%28197036429%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Under dumbarton (197036429).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Andy Xiang from Fremont",
+   "caption": "i drive across the bridge twice everyday. go down below it every month just to watch the sunset."
+  }
+ ]
+}

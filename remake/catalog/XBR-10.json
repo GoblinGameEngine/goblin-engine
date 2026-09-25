@@ -1,0 +1,66 @@
+{
+ "id": "XBR-10",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "hwy",
+  "over": "Miami River",
+  "s": 895.7,
+  "x": 2650.4,
+  "water_span_m": 319.6,
+  "ends": [
+   [
+    746.0,
+    2706.4
+   ],
+   [
+    1045.4,
+    2594.4
+   ]
+  ]
+ },
+ "example": {
+  "title": "Long Beach International Gateway (I-710 over the Back Channel)",
+  "place": "Long Beach, CA",
+  "year": 2020,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Long_Beach_International_Gateway_BG.jpg",
+  "photos": [
+   "commons_Long_Beach_International_Gateway_BG.jpg",
+   "commons_Port5_8386386196_.jpg",
+   "commons_Gerald_Desmond_bridge_and_port_of_Long_Beach.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "Coast Hwy over the Miami's mouth into the South Sea (West Coast). Modelled on the Long Beach International Gateway: a cable-stayed bridge with a 305 m main span between two 157 m white concrete towers that go from octagonal at the base to diamond-shaped at the top, fans of white stays to twin deck edges, 62 m clearance, long precast approaches, a pedestrian and bicycle path. Here: a 260 m main span, the towers on the river's banks, approaches over the basin and the beach. Foundations: large-diameter drilled shafts 30 m below the modelled bed.",
+ "traits": {
+  "type": "cable_stayed",
+  "main_span_m": 260,
+  "towers": {
+   "material": "concrete",
+   "form": "single_pylon",
+   "section": "octagon_to_diamond",
+   "height_m": 110
+  },
+  "stays": "fan_two_planes",
+  "approaches": {
+   "type": "precast_girder",
+   "span_m": 50
+  },
+  "clearance_m": 40,
+  "lanes": 4,
+  "shoulders": true,
+  "walkway": true,
+  "color": "#F2F2EE",
+  "year_built": 2020,
+  "foundations": {
+   "type": "drilled_shaft",
+   "depth_below_bed_m": 30
+  }
+ },
+ "names": {
+  "name": "Miami Gateway Bridge",
+  "sign": "MIAMI GATEWAY"
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "id": "XBR-08",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "hwy",
+  "over": "Maumee River",
+  "s": 6547.8,
+  "x": -1273.8,
+  "water_span_m": 348.3,
+  "ends": [
+   [
+    6373.6,
+    -1274.9
+   ],
+   [
+    6722.0,
+    -1272.7
+   ]
+  ]
+ },
+ "example": {
+  "title": "Veterans' Glass City Skyway (I-280 over the Maumee River)",
+  "place": "Toledo, OH",
+  "year": 2007,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Veterans'_Glass_City_Skyway.jpg",
+  "photos": [
+   "commons_Veterans_Glass_City_Skyway.jpg",
+   "commons_Veterans_Glass_City_Skyway_1.jpg",
+   "commons_Skywaybridge.JPG",
+   "commons_Aerial_view_of_Veterans_Glass_City_Skyway_and_Craig_Memorial_Bridge_2008_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "SR 14 over the Maumee River: the real Maumee's own contemporary crossing. A single-pylon cable-stayed bridge: one 122 m concrete pylon on the centreline whose top storeys are glass (lit at night), stays in a single plane to the median of a precast segmental box deck, two 186.5 m main spans, 2.7 km overall with segmental approaches, 36.6 m clearance. Here: two 170 m spans each side of the pylon on the river's centreline, segmental approaches over the basin. Lit glass crown in blue-white. Foundations: drilled shafts 30 m below the modelled bed under the pylon, 25 m under the rest.",
+ "traits": {
+  "type": "cable_stayed",
+  "main_span_m": 170,
+  "towers": {
+   "material": "concrete",
+   "form": "single_pylon",
+   "height_m": 110,
+   "top": "glass_lit"
+  },
+  "stays": "single_plane_median",
+  "approaches": {
+   "type": "segmental_box",
+   "span_m": 55
+  },
+  "clearance_m": 32,
+  "lanes": 4,
+  "shoulders": true,
+  "walkway": false,
+  "color": "#C9C6BE",
+  "year_built": 2007,
+  "foundations": {
+   "type": "drilled_shaft",
+   "depth_below_bed_m": 30
+  }
+ },
+ "names": {
+  "name": "Maumee Skyway",
+  "sign": "MAUMEE SKYWAY"
+ }
+}

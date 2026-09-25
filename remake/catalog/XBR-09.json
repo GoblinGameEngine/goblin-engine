@@ -1,0 +1,66 @@
+{
+ "id": "XBR-09",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "hwy",
+  "over": "Miami River",
+  "s": 1221.3,
+  "x": 1225.4,
+  "water_span_m": 389.4,
+  "ends": [
+   [
+    1027.6,
+    1245.3
+   ],
+   [
+    1415.0,
+    1205.5
+   ]
+  ]
+ },
+ "example": {
+  "title": "Alfred Zampa Memorial Bridge (I-80 westbound over the Carquinez Strait)",
+  "place": "Crockett - Vallejo, CA",
+  "year": 2003,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Alfred_zampa_memorial_bridge.jpg",
+  "photos": [
+   "commons_Alfred_zampa_memorial_bridge.jpg",
+   "commons_Al_Zampa_and_Carquinez_Bridges_Crockett_California.jpg",
+   "commons_Carquinez_Bridge_9-1-2007_From_Northeast.jpg",
+   "commons_Carquinez_Bridge_from_the_Eckley_Pier.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "US 30 over the Miami River (West Coast). Modelled on the Alfred Zampa Memorial Bridge, the first major US suspension bridge built since the 1960s: a 728 m main span between two hollow concrete towers (a pair of tapered legs joined by two cross struts), a streamlined steel orthotropic box deck, 45 m clearance, with a bike and pedestrian path. Here: a 300 m main span, anchorages on the banks, box-girder approaches over the basin. Foundations: large-diameter steel pipe piles and drilled shafts 30 m below the modelled bed.",
+ "traits": {
+  "type": "suspension",
+  "main_span_m": 300,
+  "towers": {
+   "material": "concrete",
+   "form": "portal",
+   "height_m": 95
+  },
+  "stiffening": "orthotropic_box",
+  "approaches": {
+   "type": "steel_box_girder",
+   "span_m": 55
+  },
+  "clearance_m": 35,
+  "lanes": 4,
+  "shoulders": true,
+  "walkway": true,
+  "color": "#D9D6CF",
+  "year_built": 2003,
+  "foundations": {
+   "type": "drilled_shaft",
+   "depth_below_bed_m": 30
+  }
+ },
+ "names": {
+  "name": "Miami River Suspension Bridge",
+  "sign": "US 30 MIAMI RIVER BRIDGE"
+ }
+}

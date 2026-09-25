@@ -1,0 +1,70 @@
+{
+ "id": "XBR-03",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "county",
+  "over": "Kettle River",
+  "s": 5574.6,
+  "x": -3.4,
+  "water_span_m": 499.5,
+  "ends": [
+   [
+    5570.1,
+    -253.1
+   ],
+   [
+    5579.2,
+    246.3
+   ]
+  ]
+ },
+ "example": {
+  "title": "Daniel Hoan Memorial Bridge (I-794 over the Milwaukee River inlet)",
+  "place": "Milwaukee, WI",
+  "year": 1977,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Hoan_Bridge_2016.jpg",
+  "photos": [
+   "commons_Hoan_Bridge_2016.jpg",
+   "commons_Hoan_Bridge_aerial.jpg",
+   "commons_Daniel_Hoan_Memorial_Bridge_-_panoramio_1_.jpg",
+   "commons_Hoan_Bridge_-_panoramio.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "Outlet Rd over the Kettle River. Modelled on the Hoan Bridge: a steel tied arch (185 m main span, 36.6 m clearance, 3 km long, AISC long-span award 1975) whose arch rises between the two deck halves, on long steel box-girder approaches on single concrete hammerhead piers. Here: a 185 m arch over the channel with its approaches crossing the basin. Painted as today: a golden-yellow arch over blue girders and blue railings. Foundations: pile groups 25 m below the modelled bed.",
+ "traits": {
+  "type": "tied_arch",
+  "main_span_m": 185,
+  "arch": {
+   "material": "steel",
+   "rise_m": 35,
+   "hangers": "vertical"
+  },
+  "towers": null,
+  "approaches": {
+   "type": "steel_box_girder",
+   "span_m": 55,
+   "piers": "hammerhead"
+  },
+  "clearance_m": 30,
+  "lanes": 2,
+  "shoulders": true,
+  "walkway": false,
+  "color": {
+   "arch": "#E0B43A",
+   "girders": "#2F5D9A"
+  },
+  "year_built": 1977,
+  "foundations": {
+   "type": "pile_group",
+   "depth_below_bed_m": 25
+  }
+ },
+ "names": {
+  "name": "Outlet Road Bridge",
+  "sign": "OUTLET RD"
+ }
+}

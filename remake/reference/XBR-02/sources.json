@@ -1,0 +1,49 @@
+{
+ "structure": "XBR-02",
+ "files": [
+  {
+   "file": "commons_Irondequoit_Bay_Bridge.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Irondequoit_Bay_Bridge.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Irondequoit_Bay_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Irondequoit Bay Bridge.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.5",
+   "author": "User:TwinsMetsFan",
+   "caption": "The Irondequoit Bay Bridge as seen from the parking area along New York State Route 404. This image is cropped from the original picture that I took on February 26, 2000 so that emphasis can be given to the bridge."
+  },
+  {
+   "file": "commons_IrondequoitBayBridgeViewedFromIrondequoitBayMarinePark.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:IrondequoitBayBridgeViewedFromIrondequoitBayMarinePark.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/IrondequoitBayBridgeViewedFromIrondequoitBayMarinePark.JPG/1920px-IrondequoitBayBridgeViewedFromIrondequoitBayMarinePark.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:IrondequoitBayBridgeViewedFromIrondequoitBayMarinePark.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DanielPenfield",
+   "caption": "en:Irondequoit Bay Bridge viewed from Irondequoit Bay Marine Park in en:Irondequoit, New York"
+  },
+  {
+   "file": "commons_IrondequoitBayBridgeLookingSoutheast.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:IrondequoitBayBridgeLookingSoutheast.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/IrondequoitBayBridgeLookingSoutheast.JPG/1920px-IrondequoitBayBridgeLookingSoutheast.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:IrondequoitBayBridgeLookingSoutheast.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DanielPenfield",
+   "caption": "en:Irondequoit Bay Bridge looking southeast"
+  },
+  {
+   "file": "commons_IrondequoitBayBridgeViewedFromLucienMorinPark.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:IrondequoitBayBridgeViewedFromLucienMorinPark.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/IrondequoitBayBridgeViewedFromLucienMorinPark.JPG/1920px-IrondequoitBayBridgeViewedFromLucienMorinPark.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:IrondequoitBayBridgeViewedFromLucienMorinPark.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DanielPenfield",
+   "caption": "en:Irondequoit Bay Bridge viewed from Lucien Morin Park in en:Penfield, New York"
+  }
+ ]
+}

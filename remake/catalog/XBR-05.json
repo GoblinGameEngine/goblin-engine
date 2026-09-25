@@ -1,0 +1,68 @@
+{
+ "id": "XBR-05",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "county",
+  "over": "Kettle River",
+  "s": 9439.1,
+  "x": 196.2,
+  "water_span_m": 496.3,
+  "ends": [
+   [
+    9383.3,
+    -45.5
+   ],
+   [
+    9495.0,
+    438.0
+   ]
+  ]
+ },
+ "example": {
+  "title": "Second Blue Water Bridge (I-69/I-94 eastbound over the St. Clair River)",
+  "place": "Port Huron, MI - Sarnia, ON",
+  "year": 1997,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:South_Span_Bluewater_Bridge_(Port_Huron_Mich).jpg",
+  "photos": [
+   "commons_South_Span_Bluewater_Bridge_Port_Huron_Mich_.jpg",
+   "commons_Bluewater_Bridge_34223453823_.jpg",
+   "commons_Bluewater_Bridge_34994015156_.jpg",
+   "commons_Blue_Water_Bridge_2025j.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "Brannock Pike over the Kettle River, Marlowe-Pruett. Modelled on the 1997 second span of the Blue Water Bridge: a continuous steel tied arch (main span 281 m, 1,882 m overall) that springs from concrete piers at the water's edge, with the deck hung from vertical hangers, on long steel-girder approaches over the low banks. Here the arch spans the 500 m channel's navigation part (scaled to 280 m, side spans to the banks), and girder approaches on concrete column bents cross the 270 m basin each side. Pale grey-white steel with an open deck truss under the approaches, as the real one. Foundations: drilled shafts carried 25 m below the modelled bed so no pier can float.",
+ "traits": {
+  "type": "tied_arch",
+  "main_span_m": 280,
+  "side_spans_m": 110,
+  "arch": {
+   "material": "steel",
+   "rise_m": 50,
+   "hangers": "vertical"
+  },
+  "towers": null,
+  "approaches": {
+   "type": "girder",
+   "span_m": 45,
+   "piers": "concrete_column_bent"
+  },
+  "clearance_m": 30,
+  "lanes": 2,
+  "shoulders": true,
+  "walkway": false,
+  "color": "#D6DAD8",
+  "year_built": 1997,
+  "foundations": {
+   "type": "drilled_shaft",
+   "depth_below_bed_m": 25
+  }
+ },
+ "names": {
+  "name": "Brannock Pike Bridge",
+  "sign": "BRANNOCK PIKE BRIDGE"
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "id": "XBR-04",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "county",
+  "over": "Kettle River",
+  "s": 7500.0,
+  "x": -44.5,
+  "water_span_m": 497.2,
+  "ends": [
+   [
+    7500.0,
+    -293.1
+   ],
+   [
+    7500.0,
+    204.1
+   ]
+  ]
+ },
+ "example": {
+  "title": "Leo Frigo Memorial Bridge (I-43 over the Fox River)",
+  "place": "Green Bay, WI",
+  "year": 1981,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Leo_Frigo_Memorial_Bridge.JPG",
+  "photos": [
+   "commons_Leo_Frigo_Memorial_Bridge.JPG",
+   "commons_Leo_Frigo_Bridge-_Green_Bay_WI_-_Flickr_-_MichaelSteeber.jpg",
+   "commons_P8260065_I-43_Greenbay_WI_.jpg",
+   "commons_P8260067_I-43_Greenbay_WI_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "Ford Rd over the Kettle River and Cedar Ford's marsh. Modelled on the Leo Frigo Memorial Bridge at the mouth of the Fox River: a high-level steel bridge (longest span 137 m, 36.6 m clearance for lake freighters, 2.4 km long) whose navigation span is a low steel tied arch, on long steel plate-girder approaches over the low marshy shore, carried on paired concrete column bents. Here: a 137 m arch over the channel, girder approaches over the channel's shallows and the marsh basin. Blue-painted steel. Foundations: steel H-piles in the marsh carried 25 m below the modelled bed.",
+ "traits": {
+  "type": "tied_arch",
+  "main_span_m": 137,
+  "arch": {
+   "material": "steel",
+   "rise_m": 22,
+   "hangers": "vertical"
+  },
+  "towers": null,
+  "approaches": {
+   "type": "girder",
+   "span_m": 50,
+   "piers": "paired_column_bent"
+  },
+  "clearance_m": 28,
+  "lanes": 2,
+  "shoulders": true,
+  "walkway": false,
+  "color": "#4E6E8E",
+  "year_built": 1981,
+  "foundations": {
+   "type": "steel_h_piles",
+   "depth_below_bed_m": 25
+  }
+ },
+ "names": {
+  "name": "Ford Road Bridge",
+  "sign": "FORD RD"
+ }
+}

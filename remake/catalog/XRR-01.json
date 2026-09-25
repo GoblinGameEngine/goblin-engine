@@ -1,0 +1,56 @@
+{
+ "id": "XRR-01",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "rail",
+  "over": "Miami River",
+  "s": 987.5,
+  "x": 1519.4,
+  "water_span_m": 340.0
+ },
+ "example": {
+  "title": "San Joaquin River Viaduct (California High-Speed Rail)",
+  "place": "Fresno - Madera, CA",
+  "year": 2021,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:San_Joaquin_River_Viaduct_2019.jpg",
+  "photos": [
+   "commons_San_Joaquin_River_Viaduct_2019.jpg",
+   "commons_2021-04-16_sj_river_viaduct_2.jpg",
+   "commons_San_Joaquin_River_Viaduct_aerial_2019.jpg",
+   "commons_San_Joaquin_Viaduct_2021-02-10_IMG_0271.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The railway over the Miami River (West Coast). Modelled on the San Joaquin River Viaduct, completed 2021: a 1,445 m concrete rail viaduct of precast girders on column bents across the floodplain, crossing the river itself on a double concrete arch, with a concrete pergola over the older tracks beside it. Here: the ballasted double-track deck on precast girders across the basin, and the twin concrete arches over the channel. Plain cast concrete. Foundations: cast-in-drilled-hole piles 25 m below the modelled bed.",
+ "traits": {
+  "type": "rail_viaduct_arch",
+  "main_span_m": 110,
+  "arch": {
+   "material": "concrete",
+   "count": 2,
+   "rise_m": 20
+  },
+  "towers": null,
+  "approaches": {
+   "type": "precast_girder",
+   "span_m": 33,
+   "piers": "column_bent"
+  },
+  "clearance_m": 10,
+  "tracks": 2,
+  "ballasted": true,
+  "color": "#C4C0B6",
+  "year_built": 2021,
+  "foundations": {
+   "type": "drilled_shaft",
+   "depth_below_bed_m": 25
+  }
+ },
+ "names": {
+  "name": "Miami River Rail Viaduct",
+  "sign": ""
+ }
+}

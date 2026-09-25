@@ -1,0 +1,62 @@
+{
+ "id": "XBR-02",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "county",
+  "over": "Kettle River",
+  "s": 17888.1,
+  "x": -21.5,
+  "water_span_m": 500.9,
+  "ends": [
+   [
+    17890.7,
+    228.9
+   ],
+   [
+    17885.6,
+    -271.9
+   ]
+  ]
+ },
+ "example": {
+  "title": "Irondequoit Bay Bridge (NY 104 over Irondequoit Bay)",
+  "place": "Irondequoit - Webster, NY (Lake Ontario shore)",
+  "year": 1970,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Irondequoit_Bay_Bridge.jpg",
+  "photos": [
+   "commons_Irondequoit_Bay_Bridge.jpg",
+   "commons_IrondequoitBayBridgeViewedFromIrondequoitBayMarinePark.JPG",
+   "commons_IrondequoitBayBridgeLookingSoutheast.JPG",
+   "commons_IrondequoitBayBridgeViewedFromLucienMorinPark.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "Lakeshore Rd over the Kettle River's broad basin by Lake Tamsin. Modelled on the Irondequoit Bay Bridge, opened February 1970: a low continuous steel deck truss (724 m, 14 m clearance) crossing the bay on concrete piers founded on clustered piles (268 piles in 20 capped clusters). Here: continuous deck-truss spans across the channel, on the same pile-cluster piers across the basin. The lowest of the Kettle bridges; weathered green-grey steel. Foundations: capped pile clusters 25 m below the modelled bed.",
+ "traits": {
+  "type": "deck_truss",
+  "main_span_m": 90,
+  "towers": null,
+  "approaches": {
+   "type": "girder",
+   "span_m": 40,
+   "piers": "pile_cluster_cap"
+  },
+  "clearance_m": 12,
+  "lanes": 2,
+  "shoulders": true,
+  "walkway": true,
+  "color": "#7E8C80",
+  "year_built": 1970,
+  "foundations": {
+   "type": "pile_cluster",
+   "depth_below_bed_m": 25
+  }
+ },
+ "names": {
+  "name": "Lakeshore Road Bridge",
+  "sign": "LAKESHORE RD"
+ }
+}

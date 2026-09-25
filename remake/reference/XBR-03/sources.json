@@ -1,0 +1,49 @@
+{
+ "structure": "XBR-03",
+ "files": [
+  {
+   "file": "commons_Hoan_Bridge_2016.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hoan_Bridge_2016.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Hoan_Bridge_2016.jpg/1920px-Hoan_Bridge_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Hoan Bridge 2016.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Wantonlife",
+   "caption": "Hoan Bridge in Milwaukee after restoration project in 2010s. Viewed from Erie Street Plaza."
+  },
+  {
+   "file": "commons_Hoan_Bridge_aerial.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hoan_Bridge_aerial.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Hoan_Bridge_aerial.jpg/1920px-Hoan_Bridge_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Hoan Bridge aerial.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Jeramey Jannene from Milwaukee, WI, United States of America",
+   "caption": "Visual proof from the top of the US Bank building that the Hoan Bridge and I794 are just a giant waste of space.\nUpdated Urban Milwaukee article on the issue discussing reconstruction possibility.\n\nUrban Milwaukee article on the issue"
+  },
+  {
+   "file": "commons_Daniel_Hoan_Memorial_Bridge_-_panoramio_1_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Daniel_Hoan_Memorial_Bridge_-_panoramio_(1).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Daniel_Hoan_Memorial_Bridge_-_panoramio_%281%29.jpg/1920px-Daniel_Hoan_Memorial_Bridge_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Daniel Hoan Memorial Bridge - panoramio (1).jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Corey Coyle",
+   "caption": "Daniel Hoan Memorial Bridge"
+  },
+  {
+   "file": "commons_Hoan_Bridge_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hoan_Bridge_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Hoan_Bridge_-_panoramio.jpg/1920px-Hoan_Bridge_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Hoan Bridge - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Corey Coyle",
+   "caption": "Hoan Bridge"
+  }
+ ]
+}

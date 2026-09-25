@@ -1,0 +1,62 @@
+{
+ "id": "XBR-06",
+ "settlement": null,
+ "kind": null,
+ "coast": "east",
+ "crossing": {
+  "road_class": "county",
+  "over": "Kettle River",
+  "s": 13356.1,
+  "x": 7.3,
+  "water_span_m": 491.6,
+  "ends": [
+   [
+    13290.2,
+    -229.6
+   ],
+   [
+    13422.0,
+    244.1
+   ]
+  ]
+ },
+ "example": {
+  "title": "Zilwaukee Bridge (I-75 / US 23 over the Saginaw River)",
+  "place": "Zilwaukee, MI",
+  "year": 1988,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Zilwaukee_Bridge_(July_2022).jpg",
+  "photos": [
+   "commons_Zilwaukee_Bridge_July_2022_.jpg",
+   "commons_Zilwaukee_Bridge.jpg",
+   "commons_Zilwaukee-Bridge-September-.jpg",
+   "commons_Zilwaukee_bridge_sunset.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "College Rd over the Kettle River, Fenwick-Kessler. Modelled on the Zilwaukee Bridge: a high-level precast segmental concrete box girder (longest span 119.5 m, 38 m over the river, 2.4 km long) on tall tapered single-column piers, the deck rising in a long even grade from the flat floodplain. Here: 120 m spans over the channel, the grade coming down over the basin on 60 m spans. Plain grey concrete, a concrete barrier parapet with a steel rail. Foundations: pile groups under each pier taken 25 m below the modelled bed.",
+ "traits": {
+  "type": "segmental_box",
+  "main_span_m": 120,
+  "towers": null,
+  "approaches": {
+   "type": "segmental_box",
+   "span_m": 60,
+   "piers": "tapered_single_column"
+  },
+  "clearance_m": 30,
+  "lanes": 2,
+  "shoulders": true,
+  "walkway": true,
+  "color": "#B8B4AC",
+  "year_built": 1988,
+  "foundations": {
+   "type": "pile_group",
+   "depth_below_bed_m": 25
+  }
+ },
+ "names": {
+  "name": "College Road Bridge",
+  "sign": "COLLEGE RD"
+ }
+}

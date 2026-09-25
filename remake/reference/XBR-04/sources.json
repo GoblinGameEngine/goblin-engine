@@ -1,0 +1,49 @@
+{
+ "structure": "XBR-04",
+ "files": [
+  {
+   "file": "commons_Leo_Frigo_Memorial_Bridge.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Leo_Frigo_Memorial_Bridge.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Leo_Frigo_Memorial_Bridge.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Leo Frigo Memorial Bridge.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Winndm31 at en.wikipedia",
+   "caption": "The arched Leo Frigo Memorial Bridge, crossing the Fox River in Green Bay, Wisconsin.  In the foreground is a railroad bridge with open (turned) swing span visible at the far left."
+  },
+  {
+   "file": "commons_Leo_Frigo_Bridge-_Green_Bay_WI_-_Flickr_-_MichaelSteeber.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Leo_Frigo_Bridge-_Green_Bay,_WI_-_Flickr_-_MichaelSteeber.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Leo_Frigo_Bridge-_Green_Bay%2C_WI_-_Flickr_-_MichaelSteeber.jpg/1920px-Leo_Frigo_Bridge-_Green_Bay%2C_WI_-_Flickr_-_MichaelSteeber.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Leo Frigo Bridge- Green Bay, WI - Flickr - MichaelSteeber.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Michael Steeber from USA",
+   "caption": "Spanning the Fox River, Green Bay's Leo Frigo bridge."
+  },
+  {
+   "file": "commons_P8260065_I-43_Greenbay_WI_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:P8260065_I-43_(Greenbay,_WI).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/P8260065_I-43_%28Greenbay%2C_WI%29.jpg/1920px-P8260065_I-43_%28Greenbay%2C_WI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:P8260065 I-43 (Greenbay, WI).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Leo Frigo Memorial Bridge crossing the Fox River in Green Bay, Wisconsin."
+  },
+  {
+   "file": "commons_P8260067_I-43_Greenbay_WI_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:P8260067_I-43_(Greenbay,_WI).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/P8260067_I-43_%28Greenbay%2C_WI%29.jpg/1920px-P8260067_I-43_%28Greenbay%2C_WI%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:P8260067 I-43 (Greenbay, WI).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Leo Frigo Memorial Bridge crossing the Fox River in Green Bay, Wisconsin."
+  }
+ ]
+}
