@@ -41,7 +41,7 @@
    "posts": "square",
    "rail": "none"
   },
-  "walls": "wood_shingle",
+  "walls": "shingle",
   "foundation": "poured_concrete",
   "colors": {
    "body": "#A9A28E",

@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: 10 Exchange Street; see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A tall narrow stucco building painted terracotta with a stepped parapet, plain punched windows and a single street door. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 2,
+  "storeys": 3,
   "facade": "stucco",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "cornice": "parapet_stepped",
+  "upper_use": "none",
   "storefronts": [
    {
-    "business": "Lowcountry Bakery",
-    "type": "bakery",
-    "sign": "LOWCOUNTRY BAKERY",
-    "sign_style": "flat_board",
+    "business": "Exchange Street Bistro",
+    "type": "cafe",
+    "sign": "EXCHANGE ST. BISTRO",
+    "sign_style": "painted_wall",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
   "year_built": 1850,
-  "found_depth_m": 6.0
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#B85A3A",
+   "trim": "#FFFFFF",
+   "accent": "#2E2E2E"
+  }
  },
  "names": {
   "businesses": [
-   "Lowcountry Bakery"
+   "Exchange Street Bistro"
   ]
  }
 }

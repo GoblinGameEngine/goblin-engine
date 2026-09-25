@@ -10,7 +10,7 @@
  "example": {
   "title": "Broad Street, French Quarter, Charleston, SC (49451727813) (building 2 of the row)",
   "place": "Charleston, Charleston County, SC",
-  "year": 1850,
+  "year": 1790,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:Broad_Street,_French_Quarter,_Charleston,_SC_(49451727813).jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: Broad Street, French Quarter, Charleston, SC (49451727813) (building 2 of the row); see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "The middle block of the same Broad Street row: three storeys of cream stucco with a front pediment, upper offices, a glazed street door with a fanlight. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 2,
+  "storeys": 3,
   "facade": "stucco",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "cornice": "pediment",
+  "upper_use": "offices",
   "storefronts": [
    {
-    "business": "Battery Gallery",
-    "type": "art_gallery",
-    "sign": "BATTERY GALLERY",
-    "sign_style": "projecting",
+    "business": "Carrow Law Offices",
+    "type": "law_office",
+    "sign": "PRIOLEAU & GRIMKE \u00b7 ATTORNEYS AT LAW",
+    "sign_style": "window_lettering",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1850,
-  "found_depth_m": 6.0
+  "year_built": 1790,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#E9DFC8",
+   "trim": "#FFFFFF",
+   "accent": "#2E2E2E"
+  }
  },
  "names": {
   "businesses": [
-   "Battery Gallery"
+   "Carrow Law Offices"
   ]
  }
 }

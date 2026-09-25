@@ -10,7 +10,7 @@
  "example": {
   "title": "Bradford St, Provincetown. - panoramio (1)",
   "place": "Provincetown, MA",
-  "year": 1850,
+  "year": 1900,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:Bradford_St,_Provincetown._-_panoramio_(1).jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: Bradford St, Provincetown. - panoramio (1); see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A tall yellow clapboard shop building on a narrow street, a round projecting sign, a tangle of overhead wires. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
   "storeys": 2,
   "facade": "frame_false_front",
-  "cornice": "parapet_flat",
+  "cornice": "none",
   "upper_use": "apartments",
   "storefronts": [
    {
-    "business": "Ashley Wine Bar",
-    "type": "wine_bar",
-    "sign": "ASHLEY WINE BAR",
+    "business": "Cape Tile & Pottery",
+    "type": "art_gallery",
+    "sign": "CAPE TILE",
     "sign_style": "projecting",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1850,
-  "found_depth_m": 6.0
+  "year_built": 1900,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#E9D8A0",
+   "trim": "#FFFFFF",
+   "accent": "#2E4E8A"
+  }
  },
  "names": {
   "businesses": [
-   "Ashley Wine Bar"
+   "Cape Tile & Pottery"
   ]
  }
 }

@@ -10,7 +10,7 @@
  "example": {
   "title": "Bobby B's Seafood & Pizza (50062235268)",
   "place": "Oak Bluffs, Martha's Vineyard, MA",
-  "year": 1985,
+  "year": 2010,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:Bobby_B's_Seafood_&_Pizza_(50062235268).jpg",
   "photos": [
@@ -18,29 +18,43 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: Bobby B's Seafood & Pizza (50062235268); see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A 2010s single-storey seafood-and-ice-cream stand of grey board with two dark sign boards, a walk-up counter and a patio of blue picnic tables under black umbrellas. One photo. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 2,
-  "facade": "stucco",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "storeys": 1,
+  "facade": "frame_false_front",
+  "cornice": "none",
+  "upper_use": "none",
   "storefronts": [
    {
-    "business": "Harbor Caf\u00e9",
-    "type": "cafe",
-    "sign": "HARBOR CAF\u00c9",
+    "business": "Bobby's Seafood & Pizza",
+    "type": "seafood_restaurant",
+    "sign": "SEAFOOD & PIZZA",
+    "sign_style": "flat_board",
+    "awning": false,
+    "extra_signs": []
+   },
+   {
+    "business": "Bernie's Ice Cream",
+    "type": "ice_cream",
+    "sign": "HOMEMADE ICE CREAM",
     "sign_style": "flat_board",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1985,
-  "found_depth_m": 6.0
+  "year_built": 2010,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#9AA0A6",
+   "trim": "#FFFFFF",
+   "accent": "#1E1E1E"
+  }
  },
  "names": {
   "businesses": [
-   "Harbor Caf\u00e9"
+   "Bobby's Seafood & Pizza",
+   "Bernie's Ice Cream"
   ]
  }
 }

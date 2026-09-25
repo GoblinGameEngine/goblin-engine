@@ -10,7 +10,7 @@
  "example": {
   "title": "76 Halsey Boulevard",
   "place": "Charleston, Charleston County, SC",
-  "year": 2005,
+  "year": 2015,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:76_Halsey_Boulevard.jpg",
   "photos": [
@@ -18,10 +18,10 @@
   ],
   "drawings": []
  },
- "brief": "A Charleston single house: 76 Halsey Boulevard, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A 2010s row of attached single houses in Charleston style: cream stucco, a parapet with urns, stacked balconies and individual entrance stairs. One photo. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "i_house",
-  "storeys": 2.5,
+  "archetype": "charleston_single",
+  "storeys": 3,
   "main_w_ft": 25,
   "main_d_ft": 28,
   "wing": null,
@@ -32,17 +32,17 @@
   },
   "dormers": [],
   "porch": {
-   "type": "side",
+   "type": "stacked",
    "posts": "columns",
    "rail": "spindle"
   },
-  "walls": "clapboard",
+  "walls": "stucco",
   "foundation": "poured_concrete",
   "colors": {
-   "body": "#E9C8C0",
+   "body": "#E6D8B0",
    "trim": "#FFFFFF",
    "accent": "#2E2E2E",
-   "roof": "#5A5A5A"
+   "roof": "#8A8A86"
   },
   "windows": {
    "type": "6over6",
@@ -57,7 +57,7 @@
    ]
   },
   "condition": "kept",
-  "year_built": 2005,
+  "year_built": 2015,
   "found_depth_m": 6.0
  },
  "names": {

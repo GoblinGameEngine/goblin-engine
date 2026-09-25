@@ -36,7 +36,7 @@
    "posts": "square",
    "rail": "none"
   },
-  "walls": "stone",
+  "walls": "block",
   "foundation": "poured_concrete",
   "colors": {
    "body": "#8A7A66",

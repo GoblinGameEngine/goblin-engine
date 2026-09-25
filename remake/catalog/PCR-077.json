@@ -10,7 +10,7 @@
  "example": {
   "title": "14 Amherst Street",
   "place": "Charleston, Charleston County, SC",
-  "year": 1840,
+  "year": 1850,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:14_Amherst_Street.jpg",
   "photos": [
@@ -18,10 +18,10 @@
   ],
   "drawings": []
  },
- "brief": "A Charleston single house: 14 Amherst Street, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Older than 1970: the Charleston single house (one room wide, side piazzas, gable end to the street) is an 18th-19th-century type; newer examples are used first where they exist. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A weathered unpainted two-storey single house being moved on cribbing, boarded windows, its frame showing (derelict; to be restored). One photo. Older than 1970: the Charleston single house is an 18th-19th-century type; newer examples are used where they exist. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "i_house",
-  "storeys": 2.5,
+  "archetype": "charleston_single",
+  "storeys": 2,
   "main_w_ft": 25,
   "main_d_ft": 29,
   "wing": null,
@@ -32,17 +32,17 @@
   },
   "dormers": [],
   "porch": {
-   "type": "side",
+   "type": "stacked",
    "posts": "columns",
    "rail": "spindle"
   },
-  "walls": "clapboard",
+  "walls": "wood",
   "foundation": "poured_concrete",
   "colors": {
-   "body": "#F4F2EC",
-   "trim": "#FFFFFF",
-   "accent": "#2E4E3E",
-   "roof": "#5A5A5A"
+   "body": "#6A6660",
+   "trim": "#6A6660",
+   "accent": "#2E2E2E",
+   "roof": "#4E4E4E"
   },
   "windows": {
    "type": "6over6",
@@ -57,7 +57,7 @@
    ]
   },
   "condition": "kept",
-  "year_built": 1840,
+  "year_built": 1850,
   "found_depth_m": 6.0
  },
  "names": {

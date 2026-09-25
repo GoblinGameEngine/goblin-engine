@@ -10,7 +10,7 @@
  "example": {
   "title": "Hotel Nautilus 2012",
   "place": "Chatham, MA",
-  "year": 1985,
+  "year": 1920,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:Hotel_Nautilus_2012.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: Hotel Nautilus 2012; see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A three-storey red-brick building with a deep front porch on brick piers, a teal door, lattice panels and big shade trees. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 2,
-  "facade": "frame_false_front",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "storeys": 3,
+  "facade": "brick",
+  "cornice": "none",
+  "upper_use": "hotel_rooms",
   "storefronts": [
    {
-    "business": "Wharf Books",
-    "type": "bookstore",
-    "sign": "WHARF BOOKS",
-    "sign_style": "projecting",
+    "business": "Harbor Nautilus Hotel",
+    "type": "tavern_hotel",
+    "sign": "NAUTILUS",
+    "sign_style": "flat_board",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1985,
-  "found_depth_m": 6.0
+  "year_built": 1920,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#A8503A",
+   "trim": "#FFFFFF",
+   "accent": "#2E6A6A"
+  }
  },
  "names": {
   "businesses": [
-   "Wharf Books"
+   "Harbor Nautilus Hotel"
   ]
  }
 }

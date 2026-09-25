@@ -18,10 +18,10 @@
   ],
   "drawings": []
  },
- "brief": "A Charleston single house: 16 Church Street, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Older than 1970: the Charleston single house (one room wide, side piazzas, gable end to the street) is an 18th-19th-century type; newer examples are used first where they exist. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A white two-storey house with a columned ground piazza and a glazed and louvred upper piazza, an iron fence. One photo. Older than 1970: the Charleston single house is an 18th-19th-century type; newer examples are used where they exist. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "i_house",
-  "storeys": 3,
+  "archetype": "charleston_single",
+  "storeys": 2.5,
   "main_w_ft": 25,
   "main_d_ft": 30,
   "wing": null,
@@ -32,17 +32,17 @@
   },
   "dormers": [],
   "porch": {
-   "type": "side",
+   "type": "stacked",
    "posts": "columns",
    "rail": "spindle"
   },
-  "walls": "stucco",
+  "walls": "clapboard",
   "foundation": "poured_concrete",
   "colors": {
-   "body": "#C8D6E6",
+   "body": "#F4F2EE",
    "trim": "#FFFFFF",
    "accent": "#2E2E2E",
-   "roof": "#5A5A5A"
+   "roof": "#6A6A66"
   },
   "windows": {
    "type": "6over6",

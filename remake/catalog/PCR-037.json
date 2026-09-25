@@ -10,7 +10,7 @@
  "example": {
   "title": "Bradford St, Provincetown (493673) (11110012146)",
   "place": "Provincetown, MA",
-  "year": 1850,
+  "year": 1929,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:Bradford_St,_Provincetown_(493673)_(11110012146).jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: Bradford St, Provincetown (493673) (11110012146); see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A two-storey clapboard diner on a narrow street, pale pink with a striped awning and a projecting 'Family Dining' board. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 3,
+  "storeys": 2,
   "facade": "frame_false_front",
-  "cornice": "parapet_flat",
+  "cornice": "none",
   "upper_use": "apartments",
   "storefronts": [
    {
-    "business": "Cooper Jewelers",
-    "type": "jeweler",
-    "sign": "COOPER JEWELERS",
-    "sign_style": "flat_board",
+    "business": "Captain's Table Family Dining",
+    "type": "diner",
+    "sign": "FAMILY DINING",
+    "sign_style": "projecting",
     "awning": true,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1850,
-  "found_depth_m": 6.0
+  "year_built": 1929,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#F2C8C8",
+   "trim": "#FFFFFF",
+   "accent": "#2E2E2E"
+  }
  },
  "names": {
   "businesses": [
-   "Cooper Jewelers"
+   "Captain's Table Family Dining"
   ]
  }
 }

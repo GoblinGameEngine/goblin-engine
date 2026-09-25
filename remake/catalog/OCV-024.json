@@ -24,7 +24,7 @@
   "units": 12,
   "balconies": "none",
   "walls": "stucco",
-  "roof": "shed",
+  "roof": "flat",
   "parking": "surface",
   "colors": {
    "body": "#B0A35A",

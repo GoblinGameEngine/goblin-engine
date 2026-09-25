@@ -28,7 +28,11 @@
   "paint": {
    "upper": "#9A3A2A",
    "lower": "#F4F4F2",
-   "lantern": "#1E1E1E"
+   "lantern": "#1E1E1E",
+   "bands": [
+    "#9A3A2A",
+    "#F4F4F2"
+   ]
   },
   "lantern": true,
   "keeper_house": false,

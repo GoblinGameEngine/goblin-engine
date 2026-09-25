@@ -10,7 +10,7 @@
  "example": {
   "title": "35 Reid Street",
   "place": "Charleston, Charleston County, SC",
-  "year": 1840,
+  "year": 1870,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:35_Reid_Street.jpg",
   "photos": [
@@ -18,9 +18,9 @@
   ],
   "drawings": []
  },
- "brief": "A Charleston single house: 35 Reid Street, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Older than 1970: the Charleston single house (one room wide, side piazzas, gable end to the street) is an 18th-19th-century type; newer examples are used first where they exist. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A white single house with a decorative bargeboard gable, a brick piazza screen with a door hood, and a long side piazza. One photo. Older than 1970: the Charleston single house is an 18th-19th-century type; newer examples are used where they exist. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "i_house",
+  "archetype": "charleston_single",
   "storeys": 2.5,
   "main_w_ft": 24,
   "main_d_ft": 28,
@@ -32,16 +32,16 @@
   },
   "dormers": [],
   "porch": {
-   "type": "side",
+   "type": "stacked",
    "posts": "columns",
    "rail": "spindle"
   },
   "walls": "clapboard",
   "foundation": "poured_concrete",
   "colors": {
-   "body": "#C8D6E6",
-   "trim": "#FFFFFF",
-   "accent": "#2E2E2E",
+   "body": "#F4F2EC",
+   "trim": "#1E1E1E",
+   "accent": "#8A3A2E",
    "roof": "#5A5A5A"
   },
   "windows": {
@@ -57,7 +57,7 @@
    ]
   },
   "condition": "kept",
-  "year_built": 1840,
+  "year_built": 1870,
   "found_depth_m": 6.0
  },
  "names": {

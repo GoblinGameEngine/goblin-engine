@@ -24,7 +24,7 @@
   "units": 12,
   "balconies": "per_room",
   "walls": "fiber_cement",
-  "roof": "gable",
+  "roof": "hip",
   "parking": "garage",
   "colors": {
    "body": "#F0E8D0",

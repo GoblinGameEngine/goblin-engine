@@ -36,7 +36,7 @@
    "posts": "turned",
    "rail": "spindle"
   },
-  "walls": "wood_shingle",
+  "walls": "shingle",
   "foundation": "poured_concrete",
   "colors": {
    "body": "#4E8A6A",

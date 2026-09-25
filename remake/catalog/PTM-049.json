@@ -27,7 +27,7 @@
   "form": "L",
   "balconies": "per_room",
   "walls": "brick",
-  "roof": "parapet",
+  "roof": "flat",
   "ground_floor": "lobby_restaurant",
   "pool": "none",
   "colors": {

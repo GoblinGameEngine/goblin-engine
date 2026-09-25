@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: 8-6 South Adger's Wharf; see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A two-storey stuccoed-brick wharf row with dark shutters, a small balcony, brick gate piers and iron fence. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
   "storeys": 2,
-  "facade": "stucco",
-  "cornice": "parapet_flat",
+  "facade": "brick",
+  "cornice": "none",
   "upper_use": "apartments",
   "storefronts": [
    {
-    "business": "Sandbar Antiques",
-    "type": "furniture",
-    "sign": "SANDBAR ANTIQUES",
-    "sign_style": "projecting",
+    "business": "Adger Court Wine Shop",
+    "type": "wine_bar",
+    "sign": "ADGER COURT WINES",
+    "sign_style": "flat_board",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
   "year_built": 1850,
-  "found_depth_m": 6.0
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#8A7A64",
+   "trim": "#FFFFFF",
+   "accent": "#2E2E2E"
+  }
  },
  "names": {
   "businesses": [
-   "Sandbar Antiques"
+   "Adger Court Wine Shop"
   ]
  }
 }

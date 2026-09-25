@@ -10,7 +10,7 @@
  "example": {
   "title": "Provincetown Tourism Office",
   "place": "Provincetown, Barnstable County, MA",
-  "year": 1985,
+  "year": 1880,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:Provincetown_Tourism_Office.jpg",
   "photos": [
@@ -18,11 +18,11 @@
   ],
   "drawings": []
  },
- "brief": "A 1980s two-storey clapboard office-and-shop building with green shutters on a brick-paved square, bicycles out front. One photo. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A two-storey white clapboard office house with green shutters and a mansard, brochure racks and bicycles on a brick-paved square. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
   "storeys": 2,
   "facade": "frame_false_front",
-  "cornice": "parapet_flat",
+  "cornice": "none",
   "upper_use": "offices",
   "storefronts": [
    {
@@ -35,8 +35,13 @@
    }
   ],
   "condition": "kept",
-  "year_built": 1985,
-  "found_depth_m": 6.0
+  "year_built": 1880,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#F4F2EC",
+   "trim": "#FFFFFF",
+   "accent": "#1E5A3A"
+  }
  },
  "names": {
   "businesses": [

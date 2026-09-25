@@ -23,8 +23,8 @@
   "storeys": 3,
   "units": 8,
   "balconies": "continuous",
-  "walls": "half_timber",
-  "roof": "gable",
+  "walls": "stucco",
+  "roof": "hip",
   "parking": "under",
   "colors": {
    "body": "#B9BCA6",

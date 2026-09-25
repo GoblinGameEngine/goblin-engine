@@ -10,7 +10,7 @@
  "example": {
   "title": "HarbourView Inn, Charleston",
   "place": "Charleston, Charleston County, SC",
-  "year": 1985,
+  "year": 1990,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:HarbourView_Inn,_Charleston.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: HarbourView Inn, Charleston; see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A c. 1990 four-storey brick inn on a corner: a cream arcaded ground floor, arched second-floor windows, iron balconies, a green awning over the door and flags. One photo. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 2,
-  "facade": "stucco",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "storeys": 4,
+  "facade": "brick",
+  "cornice": "corbelled_brick",
+  "upper_use": "hotel_rooms",
   "storefronts": [
    {
-    "business": "Wharf Books",
-    "type": "bookstore",
-    "sign": "WHARF BOOKS",
-    "sign_style": "projecting",
-    "awning": false,
+    "business": "Harbour View Inn",
+    "type": "tavern_hotel",
+    "sign": "HARBOUR VIEW INN",
+    "sign_style": "awning_lettering",
+    "awning": true,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1985,
-  "found_depth_m": 6.0
+  "year_built": 1990,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#A8503A",
+   "trim": "#EFE3C8",
+   "accent": "#2E4E3E"
+  }
  },
  "names": {
   "businesses": [
-   "Wharf Books"
+   "Harbour View Inn"
   ]
  }
 }

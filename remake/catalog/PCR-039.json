@@ -10,7 +10,7 @@
  "example": {
   "title": "Seamen's Bank Exterior",
   "place": "Provincetown, MA",
-  "year": 1850,
+  "year": 1975,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:Seamen's_Bank_Exterior.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: Seamen's Bank Exterior; see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A 1970s single-storey brick bank with a steep grey roof and a white-trimmed pedimented entrance bay painted blue, a paved plaza and flag. One photo. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 2,
-  "facade": "frame_false_front",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "storeys": 1,
+  "facade": "brick",
+  "cornice": "pediment",
+  "upper_use": "none",
   "storefronts": [
    {
-    "business": "Rainbow Realty",
-    "type": "real_estate",
-    "sign": "RAINBOW REALTY",
+    "business": "Seamen's Savings Bank",
+    "type": "bank",
+    "sign": "SEAMEN'S SAVINGS BANK",
     "sign_style": "flat_board",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1850,
-  "found_depth_m": 6.0
+  "year_built": 1975,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#9A4A36",
+   "trim": "#FFFFFF",
+   "accent": "#3E6A8A"
+  }
  },
  "names": {
   "businesses": [
-   "Rainbow Realty"
+   "Seamen's Savings Bank"
   ]
  }
 }

@@ -37,7 +37,7 @@
    "rail": "picket"
   },
   "walls": "wood",
-  "foundation": "concrete_block",
+  "foundation": "piles",
   "colors": {
    "body": "#8A6A4A",
    "trim": "#F0E6D2",

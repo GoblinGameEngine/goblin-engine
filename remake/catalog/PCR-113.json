@@ -18,10 +18,10 @@
   ],
   "drawings": []
  },
- "brief": "A Charleston single house: 5 Legare St, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Older than 1970: the Charleston single house (one room wide, side piazzas, gable end to the street) is an 18th-19th-century type; newer examples are used first where they exist. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A tall three-storey cream single house with black shutters, a gable window and stacked side piazzas behind stucco gate piers. One photo. Older than 1970: the Charleston single house is an 18th-19th-century type; newer examples are used where they exist. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "i_house",
-  "storeys": 2.5,
+  "archetype": "charleston_single",
+  "storeys": 3,
   "main_w_ft": 21,
   "main_d_ft": 27,
   "wing": null,
@@ -32,16 +32,16 @@
   },
   "dormers": [],
   "porch": {
-   "type": "side",
+   "type": "stacked",
    "posts": "columns",
    "rail": "spindle"
   },
   "walls": "clapboard",
   "foundation": "poured_concrete",
   "colors": {
-   "body": "#EDE0A8",
+   "body": "#E6E0CC",
    "trim": "#FFFFFF",
-   "accent": "#2E4E3E",
+   "accent": "#1E1E1E",
    "roof": "#6A6A66"
   },
   "windows": {

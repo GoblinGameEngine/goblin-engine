@@ -10,7 +10,7 @@
  "example": {
   "title": "External Building signage",
   "place": "Oak Bluffs, Martha's Vineyard, MA",
-  "year": 1985,
+  "year": 1884,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:External_Building_signage.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: External Building signage; see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A red board-and-batten carousel barn under a steep gable, a big oval gilded sign on the gable end. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 3,
-  "facade": "stucco",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "storeys": 1,
+  "facade": "frame_false_front",
+  "cornice": "none",
+  "upper_use": "none",
   "storefronts": [
    {
-    "business": "Tidewater Oyster Bar",
-    "type": "seafood_restaurant",
-    "sign": "TIDEWATER OYSTER BAR",
-    "sign_style": "projecting",
-    "awning": true,
+    "business": "Flying Horses Carousel",
+    "type": "arcade",
+    "sign": "FLYING HORSES \u00b7 AMERICA'S OLDEST CAROUSEL",
+    "sign_style": "painted_wall",
+    "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1985,
-  "found_depth_m": 6.0
+  "year_built": 1884,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#8E2A2E",
+   "trim": "#FFFFFF",
+   "accent": "#E0C060"
+  }
  },
  "names": {
   "businesses": [
-   "Tidewater Oyster Bar"
+   "Flying Horses Carousel"
   ]
  }
 }

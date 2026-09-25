@@ -20,7 +20,7 @@
  },
  "brief": "A bungalow-lot house: a small two-storey cottage of olive-green siding with red window frames, a brick chimney, a shed-roofed porch and garden beds. One photo. Older than 1970: the California bungalow is a 1905-30 type and has no newer examples. Year estimated. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "gable_front",
+  "archetype": "california_bungalow",
   "storeys": 2,
   "main_w_ft": 29,
   "main_d_ft": 28,

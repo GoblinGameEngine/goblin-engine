@@ -20,7 +20,7 @@
  },
  "brief": "A bungalow-lot house: a narrow one-and-a-half-storey gabled cottage of white siding, a full front porch on slender posts, a dark green door. One photo. Older than 1970: the California bungalow is a 1905-30 type and has no newer examples. Year estimated. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "gable_front",
+  "archetype": "california_bungalow",
   "storeys": 1.5,
   "main_w_ft": 33,
   "main_d_ft": 28,

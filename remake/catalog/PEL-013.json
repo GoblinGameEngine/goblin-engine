@@ -27,7 +27,10 @@
   "paint": {
    "tower": "#F7F7F4",
    "lantern": "#2E6B45",
-   "gallery": "#2E6B45"
+   "gallery": "#2E6B45",
+   "bands": [
+    "#F7F7F4"
+   ]
   },
   "lantern": true,
   "keeper_house": false,

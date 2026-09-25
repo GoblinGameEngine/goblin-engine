@@ -10,7 +10,7 @@
  "example": {
   "title": "6-2 N Adgers Wharf",
   "place": "Charleston, Charleston County, SC",
-  "year": 1850,
+  "year": 1800,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:6-2_N_Adgers_Wharf.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: 6-2 N Adgers Wharf; see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A two-storey whitewashed wharf building with a pyramidal slate roof, a Juliet balcony over the centre window, lanterns either side of the door. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
   "storeys": 2,
   "facade": "stucco",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "cornice": "none",
+  "upper_use": "offices",
   "storefronts": [
    {
-    "business": "Ashley Wine Bar",
-    "type": "wine_bar",
-    "sign": "ASHLEY WINE BAR",
-    "sign_style": "projecting",
+    "business": "Carrow Harbor Pilots",
+    "type": "marina_store",
+    "sign": "HARBOR PILOTS",
+    "sign_style": "flat_board",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1850,
-  "found_depth_m": 6.0
+  "year_built": 1800,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#E6E9EA",
+   "trim": "#2E2E2E",
+   "accent": "#2E2E2E"
+  }
  },
  "names": {
   "businesses": [
-   "Ashley Wine Bar"
+   "Carrow Harbor Pilots"
   ]
  }
 }

@@ -40,7 +40,7 @@
    "posts": "square",
    "rail": "none"
   },
-  "walls": "aluminum",
+  "walls": "vinyl",
   "foundation": "poured_concrete",
   "colors": {
    "body": "#9EA5A9",

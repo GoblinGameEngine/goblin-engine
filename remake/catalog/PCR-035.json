@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: Chatham Bars Ave, Chatham (493664) (11109986353); see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A small brick shopfront with a big window full of coloured T-shirts and painted letter banners either side of the glass. One photo. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 2,
-  "facade": "frame_false_front",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "storeys": 1,
+  "facade": "brick",
+  "cornice": "none",
+  "upper_use": "none",
   "storefronts": [
    {
-    "business": "Palmetto Gifts",
-    "type": "souvenir",
-    "sign": "PALMETTO GIFTS",
-    "sign_style": "flat_board",
+    "business": "Chatham Tee Co.",
+    "type": "t_shirts",
+    "sign": "CAPE COD \u00b7 CHATHAM",
+    "sign_style": "window_lettering",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
   "year_built": 1985,
-  "found_depth_m": 6.0
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#9A4A36",
+   "trim": "#FFFFFF",
+   "accent": "#C8263A"
+  }
  },
  "names": {
   "businesses": [
-   "Palmetto Gifts"
+   "Chatham Tee Co."
   ]
  }
 }

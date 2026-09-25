@@ -10,7 +10,7 @@
  "example": {
   "title": "The Squealing Pig, 335 Commercial St, Provincetown (493676) (11110044514)",
   "place": "Provincetown, MA",
-  "year": 1850,
+  "year": 1900,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:The_Squealing_Pig,_335_Commercial_St,_Provincetown_(493676)_(11110044514).jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: The Squealing Pig, 335 Commercial St, Provincetown (493676) (11110044514); see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A narrow shingled two-storey pub with a red-and-black painted shopfront, gold trim and a hanging pig sign, an outside stair. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
   "storeys": 2,
   "facade": "frame_false_front",
-  "cornice": "parapet_flat",
+  "cornice": "none",
   "upper_use": "apartments",
   "storefronts": [
    {
-    "business": "Lowcountry Bakery",
-    "type": "bakery",
-    "sign": "LOWCOUNTRY BAKERY",
-    "sign_style": "flat_board",
+    "business": "The Squealing Pig",
+    "type": "bar",
+    "sign": "PIG",
+    "sign_style": "projecting",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1850,
-  "found_depth_m": 6.0
+  "year_built": 1900,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#8A8A84",
+   "trim": "#C8263A",
+   "accent": "#F0C030"
+  }
  },
  "names": {
   "businesses": [
-   "Lowcountry Bakery"
+   "The Squealing Pig"
   ]
  }
 }

@@ -27,7 +27,7 @@
   "storefronts": [
    {
     "business": "Heights Pharmacy",
-    "type": "store",
+    "type": "drug_store",
     "sign": "HEIGHTS PHARMACY",
     "sign_style": "flat_board",
     "awning": true,
@@ -35,7 +35,7 @@
    },
    {
     "business": "Cindy's Nails",
-    "type": "store",
+    "type": "beauty_salon",
     "sign": "CINDY'S NAILS",
     "sign_style": "flat_board",
     "awning": true,

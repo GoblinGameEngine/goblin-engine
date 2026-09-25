@@ -36,7 +36,7 @@
    "posts": "tapered_on_piers",
    "rail": "solid"
   },
-  "walls": "stone",
+  "walls": "block",
   "foundation": "poured_concrete",
   "colors": {
    "body": "#9A968C",

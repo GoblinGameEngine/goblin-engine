@@ -26,7 +26,10 @@
   "paint": {
    "tower": "#8A3A2A",
    "lantern": "#1E1E1E",
-   "trim": "#FFFFFF"
+   "trim": "#FFFFFF",
+   "bands": [
+    "#8A3A2A"
+   ]
   },
   "lantern": true,
   "keeper_house": true,

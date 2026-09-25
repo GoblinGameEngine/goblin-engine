@@ -10,7 +10,7 @@
  "example": {
   "title": "Front of Pleasant View Inn, Misquamicut Beach, RI",
   "place": "Watch Hill, Westerly, RI",
-  "year": 1985,
+  "year": 1975,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:Front_of_Pleasant_View_Inn,_Misquamicut_Beach,_RI.JPG",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: Front of Pleasant View Inn, Misquamicut Beach, RI; see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A 1970s two-storey beach inn: a glazed lobby pavilion with tall windows and a flagpole, blue-railed room galleries behind, hydrangeas and a paved drive. One photo. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 3,
+  "storeys": 2,
   "facade": "frame_false_front",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "cornice": "none",
+  "upper_use": "hotel_rooms",
   "storefronts": [
    {
-    "business": "Cooper Jewelers",
-    "type": "jeweler",
-    "sign": "COOPER JEWELERS",
+    "business": "Pleasant View Inn",
+    "type": "motel",
+    "sign": "PLEASANT VIEW INN",
     "sign_style": "flat_board",
-    "awning": true,
+    "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1985,
-  "found_depth_m": 6.0
+  "year_built": 1975,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#F2F1EC",
+   "trim": "#2E6ACB",
+   "accent": "#2E4E8A"
+  }
  },
  "names": {
   "businesses": [
-   "Cooper Jewelers"
+   "Pleasant View Inn"
   ]
  }
 }

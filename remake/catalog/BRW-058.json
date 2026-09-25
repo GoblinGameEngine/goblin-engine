@@ -37,7 +37,7 @@
    "rail": "picket"
   },
   "walls": "vinyl",
-  "foundation": "concrete_block",
+  "foundation": "piles",
   "colors": {
    "body": "#F2F2EE",
    "trim": "#FFFFFF",

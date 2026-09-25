@@ -10,7 +10,7 @@
  "example": {
   "title": "King Street Houses in Charleston, SC (building 1 of the row)",
   "place": "Charleston, Charleston County, SC",
-  "year": 1850,
+  "year": 1840,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:King_Street_Houses_in_Charleston,_SC.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: King Street Houses in Charleston, SC (building 1 of the row); see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A three-storey white clapboard house with tiered piazzas on King Street, its ground floor used as a tea room (seen across the street, left of the pair). One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 2,
-  "facade": "stucco",
-  "cornice": "parapet_flat",
+  "storeys": 3,
+  "facade": "frame_false_front",
+  "cornice": "none",
   "upper_use": "apartments",
   "storefronts": [
    {
-    "business": "Battery Gallery",
-    "type": "art_gallery",
-    "sign": "BATTERY GALLERY",
+    "business": "King Street Tea Room",
+    "type": "cafe",
+    "sign": "KING STREET TEA ROOM",
     "sign_style": "projecting",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1850,
-  "found_depth_m": 6.0
+  "year_built": 1840,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#F4F2EC",
+   "trim": "#FFFFFF",
+   "accent": "#2E4E3E"
+  }
  },
  "names": {
   "businesses": [
-   "Battery Gallery"
+   "King Street Tea Room"
   ]
  }
 }

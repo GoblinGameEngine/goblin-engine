@@ -10,7 +10,7 @@
  "example": {
   "title": "The Cigar Factory, East Bay Street, Eastside, Charleston, SC - 50684822976",
   "place": "Charleston, Charleston County, SC",
-  "year": 1985,
+  "year": 1881,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:The_Cigar_Factory,_East_Bay_Street,_Eastside,_Charleston,_SC_-_50684822976.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: The Cigar Factory, East Bay Street, Eastside, Charleston, SC - 50684822976; see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A long two-storey brick industrial building (the old cigar factory, now shops and a restaurant): rows of tall arched windows, a low hipped roof, palms on the corner. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
   "storeys": 2,
-  "facade": "stucco",
+  "facade": "brick",
   "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "upper_use": "offices",
   "storefronts": [
    {
-    "business": "Rainbow Realty",
-    "type": "real_estate",
-    "sign": "RAINBOW REALTY",
-    "sign_style": "flat_board",
+    "business": "Cigar Works Kitchen",
+    "type": "cafe",
+    "sign": "CIGAR WORKS KITCHEN",
+    "sign_style": "painted_wall",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1985,
-  "found_depth_m": 6.0
+  "year_built": 1881,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#9A5A44",
+   "trim": "#FFFFFF",
+   "accent": "#2E4E7E"
+  }
  },
  "names": {
   "businesses": [
-   "Rainbow Realty"
+   "Cigar Works Kitchen"
   ]
  }
 }

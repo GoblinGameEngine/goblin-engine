@@ -24,7 +24,7 @@
   "form": "L",
   "balconies": "per_room",
   "walls": "stucco",
-  "roof": "parapet",
+  "roof": "flat",
   "ground_floor": "shops",
   "pool": "rooftop",
   "colors": {

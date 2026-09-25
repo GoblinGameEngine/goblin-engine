@@ -10,7 +10,7 @@
  "example": {
   "title": "100 Meeting Street - SE corner",
   "place": "Charleston, Charleston County, SC",
-  "year": 1850,
+  "year": 1840,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:100_Meeting_Street_-_SE_corner.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: 100 Meeting Street - SE corner; see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A Greek Revival civic-commercial building on a corner: cream stucco over a raised brownstone base, a tetrastyle Doric portico on the side, a tall arched window and iron railings. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
   "storeys": 2,
   "facade": "stucco",
-  "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "cornice": "pediment",
+  "upper_use": "none",
   "storefronts": [
    {
-    "business": "Wharf Books",
+    "business": "Carrow Library Society",
     "type": "bookstore",
-    "sign": "WHARF BOOKS",
-    "sign_style": "projecting",
+    "sign": "CARROW LIBRARY SOCIETY",
+    "sign_style": "painted_wall",
     "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1850,
-  "found_depth_m": 6.0
+  "year_built": 1840,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#EFE9DC",
+   "trim": "#FFFFFF",
+   "accent": "#6A5A4A"
+  }
  },
  "names": {
   "businesses": [
-   "Wharf Books"
+   "Carrow Library Society"
   ]
  }
 }

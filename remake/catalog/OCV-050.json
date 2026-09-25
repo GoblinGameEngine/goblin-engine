@@ -36,7 +36,7 @@
    "posts": "square",
    "rail": "none"
   },
-  "walls": "half_timber",
+  "walls": "stucco",
   "foundation": "poured_concrete",
   "colors": {
    "body": "#F1EEE8",

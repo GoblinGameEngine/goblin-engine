@@ -10,7 +10,7 @@
  "example": {
   "title": "701 East Bay - south building",
   "place": "Charleston, Charleston County, SC",
-  "year": 1985,
+  "year": 1885,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:701_East_Bay_-_south_building.jpg",
   "photos": [
@@ -18,29 +18,34 @@
   ],
   "drawings": []
  },
- "brief": "A harbour-town commercial building: 701 East Bay - south building; see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A two-storey red-brick warehouse converted to studios: tall arched windows, a gabled end, an outside steel stair to the upper floor, palms and a paved forecourt. One photo. Older than 1970: the Charleston / New England main-street block is an 18th-19th-century type (the town's model). Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "storeys": 3,
-  "facade": "stucco",
+  "storeys": 2,
+  "facade": "brick",
   "cornice": "parapet_flat",
-  "upper_use": "apartments",
+  "upper_use": "offices",
   "storefronts": [
    {
-    "business": "Sea Island Ice Cream",
-    "type": "ice_cream",
-    "sign": "SEA ISLAND ICE CREAM",
-    "sign_style": "projecting",
-    "awning": true,
+    "business": "East Bay Design Studio",
+    "type": "art_gallery",
+    "sign": "EAST BAY DESIGN",
+    "sign_style": "flat_board",
+    "awning": false,
     "extra_signs": []
    }
   ],
   "condition": "kept",
-  "year_built": 1985,
-  "found_depth_m": 6.0
+  "year_built": 1885,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#9A5A44",
+   "trim": "#FFFFFF",
+   "accent": "#6A6A66"
+  }
  },
  "names": {
   "businesses": [
-   "Sea Island Ice Cream"
+   "East Bay Design Studio"
   ]
  }
 }

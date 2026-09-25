@@ -37,7 +37,7 @@
    "rail": "spindle"
   },
   "walls": "clapboard",
-  "foundation": "poured_concrete",
+  "foundation": "piles",
   "colors": {
    "body": "#F4F4F2",
    "trim": "#FFFFFF",

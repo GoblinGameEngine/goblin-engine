@@ -24,7 +24,7 @@
   "units": 6,
   "balconies": "per_room",
   "walls": "stucco",
-  "roof": "gable",
+  "roof": "hip",
   "parking": "garage",
   "colors": {
    "body": "#9E948A",

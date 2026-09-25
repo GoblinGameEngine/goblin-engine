@@ -10,7 +10,7 @@
  "example": {
   "title": "78 Halsey Boulevard, Charleston, South Carolina",
   "place": "Charleston, Charleston County, SC",
-  "year": 2005,
+  "year": 2012,
   "source": "Wikimedia Commons",
   "url": "https://commons.wikimedia.org/wiki/File:78_Halsey_Boulevard,_Charleston,_South_Carolina.jpg",
   "photos": [
@@ -18,10 +18,10 @@
   ],
   "drawings": []
  },
- "brief": "A Charleston single house: 78 Halsey Boulevard, Charleston, South Carolina, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A 2010s raised Lowcountry house: grey siding, a wraparound porch on white columns over a brick-pier ground floor, a brick-and-lattice front wall. One photo. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "i_house",
-  "storeys": 2.5,
+  "archetype": "charleston_single",
+  "storeys": 2,
   "main_w_ft": 21,
   "main_d_ft": 29,
   "wing": null,
@@ -32,17 +32,17 @@
   },
   "dormers": [],
   "porch": {
-   "type": "side",
+   "type": "stacked",
    "posts": "columns",
    "rail": "spindle"
   },
-  "walls": "clapboard",
-  "foundation": "poured_concrete",
+  "walls": "fiber_cement",
+  "foundation": "piles",
   "colors": {
-   "body": "#E9C8C0",
+   "body": "#C9C4B6",
    "trim": "#FFFFFF",
    "accent": "#2E2E2E",
-   "roof": "#5A5A5A"
+   "roof": "#6A6A66"
   },
   "windows": {
    "type": "6over6",
@@ -57,7 +57,7 @@
    ]
   },
   "condition": "kept",
-  "year_built": 2005,
+  "year_built": 2012,
   "found_depth_m": 6.0
  },
  "names": {

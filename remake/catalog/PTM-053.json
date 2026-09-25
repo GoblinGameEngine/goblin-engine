@@ -25,7 +25,10 @@
   "height_m": 20.0,
   "paint": {
    "tower": "#F4F4F2",
-   "lantern": "#1E1E1E"
+   "lantern": "#1E1E1E",
+   "bands": [
+    "#F4F4F2"
+   ]
   },
   "lantern": true,
   "keeper_house": false,

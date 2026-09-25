@@ -24,7 +24,7 @@
   "units": 12,
   "balconies": "none",
   "walls": "stucco",
-  "roof": "gable",
+  "roof": "hip",
   "parking": "surface",
   "colors": {
    "body": "#C9A95E",

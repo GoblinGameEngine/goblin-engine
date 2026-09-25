@@ -22,7 +22,7 @@
  "traits": {
   "storeys": 16,
   "form": "stepped",
-  "balconies": "corner",
+  "balconies": "per_room",
   "walls": "concrete",
   "roof": "flat",
   "ground_floor": "lobby",

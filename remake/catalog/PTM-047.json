@@ -36,7 +36,7 @@
    "posts": "turned",
    "rail": "spindle"
   },
-  "walls": "stone",
+  "walls": "block",
   "foundation": "poured_concrete",
   "colors": {
    "body": "#7A6A5A",

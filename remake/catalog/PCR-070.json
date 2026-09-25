@@ -18,10 +18,10 @@
   ],
   "drawings": []
  },
- "brief": "A Charleston single house: 205 Wentworth Street, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "brief": "A 2000s single house: pink siding with dark green shutters, a coral-painted brick ground storey, stacked side piazzas, a stepped garden wall. One photo. Foundations taken deeper than needed (spec rule 4).",
  "traits": {
-  "archetype": "i_house",
-  "storeys": 2.5,
+  "archetype": "charleston_single",
+  "storeys": 3,
   "main_w_ft": 24,
   "main_d_ft": 30,
   "wing": null,
@@ -32,17 +32,17 @@
   },
   "dormers": [],
   "porch": {
-   "type": "side",
+   "type": "stacked",
    "posts": "columns",
    "rail": "spindle"
   },
   "walls": "clapboard",
-  "foundation": "poured_concrete",
+  "foundation": "piles",
   "colors": {
-   "body": "#F4F2EC",
+   "body": "#E9C4C0",
    "trim": "#FFFFFF",
-   "accent": "#2E4E3E",
-   "roof": "#5A5A5A"
+   "accent": "#1E3A2E",
+   "roof": "#6A6A66"
   },
   "windows": {
    "type": "6over6",
