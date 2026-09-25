@@ -11,6 +11,7 @@ var is_open := false
 var partners: Array = []
 var _closed := Vector3.ZERO
 var _tween: Tween
+var _snd: AudioStreamPlayer3D
 
 
 func setup(p_slide: Vector3) -> void:
@@ -35,6 +36,14 @@ func interact_prompt() -> String:
 
 func _slide(to_open: bool) -> void:
 	is_open = to_open
+	if _snd == null:
+		_snd = AudioStreamPlayer3D.new()
+		_snd.stream = load("res://remake/audio/door_slide.wav")
+		_snd.unit_size = 3.0
+		_snd.max_distance = 40.0
+		add_child(_snd)
+	_snd.pitch_scale = 1.0 if to_open else 0.92
+	_snd.play()
 	if _tween:
 		_tween.kill()
 	_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

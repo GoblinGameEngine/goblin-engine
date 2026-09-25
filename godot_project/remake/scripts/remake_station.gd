@@ -100,6 +100,10 @@ func _ready() -> void:
 	rain.name = "Rain"
 	add_child(rain)
 	rain.setup(player.get_node("Head/Camera3D"), clouds)
+	var water_amb := WaterAmbience.new()
+	water_amb.name = "WaterAmbience"
+	add_child(water_amb)
+	water_amb.setup(player.get_node("Head/Camera3D"))
 	_mark("clouds setup")
 	world = Node3D.new()
 	world.name = "World"

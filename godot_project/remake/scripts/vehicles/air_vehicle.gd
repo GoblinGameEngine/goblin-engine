@@ -51,6 +51,7 @@ var _yaw_rate := 0.0
 var _spin := 0.0
 var _riders: Array = []
 var _hud: Label
+var _engine_sounds: Array = []
 var _seat_local := Vector3.ZERO
 
 
@@ -60,6 +61,19 @@ func _ready() -> void:
 	_build_hull()
 	_rig()
 	_ranges()
+	# the engines' sound: one looped emitter at each engine, pitched and loudened with the rotors
+	var snd: AudioStreamWAV = load("res://remake/audio/aerostat_engine.wav")
+	snd.loop_mode = AudioStreamWAV.LOOP_FORWARD
+	snd.loop_end = snd.data.size() / 2
+	for e in engines:
+		var p := AudioStreamPlayer3D.new()
+		p.name = "engine_sound"
+		p.stream = snd
+		p.unit_size = 6.0
+		p.max_distance = 400.0
+		p.volume_db = -80.0
+		(e[0] as Node3D).add_child(p)
+		_engine_sounds.append(p)
 
 
 func _build_hull() -> void:
@@ -299,6 +313,17 @@ func _animate(fwd_in: float, turn_in: float, lift_in: float, delta: float) -> vo
 		eng.rotation.x = move_toward(eng.rotation.x, -tilt, tilt_rate * delta)
 		if e[1]:
 			(e[1] as Node3D).rotate_object_local(Vector3.UP, _spin * delta)
+	for p in _engine_sounds:
+		var sp := p as AudioStreamPlayer3D
+		if _spin < 0.5:
+			if sp.playing:
+				sp.stop()
+			continue
+		if not sp.playing:
+			sp.play(randf() * 3.0)
+		var k := clampf(_spin / 40.0, 0.0, 1.0)
+		sp.pitch_scale = 0.55 + 0.75 * k
+		sp.volume_db = linear_to_db(0.15 + 0.85 * k) - 4.0
 
 
 func _carry(delta: float) -> void:
