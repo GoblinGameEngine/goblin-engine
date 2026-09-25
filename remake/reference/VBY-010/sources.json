@@ -1,0 +1,27 @@
+{
+ "structure": "VBY-010",
+ "files": [
+  {
+   "file": "commons_Old_Hardware_Store.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Old_Hardware_Store.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Old_Hardware_Store.jpg/1920px-Old_Hardware_Store.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Old Hardware Store.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "LeeG7144",
+   "caption": "Old Hardware Store 678 Grand St Vermilion Ohio"
+  },
+  {
+   "file": "commons_Old_Hardware_Store_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Old_Hardware_Store_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Old_Hardware_Store_2.jpg/1920px-Old_Hardware_Store_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Old Hardware Store 2.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "LeeG7144",
+   "caption": "Old Hardware Store 678 Grand St Vermilion Ohio"
+  }
+ ]
+}

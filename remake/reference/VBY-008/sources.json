@@ -1,0 +1,27 @@
+{
+ "structure": "VBY-008",
+ "files": [
+  {
+   "file": "commons_Barber_Shop_Vermilion_Ohio_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Barber_Shop_Vermilion_Ohio_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Barber_Shop_Vermilion_Ohio_2.jpg/1920px-Barber_Shop_Vermilion_Ohio_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Barber Shop Vermilion Ohio 2.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "LeeG7144",
+   "caption": "Barber Shop"
+  },
+  {
+   "file": "commons_Barber_Shop_Vermilion_Ohio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Barber_Shop_Vermilion_Ohio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Barber_Shop_Vermilion_Ohio.jpg/1920px-Barber_Shop_Vermilion_Ohio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Barber Shop Vermilion Ohio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "LeeG7144",
+   "caption": "Barber Shop"
+  }
+ ]
+}

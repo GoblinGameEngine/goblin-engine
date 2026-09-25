@@ -1,0 +1,27 @@
+{
+ "structure": "VBY-014",
+ "files": [
+  {
+   "file": "commons_Island_House_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Island_House_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Island_House_2.jpg/1920px-Island_House_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Island House 2.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "LeeG7144",
+   "caption": "Island House"
+  },
+  {
+   "file": "commons_Island_House.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Island_House.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Island_House.jpg/1920px-Island_House.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Island House.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "LeeG7144",
+   "caption": "Island House"
+  }
+ ]
+}

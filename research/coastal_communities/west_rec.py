@@ -24,8 +24,8 @@ sys.path.insert(0, HERE)
 import west_net  # noqa: E402,F401  -- IPv4 + patient 429 handling for refs.get
 
 CAT = os.path.join(ROOT, "remake", "catalog")
-CLAIMS = os.path.join(CAT, "_claims_coastal_west.txt")
-OTHER_CLAIMS = [os.path.join(CAT, f) for f in ("_claims_coastal_east.txt", "_claims_coastal.txt")]
+CLAIMS = os.path.join(CAT, os.environ.get("COAST_CLAIMS", "_claims_coastal_west.txt"))
+OTHER_CLAIMS = glob.glob(os.path.join(CAT, "_claims_coastal*.txt"))  # every worker's claims, re-read at start
 INV = os.path.join(ROOT, "remake", "inventory", "coastal_inventory.json")
 
 
@@ -112,7 +112,7 @@ def make(spec_path):
               "source": r["example"].get("source", "Wikimedia Commons"),
               "url": r["example"].get("url") or "https://commons.wikimedia.org/wiki/" + r["photos"][0].replace(" ", "_"),
               "photos": files, "drawings": []}
-        rec = {"id": sid, "settlement": s["settlement"], "kind": s["kind"], "coast": "west"}
+        rec = {"id": sid, "settlement": s["settlement"], "kind": s["kind"], "coast": s.get("coast", "west")}
         if "w" in s:
             rec["lot"] = {"w": s["w"], "d": s["d"]}
         else:

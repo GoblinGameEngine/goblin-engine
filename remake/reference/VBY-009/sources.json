@@ -1,0 +1,27 @@
+{
+ "structure": "VBY-009",
+ "files": [
+  {
+   "file": "commons_Old_Vermilion_Banking_Company.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Old_Vermilion_Banking_Company.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Old_Vermilion_Banking_Company.jpg/1920px-Old_Vermilion_Banking_Company.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Old Vermilion Banking Company.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "LeeG7144",
+   "caption": "1907 Old Vermilion Banking Company Building"
+  },
+  {
+   "file": "commons_Old_Vermilion_Banking_Co_Plaque.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Old_Vermilion_Banking_Co_Plaque.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Old_Vermilion_Banking_Co_Plaque.jpg/1920px-Old_Vermilion_Banking_Co_Plaque.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Old Vermilion Banking Co Plaque.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "LeeG7144",
+   "caption": "Old Vermilion Banking Company Building"
+  }
+ ]
+}
