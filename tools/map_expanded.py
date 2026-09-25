@@ -2259,6 +2259,89 @@ print("creek crossings (roads+rail, need >=2):", CREEK_XING)
 # ------------------------------------------------------------------ inventory export
 # `--inventory FILE`: every structure on the map as JSON, the master list the building /
 # bridge research works from (remake/inventory/).
+# `--coastal-inventory FILE`: the NEW structures only (the coastal communities, the Harrow Falls and
+# Cedar Ford waterfront pieces, every boardwalk / pier / wharf / breakwater, the great bridges) -- the
+# list the coastal catalog works from (remake/inventory/coastal_inventory.json).  The game's own
+# inventory (map_inventory.json) is untouched.
+PREFIX = {"Port Carrow": "PCR", "Solana Point": "SOL", "Tern Harbor": "TRN", "Pelican Cove": "PEL",
+          "Brightwater": "BRW", "Haven Point": "HVN", "Playa Verde": "PLV", "Oceanview": "OCV",
+          "Port Tamsin": "PTM", "Victory Bay": "VBY", "Harrow Falls": "HFW", "Cedar Ford": "CFW"}
+COAST_OF = {"Port Carrow": "east", "Tern Harbor": "east", "Brightwater": "east", "Haven Point": "east",
+            "Solana Point": "west", "Pelican Cove": "west", "Playa Verde": "west", "Oceanview": "west",
+            "Port Tamsin": "greatlakes", "Victory Bay": "greatlakes", "Harrow Falls": "greatlakes", "Cedar Ford": "greatlakes"}
+if "--coastal-inventory" in sys.argv:
+    import json
+
+    def _info(poly):
+        cs = sum(p_[0] for p_ in poly) / len(poly)
+        cx = sum(p_[1] for p_ in poly) / len(poly)
+        if len(poly) == 4:
+            w = math.dist(poly[0], poly[1])
+            d = math.dist(poly[1], poly[2])
+            ang = math.degrees(math.atan2(poly[1][1] - poly[0][1], poly[1][0] - poly[0][0]))
+            fe = [[round(poly[0][0], 1), round(poly[0][1], 1)], [round(poly[1][0], 1), round(poly[1][1], 1)]]
+        else:
+            r_ = max(math.dist((cs, cx), p_) for p_ in poly)
+            w = d = 2 * r_
+            ang, fe = 0.0, None
+        return {"s": round(cs % C, 1), "x": round(cx, 1), "w": round(w, 1), "d": round(d, 1),
+                "angle_deg": round(ang, 1), "front_edge": fe}
+
+    OLD_IDS = {st_["settlement"]: 0 for st_ in _INV["structures"]}
+    ci = {"settlements": [], "structures": [], "walks": [], "bridges": []}
+    for t in TOWNS:
+        if t.name not in PREFIX:
+            continue
+        pre = PREFIX[t.name]
+        new_town = t.coastal
+        if new_town:
+            ci["settlements"].append({"name": t.name, "tier": t.tier, "pop": t.pop, "founding": t.founding,
+                                      "archetype": t.archetype, "coast": COAST_OF[t.name], "id_prefix": pre})
+        # land buildings: all of a new town's; for Harrow Falls / Cedar Ford only the pieces added now
+        n = 0
+        items = []
+        if new_town:
+            items = [(poly, kind, False) for poly, kind, part in t.bldgs if not part]
+        else:
+            old_n = sum(1 for st_ in _INV["structures"] if st_["settlement"] == t.name)
+            mains = [(poly, kind) for poly, kind, part in t.bldgs if not part]
+            items = [(poly, kind, False) for poly, kind in mains[old_n:]]
+        items += [(poly, kind, True) for poly, kind in t.wbldgs]
+        for poly, kind, over_water in items:
+            n += 1
+            inf = _info(poly)
+            best, label = 40.0, None
+            for p_, txt in t.marks:
+                dd = math.dist(p_, (inf["s"], inf["x"])) if abs(p_[0] - inf["s"]) < C / 2 else 1e9
+                if dd < best:
+                    best, label = dd, txt
+            ci["structures"].append({"id": f"{pre}-{n:03d}", "settlement": t.name, "coast": COAST_OF[t.name],
+                                     "kind": kind, "label": label, "over_water": over_water, **inf})
+        for k, (pts, w, kind) in enumerate(t.walks, 1):
+            ci["walks"].append({"id": f"{pre}-W{k:02d}", "settlement": t.name, "coast": COAST_OF[t.name], "kind": kind,
+                                "width_m": w, "pts": [[round(a % C, 1), round(b_, 1)] for a, b_ in pts],
+                                "length_m": round(sum(math.dist(pts[i], pts[i + 1]) for i in range(len(pts) - 1)), 1)})
+        for k, (poly, kind) in enumerate(t.decks, 1):
+            inf = _info(poly)
+            ci["walks"].append({"id": f"{pre}-D{k:02d}", "settlement": t.name, "coast": COAST_OF[t.name], "kind": kind + "_deck", **inf})
+    for k, (a, b_, cls) in enumerate(BRIDGES["major"], 1):
+        s_m, x_m = (a[0] + b_[0]) / 2, (a[1] + b_[1]) / 2
+        i, j = idx(s_m, x_m)
+        over = "Kettle River" if abs(x_m - rxf(s_m)) < 400 else ("Maumee River" if x_m < 0 else "Miami River")
+        ci["bridges"].append({"id": f"XBR-{k:02d}", "road_class": cls, "over": over, "s": round(s_m % C, 1), "x": round(x_m, 1),
+                              "water_span_m": round(math.dist(a, b_), 1),
+                              "ends": [[round(a[0] % C, 1), round(a[1], 1)], [round(b_[0] % C, 1), round(b_[1], 1)]]})
+    for k, (a, b_) in enumerate(BRIDGES["rail"], 1):
+        s_m, x_m = (a[0] + b_[0]) / 2, (a[1] + b_[1]) / 2
+        if math.dist(a, b_) > 60:
+            ci["bridges"].append({"id": f"XRR-{k:02d}", "road_class": "rail", "over": "Miami River", "s": round(s_m % C, 1),
+                                  "x": round(x_m, 1), "water_span_m": round(math.dist(a, b_), 1)})
+    out_ci = sys.argv[sys.argv.index("--coastal-inventory") + 1]
+    with open(out_ci, "w") as f:
+        json.dump(ci, f, indent=1)
+    print(f"coastal inventory: {len(ci['structures'])} structures, {len(ci['walks'])} walks/decks, "
+          f"{len(ci['bridges'])} great bridges -> {out_ci}")
+
 if "--inventory" in sys.argv:
     sys.exit("map_expanded.py is a draft: no --inventory / --terrain export until it's approved")
     import json
