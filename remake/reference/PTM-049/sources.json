@@ -1,0 +1,49 @@
+{
+ "structure": "PTM-049",
+ "files": [
+  {
+   "file": "commons_Perry_Hotel.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Perry_Hotel.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Perry_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Perry Hotel.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "rossograph",
+   "caption": "Perry Hotel"
+  },
+  {
+   "file": "commons_Hotel_Perry_in_Petoskey_Michigan.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hotel_Perry_in_Petoskey_Michigan.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Hotel_Perry_in_Petoskey_Michigan.jpg/1920px-Hotel_Perry_in_Petoskey_Michigan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Hotel Perry in Petoskey Michigan.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "MSwierenga",
+   "caption": "Porch of the Hotel Perry in Petoskey, Michigan"
+  },
+  {
+   "file": "commons_Hotel_Perry.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hotel_Perry.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Hotel_Perry.jpg/1920px-Hotel_Perry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Hotel Perry.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "MSwierenga",
+   "caption": "Hotel Perry in Petoskey, Michigan"
+  },
+  {
+   "file": "commons_Stafford_s_Perry_Hotel.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Stafford%27s_Perry_Hotel.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Stafford%27s_Perry_Hotel.jpg/1920px-Stafford%27s_Perry_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Stafford's Perry Hotel.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "MSwierenga",
+   "caption": "Side balconies of the Stafford's Perry Hotel in Petoskey Michigan"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "PTM-021",
+ "files": [
+  {
+   "file": "commons_State_Theater_in_Traverse_City_1_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:State_Theater_in_Traverse_City_(1).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/State_Theater_in_Traverse_City_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:State Theater in Traverse City (1).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "supercraigtalbert",
+   "caption": "State Theater in Traverse City during Traverse City Film Festival"
+  },
+  {
+   "file": "commons_Indiana_Jones_and_the_Dial_of_Destiny_State_Theatre_Traverse_City_Michigan.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Indiana_Jones_and_the_Dial_of_Destiny,_State_Theatre,_Traverse_City,_Michigan.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Indiana_Jones_and_the_Dial_of_Destiny%2C_State_Theatre%2C_Traverse_City%2C_Michigan.jpg/1920px-Indiana_Jones_and_the_Dial_of_Destiny%2C_State_Theatre%2C_Traverse_City%2C_Michigan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Indiana Jones and the Dial of Destiny, State Theatre, Traverse City, Michigan.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Kevin Dooley",
+   "caption": "Indiana Jones and the Dial of Destiny, State Theatre, Traverse City, Michigan."
+  }
+ ]
+}
