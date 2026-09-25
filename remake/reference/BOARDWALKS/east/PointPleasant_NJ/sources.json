@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/east/PointPleasant_NJ",
+ "files": [
+  {
+   "file": "commons_Shark_Escape_station_Jenkinson_s_Boardwalk.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Shark_Escape_station_Jenkinson%27s_Boardwalk.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Shark_Escape_station_Jenkinson%27s_Boardwalk.jpg/1920px-Shark_Escape_station_Jenkinson%27s_Boardwalk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Shark Escape station Jenkinson's Boardwalk.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Martin Lewison",
+   "caption": "View of the Shark Escape station at Jenkinson's Boardwalk"
+  },
+  {
+   "file": "commons_Shark_Escape_train_at_Jenkinson_s_Boardwalk.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Shark_Escape_train_at_Jenkinson%27s_Boardwalk.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Shark_Escape_train_at_Jenkinson%27s_Boardwalk.jpg/1920px-Shark_Escape_train_at_Jenkinson%27s_Boardwalk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Shark Escape train at Jenkinson's Boardwalk.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Martin Lewison",
+   "caption": "View of Shark Escape train at Jenkinson's Boardwalk"
+  },
+  {
+   "file": "commons_Train_ride_at_Jenkinson_s_Boardwalk.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Train_ride_at_Jenkinson%27s_Boardwalk.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Train_ride_at_Jenkinson%27s_Boardwalk.jpg/1920px-Train_ride_at_Jenkinson%27s_Boardwalk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Train ride at Jenkinson's Boardwalk.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Martin Lewison",
+   "caption": "Train ride at Jenkinson's Boardwalk"
+  },
+  {
+   "file": "commons_Jenkinson_s_Boardwalk_parking.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Jenkinson%27s_Boardwalk_parking.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Jenkinson%27s_Boardwalk_parking.jpg/1920px-Jenkinson%27s_Boardwalk_parking.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Jenkinson's Boardwalk parking.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Martin Lewison",
+   "caption": "Jenkinson's Boardwalk parking"
+  },
+  {
+   "file": "commons_Patriot_s_Run_Jenkinson_s_Boardwalk_inside_park.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Patriot%27s_Run_Jenkinson%27s_Boardwalk_inside_park.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Patriot%27s_Run_Jenkinson%27s_Boardwalk_inside_park.jpg/1920px-Patriot%27s_Run_Jenkinson%27s_Boardwalk_inside_park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Patriot's Run Jenkinson's Boardwalk inside park.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Martin Lewison",
+   "caption": "View of Patriot's Run at Jenkinson's Boardwalk from inside park"
+  }
+ ]
+}

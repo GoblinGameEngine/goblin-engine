@@ -1,0 +1,49 @@
+{
+ "structure": "BRIDGES/TacomaNarrows_2007",
+ "files": [
+  {
+   "file": "commons_Tacoma_Narrows_Bridge_2009.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Tacoma_Narrows_Bridge_2009.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Tacoma_Narrows_Bridge_2009.jpg/1920px-Tacoma_Narrows_Bridge_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Tacoma Narrows Bridge 2009.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Lderendi",
+   "caption": "Tacoma Narrows Bridge seen from the south (Tacoma Side). Left: new bridge from 2007, right: old bridge from 1950."
+  },
+  {
+   "file": "commons_Tacoma_Narrows_Bridge_117561801_.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Tacoma_Narrows_Bridge_(117561801).jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Tacoma_Narrows_Bridge_%28117561801%29.jpeg/1920px-Tacoma_Narrows_Bridge_%28117561801%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Tacoma Narrows Bridge (117561801).jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "\nSounderbruce",
+   "caption": "\n500px provided description: The Tacoma Narrows Bridge is a pair of suspension bridges that cross the Tacoma Narrows, a small strait in the Puget Sound west of Tacoma, Washington. The site is known for the infamous \"Galloping Gertie\", which failed in a windstorm just months after opening in 1940. A replacement was built in 1950 and a second, tolled span was built in 2007 as traffic increased. [#suspension bridge ,#Narrows Bridge ,#Tacoma Narrows Bridge ,#twin bridges ,#State Route 16]"
+  },
+  {
+   "file": "commons_Bridges_-_Tacoma_WA_-_Tacoma_Narrows_Bridge_2_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bridges_-_Tacoma,_WA_-_Tacoma_Narrows_Bridge_(2).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Bridges_-_Tacoma%2C_WA_-_Tacoma_Narrows_Bridge_%282%29.jpg/1280px-Bridges_-_Tacoma%2C_WA_-_Tacoma_Narrows_Bridge_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Bridges - Tacoma, WA - Tacoma Narrows Bridge (2).jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Bmzuckerman",
+   "caption": "Far (westbound) built in 1950.  Near (eastbound) built in 2007."
+  },
+  {
+   "file": "commons_Bridges_-_Tacoma_WA_-_Tacoma_Narrows_Bridge_1_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bridges_-_Tacoma,_WA_-_Tacoma_Narrows_Bridge_(1).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Bridges_-_Tacoma%2C_WA_-_Tacoma_Narrows_Bridge_%281%29.jpg/1920px-Bridges_-_Tacoma%2C_WA_-_Tacoma_Narrows_Bridge_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Bridges - Tacoma, WA - Tacoma Narrows Bridge (1).jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Bmzuckerman",
+   "caption": "Far (westbound) built in 1950.  Near (eastbound) built in 2007."
+  }
+ ]
+}

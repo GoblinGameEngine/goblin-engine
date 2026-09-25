@@ -1,0 +1,27 @@
+{
+ "structure": "BOARDWALKS/east/Rockaway_NY",
+ "files": [
+  {
+   "file": "commons_Smashed_boardwalk_end_RB_Sandy_jeh.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Smashed_boardwalk_end_RB_Sandy_jeh.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Smashed_boardwalk_end_RB_Sandy_jeh.jpg/1920px-Smashed_boardwalk_end_RB_Sandy_jeh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Smashed boardwalk end RB Sandy jeh.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Jim.henderson",
+   "caption": "Looking east at boardwalk smashed by Sandy, on a sunny afternoon."
+  },
+  {
+   "file": "commons_Stripped_boardwalk_RB_Sandy_jeh.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Stripped_boardwalk_RB_Sandy_jeh.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Stripped_boardwalk_RB_Sandy_jeh.jpg/1920px-Stripped_boardwalk_RB_Sandy_jeh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Stripped boardwalk RB Sandy jeh.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Jim.henderson",
+   "caption": "Looking east on a sunny afternoon at boardwalk stripped by Sandy."
+  }
+ ]
+}

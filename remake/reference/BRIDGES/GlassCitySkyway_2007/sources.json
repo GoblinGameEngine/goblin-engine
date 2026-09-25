@@ -1,0 +1,49 @@
+{
+ "structure": "BRIDGES/GlassCitySkyway_2007",
+ "files": [
+  {
+   "file": "commons_Veterans_Glass_City_Skyway_northbound_Toledo_Ohio_2022-12-26.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Veterans%27_Glass_City_Skyway_northbound,_Toledo,_Ohio,_2022-12-26.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Veterans%27_Glass_City_Skyway_northbound%2C_Toledo%2C_Ohio%2C_2022-12-26.jpg/1920px-Veterans%27_Glass_City_Skyway_northbound%2C_Toledo%2C_Ohio%2C_2022-12-26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Veterans' Glass City Skyway northbound, Toledo, Ohio, 2022-12-26.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Tim Kiser",
+   "caption": "View through a windshield northbound on the Veterans' Glass City Skyway on Interstate 280 in Toledo, Ohio, in December overcast."
+  },
+  {
+   "file": "commons_Veterans_Glass_City_Skyway.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Veterans%27_Glass_City_Skyway.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Veterans%27_Glass_City_Skyway.jpg/1920px-Veterans%27_Glass_City_Skyway.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Veterans' Glass City Skyway.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Sergaderg",
+   "caption": "The Veterans' Glass City Skyway and Robert Craig Memorial Bridge as viewed from the Col. James M. Schoonmaker museum ship.\nThree shots taken at 35mm, f/2.5, 1/4000sec, ISO100 and merged to remove vehicles"
+  },
+  {
+   "file": "commons_Northside_Veterans_Bridge_PB040389.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Northside_Veterans_Bridge_PB040389.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Northside_Veterans_Bridge_PB040389.jpg/1920px-Northside_Veterans_Bridge_PB040389.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Northside Veterans Bridge PB040389.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Veterans' Glass City Skyway (I-280) over the Maumee River in Toledo, Ohio."
+  },
+  {
+   "file": "commons_Veterans_Glass_City_Skyway_and_Craig_Memorial_Bridge_in_2009.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Veterans%27_Glass_City_Skyway_and_Craig_Memorial_Bridge_in_2009.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Veterans%27_Glass_City_Skyway_and_Craig_Memorial_Bridge_in_2009.jpg/1920px-Veterans%27_Glass_City_Skyway_and_Craig_Memorial_Bridge_in_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Veterans' Glass City Skyway and Craig Memorial Bridge in 2009.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Lance Woodworth",
+   "caption": "The Veterans' Glass City Skyway, a 2007 cable-stayed bridge, with the Robert Craig Memorial Bridge, a 1957 bascule bridge, in the foreground, in Toledo, Ohio. The bridges span the Maumee River."
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/east/JacksonvilleBeach_FL",
+ "files": [
+  {
+   "file": "commons_Jacksonville_Beach_Pier_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Jacksonville_Beach_Pier_-_panoramio.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Jacksonville_Beach_Pier_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Jacksonville Beach Pier - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "VeeDrummer",
+   "caption": "Jacksonville Beach Pier"
+  },
+  {
+   "file": "commons_Morning_Jacksonville_Beach_pier_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Morning_Jacksonville_Beach_pier_-_panoramio.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Morning_Jacksonville_Beach_pier_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Morning Jacksonville Beach pier - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "VeeDrummer",
+   "caption": "Morning Jacksonville Beach pier"
+  },
+  {
+   "file": "commons_JaxPier_Surf_9-9-12-9079_7978054950_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:JaxPier_Surf_9-9-12-9079_(7978054950).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/JaxPier_Surf_9-9-12-9079_%287978054950%29.jpg/1920px-JaxPier_Surf_9-9-12-9079_%287978054950%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:JaxPier Surf 9-9-12-9079 (7978054950).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Rob Bixby from Jacksonville, FL, USA",
+   "caption": "JaxPier_Surf_9-9-12-9079"
+  },
+  {
+   "file": "commons_JaxPier_Surf_9-9-12-9255_7978048016_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:JaxPier_Surf_9-9-12-9255_(7978048016).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/JaxPier_Surf_9-9-12-9255_%287978048016%29.jpg/1920px-JaxPier_Surf_9-9-12-9255_%287978048016%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:JaxPier Surf 9-9-12-9255 (7978048016).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Rob Bixby from Jacksonville, FL, USA",
+   "caption": "JaxPier_Surf_9-9-12-9255"
+  },
+  {
+   "file": "commons_JaxPier_Surf_9-9-12-8919_7966167606_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:JaxPier_Surf_9-9-12-8919_(7966167606).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/JaxPier_Surf_9-9-12-8919_%287966167606%29.jpg/1920px-JaxPier_Surf_9-9-12-8919_%287966167606%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:JaxPier Surf 9-9-12-8919 (7966167606).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Rob Bixby from Jacksonville, FL, USA",
+   "caption": "JaxPier_Surf_9-9-12-8919"
+  }
+ ]
+}

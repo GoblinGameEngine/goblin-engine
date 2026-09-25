@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/west/ImperialBeach_CA",
+ "files": [
+  {
+   "file": "commons_Imperial_Beach_Pier_Imperial_Beach_United_States_Unsplash_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Imperial_Beach_Pier,_Imperial_Beach,_United_States_(Unsplash).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Imperial_Beach_Pier%2C_Imperial_Beach%2C_United_States_%28Unsplash%29.jpg/1920px-Imperial_Beach_Pier%2C_Imperial_Beach%2C_United_States_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Imperial Beach Pier, Imperial Beach, United States (Unsplash).jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Isai Ramos isai21",
+   "caption": "Imperial Beach Pier, Imperial Beach, United States"
+  },
+  {
+   "file": "commons_View_from_Imperial_Beach_Pier_2019b.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:View_from_Imperial_Beach_Pier_2019b.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/View_from_Imperial_Beach_Pier_2019b.jpg/1920px-View_from_Imperial_Beach_Pier_2019b.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:View from Imperial Beach Pier 2019b.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Antony-22",
+   "caption": "USS Makin Island (LHD-8) viewed from Imperial Beach Pier in Imperial Beach, California in 2019"
+  },
+  {
+   "file": "commons_View_from_Imperial_Beach_Pier_2019a.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:View_from_Imperial_Beach_Pier_2019a.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/View_from_Imperial_Beach_Pier_2019a.jpg/1920px-View_from_Imperial_Beach_Pier_2019a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:View from Imperial Beach Pier 2019a.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Antony-22",
+   "caption": "View from Imperial Beach Pier in Imperial Beach, California towards Tijuana, Baja California in 2019"
+  },
+  {
+   "file": "commons_Imperial_Beach_Pier_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Imperial_Beach_Pier_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Imperial_Beach_Pier_-_panoramio.jpg/1920px-Imperial_Beach_Pier_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Imperial Beach Pier - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Whitedove Internet S\u2026",
+   "caption": "Imperial Beach Pier"
+  },
+  {
+   "file": "commons_Handstand_Walk_1095_30425401718_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Handstand_Walk_1095_(30425401718).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Handstand_Walk_1095_%2830425401718%29.jpg/1920px-Handstand_Walk_1095_%2830425401718%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Handstand Walk 1095 (30425401718).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Chris Hunkeler from Carlsbad, California, USA",
+   "caption": "Men participate in the fifth annual SoCal Fitness Classic, the final stop of Summer Series as they strive for superiority and to be crowned the fittest team of summer!\n\nIHB_1095_cr"
+  }
+ ]
+}

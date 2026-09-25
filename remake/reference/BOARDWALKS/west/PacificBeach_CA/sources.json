@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/west/PacificBeach_CA",
+ "files": [
+  {
+   "file": "commons_Crystal_Pier_Sandiago_Beach_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Crystal_Pier,_Sandiago_Beach_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Crystal_Pier%2C_Sandiago_Beach_-_panoramio.jpg/1920px-Crystal_Pier%2C_Sandiago_Beach_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Crystal Pier, Sandiago Beach - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Raman Patel",
+   "caption": "Crystal Pier, Sandiago Beach"
+  },
+  {
+   "file": "commons_San_Diego_Strand_Mission_Beach_125419187_.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Diego_Strand_Mission_Beach_(125419187).jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/San_Diego_Strand_Mission_Beach_%28125419187%29.jpeg/1920px-San_Diego_Strand_Mission_Beach_%28125419187%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Diego Strand Mission Beach (125419187).jpeg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "\nDronepicr",
+   "caption": "\n500px provided description: San Diego Strand Mission Beach [#beach ,#travel ,#usa ,#california ,#us ,#trip ,#sd ,#fitness ,#strand ,#st?dte ,#sandiego ,#l?nder ,#missionbeach ,#allgemein ,#l?nderst?dte]"
+  },
+  {
+   "file": "commons_San_Diego_Strand_Mission_beach_21602311384_2_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Diego_Strand_Mission_beach_(21602311384)_(2).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/San_Diego_Strand_Mission_beach_%2821602311384%29_%282%29.jpg/1920px-San_Diego_Strand_Mission_beach_%2821602311384%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Diego Strand Mission beach (21602311384) (2).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "dronepicr",
+   "caption": "San Diego Strand Mission beach"
+  },
+  {
+   "file": "commons_San_Diego_Strand_Mission_beach_21602311384_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Diego_Strand_Mission_beach_(21602311384).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/San_Diego_Strand_Mission_beach_%2821602311384%29.jpg/1920px-San_Diego_Strand_Mission_beach_%2821602311384%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Diego Strand Mission beach (21602311384).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "dronepicr",
+   "caption": "Mission Beach, San Diego, California, USA"
+  },
+  {
+   "file": "commons_Crystal_beach_Pier_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Crystal_beach_Pier_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Crystal_beach_Pier_-_panoramio.jpg/1920px-Crystal_beach_Pier_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Crystal beach Pier - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "rvd5star",
+   "caption": "Crystal beach Pier"
+  }
+ ]
+}

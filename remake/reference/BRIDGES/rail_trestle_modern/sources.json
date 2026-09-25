@@ -1,0 +1,38 @@
+{
+ "structure": "BRIDGES/rail_trestle_modern",
+ "files": [
+  {
+   "file": "commons_Construction_Cumberland_Valley_Railroad_Bridge_1915_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Construction_Cumberland_Valley_Railroad_Bridge_1915_1.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Construction_Cumberland_Valley_Railroad_Bridge_1915_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Construction Cumberland Valley Railroad Bridge 1915 1.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Engineering News",
+   "caption": "Original Description: Derrick on half of steel bridge unloadding material onto trestle"
+  },
+  {
+   "file": "commons_Construction_Cumberland_Valley_Railroad_Bridge_1915_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Construction_Cumberland_Valley_Railroad_Bridge_1915_2.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Construction_Cumberland_Valley_Railroad_Bridge_1915_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Construction Cumberland Valley Railroad Bridge 1915 2.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Engineering News",
+   "caption": "Original Description: Floor of working trestle"
+  },
+  {
+   "file": "commons_FROM_SW_SHOWING_WIDENED_ABUTMENT_FOR_COAL_TRESTLE._-_Philadelphia_and_Reading_Railroad_Manatawny_Creek_Bridge_Spanning_Manatawny_Creek_south_of_Ben_Franklin_Highway_Pottstown_HAER_PA_46-POTTS_1-2.tif",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:FROM_SW,_SHOWING_WIDENED_ABUTMENT_FOR_COAL_TRESTLE._-_Philadelphia_and_Reading_Railroad,_Manatawny_Creek_Bridge,_Spanning_Manatawny_Creek,_south_of_Ben_Franklin_Highway,_Pottstown_HAER_PA,46-POTTS,1-2.tif",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/FROM_SW%2C_SHOWING_WIDENED_ABUTMENT_FOR_COAL_TRESTLE._-_Philadelphia_and_Reading_Railroad%2C_Manatawny_Creek_Bridge%2C_Spanning_Manatawny_Creek%2C_south_of_Ben_Franklin_Highway%2C_Pottstown_HAER_PA%2C46-POTTS%2C1-2.tif/lossy-page1-1920px-thumbnail.tif.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:FROM SW, SHOWING WIDENED ABUTMENT FOR COAL TRESTLE. - Philadelphia and Reading Railroad, Manatawny Creek Bridge, Spanning Manatawny Creek, south of Ben Franklin Highway, Pottstown HAER PA,46-POTTS,1-2.tif",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "\nEliott, Joseph\nRelated names:\n\nConsolidated Rail Corporation (Conrail)\nConsolidated Rail Corporation (Conrail), sponsor",
+   "caption": "\nNicolls, Gustavus A; Philadelphia and Reading Railroad; Consolidated Rail Corporation (Conrail); Norfolk Southern Railroad; DeLony, Eric N, project manager; Pennsylvania Historical and Museum Commission, sponsor; Consolidated Rail Corporation (Conrail), sponsor; Spivey, Justin M, historian; Elliott, Joseph E, B, photographer"
+  }
+ ]
+}

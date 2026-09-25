@@ -1,0 +1,38 @@
+{
+ "structure": "BRIDGES/ManchacSwamp_1979",
+ "files": [
+  {
+   "file": "commons_Manchac_Bridge.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Manchac_Bridge.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Manchac_Bridge.jpg/1920px-Manchac_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Manchac Bridge.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Melanie Commander Thibodaux",
+   "caption": "The Manchac Swamp Bridge in Louisiana"
+  },
+  {
+   "file": "commons_Int55nUS51n-Exit15-Manchac_31748664013_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Int55nUS51n-Exit15-Manchac_(31748664013).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Int55nUS51n-Exit15-Manchac_%2831748664013%29.jpg/1920px-Int55nUS51n-Exit15-Manchac_%2831748664013%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Int55nUS51n-Exit15-Manchac (31748664013).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "formulanone from Huntsville, United States",
+   "caption": "Int55nUS51n-Exit15-Manchac"
+  },
+  {
+   "file": "commons_Int55US51-FrontageRoadNorth-ManchacBridges_26672094069_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Int55US51-FrontageRoadNorth-ManchacBridges_(26672094069).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Int55US51-FrontageRoadNorth-ManchacBridges_%2826672094069%29.jpg/1920px-Int55US51-FrontageRoadNorth-ManchacBridges_%2826672094069%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Int55US51-FrontageRoadNorth-ManchacBridges (26672094069).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "formulanone from Huntsville, United States",
+   "caption": "Int55US51-FrontageRoadNorth-ManchacBridges"
+  }
+ ]
+}

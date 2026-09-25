@@ -1,0 +1,27 @@
+{
+ "structure": "BOARDWALKS/west/HuntingtonBeach_CA",
+ "files": [
+  {
+   "file": "commons_Sunrise_At_The_Huntington_Beach_Pier_2014_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sunrise_At_The_Huntington_Beach_Pier_(2014).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Sunrise_At_The_Huntington_Beach_Pier_%282014%29.jpg/1920px-Sunrise_At_The_Huntington_Beach_Pier_%282014%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sunrise At The Huntington Beach Pier (2014).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Jeff Turner from Santa Clarita, CA, United States",
+   "caption": "September 8, 2014"
+  },
+  {
+   "file": "commons_Huntington_Beach_Pier_at_Sunrise_2014_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Huntington_Beach_Pier_at_Sunrise_(2014).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Huntington_Beach_Pier_at_Sunrise_%282014%29.jpg/1920px-Huntington_Beach_Pier_at_Sunrise_%282014%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Huntington Beach Pier at Sunrise (2014).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Jeff Turner from Santa Clarita, CA, United States",
+   "caption": "September 8, 2014"
+  }
+ ]
+}

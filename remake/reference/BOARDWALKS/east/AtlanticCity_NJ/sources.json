@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/east/AtlanticCity_NJ",
+ "files": [
+  {
+   "file": "commons_2014_Boardwalk_Hall_02.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:2014_Boardwalk_Hall_02.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/2014_Boardwalk_Hall_02.JPG/1920px-2014_Boardwalk_Hall_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:2014 Boardwalk Hall 02.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Farragutful",
+   "caption": "Boardwalk Hall in Atlantic City, New Jersey."
+  },
+  {
+   "file": "commons_2014_Boardwalk_Hall_01.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:2014_Boardwalk_Hall_01.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/2014_Boardwalk_Hall_01.JPG/1920px-2014_Boardwalk_Hall_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:2014 Boardwalk Hall 01.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Farragutful",
+   "caption": "Boardwalk Hall in Atlantic City, New Jersey."
+  },
+  {
+   "file": "commons_2014_Boardwalk_Hall_01_cropped_.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:2014_Boardwalk_Hall_01_(cropped).JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/2014_Boardwalk_Hall_01_%28cropped%29.JPG/1920px-2014_Boardwalk_Hall_01_%28cropped%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:2014 Boardwalk Hall 01 (cropped).JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Farragutful",
+   "caption": "Boardwalk Hall in Atlantic City, New Jersey."
+  },
+  {
+   "file": "commons_Boardwalk_Hall_detail.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Boardwalk_Hall_detail.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Boardwalk_Hall_detail.JPG/1920px-Boardwalk_Hall_detail.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Boardwalk Hall detail.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Farragutful",
+   "caption": "Detail above the main entrance of Boardwalk Hall, formerly known as the Atlantic City Convention Hall, Georgia and Mississippi Aves. and the Boardwalk Atlantic City"
+  },
+  {
+   "file": "commons_Boardwalk_Hall_02.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Boardwalk_Hall_02.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Boardwalk_Hall_02.JPG/1920px-Boardwalk_Hall_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Boardwalk Hall 02.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Farragutful",
+   "caption": "Boardwalk Hall, formerly known as the Atlantic City Convention Hall, Georgia and Mississippi Aves. and the Boardwalk Atlantic City"
+  }
+ ]
+}

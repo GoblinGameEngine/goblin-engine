@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/west/SantaCruz_CA",
+ "files": [
+  {
+   "file": "commons_Santa_Cruz_Beach_Boardwalk_-_Hurricane.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Cruz_Beach_Boardwalk_-_Hurricane.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Santa_Cruz_Beach_Boardwalk_-_Hurricane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Santa Cruz Beach Boardwalk - Hurricane.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "JinCA",
+   "caption": "This is a photo of a place or building that is listed on the California Historical Landmark listing in the United States. Its reference number is"
+  },
+  {
+   "file": "commons_Santa_Cruz_Beach_Boardwalk.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Cruz_Beach_Boardwalk.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Santa_Cruz_Beach_Boardwalk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Santa Cruz Beach Boardwalk.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "JinCA",
+   "caption": "This is a photo of a place or building that is listed on the California Historical Landmark listing in the United States. Its reference number is"
+  },
+  {
+   "file": "commons_Santa_Cruz_Beach_Boardwalk_8_2018-07-02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Cruz_Beach_Boardwalk_8_2018-07-02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Santa_Cruz_Beach_Boardwalk_8_2018-07-02.jpg/1920px-Santa_Cruz_Beach_Boardwalk_8_2018-07-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Santa Cruz Beach Boardwalk 8 2018-07-02.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "FASTILY",
+   "caption": "Santa Cruz Beach Boardwalk"
+  },
+  {
+   "file": "commons_Santa_Cruz_Beach_Boardwalk_10_2018-07-02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Cruz_Beach_Boardwalk_10_2018-07-02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Santa_Cruz_Beach_Boardwalk_10_2018-07-02.jpg/1920px-Santa_Cruz_Beach_Boardwalk_10_2018-07-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Santa Cruz Beach Boardwalk 10 2018-07-02.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "FASTILY",
+   "caption": "Santa Cruz Beach Boardwalk"
+  },
+  {
+   "file": "commons_Santa_Cruz_boardwalk_band.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Cruz_boardwalk_band.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Santa_Cruz_boardwalk_band.jpg/1920px-Santa_Cruz_boardwalk_band.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Santa Cruz boardwalk band.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Jiggy2016",
+   "caption": "Band playing on the beach Santa Cruz boardwalk"
+  }
+ ]
+}

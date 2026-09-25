@@ -1,0 +1,38 @@
+{
+ "structure": "BRIDGES/AtchafalayaBasinBridge_1973",
+ "files": [
+  {
+   "file": "commons_Atchafalaya_Bridge.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Atchafalaya_Bridge.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Atchafalaya_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Atchafalaya Bridge.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "[https://www.flickr.com/people/80915560@N00 Cassie from Eugene, Oregon]",
+   "caption": "Atchafalaya Bridge"
+  },
+  {
+   "file": "commons_Atchafalaya_Basin_Bridge_I-10_Whiskey_Bay.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Atchafalaya_Basin_Bridge,_I-10,_Whiskey_Bay.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Atchafalaya_Basin_Bridge%2C_I-10%2C_Whiskey_Bay.jpg/1920px-Atchafalaya_Basin_Bridge%2C_I-10%2C_Whiskey_Bay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Atchafalaya Basin Bridge, I-10, Whiskey Bay.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "MICHAELAT1",
+   "caption": "Underneath the Atchafalaya Basin Bridge on I-10 at the Whiskey Bay exit."
+  },
+  {
+   "file": "commons_2016-03-22_17_48_09_View_south_into_the_Atchafalaya_Swamp_from_Interstate_10_near_milepost_118_as_it_crosses_the_Atchafalaya_Basin_Bridge_in_St._Martin_Parish_Louisiana.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:2016-03-22_17_48_09_View_south_into_the_Atchafalaya_Swamp_from_Interstate_10_near_milepost_118_as_it_crosses_the_Atchafalaya_Basin_Bridge_in_St._Martin_Parish,_Louisiana.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/2016-03-22_17_48_09_View_south_into_the_Atchafalaya_Swamp_from_Interstate_10_near_milepost_118_as_it_crosses_the_Atchafalaya_Basin_Bridge_in_St._Martin_Parish%2C_Louisiana.jpg/1920px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:2016-03-22 17 48 09 View south into the Atchafalaya Swamp from Interstate 10 near milepost 118 as it crosses the Atchafalaya Basin Bridge in St. Martin Parish, Louisiana.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Famartin",
+   "caption": "View south into the Atchafalaya Swamp from Interstate 10 near milepost 118 as it crosses the Atchafalaya Basin Bridge in St. Martin Parish, Louisiana"
+  }
+ ]
+}

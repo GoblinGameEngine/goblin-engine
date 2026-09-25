@@ -1,0 +1,49 @@
+{
+ "structure": "BRIDGES/AlZampaMemorial_2003",
+ "files": [
+  {
+   "file": "commons_Carquinez_Bridge-1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Carquinez_Bridge-1.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Carquinez_Bridge-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Carquinez Bridge-1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Doug Brown",
+   "caption": "Carquinez Bridges cross the Carquinez Strait linking Vallejo to the north, with Crockett to the south in California"
+  },
+  {
+   "file": "commons_Alfred_zampa_memorial_bridge.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Alfred_zampa_memorial_bridge.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Alfred_zampa_memorial_bridge.jpg/1920px-Alfred_zampa_memorial_bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Alfred zampa memorial bridge.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Kevin Collins from Alameda, California, USA",
+   "caption": "Carquinez Bridges cross the Carquinez Strait linking Vallejo to the north, with Crockett to the south in California"
+  },
+  {
+   "file": "commons_Carquinez_Bridge_3.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Carquinez_Bridge_3.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Carquinez_Bridge_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Carquinez Bridge 3.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Stan Shebs",
+   "caption": "Photo of Carquinez Bridge, California"
+  },
+  {
+   "file": "commons_Carquinez_Bridge_22884704065_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Carquinez_Bridge_(22884704065).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Carquinez_Bridge_%2822884704065%29.jpg/1920px-Carquinez_Bridge_%2822884704065%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Carquinez Bridge (22884704065).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "sodai gomi",
+   "caption": "Carquinez Bridge"
+  }
+ ]
+}

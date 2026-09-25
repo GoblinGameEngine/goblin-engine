@@ -1,0 +1,38 @@
+{
+ "structure": "BRIDGES/ArthurRavenel_2005",
+ "files": [
+  {
+   "file": "commons_Ravenel_Bridge_at_night_from_Mt_Pleasant.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ravenel_Bridge_at_night_from_Mt_Pleasant.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Ravenel_Bridge_at_night_from_Mt_Pleasant.jpg/1920px-Ravenel_Bridge_at_night_from_Mt_Pleasant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ravenel Bridge at night from Mt Pleasant.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Juliancolton",
+   "caption": "Arthur Ravenel Jr. Bridge (also known as the Cooper River Bridge) at night, looking northwest from Mount Pleasant, South Carolina."
+  },
+  {
+   "file": "commons_Arthur_Ravenel_Jr_Bridge_West_Partial_View_20160704_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Arthur_Ravenel_Jr_Bridge,_West_Partial_View_20160704_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Arthur_Ravenel_Jr_Bridge%2C_West_Partial_View_20160704_1.jpg/1920px-Arthur_Ravenel_Jr_Bridge%2C_West_Partial_View_20160704_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Arthur Ravenel Jr Bridge, West Partial View 20160704 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DXR",
+   "caption": "A partial west view of the left part of Arthur Ravenel Jr Bridge, connecting Charleston and Mount Pleasant, South Carolina"
+  },
+  {
+   "file": "commons_Arthur_Ravenel_Jr_Bridge_West_Remote_View_20160704_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Arthur_Ravenel_Jr_Bridge,_West_Remote_View_20160704_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Arthur_Ravenel_Jr_Bridge%2C_West_Remote_View_20160704_1.jpg/1920px-Arthur_Ravenel_Jr_Bridge%2C_West_Remote_View_20160704_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Arthur Ravenel Jr Bridge, West Remote View 20160704 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DXR",
+   "caption": "A west view of Arthur Ravenel Jr Bridge, as seen from Wonders Way"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "structure": "BOARDWALKS/west/RedondoBeach_CA",
+ "files": [
+  {
+   "file": "commons_Fingerpost_in_Redondo_Beach_Pier.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Fingerpost_in_Redondo_Beach_Pier.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Fingerpost_in_Redondo_Beach_Pier.jpg/1920px-Fingerpost_in_Redondo_Beach_Pier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Fingerpost in Redondo Beach Pier.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Accipitre",
+   "caption": "Signpost pointing to various cities located at Redondo Beach Pier"
+  },
+  {
+   "file": "commons_Redondo_Beach_Marina_and_Pier_from_Bike_Path.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Redondo_Beach_Marina_and_Pier_from_Bike_Path.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Redondo_Beach_Marina_and_Pier_from_Bike_Path.jpg/1920px-Redondo_Beach_Marina_and_Pier_from_Bike_Path.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Redondo Beach Marina and Pier from Bike Path.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Accipitre",
+   "caption": "Looking north over part of the Redondo Beach Marina with the northern part of the pier in view"
+  },
+  {
+   "file": "commons_Redondo_Beach_Pier_Redondo_Beach_California_6027113068_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Redondo_Beach_Pier,_Redondo_Beach,_California_(6027113068).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Redondo_Beach_Pier%2C_Redondo_Beach%2C_California_%286027113068%29.jpg/1920px-Redondo_Beach_Pier%2C_Redondo_Beach%2C_California_%286027113068%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Redondo Beach Pier, Redondo Beach, California (6027113068).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Ken Lund from Reno, Nevada, USA",
+   "caption": "The Redondo Beach pier is located in Redondo Beach, California and stretches out onto the Pacific Ocean. The pier has been rebuilt and altered by storms and redevelopments. Its official name is \"Municipal Pier\", and it has also been called the \"Endless Pier\". Earlier versions were known as \"Pleasure Pier\" and \"Horseshoe Pier\".\nThe pier started out as a disjointed group of wharves near the end of the 19th century, but evolved into an interconnected structure after a series of storms and demolitio"
+  },
+  {
+   "file": "commons_Sunset_at_Redondo_beach_pier.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sunset_at_Redondo_beach_pier.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Sunset_at_Redondo_beach_pier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Sunset at Redondo beach pier.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Miximon",
+   "caption": "Redondo Beach"
+  }
+ ]
+}

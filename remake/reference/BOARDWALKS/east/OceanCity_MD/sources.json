@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/east/OceanCity_MD",
+ "files": [
+  {
+   "file": "commons_Ocean_City_Boardwalk_6.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_Boardwalk_6.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Ocean_City_Boardwalk_6.jpg/1920px-Ocean_City_Boardwalk_6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City Boardwalk 6.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "APK",
+   "caption": "Hooters restaurant on the boardwalk in Ocean City, Maryland."
+  },
+  {
+   "file": "commons_Ocean_City_Boardwalk_5.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_Boardwalk_5.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Ocean_City_Boardwalk_5.jpg/1920px-Ocean_City_Boardwalk_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City Boardwalk 5.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "APK",
+   "caption": "The Kite Loft on the boardwalk in Ocean City, Maryland."
+  },
+  {
+   "file": "commons_Ocean_City_Boardwalk_7.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_Boardwalk_7.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Ocean_City_Boardwalk_7.jpg/1920px-Ocean_City_Boardwalk_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City Boardwalk 7.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "APK",
+   "caption": "People watching an artist on the boardwalk in Ocean City, Maryland."
+  },
+  {
+   "file": "commons_Ocean_City_Boardwalk_8.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_Boardwalk_8.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Ocean_City_Boardwalk_8.jpg/1920px-Ocean_City_Boardwalk_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City Boardwalk 8.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "APK",
+   "caption": "Nathan's Famous restaurant on the boardwalk in Ocean City, Maryland."
+  },
+  {
+   "file": "commons_Ocean_City_Boardwalk_9.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_Boardwalk_9.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Ocean_City_Boardwalk_9.jpg/1920px-Ocean_City_Boardwalk_9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City Boardwalk 9.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "APK",
+   "caption": "Paradise Island shop on the boardwalk in Ocean City, Maryland."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "BOARDWALKS/greatlakes/TraverseCity_MI",
+ "files": [
+  {
+   "file": "commons_Traverse_City_Down_Town_River_Walk_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Traverse_City_Down_Town_River_Walk_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Traverse_City_Down_Town_River_Walk_-_panoramio.jpg/1920px-Traverse_City_Down_Town_River_Walk_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Traverse City Down Town River Walk - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "papadakp",
+   "caption": "Traverse City Down Town River Walk"
+  },
+  {
+   "file": "commons_Traffic_Cone_-_Warning_-_Uneven_Sidewalk_-_Snowy_-_Icy_52706881493_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Traffic_Cone_-_Warning_-_Uneven_Sidewalk_-_Snowy_-_Icy_(52706881493).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Traffic_Cone_-_Warning_-_Uneven_Sidewalk_-_Snowy_-_Icy_%2852706881493%29.jpg/1920px-Traffic_Cone_-_Warning_-_Uneven_Sidewalk_-_Snowy_-_Icy_%2852706881493%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Traffic Cone - Warning - Uneven Sidewalk - Snowy - Icy (52706881493).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Tony Webster from United States",
+   "caption": "A traffic cone warns of uneven sidewalk pavement, which is also snow and ice-covered, in Traverse City, Michigan."
+  }
+ ]
+}

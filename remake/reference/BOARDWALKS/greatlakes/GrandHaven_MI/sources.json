@@ -1,0 +1,27 @@
+{
+ "structure": "BOARDWALKS/greatlakes/GrandHaven_MI",
+ "files": [
+  {
+   "file": "commons_Icy_walkway_3123201144_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Icy_walkway_(3123201144).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Icy_walkway_%283123201144%29.jpg/1920px-Icy_walkway_%283123201144%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Icy walkway (3123201144).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "wsilver",
+   "caption": "Grand Haven, MI light house in winter."
+  },
+  {
+   "file": "commons_Grand_Haven_Pier_Snow.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Grand_Haven_Pier_Snow.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Grand_Haven_Pier_Snow.jpg/1920px-Grand_Haven_Pier_Snow.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Grand Haven Pier Snow.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Hansona3",
+   "caption": "Grand haven pier during a snowstorm, taken by Andy Hanson"
+  }
+ ]
+}

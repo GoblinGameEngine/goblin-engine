@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/east/FollyBeach_SC",
+ "files": [
+  {
+   "file": "commons_Folly_Pier.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Folly_Pier.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Folly_Pier.jpg/1920px-Folly_Pier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Folly Pier.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "ProfReader",
+   "caption": "Folly Pier, Folly Beach, South Carolina"
+  },
+  {
+   "file": "commons_Folly_Pier_-_panoramio_1_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Folly_Pier_-_panoramio_(1).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Folly_Pier_-_panoramio_%281%29.jpg/1920px-Folly_Pier_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Folly Pier - panoramio (1).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "RJ Matthews",
+   "caption": "Folly Pier"
+  },
+  {
+   "file": "commons_Bird_under_the_Pier_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bird_under_the_Pier_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Bird_under_the_Pier_-_panoramio.jpg/1920px-Bird_under_the_Pier_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Bird under the Pier - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "RJ Matthews",
+   "caption": "Bird under the Pier"
+  },
+  {
+   "file": "commons_Under_the_Pier_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Under_the_Pier_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Under_the_Pier_-_panoramio.jpg/1920px-Under_the_Pier_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Under the Pier - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "RJ Matthews",
+   "caption": "Under the Pier"
+  },
+  {
+   "file": "commons_Folly_Pier_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Folly_Pier_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Folly_Pier_-_panoramio.jpg/1920px-Folly_Pier_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Folly Pier - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "RJ Matthews",
+   "caption": "Folly Pier"
+  }
+ ]
+}

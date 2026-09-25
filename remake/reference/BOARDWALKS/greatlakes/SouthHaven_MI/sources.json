@@ -1,0 +1,38 @@
+{
+ "structure": "BOARDWALKS/greatlakes/SouthHaven_MI",
+ "files": [
+  {
+   "file": "commons_SouthHavenLightSouthPier2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:SouthHavenLightSouthPier2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/SouthHavenLightSouthPier2.jpg/1920px-SouthHavenLightSouthPier2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:SouthHavenLightSouthPier2.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Dave Parker",
+   "caption": "South Haven Light, south pierhead, winter, at Black River."
+  },
+  {
+   "file": "commons_SouthHavenLightSouthPier.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:SouthHavenLightSouthPier.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/SouthHavenLightSouthPier.jpg/1920px-SouthHavenLightSouthPier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:SouthHavenLightSouthPier.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Dave Parker",
+   "caption": "South Haven Light, south pierhead on left, north pierhead on right, Black River."
+  },
+  {
+   "file": "commons_South_Pier_Lighthouse_at_South_Haven_MI.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:South_Pier_Lighthouse_at_South_Haven,_MI.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/South_Pier_Lighthouse_at_South_Haven%2C_MI.jpg/1920px-South_Pier_Lighthouse_at_South_Haven%2C_MI.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:South Pier Lighthouse at South Haven, MI.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Nanamac47",
+   "caption": "Navigation Structures at South Haven Harbor, Michigan, Mouth of the Black River at Lake Michigan South Haven"
+  }
+ ]
+}

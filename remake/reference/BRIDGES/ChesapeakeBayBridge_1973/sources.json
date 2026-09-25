@@ -1,0 +1,49 @@
+{
+ "structure": "BRIDGES/ChesapeakeBayBridge_1973",
+ "files": [
+  {
+   "file": "commons_Chesapeake_Bay_Bridge_at_Sandy_Point_MD1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Chesapeake_Bay_Bridge_at_Sandy_Point_MD1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Chesapeake_Bay_Bridge_at_Sandy_Point_MD1.jpg/1920px-Chesapeake_Bay_Bridge_at_Sandy_Point_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Chesapeake Bay Bridge at Sandy Point MD1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Acroterion",
+   "caption": "The Chesapeake Bay Bridge from Sandy Point State Park, Maryland, USA on a cold day."
+  },
+  {
+   "file": "commons_San_Francisco_Oakland_Bay_Bridge-_New_and_Old_bridges.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Francisco%E2%80%93Oakland_Bay_Bridge-_New_and_Old_bridges.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/San_Francisco%E2%80%93Oakland_Bay_Bridge-_New_and_Old_bridges.jpg/1920px-San_Francisco%E2%80%93Oakland_Bay_Bridge-_New_and_Old_bridges.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Francisco\u2013Oakland Bay Bridge- New and Old bridges.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Frank Schulenburg",
+   "caption": "Eastern span of the San Francisco\u2013Oakland Bay Bridge. The old and the new bridge, as seen at night from Yerba Buena Island to Oakland (mid September 2013)."
+  },
+  {
+   "file": "commons_San_Francisco_Bay_Bridge_Western_Span_at_night.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Francisco_Bay_Bridge_Western_Span_at_night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/San_Francisco_Bay_Bridge_Western_Span_at_night.jpg/1920px-San_Francisco_Bay_Bridge_Western_Span_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Francisco Bay Bridge Western Span at night.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dllu",
+   "caption": "The western span of the San Francisco Bay Bridge at night."
+  },
+  {
+   "file": "commons_Chesapeake_Bay_Bridge_MD1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Chesapeake_Bay_Bridge_MD1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Chesapeake_Bay_Bridge_MD1.jpg/1920px-Chesapeake_Bay_Bridge_MD1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Chesapeake Bay Bridge MD1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Acroterion",
+   "caption": "Chesapeake Bay Bridge from the Queen Anne's County side, Maryland, USA"
+  }
+ ]
+}

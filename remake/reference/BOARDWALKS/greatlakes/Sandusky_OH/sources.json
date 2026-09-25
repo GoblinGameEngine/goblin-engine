@@ -1,0 +1,38 @@
+{
+ "structure": "BOARDWALKS/greatlakes/Sandusky_OH",
+ "files": [
+  {
+   "file": "commons_Sandusky_Ohio_-_20201212_-_06_-_Landward_Panorama_from_Jackson_Pier_cropped_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sandusky,_Ohio_-_20201212_-_06_-_Landward_Panorama_from_Jackson_Pier_(cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Sandusky%2C_Ohio_-_20201212_-_06_-_Landward_Panorama_from_Jackson_Pier_%28cropped%29.jpg/1920px-Sandusky%2C_Ohio_-_20201212_-_06_-_Landward_Panorama_from_Jackson_Pier_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sandusky, Ohio - 20201212 - 06 - Landward Panorama from Jackson Pier (cropped).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Andre Carrotflower",
+   "caption": "Panoramic view from Jackson Pier in Sandusky, Ohio looking back toward the shore and downtown area, December 2020."
+  },
+  {
+   "file": "commons_Sandusky_Ohio_-_20201212_-_06_-_Landward_Panorama_from_Jackson_Pier.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sandusky,_Ohio_-_20201212_-_06_-_Landward_Panorama_from_Jackson_Pier.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Sandusky%2C_Ohio_-_20201212_-_06_-_Landward_Panorama_from_Jackson_Pier.jpg/1920px-Sandusky%2C_Ohio_-_20201212_-_06_-_Landward_Panorama_from_Jackson_Pier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sandusky, Ohio - 20201212 - 06 - Landward Panorama from Jackson Pier.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Andre Carrotflower",
+   "caption": "Panoramic view from Jackson Pier in Sandusky, Ohio looking back toward the shore and downtown area, December 2020."
+  },
+  {
+   "file": "commons_Sandusky_Ohio_-_20201212_-_05_-_Lakeward_Panorama_from_Jackson_Pier.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sandusky,_Ohio_-_20201212_-_05_-_Lakeward_Panorama_from_Jackson_Pier.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Sandusky%2C_Ohio_-_20201212_-_05_-_Lakeward_Panorama_from_Jackson_Pier.jpg/1920px-Sandusky%2C_Ohio_-_20201212_-_05_-_Lakeward_Panorama_from_Jackson_Pier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sandusky, Ohio - 20201212 - 05 - Lakeward Panorama from Jackson Pier.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Andre Carrotflower",
+   "caption": "Panoramic view of Lake Erie as seen from Jackson Pier in Sandusky, Ohio, December 2020. From left to right are seen the Chesapeake Lofts Apartments, the Sandusky Coal Docks in the distance, the open waters of the lake, Cedar Point amusement park in the distance, and at far right the Viewpoint Apartments senior residential community."
+  }
+ ]
+}

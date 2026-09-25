@@ -1,0 +1,27 @@
+{
+ "structure": "BOARDWALKS/east/OldOrchardBeach_ME",
+ "files": [
+  {
+   "file": "commons_The_Pier_32783039543_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:The_Pier_(32783039543).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/The_Pier_%2832783039543%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:The Pier (32783039543).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Paul VanDerWerf from Brunswick, Maine, USA",
+   "caption": "Taken amidst the pilings that support 'The Pier' in Old Orchard Beach, Maine. The water was fairly active on this day."
+  },
+  {
+   "file": "commons_Captain_Morgan_statue_Old_Orchard_Beach_Pier_Old_Orchard_Beach_ME_May_2023.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Captain_Morgan_statue_Old_Orchard_Beach_Pier_Old_Orchard_Beach_ME_May_2023.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Captain_Morgan_statue_Old_Orchard_Beach_Pier_Old_Orchard_Beach_ME_May_2023.jpg/1920px-Captain_Morgan_statue_Old_Orchard_Beach_Pier_Old_Orchard_Beach_ME_May_2023.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Captain Morgan statue Old Orchard Beach Pier Old Orchard Beach ME May 2023.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Artaxerxes",
+   "caption": "Captain Morgan statue on Old Orchard Beach Pier in Old Orchard Beach, Maine."
+  }
+ ]
+}

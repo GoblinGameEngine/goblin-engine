@@ -1,0 +1,49 @@
+{
+ "structure": "BRIDGES/SevenMileBridge_1982",
+ "files": [
+  {
+   "file": "commons_Seven_Mile_Bridge_Florida_Keys_aerial_2003_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seven_Mile_Bridge,_Florida_Keys_aerial_(2003).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Seven_Mile_Bridge%2C_Florida_Keys_aerial_%282003%29.jpg/1920px-Seven_Mile_Bridge%2C_Florida_Keys_aerial_%282003%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seven Mile Bridge, Florida Keys aerial (2003).jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "United States Department of Transportation",
+   "caption": "Seeming to converge in the distance, the Seven-mile Bridge on the Florida Keys Scenic Highway west of Marathon, FL, runs parallel to the historic Flagler railroad bridge of the early 1900s with the Atlantic Ocean to the South and the Gulf of Mexico to the North."
+  },
+  {
+   "file": "commons_Seven_Mile_Bridge_Florida.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seven_Mile_Bridge,_Florida.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Seven_Mile_Bridge%2C_Florida.jpg/1920px-Seven_Mile_Bridge%2C_Florida.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seven Mile Bridge, Florida.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SimonMGC",
+   "caption": "Looking south down Seven Mile Bridge in Florida, USA, part of the Overseas Highway."
+  },
+  {
+   "file": "commons_Seven-mile_Historic_Bridge_Florida_Keys.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seven-mile_Historic_Bridge,_Florida_Keys.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Seven-mile_Historic_Bridge%2C_Florida_Keys.jpg/1920px-Seven-mile_Historic_Bridge%2C_Florida_Keys.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seven-mile Historic Bridge, Florida Keys.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Raychristofer",
+   "caption": "Florida Keys 7 mile bridge 5"
+  },
+  {
+   "file": "commons_Seven_Mile_Bridge_from_north.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seven_Mile_Bridge_from_north.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Seven_Mile_Bridge_from_north.jpg/1920px-Seven_Mile_Bridge_from_north.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seven Mile Bridge from north.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Summ",
+   "caption": "Seven Mile Bridge, Florida Keys"
+  }
+ ]
+}

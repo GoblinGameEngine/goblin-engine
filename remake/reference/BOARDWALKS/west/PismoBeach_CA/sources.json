@@ -1,0 +1,60 @@
+{
+ "structure": "BOARDWALKS/west/PismoBeach_CA",
+ "files": [
+  {
+   "file": "commons_Pismo_Pier_43765626_.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pismo_Pier_(43765626).jpeg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Pismo_Pier_%2843765626%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Pismo Pier (43765626).jpeg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "\nAaron Albrecht",
+   "caption": "\n500px provided description: A beautiful sunset standing from the Pismo Beach Pier in California. [#Landscapes ,#Sunset ,#Ocean ,#California ,#Coast ,#Pismo Beach]"
+  },
+  {
+   "file": "commons_Pismo_Beach_Pier_Pismo_Beach_United_States_Unsplash_gGbGPfbjbgY_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pismo_Beach_Pier,_Pismo_Beach,_United_States_(Unsplash_gGbGPfbjbgY).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Pismo_Beach_Pier%2C_Pismo_Beach%2C_United_States_%28Unsplash_gGbGPfbjbgY%29.jpg/1920px-Pismo_Beach_Pier%2C_Pismo_Beach%2C_United_States_%28Unsplash_gGbGPfbjbgY%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pismo Beach Pier, Pismo Beach, United States (Unsplash gGbGPfbjbgY).jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Tim Mossholder timmossholder",
+   "caption": "Pismo Beach Pier, Pismo Beach, United States"
+  },
+  {
+   "file": "commons_Pismo_Beach_Pier_North_view_20110805_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pismo_Beach_Pier,_North_view_20110805_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Pismo_Beach_Pier%2C_North_view_20110805_1.jpg/1920px-Pismo_Beach_Pier%2C_North_view_20110805_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pismo Beach Pier, North view 20110805 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DXR",
+   "caption": "Pismo Beach Pier at sunset, as seen from north"
+  },
+  {
+   "file": "commons_View_of_Pismo_Beach_as_seen_from_the_pier_20110805_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:View_of_Pismo_Beach_as_seen_from_the_pier_20110805_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/View_of_Pismo_Beach_as_seen_from_the_pier_20110805_1.jpg/1920px-View_of_Pismo_Beach_as_seen_from_the_pier_20110805_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:View of Pismo Beach as seen from the pier 20110805 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DXR",
+   "caption": "A view of Pismo Beach as seen from the pier, looking northeast"
+  },
+  {
+   "file": "commons_Pismo_Beach_California_USA_Pier_--_2012_--_4764.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pismo_Beach_(California,_USA),_Pier_--_2012_--_4764.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Pismo_Beach_%28California%2C_USA%29%2C_Pier_--_2012_--_4764.jpg/1920px-Pismo_Beach_%28California%2C_USA%29%2C_Pier_--_2012_--_4764.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pismo Beach (California, USA), Pier -- 2012 -- 4764.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dietmar Rabich",
+   "caption": "Pismo Beach, California, USA"
+  }
+ ]
+}

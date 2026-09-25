@@ -1,0 +1,49 @@
+{
+ "structure": "BRIDGES/Oceanside_pier",
+ "files": [
+  {
+   "file": "commons_Oceanside_Pier.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Oceanside_Pier.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Oceanside_Pier.jpg/1920px-Oceanside_Pier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Oceanside Pier.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "User Bill Newman",
+   "caption": "Pier in Oceanside, California"
+  },
+  {
+   "file": "commons_2024_Oceanside_Pier_Fire_Disaster.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:2024_Oceanside_Pier_Fire_Disaster.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/2024_Oceanside_Pier_Fire_Disaster.jpg/1920px-2024_Oceanside_Pier_Fire_Disaster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:2024 Oceanside Pier Fire Disaster.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Pink Floyd Fan 101",
+   "caption": "On 25 April 2024, a major fire destroyed the former Ruby's Diner building at the end of the iconic Oceanside Pier. This is the aftermath of said fire, taken on 27 April 2024."
+  },
+  {
+   "file": "commons_Oceanside_pier_banner.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Oceanside_pier_banner.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Oceanside_pier_banner.JPG/1920px-Oceanside_pier_banner.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Oceanside pier banner.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Jot Powers",
+   "caption": "Sunset at the Oceanside, California, pier. Cropped and resized as a banner for Wikivoyage."
+  },
+  {
+   "file": "commons_Oceanside_pier_California_from_the_Pacific_Surfliner_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Oceanside_pier_California_,_from_the_Pacific_Surfliner_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Oceanside_pier_California_%2C_from_the_Pacific_Surfliner_-_panoramio.jpg/1920px-Oceanside_pier_California_%2C_from_the_Pacific_Surfliner_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Oceanside pier California , from the Pacific Surfliner - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Loco Steve",
+   "caption": "Oceanside pier California , from the Pacific Surfliner"
+  }
+ ]
+}

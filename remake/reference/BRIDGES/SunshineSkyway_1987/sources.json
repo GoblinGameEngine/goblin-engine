@@ -1,0 +1,38 @@
+{
+ "structure": "BRIDGES/SunshineSkyway_1987",
+ "files": [
+  {
+   "file": "commons_2010-09-10_Sunshine_Skyway_Bridge.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:2010-09-10_Sunshine_Skyway_Bridge.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/2010-09-10_Sunshine_Skyway_Bridge.jpg/1920px-2010-09-10_Sunshine_Skyway_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:2010-09-10 Sunshine Skyway Bridge.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Joe King",
+   "caption": "2010-09-10 Fort DeSoto Beach"
+  },
+  {
+   "file": "commons_Skyway_Bridge_old_and_new.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Skyway_Bridge_old_and_new.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Skyway_Bridge_old_and_new.jpg/1920px-Skyway_Bridge_old_and_new.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Skyway Bridge old and new.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Apelbaum at en.wikipedia",
+   "caption": "Photo of the current Skyway Bridge with the former bridges."
+  },
+  {
+   "file": "commons_Sunshine_Skyway_Bridge_from_the_Pier.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sunshine_Skyway_Bridge_from_the_Pier.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Sunshine_Skyway_Bridge_from_the_Pier.jpg/1920px-Sunshine_Skyway_Bridge_from_the_Pier.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sunshine Skyway Bridge from the Pier.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Sangypot (talk)",
+   "caption": "Sunshine Skyway Bridge in Florida."
+  }
+ ]
+}

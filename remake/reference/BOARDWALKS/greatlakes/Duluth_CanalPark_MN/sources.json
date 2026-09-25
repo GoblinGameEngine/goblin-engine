@@ -1,0 +1,27 @@
+{
+ "structure": "BOARDWALKS/greatlakes/Duluth_CanalPark_MN",
+ "files": [
+  {
+   "file": "commons_Duluth_North_Pier_Lighthouse_33854849995_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Duluth_North_Pier_Lighthouse_(33854849995).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Duluth_North_Pier_Lighthouse_%2833854849995%29.jpg/1920px-Duluth_North_Pier_Lighthouse_%2833854849995%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Duluth North Pier Lighthouse (33854849995).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Sharon Mollerus",
+   "caption": "Duluth North Pier Lighthouse"
+  },
+  {
+   "file": "commons_Duluth_Trip_-_May_2014_-_South_Pier_Inner_Range_Light_17215270900_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Duluth_Trip_-_May_2014_-_South_Pier_Inner_Range_Light_(17215270900).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Duluth_Trip_-_May_2014_-_South_Pier_Inner_Range_Light_%2817215270900%29.jpg/1920px-Duluth_Trip_-_May_2014_-_South_Pier_Inner_Range_Light_%2817215270900%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Duluth Trip - May 2014 - South Pier Inner Range Light (17215270900).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Pete Markham from Loretto, USA",
+   "caption": "The Duluth South Pier Inner Range Light is a skeletal tower built in 1901."
+  }
+ ]
+}
