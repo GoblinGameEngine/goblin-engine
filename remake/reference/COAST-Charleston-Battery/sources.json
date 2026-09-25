@@ -1,0 +1,27 @@
+{
+ "structure": "COAST-Charleston-Battery",
+ "files": [
+  {
+   "file": "commons_Charleston_-_White_Point_Gardens.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_-_White_Point_Gardens.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Charleston_-_White_Point_Gardens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Charleston - White Point Gardens.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Curt Teich &amp; Co., Chicago (publisher)",
+   "caption": "Photomechanical print (postcard)\u00a0: halftone, colored \nDivided back \nNo. C.T. 4 \n\nDistributed by F. J. Martschink Co."
+  },
+  {
+   "file": "commons_Charleston_-_Battery_Park.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_-_Battery_Park.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Charleston_-_Battery_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Charleston - Battery Park.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Souvenir Post Card Co.",
+   "caption": "Photomechanical print (postcard) \nUndivided back \n\nNo. 1624"
+  }
+ ]
+}

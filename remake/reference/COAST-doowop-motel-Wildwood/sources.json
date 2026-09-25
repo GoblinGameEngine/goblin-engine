@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-doowop-motel-Wildwood",
+ "files": [
+  {
+   "file": "commons_Doo_Wop_Aquarius_Motel_NJ.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Doo_Wop_Aquarius_Motel_NJ.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Doo_Wop_Aquarius_Motel_NJ.jpg/1920px-Doo_Wop_Aquarius_Motel_NJ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Doo Wop Aquarius Motel NJ.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Smallbones",
+   "caption": "Aquarius Motel in Wildwood New Jersey in the Doo Wop architectural style. Part of the Wildwoods Shore Resort Historic District, a New jersey HD (not NRHP). On Taylor Street between Atlantic and Ocean Avenues."
+  },
+  {
+   "file": "commons_Doo_Wop_Sea_Kist_Motel_NJ.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Doo_Wop_Sea_Kist_Motel_NJ.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Doo_Wop_Sea_Kist_Motel_NJ.jpg/1920px-Doo_Wop_Sea_Kist_Motel_NJ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Doo Wop Sea Kist Motel NJ.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Smallbones",
+   "caption": "Sea Kist Motel in Wildwood, New Jersey.  Part of the New Jersey historic district (not NRHP) Wildwoods Shore Resort Historic District.  At the NW corner of Hildreth and Ocean Ave."
+  },
+  {
+   "file": "commons_Doo_Wop_Skylark_WW_NJ.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Doo_Wop_Skylark_WW_NJ.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Doo_Wop_Skylark_WW_NJ.jpg/1920px-Doo_Wop_Skylark_WW_NJ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Doo Wop Skylark WW NJ.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Smallbones",
+   "caption": "Skylark Motel in the Wildwoods Shore Resort Historic District a historic district designated by the State of New Jersey.  This motel was built in 1954 on Spicer Street near Atlantic Ave. in Wildwood, NJ"
+  }
+ ]
+}

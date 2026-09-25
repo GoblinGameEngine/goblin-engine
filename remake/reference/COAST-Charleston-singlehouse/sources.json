@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-Charleston-singlehouse",
+ "files": [
+  {
+   "file": "commons_Joseph_Verree_House_c.1767_47_Church_Street_Charleston_SC_25060280473_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Joseph_Verree_House_(c.1767),_47_Church_Street,_Charleston,_SC_(25060280473).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Joseph_Verree_House_%28c.1767%29%2C_47_Church_Street%2C_Charleston%2C_SC_%2825060280473%29.jpg/1920px-Joseph_Verree_House_%28c.1767%29%2C_47_Church_Street%2C_Charleston%2C_SC_%2825060280473%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Joseph Verree House (c.1767), 47 Church Street, Charleston, SC (25060280473).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Spencer Means from New York City, USA",
+   "caption": "Joseph Verree, a prosperous Charleston master carpenter, constructed this two-and-one-half-story Georgian single house c.1767. The house, noted for its two-story curved piazza and finely detailed door surround at the main entrance (on the lower piazza, of course), is a handsome and unusual structure and a personal favorite."
+  },
+  {
+   "file": "commons_Pink-house-charleston-sc1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pink-house-charleston-sc1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Pink-house-charleston-sc1.jpg/1920px-Pink-house-charleston-sc1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pink-house-charleston-sc1.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Brian Stansberry",
+   "caption": "The Pink House, built circa 1712, in Charleston, South Carolina, USA. The house is listed on the National Register of Historic Places as a contributing building in the French Quarter District. As was by then typical of the Architecture of Bermuda, the house was built of limestone from Bermuda (Charleston had been settled from Bermuda under William Sayle in the 1670s, and Bermudians retained close links with the city up to American independence)."
+  },
+  {
+   "file": "commons_Charleston_South_Carolina-Historic_homes_in_Charleston-20060429162558.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_South_Carolina-Historic_homes_in_Charleston-20060429162558.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Charleston_South_Carolina-Historic_homes_in_Charleston-20060429162558.jpg/1920px-Charleston_South_Carolina-Historic_homes_in_Charleston-20060429162558.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Charleston South Carolina-Historic homes in Charleston-20060429162558.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Brian Zinnel",
+   "caption": "Apr 2006 - Charleston, South Carolina. Historic homes in Charleston."
+  }
+ ]
+}

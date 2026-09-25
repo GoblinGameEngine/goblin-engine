@@ -1,0 +1,27 @@
+{
+ "structure": "COAST-flora-sabal",
+ "files": [
+  {
+   "file": "commons_Starr-160717-0156-Sabal_palmetto_Anhinga_on_stump_Green_Cay_Nature_Center_Boynton_Beach_Florida_29043412433_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Starr-160717-0156-Sabal_palmetto_Anhinga_on_stump,_Green_Cay_Nature_Center,_Boynton_Beach,_Florida_(29043412433).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Starr-160717-0156-Sabal_palmetto_Anhinga_on_stump%2C_Green_Cay_Nature_Center%2C_Boynton_Beach%2C_Florida_%2829043412433%29.jpg/1920px-Starr-160717-0156-Sabal_palmetto_Anhinga_on_stump%2C_Green_Cay_Nature_Center%2C_Boynton_Beach%2C_Florida_%2829043412433%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Starr-160717-0156-Sabal palmetto Anhinga on stump, Green Cay Nature Center, Boynton Beach, Florida (29043412433).jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0 us",
+   "author": "Forest and Kim Starr",
+   "caption": "Sabal palmetto (Cabbage palmetto, Florida palmetto)\nAnhinga on stump at Green Cay Nature Center Boynton Beach, Florida.\n\n#160717-0156\n\n\nImage Use Policy"
+  },
+  {
+   "file": "commons_Sabal_palmetto_002_by_Scott_Zona.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sabal_palmetto_002_by_Scott_Zona.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Sabal_palmetto_002_by_Scott_Zona.jpg/1920px-Sabal_palmetto_002_by_Scott_Zona.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Sabal palmetto 002 by Scott Zona.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "scott.zona",
+   "caption": "Yamato Scrub Natural Area, Boca Raton, Palm Beach County, Florida, USA."
+  }
+ ]
+}

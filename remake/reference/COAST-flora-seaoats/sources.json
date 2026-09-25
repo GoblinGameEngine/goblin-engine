@@ -1,0 +1,27 @@
+{
+ "structure": "COAST-flora-seaoats",
+ "files": [
+  {
+   "file": "commons_Sea_oats_Uniola_paniculata_on_a_Florida_sand_dune..jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sea_oats_(Uniola_paniculata)_on_a_Florida_sand_dune..jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Sea_oats_%28Uniola_paniculata%29_on_a_Florida_sand_dune..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Sea oats (Uniola paniculata) on a Florida sand dune..jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Georgialh",
+   "caption": "Sea Oats (Uniola paniculata) on a sand dune at John U. Lloyd Beach State Park, Florida."
+  },
+  {
+   "file": "commons_Sea_Oats.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Sea_Oats.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Sea_Oats.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Sea Oats.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Dorothy Birch, World of Color Photography",
+   "caption": "Seaoats (Uniola paniculata L.) growing next to a dune on Perdido Beach, FL."
+  }
+ ]
+}

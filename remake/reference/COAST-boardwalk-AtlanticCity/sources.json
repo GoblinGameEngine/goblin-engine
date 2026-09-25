@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-boardwalk-AtlanticCity",
+ "files": [
+  {
+   "file": "commons_Boardwalk_at_dusk_Atlantic_City_2007.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Boardwalk_at_dusk,_Atlantic_City,_2007.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Boardwalk_at_dusk%2C_Atlantic_City%2C_2007.jpg/1920px-Boardwalk_at_dusk%2C_Atlantic_City%2C_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Boardwalk at dusk, Atlantic City, 2007.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "DimiTalen",
+   "caption": "Boardwalk at dusk, Atlantic City, 2007"
+  },
+  {
+   "file": "commons_A_view_of_the_boardwalk_in_Atlantic_City.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:A_view_of_the_boardwalk_in_Atlantic_City.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/A_view_of_the_boardwalk_in_Atlantic_City.jpg/1920px-A_view_of_the_boardwalk_in_Atlantic_City.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:A view of the boardwalk in Atlantic City.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Bruce Emmerling",
+   "caption": "Boardwalk shops in Atlantic CIty"
+  },
+  {
+   "file": "commons_Boardwalk_at_Trump_Taj_Mahal_Atlantic_City_2007.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Boardwalk_at_Trump_Taj_Mahal,_Atlantic_City,_2007.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Boardwalk_at_Trump_Taj_Mahal%2C_Atlantic_City%2C_2007.jpg/1920px-Boardwalk_at_Trump_Taj_Mahal%2C_Atlantic_City%2C_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Boardwalk at Trump Taj Mahal, Atlantic City, 2007.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "DimiTalen",
+   "caption": "Boardwalk at Trump Taj Mahal, Atlantic City, 2007"
+  }
+ ]
+}

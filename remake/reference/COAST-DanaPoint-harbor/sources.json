@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-DanaPoint-harbor",
+ "files": [
+  {
+   "file": "commons_Dana_Point_a_city_in_southern_Orange_County_CA_Photo_Don_Ramey_Logan.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dana_Point_a_city_in_southern_Orange_County_CA_Photo_Don_Ramey_Logan.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Dana_Point_a_city_in_southern_Orange_County_CA_Photo_Don_Ramey_Logan.jpg/1920px-Dana_Point_a_city_in_southern_Orange_County_CA_Photo_Don_Ramey_Logan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dana Point a city in southern Orange County CA Photo Don Ramey Logan.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Don Ramey Logan",
+   "caption": "Dana Point is a city located in southern Orange County CA Photo Don Ramey Logan"
+  },
+  {
+   "file": "commons_Dana_Point_Orange_County_California.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dana_Point,_Orange_County,_California.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Dana_Point%2C_Orange_County%2C_California.jpg/1920px-Dana_Point%2C_Orange_County%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dana Point, Orange County, California.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Mertbiol",
+   "caption": "Aerial photograph of Dana Point, Orange County, California"
+  },
+  {
+   "file": "commons_EEZTOP_folding_table_at_Dana_Point_fishing.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:EEZTOP_folding_table_at_Dana_Point_fishing.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/EEZTOP_folding_table_at_Dana_Point_fishing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:EEZTOP folding table at Dana Point fishing.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Pachinco71",
+   "caption": "The EEZTOP folding table with view to Dana Point harbor with fishing gear."
+  }
+ ]
+}

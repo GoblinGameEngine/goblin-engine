@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-UKpier-Llandudno",
+ "files": [
+  {
+   "file": "commons_LlandudnoPier-P6140188.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:LlandudnoPier-P6140188.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/LlandudnoPier-P6140188.JPG/1920px-LlandudnoPier-P6140188.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:LlandudnoPier-P6140188.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "NoelWalley at English Wikipedia",
+   "caption": "Llandudno Pier taken by me, Noel Walley on 14/06/2004"
+  },
+  {
+   "file": "commons_Llandudno_Pier_-_view_along_pier_deck.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Llandudno_Pier_-_view_along_pier_deck.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Llandudno_Pier_-_view_along_pier_deck.jpg/1920px-Llandudno_Pier_-_view_along_pier_deck.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Llandudno Pier - view along pier deck.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Tom Parnell",
+   "caption": "This is a photo of listed building number"
+  },
+  {
+   "file": "commons_Llandudno_Pier_-_view_from_S.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Llandudno_Pier_-_view_from_S.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Llandudno_Pier_-_view_from_S.jpg/1920px-Llandudno_Pier_-_view_from_S.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Llandudno Pier - view from S.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Tom Parnell",
+   "caption": "This is a photo of listed building number"
+  }
+ ]
+}

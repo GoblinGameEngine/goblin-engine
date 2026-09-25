@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-UKpier-Southend",
+ "files": [
+  {
+   "file": "commons_Southend_Pier_with_train.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Southend_Pier_with_train.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Southend_Pier_with_train.jpg/1920px-Southend_Pier_with_train.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Southend Pier with train.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Toben",
+   "caption": "The picture shows the pier of Southend-on-Sea looking towards the pier's end; a train is driving into the opposite direction"
+  },
+  {
+   "file": "commons_Southend_Pier_Autumn_2007_-_crop.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Southend_Pier_Autumn_2007_-_crop.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Southend_Pier_Autumn_2007_-_crop.jpg/1920px-Southend_Pier_Autumn_2007_-_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Southend Pier Autumn 2007 - crop.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Southend_Pier_Autumn_2007.jpg: Damian Dukarski\nThe original uploader was Dammmmian at English Wikipedia.\n\nderivative work: SilkTork",
+   "caption": "Southend Seafront Autumn 2007"
+  },
+  {
+   "file": "commons_Southend_Pier_-_geograph.org.uk_-_2470389.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Southend_Pier_-_geograph.org.uk_-_2470389.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Southend_Pier_-_geograph.org.uk_-_2470389.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Southend Pier - geograph.org.uk - 2470389.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "nick macneill\u00a0",
+   "caption": "Southend Pier\u00a0"
+  }
+ ]
+}

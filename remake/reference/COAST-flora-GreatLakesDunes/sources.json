@@ -1,0 +1,27 @@
+{
+ "structure": "COAST-flora-GreatLakesDunes",
+ "files": [
+  {
+   "file": "commons_Marram_grass_in_winter.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Marram_grass_in_winter.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Marram_grass_in_winter.jpg/1920px-Marram_grass_in_winter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Marram grass in winter.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Visviva",
+   "caption": "Clump of Ammophila breviligulata on a snowy dune at Lake Street Beach in Gary Indiana."
+  },
+  {
+   "file": "commons_Dune_restoration_at_north_beach_park.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dune_restoration_at_north_beach_park.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Dune_restoration_at_north_beach_park.jpg/1920px-Dune_restoration_at_north_beach_park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dune restoration at north beach park.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Gpwitteveen",
+   "caption": "The covering of marram grass and careful placement of snow-drift fences across sections of this west facing section of the Lake Michigan dune is successfully maintaining the structure of the dune, according to the design of the restoration project. An extensive circle of boardwalk leads along the treeline up one side of the dune and across the top (visible at the top right here). Besides this location at North Beach Park, learn more about the complete collection Ottawa County parks at www.miotta"
+  }
+ ]
+}

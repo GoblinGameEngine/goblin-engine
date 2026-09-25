@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-Daytona-pier",
+ "files": [
+  {
+   "file": "commons_Daytona_Beach_Ferris_Wheel.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Daytona_Beach_Ferris_Wheel.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Daytona_Beach_Ferris_Wheel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Daytona Beach Ferris Wheel.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "By HumongoNationphotogallery",
+   "caption": "Ferris wheel, near the Main Street Pier"
+  },
+  {
+   "file": "commons_Hilton_Daytona_Beach_Oceanfront_Resort.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hilton_Daytona_Beach_Oceanfront_Resort.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Hilton_Daytona_Beach_Oceanfront_Resort.jpg/1920px-Hilton_Daytona_Beach_Oceanfront_Resort.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Hilton Daytona Beach Oceanfront Resort.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Keiteay",
+   "caption": "Hilton Daytona Beach Oceanfront Resort viewed from the Main Street Pier"
+  },
+  {
+   "file": "commons_Daytona_Beach_Bandshell.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Daytona_Beach_Bandshell.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Daytona_Beach_Bandshell.jpg/1920px-Daytona_Beach_Bandshell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Daytona Beach Bandshell.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Keiteay",
+   "caption": "Daytona Beach Bandshell viewed from the Main Street Pier"
+  }
+ ]
+}

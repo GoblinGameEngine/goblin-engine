@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-Naples-pier",
+ "files": [
+  {
+   "file": "commons_NaplesPierFlorida.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:NaplesPierFlorida.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/NaplesPierFlorida.jpg/1920px-NaplesPierFlorida.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:NaplesPierFlorida.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Massimo Catarinella",
+   "caption": "The pier is a landmark structure of Naples, Florida"
+  },
+  {
+   "file": "commons_Naples_Pier_After_Sundown_35314969951_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Naples_Pier_After_Sundown_(35314969951).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Naples_Pier_After_Sundown_%2835314969951%29.jpg/1920px-Naples_Pier_After_Sundown_%2835314969951%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Naples Pier After Sundown (35314969951).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Charles Patrick Ewing",
+   "caption": "Naples Pier After Sundown"
+  },
+  {
+   "file": "commons_Naples_Pier_in_Naples_Florida_2.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Naples_Pier_in_Naples,_Florida_2.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Naples_Pier_in_Naples%2C_Florida_2.jpeg/1920px-Naples_Pier_in_Naples%2C_Florida_2.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Naples Pier in Naples, Florida 2.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "User:quadell",
+   "caption": "Looking back along the Naples Pier in Naples, Florida, from the end."
+  }
+ ]
+}

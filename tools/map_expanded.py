@@ -58,9 +58,14 @@ SHORE = HW - SEA             # |x| of the land's edge at each sea
 # River harmonic stack -- identical to TerrainHeight.gd (generator_rules §10)
 A1, A2, A3 = 150.0, 45.0, 25.0
 PHI1, PHI2, PHI3, PHI4 = math.pi / 2, -math.pi / 4, -math.pi / 4, 0.0
-CH_HALF = 22.5 + WIDEN       # 1,045 m channel (was 45 m)
+CH_HALF = 250.0              # a 500 m river ...
+OLD_BANK = 22.5 + WIDEN      # ... in a wide basin: marsh and meadow out to the 1 km-widened banks
+BASIN = OLD_BANK - CH_HALF
 # Lake per §10: 1,000 m x 300 m, necked 100-150 m at both ends
-LAKE_S, LAKE_HALF_LEN, LAKE_HW, LAKE_NECK = math.pi / 4 * R, 500.0, 150.0 + WIDEN, 350.0   # a long smooth neck
+# Lake Tamsin, expanded north: the south (Harrow Falls) shore stays 650 m off the centreline; the new
+# north shore reaches ~1.7 km out; ~2.6 km long round the ring with long smooth necks
+LAKE_S, LAKE_HALF_LEN, LAKE_NECK = math.pi / 4 * R, 1400.0, 800.0
+LAKE_HW_S, LAKE_HW_N = 150.0 + WIDEN, 1700.0
 H_BLUFF, Z1 = 18.0, 10.0     # §16
 
 rng = random.Random(1234)
@@ -93,9 +98,10 @@ def lake_params(s):
     t = np.clip((LAKE_HALF_LEN - a) / LAKE_NECK, 0, 1)
     t = t * t * (3 - 2 * t)
     cx = rx(s) * (1 - t)
-    # one irregular marshy shore (-x), one cleaner bluff shore (+x) -- §16
-    hw_top = CH_HALF + (LAKE_HW - CH_HALF + 22 * np.sin(d / 41.0) + 12 * np.sin(d / 17.0 + 1.3)) * t
-    hw_bot = CH_HALF + (LAKE_HW - CH_HALF + 6 * np.sin(d / 63.0 + 0.4)) * t
+    # one irregular shore (-x, the new north shore: coves and points), one cleaner bluff shore (+x) -- §16
+    hw_top = CH_HALF + (LAKE_HW_N - CH_HALF + 70 * np.sin(d / 230.0) + 35 * np.sin(d / 97.0 + 1.3)
+                        + 12 * np.sin(d / 31.0)) * t
+    hw_bot = CH_HALF + (LAKE_HW_S - CH_HALF + 6 * np.sin(d / 63.0 + 0.4)) * t
     return t, cx, hw_top, hw_bot
 
 
@@ -106,6 +112,88 @@ def water_edges(s):
     top = np.where(t > 0, np.minimum(r - CH_HALF, cx - ht), r - CH_HALF)
     bot = np.where(t > 0, np.maximum(r + CH_HALF, cx + hb), r + CH_HALF)
     return top, bot
+
+
+# ------------------------------------------------------------------ the sea coasts
+# Natural coasts: headlands (rocky cliffs) alternating with crenulate bays (sandy beaches) -- see
+# research/coastal_communities/flora_and_coast.md.  |x| of the waterline = COAST_MEAN + a(s); where a(s)
+# stands proud it's a headland.  Each coastal community straightens its own stretch (SITES).
+COAST_MEAN = 3100.0
+TAU = 2 * math.pi
+
+
+def coast_amp(s, sg):
+    s = np.asarray(s, dtype=np.float64)
+    ph = 0.0 if sg < 0 else 2.1
+    # incommensurate bends at several scales: big bays, points, coves, a ragged edge
+    return (140 * np.sin(TAU * s / 2600 + ph) + 95 * np.sin(TAU * s / 1130 + 2 * ph + 0.7)
+            + 55 * np.sin(TAU * s / 610 + ph + 2.0) + 24 * np.sin(TAU * s / 233 + 3 * ph)
+            + 9 * np.sin(TAU * s / 71 + ph + 1.1))
+
+
+# old town anchors (s0, north?) -- a creek that belongs to a town moves with it
+_TOWN_S0 = [(395.0, False), (2130.0, False), (1500.0, True), (2150.0, True), (1050.0, False), (2820.0, False),
+            (1250.0, True), (1500.0, False), (650.0, True), (2580.0, True), (2955.0, True)]
+
+
+def _creek_shift(wps, pond):
+    north = wps[0][1] < 0
+    s_end = pond[0] if pond else wps[-1][0]
+    near = [t for t in _TOWN_S0 if t[1] == north and abs((s_end - t[0] + OLD_R * math.pi) % (2 * OLD_R * math.pi)
+                                                         - OLD_R * math.pi) < 450]
+    return near[0][0] * (SS - 1) if near else wps[0][0] * (SS - 1)
+
+
+HAVEN_S = 120 + _creek_shift([(120, -1380), (345, -150)], None) + 45      # Lost Creek's mouth
+# name, side (-1 north sea, +1 south sea), s centre, half-length along the coast, waterline |x|,
+# shore-road set-back from the waterline
+SITES = [
+    ("Port Carrow", -1, 10900.0, 780.0, 3200.0, 30.0),
+    ("Tern Harbor", -1, 5600.0, 380.0, 3130.0, 110.0),
+    ("Brightwater", -1, 16300.0, 520.0, 3150.0, 110.0),
+    ("Haven Point", -1, HAVEN_S, 420.0, 3130.0, 110.0),
+    ("Solana Point", 1, 10600.0, 820.0, 3200.0, 110.0),
+    ("Pelican Cove", 1, 14700.0, 380.0, 3130.0, 110.0),
+    ("Palmetto Beach", 1, 4300.0, 480.0, 3150.0, 110.0),
+    ("Oceanview", 1, 18000.0, 580.0, 3150.0, 110.0),
+]
+SITE = {st[0]: st for st in SITES}
+BLEND = 700.0
+
+
+def site_weight(s, sg):
+    """0 inside a coastal site's straightened stretch, 1 on the natural coast; and the site's line and
+    road set-back blended in."""
+    s = np.asarray(s, dtype=np.float64)
+    w = np.ones_like(s)
+    line = np.zeros_like(s)
+    off = np.zeros_like(s)
+    for name, side, sc, half, ln, ro in SITES:
+        if side != sg:
+            continue
+        d = np.abs(wrap_d(s - sc))
+        t = np.clip((d - half) / BLEND, 0, 1)
+        t = t * t * (3 - 2 * t)
+        inside = t < w
+        line = np.where(inside, ln, line)
+        off = np.where(inside, ro, off)
+        w = np.minimum(w, t)
+    return w, line, off
+
+
+def coast(s, sg):
+    """|x| of the sea's waterline at s on side sg."""
+    w, line, _ = site_weight(s, sg)
+    return (COAST_MEAN + coast_amp(s, sg)) * w + line * (1 - w)
+
+
+def coastf(s, sg):
+    return float(coast(s, sg))
+
+
+def is_sea(s, x):
+    sg = -1 if x < 0 else 1
+    return abs(x) > coastf(s, sg)
 
 
 def rail_x(s):
@@ -279,7 +367,9 @@ S = S.astype(np.float32)
 WCAT = np.zeros((WH, CW), np.uint8)             # 1 river 2 lake 3 creek 4 pond 5 ditch 6 sea
 WCAT[np.abs(X - CX_L) < CH_HALF] = 1
 WCAT[(T_L > 0) & (X > CX_L - HT_L) & (X < CX_L + HB_L)] = 2
-WCAT[np.broadcast_to(np.abs(X) > SHORE, WCAT.shape)] = 6       # the end-cap seas
+COAST_N = coast(S, -1).astype(np.float32)                       # |x| of each sea's waterline, per column
+COAST_S = coast(S, 1).astype(np.float32)
+WCAT[(X < -COAST_N) | (X > COAST_S)] = 6                          # the end-cap seas
 
 # Named tributary creeks: outer farmland -> (pond) -> river.  2-4 per stretch (§10)
 CREEKS_OLD = [
@@ -296,12 +386,6 @@ CREEKS_OLD = [
 ]
 
 
-# old town anchors (s0, north?) -- a creek that belongs to a town moves with it, keeping the town's
-# creek / pond (Kessler's Sauk Park, Cedar Ford's mill, Pruett's Deer Creek...)
-_TOWN_S0 = [(395.0, False), (2130.0, False), (1500.0, True), (2150.0, True), (1050.0, False), (2820.0, False),
-            (1250.0, True), (1500.0, False), (650.0, True), (2580.0, True), (2955.0, True)]
-
-
 def _expand_creek(name, wps, pond):
     """An old creek on the expanded map: moved round the ring as a piece (its shape kept) -- with
     its town if it has one within 450 m, else 6x round like the rest -- its bank side 500 m out, and
@@ -310,14 +394,10 @@ def _expand_creek(name, wps, pond):
     north = wps[0][1] < 0
     dx = -WIDEN if north else WIDEN
     sg = -1 if north else 1
-    s_end = pond[0] if pond else wps[-1][0]
-    near = [t for t in _TOWN_S0 if t[1] == north and abs((s_end - t[0] + OLD_R * math.pi) % (2 * OLD_R * math.pi)
-                                                         - OLD_R * math.pi) < 450]
-    shift = near[0][0] * (SS - 1) if near else s_c * (SS - 1)
-    ns = s_c + shift
+    shift = _creek_shift(wps, pond)
     pts = [(s + shift, x + dx) for s, x in wps]
     head = pts[0]
-    lead = [(head[0] + 45, sg * (SHORE + 80)), (head[0] - 70, sg * (SHORE - 330)),
+    lead = [(head[0] + 45, sg * (coastf(head[0] + 45, sg) + 80)), (head[0] - 70, sg * (SHORE - 330)),
             (head[0] + 55, sg * (SHORE - 700)), (head[0] - 20, sg * (abs(head[1]) + 150))]
     if pond:
         pond = (pond[0] + shift, pond[1] + dx, pond[2], pond[3])
@@ -425,6 +505,12 @@ class Town:
         self.s0, self.x0, self.axis, self.flip, self.label = s0, x0, axis, flip, label
         self.streets, self.bldgs, self.areas, self.marks = [], [], [], []
         self.extra_hull = []
+        # waterfront: walks (boardwalks, piers, docks, breakwaters...), decks, buildings over the
+        # water, harbour water cut into the land, land built out into the water
+        self.walks, self.decks, self.wbldgs, self.water, self.land = [], [], [], [], []
+        self.coastal = False
+        self.water_v = 0.0
+        self.density = 1.0      # scales the houses / storefronts a new town lays per block side
 
     # local (u along main street, v across it) -> ring (s, x)
     def g(self, u, v):
@@ -464,6 +550,7 @@ class Town:
             self.street([(u, vs[0]), (u, vs[-1])], "street")
 
     def stores(self, u0, u1, vf, dirn, n, half=7.0, dmin=20, dmax=28, kind="store", vacant=0.0):
+        n = max(1, int(round(n * self.density)))
         span = (u1 - u0 - 10) / n
         for k in range(n):
             a = u0 + 5 + span * k
@@ -474,6 +561,7 @@ class Town:
             self.bld(self.rect(a, b, va, va + dirn * d), kd)
 
     def houses(self, u0, u1, vf, dirn, n, half=5.0, setback=7.0, kind="house"):
+        n = max(1, int(round(n * self.density)))
         span = (u1 - u0 - 12) / n
         for k in range(n):
             uc = u0 + 6 + span * (k + 0.5) + rng.uniform(-2.5, 2.5)
@@ -860,6 +948,503 @@ def build_village(name, pop, founding, arche, s0, x0, axis, flip, n_stores, labe
     return t
 
 
+# ------------------------------------------------------------------ coastal communities
+# Nine new communities on the seas and Lake Tamsin, and the Harrow Falls / Cedar Ford waterfronts --
+# laid out from research/coastal_communities/.  Local frame: u along the shore, v toward the water
+# (v = 0 the shore road; the waterline at v = the site's set-back).  Walks (boardwalks, piers, docks,
+# breakwaters) and buildings standing over the water are kept apart from the land buildings.
+
+def _swalk(t, pts_uv, w, kind):
+    t.walks.append(([t.g(u, v) for u, v in pts_uv], w, kind))
+
+
+def _deck(t, u0, u1, v0, v1, kind="deck"):
+    t.decks.append((t.rect(u0, u1, v0, v1), kind))
+
+
+def _wb(t, u0, u1, v0, v1, kind):
+    t.wbldgs.append((t.rect(u0, u1, v0, v1), kind))
+
+
+def _pier(t, u, v0, v1, w, head=None, kind="pier"):
+    """A pier from the shore (v0) out over the water to v1, with an optional T-head (width, depth)."""
+    _swalk(t, [(u, v0), (u, v1)], w, kind)
+    if head:
+        hw, hd = head
+        sgn = 1 if v1 > v0 else -1
+        _deck(t, u - hw / 2, u + hw / 2, v1, v1 + sgn * hd)
+
+
+def _stores_v(t, v0, v1, uf, dirn, n, half=6.0, dmin=18, dmax=24, kind="store"):
+    """Storefronts along a street that runs in v (a cross street at u = uf)."""
+    n = max(1, int(round(n * t.density)))
+    span = (abs(v1 - v0) - 8) / n
+    lo = min(v0, v1)
+    for k in range(n):
+        a = lo + 4 + span * k
+        b = a + span - 0.9
+        d = rng.uniform(dmin, dmax)
+        ua = uf + dirn * half
+        t.bld([t.g(ua, a), t.g(ua + dirn * d, a), t.g(ua + dirn * d, b), t.g(ua, b)], kind)
+
+
+def _cottage_blocks(t, us, v_rows, n=4, kind="cottage", alley=False):
+    for (v0, v1) in v_rows:
+        for i in range(len(us) - 1):
+            t.houses(us[i], us[i + 1], v0, -1 if v1 < v0 else 1, n, kind=kind)
+            t.houses(us[i], us[i + 1], v1, 1 if v1 < v0 else -1, n, kind=kind)
+            if alley:
+                t.street([(us[i], (v0 + v1) / 2), (us[i + 1], (v0 + v1) / 2)], "alley")
+
+
+def coastal_town(site_name, tier, pop, founding, arche):
+    name, sg, sc, half, line, ro = SITE[site_name]
+    t = Town(name, tier, pop, founding, arche, sc, sg * (line - ro), "s", sg, "down" if sg < 0 else "up")
+    t.coastal = True
+    t.water_v = ro          # the waterline, in v
+    return t
+
+
+def build_brightwater():
+    # Jersey Shore boardwalk town (Ocean City grid, Wildwood motels, Seaside Heights amusement pier)
+    t = coastal_town("Brightwater", "Town", 6200, "Resort / excursion railroad", "Seasonal resort (Jersey Shore)")
+    t.density = 0.35
+    us = [-400 + 80 * i for i in range(11)]
+    vs = [0, -85, -170, -255]
+    t.grid(us, vs, mains=(-85,))
+    _swalk(t, [(-440, 20), (440, 20)], 12, "boardwalk")
+    for u in us:
+        _swalk(t, [(u, 26), (u, 36)], 4, "boardwalk")                     # stairs to the beach
+    t.area(t.rect(-440, 440, 26, t.water_v), "beach")
+    for i in range(10):                                                  # the boards' frontage: stands
+        t.stores(us[i] + 2, us[i + 1] - 2, 14, -1, 5, half=0, dmin=6, dmax=7,
+                 kind="arcade" if i % 3 == 0 else "stand")
+    _deck(t, 110, 200, 26, 220, "amusement")                           # Casino Pier / Morey's
+    for k in range(6):
+        _wb(t, 118 + (k % 3) * 26, 136 + (k % 3) * 26, 60 + (k // 3) * 60, 84 + (k // 3) * 60, "ride")
+    t.mark(155, 150, "Amusement Pier")
+    for i in range(10):                                                  # motels and hotels on Ocean Ave
+        if i == 1:
+            t.bld(t.rect(us[i] + 4, us[i + 1] - 4, -8, -62), "civic")
+            t.mark((us[i] + us[i + 1]) / 2, -35, "Convention Hall")
+            continue
+        kind = "motel" if i % 2 else "hotel"
+        t.bld(t.rect(us[i] + 6, us[i + 1] - 26, -8, -44), kind)
+        t.area(t.rect(us[i + 1] - 22, us[i + 1] - 6, -12, -30), "pool")
+    for i in range(10):                                                  # Central Ave: the resort avenue
+        t.stores(us[i], us[i + 1], -85, 1, 4, dmin=16, dmax=20)
+        t.stores(us[i], us[i + 1], -85, -1, 4, dmin=18, dmax=22)
+    for i in range(10):                                                  # cottage blocks
+        t.houses(us[i], us[i + 1], -170, 1, 4, kind="cottage")
+        t.houses(us[i], us[i + 1], -170, -1, 4, kind="cottage")
+        t.houses(us[i], us[i + 1], -255, 1, 4, kind="cottage")
+    t.church(-40, -212, "St. Brendan-by-the-Sea")
+    t.civic(us[6], us[7], -170, -255, "civic", 24, 18, "Post Office", vface=-190)
+    t.civic(us[8], us[9], -170, -255, "school", 50, 30, "Brightwater School", vface=-212)
+    t.bld(t.rect(-8, 8, 4, 12), "civic")
+    t.mark(0, 8, "Beach Patrol")
+    for u in range(-400, 441, 80):                                       # lifeguard stands on the sand
+        t.bld(t.rect(u - 1.5, u + 1.5, 70, 73), "lifeguard")
+    return t
+
+
+def build_palmetto_beach():
+    # Florida pier town (Naples / Daytona pier on Main St, Hollywood Broadwalk + bandshell)
+    t = coastal_town("Palmetto Beach", "Town", 5400, "Resort / railroad", "Seasonal resort (Florida)")
+    t.density = 0.5
+    us = [-360 + 90 * i for i in range(9)]
+    vs = [0, -90, -180, -270]
+    t.grid(us, vs)
+    t.street([(0, 0), (0, -360)], "main")
+    _swalk(t, [(-420, 14), (420, 14)], 10, "promenade")                 # the Broadwalk
+    t.area(t.rect(-420, 420, 20, t.water_v), "beach")
+    _pier(t, 0, 20, 330, 7, head=(34, 14))
+    _wb(t, -11, 11, 332, 342, "restaurant")
+    _wb(t, 5, 11, 150, 156, "bait")
+    for v in (90, 240):
+        _wb(t, -4, 4, v, v + 5, "pavilion")
+    t.mark(0, 355, "Palmetto Pier")
+    t.area(t.rect(-40, 40, -6, -40), "plaza")
+    t.mark(0, -24, "Pier Plaza")
+    t.bld(t.rect(-262, -238, 22, 32), "pavilion")
+    t.mark(-250, 40, "Bandshell")
+    for i in range(8):
+        if i in (3, 4):
+            continue
+        t.bld(t.rect(us[i] + 6, us[i] + 42, -8, -50), "hotel")
+        t.bld(t.rect(us[i] + 48, us[i + 1] - 6, -8, -40), "motel")
+    _stores_v(t, -8, -86, 0, -1, 4)
+    _stores_v(t, -8, -86, 0, 1, 4)
+    _stores_v(t, -94, -176, 0, -1, 4)
+    _stores_v(t, -94, -176, 0, 1, 4)
+    for i in range(8):
+        t.houses(us[i], us[i + 1], -90, -1, 3, kind="bungalow")
+        t.houses(us[i], us[i + 1], -180, 1, 3, kind="bungalow")
+        t.houses(us[i], us[i + 1], -180, -1, 3, kind="bungalow")
+        t.houses(us[i], us[i + 1], -270, 1, 3, kind="bungalow")
+    t.church(-135, -225, None)
+    t.civic(us[5], us[6], -180, -270, "civic", 22, 16, "Town Hall", "lawn")
+    return t
+
+
+def build_oceanview():
+    # Virginia Beach oceanfront: boardwalk, a continuous hotel wall, Atlantic Ave one block back
+    t = coastal_town("Oceanview", "Town", 9800, "Resort", "Oceanfront resort (Virginia Beach)")
+    t.density = 0.45
+    us = [-540 + 120 * i for i in range(10)]
+    vs = [-55, -145, -235]
+    t.grid(us, vs, mains=(-55,))
+    _swalk(t, [(-560, 22), (560, 22)], 10, "promenade")                  # concrete boardwalk
+    t.area(t.rect(-560, 560, 28, t.water_v), "beach")
+    for i in range(9):
+        for k in range(2):
+            u0 = us[i] + 6 + k * 57
+            t.bld(t.rect(u0, u0 + 50, 14, -40), "hotel")
+    t.area(t.rect(-30, 30, 14, 28), "plaza")
+    t.mark(0, 8, "Neptune Plaza")
+    for i in range(9):
+        t.stores(us[i], us[i + 1], -55, -1, 5, dmin=18, dmax=24)
+        t.stores(us[i], us[i + 1], -145, 1, 4, dmin=18, dmax=22, kind="motel")
+        t.houses(us[i], us[i + 1], -145, -1, 4, kind="condo")
+        t.houses(us[i], us[i + 1], -235, 1, 4, kind="cottage")
+    _pier(t, 420, 28, 300, 6, head=(22, 10))
+    _wb(t, 412, 428, 302, 309, "restaurant")
+    t.mark(420, 320, "Fishing Pier")
+    t.civic(us[4], us[5], -145, -235, "civic", 30, 22, "Oceanfront Visitor Ctr.", vface=-170)
+    return t
+
+
+def _harbour_services(t, u_ice, u_auction, u_rail, u_cg, village_us):
+    wv = t.water_v
+    t.bld(t.rect(u_ice, u_ice + 26, 20, 48), "icehouse")
+    t.mark(u_ice + 13, 56, "Ice House")
+    t.bld(t.rect(u_auction, u_auction + 50, 22, 58), "shed")
+    t.mark(u_auction + 25, 66, "Fish Auction")
+    for k in range(4):
+        t.bld(t.rect(u_auction - 60 + k * 14, u_auction - 50 + k * 14, 70, 92), "shed")
+    _swalk(t, [(u_rail, 30), (u_rail, wv + 70)], 6, "railway")           # marine railway
+    t.bld(t.rect(u_rail - 45, u_rail - 8, 16, 70), "boatyard")
+    t.mark(u_rail - 26, 78, "Boatyard")
+    t.bld(t.rect(u_cg, u_cg + 34, 18, 56), "civic")
+    t.bld(circle(*t.g(u_cg + 44, 30), 4, 10), "lighthouse")
+    t.mark(u_cg + 17, 64, "Coast Guard")
+    t.bld(t.rect(u_cg - 40, u_cg - 26, 70, 84), "civic")
+    t.mark(u_cg - 33, 92, "Harbormaster")
+    us = village_us
+    t.grid(us, [0, -80, -160])
+    for i in range(len(us) - 1):
+        t.houses(us[i], us[i + 1], -80, 1, 3, kind="house")
+        t.houses(us[i], us[i + 1], -80, -1, 3, kind="house")
+        t.houses(us[i], us[i + 1], -160, 1, 3, kind="house")
+    t.church((us[1] + us[2]) / 2, -40, None)
+    t.stores(us[2], us[3], 0, -1, 3, dmin=14, dmax=18)
+    t.mark((us[2] + us[3]) / 2, -30, "Store / Diner / Tavern")
+
+
+def build_tern_harbor():
+    # North Sea fishing village: Lubec/Eastport canneries on the wharves, Gloucester harbour services
+    t = coastal_town("Tern Harbor", "Village", 1300, "Fishing / cannery", "Working waterfront")
+    t.density = 0.55
+    wv = t.water_v
+    _swalk(t, [(270, wv), (310, wv + 70), (260, wv + 160), (120, wv + 200), (-10, wv + 205)], 14, "breakwater")
+    for u in (-240, -170, -100, -30):
+        _pier(t, u, wv - 6, wv + 110, 12, kind="wharf")
+        _wb(t, u - 5, u + 5, wv + 20, wv + 50, "fishhouse")
+    _pier(t, 210, wv - 6, wv + 55, 6, kind="wharf")
+    t.mark(210, wv + 65, "Fuel Dock")
+    # the cannery on pilings, its warehouse across the shore road, the conveyor crossover, the stack
+    _wb(t, 50, 150, wv - 14, wv + 50, "cannery")
+    t.bld(t.rect(60, 140, -12, -52), "warehouse")
+    _swalk(t, [(100, -12), (100, wv - 14)], 5, "crossover")
+    t.bld(circle(*t.g(160, -24), 3.5, 10), "stack")
+    t.mark(100, wv + 62, "Tern Harbor Packing Co.")
+    _harbour_services(t, -110, -300, -330, 250, [-300, -200, -100, 0, 100, 200])
+    return t
+
+
+def build_pelican_cove():
+    # South Sea fishing village: a short Cannery Row (canneries on the water, warehouses inland,
+    # conveyor crossovers over the street), Astoria-style sheds on pilings
+    t = coastal_town("Pelican Cove", "Village", 1600, "Fishing / cannery", "Working waterfront")
+    t.density = 0.55
+    wv = t.water_v
+    _swalk(t, [(-330, wv), (-360, wv + 90), (-290, wv + 190), (-120, wv + 215), (20, wv + 210)], 14, "breakwater")
+    for (u0, u1) in ((-220, -130), (10, 110)):
+        _wb(t, u0, u1, 70, wv + 40, "cannery")
+        t.bld(t.rect(u0 + 10, u1 - 10, -12, -52), "warehouse")
+        _swalk(t, [((u0 + u1) / 2, -12), ((u0 + u1) / 2, 70)], 5, "crossover")
+        t.bld(circle(*t.g(u1 + 8, -24), 3.5, 10), "stack")
+    t.mark(-175, wv + 52, "Pacific Packing")
+    t.mark(60, wv + 52, "Cove Canning Co.")
+    _pier(t, -290, wv - 6, wv + 120, 14, kind="wharf")
+    for k in range(3):
+        _wb(t, -296, -284, wv + 20 + k * 30, wv + 42 + k * 30, "fishhouse")
+    _pier(t, 250, wv - 6, wv + 90, 10, kind="wharf")
+    t.mark(250, wv + 100, "Sportfishing")
+    _harbour_services(t, 140, -60, 330, -330, [-280, -180, -80, 20, 120, 220])
+    t.mark(0, 8, "Cannery Row")
+    return t
+
+
+def build_haven_point():
+    # Great Lakes harbour town (Grand Haven / Saugatuck) at Lost Creek's mouth: a channel between twin
+    # piers with a lighthouse + catwalk, a marina basin, the riverwalk, Coast Guard, beach, bluff cottages
+    t = coastal_town("Haven Point", "Town", 3900, "Harbor / lumber", "Great Lakes-style harbor town")
+    t.density = 0.8
+    wv = t.water_v
+    t.water.append(t.rect(-32, 32, -70, wv + 4))                          # the channel
+    t.water.append(t.rect(-230, -32, -190, -70))                          # the marina basin
+    for u in (-44, 44):
+        _swalk(t, [(u, wv - 4), (u, wv + 230)], 10, "breakwater")
+    _swalk(t, [(44, 8), (44, wv + 200)], 2, "catwalk")
+    _wb(t, 38, 50, wv + 190, wv + 202, "lighthouse")
+    _wb(t, 36, 52, wv + 212, wv + 228, "lighthouse")
+    t.mark(44, wv + 245, "South Pier Lights")
+    _swalk(t, [(40, -70), (40, wv - 4)], 6, "boardwalk")                   # the riverwalk
+    for k in range(6):
+        _swalk(t, [(-220 + k * 32, -70), (-220 + k * 32, -110)], 2, "dock")
+    t.street([(-400, 0), (400, 0)], "street")
+    t.area(t.rect(60, 400, 10, wv), "beach")
+    t.mark(230, 60, "Haven Point State Beach")
+    t.area(t.rect(260, 380, -8, -60), "parking")
+    t.bld(t.rect(60, 100, 16, 50), "civic")
+    t.mark(80, 58, "Coast Guard")
+    us = [60, 150, 240, 330]
+    t.grid(us, [-30, -120, -210])
+    t.street([(40, -30), (60, -30)], "street")
+    for i in range(3):
+        t.stores(us[i], us[i + 1], -30, -1, 4)
+        t.houses(us[i], us[i + 1], -120, 1, 3, kind="house")
+        t.houses(us[i], us[i + 1], -120, -1, 3, kind="house")
+    t.church(195, -165, None)
+    ws = [-520, -430, -340, -250]                                         # bluff cottages west of the marina
+    t.grid(ws, [-30, -120, -210])
+    for i in range(3):
+        t.houses(ws[i], ws[i + 1], -120, 1, 3, kind="cottage")
+        t.houses(ws[i], ws[i + 1], -120, -1, 3, kind="cottage")
+        t.houses(ws[i], ws[i + 1], -210, 1, 3, kind="cottage")
+    t.street([(-250, -30), (-40, -30)], "street")
+    t.bld(t.rect(-240, -200, -34, -62), "boatyard")
+    t.bld(t.rect(-120, -80, -200, -230), "store")
+    t.mark(-130, -60, "Marina")
+    return t
+
+
+def build_port_tamsin():
+    # Great Lakes lake town on Lake Tamsin's new north shore (Saugatuck / South Haven): marina and
+    # breakwater with a pier light, public beach, small downtown, a grand hotel, bluff cottages
+    s0 = LAKE_S + 150
+    te = float(water_edges(s0)[0])
+    t = Town("Port Tamsin", "Town", 3400, "Lake resort", "Great Lakes-style lake town", s0, te - 90, "s", 1, "up")
+    t.coastal = True
+    t.density = 0.6
+    t.water_v = 90
+    wv = 90
+    _swalk(t, [(-330, wv - 5), (-330, wv + 120), (-150, wv + 120)], 10, "breakwater")
+    for k in range(5):
+        _swalk(t, [(-310 + k * 36, wv - 2), (-310 + k * 36, wv + 80)], 3, "dock")
+    _swalk(t, [(-110, wv - 5), (-110, wv + 180)], 8, "pier")
+    _wb(t, -116, -104, wv + 170, wv + 182, "lighthouse")
+    t.mark(-110, wv + 196, "Pier Light")
+    t.area(t.rect(0, 380, 10, wv), "beach")
+    t.mark(190, 50, "Tamsin Beach")
+    us = [-380, -285, -190, -95, 0, 95, 190, 285, 380]
+    t.grid(us, [0, -90, -180], mains=(-90,))
+    for i in range(8):
+        t.stores(us[i], us[i + 1], -90, 1, 3) if 1 <= i <= 4 else t.houses(us[i], us[i + 1], -90, 1, 3, kind="cottage")
+        t.stores(us[i], us[i + 1], -90, -1, 3) if 1 <= i <= 4 else t.houses(us[i], us[i + 1], -90, -1, 3, kind="cottage")
+        t.houses(us[i], us[i + 1], -180, 1, 3, kind="cottage")
+    t.bld(t.rect(200, 330, -10, -70), "hotel")
+    t.mark(265, -40, "Tamsin Grand Hotel")
+    t.bld(t.rect(-360, -300, -8, -60), "boatyard")
+    t.church(-140, -135, None)
+    t.civic(us[4], us[5], -90, -180, "civic", 22, 16, "Post Office", vface=-110)
+    return t
+
+
+def build_port_carrow():
+    # North Sea city: Charleston (Grand Model grid, Four Corners, King St, Rainbow Row, the Battery,
+    # City Market) + Nantucket (parallel wharves with shingled shacks, cobbled Main St, grey-shingled houses)
+    t = coastal_town("Port Carrow", "City", 38600, "Port / whaling", "Port and tourism city (Charleston + Nantucket)")
+    t.density = 0.42
+    wv = t.water_v
+    # the Battery: a point of land with a seawall promenade and a live-oak park
+    pt = [(-800, 0), (-805, 90), (-780, 180), (-720, 238), (-650, 245), (-600, 200), (-590, wv)]
+    t.land.append([t.g(u, v) for u, v in pt + [(-590, 0)]])
+    t.area([t.g(u * 0.97 - 20, v * 0.93) for u, v in pt[1:-1]] + [t.g(-610, 10), t.g(-790, 10)], "park")
+    _swalk(t, pt, 8, "promenade")
+    t.mark(-695, 120, "The Battery")
+    # the wharves (Nantucket) off the wharf street (East Bay St, v = 0)
+    for k, u in enumerate((-520, -430, -340, -250, -160, -70, 20)):
+        L = 170 if k % 2 else 200
+        _pier(t, u, wv - 6, wv + L, 20, kind="wharf")
+        for j in range(2):
+            _wb(t, u - 8, u + 8, wv + 30 + j * 70, wv + 56 + j * 70, "shingle")
+    t.mark(-70, wv + 230, "Straight Wharf")
+    _pier(t, 150, wv - 6, wv + 280, 26, kind="wharf")
+    _wb(t, 132, 168, wv + 250, wv + 280, "civic")
+    t.mark(150, wv + 300, "Ferry Terminal")
+    _pier(t, 300, wv - 6, wv + 90, 12, kind="wharf")
+    _wb(t, 285, 315, wv + 60, wv + 88, "civic")
+    t.mark(300, wv + 104, "Yacht Club")
+    # Rainbow Row on the wharf street, merchant rows either side
+    t.stores(-320, -140, 0, -1, 14, dmin=15, dmax=16, kind="rowhouse")
+    t.mark(-230, -30, "Rainbow Row")
+    t.stores(-560, -330, 0, -1, 10, dmin=18, dmax=22)
+    t.stores(-130, 60, 0, -1, 8, dmin=18, dmax=22)
+    # the Grand Model grid
+    us = [-546 + 91 * i for i in range(13)]
+    vs = [0, -91, -182, -273, -364, -455]
+    t.grid(us, vs, mains=(0,))
+    t.street([(0, 0), (0, -455)], "main")                                 # cobbled Main Street
+    t.street([(182, 0), (182, -660)], "main")                             # King Street
+    _stores_v(t, -8, -86, 0, -1, 4)
+    _stores_v(t, -8, -86, 0, 1, 4)
+    _stores_v(t, -96, -178, 0, -1, 4)
+    _stores_v(t, -96, -178, 0, 1, 4)
+    for (v0, v1) in ((-8, -86), (-96, -178), (-187, -269), (-278, -360), (-369, -451), (-460, -560), (-560, -650)):
+        _stores_v(t, v0, v1, 182, -1, 4)
+        _stores_v(t, v0, v1, 182, 1, 4)
+    t.mark(182, -680, "King Street")
+    # the Four Corners of Law at Meeting x Broad (u = -91, v = -182)
+    for (du, dv, kind, txt) in ((-1, 1, "civic", "City Hall"), (1, 1, "civic", "Courthouse"),
+                                (-1, -1, "civic", "Post Office"), (1, -1, "church", "St. Michael's")):
+        uc, vc = -91 + du * 26, -182 + dv * 26
+        t.bld(t.rect(uc - 17, uc + 17, vc - 16, vc + 16), kind)
+        t.mark(uc, vc, txt)
+    t.bld(t.rect(-420, -230, -100, -112), "market")
+    t.mark(-325, -125, "City Market")
+    kinds = ("singlehouse", "shingle")
+    for j, (v0, v1) in enumerate(((-91, -182), (-182, -273), (-273, -364), (-364, -455))):
+        for i in range(12):
+            u0, u1 = us[i], us[i + 1]
+            if u0 <= -91 <= u1 and v1 <= -182 <= v0:
+                continue
+            if u0 <= 0 < u1 or u0 <= 182 < u1:
+                continue
+            if j == 0 and -420 < u0 < -230:
+                continue
+            k = kinds[(i + j) % 2]
+            t.houses(u0, u1, v0, -1, 3, kind=k)
+            t.houses(u0, u1, v1, 1, 3, kind=k)
+    t.church(-364 + 45, -318, "Circular Church")
+    t.church(273 + 45, -410, "Huguenot Church")
+    t.civic(us[9], us[10], -364, -455, "school", 50, 36, "Carrow Academy", "schoolground", vface=-400)
+    # the ocean beach and pier east of the wharves
+    t.area(t.rect(420, 780, 10, wv + 60), "beach")
+    _pier(t, 620, wv + 50, wv + 300, 7, head=(28, 12))
+    t.houses(400, 780, 0, -1, 7, kind="beachhouse")
+    return t
+
+
+def build_solana_point():
+    # South Sea city: Huntington Beach (wide beach, long pier, Pier Plaza, Main St, Pacific City) +
+    # Dana Point (rocky headland, harbour in its lee: breakwater, two marina basins, island + bridge,
+    # boatyard, launch ramp, fishing pier, yacht clubs; the bluff-top Lantern District)
+    t = coastal_town("Solana Point", "City", 44200, "Resort / oil / harbor", "Beach and harbor city (Huntington Beach + Dana Point)")
+    t.density = 0.7
+    wv = t.water_v
+    t.street([(-820, 0), (820, 0)], "main")                               # the coast highway through town
+    # Huntington Beach half
+    t.area(t.rect(-800, -80, 10, 34), "parking")
+    t.area(t.rect(-800, -80, 34, wv), "beach")
+    _pier(t, -420, 34, 560, 9, head=(32, 16))
+    _wb(t, -432, -408, 562, 574, "restaurant")
+    _wb(t, -426, -414, 300, 308, "lifeguard")
+    t.mark(-420, 595, "Solana Pier")
+    t.area(t.rect(-465, -375, 4, 34), "plaza")
+    t.mark(-420, 20, "Pier Plaza")
+    t.street([(-420, 0), (-420, -450)], "main")
+    t.mark(-420, -470, "Main Street")
+    us = [-780 + 90 * i for i in range(8)]
+    vs = [-100, -200, -300, -400]
+    t.grid(us, vs)
+    for (v0, v1) in ((-8, -96), (-104, -196), (-204, -296)):
+        _stores_v(t, v0, v1, -420, -1, 4)
+        _stores_v(t, v0, v1, -420, 1, 4)
+    t.area(t.rect(-360, -160, -8, -92), "plaza")
+    for k in range(5):
+        t.bld(t.rect(-350 + k * 38, -318 + k * 38, -14, -40), "store")
+    t.bld(t.rect(-340, -180, -60, -86), "store")
+    t.mark(-260, -52, "Pacific City")
+    t.bld(t.rect(-560, -462, -8, -80), "hotel")
+    t.mark(-511, -44, "The Strand")
+    for i in range(7):
+        for (v0, v1) in ((-100, -200), (-200, -300), (-300, -400)):
+            if us[i] <= -420 < us[i + 1] or us[i] >= -360 and v0 == -100 and us[i] < -160:
+                continue
+            t.houses(us[i], us[i + 1], v0, -1, 3, kind="beachhouse")
+            t.houses(us[i], us[i + 1], v1, 1, 3, kind="beachhouse")
+    # the headland
+    t.land.append([t.g(u, v) for u, v in chaikin([(-90, 0), (-60, 180), (-30, 300), (20, 385), (80, 405),
+                                                         (140, 360), (170, 250), (180, 0)], 2)])
+    t.area([t.g(u, v) for u, v in chaikin([(-40, 80), (-20, 250), (40, 350), (110, 350), (140, 240), (140, 80)], 2)], "park")
+    t.mark(55, 250, "Headlands Park")
+    # the harbour: breakwater off the headland, basins, island, boatyard
+    _swalk(t, [(150, 380), (380, 360), (620, 330), (760, 270)], 16, "breakwater")
+    t.street([(180, 40), (800, 40)], "street")
+    for k in range(12):
+        t.bld(t.rect(200 + k * 30, 222 + k * 30, 48, 74), "store")
+    t.mark(380, 88, "Mariners Village")
+    for (u0, u1) in ((200, 410), (570, 780)):
+        _swalk(t, [(u0, wv + 30), (u1, wv + 30)], 3, "dock")
+        for u in range(u0 + 10, u1, 22):
+            _swalk(t, [(u, wv + 30), (u, wv + 85)], 1.5, "dock")
+    t.land.append(t.rect(430, 550, wv + 40, wv + 110))
+    _swalk(t, [(490, 80), (490, wv + 40)], 10, "bridge")
+    t.bld(t.rect(440, 500, wv + 50, wv + 100), "hotel")
+    t.bld(t.rect(510, 545, wv + 55, wv + 95), "civic")
+    t.mark(490, wv + 125, "Harbor Island")
+    t.bld(t.rect(700, 790, 48, 100), "boatyard")
+    _swalk(t, [(680, 60), (680, wv + 30)], 12, "ramp")
+    t.mark(745, 112, "Shipyard")
+    _pier(t, 185, 90, wv + 120, 5)
+    # the Lantern District on the bluff
+    ls = [200, 290, 380, 470, 560, 650, 740]
+    t.grid(ls, [-60, -150, -240, -330])
+    t.street([(470, 40), (470, -380)], "main")
+    t.mark(470, -400, "Golden Lantern")
+    for (v0, v1) in ((-68, -142), (-158, -232)):
+        _stores_v(t, v0, v1, 470, -1, 3)
+        _stores_v(t, v0, v1, 470, 1, 3)
+    for i in range(6):
+        t.houses(ls[i], ls[i + 1], -240, 1, 3, kind="house")
+        t.houses(ls[i], ls[i + 1], -240, -1, 3, kind="house")
+        t.houses(ls[i], ls[i + 1], -330, 1, 3, kind="house")
+    t.bld(t.rect(210, 330, -8, -52), "hotel")
+    t.bld(t.rect(600, 720, -8, -52), "hotel")
+    return t
+
+
+def add_harrow_falls_waterfront(t):
+    # the boardwalk along the lakefront and the pier (research/coastal_communities/boardwalks_and_piers.md)
+    _swalk(t, [(-440, -46), (440, -46)], 10, "boardwalk")
+    _pier(t, 45.5, -46, -376, 10, head=(64, 26))
+    t.bld(t.rect(25, 66, -8, -40), "pavilion")
+    t.mark(45.5, -24, "Pier Pavilion")
+    for v in (-120, -200):
+        for du in (-11, 7):
+            _wb(t, 45.5 + du, 45.5 + du + 4, v - 4, v, "kiosk")
+    _wb(t, 37.5, 53.5, -244, -256, "pavilion")
+    _wb(t, 54, 60, -262, -268, "bait")
+    _wb(t, 31, 37, -262, -266, "shed")
+    _wb(t, 58, 74, -380, -398, "restaurant")
+    _wb(t, 17, 30, -380, -394, "civic")
+    t.wbldgs.append((circle(*t.g(45.5, -389), 5, 12), "pavilion"))
+    _swalk(t, [(45.5, -402), (45.5, -414)], 6, "dock")
+    t.mark(45.5, -430, "Harrow Falls Pier")
+
+
+def add_cedar_ford_boardwalk(t):
+    # across the Kettle River's marsh basin to the river: a boardwalk, a viewing / fishing platform,
+    # a marsh-edge loop and a small nature centre
+    _swalk(t, [(0, -8), (0, -318)], 5, "boardwalk")
+    _deck(t, -14, 14, -318, -340)
+    _swalk(t, [(-150, -48), (150, -48)], 4, "boardwalk")
+    t.bld(t.rect(-160, -136, -52, -70), "civic")
+    t.mark(0, -360, "Kettle Marsh Boardwalk")
+
+
 def build_all():
     towns = [build_harrow_falls(), build_kessler(), build_marlowe(), build_bellhaven(),
              build_fenwick(), build_tamarack()]
@@ -867,7 +1452,7 @@ def build_all():
     s_cf = 1250.0 * SS
     # Cedar Ford: mill village, core within one block of the Kettle (§7 village rule, 1-in-3/4
     # villages are water-founded); "Water St." is the first street back from the bank (§8)
-    top_edge = float(water_edges(s_cf)[0])
+    top_edge = rxf(s_cf) - OLD_BANK                 # the draft's bank: the village stays put; the basin lies below it
     cf = build_village("Cedar Ford", 1150, "Water/mill-founded", "Stable ag / manufacturing",
                        s_cf, top_edge - 62, "s", -1, 4, "up", vs=(0, 91, 182),
                        school="Cedar Ford-Pruett Consol.")
@@ -923,6 +1508,28 @@ for _t in TOWNS:
         for _pt in _st["parts"]:
             _t.bldgs.append((_inv_poly(_pt, _ds, _dx), "silo", True))
 
+_TN = {t.name: t for t in TOWNS}
+add_harrow_falls_waterfront(_TN["Harrow Falls"])
+add_cedar_ford_boardwalk(_TN["Cedar Ford"])
+TOWNS += [build_port_carrow(), build_tern_harbor(), build_brightwater(), build_haven_point(),
+          build_solana_point(), build_pelican_cove(), build_palmetto_beach(), build_oceanview(),
+          build_port_tamsin()]
+
+# harbour water cut into the land, and land built out into the water (the Battery, a headland,
+# Harbor Island): painted into the water raster
+def _poly_mask(polys):
+    im = Image.new("L", (CW, WH), 0)
+    d_ = ImageDraw.Draw(im)
+    for poly in polys:
+        draw_poly(d_, poly, fill=1)
+    return np.array(im) > 0
+
+
+_LANDM = _poly_mask([p_ for t in TOWNS for p_ in t.land])
+WCAT[_LANDM & ((WCAT == 6) | (WCAT == 2) | (WCAT == 1))] = 0
+WCAT[_poly_mask([p_ for t in TOWNS for p_ in t.water])] = 7       # 7 harbour / channel
+WBUF = dilate(WCAT > 0, fk(4))
+
 # ------------------------------------------------------------------ global roads
 ROADS = []   # (pts, cls, name)
 
@@ -939,7 +1546,7 @@ T = {t.name: t for t in TOWNS}
 # SR 14 -- port-side loop through the port-side settlements' main streets
 sr14 = [T["Dunmore Crossing"].g(0, 0), P(900, -780), T["Marlowe"].g(0, 0), P(1830, -760),
         T["Fenwick"].g(-182, 0), T["Fenwick"].g(182, 0), P(2600, -720), T["Haskins Corner"].g(0, 0),
-        P(3142 + 250, -700)]
+        (C + 450, -1400), (C + 1100, -2200), (C + 2500, -2300), (C + 3500, -1750)]
 road([(p[0], p[1]) for p in sr14] + [(T["Dunmore Crossing"].g(0, 0)[0] + C, -800 - WIDEN)], "hwy", "SR 14", smooth=2)
 # US 30 -- starboard loop; bypasses Harrow Falls' downtown along the bluff-top street
 hf = T["Harrow Falls"]
@@ -955,6 +1562,20 @@ road([P(650, -700), P(930, -380), P(930, 380), P(900, 740)], "county", "Outlet R
 road([T["Cedar Ford"].g(0, 0), P(1250, 300), P(1150, 700), T["Bellhaven"].g(-182, 91)], "county", "Ford Rd", 2)
 road([T["Marlowe"].g(182, 0), P(1610, 200), T["Pruett"].g(0, 91)], "county", "Brannock Pike", 2)
 road([T["Fenwick"].g(91, 182), P(2270, 250), T["Kessler"].g(91, 364)], "county", "College Rd", 2)
+# the coast roads: round each sea, through every coastal town on its shore road (Ocean Rd on the
+# North Sea; the Coast Highway on the South Sea, PCH-style)
+for _sg, _cls, _nm in ((-1, "county", "Ocean Rd"), (1, "hwy", "Coast Hwy")):
+    _ss = np.arange(0.0, C + 1.0, 120.0)
+    _w, _line, _off = site_weight(_ss, _sg)
+    _ro = 300.0 * _w + _off * (1 - _w)
+    _cst = coast(_ss, _sg)
+    road([(float(a), _sg * float(c - r)) for a, c, r in zip(_ss, _cst, _ro)], _cls, _nm, smooth=1)
+# connectors from the coastal cities and lake town to the highways
+_pc, _sp, _pt, _hp = T["Port Carrow"], T["Solana Point"], T["Port Tamsin"], T["Haven Point"]
+road([_pc.g(182, -660), (_pc.g(182, -660)[0] + 60, -2200), P(1830, -760)], "county", "Carrow Pike", 2)
+road([_sp.g(-420, -450), (_sp.g(-420, -450)[0] + 80, 2300), (_sp.g(-420, -450)[0] + 300, 1600)], "county", "Main St Ext.", 2)
+road([_pt.g(0, -180), (_pt.g(0, -180)[0], -2280)], "county", "Tamsin Rd", 1)
+road([_hp.g(195, -210), (_hp.g(195, -210)[0] + 40, -2300), (_hp.g(195, -210)[0] + 150, -1500)], "county", "Haven Rd", 2)
 
 # settlement footprints (for clipping section roads / farmland)
 # Built-up area = the settlement's own streets/buildings/lots grown by ~25 m (organic edge,
@@ -992,21 +1613,35 @@ side = np.where(X < CX_L, -1.0, 1.0)
 dist = np.where(X < TOP_E, TOP_E - X, np.where(X > BOT_E, X - BOT_E, 0.0))
 w_cut = 0.5 * (1 + b * side)
 d0_cut = 60 * (1 - T_L) + 140 * T_L
-d0 = 230 - (230 - d0_cut) * w_cut
+d0 = 230 - (230 - d0_cut) * w_cut + BASIN * (1 - T_L)       # the valley walls stand back past the basin
 Lb = 160 - 85 * w_cut
 H = H_BLUFF * (1 + 0.3 * np.sin(2 * th + PHI4))
 ELEV = (H * np.maximum(0, np.tanh((dist - d0) / Lb)) - Z1 * np.cos(th - math.pi / 4)
         + 1.2 * np.sin(S / 97 + X / 131) + 0.8 * np.sin(X / 53 - S / 211)).astype(np.float32)
 ELEV_INLAND = ELEV.copy()                                        # (woods follow the inland slopes only)
-_u = np.clip((SHORE - np.abs(X)) / 400.0, 0.0, 1.0)
-ELEV *= _u * _u * (3 - 2 * _u)                                   # the land runs gently down to the seas
+# the coasts: distance inland from each sea's waterline; headlands (proud of the mean line, outside
+# the towns' straightened stretches) end in rocky cliffs, the bays in sandy beaches
+_wn, _, _ = site_weight(S[0], -1)
+_ws, _, _ = site_weight(S[0], 1)
+HEAD_N = ((coast_amp(S[0], -1) > 55) & (_wn > 0.99))[None, :]
+HEAD_S = ((coast_amp(S[0], 1) > 55) & (_ws > 0.99))[None, :]
+DCOAST = np.where(X < 0, COAST_N + X, COAST_S - X)                 # metres inland of the waterline
+HEADLAND = np.where(X < 0, HEAD_N, HEAD_S)
+_u = np.clip(DCOAST / 400.0, 0.0, 1.0)
+_u = _u * _u * (3 - 2 * _u)
+ELEV = np.where(HEADLAND, ELEV + 22.0 * (1 - np.clip(DCOAST / 500.0, 0, 1)), ELEV * _u).astype(np.float32)
+del _u
 WATER = WCAT > 0
-FLOOD = (~WATER) & (dist < d0 * 0.85) & (w_cut < 0.5) & (dist > 0)
+BASIN_M = (~WATER) & (dist > 0) & (dist < BASIN) & (T_L < 0.5)          # the river's wide basin
+FLOOD = ((~WATER) & (dist < d0 * 0.85) & (w_cut < 0.5) & (dist > 0)) | BASIN_M
+MARSH = BASIN_M & (dist < BASIN * 0.55)
+BEACH = (~WATER) & (DCOAST > 0) & (DCOAST < 75) & ~HEADLAND
+CLIFF = (~WATER) & (DCOAST > 0) & (DCOAST < 24) & HEADLAND
 
 
 def in_blocked(s, x, buf=False):
     i, j = idx(s, x)
-    if abs(x) > SHORE - 30:
+    if is_sea(s, x + (30 if x > 0 else -30)):
         return True
     return (fp_buf if buf else FP)[j, i]
 
@@ -1037,13 +1672,13 @@ def near_river(p):
 
 
 for s in SECTION_S:
-    pts = densify([(s, -SHORE + 25), (s, SHORE - 25)], 3.0)
+    pts = densify([(s, -COAST_MEAN - 300), (s, COAST_MEAN + 300)], 3.0)
     for run in clip_runs(pts, lambda p: near_river(p) or in_blocked(*p) or is_water(*p) and False):
         if math.dist(run[0], run[-1]) > 60:
             ROADS.append((run, "gravel", ""))
 for x in SECTION_X:
     pts = densify([(0, x), (C, x)], 3.0)
-    for run in clip_runs(pts, lambda p: in_blocked(*p)):
+    for run in clip_runs(pts, lambda p: in_blocked(*p) or is_water(*p)):
         if math.dist(run[0], run[-1]) > 60:
             ROADS.append((run, "gravel", ""))
 
@@ -1065,7 +1700,7 @@ def bld_ok(poly):
     cx = sum(p[1] for p in poly) / len(poly)
     for p in poly + [(cs, cx)]:
         i, j = idx(*p)
-        if WBUF[j, i] or RMASK[j, i] or abs(p[1]) > SHORE - 20:
+        if WBUF[j, i] or RMASK[j, i] or is_sea(*p):
             return False
     return True
 
@@ -1073,13 +1708,28 @@ def bld_ok(poly):
 dropped = 0                       # kept regardless (they're the current map's): counted as conflicts
 CONFLICTS = []
 for t in TOWNS:
+    if t.coastal or t.name in ("Harrow Falls", "Cedar Ford"):
+        # new buildings (the coastal towns, the new waterfront pieces) are laid out fresh: any that
+        # land on water or a road are dropped
+        continue
     for (poly, kind, part) in t.bldgs:
         if not part and not bld_ok(poly):
             dropped += 1
             CONFLICTS.append((t.name, kind, poly[0]))
+NEW_DROPPED = 0
+for t in TOWNS:
+    if not t.coastal:
+        continue
+    keep = []
+    for b_ in t.bldgs:
+        if b_[2] or bld_ok(b_[0]):
+            keep.append(b_)
+        else:
+            NEW_DROPPED += 1
+    t.bldgs = keep
 
 # ------------------------------------------------------------------ farmland: fields, ditches, farmsteads
-FARM = (~FP) & (~WATER) & (~FLOOD)
+FARM = (~FP) & (~WATER) & (~FLOOD) & (~BEACH) & (~CLIFF)
 rng_np = np.random.default_rng(7)
 fs = np.floor((S + 37 * np.floor((X + HW) / 160.0)) / 210.0)
 fx = np.floor((X + HW) / 160.0)
@@ -1154,6 +1804,10 @@ print("compositing terrain...", file=sys.stderr)
 img = np.zeros((WH, CW, 3), np.uint8)
 img[:] = FIELDC
 img[FLOOD] = (212, 230, 195)
+img[MARSH] = (178, 208, 172)
+img[MARSH & (rng_np.random((WH, CW), dtype=np.float32) < 0.25)] = (140, 180, 150)
+img[BEACH] = (240, 226, 180)
+img[CLIFF] = (150, 140, 126)
 # woods: riparian strips along creeks, steep bluff faces, never on settlements/fields' roads
 gy, gx = np.gradient(ELEV_INLAND, PX)
 slope = np.hypot(gx, gy)
@@ -1166,7 +1820,7 @@ speck = rng_np.random((WH, CW), dtype=np.float32) < 0.10
 img[WOODS & speck] = (96, 140, 78)
 img[FP] = (236, 231, 221)
 wcols = {1: (93, 159, 216), 2: (93, 159, 216), 3: (90, 154, 214), 4: (91, 155, 213), 5: (104, 160, 214),
-         6: (66, 128, 196)}
+         6: (66, 128, 196), 7: (78, 140, 204)}
 for k, col in wcols.items():
     img[WCAT == k] = col
 # hillshade (NW light, 5x vertical exaggeration) + 4 m contours
@@ -1178,6 +1832,8 @@ lx, ly, lz = -0.5, -0.5, 0.707
 shade = (nx * lx + ny * ly + nz * lz) / nl
 shade = np.clip(0.80 + 0.55 * (shade - 0.707), 0.55, 1.12)
 shade[WATER] = 1.0
+_foot = (WCAT == 6) & dilate(CLIFF, fk(10)) & (rng_np.random((WH, CW), dtype=np.float32) < 0.18)
+img[_foot] = (96, 92, 86)
 img = np.clip(img * shade[..., None], 0, 255).astype(np.uint8)
 band = np.floor(ELEV / 4.0)
 cont = np.zeros_like(WATER)
@@ -1193,7 +1849,8 @@ dr = ImageDraw.Draw(layer)
 AREA_COL = {"park": (170, 214, 145), "square": (190, 226, 165), "lawn": (205, 229, 186),
             "promenade": (178, 220, 150), "schoolground": (214, 232, 196), "sportsfield": (150, 200, 118),
             "parking": (200, 200, 200), "lot": (212, 210, 204), "cemetery": (190, 212, 170),
-            "campus": (208, 230, 190), "culdesac": (250, 250, 250)}
+            "campus": (208, 230, 190), "culdesac": (250, 250, 250),
+            "beach": (242, 230, 188), "plaza": (228, 222, 210), "pool": (120, 196, 232)}
 for t in TOWNS:
     for poly, kind in t.areas:
         draw_poly(dr, poly, fill=AREA_COL[kind], outline=(150, 150, 140) if kind in ("parking", "lot") else None)
@@ -1273,15 +1930,45 @@ for a, b_ in BRIDGES["rail"]:
     draw_line(dr, [a, b_], fill=(20, 20, 20), width=11)
     draw_line(dr, [a, b_], fill=(40, 40, 40), width=5)
 
+# waterfront: decks, walks (boardwalks, piers, docks, breakwaters...), then buildings over the water
+WALK = {"boardwalk": ((120, 84, 50), (184, 140, 92)), "pier": ((110, 78, 48), (176, 132, 86)),
+        "wharf": ((100, 72, 44), (160, 120, 80)), "promenade": ((150, 140, 125), (232, 222, 200)),
+        "dock": ((90, 66, 42), (168, 128, 84)), "breakwater": ((80, 78, 74), (140, 136, 128)),
+        "catwalk": ((150, 20, 20), (205, 50, 45)), "crossover": ((70, 70, 70), (130, 130, 130)),
+        "railway": ((40, 40, 40), (90, 90, 90)), "bridge": ((90, 90, 90), (200, 200, 200)),
+        "ramp": ((120, 120, 120), (190, 190, 190))}
+DECK_COL = {"deck": (176, 132, 86), "amusement": (232, 200, 120)}
+for t in TOWNS:
+    for poly, kind in t.decks:
+        draw_poly(dr, poly, fill=DECK_COL[kind], outline=(110, 78, 48))
+for t in TOWNS:
+    for pts, w, kind in t.walks:
+        case, fill = WALK[kind]
+        draw_line(dr, pts, fill=case, width=w + 2)
+for t in TOWNS:
+    for pts, w, kind in t.walks:
+        case, fill = WALK[kind]
+        draw_line(dr, pts, fill=fill, width=w)
+
 # buildings
 BCOL = {"house": (118, 100, 84), "store": (165, 70, 58), "vacant": (222, 212, 205), "civic": (47, 85, 151),
         "church": (111, 66, 160), "school": (217, 130, 43), "industrial": (88, 88, 88), "silo": (150, 160, 165),
         "tower": (61, 111, 143), "bigbox": (192, 96, 58), "strip": (200, 120, 80), "barn": (168, 50, 42),
-        "shed": (138, 138, 122)}
+        "shed": (138, 138, 122),
+        "hotel": (214, 120, 150), "motel": (236, 150, 190), "arcade": (240, 180, 40), "stand": (250, 210, 90),
+        "cottage": (150, 120, 96), "bungalow": (160, 128, 96), "beachhouse": (170, 150, 120), "condo": (190, 160, 170),
+        "rowhouse": (230, 110, 120), "singlehouse": (200, 170, 120), "shingle": (132, 132, 128),
+        "cannery": (70, 90, 110), "warehouse": (100, 110, 120), "fishhouse": (120, 120, 110), "icehouse": (160, 190, 210),
+        "boatyard": (110, 100, 90), "lighthouse": (220, 40, 40), "pavilion": (250, 245, 230), "restaurant": (200, 90, 60),
+        "lifeguard": (240, 60, 40), "market": (190, 150, 110), "stack": (60, 60, 60), "ride": (230, 80, 160),
+        "kiosk": (240, 200, 90), "bait": (90, 140, 90)}
 for t in TOWNS:
     for poly, kind, _ in t.bldgs:
         draw_poly(dr, poly, fill=BCOL[kind], outline=(40, 30, 25) if kind != "vacant" else (140, 70, 60))
 FS_POLYS = []          # what was drawn, per farmstead (farmstead_polys draws its side at random)
+for t in TOWNS:
+    for poly, kind in t.wbldgs:
+        draw_poly(dr, poly, fill=BCOL[kind], outline=(40, 30, 25))
 for c in FARMSTEADS:
     FS_POLYS.append(farmstead_polys(c))
     for poly, kind in FS_POLYS[-1]:
@@ -1318,7 +2005,7 @@ for name, poly in OXBOW_POLYS:
     cs = sum(p[0] for p in poly) / len(poly)
     cx = sum(p[1] for p in poly) / len(poly)
     text(dr, (cs, cx + (40 if cx > rxf(cs) else -40)), name, F_CREEK, (30, 80, 150), sw=3)
-text(dr, (LAKE_S, -10), "LAKE TAMSIN", F_CITY, (25, 70, 140), halo=(200, 225, 245))
+text(dr, (LAKE_S, -700), "LAKE TAMSIN", F_CITY, (25, 70, 140), halo=(200, 225, 245))
 for s in (1150, 1700, 2450, 2900):
     text(dr, (s * SS, rxf(s * SS)), "KETTLE RIVER", F_CITY, (25, 70, 140), halo=(225, 238, 250))
 for s in (2000, 7000, 12000, 17000):
@@ -1339,7 +2026,7 @@ for t in TOWNS:
         text(dr, (cs, y), t.name.upper() if t.tier == "City" else t.name, f, (20, 20, 20), sw=6)
         text(dr, (cs, y + (f.size * 0.62 + F_SUB.size * 0.8) * PX), sub, F_SUB, (60, 60, 60), sw=4)
     else:
-        y = max(ys) + 34
+        y = max(ys) + 30 + f.size * 0.55 * PX
         text(dr, (cs, y), t.name.upper() if t.tier == "City" else t.name, f, (20, 20, 20), sw=6)
         text(dr, (cs, y + (f.size * 0.62 + F_SUB.size * 0.8) * PX), sub, F_SUB, (60, 60, 60), sw=4)
 
@@ -1410,7 +2097,12 @@ pd.ellipse([lx + 30, ly + 7, lx + 40, ly + 17], fill=(40, 70, 120))
 pd.text((lx + 90, ly + 12), "Culvert (road over farm ditch)", font=F_L, fill=(30, 30, 30), anchor="lm")
 ly += 44
 leg_box("River / lake / pond", wcols[1], None)
-leg_box("Sea (end caps)", wcols[6], None)
+leg_box("Sea (end caps) / harbour", wcols[6], None)
+leg_box("Sandy beach", (240, 226, 180), None)
+leg_box("Rocky cliffs (headlands)", (150, 140, 126), None)
+leg_box("River basin marsh", (178, 208, 172), None)
+leg_line("Boardwalk / pier / wharf", WALK["boardwalk"][1], WALK["boardwalk"][0], 10)
+leg_line("Breakwater / jetty", WALK["breakwater"][1], WALK["breakwater"][0], 10)
 leg_line("Creek (named) / farm ditch", wcols[3], wcols[5], 5)
 leg_box("Floodplain (park, not buildable)", (212, 230, 195), None)
 leg_box("Woods (bluff faces, creek banks)", (134, 173, 109), None)
@@ -1423,7 +2115,10 @@ ly += 50
 for label, k in (("House", "house"), ("Storefront", "store"), ("Vacant / derelict", "vacant"),
                  ("Civic (hall, courthouse, library...)", "civic"), ("Church", "church"), ("School", "school"),
                  ("Industrial / mill / elevator", "industrial"), ("Highway commercial", "bigbox"),
-                 ("Barn (farmstead)", "barn")):
+                 ("Barn (farmstead)", "barn"), ("Hotel / motel", "hotel"), ("Arcade / boardwalk stand", "arcade"),
+                 ("Cottage / beach house", "cottage"), ("Row house (Rainbow Row)", "rowhouse"),
+                 ("Cannery / fish house", "cannery"), ("Lighthouse / lifeguard stand", "lighthouse"),
+                 ("Pavilion / bandshell", "pavilion")):
     leg_box(label, BCOL[k], (140, 70, 60) if k == "vacant" else (40, 30, 25))
 
 # stats
@@ -1432,7 +2127,7 @@ pd.text((lx, ly), "Settlements (lore population)   structures", font=F_LB, fill=
 ly += 44
 total = 0
 for t in sorted(TOWNS, key=lambda t: ("City", "Town", "Village").index(t.tier)):
-    n = sum(1 for _, _, part in t.bldgs if not part)
+    n = sum(1 for _, _, part in t.bldgs if not part) + len(t.wbldgs)
     total += n
     pd.text((lx, ly), f"{t.name}", font=F_LB, fill=(20, 20, 20))
     pd.text((lx + LEG - 70, ly), f"{n}", font=F_LB, fill=(20, 20, 20), anchor="ra")
@@ -1453,11 +2148,12 @@ page.save(out)
 
 # ------------------------------------------------------------------ validation report
 print(f"saved {out}  {page.size}")
-print(f"structures: {total} in settlements + {nfs} farmsteads; {dropped} sit on water / a road now:")
+print(f"structures: {total} in settlements + {nfs} farmsteads; {dropped} sit on water / a road now "
+      f"(new coastal buildings dropped on water/roads: {NEW_DROPPED}):")
 for name, kind, q in CONFLICTS:
     print(f"   CONFLICT {name} {kind} at s={q[0]:.0f} x={q[1]:.0f}")
 for t in TOWNS:
-    n = sum(1 for _, _, part in t.bldgs if not part)
+    n = sum(1 for _, _, part in t.bldgs if not part) + len(t.wbldgs)
     xs = [p[0] for p in FOOT[t.name]]
     ys = [p[1] for p in FOOT[t.name]]
     print(f"  {t.name:17s} {t.tier:8s} {n:4d} bldgs  s {min(xs):7.0f}..{max(xs):7.0f}  x {min(ys):6.0f}..{max(ys):6.0f}")

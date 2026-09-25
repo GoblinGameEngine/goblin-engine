@@ -1,0 +1,27 @@
+{
+ "structure": "COAST-flora-fanpalm",
+ "files": [
+  {
+   "file": "commons_Manhattan_Beach_Sunset.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Manhattan_Beach_Sunset.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Manhattan_Beach_Sunset.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Manhattan Beach Sunset.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Adrian104",
+   "caption": "Manhattan Beach, L.A.; sunset.\n\nBack-lighted Mexican fan palms (Washingtonia robusta)."
+  },
+  {
+   "file": "commons_Long_Beach_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Long_Beach_03.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Long_Beach_03.jpg/1920px-Long_Beach_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Long Beach 03.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.5",
+   "author": "Christophe.Finot",
+   "caption": "A landscape avenue (all\u00e9e) of palm trees, in a city park in Long Beach, Los Angeles County, California.\nMexican fan palm (Washingtonia robusta) trees."
+  }
+ ]
+}

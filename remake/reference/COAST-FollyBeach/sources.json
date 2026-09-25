@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-FollyBeach",
+ "files": [
+  {
+   "file": "commons_Folly-beach-pier-south-sc1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Folly-beach-pier-south-sc1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Folly-beach-pier-south-sc1.jpg/1920px-Folly-beach-pier-south-sc1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Folly-beach-pier-south-sc1.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Brian Stansberry",
+   "caption": "The view south from the Folly Beach pier near Charleston, South Carolina, in the southeastern United States.  The outer bands of Subtropical Storm Andrea dominate the sky."
+  },
+  {
+   "file": "commons_Folly-Beach-Pier-sc.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Folly-Beach-Pier-sc.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Folly-Beach-Pier-sc.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Folly-Beach-Pier-sc.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Brian Stansberry",
+   "caption": "View of Folly Beach, South Carolina, United States, from the second level of the Folly Beach Pier."
+  },
+  {
+   "file": "commons_Folly-beach-pier-sc1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Folly-beach-pier-sc1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Folly-beach-pier-sc1.jpg/1920px-Folly-beach-pier-sc1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Folly-beach-pier-sc1.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Brian Stansberry",
+   "caption": "The Folly Beach pier in Folly Beach, South Carolina, USA."
+  }
+ ]
+}

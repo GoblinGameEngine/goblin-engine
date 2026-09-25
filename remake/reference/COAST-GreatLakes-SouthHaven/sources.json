@@ -1,0 +1,27 @@
+{
+ "structure": "COAST-GreatLakes-SouthHaven",
+ "files": [
+  {
+   "file": "commons_South_Haven_Lighthouse_MS.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:South_Haven_Lighthouse_MS.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/South_Haven_Lighthouse_MS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:South Haven Lighthouse MS.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.5",
+   "author": "Rabbet at English Wikipedia",
+   "caption": "South Haven Light is a lighthouse which was built in 1872 and is located in Michigan. It is still in operation today. Author: D. R. J. Stiennon"
+  },
+  {
+   "file": "commons_South_Haven_Michigan_lightkeeper_s_house_from_shore_side.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:South_Haven_Michigan_lightkeeper%27s_house_from_shore_side.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/South_Haven_Michigan_lightkeeper%27s_house_from_shore_side.jpg/1920px-South_Haven_Michigan_lightkeeper%27s_house_from_shore_side.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:South Haven Michigan lightkeeper's house from shore side.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.5",
+   "author": "D.R.J. Stiennon",
+   "caption": "Lightkeepers house at South Haven Light, Michigan, USA"
+  }
+ ]
+}

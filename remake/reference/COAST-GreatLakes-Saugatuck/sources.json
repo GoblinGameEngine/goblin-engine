@@ -1,0 +1,38 @@
+{
+ "structure": "COAST-GreatLakes-Saugatuck",
+ "files": [
+  {
+   "file": "commons_Saugatuck_Michigan.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Saugatuck,_Michigan.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Saugatuck%2C_Michigan.jpg/1920px-Saugatuck%2C_Michigan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Saugatuck, Michigan.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "WMrapids",
+   "caption": "Aerial view of Saugatuck, Michigan"
+  },
+  {
+   "file": "commons_Saugatuck_MI_from_Mount_Baldhead.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Saugatuck_MI_from_Mount_Baldhead.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Saugatuck_MI_from_Mount_Baldhead.jpg/1920px-Saugatuck_MI_from_Mount_Baldhead.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Saugatuck MI from Mount Baldhead.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Robert Moore",
+   "caption": "View of the Kalamazoo River and downtown Saugatuck, MI from atop Mt. Baldhead."
+  },
+  {
+   "file": "commons_Uncommon_Ground_-_Saugatuck_MI_-_Flickr_-_Ann_Gordon.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Uncommon_Ground_-_Saugatuck_MI_-_Flickr_-_%5EAnn_Gordon.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Uncommon_Ground_-_Saugatuck_MI_-_Flickr_-_%5EAnn_Gordon.jpg/1920px-Uncommon_Ground_-_Saugatuck_MI_-_Flickr_-_%5EAnn_Gordon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Uncommon Ground - Saugatuck MI - Flickr - ^Ann Gordon.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "*Ann Gordon",
+   "caption": "Uncommon Ground - Saugatuck MI"
+  }
+ ]
+}

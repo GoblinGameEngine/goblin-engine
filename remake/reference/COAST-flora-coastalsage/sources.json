@@ -1,0 +1,27 @@
+{
+ "structure": "COAST-flora-coastalsage",
+ "files": [
+  {
+   "file": "commons_Coastal_sage_scrub_6931421255_2_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Coastal_sage_scrub_(6931421255)_(2).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Coastal_sage_scrub_%286931421255%29_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Coastal sage scrub (6931421255) (2).jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "U.S. Fish and Wildlife Service Headquarters",
+   "caption": "San Diego National Wlldlife Refuge, CA\n\nPhoto: Lisa Cox/USFWS"
+  },
+  {
+   "file": "commons_California_Coastal_Sage_Scrub_and_Chaparral_in_Wildomar_3.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:California_Coastal_Sage_Scrub_and_Chaparral_in_Wildomar_3.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/California_Coastal_Sage_Scrub_and_Chaparral_in_Wildomar_3.jpg/1920px-California_Coastal_Sage_Scrub_and_Chaparral_in_Wildomar_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:California Coastal Sage Scrub and Chaparral in Wildomar 3.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Z3lvs",
+   "caption": "This image was captured in the Inland Valleys EPA Level IV Ecoregion (85k) and faces the Santa Ana Mountains EPA Level IV Ecoregion (85m) in the distance. In One Earth's ecoregion framework, this image captures part of the California Coastal Sage and Chaparral Ecoregion."
+  }
+ ]
+}
