@@ -20,17 +20,18 @@ class_name RemakeClouds
 ##
 ## Positions are a fixed-seed hash, so the same sky comes back every launch.
 
-const LOW_COUNT := 160                # per layer: sparse over the 3 km x 8 km floor
+const LOW_COUNT := 40                 # per layer: few, but big
 ## cumulus layers: [base, lowest top, wind m/s east, size] -- each its own node turning at its own
 ## wind; the clouds grow with height (size scales a cloud's length, and its puffs with it)
-const LOW_LAYERS := [[200.0, 300.0, 4.0, 2.0], [500.0, 600.0, 5.0, 2.75], [900.0, 1000.0, 6.0, 3.5],
-	[1400.0, 1500.0, 7.0, 4.25], [2000.0, 2100.0, 8.0, 5.0]]
+const LOW_LAYERS := [[200.0, 300.0, 4.0, 8.0], [500.0, 600.0, 5.0, 11.0], [900.0, 1000.0, 6.0, 14.0],
+	[1400.0, 1500.0, 7.0, 17.0], [2000.0, 2100.0, 8.0, 20.0]]
+const CUMULUS_CEILING := StationGeo.R - StationGeo.SHAFT_R - 300.0   # tops kept under the lower cirrus shell
 const CIRRUS_ROWS := 24              # the cirrus shell: bands along the axis ...
 const CIRRUS_COLS := 6               # ... by slots round it, one jittered ribbon each
-const CIRRUS_H := StationGeo.R - StationGeo.SHAFT_R - 50.0   # 50 m off the central shaft
-## cirrus shells: [height, wind m/s east, size] -- the top one hugging the shaft, two more below it;
-## bigger the higher they are (size scales a ribbon's width and its span round the axis)
-const CIRRUS_SHELLS := [[CIRRUS_H, 0.6, 3.0], [CIRRUS_H - 150.0, 0.8, 2.5], [CIRRUS_H - 300.0, 1.0, 2.0]]
+const CIRRUS_H := StationGeo.R - StationGeo.SHAFT_R - 100.0  # 100 m off the central shaft
+## cirrus shells: [height, wind m/s east, size] -- 100 m and 250 m off the central shaft; the higher
+## one bigger (size scales a ribbon's width and its span round the axis)
+const CIRRUS_SHELLS := [[CIRRUS_H, 0.6, 3.0], [CIRRUS_H - 150.0, 0.8, 2.5]]
 const END_CLEAR := 40.0              # m kept between a cloud and an end cap
 const SEED := 20260924
 
@@ -84,7 +85,9 @@ func setup(p_target: Node3D, p_env: Environment) -> void:
 func _make_cumulus(i: int, layer: Node3D, base: float, top_h: float, size: float) -> Dictionary:
 	# simple on purpose: a row of 2-4 big puffs along its length (local x, turned to run with the
 	# wind round the ring) and a few smaller heads on top, all pressed flat underneath
-	var length := _rng.randf_range(45.0, 110.0) * size
+	# a cloud is straight, the air it rides curves round the axis: keep it short enough of its radius
+	# that its ends don't droop out of its layer
+	var length := minf(_rng.randf_range(45.0, 110.0) * size, 0.8 * (StationGeo.R - base))
 	var puffs := []
 	var n_base := clampi(roundi(length / 30.0), 2, 4)
 	var r0 := length / (n_base + 1.0)
@@ -117,6 +120,17 @@ func _make_cumulus(i: int, layer: Node3D, base: float, top_h: float, size: float
 	var top := 0.0
 	for p in puffs:
 		top = maxf(top, p[0].y + p[1])
+	if base + top > CUMULUS_CEILING:
+		var k := (CUMULUS_CEILING - base) / top
+		for p in puffs:
+			p[0] *= k
+			p[1] *= k
+		for cs in area.get_children():
+			(cs as CollisionShape3D).position *= k
+			((cs as CollisionShape3D).shape as SphereShape3D).radius *= k
+		length *= k
+		width *= k
+		top *= k
 	var half_w := width * 0.5 + 20.0                          # its extent along the axis
 	var sp := _rng.randf() * StationGeo.CIRC
 	var h := _rng.randf_range(base, maxf(base, top_h - top))
