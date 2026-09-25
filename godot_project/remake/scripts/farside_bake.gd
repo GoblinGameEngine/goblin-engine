@@ -44,15 +44,21 @@ func _ready() -> void:
 	var trees := MapTrees.new()
 	add_child(trees)
 	trees.setup()
+	var walks := CoastalWalks.new()
+	add_child(walks)
+	walks.setup()
+	var bridges := GreatBridges.new()
+	add_child(bridges)
+	bridges.setup()
 	world = Node3D.new()
 	add_child(world)
-	_bake(roads, trees)
+	_bake(roads, trees, walks)
 
 
-func _bake(roads: MapRoads, trees: MapTrees) -> void:
+func _bake(roads: MapRoads, trees: MapTrees, walks: CoastalWalks) -> void:
 	var tree := get_tree()
 	await RemakeWorld.build(world, [])
-	while roads.is_processing() or trees.is_processing():
+	while roads.is_processing() or trees.is_processing() or walks.is_processing():
 		await tree.process_frame
 	var vp := SubViewport.new()
 	vp.size = Vector2i(TILE, TILE)

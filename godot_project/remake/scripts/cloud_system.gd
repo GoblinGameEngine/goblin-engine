@@ -1,41 +1,42 @@
 extends Node3D
 class_name RemakeClouds
 
-## The station's weather: two sparse cloud layers drifting west to east -- round the axis, the way
+## The station's weather: sparse cloud layers drifting west to east -- round the axis, the way
 ## the air turns with the station (north is the Marlowe end cap, -x; east is +s, see
 ## RemakeStation.compass_bearing).  Each layer is one node turned about the axis, so the clouds
 ## simply come round again.
 ##
-##   Low cumulus, LOW_BASE..LOW_TOP m up: a few puffs blended into one smooth cartoon skin (a
+##   Cumulus, in LOW_LAYERS (the lowest 200..300 m up, the rest stacked up the air column): a few puffs blended into one smooth cartoon skin (a
 ##   smooth-union distance field, shrink-wrapped by a sphere of rays -- no facets, no seams
 ##   where puffs meet) with a flat base, opaque and cel-shaded (cumulus.gdshader) so the outline
 ##   pass inks only the silhouette.  The skins are generated on a worker thread at startup.  Each is also a WaterVolume --
 ##   the same trigger the lake uses -- so whatever flies or falls into one gets enter_water() /
 ##   exit_water() and treats it as water; the camera inside one whites out (fog by depth).
 ##
-##   High cirrus, CIRRUS_H m up (50 m off the central shaft): a sparse shell of flat translucent
+##   High cirrus, CIRRUS_SHELLS m up (the top one 50 m off the central shaft): sparse shells of flat translucent
 ##   ribbons wrapped round the axis, the way the spinning air carries them (cirrus.gdshader),
 ##   drifting very slowly -- one jittered ribbon per slot of a band x slot grid, so they spread
 ##   evenly without clumping, merged into one mesh per band.
 ##
 ## Positions are a fixed-seed hash, so the same sky comes back every launch.
 
-const LOW_COUNT := 160                # sparse over the 3 km x 8 km floor
-const LOW_BASE := 200.0
-const LOW_TOP := 300.0
-const LOW_WIND := 4.0                # m/s east, at the layer's middle
+const LOW_COUNT := 160                # per layer: sparse over the 3 km x 8 km floor
+## cumulus layers: [base, top, wind m/s east] -- each its own node turning at its own wind
+const LOW_LAYERS := [[200.0, 300.0, 4.0], [500.0, 600.0, 5.0], [900.0, 1000.0, 6.0], [1400.0, 1500.0, 7.0],
+	[2000.0, 2100.0, 8.0]]
 const CIRRUS_ROWS := 24              # the cirrus shell: bands along the axis ...
 const CIRRUS_COLS := 6               # ... by slots round it, one jittered ribbon each
 const CIRRUS_H := StationGeo.R - StationGeo.SHAFT_R - 50.0   # 50 m off the central shaft
-const CIRRUS_WIND := 0.6
+## cirrus shells: [height, wind m/s east] -- the top one hugging the shaft, two more below it
+const CIRRUS_SHELLS := [[CIRRUS_H, 0.6], [CIRRUS_H - 150.0, 0.8], [CIRRUS_H - 300.0, 1.0]]
 const END_CLEAR := 40.0              # m kept between a cloud and an end cap
 const SEED := 20260924
 
 var target: Node3D                   # the camera the inside-a-cloud whiteout follows
 var env: Environment
 var _low: Array = []                 # {node, reach, puffs: [[Vector3 local, r]]}
-var _low_layer: Node3D               # turned about the axis: the low clouds' drift
-var _high_layer: Node3D
+var _low_layers: Array = []          # [node, wind radius factor]: turned about the axis, each layer's drift
+var _high_layers: Array = []
 var _cumulus_mat: ShaderMaterial
 var _cirrus_mat: ShaderMaterial
 var _rng := RandomNumberGenerator.new()
@@ -52,16 +53,24 @@ func setup(p_target: Node3D, p_env: Environment) -> void:
 	_cumulus_mat.shader = load("res://remake/shaders/cumulus.gdshader")
 	_cirrus_mat = ShaderMaterial.new()
 	_cirrus_mat.shader = load("res://remake/shaders/cirrus.gdshader")
-	_low_layer = Node3D.new()
-	_low_layer.name = "Cumulus"
-	add_child(_low_layer)
-	_high_layer = Node3D.new()
-	_high_layer.name = "Cirrus"
-	add_child(_high_layer)
-	for i in LOW_COUNT:
-		_low.append(_make_cumulus(i))
-	for row in CIRRUS_ROWS:
-		_make_cirrus_band(row)
+	for li in LOW_LAYERS.size():
+		var lay := Node3D.new()
+		lay.name = "Cumulus_%d" % li
+		add_child(lay)
+		var base: float = LOW_LAYERS[li][0]
+		var top_: float = LOW_LAYERS[li][1]
+		_low_layers.append([lay, LOW_LAYERS[li][2] / (StationGeo.R - (base + top_) * 0.5)])
+		for i in LOW_COUNT:
+			_low.append(_make_cumulus(li * LOW_COUNT + i, lay, base, top_))
+	for si in CIRRUS_SHELLS.size():
+		var lay := Node3D.new()
+		lay.name = "Cirrus_%d" % si
+		lay.rotation.x = si * 1.3                              # the shells' gaps don't line up
+		add_child(lay)
+		var hh: float = CIRRUS_SHELLS[si][0]
+		_high_layers.append([lay, CIRRUS_SHELLS[si][1] / (StationGeo.R - hh)])
+		for row in CIRRUS_ROWS:
+			_make_cirrus_band(row, lay, hh)
 	var all_puffs := []
 	for c in _low:
 		all_puffs.append(c.puffs)
@@ -70,7 +79,7 @@ func setup(p_target: Node3D, p_env: Environment) -> void:
 
 
 # ------------------------------------------------------------------ low cumulus
-func _make_cumulus(i: int) -> Dictionary:
+func _make_cumulus(i: int, layer: Node3D, base: float, top_h: float) -> Dictionary:
 	# simple on purpose: a row of 2-4 big puffs along its length (local x, turned to run with the
 	# wind round the ring) and a few smaller heads on top, all pressed flat underneath
 	var length := _rng.randf_range(45.0, 110.0)
@@ -88,7 +97,7 @@ func _make_cumulus(i: int) -> Dictionary:
 	var width := r0 * 2.0
 	var node := Node3D.new()
 	node.name = "cumulus_%d" % i
-	_low_layer.add_child(node)
+	layer.add_child(node)
 	var mi := MeshInstance3D.new()                         # its mesh comes from the worker (_make_skins)
 	mi.material_override = _cumulus_mat
 	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
@@ -108,7 +117,7 @@ func _make_cumulus(i: int) -> Dictionary:
 		top = maxf(top, p[0].y + p[1])
 	var half_w := width * 0.5 + 20.0                          # its extent along the axis
 	var sp := _rng.randf() * StationGeo.CIRC
-	var h := _rng.randf_range(LOW_BASE, maxf(LOW_BASE, LOW_TOP - top))
+	var h := _rng.randf_range(base, maxf(base, top_h - top))
 	var lim := StationGeo.HALF_LEN - END_CLEAR - half_w
 	node.transform = Transform3D(StationGeo.basis(sp, PI * 0.5), StationGeo.point(sp, _rng.randf_range(-lim, lim), h))
 	return {"node": node, "mesh": mi, "puffs": puffs, "reach": maxf(length * 0.5, width * 0.5) + 25.0}
@@ -189,11 +198,11 @@ func _make_skins(all_puffs: Array) -> void:
 
 
 # ------------------------------------------------------------------ high cirrus
-func _make_cirrus_band(row: int) -> void:
+func _make_cirrus_band(row: int, layer: Node3D, height: float) -> void:
 	## One band of the shell along the axis: CIRRUS_COLS ribbons round it, each on the cylinder
 	## CIRRUS_H up -- its span round the axis, its width along it -- in one mesh (UV2.x: the
 	## ribbon's seed for the shader's wisps).
-	var r := StationGeo.R - CIRRUS_H
+	var r := StationGeo.R - height
 	var band := (StationGeo.LENGTH - 2.0 * END_CLEAR) / CIRRUS_ROWS
 	var x0 := -StationGeo.HALF_LEN + END_CLEAR + band * row
 	var st := SurfaceTool.new()
@@ -216,11 +225,11 @@ func _make_cirrus_band(row: int) -> void:
 				st.set_uv2(Vector2(seed, 0.0))
 				st.add_vertex(Vector3(xc + (v - 0.5) * width + skew * (u - 0.5), r * cos(th), r * sin(th)))
 	var mi := MeshInstance3D.new()
-	mi.name = "cirrus_%d" % row
+	mi.name = "cirrus_%d_%d" % [roundi(height), row]
 	mi.mesh = st.commit()
 	mi.material_override = _cirrus_mat
 	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	_high_layer.add_child(mi)
+	layer.add_child(mi)
 
 
 func _process(delta: float) -> void:
@@ -234,8 +243,9 @@ func _process(delta: float) -> void:
 		_skins = []
 	# east is +s: a turn about +x (y toward z) at each layer's wind over its radius
 	var dt := minf(delta, 0.1)
-	_low_layer.rotation.x = fposmod(_low_layer.rotation.x + LOW_WIND / (StationGeo.R - (LOW_BASE + LOW_TOP) * 0.5) * dt, TAU)
-	_high_layer.rotation.x = fposmod(_high_layer.rotation.x + CIRRUS_WIND / (StationGeo.R - CIRRUS_H) * dt, TAU)
+	for L in _low_layers + _high_layers:
+		var lay: Node3D = L[0]
+		lay.rotation.x = fposmod(lay.rotation.x + float(L[1]) * dt, TAU)
 	_whiteout()
 
 
