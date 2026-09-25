@@ -1,0 +1,27 @@
+{
+ "structure": "OCV-035",
+ "files": [
+  {
+   "file": "commons_Circle_Bar.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Circle_Bar.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle_Bar.jpg/1920px-Circle_Bar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Circle Bar.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DocFreeman24",
+   "caption": "Circle Bar in Santa Monica, California, United States as of April 2021."
+  },
+  {
+   "file": "commons_Circle_Bar_in_Santa_Monica_California_US.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Circle_Bar_in_Santa_Monica,_California,_US.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Circle_Bar_in_Santa_Monica%2C_California%2C_US.jpg/1920px-Circle_Bar_in_Santa_Monica%2C_California%2C_US.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Circle Bar in Santa Monica, California, US.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Clyde Charles Brown",
+   "caption": "Circle Bar in Santa Monica, California, US"
+  }
+ ]
+}

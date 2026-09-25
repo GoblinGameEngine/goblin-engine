@@ -1,0 +1,37 @@
+{
+ "id": "OCV-W02",
+ "settlement": "Oceanview",
+ "kind": "pier",
+ "coast": "west",
+ "walk": {
+  "width_m": 6,
+  "length_m": 272.0
+ },
+ "example": {
+  "title": "Santa Cruz Municipal Wharf",
+  "place": "Santa Cruz, Santa Cruz County, CA",
+  "year": 1914,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Santa_Cruz_municipal_wharf.JPG",
+  "photos": [
+   "commons_Santa_Cruz_municipal_wharf.JPG",
+   "commons_Wharf_-_Santa_Cruz_15231800734_.jpg",
+   "commons_Santa_Cruz_Municipal_Wharf_-_panoramio.jpg",
+   "commons_Santa_Cruz_bench_on_wharf.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "The long municipal wharf: a wide timber-planked deck on bents of creosoted timber piles with cross-bracing, a white-painted timber rail with benches, lamp posts, and a street of low restaurant and fish-market buildings along it; cars drive onto it. Four photos. The wharf dates from 1914 (much rebuilt since); no newer timber wharf of this length exists on the coast. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 6,
+  "pile_depth_m": 12.0,
+  "year_built": 1914,
+  "vehicle_deck": true
+ },
+ "names": {}
+}
