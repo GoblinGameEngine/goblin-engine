@@ -1,0 +1,27 @@
+{
+ "structure": "OCV-021",
+ "files": [
+  {
+   "file": "commons_Mammoth_Lakes_2018-02_07.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Mammoth_Lakes_2018-02_07.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Mammoth_Lakes_2018-02_07.jpg/1920px-Mammoth_Lakes_2018-02_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Mammoth Lakes 2018-02 07.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Johan J\u00f6nsson (Julle)",
+   "caption": "Motel 6, Mammoth Lakes."
+  },
+  {
+   "file": "commons_Mammoth_Lakes_2018-02_08.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Mammoth_Lakes_2018-02_08.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Mammoth_Lakes_2018-02_08.jpg/1920px-Mammoth_Lakes_2018-02_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Mammoth Lakes 2018-02 08.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Johan J\u00f6nsson (Julle)",
+   "caption": "Motel 6, Mammoth Lakes."
+  }
+ ]
+}

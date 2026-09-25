@@ -1,0 +1,36 @@
+{
+ "id": "OCV-W01",
+ "settlement": "Oceanview",
+ "kind": "promenade",
+ "coast": "west",
+ "walk": {
+  "width_m": 10,
+  "length_m": 1120.0
+ },
+ "example": {
+  "title": "Venice Ocean Front Walk",
+  "place": "Venice, Los Angeles, CA",
+  "year": 2000,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Ocean_Front_Walk_Venice_April_2020_2.jpg",
+  "photos": [
+   "commons_Ocean_Front_Walk_Venice_April_2020_2.jpg",
+   "commons_Ocean_Front_Walk_Venice_April_2020_1.jpg",
+   "commons_Ocean_Front_Walk_Venice_Beach_July_2022.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The two-mile concrete beach promenade: a broad flat concrete walk with a separate painted bike path, a low white stucco kerb wall and palms on the sand side, and a continuous wall of shops, caf\u00e9s, stalls and four- and five-storey condo blocks on the other, vendors' stands and crowds along it. Three photos. Resurfaced in the 2000s. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 10,
+  "pile_depth_m": 10.0,
+  "year_built": 2000,
+  "bike_path": true
+ },
+ "names": {}
+}
