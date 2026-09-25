@@ -1,0 +1,34 @@
+{
+ "id": "PEL-W04",
+ "settlement": "Pelican Cove",
+ "kind": "wharf",
+ "coast": "west",
+ "walk": {
+  "width_m": 14,
+  "length_m": 126.0
+ },
+ "example": {
+  "title": "17th Street Pier (Coast Guard and Bar Pilots pier)",
+  "place": "Astoria, Clatsop County, OR",
+  "year": 1990,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:17th_St_Pier_2924.jpg",
+  "photos": [
+   "commons_17th_St_Pier_2924.jpg",
+   "commons_17th_St_Pier_3065.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A heavy working pier into the river: a broad timber-decked pier with concrete deck patches, galvanised steel gates and a bollard plaque at the landward end, red-hulled Coast Guard cutters and pilot boats moored along it, fenced pile clusters and dolphins alongside. Two photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 14,
+  "pile_depth_m": 10.0,
+  "year_built": 1990
+ },
+ "names": {}
+}

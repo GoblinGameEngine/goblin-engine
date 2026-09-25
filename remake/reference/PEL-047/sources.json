@@ -1,0 +1,27 @@
+{
+ "structure": "PEL-047",
+ "files": [
+  {
+   "file": "commons_Cannery_Row_at_night_2_2018-01-24.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cannery_Row_at_night_2_2018-01-24.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Cannery_Row_at_night_2_2018-01-24.jpg/1920px-Cannery_Row_at_night_2_2018-01-24.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cannery Row at night 2 2018-01-24.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "FASTILY",
+   "caption": "Cannery Row at night"
+  },
+  {
+   "file": "commons_Cannery_Row_at_night_1_2018-01-24.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cannery_Row_at_night_1_2018-01-24.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Cannery_Row_at_night_1_2018-01-24.jpg/1920px-Cannery_Row_at_night_1_2018-01-24.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cannery Row at night 1 2018-01-24.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "FASTILY",
+   "caption": "Cannery Row at night"
+  }
+ ]
+}

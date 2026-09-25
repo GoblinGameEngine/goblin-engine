@@ -1,0 +1,35 @@
+{
+ "id": "PEL-W02",
+ "settlement": "Pelican Cove",
+ "kind": "crossover",
+ "coast": "west",
+ "walk": {
+  "width_m": 5,
+  "length_m": 82.0
+ },
+ "example": {
+  "title": "Cannery Row conveyor crossover over the street (white lattice bridge)",
+  "place": "Cannery Row, Monterey, Monterey County, CA",
+  "year": 1930,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Cannery_Row_Monterey_CA.jpg",
+  "photos": [
+   "commons_Cannery_Row_Monterey_CA.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "An enclosed conveyor crossover bridging the waterfront street between a cannery and its warehouse: a boxy white-painted timber truss enclosure with diagonal lattice sides and a flat roof, carried on the buildings at each end some 6 m above the road, now a pedestrian bridge. One photo. Older than 1970: cannery crossovers are pre-war. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "concrete_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 5,
+  "pile_depth_m": 10.0,
+  "year_built": 1930,
+  "enclosed": true,
+  "clearance_m": 6.0
+ },
+ "names": {}
+}

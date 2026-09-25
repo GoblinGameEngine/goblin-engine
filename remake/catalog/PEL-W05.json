@@ -1,0 +1,33 @@
+{
+ "id": "PEL-W05",
+ "settlement": "Pelican Cove",
+ "kind": "wharf",
+ "coast": "west",
+ "walk": {
+  "width_m": 10,
+  "length_m": 96.0
+ },
+ "example": {
+  "title": "Garibaldi fishing pier with its pier-end shed",
+  "place": "Garibaldi, Tillamook County, OR",
+  "year": 1929,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Garibaldi_Pier_(Tillamook_County,_Oregon_scenic_images)_(tilD0002).jpg",
+  "photos": [
+   "commons_Garibaldi_Pier_Tillamook_County_Oregon_scenic_images_tilD0002_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A long narrow timber fishing pier on bents of round creosoted piles, a plank deck with a timber rail and a small gabled red shed at the end over the bay. One photo. Older than 1970: wooden bay fishing piers of this kind date from the 1920s-30s. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": true,
+  "width_m": 10,
+  "pile_depth_m": 10.0,
+  "year_built": 1929
+ },
+ "names": {}
+}

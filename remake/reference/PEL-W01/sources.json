@@ -1,0 +1,38 @@
+{
+ "structure": "PEL-W01",
+ "files": [
+  {
+   "file": "commons_Boat_and_Lighthouse_8509603852_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Boat_and_Lighthouse_(8509603852).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Boat_and_Lighthouse_%288509603852%29.jpg/1920px-Boat_and_Lighthouse_%288509603852%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Boat and Lighthouse (8509603852).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Don DeBold from San Jose, CA, USA",
+   "caption": "Boat and Lighthouse"
+  },
+  {
+   "file": "commons_Guardian_of_the_Rocks_6021140644_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Guardian_of_the_Rocks_(6021140644).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Guardian_of_the_Rocks_%286021140644%29.jpg/1920px-Guardian_of_the_Rocks_%286021140644%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Guardian of the Rocks (6021140644).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "John Loo from Sunnyvale, USA",
+   "caption": "Santa Cruz, CA"
+  },
+  {
+   "file": "commons_Lighthouse_Bench_Volleyball_and_Lighthouse_6868329285_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Lighthouse_Bench,_Volleyball_and_Lighthouse_(6868329285).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Lighthouse_Bench%2C_Volleyball_and_Lighthouse_%286868329285%29.jpg/1920px-Lighthouse_Bench%2C_Volleyball_and_Lighthouse_%286868329285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Lighthouse Bench, Volleyball and Lighthouse (6868329285).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Don DeBold from San Jose, CA, USA",
+   "caption": "Lighthouse Bench, Volleyball and Lighthouse"
+  }
+ ]
+}

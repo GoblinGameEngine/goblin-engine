@@ -1,0 +1,27 @@
+{
+ "structure": "PEL-014",
+ "files": [
+  {
+   "file": "commons_Bar_Pilot_Hse_3062.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bar_Pilot_Hse_3062.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Bar_Pilot_Hse_3062.jpg/1920px-Bar_Pilot_Hse_3062.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Bar Pilot Hse 3062.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Astoria Riverwalk"
+  },
+  {
+   "file": "commons_Col_R_Bar_Pilots_3064.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Col_R_Bar_Pilots_3064.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Col_R_Bar_Pilots_3064.jpg/1920px-Col_R_Bar_Pilots_3064.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Col R Bar Pilots 3064.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Astoria Riverwalk"
+  }
+ ]
+}

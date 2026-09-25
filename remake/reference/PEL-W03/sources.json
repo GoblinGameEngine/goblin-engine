@@ -1,0 +1,27 @@
+{
+ "structure": "PEL-W03",
+ "files": [
+  {
+   "file": "commons_Cannery_Row_1_Monterey_CA_jjron_24.03.2012.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cannery_Row_1,_Monterey,_CA,_jjron_24.03.2012.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Cannery_Row_1%2C_Monterey%2C_CA%2C_jjron_24.03.2012.jpg/1920px-Cannery_Row_1%2C_Monterey%2C_CA%2C_jjron_24.03.2012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cannery Row 1, Monterey, CA, jjron 24.03.2012.jpg",
+   "kind": "photo",
+   "license": "GFDL 1.2",
+   "author": "jjron",
+   "caption": "Cannery Row from near Hoffman Ave, featuring the Cannery Row Company and Monterey Canning Company buildings. Monterey, California, USA."
+  },
+  {
+   "file": "commons_Cannery_Row_2_15398349067_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cannery_Row_2_(15398349067).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Cannery_Row_2_%2815398349067%29.jpg/1920px-Cannery_Row_2_%2815398349067%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cannery Row 2 (15398349067).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Tony Hisgett from Birmingham, UK",
+   "caption": "Cannery Row 2"
+  }
+ ]
+}

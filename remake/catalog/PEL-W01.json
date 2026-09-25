@@ -1,0 +1,37 @@
+{
+ "id": "PEL-W01",
+ "settlement": "Pelican Cove",
+ "kind": "breakwater",
+ "coast": "west",
+ "walk": {
+  "width_m": 14,
+  "length_m": 528.9
+ },
+ "example": {
+  "title": "Santa Cruz Harbor west jetty (breakwater) and Walton Lighthouse",
+  "place": "Santa Cruz, Santa Cruz County, CA",
+  "year": 1964,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Boat_and_Lighthouse_(8509603852).jpg",
+  "photos": [
+   "commons_Boat_and_Lighthouse_8509603852_.jpg",
+   "commons_Guardian_of_the_Rocks_6021140644_.jpg",
+   "commons_Lighthouse_Bench_Volleyball_and_Lighthouse_6868329285_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The harbour's west jetty: a rubble-mound breakwater of big grey granite boulders capped with interlocking concrete dolosse, a flat walkable crest, ending at a small white lighthouse; fishermen on the rocks, a boat entering the channel. Three photos (the jetty seen from the harbour beach and the channel; the light itself is PEL-013). Older than 1970: the jetty (1964) predates 1970; the light on it is 2002. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "rubble_mound",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 14,
+  "pile_depth_m": 12.0,
+  "year_built": 1964,
+  "armour": "dolosse_and_boulders",
+  "end_light": true
+ },
+ "names": {}
+}

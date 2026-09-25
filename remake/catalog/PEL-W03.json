@@ -1,0 +1,38 @@
+{
+ "id": "PEL-W03",
+ "settlement": "Pelican Cove",
+ "kind": "crossover",
+ "coast": "west",
+ "walk": {
+  "width_m": 5,
+  "length_m": 82.0
+ },
+ "example": {
+  "title": "Cannery Row conveyor crossover lettered with the company name",
+  "place": "Cannery Row, Monterey, Monterey County, CA",
+  "year": 1930,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Cannery_Row_1,_Monterey,_CA,_jjron_24.03.2012.jpg",
+  "photos": [
+   "commons_Cannery_Row_1_Monterey_CA_jjron_24.03.2012.jpg",
+   "commons_Cannery_Row_2_15398349067_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A second enclosed crossover over the street: a white-painted enclosed timber bridge with a row of small windows and the company name in large black letters along its side, spanning between two-storey cannery buildings with flags. Two photos. Older than 1970: cannery crossovers are pre-war. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "concrete_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 5,
+  "pile_depth_m": 10.0,
+  "year_built": 1930,
+  "enclosed": true,
+  "clearance_m": 6.0
+ },
+ "names": {
+  "sign": "PELICAN COVE CANNING COMPANY"
+ }
+}

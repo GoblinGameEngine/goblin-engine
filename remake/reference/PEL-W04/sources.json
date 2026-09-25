@@ -1,0 +1,27 @@
+{
+ "structure": "PEL-W04",
+ "files": [
+  {
+   "file": "commons_17th_St_Pier_2924.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:17th_St_Pier_2924.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/17th_St_Pier_2924.jpg/1920px-17th_St_Pier_2924.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:17th St Pier 2924.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Astoria Riverwalk"
+  },
+  {
+   "file": "commons_17th_St_Pier_3065.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:17th_St_Pier_3065.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/17th_St_Pier_3065.jpg/1920px-17th_St_Pier_3065.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:17th St Pier 3065.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Chris Light",
+   "caption": "Astoria Riverwalk"
+  }
+ ]
+}
