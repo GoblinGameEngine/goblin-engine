@@ -1,0 +1,46 @@
+{
+ "id": "PCR-032",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 20.2,
+  "d": 36.1
+ },
+ "example": {
+  "title": "Bay Street (4983153614)",
+  "place": "Beaufort, SC",
+  "year": 1850,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Bay_Street_(4983153614).jpg",
+  "photos": [
+   "commons_Bay_Street_4983153614_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: Bay Street (4983153614); see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 2,
+  "facade": "frame_false_front",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Battery Gallery",
+    "type": "art_gallery",
+    "sign": "BATTERY GALLERY",
+    "sign_style": "projecting",
+    "awning": false,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1850,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Battery Gallery"
+  ]
+ }
+}

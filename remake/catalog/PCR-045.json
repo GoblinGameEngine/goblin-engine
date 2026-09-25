@@ -1,0 +1,46 @@
+{
+ "id": "PCR-045",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 21.1,
+  "d": 45.1
+ },
+ "example": {
+  "title": "Bobby B's Seafood & Pizza (50062235268)",
+  "place": "Oak Bluffs, Martha's Vineyard, MA",
+  "year": 1985,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Bobby_B's_Seafood_&_Pizza_(50062235268).jpg",
+  "photos": [
+   "commons_Bobby_B_s_Seafood_Pizza_50062235268_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: Bobby B's Seafood & Pizza (50062235268); see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 2,
+  "facade": "stucco",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Harbor Caf\u00e9",
+    "type": "cafe",
+    "sign": "HARBOR CAF\u00c9",
+    "sign_style": "flat_board",
+    "awning": false,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1985,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Harbor Caf\u00e9"
+  ]
+ }
+}

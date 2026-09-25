@@ -1,0 +1,68 @@
+{
+ "id": "PCR-063",
+ "settlement": "Port Carrow",
+ "kind": "singlehouse",
+ "coast": "east",
+ "lot": {
+  "w": 10.5,
+  "d": 11.1
+ },
+ "example": {
+  "title": "78 Halsey Boulevard, Charleston, South Carolina",
+  "place": "Charleston, Charleston County, SC",
+  "year": 2005,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:78_Halsey_Boulevard,_Charleston,_South_Carolina.jpg",
+  "photos": [
+   "commons_78_Halsey_Boulevard_Charleston_South_Carolina.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A Charleston single house: 78 Halsey Boulevard, Charleston, South Carolina, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "archetype": "i_house",
+  "storeys": 2.5,
+  "main_w_ft": 21,
+  "main_d_ft": 29,
+  "wing": null,
+  "roof": {
+   "type": "gable",
+   "pitch_deg": 36,
+   "material": "metal"
+  },
+  "dormers": [],
+  "porch": {
+   "type": "side",
+   "posts": "columns",
+   "rail": "spindle"
+  },
+  "walls": "clapboard",
+  "foundation": "poured_concrete",
+  "colors": {
+   "body": "#E9C8C0",
+   "trim": "#FFFFFF",
+   "accent": "#2E2E2E",
+   "roof": "#5A5A5A"
+  },
+  "windows": {
+   "type": "6over6",
+   "shutters": true
+  },
+  "chimneys": [],
+  "garage": "none",
+  "yard": {
+   "fence": "iron",
+   "extras": [
+    "garden"
+   ]
+  },
+  "condition": "kept",
+  "year_built": 2005,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "family": "Cannon",
+  "house_number": "14",
+  "street": "Tradd St"
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "id": "PCR-040",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 23.3,
+  "d": 36.1
+ },
+ "example": {
+  "title": "Atlantic House Provincetown",
+  "place": "Provincetown, MA",
+  "year": 1850,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Atlantic_House_Provincetown.JPG",
+  "photos": [
+   "commons_Atlantic_House_Provincetown.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: Atlantic House Provincetown; see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 3,
+  "facade": "frame_false_front",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Sea Island Ice Cream",
+    "type": "ice_cream",
+    "sign": "SEA ISLAND ICE CREAM",
+    "sign_style": "projecting",
+    "awning": true,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1850,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Sea Island Ice Cream"
+  ]
+ }
+}

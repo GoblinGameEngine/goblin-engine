@@ -1,0 +1,46 @@
+{
+ "id": "PCR-041",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 18.6,
+  "d": 36.1
+ },
+ "example": {
+  "title": "The Squealing Pig, 335 Commercial St, Provincetown (493676) (11110044514)",
+  "place": "Provincetown, MA",
+  "year": 1850,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Squealing_Pig,_335_Commercial_St,_Provincetown_(493676)_(11110044514).jpg",
+  "photos": [
+   "commons_The_Squealing_Pig_335_Commercial_St_Provincetown_493676_11110044514_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: The Squealing Pig, 335 Commercial St, Provincetown (493676) (11110044514); see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 2,
+  "facade": "frame_false_front",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Lowcountry Bakery",
+    "type": "bakery",
+    "sign": "LOWCOUNTRY BAKERY",
+    "sign_style": "flat_board",
+    "awning": false,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1850,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Lowcountry Bakery"
+  ]
+ }
+}

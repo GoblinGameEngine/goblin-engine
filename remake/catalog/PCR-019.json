@@ -1,0 +1,46 @@
+{
+ "id": "PCR-019",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 21.5,
+  "d": 36.1
+ },
+ "example": {
+  "title": "51 Reid St",
+  "place": "Charleston, Charleston County, SC",
+  "year": 1985,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:51_Reid_St.jpg",
+  "photos": [
+   "commons_51_Reid_St.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: 51 Reid St; see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 3,
+  "facade": "stucco",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Carrow Outfitters",
+    "type": "clothing",
+    "sign": "CARROW OUTFITTERS",
+    "sign_style": "flat_board",
+    "awning": true,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1985,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Carrow Outfitters"
+  ]
+ }
+}

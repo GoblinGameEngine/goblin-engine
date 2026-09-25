@@ -1,0 +1,46 @@
+{
+ "id": "PCR-043",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 18.9,
+  "d": 45.1
+ },
+ "example": {
+  "title": "Alisson's Restaurant (8062120425)",
+  "place": "Kennebunkport, ME",
+  "year": 1985,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Alisson's_Restaurant_(8062120425).jpg",
+  "photos": [
+   "commons_Alisson_s_Restaurant_8062120425_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: Alisson's Restaurant (8062120425); see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 3,
+  "facade": "frame_false_front",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Carrow Outfitters",
+    "type": "clothing",
+    "sign": "CARROW OUTFITTERS",
+    "sign_style": "flat_board",
+    "awning": true,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1985,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Carrow Outfitters"
+  ]
+ }
+}

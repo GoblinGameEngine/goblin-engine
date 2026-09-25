@@ -1,0 +1,46 @@
+{
+ "id": "PCR-018",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 22.8,
+  "d": 36.1
+ },
+ "example": {
+  "title": "635 E Bay - NW building",
+  "place": "Charleston, Charleston County, SC",
+  "year": 1985,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:635_E_Bay_-_NW_building.jpg",
+  "photos": [
+   "commons_635_E_Bay_-_NW_building.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: 635 E Bay - NW building; see the photo for its storefronts, awnings and signs. One photo; year estimated. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 2,
+  "facade": "stucco",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Sandbar Antiques",
+    "type": "furniture",
+    "sign": "SANDBAR ANTIQUES",
+    "sign_style": "projecting",
+    "awning": false,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1985,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Sandbar Antiques"
+  ]
+ }
+}

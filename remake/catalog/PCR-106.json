@@ -1,0 +1,68 @@
+{
+ "id": "PCR-106",
+ "settlement": "Port Carrow",
+ "kind": "singlehouse",
+ "coast": "east",
+ "lot": {
+  "w": 12.0,
+  "d": 10.3
+ },
+ "example": {
+  "title": "Colonel John English House, South of Broad, Charleston, SC (49549586178)",
+  "place": "Charleston, Charleston County, SC",
+  "year": 1840,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Colonel_John_English_House,_South_of_Broad,_Charleston,_SC_(49549586178).jpg",
+  "photos": [
+   "commons_Colonel_John_English_House_South_of_Broad_Charleston_SC_49549586178_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A Charleston single house: Colonel John English House, South of Broad, Charleston, SC (49549586178), one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Older than 1970: the Charleston single house (one room wide, side piazzas, gable end to the street) is an 18th-19th-century type; newer examples are used first where they exist. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "archetype": "i_house",
+  "storeys": 2.5,
+  "main_w_ft": 24,
+  "main_d_ft": 27,
+  "wing": null,
+  "roof": {
+   "type": "gable",
+   "pitch_deg": 36,
+   "material": "metal"
+  },
+  "dormers": [],
+  "porch": {
+   "type": "side",
+   "posts": "columns",
+   "rail": "spindle"
+  },
+  "walls": "clapboard",
+  "foundation": "poured_concrete",
+  "colors": {
+   "body": "#BFD0C0",
+   "trim": "#FFFFFF",
+   "accent": "#3A3A3A",
+   "roof": "#5A5A5A"
+  },
+  "windows": {
+   "type": "6over6",
+   "shutters": true
+  },
+  "chimneys": [],
+  "garage": "none",
+  "yard": {
+   "fence": "iron",
+   "extras": [
+    "garden"
+   ]
+  },
+  "condition": "kept",
+  "year_built": 1840,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "family": "Grimke",
+  "house_number": "56",
+  "street": "Meeting St"
+ }
+}

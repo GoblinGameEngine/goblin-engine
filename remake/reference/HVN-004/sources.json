@@ -2,15 +2,15 @@
  "structure": "HVN-004",
  "files": [
   {
-   "file": "commons_C_view_restaurant.jpg",
+   "file": "commons_Cape_Publishing_Offices.jpg",
    "source": "Wikimedia Commons",
-   "record": "https://commons.wikimedia.org/wiki/File:C_view_restaurant.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/C_view_restaurant.jpg/1920px-C_view_restaurant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "title": "File:C view restaurant.jpg",
+   "record": "https://commons.wikimedia.org/wiki/File:Cape_Publishing_Offices.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Cape_Publishing_Offices.jpg/1920px-Cape_Publishing_Offices.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cape Publishing Offices.jpg",
    "kind": "photo",
-   "license": "CC BY-SA 4.0",
-   "author": "",
-   "caption": "C View Restaurant"
+   "license": "CC0",
+   "author": "WhisperToMe",
+   "caption": "Cape Publishing Offices"
   }
  ]
 }

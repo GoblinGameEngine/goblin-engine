@@ -1,0 +1,68 @@
+{
+ "id": "PCR-091",
+ "settlement": "Port Carrow",
+ "kind": "singlehouse",
+ "coast": "east",
+ "lot": {
+  "w": 11.1,
+  "d": 11.2
+ },
+ "example": {
+  "title": "41 Chapel St",
+  "place": "Charleston, Charleston County, SC",
+  "year": 1840,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:41_Chapel_St.JPG",
+  "photos": [
+   "commons_41_Chapel_St.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A Charleston single house: 41 Chapel St, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Older than 1970: the Charleston single house (one room wide, side piazzas, gable end to the street) is an 18th-19th-century type; newer examples are used first where they exist. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "archetype": "i_house",
+  "storeys": 3,
+  "main_w_ft": 22,
+  "main_d_ft": 29,
+  "wing": null,
+  "roof": {
+   "type": "gable",
+   "pitch_deg": 36,
+   "material": "metal"
+  },
+  "dormers": [],
+  "porch": {
+   "type": "side",
+   "posts": "columns",
+   "rail": "spindle"
+  },
+  "walls": "clapboard",
+  "foundation": "poured_concrete",
+  "colors": {
+   "body": "#BFD0C0",
+   "trim": "#FFFFFF",
+   "accent": "#3A3A3A",
+   "roof": "#5A5A5A"
+  },
+  "windows": {
+   "type": "6over6",
+   "shutters": true
+  },
+  "chimneys": [],
+  "garage": "none",
+  "yard": {
+   "fence": "iron",
+   "extras": [
+    "garden"
+   ]
+  },
+  "condition": "kept",
+  "year_built": 1840,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "family": "Tucker",
+  "house_number": "46",
+  "street": "Tradd St"
+ }
+}

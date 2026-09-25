@@ -1,0 +1,68 @@
+{
+ "id": "PCR-092",
+ "settlement": "Port Carrow",
+ "kind": "singlehouse",
+ "coast": "east",
+ "lot": {
+  "w": 10.8,
+  "d": 11.3
+ },
+ "example": {
+  "title": "28 Mary Street",
+  "place": "Charleston, Charleston County, SC",
+  "year": 1840,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:28_Mary_Street.jpg",
+  "photos": [
+   "commons_28_Mary_Street.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A Charleston single house: 28 Mary Street, one room wide with its gable end to the street and tiered side piazzas; see the photo for its piazzas, trim and colour. One photo; year estimated. Older than 1970: the Charleston single house (one room wide, side piazzas, gable end to the street) is an 18th-19th-century type; newer examples are used first where they exist. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "archetype": "i_house",
+  "storeys": 2.5,
+  "main_w_ft": 21,
+  "main_d_ft": 30,
+  "wing": null,
+  "roof": {
+   "type": "gable",
+   "pitch_deg": 36,
+   "material": "metal"
+  },
+  "dormers": [],
+  "porch": {
+   "type": "side",
+   "posts": "columns",
+   "rail": "spindle"
+  },
+  "walls": "clapboard",
+  "foundation": "poured_concrete",
+  "colors": {
+   "body": "#C8D6E6",
+   "trim": "#FFFFFF",
+   "accent": "#2E2E2E",
+   "roof": "#5A5A5A"
+  },
+  "windows": {
+   "type": "6over6",
+   "shutters": true
+  },
+  "chimneys": [],
+  "garage": "none",
+  "yard": {
+   "fence": "iron",
+   "extras": [
+    "garden"
+   ]
+  },
+  "condition": "kept",
+  "year_built": 1840,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "family": "Vanderhorst",
+  "house_number": "48",
+  "street": "Meeting St"
+ }
+}

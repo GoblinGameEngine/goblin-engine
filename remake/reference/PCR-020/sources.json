@@ -1,0 +1,16 @@
+{
+ "structure": "PCR-020",
+ "files": [
+  {
+   "file": "commons_King_Street_Houses_in_Charleston_SC.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:King_Street_Houses_in_Charleston,_SC.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/King_Street_Houses_in_Charleston%2C_SC.jpg/1920px-King_Street_Houses_in_Charleston%2C_SC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:King Street Houses in Charleston, SC.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Thomas Kirchel",
+   "caption": "King and Lamboll Street Houses in Charleston, South Carolina."
+  }
+ ]
+}

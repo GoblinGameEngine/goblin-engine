@@ -1,0 +1,46 @@
+{
+ "id": "PCR-009",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 54.1,
+  "d": 21.7
+ },
+ "example": {
+  "title": "Broad Street, French Quarter, Charleston, SC (49451727813) (building 3 of the row)",
+  "place": "Charleston, Charleston County, SC",
+  "year": 1850,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Broad_Street,_French_Quarter,_Charleston,_SC_(49451727813).jpg",
+  "photos": [
+   "commons_Broad_Street_French_Quarter_Charleston_SC_49451727813_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: Broad Street, French Quarter, Charleston, SC (49451727813) (building 3 of the row); see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 2,
+  "facade": "stucco",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Harbor Caf\u00e9",
+    "type": "cafe",
+    "sign": "HARBOR CAF\u00c9",
+    "sign_style": "flat_board",
+    "awning": false,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1850,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Harbor Caf\u00e9"
+  ]
+ }
+}

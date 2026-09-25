@@ -1,0 +1,46 @@
+{
+ "id": "PCR-027",
+ "settlement": "Port Carrow",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 19.9,
+  "d": 36.1
+ },
+ "example": {
+  "title": "4 South Adger's Wharf",
+  "place": "Charleston, Charleston County, SC",
+  "year": 1850,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:4_South_Adger's_Wharf.JPG",
+  "photos": [
+   "commons_4_South_Adger_s_Wharf.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour-town commercial building: 4 South Adger's Wharf; see the photo for its storefronts, awnings and signs. One photo; year estimated. Older than 1970: the Charleston / Nantucket / Cape Cod main-street blocks (the town's model) are 18th-19th-century. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 2,
+  "facade": "stucco",
+  "cornice": "parapet_flat",
+  "upper_use": "apartments",
+  "storefronts": [
+   {
+    "business": "Rainbow Realty",
+    "type": "real_estate",
+    "sign": "RAINBOW REALTY",
+    "sign_style": "flat_board",
+    "awning": false,
+    "extra_signs": []
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1850,
+  "found_depth_m": 6.0
+ },
+ "names": {
+  "businesses": [
+   "Rainbow Realty"
+  ]
+ }
+}
