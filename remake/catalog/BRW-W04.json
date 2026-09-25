@@ -1,0 +1,34 @@
+{
+ "id": "BRW-W04",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Ocean Grove boardwalk",
+  "place": "Ocean Grove, NJ",
+  "year": 2013,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Main_Street_Ocean_Grove,_NJ_33.jpg",
+  "photos": [
+   "commons_Main_Street_Ocean_Grove_NJ_33.jpg",
+   "commons_Main_Street_Ocean_Grove_NJ_34.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A ramp to the sand off a red-stained timber boardwalk with white benches and a rail. 2 photos. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 2013
+ },
+ "names": {}
+}

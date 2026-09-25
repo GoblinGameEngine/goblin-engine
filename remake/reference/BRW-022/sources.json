@@ -1,0 +1,38 @@
+{
+ "structure": "BRW-022",
+ "files": [
+  {
+   "file": "commons_Wildwoods_Convention_Center_at_night.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wildwoods_Convention_Center_at_night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Wildwoods_Convention_Center_at_night.jpg/1920px-Wildwoods_Convention_Center_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wildwoods Convention Center at night.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Plantsmushrooms",
+   "caption": "Wildwoods Convention Center on the boardwalk at night"
+  },
+  {
+   "file": "commons_Wildwoods_Convention_Center.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wildwoods_Convention_Center.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Wildwoods_Convention_Center.jpg/1920px-Wildwoods_Convention_Center.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wildwoods Convention Center.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Plantsmushrooms",
+   "caption": "Wildwoods Convention Center on the boardwalk"
+  },
+  {
+   "file": "commons_Wildwood_Tramcar_at_Wildwoods_Convention_Center.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wildwood_Tramcar_at_Wildwoods_Convention_Center.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Wildwood_Tramcar_at_Wildwoods_Convention_Center.jpeg/1920px-Wildwood_Tramcar_at_Wildwoods_Convention_Center.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wildwood Tramcar at Wildwoods Convention Center.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dough4872",
+   "caption": "Tramcar on the boardwalk in Wildwood, New Jersey at the Wildwoods Convention Center"
+  }
+ ]
+}

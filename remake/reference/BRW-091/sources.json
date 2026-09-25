@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-091",
+ "files": [
+  {
+   "file": "commons_LifeguardMiamiBeach.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:LifeguardMiamiBeach.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/LifeguardMiamiBeach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:LifeguardMiamiBeach.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Kerschbaumer's",
+   "caption": "Miami Beach, Miami, Florida, USA"
+  },
+  {
+   "file": "commons_Mia_lifeg_2.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Mia_lifeg_2.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Mia_lifeg_2.jpeg/1920px-Mia_lifeg_2.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Mia lifeg 2.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Cristo Vlahos",
+   "caption": "Iconic South Beach Lifeguard Station, Miami Beach - Florida"
+  }
+ ]
+}

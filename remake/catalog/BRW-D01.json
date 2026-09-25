@@ -1,0 +1,35 @@
+{
+ "id": "BRW-D01",
+ "settlement": "Brightwater",
+ "kind": "amusement_deck",
+ "coast": "east",
+ "lot": {
+  "w": 90.0,
+  "d": 194.0
+ },
+ "example": {
+  "title": "Morey's Mariner's Landing Pier",
+  "place": "Wildwood, NJ",
+  "year": 1980,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Wildwood_night_view_from_Mariner's_Landing_ferris_wheel.JPG",
+  "photos": [
+   "commons_Wildwood_night_view_from_Mariner_s_Landing_ferris_wheel.JPG",
+   "commons_Wildwood_piers_1195.jpg",
+   "commons_Mariner_s_Landing_pier_at_night.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "The amusement pier: a broad timber deck on pile bents running out over the beach and surf, carrying the rides, games and a water flume, fenced, lit at night. 3 photos. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "ornamental_iron",
+  "lighting": "string",
+  "benches": true,
+  "width_m": 90,
+  "pile_depth_m": 12.0,
+  "year_built": 1980
+ },
+ "names": {}
+}

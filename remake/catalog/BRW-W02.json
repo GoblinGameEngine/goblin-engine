@@ -1,0 +1,34 @@
+{
+ "id": "BRW-W02",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Belmar boardwalk (rebuilt 2013)",
+  "place": "Belmar, NJ",
+  "year": 2013,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Belmar_boardwalk_looking_north_between_12th_Avenue_and_11th_Avenue.jpeg",
+  "photos": [
+   "commons_Belmar_boardwalk_looking_north_between_12th_Avenue_and_11th_Avenue.jpeg",
+   "commons_Belmar_boardwalk_looking_north_at_13th_Avenue.jpeg"
+  ],
+  "drawings": []
+ },
+ "brief": "A beach-access ramp off the boardwalk, as on Belmar's post-Sandy boardwalk: composite decking on concrete-footed piles, galvanised rails. 2 photos. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "composite",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 2013
+ },
+ "names": {}
+}

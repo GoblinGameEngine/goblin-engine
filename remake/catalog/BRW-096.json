@@ -1,0 +1,32 @@
+{
+ "id": "BRW-096",
+ "settlement": "Brightwater",
+ "kind": "ride",
+ "coast": "east",
+ "lot": {
+  "w": 18.0,
+  "d": 24.0
+ },
+ "example": {
+  "title": "GaleForce roller coaster, Playland's Castaway Cove",
+  "place": "Ocean City, NJ",
+  "year": 2015,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Ocean_City_Boardwalk_35.jpg",
+  "photos": [
+   "commons_Ocean_City_Boardwalk_35.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A 2015 launched steel coaster: a white track climbing a vertical 125 ft tower and diving in a beyond-vertical drop, tight twisted layout over the pier deck. One photo. Over the water: its foundations are the pier deck's pile bents, 10 m below the bed.",
+ "traits": {
+  "type": "coaster",
+  "year_built": 2015,
+  "pile_depth_m": 10.0,
+  "lights": "led_chase"
+ },
+ "names": {
+  "name": "GaleForce roller coaster",
+  "sign": "GALEFORCE ROLLER COASTER"
+ }
+}

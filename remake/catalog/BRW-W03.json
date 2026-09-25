@@ -1,0 +1,33 @@
+{
+ "id": "BRW-W03",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Avon-by-the-Sea boardwalk",
+  "place": "Avon-by-the-Sea, NJ",
+  "year": 2013,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Avon-by-the-Sea_boardwalk_looking_north_at_Lincoln_Avenue.jpeg",
+  "photos": [
+   "commons_Avon-by-the-Sea_boardwalk_looking_north_at_Lincoln_Avenue.jpeg"
+  ],
+  "drawings": []
+ },
+ "brief": "A beach entrance through the Avon boardwalk: timber planks, a white rail, a gate with the beach-badge checker's post. One photo. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 2013
+ },
+ "names": {}
+}

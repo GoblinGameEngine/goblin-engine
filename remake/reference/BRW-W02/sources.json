@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-W02",
+ "files": [
+  {
+   "file": "commons_Belmar_boardwalk_looking_north_between_12th_Avenue_and_11th_Avenue.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Belmar_boardwalk_looking_north_between_12th_Avenue_and_11th_Avenue.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Belmar_boardwalk_looking_north_between_12th_Avenue_and_11th_Avenue.jpeg/1920px-Belmar_boardwalk_looking_north_between_12th_Avenue_and_11th_Avenue.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Belmar boardwalk looking north between 12th Avenue and 11th Avenue.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dough4872",
+   "caption": "A view of the boardwalk in Belmar, New Jersey looking north between 12th Avenue and 11th Avenue"
+  },
+  {
+   "file": "commons_Belmar_boardwalk_looking_north_at_13th_Avenue.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Belmar_boardwalk_looking_north_at_13th_Avenue.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Belmar_boardwalk_looking_north_at_13th_Avenue.jpeg/1920px-Belmar_boardwalk_looking_north_at_13th_Avenue.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Belmar boardwalk looking north at 13th Avenue.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dough4872",
+   "caption": "A view of the boardwalk in Belmar, New Jersey looking north at 13th Avenue"
+  }
+ ]
+}

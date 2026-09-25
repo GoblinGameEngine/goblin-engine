@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-089",
+ "files": [
+  {
+   "file": "commons_Cargo_passant_sur_Pompano_Beach_Florida_USA_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cargo_passant_sur_Pompano_Beach,Florida,USA_-_panoramio.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Cargo_passant_sur_Pompano_Beach%2CFlorida%2CUSA_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Cargo passant sur Pompano Beach,Florida,USA - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Richard Mc Neil",
+   "caption": "Cargo passant sur Pompano Beach,Florida,USA"
+  },
+  {
+   "file": "commons_Pompano_Beach_Lifeguard_Station_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pompano_Beach_Lifeguard_Station_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Pompano_Beach_Lifeguard_Station_-_panoramio.jpg/1920px-Pompano_Beach_Lifeguard_Station_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pompano Beach Lifeguard Station - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "DaSpader",
+   "caption": "Pompano Beach Lifeguard Station"
+  }
+ ]
+}

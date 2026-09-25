@@ -1,0 +1,38 @@
+{
+ "structure": "BRW-W01",
+ "files": [
+  {
+   "file": "commons_Ocean_City_NJ_boardwalk_looking_north_between_10th_Street_and_9th_Street.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_NJ_boardwalk_looking_north_between_10th_Street_and_9th_Street.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Ocean_City_NJ_boardwalk_looking_north_between_10th_Street_and_9th_Street.jpeg/1920px-Ocean_City_NJ_boardwalk_looking_north_between_10th_Street_and_9th_Street.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City NJ boardwalk looking north between 10th Street and 9th Street.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dough4872",
+   "caption": "A view of the boardwalk in Ocean City, New Jersey looking north between 10th Street and 9th Street"
+  },
+  {
+   "file": "commons_Ocean_City_NJ_boardwalk_looking_north_at_10th_Street.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_NJ_boardwalk_looking_north_at_10th_Street.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Ocean_City_NJ_boardwalk_looking_north_at_10th_Street.jpeg/1920px-Ocean_City_NJ_boardwalk_looking_north_at_10th_Street.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City NJ boardwalk looking north at 10th Street.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dough4872",
+   "caption": "A view of the boardwalk in Ocean City, New Jersey looking north at 10th Street"
+  },
+  {
+   "file": "commons_Ocean_City_NJ_boardwalk_looking_north_at_9th_Street.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_NJ_boardwalk_looking_north_at_9th_Street.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Ocean_City_NJ_boardwalk_looking_north_at_9th_Street.jpeg/1920px-Ocean_City_NJ_boardwalk_looking_north_at_9th_Street.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City NJ boardwalk looking north at 9th Street.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dough4872",
+   "caption": "A view of the boardwalk in Ocean City, New Jersey looking north at 9th Street"
+  }
+ ]
+}

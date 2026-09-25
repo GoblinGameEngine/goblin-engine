@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-018",
+ "files": [
+  {
+   "file": "commons_Eat_In_Your_Car_at_the_Circus_Drive-In.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Eat_In_Your_Car_at_the_Circus_Drive-In.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Eat_In_Your_Car_at_the_Circus_Drive-In.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Eat In Your Car at the Circus Drive-In.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Jackie",
+   "caption": "entrance sign to the Circus Drive-In"
+  },
+  {
+   "file": "commons_The_Circus_Drive-In_Wall_New_Jersey.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:The_Circus_Drive-In,_Wall,_New_Jersey.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/The_Circus_Drive-In%2C_Wall%2C_New_Jersey.jpg/1920px-The_Circus_Drive-In%2C_Wall%2C_New_Jersey.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:The Circus Drive-In, Wall, New Jersey.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Peter",
+   "caption": "Jersey Shore favorite since 1954"
+  }
+ ]
+}

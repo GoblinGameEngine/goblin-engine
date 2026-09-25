@@ -1,0 +1,35 @@
+{
+ "id": "BRW-W01",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 12,
+  "length_m": 880.0
+ },
+ "example": {
+  "title": "Ocean City boardwalk, 8th-12th Streets",
+  "place": "Ocean City, NJ",
+  "year": 2015,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Ocean_City_NJ_boardwalk_looking_north_between_10th_Street_and_9th_Street.jpeg",
+  "photos": [
+   "commons_Ocean_City_NJ_boardwalk_looking_north_between_10th_Street_and_9th_Street.jpeg",
+   "commons_Ocean_City_NJ_boardwalk_looking_north_at_10th_Street.jpeg",
+   "commons_Ocean_City_NJ_boardwalk_looking_north_at_9th_Street.jpeg"
+  ],
+  "drawings": []
+ },
+ "brief": "The main boardwalk: a 12 m wide timber deck of planks laid across the walk on timber stringers and pile bents, a white pipe rail on the beach side, lamp posts, benches facing the sea, shops on the land side. Sections rebuilt 2010s. 3 photos. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 12,
+  "pile_depth_m": 10.0,
+  "year_built": 2015
+ },
+ "names": {}
+}

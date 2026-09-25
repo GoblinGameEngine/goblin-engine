@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-W04",
+ "files": [
+  {
+   "file": "commons_Main_Street_Ocean_Grove_NJ_33.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Main_Street_Ocean_Grove,_NJ_33.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Main_Street_Ocean_Grove%2C_NJ_33.jpg/1920px-Main_Street_Ocean_Grove%2C_NJ_33.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Main Street Ocean Grove, NJ 33.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Curlyrnd",
+   "caption": "Main Street Ocean Grove, NJ"
+  },
+  {
+   "file": "commons_Main_Street_Ocean_Grove_NJ_34.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Main_Street_Ocean_Grove,_NJ_34.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Main_Street_Ocean_Grove%2C_NJ_34.jpg/1920px-Main_Street_Ocean_Grove%2C_NJ_34.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Main Street Ocean Grove, NJ 34.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Curlyrnd",
+   "caption": "Main Street Ocean Grove, NJ"
+  }
+ ]
+}

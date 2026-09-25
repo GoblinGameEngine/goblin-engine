@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-029",
+ "files": [
+  {
+   "file": "commons_Myrtle_Beach_26700330235_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Myrtle_Beach_(26700330235).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Myrtle_Beach_%2826700330235%29.jpg/1920px-Myrtle_Beach_%2826700330235%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Myrtle Beach (26700330235).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Darrin",
+   "caption": "Taken by Darrin"
+  },
+  {
+   "file": "commons_Marriott_Myrtle_Beach_26607313162_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Marriott_Myrtle_Beach_(26607313162).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Marriott_Myrtle_Beach_%2826607313162%29.jpg/1920px-Marriott_Myrtle_Beach_%2826607313162%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Marriott Myrtle Beach (26607313162).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Darrin",
+   "caption": "Taken by Darrin"
+  }
+ ]
+}

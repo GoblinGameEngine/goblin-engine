@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-036",
+ "files": [
+  {
+   "file": "commons_Rehoboth_Avenue_shops_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Rehoboth_Avenue_shops_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Rehoboth_Avenue_shops_2.jpg/1920px-Rehoboth_Avenue_shops_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Rehoboth Avenue shops 2.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "APK",
+   "caption": "Shops along Rehoboth Avenue in Rehoboth Beach, Delaware."
+  },
+  {
+   "file": "commons_Rehoboth_Avenue_shops_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Rehoboth_Avenue_shops_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Rehoboth_Avenue_shops_1.jpg/1920px-Rehoboth_Avenue_shops_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Rehoboth Avenue shops 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "APK",
+   "caption": "Shops along Rehoboth Avenue in Rehoboth Beach, Delaware."
+  }
+ ]
+}

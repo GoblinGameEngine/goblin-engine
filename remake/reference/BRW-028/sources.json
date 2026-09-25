@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-028",
+ "files": [
+  {
+   "file": "commons_Jetty_Motel_Cape_May_B.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Jetty_Motel_Cape_May_B.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Jetty_Motel_Cape_May_B.jpg/1920px-Jetty_Motel_Cape_May_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Jetty Motel Cape May B.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "WhisperToMe",
+   "caption": "Jetty Motel Cape May"
+  },
+  {
+   "file": "commons_Jetty_Motel_Cape_May_A.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Jetty_Motel_Cape_May_A.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Jetty_Motel_Cape_May_A.jpg/1920px-Jetty_Motel_Cape_May_A.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Jetty Motel Cape May A.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "WhisperToMe",
+   "caption": "Jetty Motel Cape May"
+  }
+ ]
+}

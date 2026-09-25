@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-088",
+ "files": [
+  {
+   "file": "commons_Fort_Lauderdale_beach_lifeguard_tower_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Fort_Lauderdale_beach_lifeguard_tower_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Fort_Lauderdale_beach_lifeguard_tower_-_panoramio.jpg/1920px-Fort_Lauderdale_beach_lifeguard_tower_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Fort Lauderdale beach lifeguard tower - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "quyentr",
+   "caption": "Fort Lauderdale beach lifeguard tower"
+  },
+  {
+   "file": "commons_Ft_lauderdale_beach_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ft_lauderdale_beach_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Ft_lauderdale_beach_1.jpg/1920px-Ft_lauderdale_beach_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ft lauderdale beach 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "MdeVicente",
+   "caption": "Lifeguard stand at Fort Lauderdale beach"
+  }
+ ]
+}

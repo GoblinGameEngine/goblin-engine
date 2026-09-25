@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-085",
+ "files": [
+  {
+   "file": "commons_North_Wildwood_beach_at_18th_Avenue.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:North_Wildwood_beach_at_18th_Avenue.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/North_Wildwood_beach_at_18th_Avenue.jpg/1920px-North_Wildwood_beach_at_18th_Avenue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:North Wildwood beach at 18th Avenue.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dough4872",
+   "caption": "A view of the beach at North Wildwood, New Jersey at 18th Avenue"
+  },
+  {
+   "file": "commons_North_Wildwood_beach_looking_north_at_18th_Avenue.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:North_Wildwood_beach_looking_north_at_18th_Avenue.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/North_Wildwood_beach_looking_north_at_18th_Avenue.jpeg/1920px-North_Wildwood_beach_looking_north_at_18th_Avenue.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:North Wildwood beach looking north at 18th Avenue.jpeg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Dough4872",
+   "caption": "A view of the beach at North Wildwood, New Jersey looking north at 18th Avenue"
+  }
+ ]
+}

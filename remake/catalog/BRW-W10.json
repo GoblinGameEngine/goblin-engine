@@ -1,0 +1,33 @@
+{
+ "id": "BRW-W10",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Seaside Heights boardwalk",
+  "place": "Seaside Heights, NJ",
+  "year": 2013,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Seaside_Heights_boardwalk_north_of_Casino_Pier.JPG",
+  "photos": [
+   "commons_Seaside_Heights_boardwalk_north_of_Casino_Pier.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A ramp down from Seaside's rebuilt boardwalk between the stands, lamp standards and a pipe rail. One photo. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 2013
+ },
+ "names": {}
+}

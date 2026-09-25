@@ -1,0 +1,34 @@
+{
+ "id": "BRW-W09",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Casino Pier boardwalk (under repair, 2016)",
+  "place": "Seaside Heights, NJ",
+  "year": 2016,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Casino_Pier_Boardwalk_Under_Repairs_Following_the_Fire,_June_2014.jpg",
+  "photos": [
+   "commons_Casino_Pier_Boardwalk_Under_Repairs_Following_the_Fire_June_2014.jpg",
+   "commons_Casino_Pier_Boardwalk_Aug_2016.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A new section of Seaside's boardwalk in fresh yellow-pine planks laid in a herringbone, on new piles. 2 photos. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_herringbone",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 2016
+ },
+ "names": {}
+}

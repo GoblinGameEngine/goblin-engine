@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-100",
+ "files": [
+  {
+   "file": "commons_Just_one_more_text_8995807916_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Just_one_more_text_(8995807916).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Just_one_more_text_%288995807916%29.jpg/1920px-Just_one_more_text_%288995807916%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Just one more text (8995807916).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Kevin Jarrett from Northfield, NJ, USA",
+   "caption": "Merry Go Round\n\nGillian's Wonderland Pier"
+  },
+  {
+   "file": "commons_Wonderland_etc._7619739158_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wonderland_etc._(7619739158).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Wonderland_etc._%287619739158%29.jpg/1920px-Wonderland_etc._%287619739158%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wonderland etc. (7619739158).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Kevin Jarrett from Northfield, NJ, USA",
+   "caption": "Wonderland etc."
+  }
+ ]
+}

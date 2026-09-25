@@ -1,0 +1,38 @@
+{
+ "structure": "BRW-D01",
+ "files": [
+  {
+   "file": "commons_Wildwood_night_view_from_Mariner_s_Landing_ferris_wheel.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wildwood_night_view_from_Mariner%27s_Landing_ferris_wheel.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Wildwood_night_view_from_Mariner%27s_Landing_ferris_wheel.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Wildwood night view from Mariner's Landing ferris wheel.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Dough4872",
+   "caption": "A nighttime view of Wildwood, New Jersey from the Mariner's Landing ferris wheel"
+  },
+  {
+   "file": "commons_Wildwood_piers_1195.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wildwood_piers_1195.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Wildwood_piers_1195.jpg/1920px-Wildwood_piers_1195.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wildwood piers 1195.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Gmishkin (talk\u00a0\u00b7 contribs)",
+   "caption": "View of the piers, the boardwalk, and Wildwood at Morey's Piers"
+  },
+  {
+   "file": "commons_Mariner_s_Landing_pier_at_night.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Mariner%27s_Landing_pier_at_night.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Mariner%27s_Landing_pier_at_night.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Mariner's Landing pier at night.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Dough4872",
+   "caption": "A view of the Mariner's Landing amusement pier in Wildwood, New Jersey at night"
+  }
+ ]
+}

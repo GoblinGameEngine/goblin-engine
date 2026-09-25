@@ -1,0 +1,49 @@
+{
+ "structure": "BRW-099",
+ "files": [
+  {
+   "file": "commons_HauntedHouseTrimpers.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:HauntedHouseTrimpers.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/HauntedHouseTrimpers.jpg/1920px-HauntedHouseTrimpers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:HauntedHouseTrimpers.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Mttbme",
+   "caption": "Trimper's Haunted House, in Ocean City Maryland."
+  },
+  {
+   "file": "commons_Ocean_City_Haunted_House.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_Haunted_House.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Ocean_City_Haunted_House.jpg/1920px-Ocean_City_Haunted_House.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City Haunted House.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "JefferyGoldman",
+   "caption": "Haunted house in Ocean City, MD"
+  },
+  {
+   "file": "commons_Ocean_City_Haunted.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_Haunted.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Ocean_City_Haunted.jpg/1920px-Ocean_City_Haunted.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City Haunted.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "JefferyGoldman",
+   "caption": "Haunted house in Ocean City, MD"
+  },
+  {
+   "file": "commons_Ocean_City_MD_Haunted_House_August_2009.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_MD_Haunted_House_August_2009.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Ocean_City_MD_Haunted_House_August_2009.jpg/1920px-Ocean_City_MD_Haunted_House_August_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ocean City MD Haunted House August 2009.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Notyourbroom",
+   "caption": "The haunted house on the boardwalk of Ocean City, Maryland"
+  }
+ ]
+}

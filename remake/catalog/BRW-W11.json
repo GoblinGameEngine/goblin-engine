@@ -1,0 +1,33 @@
+{
+ "id": "BRW-W11",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Sunset Pavilion on the Cape May promenade",
+  "place": "Cape May, NJ",
+  "year": 2000,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Sunset_Pavilion_cape_may.jpg",
+  "photos": [
+   "commons_Sunset_Pavilion_cape_may.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A beach access beside a small open pavilion on the promenade: timber deck, white rails, a shingled hip roof over benches. One photo. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": true,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 2000
+ },
+ "names": {}
+}

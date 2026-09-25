@@ -1,0 +1,34 @@
+{
+ "id": "BRW-W05",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Rehoboth Beach boardwalk",
+  "place": "Rehoboth Beach, DE",
+  "year": 2000,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Rehoboth_Beach_boardwalk_at_Wilmington_Avenue_looking_north_at_night.jpeg",
+  "photos": [
+   "commons_Rehoboth_Beach_boardwalk_at_Wilmington_Avenue_looking_north_at_night.jpeg",
+   "commons_Rehoboth_Beach_boardwalk_looking_north_toward_Rehoboth_Avenue.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A beach access off the Rehoboth boardwalk: timber planks, lamp posts, a sand fence either side through the dune. 2 photos. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 2000
+ },
+ "names": {}
+}

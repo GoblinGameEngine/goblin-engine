@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-011",
+ "files": [
+  {
+   "file": "commons_Cape_May_lifeguard_bldg.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cape_May_lifeguard_bldg.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Cape_May_lifeguard_bldg.jpg/1920px-Cape_May_lifeguard_bldg.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cape May lifeguard bldg.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "",
+   "caption": "Cape May lifeguard station"
+  },
+  {
+   "file": "commons_Cape_May_lifeguard_station.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cape_May_lifeguard_station.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Cape_May_lifeguard_station.jpg/1920px-Cape_May_lifeguard_station.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cape May lifeguard station.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "",
+   "caption": "Cape May lifeguard station"
+  }
+ ]
+}

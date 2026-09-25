@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-025",
+ "files": [
+  {
+   "file": "commons_Hilton_31st.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hilton_@_31st.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Hilton_%40_31st.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Hilton @ 31st.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "AuthenticEccentric",
+   "caption": "The new Hilton. That is plastic wrap on the palms."
+  },
+  {
+   "file": "commons_The_Hilton_at_Virginia_Beach.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:The_Hilton_at_Virginia_Beach.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/The_Hilton_at_Virginia_Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:The Hilton at Virginia Beach.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Jason Pratt",
+   "caption": "Virginia Beach"
+  }
+ ]
+}

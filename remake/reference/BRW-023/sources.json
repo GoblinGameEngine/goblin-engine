@@ -1,0 +1,38 @@
+{
+ "structure": "BRW-023",
+ "files": [
+  {
+   "file": "commons_Showboat_and_House_of_Blues.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Showboat_and_House_of_Blues.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Showboat_and_House_of_Blues.jpg/1920px-Showboat_and_House_of_Blues.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Showboat and House of Blues.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Farragutful",
+   "caption": "Showboat Hotel and the House of Blues in Atlantic City, New Jersey."
+  },
+  {
+   "file": "commons_Showboat_Atlantic_City.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Showboat_Atlantic_City.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Showboat_Atlantic_City.jpg/1920px-Showboat_Atlantic_City.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Showboat Atlantic City.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Stinkie Pinkie",
+   "caption": "The Showboat Casino in Atlantic City"
+  },
+  {
+   "file": "commons_Showboat_Hotel_seen_from_Steel_Pier_Atlantic_City_2007.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Showboat_Hotel_seen_from_Steel_Pier,_Atlantic_City,_2007.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Showboat_Hotel_seen_from_Steel_Pier%2C_Atlantic_City%2C_2007.jpg/1920px-Showboat_Hotel_seen_from_Steel_Pier%2C_Atlantic_City%2C_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Showboat Hotel seen from Steel Pier, Atlantic City, 2007.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "DimiTalen",
+   "caption": "Showboat Hotel seen from Steel Pier, Atlantic City, 2007"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "id": "BRW-W12",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Ocean City boardwalk at 4th Street",
+  "place": "Ocean City, NJ",
+  "year": 2015,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Ocean_City_NJ_boardwalk_looking_north_at_4th_Street.jpeg",
+  "photos": [
+   "commons_Ocean_City_NJ_boardwalk_looking_north_at_4th_Street.jpeg"
+  ],
+  "drawings": []
+ },
+ "brief": "A ramp to the beach at the quiet north end of the boardwalk, by the condominium blocks, timber with a pipe rail. One photo. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 2015
+ },
+ "names": {}
+}

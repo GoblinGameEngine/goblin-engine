@@ -1,0 +1,33 @@
+{
+ "id": "BRW-W08",
+ "settlement": "Brightwater",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 4,
+  "length_m": 10.0
+ },
+ "example": {
+  "title": "Virginia Beach boardwalk at 29th Street",
+  "place": "Virginia Beach, VA",
+  "year": 1990,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Virginia_Beach_boardwalk_at_29th_Street_looking_north.jpeg",
+  "photos": [
+   "commons_Virginia_Beach_boardwalk_at_29th_Street_looking_north.jpeg"
+  ],
+  "drawings": []
+ },
+ "brief": "A concrete ramp from Virginia Beach's concrete boardwalk to the sand, a timber rail along the dune. One photo. Year estimated where not stated; piles 10 m or more below the modelled bed.",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "timber",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 1990
+ },
+ "names": {}
+}

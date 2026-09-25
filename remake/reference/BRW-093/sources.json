@@ -1,0 +1,27 @@
+{
+ "structure": "BRW-093",
+ "files": [
+  {
+   "file": "commons_ClassicMiami.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:ClassicMiami.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/ClassicMiami.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:ClassicMiami.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Mauri from Verona, Italy",
+   "caption": "ClassicMiami"
+  },
+  {
+   "file": "commons_Miami_Beach_11.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Miami_Beach_11.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Miami_Beach_11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Miami Beach 11.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Urban~commonswiki",
+   "caption": "Miami Beach, Florida\n\nI took this picture"
+  }
+ ]
+}
