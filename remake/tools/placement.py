@@ -152,6 +152,21 @@ def main():
     with open(os.path.join(ROOT, "godot_project", "remake", "walks.json"), "w") as f:
         json.dump({"walks": walks}, f, indent=0)
     print(f"walks: {len(walks)}")
+    # the great bridges (XBR / XRR records): GreatBridges builds them in the game between the crossing's
+    # ends (the map inventory's MAJOR / RAIL crossing at the same place), approaches ramped over the basin
+    bridges = []
+    for br in cinv.get("bridges", []):
+        rp = os.path.join(ROOT, "remake", "catalog", br["id"] + ".json")
+        if not os.path.exists(rp):
+            continue
+        rec = json.load(open(rp))
+        cr = min((c for c in inv["crossings"] if c["type"] in ("major", "rail")),
+                 key=lambda c: math.hypot(c["s"] - br["s"], c["x"] - br["x"]))
+        bridges.append({"id": br["id"], "road_class": br.get("road_class"), "over": br.get("over"), "ends": cr["ends"],
+                        "name": (rec.get("names") or {}).get("name"), "traits": rec.get("traits", {})})
+    with open(os.path.join(ROOT, "godot_project", "remake", "bridges.json"), "w") as f:
+        json.dump({"bridges": bridges}, f, indent=1)
+    print(f"bridges: {len(bridges)}")
     print(f"placement: {len(out)} placed -> {OUT}")
     if missing:
         print(f"not built ({len(missing)}): {' '.join(missing)}", file=sys.stderr)

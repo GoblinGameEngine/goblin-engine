@@ -71,6 +71,11 @@ func _ready() -> void:
 	add_child(walks)
 	walks.setup()
 	_mark("walks setup")
+	var bridges := GreatBridges.new()
+	bridges.name = "GreatBridges"
+	add_child(bridges)
+	bridges.setup()
+	_mark("great bridges")
 	var cliffs := CliffWalls.new()
 	cliffs.name = "CliffWalls"
 	add_child(cliffs)

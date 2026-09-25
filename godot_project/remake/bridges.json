@@ -1,0 +1,443 @@
+{
+ "bridges": [
+  {
+   "id": "XBR-01",
+   "road_class": "county",
+   "over": "Miami River",
+   "ends": [
+    [
+     1497.0,
+     822.8
+    ],
+    [
+     1129.5,
+     843.5
+    ]
+   ],
+   "name": "Lakeshore Road Bridge (Miami)",
+   "traits": {
+    "type": "girder_trestle",
+    "main_span_m": 100,
+    "towers": null,
+    "hump": true,
+    "approaches": {
+     "type": "concrete_box_girder_trestle",
+     "span_m": 38,
+     "piers": "paired_column_bent"
+    },
+    "clearance_m": 20,
+    "lanes": 2,
+    "shoulders": true,
+    "walkway": true,
+    "color": "#D9CFB8",
+    "year_built": 1982,
+    "foundations": {
+     "type": "precast_piles",
+     "depth_below_bed_m": 25
+    },
+    "lighting": "single_arm_poles"
+   }
+  },
+  {
+   "id": "XBR-02",
+   "road_class": "county",
+   "over": "Kettle River",
+   "ends": [
+    [
+     17890.7,
+     228.9
+    ],
+    [
+     17885.6,
+     -271.9
+    ]
+   ],
+   "name": "Lakeshore Road Bridge",
+   "traits": {
+    "type": "deck_truss",
+    "main_span_m": 90,
+    "towers": null,
+    "approaches": {
+     "type": "girder",
+     "span_m": 40,
+     "piers": "pile_cluster_cap"
+    },
+    "clearance_m": 12,
+    "lanes": 2,
+    "shoulders": true,
+    "walkway": true,
+    "color": "#7E8C80",
+    "year_built": 1970,
+    "foundations": {
+     "type": "pile_cluster",
+     "depth_below_bed_m": 25
+    }
+   }
+  },
+  {
+   "id": "XBR-03",
+   "road_class": "county",
+   "over": "Kettle River",
+   "ends": [
+    [
+     5570.1,
+     -253.1
+    ],
+    [
+     5579.2,
+     246.3
+    ]
+   ],
+   "name": "Outlet Road Bridge",
+   "traits": {
+    "type": "tied_arch",
+    "main_span_m": 185,
+    "arch": {
+     "material": "steel",
+     "rise_m": 35,
+     "hangers": "vertical"
+    },
+    "towers": null,
+    "approaches": {
+     "type": "steel_box_girder",
+     "span_m": 55,
+     "piers": "hammerhead"
+    },
+    "clearance_m": 30,
+    "lanes": 2,
+    "shoulders": true,
+    "walkway": false,
+    "color": {
+     "arch": "#E0B43A",
+     "girders": "#2F5D9A"
+    },
+    "year_built": 1977,
+    "foundations": {
+     "type": "pile_group",
+     "depth_below_bed_m": 25
+    }
+   }
+  },
+  {
+   "id": "XBR-04",
+   "road_class": "county",
+   "over": "Kettle River",
+   "ends": [
+    [
+     7500.0,
+     -293.1
+    ],
+    [
+     7500.0,
+     204.1
+    ]
+   ],
+   "name": "Ford Road Bridge",
+   "traits": {
+    "type": "tied_arch",
+    "main_span_m": 137,
+    "arch": {
+     "material": "steel",
+     "rise_m": 22,
+     "hangers": "vertical"
+    },
+    "towers": null,
+    "approaches": {
+     "type": "girder",
+     "span_m": 50,
+     "piers": "paired_column_bent"
+    },
+    "clearance_m": 28,
+    "lanes": 2,
+    "shoulders": true,
+    "walkway": false,
+    "color": "#4E6E8E",
+    "year_built": 1981,
+    "foundations": {
+     "type": "steel_h_piles",
+     "depth_below_bed_m": 25
+    }
+   }
+  },
+  {
+   "id": "XBR-05",
+   "road_class": "county",
+   "over": "Kettle River",
+   "ends": [
+    [
+     9383.3,
+     -45.5
+    ],
+    [
+     9495.0,
+     438.0
+    ]
+   ],
+   "name": "Brannock Pike Bridge",
+   "traits": {
+    "type": "tied_arch",
+    "main_span_m": 280,
+    "side_spans_m": 110,
+    "arch": {
+     "material": "steel",
+     "rise_m": 50,
+     "hangers": "vertical"
+    },
+    "towers": null,
+    "approaches": {
+     "type": "girder",
+     "span_m": 45,
+     "piers": "concrete_column_bent"
+    },
+    "clearance_m": 30,
+    "lanes": 2,
+    "shoulders": true,
+    "walkway": false,
+    "color": "#D6DAD8",
+    "year_built": 1997,
+    "foundations": {
+     "type": "drilled_shaft",
+     "depth_below_bed_m": 25
+    }
+   }
+  },
+  {
+   "id": "XBR-06",
+   "road_class": "county",
+   "over": "Kettle River",
+   "ends": [
+    [
+     13290.2,
+     -229.6
+    ],
+    [
+     13422.0,
+     244.1
+    ]
+   ],
+   "name": "College Road Bridge",
+   "traits": {
+    "type": "segmental_box",
+    "main_span_m": 120,
+    "towers": null,
+    "approaches": {
+     "type": "segmental_box",
+     "span_m": 60,
+     "piers": "tapered_single_column"
+    },
+    "clearance_m": 30,
+    "lanes": 2,
+    "shoulders": true,
+    "walkway": true,
+    "color": "#B8B4AC",
+    "year_built": 1988,
+    "foundations": {
+     "type": "pile_group",
+     "depth_below_bed_m": 25
+    }
+   }
+  },
+  {
+   "id": "XBR-07",
+   "road_class": "county",
+   "over": "Maumee River",
+   "ends": [
+    [
+     6160.9,
+     -2990.6
+    ],
+    [
+     6557.3,
+     -2794.3
+    ]
+   ],
+   "name": "Maumee Narrows Bridge",
+   "traits": {
+    "type": "suspension",
+    "main_span_m": 420,
+    "towers": {
+     "material": "steel",
+     "form": "portal",
+     "height_m": 110
+    },
+    "stiffening": "deck_truss",
+    "approaches": {
+     "type": "deck_truss_and_girder",
+     "span_m": 60
+    },
+    "clearance_m": 40,
+    "lanes": 2,
+    "shoulders": true,
+    "walkway": false,
+    "color": "#9AA0A4",
+    "year_built": 1973,
+    "foundations": {
+     "type": "caisson",
+     "depth_below_bed_m": 30
+    }
+   }
+  },
+  {
+   "id": "XBR-08",
+   "road_class": "hwy",
+   "over": "Maumee River",
+   "ends": [
+    [
+     6373.6,
+     -1274.9
+    ],
+    [
+     6722.0,
+     -1272.7
+    ]
+   ],
+   "name": "Maumee Skyway",
+   "traits": {
+    "type": "cable_stayed",
+    "main_span_m": 170,
+    "towers": {
+     "material": "concrete",
+     "form": "single_pylon",
+     "height_m": 110,
+     "top": "glass_lit"
+    },
+    "stays": "single_plane_median",
+    "approaches": {
+     "type": "segmental_box",
+     "span_m": 55
+    },
+    "clearance_m": 32,
+    "lanes": 4,
+    "shoulders": true,
+    "walkway": false,
+    "color": "#C9C6BE",
+    "year_built": 2007,
+    "foundations": {
+     "type": "drilled_shaft",
+     "depth_below_bed_m": 30
+    }
+   }
+  },
+  {
+   "id": "XBR-09",
+   "road_class": "hwy",
+   "over": "Miami River",
+   "ends": [
+    [
+     1027.6,
+     1245.3
+    ],
+    [
+     1415.0,
+     1205.5
+    ]
+   ],
+   "name": "Miami River Suspension Bridge",
+   "traits": {
+    "type": "suspension",
+    "main_span_m": 300,
+    "towers": {
+     "material": "concrete",
+     "form": "portal",
+     "height_m": 95
+    },
+    "stiffening": "orthotropic_box",
+    "approaches": {
+     "type": "steel_box_girder",
+     "span_m": 55
+    },
+    "clearance_m": 35,
+    "lanes": 4,
+    "shoulders": true,
+    "walkway": true,
+    "color": "#D9D6CF",
+    "year_built": 2003,
+    "foundations": {
+     "type": "drilled_shaft",
+     "depth_below_bed_m": 30
+    }
+   }
+  },
+  {
+   "id": "XBR-10",
+   "road_class": "hwy",
+   "over": "Miami River",
+   "ends": [
+    [
+     746.0,
+     2706.4
+    ],
+    [
+     1045.4,
+     2594.4
+    ]
+   ],
+   "name": "Miami Gateway Bridge",
+   "traits": {
+    "type": "cable_stayed",
+    "main_span_m": 260,
+    "towers": {
+     "material": "concrete",
+     "form": "single_pylon",
+     "section": "octagon_to_diamond",
+     "height_m": 110
+    },
+    "stays": "fan_two_planes",
+    "approaches": {
+     "type": "precast_girder",
+     "span_m": 50
+    },
+    "clearance_m": 40,
+    "lanes": 4,
+    "shoulders": true,
+    "walkway": true,
+    "color": "#F2F2EE",
+    "year_built": 2020,
+    "foundations": {
+     "type": "drilled_shaft",
+     "depth_below_bed_m": 30
+    }
+   }
+  },
+  {
+   "id": "XRR-01",
+   "road_class": "rail",
+   "over": "Miami River",
+   "ends": [
+    [
+     817.5,
+     1520.0
+    ],
+    [
+     1157.5,
+     1518.8
+    ]
+   ],
+   "name": "Miami River Rail Viaduct",
+   "traits": {
+    "type": "rail_viaduct_arch",
+    "main_span_m": 110,
+    "arch": {
+     "material": "concrete",
+     "count": 2,
+     "rise_m": 20
+    },
+    "towers": null,
+    "approaches": {
+     "type": "precast_girder",
+     "span_m": 33,
+     "piers": "column_bent"
+    },
+    "clearance_m": 10,
+    "tracks": 2,
+    "ballasted": true,
+    "color": "#C4C0B6",
+    "year_built": 2021,
+    "foundations": {
+     "type": "drilled_shaft",
+     "depth_below_bed_m": 25
+    }
+   }
+  }
+ ]
+}

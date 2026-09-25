@@ -15691,6 +15691,4054 @@
 ]
 },
 {
+"id": "PCR-001",
+"kind": "rowhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-001.glb",
+"model": "PCR-001",
+"s": 10598.7,
+"x": -3155.4,
+"yaw": 1.5708,
+"min": [
+-3.91,
+-4,
+-7.65
+],
+"max": [
+3.91,
+10.89,
+10.25
+],
+"fmin": [
+-3.91,
+-7.25
+],
+"fmax": [
+3.91,
+10.25
+]
+},
+{
+"id": "PCR-002",
+"kind": "rowhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-002.glb",
+"model": "PCR-002",
+"s": 10627.0,
+"x": -3155.3,
+"yaw": 1.5643,
+"min": [
+-3.91,
+-4,
+-7.7
+],
+"max": [
+3.91,
+10.92,
+10.3
+],
+"fmin": [
+-3.91,
+-7.3
+],
+"fmax": [
+3.91,
+10.3
+]
+},
+{
+"id": "PCR-003",
+"kind": "rowhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-003.glb",
+"model": "PCR-003",
+"s": 10655.4,
+"x": -3155.1,
+"yaw": 1.5708,
+"min": [
+-3.91,
+-4,
+-7.85
+],
+"max": [
+3.91,
+11.0,
+10.45
+],
+"fmin": [
+-3.91,
+-7.45
+],
+"fmax": [
+3.91,
+10.45
+]
+},
+{
+"id": "PCR-004",
+"kind": "rowhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-004.glb",
+"model": "PCR-004",
+"s": 10683.7,
+"x": -3155.2,
+"yaw": 1.5708,
+"min": [
+-3.91,
+-4,
+-7.8
+],
+"max": [
+3.91,
+10.97,
+10.4
+],
+"fmin": [
+-3.91,
+-7.4
+],
+"fmax": [
+3.91,
+10.4
+]
+},
+{
+"id": "PCR-005",
+"kind": "rowhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-005.glb",
+"model": "PCR-005",
+"s": 10712.0,
+"x": -3155.3,
+"yaw": 1.5643,
+"min": [
+-3.91,
+-4,
+-7.65
+],
+"max": [
+3.91,
+10.89,
+10.25
+],
+"fmin": [
+-3.91,
+-7.25
+],
+"fmax": [
+3.91,
+10.25
+]
+},
+{
+"id": "PCR-006",
+"kind": "rowhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-006.glb",
+"model": "PCR-006",
+"s": 10740.4,
+"x": -3155.4,
+"yaw": 1.5708,
+"min": [
+-3.91,
+-4,
+-7.6
+],
+"max": [
+3.91,
+10.86,
+10.2
+],
+"fmin": [
+-3.91,
+-7.2
+],
+"fmax": [
+3.91,
+10.2
+]
+},
+{
+"id": "PCR-007",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-007.glb",
+"model": "PCR-007",
+"s": 10372.0,
+"x": -3153.6,
+"yaw": 1.5655,
+"min": [
+-27.05,
+-4,
+-10.4
+],
+"max": [
+27.05,
+14.2,
+9.4
+],
+"fmin": [
+-12.04,
+-10.3
+],
+"fmax": [
+12.22,
+6.24
+]
+},
+{
+"id": "PCR-008",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-008.glb",
+"model": "PCR-008",
+"s": 10427.0,
+"x": -3152.9,
+"yaw": 1.5658,
+"min": [
+-27.05,
+-4,
+-10.15
+],
+"max": [
+27.05,
+14.2,
+10.15
+],
+"fmin": [
+-12.22,
+-10.01
+],
+"fmax": [
+12.04,
+6.99
+]
+},
+{
+"id": "PCR-009",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-009.glb",
+"model": "PCR-009",
+"s": 10482.0,
+"x": -3152.1,
+"yaw": 1.5662,
+"min": [
+-27.05,
+-4,
+-10.85
+],
+"max": [
+27.05,
+12.76,
+10.85
+],
+"fmin": [
+-12.22,
+-10.71
+],
+"fmax": [
+12.04,
+7.69
+]
+},
+{
+"id": "PCR-010",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-010.glb",
+"model": "PCR-010",
+"s": 10537.0,
+"x": -3152.3,
+"yaw": 1.5661,
+"min": [
+-27.05,
+-4,
+-10.75
+],
+"max": [
+27.05,
+14.2,
+10.75
+],
+"fmin": [
+-12.04,
+-10.61
+],
+"fmax": [
+12.22,
+7.59
+]
+},
+{
+"id": "PCR-011",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-011.glb",
+"model": "PCR-011",
+"s": 10804.5,
+"x": -3152.4,
+"yaw": 1.5661,
+"min": [
+-29.55,
+-4,
+-10.65
+],
+"max": [
+29.55,
+11.76,
+10.65
+],
+"fmin": [
+-12.04,
+-10.51
+],
+"fmax": [
+12.22,
+7.49
+]
+},
+{
+"id": "PCR-012",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-012.glb",
+"model": "PCR-012",
+"s": 10864.5,
+"x": -3152.1,
+"yaw": 1.5662,
+"min": [
+-29.55,
+-4,
+-10.9
+],
+"max": [
+29.55,
+10.55,
+10.9
+],
+"fmin": [
+-12.22,
+-10.76
+],
+"fmax": [
+12.22,
+7.74
+]
+},
+{
+"id": "PCR-013",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-013.glb",
+"model": "PCR-013",
+"s": 10924.5,
+"x": -3154.0,
+"yaw": 1.5652,
+"min": [
+-29.55,
+-4,
+-9.2
+],
+"max": [
+29.55,
+11.76,
+9.05
+],
+"fmin": [
+-12.05,
+-9.2
+],
+"fmax": [
+12.22,
+5.89
+]
+},
+{
+"id": "PCR-014",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-014.glb",
+"model": "PCR-014",
+"s": 10884.0,
+"x": -3105.1,
+"yaw": -1.5679,
+"min": [
+-10.12,
+-4,
+-18.05
+],
+"max": [
+9.95,
+12.76,
+17.05
+],
+"fmin": [
+-10.12,
+-17.95
+],
+"fmax": [
+9.94,
+9.29
+]
+},
+{
+"id": "PCR-015",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-015.glb",
+"model": "PCR-015",
+"s": 10882.2,
+"x": -3140.1,
+"yaw": -1.5737,
+"min": [
+-11.85,
+-4,
+-17.05
+],
+"max": [
+12.02,
+9.01,
+17.05
+],
+"fmin": [
+-11.84,
+-16.91
+],
+"fmax": [
+12.02,
+9.29
+]
+},
+{
+"id": "PCR-016",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-016.glb",
+"model": "PCR-016",
+"s": 10917.7,
+"x": -3105.1,
+"yaw": -1.5737,
+"min": [
+-11.82,
+-4,
+-17.05
+],
+"max": [
+11.65,
+9.01,
+17.05
+],
+"fmin": [
+-11.82,
+-16.91
+],
+"fmax": [
+11.64,
+9.29
+]
+},
+{
+"id": "PCR-017",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-017.glb",
+"model": "PCR-017",
+"s": 10917.6,
+"x": -3140.1,
+"yaw": -1.5708,
+"min": [
+-11.77,
+-4,
+-17.05
+],
+"max": [
+11.6,
+9.01,
+17.05
+],
+"fmin": [
+-11.77,
+-16.91
+],
+"fmax": [
+11.59,
+9.29
+]
+},
+{
+"id": "PCR-018",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-018.glb",
+"model": "PCR-018",
+"s": 10882.6,
+"x": -3014.1,
+"yaw": -1.5708,
+"min": [
+-11.57,
+-4,
+-19.05
+],
+"max": [
+11.57,
+5.16,
+18.05
+],
+"fmin": [
+-11.57,
+-18.95
+],
+"fmax": [
+11.57,
+8.29
+]
+},
+{
+"id": "PCR-019",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-019.glb",
+"model": "PCR-019",
+"s": 10883.3,
+"x": -3051.1,
+"yaw": -1.5736,
+"min": [
+-10.92,
+-4,
+-18.05
+],
+"max": [
+10.92,
+4.96,
+18.05
+],
+"fmin": [
+-10.92,
+-17.91
+],
+"fmax": [
+10.92,
+8.29
+]
+},
+{
+"id": "PCR-020",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-020.glb",
+"model": "PCR-020",
+"s": 10915.3,
+"x": -3014.1,
+"yaw": -1.5708,
+"min": [
+-9.47,
+-4,
+-19.05
+],
+"max": [
+9.3,
+14.06,
+18.05
+],
+"fmin": [
+-9.47,
+-18.95
+],
+"fmax": [
+9.29,
+8.29
+]
+},
+{
+"id": "PCR-021",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-021.glb",
+"model": "PCR-021",
+"s": 10917.0,
+"x": -3051.1,
+"yaw": -1.568,
+"min": [
+-11.05,
+-4,
+-18.05
+],
+"max": [
+11.22,
+14.06,
+18.05
+],
+"fmin": [
+-11.04,
+-17.91
+],
+"fmax": [
+11.22,
+8.29
+]
+},
+{
+"id": "PCR-022",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-022.glb",
+"model": "PCR-022",
+"s": 11066.1,
+"x": -3105.1,
+"yaw": -1.5708,
+"min": [
+-10.07,
+-4,
+-17.05
+],
+"max": [
+9.9,
+8.61,
+17.05
+],
+"fmin": [
+-10.07,
+-16.91
+],
+"fmax": [
+9.89,
+9.29
+]
+},
+{
+"id": "PCR-023",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-023.glb",
+"model": "PCR-023",
+"s": 11064.1,
+"x": -3140.1,
+"yaw": -1.5708,
+"min": [
+-11.9,
+-4,
+-17.05
+],
+"max": [
+12.07,
+8.61,
+17.05
+],
+"fmin": [
+-11.89,
+-16.91
+],
+"fmax": [
+12.07,
+9.29
+]
+},
+{
+"id": "PCR-024",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-024.glb",
+"model": "PCR-024",
+"s": 11098.1,
+"x": -3105.1,
+"yaw": -1.5708,
+"min": [
+-10.1,
+-4,
+-18.18
+],
+"max": [
+10.27,
+11.76,
+17.05
+],
+"fmin": [
+-10.09,
+-18.15
+],
+"fmax": [
+10.27,
+9.29
+]
+},
+{
+"id": "PCR-025",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-025.glb",
+"model": "PCR-025",
+"s": 11097.5,
+"x": -3140.1,
+"yaw": -1.5737,
+"min": [
+-9.45,
+-4,
+-18.18
+],
+"max": [
+9.62,
+8.61,
+17.05
+],
+"fmin": [
+-9.44,
+-18.15
+],
+"fmax": [
+9.62,
+9.29
+]
+},
+{
+"id": "PCR-026",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-026.glb",
+"model": "PCR-026",
+"s": 11064.6,
+"x": -3014.1,
+"yaw": -1.5708,
+"min": [
+-11.57,
+-4,
+-18.05
+],
+"max": [
+11.4,
+8.61,
+18.05
+],
+"fmin": [
+-11.57,
+-17.91
+],
+"fmax": [
+11.39,
+8.29
+]
+},
+{
+"id": "PCR-027",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-027.glb",
+"model": "PCR-027",
+"s": 11066.0,
+"x": -3051.1,
+"yaw": -1.568,
+"min": [
+-9.95,
+-4,
+-18.05
+],
+"max": [
+10.12,
+8.61,
+18.05
+],
+"fmin": [
+-9.94,
+-17.91
+],
+"fmax": [
+10.12,
+8.29
+]
+},
+{
+"id": "PCR-028",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-028.glb",
+"model": "PCR-028",
+"s": 11097.4,
+"x": -3014.1,
+"yaw": -1.5708,
+"min": [
+-9.4,
+-4,
+-19.05
+],
+"max": [
+9.57,
+12.26,
+18.05
+],
+"fmin": [
+-9.39,
+-18.95
+],
+"fmax": [
+9.57,
+8.29
+]
+},
+{
+"id": "PCR-029",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-029.glb",
+"model": "PCR-029",
+"s": 11099.1,
+"x": -3051.1,
+"yaw": -1.5736,
+"min": [
+-11.22,
+-4,
+-18.05
+],
+"max": [
+11.22,
+14.3,
+18.05
+],
+"fmin": [
+-11.22,
+-17.91
+],
+"fmax": [
+11.22,
+8.29
+]
+},
+{
+"id": "PCR-030",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-030.glb",
+"model": "PCR-030",
+"s": 11065.9,
+"x": -2923.1,
+"yaw": -1.5708,
+"min": [
+-10.1,
+-4,
+-18.05
+],
+"max": [
+10.27,
+8.61,
+18.05
+],
+"fmin": [
+-10.09,
+-17.91
+],
+"fmax": [
+10.27,
+8.29
+]
+},
+{
+"id": "PCR-031",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-031.glb",
+"model": "PCR-031",
+"s": 11066.0,
+"x": -2960.1,
+"yaw": -1.568,
+"min": [
+-10.12,
+-4,
+-18.05
+],
+"max": [
+10.12,
+6.36,
+18.05
+],
+"fmin": [
+-10.12,
+-17.91
+],
+"fmax": [
+10.12,
+8.29
+]
+},
+{
+"id": "PCR-032",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-032.glb",
+"model": "PCR-032",
+"s": 11098.1,
+"x": -2923.1,
+"yaw": -1.5708,
+"min": [
+-10.27,
+-4,
+-19.18
+],
+"max": [
+10.1,
+9.11,
+18.05
+],
+"fmin": [
+-10.27,
+-19.15
+],
+"fmax": [
+10.09,
+8.29
+]
+},
+{
+"id": "PCR-033",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-033.glb",
+"model": "PCR-033",
+"s": 11098.2,
+"x": -2960.1,
+"yaw": -1.5708,
+"min": [
+-10.2,
+-4,
+-19.18
+],
+"max": [
+10.37,
+9.11,
+18.05
+],
+"fmin": [
+-10.19,
+-19.15
+],
+"fmax": [
+10.37,
+8.29
+]
+},
+{
+"id": "PCR-034",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-034.glb",
+"model": "PCR-034",
+"s": 11064.2,
+"x": -2832.1,
+"yaw": -1.5708,
+"min": [
+-11.8,
+-4,
+-18.05
+],
+"max": [
+11.97,
+10.41,
+18.05
+],
+"fmin": [
+-11.79,
+-17.91
+],
+"fmax": [
+11.97,
+8.29
+]
+},
+{
+"id": "PCR-035",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-035.glb",
+"model": "PCR-035",
+"s": 11066.9,
+"x": -2869.1,
+"yaw": -1.5736,
+"min": [
+-9.32,
+-4,
+-18.05
+],
+"max": [
+9.32,
+4.56,
+18.05
+],
+"fmin": [
+-9.32,
+-17.91
+],
+"fmax": [
+9.32,
+8.29
+]
+},
+{
+"id": "PCR-036",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-036.glb",
+"model": "PCR-036",
+"s": 11099.7,
+"x": -2832.1,
+"yaw": -1.5708,
+"min": [
+-11.87,
+-4,
+-19.05
+],
+"max": [
+11.7,
+10.41,
+18.05
+],
+"fmin": [
+-11.87,
+-18.95
+],
+"fmax": [
+11.69,
+8.29
+]
+},
+{
+"id": "PCR-037",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-037.glb",
+"model": "PCR-037",
+"s": 11099.9,
+"x": -2869.1,
+"yaw": -1.5708,
+"min": [
+-12.07,
+-4,
+-19.17
+],
+"max": [
+11.9,
+10.41,
+18.05
+],
+"fmin": [
+-12.07,
+-19.15
+],
+"fmax": [
+11.89,
+8.29
+]
+},
+{
+"id": "PCR-038",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-038.glb",
+"model": "PCR-038",
+"s": 11065.4,
+"x": -2741.1,
+"yaw": -1.568,
+"min": [
+-10.55,
+-4,
+-19.05
+],
+"max": [
+10.72,
+10.41,
+18.05
+],
+"fmin": [
+-10.54,
+-18.95
+],
+"fmax": [
+10.72,
+8.29
+]
+},
+{
+"id": "PCR-039",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-039.glb",
+"model": "PCR-039",
+"s": 11064.1,
+"x": -2778.1,
+"yaw": -1.5708,
+"min": [
+-12.07,
+-4,
+-18.05
+],
+"max": [
+12.07,
+6.5,
+18.05
+],
+"fmin": [
+-12.07,
+-17.91
+],
+"fmax": [
+12.07,
+8.29
+]
+},
+{
+"id": "PCR-040",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-040.glb",
+"model": "PCR-040",
+"s": 11099.7,
+"x": -2741.1,
+"yaw": -1.5736,
+"min": [
+-11.82,
+-4,
+-19.05
+],
+"max": [
+11.65,
+10.41,
+18.05
+],
+"fmin": [
+-11.82,
+-18.95
+],
+"fmax": [
+11.64,
+8.29
+]
+},
+{
+"id": "PCR-041",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-041.glb",
+"model": "PCR-041",
+"s": 11097.3,
+"x": -2778.1,
+"yaw": -1.5708,
+"min": [
+-9.3,
+-4,
+-19.05
+],
+"max": [
+9.47,
+10.41,
+18.05
+],
+"fmin": [
+-9.29,
+-18.95
+],
+"fmax": [
+9.47,
+8.29
+]
+},
+{
+"id": "PCR-042",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-042.glb",
+"model": "PCR-042",
+"s": 11064.9,
+"x": -2636.6,
+"yaw": -1.5708,
+"min": [
+-11.27,
+-4,
+-23.68
+],
+"max": [
+11.1,
+10.41,
+22.55
+],
+"fmin": [
+-11.27,
+-23.65
+],
+"fmax": [
+11.09,
+3.79
+]
+},
+{
+"id": "PCR-043",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-043.glb",
+"model": "PCR-043",
+"s": 11066.6,
+"x": -2682.6,
+"yaw": -1.573,
+"min": [
+-9.62,
+-4,
+-23.55
+],
+"max": [
+9.45,
+10.85,
+22.55
+],
+"fmin": [
+-9.62,
+-23.45
+],
+"fmax": [
+9.44,
+3.79
+]
+},
+{
+"id": "PCR-044",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-044.glb",
+"model": "PCR-044",
+"s": 11098.6,
+"x": -2636.6,
+"yaw": -1.573,
+"min": [
+-10.55,
+-4,
+-23.67
+],
+"max": [
+10.72,
+9.71,
+22.55
+],
+"fmin": [
+-10.54,
+-23.65
+],
+"fmax": [
+10.72,
+3.79
+]
+},
+{
+"id": "PCR-045",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-045.glb",
+"model": "PCR-045",
+"s": 11098.5,
+"x": -2682.6,
+"yaw": -1.5686,
+"min": [
+-10.72,
+-4,
+-22.55
+],
+"max": [
+10.72,
+6.36,
+22.55
+],
+"fmin": [
+-10.72,
+-22.41
+],
+"fmax": [
+10.72,
+3.79
+]
+},
+{
+"id": "PCR-046",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-046.glb",
+"model": "PCR-046",
+"s": 11066.5,
+"x": -2544.1,
+"yaw": -1.5708,
+"min": [
+-9.67,
+-4,
+-20.05
+],
+"max": [
+9.67,
+6.76,
+20.05
+],
+"fmin": [
+-9.67,
+-19.91
+],
+"fmax": [
+9.67,
+6.29
+]
+},
+{
+"id": "PCR-047",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-047.glb",
+"model": "PCR-047",
+"s": 11065.7,
+"x": -2585.1,
+"yaw": -1.5733,
+"min": [
+-10.35,
+-4,
+-20.05
+],
+"max": [
+10.52,
+14.06,
+20.05
+],
+"fmin": [
+-10.34,
+-19.91
+],
+"fmax": [
+10.52,
+6.29
+]
+},
+{
+"id": "PCR-048",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-048.glb",
+"model": "PCR-048",
+"s": 11098.5,
+"x": -2544.1,
+"yaw": -1.5708,
+"min": [
+-10.67,
+-4,
+-20.05
+],
+"max": [
+10.5,
+12.26,
+20.05
+],
+"fmin": [
+-10.67,
+-19.91
+],
+"fmax": [
+10.49,
+6.29
+]
+},
+{
+"id": "PCR-049",
+"kind": "store",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-049.glb",
+"model": "PCR-049",
+"s": 11097.9,
+"x": -2585.1,
+"yaw": -1.5708,
+"min": [
+-9.9,
+-4,
+-20.05
+],
+"max": [
+10.07,
+9.71,
+20.05
+],
+"fmin": [
+-9.89,
+-19.91
+],
+"fmax": [
+10.07,
+6.29
+]
+},
+{
+"id": "PCR-050",
+"kind": "civic",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-050.glb",
+"model": "PCR-050",
+"s": 10783.0,
+"x": -3014.0,
+"yaw": -1.5708,
+"min": [
+-17.6,
+-4,
+-16.5
+],
+"max": [
+17.6,
+11.32,
+13.06
+],
+"fmin": [
+-17.6,
+-16.5
+],
+"fmax": [
+17.6,
+13.04
+]
+},
+{
+"id": "PCR-051",
+"kind": "civic",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-051.glb",
+"model": "PCR-051",
+"s": 10835.0,
+"x": -3014.0,
+"yaw": -1.5708,
+"min": [
+-17.6,
+-4,
+-16.5
+],
+"max": [
+17.6,
+15.62,
+13.06
+],
+"fmin": [
+-17.6,
+-16.5
+],
+"fmax": [
+17.6,
+13.04
+]
+},
+{
+"id": "PCR-052",
+"kind": "civic",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-052.glb",
+"model": "PCR-052",
+"s": 10783.0,
+"x": -2962.0,
+"yaw": -1.5708,
+"min": [
+-12.06,
+-4,
+-16.5
+],
+"max": [
+12.06,
+13.73,
+11.6
+],
+"fmin": [
+-12.04,
+-16.5
+],
+"fmax": [
+12.04,
+11.6
+]
+},
+{
+"id": "PCR-053",
+"kind": "church",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-053.glb",
+"model": "PCR-053",
+"s": 10835.0,
+"x": -2962.0,
+"yaw": -1.5708,
+"min": [
+-8.4,
+-4,
+-19.0
+],
+"max": [
+10.6,
+24.85,
+14.3
+],
+"fmin": [
+-8.4,
+-19.0
+],
+"fmax": [
+10.6,
+14.3
+]
+},
+{
+"id": "PCR-054",
+"kind": "market",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-054.glb",
+"model": "PCR-054",
+"s": 10575.0,
+"x": -3064.0,
+"yaw": 1.5708,
+"min": [
+-95,
+-4,
+-6
+],
+"max": [
+95,
+6.9,
+6
+],
+"fmin": [
+-12.22,
+-5.86
+],
+"fmax": [
+12.22,
+4.34
+]
+},
+{
+"id": "PCR-055",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-055.glb",
+"model": "PCR-055",
+"s": 10397.0,
+"x": -3059.0,
+"yaw": 1.561,
+"min": [
+-4.41,
+-4,
+-5.05
+],
+"max": [
+4.41,
+9.99,
+8.25
+],
+"fmin": [
+-4.41,
+-4.65
+],
+"fmax": [
+4.41,
+8.25
+]
+},
+{
+"id": "PCR-056",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-056.glb",
+"model": "PCR-056",
+"s": 10397.5,
+"x": -3007.6,
+"yaw": -1.5708,
+"min": [
+-3.96,
+-4,
+-5.95
+],
+"max": [
+3.96,
+9.66,
+9.05
+],
+"fmin": [
+-3.96,
+-5.55
+],
+"fmax": [
+3.96,
+9.05
+]
+},
+{
+"id": "PCR-057",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-057.glb",
+"model": "PCR-057",
+"s": 10489.9,
+"x": -3061.8,
+"yaw": 1.5708,
+"min": [
+-4.45,
+-4,
+-5.15
+],
+"max": [
+4.45,
+9.13,
+6.57
+],
+"fmin": [
+-4.45,
+-4.67
+],
+"fmax": [
+4.45,
+6.57
+]
+},
+{
+"id": "PCR-058",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-058.glb",
+"model": "PCR-058",
+"s": 10492.9,
+"x": -3006.3,
+"yaw": -1.5708,
+"min": [
+-4.65,
+-4,
+-5.1
+],
+"max": [
+4.65,
+9.33,
+6.62
+],
+"fmin": [
+-4.65,
+-4.62
+],
+"fmax": [
+4.65,
+6.62
+]
+},
+{
+"id": "PCR-059",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-059.glb",
+"model": "PCR-059",
+"s": 11034.4,
+"x": -3059.0,
+"yaw": 1.5708,
+"min": [
+-5.58,
+-4,
+-5.6
+],
+"max": [
+5.58,
+8.13,
+6.52
+],
+"fmin": [
+-5.58,
+-5.12
+],
+"fmax": [
+5.58,
+6.52
+]
+},
+{
+"id": "PCR-060",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-060.glb",
+"model": "PCR-060",
+"s": 11038.4,
+"x": -3008.3,
+"yaw": -1.5708,
+"min": [
+-4.77,
+-4,
+-5.35
+],
+"max": [
+4.77,
+9.45,
+6.37
+],
+"fmin": [
+-4.77,
+-4.87
+],
+"fmax": [
+4.77,
+6.37
+]
+},
+{
+"id": "PCR-061",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-061.glb",
+"model": "PCR-061",
+"s": 11218.6,
+"x": -3059.6,
+"yaw": 1.561,
+"min": [
+-5.07,
+-4,
+-5.1
+],
+"max": [
+5.07,
+9.75,
+6.62
+],
+"fmin": [
+-5.07,
+-4.62
+],
+"fmax": [
+5.07,
+6.62
+]
+},
+{
+"id": "PCR-062",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-062.glb",
+"model": "PCR-062",
+"s": 11216.7,
+"x": -3005.5,
+"yaw": -1.5808,
+"min": [
+-4.8,
+-4,
+-5
+],
+"max": [
+4.8,
+8.12,
+6.52
+],
+"fmin": [
+-4.8,
+-4.52
+],
+"fmax": [
+4.8,
+6.52
+]
+},
+{
+"id": "PCR-063",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-063.glb",
+"model": "PCR-063",
+"s": 11309.7,
+"x": -3058.7,
+"yaw": 1.5619,
+"min": [
+-3.65,
+-4,
+-5.55
+],
+"max": [
+3.65,
+9.44,
+8.75
+],
+"fmin": [
+-3.65,
+-5.15
+],
+"fmax": [
+3.65,
+8.75
+]
+},
+{
+"id": "PCR-064",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-064.glb",
+"model": "PCR-064",
+"s": 11309.8,
+"x": -3006.6,
+"yaw": -1.5708,
+"min": [
+-4.41,
+-4,
+-4.65
+],
+"max": [
+4.41,
+9.99,
+7.85
+],
+"fmin": [
+-4.41,
+-4.25
+],
+"fmax": [
+4.41,
+7.85
+]
+},
+{
+"id": "PCR-065",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-065.glb",
+"model": "PCR-065",
+"s": 11400.4,
+"x": -3060.3,
+"yaw": 1.5802,
+"min": [
+-5.38,
+-4,
+-5.35
+],
+"max": [
+5.38,
+10.06,
+6.37
+],
+"fmin": [
+-5.38,
+-4.87
+],
+"fmax": [
+5.38,
+6.37
+]
+},
+{
+"id": "PCR-066",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-066.glb",
+"model": "PCR-066",
+"s": 11399.5,
+"x": -3007.4,
+"yaw": -1.562,
+"min": [
+-5.28,
+-4,
+-5.7
+],
+"max": [
+5.28,
+8.23,
+6.62
+],
+"fmin": [
+-5.28,
+-5.22
+],
+"fmax": [
+5.28,
+6.62
+]
+},
+{
+"id": "PCR-067",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-067.glb",
+"model": "PCR-067",
+"s": 10401.8,
+"x": -2968.7,
+"yaw": 1.5808,
+"min": [
+-5.43,
+-4,
+-5
+],
+"max": [
+5.43,
+8.12,
+6.52
+],
+"fmin": [
+-5.43,
+-4.52
+],
+"fmax": [
+5.43,
+6.52
+]
+},
+{
+"id": "PCR-068",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-068.glb",
+"model": "PCR-068",
+"s": 10397.4,
+"x": -2916.1,
+"yaw": -1.5622,
+"min": [
+-5.13,
+-4,
+-5.8
+],
+"max": [
+5.13,
+8.33,
+6.72
+],
+"fmin": [
+-5.13,
+-5.32
+],
+"fmax": [
+5.13,
+6.72
+]
+},
+{
+"id": "PCR-069",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-069.glb",
+"model": "PCR-069",
+"s": 10489.4,
+"x": -2968.5,
+"yaw": 1.5606,
+"min": [
+-3.96,
+-4,
+-4.9
+],
+"max": [
+3.96,
+9.66,
+8.1
+],
+"fmin": [
+-3.96,
+-4.5
+],
+"fmax": [
+3.96,
+8.1
+]
+},
+{
+"id": "PCR-070",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-070.glb",
+"model": "PCR-070",
+"s": 10492.3,
+"x": -2916.1,
+"yaw": -1.562,
+"min": [
+-4.11,
+-4,
+-5.75
+],
+"max": [
+4.11,
+9.77,
+8.95
+],
+"fmin": [
+-4.11,
+-5.35
+],
+"fmax": [
+4.11,
+8.95
+]
+},
+{
+"id": "PCR-071",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-071.glb",
+"model": "PCR-071",
+"s": 10581.6,
+"x": -2969.3,
+"yaw": 1.5708,
+"min": [
+-5.43,
+-4,
+-5.75
+],
+"max": [
+5.43,
+8.28,
+6.67
+],
+"fmin": [
+-5.43,
+-5.27
+],
+"fmax": [
+5.43,
+6.67
+]
+},
+{
+"id": "PCR-072",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-072.glb",
+"model": "PCR-072",
+"s": 10580.5,
+"x": -2916.1,
+"yaw": -1.5812,
+"min": [
+-5.43,
+-4,
+-4.7
+],
+"max": [
+5.43,
+8.12,
+6.22
+],
+"fmin": [
+-5.43,
+-4.22
+],
+"fmax": [
+5.43,
+6.22
+]
+},
+{
+"id": "PCR-073",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-073.glb",
+"model": "PCR-073",
+"s": 10671.0,
+"x": -2969.1,
+"yaw": 1.5599,
+"min": [
+-4.11,
+-4,
+-4.6
+],
+"max": [
+4.11,
+9.77,
+7.8
+],
+"fmin": [
+-4.11,
+-4.2
+],
+"fmax": [
+4.11,
+7.8
+]
+},
+{
+"id": "PCR-074",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-074.glb",
+"model": "PCR-074",
+"s": 10671.9,
+"x": -2917.4,
+"yaw": -1.5708,
+"min": [
+-4.26,
+-4,
+-5.4
+],
+"max": [
+4.26,
+9.88,
+8.6
+],
+"fmin": [
+-4.26,
+-5.0
+],
+"fmax": [
+4.26,
+8.6
+]
+},
+{
+"id": "PCR-075",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-075.glb",
+"model": "PCR-075",
+"s": 11037.1,
+"x": -2969.4,
+"yaw": 1.5708,
+"min": [
+-4.01,
+-4,
+-5.65
+],
+"max": [
+4.01,
+10.69,
+8.85
+],
+"fmin": [
+-4.01,
+-5.25
+],
+"fmax": [
+4.01,
+8.85
+]
+},
+{
+"id": "PCR-076",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-076.glb",
+"model": "PCR-076",
+"s": 11036.3,
+"x": -2914.3,
+"yaw": -1.5708,
+"min": [
+-3.55,
+-4,
+-5.25
+],
+"max": [
+3.55,
+9.26,
+6.47
+],
+"fmin": [
+-3.55,
+-4.77
+],
+"fmax": [
+3.55,
+6.47
+]
+},
+{
+"id": "PCR-077",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-077.glb",
+"model": "PCR-077",
+"s": 11217.8,
+"x": -2967.6,
+"yaw": 1.5797,
+"min": [
+-4.16,
+-4,
+-5.6
+],
+"max": [
+4.16,
+9.7,
+6.52
+],
+"fmin": [
+-4.16,
+-5.12
+],
+"fmax": [
+4.16,
+6.52
+]
+},
+{
+"id": "PCR-078",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-078.glb",
+"model": "PCR-078",
+"s": 11220.2,
+"x": -2915.5,
+"yaw": -1.5708,
+"min": [
+-4.16,
+-4,
+-5.3
+],
+"max": [
+4.16,
+9.7,
+6.42
+],
+"fmin": [
+-4.16,
+-4.82
+],
+"fmax": [
+4.16,
+6.42
+]
+},
+{
+"id": "PCR-079",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-079.glb",
+"model": "PCR-079",
+"s": 11307.4,
+"x": -2968.0,
+"yaw": 1.5708,
+"min": [
+-4.65,
+-4,
+-5.5
+],
+"max": [
+4.65,
+9.33,
+6.42
+],
+"fmin": [
+-4.65,
+-5.02
+],
+"fmax": [
+4.65,
+6.42
+]
+},
+{
+"id": "PCR-080",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-080.glb",
+"model": "PCR-080",
+"s": 11311.3,
+"x": -2916.5,
+"yaw": -1.5801,
+"min": [
+-5.53,
+-4,
+-5.45
+],
+"max": [
+5.53,
+10.21,
+6.37
+],
+"fmin": [
+-5.53,
+-4.97
+],
+"fmax": [
+5.53,
+6.37
+]
+},
+{
+"id": "PCR-081",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-081.glb",
+"model": "PCR-081",
+"s": 11398.2,
+"x": -2969.0,
+"yaw": 1.5617,
+"min": [
+-3.7,
+-4,
+-5.55
+],
+"max": [
+3.7,
+9.37,
+6.47
+],
+"fmin": [
+-3.7,
+-5.07
+],
+"fmax": [
+3.7,
+6.47
+]
+},
+{
+"id": "PCR-082",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-082.glb",
+"model": "PCR-082",
+"s": 11399.2,
+"x": -2916.2,
+"yaw": -1.5602,
+"min": [
+-3.4,
+-4,
+-4.7
+],
+"max": [
+3.4,
+9.14,
+6.22
+],
+"fmin": [
+-3.4,
+-4.22
+],
+"fmax": [
+3.4,
+6.22
+]
+},
+{
+"id": "PCR-083",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-083.glb",
+"model": "PCR-083",
+"s": 10398.9,
+"x": -2877.5,
+"yaw": 1.5708,
+"min": [
+-4.01,
+-4,
+-5.4
+],
+"max": [
+4.01,
+9.59,
+6.32
+],
+"fmin": [
+-4.01,
+-4.92
+],
+"fmax": [
+4.01,
+6.32
+]
+},
+{
+"id": "PCR-084",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-084.glb",
+"model": "PCR-084",
+"s": 10401.8,
+"x": -2824.2,
+"yaw": -1.5623,
+"min": [
+-5.39,
+-4,
+-5.9
+],
+"max": [
+5.39,
+9.37,
+6.82
+],
+"fmin": [
+-3.7,
+-4.6
+],
+"fmax": [
+3.7,
+6.82
+]
+},
+{
+"id": "PCR-085",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-085.glb",
+"model": "PCR-085",
+"s": 10491.5,
+"x": -2878.1,
+"yaw": 1.5708,
+"min": [
+-5.28,
+-4,
+-4.95
+],
+"max": [
+5.28,
+8.12,
+6.47
+],
+"fmin": [
+-5.28,
+-4.47
+],
+"fmax": [
+5.28,
+6.47
+]
+},
+{
+"id": "PCR-086",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-086.glb",
+"model": "PCR-086",
+"s": 10491.1,
+"x": -2825.9,
+"yaw": -1.5708,
+"min": [
+-5.74,
+-4,
+-5.95
+],
+"max": [
+5.74,
+9.91,
+6.87
+],
+"fmin": [
+-5.23,
+-4.65
+],
+"fmax": [
+5.23,
+6.87
+]
+},
+{
+"id": "PCR-087",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-087.glb",
+"model": "PCR-087",
+"s": 10579.2,
+"x": -2879.6,
+"yaw": 1.5602,
+"min": [
+-3.4,
+-4,
+-4.75
+],
+"max": [
+3.4,
+9.14,
+6.27
+],
+"fmin": [
+-3.4,
+-4.27
+],
+"fmax": [
+3.4,
+6.27
+]
+},
+{
+"id": "PCR-088",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-088.glb",
+"model": "PCR-088",
+"s": 10580.8,
+"x": -2823.9,
+"yaw": -1.5708,
+"min": [
+-3.86,
+-4,
+-5.65
+],
+"max": [
+3.86,
+9.48,
+6.57
+],
+"fmin": [
+-3.86,
+-5.17
+],
+"fmax": [
+3.86,
+6.57
+]
+},
+{
+"id": "PCR-089",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-089.glb",
+"model": "PCR-089",
+"s": 10672.7,
+"x": -2877.7,
+"yaw": 1.5612,
+"min": [
+-5.53,
+-4,
+-5.25
+],
+"max": [
+5.53,
+10.21,
+6.47
+],
+"fmin": [
+-5.53,
+-4.77
+],
+"fmax": [
+5.53,
+6.47
+]
+},
+{
+"id": "PCR-090",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-090.glb",
+"model": "PCR-090",
+"s": 10674.1,
+"x": -2826.0,
+"yaw": -1.5708,
+"min": [
+-4.4,
+-4,
+-5.3
+],
+"max": [
+4.4,
+9.08,
+6.42
+],
+"fmin": [
+-4.4,
+-4.82
+],
+"fmax": [
+4.4,
+6.42
+]
+},
+{
+"id": "PCR-091",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-091.glb",
+"model": "PCR-091",
+"s": 10763.9,
+"x": -2877.0,
+"yaw": 1.5619,
+"min": [
+-3.7,
+-4,
+-5.6
+],
+"max": [
+3.7,
+9.37,
+6.52
+],
+"fmin": [
+-3.7,
+-5.12
+],
+"fmax": [
+3.7,
+6.52
+]
+},
+{
+"id": "PCR-092",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-092.glb",
+"model": "PCR-092",
+"s": 10761.1,
+"x": -2823.8,
+"yaw": -1.5708,
+"min": [
+-3.55,
+-4,
+-5.65
+],
+"max": [
+3.55,
+10.36,
+8.85
+],
+"fmin": [
+-3.55,
+-5.25
+],
+"fmax": [
+3.55,
+8.85
+]
+},
+{
+"id": "PCR-093",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-093.glb",
+"model": "PCR-093",
+"s": 10854.9,
+"x": -2877.7,
+"yaw": 1.5708,
+"min": [
+-5.43,
+-4,
+-5.65
+],
+"max": [
+5.43,
+8.18,
+6.57
+],
+"fmin": [
+-5.43,
+-5.17
+],
+"fmax": [
+5.43,
+6.57
+]
+},
+{
+"id": "PCR-094",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-094.glb",
+"model": "PCR-094",
+"s": 10854.9,
+"x": -2824.3,
+"yaw": -1.5597,
+"min": [
+-4.95,
+-4,
+-4.5
+],
+"max": [
+4.95,
+8.12,
+6.02
+],
+"fmin": [
+-4.95,
+-4.02
+],
+"fmax": [
+4.95,
+6.02
+]
+},
+{
+"id": "PCR-095",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-095.glb",
+"model": "PCR-095",
+"s": 11034.6,
+"x": -2876.5,
+"yaw": 1.5793,
+"min": [
+-5.99,
+-4,
+-5.85
+],
+"max": [
+5.99,
+10.06,
+6.77
+],
+"fmin": [
+-5.38,
+-4.55
+],
+"fmax": [
+5.38,
+6.77
+]
+},
+{
+"id": "PCR-096",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-096.glb",
+"model": "PCR-096",
+"s": 11038.5,
+"x": -2825.4,
+"yaw": -1.5708,
+"min": [
+-4.75,
+-4,
+-5.45
+],
+"max": [
+4.75,
+9.43,
+6.37
+],
+"fmin": [
+-4.75,
+-4.97
+],
+"fmax": [
+4.75,
+6.37
+]
+},
+{
+"id": "PCR-097",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-097.glb",
+"model": "PCR-097",
+"s": 11219.5,
+"x": -2879.8,
+"yaw": 1.5817,
+"min": [
+-4.3,
+-4,
+-4.55
+],
+"max": [
+4.3,
+8.12,
+6.07
+],
+"fmin": [
+-4.3,
+-4.07
+],
+"fmax": [
+4.3,
+6.07
+]
+},
+{
+"id": "PCR-098",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-098.glb",
+"model": "PCR-098",
+"s": 11217.5,
+"x": -2823.6,
+"yaw": -1.561,
+"min": [
+-4.97,
+-4,
+-5.1
+],
+"max": [
+4.97,
+8.23,
+6.02
+],
+"fmin": [
+-4.97,
+-4.62
+],
+"fmax": [
+4.97,
+6.02
+]
+},
+{
+"id": "PCR-099",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-099.glb",
+"model": "PCR-099",
+"s": 11311.9,
+"x": -2878.6,
+"yaw": 1.5708,
+"min": [
+-3.4,
+-4,
+-5.05
+],
+"max": [
+3.4,
+10.24,
+8.25
+],
+"fmin": [
+-3.4,
+-4.65
+],
+"fmax": [
+3.4,
+8.25
+]
+},
+{
+"id": "PCR-100",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-100.glb",
+"model": "PCR-100",
+"s": 11308.2,
+"x": -2825.6,
+"yaw": -1.5615,
+"min": [
+-3.7,
+-4,
+-5.35
+],
+"max": [
+3.7,
+10.47,
+8.55
+],
+"fmin": [
+-3.7,
+-4.95
+],
+"fmax": [
+3.7,
+8.55
+]
+},
+{
+"id": "PCR-101",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-101.glb",
+"model": "PCR-101",
+"s": 11402.4,
+"x": -2879.4,
+"yaw": 1.5708,
+"min": [
+-4.55,
+-4,
+-4.8
+],
+"max": [
+4.55,
+9.23,
+5.72
+],
+"fmin": [
+-4.55,
+-4.32
+],
+"fmax": [
+4.55,
+5.72
+]
+},
+{
+"id": "PCR-102",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-102.glb",
+"model": "PCR-102",
+"s": 11401.2,
+"x": -2823.8,
+"yaw": -1.5708,
+"min": [
+-5.95,
+-4,
+-5.65
+],
+"max": [
+5.95,
+8.37,
+6.57
+],
+"fmin": [
+-5.28,
+-4.35
+],
+"fmax": [
+5.28,
+6.57
+]
+},
+{
+"id": "PCR-103",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-103.glb",
+"model": "PCR-103",
+"s": 10399.9,
+"x": -2788.1,
+"yaw": 1.5708,
+"min": [
+-5.28,
+-4,
+-5.1
+],
+"max": [
+5.28,
+8.23,
+6.02
+],
+"fmin": [
+-5.28,
+-4.62
+],
+"fmax": [
+5.28,
+6.02
+]
+},
+{
+"id": "PCR-104",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-104.glb",
+"model": "PCR-104",
+"s": 10401.9,
+"x": -2732.7,
+"yaw": -1.5708,
+"min": [
+-4.75,
+-4,
+-4.95
+],
+"max": [
+4.75,
+9.43,
+5.87
+],
+"fmin": [
+-4.75,
+-4.47
+],
+"fmax": [
+4.75,
+5.87
+]
+},
+{
+"id": "PCR-105",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-105.glb",
+"model": "PCR-105",
+"s": 10491.2,
+"x": -2786.2,
+"yaw": 1.5708,
+"min": [
+-3.4,
+-4,
+-5.3
+],
+"max": [
+3.4,
+10.24,
+8.5
+],
+"fmin": [
+-3.4,
+-4.9
+],
+"fmax": [
+3.4,
+8.5
+]
+},
+{
+"id": "PCR-106",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-106.glb",
+"model": "PCR-106",
+"s": 10488.4,
+"x": -2735.0,
+"yaw": -1.5708,
+"min": [
+-4.01,
+-4,
+-5.15
+],
+"max": [
+4.01,
+10.69,
+8.35
+],
+"fmin": [
+-4.01,
+-4.75
+],
+"fmax": [
+4.01,
+8.35
+]
+},
+{
+"id": "PCR-107",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-107.glb",
+"model": "PCR-107",
+"s": 10582.9,
+"x": -2786.3,
+"yaw": 1.5708,
+"min": [
+-6.14,
+-4,
+-5.9
+],
+"max": [
+6.14,
+8.62,
+6.82
+],
+"fmin": [
+-5.43,
+-4.6
+],
+"fmax": [
+5.43,
+6.82
+]
+},
+{
+"id": "PCR-108",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-108.glb",
+"model": "PCR-108",
+"s": 10579.8,
+"x": -2733.9,
+"yaw": -1.5708,
+"min": [
+-4.75,
+-4,
+-5.1
+],
+"max": [
+4.75,
+8.23,
+6.02
+],
+"fmin": [
+-4.75,
+-4.62
+],
+"fmax": [
+4.75,
+6.02
+]
+},
+{
+"id": "PCR-109",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-109.glb",
+"model": "PCR-109",
+"s": 10671.0,
+"x": -2785.5,
+"yaw": 1.5708,
+"min": [
+-4.16,
+-4,
+-5.8
+],
+"max": [
+4.16,
+9.7,
+6.72
+],
+"fmin": [
+-4.16,
+-5.32
+],
+"fmax": [
+4.16,
+6.72
+]
+},
+{
+"id": "PCR-110",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-110.glb",
+"model": "PCR-110",
+"s": 10673.1,
+"x": -2733.7,
+"yaw": -1.5799,
+"min": [
+-4.16,
+-4,
+-5.5
+],
+"max": [
+4.16,
+10.8,
+8.7
+],
+"fmin": [
+-4.16,
+-5.1
+],
+"fmax": [
+4.16,
+8.7
+]
+},
+{
+"id": "PCR-111",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-111.glb",
+"model": "PCR-111",
+"s": 10762.0,
+"x": -2786.7,
+"yaw": 1.5708,
+"min": [
+-5.53,
+-4,
+-4.55
+],
+"max": [
+5.53,
+10.21,
+5.97
+],
+"fmin": [
+-5.53,
+-4.07
+],
+"fmax": [
+5.53,
+5.97
+]
+},
+{
+"id": "PCR-112",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-112.glb",
+"model": "PCR-112",
+"s": 10765.0,
+"x": -2734.3,
+"yaw": -1.5708,
+"min": [
+-5.74,
+-4,
+-5.25
+],
+"max": [
+5.74,
+9.91,
+6.17
+],
+"fmin": [
+-5.23,
+-3.95
+],
+"fmax": [
+5.23,
+6.17
+]
+},
+{
+"id": "PCR-113",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-113.glb",
+"model": "PCR-113",
+"s": 10853.9,
+"x": -2788.2,
+"yaw": 1.5708,
+"min": [
+-3.55,
+-4,
+-5.05
+],
+"max": [
+3.55,
+10.36,
+8.25
+],
+"fmin": [
+-3.55,
+-4.65
+],
+"fmax": [
+3.55,
+8.25
+]
+},
+{
+"id": "PCR-114",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-114.glb",
+"model": "PCR-114",
+"s": 10854.2,
+"x": -2732.9,
+"yaw": -1.5599,
+"min": [
+-4.01,
+-4,
+-4.65
+],
+"max": [
+4.01,
+10.69,
+7.85
+],
+"fmin": [
+-4.01,
+-4.25
+],
+"fmax": [
+4.01,
+7.85
+]
+},
+{
+"id": "PCR-115",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-115.glb",
+"model": "PCR-115",
+"s": 11036.1,
+"x": -2787.2,
+"yaw": 1.5615,
+"min": [
+-3.55,
+-4,
+-5.35
+],
+"max": [
+3.55,
+9.26,
+6.37
+],
+"fmin": [
+-3.55,
+-4.87
+],
+"fmax": [
+3.55,
+6.37
+]
+},
+{
+"id": "PCR-116",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-116.glb",
+"model": "PCR-116",
+"s": 11037.7,
+"x": -2734.1,
+"yaw": -1.5623,
+"min": [
+-6.24,
+-4,
+-5.85
+],
+"max": [
+6.24,
+9.7,
+6.77
+],
+"fmin": [
+-4.16,
+-4.55
+],
+"fmax": [
+4.16,
+6.77
+]
+},
+{
+"id": "PCR-117",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-117.glb",
+"model": "PCR-117",
+"s": 11217.8,
+"x": -2787.7,
+"yaw": 1.5708,
+"min": [
+-3.86,
+-4,
+-5.1
+],
+"max": [
+3.86,
+10.58,
+8.3
+],
+"fmin": [
+-3.86,
+-4.7
+],
+"fmax": [
+3.86,
+8.3
+]
+},
+{
+"id": "PCR-118",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-118.glb",
+"model": "PCR-118",
+"s": 11217.4,
+"x": -2733.4,
+"yaw": -1.5604,
+"min": [
+-3.86,
+-4,
+-4.75
+],
+"max": [
+3.86,
+10.58,
+7.95
+],
+"fmin": [
+-3.86,
+-4.35
+],
+"fmax": [
+3.86,
+7.95
+]
+},
+{
+"id": "PCR-119",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-119.glb",
+"model": "PCR-119",
+"s": 11310.9,
+"x": -2789.0,
+"yaw": 1.5708,
+"min": [
+-4.85,
+-4,
+-4.85
+],
+"max": [
+4.85,
+10.21,
+5.21
+],
+"fmin": [
+-4.85,
+-3.81
+],
+"fmax": [
+4.85,
+5.21
+]
+},
+{
+"id": "PCR-120",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-120.glb",
+"model": "PCR-120",
+"s": 11307.5,
+"x": -2732.6,
+"yaw": -1.5799,
+"min": [
+-6.2,
+-4,
+-5.5
+],
+"max": [
+6.2,
+10.99,
+5.86
+],
+"fmin": [
+-5.63,
+-3.92
+],
+"fmax": [
+5.63,
+5.86
+]
+},
+{
+"id": "PCR-121",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-121.glb",
+"model": "PCR-121",
+"s": 11402.8,
+"x": -2787.0,
+"yaw": 1.5597,
+"min": [
+-3.7,
+-4,
+-4.5
+],
+"max": [
+3.7,
+10.47,
+7.7
+],
+"fmin": [
+-3.7,
+-4.1
+],
+"fmax": [
+3.7,
+7.7
+]
+},
+{
+"id": "PCR-122",
+"kind": "singlehouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-122.glb",
+"model": "PCR-122",
+"s": 11398.2,
+"x": -2734.9,
+"yaw": -1.5612,
+"min": [
+-4.16,
+-4,
+-5.2
+],
+"max": [
+4.16,
+9.7,
+6.52
+],
+"fmin": [
+-4.16,
+-4.72
+],
+"fmax": [
+4.16,
+6.52
+]
+},
+{
+"id": "PCR-123",
+"kind": "church",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-123.glb",
+"model": "PCR-123",
+"s": 10581.0,
+"x": -2852.0,
+"yaw": -1.5708,
+"min": [
+-6.9,
+-4,
+-16
+],
+"max": [
+9.1,
+15.81,
+11.3
+],
+"fmin": [
+-6.9,
+-16
+],
+"fmax": [
+9.1,
+11.3
+]
+},
+{
+"id": "PCR-124",
+"kind": "church",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-124.glb",
+"model": "PCR-124",
+"s": 11218.0,
+"x": -2760.0,
+"yaw": -1.5708,
+"min": [
+-6.9,
+-4,
+-13
+],
+"max": [
+9.1,
+15.3,
+11.3
+],
+"fmin": [
+-6.9,
+-11.78
+],
+"fmax": [
+9.1,
+11.3
+]
+},
+{
+"id": "PCR-125",
+"kind": "school",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-125.glb",
+"model": "PCR-125",
+"s": 11218.5,
+"x": -2770.0,
+"yaw": -1.5708,
+"min": [
+-25.6,
+-4,
+-18.5
+],
+"max": [
+25.6,
+11.86,
+15.04
+],
+"fmin": [
+-25.6,
+-18.5
+],
+"fmax": [
+25.6,
+15.04
+]
+},
+{
+"id": "PCR-126",
+"kind": "beachhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-126.glb",
+"model": "PCR-126",
+"s": 11368.8,
+"x": -3149.3,
+"yaw": 1.5625,
+"min": [
+-5.17,
+-4,
+-6
+],
+"max": [
+5.17,
+7.44,
+6.36
+],
+"fmin": [
+-5.17,
+-4.96
+],
+"fmax": [
+5.17,
+6.36
+]
+},
+{
+"id": "PCR-127",
+"kind": "beachhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-127.glb",
+"model": "PCR-127",
+"s": 11490.4,
+"x": -3152.0,
+"yaw": 1.5708,
+"min": [
+-4.5,
+-4,
+-5.5
+],
+"max": [
+4.5,
+8.25,
+8.7
+],
+"fmin": [
+-4.5,
+-5.1
+],
+"fmax": [
+4.5,
+8.7
+]
+},
+{
+"id": "PCR-128",
+"kind": "beachhouse",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-128.glb",
+"model": "PCR-128",
+"s": 11610.7,
+"x": -3149.8,
+"yaw": 1.5796,
+"min": [
+-4.87,
+-4,
+-5.65
+],
+"max": [
+4.87,
+8.32,
+8.85
+],
+"fmin": [
+-4.87,
+-5.25
+],
+"fmax": [
+4.87,
+8.85
+]
+},
+{
+"id": "PCR-129",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-129.glb",
+"model": "PCR-129",
+"s": 10380.0,
+"x": -3243.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+14.73,
+12.43
+],
+"fmin": [
+-6.8,
+-11.42
+],
+"fmax": [
+6.8,
+12.43
+],
+"over_water": true
+},
+{
+"id": "PCR-130",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-130.glb",
+"model": "PCR-130",
+"s": 10380.0,
+"x": -3313.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+14.73,
+12.43
+],
+"fmin": [
+-6.8,
+-11.42
+],
+"fmax": [
+6.8,
+12.43
+],
+"over_water": true
+},
+{
+"id": "PCR-131",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-131.glb",
+"model": "PCR-131",
+"s": 10470.0,
+"x": -3243.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-132",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-132.glb",
+"model": "PCR-132",
+"s": 10470.0,
+"x": -3313.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-133",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-133.glb",
+"model": "PCR-133",
+"s": 10560.0,
+"x": -3243.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-134",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-134.glb",
+"model": "PCR-134",
+"s": 10560.0,
+"x": -3313.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-135",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-135.glb",
+"model": "PCR-135",
+"s": 10650.0,
+"x": -3243.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-136",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-136.glb",
+"model": "PCR-136",
+"s": 10650.0,
+"x": -3313.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-137",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-137.glb",
+"model": "PCR-137",
+"s": 10740.0,
+"x": -3243.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+11.58,
+13.92
+],
+"fmin": [
+-6.9,
+-11.7
+],
+"fmax": [
+6.9,
+13.92
+],
+"over_water": true
+},
+{
+"id": "PCR-138",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-138.glb",
+"model": "PCR-138",
+"s": 10740.0,
+"x": -3313.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+12.36,
+12.43
+],
+"fmin": [
+-7.0,
+-11.42
+],
+"fmax": [
+7.0,
+12.43
+],
+"over_water": true
+},
+{
+"id": "PCR-139",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-139.glb",
+"model": "PCR-139",
+"s": 10830.0,
+"x": -3243.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-140",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-140.glb",
+"model": "PCR-140",
+"s": 10830.0,
+"x": -3313.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-141",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-141.glb",
+"model": "PCR-141",
+"s": 10920.0,
+"x": -3243.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-142",
+"kind": "shingle",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-142.glb",
+"model": "PCR-142",
+"s": 10920.0,
+"x": -3313.0,
+"yaw": -1.5708,
+"min": [
+-7.85,
+-4,
+-13
+],
+"max": [
+7.84,
+15.39,
+13.27
+],
+"fmin": [
+-6.8,
+-11.7
+],
+"fmax": [
+6.8,
+13.27
+],
+"over_water": true
+},
+{
+"id": "PCR-143",
+"kind": "civic",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-143.glb",
+"model": "PCR-143",
+"s": 11050.0,
+"x": -3465.0,
+"yaw": -1.5708,
+"min": [
+-18.6,
+-4,
+-15
+],
+"max": [
+18.6,
+16.38,
+12.6
+],
+"fmin": [
+-18.6,
+-13.82
+],
+"fmax": [
+18.6,
+12.6
+],
+"over_water": true
+},
+{
+"id": "PCR-144",
+"kind": "civic",
+"settlement": "Port Carrow",
+"glb": "res://remake/buildings/PCR-144.glb",
+"model": "PCR-144",
+"s": 11200.0,
+"x": -3274.0,
+"yaw": -1.5708,
+"min": [
+-14.76,
+-4,
+-14
+],
+"max": [
+14.76,
+14.35,
+11.6
+],
+"fmin": [
+-14.76,
+-12.82
+],
+"fmax": [
+14.76,
+11.6
+],
+"over_water": true
+},
+{
 "id": "TRN-001",
 "kind": "warehouse",
 "settlement": "Tern Harbor",
