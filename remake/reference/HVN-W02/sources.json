@@ -1,0 +1,27 @@
+{
+ "structure": "HVN-W02",
+ "files": [
+  {
+   "file": "commons_Bay_Head_and_Mantoloking_above_Osborne_Ave.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bay_Head_and_Mantoloking_above_Osborne_Ave.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Bay_Head_and_Mantoloking_above_Osborne_Ave.jpg/1920px-Bay_Head_and_Mantoloking_above_Osborne_Ave.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Bay Head and Mantoloking above Osborne Ave.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "James Loesch",
+   "caption": "Drone photography on the New Jersey Shore,"
+  },
+  {
+   "file": "commons_Jetty_and_Two_Fishermen.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Jetty_and_Two_Fishermen.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Jetty_and_Two_Fishermen.jpg/1920px-Jetty_and_Two_Fishermen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Jetty and Two Fishermen.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "James Loesch",
+   "caption": "Above Bay Head Beach at Karge St,"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "id": "VBY-W01",
+ "settlement": "Victory Bay",
+ "kind": "wharf",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 14,
+  "length_m": 100.0
+ },
+ "example": {
+  "title": "Kelleys Island ferry dock with the Carmen Lee ferry, Marblehead",
+  "place": "Marblehead, Ottawa County, OH",
+  "year": 2000,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Carmen_Lee_ferry_(July_28,_2022)_01.jpg",
+  "photos": [
+   "commons_Carmen_Lee_ferry_July_28_2022_01.jpg",
+   "commons_Carmen_Lee_ferry_July_28_2022_05.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A car-ferry landing: a concrete apron and ramp with a fixed dock, a lamp post and blue steel rail, an orange double-ended ferry tied up alongside. Two photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 14,
+  "pile_depth_m": 10.0,
+  "year_built": 2000
+ },
+ "names": {}
+}

@@ -1,0 +1,38 @@
+{
+ "structure": "PTM-W07",
+ "files": [
+  {
+   "file": "commons_Grand_Haven-Girls_3529464583_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Grand_Haven-Girls_(3529464583).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Grand_Haven-Girls_%283529464583%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Grand Haven-Girls (3529464583).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Chris \"Mr. Pants\" Landis",
+   "caption": "Grand Haven-Girls"
+  },
+  {
+   "file": "commons_Lighthouse_7347695834_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Lighthouse_(7347695834).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Lighthouse_%287347695834%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Lighthouse (7347695834).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Caitriana Nicholson from \u5317\u4eac ~ Beijing, \u4e2d\u56fd ~ China",
+   "caption": "Grand Haven, MI"
+  },
+  {
+   "file": "commons_On_the_pier_7347697278_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:On_the_pier_(7347697278).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/On_the_pier_%287347697278%29.jpg/960px-On_the_pier_%287347697278%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:On the pier (7347697278).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Caitriana Nicholson from \u5317\u4eac ~ Beijing, \u4e2d\u56fd ~ China",
+   "caption": "Grand Haven, MI"
+  }
+ ]
+}

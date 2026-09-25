@@ -1,0 +1,38 @@
+{
+ "structure": "HFW-D01",
+ "files": [
+  {
+   "file": "commons_Chicago_38044975726_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Chicago_(38044975726).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Chicago_%2838044975726%29.jpg/1920px-Chicago_%2838044975726%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Chicago (38044975726).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Olivier Bruchez from Lausanne, Switzerland",
+   "caption": "Chicago"
+  },
+  {
+   "file": "commons_American_Flags_on_Navy_Pier_Chicago_49686996243_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:American_Flags_on_Navy_Pier,_Chicago_(49686996243).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/American_Flags_on_Navy_Pier%2C_Chicago_%2849686996243%29.jpg/1920px-American_Flags_on_Navy_Pier%2C_Chicago_%2849686996243%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:American Flags on Navy Pier, Chicago (49686996243).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Matt Kieffer from London, United Kingdom",
+   "caption": "American Flags on Navy Pier, Chicago"
+  },
+  {
+   "file": "commons_American_Flags_on_Navy_Pier_Chicago_49687826717_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:American_Flags_on_Navy_Pier,_Chicago_(49687826717).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/American_Flags_on_Navy_Pier%2C_Chicago_%2849687826717%29.jpg/1920px-American_Flags_on_Navy_Pier%2C_Chicago_%2849687826717%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:American Flags on Navy Pier, Chicago (49687826717).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Matt Kieffer from London, United Kingdom",
+   "caption": "American Flags on Navy Pier, Chicago"
+  }
+ ]
+}

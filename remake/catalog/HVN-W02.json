@@ -1,0 +1,34 @@
+{
+ "id": "HVN-W02",
+ "settlement": "Haven Point",
+ "kind": "breakwater",
+ "coast": "east",
+ "walk": {
+  "width_m": 10,
+  "length_m": 234.0
+ },
+ "example": {
+  "title": "Rock groin jetty at Bay Head / Mantoloking",
+  "place": "Point Pleasant Beach / Bay Head, Ocean County, NJ",
+  "year": 1985,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Bay_Head_and_Mantoloking_above_Osborne_Ave.jpg",
+  "photos": [
+   "commons_Bay_Head_and_Mantoloking_above_Osborne_Ave.jpg",
+   "commons_Jetty_and_Two_Fishermen.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A long granite rubble groin across the beach into the surf, fishermen on the end. Two photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "rubble_mound",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 10,
+  "pile_depth_m": 12.0,
+  "year_built": 1985
+ },
+ "names": {}
+}

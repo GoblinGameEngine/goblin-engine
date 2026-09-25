@@ -1,0 +1,27 @@
+{
+ "structure": "HVN-001",
+ "files": [
+  {
+   "file": "commons_Old_coast_guard_boathouse_cape_may.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Old_coast_guard_boathouse_cape_may.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Old_coast_guard_boathouse_cape_may.jpg/1920px-Old_coast_guard_boathouse_cape_may.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Old coast guard boathouse cape may.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "",
+   "caption": "Old Coast Guard boathouse"
+  },
+  {
+   "file": "commons_Historic_coast_guard_boathouse_plaque.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Historic_coast_guard_boathouse_plaque.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Historic_coast_guard_boathouse_plaque.jpg/1920px-Historic_coast_guard_boathouse_plaque.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Historic coast guard boathouse plaque.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "",
+   "caption": "Historic coast guard sign"
+  }
+ ]
+}

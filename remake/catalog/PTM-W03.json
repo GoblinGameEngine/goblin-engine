@@ -1,0 +1,34 @@
+{
+ "id": "PTM-W03",
+ "settlement": "Port Tamsin",
+ "kind": "dock",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 3,
+  "length_m": 82.0
+ },
+ "example": {
+  "title": "Petoskey municipal marina dock (row 2 from the left)",
+  "place": "Petoskey, Emmet County, MI",
+  "year": 1990,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:2009-0619-Petoskey-marina.JPG",
+  "photos": [
+   "commons_2009-0619-Petoskey-marina.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A floating marina dock of timber-decked pontoons with fingers and power posts, sailboats moored, behind a rip-rap breakwater. One photo; this record is dock row 2 counted from the left. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "concrete_piles",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 3,
+  "pile_depth_m": 10.0,
+  "year_built": 1990,
+  "floating": true
+ },
+ "names": {}
+}

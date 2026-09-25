@@ -1,0 +1,27 @@
+{
+ "structure": "HVN-003",
+ "files": [
+  {
+   "file": "commons_Wawa_store_452.jpeg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Wawa_store_452.jpeg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Wawa_store_452.jpeg/1920px-Wawa_store_452.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Wawa store 452.jpeg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "WhisperToMe",
+   "caption": "Wawa store 452"
+  },
+  {
+   "file": "commons_WawaStore452.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:WawaStore452.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/WawaStore452.jpg/1920px-WawaStore452.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:WawaStore452.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "WhisperToMe",
+   "caption": "Wawa Store #452, 1426-28 Texas Avenue Cape May, NJ 08204"
+  }
+ ]
+}

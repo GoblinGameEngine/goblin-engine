@@ -1,0 +1,27 @@
+{
+ "structure": "HVN-009",
+ "files": [
+  {
+   "file": "commons_Boarding_House_0_CMNJ.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Boarding_House_0_CMNJ.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Boarding_House_0_CMNJ.jpg/1920px-Boarding_House_0_CMNJ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Boarding House 0 CMNJ.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "WhisperToMe",
+   "caption": "Boarding House"
+  },
+  {
+   "file": "commons_BoardingHouseCapeMayNJhotel.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:BoardingHouseCapeMayNJhotel.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/BoardingHouseCapeMayNJhotel.jpg/1920px-BoardingHouseCapeMayNJhotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:BoardingHouseCapeMayNJhotel.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "WhisperToMe",
+   "caption": "Boarding House"
+  }
+ ]
+}

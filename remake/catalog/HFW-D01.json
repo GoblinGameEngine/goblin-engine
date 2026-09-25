@@ -1,0 +1,37 @@
+{
+ "id": "HFW-D01",
+ "settlement": "Harrow Falls",
+ "kind": "deck_deck",
+ "coast": "greatlakes",
+ "lot": {
+  "w": 64.0,
+  "d": 26.0
+ },
+ "example": {
+  "title": "Navy Pier east end: the flag plaza and lake terrace",
+  "place": "Navy Pier, Chicago, Cook County, IL",
+  "year": 1995,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Chicago_(38044975726).jpg",
+  "photos": [
+   "commons_Chicago_38044975726_.jpg",
+   "commons_American_Flags_on_Navy_Pier_Chicago_49686996243_.jpg",
+   "commons_American_Flags_on_Navy_Pier_Chicago_49687826717_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The pier head: a wide paved terrace at the end of the pier with a row of tall flagpoles, iron rails, lamps and benches, facing open lake. Three photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "ornamental_iron",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 64.0,
+  "pile_depth_m": 10.0,
+  "year_built": 1995,
+  "platform": true,
+  "platform_d_m": 26.0
+ },
+ "names": {}
+}

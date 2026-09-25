@@ -1,0 +1,35 @@
+{
+ "id": "CFW-D01",
+ "settlement": "Cedar Ford",
+ "kind": "deck_deck",
+ "coast": "greatlakes",
+ "lot": {
+  "w": 28.0,
+  "d": 22.0
+ },
+ "example": {
+  "title": "Observation deck on the Sand Point Marsh Trail",
+  "place": "Munising, Alger County, MI",
+  "year": 1995,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Sand_Point_Marsh_Trail_(f9039394-6337-460d-ba1d-8f2c9429616b).JPG",
+  "photos": [
+   "commons_Sand_Point_Marsh_Trail_f9039394-6337-460d-ba1d-8f2c9429616b_.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A timber viewing deck at the end of a marsh boardwalk: a square plank platform with timber rails, a bench and an interpretive sign looking over open marsh. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": true,
+  "width_m": 28.0,
+  "pile_depth_m": 10.0,
+  "year_built": 1995,
+  "platform": true,
+  "platform_d_m": 22.0
+ },
+ "names": {}
+}

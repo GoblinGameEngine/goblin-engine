@@ -1,0 +1,37 @@
+{
+ "id": "HFW-W02",
+ "settlement": "Harrow Falls",
+ "kind": "pier",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 10,
+  "length_m": 330.0
+ },
+ "example": {
+  "title": "St. Joseph North Pier and its elevated catwalk",
+  "place": "St. Joseph, Berrien County, MI",
+  "year": 1907,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:St._Joseph_-_St._Joseph_North_Pier_Inner_Light_-_20220507115113.jpg",
+  "photos": [
+   "commons_St._Joseph_-_St._Joseph_North_Pier_Inner_Light_-_20220507115113.jpg",
+   "commons_St._Joseph_-_St._Joseph_North_Pier_Inner_Light_-_20220507115120.jpg",
+   "commons_St._Joseph_Lighthouse_-_panoramio.jpg",
+   "commons_St._Joseph_Light_House_37172537461_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A long concrete pier with an elevated steel catwalk on trestle bents running its length to an inner light (white tower on a red-roofed fog house) and an outer light. Four photos. Older than 1970: Great Lakes catwalk piers are 1900s. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 10,
+  "pile_depth_m": 12.0,
+  "year_built": 1907,
+  "catwalk": true
+ },
+ "names": {}
+}

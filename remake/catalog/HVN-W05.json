@@ -1,0 +1,33 @@
+{
+ "id": "HVN-W05",
+ "settlement": "Haven Point",
+ "kind": "dock",
+ "coast": "east",
+ "walk": {
+  "width_m": 2,
+  "length_m": 40.0
+ },
+ "example": {
+  "title": "Montauk commercial fishing dock (row 1 of the photo)",
+  "place": "Montauk, Suffolk County, NY",
+  "year": 1980,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Montauk_Fishing_Fleet_by_Don_Ramey_Logan.jpg",
+  "photos": [
+   "commons_Montauk_Fishing_Fleet_by_Don_Ramey_Logan.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A working fishing dock of timber piles and planks with draggers and trawlers tied alongside, bollards and gear. One photo; this record is dock 1 of the frame. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 2,
+  "pile_depth_m": 10.0,
+  "year_built": 1980
+ },
+ "names": {}
+}

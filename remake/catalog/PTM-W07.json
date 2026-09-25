@@ -1,0 +1,36 @@
+{
+ "id": "PTM-W07",
+ "settlement": "Port Tamsin",
+ "kind": "pier",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 8,
+  "length_m": 185.0
+ },
+ "example": {
+  "title": "Grand Haven South Pier and catwalk",
+  "place": "Grand Haven, Ottawa County, MI",
+  "year": 1922,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Grand_Haven-Girls_(3529464583).jpg",
+  "photos": [
+   "commons_Grand_Haven-Girls_3529464583_.jpg",
+   "commons_Lighthouse_7347695834_.jpg",
+   "commons_On_the_pier_7347697278_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A broad concrete pier with an elevated black steel catwalk on trestle bents out to a red cylindrical inner light. Three photos. Older than 1970: Great Lakes catwalk piers are pre-war. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 8,
+  "pile_depth_m": 12.0,
+  "year_built": 1922,
+  "catwalk": true
+ },
+ "names": {}
+}

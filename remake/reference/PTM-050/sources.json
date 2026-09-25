@@ -1,0 +1,27 @@
+{
+ "structure": "PTM-050",
+ "files": [
+  {
+   "file": "commons_FincantieriShipyard-WI-DSC01627.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:FincantieriShipyard-WI-DSC01627.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/FincantieriShipyard-WI-DSC01627.jpg/1920px-FincantieriShipyard-WI-DSC01627.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:FincantieriShipyard-WI-DSC01627.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DrReload",
+   "caption": "Fincantieri shipyard in Sturgeon Bay, September 2021"
+  },
+  {
+   "file": "commons_Fincantieri_Bay_Shipbuilding_4-26-2019.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Fincantieri_Bay_Shipbuilding_4-26-2019.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Fincantieri_Bay_Shipbuilding_4-26-2019.jpg/1920px-Fincantieri_Bay_Shipbuilding_4-26-2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Fincantieri Bay Shipbuilding 4-26-2019.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "SigmaJosh",
+   "caption": "A freighter at the Fincantieri Bay Shipbuilding on April 26th, 2019"
+  }
+ ]
+}

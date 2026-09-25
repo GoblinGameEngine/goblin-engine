@@ -1,0 +1,33 @@
+{
+ "id": "HVN-W01",
+ "settlement": "Haven Point",
+ "kind": "breakwater",
+ "coast": "east",
+ "walk": {
+  "width_m": 10,
+  "length_m": 234.0
+ },
+ "example": {
+  "title": "Barnegat Inlet south jetty",
+  "place": "Barnegat Light, Ocean County, NJ",
+  "year": 1991,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:LBI_NJ_Lighthouse_01.JPG",
+  "photos": [
+   "commons_LBI_NJ_Lighthouse_01.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A granite-boulder jetty running out from the lighthouse along the inlet, a stub pile in the rocks. One photo. (Rebuilt 1991.) Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "rubble_mound",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 10,
+  "pile_depth_m": 12.0,
+  "year_built": 1991
+ },
+ "names": {}
+}

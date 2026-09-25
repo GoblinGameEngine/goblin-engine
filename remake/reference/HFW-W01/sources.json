@@ -1,0 +1,38 @@
+{
+ "structure": "HFW-W01",
+ "files": [
+  {
+   "file": "commons_Chicago_24245502778_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Chicago_(24245502778).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Chicago_%2824245502778%29.jpg/1920px-Chicago_%2824245502778%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Chicago (24245502778).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Olivier Bruchez from Lausanne, Switzerland",
+   "caption": "Chicago"
+  },
+  {
+   "file": "commons_Chicago_26321399399_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Chicago_(26321399399).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Chicago_%2826321399399%29.jpg/1920px-Chicago_%2826321399399%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Chicago (26321399399).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Olivier Bruchez from Lausanne, Switzerland",
+   "caption": "Chicago"
+  },
+  {
+   "file": "commons_Chicago_26321403489_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Chicago_(26321403489).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Chicago_%2826321403489%29.jpg/1920px-Chicago_%2826321403489%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Chicago (26321403489).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Olivier Bruchez from Lausanne, Switzerland",
+   "caption": "Chicago"
+  }
+ ]
+}

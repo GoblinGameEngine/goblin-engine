@@ -1,0 +1,35 @@
+{
+ "id": "CFW-W01",
+ "settlement": "Cedar Ford",
+ "kind": "boardwalk",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 5,
+  "length_m": 310.0
+ },
+ "example": {
+  "title": "Sand Point Marsh Trail boardwalk, Pictured Rocks",
+  "place": "Munising, Alger County, MI",
+  "year": 1995,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Sand_Point_Marsh_Trail_(2ae3867f-7363-43a5-bb56-a8738f33d477).JPG",
+  "photos": [
+   "commons_Sand_Point_Marsh_Trail_2ae3867f-7363-43a5-bb56-a8738f33d477_.JPG",
+   "commons_Sand_Point_Marsh_Trail_effd8dc2-85a6-4f70-8ea6-8fc74fd309b7_.JPG",
+   "commons_Sand_Point_Marsh_Trail_in_Winter_771141d5-347a-4ce9-b79a-b1ae97497886_.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A narrow timber boardwalk winding through a cedar-and-sedge marsh: plank deck on low timber posts, a simple timber rail. Three photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": true,
+  "width_m": 5,
+  "pile_depth_m": 10.0,
+  "year_built": 1995
+ },
+ "names": {}
+}

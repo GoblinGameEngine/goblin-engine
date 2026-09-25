@@ -1,0 +1,33 @@
+{
+ "id": "PTM-W01",
+ "settlement": "Port Tamsin",
+ "kind": "breakwater",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 10,
+  "length_m": 305.0
+ },
+ "example": {
+  "title": "Breakwater with a red light tower (Muskegon South Breakwater)",
+  "place": "Muskegon, Muskegon County, MI",
+  "year": 1930,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:A_Lighthouse_on_the_Great_Lakes_(32425648575).jpg",
+  "photos": [
+   "commons_A_Lighthouse_on_the_Great_Lakes_32425648575_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A long concrete-capped breakwater of big broken slabs running out to a red cylindrical steel light tower. One photo. Older than 1970. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "rubble_mound",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 10,
+  "pile_depth_m": 12.0,
+  "year_built": 1930
+ },
+ "names": {}
+}

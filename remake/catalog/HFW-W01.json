@@ -1,0 +1,35 @@
+{
+ "id": "HFW-W01",
+ "settlement": "Harrow Falls",
+ "kind": "boardwalk",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 10,
+  "length_m": 880.0
+ },
+ "example": {
+  "title": "Navy Pier south promenade",
+  "place": "Navy Pier, Chicago, Cook County, IL",
+  "year": 1995,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Chicago_(24245502778).jpg",
+  "photos": [
+   "commons_Chicago_24245502778_.jpg",
+   "commons_Chicago_26321399399_.jpg",
+   "commons_Chicago_26321403489_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The pier's south dock promenade (rebuilt 1995): a broad paved walk along the lake with an iron rail, lamp standards and benches, the towered hall behind. Three photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "ornamental_iron",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 10,
+  "pile_depth_m": 10.0,
+  "year_built": 1995
+ },
+ "names": {}
+}

@@ -1,0 +1,33 @@
+{
+ "id": "HVN-W03",
+ "settlement": "Haven Point",
+ "kind": "catwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 2,
+  "length_m": 302.0
+ },
+ "example": {
+  "title": "Barnegat Lighthouse sea-wall promenade (2008)",
+  "place": "Barnegat Light, Ocean County, NJ",
+  "year": 2008,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:2020-10-18_16_32_26_View_of_Barnegat_Lighthouse_within_Barnegat_Lighthouse_State_Park_in_Barnegat_Light,_Ocean_County,_New_Jersey.jpg",
+  "photos": [
+   "commons_2020-10-18_16_32_26_View_of_Barnegat_Lighthouse_within_Barnegat_Lighthouse_State_Park_in_Barnegat_Light_Ocean_County_New_Jersey.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A concrete sea-wall walkway with a pipe rail skirting the lighthouse base along the inlet. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 2,
+  "pile_depth_m": 10.0,
+  "year_built": 2008
+ },
+ "names": {}
+}

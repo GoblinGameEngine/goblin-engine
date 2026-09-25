@@ -1,0 +1,33 @@
+{
+ "id": "VBY-W03",
+ "settlement": "Victory Bay",
+ "kind": "dock",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 3,
+  "length_m": 66.0
+ },
+ "example": {
+  "title": "Seaway Marina dock, Kelleys Island",
+  "place": "Kelleys Island, Erie County, OH",
+  "year": 1995,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Seaway_Marina_from_the_lake.jpg",
+  "photos": [
+   "commons_Seaway_Marina_from_the_lake.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A timber-and-concrete marina dock with cabin cruisers moored alongside, cleats and a rail. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 3,
+  "pile_depth_m": 10.0,
+  "year_built": 1995
+ },
+ "names": {}
+}

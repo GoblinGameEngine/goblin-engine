@@ -1,0 +1,27 @@
+{
+ "structure": "HVN-042",
+ "files": [
+  {
+   "file": "commons_Utschs_Marina.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Utschs_Marina.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Utschs_Marina.jpg/1920px-Utschs_Marina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Utschs Marina.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "WhisperToMe",
+   "caption": "Utsch's Marina"
+  },
+  {
+   "file": "commons_UtschsMarinaLowerTown.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:UtschsMarinaLowerTown.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/UtschsMarinaLowerTown.jpg/1920px-UtschsMarinaLowerTown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:UtschsMarinaLowerTown.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "WhisperToMe",
+   "caption": "Utschs Marina"
+  }
+ ]
+}

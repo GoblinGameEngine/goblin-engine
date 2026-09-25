@@ -1,0 +1,53 @@
+{
+ "id": "HVN-004",
+ "settlement": "Haven Point",
+ "kind": "store",
+ "coast": "east",
+ "lot": {
+  "w": 25.8,
+  "d": 22.0
+ },
+ "example": {
+  "title": "C View restaurant, Cape May",
+  "place": "Cape May, Cape May County, NJ",
+  "year": 1920,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:C_view_restaurant.jpg",
+  "photos": [
+   "commons_C_view_restaurant.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A two-storey clapboard corner tavern with a porch, a lettered sign and flower beds. One photo. Older than 1970: a pre-war harbour-village building. Foundations taken deeper than needed (spec rule 4).",
+ "traits": {
+  "storeys": 2,
+  "facade": "frame_false_front",
+  "cornice": "parapet_flat",
+  "upper_use": "none",
+  "storefronts": [
+   {
+    "business": "Channel View Tavern",
+    "type": "bar",
+    "sign": "CHANNEL VIEW",
+    "sign_style": "projecting",
+    "awning": false,
+    "extra_signs": [
+     "Wings \u00b7 Beer"
+    ]
+   }
+  ],
+  "condition": "kept",
+  "year_built": 1920,
+  "found_depth_m": 6.0,
+  "colors": {
+   "body": "#EDE0A8",
+   "trim": "#6A4A34",
+   "accent": "#2E4E7E"
+  }
+ },
+ "names": {
+  "businesses": [
+   "Channel View Tavern"
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "id": "CFW-W02",
+ "settlement": "Cedar Ford",
+ "kind": "boardwalk",
+ "coast": "greatlakes",
+ "walk": {
+  "width_m": 4,
+  "length_m": 300.0
+ },
+ "example": {
+  "title": "Maumee Bay State Park nature-centre boardwalk",
+  "place": "Oregon, Lucas County, OH",
+  "year": 1991,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:P5250060_MaumeeBaySP_NatureCtr_(boardwalk).jpg",
+  "photos": [
+   "commons_P5250060_MaumeeBaySP_NatureCtr_boardwalk_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A 1991 marsh-and-swamp-forest boardwalk: a broad grey composite-and-timber deck on posts with a low edge rail, curving through wet woods. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "composite",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": true,
+  "width_m": 4,
+  "pile_depth_m": 10.0,
+  "year_built": 1991
+ },
+ "names": {}
+}

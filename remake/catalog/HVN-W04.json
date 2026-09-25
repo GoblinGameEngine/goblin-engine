@@ -1,0 +1,34 @@
+{
+ "id": "HVN-W04",
+ "settlement": "Haven Point",
+ "kind": "boardwalk",
+ "coast": "east",
+ "walk": {
+  "width_m": 6,
+  "length_m": 176.0
+ },
+ "example": {
+  "title": "Dune-crossover boardwalk, Barnegat Lighthouse State Park",
+  "place": "Barnegat Light, Ocean County, NJ",
+  "year": 2000,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:2020-10-18_16_44_19_View_east_down_the_walkway_to_the_Atlantic_Ocean_from_East_9th_Street_in_Barnegat_Light,_Ocean_County,_New_Jersey.jpg",
+  "photos": [
+   "commons_2020-10-18_16_44_19_View_east_down_the_walkway_to_the_Atlantic_Ocean_from_East_9th_Street_in_Barnegat_Light_Ocean_County_New_Jersey.jpg",
+   "commons_2020-10-18_16_44_21_View_east_down_the_walkway_to_the_Atlantic_Ocean_from_East_9th_Street_in_Barnegat_Light_Ocean_County_New_Jersey.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A timber boardwalk with rails over the grassed dunes to the beach. Two photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": true,
+  "width_m": 6,
+  "pile_depth_m": 10.0,
+  "year_built": 2000
+ },
+ "names": {}
+}
