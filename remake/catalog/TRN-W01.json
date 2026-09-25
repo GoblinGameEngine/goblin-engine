@@ -1,0 +1,35 @@
+{
+ "id": "TRN-W01",
+ "settlement": "Tern Harbor",
+ "kind": "breakwater",
+ "coast": "east",
+ "walk": {
+  "width_m": 14,
+  "length_m": 459.3
+ },
+ "example": {
+  "title": "Dog Bar Breakwater, Eastern Point, Gloucester",
+  "place": "Gloucester, Essex County, MA",
+  "year": 1905,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Gloucester,MA_-_Lighthouse_and_breakwater,_America's_Oldest_Seaport_-_panoramio.jpg",
+  "photos": [
+   "commons_Gloucester_MA_-_Lighthouse_and_breakwater_America_s_Oldest_Seaport_-_panoramio.jpg",
+   "commons_Eastern_Point_Lighthouse_Gloucester_493874_11683001796_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A long granite-block breakwater running out from the lighthouse point across the harbour mouth: a flat walkable crest of big dressed granite blocks, a small light at the end. Two photos. Older than 1970 (1894-1905): no newer granite breakwater of this kind. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "rubble_mound",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 14,
+  "pile_depth_m": 12.0,
+  "year_built": 1905,
+  "armour": "granite_block"
+ },
+ "names": {}
+}

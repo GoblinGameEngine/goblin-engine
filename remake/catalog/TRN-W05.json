@@ -1,0 +1,34 @@
+{
+ "id": "TRN-W05",
+ "settlement": "Tern Harbor",
+ "kind": "wharf",
+ "coast": "east",
+ "walk": {
+  "width_m": 12,
+  "length_m": 116.0
+ },
+ "example": {
+  "title": "New Bedford harbour bulkhead and pile wharf (built 2010s)",
+  "place": "New Bedford, Bristol County, MA",
+  "year": 2014,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Bulkhead_Construction_New_Bedford_Harbor_Site_Dewatering_Facility_(4385003316).jpg",
+  "photos": [
+   "commons_Bulkhead_Construction_New_Bedford_Harbor_Site_Dewatering_Facility_4385003316_.jpg",
+   "commons_Bulkhead_Construction_New_Bedford_Harbor_Site_Dewatering_Facility_4385003294_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A new harbour wharf under construction: a steel sheet-pile bulkhead with a timber-decked pile wharf of steel piles and cross-beams stepping out into the harbour. Two photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "steel_screw_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 12,
+  "pile_depth_m": 10.0,
+  "year_built": 2014
+ },
+ "names": {}
+}

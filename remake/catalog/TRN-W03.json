@@ -1,0 +1,33 @@
+{
+ "id": "TRN-W03",
+ "settlement": "Tern Harbor",
+ "kind": "wharf",
+ "coast": "east",
+ "walk": {
+  "width_m": 12,
+  "length_m": 116.0
+ },
+ "example": {
+  "title": "Old wharf and shed in Gloucester harbour",
+  "place": "Gloucester, Essex County, MA",
+  "year": 1950,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:2010_harbor_Gloucester_Massachusetts_USA_4444257168.jpg",
+  "photos": [
+   "commons_2010_harbor_Gloucester_Massachusetts_USA_4444257168.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A timber wharf on creosoted piles with an old shed at its end, broken piles of earlier wharves in the water. One photo. Older than 1970. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 12,
+  "pile_depth_m": 10.0,
+  "year_built": 1950
+ },
+ "names": {}
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "TRN-W01",
+ "files": [
+  {
+   "file": "commons_Gloucester_MA_-_Lighthouse_and_breakwater_America_s_Oldest_Seaport_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Gloucester,MA_-_Lighthouse_and_breakwater,_America%27s_Oldest_Seaport_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Gloucester%2CMA_-_Lighthouse_and_breakwater%2C_America%27s_Oldest_Seaport_-_panoramio.jpg/1920px-Gloucester%2CMA_-_Lighthouse_and_breakwater%2C_America%27s_Oldest_Seaport_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Gloucester,MA - Lighthouse and breakwater, America's Oldest Seaport - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "joefrogger",
+   "caption": "Gloucester,MA - Lighthouse and breakwater, America's Oldest Seaport"
+  },
+  {
+   "file": "commons_Eastern_Point_Lighthouse_Gloucester_493874_11683001796_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Eastern_Point_Lighthouse,_Gloucester_(493874)_(11683001796).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Eastern_Point_Lighthouse%2C_Gloucester_%28493874%29_%2811683001796%29.jpg/1920px-Eastern_Point_Lighthouse%2C_Gloucester_%28493874%29_%2811683001796%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Eastern Point Lighthouse, Gloucester (493874) (11683001796).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Robert Linsdell from St. Andrews, Canada",
+   "caption": "Eastern Point Lighthouse, Gloucester, Massachusetts, United States"
+  }
+ ]
+}

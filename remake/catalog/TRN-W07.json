@@ -1,0 +1,35 @@
+{
+ "id": "TRN-W07",
+ "settlement": "Tern Harbor",
+ "kind": "crossover",
+ "coast": "east",
+ "walk": {
+  "width_m": 5,
+  "length_m": 108.0
+ },
+ "example": {
+  "title": "Marshall Point Lighthouse footbridge, Port Clyde",
+  "place": "Port Clyde, Knox County, ME",
+  "year": 1990,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Maine-00023_-_Marshall_Point_Lighthouse.jpg",
+  "photos": [
+   "commons_Maine-00023_-_Marshall_Point_Lighthouse.jpg",
+   "commons_Maine-00039_-_Marshall_Point_Lighthouse.jpg",
+   "commons_Maine-00024_-_Marshall_Point_Lighthouse.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A raised timber footbridge on granite-block piers crossing the rocks to a lighthouse, with a white timber rail. Three photos (bridge rebuilt c. 1990). Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "rubble_mound",
+  "rail": "timber",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 5,
+  "pile_depth_m": 10.0,
+  "year_built": 1990
+ },
+ "names": {}
+}

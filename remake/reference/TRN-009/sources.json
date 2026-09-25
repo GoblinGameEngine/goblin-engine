@@ -1,0 +1,49 @@
+{
+ "structure": "TRN-009",
+ "files": [
+  {
+   "file": "commons_2012_Beacon_Marine_Basin_building_Gloucester_Massachusetts_USA_8395070008.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:2012_Beacon_Marine_Basin_building_Gloucester_Massachusetts_USA_8395070008.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/2012_Beacon_Marine_Basin_building_Gloucester_Massachusetts_USA_8395070008.jpg/1920px-2012_Beacon_Marine_Basin_building_Gloucester_Massachusetts_USA_8395070008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:2012 Beacon Marine Basin building Gloucester Massachusetts USA 8395070008.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Doug Kerr from Albany, NY, United States",
+   "caption": "Gloucester, Massachusetts"
+  },
+  {
+   "file": "commons_Beacon_Marine_Basin_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Beacon_Marine_Basin_02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Beacon_Marine_Basin_02.jpg/1920px-Beacon_Marine_Basin_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Beacon Marine Basin 02.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Missgretchenc",
+   "caption": "Beacon Marine Basin, 211 East Main Street, Gloucester, Essex County, MA"
+  },
+  {
+   "file": "commons_Beacon_Marine_Basin_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Beacon_Marine_Basin_03.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Beacon_Marine_Basin_03.jpg/1920px-Beacon_Marine_Basin_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Beacon Marine Basin 03.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Missgretchenc",
+   "caption": "Beacon Marine Basin, 211 East Main Street, Gloucester, Essex County, MA"
+  },
+  {
+   "file": "commons_Eastern_Wharf_Gloucester.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Eastern_Wharf_Gloucester.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Eastern_Wharf_Gloucester.jpg/1920px-Eastern_Wharf_Gloucester.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Eastern Wharf Gloucester.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Ymblanter",
+   "caption": "A wharf at the Inner Harbor in Gloucester, MA"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "id": "TRN-W06",
+ "settlement": "Tern Harbor",
+ "kind": "wharf",
+ "coast": "east",
+ "walk": {
+  "width_m": 6,
+  "length_m": 61.0
+ },
+ "example": {
+  "title": "Dragger wharf with a net winch, Gloucester",
+  "place": "Gloucester, Essex County, MA",
+  "year": 1980,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Harbor_in_Gloucester,_Massachusetts.jpg",
+  "photos": [
+   "commons_Harbor_in_Gloucester_Massachusetts.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A short working wharf where a dragger lies alongside with its net drum and gallows, a timber deck and bollards. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 6,
+  "pile_depth_m": 10.0,
+  "year_built": 1980
+ },
+ "names": {}
+}

@@ -1,0 +1,35 @@
+{
+ "id": "TRN-W08",
+ "settlement": "Tern Harbor",
+ "kind": "railway",
+ "coast": "east",
+ "walk": {
+  "width_m": 6,
+  "length_m": 150.0
+ },
+ "example": {
+  "title": "Gloucester station tracks along the harbour (MBTA)",
+  "place": "Gloucester, Essex County, MA",
+  "year": 1985,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Gloucester_station_from_Washington_Street_(2),_April_2014.JPG",
+  "photos": [
+   "commons_Gloucester_station_from_Washington_Street_2_April_2014.JPG",
+   "commons_Gloucester_station_from_Washington_Street_1_April_2014.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A single-track railway with a low concrete platform, a timber shelter with a red hipped roof and lamp standards, running along the harbour side of town. Two photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 6,
+  "pile_depth_m": 10.0,
+  "year_built": 1985,
+  "gauge": "standard"
+ },
+ "names": {}
+}

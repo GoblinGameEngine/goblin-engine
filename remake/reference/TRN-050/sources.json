@@ -1,0 +1,27 @@
+{
+ "structure": "TRN-050",
+ "files": [
+  {
+   "file": "commons_LubecME_McCurdysSmokehouse_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:LubecME_McCurdysSmokehouse_1.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/LubecME_McCurdysSmokehouse_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:LubecME McCurdysSmokehouse 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Magicpiano",
+   "caption": "McCurdy Smokehouse, Lubec, Maine."
+  },
+  {
+   "file": "commons_LubecME_McCurdysSmokehouse_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:LubecME_McCurdysSmokehouse_2.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/LubecME_McCurdysSmokehouse_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:LubecME McCurdysSmokehouse 2.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Magicpiano",
+   "caption": "McCurdy Smokehouse, Lubec, Maine."
+  }
+ ]
+}

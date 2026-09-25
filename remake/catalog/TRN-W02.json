@@ -1,0 +1,33 @@
+{
+ "id": "TRN-W02",
+ "settlement": "Tern Harbor",
+ "kind": "wharf",
+ "coast": "east",
+ "walk": {
+  "width_m": 12,
+  "length_m": 116.0
+ },
+ "example": {
+  "title": "State Pier and Pier 3, New Bedford",
+  "place": "New Bedford, Bristol County, MA",
+  "year": 1980,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Boats_at_State_Pier_and_Pier_3,_New_Bedford,_December_2023.jpg",
+  "photos": [
+   "commons_Boats_at_State_Pier_and_Pier_3_New_Bedford_December_2023.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A broad concrete-decked fishing pier crowded with steel draggers and scallopers, bollards and gear along the edge. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 12,
+  "pile_depth_m": 10.0,
+  "year_built": 1980
+ },
+ "names": {}
+}
