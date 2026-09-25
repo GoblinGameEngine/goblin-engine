@@ -18,9 +18,9 @@
   ],
   "drawings": []
  },
- "brief": "One of the marina's floating finger docks (1971): a narrow concrete-pontoon walk 1.5 m wide running out from the main dock between rows of slips, white-hulled sailboats and motor yachts moored either side, cleats and power pedestals, held by round concrete guide piles. One photo; this record is the dock row seen in the view across the basin (the left-hand dock row). Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "brief": "One of the marina's floating finger docks (1971): a narrow composite-decked pontoon walk 1.5 m wide running out from the main dock between rows of slips, white-hulled sailboats and motor yachts moored either side, cleats and power pedestals, held by round concrete guide piles. One photo; this record is the dock row seen in the view across the basin (the left-hand dock row). Piles carried 10 m or more below the modelled bed (spec rule 4).",
  "traits": {
-  "deck": "concrete",
+  "deck": "composite",
   "substructure": "concrete_piles",
   "rail": "none",
   "lighting": "none",

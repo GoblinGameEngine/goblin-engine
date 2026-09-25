@@ -19,11 +19,11 @@
   ],
   "drawings": []
  },
- "brief": "The main walk of the West Basin marina (1971): a railed concrete promenade along the bulkhead with white pipe rails and gates down to a long floating main dock of concrete pontoons, sailboats and motor yachts in slips on both sides. Two photos (at dusk). Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "brief": "The main walk of the West Basin marina (1971): a railed concrete promenade along the bulkhead with white pipe rails and gates down to a long floating main dock of composite-decked pontoons, sailboats and motor yachts in slips on both sides. Two photos (at dusk). Piles carried 10 m or more below the modelled bed (spec rule 4).",
  "traits": {
-  "deck": "concrete",
+  "deck": "composite",
   "substructure": "concrete_piles",
-  "rail": "pipe",
+  "rail": "none",
   "lighting": "lamp_posts",
   "benches": true,
   "width_m": 3,

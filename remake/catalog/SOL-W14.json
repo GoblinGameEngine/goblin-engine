@@ -18,9 +18,9 @@
   ],
   "drawings": []
  },
- "brief": "The East Basin's main floating dock (1971): a long concrete-pontoon walkway held by guide piles, with short fingers and power pedestals, sport boats and cabin cruisers moored along it. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "brief": "The East Basin's main floating dock (1971): a long composite-decked pontoon walkway held by guide piles, with short fingers and power pedestals, sport boats and cabin cruisers moored along it. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
  "traits": {
-  "deck": "concrete",
+  "deck": "composite",
   "substructure": "concrete_piles",
   "rail": "none",
   "lighting": "lamp_posts",
