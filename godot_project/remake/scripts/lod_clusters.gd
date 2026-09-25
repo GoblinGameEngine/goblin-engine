@@ -47,24 +47,25 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 		var e: Dictionary = entries[idx]
 		while ahead < mini(entries.size(), idx + LOOKAHEAD):
 			for l in [1, 2, 3]:
-				var ap := "res://remake/buildings/%s.lod%d.glb" % [entries[ahead].id, l]
+				var ap := "res://remake/buildings/%s.lod%d.glb" % [entries[ahead].get("model", entries[ahead].id), l]
 				if ResourceLoader.exists(ap):
 					ResourceLoader.load_threaded_request(ap, "", true)
 			ahead += 1
 		var id: String = e.id
-		if not lod_scenes.has(id):
-			lod_scenes[id] = []
+		var model: String = e.get("model", id)             # the glbs it uses (a crossing may reuse another's)
+		if not lod_scenes.has(model):
+			lod_scenes[model] = []
 			for l in [1, 2, 3]:
-				var p := "res://remake/buildings/%s.lod%d.glb" % [id, l]
+				var p := "res://remake/buildings/%s.lod%d.glb" % [model, l]
 				if not ResourceLoader.exists(p):
-					lod_scenes[id].append(null)
+					lod_scenes[model].append(null)
 					continue
 				# not loaded yet: let frames go by rather than block on it
 				while ResourceLoader.load_threaded_get_status(p) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 					await tree.process_frame
 					frame_start = Time.get_ticks_usec()
-				lod_scenes[id].append(ResourceLoader.load_threaded_get(p))
-		var sc: Array = lod_scenes[id]
+				lod_scenes[model].append(ResourceLoader.load_threaded_get(p))
+		var sc: Array = lod_scenes[model]
 		if sc[0] == null:
 			continue
 		var root := Node3D.new()
@@ -73,7 +74,7 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 		parent.add_child(root)
 		var lod1: Node3D = sc[0].instantiate()
 		root.add_child(lod1)
-		RemakeBuilding.prepare_lod(lod1, "res://remake/buildings/%s.lod1.glb" % id)
+		RemakeBuilding.prepare_lod(lod1, "res://remake/buildings/%s.lod1.glb" % model)
 		# size and prominence from the massing (LOD2 has no yard props): switch distances scale with
 		# it, and a tall or very long building is a landmark that keeps its own chain
 		var l2: Node3D = sc[1].instantiate() if sc[1] else null
@@ -84,11 +85,11 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 		if full:
 			var b := RemakeBuilding.new()
 			root.add_child(b)
-			b.load_building(load("res://remake/buildings/%s.glb" % id))
+			b.load_building(load("res://remake/buildings/%s.glb" % model))
 			_ranges(b, 0.0, D1 * k)
 			_light_fade(b)
 		else:
-			records.append({"id": id, "root": root, "lod1": lod1, "k": k, "landmark": landmark})
+			records.append({"id": id, "model": model, "root": root, "lod1": lod1, "k": k, "landmark": landmark})
 		var lod1_begin := D1 * k if full else 0.0          # no full detail yet: LOD1 from 0 m (the streamer swaps it)
 		if landmark:
 			# its own chain all the way out
@@ -99,7 +100,7 @@ static func build(parent: Node3D, entries: Array, full := true) -> Dictionary:
 				if inst == null:
 					continue
 				root.add_child(inst)
-				RemakeBuilding.prepare_lod(inst, "res://remake/buildings/%s.lod%d.glb" % [id, l])
+				RemakeBuilding.prepare_lod(inst, "res://remake/buildings/%s.lod%d.glb" % [model, l])
 				_ranges(inst, (D2 if l == 2 else D3) * k, D3 * k if l == 2 else 0.0)
 			if Time.get_ticks_usec() - frame_start > BUDGET_USEC:
 				await tree.process_frame

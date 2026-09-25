@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 			continue
 		if _inflight.size() >= MAX_INFLIGHT:
 			break
-		var path := "res://remake/buildings/%s.glb" % records[i].id
+		var path := "res://remake/buildings/%s.glb" % records[i].get("model", records[i].id)
 		if ResourceLoader.load_threaded_request(path) == OK:
 			_inflight[i] = path
 

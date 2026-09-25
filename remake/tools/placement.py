@@ -82,8 +82,10 @@ def main():
             return
         _add(rid, kind, settlement, s, x, yaw)
 
-    def _add(rid, kind, settlement, s, x, yaw):
-        glb = os.path.join(BLD, f"{rid}.glb")
+    def _add(rid, kind, settlement, s, x, yaw, model=None):
+        # model: the glb it uses when that's another structure's (a crossing reusing an existing
+        # bridge on the expanded map); the entry keeps its own id
+        glb = os.path.join(BLD, f"{model or rid}.glb")
         if not os.path.exists(glb):
             missing.append(rid)
             return
@@ -92,10 +94,11 @@ def main():
             missing.append(rid + " (no _visual mesh)")
             return
         # the footprint the building stands on: its massing (LOD2, no yard props), else the visual bounds
-        lod2 = os.path.join(BLD, f"{rid}.lod2.glb")
+        lod2 = os.path.join(BLD, f"{model or rid}.lod2.glb")
         f = glb_bounds(lod2, any_mesh=True) if os.path.exists(lod2) else None
         f = f or b
-        out.append({"id": rid, "kind": kind, "settlement": settlement, "glb": f"res://remake/buildings/{rid}.glb",
+        out.append({"id": rid, "kind": kind, "settlement": settlement, "glb": f"res://remake/buildings/{model or rid}.glb",
+                    "model": model or rid,
                     "s": round(s, 2), "x": round(x, 2), "yaw": round(yaw, 4),
                     "min": [round(v, 2) for v in b[0]], "max": [round(v, 2) for v in b[1]],
                     "fmin": [round(f[0][0], 2), round(f[0][2], 2)], "fmax": [round(f[1][0], 2), round(f[1][2], 2)]})
@@ -118,7 +121,10 @@ def main():
 
     for c in inv["crossings"]:
         (as_, ax), (bs, bx) = c.get("ends") or ((c["s"], c["x"]), (c["s"] + 1, c["x"]))
-        add(c["id"], "crossing", None, c["s"], c["x"], yaw_facing(bs - as_, bx - ax))
+        if c.get("model", c["id"]) is None:
+            missing.append(c["id"] + " (no model yet)")
+            continue
+        _add(c["id"], "crossing", None, c["s"], c["x"], yaw_facing(bs - as_, bx - ax), c.get("model"))
 
     with open(OUT, "w") as f:
         json.dump({"structures": out}, f, indent=0)

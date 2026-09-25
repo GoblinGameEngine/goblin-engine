@@ -2,268 +2,261 @@
 	"aerostats": [
 		{
 			"id": "AERO-Bellhaven-1",
-			"s": 1092.67,
+			"s": 8416.47,
 			"where": "Bellhaven",
-			"x": 608.33,
+			"x": 3121.44,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Bellhaven-2",
-			"s": 1033.56,
+			"s": 8325.53,
 			"where": "Bellhaven",
-			"x": 520.21,
+			"x": 3118.66,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-CedarFord-1",
-			"s": 1117.71,
+			"s": 13628.75,
 			"where": "Cedar Ford",
-			"x": -118.8,
+			"x": -2685.36,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-DunmoreCrossing-1",
-			"s": 629.14,
+			"s": 16870,
 			"where": "Dunmore Crossing",
-			"x": -816.38,
+			"x": -3126.68,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Fenwick-1",
-			"s": 2188.33,
+			"s": 18224.47,
 			"where": "Fenwick",
-			"x": -734.06,
+			"x": -3261.55,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Fenwick-2",
-			"s": 2300.2,
+			"s": 18276.95,
 			"where": "Fenwick",
-			"x": -735.15,
+			"x": -3262.28,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HarrowFalls-1",
-			"s": 545.99,
+			"s": 10579.93,
 			"where": "Harrow Falls",
-			"x": 265.75,
+			"x": 3180.07,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HarrowFalls-2",
-			"s": 607.93,
+			"s": 10291.33,
 			"where": "Harrow Falls",
-			"x": 263.06,
+			"x": 2962.58,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HarrowFalls-3",
-			"s": 407.96,
+			"s": 10234.82,
 			"where": "Harrow Falls",
-			"x": 500.33,
+			"x": 2971.66,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HarrowFalls-4",
-			"s": 136.2,
+			"s": 10307.12,
 			"where": "Harrow Falls",
-			"x": 519.51,
+			"x": 3009.8,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HaskinsCorner-1",
-			"s": 3027.17,
+			"s": 1305.95,
 			"where": "Haskins Corner",
-			"x": -791.5,
+			"x": -3161.1,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HaskinsCorner-2",
-			"s": 2889,
+			"s": 1428.52,
 			"where": "Haskins Corner",
-			"x": -587.73,
+			"x": -3063.44,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Kessler-1",
-			"s": 1837.31,
+			"s": 17675.28,
 			"where": "Kessler",
-			"x": 528.97,
+			"x": 3125.65,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Kessler-2",
-			"s": 1963.27,
+			"s": 17726,
 			"where": "Kessler",
-			"x": 738.94,
+			"x": 3121.61,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Kessler-3",
-			"s": 2074.02,
+			"s": 17602.23,
 			"where": "Kessler",
-			"x": 408.97,
-			"yaw": 0
-		},
-		{
-			"id": "AERO-LoomisGrove-1",
-			"s": 2476.65,
-			"where": "Loomis Grove",
-			"x": -848.68,
+			"x": 3108.4,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Marlowe-1",
-			"s": 1567.41,
+			"s": 1214.7,
 			"where": "Marlowe",
-			"x": -879.73,
+			"x": -3284.71,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Marlowe-2",
-			"s": 1721.54,
+			"s": 1240.6,
 			"where": "Marlowe",
-			"x": -720.59,
+			"x": -3230.92,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Pruett-1",
-			"s": 1840.52,
+			"s": 1621.99,
 			"where": "Pruett",
-			"x": 725.96,
+			"x": 3182.28,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Tamarack-1",
-			"s": 2881.64,
+			"s": 16810.67,
 			"where": "Tamarack",
-			"x": 472.11,
+			"x": 2937.93,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Tamarack-2",
-			"s": 2660.72,
+			"s": 16639,
 			"where": "Tamarack",
-			"x": 451.28,
+			"x": 2910.41,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-01",
-			"s": 1582.59,
+			"s": 14113.4,
 			"where": "FARM-01",
-			"x": 512.47,
+			"x": -1714.6,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-03",
-			"s": 562.88,
+			"s": 5985.46,
 			"where": "FARM-03",
-			"x": 1366.96,
+			"x": -779.27,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-05",
-			"s": 2954.57,
+			"s": 96.09,
 			"where": "FARM-05",
-			"x": -1204.95,
+			"x": 2590.14,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-07",
-			"s": 2906.07,
+			"s": 7492.34,
 			"where": "FARM-07",
-			"x": 383.86,
+			"x": -1586.68,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-09",
-			"s": 1544.63,
+			"s": 2358.34,
 			"where": "FARM-09",
-			"x": 1433.97,
+			"x": -2528.12,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-11",
-			"s": 2965.3,
+			"s": 15536.69,
 			"where": "FARM-11",
-			"x": 1358.9,
+			"x": -1373.69,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-13",
-			"s": 2485.99,
+			"s": 2739.71,
 			"where": "FARM-13",
-			"x": 1383.59,
+			"x": 877.71,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-15",
-			"s": 134.59,
+			"s": 12130.55,
 			"where": "FARM-15",
-			"x": -1155.47,
+			"x": 1313.15,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-17",
-			"s": 1512.98,
+			"s": 17828.51,
 			"where": "FARM-17",
-			"x": -1183.96,
+			"x": -2487.44,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-19",
-			"s": 2117.67,
+			"s": 10773.11,
 			"where": "FARM-19",
-			"x": 1243.88,
+			"x": -1631.47,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-21",
-			"s": 2947.41,
+			"s": 8290.21,
 			"where": "FARM-21",
-			"x": -1310.1,
+			"x": -2528.17,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-23",
-			"s": 2203.21,
+			"s": 4313.22,
 			"where": "FARM-23",
-			"x": -357.21,
+			"x": 1744.61,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-25",
-			"s": 2640.04,
+			"s": 14683.81,
 			"where": "FARM-25",
-			"x": -292.11,
+			"x": -2587.73,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-27",
-			"s": 1024.71,
+			"s": 10719.25,
 			"where": "FARM-27",
-			"x": 394.64,
+			"x": 2533.01,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-29",
-			"s": 908.4,
+			"s": 9876.97,
 			"where": "FARM-29",
-			"x": -372.78,
+			"x": -2572.72,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-31",
-			"s": 2981.66,
+			"s": 9074.05,
 			"where": "FARM-31",
-			"x": -267.71,
+			"x": -599.44,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-FARM-33",
-			"s": 2597.87,
+			"s": 7156.41,
 			"where": "FARM-33",
-			"x": 439.59,
+			"x": 3004.83,
 			"yaw": 0
 		}
 	]

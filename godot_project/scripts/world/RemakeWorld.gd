@@ -40,6 +40,6 @@ static func build(root: Node3D, settlements: Array) -> Dictionary:
 static func _entry(e: Dictionary, s: float, x: float, basis: Basis, h: float) -> Dictionary:
 	var cell2 := RemakeLodClusters.CELL2
 	var cell3 := RemakeLodClusters.CELL3
-	return {"id": e.id, "xform": Transform3D(basis, StationGeo.point(s, x, h)),
+	return {"id": e.id, "model": e.get("model", e.id), "xform": Transform3D(basis, StationGeo.point(s, x, h)),
 		"key2": Vector2i(floori(s / cell2), floori(x / cell2)),
 		"key3": Vector2i(floori(s / cell3), floori(x / cell3))}

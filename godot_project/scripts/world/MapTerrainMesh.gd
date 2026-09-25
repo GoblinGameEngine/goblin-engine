@@ -14,9 +14,9 @@ class_name MapTerrainMesh
 ## Vertex colours tint the ground: grass, bank mud and river bed by carved depth, bare earth on
 ## steep slopes.  Water surfaces (river, lake) are built alongside (build_water).
 
-const CHUNKS_ROUND := 48             # chunks round the ring (65.4 m each)
+static var CHUNKS_ROUND := roundi(StationGeo.CIRC / 65.4)   # chunks round the ring (~65 m each)
 const CHUNK_X := 100.0
-const GROUP := 4
+const GROUP := 8                     # chunks per side of a merged group (the mid and far tiers)
 const NEAR := 220.0
 const MID := 650.0
 const SKIRT := 1.5
@@ -98,6 +98,8 @@ func _cover_tint(lc: Vector2i) -> Color:
 		3: return Color(0.2, 0.32, 0.14)           # woods (the floor under the trees)
 		4: return FIELD_TINT[lc.y % 6]             # farm fields, by field
 		5: return Color(0.22, 0.34, 0.15)          # windbreak grove
+		6: return Color(0.83, 0.76, 0.58)          # sandy beach
+		7: return Color(0.46, 0.43, 0.39)          # rock: the headland cliffs
 	return GRASS
 
 

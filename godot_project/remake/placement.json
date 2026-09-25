@@ -5,8 +5,9 @@
 "kind": "industrial",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-001.glb",
-"s": 195.0,
-"x": 173.0,
+"model": "HF-001",
+"s": 10070.0,
+"x": 2673.0,
 "yaw": 1.5708,
 "min": [
 -15,
@@ -32,8 +33,9 @@
 "kind": "industrial",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-002.glb",
-"s": 235.0,
-"x": 173.0,
+"model": "HF-002",
+"s": 10110.0,
+"x": 2673.0,
 "yaw": 1.5708,
 "min": [
 -15,
@@ -59,8 +61,9 @@
 "kind": "industrial",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-003.glb",
-"s": 572.5,
-"x": 172.5,
+"model": "HF-003",
+"s": 10447.5,
+"x": 2672.5,
 "yaw": 1.5708,
 "min": [
 -27.5,
@@ -86,8 +89,9 @@
 "kind": "civic",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-004.glb",
-"s": 213.0,
-"x": 240.0,
+"model": "HF-004",
+"s": 10088.0,
+"x": 2740.0,
 "yaw": 1.5708,
 "min": [
 -17.6,
@@ -113,8 +117,9 @@
 "kind": "church",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-005.glb",
-"s": 213.0,
-"x": 334.5,
+"model": "HF-005",
+"s": 10088.0,
+"x": 2834.5,
 "yaw": 1.5708,
 "min": [
 -6.9,
@@ -140,8 +145,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-006.glb",
-"s": 189.0,
-"x": 357.3,
+"model": "HF-006",
+"s": 10064.0,
+"x": 2857.3,
 "yaw": -1.5708,
 "min": [
 -4.63,
@@ -167,8 +173,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-007.glb",
-"s": 215.2,
-"x": 358.8,
+"model": "HF-007",
+"s": 10090.2,
+"x": 2858.8,
 "yaw": -1.5708,
 "min": [
 -4.48,
@@ -194,8 +201,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-008.glb",
-"s": 240.7,
-"x": 357.6,
+"model": "HF-008",
+"s": 10115.7,
+"x": 2857.6,
 "yaw": -1.5817,
 "min": [
 -4.32,
@@ -221,8 +229,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-009.glb",
-"s": 185.9,
-"x": 394.4,
+"model": "HF-009",
+"s": 10060.9,
+"x": 2894.4,
 "yaw": 1.5708,
 "min": [
 -5.8,
@@ -248,8 +257,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-010.glb",
-"s": 211.4,
-"x": 394.5,
+"model": "HF-010",
+"s": 10086.4,
+"x": 2894.5,
 "yaw": 1.5708,
 "min": [
 -4.17,
@@ -275,8 +285,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-011.glb",
-"s": 241.7,
-"x": 395.2,
+"model": "HF-011",
+"s": 10116.7,
+"x": 2895.2,
 "yaw": 1.5708,
 "min": [
 -4.95,
@@ -302,8 +313,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-012.glb",
-"s": 187.2,
-"x": 449.4,
+"model": "HF-012",
+"s": 10062.2,
+"x": 2949.4,
 "yaw": -1.5802,
 "min": [
 -4.17,
@@ -329,8 +341,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-013.glb",
-"s": 213.3,
-"x": 449.2,
+"model": "HF-013",
+"s": 10088.3,
+"x": 2949.2,
 "yaw": -1.5802,
 "min": [
 -3.56,
@@ -356,8 +369,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-014.glb",
-"s": 238.1,
-"x": 448.8,
+"model": "HF-014",
+"s": 10113.1,
+"x": 2948.8,
 "yaw": -1.5708,
 "min": [
 -5.09,
@@ -383,8 +397,9 @@
 "kind": "church",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-015.glb",
-"s": 213.0,
-"x": 512.5,
+"model": "HF-015",
+"s": 10088.0,
+"x": 3012.5,
 "yaw": 1.5708,
 "min": [
 -6.9,
@@ -410,8 +425,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-016.glb",
-"s": 273.2,
-"x": 211.6,
+"model": "HF-016",
+"s": 10148.2,
+"x": 2711.6,
 "yaw": 1.5708,
 "min": [
 -9.7,
@@ -437,8 +453,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-017.glb",
-"s": 293.4,
-"x": 211.6,
+"model": "HF-017",
+"s": 10168.4,
+"x": 2711.6,
 "yaw": 1.5658,
 "min": [
 -9.7,
@@ -464,8 +481,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-018.glb",
-"s": 313.7,
-"x": 213.4,
+"model": "HF-018",
+"s": 10188.7,
+"x": 2713.4,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -491,8 +509,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-019.glb",
-"s": 333.9,
-"x": 211.8,
+"model": "HF-019",
+"s": 10208.9,
+"x": 2711.8,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -518,8 +537,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-020.glb",
-"s": 273.2,
-"x": 267.9,
+"model": "HF-020",
+"s": 10148.2,
+"x": 2767.9,
 "yaw": -1.5708,
 "min": [
 -9.87,
@@ -545,8 +565,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-021.glb",
-"s": 293.4,
-"x": 268.0,
+"model": "HF-021",
+"s": 10168.4,
+"x": 2768.0,
 "yaw": -1.566,
 "min": [
 -9.87,
@@ -572,8 +593,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-022.glb",
-"s": 313.7,
-"x": 265.5,
+"model": "HF-022",
+"s": 10188.7,
+"x": 2765.5,
 "yaw": -1.5708,
 "min": [
 -9.7,
@@ -599,8 +621,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-023.glb",
-"s": 333.9,
-"x": 268.0,
+"model": "HF-023",
+"s": 10208.9,
+"x": 2768.0,
 "yaw": -1.5708,
 "min": [
 -9.87,
@@ -626,8 +649,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-024.glb",
-"s": 273.2,
-"x": 302.7,
+"model": "HF-024",
+"s": 10148.2,
+"x": 2802.7,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -653,8 +677,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-025.glb",
-"s": 293.4,
-"x": 305.8,
+"model": "HF-025",
+"s": 10168.4,
+"x": 2805.8,
 "yaw": 1.567,
 "min": [
 -9.7,
@@ -680,8 +705,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-026.glb",
-"s": 313.7,
-"x": 303.2,
+"model": "HF-026",
+"s": 10188.7,
+"x": 2803.2,
 "yaw": 1.5708,
 "min": [
 -9.7,
@@ -707,8 +733,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-027.glb",
-"s": 333.9,
-"x": 303.2,
+"model": "HF-027",
+"s": 10208.9,
+"x": 2803.2,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -734,8 +761,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-028.glb",
-"s": 275.4,
-"x": 358.5,
+"model": "HF-028",
+"s": 10150.4,
+"x": 2858.5,
 "yaw": -1.5708,
 "min": [
 -4.63,
@@ -761,8 +789,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-029.glb",
-"s": 305.6,
-"x": 357.4,
+"model": "HF-029",
+"s": 10180.6,
+"x": 2857.4,
 "yaw": -1.5708,
 "min": [
 -5.55,
@@ -788,8 +817,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-030.glb",
-"s": 331.9,
-"x": 357.0,
+"model": "HF-030",
+"s": 10206.9,
+"x": 2857.0,
 "yaw": -1.5708,
 "min": [
 -3.09,
@@ -815,8 +845,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-031.glb",
-"s": 279.2,
-"x": 393.8,
+"model": "HF-031",
+"s": 10154.2,
+"x": 2893.8,
 "yaw": 1.5602,
 "min": [
 -4.75,
@@ -842,8 +873,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-032.glb",
-"s": 303.7,
-"x": 396.3,
+"model": "HF-032",
+"s": 10178.7,
+"x": 2896.3,
 "yaw": 1.5708,
 "min": [
 -1.9,
@@ -869,8 +901,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-033.glb",
-"s": 330.3,
-"x": 395.9,
+"model": "HF-033",
+"s": 10205.3,
+"x": 2895.9,
 "yaw": 1.5801,
 "min": [
 -3.4,
@@ -896,8 +929,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-034.glb",
-"s": 276.9,
-"x": 449.4,
+"model": "HF-034",
+"s": 10151.9,
+"x": 2949.4,
 "yaw": -1.5796,
 "min": [
 -4.78,
@@ -923,8 +957,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-035.glb",
-"s": 306.0,
-"x": 448.3,
+"model": "HF-035",
+"s": 10181.0,
+"x": 2948.3,
 "yaw": -1.5708,
 "min": [
 -4.48,
@@ -950,8 +985,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-036.glb",
-"s": 331.4,
-"x": 450.2,
+"model": "HF-036",
+"s": 10206.4,
+"x": 2950.2,
 "yaw": -1.5708,
 "min": [
 -4.31,
@@ -977,8 +1013,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-037.glb",
-"s": 277.1,
-"x": 484.6,
+"model": "HF-037",
+"s": 10152.1,
+"x": 2984.6,
 "yaw": 1.5606,
 "min": [
 -3.76,
@@ -1004,8 +1041,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-038.glb",
-"s": 304.0,
-"x": 487.5,
+"model": "HF-038",
+"s": 10179.0,
+"x": 2987.5,
 "yaw": 1.5623,
 "min": [
 -4.99,
@@ -1031,8 +1069,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-039.glb",
-"s": 329.4,
-"x": 484.9,
+"model": "HF-039",
+"s": 10204.4,
+"x": 2984.9,
 "yaw": 1.5708,
 "min": [
 -5.39,
@@ -1058,8 +1097,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-040.glb",
-"s": 275.5,
-"x": 540.5,
+"model": "HF-040",
+"s": 10150.5,
+"x": 3040.5,
 "yaw": -1.5604,
 "min": [
 -3.6,
@@ -1085,8 +1125,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-041.glb",
-"s": 305.0,
-"x": 538.8,
+"model": "HF-041",
+"s": 10180.0,
+"x": 3038.8,
 "yaw": -1.5614,
 "min": [
 -6.2,
@@ -1112,8 +1153,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-042.glb",
-"s": 329.6,
-"x": 539.2,
+"model": "HF-042",
+"s": 10204.6,
+"x": 3039.2,
 "yaw": -1.5612,
 "min": [
 -4.1,
@@ -1139,8 +1181,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-043.glb",
-"s": 364.2,
-"x": 212.2,
+"model": "HF-043",
+"s": 10239.2,
+"x": 2712.2,
 "yaw": 1.5708,
 "min": [
 -9.7,
@@ -1166,8 +1209,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-044.glb",
-"s": 384.4,
-"x": 212.7,
+"model": "HF-044",
+"s": 10259.4,
+"x": 2712.7,
 "yaw": 1.5663,
 "min": [
 -9.7,
@@ -1193,8 +1237,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-045.glb",
-"s": 404.7,
-"x": 213.7,
+"model": "HF-045",
+"s": 10279.7,
+"x": 2713.7,
 "yaw": 1.5708,
 "min": [
 -9.7,
@@ -1220,8 +1265,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-046.glb",
-"s": 424.9,
-"x": 214.6,
+"model": "HF-046",
+"s": 10299.9,
+"x": 2714.6,
 "yaw": 1.5708,
 "min": [
 -9.7,
@@ -1247,8 +1293,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-047.glb",
-"s": 364.2,
-"x": 267.2,
+"model": "HF-047",
+"s": 10239.2,
+"x": 2767.2,
 "yaw": -1.5708,
 "min": [
 -9.87,
@@ -1274,8 +1321,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-048.glb",
-"s": 384.4,
-"x": 266.0,
+"model": "HF-048",
+"s": 10259.4,
+"x": 2766.0,
 "yaw": -1.5668,
 "min": [
 -9.87,
@@ -1301,8 +1349,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-049.glb",
-"s": 404.7,
-"x": 265.2,
+"model": "HF-049",
+"s": 10279.7,
+"x": 2765.2,
 "yaw": -1.5708,
 "min": [
 -9.87,
@@ -1328,8 +1377,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-050.glb",
-"s": 424.9,
-"x": 267.2,
+"model": "HF-050",
+"s": 10299.9,
+"x": 2767.2,
 "yaw": -1.5708,
 "min": [
 -9.7,
@@ -1355,8 +1405,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-051.glb",
-"s": 364.2,
-"x": 305.2,
+"model": "HF-051",
+"s": 10239.2,
+"x": 2805.2,
 "yaw": 1.5708,
 "min": [
 -9.7,
@@ -1382,8 +1433,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-052.glb",
-"s": 384.4,
-"x": 305.6,
+"model": "HF-052",
+"s": 10259.4,
+"x": 2805.6,
 "yaw": 1.567,
 "min": [
 -9.87,
@@ -1409,8 +1461,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-053.glb",
-"s": 404.7,
-"x": 303.4,
+"model": "HF-053",
+"s": 10279.7,
+"x": 2803.4,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -1436,8 +1489,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-054.glb",
-"s": 424.9,
-"x": 305.5,
+"model": "HF-054",
+"s": 10299.9,
+"x": 2805.5,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -1463,8 +1517,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-055.glb",
-"s": 370.3,
-"x": 355.8,
+"model": "HF-055",
+"s": 10245.3,
+"x": 2855.8,
 "yaw": -1.5708,
 "min": [
 -4.48,
@@ -1490,8 +1545,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-056.glb",
-"s": 395.2,
-"x": 357.3,
+"model": "HF-056",
+"s": 10270.2,
+"x": 2857.3,
 "yaw": -1.5708,
 "min": [
 -5.39,
@@ -1517,8 +1573,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-057.glb",
-"s": 423.1,
-"x": 359.1,
+"model": "HF-057",
+"s": 10298.1,
+"x": 2859.1,
 "yaw": -1.5814,
 "min": [
 -5.07,
@@ -1544,8 +1601,9 @@
 "kind": "school",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-058.glb",
-"s": 375.2,
-"x": 402.5,
+"model": "HF-058",
+"s": 10250.2,
+"x": 2902.5,
 "yaw": 1.5677,
 "min": [
 -18.35,
@@ -1571,8 +1629,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-059.glb",
-"s": 368.2,
-"x": 484.8,
+"model": "HF-059",
+"s": 10243.2,
+"x": 2984.8,
 "yaw": 1.5708,
 "min": [
 -3.41,
@@ -1598,8 +1657,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-060.glb",
-"s": 394.4,
-"x": 486.9,
+"model": "HF-060",
+"s": 10269.4,
+"x": 2986.9,
 "yaw": 1.5708,
 "min": [
 -5.14,
@@ -1625,8 +1685,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-061.glb",
-"s": 419.1,
-"x": 487.0,
+"model": "HF-061",
+"s": 10294.1,
+"x": 2987.0,
 "yaw": 1.5708,
 "min": [
 -5.24,
@@ -1652,8 +1713,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-062.glb",
-"s": 367.0,
-"x": 540.7,
+"model": "HF-062",
+"s": 10242.0,
+"x": 3040.7,
 "yaw": -1.5708,
 "min": [
 -4.32,
@@ -1679,8 +1741,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-063.glb",
-"s": 394.6,
-"x": 540.1,
+"model": "HF-063",
+"s": 10269.6,
+"x": 3040.1,
 "yaw": -1.5612,
 "min": [
 -4.93,
@@ -1706,8 +1769,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-064.glb",
-"s": 421.2,
-"x": 539.7,
+"model": "HF-064",
+"s": 10296.2,
+"x": 3039.7,
 "yaw": -1.5708,
 "min": [
 -2.35,
@@ -1733,8 +1797,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-065.glb",
-"s": 455.2,
-"x": 212.4,
+"model": "HF-065",
+"s": 10330.2,
+"x": 2712.4,
 "yaw": 1.5708,
 "min": [
 -9.7,
@@ -1760,8 +1825,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-066.glb",
-"s": 475.4,
-"x": 215.3,
+"model": "HF-066",
+"s": 10350.4,
+"x": 2715.3,
 "yaw": 1.5672,
 "min": [
 -9.7,
@@ -1787,8 +1853,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-067.glb",
-"s": 495.7,
-"x": 214.2,
+"model": "HF-067",
+"s": 10370.7,
+"x": 2714.2,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -1814,8 +1881,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-068.glb",
-"s": 515.9,
-"x": 214.7,
+"model": "HF-068",
+"s": 10390.9,
+"x": 2714.7,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -1841,8 +1909,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-069.glb",
-"s": 455.2,
-"x": 265.9,
+"model": "HF-069",
+"s": 10330.2,
+"x": 2765.9,
 "yaw": -1.5708,
 "min": [
 -9.87,
@@ -1868,8 +1937,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-070.glb",
-"s": 475.4,
-"x": 267.1,
+"model": "HF-070",
+"s": 10350.4,
+"x": 2767.1,
 "yaw": -1.5664,
 "min": [
 -9.87,
@@ -1895,8 +1965,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-071.glb",
-"s": 495.7,
-"x": 268.3,
+"model": "HF-071",
+"s": 10370.7,
+"x": 2768.3,
 "yaw": -1.5708,
 "min": [
 -9.87,
@@ -1922,8 +1993,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-072.glb",
-"s": 515.9,
-"x": 264.9,
+"model": "HF-072",
+"s": 10390.9,
+"x": 2764.9,
 "yaw": -1.5708,
 "min": [
 -9.87,
@@ -1949,8 +2021,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-073.glb",
-"s": 455.2,
-"x": 306.5,
+"model": "HF-073",
+"s": 10330.2,
+"x": 2806.5,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -1976,8 +2049,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-074.glb",
-"s": 475.4,
-"x": 306.5,
+"model": "HF-074",
+"s": 10350.4,
+"x": 2806.5,
 "yaw": 1.5672,
 "min": [
 -9.7,
@@ -2003,8 +2077,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-075.glb",
-"s": 495.7,
-"x": 305.3,
+"model": "HF-075",
+"s": 10370.7,
+"x": 2805.3,
 "yaw": 1.5708,
 "min": [
 -9.87,
@@ -2030,8 +2105,9 @@
 "kind": "store",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-076.glb",
-"s": 515.9,
-"x": 306.3,
+"model": "HF-076",
+"s": 10390.9,
+"x": 2806.3,
 "yaw": 1.5708,
 "min": [
 -9.7,
@@ -2057,8 +2133,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-077.glb",
-"s": 458.1,
-"x": 358.0,
+"model": "HF-077",
+"s": 10333.1,
+"x": 2858.0,
 "yaw": -1.5606,
 "min": [
 -5.09,
@@ -2084,8 +2161,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-078.glb",
-"s": 486.5,
-"x": 358.6,
+"model": "HF-078",
+"s": 10361.5,
+"x": 2858.6,
 "yaw": -1.5708,
 "min": [
 -4.48,
@@ -2111,8 +2189,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-079.glb",
-"s": 511.2,
-"x": 357.5,
+"model": "HF-079",
+"s": 10386.2,
+"x": 2857.5,
 "yaw": -1.5801,
 "min": [
 -3.94,
@@ -2138,8 +2217,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-080.glb",
-"s": 461.3,
-"x": 393.3,
+"model": "HF-080",
+"s": 10336.3,
+"x": 2893.3,
 "yaw": 1.5708,
 "min": [
 -4.32,
@@ -2165,8 +2245,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-081.glb",
-"s": 483.7,
-"x": 396.5,
+"model": "HF-081",
+"s": 10358.7,
+"x": 2896.5,
 "yaw": 1.5708,
 "min": [
 -5.09,
@@ -2192,8 +2273,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-082.glb",
-"s": 514.8,
-"x": 395.2,
+"model": "HF-082",
+"s": 10389.8,
+"x": 2895.2,
 "yaw": 1.5708,
 "min": [
 -4.63,
@@ -2219,8 +2301,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-083.glb",
-"s": 457.5,
-"x": 448.5,
+"model": "HF-083",
+"s": 10332.5,
+"x": 2948.5,
 "yaw": -1.5606,
 "min": [
 -5.09,
@@ -2246,8 +2329,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-084.glb",
-"s": 488.0,
-"x": 448.3,
+"model": "HF-084",
+"s": 10363.0,
+"x": 2948.3,
 "yaw": -1.5614,
 "min": [
 -4.32,
@@ -2273,8 +2357,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-085.glb",
-"s": 513.9,
-"x": 448.8,
+"model": "HF-085",
+"s": 10388.9,
+"x": 2948.8,
 "yaw": -1.5708,
 "min": [
 -4.93,
@@ -2300,8 +2385,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-086.glb",
-"s": 458.0,
-"x": 488.3,
+"model": "HF-086",
+"s": 10333.0,
+"x": 2988.3,
 "yaw": 1.5793,
 "min": [
 -3.7,
@@ -2327,8 +2413,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-087.glb",
-"s": 484.2,
-"x": 485.4,
+"model": "HF-087",
+"s": 10359.2,
+"x": 2985.4,
 "yaw": 1.5708,
 "min": [
 -4.78,
@@ -2354,8 +2441,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-088.glb",
-"s": 514.6,
-"x": 485.8,
+"model": "HF-088",
+"s": 10389.6,
+"x": 2985.8,
 "yaw": 1.5814,
 "min": [
 -3.3,
@@ -2381,8 +2469,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-089.glb",
-"s": 459.7,
-"x": 539.8,
+"model": "HF-089",
+"s": 10334.7,
+"x": 3039.8,
 "yaw": -1.5708,
 "min": [
 -5.09,
@@ -2408,8 +2497,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-090.glb",
-"s": 487.0,
-"x": 539.4,
+"model": "HF-090",
+"s": 10362.0,
+"x": 3039.4,
 "yaw": -1.5614,
 "min": [
 -2.55,
@@ -2435,8 +2525,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-091.glb",
-"s": 512.1,
-"x": 538.4,
+"model": "HF-091",
+"s": 10387.1,
+"x": 3038.4,
 "yaw": -1.5794,
 "min": [
 -4.48,
@@ -2462,8 +2553,9 @@
 "kind": "civic",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-092.glb",
-"s": 577.0,
-"x": 240.0,
+"model": "HF-092",
+"s": 10452.0,
+"x": 2740.0,
 "yaw": 1.5708,
 "min": [
 -12.06,
@@ -2489,8 +2581,9 @@
 "kind": "civic",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-093.glb",
-"s": 577.0,
-"x": 331.0,
+"model": "HF-093",
+"s": 10452.0,
+"x": 2831.0,
 "yaw": 1.5708,
 "min": [
 -12.06,
@@ -2516,8 +2609,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-094.glb",
-"s": 551.5,
-"x": 394.2,
+"model": "HF-094",
+"s": 10426.5,
+"x": 2894.2,
 "yaw": 1.5617,
 "min": [
 -6.2,
@@ -2543,8 +2637,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-095.glb",
-"s": 575.6,
-"x": 396.4,
+"model": "HF-095",
+"s": 10450.6,
+"x": 2896.4,
 "yaw": 1.5708,
 "min": [
 -5.09,
@@ -2570,8 +2665,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-096.glb",
-"s": 604.3,
-"x": 393.9,
+"model": "HF-096",
+"s": 10479.3,
+"x": 2893.9,
 "yaw": 1.5804,
 "min": [
 -4.31,
@@ -2597,8 +2693,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-097.glb",
-"s": 550.4,
-"x": 447.8,
+"model": "HF-097",
+"s": 10425.4,
+"x": 2947.8,
 "yaw": -1.5708,
 "min": [
 -4.02,
@@ -2624,8 +2721,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-098.glb",
-"s": 575.2,
-"x": 448.0,
+"model": "HF-098",
+"s": 10450.2,
+"x": 2948.0,
 "yaw": -1.5617,
 "min": [
 -3.79,
@@ -2651,8 +2749,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-099.glb",
-"s": 604.8,
-"x": 449.4,
+"model": "HF-099",
+"s": 10479.8,
+"x": 2949.4,
 "yaw": -1.5708,
 "min": [
 -5.9,
@@ -2678,8 +2777,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-100.glb",
-"s": 549.0,
-"x": 484.9,
+"model": "HF-100",
+"s": 10424.0,
+"x": 2984.9,
 "yaw": 1.5604,
 "min": [
 -4.48,
@@ -2705,8 +2805,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-101.glb",
-"s": 579.5,
-"x": 486.6,
+"model": "HF-101",
+"s": 10454.5,
+"x": 2986.6,
 "yaw": 1.5797,
 "min": [
 -4.93,
@@ -2732,8 +2833,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-102.glb",
-"s": 601.5,
-"x": 485.2,
+"model": "HF-102",
+"s": 10476.5,
+"x": 2985.2,
 "yaw": 1.5708,
 "min": [
 -4.17,
@@ -2759,8 +2861,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-103.glb",
-"s": 552.7,
-"x": 540.0,
+"model": "HF-103",
+"s": 10427.7,
+"x": 3040.0,
 "yaw": -1.5708,
 "min": [
 -4.63,
@@ -2786,8 +2889,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-104.glb",
-"s": 576.5,
-"x": 541.7,
+"model": "HF-104",
+"s": 10451.5,
+"x": 3041.7,
 "yaw": -1.5708,
 "min": [
 -5.75,
@@ -2813,8 +2917,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-105.glb",
-"s": 602.4,
-"x": 540.1,
+"model": "HF-105",
+"s": 10477.4,
+"x": 3040.1,
 "yaw": -1.5708,
 "min": [
 -5.09,
@@ -2840,8 +2945,9 @@
 "kind": "civic",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-106.glb",
-"s": 395.0,
-"x": 604.5,
+"model": "HF-106",
+"s": 10270.0,
+"x": 3104.5,
 "yaw": 1.5708,
 "min": [
 -22.6,
@@ -2867,8 +2973,9 @@
 "kind": "civic",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-107.glb",
-"s": 213.0,
-"x": 604.0,
+"model": "HF-107",
+"s": 10088.0,
+"x": 3104.0,
 "yaw": 1.5708,
 "min": [
 -23.1,
@@ -2894,8 +3001,9 @@
 "kind": "school",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-108.glb",
-"s": 489.0,
-"x": 584.5,
+"model": "HF-108",
+"s": 10364.0,
+"x": 3084.5,
 "yaw": 1.5708,
 "min": [
 -32.6,
@@ -2921,8 +3029,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-109.glb",
-"s": 276.2,
-"x": 577.5,
+"model": "HF-109",
+"s": 10151.2,
+"x": 3077.5,
 "yaw": 1.5708,
 "min": [
 -4.78,
@@ -2948,8 +3057,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-110.glb",
-"s": 293.2,
-"x": 578.6,
+"model": "HF-110",
+"s": 10168.2,
+"x": 3078.6,
 "yaw": 1.5623,
 "min": [
 -5.15,
@@ -2975,8 +3085,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-111.glb",
-"s": 314.6,
-"x": 579.0,
+"model": "HF-111",
+"s": 10189.6,
+"x": 3079.0,
 "yaw": 1.5708,
 "min": [
 -4.63,
@@ -3002,8 +3113,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-112.glb",
-"s": 336.0,
-"x": 576.2,
+"model": "HF-112",
+"s": 10211.0,
+"x": 3076.2,
 "yaw": 1.5806,
 "min": [
 -4.78,
@@ -3029,8 +3141,9 @@
 "kind": "tower",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-113.glb",
-"s": 65.0,
-"x": 614.5,
+"model": "HF-113",
+"s": 9940.0,
+"x": 3114.5,
 "yaw": -1.5708,
 "min": [
 -7.73,
@@ -3056,8 +3169,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-114.glb",
-"s": 403.7,
-"x": 776.8,
+"model": "HF-114",
+"s": 10278.7,
+"x": 3276.8,
 "yaw": -0.4414,
 "min": [
 -4.67,
@@ -3083,8 +3197,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-115.glb",
-"s": 370.5,
-"x": 809.5,
+"model": "HF-115",
+"s": 10245.5,
+"x": 3309.5,
 "yaw": -1.0579,
 "min": [
 -5.85,
@@ -3110,8 +3225,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-116.glb",
-"s": 319.3,
-"x": 827.4,
+"model": "HF-116",
+"s": 10194.3,
+"x": 3327.4,
 "yaw": -1.3715,
 "min": [
 -4.5,
@@ -3137,8 +3253,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-117.glb",
-"s": 260.0,
-"x": 831.1,
+"model": "HF-117",
+"s": 10135.0,
+"x": 3331.1,
 "yaw": -1.6313,
 "min": [
 -4.67,
@@ -3164,8 +3281,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-118.glb",
-"s": 203.4,
-"x": 820.2,
+"model": "HF-118",
+"s": 10078.4,
+"x": 3320.2,
 "yaw": -1.9051,
 "min": [
 -5.9,
@@ -3191,8 +3309,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-119.glb",
-"s": 160.0,
-"x": 795.2,
+"model": "HF-119",
+"s": 10035.0,
+"x": 3295.2,
 "yaw": -2.3349,
 "min": [
 -4.31,
@@ -3218,8 +3337,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-120.glb",
-"s": 141.0,
-"x": 754.5,
+"model": "HF-120",
+"s": 10016.0,
+"x": 3254.5,
 "yaw": -3.1416,
 "min": [
 -4.93,
@@ -3245,8 +3365,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-121.glb",
-"s": 160.0,
-"x": 713.9,
+"model": "HF-121",
+"s": 10035.0,
+"x": 3213.9,
 "yaw": 2.328,
 "min": [
 -4.77,
@@ -3272,8 +3393,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-122.glb",
-"s": 203.4,
-"x": 688.9,
+"model": "HF-122",
+"s": 10078.4,
+"x": 3188.9,
 "yaw": 1.9051,
 "min": [
 -4.93,
@@ -3299,8 +3421,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-123.glb",
-"s": 260.0,
-"x": 678.0,
+"model": "HF-123",
+"s": 10135.0,
+"x": 3178.0,
 "yaw": 1.6307,
 "min": [
 -4.67,
@@ -3326,8 +3449,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-124.glb",
-"s": 319.3,
-"x": 681.6,
+"model": "HF-124",
+"s": 10194.3,
+"x": 3181.6,
 "yaw": 1.3675,
 "min": [
 -4.31,
@@ -3353,8 +3477,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-125.glb",
-"s": 370.5,
-"x": 699.6,
+"model": "HF-125",
+"s": 10245.5,
+"x": 3199.6,
 "yaw": 1.0579,
 "min": [
 -4.77,
@@ -3380,8 +3505,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-126.glb",
-"s": 403.7,
-"x": 732.3,
+"model": "HF-126",
+"s": 10278.7,
+"x": 3232.3,
 "yaw": 0.4504,
 "min": [
 -4.93,
@@ -3407,8 +3533,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-127.glb",
-"s": 410.1,
-"x": 817.7,
+"model": "HF-127",
+"s": 10285.1,
+"x": 3317.7,
 "yaw": 1.9809,
 "min": [
 -4.67,
@@ -3434,8 +3561,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-128.glb",
-"s": 405.1,
-"x": 844.3,
+"model": "HF-128",
+"s": 10280.1,
+"x": 3344.3,
 "yaw": 0.7783,
 "min": [
 -4.67,
@@ -3461,8 +3589,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-129.glb",
-"s": 378.5,
-"x": 849.3,
+"model": "HF-129",
+"s": 10253.5,
+"x": 3349.3,
 "yaw": -0.4233,
 "min": [
 -4.7,
@@ -3488,8 +3617,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-130.glb",
-"s": 652.9,
-"x": 773.2,
+"model": "HF-130",
+"s": 10527.9,
+"x": 3273.2,
 "yaw": -0.4817,
 "min": [
 -4.31,
@@ -3515,8 +3645,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-131.glb",
-"s": 615.4,
-"x": 806.0,
+"model": "HF-131",
+"s": 10490.4,
+"x": 3306.0,
 "yaw": -1.1342,
 "min": [
 -5.25,
@@ -3542,8 +3673,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-132.glb",
-"s": 560.0,
-"x": 819.9,
+"model": "HF-132",
+"s": 10435.0,
+"x": 3319.9,
 "yaw": -1.4918,
 "min": [
 -5.8,
@@ -3569,8 +3701,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-133.glb",
-"s": 500.9,
-"x": 815.3,
+"model": "HF-133",
+"s": 10375.9,
+"x": 3315.3,
 "yaw": -1.8133,
 "min": [
 -4.21,
@@ -3596,8 +3729,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-134.glb",
-"s": 452.8,
-"x": 792.1,
+"model": "HF-134",
+"s": 10327.8,
+"x": 3292.1,
 "yaw": -2.2783,
 "min": [
 -4.78,
@@ -3623,8 +3757,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-135.glb",
-"s": 431.0,
-"x": 749.5,
+"model": "HF-135",
+"s": 10306.0,
+"x": 3249.5,
 "yaw": -3.1416,
 "min": [
 -4.67,
@@ -3650,8 +3785,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-136.glb",
-"s": 452.8,
-"x": 707.0,
+"model": "HF-136",
+"s": 10327.8,
+"x": 3207.0,
 "yaw": 2.2719,
 "min": [
 -4.78,
@@ -3677,8 +3813,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-137.glb",
-"s": 500.9,
-"x": 683.8,
+"model": "HF-137",
+"s": 10375.9,
+"x": 3183.8,
 "yaw": 1.8133,
 "min": [
 -4.62,
@@ -3704,8 +3841,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-138.glb",
-"s": 560.0,
-"x": 679.1,
+"model": "HF-138",
+"s": 10435.0,
+"x": 3179.1,
 "yaw": 1.4902,
 "min": [
 -4.21,
@@ -3731,8 +3869,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-139.glb",
-"s": 615.4,
-"x": 693.1,
+"model": "HF-139",
+"s": 10490.4,
+"x": 3193.1,
 "yaw": 1.1384,
 "min": [
 -5.8,
@@ -3758,8 +3897,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-140.glb",
-"s": 652.9,
-"x": 725.9,
+"model": "HF-140",
+"s": 10527.9,
+"x": 3225.9,
 "yaw": 0.4905,
 "min": [
 -4.31,
@@ -3785,8 +3925,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-141.glb",
-"s": 666.0,
-"x": 808.5,
+"model": "HF-141",
+"s": 10541.0,
+"x": 3308.5,
 "yaw": 1.99,
 "min": [
 -3.7,
@@ -3812,8 +3953,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-142.glb",
-"s": 661.0,
-"x": 835.1,
+"model": "HF-142",
+"s": 10536.0,
+"x": 3335.1,
 "yaw": 0.7925,
 "min": [
 -4.67,
@@ -3839,8 +3981,9 @@
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-143.glb",
-"s": 634.3,
-"x": 840.1,
+"model": "HF-143",
+"s": 10509.3,
+"x": 3340.1,
 "yaw": -0.4101,
 "min": [
 -5.32,
@@ -3866,8 +4009,9 @@
 "kind": "bigbox",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-144.glb",
-"s": 717.5,
-"x": 737.0,
+"model": "HF-144",
+"s": 10592.5,
+"x": 3237.0,
 "yaw": 1.5708,
 "min": [
 -47.5,
@@ -3893,8 +4037,9 @@
 "kind": "strip",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-145.glb",
-"s": 707.5,
-"x": 565.5,
+"model": "HF-145",
+"s": 10582.5,
+"x": 3065.5,
 "yaw": 1.5708,
 "min": [
 -42.5,
@@ -3920,8 +4065,9 @@
 "kind": "strip",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-146.glb",
-"s": 787.5,
-"x": 627.0,
+"model": "HF-146",
+"s": 10662.5,
+"x": 3127.0,
 "yaw": 1.5708,
 "min": [
 -7.5,
@@ -3947,8 +4093,9 @@
 "kind": "civic",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-001.glb",
-"s": 1948.0,
-"x": 894.3,
+"model": "K-001",
+"s": 17498.8,
+"x": 3394.3,
 "yaw": -1.5708,
 "min": [
 -13.6,
@@ -3974,8 +4121,9 @@
 "kind": "church",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-002.glb",
-"s": 1948.0,
-"x": 814.3,
+"model": "K-002",
+"s": 17498.8,
+"x": 3314.3,
 "yaw": -1.5708,
 "min": [
 -6.9,
@@ -4001,8 +4149,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-003.glb",
-"s": 2008.2,
-"x": 839.9,
+"model": "K-003",
+"s": 17559.0,
+"x": 3339.9,
 "yaw": -1.5748,
 "min": [
 -9.65,
@@ -4028,8 +4177,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-004.glb",
-"s": 2028.4,
-"x": 840.2,
+"model": "K-004",
+"s": 17579.2,
+"x": 3340.2,
 "yaw": -1.5667,
 "min": [
 -9.82,
@@ -4055,8 +4205,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-005.glb",
-"s": 2048.7,
-"x": 839.1,
+"model": "K-005",
+"s": 17599.5,
+"x": 3339.1,
 "yaw": -1.5746,
 "min": [
 -9.82,
@@ -4082,8 +4233,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-006.glb",
-"s": 2068.9,
-"x": 841.9,
+"model": "K-006",
+"s": 17619.7,
+"x": 3341.9,
 "yaw": -1.5708,
 "min": [
 -9.65,
@@ -4109,8 +4261,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-007.glb",
-"s": 2011.5,
-"x": 786.8,
+"model": "K-007",
+"s": 17562.3,
+"x": 3286.8,
 "yaw": 1.5664,
 "min": [
 -13.05,
@@ -4136,8 +4289,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-008.glb",
-"s": 2038.5,
-"x": 784.7,
+"model": "K-008",
+"s": 17589.3,
+"x": 3284.7,
 "yaw": 1.5655,
 "min": [
 -13.05,
@@ -4163,8 +4317,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-009.glb",
-"s": 2065.6,
-"x": 785.8,
+"model": "K-009",
+"s": 17616.4,
+"x": 3285.8,
 "yaw": 1.5756,
 "min": [
 -13.05,
@@ -4190,8 +4345,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-010.glb",
-"s": 2099.2,
-"x": 840.1,
+"model": "K-010",
+"s": 17650.0,
+"x": 3340.1,
 "yaw": -1.5749,
 "min": [
 -9.65,
@@ -4217,8 +4373,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-011.glb",
-"s": 2119.4,
-"x": 840.4,
+"model": "K-011",
+"s": 17670.2,
+"x": 3340.4,
 "yaw": -1.5666,
 "min": [
 -9.82,
@@ -4244,8 +4401,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-012.glb",
-"s": 2139.7,
-"x": 838.6,
+"model": "K-012",
+"s": 17690.5,
+"x": 3338.6,
 "yaw": -1.5744,
 "min": [
 -9.65,
@@ -4271,8 +4429,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-013.glb",
-"s": 2159.9,
-"x": 840.5,
+"model": "K-013",
+"s": 17710.7,
+"x": 3340.5,
 "yaw": -1.5708,
 "min": [
 -9.65,
@@ -4298,8 +4457,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-014.glb",
-"s": 2102.6,
-"x": 785.9,
+"model": "K-014",
+"s": 17653.4,
+"x": 3285.9,
 "yaw": 1.5755,
 "min": [
 -13.05,
@@ -4325,8 +4485,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-015.glb",
-"s": 2129.6,
-"x": 784.6,
+"model": "K-015",
+"s": 17680.4,
+"x": 3284.6,
 "yaw": 1.5762,
 "min": [
 -13.05,
@@ -4352,8 +4513,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-016.glb",
-"s": 2156.6,
-"x": 786.1,
+"model": "K-016",
+"s": 17707.4,
+"x": 3286.1,
 "yaw": 1.5754,
 "min": [
 -13.05,
@@ -4379,8 +4541,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-017.glb",
-"s": 2190.2,
-"x": 839.6,
+"model": "K-017",
+"s": 17741.0,
+"x": 3339.6,
 "yaw": -1.5747,
 "min": [
 -9.82,
@@ -4406,8 +4569,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-018.glb",
-"s": 2210.4,
-"x": 840.9,
+"model": "K-018",
+"s": 17761.2,
+"x": 3340.9,
 "yaw": -1.5664,
 "min": [
 -9.82,
@@ -4433,8 +4597,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-019.glb",
-"s": 2230.7,
-"x": 838.6,
+"model": "K-019",
+"s": 17781.5,
+"x": 3338.6,
 "yaw": -1.5744,
 "min": [
 -9.82,
@@ -4460,8 +4625,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-020.glb",
-"s": 2250.9,
-"x": 838.7,
+"model": "K-020",
+"s": 17801.7,
+"x": 3338.7,
 "yaw": -1.5708,
 "min": [
 -9.82,
@@ -4487,8 +4653,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-021.glb",
-"s": 2193.6,
-"x": 787.2,
+"model": "K-021",
+"s": 17744.4,
+"x": 3287.2,
 "yaw": 1.575,
 "min": [
 -13.05,
@@ -4514,8 +4681,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-022.glb",
-"s": 2220.6,
-"x": 786.1,
+"model": "K-022",
+"s": 17771.4,
+"x": 3286.1,
 "yaw": 1.5754,
 "min": [
 -13.05,
@@ -4541,8 +4709,9 @@
 "kind": "store",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-023.glb",
-"s": 2247.6,
-"x": 787.0,
+"model": "K-023",
+"s": 17798.4,
+"x": 3287.0,
 "yaw": 1.5751,
 "min": [
 -13.05,
@@ -4568,8 +4737,9 @@
 "kind": "industrial",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-024.glb",
-"s": 2286.5,
-"x": 899.3,
+"model": "K-024",
+"s": 17837.3,
+"x": 3399.3,
 "yaw": -1.5708,
 "min": [
 -40.45,
@@ -4595,8 +4765,9 @@
 "kind": "church",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-025.glb",
-"s": 2312.0,
-"x": 814.3,
+"model": "K-025",
+"s": 17862.8,
+"x": 3314.3,
 "yaw": -1.5708,
 "min": [
 -6.9,
@@ -4622,8 +4793,9 @@
 "kind": "industrial",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-026.glb",
-"s": 2017.5,
-"x": 1029.3,
+"model": "K-026",
+"s": 17568.3,
+"x": 3529.3,
 "yaw": 1.5708,
 "min": [
 -72.5,
@@ -4649,8 +4821,9 @@
 "kind": "industrial",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-027.glb",
-"s": 2227.0,
-"x": 1006.8,
+"model": "K-027",
+"s": 17777.8,
+"x": 3506.8,
 "yaw": 1.5708,
 "min": [
 -17,
@@ -4676,8 +4849,9 @@
 "kind": "industrial",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-028.glb",
-"s": 2272.0,
-"x": 1006.8,
+"model": "K-028",
+"s": 17822.8,
+"x": 3506.8,
 "yaw": 1.5708,
 "min": [
 -17,
@@ -4703,8 +4877,9 @@
 "kind": "industrial",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-029.glb",
-"s": 2317.0,
-"x": 1006.8,
+"model": "K-029",
+"s": 17867.8,
+"x": 3506.8,
 "yaw": 1.5708,
 "min": [
 -17,
@@ -4730,8 +4905,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-030.glb",
-"s": 1923.8,
-"x": 748.8,
+"model": "K-030",
+"s": 17474.6,
+"x": 3248.8,
 "yaw": -1.5708,
 "min": [
 -3.09,
@@ -4757,8 +4933,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-031.glb",
-"s": 1946.5,
-"x": 749.6,
+"model": "K-031",
+"s": 17497.3,
+"x": 3249.6,
 "yaw": -1.5708,
 "min": [
 -3.5,
@@ -4784,8 +4961,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-032.glb",
-"s": 1973.5,
-"x": 749.3,
+"model": "K-032",
+"s": 17524.3,
+"x": 3249.3,
 "yaw": -1.5708,
 "min": [
 -3.4,
@@ -4811,8 +4989,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-033.glb",
-"s": 1922.6,
-"x": 695.0,
+"model": "K-033",
+"s": 17473.4,
+"x": 3195.0,
 "yaw": 1.5708,
 "min": [
 -3.4,
@@ -4838,8 +5017,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-034.glb",
-"s": 1950.4,
-"x": 694.7,
+"model": "K-034",
+"s": 17501.2,
+"x": 3194.7,
 "yaw": 1.5814,
 "min": [
 -4.31,
@@ -4865,8 +5045,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-035.glb",
-"s": 1976.6,
-"x": 696.0,
+"model": "K-035",
+"s": 17527.4,
+"x": 3196.0,
 "yaw": 1.5708,
 "min": [
 -4.31,
@@ -4892,8 +5073,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-036.glb",
-"s": 1975.1,
-"x": 657.7,
+"model": "K-036",
+"s": 17525.9,
+"x": 3157.7,
 "yaw": -1.5802,
 "min": [
 -5.65,
@@ -4919,8 +5101,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-037.glb",
-"s": 1949.6,
-"x": 606.1,
+"model": "K-037",
+"s": 17500.4,
+"x": 3106.1,
 "yaw": 1.5708,
 "min": [
 -5.64,
@@ -4946,8 +5129,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-038.glb",
-"s": 1973.3,
-"x": 605.5,
+"model": "K-038",
+"s": 17524.1,
+"x": 3105.5,
 "yaw": 1.562,
 "min": [
 -4.82,
@@ -4973,8 +5157,9 @@
 "kind": "civic",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-039.glb",
-"s": 1948.0,
-"x": 540.8,
+"model": "K-039",
+"s": 17498.8,
+"x": 3040.8,
 "yaw": -1.5708,
 "min": [
 -22.6,
@@ -5000,8 +5185,9 @@
 "kind": "civic",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-040.glb",
-"s": 2039.0,
-"x": 722.8,
+"model": "K-040",
+"s": 17589.8,
+"x": 3222.8,
 "yaw": -1.5708,
 "min": [
 -12.06,
@@ -5027,8 +5213,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-041.glb",
-"s": 2010.9,
-"x": 660.1,
+"model": "K-041",
+"s": 17561.7,
+"x": 3160.1,
 "yaw": -1.5812,
 "min": [
 -3.7,
@@ -5054,8 +5241,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-042.glb",
-"s": 2038.0,
-"x": 657.8,
+"model": "K-042",
+"s": 17588.8,
+"x": 3157.8,
 "yaw": -1.5708,
 "min": [
 -4.31,
@@ -5081,8 +5269,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-043.glb",
-"s": 2064.2,
-"x": 656.8,
+"model": "K-043",
+"s": 17615.0,
+"x": 3156.8,
 "yaw": -1.5793,
 "min": [
 -6.24,
@@ -5108,8 +5297,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-044.glb",
-"s": 2012.5,
-"x": 605.4,
+"model": "K-044",
+"s": 17563.3,
+"x": 3105.4,
 "yaw": 1.5708,
 "min": [
 -4.92,
@@ -5135,8 +5325,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-045.glb",
-"s": 2037.7,
-"x": 605.4,
+"model": "K-045",
+"s": 17588.5,
+"x": 3105.4,
 "yaw": 1.5817,
 "min": [
 -4.16,
@@ -5162,8 +5353,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-046.glb",
-"s": 2066.9,
-"x": 604.1,
+"model": "K-046",
+"s": 17617.7,
+"x": 3104.1,
 "yaw": 1.5615,
 "min": [
 -4.82,
@@ -5189,8 +5381,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-047.glb",
-"s": 2012.1,
-"x": 568.5,
+"model": "K-047",
+"s": 17562.9,
+"x": 3068.5,
 "yaw": -1.5615,
 "min": [
 -3.6,
@@ -5216,8 +5409,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-048.glb",
-"s": 2037.6,
-"x": 566.8,
+"model": "K-048",
+"s": 17588.4,
+"x": 3066.8,
 "yaw": -1.5799,
 "min": [
 -5.95,
@@ -5243,8 +5437,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-049.glb",
-"s": 2065.4,
-"x": 568.8,
+"model": "K-049",
+"s": 17616.2,
+"x": 3068.8,
 "yaw": -1.5708,
 "min": [
 -3.4,
@@ -5270,8 +5465,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-050.glb",
-"s": 2012.9,
-"x": 513.7,
+"model": "K-050",
+"s": 17563.7,
+"x": 3013.7,
 "yaw": 1.561,
 "min": [
 -3.86,
@@ -5297,8 +5493,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-051.glb",
-"s": 2039.9,
-"x": 513.7,
+"model": "K-051",
+"s": 17590.7,
+"x": 3013.7,
 "yaw": 1.5708,
 "min": [
 -3.7,
@@ -5324,8 +5521,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-052.glb",
-"s": 2067.5,
-"x": 514.8,
+"model": "K-052",
+"s": 17618.3,
+"x": 3014.8,
 "yaw": 1.5612,
 "min": [
 -3.91,
@@ -5351,8 +5549,9 @@
 "kind": "civic",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-053.glb",
-"s": 2130.0,
-"x": 722.8,
+"model": "K-053",
+"s": 17680.8,
+"x": 3222.8,
 "yaw": -1.5708,
 "min": [
 -20.6,
@@ -5378,8 +5577,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-054.glb",
-"s": 2105.0,
-"x": 659.0,
+"model": "K-054",
+"s": 17655.8,
+"x": 3159.0,
 "yaw": -1.5615,
 "min": [
 -5.98,
@@ -5405,8 +5605,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-055.glb",
-"s": 2130.5,
-"x": 659.4,
+"model": "K-055",
+"s": 17681.3,
+"x": 3159.4,
 "yaw": -1.5799,
 "min": [
 -3.76,
@@ -5432,8 +5633,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-056.glb",
-"s": 2158.7,
-"x": 658.5,
+"model": "K-056",
+"s": 17709.5,
+"x": 3158.5,
 "yaw": -1.5797,
 "min": [
 -3.4,
@@ -5459,8 +5661,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-057.glb",
-"s": 2102.2,
-"x": 604.2,
+"model": "K-057",
+"s": 17653.0,
+"x": 3104.2,
 "yaw": 1.5602,
 "min": [
 -4.31,
@@ -5486,8 +5689,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-058.glb",
-"s": 2131.8,
-"x": 606.3,
+"model": "K-058",
+"s": 17682.6,
+"x": 3106.3,
 "yaw": 1.5708,
 "min": [
 -5.74,
@@ -5513,8 +5717,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-059.glb",
-"s": 2157.8,
-"x": 603.3,
+"model": "K-059",
+"s": 17708.6,
+"x": 3103.3,
 "yaw": 1.5812,
 "min": [
 -4.21,
@@ -5540,8 +5745,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-060.glb",
-"s": 2103.1,
-"x": 568.7,
+"model": "K-060",
+"s": 17653.9,
+"x": 3068.7,
 "yaw": -1.5708,
 "min": [
 -5.05,
@@ -5567,8 +5773,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-061.glb",
-"s": 2130.0,
-"x": 568.6,
+"model": "K-061",
+"s": 17680.8,
+"x": 3068.6,
 "yaw": -1.5708,
 "min": [
 -4.82,
@@ -5594,8 +5801,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-062.glb",
-"s": 2154.1,
-"x": 567.5,
+"model": "K-062",
+"s": 17704.9,
+"x": 3067.5,
 "yaw": -1.5819,
 "min": [
 -4.01,
@@ -5621,8 +5829,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-063.glb",
-"s": 2105.6,
-"x": 514.5,
+"model": "K-063",
+"s": 17656.4,
+"x": 3014.5,
 "yaw": 1.5799,
 "min": [
 -4.06,
@@ -5648,8 +5857,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-064.glb",
-"s": 2132.0,
-"x": 513.3,
+"model": "K-064",
+"s": 17682.8,
+"x": 3013.3,
 "yaw": 1.5804,
 "min": [
 -3.7,
@@ -5675,8 +5885,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-065.glb",
-"s": 2155.9,
-"x": 512.6,
+"model": "K-065",
+"s": 17706.7,
+"x": 3012.6,
 "yaw": 1.5708,
 "min": [
 -4.31,
@@ -5702,8 +5913,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-066.glb",
-"s": 2193.6,
-"x": 748.6,
+"model": "K-066",
+"s": 17744.4,
+"x": 3248.6,
 "yaw": -1.5708,
 "min": [
 -4.31,
@@ -5729,8 +5941,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-067.glb",
-"s": 2223.1,
-"x": 748.9,
+"model": "K-067",
+"s": 17773.9,
+"x": 3248.9,
 "yaw": -1.5799,
 "min": [
 -4.77,
@@ -5756,8 +5969,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-068.glb",
-"s": 2247.9,
-"x": 749.9,
+"model": "K-068",
+"s": 17798.7,
+"x": 3249.9,
 "yaw": -1.5806,
 "min": [
 -3.4,
@@ -5783,8 +5997,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-069.glb",
-"s": 2193.9,
-"x": 696.6,
+"model": "K-069",
+"s": 17744.7,
+"x": 3196.6,
 "yaw": 1.5817,
 "min": [
 -4.06,
@@ -5810,8 +6025,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-070.glb",
-"s": 2222.7,
-"x": 695.7,
+"model": "K-070",
+"s": 17773.5,
+"x": 3195.7,
 "yaw": 1.5708,
 "min": [
 -4.01,
@@ -5837,8 +6053,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-071.glb",
-"s": 2247.5,
-"x": 696.0,
+"model": "K-071",
+"s": 17798.3,
+"x": 3196.0,
 "yaw": 1.5708,
 "min": [
 -4.31,
@@ -5864,8 +6081,9 @@
 "kind": "school",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-072.glb",
-"s": 2201.2,
-"x": 651.3,
+"model": "K-072",
+"s": 17752.0,
+"x": 3151.3,
 "yaw": -1.5677,
 "min": [
 -18.35,
@@ -5891,8 +6109,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-073.glb",
-"s": 2194.4,
-"x": 566.9,
+"model": "K-073",
+"s": 17745.2,
+"x": 3066.9,
 "yaw": -1.5708,
 "min": [
 -3.91,
@@ -5918,8 +6137,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-074.glb",
-"s": 2220.2,
-"x": 567.8,
+"model": "K-074",
+"s": 17771.0,
+"x": 3067.8,
 "yaw": -1.5793,
 "min": [
 -5.74,
@@ -5945,8 +6165,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-075.glb",
-"s": 2247.4,
-"x": 567.8,
+"model": "K-075",
+"s": 17798.2,
+"x": 3067.8,
 "yaw": -1.5708,
 "min": [
 -3.4,
@@ -5972,8 +6193,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-076.glb",
-"s": 2195.4,
-"x": 513.7,
+"model": "K-076",
+"s": 17746.2,
+"x": 3013.7,
 "yaw": 1.5801,
 "min": [
 -4.62,
@@ -5999,8 +6221,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-077.glb",
-"s": 2222.1,
-"x": 514.8,
+"model": "K-077",
+"s": 17772.9,
+"x": 3014.8,
 "yaw": 1.5606,
 "min": [
 -3.09,
@@ -6026,8 +6249,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-078.glb",
-"s": 2245.2,
-"x": 514.3,
+"model": "K-078",
+"s": 17796.0,
+"x": 3014.3,
 "yaw": 1.5708,
 "min": [
 -3.6,
@@ -6053,8 +6277,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-079.glb",
-"s": 2283.2,
-"x": 750.6,
+"model": "K-079",
+"s": 17834.0,
+"x": 3250.6,
 "yaw": -1.5615,
 "min": [
 -3.86,
@@ -6080,8 +6305,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-080.glb",
-"s": 2312.8,
-"x": 749.8,
+"model": "K-080",
+"s": 17863.6,
+"x": 3249.8,
 "yaw": -1.5604,
 "min": [
 -4.62,
@@ -6107,8 +6333,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-081.glb",
-"s": 2337.2,
-"x": 748.2,
+"model": "K-081",
+"s": 17888.0,
+"x": 3248.2,
 "yaw": -1.5797,
 "min": [
 -4.62,
@@ -6134,8 +6361,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-082.glb",
-"s": 2284.7,
-"x": 695.6,
+"model": "K-082",
+"s": 17835.5,
+"x": 3195.6,
 "yaw": 1.5708,
 "min": [
 -4.62,
@@ -6161,8 +6389,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-083.glb",
-"s": 2311.2,
-"x": 695.2,
+"model": "K-083",
+"s": 17862.0,
+"x": 3195.2,
 "yaw": 1.5708,
 "min": [
 -4.21,
@@ -6188,8 +6417,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-084.glb",
-"s": 2339.7,
-"x": 695.0,
+"model": "K-084",
+"s": 17890.5,
+"x": 3195.0,
 "yaw": 1.5708,
 "min": [
 -4.92,
@@ -6215,8 +6445,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-085.glb",
-"s": 2283.6,
-"x": 658.9,
+"model": "K-085",
+"s": 17834.4,
+"x": 3158.9,
 "yaw": -1.5708,
 "min": [
 -3.7,
@@ -6242,8 +6473,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-086.glb",
-"s": 2312.9,
-"x": 659.8,
+"model": "K-086",
+"s": 17863.7,
+"x": 3159.8,
 "yaw": -1.5708,
 "min": [
 -4.92,
@@ -6269,8 +6501,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-087.glb",
-"s": 2338.1,
-"x": 659.3,
+"model": "K-087",
+"s": 17888.9,
+"x": 3159.3,
 "yaw": -1.5708,
 "min": [
 -3.91,
@@ -6296,8 +6529,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-088.glb",
-"s": 2285.1,
-"x": 603.2,
+"model": "K-088",
+"s": 17835.9,
+"x": 3103.2,
 "yaw": 1.5597,
 "min": [
 -3.09,
@@ -6323,8 +6557,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-089.glb",
-"s": 2311.3,
-"x": 603.7,
+"model": "K-089",
+"s": 17862.1,
+"x": 3103.7,
 "yaw": 1.5708,
 "min": [
 -3.09,
@@ -6350,8 +6585,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-090.glb",
-"s": 2336.6,
-"x": 605.1,
+"model": "K-090",
+"s": 17887.4,
+"x": 3105.1,
 "yaw": 1.5614,
 "min": [
 -5.55,
@@ -6377,8 +6613,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-091.glb",
-"s": 2283.6,
-"x": 566.6,
+"model": "K-091",
+"s": 17834.4,
+"x": 3066.6,
 "yaw": -1.5708,
 "min": [
 -6.05,
@@ -6404,8 +6641,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-092.glb",
-"s": 2313.7,
-"x": 567.7,
+"model": "K-092",
+"s": 17864.5,
+"x": 3067.7,
 "yaw": -1.5708,
 "min": [
 -4.46,
@@ -6431,8 +6669,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-093.glb",
-"s": 2339.0,
-"x": 568.2,
+"model": "K-093",
+"s": 17889.8,
+"x": 3068.2,
 "yaw": -1.5797,
 "min": [
 -4.52,
@@ -6458,8 +6697,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-094.glb",
-"s": 2285.3,
-"x": 513.5,
+"model": "K-094",
+"s": 17836.1,
+"x": 3013.5,
 "yaw": 1.5602,
 "min": [
 -3.7,
@@ -6485,8 +6725,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-095.glb",
-"s": 2311.9,
-"x": 513.1,
+"model": "K-095",
+"s": 17862.7,
+"x": 3013.1,
 "yaw": 1.5808,
 "min": [
 -3.91,
@@ -6512,8 +6753,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-096.glb",
-"s": 2336.5,
-"x": 515.3,
+"model": "K-096",
+"s": 17887.3,
+"x": 3015.3,
 "yaw": 1.5625,
 "min": [
 -4.01,
@@ -6539,8 +6781,9 @@
 "kind": "tower",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-097.glb",
-"s": 2390.0,
-"x": 709.3,
+"model": "K-097",
+"s": 17940.8,
+"x": 3209.3,
 "yaw": -1.5708,
 "min": [
 -7.73,
@@ -6566,8 +6809,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-098.glb",
-"s": 2223.9,
-"x": 362.1,
+"model": "K-098",
+"s": 17774.7,
+"x": 2862.1,
 "yaw": 1.0802,
 "min": [
 -3.7,
@@ -6593,8 +6837,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-099.glb",
-"s": 2177.9,
-"x": 345.1,
+"model": "K-099",
+"s": 17728.7,
+"x": 2845.1,
 "yaw": 1.338,
 "min": [
 -3.7,
@@ -6620,8 +6865,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-100.glb",
-"s": 2120.6,
-"x": 336.4,
+"model": "K-100",
+"s": 17671.4,
+"x": 2836.4,
 "yaw": 1.4902,
 "min": [
 -4.31,
@@ -6647,8 +6893,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-101.glb",
-"s": 2059.4,
-"x": 336.4,
+"model": "K-101",
+"s": 17610.2,
+"x": 2836.4,
 "yaw": 1.6514,
 "min": [
 -4.77,
@@ -6674,8 +6921,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-102.glb",
-"s": 2002.1,
-"x": 345.1,
+"model": "K-102",
+"s": 17552.9,
+"x": 2845.1,
 "yaw": 1.8036,
 "min": [
 -4.31,
@@ -6701,8 +6949,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-103.glb",
-"s": 1956.1,
-"x": 362.1,
+"model": "K-103",
+"s": 17506.9,
+"x": 2862.1,
 "yaw": 2.0613,
 "min": [
 -5.27,
@@ -6728,8 +6977,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-104.glb",
-"s": 1926.2,
-"x": 389.5,
+"model": "K-104",
+"s": 17477.0,
+"x": 2889.5,
 "yaw": 2.647,
 "min": [
 -4.31,
@@ -6755,8 +7005,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-105.glb",
-"s": 1926.2,
-"x": 429.1,
+"model": "K-105",
+"s": 17477.0,
+"x": 2929.1,
 "yaw": -2.6557,
 "min": [
 -4.62,
@@ -6782,8 +7033,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-106.glb",
-"s": 1956.1,
-"x": 456.5,
+"model": "K-106",
+"s": 17506.9,
+"x": 2956.5,
 "yaw": -2.0613,
 "min": [
 -4.52,
@@ -6809,8 +7061,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-107.glb",
-"s": 2002.1,
-"x": 473.5,
+"model": "K-107",
+"s": 17552.9,
+"x": 2973.5,
 "yaw": -1.8036,
 "min": [
 -4.67,
@@ -6836,8 +7089,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-108.glb",
-"s": 2059.4,
-"x": 482.2,
+"model": "K-108",
+"s": 17610.2,
+"x": 2982.2,
 "yaw": -1.6514,
 "min": [
 -4.31,
@@ -6863,8 +7117,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-109.glb",
-"s": 2120.6,
-"x": 482.2,
+"model": "K-109",
+"s": 17671.4,
+"x": 2982.2,
 "yaw": -1.4902,
 "min": [
 -4.62,
@@ -6890,8 +7145,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-110.glb",
-"s": 2177.9,
-"x": 473.5,
+"model": "K-110",
+"s": 17728.7,
+"x": 2973.5,
 "yaw": -1.338,
 "min": [
 -4.77,
@@ -6917,8 +7173,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-111.glb",
-"s": 2253.8,
-"x": 429.1,
+"model": "K-111",
+"s": 17804.6,
+"x": 2929.1,
 "yaw": -0.4859,
 "min": [
 -3.4,
@@ -6944,8 +7201,9 @@
 "kind": "house",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-112.glb",
-"s": 2218.2,
-"x": 316.6,
+"model": "K-112",
+"s": 17769.0,
+"x": 2816.6,
 "yaw": 0.4101,
 "min": [
 -4.31,
@@ -6971,8 +7229,9 @@
 "kind": "bigbox",
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-113.glb",
-"s": 1746.5,
-"x": 772.8,
+"model": "K-113",
+"s": 17297.3,
+"x": 3272.8,
 "yaw": -1.5708,
 "min": [
 -38.5,
@@ -6998,8 +7257,9 @@
 "kind": "civic",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-001.glb",
-"s": 1454.5,
-"x": -896.5,
+"model": "M-001",
+"s": 1255.3,
+"x": -3396.5,
 "yaw": -3.1416,
 "min": [
 -11.06,
@@ -7025,8 +7285,9 @@
 "kind": "church",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-002.glb",
-"s": 1545.0,
-"x": -896.5,
+"model": "M-002",
+"s": 1345.8,
+"x": -3396.5,
 "yaw": -3.1416,
 "min": [
 -6.9,
@@ -7052,8 +7313,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-003.glb",
-"s": 1479.0,
-"x": -836.3,
+"model": "M-003",
+"s": 1279.8,
+"x": -3336.3,
 "yaw": -0.0,
 "min": [
 -9.7,
@@ -7079,9 +7341,10 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-004.glb",
-"s": 1481.8,
-"x": -816.1,
-"yaw": -0.0,
+"model": "M-004",
+"s": 1282.6,
+"x": -3316.1,
+"yaw": 0.0,
 "min": [
 -9.87,
 -4,
@@ -7106,8 +7369,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-005.glb",
-"s": 1482.4,
-"x": -795.8,
+"model": "M-005",
+"s": 1283.2,
+"x": -3295.8,
 "yaw": -0.0,
 "min": [
 -9.87,
@@ -7133,8 +7397,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-006.glb",
-"s": 1518.0,
-"x": -836.3,
+"model": "M-006",
+"s": 1318.8,
+"x": -3336.3,
 "yaw": -3.1416,
 "min": [
 -9.7,
@@ -7160,9 +7425,10 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-007.glb",
-"s": 1517.2,
-"x": -816.1,
-"yaw": -3.1416,
+"model": "M-007",
+"s": 1318.0,
+"x": -3316.1,
+"yaw": 3.1416,
 "min": [
 -9.7,
 -4,
@@ -7187,8 +7453,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-008.glb",
-"s": 1520.2,
-"x": -795.8,
+"model": "M-008",
+"s": 1321.0,
+"x": -3295.8,
 "yaw": -3.1416,
 "min": [
 -9.87,
@@ -7214,8 +7481,9 @@
 "kind": "civic",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-009.glb",
-"s": 1545.0,
-"x": -714.5,
+"model": "M-009",
+"s": 1345.8,
+"x": -3214.5,
 "yaw": -3.1416,
 "min": [
 -20.1,
@@ -7241,9 +7509,10 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-010.glb",
-"s": 1479.7,
-"x": -725.1,
-"yaw": -0.0,
+"model": "M-010",
+"s": 1280.5,
+"x": -3225.1,
+"yaw": 0.0,
 "min": [
 -9.7,
 -4,
@@ -7268,8 +7537,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-011.glb",
-"s": 1480.4,
-"x": -704.8,
+"model": "M-011",
+"s": 1281.2,
+"x": -3204.8,
 "yaw": -0.0,
 "min": [
 -9.87,
@@ -7295,8 +7565,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-012.glb",
-"s": 1479.8,
-"x": -684.6,
+"model": "M-012",
+"s": 1280.6,
+"x": -3184.6,
 "yaw": -0.0038,
 "min": [
 -9.87,
@@ -7322,9 +7593,10 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-013.glb",
-"s": 1609.7,
-"x": -725.1,
-"yaw": -3.1416,
+"model": "M-013",
+"s": 1410.5,
+"x": -3225.1,
+"yaw": 3.1416,
 "min": [
 -9.7,
 -4,
@@ -7349,8 +7621,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-014.glb",
-"s": 1609.8,
-"x": -704.8,
+"model": "M-014",
+"s": 1410.6,
+"x": -3204.8,
 "yaw": -3.1416,
 "min": [
 -9.7,
@@ -7376,8 +7649,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-015.glb",
-"s": 1611.8,
-"x": -684.6,
+"model": "M-015",
+"s": 1412.6,
+"x": -3184.6,
 "yaw": -3.138,
 "min": [
 -9.87,
@@ -7403,8 +7677,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-016.glb",
-"s": 1481.7,
-"x": -651.0,
+"model": "M-016",
+"s": 1282.5,
+"x": -3151.0,
 "yaw": -0.0044,
 "min": [
 -13.05,
@@ -7430,8 +7705,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-017.glb",
-"s": 1479.2,
-"x": -624.0,
+"model": "M-017",
+"s": 1280.0,
+"x": -3124.0,
 "yaw": -0.0036,
 "min": [
 -13.05,
@@ -7457,8 +7733,9 @@
 "kind": "store",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-018.glb",
-"s": 1481.4,
-"x": -597.0,
+"model": "M-018",
+"s": 1282.2,
+"x": -3097.0,
 "yaw": -0.0043,
 "min": [
 -13.05,
@@ -7484,8 +7761,9 @@
 "kind": "civic",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-019.glb",
-"s": 1545.5,
-"x": -623.5,
+"model": "M-019",
+"s": 1346.3,
+"x": -3123.5,
 "yaw": -3.1416,
 "min": [
 -14.6,
@@ -7511,8 +7789,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-020.glb",
-"s": 1337.9,
-"x": -916.6,
+"model": "M-020",
+"s": 1138.7,
+"x": -3416.6,
 "yaw": -3.1416,
 "min": [
 -4.31,
@@ -7538,8 +7817,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-021.glb",
-"s": 1336.8,
-"x": -878.0,
+"model": "M-021",
+"s": 1137.6,
+"x": -3378.0,
 "yaw": -3.1416,
 "min": [
 -4.82,
@@ -7565,8 +7845,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-022.glb",
-"s": 1390.5,
-"x": -923.5,
+"model": "M-022",
+"s": 1191.3,
+"x": -3423.5,
 "yaw": 0.0083,
 "min": [
 -4.36,
@@ -7592,9 +7873,10 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-023.glb",
-"s": 1388.6,
-"x": -897.1,
-"yaw": -0.0,
+"model": "M-023",
+"s": 1189.4,
+"x": -3397.1,
+"yaw": 0.0,
 "min": [
 -4.36,
 -4,
@@ -7619,8 +7901,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-024.glb",
-"s": 1389.2,
-"x": -868.8,
+"model": "M-024",
+"s": 1190.0,
+"x": -3368.8,
 "yaw": -0.0,
 "min": [
 -4.01,
@@ -7646,8 +7929,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-025.glb",
-"s": 1335.9,
-"x": -825.7,
+"model": "M-025",
+"s": 1136.7,
+"x": -3325.7,
 "yaw": -3.1416,
 "min": [
 -3.58,
@@ -7673,8 +7957,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-026.glb",
-"s": 1337.4,
-"x": -786.0,
+"model": "M-026",
+"s": 1138.2,
+"x": -3286.0,
 "yaw": 3.1325,
 "min": [
 -5.28,
@@ -7700,8 +7985,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-027.glb",
-"s": 1391.1,
-"x": -830.3,
+"model": "M-027",
+"s": 1191.9,
+"x": -3330.3,
 "yaw": -0.0,
 "min": [
 -4.31,
@@ -7727,8 +8013,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-028.glb",
-"s": 1391.3,
-"x": -805.8,
+"model": "M-028",
+"s": 1192.1,
+"x": -3305.8,
 "yaw": -0.0096,
 "min": [
 -4.82,
@@ -7754,9 +8041,10 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-029.glb",
-"s": 1389.0,
-"x": -779.4,
-"yaw": 0.0,
+"model": "M-029",
+"s": 1189.8,
+"x": -3279.4,
+"yaw": -0.0,
 "min": [
 -3.59,
 -4,
@@ -7781,8 +8069,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-030.glb",
-"s": 1335.2,
-"x": -736.5,
+"model": "M-030",
+"s": 1136.0,
+"x": -3236.5,
 "yaw": -3.1312,
 "min": [
 -3.7,
@@ -7808,8 +8097,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-031.glb",
-"s": 1337.7,
-"x": -692.6,
+"model": "M-031",
+"s": 1138.5,
+"x": -3192.6,
 "yaw": -3.1312,
 "min": [
 -4.52,
@@ -7835,8 +8125,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-032.glb",
-"s": 1390.3,
-"x": -739.0,
+"model": "M-032",
+"s": 1191.1,
+"x": -3239.0,
 "yaw": -0.01,
 "min": [
 -4.21,
@@ -7862,8 +8153,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-033.glb",
-"s": 1389.4,
-"x": -714.8,
+"model": "M-033",
+"s": 1190.2,
+"x": -3214.8,
 "yaw": -0.0,
 "min": [
 -5.53,
@@ -7889,8 +8181,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-034.glb",
-"s": 1389.4,
-"x": -686.8,
+"model": "M-034",
+"s": 1190.2,
+"x": -3186.8,
 "yaw": 0.0109,
 "min": [
 -4.31,
@@ -7916,8 +8209,9 @@
 "kind": "church",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-035.glb",
-"s": 1363.5,
-"x": -623.5,
+"model": "M-035",
+"s": 1164.3,
+"x": -3123.5,
 "yaw": -3.1416,
 "min": [
 -6.9,
@@ -7943,9 +8237,10 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-036.glb",
-"s": 1391.9,
-"x": -640.9,
-"yaw": 0.0,
+"model": "M-036",
+"s": 1192.7,
+"x": -3140.9,
+"yaw": -0.0,
 "min": [
 -4.92,
 -4,
@@ -7970,9 +8265,10 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-037.glb",
-"s": 1388.6,
-"x": -605.6,
-"yaw": -0.0,
+"model": "M-037",
+"s": 1189.4,
+"x": -3105.6,
+"yaw": 0.0,
 "min": [
 -5.53,
 -4,
@@ -7997,8 +8293,9 @@
 "kind": "school",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-038.glb",
-"s": 1617.0,
-"x": -916.2,
+"model": "M-038",
+"s": 1417.8,
+"x": -3416.2,
 "yaw": 3.1385,
 "min": [
 -18.35,
@@ -8024,8 +8321,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-039.glb",
-"s": 1608.7,
-"x": -834.2,
+"model": "M-039",
+"s": 1409.5,
+"x": -3334.2,
 "yaw": 3.1312,
 "min": [
 -4.92,
@@ -8051,8 +8349,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-040.glb",
-"s": 1611.1,
-"x": -806.7,
+"model": "M-040",
+"s": 1411.9,
+"x": -3306.7,
 "yaw": 3.132,
 "min": [
 -4.31,
@@ -8078,8 +8377,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-041.glb",
-"s": 1608.8,
-"x": -780.2,
+"model": "M-041",
+"s": 1409.6,
+"x": -3280.2,
 "yaw": -3.1416,
 "min": [
 -4.31,
@@ -8105,8 +8405,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-042.glb",
-"s": 1662.8,
-"x": -826.7,
+"model": "M-042",
+"s": 1463.6,
+"x": -3326.7,
 "yaw": 0.0089,
 "min": [
 -5.05,
@@ -8132,8 +8433,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-043.glb",
-"s": 1663.6,
-"x": -783.3,
+"model": "M-043",
+"s": 1464.4,
+"x": -3283.3,
 "yaw": -0.0,
 "min": [
 -4.31,
@@ -8159,8 +8461,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-044.glb",
-"s": 1609.6,
-"x": -738.6,
+"model": "M-044",
+"s": 1410.4,
+"x": -3238.6,
 "yaw": -3.1312,
 "min": [
 -4.67,
@@ -8186,8 +8489,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-045.glb",
-"s": 1610.1,
-"x": -716.8,
+"model": "M-045",
+"s": 1410.9,
+"x": -3216.8,
 "yaw": -3.1416,
 "min": [
 -5.33,
@@ -8213,9 +8517,10 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-046.glb",
-"s": 1609.6,
-"x": -688.4,
-"yaw": 3.1416,
+"model": "M-046",
+"s": 1410.4,
+"x": -3188.4,
+"yaw": -3.1416,
 "min": [
 -3.91,
 -4,
@@ -8240,9 +8545,10 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-047.glb",
-"s": 1664.4,
-"x": -733.6,
-"yaw": -0.0,
+"model": "M-047",
+"s": 1465.2,
+"x": -3233.6,
+"yaw": 0.0,
 "min": [
 -4.52,
 -4,
@@ -8267,8 +8573,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-048.glb",
-"s": 1662.9,
-"x": -692.6,
+"model": "M-048",
+"s": 1463.7,
+"x": -3192.6,
 "yaw": -0.0,
 "min": [
 -4.06,
@@ -8294,8 +8601,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-049.glb",
-"s": 1609.8,
-"x": -650.3,
+"model": "M-049",
+"s": 1410.6,
+"x": -3150.3,
 "yaw": -3.1416,
 "min": [
 -3.76,
@@ -8321,8 +8629,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-050.glb",
-"s": 1607.8,
-"x": -623.2,
+"model": "M-050",
+"s": 1408.6,
+"x": -3123.2,
 "yaw": -3.1416,
 "min": [
 -4.82,
@@ -8348,8 +8657,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-051.glb",
-"s": 1610.2,
-"x": -597.8,
+"model": "M-051",
+"s": 1411.0,
+"x": -3097.8,
 "yaw": -3.1416,
 "min": [
 -4.21,
@@ -8375,8 +8685,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-052.glb",
-"s": 1662.6,
-"x": -645.7,
+"model": "M-052",
+"s": 1463.4,
+"x": -3145.7,
 "yaw": 0.0093,
 "min": [
 -4.52,
@@ -8402,9 +8713,10 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-053.glb",
-"s": 1664.5,
-"x": -601.9,
-"yaw": 0.0,
+"model": "M-053",
+"s": 1465.3,
+"x": -3101.9,
+"yaw": -0.0,
 "min": [
 -4.78,
 -4,
@@ -8429,8 +8741,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-054.glb",
-"s": 1539.8,
-"x": -950.1,
+"model": "M-054",
+"s": 1340.6,
+"x": -3450.1,
 "yaw": -1.4219,
 "min": [
 -4.67,
@@ -8456,8 +8769,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-055.glb",
-"s": 1593.1,
-"x": -966.3,
+"model": "M-055",
+"s": 1393.9,
+"x": -3466.3,
 "yaw": -1.0938,
 "min": [
 -4.31,
@@ -8483,8 +8797,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-056.glb",
-"s": 1628.3,
-"x": -999.1,
+"model": "M-056",
+"s": 1429.1,
+"x": -3499.1,
 "yaw": -0.4636,
 "min": [
 -4.67,
@@ -8510,8 +8825,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-057.glb",
-"s": 1628.3,
-"x": -1044.9,
+"model": "M-057",
+"s": 1429.1,
+"x": -3544.9,
 "yaw": 0.4636,
 "min": [
 -4.01,
@@ -8537,8 +8853,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-058.glb",
-"s": 1593.1,
-"x": -1077.7,
+"model": "M-058",
+"s": 1393.9,
+"x": -3577.7,
 "yaw": 1.0938,
 "min": [
 -4.77,
@@ -8564,8 +8881,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-059.glb",
-"s": 1539.8,
-"x": -1093.9,
+"model": "M-059",
+"s": 1340.6,
+"x": -3593.9,
 "yaw": 1.4219,
 "min": [
 -4.62,
@@ -8591,8 +8909,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-060.glb",
-"s": 1480.2,
-"x": -1093.9,
+"model": "M-060",
+"s": 1281.0,
+"x": -3593.9,
 "yaw": 1.7197,
 "min": [
 -4.31,
@@ -8618,8 +8937,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-061.glb",
-"s": 1426.9,
-"x": -1077.7,
+"model": "M-061",
+"s": 1227.7,
+"x": -3577.7,
 "yaw": 2.0478,
 "min": [
 -4.67,
@@ -8645,8 +8965,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-062.glb",
-"s": 1391.7,
-"x": -1044.9,
+"model": "M-062",
+"s": 1192.5,
+"x": -3544.9,
 "yaw": 2.6779,
 "min": [
 -4.52,
@@ -8672,8 +8993,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-063.glb",
-"s": 1391.7,
-"x": -999.1,
+"model": "M-063",
+"s": 1192.5,
+"x": -3499.1,
 "yaw": -2.6779,
 "min": [
 -4.67,
@@ -8699,8 +9021,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-064.glb",
-"s": 1426.9,
-"x": -966.3,
+"model": "M-064",
+"s": 1227.7,
+"x": -3466.3,
 "yaw": -2.0478,
 "min": [
 -4.67,
@@ -8726,8 +9049,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-065.glb",
-"s": 1480.2,
-"x": -950.1,
+"model": "M-065",
+"s": 1281.0,
+"x": -3450.1,
 "yaw": -1.7197,
 "min": [
 -4.31,
@@ -8753,8 +9077,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-066.glb",
-"s": 1606.4,
-"x": -929.3,
+"model": "M-066",
+"s": 1407.2,
+"x": -3429.3,
 "yaw": 2.7315,
 "min": [
 -3.79,
@@ -8780,8 +9105,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-067.glb",
-"s": 1633.0,
-"x": -934.3,
+"model": "M-067",
+"s": 1433.8,
+"x": -3434.3,
 "yaw": -2.3491,
 "min": [
 -3.7,
@@ -8807,8 +9133,9 @@
 "kind": "house",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-068.glb",
-"s": 1638.0,
-"x": -961.0,
+"model": "M-068",
+"s": 1438.8,
+"x": -3461.0,
 "yaw": -1.1516,
 "min": [
 -4.67,
@@ -8834,8 +9161,9 @@
 "kind": "tower",
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/M-069.glb",
-"s": 1560.0,
-"x": -990.0,
+"model": "M-069",
+"s": 1360.8,
+"x": -3490.0,
 "yaw": -1.5708,
 "min": [
 -7.73,
@@ -8861,8 +9189,9 @@
 "kind": "industrial",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-001.glb",
-"s": 886.0,
-"x": 852.0,
+"model": "B-001",
+"s": 8286.4,
+"x": 3352.0,
 "yaw": -1.5708,
 "min": [
 -40.35,
@@ -8888,8 +9217,9 @@
 "kind": "church",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-002.glb",
-"s": 913.5,
-"x": 767.0,
+"model": "B-002",
+"s": 8313.9,
+"x": 3267.0,
 "yaw": -1.5708,
 "min": [
 -6.9,
@@ -8915,8 +9245,9 @@
 "kind": "store",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-003.glb",
-"s": 993.9,
-"x": 793.1,
+"model": "B-003",
+"s": 8394.3,
+"x": 3293.1,
 "yaw": -1.5708,
 "min": [
 -9.7,
@@ -8942,8 +9273,9 @@
 "kind": "store",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-004.glb",
-"s": 1014.2,
-"x": 794.8,
+"model": "B-004",
+"s": 8414.6,
+"x": 3294.8,
 "yaw": -1.5708,
 "min": [
 -9.87,
@@ -8969,8 +9301,9 @@
 "kind": "store",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-005.glb",
-"s": 1034.4,
-"x": 791.5,
+"model": "B-005",
+"s": 8434.8,
+"x": 3291.5,
 "yaw": -1.5671,
 "min": [
 -9.65,
@@ -8996,8 +9329,9 @@
 "kind": "store",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-006.glb",
-"s": 1064.7,
-"x": 793.9,
+"model": "B-006",
+"s": 8465.1,
+"x": 3293.9,
 "yaw": -1.5753,
 "min": [
 -9.65,
@@ -9023,8 +9357,9 @@
 "kind": "store",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-007.glb",
-"s": 1084.9,
-"x": 791.0,
+"model": "B-007",
+"s": 8485.3,
+"x": 3291.0,
 "yaw": -1.5708,
 "min": [
 -9.82,
@@ -9050,8 +9385,9 @@
 "kind": "store",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-008.glb",
-"s": 1105.2,
-"x": 794.8,
+"model": "B-008",
+"s": 8505.6,
+"x": 3294.8,
 "yaw": -1.5757,
 "min": [
 -9.82,
@@ -9077,8 +9413,9 @@
 "kind": "store",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-009.glb",
-"s": 1125.4,
-"x": 793.3,
+"model": "B-009",
+"s": 8525.8,
+"x": 3293.3,
 "yaw": -1.5665,
 "min": [
 -9.82,
@@ -9104,8 +9441,9 @@
 "kind": "civic",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-010.glb",
-"s": 1186.5,
-"x": 847.0,
+"model": "B-010",
+"s": 8586.9,
+"x": 3347.0,
 "yaw": -1.5708,
 "min": [
 -11.06,
@@ -9131,8 +9469,9 @@
 "kind": "civic",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-011.glb",
-"s": 1186.5,
-"x": 766.5,
+"model": "B-011",
+"s": 8586.9,
+"x": 3266.5,
 "yaw": -1.5708,
 "min": [
 -15.6,
@@ -9158,8 +9497,9 @@
 "kind": "civic",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-012.glb",
-"s": 1050.0,
-"x": 896.0,
+"model": "B-012",
+"s": 8450.4,
+"x": 3396.0,
 "yaw": 1.5708,
 "min": [
 -12.6,
@@ -9185,8 +9525,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-013.glb",
-"s": 886.9,
-"x": 703.0,
+"model": "B-013",
+"s": 8287.3,
+"x": 3203.0,
 "yaw": -1.5708,
 "min": [
 -4.21,
@@ -9212,8 +9553,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-014.glb",
-"s": 941.9,
-"x": 702.5,
+"model": "B-014",
+"s": 8342.3,
+"x": 3202.5,
 "yaw": -1.5708,
 "min": [
 -4.21,
@@ -9239,8 +9581,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-015.glb",
-"s": 894.9,
-"x": 650.8,
+"model": "B-015",
+"s": 8295.3,
+"x": 3150.8,
 "yaw": 1.5708,
 "min": [
 -5.01,
@@ -9266,8 +9609,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-016.glb",
-"s": 931.2,
-"x": 647.3,
+"model": "B-016",
+"s": 8331.6,
+"x": 3147.3,
 "yaw": 1.5804,
 "min": [
 -3.62,
@@ -9293,8 +9637,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-017.glb",
-"s": 977.7,
-"x": 701.0,
+"model": "B-017",
+"s": 8378.1,
+"x": 3201.0,
 "yaw": -1.5708,
 "min": [
 -4.92,
@@ -9320,8 +9665,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-018.glb",
-"s": 984.5,
-"x": 649.0,
+"model": "B-018",
+"s": 8384.9,
+"x": 3149.0,
 "yaw": 1.5799,
 "min": [
 -6.08,
@@ -9347,8 +9693,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-019.glb",
-"s": 1023.6,
-"x": 649.6,
+"model": "B-019",
+"s": 8424.0,
+"x": 3149.6,
 "yaw": 1.5793,
 "min": [
 -4.6,
@@ -9374,8 +9721,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-020.glb",
-"s": 1097.3,
-"x": 702.5,
+"model": "B-020",
+"s": 8497.7,
+"x": 3202.5,
 "yaw": -1.5708,
 "min": [
 -3.37,
@@ -9401,8 +9749,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-021.glb",
-"s": 1124.2,
-"x": 700.4,
+"model": "B-021",
+"s": 8524.6,
+"x": 3200.4,
 "yaw": -1.5708,
 "min": [
 -3.4,
@@ -9428,8 +9777,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-022.glb",
-"s": 1074.6,
-"x": 650.5,
+"model": "B-022",
+"s": 8475.0,
+"x": 3150.5,
 "yaw": 1.5708,
 "min": [
 -4.78,
@@ -9455,8 +9805,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-023.glb",
-"s": 1115.0,
-"x": 647.2,
+"model": "B-023",
+"s": 8515.4,
+"x": 3147.2,
 "yaw": 1.5606,
 "min": [
 -3.3,
@@ -9482,8 +9833,9 @@
 "kind": "church",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-024.glb",
-"s": 1186.5,
-"x": 675.5,
+"model": "B-024",
+"s": 8586.9,
+"x": 3175.5,
 "yaw": -1.5708,
 "min": [
 -7.25,
@@ -9509,8 +9861,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-025.glb",
-"s": 1167.1,
-"x": 648.2,
+"model": "B-025",
+"s": 8567.5,
+"x": 3148.2,
 "yaw": 1.5612,
 "min": [
 -4.24,
@@ -9536,8 +9889,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-026.glb",
-"s": 1206.4,
-"x": 648.0,
+"model": "B-026",
+"s": 8606.8,
+"x": 3148.0,
 "yaw": 1.5614,
 "min": [
 -1.9,
@@ -9563,8 +9917,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-027.glb",
-"s": 983.3,
-"x": 610.0,
+"model": "B-027",
+"s": 8383.7,
+"x": 3110.0,
 "yaw": -1.5796,
 "min": [
 -4.9,
@@ -9590,8 +9945,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-028.glb",
-"s": 1025.3,
-"x": 610.2,
+"model": "B-028",
+"s": 8425.7,
+"x": 3110.2,
 "yaw": -1.562,
 "min": [
 -5.62,
@@ -9617,8 +9973,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-029.glb",
-"s": 983.2,
-"x": 559.6,
+"model": "B-029",
+"s": 8383.6,
+"x": 3059.6,
 "yaw": 1.5625,
 "min": [
 -6.1,
@@ -9644,8 +10001,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-030.glb",
-"s": 1025.6,
-"x": 556.9,
+"model": "B-030",
+"s": 8426.0,
+"x": 3056.9,
 "yaw": 1.5806,
 "min": [
 -4.62,
@@ -9671,8 +10029,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-031.glb",
-"s": 1075.8,
-"x": 612.0,
+"model": "B-031",
+"s": 8476.2,
+"x": 3112.0,
 "yaw": -1.5708,
 "min": [
 -5.09,
@@ -9698,8 +10057,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-032.glb",
-"s": 1113.0,
-"x": 610.6,
+"model": "B-032",
+"s": 8513.4,
+"x": 3110.6,
 "yaw": -1.5814,
 "min": [
 -3.12,
@@ -9725,8 +10085,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-033.glb",
-"s": 1074.1,
-"x": 557.9,
+"model": "B-033",
+"s": 8474.5,
+"x": 3057.9,
 "yaw": 1.561,
 "min": [
 -3.09,
@@ -9752,8 +10113,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-034.glb",
-"s": 1116.8,
-"x": 556.4,
+"model": "B-034",
+"s": 8517.2,
+"x": 3056.4,
 "yaw": 1.5612,
 "min": [
 -2.31,
@@ -9779,8 +10141,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-035.glb",
-"s": 1206.1,
-"x": 611.3,
+"model": "B-035",
+"s": 8606.5,
+"x": 3111.3,
 "yaw": -1.5799,
 "min": [
 -3.09,
@@ -9806,8 +10169,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-036.glb",
-"s": 1168.9,
-"x": 558.5,
+"model": "B-036",
+"s": 8569.3,
+"x": 3058.5,
 "yaw": 1.5817,
 "min": [
 -5.15,
@@ -9833,8 +10197,9 @@
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/B-037.glb",
-"s": 1203.9,
-"x": 558.6,
+"model": "B-037",
+"s": 8604.3,
+"x": 3058.6,
 "yaw": 1.5708,
 "min": [
 -5.32,
@@ -9860,8 +10225,9 @@
 "kind": "civic",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-001.glb",
-"s": 2013.5,
-"x": -845.5,
+"model": "F-001",
+"s": 18064.3,
+"x": -3345.5,
 "yaw": 1.5708,
 "min": [
 -11.06,
@@ -9887,8 +10253,9 @@
 "kind": "church",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-002.glb",
-"s": 2013.5,
-"x": -755.0,
+"model": "F-002",
+"s": 18064.3,
+"x": -3255.0,
 "yaw": 1.5708,
 "min": [
 -6.9,
@@ -9914,8 +10281,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-003.glb",
-"s": 2073.7,
-"x": -817.6,
+"model": "F-003",
+"s": 18124.5,
+"x": -3317.6,
 "yaw": -1.5755,
 "min": [
 -9.65,
@@ -9941,8 +10309,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-004.glb",
-"s": 2093.9,
-"x": -819.8,
+"model": "F-004",
+"s": 18144.7,
+"x": -3319.8,
 "yaw": -1.5708,
 "min": [
 -9.82,
@@ -9968,8 +10337,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-005.glb",
-"s": 2114.2,
-"x": -818.3,
+"model": "F-005",
+"s": 18165.0,
+"x": -3318.3,
 "yaw": -1.5752,
 "min": [
 -9.65,
@@ -9995,8 +10365,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-006.glb",
-"s": 2134.4,
-"x": -818.8,
+"model": "F-006",
+"s": 18185.2,
+"x": -3318.8,
 "yaw": -1.5666,
 "min": [
 -9.65,
@@ -10022,8 +10393,9 @@
 "kind": "civic",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-007.glb",
-"s": 2195.5,
-"x": -755.0,
+"model": "F-007",
+"s": 18246.3,
+"x": -3255.0,
 "yaw": -1.5708,
 "min": [
 -4.35,
@@ -10049,8 +10421,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-008.glb",
-"s": 2164.7,
-"x": -818.5,
+"model": "F-008",
+"s": 18215.5,
+"x": -3318.5,
 "yaw": -1.5751,
 "min": [
 -9.65,
@@ -10076,8 +10449,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-009.glb",
-"s": 2184.9,
-"x": -820.6,
+"model": "F-009",
+"s": 18235.7,
+"x": -3320.6,
 "yaw": -1.5708,
 "min": [
 -9.82,
@@ -10103,8 +10477,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-010.glb",
-"s": 2205.2,
-"x": -820.2,
+"model": "F-010",
+"s": 18256.0,
+"x": -3320.2,
 "yaw": -1.5746,
 "min": [
 -9.82,
@@ -10130,8 +10505,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-011.glb",
-"s": 2225.4,
-"x": -817.5,
+"model": "F-011",
+"s": 18276.2,
+"x": -3317.5,
 "yaw": -1.566,
 "min": [
 -9.82,
@@ -10157,8 +10533,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-012.glb",
-"s": 2164.7,
-"x": -689.2,
+"model": "F-012",
+"s": 18215.5,
+"x": -3189.2,
 "yaw": 1.5747,
 "min": [
 -9.65,
@@ -10184,8 +10561,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-013.glb",
-"s": 2184.9,
-"x": -690.8,
+"model": "F-013",
+"s": 18235.7,
+"x": -3190.8,
 "yaw": 1.5708,
 "min": [
 -9.82,
@@ -10211,8 +10589,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-014.glb",
-"s": 2205.2,
-"x": -691.5,
+"model": "F-014",
+"s": 18256.0,
+"x": -3191.5,
 "yaw": 1.5756,
 "min": [
 -9.82,
@@ -10238,8 +10617,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-015.glb",
-"s": 2225.4,
-"x": -690.8,
+"model": "F-015",
+"s": 18276.2,
+"x": -3190.8,
 "yaw": 1.5663,
 "min": [
 -9.82,
@@ -10265,8 +10645,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-016.glb",
-"s": 2259.1,
-"x": -818.8,
+"model": "F-016",
+"s": 18309.9,
+"x": -3318.8,
 "yaw": -1.575,
 "min": [
 -13.05,
@@ -10292,8 +10673,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-017.glb",
-"s": 2286.1,
-"x": -820.0,
+"model": "F-017",
+"s": 18336.9,
+"x": -3320.0,
 "yaw": -1.5746,
 "min": [
 -13.05,
@@ -10319,8 +10701,9 @@
 "kind": "store",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-018.glb",
-"s": 2313.1,
-"x": -818.7,
+"model": "F-018",
+"s": 18363.9,
+"x": -3318.7,
 "yaw": -1.5751,
 "min": [
 -13.05,
@@ -10346,8 +10729,9 @@
 "kind": "civic",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-019.glb",
-"s": 2286.5,
-"x": -754.5,
+"model": "F-019",
+"s": 18337.3,
+"x": -3254.5,
 "yaw": 1.5708,
 "min": [
 -12.06,
@@ -10373,8 +10757,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-020.glb",
-"s": 1992.8,
-"x": -963.3,
+"model": "F-020",
+"s": 18043.6,
+"x": -3463.3,
 "yaw": 1.5708,
 "min": [
 -4.55,
@@ -10400,8 +10785,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-021.glb",
-"s": 2031.6,
-"x": -964.0,
+"model": "F-021",
+"s": 18082.4,
+"x": -3464.0,
 "yaw": 1.5708,
 "min": [
 -2.85,
@@ -10427,8 +10813,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-022.glb",
-"s": 1988.7,
-"x": -910.9,
+"model": "F-022",
+"s": 18039.5,
+"x": -3410.9,
 "yaw": -1.5708,
 "min": [
 -5.7,
@@ -10454,8 +10841,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-023.glb",
-"s": 2013.7,
-"x": -909.3,
+"model": "F-023",
+"s": 18064.5,
+"x": -3409.3,
 "yaw": -1.5806,
 "min": [
 -4.61,
@@ -10481,8 +10869,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-024.glb",
-"s": 2038.5,
-"x": -908.8,
+"model": "F-024",
+"s": 18089.3,
+"x": -3408.8,
 "yaw": -1.5808,
 "min": [
 -5.85,
@@ -10508,8 +10897,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-025.glb",
-"s": 2082.9,
-"x": -961.5,
+"model": "F-025",
+"s": 18133.7,
+"x": -3461.5,
 "yaw": 1.5708,
 "min": [
 -4.45,
@@ -10535,8 +10925,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-026.glb",
-"s": 2124.0,
-"x": -963.7,
+"model": "F-026",
+"s": 18174.8,
+"x": -3463.7,
 "yaw": 1.561,
 "min": [
 -5,
@@ -10562,8 +10953,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-027.glb",
-"s": 2076.0,
-"x": -908.6,
+"model": "F-027",
+"s": 18126.8,
+"x": -3408.6,
 "yaw": -1.5615,
 "min": [
 -4.7,
@@ -10589,8 +10981,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-028.glb",
-"s": 2102.2,
-"x": -909.8,
+"model": "F-028",
+"s": 18153.0,
+"x": -3409.8,
 "yaw": -1.5599,
 "min": [
 -5.16,
@@ -10616,8 +11009,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-029.glb",
-"s": 2129.5,
-"x": -908.8,
+"model": "F-029",
+"s": 18180.3,
+"x": -3408.8,
 "yaw": -1.5708,
 "min": [
 -4.82,
@@ -10643,8 +11037,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-030.glb",
-"s": 2177.0,
-"x": -963.5,
+"model": "F-030",
+"s": 18227.8,
+"x": -3463.5,
 "yaw": 1.5708,
 "min": [
 -4.48,
@@ -10670,8 +11065,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-031.glb",
-"s": 2213.5,
-"x": -963.1,
+"model": "F-031",
+"s": 18264.3,
+"x": -3463.1,
 "yaw": 1.5817,
 "min": [
 -4.9,
@@ -10697,8 +11093,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-032.glb",
-"s": 2168.9,
-"x": -909.7,
+"model": "F-032",
+"s": 18219.7,
+"x": -3409.7,
 "yaw": -1.5708,
 "min": [
 -5.45,
@@ -10724,8 +11121,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-033.glb",
-"s": 2193.7,
-"x": -911.4,
+"model": "F-033",
+"s": 18244.5,
+"x": -3411.4,
 "yaw": -1.5708,
 "min": [
 -5.8,
@@ -10751,8 +11149,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-034.glb",
-"s": 2220.4,
-"x": -909.0,
+"model": "F-034",
+"s": 18271.2,
+"x": -3409.0,
 "yaw": -1.5802,
 "min": [
 -5.39,
@@ -10778,8 +11177,9 @@
 "kind": "church",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-035.glb",
-"s": 2286.5,
-"x": -936.5,
+"model": "F-035",
+"s": 18337.3,
+"x": -3436.5,
 "yaw": 1.5708,
 "min": [
 -6.9,
@@ -10805,8 +11205,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-036.glb",
-"s": 2268.7,
-"x": -908.0,
+"model": "F-036",
+"s": 18319.5,
+"x": -3408.0,
 "yaw": -1.5708,
 "min": [
 -4.01,
@@ -10832,8 +11233,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-037.glb",
-"s": 2308.0,
-"x": -910.2,
+"model": "F-037",
+"s": 18358.8,
+"x": -3410.2,
 "yaw": -1.5602,
 "min": [
 -4.4,
@@ -10859,8 +11261,9 @@
 "kind": "school",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-038.glb",
-"s": 1993.8,
-"x": -683.0,
+"model": "F-038",
+"s": 18044.6,
+"x": -3183.0,
 "yaw": 1.5739,
 "min": [
 -18.35,
@@ -10886,8 +11289,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-039.glb",
-"s": 2080.3,
-"x": -689.9,
+"model": "F-039",
+"s": 18131.1,
+"x": -3189.9,
 "yaw": 1.5812,
 "min": [
 -5.5,
@@ -10913,8 +11317,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-040.glb",
-"s": 2103.6,
-"x": -690.4,
+"model": "F-040",
+"s": 18154.4,
+"x": -3190.4,
 "yaw": 1.5708,
 "min": [
 -4.75,
@@ -10940,8 +11345,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-041.glb",
-"s": 2128.7,
-"x": -688.9,
+"model": "F-041",
+"s": 18179.5,
+"x": -3188.9,
 "yaw": 1.5801,
 "min": [
 -5.4,
@@ -10967,8 +11373,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-042.glb",
-"s": 2084.2,
-"x": -637.0,
+"model": "F-042",
+"s": 18135.0,
+"x": -3137.0,
 "yaw": -1.5708,
 "min": [
 -4.55,
@@ -10994,8 +11401,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-043.glb",
-"s": 2124.4,
-"x": -636.0,
+"model": "F-043",
+"s": 18175.2,
+"x": -3136.0,
 "yaw": -1.5602,
 "min": [
 -4.4,
@@ -11021,8 +11429,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-044.glb",
-"s": 2169.9,
-"x": -689.4,
+"model": "F-044",
+"s": 18220.7,
+"x": -3189.4,
 "yaw": 1.5708,
 "min": [
 -5.32,
@@ -11048,8 +11457,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-045.glb",
-"s": 2197.2,
-"x": -690.3,
+"model": "F-045",
+"s": 18248.0,
+"x": -3190.3,
 "yaw": 1.5708,
 "min": [
 -5.2,
@@ -11075,8 +11485,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-046.glb",
-"s": 2220.8,
-"x": -689.4,
+"model": "F-046",
+"s": 18271.6,
+"x": -3189.4,
 "yaw": 1.5615,
 "min": [
 -4.8,
@@ -11102,8 +11513,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-047.glb",
-"s": 2176.9,
-"x": -636.4,
+"model": "F-047",
+"s": 18227.7,
+"x": -3136.4,
 "yaw": -1.5802,
 "min": [
 -4.01,
@@ -11129,8 +11541,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-048.glb",
-"s": 2215.0,
-"x": -637.6,
+"model": "F-048",
+"s": 18265.8,
+"x": -3137.6,
 "yaw": -1.5708,
 "min": [
 -6.32,
@@ -11156,8 +11569,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-049.glb",
-"s": 2262.3,
-"x": -689.3,
+"model": "F-049",
+"s": 18313.1,
+"x": -3189.3,
 "yaw": 1.5801,
 "min": [
 -4.9,
@@ -11183,8 +11597,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-050.glb",
-"s": 2285.2,
-"x": -691.1,
+"model": "F-050",
+"s": 18336.0,
+"x": -3191.1,
 "yaw": 1.5614,
 "min": [
 -4.45,
@@ -11210,8 +11625,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-051.glb",
-"s": 2315.3,
-"x": -690.7,
+"model": "F-051",
+"s": 18366.1,
+"x": -3190.7,
 "yaw": 1.5708,
 "min": [
 -5.15,
@@ -11237,8 +11653,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-052.glb",
-"s": 2264.8,
-"x": -637.0,
+"model": "F-052",
+"s": 18315.6,
+"x": -3137.0,
 "yaw": -1.5708,
 "min": [
 -4.92,
@@ -11264,8 +11681,9 @@
 "kind": "house",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-053.glb",
-"s": 2304.2,
-"x": -636.0,
+"model": "F-053",
+"s": 18355.0,
+"x": -3136.0,
 "yaw": -1.561,
 "min": [
 -4.92,
@@ -11291,8 +11709,9 @@
 "kind": "civic",
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/F-054.glb",
-"s": 2444.0,
-"x": -847.0,
+"model": "F-054",
+"s": 18494.8,
+"x": -3347.0,
 "yaw": 1.5708,
 "min": [
 -19.6,
@@ -11318,8 +11737,9 @@
 "kind": "industrial",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-001.glb",
-"s": 2656.0,
-"x": 888.1,
+"model": "T-001",
+"s": 16607.2,
+"x": 3388.1,
 "yaw": -1.5708,
 "min": [
 -40.35,
@@ -11345,8 +11765,9 @@
 "kind": "church",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-002.glb",
-"s": 2683.5,
-"x": 803.1,
+"model": "T-002",
+"s": 16634.7,
+"x": 3303.1,
 "yaw": -1.5708,
 "min": [
 -6.9,
@@ -11372,8 +11793,9 @@
 "kind": "store",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-003.glb",
-"s": 2743.7,
-"x": 827.3,
+"model": "T-003",
+"s": 16694.9,
+"x": 3327.3,
 "yaw": -1.5744,
 "min": [
 -9.82,
@@ -11399,8 +11821,9 @@
 "kind": "vacant",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-004.glb",
-"s": 2763.9,
-"x": 827.6,
+"model": "T-004",
+"s": 16715.1,
+"x": 3327.6,
 "yaw": -1.5708,
 "min": [
 -9.65,
@@ -11426,8 +11849,9 @@
 "kind": "store",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-005.glb",
-"s": 2784.2,
-"x": 828.3,
+"model": "T-005",
+"s": 16735.4,
+"x": 3328.3,
 "yaw": -1.5747,
 "min": [
 -9.65,
@@ -11453,8 +11877,9 @@
 "kind": "vacant",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-006.glb",
-"s": 2804.4,
-"x": 827.3,
+"model": "T-006",
+"s": 16755.6,
+"x": 3327.3,
 "yaw": -1.5672,
 "min": [
 -9.82,
@@ -11480,8 +11905,9 @@
 "kind": "store",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-007.glb",
-"s": 2834.7,
-"x": 829.1,
+"model": "T-007",
+"s": 16785.9,
+"x": 3329.1,
 "yaw": -1.575,
 "min": [
 -9.82,
@@ -11507,8 +11933,9 @@
 "kind": "vacant",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-008.glb",
-"s": 2854.9,
-"x": 828.7,
+"model": "T-008",
+"s": 16806.1,
+"x": 3328.7,
 "yaw": -1.5708,
 "min": [
 -9.82,
@@ -11534,8 +11961,9 @@
 "kind": "vacant",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-009.glb",
-"s": 2875.2,
-"x": 830.2,
+"model": "T-009",
+"s": 16826.4,
+"x": 3330.2,
 "yaw": -1.5754,
 "min": [
 -9.65,
@@ -11561,8 +11989,9 @@
 "kind": "vacant",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-010.glb",
-"s": 2895.4,
-"x": 829.3,
+"model": "T-010",
+"s": 16846.6,
+"x": 3329.3,
 "yaw": -1.5666,
 "min": [
 -9.82,
@@ -11588,8 +12017,9 @@
 "kind": "civic",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-011.glb",
-"s": 2956.5,
-"x": 883.1,
+"model": "T-011",
+"s": 16907.7,
+"x": 3383.1,
 "yaw": -1.5708,
 "min": [
 -11.06,
@@ -11615,8 +12045,9 @@
 "kind": "civic",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-012.glb",
-"s": 2956.5,
-"x": 802.6,
+"model": "T-012",
+"s": 16907.7,
+"x": 3302.6,
 "yaw": -1.5708,
 "min": [
 -15.6,
@@ -11642,8 +12073,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-013.glb",
-"s": 2657.4,
-"x": 738.3,
+"model": "T-013",
+"s": 16608.6,
+"x": 3238.3,
 "yaw": -1.5708,
 "min": [
 -4.89,
@@ -11669,8 +12101,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-014.glb",
-"s": 2683.0,
-"x": 739.5,
+"model": "T-014",
+"s": 16634.2,
+"x": 3239.5,
 "yaw": -1.5708,
 "min": [
 -5.9,
@@ -11696,8 +12129,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-015.glb",
-"s": 2709.4,
-"x": 738.3,
+"model": "T-015",
+"s": 16660.6,
+"x": 3238.3,
 "yaw": -1.5612,
 "min": [
 -4.75,
@@ -11723,8 +12157,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-016.glb",
-"s": 2664.1,
-"x": 685.9,
+"model": "T-016",
+"s": 16615.3,
+"x": 3185.9,
 "yaw": 1.5708,
 "min": [
 -4.01,
@@ -11750,8 +12185,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-017.glb",
-"s": 2703.5,
-"x": 684.2,
+"model": "T-017",
+"s": 16654.7,
+"x": 3184.2,
 "yaw": 1.5797,
 "min": [
 -2.95,
@@ -11777,8 +12213,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-018.glb",
-"s": 2749.5,
-"x": 739.0,
+"model": "T-018",
+"s": 16700.7,
+"x": 3239.0,
 "yaw": -1.5708,
 "min": [
 -3.4,
@@ -11804,8 +12241,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-019.glb",
-"s": 2775.5,
-"x": 736.4,
+"model": "T-019",
+"s": 16726.7,
+"x": 3236.4,
 "yaw": -1.5708,
 "min": [
 -4.89,
@@ -11831,8 +12269,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-020.glb",
-"s": 2802.5,
-"x": 738.1,
+"model": "T-020",
+"s": 16753.7,
+"x": 3238.1,
 "yaw": -1.5801,
 "min": [
 -5.1,
@@ -11858,8 +12297,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-021.glb",
-"s": 2752.8,
-"x": 685.2,
+"model": "T-021",
+"s": 16704.0,
+"x": 3185.2,
 "yaw": 1.5804,
 "min": [
 -3.7,
@@ -11885,8 +12325,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-022.glb",
-"s": 2795.9,
-"x": 683.9,
+"model": "T-022",
+"s": 16747.1,
+"x": 3183.9,
 "yaw": 1.5796,
 "min": [
 -3.7,
@@ -11912,8 +12353,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-023.glb",
-"s": 2838.7,
-"x": 736.6,
+"model": "T-023",
+"s": 16789.9,
+"x": 3236.6,
 "yaw": -1.5623,
 "min": [
 -5.16,
@@ -11939,8 +12381,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-024.glb",
-"s": 2865.1,
-"x": 737.2,
+"model": "T-024",
+"s": 16816.3,
+"x": 3237.2,
 "yaw": -1.5793,
 "min": [
 -3.4,
@@ -11966,8 +12409,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-025.glb",
-"s": 2892.3,
-"x": 739.4,
+"model": "T-025",
+"s": 16843.5,
+"x": 3239.4,
 "yaw": -1.5614,
 "min": [
 -3.09,
@@ -11993,8 +12437,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-026.glb",
-"s": 2844.2,
-"x": 685.3,
+"model": "T-026",
+"s": 16795.4,
+"x": 3185.3,
 "yaw": 1.5708,
 "min": [
 -4.01,
@@ -12020,8 +12465,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-027.glb",
-"s": 2887.0,
-"x": 685.9,
+"model": "T-027",
+"s": 16838.2,
+"x": 3185.9,
 "yaw": 1.5796,
 "min": [
 -4.52,
@@ -12047,8 +12493,9 @@
 "kind": "church",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-028.glb",
-"s": 2956.5,
-"x": 711.6,
+"model": "T-028",
+"s": 16907.7,
+"x": 3211.6,
 "yaw": -1.5708,
 "min": [
 -6.9,
@@ -12074,8 +12521,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-029.glb",
-"s": 2938.5,
-"x": 685.8,
+"model": "T-029",
+"s": 16889.7,
+"x": 3185.8,
 "yaw": 1.5606,
 "min": [
 -3.4,
@@ -12101,8 +12549,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-030.glb",
-"s": 2974.6,
-"x": 685.8,
+"model": "T-030",
+"s": 16925.8,
+"x": 3185.8,
 "yaw": 1.5794,
 "min": [
 -4.52,
@@ -12128,8 +12577,9 @@
 "kind": "school",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-031.glb",
-"s": 2663.8,
-"x": 640.1,
+"model": "T-031",
+"s": 16615.0,
+"x": 3140.1,
 "yaw": -1.5739,
 "min": [
 -18.35,
@@ -12155,8 +12605,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-032.glb",
-"s": 2753.1,
-"x": 646.1,
+"model": "T-032",
+"s": 16704.3,
+"x": 3146.1,
 "yaw": -1.5708,
 "min": [
 -4.21,
@@ -12182,8 +12633,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-033.glb",
-"s": 2793.7,
-"x": 647.6,
+"model": "T-033",
+"s": 16744.9,
+"x": 3147.6,
 "yaw": -1.5817,
 "min": [
 -5.57,
@@ -12209,8 +12661,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-034.glb",
-"s": 2756.5,
-"x": 593.1,
+"model": "T-034",
+"s": 16707.7,
+"x": 3093.1,
 "yaw": 1.5808,
 "min": [
 -4.75,
@@ -12236,8 +12689,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-035.glb",
-"s": 2792.3,
-"x": 594.3,
+"model": "T-035",
+"s": 16743.5,
+"x": 3094.3,
 "yaw": 1.5617,
 "min": [
 -5.09,
@@ -12263,8 +12717,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-036.glb",
-"s": 2846.5,
-"x": 648.7,
+"model": "T-036",
+"s": 16797.7,
+"x": 3148.7,
 "yaw": -1.5804,
 "min": [
 -4.78,
@@ -12290,8 +12745,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-037.glb",
-"s": 2885.0,
-"x": 647.1,
+"model": "T-037",
+"s": 16836.2,
+"x": 3147.1,
 "yaw": -1.5597,
 "min": [
 -5.23,
@@ -12317,8 +12773,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-038.glb",
-"s": 2843.6,
-"x": 593.2,
+"model": "T-038",
+"s": 16794.8,
+"x": 3093.2,
 "yaw": 1.5708,
 "min": [
 -5.09,
@@ -12344,8 +12801,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-039.glb",
-"s": 2884.0,
-"x": 595.5,
+"model": "T-039",
+"s": 16835.2,
+"x": 3095.5,
 "yaw": 1.5622,
 "min": [
 -4.82,
@@ -12371,8 +12829,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-040.glb",
-"s": 2936.4,
-"x": 646.4,
+"model": "T-040",
+"s": 16887.6,
+"x": 3146.4,
 "yaw": -1.5614,
 "min": [
 -4.8,
@@ -12398,8 +12857,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-041.glb",
-"s": 2974.7,
-"x": 646.6,
+"model": "T-041",
+"s": 16925.9,
+"x": 3146.6,
 "yaw": -1.5608,
 "min": [
 -5.53,
@@ -12425,8 +12885,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-042.glb",
-"s": 2937.6,
-"x": 594.1,
+"model": "T-042",
+"s": 16888.8,
+"x": 3094.1,
 "yaw": 1.5801,
 "min": [
 -4.7,
@@ -12452,8 +12913,9 @@
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-043.glb",
-"s": 2974.5,
-"x": 594.0,
+"model": "T-043",
+"s": 16925.7,
+"x": 3094.0,
 "yaw": 1.5599,
 "min": [
 -4.62,
@@ -12479,8 +12941,9 @@
 "kind": "vacant",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-044.glb",
-"s": 2957.5,
-"x": 1010.6,
+"model": "T-044",
+"s": 16908.7,
+"x": 3510.6,
 "yaw": 1.5708,
 "min": [
 -62.5,
@@ -12506,8 +12969,9 @@
 "kind": "store",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-001.glb",
-"s": 1173.7,
-"x": -145.1,
+"model": "CF-001",
+"s": 13574.1,
+"x": -2645.1,
 "yaw": -1.5756,
 "min": [
 -9.82,
@@ -12533,8 +12997,9 @@
 "kind": "store",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-002.glb",
-"s": 1193.9,
-"x": -148.2,
+"model": "CF-002",
+"s": 13594.3,
+"x": -2648.2,
 "yaw": -1.5708,
 "min": [
 -9.82,
@@ -12560,8 +13025,9 @@
 "kind": "store",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-003.glb",
-"s": 1214.2,
-"x": -144.9,
+"model": "CF-003",
+"s": 13614.6,
+"x": -2644.9,
 "yaw": -1.5757,
 "min": [
 -9.82,
@@ -12587,8 +13053,9 @@
 "kind": "church",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-004.glb",
-"s": 1295.5,
-"x": -172.7,
+"model": "CF-004",
+"s": 13695.9,
+"x": -2672.7,
 "yaw": -1.5708,
 "min": [
 -6.9,
@@ -12614,8 +13081,9 @@
 "kind": "civic",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-005.glb",
-"s": 1295.5,
-"x": -240.7,
+"model": "CF-005",
+"s": 13695.9,
+"x": -2740.7,
 "yaw": -1.5708,
 "min": [
 -6.6,
@@ -12641,8 +13109,9 @@
 "kind": "house",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-006.glb",
-"s": 1185.6,
-"x": -199.2,
+"model": "CF-006",
+"s": 13586.0,
+"x": -2699.2,
 "yaw": 1.5708,
 "min": [
 -5.01,
@@ -12668,8 +13137,9 @@
 "kind": "house",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-007.glb",
-"s": 1205.5,
-"x": -236.8,
+"model": "CF-007",
+"s": 13605.9,
+"x": -2736.8,
 "yaw": -1.5602,
 "min": [
 -1.51,
@@ -12695,8 +13165,9 @@
 "kind": "house",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-008.glb",
-"s": 1203.3,
-"x": -290.9,
+"model": "CF-008",
+"s": 13603.7,
+"x": -2790.9,
 "yaw": 1.5612,
 "min": [
 -4.57,
@@ -12722,8 +13193,9 @@
 "kind": "house",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-009.glb",
-"s": 1275.4,
-"x": -199.1,
+"model": "CF-009",
+"s": 13675.8,
+"x": -2699.1,
 "yaw": 1.5623,
 "min": [
 -5.5,
@@ -12749,8 +13221,9 @@
 "kind": "house",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-010.glb",
-"s": 1316.5,
-"x": -199.9,
+"model": "CF-010",
+"s": 13716.9,
+"x": -2699.9,
 "yaw": 1.5791,
 "min": [
 -4.86,
@@ -12776,8 +13249,9 @@
 "kind": "store",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-011.glb",
-"s": 1183.8,
-"x": -109.4,
+"model": "CF-011",
+"s": 13584.2,
+"x": -2609.4,
 "yaw": 1.5708,
 "min": [
 -19.8,
@@ -12803,8 +13277,9 @@
 "kind": "industrial",
 "settlement": "Cedar Ford",
 "glb": "res://remake/buildings/CF-012.glb",
-"s": 1286.0,
-"x": -100.7,
+"model": "CF-012",
+"s": 13686.4,
+"x": -2600.7,
 "yaw": 1.5708,
 "min": [
 -16,
@@ -12830,8 +13305,9 @@
 "kind": "store",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-STORE.glb",
-"s": 1423.03,
-"x": 939.7,
+"model": "P-STORE",
+"s": 1223.83,
+"x": 3439.7,
 "yaw": 1.5708,
 "min": [
 -11.89,
@@ -12857,8 +13333,9 @@
 "kind": "store",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-TAVERN.glb",
-"s": 1442.55,
-"x": 939.7,
+"model": "P-TAVERN",
+"s": 1243.35,
+"x": 3439.7,
 "yaw": 1.5708,
 "min": [
 -9.72,
@@ -12884,8 +13361,9 @@
 "kind": "church",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-CHURCH.glb",
-"s": 1545.5,
-"x": 874.4,
+"model": "P-CHURCH",
+"s": 1346.3,
+"x": 3374.4,
 "yaw": -1.5708,
 "min": [
 -4.58,
@@ -12911,8 +13389,9 @@
 "kind": "civic",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-PO.glb",
-"s": 1545.5,
-"x": 941.4,
+"model": "P-PO",
+"s": 1346.3,
+"x": 3441.4,
 "yaw": -1.5708,
 "min": [
 -5.5,
@@ -12938,8 +13417,9 @@
 "kind": "house",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-HOUSE1.glb",
-"s": 1434.0,
-"x": 846.8,
+"model": "P-HOUSE1",
+"s": 1234.8,
+"x": 3346.8,
 "yaw": 1.5797,
 "min": [
 -11.05,
@@ -12965,8 +13445,9 @@
 "kind": "house",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-HOUSE2.glb",
-"s": 1472.8,
-"x": 847.7,
+"model": "P-HOUSE2",
+"s": 1273.6,
+"x": 3347.7,
 "yaw": 1.5796,
 "min": [
 -7.85,
@@ -12992,8 +13473,9 @@
 "kind": "house",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-HOUSE3.glb",
-"s": 1527.4,
-"x": 847.2,
+"model": "P-HOUSE3",
+"s": 1328.2,
+"x": 3347.2,
 "yaw": 1.5708,
 "min": [
 -7.85,
@@ -13019,8 +13501,9 @@
 "kind": "house",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-HOUSE4.glb",
-"s": 1563.4,
-"x": 848.5,
+"model": "P-HOUSE4",
+"s": 1364.2,
+"x": 3348.5,
 "yaw": 1.5804,
 "min": [
 -4.06,
@@ -13046,8 +13529,9 @@
 "kind": "industrial",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-ELEV.glb",
-"s": 1427.0,
-"x": 1037.4,
+"model": "P-ELEV",
+"s": 1227.8,
+"x": 3537.4,
 "yaw": -1.5708,
 "min": [
 -7.2,
@@ -13073,8 +13557,9 @@
 "kind": "civic",
 "settlement": "Pruett",
 "glb": "res://remake/buildings/P-DEPOT.glb",
-"s": 1500.0,
-"x": 986.4,
+"model": "P-DEPOT",
+"s": 1300.8,
+"x": 3486.4,
 "yaw": 1.5708,
 "min": [
 -14.18,
@@ -13100,8 +13585,9 @@
 "kind": "store",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-001.glb",
-"s": 670.8,
-"x": -866.2,
+"model": "DC-001",
+"s": 16920.8,
+"x": -3366.2,
 "yaw": -3.1416,
 "min": [
 -19.8,
@@ -13127,8 +13613,9 @@
 "kind": "store",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-002.glb",
-"s": 629.9,
-"x": -846.0,
+"model": "DC-002",
+"s": 16879.9,
+"x": -3346.0,
 "yaw": -0.0038,
 "min": [
 -40.05,
@@ -13154,8 +13641,9 @@
 "kind": "church",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-003.glb",
-"s": 695.0,
-"x": -754.5,
+"model": "DC-003",
+"s": 16945.0,
+"x": -3254.5,
 "yaw": -3.1416,
 "min": [
 -6.9,
@@ -13181,8 +13669,9 @@
 "kind": "civic",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-004.glb",
-"s": 628.0,
-"x": -754.5,
+"model": "DC-004",
+"s": 16878.0,
+"x": -3254.5,
 "yaw": -3.1416,
 "min": [
 -6.6,
@@ -13208,8 +13697,9 @@
 "kind": "house",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-005.glb",
-"s": 579.4,
-"x": -864.4,
+"model": "DC-005",
+"s": 16829.4,
+"x": -3364.4,
 "yaw": -3.1416,
 "min": [
 -4.85,
@@ -13235,8 +13725,9 @@
 "kind": "house",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-006.glb",
-"s": 577.6,
-"x": -827.2,
+"model": "DC-006",
+"s": 16827.6,
+"x": -3327.2,
 "yaw": 3.133,
 "min": [
 -4.8,
@@ -13262,8 +13753,9 @@
 "kind": "house",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-007.glb",
-"s": 723.5,
-"x": -867.0,
+"model": "DC-007",
+"s": 16973.5,
+"x": -3367.0,
 "yaw": -0.0,
 "min": [
 -4.8,
@@ -13289,8 +13781,9 @@
 "kind": "house",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-008.glb",
-"s": 723.1,
-"x": -824.6,
+"model": "DC-008",
+"s": 16973.1,
+"x": -3324.6,
 "yaw": -0.0096,
 "min": [
 -4.55,
@@ -13316,8 +13809,9 @@
 "kind": "house",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-009.glb",
-"s": 577.5,
-"x": -735.5,
+"model": "DC-009",
+"s": 16827.5,
+"x": -3235.5,
 "yaw": -3.1314,
 "min": [
 -5.09,
@@ -13343,8 +13837,9 @@
 "kind": "house",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-010.glb",
-"s": 720.7,
-"x": -774.9,
+"model": "DC-010",
+"s": 16970.7,
+"x": -3274.9,
 "yaw": 0.0088,
 "min": [
 -4.89,
@@ -13370,8 +13865,9 @@
 "kind": "house",
 "settlement": "Dunmore Crossing",
 "glb": "res://remake/buildings/DC-011.glb",
-"s": 721.5,
-"x": -734.6,
+"model": "DC-011",
+"s": 16971.5,
+"x": -3234.6,
 "yaw": -0.0111,
 "min": [
 -4.5,
@@ -13397,8 +13893,9 @@
 "kind": "store",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-001.glb",
-"s": 2513.8,
-"x": -1229.8,
+"model": "LG-001",
+"s": 10465.0,
+"x": -3729.8,
 "yaw": 1.5708,
 "min": [
 -19.8,
@@ -13424,8 +13921,9 @@
 "kind": "vacant",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-002.glb",
-"s": 2554.3,
-"x": -1232.2,
+"model": "LG-002",
+"s": 10505.5,
+"x": -3732.2,
 "yaw": 1.5708,
 "min": [
 -19.8,
@@ -13451,8 +13949,9 @@
 "kind": "store",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-003.glb",
-"s": 2534.1,
-"x": -1267.6,
+"model": "LG-003",
+"s": 10485.3,
+"x": -3767.6,
 "yaw": -1.5755,
 "min": [
 -40.05,
@@ -13478,8 +13977,9 @@
 "kind": "church",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-004.glb",
-"s": 2625.5,
-"x": -1205.0,
+"model": "LG-004",
+"s": 10576.7,
+"x": -3705.0,
 "yaw": 1.5708,
 "min": [
 -6.9,
@@ -13505,8 +14005,9 @@
 "kind": "civic",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-005.glb",
-"s": 2625.5,
-"x": -1272.0,
+"model": "LG-005",
+"s": 10576.7,
+"x": -3772.0,
 "yaw": 1.5708,
 "min": [
 -6.6,
@@ -13532,8 +14033,9 @@
 "kind": "house",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-006.glb",
-"s": 2514.5,
-"x": -1322.5,
+"model": "LG-006",
+"s": 10465.7,
+"x": -3822.5,
 "yaw": 1.5708,
 "min": [
 -6.15,
@@ -13559,8 +14061,9 @@
 "kind": "house",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-007.glb",
-"s": 2553.1,
-"x": -1321.2,
+"model": "LG-007",
+"s": 10504.3,
+"x": -3821.2,
 "yaw": 1.5615,
 "min": [
 -5.23,
@@ -13586,8 +14089,9 @@
 "kind": "house",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-008.glb",
-"s": 2512.8,
-"x": -1177.8,
+"model": "LG-008",
+"s": 10464.0,
+"x": -3677.8,
 "yaw": -1.5612,
 "min": [
 -4.45,
@@ -13613,8 +14117,9 @@
 "kind": "house",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-009.glb",
-"s": 2553.7,
-"x": -1175.9,
+"model": "LG-009",
+"s": 10504.9,
+"x": -3675.9,
 "yaw": -1.5708,
 "min": [
 -3.91,
@@ -13640,8 +14145,9 @@
 "kind": "house",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-010.glb",
-"s": 2607.4,
-"x": -1321.7,
+"model": "LG-010",
+"s": 10558.6,
+"x": -3821.7,
 "yaw": 1.5814,
 "min": [
 -3.53,
@@ -13667,8 +14173,9 @@
 "kind": "house",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-011.glb",
-"s": 2644.9,
-"x": -1322.4,
+"model": "LG-011",
+"s": 10596.1,
+"x": -3822.4,
 "yaw": 1.5606,
 "min": [
 -5.16,
@@ -13694,8 +14201,9 @@
 "kind": "house",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-012.glb",
-"s": 2604.1,
-"x": -1178.4,
+"model": "LG-012",
+"s": 10555.3,
+"x": -3678.4,
 "yaw": -1.5622,
 "min": [
 -5.2,
@@ -13721,8 +14229,9 @@
 "kind": "house",
 "settlement": "Loomis Grove",
 "glb": "res://remake/buildings/LG-013.glb",
-"s": 2647.3,
-"x": -1176.7,
+"model": "LG-013",
+"s": 10598.5,
+"x": -3676.7,
 "yaw": -1.5708,
 "min": [
 -5.2,
@@ -13748,8 +14257,9 @@
 "kind": "store",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-001.glb",
-"s": 2924.2,
-"x": -620.7,
+"model": "HC-001",
+"s": 1400.8,
+"x": -3120.7,
 "yaw": 1.5749,
 "min": [
 -9.65,
@@ -13775,8 +14285,9 @@
 "kind": "store",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-002.glb",
-"s": 2944.4,
-"x": -621.7,
+"model": "HC-002",
+"s": 1421.0,
+"x": -3121.7,
 "yaw": 1.5664,
 "min": [
 -9.65,
@@ -13802,8 +14313,9 @@
 "kind": "store",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-003.glb",
-"s": 2964.7,
-"x": -619.9,
+"model": "HC-003",
+"s": 1441.3,
+"x": -3119.9,
 "yaw": 1.5746,
 "min": [
 -9.65,
@@ -13829,8 +14341,9 @@
 "kind": "store",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-004.glb",
-"s": 2984.9,
-"x": -621.8,
+"model": "HC-004",
+"s": 1461.5,
+"x": -3121.8,
 "yaw": 1.5708,
 "min": [
 -9.65,
@@ -13856,8 +14369,9 @@
 "kind": "church",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-005.glb",
-"s": 2864.0,
-"x": -595.0,
+"model": "HC-005",
+"s": 1340.6,
+"x": -3095.0,
 "yaw": 1.5708,
 "min": [
 -6.9,
@@ -13883,8 +14397,9 @@
 "kind": "civic",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-006.glb",
-"s": 3046.0,
-"x": -618.0,
+"model": "HC-006",
+"s": 1522.6,
+"x": -3118.0,
 "yaw": 1.5708,
 "min": [
 -6.06,
@@ -13910,8 +14425,9 @@
 "kind": "civic",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-007.glb",
-"s": 2864.0,
-"x": -776.5,
+"model": "HC-007",
+"s": 1340.6,
+"x": -3276.5,
 "yaw": 1.5708,
 "min": [
 -9.6,
@@ -13937,8 +14453,9 @@
 "kind": "school",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-008.glb",
-"s": 3026.2,
-"x": -432.0,
+"model": "HC-008",
+"s": 1502.8,
+"x": -2932.0,
 "yaw": 1.5677,
 "min": [
 -18.35,
@@ -13964,8 +14481,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-009.glb",
-"s": 2842.7,
-"x": -713.0,
+"model": "HC-009",
+"s": 1319.3,
+"x": -3213.0,
 "yaw": 1.5708,
 "min": [
 -5.15,
@@ -13991,8 +14509,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-010.glb",
-"s": 2885.5,
-"x": -710.8,
+"model": "HC-010",
+"s": 1362.1,
+"x": -3210.8,
 "yaw": 1.5793,
 "min": [
 -5.1,
@@ -14018,8 +14537,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-011.glb",
-"s": 2841.8,
-"x": -567.6,
+"model": "HC-011",
+"s": 1318.4,
+"x": -3067.6,
 "yaw": -1.5708,
 "min": [
 -4.45,
@@ -14045,8 +14565,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-012.glb",
-"s": 2881.3,
-"x": -567.5,
+"model": "HC-012",
+"s": 1357.9,
+"x": -3067.5,
 "yaw": -1.5793,
 "min": [
 -4.55,
@@ -14072,8 +14593,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-013.glb",
-"s": 2864.8,
-"x": -529.0,
+"model": "HC-013",
+"s": 1341.4,
+"x": -3029.0,
 "yaw": 1.5708,
 "min": [
 -4.52,
@@ -14099,8 +14621,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-014.glb",
-"s": 2865.8,
-"x": -476.5,
+"model": "HC-014",
+"s": 1342.4,
+"x": -2976.5,
 "yaw": -1.561,
 "min": [
 -5.47,
@@ -14126,8 +14649,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-015.glb",
-"s": 2956.3,
-"x": -802.6,
+"model": "HC-015",
+"s": 1432.9,
+"x": -3302.6,
 "yaw": 1.5708,
 "min": [
 -4.7,
@@ -14153,8 +14677,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-016.glb",
-"s": 2953.1,
-"x": -750.6,
+"model": "HC-016",
+"s": 1429.7,
+"x": -3250.6,
 "yaw": -1.581,
 "min": [
 -5.8,
@@ -14180,8 +14705,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-017.glb",
-"s": 2936.9,
-"x": -711.8,
+"model": "HC-017",
+"s": 1413.5,
+"x": -3211.8,
 "yaw": 1.5708,
 "min": [
 -4.95,
@@ -14207,8 +14733,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-018.glb",
-"s": 2975.5,
-"x": -710.9,
+"model": "HC-018",
+"s": 1452.1,
+"x": -3210.9,
 "yaw": 1.5708,
 "min": [
 -5.51,
@@ -14234,8 +14761,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-019.glb",
-"s": 2974.1,
-"x": -567.7,
+"model": "HC-019",
+"s": 1450.7,
+"x": -3067.7,
 "yaw": -1.5708,
 "min": [
 -4.57,
@@ -14261,8 +14789,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-020.glb",
-"s": 3043.8,
-"x": -804.3,
+"model": "HC-020",
+"s": 1520.4,
+"x": -3304.3,
 "yaw": 1.5708,
 "min": [
 -4.66,
@@ -14288,8 +14817,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-021.glb",
-"s": 3048.4,
-"x": -748.0,
+"model": "HC-021",
+"s": 1525.0,
+"x": -3248.0,
 "yaw": -1.5606,
 "min": [
 -4.5,
@@ -14315,8 +14845,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-022.glb",
-"s": 3028.3,
-"x": -712.2,
+"model": "HC-022",
+"s": 1504.9,
+"x": -3212.2,
 "yaw": 1.5814,
 "min": [
 -5.7,
@@ -14342,8 +14873,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-023.glb",
-"s": 3065.7,
-"x": -710.5,
+"model": "HC-023",
+"s": 1542.3,
+"x": -3210.5,
 "yaw": 1.5708,
 "min": [
 -6.14,
@@ -14369,8 +14901,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-024.glb",
-"s": 3047.1,
-"x": -530.8,
+"model": "HC-024",
+"s": 1523.7,
+"x": -3030.8,
 "yaw": 1.5802,
 "min": [
 -4.95,
@@ -14396,8 +14929,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-025.glb",
-"s": 3045.5,
-"x": -478.1,
+"model": "HC-025",
+"s": 1522.1,
+"x": -2978.1,
 "yaw": -1.5708,
 "min": [
 -4.6,
@@ -14423,8 +14957,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-026.glb",
-"s": 3072.8,
-"x": -908.0,
+"model": "HC-026",
+"s": 1549.4,
+"x": -3408.0,
 "yaw": -0.5302,
 "min": [
 -5.9,
@@ -14450,8 +14985,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-027.glb",
-"s": 3037.1,
-"x": -878.8,
+"model": "HC-027",
+"s": 1513.7,
+"x": -3378.8,
 "yaw": -1.1336,
 "min": [
 -4.5,
@@ -14477,8 +15013,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-028.glb",
-"s": 2984.5,
-"x": -864.8,
+"model": "HC-028",
+"s": 1461.1,
+"x": -3364.8,
 "yaw": -1.4612,
 "min": [
 -5.9,
@@ -14504,8 +15041,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-029.glb",
-"s": 2925.5,
-"x": -864.8,
+"model": "HC-029",
+"s": 1402.1,
+"x": -3364.8,
 "yaw": -1.6804,
 "min": [
 -4.5,
@@ -14531,8 +15069,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-030.glb",
-"s": 2872.9,
-"x": -878.8,
+"model": "HC-030",
+"s": 1349.5,
+"x": -3378.8,
 "yaw": -2.008,
 "min": [
 -4.5,
@@ -14558,8 +15097,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-031.glb",
-"s": 2837.2,
-"x": -952.0,
+"model": "HC-031",
+"s": 1313.8,
+"x": -3452.0,
 "yaw": 2.6114,
 "min": [
 -5.9,
@@ -14585,8 +15125,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-032.glb",
-"s": 2872.9,
-"x": -981.2,
+"model": "HC-032",
+"s": 1349.5,
+"x": -3481.2,
 "yaw": 2.008,
 "min": [
 -4.97,
@@ -14612,8 +15153,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-033.glb",
-"s": 2925.5,
-"x": -995.2,
+"model": "HC-033",
+"s": 1402.1,
+"x": -3495.2,
 "yaw": 1.6804,
 "min": [
 -5.9,
@@ -14639,8 +15181,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-034.glb",
-"s": 2984.5,
-"x": -995.2,
+"model": "HC-034",
+"s": 1461.1,
+"x": -3495.2,
 "yaw": 1.4612,
 "min": [
 -4.97,
@@ -14666,8 +15209,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-035.glb",
-"s": 3037.1,
-"x": -981.2,
+"model": "HC-035",
+"s": 1513.7,
+"x": -3481.2,
 "yaw": 1.1336,
 "min": [
 -4.7,
@@ -14693,8 +15237,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-036.glb",
-"s": 3072.8,
-"x": -952.0,
+"model": "HC-036",
+"s": 1549.4,
+"x": -3452.0,
 "yaw": 0.5302,
 "min": [
 -4.93,
@@ -14720,8 +15265,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-037.glb",
-"s": 3083.0,
-"x": -873.9,
+"model": "HC-037",
+"s": 1559.6,
+"x": -3373.9,
 "yaw": 1.9809,
 "min": [
 -5.9,
@@ -14747,8 +15293,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-038.glb",
-"s": 3078.0,
-"x": -847.3,
+"model": "HC-038",
+"s": 1554.6,
+"x": -3347.3,
 "yaw": 0.7783,
 "min": [
 -3.6,
@@ -14774,8 +15321,9 @@
 "kind": "house",
 "settlement": "Haskins Corner",
 "glb": "res://remake/buildings/HC-039.glb",
-"s": 3051.4,
-"x": -842.3,
+"model": "HC-039",
+"s": 1528.0,
+"x": -3342.3,
 "yaw": -0.4192,
 "min": [
 -4.7,
@@ -14801,9 +15349,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-01-house.glb",
-"s": 1527.8,
-"x": 459.8,
-"yaw": -2.9876,
+"model": "FARM-01-house",
+"s": 14133.4,
+"x": -1714.6,
+"yaw": 2.9876,
 "min": [
 -10.4,
 -4,
@@ -14828,9 +15377,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-01-barn.glb",
-"s": 1556.8,
-"x": 455.3,
-"yaw": -2.9876,
+"model": "FARM-01-barn",
+"s": 14162.4,
+"x": -1710.1,
+"yaw": 2.9876,
 "min": [
 -4.87,
 -4,
@@ -14855,9 +15405,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-01-silo.glb",
-"s": 1575.8,
-"x": 455.8,
-"yaw": -3.0585,
+"model": "FARM-01-silo",
+"s": 14181.4,
+"x": -1710.6,
+"yaw": 3.0585,
 "min": [
 -2.34,
 -4,
@@ -14882,9 +15433,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-01-shed.glb",
-"s": 1506.8,
-"x": 437.8,
-"yaw": -0.8086,
+"model": "FARM-01-shed",
+"s": 14112.4,
+"x": -1692.6,
+"yaw": 0.8086,
 "min": [
 -4.26,
 -4,
@@ -14909,9 +15461,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-02-house.glb",
-"s": 687.3,
-"x": -595.7,
-"yaw": 2.9876,
+"model": "FARM-02-house",
+"s": 15596.4,
+"x": 2328.7,
+"yaw": -2.9876,
 "min": [
 -10.85,
 -4,
@@ -14936,9 +15489,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-02-barn.glb",
-"s": 716.3,
-"x": -591.2,
-"yaw": 2.9876,
+"model": "FARM-02-barn",
+"s": 15625.4,
+"x": 2324.2,
+"yaw": -2.9876,
 "min": [
 -10.05,
 -4,
@@ -14963,9 +15517,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-02-silo.glb",
-"s": 735.3,
-"x": -591.7,
-"yaw": 3.0585,
+"model": "FARM-02-silo",
+"s": 15644.4,
+"x": 2324.7,
+"yaw": -3.0585,
 "min": [
 -2.18,
 -4,
@@ -14990,9 +15545,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-02-shed.glb",
-"s": 666.3,
-"x": -573.7,
-"yaw": 0.8086,
+"model": "FARM-02-shed",
+"s": 15575.4,
+"x": 2306.7,
+"yaw": -0.8086,
 "min": [
 -6.4,
 -4,
@@ -15017,9 +15573,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-03-house.glb",
-"s": 549.1,
-"x": 1333.7,
-"yaw": 2.9876,
+"model": "FARM-03-house",
+"s": 5942.6,
+"x": -789.2,
+"yaw": -2.9876,
 "min": [
 -10.39,
 -4,
@@ -15044,9 +15601,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-03-barn.glb",
-"s": 578.1,
-"x": 1338.2,
-"yaw": 2.9876,
+"model": "FARM-03-barn",
+"s": 5971.6,
+"x": -793.7,
+"yaw": -2.9876,
 "min": [
 -5.48,
 -4,
@@ -15071,9 +15629,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-03-silo.glb",
-"s": 597.1,
-"x": 1337.7,
-"yaw": 3.0585,
+"model": "FARM-03-silo",
+"s": 5990.6,
+"x": -793.2,
+"yaw": -3.0585,
 "min": [
 -2.79,
 -4,
@@ -15098,9 +15657,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-03-shed.glb",
-"s": 528.1,
-"x": 1355.7,
-"yaw": 0.8086,
+"model": "FARM-03-shed",
+"s": 5921.6,
+"x": -811.2,
+"yaw": -0.8086,
 "min": [
 -7.01,
 -4,
@@ -15125,9 +15685,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-04-house.glb",
-"s": 1254.2,
-"x": -1293.6,
-"yaw": 2.9876,
+"model": "FARM-04-house",
+"s": 17210.6,
+"x": -1095.3,
+"yaw": -2.9876,
 "min": [
 -10.8,
 -4,
@@ -15152,9 +15713,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-04-barn.glb",
-"s": 1283.2,
-"x": -1289.1,
-"yaw": 2.9876,
+"model": "FARM-04-barn",
+"s": 17239.6,
+"x": -1099.8,
+"yaw": -2.9876,
 "min": [
 -10.97,
 -4,
@@ -15179,9 +15741,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-04-silo.glb",
-"s": 1302.2,
-"x": -1289.6,
-"yaw": 3.0585,
+"model": "FARM-04-silo",
+"s": 17258.6,
+"x": -1099.3,
+"yaw": -3.0585,
 "min": [
 -2.49,
 -4,
@@ -15206,9 +15769,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-04-shed.glb",
-"s": 1233.2,
-"x": -1271.6,
-"yaw": 0.8086,
+"model": "FARM-04-shed",
+"s": 17189.6,
+"x": -1117.3,
+"yaw": -0.8086,
 "min": [
 -5.48,
 -4,
@@ -15233,9 +15797,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-05-house.glb",
-"s": 3037.7,
-"x": -1192.9,
-"yaw": 2.9876,
+"model": "FARM-05-house",
+"s": 120.0,
+"x": 2588.1,
+"yaw": -2.9876,
 "min": [
 -5.18,
 -4,
@@ -15260,9 +15825,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-05-barn.glb",
-"s": 3066.7,
-"x": -1188.4,
-"yaw": 2.9876,
+"model": "FARM-05-barn",
+"s": 149.0,
+"x": 2583.6,
+"yaw": -2.9876,
 "min": [
 -6.4,
 -4,
@@ -15287,9 +15853,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-05-silo.glb",
-"s": 3085.7,
-"x": -1188.9,
-"yaw": 3.0585,
+"model": "FARM-05-silo",
+"s": 168.0,
+"x": 2584.1,
+"yaw": -3.0585,
 "min": [
 -3.25,
 -4,
@@ -15314,9 +15881,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-05-shed.glb",
-"s": 3016.7,
-"x": -1170.9,
-"yaw": 0.8086,
+"model": "FARM-05-shed",
+"s": 99.0,
+"x": 2566.1,
+"yaw": -0.8086,
 "min": [
 -4.69,
 -4,
@@ -15341,8 +15909,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-06-house.glb",
-"s": 1516.2,
-"x": -388.6,
+"model": "FARM-06-house",
+"s": 528.0,
+"x": -2584.0,
 "yaw": -2.9876,
 "min": [
 -10.4,
@@ -15368,8 +15937,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-06-barn.glb",
-"s": 1545.2,
-"x": -393.1,
+"model": "FARM-06-barn",
+"s": 557.0,
+"x": -2588.5,
 "yaw": -2.9876,
 "min": [
 -8.02,
@@ -15395,8 +15965,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-06-silo.glb",
-"s": 1564.2,
-"x": -392.6,
+"model": "FARM-06-silo",
+"s": 576.0,
+"x": -2588.0,
 "yaw": -3.0585,
 "min": [
 -2.18,
@@ -15422,8 +15993,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-06-shed.glb",
-"s": 1495.2,
-"x": -410.6,
+"model": "FARM-06-shed",
+"s": 507.0,
+"x": -2606.0,
 "yaw": -0.8086,
 "min": [
 -6.1,
@@ -15449,9 +16021,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-07-house.glb",
-"s": 2960.5,
-"x": 358.6,
-"yaw": 2.9876,
+"model": "FARM-07-house",
+"s": 7480.1,
+"x": -1602.5,
+"yaw": -2.9876,
 "min": [
 -10.39,
 -4,
@@ -15476,9 +16049,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-07-barn.glb",
-"s": 2989.5,
-"x": 363.1,
-"yaw": 2.9876,
+"model": "FARM-07-barn",
+"s": 7509.1,
+"x": -1607.0,
+"yaw": -2.9876,
 "min": [
 -5.79,
 -4,
@@ -15503,9 +16077,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-07-silo.glb",
-"s": 3008.5,
-"x": 362.6,
-"yaw": 3.0585,
+"model": "FARM-07-silo",
+"s": 7528.1,
+"x": -1606.5,
+"yaw": -3.0585,
 "min": [
 -2.03,
 -4,
@@ -15530,9 +16105,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-07-shed.glb",
-"s": 2939.5,
-"x": 380.6,
-"yaw": 0.8086,
+"model": "FARM-07-shed",
+"s": 7459.1,
+"x": -1624.5,
+"yaw": -0.8086,
 "min": [
 -3.96,
 -4,
@@ -15557,9 +16133,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-08-house.glb",
-"s": 2549.3,
-"x": 1015.8,
-"yaw": 2.9876,
+"model": "FARM-08-house",
+"s": 6411.2,
+"x": 2515.4,
+"yaw": -2.9876,
 "min": [
 -10.39,
 -4,
@@ -15584,9 +16161,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-08-barn.glb",
-"s": 2578.3,
-"x": 1020.3,
-"yaw": 2.9876,
+"model": "FARM-08-barn",
+"s": 6440.2,
+"x": 2510.9,
+"yaw": -2.9876,
 "min": [
 -5.89,
 -4,
@@ -15611,9 +16189,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-08-silo.glb",
-"s": 2597.3,
-"x": 1019.8,
-"yaw": 3.0585,
+"model": "FARM-08-silo",
+"s": 6459.2,
+"x": 2511.4,
+"yaw": -3.0585,
 "min": [
 -3.1,
 -4,
@@ -15638,9 +16217,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-08-shed.glb",
-"s": 2528.3,
-"x": 1037.8,
-"yaw": 0.8086,
+"model": "FARM-08-shed",
+"s": 6390.2,
+"x": 2493.4,
+"yaw": -0.8086,
 "min": [
 -4.97,
 -4,
@@ -15665,9 +16245,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-09-house.glb",
-"s": 1602.4,
-"x": 1391.0,
-"yaw": -2.9876,
+"model": "FARM-09-house",
+"s": 2346.1,
+"x": -2512.3,
+"yaw": 2.9876,
 "min": [
 -10.5,
 -4,
@@ -15692,9 +16273,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-09-barn.glb",
-"s": 1631.4,
-"x": 1386.5,
-"yaw": -2.9876,
+"model": "FARM-09-barn",
+"s": 2375.1,
+"x": -2507.8,
+"yaw": 2.9876,
 "min": [
 -11.22,
 -4,
@@ -15719,9 +16301,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-09-silo.glb",
-"s": 1650.4,
-"x": 1387.0,
-"yaw": -3.0585,
+"model": "FARM-09-silo",
+"s": 2394.1,
+"x": -2508.3,
+"yaw": 3.0585,
 "min": [
 -2.18,
 -4,
@@ -15746,9 +16329,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-09-shed.glb",
-"s": 1581.4,
-"x": 1369.0,
-"yaw": -0.8086,
+"model": "FARM-09-shed",
+"s": 2325.1,
+"x": -2490.3,
+"yaw": 0.8086,
 "min": [
 -9.44,
 -4,
@@ -15773,9 +16357,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-10-house.glb",
-"s": 2617.1,
-"x": -598.7,
-"yaw": 2.9876,
+"model": "FARM-10-house",
+"s": 13472.4,
+"x": 667.2,
+"yaw": -2.9876,
 "min": [
 -10.6,
 -4,
@@ -15800,9 +16385,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-10-barn.glb",
-"s": 2646.1,
-"x": -594.2,
-"yaw": 2.9876,
+"model": "FARM-10-barn",
+"s": 13501.4,
+"x": 662.7,
+"yaw": -2.9876,
 "min": [
 -4.97,
 -4,
@@ -15827,9 +16413,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-10-silo.glb",
-"s": 2665.1,
-"x": -594.7,
-"yaw": 3.0585,
+"model": "FARM-10-silo",
+"s": 13520.4,
+"x": 663.2,
+"yaw": -3.0585,
 "min": [
 -2.49,
 -4,
@@ -15854,9 +16441,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-10-shed.glb",
-"s": 2596.1,
-"x": -576.7,
-"yaw": 0.8086,
+"model": "FARM-10-shed",
+"s": 13451.4,
+"x": 645.2,
+"yaw": -0.8086,
 "min": [
 -6.4,
 -4,
@@ -15881,9 +16469,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-11-house.glb",
-"s": 2965.3,
-"x": 1294.9,
-"yaw": 2.9876,
+"model": "FARM-11-house",
+"s": 15519.2,
+"x": -1383.4,
+"yaw": -2.9876,
 "min": [
 -10.39,
 -4,
@@ -15908,9 +16497,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-11-barn.glb",
-"s": 2994.3,
-"x": 1299.4,
-"yaw": 2.9876,
+"model": "FARM-11-barn",
+"s": 15548.2,
+"x": -1387.9,
+"yaw": -2.9876,
 "min": [
 -5.28,
 -4,
@@ -15935,9 +16525,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-11-silo.glb",
-"s": 3013.3,
-"x": 1298.9,
-"yaw": 3.0585,
+"model": "FARM-11-silo",
+"s": 15567.2,
+"x": -1387.4,
+"yaw": -3.0585,
 "min": [
 -2.18,
 -4,
@@ -15962,9 +16553,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-11-shed.glb",
-"s": 2944.3,
-"x": 1316.9,
-"yaw": 0.8086,
+"model": "FARM-11-shed",
+"s": 15498.2,
+"x": -1405.4,
+"yaw": -0.8086,
 "min": [
 -4.57,
 -4,
@@ -15989,9 +16581,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-12-house.glb",
-"s": 145.4,
-"x": -517.7,
-"yaw": -2.9876,
+"model": "FARM-12-house",
+"s": 15604.2,
+"x": -2571.8,
+"yaw": 2.9876,
 "min": [
 -10.7,
 -4,
@@ -16016,9 +16609,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-12-barn.glb",
-"s": 174.4,
-"x": -522.2,
-"yaw": -2.9876,
+"model": "FARM-12-barn",
+"s": 15633.2,
+"x": -2567.3,
+"yaw": 2.9876,
 "min": [
 -6.4,
 -4,
@@ -16043,9 +16637,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-12-silo.glb",
-"s": 193.4,
-"x": -521.7,
-"yaw": -3.0585,
+"model": "FARM-12-silo",
+"s": 15652.2,
+"x": -2567.8,
+"yaw": 3.0585,
 "min": [
 -2.18,
 -4,
@@ -16070,9 +16665,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-12-shed.glb",
-"s": 124.4,
-"x": -539.7,
-"yaw": -0.8086,
+"model": "FARM-12-shed",
+"s": 15583.2,
+"x": -2549.8,
+"yaw": 0.8086,
 "min": [
 -4.87,
 -4,
@@ -16097,9 +16693,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-13-house.glb",
-"s": 2568.5,
-"x": 1342.9,
-"yaw": -2.9876,
+"model": "FARM-13-house",
+"s": 2722.3,
+"x": 846.2,
+"yaw": 2.9876,
 "min": [
 -10.4,
 -4,
@@ -16124,9 +16721,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-13-barn.glb",
-"s": 2597.5,
-"x": 1338.4,
-"yaw": -2.9876,
+"model": "FARM-13-barn",
+"s": 2751.3,
+"x": 850.7,
+"yaw": 2.9876,
 "min": [
 -4.87,
 -4,
@@ -16151,9 +16749,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-13-silo.glb",
-"s": 2616.5,
-"x": 1338.9,
-"yaw": -3.0585,
+"model": "FARM-13-silo",
+"s": 2770.3,
+"x": 850.2,
+"yaw": 3.0585,
 "min": [
 -2.49,
 -4,
@@ -16178,9 +16777,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-13-shed.glb",
-"s": 2547.5,
-"x": 1320.9,
-"yaw": -0.8086,
+"model": "FARM-13-shed",
+"s": 2701.3,
+"x": 868.2,
+"yaw": 0.8086,
 "min": [
 -3.3,
 -4,
@@ -16205,8 +16805,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-14-house.glb",
-"s": 1976.4,
-"x": -1123.9,
+"model": "FARM-14-house",
+"s": 18582.5,
+"x": 1830.4,
 "yaw": 2.9876,
 "min": [
 -10.4,
@@ -16232,8 +16833,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-14-barn.glb",
-"s": 2005.4,
-"x": -1119.4,
+"model": "FARM-14-barn",
+"s": 18611.5,
+"x": 1834.9,
 "yaw": 2.9876,
 "min": [
 -4.57,
@@ -16259,8 +16861,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-14-silo.glb",
-"s": 2024.4,
-"x": -1119.9,
+"model": "FARM-14-silo",
+"s": 18630.5,
+"x": 1834.4,
 "yaw": 3.0585,
 "min": [
 -2.18,
@@ -16286,8 +16889,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-14-shed.glb",
-"s": 1955.4,
-"x": -1101.9,
+"model": "FARM-14-shed",
+"s": 18561.5,
+"x": 1852.4,
 "yaw": 0.8086,
 "min": [
 -4.26,
@@ -16313,8 +16917,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-15-house.glb",
-"s": 162.0,
-"x": -1217.7,
+"model": "FARM-15-house",
+"s": 12137.5,
+"x": 1331.9,
 "yaw": 2.9876,
 "min": [
 -7.64,
@@ -16340,8 +16945,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-15-barn.glb",
-"s": 191.0,
-"x": -1213.2,
+"model": "FARM-15-barn",
+"s": 12166.5,
+"x": 1336.4,
 "yaw": 2.9876,
 "min": [
 -5.79,
@@ -16367,8 +16973,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-15-silo.glb",
-"s": 210.0,
-"x": -1213.7,
+"model": "FARM-15-silo",
+"s": 12185.5,
+"x": 1335.9,
 "yaw": 3.0585,
 "min": [
 -2.79,
@@ -16394,8 +17001,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-15-shed.glb",
-"s": 141.0,
-"x": -1195.7,
+"model": "FARM-15-shed",
+"s": 12116.5,
+"x": 1353.9,
 "yaw": 0.8086,
 "min": [
 -4.87,
@@ -16421,8 +17029,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-16-house.glb",
-"s": 616.7,
-"x": -1373.0,
+"model": "FARM-16-house",
+"s": 18815.1,
+"x": -2556.8,
 "yaw": 2.9876,
 "min": [
 -10.39,
@@ -16448,8 +17057,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-16-barn.glb",
-"s": 645.7,
-"x": -1368.5,
+"model": "FARM-16-barn",
+"s": 18844.1,
+"x": -2552.3,
 "yaw": 2.9876,
 "min": [
 -7.11,
@@ -16475,9 +17085,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-16-silo.glb",
-"s": 664.7,
-"x": -1369.0,
-"yaw": 3.0585,
+"model": "FARM-16-silo",
+"s": 13.5,
+"x": -2552.8,
+"yaw": 0.0002,
 "min": [
 -2.79,
 -4,
@@ -16502,8 +17113,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-16-shed.glb",
-"s": 595.7,
-"x": -1351.0,
+"model": "FARM-16-shed",
+"s": 18794.1,
+"x": -2534.8,
 "yaw": 0.8086,
 "min": [
 -12.3,
@@ -16529,8 +17141,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-17-house.glb",
-"s": 1515.0,
-"x": -1219.9,
+"model": "FARM-17-house",
+"s": 17823.5,
+"x": -2506.8,
 "yaw": -2.9876,
 "min": [
 -10.4,
@@ -16556,8 +17169,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-17-barn.glb",
-"s": 1544.0,
-"x": -1224.4,
+"model": "FARM-17-barn",
+"s": 17852.5,
+"x": -2511.3,
 "yaw": -2.9876,
 "min": [
 -9.39,
@@ -16583,8 +17197,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-17-silo.glb",
-"s": 1563.0,
-"x": -1223.9,
+"model": "FARM-17-silo",
+"s": 17871.5,
+"x": -2510.8,
 "yaw": -3.0585,
 "min": [
 -2.18,
@@ -16610,8 +17225,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-17-shed.glb",
-"s": 1494.0,
-"x": -1241.9,
+"model": "FARM-17-shed",
+"s": 17802.5,
+"x": -2528.8,
 "yaw": -0.8086,
 "min": [
 -4.57,
@@ -16637,9 +17253,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-18-house.glb",
-"s": 2619.8,
-"x": -1445.0,
-"yaw": 2.9876,
+"model": "FARM-18-house",
+"s": 1437.0,
+"x": 2505.9,
+"yaw": -2.9876,
 "min": [
 -10.6,
 -4,
@@ -16664,9 +17281,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-18-barn.glb",
-"s": 2648.8,
-"x": -1440.5,
-"yaw": 2.9876,
+"model": "FARM-18-barn",
+"s": 1466.0,
+"x": 2501.4,
+"yaw": -2.9876,
 "min": [
 -6.5,
 -4,
@@ -16691,9 +17309,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-18-silo.glb",
-"s": 2667.8,
-"x": -1441.0,
-"yaw": 3.0585,
+"model": "FARM-18-silo",
+"s": 1485.0,
+"x": 2501.9,
+"yaw": -3.0585,
 "min": [
 -2.49,
 -4,
@@ -16718,9 +17337,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-18-shed.glb",
-"s": 2598.8,
-"x": -1423.0,
-"yaw": 0.8086,
+"model": "FARM-18-shed",
+"s": 1416.0,
+"x": 2483.9,
+"yaw": -0.8086,
 "min": [
 -5.79,
 -4,
@@ -16745,9 +17365,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-19-house.glb",
-"s": 2049.2,
-"x": 1210.9,
-"yaw": -2.9876,
+"model": "FARM-19-house",
+"s": 10772.1,
+"x": -1611.5,
+"yaw": 2.9876,
 "min": [
 -10.39,
 -4,
@@ -16772,9 +17393,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-19-barn.glb",
-"s": 2078.2,
-"x": 1206.4,
-"yaw": -2.9876,
+"model": "FARM-19-barn",
+"s": 10801.1,
+"x": -1607.0,
+"yaw": 2.9876,
 "min": [
 -5.18,
 -4,
@@ -16799,9 +17421,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-19-silo.glb",
-"s": 2097.2,
-"x": 1206.9,
-"yaw": -3.0585,
+"model": "FARM-19-silo",
+"s": 10820.1,
+"x": -1607.5,
+"yaw": 3.0585,
 "min": [
 -2.49,
 -4,
@@ -16826,9 +17449,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-19-shed.glb",
-"s": 2028.2,
-"x": 1188.9,
-"yaw": -0.8086,
+"model": "FARM-19-shed",
+"s": 10751.1,
+"x": -1589.5,
+"yaw": 0.8086,
 "min": [
 -4.47,
 -4,
@@ -16853,9 +17477,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-20-house.glb",
-"s": 140.9,
-"x": 1165.9,
-"yaw": 2.9876,
+"model": "FARM-20-house",
+"s": 3723.1,
+"x": -2516.3,
+"yaw": -2.9876,
 "min": [
 -10.35,
 -4,
@@ -16880,9 +17505,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-20-barn.glb",
-"s": 169.9,
-"x": 1170.4,
-"yaw": 2.9876,
+"model": "FARM-20-barn",
+"s": 3752.1,
+"x": -2520.8,
+"yaw": -2.9876,
 "min": [
 -5.89,
 -4,
@@ -16907,9 +17533,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-20-silo.glb",
-"s": 188.9,
-"x": 1169.9,
-"yaw": 3.0585,
+"model": "FARM-20-silo",
+"s": 3771.1,
+"x": -2520.3,
+"yaw": -3.0585,
 "min": [
 -3.4,
 -4,
@@ -16934,9 +17561,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-20-shed.glb",
-"s": 119.9,
-"x": 1187.9,
-"yaw": 0.8086,
+"model": "FARM-20-shed",
+"s": 3702.1,
+"x": -2538.3,
+"yaw": -0.8086,
 "min": [
 -6.4,
 -4,
@@ -16961,9 +17589,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-21-house.glb",
-"s": 2965.4,
-"x": -1457.0,
-"yaw": -2.9876,
+"model": "FARM-21-house",
+"s": 8289.2,
+"x": -2508.2,
+"yaw": 2.9876,
 "min": [
 -10.7,
 -4,
@@ -16988,9 +17617,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-21-barn.glb",
-"s": 2994.4,
-"x": -1461.5,
-"yaw": -2.9876,
+"model": "FARM-21-barn",
+"s": 8318.2,
+"x": -2503.7,
+"yaw": 2.9876,
 "min": [
 -9.64,
 -4,
@@ -17015,9 +17645,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-21-silo.glb",
-"s": 3013.4,
-"x": -1461.0,
-"yaw": -3.0585,
+"model": "FARM-21-silo",
+"s": 8337.2,
+"x": -2504.2,
+"yaw": 3.0585,
 "min": [
 -2.79,
 -4,
@@ -17042,9 +17673,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-21-shed.glb",
-"s": 2944.4,
-"x": -1479.0,
-"yaw": -0.8086,
+"model": "FARM-21-shed",
+"s": 8268.2,
+"x": -2486.2,
+"yaw": 0.8086,
 "min": [
 -3.96,
 -4,
@@ -17069,9 +17701,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-22-house.glb",
-"s": 2611.3,
-"x": -895.8,
-"yaw": -2.9876,
+"model": "FARM-22-house",
+"s": 4332.0,
+"x": -1518.4,
+"yaw": 2.9876,
 "min": [
 -10.35,
 -4,
@@ -17096,9 +17729,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-22-barn.glb",
-"s": 2640.3,
-"x": -900.3,
-"yaw": -2.9876,
+"model": "FARM-22-barn",
+"s": 4361.0,
+"x": -1513.9,
+"yaw": 2.9876,
 "min": [
 -6.5,
 -4,
@@ -17123,9 +17757,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-22-silo.glb",
-"s": 2659.3,
-"x": -899.8,
-"yaw": -3.0585,
+"model": "FARM-22-silo",
+"s": 4380.0,
+"x": -1514.4,
+"yaw": 3.0585,
 "min": [
 -3.1,
 -4,
@@ -17150,9 +17785,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-22-shed.glb",
-"s": 2590.3,
-"x": -917.8,
-"yaw": -0.8086,
+"model": "FARM-22-shed",
+"s": 4311.0,
+"x": -1496.4,
+"yaw": 0.8086,
 "min": [
 -4.87,
 -4,
@@ -17177,8 +17813,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-23-house.glb",
-"s": 2202.2,
-"x": -437.2,
+"model": "FARM-23-house",
+"s": 4331.6,
+"x": 1752.5,
 "yaw": 2.9876,
 "min": [
 -10.39,
@@ -17204,8 +17841,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-23-barn.glb",
-"s": 2231.2,
-"x": -432.7,
+"model": "FARM-23-barn",
+"s": 4360.6,
+"x": 1757.0,
 "yaw": 2.9876,
 "min": [
 -6.4,
@@ -17231,8 +17869,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-23-silo.glb",
-"s": 2250.2,
-"x": -433.2,
+"model": "FARM-23-silo",
+"s": 4379.6,
+"x": 1756.5,
 "yaw": 3.0585,
 "min": [
 -2.18,
@@ -17258,8 +17897,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-23-shed.glb",
-"s": 2181.2,
-"x": -415.2,
+"model": "FARM-23-shed",
+"s": 4310.6,
+"x": 1774.5,
 "yaw": 0.8086,
 "min": [
 -4.88,
@@ -17285,8 +17925,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-24-house.glb",
-"s": 1131.3,
-"x": 1192.9,
+"model": "FARM-24-house",
+"s": 12304.1,
+"x": -1449.4,
 "yaw": 2.9876,
 "min": [
 -10.53,
@@ -17312,8 +17953,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-24-barn.glb",
-"s": 1160.3,
-"x": 1197.4,
+"model": "FARM-24-barn",
+"s": 12333.1,
+"x": -1444.9,
 "yaw": 2.9876,
 "min": [
 -5.58,
@@ -17339,8 +17981,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-24-silo.glb",
-"s": 1179.3,
-"x": 1196.9,
+"model": "FARM-24-silo",
+"s": 12352.1,
+"x": -1445.4,
 "yaw": 3.0585,
 "min": [
 -2.49,
@@ -17366,8 +18009,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-24-shed.glb",
-"s": 1110.3,
-"x": 1214.9,
+"model": "FARM-24-shed",
+"s": 12283.1,
+"x": -1427.4,
 "yaw": 0.8086,
 "min": [
 -6.09,
@@ -17393,8 +18037,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-25-house.glb",
-"s": 2611.5,
-"x": -325.6,
+"model": "FARM-25-house",
+"s": 14703.4,
+"x": -2583.7,
 "yaw": -2.9876,
 "min": [
 -10.85,
@@ -17420,8 +18065,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-25-barn.glb",
-"s": 2640.5,
-"x": -330.1,
+"model": "FARM-25-barn",
+"s": 14732.4,
+"x": -2588.2,
 "yaw": -2.9876,
 "min": [
 -10.0,
@@ -17447,8 +18093,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-25-silo.glb",
-"s": 2659.5,
-"x": -329.6,
+"model": "FARM-25-silo",
+"s": 14751.4,
+"x": -2587.7,
 "yaw": -3.0585,
 "min": [
 -2.49,
@@ -17474,8 +18121,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-25-shed.glb",
-"s": 2590.5,
-"x": -347.6,
+"model": "FARM-25-shed",
+"s": 14682.4,
+"x": -2605.7,
 "yaw": -0.8086,
 "min": [
 -6.24,
@@ -17501,8 +18149,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-26-house.glb",
-"s": 1974.6,
-"x": -1463.0,
+"model": "FARM-26-house",
+"s": 18811.6,
+"x": 681.2,
 "yaw": 2.9876,
 "min": [
 -10.4,
@@ -17528,8 +18177,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-26-barn.glb",
-"s": 2003.6,
-"x": -1458.5,
+"model": "FARM-26-barn",
+"s": 18840.6,
+"x": 685.7,
 "yaw": 2.9876,
 "min": [
 -10.61,
@@ -17555,9 +18205,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-26-silo.glb",
-"s": 2022.6,
-"x": -1459.0,
-"yaw": 3.0585,
+"model": "FARM-26-silo",
+"s": 10.0,
+"x": 685.2,
+"yaw": 0.0002,
 "min": [
 -2.18,
 -4,
@@ -17582,8 +18233,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-26-shed.glb",
-"s": 1953.6,
-"x": -1441.0,
+"model": "FARM-26-shed",
+"s": 18790.6,
+"x": 703.2,
 "yaw": 0.8086,
 "min": [
 -12.4,
@@ -17609,8 +18261,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-27-house.glb",
-"s": 1059.0,
-"x": 340.6,
+"model": "FARM-27-house",
+"s": 10722.3,
+"x": 2509.2,
 "yaw": -2.9876,
 "min": [
 -10.83,
@@ -17636,8 +18289,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-27-barn.glb",
-"s": 1088.0,
-"x": 336.1,
+"model": "FARM-27-barn",
+"s": 10751.3,
+"x": 2504.7,
 "yaw": -2.9876,
 "min": [
 -6.5,
@@ -17663,8 +18317,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-27-silo.glb",
-"s": 1107.0,
-"x": 336.6,
+"model": "FARM-27-silo",
+"s": 10770.3,
+"x": 2505.2,
 "yaw": -3.0585,
 "min": [
 -2.49,
@@ -17690,8 +18345,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-27-shed.glb",
-"s": 1038.0,
-"x": 318.6,
+"model": "FARM-27-shed",
+"s": 10701.3,
+"x": 2487.2,
 "yaw": -0.8086,
 "min": [
 -4.57,
@@ -17717,9 +18373,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-28-house.glb",
-"s": 618.0,
-"x": 1018.8,
-"yaw": -2.9876,
+"model": "FARM-28-house",
+"s": 11844.3,
+"x": -2515.9,
+"yaw": 2.9876,
 "min": [
 -10.39,
 -4,
@@ -17744,9 +18401,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-28-barn.glb",
-"s": 647.0,
-"x": 1014.3,
-"yaw": -2.9876,
+"model": "FARM-28-barn",
+"s": 11873.3,
+"x": -2511.4,
+"yaw": 2.9876,
 "min": [
 -6.5,
 -4,
@@ -17771,9 +18429,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-28-silo.glb",
-"s": 666.0,
-"x": 1014.8,
-"yaw": -3.0585,
+"model": "FARM-28-silo",
+"s": 11892.3,
+"x": -2511.9,
+"yaw": 3.0585,
 "min": [
 -2.18,
 -4,
@@ -17798,9 +18457,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-28-shed.glb",
-"s": 597.0,
-"x": 996.8,
-"yaw": -0.8086,
+"model": "FARM-28-shed",
+"s": 11823.3,
+"x": -2493.9,
+"yaw": 0.8086,
 "min": [
 -3.35,
 -4,
@@ -17825,9 +18485,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-29-house.glb",
-"s": 844.9,
-"x": -380.8,
-"yaw": 2.9876,
+"model": "FARM-29-house",
+"s": 9858.3,
+"x": -2587.8,
+"yaw": -2.9876,
 "min": [
 -10.6,
 -4,
@@ -17852,9 +18513,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-29-barn.glb",
-"s": 873.9,
-"x": -376.3,
-"yaw": 2.9876,
+"model": "FARM-29-barn",
+"s": 9887.3,
+"x": -2592.3,
+"yaw": -2.9876,
 "min": [
 -6.4,
 -4,
@@ -17879,9 +18541,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-29-silo.glb",
-"s": 892.9,
-"x": -376.8,
-"yaw": 3.0585,
+"model": "FARM-29-silo",
+"s": 9906.3,
+"x": -2591.8,
+"yaw": -3.0585,
 "min": [
 -2.49,
 -4,
@@ -17906,9 +18569,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-29-shed.glb",
-"s": 823.9,
-"x": -358.8,
-"yaw": 0.8086,
+"model": "FARM-29-shed",
+"s": 9837.3,
+"x": -2609.8,
+"yaw": -0.8086,
 "min": [
 -5.79,
 -4,
@@ -17933,9 +18597,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-30-house.glb",
-"s": 692.3,
-"x": -1117.9,
-"yaw": 2.9876,
+"model": "FARM-30-house",
+"s": 13911.1,
+"x": 1464.4,
+"yaw": -2.9876,
 "min": [
 -10.4,
 -4,
@@ -17960,9 +18625,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-30-barn.glb",
-"s": 721.3,
-"x": -1113.4,
-"yaw": 2.9876,
+"model": "FARM-30-barn",
+"s": 13940.1,
+"x": 1459.9,
+"yaw": -2.9876,
 "min": [
 -5.79,
 -4,
@@ -17987,9 +18653,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-30-silo.glb",
-"s": 740.3,
-"x": -1113.9,
-"yaw": 3.0585,
+"model": "FARM-30-silo",
+"s": 13959.1,
+"x": 1460.4,
+"yaw": -3.0585,
 "min": [
 -2.18,
 -4,
@@ -18014,9 +18681,10 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-30-shed.glb",
-"s": 671.3,
-"x": -1095.9,
-"yaw": 0.8086,
+"model": "FARM-30-shed",
+"s": 13890.1,
+"x": 1442.4,
+"yaw": -0.8086,
 "min": [
 -4.26,
 -4,
@@ -18041,8 +18709,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-31-house.glb",
-"s": 2959.5,
-"x": -250.6,
+"model": "FARM-31-house",
+"s": 9081.0,
+"x": -618.2,
 "yaw": 2.9876,
 "min": [
 -10.35,
@@ -18068,8 +18737,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-31-barn.glb",
-"s": 2988.5,
-"x": -246.1,
+"model": "FARM-31-barn",
+"s": 9110.0,
+"x": -613.7,
 "yaw": 2.9876,
 "min": [
 -5.63,
@@ -18095,8 +18765,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-31-silo.glb",
-"s": 3007.5,
-"x": -246.6,
+"model": "FARM-31-silo",
+"s": 9129.0,
+"x": -614.2,
 "yaw": 3.0585,
 "min": [
 -2.34,
@@ -18122,8 +18793,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-31-shed.glb",
-"s": 2938.5,
-"x": -228.6,
+"model": "FARM-31-shed",
+"s": 9060.0,
+"x": -596.2,
 "yaw": 0.8086,
 "min": [
 -3.3,
@@ -18149,8 +18821,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-32-house.glb",
-"s": 1051.8,
-"x": -741.2,
+"model": "FARM-32-house",
+"s": 12249.4,
+"x": 2512.4,
 "yaw": 2.9876,
 "min": [
 -10.85,
@@ -18176,8 +18849,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-32-barn.glb",
-"s": 1080.8,
-"x": -736.7,
+"model": "FARM-32-barn",
+"s": 12278.4,
+"x": 2516.9,
 "yaw": 2.9876,
 "min": [
 -10.25,
@@ -18203,8 +18877,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-32-silo.glb",
-"s": 1099.8,
-"x": -737.2,
+"model": "FARM-32-silo",
+"s": 12297.4,
+"x": 2516.4,
 "yaw": 3.0585,
 "min": [
 -2.18,
@@ -18230,8 +18905,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-32-shed.glb",
-"s": 1030.8,
-"x": -719.2,
+"model": "FARM-32-shed",
+"s": 12228.4,
+"x": 2534.4,
 "yaw": 0.8086,
 "min": [
 -3.3,
@@ -18257,8 +18933,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-33-house.glb",
-"s": 2614.6,
-"x": 394.6,
+"model": "FARM-33-house",
+"s": 7176.0,
+"x": 3000.8,
 "yaw": 2.9876,
 "min": [
 -10.35,
@@ -18284,8 +18961,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-33-barn.glb",
-"s": 2643.6,
-"x": 399.1,
+"model": "FARM-33-barn",
+"s": 7205.0,
+"x": 3005.3,
 "yaw": 2.9876,
 "min": [
 -12.5,
@@ -18311,8 +18989,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-33-silo.glb",
-"s": 2662.6,
-"x": 398.6,
+"model": "FARM-33-silo",
+"s": 7224.0,
+"x": 3004.8,
 "yaw": 3.0585,
 "min": [
 -2.49,
@@ -18338,8 +19017,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-33-shed.glb",
-"s": 2593.6,
-"x": 416.6,
+"model": "FARM-33-shed",
+"s": 7155.0,
+"x": 3022.8,
 "yaw": 0.8086,
 "min": [
 -5.79,
@@ -18365,8 +19045,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-34-house.glb",
-"s": 1971.8,
-"x": 1466.0,
+"model": "FARM-34-house",
+"s": 915.0,
+"x": -1717.5,
 "yaw": 2.9876,
 "min": [
 -10.85,
@@ -18392,8 +19073,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-34-barn.glb",
-"s": 2000.8,
-"x": 1470.5,
+"model": "FARM-34-barn",
+"s": 944.0,
+"x": -1713.0,
 "yaw": 2.9876,
 "min": [
 -5.79,
@@ -18419,8 +19101,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-34-silo.glb",
-"s": 2019.8,
-"x": 1470.0,
+"model": "FARM-34-silo",
+"s": 963.0,
+"x": -1713.5,
 "yaw": 3.0585,
 "min": [
 -2.18,
@@ -18446,8 +19129,9 @@
 "kind": "farm",
 "settlement": null,
 "glb": "res://remake/buildings/FARM-34-shed.glb",
-"s": 1950.8,
-"x": 1488.0,
+"model": "FARM-34-shed",
+"s": 894.0,
+"x": -1695.5,
 "yaw": 0.8086,
 "min": [
 -5.79,
@@ -18469,147 +19153,13 @@
 ]
 },
 {
-"id": "MAJOR-01",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/MAJOR-01.glb",
-"s": -160.0,
-"x": -20.5,
-"yaw": 1.5708,
-"min": [
--4.15,
--7,
--30.05
-],
-"max": [
-4.15,
-8.07,
-30.05
-],
-"fmin": [
--3.09,
--30.05
-],
-"fmax": [
-3.09,
-30.05
-]
-},
-{
-"id": "MAJOR-02",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/MAJOR-02.glb",
-"s": 930.0,
-"x": -1.5,
-"yaw": -1.5708,
-"min": [
--4.3,
--7,
--29.95
-],
-"max": [
-4.3,
-5.65,
-29.95
-],
-"fmin": [
--3.24,
--29.95
-],
-"fmax": [
-3.24,
-29.95
-]
-},
-{
-"id": "MAJOR-03",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/MAJOR-03.glb",
-"s": 1250.0,
-"x": -43.6,
-"yaw": -1.5708,
-"min": [
--4.3,
--12.07,
--29.75
-],
-"max": [
-4.3,
-1.8,
-29.75
-],
-"fmin": [
--3.44,
--29.75
-],
-"fmax": [
-3.44,
-29.75
-]
-},
-{
-"id": "MAJOR-04",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/MAJOR-04.glb",
-"s": 1582.5,
-"x": 188.4,
-"yaw": -1.5708,
-"min": [
--4.15,
--7,
--30.25
-],
-"max": [
-4.15,
-8.07,
-30.25
-],
-"fmin": [
--3.09,
--30.25
-],
-"fmax": [
-3.09,
-30.25
-]
-},
-{
-"id": "MAJOR-05",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/MAJOR-05.glb",
-"s": 2259.7,
-"x": -36.1,
-"yaw": -1.5594,
-"min": [
--3.99,
--7,
--30
-],
-"max": [
-3.99,
-6.86,
-30
-],
-"fmin": [
--2.93,
--30
-],
-"fmax": [
-2.93,
-30
-]
-},
-{
 "id": "SMALL-01",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-01.glb",
-"s": 180.0,
-"x": -1261.4,
+"model": "SMALL-01",
+"s": 1080.0,
+"x": -2558.3,
 "yaw": -1.5708,
 "min": [
 -3.86,
@@ -18635,8 +19185,9 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-02.glb",
-"s": 180.0,
-"x": -1254.9,
+"model": "SMALL-02",
+"s": 2689.0,
+"x": -2592.8,
 "yaw": -0.0,
 "min": [
 -4.54,
@@ -18662,8 +19213,9 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-03.glb",
-"s": 650.0,
-"x": 1051.4,
+"model": "SMALL-03",
+"s": 2689.0,
+"x": 1826.0,
 "yaw": -1.5708,
 "min": [
 -3.93,
@@ -18689,8 +19241,9 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-04.glb",
-"s": 1100.0,
-"x": -952.8,
+"model": "SMALL-04",
+"s": 2689.0,
+"x": 2066.1,
 "yaw": -1.5708,
 "min": [
 -3.93,
@@ -18716,8 +19269,9 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-05.glb",
-"s": 2010.0,
-"x": -42.0,
+"model": "SMALL-05",
+"s": 2689.0,
+"x": 2175.6,
 "yaw": -1.5708,
 "min": [
 -4.04,
@@ -18743,9 +19297,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-06.glb",
-"s": 185.0,
-"x": -1250.0,
-"yaw": -0.0,
+"model": "SMALL-06",
+"s": 2689.0,
+"x": 2391.7,
+"yaw": -1.5708,
 "min": [
 -5.71,
 -7,
@@ -18769,37 +19324,11 @@
 "id": "SMALL-07",
 "kind": "crossing",
 "settlement": null,
-"glb": "res://remake/buildings/SMALL-07.glb",
-"s": 1013.7,
-"x": -1250.0,
-"yaw": -0.0,
-"min": [
--3.93,
--7,
--11.5
-],
-"max": [
-3.93,
-2.74,
-11.5
-],
-"fmin": [
--2.93,
--11.5
-],
-"fmax": [
-2.93,
-11.5
-]
-},
-{
-"id": "SMALL-08",
-"kind": "crossing",
-"settlement": null,
 "glb": "res://remake/buildings/SMALL-08.glb",
-"s": 1830.3,
-"x": -1250.0,
-"yaw": -0.0,
+"model": "SMALL-08",
+"s": 2689.0,
+"x": 2603.3,
+"yaw": -1.5708,
 "min": [
 -4.24,
 -7,
@@ -18820,13 +19349,42 @@
 ]
 },
 {
+"id": "SMALL-08",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-07.glb",
+"model": "SMALL-07",
+"s": 2689.0,
+"x": 3126.9,
+"yaw": -1.5708,
+"min": [
+-3.93,
+-7,
+-11.5
+],
+"max": [
+3.93,
+2.74,
+11.5
+],
+"fmin": [
+-2.93,
+-11.5
+],
+"fmax": [
+2.93,
+11.5
+]
+},
+{
 "id": "SMALL-09",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-09.glb",
-"s": 2331.9,
-"x": -1250.0,
-"yaw": -0.0,
+"model": "SMALL-09",
+"s": 4298.0,
+"x": -2318.2,
+"yaw": -1.5708,
 "min": [
 -4.34,
 -7,
@@ -18851,9 +19409,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-10.glb",
-"s": 2838.5,
-"x": -1250.0,
-"yaw": -0.0,
+"model": "SMALL-10",
+"s": 4298.0,
+"x": 2612.3,
+"yaw": -1.5708,
 "min": [
 -4.01,
 -7,
@@ -18878,9 +19437,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-11.glb",
-"s": 710.1,
-"x": 1300.0,
-"yaw": -0.0,
+"model": "SMALL-11",
+"s": 5907.0,
+"x": -2405.2,
+"yaw": -1.5708,
 "min": [
 -3.8,
 -7,
@@ -18905,9 +19465,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-12.glb",
-"s": 1374.3,
-"x": 1300.0,
-"yaw": -0.0,
+"model": "SMALL-12",
+"s": 5907.0,
+"x": 2675.3,
+"yaw": -1.5708,
 "min": [
 -4.85,
 -7,
@@ -18932,9 +19493,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-13.glb",
-"s": 1379.3,
-"x": 1300.0,
-"yaw": -0.0,
+"model": "SMALL-13",
+"s": 7516.0,
+"x": -2420.2,
+"yaw": -1.5708,
 "min": [
 -3.8,
 -7,
@@ -18959,9 +19521,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-14.glb",
-"s": 3032.1,
-"x": 1300.0,
-"yaw": -0.0,
+"model": "SMALL-14",
+"s": 7516.0,
+"x": 2543.2,
+"yaw": -1.5708,
 "min": [
 -3.94,
 -7,
@@ -18985,9 +19548,38 @@
 "id": "SMALL-15",
 "kind": "crossing",
 "settlement": null,
+"glb": "res://remake/buildings/SMALL-16.glb",
+"model": "SMALL-16",
+"s": 9125.0,
+"x": -2678.3,
+"yaw": -1.5708,
+"min": [
+-4.24,
+-7,
+-11
+],
+"max": [
+4.24,
+1.8,
+11
+],
+"fmin": [
+-3.44,
+-11
+],
+"fmax": [
+3.44,
+11
+]
+},
+{
+"id": "SMALL-16",
+"kind": "crossing",
+"settlement": null,
 "glb": "res://remake/buildings/SMALL-15.glb",
-"s": 1969.3,
-"x": 929.3,
+"model": "SMALL-15",
+"s": 9125.0,
+"x": -2169.6,
 "yaw": -0.0,
 "min": [
 -7.8,
@@ -19009,40 +19601,42 @@
 ]
 },
 {
-"id": "SMALL-16",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/SMALL-16.glb",
-"s": 1869.3,
-"x": 768.3,
-"yaw": -0.0,
-"min": [
--4.24,
--7,
--11
-],
-"max": [
-4.24,
-1.8,
-11
-],
-"fmin": [
--3.44,
--11
-],
-"fmax": [
-3.44,
-11
-]
-},
-{
 "id": "SMALL-17",
 "kind": "crossing",
 "settlement": null,
+"glb": "res://remake/buildings/SMALL-19.glb",
+"model": "SMALL-19",
+"s": 9125.0,
+"x": 2456.2,
+"yaw": -1.5708,
+"min": [
+-6.37,
+-7,
+-9.5
+],
+"max": [
+6.37,
+1.8,
+9.5
+],
+"fmin": [
+-5.57,
+-9.5
+],
+"fmax": [
+5.57,
+9.5
+]
+},
+{
+"id": "SMALL-18",
+"kind": "crossing",
+"settlement": null,
 "glb": "res://remake/buildings/SMALL-17.glb",
-"s": 1910.0,
-"x": 677.3,
-"yaw": -0.0,
+"model": "SMALL-17",
+"s": 10734.0,
+"x": -2487.7,
+"yaw": -1.5708,
 "min": [
 -7.29,
 -8.75,
@@ -19063,12 +19657,13 @@
 ]
 },
 {
-"id": "SMALL-18",
+"id": "SMALL-19",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-18.glb",
-"s": 1889.4,
-"x": 586.3,
+"model": "SMALL-18",
+"s": 10734.0,
+"x": 2403.7,
 "yaw": -0.0,
 "min": [
 -4.85,
@@ -19090,40 +19685,14 @@
 ]
 },
 {
-"id": "SMALL-19",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/SMALL-19.glb",
-"s": 1902.5,
-"x": 904.2,
-"yaw": 1.5708,
-"min": [
--6.37,
--7,
--9.5
-],
-"max": [
-6.37,
-1.8,
-9.5
-],
-"fmin": [
--5.57,
--9.5
-],
-"fmax": [
-5.57,
-9.5
-]
-},
-{
 "id": "SMALL-20",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-20.glb",
-"s": 1902.5,
-"x": 650.0,
-"yaw": 1.5708,
+"model": "SMALL-20",
+"s": 12343.0,
+"x": -2399.2,
+"yaw": -1.5708,
 "min": [
 -6.71,
 -12.9,
@@ -19147,9 +19716,38 @@
 "id": "SMALL-21",
 "kind": "crossing",
 "settlement": null,
+"glb": "res://remake/buildings/SMALL-22.glb",
+"model": "SMALL-22",
+"s": 12343.0,
+"x": 2462.2,
+"yaw": -1.5708,
+"min": [
+-6.99,
+-7,
+-11
+],
+"max": [
+6.99,
+1.8,
+11
+],
+"fmin": [
+-5.98,
+-11
+],
+"fmax": [
+5.98,
+11
+]
+},
+{
+"id": "SMALL-22",
+"kind": "crossing",
+"settlement": null,
 "glb": "res://remake/buildings/SMALL-21.glb",
-"s": 2388.4,
-"x": -891.0,
+"model": "SMALL-21",
+"s": 13952.0,
+"x": -2466.7,
 "yaw": -0.0,
 "min": [
 -4.62,
@@ -19171,40 +19769,14 @@
 ]
 },
 {
-"id": "SMALL-22",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/SMALL-22.glb",
-"s": 2971.9,
-"x": 918.1,
-"yaw": -0.0,
-"min": [
--6.99,
--7,
--11
-],
-"max": [
-6.99,
-1.8,
-11
-],
-"fmin": [
--5.98,
--11
-],
-"fmax": [
-5.98,
-11
-]
-},
-{
 "id": "SMALL-23",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-23.glb",
-"s": 3002.0,
-"x": 900.0,
-"yaw": 1.5708,
+"model": "SMALL-23",
+"s": 13952.0,
+"x": 2330.2,
+"yaw": -1.5708,
 "min": [
 -5.46,
 -7,
@@ -19229,9 +19801,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-24.glb",
-"s": 1230.3,
-"x": -218.7,
-"yaw": -0.0,
+"model": "SMALL-24",
+"s": 15561.0,
+"x": -2396.2,
+"yaw": -1.5708,
 "min": [
 -4.85,
 -7,
@@ -19256,9 +19829,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-25.glb",
-"s": 1248.0,
-"x": -309.7,
-"yaw": -0.0,
+"model": "SMALL-25",
+"s": 15561.0,
+"x": 2423.2,
+"yaw": -1.5708,
 "min": [
 -3.92,
 -7,
@@ -19282,10 +19856,39 @@
 "id": "SMALL-26",
 "kind": "crossing",
 "settlement": null,
+"glb": "res://remake/buildings/SMALL-38.glb",
+"model": "SMALL-38",
+"s": 17170.0,
+"x": -2606.3,
+"yaw": -1.5708,
+"min": [
+-5.82,
+-7,
+-11.1
+],
+"max": [
+5.82,
+1.8,
+11.1
+],
+"fmin": [
+-4.96,
+-11.1
+],
+"fmax": [
+4.96,
+11.1
+]
+},
+{
+"id": "SMALL-27",
+"kind": "crossing",
+"settlement": null,
 "glb": "res://remake/buildings/SMALL-26.glb",
-"s": 1250.0,
-"x": -154.0,
-"yaw": 1.5708,
+"model": "SMALL-26",
+"s": 17170.0,
+"x": 270.1,
+"yaw": -1.5708,
 "min": [
 -4.09,
 -7,
@@ -19306,13 +19909,14 @@
 ]
 },
 {
-"id": "SMALL-27",
+"id": "SMALL-28",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-27.glb",
-"s": 1250.0,
-"x": -304.1,
-"yaw": 1.5708,
+"model": "SMALL-27",
+"s": 17170.0,
+"x": 336.1,
+"yaw": -1.5708,
 "min": [
 -4.49,
 -7,
@@ -19333,13 +19937,14 @@
 ]
 },
 {
-"id": "SMALL-28",
+"id": "SMALL-29",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-28.glb",
-"s": 1250.0,
-"x": -400.7,
-"yaw": -0.0,
+"model": "SMALL-28",
+"s": 17170.0,
+"x": 555.2,
+"yaw": -1.5708,
 "min": [
 -4.85,
 -7,
@@ -19360,13 +19965,14 @@
 ]
 },
 {
-"id": "SMALL-29",
+"id": "SMALL-30",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-29.glb",
-"s": 1250.0,
-"x": -333.4,
-"yaw": 1.5708,
+"model": "SMALL-29",
+"s": 17170.0,
+"x": 639.2,
+"yaw": -1.5708,
 "min": [
 -4.97,
 -13.07,
@@ -19387,13 +19993,14 @@
 ]
 },
 {
-"id": "SMALL-30",
+"id": "SMALL-31",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-30.glb",
-"s": 1250.0,
-"x": -400.7,
-"yaw": -0.0,
+"model": "SMALL-30",
+"s": 17170.0,
+"x": 877.8,
+"yaw": -1.5708,
 "min": [
 -4.54,
 -7,
@@ -19414,13 +20021,14 @@
 ]
 },
 {
-"id": "SMALL-31",
+"id": "SMALL-32",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-31.glb",
-"s": 2866.2,
-"x": -904.6,
-"yaw": 2.4733,
+"model": "SMALL-31",
+"s": 17170.0,
+"x": 916.8,
+"yaw": -1.5708,
 "min": [
 -11.2,
 -7,
@@ -19441,13 +20049,14 @@
 ]
 },
 {
-"id": "SMALL-32",
+"id": "SMALL-33",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-32.glb",
-"s": -92.9,
-"x": 330.9,
-"yaw": 2.3377,
+"model": "SMALL-32",
+"s": 17170.0,
+"x": 982.8,
+"yaw": -1.5708,
 "min": [
 -3.82,
 -7,
@@ -19468,12 +20077,13 @@
 ]
 },
 {
-"id": "SMALL-33",
+"id": "SMALL-34",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-33.glb",
-"s": 1250.0,
-"x": -120.4,
+"model": "SMALL-33",
+"s": 17170.0,
+"x": 1197.4,
 "yaw": -1.5708,
 "min": [
 -3.8,
@@ -19495,13 +20105,14 @@
 ]
 },
 {
-"id": "SMALL-34",
+"id": "SMALL-35",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-34.glb",
-"s": 1869.2,
-"x": 859.3,
-"yaw": -0.0,
+"model": "SMALL-34",
+"s": 17170.0,
+"x": 1440.4,
+"yaw": -1.5708,
 "min": [
 -7.03,
 -7,
@@ -19522,13 +20133,14 @@
 ]
 },
 {
-"id": "SMALL-35",
+"id": "SMALL-36",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-35.glb",
-"s": 1250.5,
-"x": -127.7,
-"yaw": -0.0,
+"model": "SMALL-35",
+"s": 17170.0,
+"x": 1638.5,
+"yaw": -1.5708,
 "min": [
 -4.14,
 -7,
@@ -19549,13 +20161,14 @@
 ]
 },
 {
-"id": "SMALL-36",
+"id": "SMALL-37",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-36.glb",
-"s": 1141.0,
-"x": -772.0,
-"yaw": -0.0375,
+"model": "SMALL-36",
+"s": 17170.0,
+"x": 1718.0,
+"yaw": -1.5708,
 "min": [
 -6.07,
 -7,
@@ -19576,13 +20189,14 @@
 ]
 },
 {
-"id": "SMALL-37",
+"id": "SMALL-38",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-37.glb",
-"s": 1822.2,
-"x": -766.4,
-"yaw": 0.092,
+"model": "SMALL-37",
+"s": 17170.0,
+"x": 2324.2,
+"yaw": -1.5708,
 "min": [
 -6.37,
 -7,
@@ -19603,40 +20217,14 @@
 ]
 },
 {
-"id": "SMALL-38",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/SMALL-38.glb",
-"s": 2388.9,
-"x": -779.0,
-"yaw": -0.2134,
-"min": [
--5.82,
--7,
--11.1
-],
-"max": [
-5.82,
-1.8,
-11.1
-],
-"fmin": [
--4.96,
--11.1
-],
-"fmax": [
-4.96,
-11.1
-]
-},
-{
 "id": "SMALL-39",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-39.glb",
-"s": 2706.8,
-"x": -696.3,
-"yaw": -0.2402,
+"model": "SMALL-39",
+"s": 17170.0,
+"x": 2627.3,
+"yaw": -1.5708,
 "min": [
 -4.18,
 -7,
@@ -19661,9 +20249,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/SMALL-40.glb",
-"s": 3460.7,
-"x": -719.6,
-"yaw": 0.2134,
+"model": "SMALL-40",
+"s": 18779.0,
+"x": -2684.3,
+"yaw": -1.5708,
 "min": [
 -6.37,
 -7,
@@ -19687,10 +20276,39 @@
 "id": "SMALL-41",
 "kind": "crossing",
 "settlement": null,
+"glb": "res://remake/buildings/SMALL-47.glb",
+"model": "SMALL-47",
+"s": 18779.0,
+"x": 2609.3,
+"yaw": -1.5708,
+"min": [
+-8.25,
+-7,
+-9.5
+],
+"max": [
+8.25,
+1.8,
+9.5
+],
+"fmin": [
+-8.25,
+-9.5
+],
+"fmax": [
+8.25,
+9.5
+]
+},
+{
+"id": "SMALL-42",
+"kind": "crossing",
+"settlement": null,
 "glb": "res://remake/buildings/SMALL-41.glb",
-"s": 819.3,
-"x": 732.2,
-"yaw": -1.4289,
+"model": "SMALL-41",
+"s": 12526.8,
+"x": 1268.3,
+"yaw": -0.0,
 "min": [
 -6.37,
 -7,
@@ -19711,67 +20329,70 @@
 ]
 },
 {
-"id": "SMALL-42",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/SMALL-42.glb",
-"s": 820.4,
-"x": 739.5,
-"yaw": -1.4056,
-"min": [
--7.47,
--7,
--10.15
-],
-"max": [
-7.47,
-1.8,
-10.15
-],
-"fmin": [
--7.47,
--10.15
-],
-"fmax": [
-7.47,
-10.15
-]
-},
-{
 "id": "SMALL-43",
 "kind": "crossing",
 "settlement": null,
-"glb": "res://remake/buildings/SMALL-43.glb",
-"s": 821.2,
-"x": 744.3,
-"yaw": -1.4801,
+"glb": "res://remake/buildings/SMALL-42.glb",
+"model": "SMALL-42",
+"s": 12560.0,
+"x": 1177.3,
+"yaw": -0.0,
 "min": [
--6.86,
+-7.47,
 -7,
--9.5
+-10.15
 ],
 "max": [
-6.86,
+7.47,
 1.8,
-9.5
+10.15
 ],
 "fmin": [
--6.86,
--9.5
+-7.47,
+-10.15
 ],
 "fmax": [
-6.86,
-9.5
+7.47,
+10.15
 ]
 },
 {
 "id": "SMALL-44",
 "kind": "crossing",
 "settlement": null,
+"glb": "res://remake/buildings/SMALL-43.glb",
+"model": "SMALL-43",
+"s": 12528.4,
+"x": 1086.3,
+"yaw": -0.0,
+"min": [
+-6.86,
+-7,
+-9.5
+],
+"max": [
+6.86,
+1.8,
+9.5
+],
+"fmin": [
+-6.86,
+-9.5
+],
+"fmax": [
+6.86,
+9.5
+]
+},
+{
+"id": "SMALL-45",
+"kind": "crossing",
+"settlement": null,
 "glb": "res://remake/buildings/SMALL-44.glb",
-"s": 838.8,
-"x": 785.1,
-"yaw": -0.8703,
+"model": "SMALL-44",
+"s": 12552.5,
+"x": 1143.0,
+"yaw": 1.5708,
 "min": [
 -4.85,
 -7,
@@ -19795,64 +20416,11 @@
 "id": "SMALL-46",
 "kind": "crossing",
 "settlement": null,
-"glb": "res://remake/buildings/SMALL-46.glb",
-"s": 1869.4,
-"x": 862.2,
-"yaw": 0.0384,
-"min": [
--5.96,
--7,
--10.6
-],
-"max": [
-5.96,
-1.8,
-10.6
-],
-"fmin": [
--5.16,
--10.6
-],
-"fmax": [
-5.16,
-10.6
-]
-},
-{
-"id": "SMALL-47",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/SMALL-47.glb",
-"s": 3035.3,
-"x": 876.9,
-"yaw": -0.6889,
-"min": [
--8.25,
--7,
--9.5
-],
-"max": [
-8.25,
-1.8,
-9.5
-],
-"fmin": [
--8.25,
--9.5
-],
-"fmax": [
-8.25,
-9.5
-]
-},
-{
-"id": "SMALL-48",
-"kind": "crossing",
-"settlement": null,
 "glb": "res://remake/buildings/SMALL-48.glb",
-"s": 3056.5,
-"x": 869.9,
-"yaw": 0.9851,
+"model": "SMALL-48",
+"s": 13150.0,
+"x": -1391.0,
+"yaw": -0.0,
 "min": [
 -5.46,
 -7.3,
@@ -19873,12 +20441,909 @@
 ]
 },
 {
+"id": "SMALL-47",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-46.glb",
+"model": "SMALL-46",
+"s": 13157.5,
+"x": -1391.0,
+"yaw": -0.0,
+"min": [
+-5.96,
+-7,
+-10.6
+],
+"max": [
+5.96,
+1.8,
+10.6
+],
+"fmin": [
+-5.16,
+-10.6
+],
+"fmax": [
+5.16,
+10.6
+]
+},
+{
+"id": "SMALL-48",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 3374.4,
+"x": -3020.0,
+"yaw": -0.0,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
+"id": "SMALL-49",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 3363.0,
+"x": -2990.0,
+"yaw": -0.0,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-50",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 6566.0,
+"x": 1209.0,
+"yaw": -3.1172,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
+"id": "SMALL-51",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-42.glb",
+"model": "SMALL-42",
+"s": 9372.8,
+"x": -73.7,
+"yaw": -1.2135,
+"min": [
+-7.47,
+-7,
+-10.15
+],
+"max": [
+7.47,
+1.8,
+10.15
+],
+"fmin": [
+-7.47,
+-10.15
+],
+"fmax": [
+7.47,
+10.15
+]
+},
+{
+"id": "SMALL-52",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 13104.8,
+"x": -780.1,
+"yaw": -1.249,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-53",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-03.glb",
+"model": "SMALL-03",
+"s": 1706.8,
+"x": -2657.3,
+"yaw": -0.3262,
+"min": [
+-3.93,
+-7,
+-9.5
+],
+"max": [
+3.93,
+2.13,
+9.5
+],
+"fmin": [
+-2.93,
+-9.5
+],
+"fmax": [
+2.93,
+9.5
+]
+},
+{
+"id": "SMALL-54",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 2163.6,
+"x": -2668.4,
+"yaw": 0.7854,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
+"id": "SMALL-55",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 3373.0,
+"x": -3020.0,
+"yaw": -0.0,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-56",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 8468.0,
+"x": -2928.8,
+"yaw": -0.3142,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
+"id": "SMALL-57",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 9235.8,
+"x": -2849.9,
+"yaw": -0.6868,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-58",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 13041.0,
+"x": -2703.3,
+"yaw": 0.1161,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-59",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 15779.0,
+"x": -3038.3,
+"yaw": 0.0167,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-60",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 11088.2,
+"x": -2477.7,
+"yaw": -1.3645,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
+"id": "SMALL-61",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 10230.0,
+"x": 2427.5,
+"yaw": 1.3258,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
+"id": "SMALL-62",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 3645.8,
+"x": -2382.0,
+"yaw": -1.4735,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
+"id": "SMALL-63",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 12525.7,
+"x": 1359.3,
+"yaw": -0.0,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
+"id": "SMALL-64",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-41.glb",
+"model": "SMALL-41",
+"s": 8647.2,
+"x": -1263.0,
+"yaw": -0.0125,
+"min": [
+-6.37,
+-7,
+-9.5
+],
+"max": [
+6.37,
+1.8,
+9.5
+],
+"fmin": [
+-5.57,
+-9.5
+],
+"fmax": [
+5.57,
+9.5
+]
+},
+{
+"id": "SMALL-65",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 9334.0,
+"x": -1260.9,
+"yaw": -0.0,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-66",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-41.glb",
+"model": "SMALL-41",
+"s": 13128.4,
+"x": -1295.9,
+"yaw": -0.0123,
+"min": [
+-6.37,
+-7,
+-9.5
+],
+"max": [
+6.37,
+1.8,
+9.5
+],
+"fmin": [
+-5.57,
+-9.5
+],
+"fmax": [
+5.57,
+9.5
+]
+},
+{
+"id": "SMALL-67",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 15584.8,
+"x": -1218.9,
+"yaw": -0.0333,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-68",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-41.glb",
+"model": "SMALL-41",
+"s": 3397.5,
+"x": -1782.1,
+"yaw": -0.6188,
+"min": [
+-6.37,
+-7,
+-9.5
+],
+"max": [
+6.37,
+1.8,
+9.5
+],
+"fmin": [
+-5.57,
+-9.5
+],
+"fmax": [
+5.57,
+9.5
+]
+},
+{
+"id": "SMALL-69",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 2827.5,
+"x": 1160.4,
+"yaw": -0.05,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-70",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 6556.3,
+"x": 1318.4,
+"yaw": -0.0328,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-71",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 12526.7,
+"x": 1360.5,
+"yaw": 0.0167,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-72",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 17152.2,
+"x": 1352.5,
+"yaw": -0.0333,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-73",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-41.glb",
+"model": "SMALL-41",
+"s": 1238.0,
+"x": 2577.2,
+"yaw": -0.112,
+"min": [
+-6.37,
+-7,
+-9.5
+],
+"max": [
+6.37,
+1.8,
+9.5
+],
+"fmin": [
+-5.57,
+-9.5
+],
+"fmax": [
+5.57,
+9.5
+]
+},
+{
+"id": "SMALL-74",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-41.glb",
+"model": "SMALL-41",
+"s": 2650.0,
+"x": 2977.8,
+"yaw": -0.5685,
+"min": [
+-6.37,
+-7,
+-9.5
+],
+"max": [
+6.37,
+1.8,
+9.5
+],
+"fmin": [
+-5.57,
+-9.5
+],
+"fmax": [
+5.57,
+9.5
+]
+},
+{
+"id": "SMALL-75",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-41.glb",
+"model": "SMALL-41",
+"s": 6628.1,
+"x": 2645.1,
+"yaw": 0.4856,
+"min": [
+-6.37,
+-7,
+-9.5
+],
+"max": [
+6.37,
+1.8,
+9.5
+],
+"fmin": [
+-5.57,
+-9.5
+],
+"fmax": [
+5.57,
+9.5
+]
+},
+{
+"id": "SMALL-76",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-17.glb",
+"model": "SMALL-17",
+"s": 12383.6,
+"x": 2775.9,
+"yaw": -0.5404,
+"min": [
+-7.29,
+-8.75,
+-15.55
+],
+"max": [
+7.29,
+1.8,
+15.55
+],
+"fmin": [
+-6.49,
+-15.55
+],
+"fmax": [
+6.49,
+15.55
+]
+},
+{
+"id": "SMALL-77",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-06.glb",
+"model": "SMALL-06",
+"s": 17101.5,
+"x": 2865.1,
+"yaw": -0.7659,
+"min": [
+-5.71,
+-7,
+-11
+],
+"max": [
+5.71,
+1.83,
+11
+],
+"fmin": [
+-4.66,
+-11
+],
+"fmax": [
+4.66,
+11
+]
+},
+{
+"id": "SMALL-78",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/SMALL-01.glb",
+"model": "SMALL-01",
+"s": 17118.5,
+"x": 2881.3,
+"yaw": -0.7854,
+"min": [
+-3.86,
+-7,
+-12.5
+],
+"max": [
+3.86,
+2.43,
+12.5
+],
+"fmin": [
+-2.86,
+-12.5
+],
+"fmax": [
+2.86,
+12.5
+]
+},
+{
 "id": "CULVERT-01",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-01.glb",
-"s": 180.0,
-"x": -1340.0,
+"model": "CULVERT-01",
+"s": 2689.0,
+"x": 799.7,
 "yaw": -1.5708,
 "min": [
 -5.76,
@@ -19904,9 +21369,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-02.glb",
-"s": 180.0,
-"x": -1019.8,
-"yaw": -1.5708,
+"model": "CULVERT-02",
+"s": 2689.0,
+"x": 960.3,
+"yaw": -0.0,
 "min": [
 -5.76,
 -7,
@@ -19931,8 +21397,9 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-03.glb",
-"s": 180.0,
-"x": -859.8,
+"model": "CULVERT-03",
+"s": 2689.0,
+"x": 1279.9,
 "yaw": -1.5708,
 "min": [
 -4.85,
@@ -19958,9 +21425,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-04.glb",
-"s": 180.0,
-"x": -539.7,
-"yaw": -1.5708,
+"model": "CULVERT-04",
+"s": 2689.0,
+"x": 1599.5,
+"yaw": -0.0,
 "min": [
 -5.46,
 -7,
@@ -19985,8 +21453,9 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-05.glb",
-"s": 1100.0,
-"x": -1179.9,
+"model": "CULVERT-05",
+"s": 2689.0,
+"x": 1760.0,
 "yaw": -1.5708,
 "min": [
 -4.85,
@@ -20012,8 +21481,9 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-06.glb",
-"s": 1100.0,
-"x": -1019.8,
+"model": "CULVERT-06",
+"s": 2689.0,
+"x": 1922.1,
 "yaw": -1.5708,
 "min": [
 -4.54,
@@ -20039,8 +21509,9 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-07.glb",
-"s": 1100.0,
-"x": -859.8,
+"model": "CULVERT-07",
+"s": 2689.0,
+"x": 2240.2,
 "yaw": -1.5708,
 "min": [
 -4.85,
@@ -20066,9 +21537,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-08.glb",
-"s": 1100.0,
-"x": -539.7,
-"yaw": -1.5708,
+"model": "CULVERT-08",
+"s": 2689.0,
+"x": 2562.8,
+"yaw": -0.0,
 "min": [
 -8.08,
 -7,
@@ -20093,9 +21565,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-09.glb",
-"s": 2580.0,
-"x": -699.7,
-"yaw": -1.5708,
+"model": "CULVERT-09",
+"s": 2689.0,
+"x": 2721.8,
+"yaw": -0.0,
 "min": [
 -7.77,
 -7,
@@ -20119,9 +21592,38 @@
 "id": "CULVERT-10",
 "kind": "crossing",
 "settlement": null,
+"glb": "res://remake/buildings/CULVERT-11.glb",
+"model": "CULVERT-11",
+"s": 2689.0,
+"x": 3042.9,
+"yaw": -0.0,
+"min": [
+-5.46,
+-7,
+-9.5
+],
+"max": [
+5.46,
+1.8,
+9.5
+],
+"fmin": [
+-4.66,
+-9.5
+],
+"fmax": [
+4.66,
+9.5
+]
+},
+{
+"id": "CULVERT-11",
+"kind": "crossing",
+"settlement": null,
 "glb": "res://remake/buildings/CULVERT-10.glb",
-"s": 2580.0,
-"x": -539.7,
+"model": "CULVERT-10",
+"s": 2689.0,
+"x": 3200.4,
 "yaw": -1.5708,
 "min": [
 -4.85,
@@ -20143,40 +21645,14 @@
 ]
 },
 {
-"id": "CULVERT-11",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/CULVERT-11.glb",
-"s": 2580.0,
-"x": -379.6,
-"yaw": -1.5708,
-"min": [
--5.46,
--7,
--9.5
-],
-"max": [
-5.46,
-1.8,
-9.5
-],
-"fmin": [
--4.66,
--9.5
-],
-"fmax": [
-4.66,
-9.5
-]
-},
-{
 "id": "CULVERT-12",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-12.glb",
-"s": 2580.0,
-"x": -219.6,
-"yaw": -1.5708,
+"model": "CULVERT-12",
+"s": 9125.0,
+"x": -2880.8,
+"yaw": -0.0,
 "min": [
 -5.46,
 -7,
@@ -20200,9 +21676,38 @@
 "id": "CULVERT-13",
 "kind": "crossing",
 "settlement": null,
+"glb": "res://remake/buildings/CULVERT-14.glb",
+"model": "CULVERT-14",
+"s": 9125.0,
+"x": -2559.8,
+"yaw": -0.0,
+"min": [
+-5.15,
+-7,
+-9.5
+],
+"max": [
+5.15,
+1.8,
+9.5
+],
+"fmin": [
+-4.35,
+-9.5
+],
+"fmax": [
+4.35,
+9.5
+]
+},
+{
+"id": "CULVERT-14",
+"kind": "crossing",
+"settlement": null,
 "glb": "res://remake/buildings/CULVERT-13.glb",
-"s": 3000.0,
-"x": 420.6,
+"model": "CULVERT-13",
+"s": 12343.0,
+"x": 1760.0,
 "yaw": -1.5708,
 "min": [
 -5.46,
@@ -20224,40 +21729,14 @@
 ]
 },
 {
-"id": "CULVERT-14",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/CULVERT-14.glb",
-"s": 3000.0,
-"x": 1220.9,
-"yaw": -1.5708,
-"min": [
--5.15,
--7,
--9.5
-],
-"max": [
-5.15,
-1.8,
-9.5
-],
-"fmin": [
--4.35,
--9.5
-],
-"fmax": [
-4.35,
-9.5
-]
-},
-{
 "id": "CULVERT-15",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-15.glb",
-"s": 928.1,
-"x": 260.5,
-"yaw": -1.5708,
+"model": "CULVERT-15",
+"s": 12343.0,
+"x": 1920.6,
+"yaw": -0.0,
 "min": [
 -5.76,
 -7,
@@ -20281,37 +21760,11 @@
 "id": "CULVERT-16",
 "kind": "crossing",
 "settlement": null,
-"glb": "res://remake/buildings/CULVERT-16.glb",
-"s": 923.4,
-"x": 420.2,
-"yaw": -1.6208,
-"min": [
--5.46,
--7,
--9.5
-],
-"max": [
-5.46,
-1.8,
-9.5
-],
-"fmin": [
--4.66,
--9.5
-],
-"fmax": [
-4.66,
-9.5
-]
-},
-{
-"id": "CULVERT-17",
-"kind": "crossing",
-"settlement": null,
 "glb": "res://remake/buildings/CULVERT-17.glb",
-"s": 1241.9,
-"x": 260.0,
-"yaw": -1.6705,
+"model": "CULVERT-17",
+"s": 12343.0,
+"x": 2079.6,
+"yaw": -0.0,
 "min": [
 -4.85,
 -7,
@@ -20332,13 +21785,42 @@
 ]
 },
 {
+"id": "CULVERT-17",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-16.glb",
+"model": "CULVERT-16",
+"s": 12343.0,
+"x": 2240.2,
+"yaw": -1.5708,
+"min": [
+-5.46,
+-7,
+-9.5
+],
+"max": [
+5.46,
+1.8,
+9.5
+],
+"fmin": [
+-4.66,
+-9.5
+],
+"fmax": [
+4.66,
+9.5
+]
+},
+{
 "id": "CULVERT-18",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-18.glb",
-"s": 1218.0,
-"x": 420.1,
-"yaw": -1.7682,
+"model": "CULVERT-18",
+"s": 12343.0,
+"x": 2400.7,
+"yaw": -0.0,
 "min": [
 -5.15,
 -7,
@@ -20362,37 +21844,11 @@
 "id": "CULVERT-19",
 "kind": "crossing",
 "settlement": null,
-"glb": "res://remake/buildings/CULVERT-19.glb",
-"s": 2249.0,
-"x": -379.9,
-"yaw": -1.5208,
-"min": [
--4.85,
--7,
--9.5
-],
-"max": [
-4.85,
-1.8,
-9.5
-],
-"fmin": [
--4.05,
--9.5
-],
-"fmax": [
-4.05,
-9.5
-]
-},
-{
-"id": "CULVERT-20",
-"kind": "crossing",
-"settlement": null,
 "glb": "res://remake/buildings/CULVERT-20.glb",
-"s": 2693.5,
-"x": -699.5,
-"yaw": -0.239,
+"model": "CULVERT-20",
+"s": 12343.0,
+"x": 2559.8,
+"yaw": -0.0,
 "min": [
 -5.91,
 -7.3,
@@ -20413,13 +21869,42 @@
 ]
 },
 {
+"id": "CULVERT-20",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-19.glb",
+"model": "CULVERT-19",
+"s": 12343.0,
+"x": 2720.3,
+"yaw": -1.5708,
+"min": [
+-4.85,
+-7,
+-9.5
+],
+"max": [
+4.85,
+1.8,
+9.5
+],
+"fmin": [
+-4.05,
+-9.5
+],
+"fmax": [
+4.05,
+9.5
+]
+},
+{
 "id": "CULVERT-21",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-21.glb",
-"s": 3358.6,
-"x": -699.5,
-"yaw": 0.192,
+"model": "CULVERT-21",
+"s": 12343.0,
+"x": 2880.8,
+"yaw": -0.0,
 "min": [
 -7.8,
 -8.5,
@@ -20440,13 +21925,14 @@
 ]
 },
 {
-"id": "CULVERT-23",
+"id": "CULVERT-22",
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/CULVERT-23.glb",
-"s": 3096.8,
-"x": 740.5,
-"yaw": 1.3258,
+"model": "CULVERT-23",
+"s": 15561.0,
+"x": -1440.4,
+"yaw": -0.0,
 "min": [
 -9.77,
 -7,
@@ -20467,30 +21953,703 @@
 ]
 },
 {
-"id": "RAIL-01",
+"id": "CULVERT-23",
 "kind": "crossing",
 "settlement": null,
-"glb": "res://remake/buildings/RAIL-01.glb",
-"s": 868.0,
-"x": 901.7,
-"yaw": 0.05,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 15561.0,
+"x": -1279.9,
+"yaw": -1.5708,
 "min": [
--2.8,
+-5.76,
 -7,
--9
+-9.5
 ],
 "max": [
-2.8,
+5.76,
 1.8,
-9
+9.5
 ],
 "fmin": [
--2.8,
--9
+-4.96,
+-9.5
 ],
 "fmax": [
-2.8,
-9
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-24",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 15561.0,
+"x": -1119.3,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-25",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 15561.0,
+"x": -960.3,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-26",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 15561.0,
+"x": -799.7,
+"yaw": -1.5708,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-27",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 15561.0,
+"x": -639.2,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-28",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 17170.0,
+"x": 1281.4,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-29",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 17170.0,
+"x": 1761.5,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-30",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 17170.0,
+"x": 1922.1,
+"yaw": -1.5708,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-31",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 17170.0,
+"x": 2241.7,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-32",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 17170.0,
+"x": 2402.2,
+"yaw": -1.5708,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-33",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 17170.0,
+"x": 2562.8,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-34",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 17170.0,
+"x": 2721.8,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-35",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 3415.0,
+"x": -3020.0,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-36",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 13044.1,
+"x": -960.4,
+"yaw": -1.2178,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-37",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 13098.1,
+"x": -800.0,
+"yaw": -1.2412,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-38",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 13152.4,
+"x": -638.6,
+"yaw": -1.2178,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-39",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 3414.0,
+"x": -3020.0,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-40",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 8578.2,
+"x": -2878.3,
+"yaw": -0.535,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-41",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 9199.2,
+"x": -2880.0,
+"yaw": -0.6979,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-42",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 12940.9,
+"x": -2719.9,
+"yaw": -0.4412,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-43",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 15769.0,
+"x": -3038.1,
+"yaw": 0.05,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-44",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 15834.0,
+"x": -3039.3,
+"yaw": 0.0156,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-45",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 3430.8,
+"x": -1758.3,
+"yaw": -0.6288,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-46",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-02.glb",
+"model": "CULVERT-02",
+"s": 12270.0,
+"x": 2721.9,
+"yaw": -0.0,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
+]
+},
+{
+"id": "CULVERT-47",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/CULVERT-01.glb",
+"model": "CULVERT-01",
+"s": 12515.0,
+"x": 2881.7,
+"yaw": -0.6528,
+"min": [
+-5.76,
+-7,
+-9.5
+],
+"max": [
+5.76,
+1.8,
+9.5
+],
+"fmin": [
+-4.96,
+-9.5
+],
+"fmax": [
+4.96,
+9.5
 ]
 },
 {
@@ -20498,9 +22657,10 @@
 "kind": "crossing",
 "settlement": null,
 "glb": "res://remake/buildings/RAIL-02.glb",
-"s": 934.0,
-"x": 901.6,
-"yaw": -0.006,
+"model": "RAIL-02",
+"s": 2832.5,
+"x": 1475.0,
+"yaw": 0.04,
 "min": [
 -2.93,
 -7,
@@ -20518,87 +22678,90 @@
 "fmax": [
 2.93,
 64
+]
+},
+{
+"id": "RAIL-03",
+"kind": "crossing",
+"settlement": null,
+"glb": "res://remake/buildings/RAIL-04.glb",
+"model": "RAIL-04",
+"s": 6567.5,
+"x": 1412.8,
+"yaw": -0.02,
+"min": [
+-4.66,
+-7,
+-9.55
+],
+"max": [
+4.66,
+1.8,
+9.55
+],
+"fmin": [
+-4.66,
+-9.55
+],
+"fmax": [
+4.66,
+9.55
 ]
 },
 {
 "id": "RAIL-04",
 "kind": "crossing",
 "settlement": null,
-"glb": "res://remake/buildings/RAIL-04.glb",
-"s": 1860.5,
-"x": 1009.9,
-"yaw": 0.1279,
+"glb": "res://remake/buildings/RAIL-05.glb",
+"model": "RAIL-05",
+"s": 12532.5,
+"x": 1464.2,
+"yaw": 0.04,
 "min": [
--4.66,
 -7,
--9.55
+-7,
+-7.55
 ],
 "max": [
-4.66,
+7,
 1.8,
-9.55
+7.55
 ],
 "fmin": [
--4.66,
--9.55
+-7,
+-7.55
 ],
 "fmax": [
-4.66,
-9.55
+7,
+7.55
 ]
 },
 {
 "id": "RAIL-05",
 "kind": "crossing",
 "settlement": null,
-"glb": "res://remake/buildings/RAIL-05.glb",
-"s": 2036.5,
-"x": 976.5,
-"yaw": 0.2292,
-"min": [
--7,
--7,
--7.55
-],
-"max": [
-7,
-1.8,
-7.55
-],
-"fmin": [
--7,
--7.55
-],
-"fmax": [
-7,
-7.55
-]
-},
-{
-"id": "RAIL-06",
-"kind": "crossing",
-"settlement": null,
-"glb": "res://remake/buildings/RAIL-06.glb",
-"s": 3082.0,
-"x": 1001.4,
-"yaw": -0.1732,
+"glb": "res://remake/buildings/RAIL-01.glb",
+"model": "RAIL-01",
+"s": 17177.5,
+"x": 1453.1,
+"yaw": -0.04,
 "min": [
 -2.8,
 -7,
--10.05
+-9
 ],
 "max": [
 2.8,
 1.8,
-10.05
+9
 ],
 "fmin": [
 -2.8,
--10.05
+-9
 ],
 "fmax": [
 2.8,
-10.05
+9
 ]
 }
 ]

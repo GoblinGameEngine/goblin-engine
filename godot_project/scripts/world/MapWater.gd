@@ -14,8 +14,15 @@ const OVERLAP := 1.5                 # past the rim, under the bank
 const CHUNKS := 24                   # the river / lake surface in this many pieces round the ring
 
 
+const RECT_CELL := 400.0             # v2: the merged water rectangles, grouped per this much of the ring
+const RECT_SEG := 32.0               # ... each split this often along the ring (it's a cylinder)
+
+
 static func build(root: Node3D) -> void:
 	## The river / lake surface, in CHUNKS pieces (the far side hides its own).
+	if FileAccess.file_exists("res://remake/water_rects.json"):
+		_build_rects(root)
+		return
 	for i in CHUNKS:
 		_build_range(root, StationGeo.CIRC * i / CHUNKS, StationGeo.CIRC * (i + 1) / CHUNKS).name = "map_water_%d" % i
 
@@ -52,6 +59,50 @@ static func _build_range(root: Node3D, s0: float, s1: float) -> MeshInstance3D:
 	mi.set_script(load("res://scripts/world/LakeWater.gd"))
 	root.add_child(mi)
 	return mi
+
+
+static func _build_rects(root: Node3D) -> void:
+	## Version 2: every river, lake, sea and harbour surface from tools/map_expanded.py's merged
+	## rectangles (s0, s1, x0, x1, level), OVERLAP past each side (under the banks), per RECT_CELL.
+	var d: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://remake/water_rects.json"))
+	var mat := StandardMaterial3D.new()
+	mat.albedo_texture = load("res://assets/textures/water_tinted_0.png")
+	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.albedo_color = Color(1.0, 1.0, 1.0, 0.9)
+	var cells := {}
+	for r in d.rects:
+		var s0: float = r[0] - OVERLAP
+		var s1: float = r[1] + OVERLAP
+		var x0: float = r[2] - OVERLAP
+		var x1: float = r[3] + OVERLAP
+		var lvl: float = r[4]
+		var key := floori(fposmod((s0 + s1) * 0.5, StationGeo.CIRC) / RECT_CELL)
+		if not cells.has(key):
+			var st0 := SurfaceTool.new()
+			st0.begin(Mesh.PRIMITIVE_TRIANGLES)
+			cells[key] = st0
+		var st: SurfaceTool = cells[key]
+		var n := maxi(1, ceili((s1 - s0) / RECT_SEG))
+		for i in n:
+			var sa := s0 + (s1 - s0) * i / n
+			var sb := s0 + (s1 - s0) * (i + 1) / n
+			var ua := StationGeo.up(sa)
+			var ub := StationGeo.up(sb)
+			var q := [[StationGeo.point(sa, x0, lvl), ua, Vector2(x0, sa)], [StationGeo.point(sb, x0, lvl), ub, Vector2(x0, sb)],
+				[StationGeo.point(sb, x1, lvl), ub, Vector2(x1, sb)], [StationGeo.point(sa, x1, lvl), ua, Vector2(x1, sa)]]
+			for k in [0, 1, 2, 0, 2, 3]:
+				st.set_normal(q[k][1])
+				st.set_uv(q[k][2] / 20.0)
+				st.add_vertex(q[k][0])
+	for key in cells:
+		var st: SurfaceTool = cells[key]
+		st.set_material(mat)
+		var mi := MeshInstance3D.new()
+		mi.name = "map_water_%d" % key
+		mi.mesh = st.commit()
+		mi.set_script(load("res://scripts/world/LakeWater.gd"))
+		root.add_child(mi)
 
 
 const FILL := 0.75                   # the small water stands at this fraction of its carved depth

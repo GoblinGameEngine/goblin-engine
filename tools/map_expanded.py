@@ -1687,13 +1687,25 @@ ELEV_INLAND = ELEV.copy()                                        # (woods follow
 # the towns' straightened stretches) end in rocky cliffs, the bays in sandy beaches
 _wn, _, _ = site_weight(S[0], -1)
 _ws, _, _ = site_weight(S[0], 1)
-HEAD_N = ((coast_amp(S[0], -1) > 55) & (_wn > 0.99))[None, :]
-HEAD_S = ((coast_amp(S[0], 1) > 150) & (_ws > 0.99))[None, :]        # the South Sea: mostly beaches
+def _headw(amp, lo, hi, w):
+    t_ = np.clip((amp - lo) / (hi - lo), 0, 1)
+    return (t_ * t_ * (3 - 2 * t_)) * np.clip((w - 0.8) / 0.2, 0, 1)
+def _amp_big(s_, sg):
+    # the headlands' large-scale shape only (the coast's small ripples don't make or unmake a cliff)
+    ph = 0.0 if sg < 0 else 2.1
+    return (140 * np.sin(TAU * s_ / 2600 + ph) + 95 * np.sin(TAU * s_ / 1130 + 2 * ph + 0.7)
+            + 55 * np.sin(TAU * s_ / 610 + ph + 2.0))
+HEADW_N = _headw(_amp_big(S[0], -1), 40, 110, _wn)[None, :].astype(np.float32)     # 0..1: how much a headland
+HEADW_S = _headw(_amp_big(S[0], 1), 130, 210, _ws)[None, :].astype(np.float32)    # (the South Sea: mostly beaches)
+HEAD_N = HEADW_N > 0.5
+HEAD_S = HEADW_S > 0.5
 DCOAST = np.where(X < 0, COAST_N + X, COAST_S - X)                 # metres inland of the waterline
 HEADLAND = np.where(X < 0, HEAD_N, HEAD_S)
 _u = np.clip(DCOAST / 400.0, 0.0, 1.0)
 _u = _u * _u * (3 - 2 * _u)
-ELEV = np.where(HEADLAND, ELEV + 22.0 * (1 - np.clip(DCOAST / 500.0, 0, 1)), ELEV * _u).astype(np.float32)
+_hw = np.where(X < 0, HEADW_N, HEADW_S)
+ELEV = (_hw * (ELEV + 22.0 * (1 - np.clip(DCOAST / 500.0, 0, 1))) + (1 - _hw) * ELEV * _u).astype(np.float32)
+del _hw
 _rv = dilate(RIVMASK, fk(RIVER_BASIN))                                    # the great rivers' valleys
 ELEV = np.where(_rv, ELEV * 0.15, np.where(dilate(_rv, fk(260)), ELEV * 0.55, ELEV)).astype(np.float32)
 del _rv
@@ -2342,8 +2354,219 @@ if "--coastal-inventory" in sys.argv:
     print(f"coastal inventory: {len(ci['structures'])} structures, {len(ci['walks'])} walks/decks, "
           f"{len(ci['bridges'])} great bridges -> {out_ci}")
 
+# `--game-data`: the approved map into the game (godot_project/remake/): the terrain as rasters the
+# game samples directly (so it matches this map exactly), land cover, the terrain.json features, and
+# the inventory (every existing structure at its new place under its own id, the farmsteads, every
+# crossing with the existing bridge model that fits it).
+if "--game-data" in sys.argv:
+    import gzip
+    import json
+    GD = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "godot_project", "remake")
+    RS = 2                                           # raster step: 2 px of this map = 4 m
+    # --- water level: the Kettle and the lake from their banks, the great rivers stepping down to
+    # the sea, the sea and harbours flat
+    col = np.arange(CW)
+
+    def _row(xm):
+        return np.clip(((xm + HW) * K).astype(np.int64), 0, WH - 1)
+    te, be = TOP_E[0], BOT_E[0]
+    bank_lo = np.minimum(ELEV[_row(te - 6.0), col], ELEV[_row(be + 6.0), col]) - 0.4
+    lvl_k = bank_lo.copy()
+    for sh in range(1, 21):                                   # a running minimum over +-40 m
+        lvl_k = np.minimum(lvl_k, np.minimum(np.roll(bank_lo, sh), np.roll(bank_lo, -sh)))
+    # Lake Tamsin stands at one level (its lowest bank), blending into the Kettle's through the necks
+    tl = T_L[0]
+    lake_lvl = float(lvl_k[tl > 0.5].min())
+    lvl_k = lvl_k * (1 - tl) + lake_lvl * tl
+    LEVEL = np.full((WH, CW), -9999.0, np.float32)
+    kettle = ((WCAT == 1) | (WCAT == 2)) & ~RIVMASK
+    LEVEL[kettle] = np.broadcast_to(lvl_k[None, :], LEVEL.shape)[kettle]
+    SEA_LEVEL = -0.5
+    LEVEL[(WCAT == 6) | (WCAT == 7)] = SEA_LEVEL
+    riv_lev = np.full((WH, CW), -9999.0, np.float32)
+    jj, ii = np.nonzero(RIVMASK & (WCAT == 1))
+    ps_px = ii * PX + PX / 2
+    px_px = jj * PX + PX / 2 - HW
+    best_d = np.full(len(ii), 1e18)
+    for nm, pth in RIVER_PATHS:
+        # the path runs from the sea to the Kettle / lake: walk it from the inland end, never rising
+        # toward the sea, never above its banks
+        pts = list(reversed(pth))
+        i_, j_ = idx(*pts[0])
+        prev = float(lvl_k[i_])
+        levels = []
+        for k_, (ps, px_) in enumerate(pts):
+            a = pts[max(0, k_ - 1)]
+            b_ = pts[min(len(pts) - 1, k_ + 1)]
+            dv = np.array([b_[0] - a[0], b_[1] - a[1]])
+            nrm = np.array([-dv[1], dv[0]]) / (np.hypot(*dv) or 1.0)
+            banks = [ELEV[idx(ps + nrm[0] * sg_ * (RIVER_HALF + 10), px_ + nrm[1] * sg_ * (RIVER_HALF + 10))[::-1]]
+                     for sg_ in (-1, 1)]
+            frac = k_ / (len(pts) - 1)
+            lv = min(prev, float(min(banks)) - 0.4, float(lvl_k[i_]) * (1 - frac) + SEA_LEVEL * frac + 0.3)
+            levels.append(lv)
+            prev = lv
+        levels = [float(np.mean(levels[max(0, k_ - 6):k_ + 7])) for k_ in range(len(levels))]   # smooth along the river
+        # each river pixel takes the level of its nearest centreline point
+        for k_, (ps, px_) in enumerate(pts):
+            dd = (wrap_d(ps_px - ps)) ** 2 + (px_px - px_) ** 2
+            better = dd < best_d
+            best_d = np.where(better, dd, best_d)
+            riv_lev[jj[better], ii[better]] = levels[k_]
+    LEVEL[RIVMASK & (WCAT == 1)] = riv_lev[RIVMASK & (WCAT == 1)]
+    # --- bed depth below the water level: deepening from each shore
+    def _depth(mask, radius_m, maxd):
+        bl = np.array(Image.fromarray(mask.astype(np.uint8) * 255).filter(ImageFilter.GaussianBlur(radius_m * K))) / 255.0
+        return np.where(mask, 0.4 + maxd * np.clip((bl - 0.5) / 0.5, 0, 1) ** 0.7, 0.0)
+    DEPTH = np.maximum.reduce([_depth(kettle, 60, 6.0), _depth(RIVMASK & (WCAT == 1), 40, 4.0),
+                               _depth((WCAT == 6) | (WCAT == 7), 180, 18.0)])
+    # --- land cover (classes as before + 6 beach, 7 rock / cliff)
+    cls_ = np.zeros((WH, CW), np.uint8)
+    cls_[FARM] = 4
+    cls_[FLOOD] = 2
+    cls_[WOODS] = 3
+    cls_[FP] = 1
+    wb = Image.new("L", (CW, WH), 0)
+    wbd = ImageDraw.Draw(wb)
+    for c_ in FARMSTEADS:
+        draw_ellipse(wbd, c_[0] - 8, c_[1], 26, fill=1)
+    cls_[np.array(wb) > 0] = 5
+    cls_[BEACH] = 6
+    cls_[CLIFF] = 7
+    cls_[WCAT > 0] = 0
+    lc = np.stack([cls_, (fid % 97).astype(np.uint8), np.zeros_like(cls_)], -1)[::RS, ::RS]
+    Image.fromarray(lc, "RGB").save(os.path.join(GD, "landcover.png"), optimize=True)
+
+    def _save(name, arr, dt):
+        with gzip.open(os.path.join(GD, name), "wb", compresslevel=6) as f:
+            f.write(np.ascontiguousarray(arr[::RS, ::RS]).astype(dt).tobytes())
+    # water surfaces as merged rectangles (s0, s1, x0, x1, level) over the 4 m raster: each column's
+    # runs of water at one level (0.1 m steps) extend across the next columns while they stay the same
+    LV4 = LEVEL[::RS, ::RS]
+    q = np.where(LV4 > -9000, np.round(LV4 * 10).astype(np.int32), -99999)
+    rects, open_ = [], {}
+    step = PX * RS
+    ncol = q.shape[1]
+    for ci in range(ncol + 1):
+        runs = set()
+        if ci < ncol:
+            colv = q[:, ci]
+            j = 0
+            n_ = len(colv)
+            while j < n_:
+                if colv[j] == -99999:
+                    j += 1
+                    continue
+                v = colv[j]
+                k2 = j
+                while k2 + 1 < n_ and colv[k2 + 1] == v:
+                    k2 += 1
+                runs.add((j, k2, int(v)))
+                j = k2 + 1
+        for key in list(open_):
+            if key not in runs or ci - open_[key] >= 16:           # at most 16 columns (64 m) per rect
+                j0, j1, v = key
+                rects.append([round(open_[key] * step, 1), round(ci * step, 1), round(j0 * step - HW, 1),
+                              round((j1 + 1) * step - HW, 1), v / 10.0])
+                del open_[key]
+        for key in runs:
+            if key not in open_:
+                open_[key] = ci
+    json.dump({"step_m": step, "rects": rects}, open(os.path.join(GD, "water_rects.json"), "w"))
+    print("water rects:", len(rects))
+    _save("terrain_base.bin.gz", ELEV, np.float16)
+    _save("terrain_level.bin.gz", LEVEL, np.float16)
+    _save("terrain_depth.bin.gz", DEPTH, np.float16)
+    NX, NY = CW // RS + (1 if CW % RS else 0), WH // RS + (1 if WH % RS else 0)
+    ter = {"version": 2, "R": R, "W": W, "raster": {"step_m": PX * RS, "nx": int(NX), "ny": int(NY), "x0": -HW,
+                                                    "base": "terrain_base.bin.gz", "level": "terrain_level.bin.gz",
+                                                    "depth": "terrain_depth.bin.gz", "dtype": "float16", "no_water": -9999.0},
+           "landcover_step_m": PX * RS, "sea_level": SEA_LEVEL,
+           "creeks": [{"name": n, "hw": 3.5, "depth": 1.1, "pts": [[round(a % C, 1), round(b_, 1)] for a, b_ in path]}
+                      for n, path, pond in CREEK_PATHS]
+                     + [{"name": "spur", "hw": 2.0, "depth": 0.7, "pts": [[round(a % C, 1), round(b_, 1)] for a, b_ in sp]}
+                        for sp in SPUR_PATHS],
+           "ponds": [{"name": n, "s": pond[0] % C, "x": pond[1], "a": pond[2] / 2, "b": pond[3], "rot": 0.25, "depth": 1.8}
+                     for n, path, pond in CREEK_PATHS if pond],
+           "oxbows": [],
+           "ditches": [{"s0": round(min(p_[0] for p_ in run), 1), "s1": round(max(p_[0] for p_ in run), 1),
+                        "x": round(run[0][1], 1), "hw": 1.5, "depth": 0.6} for run in DITCHES],
+           "roads": [{"cls": cls, "w": ROAD_W[cls], "name": nm, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in pts]}
+                     for pts, cls, nm in ROADS]
+                    + [{"cls": cls, "w": ROAD_W[cls], "town": t.name, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in pts]}
+                       for t in TOWNS for pts, cls in t.streets],
+           "rail": {"w": 8, "pts": [[round(a, 1), round(b_, 1)] for a, b_ in RAIL]},
+           "areas": [{"kind": kind, "town": t.name, "poly": [[round(a, 1), round(b_, 1)] for a, b_ in poly]}
+                     for t in TOWNS for poly, kind in t.areas]}
+    json.dump(ter, open(os.path.join(GD, "terrain.json"), "w"), indent=0)
+    # --- the inventory: existing structures at their new places, farmsteads, crossings
+    def _ri(poly):
+        cs = sum(p_[0] for p_ in poly) / len(poly)
+        cx = sum(p_[1] for p_ in poly) / len(poly)
+        if len(poly) == 4:
+            w = math.dist(poly[0], poly[1])
+            d = math.dist(poly[1], poly[2])
+            ang = math.degrees(math.atan2(poly[1][1] - poly[0][1], poly[1][0] - poly[0][0]))
+            fe = [[round(poly[0][0] % C, 1), round(poly[0][1], 1)], [round(poly[1][0] % C, 1), round(poly[1][1], 1)]]
+        else:
+            w = d = 2 * max(math.dist((cs, cx), p_) for p_ in poly)
+            ang, fe = 0.0, None
+        return {"s": round(cs % C, 1), "x": round(cx, 1), "w": round(w, 1), "d": round(d, 1), "angle_deg": round(ang, 1), "front_edge": fe}
+    inv = {"settlements": _INV["settlements"], "structures": [], "farmsteads": [], "crossings": []}
+    by_town = {}
+    for st_ in _INV["structures"]:
+        by_town.setdefault(st_["settlement"], []).append(st_)
+    for t in TOWNS:
+        if t.coastal or t.name not in by_town:
+            continue
+        mains = [poly for poly, kind, part in t.bldgs if not part]
+        for st_, poly in zip(by_town[t.name], mains):
+            _ds = OLD_S0[t.name] * (SS - 1)
+            _dx = -WIDEN if t.x0 < 0 else WIDEN
+            parts = [dict(pt_, s=round((pt_["s"] + _ds) % C, 1), x=round(pt_["x"] + _dx, 1), front_edge=None) for pt_ in st_["parts"]]
+            inv["structures"].append({**st_, **_ri(poly), "parts": parts})
+    for k_, c_ in enumerate(FARMSTEADS, 1):
+        parts = []
+        for poly, kind in FS_POLYS[k_ - 1]:
+            ss_, xs_ = [q[0] for q in poly], [q[1] for q in poly]
+            parts.append({"part": kind, "s": round(((min(ss_) + max(ss_)) / 2) % C, 1), "x": round((min(xs_) + max(xs_)) / 2, 1),
+                          "w": round(max(ss_) - min(ss_), 1), "d": round(max(xs_) - min(xs_), 1)})
+        inv["farmsteads"].append({"id": f"FARM-{k_:02d}", "s": round(c_[0] % C, 1), "x": round(c_[1], 1),
+                                  "structures": ["farmhouse", "barn", "silo", "machine shed"], "parts": parts})
+    # crossings: each takes the existing bridge model of its type whose span fits best (unused ones first)
+    old_x = {}
+    _bld = os.path.join(GD, "buildings")
+    for c_ in _INV["crossings"]:
+        if os.path.exists(os.path.join(_bld, c_["id"] + ".glb")):       # only models that exist
+            old_x.setdefault(c_["type"], []).append(c_)
+    used = set()
+    n_by = {}
+    for kind in ("small", "culvert", "rail", "major"):
+        for item in BRIDGES[kind]:
+            a, b_ = item[0], item[1]
+            cls = item[2] if len(item) > 2 else "rail"
+            span = math.dist(a, b_)
+            s_m, x_m = (a[0] + b_[0]) / 2, (a[1] + b_[1]) / 2
+            n_by[kind] = n_by.get(kind, 0) + 1
+            rid = f"{kind.upper()}-{n_by[kind]:02d}"
+            model = None
+            if kind in ("small", "culvert") or (kind == "rail" and span < 80):
+                pool = old_x.get(kind if kind != "rail" else "rail", [])
+                cands = sorted(pool, key=lambda o: (o["id"] in used, abs(o["span_m"] - span)))
+                if cands:
+                    model = cands[0]["id"]
+                    used.add(model)
+            inv["crossings"].append({"id": rid, "type": kind, "road_class": cls, "model": model,
+                                     "s": round(s_m % C, 1), "x": round(x_m, 1), "span_m": round(span, 1),
+                                     "ends": [[round(a[0] % C, 1), round(a[1], 1)], [round(b_[0] % C, 1), round(b_[1], 1)]]})
+    json.dump(inv, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "remake", "inventory",
+                                     "map_inventory.json"), "w"), indent=1)
+    print(f"game data: rasters {NX}x{NY} @ {PX * RS} m, {len(inv['structures'])} structures, "
+          f"{len(inv['farmsteads'])} farmsteads, {len(inv['crossings'])} crossings "
+          f"({sum(1 for c_ in inv['crossings'] if c_['model'])} on existing models)")
+
 if "--inventory" in sys.argv:
-    sys.exit("map_expanded.py is a draft: no --inventory / --terrain export until it's approved")
+    sys.exit("map_expanded.py: use --game-data (the map is approved) or --coastal-inventory")
     import json
 
     def rect_info(poly):

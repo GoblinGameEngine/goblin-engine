@@ -20,13 +20,13 @@ class_name RemakeClouds
 ##
 ## Positions are a fixed-seed hash, so the same sky comes back every launch.
 
-const LOW_COUNT := 34
+const LOW_COUNT := 160                # sparse over the 3 km x 8 km floor
 const LOW_BASE := 200.0
 const LOW_TOP := 300.0
 const LOW_WIND := 4.0                # m/s east, at the layer's middle
-const CIRRUS_ROWS := 10              # the cirrus shell: bands along the axis ...
+const CIRRUS_ROWS := 24              # the cirrus shell: bands along the axis ...
 const CIRRUS_COLS := 6               # ... by slots round it, one jittered ribbon each
-const CIRRUS_H := 400.0              # 100 m from the axis, 50 m off the shaft
+const CIRRUS_H := StationGeo.R - StationGeo.SHAFT_R - 50.0   # 50 m off the central shaft
 const CIRRUS_WIND := 0.6
 const END_CLEAR := 40.0              # m kept between a cloud and an end cap
 const SEED := 20260924

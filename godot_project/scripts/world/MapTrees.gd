@@ -14,7 +14,7 @@ class_name MapTrees
 
 const WOODS_STEP := 6.0
 const GROVE_STEP := 5.0
-const CELL := 200.0
+const CELL := 400.0
 const NEAR := 320.0
 const FAR := 900.0
 

@@ -104,7 +104,7 @@ static func _hash(end: int, k: int, salt: int) -> float:
 
 
 # ------------------------------------------------------------------ building
-const TILES_ROUND := 24             # tiles round each end (131 m each; all three versions share them)
+static var TILES_ROUND := roundi(StationGeo.CIRC / 131.0)   # tiles round each end (~131 m each; all three versions share them)
 
 func setup(p_target: Node3D) -> void:
 	target = p_target

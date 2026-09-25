@@ -16,8 +16,8 @@ const STATION_PLAYER_SCENE := preload("res://scenes/StationPlayer.tscn")
 const WALL_TILE := 6.0
 
 static var SETTLEMENTS: Array = []            # [] = the whole map
-static var SPAWN_S := 395.0                   # Harrow Falls, Main Street
-static var SPAWN_X := 283.0
+static var SPAWN_S := 2370.0                  # Harrow Falls, Main Street (the expanded map)
+static var SPAWN_X := 783.0
 
 var player: StationPlayer
 var sun: DirectionalLight3D
@@ -289,4 +289,7 @@ func _spawn_player() -> void:
 	player = STATION_PLAYER_SCENE.instantiate() as StationPlayer
 	player.global_transform = Transform3D(Basis.looking_at(StationGeo.forward(SPAWN_S), up), feet + up * 1.43)
 	add_child(player)
+	# see the whole cylinder: straight across (the far side, 2R overhead) and end cap to end cap --
+	# Godot's default 4 km far plane cut the view off into black on the 3 km ring
+	player.camera.far = 2.0 * StationGeo.R + StationGeo.LENGTH
 	ScreenOutline.attach_to_camera(player.camera)

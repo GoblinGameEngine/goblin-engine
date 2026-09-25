@@ -35,6 +35,17 @@ static var _pad_by_id: Dictionary = {}
 static var _grid: Dictionary = {}    # Vector2i -> Array of [kind, index]
 static var R := 500.0
 static var C := TAU * 500.0
+# version 2 (tools/map_expanded.py --game-data): the terrain as rasters sampled directly -- the base
+# ground before water (bilinear), and the rivers', lake's and seas' water level and bed depth
+static var _v2 := false
+static var _nx := 0
+static var _ny := 0
+static var _step := 4.0
+static var _x0 := 0.0
+static var _base := PackedByteArray()
+static var _lvl := PackedByteArray()
+static var _dep := PackedByteArray()
+static var _lc_step := 2.0
 
 
 static func _load() -> void:
@@ -43,6 +54,17 @@ static func _load() -> void:
 	_d = JSON.parse_string(FileAccess.get_file_as_string(PATH))
 	R = _d.R
 	C = TAU * R
+	if int(_d.get("version", 1)) >= 2:
+		var rs: Dictionary = _d.raster
+		_nx = int(rs.nx)
+		_ny = int(rs.ny)
+		_step = rs.step_m
+		_x0 = rs.x0
+		_lc_step = _d.get("landcover_step_m", 2.0)
+		_base = _raster(rs.base)
+		_lvl = _raster(rs.level)
+		_dep = _raster(rs.depth)
+		_v2 = true
 	# index every feature's bounding box (grown by its bank) into the grid
 	for i in _d.creeks.size():
 		var cr: Dictionary = _d.creeks[i]
@@ -79,6 +101,46 @@ static func _load() -> void:
 			hi = Vector2(maxf(hi.x, q[0]), maxf(hi.y, q[1]))
 		_index(["area", i], lo.x, lo.y, hi.x, hi.y, 1.0)
 	_load_pads()
+
+
+static func _raster(file: String) -> PackedByteArray:
+	var raw := FileAccess.get_file_as_bytes("res://remake/" + file)
+	return raw.decompress(_nx * _ny * 2, FileAccess.COMPRESSION_GZIP)
+
+
+static func _cell(s: float, x: float) -> Vector2:
+	## Raster coordinates (fractional, cell centres at .5) of (s, x).
+	return Vector2(fposmod(s, C) / _step - 0.5, (x - _x0) / _step - 0.5)
+
+
+static func _bil(buf: PackedByteArray, s: float, x: float) -> float:
+	var f := _cell(s, x)
+	var i0 := floori(f.x)
+	var j0 := clampi(floori(f.y), 0, _ny - 2)
+	var tx := f.x - i0
+	var ty := clampf(f.y - j0, 0.0, 1.0)
+	i0 = posmod(i0, _nx)
+	var i1 := (i0 + 1) % _nx
+	var r0 := j0 * _nx
+	var r1 := r0 + _nx
+	var a := lerpf(buf.decode_half((r0 + i0) * 2), buf.decode_half((r0 + i1) * 2), tx)
+	var b := lerpf(buf.decode_half((r1 + i0) * 2), buf.decode_half((r1 + i1) * 2), tx)
+	return lerpf(a, b, ty)
+
+
+static func water_at(s: float, x: float) -> Vector2:
+	## (water level, bed depth below it) of the rivers, the lake and the seas at (s, x); level
+	## -9999 where there's none.
+	_load()
+	if not _v2:
+		return Vector2(-9999.0, 0.0)
+	var f := _cell(s, x)
+	var i := posmod(roundi(f.x), _nx)
+	var j := clampi(roundi(f.y), 0, _ny - 1)
+	var lv := _lvl.decode_half((j * _nx + i) * 2)
+	if lv < -9000.0:
+		return Vector2(-9999.0, 0.0)
+	return Vector2(lv, _bil(_dep, s, x))
 
 
 static func _index(item: Array, s0: float, x0: float, s1: float, x1: float, grow: float) -> void:
@@ -130,6 +192,8 @@ static func water_edges(s: float) -> Vector2:
 static func base_elev(s: float, x: float) -> float:
 	## The bluff / floodplain terrain before any water is carved.
 	_load()
+	if _v2:
+		return _bil(_base, s, x)
 	var r: Dictionary = _d.river
 	var th := s / R
 	var lp := lake_params(s)
@@ -177,6 +241,8 @@ static func _body_profile(s: float, x: float) -> float:
 	## Depth below the water level of the river / lake bed at (s, x): the channel's trapezoid (bed
 	## 12 m either side of the line, sloping to 0 at the rim) and the lake's shelving floor; 0
 	## outside the depression.
+	if _v2:
+		return water_at(s, x).y
 	var r: Dictionary = _d.river
 	var lp := lake_params(s)
 	var dep := _trap(absf(x - lp.y), r.bed_half, r.ch_half - r.bed_half + BANK, r.depth)
@@ -236,6 +302,11 @@ static func sample(s: float, x: float) -> Vector2:
 	var h := rg.x
 	if rg.y < 0.5:
 		h -= _small_depth(s, x)
+	if _v2:
+		var w := water_at(s, x)
+		if w.x > -9000.0:
+			h = minf(h, w.x - w.y)
+		return Vector2(h, maxf(0.0, base - h))
 	var bp := _body_profile(s, x)
 	if bp > 0.0:
 		h = minf(h, water_level(s) - bp)
@@ -366,9 +437,10 @@ static func landcover(s: float, x: float) -> Vector2i:
 	## 1 built-up, 2 floodplain meadow, 3 woods, 4 farm field (id picks its crop), 5 windbreak grove,
 	## 0 anything else.
 	if _lc == null:
+		_load()
 		_lc = load("res://remake/landcover.png")
-	var px := clampi(floori(fposmod(s, C) / 2.0), 0, _lc.get_width() - 1)
-	var py := clampi(floori((x + 1500.0) / 2.0), 0, _lc.get_height() - 1)
+	var px := clampi(floori(fposmod(s, C) / _lc_step), 0, _lc.get_width() - 1)
+	var py := clampi(floori((x + StationGeo.HALF_LEN) / _lc_step), 0, _lc.get_height() - 1)
 	var c := _lc.get_pixel(px, py)
 	return Vector2i(roundi(c.r * 255.0), roundi(c.g * 255.0))
 
