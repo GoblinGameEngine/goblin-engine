@@ -23,6 +23,15 @@ hw.GROUPS.update({
               ("Kiawah Island", 32.6080, -80.0850), ("Mount Pleasant Shem Creek", 32.7950, -79.8830),
               ("Nantucket town", 41.2835, -70.0995), ("Siasconset", 41.2630, -69.9660),
               ("Edgartown", 41.3890, -70.5130), ("Oak Bluffs", 41.4540, -70.5620)],
+    # Port Carrow, second pass: where the Lowcountry and New England shingle style is still built new
+    "e_pcr2": [("I'On, Mount Pleasant", 32.8185, -79.8695), ("Daniel Island", 32.8630, -79.9020),
+               ("Kiawah Island village", 32.6100, -80.0600), ("Seabrook Island", 32.5800, -80.1700),
+               ("Wild Dunes, Isle of Palms", 32.8040, -79.7550), ("Dewees Island", 32.8420, -79.7250),
+               ("Harbour Town, Hilton Head", 32.1380, -80.8110), ("Beaufort SC", 32.4316, -80.6698),
+               ("Bald Head Island NC", 33.8590, -77.9960), ("Southport NC", 33.9180, -78.0200),
+               ("Chatham MA", 41.6820, -69.9600), ("Provincetown MA", 42.0500, -70.1860),
+               ("Nantucket mid-island", 41.2700, -70.0700), ("Madaket, Nantucket", 41.2710, -70.1960),
+               ("Kennebunkport ME", 43.3620, -70.4770), ("Watch Hill RI", 41.3110, -71.8580)],
 })
 
 if __name__ == "__main__":
