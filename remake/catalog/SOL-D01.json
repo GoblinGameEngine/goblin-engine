@@ -1,0 +1,37 @@
+{
+ "id": "SOL-D01",
+ "settlement": "Solana Point",
+ "kind": "deck_deck",
+ "coast": "west",
+ "lot": {
+  "w": 32.0,
+  "d": 16.0
+ },
+ "example": {
+  "title": "Huntington Beach Municipal Pier end (octagonal T-head, 1992)",
+  "place": "Huntington Beach, Orange County, CA",
+  "year": 1992,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:HBMunicipalPier_072020.jpg",
+  "photos": [
+   "commons_HBMunicipalPier_072020.jpg",
+   "commons_Huntington_Beach_Municipal_Pier_-_89001203.jpg",
+   "commons_Huntington_Beach_Pier.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The seaward end of the rebuilt concrete pier: a broad octagonal concrete deck on slender concrete pile bents, white pipe rails and iron lamp standards all round, benches, and the red-roofed diner in the middle. Three photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 32.0,
+  "pile_depth_m": 12.0,
+  "year_built": 1992,
+  "platform": true,
+  "platform_d_m": 16.0
+ },
+ "names": {}
+}

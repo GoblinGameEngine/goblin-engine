@@ -1,0 +1,38 @@
+{
+ "structure": "OCV-D01",
+ "files": [
+  {
+   "file": "commons_Santa_Cruz_CA_USA_Monterey_Bay_From_the_Municipal_Wharf_2011_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Cruz,_CA,_USA,_Monterey_Bay_From_the_Municipal_Wharf,_2011_-_panoramio.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Santa_Cruz%2C_CA%2C_USA%2C_Monterey_Bay_From_the_Municipal_Wharf%2C_2011_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Santa Cruz, CA, USA, Monterey Bay From the Municipal Wharf, 2011 - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Chris English",
+   "caption": "Santa Cruz, CA, USA: Monterey Bay From the Municipal Wharf, 2011"
+  },
+  {
+   "file": "commons_Santa_Cruz_-_bay_and_beach_from_wharf.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Cruz_-_bay_and_beach_from_wharf.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Santa_Cruz_-_bay_and_beach_from_wharf.JPG/1920px-Santa_Cruz_-_bay_and_beach_from_wharf.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Santa Cruz - bay and beach from wharf.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Runner1928",
+   "caption": "Santa Cruz, California"
+  },
+  {
+   "file": "commons_Santa_Cruz_Wharf_boats.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Cruz_Wharf_boats.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Santa_Cruz_Wharf_boats.jpg/1920px-Santa_Cruz_Wharf_boats.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Santa Cruz Wharf boats.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "ZappaOMati",
+   "caption": "Boats located off of Santa Cruz Wharf."
+  }
+ ]
+}

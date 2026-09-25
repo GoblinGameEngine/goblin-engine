@@ -1,0 +1,38 @@
+{
+ "structure": "PLV-001",
+ "files": [
+  {
+   "file": "commons_Junior_Seau_Amphitheater_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Junior_Seau_Amphitheater_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Junior_Seau_Amphitheater_1.jpg/1920px-Junior_Seau_Amphitheater_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Junior Seau Amphitheater 1.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Gwsuperfan",
+   "caption": "Junior Seau Pier Amphitheatre in Oceanside, CA"
+  },
+  {
+   "file": "commons_Junior_Seau_Amphitheater_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Junior_Seau_Amphitheater_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Junior_Seau_Amphitheater_2.jpg/1920px-Junior_Seau_Amphitheater_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Junior Seau Amphitheater 2.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Gwsuperfan",
+   "caption": "Junior Seau Oceanside Beach Amphitheater in Oceanside, CA"
+  },
+  {
+   "file": "commons_Junior_Seau_Amphitheater_4.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Junior_Seau_Amphitheater_4.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Junior_Seau_Amphitheater_4.jpg/1920px-Junior_Seau_Amphitheater_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Junior Seau Amphitheater 4.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Gwsuperfan",
+   "caption": "Junior Seau Oceanside Beach Amphitheater in Oceanside, CA"
+  }
+ ]
+}

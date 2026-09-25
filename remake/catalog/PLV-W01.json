@@ -1,0 +1,36 @@
+{
+ "id": "PLV-W01",
+ "settlement": "Playa Verde",
+ "kind": "promenade",
+ "coast": "west",
+ "walk": {
+  "width_m": 10,
+  "length_m": 840.0
+ },
+ "example": {
+  "title": "The Strand promenade below the bluff, Oceanside",
+  "place": "Oceanside, San Diego County, CA",
+  "year": 1990,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Oceanside,_California_01.jpg",
+  "photos": [
+   "commons_Oceanside_California_01.jpg",
+   "commons_Oceanside_Pier-1.jpg",
+   "commons_OceansidePier2.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The beachfront promenade along The Strand: a broad concrete walk between a low sea wall and a lawn park of tall palms, lamp posts and benches, the bluff with hotels above and the pier running out at the end. Three photos. Resurfaced c. 1990. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 10,
+  "pile_depth_m": 10.0,
+  "year_built": 1990,
+  "sea_wall": true
+ },
+ "names": {}
+}

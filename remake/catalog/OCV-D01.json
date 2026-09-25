@@ -1,0 +1,37 @@
+{
+ "id": "OCV-D01",
+ "settlement": "Oceanview",
+ "kind": "deck_deck",
+ "coast": "west",
+ "lot": {
+  "w": 22.0,
+  "d": 10.0
+ },
+ "example": {
+  "title": "Santa Cruz Municipal Wharf end platform",
+  "place": "Santa Cruz, Santa Cruz County, CA",
+  "year": 1914,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Santa_Cruz,_CA,_USA,_Monterey_Bay_From_the_Municipal_Wharf,_2011_-_panoramio.jpg",
+  "photos": [
+   "commons_Santa_Cruz_CA_USA_Monterey_Bay_From_the_Municipal_Wharf_2011_-_panoramio.jpg",
+   "commons_Santa_Cruz_-_bay_and_beach_from_wharf.JPG",
+   "commons_Santa_Cruz_Wharf_boats.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The outer end of the long timber wharf: a wide plank deck on timber pile bents with a white timber rail, benches and lamp posts, boat hoists at the rail, sea lions on the cross-bracing below, looking back over the bay to the beach and boardwalk rides. Three photos. Older than 1970: the wharf dates from 1914 (much rebuilt since). Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 22.0,
+  "pile_depth_m": 12.0,
+  "year_built": 1914,
+  "platform": true,
+  "platform_d_m": 10.0
+ },
+ "names": {}
+}

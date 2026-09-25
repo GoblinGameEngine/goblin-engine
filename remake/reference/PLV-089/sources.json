@@ -1,0 +1,27 @@
+{
+ "structure": "PLV-089",
+ "files": [
+  {
+   "file": "commons_Pismo_Beach_Pier_North_view_20110805_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pismo_Beach_Pier,_North_view_20110805_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Pismo_Beach_Pier%2C_North_view_20110805_1.jpg/1920px-Pismo_Beach_Pier%2C_North_view_20110805_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pismo Beach Pier, North view 20110805 1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DXR",
+   "caption": "Pismo Beach Pier at sunset, as seen from north"
+  },
+  {
+   "file": "commons_Pismo_Beach_Pier_North_view_20110805_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pismo_Beach_Pier,_North_view_20110805_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Pismo_Beach_Pier%2C_North_view_20110805_2.jpg/1920px-Pismo_Beach_Pier%2C_North_view_20110805_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pismo Beach Pier, North view 20110805 2.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "DXR",
+   "caption": "A north view of Pismo Beach Pier"
+  }
+ ]
+}

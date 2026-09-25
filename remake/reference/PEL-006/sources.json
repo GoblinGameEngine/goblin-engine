@@ -1,0 +1,38 @@
+{
+ "structure": "PEL-006",
+ "files": [
+  {
+   "file": "commons_Seattle_September_7_2024_-_299.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seattle,_September_7,_2024_-_299.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Seattle%2C_September_7%2C_2024_-_299.jpg/1920px-Seattle%2C_September_7%2C_2024_-_299.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seattle, September 7, 2024 - 299.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Another Believer",
+   "caption": "Seattle"
+  },
+  {
+   "file": "commons_Fisherman_s_Terminal_Seattle_WA.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Fisherman%27s_Terminal,_Seattle,_WA.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Fisherman%27s_Terminal%2C_Seattle%2C_WA.JPG/1920px-Fisherman%27s_Terminal%2C_Seattle%2C_WA.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Fisherman's Terminal, Seattle, WA.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Omalmin",
+   "caption": "Fisherman's Terminal, Ballard, Seattle, Washington, USA"
+  },
+  {
+   "file": "commons_Seattle_Fishermen_s_Terminal_at_sunset_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seattle_Fishermen%27s_Terminal_at_sunset_05.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Seattle_Fishermen%27s_Terminal_at_sunset_05.jpg/1920px-Seattle_Fishermen%27s_Terminal_at_sunset_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seattle Fishermen's Terminal at sunset 05.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Joe Mabel",
+   "caption": "Fishermen's Terminal, Seattle, Washington at sunset. Boats in foreground, terminal building in background."
+  }
+ ]
+}

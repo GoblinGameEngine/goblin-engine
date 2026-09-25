@@ -1,0 +1,40 @@
+{
+ "id": "PEL-W06",
+ "settlement": "Pelican Cove",
+ "kind": "railway",
+ "coast": "west",
+ "walk": {
+  "width_m": 6,
+  "length_m": 150.0
+ },
+ "example": {
+  "title": "Astoria Riverfront Trolley line on its riverside trestle (opened 1999)",
+  "place": "Astoria, Clatsop County, OR",
+  "year": 1999,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Astoria_Riverfront_Trolley_on_trestle_west_of_2nd_Street-crop.jpg",
+  "photos": [
+   "commons_Astoria_Riverfront_Trolley_on_trestle_west_of_2nd_Street-crop.jpg",
+   "commons_Astoria_Riverfront_Trolley_on_trestle_west_of_2nd_Street.jpg",
+   "commons_Sheltered_stop_for_Astoria_Riverfront_Trolley_near_Basin_St.jpg",
+   "commons_Astoria_Riverfront_Trolley_Clatsop_County_Oregon_scenic_images_clatDA0058b_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A single-track heritage trolley line opened in 1999 on the former railway along the river: steel rails on a timber-sleepered bed running along the waterfront and out over the river shallows on a low timber trestle of creosoted pile bents with a plank walkway beside, with small red-roofed open shelters at the stops and a red-and-cream 1913 trolley car. Four photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 6,
+  "pile_depth_m": 10.0,
+  "year_built": 1999,
+  "gauge": "standard",
+  "stops": 3
+ },
+ "names": {
+  "sign": "PELICAN COVE WATERFRONT TROLLEY \u00b7 ALL ABOARD"
+ }
+}

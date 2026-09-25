@@ -1,0 +1,38 @@
+{
+ "structure": "PEL-002",
+ "files": [
+  {
+   "file": "commons_Moss_Landing_Powerplant_stack.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Moss_Landing_Powerplant_stack.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Moss_Landing_Powerplant_stack.jpg/1920px-Moss_Landing_Powerplant_stack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Moss Landing Powerplant stack.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Dinomite",
+   "caption": "One of the smoke stacks at Moss Landing Power Plant.  Stitched from multiple images using Hugin."
+  },
+  {
+   "file": "commons_Moss_Landing_power_plant.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Moss_Landing_power_plant.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Moss_Landing_power_plant.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Moss Landing power plant.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "John Pilge",
+   "caption": "The power plant at Moss Landing."
+  },
+  {
+   "file": "commons_Moss_Landing_Power_Plant_p1270026.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Moss_Landing_Power_Plant_p1270026.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Moss_Landing_Power_Plant_p1270026.jpg/1920px-Moss_Landing_Power_Plant_p1270026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Moss Landing Power Plant p1270026.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "David Monniaux",
+   "caption": "Moss Landing Power Plant, Moss Landing, California.  Contrast enhanced to compensate mist."
+  }
+ ]
+}

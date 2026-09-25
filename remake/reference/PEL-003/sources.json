@@ -1,0 +1,27 @@
+{
+ "structure": "PEL-003",
+ "files": [
+  {
+   "file": "commons_Seattle_-_Interbay_DIY_Skatepark_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seattle_-_Interbay_DIY_Skatepark_01.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Seattle_-_Interbay_DIY_Skatepark_01.jpg/1920px-Seattle_-_Interbay_DIY_Skatepark_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seattle - Interbay DIY Skatepark 01.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Joe Mabel",
+   "caption": "Interbay DIY Skatepark, just west of the south end of the Ballard Bridge, Seattle, Washington. In the background are net sheds at Fishermen's Terminal. This is seen from near the west end of the South Ship Canal Trail."
+  },
+  {
+   "file": "commons_Seattle_-_Interbay_DIY_Skatepark_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seattle_-_Interbay_DIY_Skatepark_02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Seattle_-_Interbay_DIY_Skatepark_02.jpg/1920px-Seattle_-_Interbay_DIY_Skatepark_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seattle - Interbay DIY Skatepark 02.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Joe Mabel",
+   "caption": "Interbay DIY Skatepark, just west of the south end of the Ballard Bridge, Seattle, Washington. In the background are the easternmost buildings of Fishermen's Terminal. This is seen from the South Ship Canal Trail, near its west end."
+  }
+ ]
+}

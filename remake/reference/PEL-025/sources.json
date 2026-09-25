@@ -1,0 +1,16 @@
+{
+ "structure": "PEL-025",
+ "files": [
+  {
+   "file": "commons_House_at_30_Tremont.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:House_at_30_Tremont.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/House_at_30_Tremont.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:House at 30 Tremont.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Jon Roanhaus",
+   "caption": "House at 30 Tremont Street  Listed address is obsolete.  Correct address, confirmed by City Planning Department on Historic Property Inventory Report, is 1070 Tremont Street."
+  }
+ ]
+}

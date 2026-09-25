@@ -1,0 +1,38 @@
+{
+ "structure": "PEL-004",
+ "files": [
+  {
+   "file": "commons_Morro_Bay_2015_009.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Morro_Bay_2015_009.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Morro_Bay_2015_009.jpg/1920px-Morro_Bay_2015_009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Morro Bay 2015 009.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Photograph by Mike Peel (www.mikepeel.net).",
+   "caption": "Morro Bay Power Plant, California, USA."
+  },
+  {
+   "file": "commons_Morro_Bay_2015_011.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Morro_Bay_2015_011.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Morro_Bay_2015_011.jpg/1920px-Morro_Bay_2015_011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Morro Bay 2015 011.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Photograph by Mike Peel (www.mikepeel.net).",
+   "caption": "Morro Bay Power Plant towers, California, USA."
+  },
+  {
+   "file": "commons_Morro_Bay_Power_Plant.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Morro_Bay_Power_Plant.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Morro_Bay_Power_Plant.jpg/1920px-Morro_Bay_Power_Plant.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Morro Bay Power Plant.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "User:Keavon",
+   "caption": "A view of the power generating facility at Morro Bay, California photographed April 15, 2016."
+  }
+ ]
+}

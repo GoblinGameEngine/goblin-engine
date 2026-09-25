@@ -1,0 +1,37 @@
+{
+ "id": "PLV-D01",
+ "settlement": "Playa Verde",
+ "kind": "deck_deck",
+ "coast": "west",
+ "lot": {
+  "w": 34.0,
+  "d": 14.0
+ },
+ "example": {
+  "title": "Pismo Beach Pier end platform (pier rebuilt 1985, 2019)",
+  "place": "Pismo Beach, San Luis Obispo County, CA",
+  "year": 1985,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Downtown,_Pismo_Beach,_CA,_USA_-_panoramio_-_Sergei_Gussev_(3).jpg",
+  "photos": [
+   "commons_Downtown_Pismo_Beach_CA_USA_-_panoramio_-_Sergei_Gussev_3_.jpg",
+   "commons_Downtown_Pismo_Beach_CA_USA_-_panoramio_-_Sergei_Gussev_4_.jpg",
+   "commons_Downtown_Pismo_Beach_CA_USA_-_panoramio_-_Sergei_Gussev_11_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The widened end of a timber pier: a broad plank deck on a forest of creosoted piles with cross-bracing, a white timber rail round three sides with a 'no overhead casting' board, a lamp post and a small shelter, standing well above the surf. Three photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 34.0,
+  "pile_depth_m": 12.0,
+  "year_built": 1985,
+  "platform": true,
+  "platform_d_m": 14.0
+ },
+ "names": {}
+}

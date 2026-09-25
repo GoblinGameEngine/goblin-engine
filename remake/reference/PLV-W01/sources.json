@@ -1,0 +1,38 @@
+{
+ "structure": "PLV-W01",
+ "files": [
+  {
+   "file": "commons_Oceanside_California_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Oceanside,_California_01.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Oceanside%2C_California_01.jpg/1920px-Oceanside%2C_California_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Oceanside, California 01.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Tgormanbrown",
+   "caption": "Oceanside, California has miles of beautiful beaches and one of the longest wooden piers on the west coast."
+  },
+  {
+   "file": "commons_Oceanside_Pier-1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Oceanside_Pier-1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Oceanside_Pier-1.jpg/1920px-Oceanside_Pier-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Oceanside Pier-1.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Visitor7",
+   "caption": "Oceanside Pier"
+  },
+  {
+   "file": "commons_OceansidePier2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:OceansidePier2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/OceansidePier2.jpg/1920px-OceansidePier2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:OceansidePier2.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "Berwil 92083 at English Wikipedia",
+   "caption": ""
+  }
+ ]
+}

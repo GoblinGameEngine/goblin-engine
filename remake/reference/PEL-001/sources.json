@@ -1,0 +1,38 @@
+{
+ "structure": "PEL-001",
+ "files": [
+  {
+   "file": "commons_Seattle_-_Fishermen_s_Terminal_-_Seattle_Ship_Supply_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_01.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_01.jpg/1920px-Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seattle - Fishermen's Terminal - Seattle Ship Supply 01.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Joe Mabel",
+   "caption": "Seattle Ship Supply building, Fishermen's Terminal, Seattle, Washington during the Fall Fishermen's Festival."
+  },
+  {
+   "file": "commons_Seattle_-_Fishermen_s_Terminal_-_Seattle_Ship_Supply_02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_02.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_02.jpg/1920px-Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seattle - Fishermen's Terminal - Seattle Ship Supply 02.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Joe Mabel",
+   "caption": "Seattle Ship Supply, Fishermen's Terminal, Seattle, Washington, U.S. Seen from the south."
+  },
+  {
+   "file": "commons_Seattle_-_Fishermen_s_Terminal_-_Seattle_Ship_Supply_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_03.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_03.jpg/1920px-Seattle_-_Fishermen%27s_Terminal_-_Seattle_Ship_Supply_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Seattle - Fishermen's Terminal - Seattle Ship Supply 03.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Joe Mabel",
+   "caption": "Seattle Ship Supply, Fishermen's Terminal, Seattle, Washington, U.S. Seen from the south."
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "id": "PLV-W02",
+ "settlement": "Playa Verde",
+ "kind": "pier",
+ "coast": "west",
+ "walk": {
+  "width_m": 7,
+  "length_m": 310.0
+ },
+ "example": {
+  "title": "Oceanside Pier (rebuilt 1987)",
+  "place": "Oceanside, San Diego County, CA",
+  "year": 1987,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Oceanside_Pier-3.jpg",
+  "photos": [
+   "commons_Oceanside_Pier-3.jpg",
+   "commons_Oceanside_Pier-4.jpg",
+   "commons_Oceanside_Pier.jpg",
+   "commons_Oceanside-pier.JPG",
+   "commons_Under_the_Oceanside_Pier.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The town's 1987 wooden pier, at 1,954 ft the longest wooden over-water pier on the West Coast: a straight timber-planked deck on tall bents of creosoted timber piles with diagonal bracing, a timber rail with benches and fishermen, tall lamp standards all along, and a widened end carrying a restaurant and bait shop. It runs from the foot of the main street over the beach and surf. Five photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "timber",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 7,
+  "pile_depth_m": 12.0,
+  "year_built": 1987,
+  "deck_height_m": 8.0
+ },
+ "names": {
+  "sign": "PLAYA VERDE PIER \u00b7 EST. 1888 \u00b7 REBUILT 1987",
+  "rules": "NO OVERHEAD CASTING"
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "structure": "PLV-020",
+ "files": [
+  {
+   "file": "commons_Junior_Seau_Beach_Community_Center_1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Junior_Seau_Beach_Community_Center_1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Junior_Seau_Beach_Community_Center_1.jpg/1920px-Junior_Seau_Beach_Community_Center_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Junior Seau Beach Community Center 1.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Gwsuperfan",
+   "caption": "Junior Seau Beach Community Center in Oceanside, CA"
+  },
+  {
+   "file": "commons_Junior_Seau_Beach_Community_Center_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Junior_Seau_Beach_Community_Center_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Junior_Seau_Beach_Community_Center_2.jpg/1920px-Junior_Seau_Beach_Community_Center_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Junior Seau Beach Community Center 2.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Gwsuperfan",
+   "caption": "Junior Seau Beach Community Center in Oceanside, CA"
+  },
+  {
+   "file": "commons_Junior_Seau_Beach_Community_Center_8.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Junior_Seau_Beach_Community_Center_8.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Junior_Seau_Beach_Community_Center_8.jpg/1920px-Junior_Seau_Beach_Community_Center_8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Junior Seau Beach Community Center 8.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Gwsuperfan",
+   "caption": "Exterior from Pier- Junior Seau Beach Community Center in Oceanside, CA"
+  }
+ ]
+}
