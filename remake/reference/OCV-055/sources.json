@@ -1,0 +1,16 @@
+{
+ "structure": "OCV-055",
+ "files": [
+  {
+   "file": "commons_Dingbat_Lime.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dingbat_Lime.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Dingbat_Lime.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Dingbat Lime.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Barmysot",
+   "caption": "Example of \"dingbat\" apartment facade."
+  }
+ ]
+}
