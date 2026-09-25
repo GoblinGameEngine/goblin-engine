@@ -2,15 +2,26 @@
  "structure": "BRW-096",
  "files": [
   {
-   "file": "commons_Ocean_City_Boardwalk_35.jpg",
+   "file": "commons_Gillian_s_Wonderland_7683215938_.jpg",
    "source": "Wikimedia Commons",
-   "record": "https://commons.wikimedia.org/wiki/File:Ocean_City_Boardwalk_35.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Ocean_City_Boardwalk_35.jpg/1920px-Ocean_City_Boardwalk_35.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "title": "File:Ocean City Boardwalk 35.jpg",
+   "record": "https://commons.wikimedia.org/wiki/File:Gillian%27s_Wonderland_(7683215938).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Gillian%27s_Wonderland_%287683215938%29.jpg/1920px-Gillian%27s_Wonderland_%287683215938%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Gillian's Wonderland (7683215938).jpg",
    "kind": "photo",
-   "license": "CC BY-SA 4.0",
-   "author": "APK",
-   "caption": "The Tidal Wave rollercoaster at Trimper's Rides in Ocean City, Maryland."
+   "license": "CC BY 2.0",
+   "author": "Kevin Jarrett from Northfield, NJ, USA",
+   "caption": "Gillian's Wonderland"
+  },
+  {
+   "file": "commons_Gillian_s_Wonderland_7683216394_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Gillian%27s_Wonderland_(7683216394).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Gillian%27s_Wonderland_%287683216394%29.jpg/1920px-Gillian%27s_Wonderland_%287683216394%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Gillian's Wonderland (7683216394).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Kevin Jarrett from Northfield, NJ, USA",
+   "caption": "Gillian's Wonderland"
   }
  ]
 }

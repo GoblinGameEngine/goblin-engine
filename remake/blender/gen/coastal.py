@@ -11,7 +11,7 @@ coastal.py -- generators for the coastal kinds of CATALOG_SPEC_COASTAL.md.
   pavilion            posts under a hip / pyramid roof, open sides, benches.
   lifeguard           a chair on a sled, or a hut on braced legs with a ramp.
   lighthouse          tapered banded tower, gallery, glazed lantern, optional keeper's house.
-  ride                ferris wheel, coaster, wave swinger, drop tower, dark ride, carousel.
+  ride                ferris wheel, go-kart speedway, wave swinger, drop tower, dark ride, carousel (no roller coasters).
   stack / monument    a boiler chimney; a column or obelisk.
   cannery, fishhouse, icehouse, shed, boatyard, warehouse
                       the works builder, stood on pile bents when on_pilings / over the water.
@@ -535,27 +535,35 @@ def build_ride(rec):
             p.box((-0.05, gy - 0.05, gz - 0.4), (0.05, gy + 0.05, gz), "steel")
             p.cylinder((1.45, math.cos(a0) * R), 0.12, gz - 0.05, gz + 0.05, "bulb", n=6)
         p.box((-1.6, -0.4, cz - 0.4), (1.6, 0.4, cz + 0.4), "steel")
-    elif typ == "coaster":
-        # a launched steel coaster: a vertical tower, a drop, a loop of track round the deck on supports
-        H = min(38.0, hd * 3.0)
-        pts = []
-        for i in range(48):
-            t = i / 48
-            a = t * 2 * math.pi
-            x = math.cos(a) * (hw - 1.5)
-            y = math.sin(a) * (hd - 1.5)
-            z = 1.5 + (H * max(0.0, math.cos(a * 1.0)) ** 6 if t < 0.5 else 3.0 + 4.0 * abs(math.sin(a * 3)))
-            pts.append((x, y, z))
-        for (xa, ya, za), (xb, yb, zb) in zip(pts, pts[1:] + pts[:1]):
-            u = g.Vector((xb - xa, yb - ya, 0.0))
-            if u.length < 1e-6:
-                continue
-            v = g.Vector((-u.y, u.x, 0.0)).normalized() * 0.6
-            p.face([(xa - v.x, ya - v.y, za), (xb - v.x, yb - v.y, zb), (xb + v.x, yb + v.y, zb), (xa + v.x, ya + v.y, za)], "ride_white")
-            p.face([(xa + v.x, ya + v.y, za - 0.3), (xb + v.x, yb + v.y, zb - 0.3), (xb - v.x, yb - v.y, zb - 0.3), (xa - v.x, ya - v.y, za - 0.3)],
-                   "ride_white")
-            p.cylinder((xa, ya), 0.18, 0.3, za - 0.3, "ride_white", n=6)
-        p.box((pts[0][0] - 0.8, pts[0][1] - 1.5, 0.3), (pts[0][0] + 0.8, pts[0][1] + 1.5, 1.4), "ride_red")
+    elif typ in ("go_karts", "coaster"):
+        # a go-kart speedway (no roller coasters on the station): a figure-eight track of asphalt with a
+        # tyre barrier and a low fence, a timing hut, a bulb-lit start gantry, karts in the pits
+        pal.solid("tyre", (0.05, 0.05, 0.05), rough=0.9)
+        R = min(hw, hd / 2) - 1.5
+        for cyc in (-1, 1):
+            cy = cyc * (hd - R - 1.0)
+            n = 28
+            for i in range(n):
+                a0, a1 = i * 2 * math.pi / n, (i + 1) * 2 * math.pi / n
+                ro, ri = R, R - 4.0
+                q = [(math.cos(a0) * ro, cy + math.sin(a0) * ro, 0.32), (math.cos(a1) * ro, cy + math.sin(a1) * ro, 0.32),
+                     (math.cos(a1) * ri, cy + math.sin(a1) * ri, 0.32), (math.cos(a0) * ri, cy + math.sin(a0) * ri, 0.32)]
+                p.face(q[::-1], "asphalt")
+                for rr in (ro + 0.3, ri - 0.3):
+                    p.cylinder((math.cos(a0) * rr, cy + math.sin(a0) * rr), 0.3, 0.3, 0.75, "tyre", n=8)
+                p.box((math.cos(a0) * (ro + 0.8) - 0.03, cy + math.sin(a0) * (ro + 0.8) - 0.03, 0.3),
+                      (math.cos(a0) * (ro + 0.8) + 0.03, cy + math.sin(a0) * (ro + 0.8) + 0.03, 1.4), "chainlink")
+        for k in range(6):
+            kx, ky = -1.5 + (k % 3) * 1.4, -hd + 1.5 + (k // 3) * 2.0
+            p.box((kx - 0.55, ky - 0.9, 0.35), (kx + 0.55, ky + 0.9, 0.75), cols[k % 4])
+            p.box((kx - 0.3, ky - 0.1, 0.75), (kx + 0.3, ky + 0.4, 1.0), "black")
+        p.box((hw - 3.5, -1.5, 0.3), (hw - 0.5, 1.5, 2.8), "ext")
+        p.box((hw - 3.6, -1.6, 2.8), (hw - 0.4, 1.6, 3.0), "accent")
+        for sx in (-R + 0.5, -R + 4.5):
+            p.box((sx - 0.1, -0.1, 0.3), (sx + 0.1, 0.1, 4.0), "ride_white")
+        p.box((-R + 0.4, -0.2, 3.8), (-R + 4.6, 0.2, 4.4), "ride_red")
+        for i in range(8):
+            p.cylinder((-R + 0.7 + i * 0.5, 0.22), 0.07, 4.0, 4.15, "bulb", n=6)
     elif typ == "swings":
         H = 12.0
         p.cylinder((0, 0), 0.6, 0.3, H, "ride_white", n=12)

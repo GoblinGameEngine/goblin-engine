@@ -15,6 +15,9 @@ class_name RemakeWorld
 ## "farms" / "crossings" (or when placing everything).
 
 
+const DECK_H := 2.5             # a pier / wharf deck over the water level (CoastalWalks.DECK_H)
+
+
 static func build(root: Node3D, settlements: Array) -> Dictionary:
 	var pl: Array = JSON.parse_string(FileAccess.get_file_as_string("res://remake/placement.json")).structures
 	var entries := []
@@ -30,6 +33,11 @@ static func build(root: Node3D, settlements: Array) -> Dictionary:
 		var h := MapTerrain.pad_height(e.id)
 		if is_nan(h):
 			h = MapTerrain.elevation(s, x)
+		if e.get("over_water", false):
+			# on the pier / wharf deck: the water level plus the deck's height, not the bed
+			var w := MapTerrain.water_at(s, x)
+			if w.x > -9000.0:
+				h = w.x + DECK_H
 		entries.append(_entry(e, s, x, basis, h))
 	var t0 := Time.get_ticks_msec()
 	var info: Dictionary = await RemakeLodClusters.build(root, entries, false)      # full detail streams (RemakeDetailStreamer)

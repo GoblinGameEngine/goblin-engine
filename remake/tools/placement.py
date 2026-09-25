@@ -30,6 +30,7 @@ import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 INV = os.path.join(ROOT, "remake", "inventory", "map_inventory.json")
+CINV = os.path.join(ROOT, "remake", "inventory", "coastal_inventory.json")
 BLD = os.path.join(ROOT, "godot_project", "remake", "buildings")
 OUT = os.path.join(ROOT, "godot_project", "remake", "placement.json")
 
@@ -108,6 +109,17 @@ def main():
         fs, fx = (a0 + b0) / 2 - st["s"], (a1 + b1) / 2 - st["x"]
         add(st["id"], st["kind"], st["settlement"], st["s"], st["x"], yaw_facing(fs, fx))
 
+    # the coast's new communities (tools/map_expanded.py --coastal-inventory); over-water ones stand on
+    # the pier deck (the placer puts them on the water level + the deck height, not on the bed)
+    cinv = json.load(open(CINV)) if os.path.exists(CINV) else {"structures": []}
+    for st in cinv["structures"]:
+        (a0, a1), (b0, b1) = st["front_edge"] if st.get("front_edge") else ((st["s"], st["x"]), (st["s"], st["x"] + 1))
+        fs, fx = (a0 + b0) / 2 - st["s"], (a1 + b1) / 2 - st["x"]
+        n = len(out)
+        add(st["id"], st["kind"], st["settlement"], st["s"], st["x"], yaw_facing(fs, fx))
+        if st.get("over_water") and len(out) > n:
+            out[-1]["over_water"] = True
+
     for fm in inv["farmsteads"]:
         parts = {p["part"]: p for p in fm.get("parts", [])}
         house = parts.get("house")
@@ -128,6 +140,18 @@ def main():
 
     with open(OUT, "w") as f:
         json.dump({"structures": out}, f, indent=0)
+    # the walks (boardwalks, piers, docks, wharves, breakwaters, promenades...): CoastalWalks builds
+    # them in the game along their map lines; their record's traits say how
+    walks = []
+    for w in cinv.get("walks", []):
+        rp = os.path.join(ROOT, "remake", "catalog", w["id"] + ".json")
+        tr = json.load(open(rp)).get("traits", {}) if os.path.exists(rp) else {}
+        walks.append({"id": w["id"], "kind": w["kind"], "settlement": w["settlement"], "w": w.get("width_m") or tr.get("width_m") or 4,
+                      "pts": w.get("pts"), "rect": [w["s"], w["x"], w["w"], w["d"]] if "pts" not in w else None,
+                      "traits": {k: tr.get(k) for k in ("deck", "substructure", "rail", "lighting", "benches", "pile_depth_m")}})
+    with open(os.path.join(ROOT, "godot_project", "remake", "walks.json"), "w") as f:
+        json.dump({"walks": walks}, f, indent=0)
+    print(f"walks: {len(walks)}")
     print(f"placement: {len(out)} placed -> {OUT}")
     if missing:
         print(f"not built ({len(missing)}): {' '.join(missing)}", file=sys.stderr)

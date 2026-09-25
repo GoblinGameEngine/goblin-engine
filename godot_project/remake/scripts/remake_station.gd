@@ -66,6 +66,11 @@ func _ready() -> void:
 	add_child(roads)
 	roads.setup()
 	_mark("roads setup")
+	var walks := CoastalWalks.new()
+	walks.name = "Walks"
+	add_child(walks)
+	walks.setup()
+	_mark("walks setup")
 	var cliffs := CliffWalls.new()
 	cliffs.name = "CliffWalls"
 	add_child(cliffs)
@@ -118,6 +123,7 @@ func _watch_load() -> void:
 		"terrain (all tiers)": func() -> bool: return terrain._far_todo.is_empty() and not terrain.busy(),
 		"trees": func() -> bool: return not get_node("Trees").is_processing(),
 		"roads": func() -> bool: return not get_node("Roads").is_processing(),
+		"walks": func() -> bool: return not get_node("Walks").is_processing(),
 		"cliffs": func() -> bool: return (get_node("CliffWalls") as CliffWalls)._todo.is_empty(),
 		"cloud skins": func() -> bool: return (get_node("Clouds") as RemakeClouds)._skin_task == -1,
 		"structures": func() -> bool: return streamer.records.size() > 0,
@@ -198,10 +204,11 @@ func _place_structures() -> void:
 		if r.landmark:
 			landmarks[r.root] = true
 	far_side.add_children_of(world, func(n: Node) -> bool: return landmarks.has(n))
-	while get_node("Trees").is_processing() or get_node("Roads").is_processing():
+	while get_node("Trees").is_processing() or get_node("Roads").is_processing() or get_node("Walks").is_processing():
 		await get_tree().process_frame
 	far_side.add_children_of(get_node("Trees"))
 	far_side.add_children_of(get_node("Roads"))
+	far_side.add_children_of(get_node("Walks"), func(n: Node) -> bool: return n is StaticBody3D)
 	info.erase("records")
 	print("RemakeStation: placed ", info)
 
