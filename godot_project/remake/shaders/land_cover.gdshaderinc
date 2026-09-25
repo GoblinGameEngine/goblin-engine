@@ -12,11 +12,10 @@ const vec3 FIELD[6] = vec3[6](vec3(0.28, 0.45, 0.15), vec3(0.5, 0.6, 0.24), vec3
 	vec3(0.4, 0.58, 0.27), vec3(0.45, 0.53, 0.3), vec3(0.56, 0.53, 0.35));
 const float FIELD_VAR[4] = float[4](0.9, 0.97, 1.03, 1.1);
 
-vec3 cover(vec2 uv) {
-	float s = mod(uv.y * tex_m, circ);
-	float x = uv.x * tex_m + half_len;
+vec3 cover_at(ivec2 p) {
 	ivec2 size = textureSize(landcover, 0);
-	ivec2 p = clamp(ivec2(floor(vec2(s, x) / lc_step)), ivec2(0), size - 1);
+	p.x = (p.x % size.x + size.x) % size.x;              // the ring wraps round in s
+	p.y = clamp(p.y, 0, size.y - 1);
 	vec4 t = texelFetch(landcover, p, 0);
 	int cls = int(round(t.r * 255.0));
 	int g = int(round(t.g * 255.0));
@@ -27,6 +26,16 @@ vec3 cover(vec2 uv) {
 	if (cls == 6) return vec3(0.83, 0.76, 0.58);
 	if (cls == 7) return vec3(0.46, 0.43, 0.39);
 	return GRASS;
+}
+
+vec3 cover(vec2 uv) {
+	// the four nearest cells' colours, blended (a class can't be interpolated, its colour can): edges
+	// soften over a cell instead of stepping
+	vec2 q = vec2(mod(uv.y * tex_m, circ), uv.x * tex_m + half_len) / lc_step - 0.5;
+	ivec2 p = ivec2(floor(q));
+	vec2 f = fract(q);
+	return mix(mix(cover_at(p), cover_at(p + ivec2(1, 0)), f.x),
+		mix(cover_at(p + ivec2(0, 1)), cover_at(p + ivec2(1, 1)), f.x), f.y);
 }
 
 vec3 to_linear(vec3 c) {

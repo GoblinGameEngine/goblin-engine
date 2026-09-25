@@ -57,7 +57,7 @@ static func wrap_ds(ds: float) -> float:
 
 ## The far-side image (remake/farside.png, baked by remake/scenes/FarsideBake.tscn): 1 m / px,
 ## FARSIDE_W m of s across (the circumference, padded), FARSIDE_H m of x down from -FARSIDE_H/2.
-const FARSIDE_W := 19000.0
+const FARSIDE_W := 18944.0         # farside_bake.gd: TILES_S x TILE_M
 const FARSIDE_H := 8192.0
 
 

@@ -1,19 +1,22 @@
 extends Node3D
 
 ## Bakes the far-side image: the finished world seen straight down, unshaded (its surface colours
-## only -- the station lights it at runtime), at 1 m / px over the whole floor:
-##   remake/farside.png, (TILES_S x TILE) x (TILES_X x TILE) px, column = s, row = x + HALF_EXTENT.
+## only -- the station lights it at runtime), at 2 m / px over the whole floor:
+##   remake/farside.webp, (TILES_S x TILE) x (TILES_X x TILE) px, column = s / 2, row = (x + HALF_EXTENT) / 2
+##   (StationGeo.FARSIDE_W x FARSIDE_H m; lossy WebP -- a PNG of it is ~40 MB).
 ## Builds the world like RemakeStation (terrain, water, roads, trees, structures), then renders
-## TILE m x TILE m tiles through an orthographic camera 250 m up, moving the terrain's streaming
+## TILE_M m x TILE_M m tiles through an orthographic camera 250 m up, moving the terrain's streaming
 ## probe to each tile first so its ground is at full detail.  Run:
 ##   godot4 --path . res://remake/scenes/FarsideBake.tscn          (a window; takes a few minutes)
 
-const TILE := 128
-const TILES_S := 25                  # 3,200 m >= the 3,141.6 m circumference (the rest wraps)
-const TILES_X := 24                  # 3,072 m >= the 3,000 m length
-const HALF_EXTENT := 1536.0
+const TILE := 128                    # px per tile
+const TILE_M := 256.0                # m per tile (2 m / px)
+const TILES_S := 74                  # 18,944 m >= the 18,849.6 m circumference (the rest wraps)
+const TILES_X := 32                  # 8,192 m >= the 8,000 m length
+const HALF_EXTENT := 4096.0
 const CAM_H := 250.0
-const OUT := "res://remake/farside.png"
+const OUT := "res://remake/farside.webp"
+const COLS := "user://farside_cols"
 
 var probe: Node3D
 var terrain: MapTerrainMesh
@@ -29,10 +32,7 @@ func _ready() -> void:
 	probe = Node3D.new()
 	add_child(probe)
 	probe.global_position = StationGeo.point(0.0, 0.0, 0.0)
-	var floor_mat := StandardMaterial3D.new()
-	floor_mat.albedo_texture = RemakeStation._neutral_detail("res://assets/textures/grass_tinted.png")
-	floor_mat.vertex_color_use_as_albedo = true
-	floor_mat.vertex_color_is_srgb = true
+	var floor_mat := MapTerrainMesh.make_material(RemakeStation._neutral_detail("res://assets/textures/grass_tinted.png"))
 	terrain = MapTerrainMesh.new()
 	add_child(terrain)
 	terrain.setup(probe, floor_mat)
@@ -61,16 +61,22 @@ func _bake(roads: MapRoads, trees: MapTrees) -> void:
 	add_child(vp)
 	var cam := Camera3D.new()
 	cam.projection = Camera3D.PROJECTION_ORTHOGONAL
-	cam.size = TILE
+	cam.size = TILE_M
 	cam.near = 1.0
 	cam.far = CAM_H + 80.0
 	vp.add_child(cam)
 	var img := Image.create(TILES_S * TILE, TILES_X * TILE, false, Image.FORMAT_RGB8)
 	var t0 := Time.get_ticks_msec()
+	# each finished column is kept (user://farside_cols/), so an interrupted bake resumes where it stopped
+	DirAccess.make_dir_recursive_absolute(COLS)
 	for ts in TILES_S:
+		var col_path := COLS + "/col_%02d.png" % ts
+		if FileAccess.file_exists(col_path):
+			img.blit_rect(Image.load_from_file(col_path), Rect2i(0, 0, TILE, TILES_X * TILE), Vector2i(ts * TILE, 0))
+			continue
 		for tx in TILES_X:
-			var s := (ts + 0.5) * TILE
-			var x := -HALF_EXTENT + (tx + 0.5) * TILE
+			var s := (ts + 0.5) * TILE_M
+			var x := -HALF_EXTENT + (tx + 0.5) * TILE_M
 			# the ground under the tile at full detail first
 			probe.global_position = StationGeo.point(s, x, 0.0)
 			terrain._update()
@@ -85,7 +91,10 @@ func _bake(roads: MapRoads, trees: MapTrees) -> void:
 			var tile := vp.get_texture().get_image()
 			tile.convert(Image.FORMAT_RGB8)
 			img.blit_rect(tile, Rect2i(0, 0, TILE, TILE), Vector2i(ts * TILE, tx * TILE))
+		img.get_region(Rect2i(ts * TILE, 0, TILE, TILES_X * TILE)).save_png(col_path)
 		print("farside bake: column %d/%d  %.0f s" % [ts + 1, TILES_S, (Time.get_ticks_msec() - t0) / 1000.0])
-	img.save_png(ProjectSettings.globalize_path(OUT))
+	img.save_webp(ProjectSettings.globalize_path(OUT), true, 0.9)
 	print("FARSIDE_BAKED ", OUT, " ", img.get_size())
+	for f in DirAccess.get_files_at(COLS):
+		DirAccess.remove_absolute(COLS + "/" + f)
 	get_tree().quit()

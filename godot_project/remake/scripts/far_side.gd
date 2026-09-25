@@ -9,7 +9,7 @@ class_name RemakeFarSide
 ## landmarks (spires, elevators, towers, silos -- what shows at that range) keep their own far
 ## versions.  Checked every CHECK s with HYST m of hysteresis.
 
-const FLAT_ARC := 1.0e9              # off until farside.png is re-baked for the 3 km ring (then ~1,500 m of arc)
+const FLAT_ARC := 1500.0             # m of arc round the ring: beyond it the far side is the flat baked image
 const HYST := 30.0
 const CHECK := 0.25
 
