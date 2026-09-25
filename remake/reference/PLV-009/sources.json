@@ -1,0 +1,27 @@
+{
+ "structure": "PLV-009",
+ "files": [
+  {
+   "file": "commons_Jet_Inn_4542_Slauson_Avenue_Los_Angeles_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Jet_Inn,_4542_Slauson_Avenue,_Los_Angeles_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Jet_Inn%2C_4542_Slauson_Avenue%2C_Los_Angeles_2.jpg/1920px-Jet_Inn%2C_4542_Slauson_Avenue%2C_Los_Angeles_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Jet Inn, 4542 Slauson Avenue, Los Angeles 2.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Downtowngal",
+   "caption": "Jet Inn, 4542 Slauson Avenue, Los Angeles.  Name is a pun because the motel is near the airport where you \"jet in.\""
+  },
+  {
+   "file": "commons_Jet_Inn_4542_Slauson_Avenue_Los_Angeles.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Jet_Inn,_4542_Slauson_Avenue,_Los_Angeles.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Jet_Inn%2C_4542_Slauson_Avenue%2C_Los_Angeles.jpg/1920px-Jet_Inn%2C_4542_Slauson_Avenue%2C_Los_Angeles.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Jet Inn, 4542 Slauson Avenue, Los Angeles.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Downtowngal",
+   "caption": "Jet Inn, 4542 Slauson Avenue, Los Angeles. Name is a pun because the motel is near the airport where you \"jet in.\""
+  }
+ ]
+}
