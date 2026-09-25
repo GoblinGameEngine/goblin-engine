@@ -1,0 +1,27 @@
+{
+ "structure": "OCV-017",
+ "files": [
+  {
+   "file": "commons_Cannery_Row_Monterey_8_2017-11-21.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cannery_Row,_Monterey_8_2017-11-21.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Cannery_Row%2C_Monterey_8_2017-11-21.jpg/1920px-Cannery_Row%2C_Monterey_8_2017-11-21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cannery Row, Monterey 8 2017-11-21.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "FASTILY",
+   "caption": "Cannery Row, Monterey"
+  },
+  {
+   "file": "commons_Cannery_Row_Monterey_-_DSC06785.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Cannery_Row,_Monterey_-_DSC06785.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Cannery_Row%2C_Monterey_-_DSC06785.JPG/1920px-Cannery_Row%2C_Monterey_-_DSC06785.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Cannery Row, Monterey - DSC06785.JPG",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Daderot",
+   "caption": "Cannery Row - Monterey, California, USA."
+  }
+ ]
+}

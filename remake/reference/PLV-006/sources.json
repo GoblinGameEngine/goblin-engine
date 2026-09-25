@@ -1,0 +1,38 @@
+{
+ "structure": "PLV-006",
+ "files": [
+  {
+   "file": "commons_San_Diego_County_CA_USA_-_panoramio_10_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Diego_County,_CA,_USA_-_panoramio_(10).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/San_Diego_County%2C_CA%2C_USA_-_panoramio_%2810%29.jpg/1920px-San_Diego_County%2C_CA%2C_USA_-_panoramio_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Diego County, CA, USA - panoramio (10).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "San Diego County, CA, USA"
+  },
+  {
+   "file": "commons_San_Diego_County_CA_USA_-_panoramio_11_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Diego_County,_CA,_USA_-_panoramio_(11).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/San_Diego_County%2C_CA%2C_USA_-_panoramio_%2811%29.jpg/1920px-San_Diego_County%2C_CA%2C_USA_-_panoramio_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Diego County, CA, USA - panoramio (11).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "San Diego County, CA, USA"
+  },
+  {
+   "file": "commons_San_Diego_County_CA_USA_-_panoramio_12_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Diego_County,_CA,_USA_-_panoramio_(12).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/San_Diego_County%2C_CA%2C_USA_-_panoramio_%2812%29.jpg/1920px-San_Diego_County%2C_CA%2C_USA_-_panoramio_%2812%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Diego County, CA, USA - panoramio (12).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "San Diego County, CA, USA"
+  }
+ ]
+}

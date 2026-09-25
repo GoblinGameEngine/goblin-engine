@@ -1,0 +1,38 @@
+{
+ "structure": "OCV-015",
+ "files": [
+  {
+   "file": "commons_Long_Beach_Los_Angeles_USA_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Long_Beach_(Los_Angeles,_USA).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Long_Beach_%28Los_Angeles%2C_USA%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Long Beach (Los Angeles, USA).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.5",
+   "author": "Christophe.Finot",
+   "caption": "Long Beach, California, United-States."
+  },
+  {
+   "file": "commons_Long_Beach_05.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Long_Beach_05.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Long_Beach_05.jpg/1920px-Long_Beach_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Long Beach 05.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.5",
+   "author": "Christophe.Finot",
+   "caption": "Long Beach, California, United-States."
+  },
+  {
+   "file": "commons_Hyatt_Rengency_Hotel_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Hyatt_Rengency_Hotel_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Hyatt_Rengency_Hotel_-_panoramio.jpg/1920px-Hyatt_Rengency_Hotel_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Hyatt Rengency Hotel - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Clotee Pridgen Alloc\u2026",
+   "caption": "Hyatt Rengency Hotel"
+  }
+ ]
+}

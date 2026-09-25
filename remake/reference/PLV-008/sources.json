@@ -1,0 +1,27 @@
+{
+ "structure": "PLV-008",
+ "files": [
+  {
+   "file": "commons_San_Diego-Carlsbad-San_Marcos_CA_CA_USA_-_panoramio_10_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Diego-Carlsbad-San_Marcos,_CA,_CA,_USA_-_panoramio_(10).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/San_Diego-Carlsbad-San_Marcos%2C_CA%2C_CA%2C_USA_-_panoramio_%2810%29.jpg/1920px-San_Diego-Carlsbad-San_Marcos%2C_CA%2C_CA%2C_USA_-_panoramio_%2810%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Diego-Carlsbad-San Marcos, CA, CA, USA - panoramio (10).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "San Diego-Carlsbad-San Marcos, CA, CA, USA"
+  },
+  {
+   "file": "commons_San_Diego_County_CA_USA_-_panoramio_43_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:San_Diego_County,_CA,_USA_-_panoramio_(43).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/San_Diego_County%2C_CA%2C_USA_-_panoramio_%2843%29.jpg/1920px-San_Diego_County%2C_CA%2C_USA_-_panoramio_%2843%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:San Diego County, CA, USA - panoramio (43).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "San Diego County, CA, USA"
+  }
+ ]
+}

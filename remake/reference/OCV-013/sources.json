@@ -1,0 +1,27 @@
+{
+ "structure": "OCV-013",
+ "files": [
+  {
+   "file": "commons_Four_Seasons_Westlake_Village_2013_Front.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Four_Seasons_Westlake_Village_2013_Front.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Four_Seasons_Westlake_Village_2013_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Four Seasons Westlake Village 2013 Front.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Patrick Pelletier",
+   "caption": "Main entrance of the Four Seasons hotel in Westlake Village, California."
+  },
+  {
+   "file": "commons_Four_Seasons_Westlake_Village_2013_Hallway.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Four_Seasons_Westlake_Village_2013_Hallway.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Four_Seasons_Westlake_Village_2013_Hallway.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Four Seasons Westlake Village 2013 Hallway.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Patrick Pelletier",
+   "caption": "Main ground-floor corridor at the Four Seasons hotel in Westlake Village, California."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "PLV-013",
+ "files": [
+  {
+   "file": "commons_Pizza_Port_Carlsbad.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pizza_Port_Carlsbad.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Pizza_Port_Carlsbad.jpg/1920px-Pizza_Port_Carlsbad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pizza Port Carlsbad.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Bovlb",
+   "caption": "Pizza Port's restaurant in Carlsbad."
+  },
+  {
+   "file": "commons_Pizza_Port_Carlsbad_2.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pizza_Port_Carlsbad_2.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Pizza_Port_Carlsbad_2.jpg/1920px-Pizza_Port_Carlsbad_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pizza Port Carlsbad 2.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Bovlb",
+   "caption": "Pizza Port's liquor store in Carlsbad."
+  }
+ ]
+}
