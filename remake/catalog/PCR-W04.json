@@ -1,0 +1,33 @@
+{
+ "id": "PCR-W04",
+ "settlement": "Port Carrow",
+ "kind": "wharf",
+ "coast": "east",
+ "walk": {
+  "width_m": 20,
+  "length_m": 206.0
+ },
+ "example": {
+  "title": "Old North Wharf, Nantucket",
+  "place": "Nantucket, MA",
+  "year": 1975,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Nantucket_harbor,_Old_North_Wharf,_wharf_shack,_MA,_USA_01.JPG",
+  "photos": [
+   "commons_Nantucket_harbor_Old_North_Wharf_wharf_shack_MA_USA_01.JPG"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour wharf: old north wharf, nantucket, a plank or concrete deck on pile bents with bollards and boats alongside. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 20,
+  "pile_depth_m": 10.0,
+  "year_built": 1975
+ },
+ "names": {}
+}

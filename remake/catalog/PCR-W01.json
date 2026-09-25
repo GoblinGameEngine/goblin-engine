@@ -1,0 +1,35 @@
+{
+ "id": "PCR-W01",
+ "settlement": "Port Carrow",
+ "kind": "promenade",
+ "coast": "east",
+ "walk": {
+  "width_m": 8,
+  "length_m": 574.9
+ },
+ "example": {
+  "title": "Waterfront Park promenade, Charleston (1990)",
+  "place": "Charleston, Charleston County, SC",
+  "year": 1990,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Waterfront_Park_(Charleston)_04.JPG",
+  "photos": [
+   "commons_Waterfront_Park_Charleston_04.JPG",
+   "commons_Waterfront_Park_Charleston_02.JPG",
+   "commons_Pineapple_fountain_Waterfront_Park_Charleston.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The 1990 harbour promenade: a wide walk along the Cooper River with a timber pier deck and swings, iron benches, lamp posts, lawns, oaks and the pineapple fountain. Three photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "ornamental_iron",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 8,
+  "pile_depth_m": 10.0,
+  "year_built": 1990
+ },
+ "names": {}
+}

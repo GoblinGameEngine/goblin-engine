@@ -1,0 +1,49 @@
+{
+ "structure": "PCR-053",
+ "files": [
+  {
+   "file": "commons_80_Meeting_St.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:80_Meeting_St.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/80_Meeting_St.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:80 Meeting St.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "ProfReader",
+   "caption": "St. Michael's Episcopal Church is located at 80 Meeting St., Charleston, South Carolina."
+  },
+  {
+   "file": "commons_Charleston_-_St._Michael_s_Church_2022_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_-_St._Michael%27s_Church_(2022).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Charleston_-_St._Michael%27s_Church_%282022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Charleston - St. Michael's Church (2022).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "P. Hughes",
+   "caption": "St. Michael's Church, Charleston, South Carolina"
+  },
+  {
+   "file": "commons_Charleston_SC_USA_-_panoramio_-_Tom_Key_13_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston,_SC,_USA_-_panoramio_-_Tom_Key_(13).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Charleston%2C_SC%2C_USA_-_panoramio_-_Tom_Key_%2813%29.jpg/1920px-Charleston%2C_SC%2C_USA_-_panoramio_-_Tom_Key_%2813%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Charleston, SC, USA - panoramio - Tom Key (13).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Tom Key",
+   "caption": "Charleston, SC, USA"
+  },
+  {
+   "file": "commons_St._Michael_s_Episcopal_Church_French_Quarter_Charleston_SC_49451726488_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:St._Michael%27s_Episcopal_Church,_French_Quarter,_Charleston,_SC_(49451726488).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/St._Michael%27s_Episcopal_Church%2C_French_Quarter%2C_Charleston%2C_SC_%2849451726488%29.jpg/1920px-St._Michael%27s_Episcopal_Church%2C_French_Quarter%2C_Charleston%2C_SC_%2849451726488%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:St. Michael's Episcopal Church, French Quarter, Charleston, SC (49451726488).jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Warren LeMay from Covington, KY, United States",
+   "caption": "St. Michael's Episcopal Church, French Quarter, Charleston, SC"
+  }
+ ]
+}

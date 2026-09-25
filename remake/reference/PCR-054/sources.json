@@ -1,0 +1,38 @@
+{
+ "structure": "PCR-054",
+ "files": [
+  {
+   "file": "commons_Charleston_City_Market_in_Charleston_SC.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_City_Market_in_Charleston,_SC.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Charleston_City_Market_in_Charleston%2C_SC.jpg/1920px-Charleston_City_Market_in_Charleston%2C_SC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Charleston City Market in Charleston, SC.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Mollz03",
+   "caption": "Rafters in historic downtown Charleston City Market in Charleston, SC"
+  },
+  {
+   "file": "commons_Charleston_-_The_Old_Market_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_-_The_Old_Market_03.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Charleston_-_The_Old_Market_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Charleston - The Old Market 03.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "E. C. Kropp Co., Milwaukee",
+   "caption": "Photomechanical print (postcard)\u00a0: halftone, tinted \nDivided back"
+  },
+  {
+   "file": "commons_Market-hall-charleston-sc1.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Market-hall-charleston-sc1.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Market-hall-charleston-sc1.jpg/1920px-Market-hall-charleston-sc1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Market-hall-charleston-sc1.jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Brian Stansberry",
+   "caption": "Market Hall in Charleston, South Carolina, USA."
+  }
+ ]
+}

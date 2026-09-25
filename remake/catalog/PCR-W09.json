@@ -1,0 +1,33 @@
+{
+ "id": "PCR-W09",
+ "settlement": "Port Carrow",
+ "kind": "wharf",
+ "coast": "east",
+ "walk": {
+  "width_m": 26,
+  "length_m": 286.0
+ },
+ "example": {
+  "title": "Downtown Beaufort marina wharf",
+  "place": "Beaufort, SC",
+  "year": 1980,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:The_downtown_Beaufor_Marina_(5072163729).jpg",
+  "photos": [
+   "commons_The_downtown_Beaufor_Marina_5072163729_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour wharf: downtown beaufort marina wharf, a plank or concrete deck on pile bents with bollards and boats alongside. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 26,
+  "pile_depth_m": 10.0,
+  "year_built": 1980
+ },
+ "names": {}
+}

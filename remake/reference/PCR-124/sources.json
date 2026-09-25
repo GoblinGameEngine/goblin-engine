@@ -1,0 +1,38 @@
+{
+ "structure": "PCR-124",
+ "files": [
+  {
+   "file": "commons_Charleston_-_Huguenot_Church_2022_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_-_Huguenot_Church_(2022).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Charleston_-_Huguenot_Church_%282022%29.jpg/1920px-Charleston_-_Huguenot_Church_%282022%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Charleston - Huguenot Church (2022).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "P. Hughes",
+   "caption": "Huguenot Church, Charleston, South Carolina"
+  },
+  {
+   "file": "commons_Charleston_-_Huguenot_Church.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_-_Huguenot_Church.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Charleston_-_Huguenot_Church.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Charleston - Huguenot Church.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "S. H. Kress &amp; Co. (publisher)",
+   "caption": "Photomechanical print (postcard) \nDivided back"
+  },
+  {
+   "file": "commons_Huguenot_Church_Charleston_June_2025.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Huguenot_Church,_Charleston,_June_2025.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Huguenot_Church%2C_Charleston%2C_June_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Huguenot Church, Charleston, June 2025.jpg",
+   "kind": "photo",
+   "license": "CC BY 4.0",
+   "author": "Pbritti",
+   "caption": "The Huguenot Church in Charleston, South Carolina, in June 2025"
+  }
+ ]
+}

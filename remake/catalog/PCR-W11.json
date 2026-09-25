@@ -1,0 +1,33 @@
+{
+ "id": "PCR-W11",
+ "settlement": "Port Carrow",
+ "kind": "pier",
+ "coast": "east",
+ "walk": {
+  "width_m": 7,
+  "length_m": 250.0
+ },
+ "example": {
+  "title": "MacMillan Pier (fishing pier), Provincetown",
+  "place": "Provincetown, Barnstable County, MA",
+  "year": 2000,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Provincetown,_MA_fishing_pier_(14278958196).jpg",
+  "photos": [
+   "commons_Provincetown_MA_fishing_pier_14278958196_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A long concrete-decked town pier with fishing boats, a harbourmaster's building and a rail, the fishermen's-memorial sign at its foot. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 7,
+  "pile_depth_m": 10.0,
+  "year_built": 2000
+ },
+ "names": {}
+}

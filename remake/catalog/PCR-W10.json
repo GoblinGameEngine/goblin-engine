@@ -1,0 +1,33 @@
+{
+ "id": "PCR-W10",
+ "settlement": "Port Carrow",
+ "kind": "wharf",
+ "coast": "east",
+ "walk": {
+  "width_m": 12,
+  "length_m": 96.0
+ },
+ "example": {
+  "title": "Bald Head Island harbour wharf",
+  "place": "Bald Head Island, NC",
+  "year": 1985,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Bald_Head_Island_NC_-_Harbor_-_panoramio_(3).jpg",
+  "photos": [
+   "commons_Bald_Head_Island_NC_-_Harbor_-_panoramio_3_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour wharf: bald head island harbour wharf, a plank or concrete deck on pile bents with bollards and boats alongside. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 12,
+  "pile_depth_m": 10.0,
+  "year_built": 1985
+ },
+ "names": {}
+}

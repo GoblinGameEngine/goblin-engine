@@ -1,0 +1,38 @@
+{
+ "structure": "PCR-W01",
+ "files": [
+  {
+   "file": "commons_Waterfront_Park_Charleston_04.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Waterfront_Park_(Charleston)_04.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Waterfront_Park_%28Charleston%29_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Waterfront Park (Charleston) 04.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Elisa.rolle",
+   "caption": "Waterfront Park (Charleston)"
+  },
+  {
+   "file": "commons_Waterfront_Park_Charleston_02.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Waterfront_Park_(Charleston)_02.JPG",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Waterfront_Park_%28Charleston%29_02.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Waterfront Park (Charleston) 02.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Elisa.rolle",
+   "caption": "Waterfront Park (Charleston)"
+  },
+  {
+   "file": "commons_Pineapple_fountain_Waterfront_Park_Charleston.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Pineapple_fountain_Waterfront_Park,_Charleston.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Pineapple_fountain_Waterfront_Park%2C_Charleston.jpg/1920px-Pineapple_fountain_Waterfront_Park%2C_Charleston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Pineapple fountain Waterfront Park, Charleston.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Michael Rivera",
+   "caption": "Waterfront Park, Charleston, Charleston County, South Carolina"
+  }
+ ]
+}

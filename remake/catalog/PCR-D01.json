@@ -1,0 +1,34 @@
+{
+ "id": "PCR-D01",
+ "settlement": "Port Carrow",
+ "kind": "deck_deck",
+ "coast": "east",
+ "lot": {
+  "w": 28.0,
+  "d": 12.0
+ },
+ "example": {
+  "title": "End of MacMillan Pier, Provincetown (aerial)",
+  "place": "Provincetown, Barnstable County, MA",
+  "year": 2000,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Harbor_at_Provincetown.jpg",
+  "photos": [
+   "commons_Harbor_at_Provincetown.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The wide head of a harbour pier with ferry berths and boats round it, seen from the monument. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 34.0,
+  "pile_depth_m": 10.0,
+  "year_built": 2000,
+  "platform": true
+ },
+ "names": {}
+}

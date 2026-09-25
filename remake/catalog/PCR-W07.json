@@ -1,0 +1,33 @@
+{
+ "id": "PCR-W07",
+ "settlement": "Port Carrow",
+ "kind": "wharf",
+ "coast": "east",
+ "walk": {
+  "width_m": 20,
+  "length_m": 176.0
+ },
+ "example": {
+  "title": "Wharf pier lights, Provincetown",
+  "place": "Provincetown, MA",
+  "year": 1950,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Wharf_-_Provincetown,_Massachusetts,_USA_-_August_13,_2015_-_panoramio_(1).jpg",
+  "photos": [
+   "commons_Wharf_-_Provincetown_Massachusetts_USA_-_August_13_2015_-_panoramio_1_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A harbour wharf: wharf pier lights, provincetown, a plank or concrete deck on pile bents with bollards and boats alongside. One photo. Older than 1970. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "timber_plank",
+  "substructure": "timber_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 20,
+  "pile_depth_m": 10.0,
+  "year_built": 1950
+ },
+ "names": {}
+}

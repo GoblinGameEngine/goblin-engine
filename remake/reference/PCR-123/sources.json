@@ -1,0 +1,27 @@
+{
+ "structure": "PCR-123",
+ "files": [
+  {
+   "file": "commons_Charleston_-_Circular_Congregational_Church_-_20170609093811.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_-_Circular_Congregational_Church_-_20170609093811.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Charleston_-_Circular_Congregational_Church_-_20170609093811.jpg/1920px-Charleston_-_Circular_Congregational_Church_-_20170609093811.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Charleston - Circular Congregational Church - 20170609093811.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Masawchak",
+   "caption": "Charleston, Circular Congregational Church."
+  },
+  {
+   "file": "commons_Charleston_-_Circular_Congregational_Church.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Charleston_-_Circular_Congregational_Church.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Charleston_-_Circular_Congregational_Church.jpg/1920px-Charleston_-_Circular_Congregational_Church.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Charleston - Circular Congregational Church.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "P. Hughes",
+   "caption": "Circular Congregational Church, Charleston, South Carolina"
+  }
+ ]
+}
