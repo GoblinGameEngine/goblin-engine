@@ -1,0 +1,27 @@
+{
+ "structure": "SOL-006",
+ "files": [
+  {
+   "file": "commons_Bella_Terra_Huntington_Beach.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Bella_Terra_Huntington_Beach.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Bella_Terra_Huntington_Beach.JPG/1920px-Bella_Terra_Huntington_Beach.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Bella Terra Huntington Beach.JPG",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "MattL90",
+   "caption": "Bella Terra mall in Huntington Beach, CA."
+  },
+  {
+   "file": "commons_BellaterraCA.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:BellaterraCA.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/BellaterraCA.jpg/1920px-BellaterraCA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:BellaterraCA.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Kennethshoe",
+   "caption": "Bella Terra, shopping center in Huntington Beach, California"
+  }
+ ]
+}

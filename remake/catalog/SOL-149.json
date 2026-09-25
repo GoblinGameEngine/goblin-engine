@@ -1,0 +1,46 @@
+{
+ "id": "SOL-149",
+ "settlement": "Solana Point",
+ "kind": "restaurant",
+ "coast": "west",
+ "lot": {
+  "w": 24.0,
+  "d": 12.0
+ },
+ "example": {
+  "title": "Waterfront crab-shack restaurant on pilings over the bay (Joe's Crab Shack, Newport Beach)",
+  "place": "Newport Beach, Orange County, CA",
+  "year": 1975,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Joe's_Crab_Shack_in_Newport_Beach,_California_2017.jpg",
+  "photos": [
+   "commons_Joe_s_Crab_Shack_in_Newport_Beach_California_2017.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A waterfront seafood restaurant built out on timber piles over the bay (opened in the 1970s as a harbourside restaurant, re-themed as a crab shack in the 2000s): a long single-storey shed of weathered grey board siding under a low gable of rusty corrugated metal, a huge red neon-style sign letter by letter along the fascia, painted shark and hand-lettered boards ('FREE CRAB TOMORROW'), a railed deck and entry ramp, lamp posts, palms. One photo. Piles carried 10 m below the bed (spec rule 4).",
+ "traits": {
+  "storeys": 1,
+  "deck": true,
+  "walls": "frame",
+  "roof": "gable_metal",
+  "on_pilings": true,
+  "pile_depth_m": 10.0,
+  "year_built": 1975,
+  "colors": {
+   "body": "#8C8A84",
+   "trim": "#5A4636",
+   "accent": "#D7262B",
+   "roof": "#8A5A3C"
+  }
+ },
+ "names": {
+  "name": "Solana Pier Crab House",
+  "sign": "EAT AT THE CRAB HOUSE",
+  "extra_signs": [
+   "FREE CRAB TOMORROW",
+   "Buckets \u00b7 Beer \u00b7 Sunsets"
+  ]
+ },
+ "label": "Solana Pier"
+}
