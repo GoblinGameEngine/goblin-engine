@@ -21,14 +21,16 @@ class_name RemakeClouds
 ## Positions are a fixed-seed hash, so the same sky comes back every launch.
 
 const LOW_COUNT := 160                # per layer: sparse over the 3 km x 8 km floor
-## cumulus layers: [base, top, wind m/s east] -- each its own node turning at its own wind
-const LOW_LAYERS := [[200.0, 300.0, 4.0], [500.0, 600.0, 5.0], [900.0, 1000.0, 6.0], [1400.0, 1500.0, 7.0],
-	[2000.0, 2100.0, 8.0]]
+## cumulus layers: [base, lowest top, wind m/s east, size] -- each its own node turning at its own
+## wind; the clouds grow with height (size scales a cloud's length, and its puffs with it)
+const LOW_LAYERS := [[200.0, 300.0, 4.0, 2.0], [500.0, 600.0, 5.0, 2.75], [900.0, 1000.0, 6.0, 3.5],
+	[1400.0, 1500.0, 7.0, 4.25], [2000.0, 2100.0, 8.0, 5.0]]
 const CIRRUS_ROWS := 24              # the cirrus shell: bands along the axis ...
 const CIRRUS_COLS := 6               # ... by slots round it, one jittered ribbon each
 const CIRRUS_H := StationGeo.R - StationGeo.SHAFT_R - 50.0   # 50 m off the central shaft
-## cirrus shells: [height, wind m/s east] -- the top one hugging the shaft, two more below it
-const CIRRUS_SHELLS := [[CIRRUS_H, 0.6], [CIRRUS_H - 150.0, 0.8], [CIRRUS_H - 300.0, 1.0]]
+## cirrus shells: [height, wind m/s east, size] -- the top one hugging the shaft, two more below it;
+## bigger the higher they are (size scales a ribbon's width and its span round the axis)
+const CIRRUS_SHELLS := [[CIRRUS_H, 0.6, 3.0], [CIRRUS_H - 150.0, 0.8, 2.5], [CIRRUS_H - 300.0, 1.0, 2.0]]
 const END_CLEAR := 40.0              # m kept between a cloud and an end cap
 const SEED := 20260924
 
@@ -61,7 +63,7 @@ func setup(p_target: Node3D, p_env: Environment) -> void:
 		var top_: float = LOW_LAYERS[li][1]
 		_low_layers.append([lay, LOW_LAYERS[li][2] / (StationGeo.R - (base + top_) * 0.5)])
 		for i in LOW_COUNT:
-			_low.append(_make_cumulus(li * LOW_COUNT + i, lay, base, top_))
+			_low.append(_make_cumulus(li * LOW_COUNT + i, lay, base, top_, LOW_LAYERS[li][3]))
 	for si in CIRRUS_SHELLS.size():
 		var lay := Node3D.new()
 		lay.name = "Cirrus_%d" % si
@@ -70,7 +72,7 @@ func setup(p_target: Node3D, p_env: Environment) -> void:
 		var hh: float = CIRRUS_SHELLS[si][0]
 		_high_layers.append([lay, CIRRUS_SHELLS[si][1] / (StationGeo.R - hh)])
 		for row in CIRRUS_ROWS:
-			_make_cirrus_band(row, lay, hh)
+			_make_cirrus_band(row, lay, hh, CIRRUS_SHELLS[si][2])
 	var all_puffs := []
 	for c in _low:
 		all_puffs.append(c.puffs)
@@ -79,10 +81,10 @@ func setup(p_target: Node3D, p_env: Environment) -> void:
 
 
 # ------------------------------------------------------------------ low cumulus
-func _make_cumulus(i: int, layer: Node3D, base: float, top_h: float) -> Dictionary:
+func _make_cumulus(i: int, layer: Node3D, base: float, top_h: float, size: float) -> Dictionary:
 	# simple on purpose: a row of 2-4 big puffs along its length (local x, turned to run with the
 	# wind round the ring) and a few smaller heads on top, all pressed flat underneath
-	var length := _rng.randf_range(45.0, 110.0)
+	var length := _rng.randf_range(45.0, 110.0) * size
 	var puffs := []
 	var n_base := clampi(roundi(length / 30.0), 2, 4)
 	var r0 := length / (n_base + 1.0)
@@ -198,7 +200,7 @@ func _make_skins(all_puffs: Array) -> void:
 
 
 # ------------------------------------------------------------------ high cirrus
-func _make_cirrus_band(row: int, layer: Node3D, height: float) -> void:
+func _make_cirrus_band(row: int, layer: Node3D, height: float, size: float) -> void:
 	## One band of the shell along the axis: CIRRUS_COLS ribbons round it, each on the cylinder
 	## CIRRUS_H up -- its span round the axis, its width along it -- in one mesh (UV2.x: the
 	## ribbon's seed for the shader's wisps).
@@ -209,9 +211,9 @@ func _make_cirrus_band(row: int, layer: Node3D, height: float) -> void:
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var n := 24
 	for col in CIRRUS_COLS:
-		var span := _rng.randf_range(0.45, 1.2)             # radians: 45-120 m of arc
+		var span := minf(_rng.randf_range(0.45, 1.2) * size, 3.0)   # radians round the axis
 		var th0 := TAU * (col + _rng.randf_range(0.15, 0.85)) / CIRRUS_COLS + row * 0.37
-		var width := _rng.randf_range(25.0, 60.0)
+		var width := minf(_rng.randf_range(25.0, 60.0) * size, band * 0.9)
 		var skew := _rng.randf_range(-0.3, 0.3) * width    # wisps lie a little aslant the wind
 		var xc := x0 + width * 0.5 + absf(skew) * 0.5 + _rng.randf() * maxf(0.0, band - width - absf(skew))
 		var seed := _rng.randf() * 50.0
