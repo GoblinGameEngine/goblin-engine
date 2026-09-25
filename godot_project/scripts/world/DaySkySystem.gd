@@ -11,7 +11,7 @@ class_name DaySkySystem
 # time_of_day: 0=midnight, 0.25=dawn ends/full day begins, 0.75=day ends/
 # dusk begins, wraps at 1.0.
 
-static var DAY_LENGTH_SECONDS := 600.0  # live-tunable, e.g. gcmd.py run "DaySkySystem.DAY_LENGTH_SECONDS = 120.0"
+static var DAY_LENGTH_SECONDS := 2880.0  # 24 in-game hours: 1 hour every 2 real minutes (user). Live-tunable, e.g. gcmd.py run "DaySkySystem.DAY_LENGTH_SECONDS = 120.0"
 static var lamp_light_on: bool = false  # read by StreetFurniture.gd when a NEW lamp post spawns, so it starts in the right state
 
 const SKY_DAY_TEX := preload("res://assets/textures/sky_day.png")

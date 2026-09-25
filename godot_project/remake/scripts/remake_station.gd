@@ -95,7 +95,11 @@ func _ready() -> void:
 	var clouds := RemakeClouds.new()
 	clouds.name = "Clouds"
 	add_child(clouds)
-	clouds.setup(player.get_node("Head/Camera3D"), environment)
+	clouds.setup(player.get_node("Head/Camera3D"), environment, sky_system)
+	var rain := RemakeRain.new()
+	rain.name = "Rain"
+	add_child(rain)
+	rain.setup(player.get_node("Head/Camera3D"), clouds)
 	_mark("clouds setup")
 	world = Node3D.new()
 	world.name = "World"
