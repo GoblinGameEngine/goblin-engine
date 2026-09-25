@@ -1,0 +1,49 @@
+{
+ "structure": "SOL-W01",
+ "files": [
+  {
+   "file": "commons_Drone_view_of_the_pier_Unsplash_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Drone_view_of_the_pier_(Unsplash).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Drone_view_of_the_pier_%28Unsplash%29.jpg/1920px-Drone_view_of_the_pier_%28Unsplash%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Drone view of the pier (Unsplash).jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Renato Sanchez Lozada renato___o",
+   "caption": "Huntington Beach, United States"
+  },
+  {
+   "file": "commons_HBMunicipalPier_012020.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:HBMunicipalPier_012020.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/HBMunicipalPier_012020.jpg/1920px-HBMunicipalPier_012020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:HBMunicipalPier 012020.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "WGilmerPhotographs",
+   "caption": "\n\n\n\n\nThis is an image of a place or building that is listed on the National Register of Historic Places in the United States of America. Its reference number is 89001203 (Wikidata).\n\n"
+  },
+  {
+   "file": "commons_HB_Pier_by_Don_Ramey_Logan.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:HB_Pier_by_Don_Ramey_Logan.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/HB_Pier_by_Don_Ramey_Logan.jpg/1920px-HB_Pier_by_Don_Ramey_Logan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:HB Pier by Don Ramey Logan.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "WPPilot",
+   "caption": "HB Pier by Don Ramey Logan"
+  },
+  {
+   "file": "commons_HBMunicipalPier_042020.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:HBMunicipalPier_042020.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/HBMunicipalPier_042020.jpg/1920px-HBMunicipalPier_042020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:HBMunicipalPier 042020.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "WGilmerPhotographs",
+   "caption": "\n\n\n\n\nThis is an image of a place or building that is listed on the National Register of Historic Places in the United States of America. Its reference number is 89001203 (Wikidata).\n\n"
+  }
+ ]
+}

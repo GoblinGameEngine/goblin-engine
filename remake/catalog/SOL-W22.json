@@ -1,0 +1,34 @@
+{
+ "id": "SOL-W22",
+ "settlement": "Solana Point",
+ "kind": "dock",
+ "coast": "west",
+ "walk": {
+  "width_m": 1.5,
+  "length_m": 55.0
+ },
+ "example": {
+  "title": "Dana Point Harbor marina finger dock (view down fairway)",
+  "place": "Dana Point Harbor, Dana Point, Orange County, CA",
+  "year": 1971,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Orange_County_(26252156965).jpg",
+  "photos": [
+   "commons_Orange_County_26252156965_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "One of the marina's floating finger docks (1971): a narrow concrete-pontoon walk 1.5 m wide running out from the main dock between rows of slips, white-hulled sailboats and motor yachts moored either side, cleats and power pedestals, held by round concrete guide piles. One photo; this record is the dock row seen in the view down the fairway (the left-hand dock row). Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "none",
+  "lighting": "none",
+  "benches": false,
+  "width_m": 1.5,
+  "pile_depth_m": 10.0,
+  "year_built": 1971,
+  "floating": true
+ },
+ "names": {}
+}

@@ -8,38 +8,39 @@
   "d": 12.0
  },
  "example": {
-  "title": "Waterfront crab-shack restaurant on pilings over the bay (Joe's Crab Shack, Newport Beach)",
-  "place": "Newport Beach, Orange County, CA",
-  "year": 1975,
+  "title": "Pier-end diner at the end of the Huntington Beach Municipal Pier (built 1992)",
+  "place": "Huntington Beach, Orange County, CA",
+  "year": 1992,
   "source": "Wikimedia Commons",
-  "url": "https://commons.wikimedia.org/wiki/File:Joe's_Crab_Shack_in_Newport_Beach,_California_2017.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Ruby's,_Huntington_Beach_pier,_California.jpg",
   "photos": [
-   "commons_Joe_s_Crab_Shack_in_Newport_Beach_California_2017.jpg"
+   "commons_Ruby_s_Huntington_Beach_pier_California.jpg",
+   "commons_Ruby_s_Diner_Huntington_Beach_at_sunset.jpg",
+   "commons_Ruby_s_Huntington_Beach_California_52002501546_.jpg"
   ],
   "drawings": []
  },
- "brief": "A waterfront seafood restaurant built out on timber piles over the bay (opened in the 1970s as a harbourside restaurant, re-themed as a crab shack in the 2000s): a long single-storey shed of weathered grey board siding under a low gable of rusty corrugated metal, a huge red neon-style sign letter by letter along the fascia, painted shark and hand-lettered boards ('FREE CRAB TOMORROW'), a railed deck and entry ramp, lamp posts, palms. One photo. Piles carried 10 m below the bed (spec rule 4).",
+ "brief": "The 1992 diner at the seaward end of the rebuilt municipal pier: a single-storey octagonal pavilion with a broad dark-red hipped roof crowned by a small octagonal lantern, white-painted walls with teal-framed windows and doors all round, a red neon script sign on the fascia over the door, standing on the widened concrete T-head of the pier among iron lamp standards and white pipe rails. Three photos. Pier piles 10 m below the bed (spec rule 4).",
  "traits": {
   "storeys": 1,
   "deck": true,
-  "walls": "frame",
-  "roof": "gable_metal",
+  "walls": "stucco",
+  "roof": "octagonal_hip",
   "on_pilings": true,
   "pile_depth_m": 10.0,
-  "year_built": 1975,
+  "year_built": 1992,
   "colors": {
-   "body": "#8C8A84",
-   "trim": "#5A4636",
-   "accent": "#D7262B",
-   "roof": "#8A5A3C"
+   "body": "#F3F1EA",
+   "trim": "#1F7F7A",
+   "accent": "#D7263D",
+   "roof": "#8E2A2E"
   }
  },
  "names": {
-  "name": "Solana Pier Crab House",
-  "sign": "EAT AT THE CRAB HOUSE",
+  "name": "Pier's End Diner",
+  "sign": "Pier's End Diner",
   "extra_signs": [
-   "FREE CRAB TOMORROW",
-   "Buckets \u00b7 Beer \u00b7 Sunsets"
+   "Shakes \u00b7 Burgers \u00b7 Breakfast all day"
   ]
  },
  "label": "Solana Pier"

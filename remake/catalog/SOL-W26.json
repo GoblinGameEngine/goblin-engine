@@ -1,0 +1,38 @@
+{
+ "id": "SOL-W26",
+ "settlement": "Solana Point",
+ "kind": "ramp",
+ "coast": "west",
+ "walk": {
+  "width_m": 12,
+  "length_m": 80.0
+ },
+ "example": {
+  "title": "Rio Vista public boat launching facility",
+  "place": "Rio Vista, Solano County, CA",
+  "year": 2010,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Rio_Vista_Public_Boat_Launch_-_August_2025_-_Sarah_Stierch_01.jpg",
+  "photos": [
+   "commons_Rio_Vista_Public_Boat_Launch_-_August_2025_-_Sarah_Stierch_01.jpg",
+   "commons_Rio_Vista_Public_Boat_Launch_-_August_2025_-_Sarah_Stierch_03.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A public boat launch of the 2000s-2010s: a wide concrete launch ramp with grooved surface running down into the water between low rip-rap banks, a floating boarding dock with a chain-link-railed gangway alongside, a stepped concrete path and a cast-concrete sign panel on a river-cobble bed ('Boat launching facility, funded by the Harbors and Watercraft revolving fund'), lamp standards and a parking area. Two photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 12,
+  "pile_depth_m": 10.0,
+  "year_built": 2010,
+  "ramp_lanes": 2,
+  "boarding_dock": true
+ },
+ "names": {
+  "sign": "SOLANA POINT HARBOR \u00b7 PUBLIC LAUNCH RAMP"
+ }
+}

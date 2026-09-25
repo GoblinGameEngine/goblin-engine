@@ -2,15 +2,37 @@
  "structure": "SOL-149",
  "files": [
   {
-   "file": "commons_Joe_s_Crab_Shack_in_Newport_Beach_California_2017.jpg",
+   "file": "commons_Ruby_s_Huntington_Beach_pier_California.jpg",
    "source": "Wikimedia Commons",
-   "record": "https://commons.wikimedia.org/wiki/File:Joe%27s_Crab_Shack_in_Newport_Beach,_California_2017.jpg",
-   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Joe%27s_Crab_Shack_in_Newport_Beach%2C_California_2017.jpg/1920px-Joe%27s_Crab_Shack_in_Newport_Beach%2C_California_2017.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-   "title": "File:Joe's Crab Shack in Newport Beach, California 2017.jpg",
+   "record": "https://commons.wikimedia.org/wiki/File:Ruby%27s,_Huntington_Beach_pier,_California.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ruby%27s%2C_Huntington_Beach_pier%2C_California.jpg/1920px-Ruby%27s%2C_Huntington_Beach_pier%2C_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ruby's, Huntington Beach pier, California.jpg",
    "kind": "photo",
-   "license": "CC BY-SA 2.0",
-   "author": "Brian Sterling",
-   "caption": "Joe's Crab Shack"
+   "license": "CC BY-SA 4.0",
+   "author": "Photograph by Mike Peel (www.mikepeel.net).",
+   "caption": "Ruby's, at the end of Huntington Beach pier, California."
+  },
+  {
+   "file": "commons_Ruby_s_Diner_Huntington_Beach_at_sunset.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ruby%27s_Diner_Huntington_Beach_at_sunset.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Ruby%27s_Diner_Huntington_Beach_at_sunset.jpg/1920px-Ruby%27s_Diner_Huntington_Beach_at_sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ruby's Diner Huntington Beach at sunset.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "0pen$0urce",
+   "caption": "Ruby's Diner Huntington Beach at sunset"
+  },
+  {
+   "file": "commons_Ruby_s_Huntington_Beach_California_52002501546_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ruby%27s,_Huntington_Beach,_California_(52002501546).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ruby%27s%2C_Huntington_Beach%2C_California_%2852002501546%29.jpg/1920px-Ruby%27s%2C_Huntington_Beach%2C_California_%2852002501546%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ruby's, Huntington Beach, California (52002501546).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Chad Davis from Minneapolis, United States",
+   "caption": "The Ruby's on the pier in Huntington Beach."
   }
  ]
 }

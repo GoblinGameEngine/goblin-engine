@@ -1,0 +1,37 @@
+{
+ "id": "SOL-W27",
+ "settlement": "Solana Point",
+ "kind": "pier",
+ "coast": "west",
+ "walk": {
+  "width_m": 5,
+  "length_m": 140.0
+ },
+ "example": {
+  "title": "Dana Point Harbor fishing pier at Baby Beach",
+  "place": "Dana Point Harbor, Dana Point, Orange County, CA",
+  "year": 1971,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Dana_Point_Alt.JPG",
+  "photos": [
+   "commons_Dana_Point_Alt.JPG",
+   "commons_Dana_Point_Harbor.jpg",
+   "commons_Orange_County_25649265733_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "A short T-ended fishing pier into the sheltered harbour beside a small swimming beach: a concrete deck on concrete piles with a plain pipe rail, benches and lamp posts, the replica tall ship moored nearby. Three photos (from the bluffs). Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 5,
+  "pile_depth_m": 10.0,
+  "year_built": 1971
+ },
+ "names": {
+  "sign": "SOLANA POINT FISHING PIER \u00b7 NO SWIMMING OFF PIER"
+ }
+}

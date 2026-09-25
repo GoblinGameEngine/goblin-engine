@@ -1,0 +1,41 @@
+{
+ "id": "SOL-W01",
+ "settlement": "Solana Point",
+ "kind": "pier",
+ "coast": "west",
+ "walk": {
+  "width_m": 9,
+  "length_m": 526.0
+ },
+ "example": {
+  "title": "Huntington Beach Municipal Pier (rebuilt 1992)",
+  "place": "Huntington Beach, Orange County, CA",
+  "year": 1992,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Drone_view_of_the_pier_(Unsplash).jpg",
+  "photos": [
+   "commons_Drone_view_of_the_pier_Unsplash_.jpg",
+   "commons_HBMunicipalPier_012020.jpg",
+   "commons_HB_Pier_by_Don_Ramey_Logan.jpg",
+   "commons_HBMunicipalPier_042020.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The 1,850 ft municipal pier, rebuilt in reinforced concrete in 1992 after the 1988 storm: a straight deck on tall slender concrete pile bents with cross-bracing, a broad concrete deck with white pipe rails and iron lamp standards, small gabled lifeguard and bait kiosks along it, a lifeguard tower midway and a wide octagonal T-head carrying the red-roofed diner at the end; flags and a plaza at the foot. Four photos. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": true,
+  "width_m": 9,
+  "pile_depth_m": 12.0,
+  "year_built": 1992,
+  "deck_height_m": 9.0,
+  "t_head": true
+ },
+ "names": {
+  "sign": "SOLANA POINT MUNICIPAL PIER \u00b7 EST. 1904 \u00b7 REBUILT 1992",
+  "rules": "NO SKATEBOARDS \u00b7 NO BIKES ON PIER"
+ }
+}

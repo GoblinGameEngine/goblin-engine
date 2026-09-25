@@ -1,0 +1,34 @@
+{
+ "id": "SOL-W14",
+ "settlement": "Solana Point",
+ "kind": "dock",
+ "coast": "west",
+ "walk": {
+  "width_m": 3,
+  "length_m": 210.0
+ },
+ "example": {
+  "title": "Dana Point Harbor East Basin main dock",
+  "place": "Dana Point Harbor, Dana Point, Orange County, CA",
+  "year": 1971,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Dana_Point_Harbor_East_Basin.jpg",
+  "photos": [
+   "commons_Dana_Point_Harbor_East_Basin.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The East Basin's main floating dock (1971): a long concrete-pontoon walkway held by guide piles, with short fingers and power pedestals, sport boats and cabin cruisers moored along it. One photo. Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "none",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 3,
+  "pile_depth_m": 10.0,
+  "year_built": 1971,
+  "floating": true
+ },
+ "names": {}
+}

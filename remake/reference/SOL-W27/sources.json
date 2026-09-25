@@ -1,0 +1,38 @@
+{
+ "structure": "SOL-W27",
+ "files": [
+  {
+   "file": "commons_Dana_Point_Alt.JPG",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dana_Point_Alt.JPG",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Dana_Point_Alt.JPG/1920px-Dana_Point_Alt.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dana Point Alt.JPG",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "",
+   "caption": ""
+  },
+  {
+   "file": "commons_Dana_Point_Harbor.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dana_Point_Harbor.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Dana_Point_Harbor.jpg/1920px-Dana_Point_Harbor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dana Point Harbor.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 2.0",
+   "author": "Tracie Hall",
+   "caption": "View of Dana Point Harbor with the ship \"Spirit of Dana Point\" anchored at the Ocean Institute in the foreground."
+  },
+  {
+   "file": "commons_Orange_County_25649265733_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Orange_County_(25649265733).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Orange_County_%2825649265733%29.jpg/1920px-Orange_County_%2825649265733%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Orange County (25649265733).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "Sergei Gussev",
+   "caption": "California, USA - April 2016\n\nLos Angeles"
+  }
+ ]
+}

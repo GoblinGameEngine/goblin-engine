@@ -1,0 +1,27 @@
+{
+ "structure": "SOL-W03",
+ "files": [
+  {
+   "file": "commons_Dana_Point_CA_USA_-_panoramio_4_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dana_Point,_CA,_USA_-_panoramio_(4).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Dana_Point%2C_CA%2C_USA_-_panoramio_%284%29.jpg/1920px-Dana_Point%2C_CA%2C_USA_-_panoramio_%284%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dana Point, CA, USA - panoramio (4).jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Jack CameraMan",
+   "caption": "Dana Point, CA, USA"
+  },
+  {
+   "file": "commons_Dana_Point_CA_USA_-_panoramio_7_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Dana_Point,_CA,_USA_-_panoramio_(7).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Dana_Point%2C_CA%2C_USA_-_panoramio_%287%29.jpg/1920px-Dana_Point%2C_CA%2C_USA_-_panoramio_%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Dana Point, CA, USA - panoramio (7).jpg",
+   "kind": "photo",
+   "license": "CC BY 3.0",
+   "author": "Jack CameraMan",
+   "caption": "Dana Point, CA, USA"
+  }
+ ]
+}

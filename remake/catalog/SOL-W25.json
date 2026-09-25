@@ -1,0 +1,34 @@
+{
+ "id": "SOL-W25",
+ "settlement": "Solana Point",
+ "kind": "bridge",
+ "coast": "west",
+ "walk": {
+  "width_m": 10,
+  "length_m": 70.0
+ },
+ "example": {
+  "title": "Island Way bridge to the harbour island",
+  "place": "Dana Point Harbor, Dana Point, Orange County, CA",
+  "year": 1971,
+  "source": "Wikimedia Commons",
+  "url": "https://commons.wikimedia.org/wiki/File:Morning_Haze_on_Dana_Point_Marina,_CA_9-16_(29703547572).jpg",
+  "photos": [
+   "commons_Morning_Haze_on_Dana_Point_Marina_CA_9-16_29703547572_.jpg"
+  ],
+  "drawings": []
+ },
+ "brief": "The low road bridge to the harbour island (1971): a short multi-span concrete slab bridge on pile bents over the channel between the two marina basins, with a pipe rail, sidewalks and lamp posts, palms on the island beyond. One photo (in haze, from the bluff). Piles carried 10 m or more below the modelled bed (spec rule 4).",
+ "traits": {
+  "deck": "concrete",
+  "substructure": "concrete_piles",
+  "rail": "pipe",
+  "lighting": "lamp_posts",
+  "benches": false,
+  "width_m": 10,
+  "pile_depth_m": 10.0,
+  "year_built": 1971,
+  "spans": 4
+ },
+ "names": {}
+}
