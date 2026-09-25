@@ -47,6 +47,14 @@ GROUPS = {
                  ("Cayucos", 35.4430, -120.8920), ("Avila Beach", 35.1800, -120.7320),
                  ("Carlsbad", 33.1590, -117.3500), ("Encinitas", 33.0460, -117.2930),
                  ("Imperial Beach", 32.5800, -117.1330), ("Ventura", 34.2760, -119.2930)],
+    # Pelican Cove houses: working fishing towns with post-1970 housing
+    "west_pel2": [("Warrenton OR", 46.1651, -123.9237), ("Winchester Bay OR", 43.6801, -124.1790),
+                  ("Charleston OR", 43.3401, -124.3290), ("Brookings-Harbor OR", 42.0526, -124.2840),
+                  ("Port Orford OR", 42.7454, -124.4973), ("Depoe Bay OR", 44.8085, -124.0632),
+                  ("Trinidad CA", 41.0593, -124.1431), ("King Salmon CA", 40.7390, -124.2176),
+                  ("Princeton-by-the-Sea CA", 37.5030, -122.4866), ("La Push WA", 47.9090, -124.6360),
+                  ("Sekiu WA", 48.2629, -124.2980), ("Neah Bay WA", 48.3682, -124.6250),
+                  ("Westport WA town", 46.8890, -124.1040), ("Ilwaco WA town", 46.3090, -124.0410)],
     # Oceanview = Santa Cruz Beach Boardwalk + Venice + Santa Monica Pier
     "west_ocv": [("Santa Cruz boardwalk", 36.9640, -122.0180), ("Santa Cruz downtown", 36.9740, -122.0260),
                  ("Capitola", 36.9720, -121.9530), ("Venice", 33.9900, -118.4720),

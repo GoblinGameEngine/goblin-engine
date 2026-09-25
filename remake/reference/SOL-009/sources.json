@@ -1,0 +1,16 @@
+{
+ "structure": "SOL-009",
+ "files": [
+  {
+   "file": "commons_Erewhon_in_Santa_Monica.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Erewhon_in_Santa_Monica.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Erewhon_in_Santa_Monica.jpg/1920px-Erewhon_in_Santa_Monica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Erewhon in Santa Monica.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Mx. Granger",
+   "caption": "Erewhon Market branch in Santa Monica"
+  }
+ ]
+}

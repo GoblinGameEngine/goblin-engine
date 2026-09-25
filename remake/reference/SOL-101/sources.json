@@ -1,0 +1,27 @@
+{
+ "structure": "SOL-101",
+ "files": [
+  {
+   "file": "commons_Ghiradelli_8726078115_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ghiradelli_(8726078115).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Ghiradelli_%288726078115%29.jpg/1920px-Ghiradelli_%288726078115%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ghiradelli (8726078115).jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "vxla from Chicago, US",
+   "caption": "Ghiradelli"
+  },
+  {
+   "file": "commons_Ghirardelli_at_the_Gaslamp_Quarter_in_San_Diego_at_night.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Ghirardelli_at_the_Gaslamp_Quarter_in_San_Diego_at_night.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Ghirardelli_at_the_Gaslamp_Quarter_in_San_Diego_at_night.jpg/1920px-Ghirardelli_at_the_Gaslamp_Quarter_in_San_Diego_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Ghirardelli at the Gaslamp Quarter in San Diego at night.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Frank Schulenburg",
+   "caption": "Ghirardelli icecream and chocolate shop at the Gaslamp Quarter in San Diego, California, at night"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "SOL-090",
+ "files": [
+  {
+   "file": "commons_AMC_Santa_Monica_7.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:AMC_Santa_Monica_7.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/AMC_Santa_Monica_7.jpg/1920px-AMC_Santa_Monica_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:AMC Santa Monica 7.jpg",
+   "kind": "photo",
+   "license": "CC0",
+   "author": "Simon Cobb",
+   "caption": "AMC Santa Monica 7"
+  },
+  {
+   "file": "commons_Santa_Monica_Third_Street_Promenade_-_Movie_theatre.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Monica_%E2%80%93_Third_Street_Promenade_-_Movie_theatre.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Santa_Monica_%E2%80%93_Third_Street_Promenade_-_Movie_theatre.jpg/1920px-Santa_Monica_%E2%80%93_Third_Street_Promenade_-_Movie_theatre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Santa Monica \u2013 Third Street Promenade - Movie theatre.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Cayambe",
+   "caption": "Le cin\u00e9ma AMC Santa Monica 7 dans Third Street Promenade \u00e0 Santa Monica en Californie."
+  }
+ ]
+}

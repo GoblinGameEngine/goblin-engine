@@ -1,0 +1,16 @@
+{
+ "structure": "SOL-100",
+ "files": [
+  {
+   "file": "commons_Santa_Monica_Place.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Santa_Monica_Place.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Santa_Monica_Place.jpg/1920px-Santa_Monica_Place.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Santa Monica Place.jpg",
+   "kind": "photo",
+   "license": "Public domain",
+   "author": "No machine-readable author provided. Infratec~commonswiki assumed (based on copyright claims).",
+   "caption": "Santa Monica Place, a shopping mall in Santa Monica, California."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "SOL-093",
+ "files": [
+  {
+   "file": "commons_Midway_District_San_Diego_CA_USA_-_panoramio_1_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Midway_District,_San_Diego,_CA,_USA_-_panoramio_(1).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Midway_District%2C_San_Diego%2C_CA%2C_USA_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Midway District, San Diego, CA, USA - panoramio (1).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "Midway District, San Diego, CA, USA"
+  },
+  {
+   "file": "commons_Midway_District_San_Diego_CA_USA_-_panoramio.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Midway_District,_San_Diego,_CA,_USA_-_panoramio.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Midway_District%2C_San_Diego%2C_CA%2C_USA_-_panoramio.jpg/1920px-Midway_District%2C_San_Diego%2C_CA%2C_USA_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Midway District, San Diego, CA, USA - panoramio.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "Midway District, San Diego, CA, USA"
+  }
+ ]
+}

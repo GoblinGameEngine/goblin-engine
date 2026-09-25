@@ -1,0 +1,38 @@
+{
+ "structure": "SOL-015",
+ "files": [
+  {
+   "file": "commons_301-309_Wilshire_Boulevard_Santa_Monica_01_cropped_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:301-309_Wilshire_Boulevard,_Santa_Monica_01_(cropped).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/301-309_Wilshire_Boulevard%2C_Santa_Monica_01_%28cropped%29.jpg/1920px-301-309_Wilshire_Boulevard%2C_Santa_Monica_01_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:301-309 Wilshire Boulevard, Santa Monica 01 (cropped).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Joe Mabel",
+   "caption": "Art Deco commercial building, 301-309 Wilshire Boulevard, Santa Monica, California."
+  },
+  {
+   "file": "commons_301-309_Wilshire_Boulevard_Santa_Monica_detail_01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:301-309_Wilshire_Boulevard,_Santa_Monica_detail_01.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/301-309_Wilshire_Boulevard%2C_Santa_Monica_detail_01.jpg/1920px-301-309_Wilshire_Boulevard%2C_Santa_Monica_detail_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:301-309 Wilshire Boulevard, Santa Monica detail 01.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Joe Mabel",
+   "caption": "Detail (frieze), Art Deco commercial building, 301-309 Wilshire Boulevard, Santa Monica, California."
+  },
+  {
+   "file": "commons_301-309_Wilshire_Boulevard_Santa_Monica_detail_03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:301-309_Wilshire_Boulevard,_Santa_Monica_detail_03.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/301-309_Wilshire_Boulevard%2C_Santa_Monica_detail_03.jpg/1920px-301-309_Wilshire_Boulevard%2C_Santa_Monica_detail_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:301-309 Wilshire Boulevard, Santa Monica detail 03.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Joe Mabel",
+   "caption": "Detail (frieze), Art Deco commercial building, 301-309 Wilshire Boulevard, Santa Monica, California."
+  }
+ ]
+}
