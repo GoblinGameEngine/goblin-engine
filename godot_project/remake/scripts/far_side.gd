@@ -4,7 +4,7 @@ class_name RemakeFarSide
 ## The far side of the cylinder, drawn flat.  Beyond FLAT_ARC of arc round the ring from the
 ## player (central angle ~105 deg, ~790 m away), a building's relief is a few pixels and you see
 ## the floor almost face-on, so everything there is drawn as the baked top-down image of itself
-## (remake/farside.png, FarsideBake.tscn) on the terrain's coarse far tier.  Hidden there:
+## (remake/farside.webp, FarsideBake.tscn) on the terrain's coarse far tier.  Hidden there:
 ## every non-landmark building and merged district mesh, the trees, roads and water.  The tall
 ## landmarks (spires, elevators, towers, silos -- what shows at that range) keep their own far
 ## versions.  Checked every CHECK s with HYST m of hysteresis.
@@ -26,10 +26,10 @@ func setup(p_target: Node3D, terrain: MapTerrainMesh, detail: Texture2D) -> void
 	_terrain = terrain
 	_far_mat = ShaderMaterial.new()
 	_far_mat.shader = load("res://remake/shaders/farside.gdshader")
-	_far_mat.set_shader_parameter("farside", load("res://remake/farside.png"))
+	_far_mat.set_shader_parameter("farside", load("res://remake/farside.webp"))
 	_far_mat.set_shader_parameter("detail", detail)
 	_far_mat.set_shader_parameter("flat_arc", FLAT_ARC)
-	_far_mat.set_shader_parameter("circ", StationGeo.CIRC)
+	MapTerrainMesh.set_cover_params(_far_mat)
 	_far_mat.set_shader_parameter("image_w", StationGeo.FARSIDE_W)
 	terrain.far_material = _far_mat
 

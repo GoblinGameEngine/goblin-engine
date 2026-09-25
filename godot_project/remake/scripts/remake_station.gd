@@ -40,18 +40,16 @@ func _ready() -> void:
 	_mark("shell")
 	_spawn_player()
 	_mark("player")
-	var floor_mat := StandardMaterial3D.new()
-	floor_mat.albedo_texture = _neutral_detail("res://assets/textures/grass_tinted.png")
+	var detail := _neutral_detail("res://assets/textures/grass_tinted.png")
+	var floor_mat := MapTerrainMesh.make_material(detail)      # land cover per pixel, the grain over it
 	_mark("neutral detail texture")
-	floor_mat.vertex_color_use_as_albedo = true          # MapTerrainMesh colours the ground by land cover
-	floor_mat.vertex_color_is_srgb = true
 	terrain = MapTerrainMesh.new()
 	terrain.name = "Terrain"
 	add_child(terrain)
 	far_side = RemakeFarSide.new()
 	far_side.name = "FarSide"
 	add_child(far_side)
-	far_side.setup(player, terrain, floor_mat.albedo_texture)
+	far_side.setup(player, terrain, detail)
 	terrain.setup(player, floor_mat)
 	_mark("terrain setup")
 	MapWater.build(self)

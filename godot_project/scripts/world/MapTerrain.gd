@@ -432,6 +432,18 @@ static func pad_height(id: String) -> float:
 static var _lc: Image = null
 
 
+static func landcover_image() -> Image:
+	if _lc == null:
+		_load()
+		_lc = load("res://remake/landcover.png")
+	return _lc
+
+
+static func landcover_step() -> float:
+	_load()
+	return _lc_step
+
+
 static func landcover(s: float, x: float) -> Vector2i:
 	## (class, field id) of the map's land cover at (s, x) -- remake/landcover.png, 2 m / px:
 	## 1 built-up, 2 floodplain meadow, 3 woods, 4 farm field (id picks its crop), 5 windbreak grove,

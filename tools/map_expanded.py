@@ -1541,14 +1541,15 @@ def build_all():
 TOWNS = build_all()
 
 # No buildings are added or lost in the expansion: each community's structures are exactly those of
-# the current map (remake/inventory/map_inventory.json -- same ids, same footprints), moved as a
+# the current map (remake/inventory/map_inventory_pre_expansion.json -- same ids, same footprints), moved as a
 # piece with its town: 6x further round the ring, 500 m further from the river.
 OLD_S0 = {"Harrow Falls": 395.0, "Kessler": 2130.0, "Marlowe": 1500.0, "Fenwick": 2150.0, "Bellhaven": 1050.0,
           "Tamarack": 2820.0, "Cedar Ford": 1250.0, "Pruett": 1500.0, "Dunmore Crossing": 650.0,
           "Loomis Grove": 2580.0, "Haskins Corner": 2955.0}
 import json as _json
+# (read from the frozen pre-expansion copy: --game-data rewrites map_inventory.json at the new positions)
 _INV = _json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "remake", "inventory",
-                                    "map_inventory.json")))
+                                    "map_inventory_pre_expansion.json")))
 
 
 def _inv_poly(st, ds, dx):
@@ -1821,12 +1822,103 @@ for t in TOWNS:
 # ------------------------------------------------------------------ farmland: fields, ditches, farmsteads
 FARM = (~FP) & (~WATER) & (~FLOOD) & (~BEACH) & (~CLIFF)
 rng_np = np.random.default_rng(7)
-fs = np.floor((S + 37 * np.floor((X + HW) / 160.0)) / 210.0)
-fx = np.floor((X + HW) / 160.0)
-fid = (fs * 7919 + fx * 104729).astype(np.int64) % 97
-FIELD_COLS = np.array([[205, 220, 143], [179, 212, 137], [226, 226, 166], [196, 220, 174],
-                       [227, 214, 173], [190, 214, 150]], np.uint8)
-FIELDC = FIELD_COLS[(fid % 6).astype(np.int64)]
+# Farmland, organically (research/coastal_communities -- and Iowa / Illinois practice): the PLSS
+# mile-square SECTIONS the section roads outline, each split by its owners into quarters (160 ac),
+# halves (80 ac) or forties (40 ac); corn and soybeans in rotation on most of it, hay, pasture,
+# small grain and set-aside (CRP) grass on the rest; contour strips on the slopes; an occasional
+# centre pivot; woodlots in odd corners and windbreak tree lines along some boundaries.
+SEC = 1609.0
+SEC_S0, SEC_X0 = 180.0 * SS, 1300.0 + WIDEN        # the grid the section roads run on
+
+
+def _h(a, b_, c_):
+    hh = (a.astype(np.int64) * 73856093) ^ (b_.astype(np.int64) * 19349663) ^ (np.int64(c_) * 83492791 if np.isscalar(c_) else c_.astype(np.int64) * 83492791)
+    hh = (hh ^ (hh >> 13)) * 1274126177
+    return (hh ^ (hh >> 16)) & 0x7FFFFFFF
+
+
+_su = (S.astype(np.float64) - SEC_S0) / SEC
+_sx = (X.astype(np.float64) - SEC_X0) / SEC
+SEC_I = np.broadcast_to(np.floor(_su), (WH, CW)).astype(np.int32)
+SEC_J = np.broadcast_to(np.floor(_sx), (WH, CW)).astype(np.int32)
+_u = np.broadcast_to(_su - np.floor(_su), (WH, CW)).astype(np.float32)
+_v = np.broadcast_to(_sx - np.floor(_sx), (WH, CW)).astype(np.float32)
+# the section roads stay straight, but the owners' lines inside a section wander (old fence rows
+# bent round wet spots, knolls and the creeks) -- a smooth warp that vanishes at the section roads
+_Sf = np.broadcast_to(S, (WH, CW)).astype(np.float32)
+_Xf = np.broadcast_to(X, (WH, CW)).astype(np.float32)
+_wu = (0.045 * np.sin(_Xf / 173.0 + 1.3) + 0.03 * np.sin(_Xf / 71.0 + _Sf / 263.0)) * np.sin(math.pi * _u)
+_wv = (0.045 * np.sin(_Sf / 191.0 + 0.4) + 0.03 * np.sin(_Sf / 67.0 - _Xf / 241.0)) * np.sin(math.pi * _v)
+del _Sf, _Xf
+_uw = np.clip(_u + _wu, 0, 0.9999)
+_vw = np.clip(_v + _wv, 0, 0.9999)
+del _wu, _wv
+_q = ((_uw >= 0.5).astype(np.int32) * 2 + (_vw >= 0.5))
+_uq = (_uw * 2) % 1.0
+_vq = (_vw * 2) % 1.0
+del _uw, _vw
+# terrain splits: some quarters are farmed as bottom land and upland, the line following the ground
+_ec = ELEV[::16, ::16].astype(np.float32)
+for _ax in (0, 1):
+    for _i in range(3):
+        _ec = (np.roll(_ec, 4, _ax) + np.roll(_ec, -4, _ax) + np.roll(_ec, 8, _ax) + np.roll(_ec, -8, _ax) + _ec) / 5
+# bilinear back up to full resolution, a band of rows at a time (a blocky upsample saw-tooths the lines)
+_low = np.empty((WH, CW), bool)
+_fx = np.arange(CW, dtype=np.float32) / 16.0
+_x0 = np.minimum(_fx.astype(np.int32), _ec.shape[1] - 1)
+_x1 = np.minimum(_x0 + 1, _ec.shape[1] - 1)
+_tx = _fx - _x0
+for _r in range(WH):
+    _fy = _r / 16.0
+    _y0 = min(int(_fy), _ec.shape[0] - 1)
+    _y1 = min(_y0 + 1, _ec.shape[0] - 1)
+    _ty = _fy - _y0
+    _row = (_ec[_y0, _x0] * (1 - _tx) + _ec[_y0, _x1] * _tx) * (1 - _ty) + (_ec[_y1, _x0] * (1 - _tx) + _ec[_y1, _x1] * _tx) * _ty
+    _low[_r] = ELEV[_r] < _row - 0.3
+del _ec, _fx, _x0, _x1, _tx
+_mode = _h(SEC_I, SEC_J, _q) % 100
+_sub = np.where(_mode < 18, 0, np.where(_mode < 34, 1 + (_uq >= 0.5), np.where(_mode < 50, 3 + (_vq >= 0.5),
+               np.where(_mode < 72, 9 + _low, 5 + (_uq >= 0.5) * 2 + (_vq >= 0.5)))))
+del _low
+PARCEL = _h(SEC_I, SEC_J, _q * 16 + _sub)
+del _mode
+_pc = PARCEL % 100
+CROP = np.select([_pc < 38, _pc < 72, _pc < 80, _pc < 88, _pc < 94], [0, 1, 3, 4, 2], 5).astype(np.uint8)   # 0 corn 1 soy 2 grain 3 hay 4 pasture 5 CRP
+# centre pivots: a circle of crop, the quarter's corners left to grass
+_piv = (_h(SEC_I, SEC_J, _q + 50) % 100) < 4
+_rp = np.hypot(_uq - 0.5, _vq - 0.5)
+CROP = np.where(_piv & (_rp > 0.48), np.uint8(4 + (_pc % 2)), np.where(_piv, np.uint8(_pc % 2), CROP))
+# contour strips where the ground slopes: row crop and hay alternating along the contours
+_gy, _gx = np.gradient(ELEV, PX)
+_slope = np.hypot(_gx, _gy)
+del _gy, _gx
+_strip = (_slope > 0.035) & (CROP <= 1) & ~_piv
+CROP = np.where(_strip & ((np.floor(ELEV / 1.6).astype(np.int32) % 2) == 1), np.uint8(3), CROP)
+del _slope, _strip
+VARIANT = ((PARCEL >> 8) % 4).astype(np.uint8)
+ROWS_S = ((PARCEL >> 12) & 1).astype(bool)
+FIELD_G = (CROP + 8 * VARIANT).astype(np.uint8)
+# woodlots in some quarters' outer corners, and windbreak tree lines along some section / quarter lines
+_wl = (_h(SEC_I, SEC_J, _q + 99) % 100) < 7
+_cu = np.where(_uq < 0.5, 0.18, 0.82)
+_cv = np.where(_vq < 0.5, 0.18, 0.82)
+_wob = 1 + 0.18 * np.sin(np.arctan2(_vq - _cv, _uq - _cu) * 3 + (PARCEL % 7))
+WOODLOT = _wl & (np.hypot((_uq - _cu) * 1.3, _vq - _cv) < 0.2 * _wob)
+del _wl, _cu, _cv, _wob
+_du = np.minimum(np.abs(_u - 0.5), np.minimum(_u, 1 - _u)) * SEC            # metres to the nearest s-running line
+_dv = np.minimum(np.abs(_v - 0.5), np.minimum(_v, 1 - _v)) * SEC
+_line_s = np.round(_su * 2).astype(np.int32)
+_line_x = np.round(_sx * 2).astype(np.int32)
+HEDGE = ((_du < 4.0) & ((_h(np.broadcast_to(_line_s, (WH, CW)), SEC_J, 7) % 100) < 30)) | \
+        ((_dv < 4.0) & ((_h(SEC_I, np.broadcast_to(_line_x, (WH, CW)), 11) % 100) < 30))
+del _du, _dv, _line_s, _line_x, _u, _v, _uq, _vq, _q, _rp, _pc, _su, _sx
+CROP_COLS = np.array([[96, 142, 52], [168, 196, 88], [222, 196, 118], [132, 188, 96], [150, 170, 108], [180, 170, 120]], np.float32)
+_var = np.array([0.9, 0.97, 1.03, 1.1], np.float32)
+_rowc = np.where(ROWS_S, np.broadcast_to(S, (WH, CW)), np.broadcast_to(X, (WH, CW)))
+_rowm = 1 + 0.035 * np.sin(_rowc * (TAU / 7.0)) * (CROP <= 2)
+FIELDC = np.clip(CROP_COLS[CROP] * (_var[VARIANT] * _rowm)[..., None], 0, 255).astype(np.uint8)
+del _rowc, _rowm
+fid = FIELD_G
 
 # ditches: parallel to the ring (along s) at the field-band edges, each draining into the
 # nearest named creek (field ditch -> creek -> river, never ditch straight into the river)
@@ -1892,6 +1984,19 @@ def farmstead_polys(c):
 # ------------------------------------------------------------------ raster composite
 print("compositing terrain...", file=sys.stderr)
 img = np.zeros((WH, CW, 3), np.uint8)
+# irregular pasture paddocks round every farmstead (behind the buildings, following no grid)
+_pd = Image.new("L", (CW, WH), 0)
+_pdd = ImageDraw.Draw(_pd)
+for k_, c_ in enumerate(FARMSTEADS):
+    rr = 90 + 50 * ((k_ * 37) % 7) / 6
+    pts_ = [(c_[0] + (rr + 25 * math.sin(a_ * 3 + k_)) * math.cos(a_), c_[1] + (rr * 0.7 + 20 * math.sin(a_ * 2 + k_)) * math.sin(a_))
+            for a_ in np.linspace(0, TAU, 24, endpoint=False)]
+    draw_poly(_pdd, pts_, fill=1)
+PADDOCK = (np.array(_pd) > 0) & FARM
+del _pd
+CROP[PADDOCK] = 4
+FIELD_G[PADDOCK] = 4 + 8 * 2
+FIELDC[PADDOCK] = (140, 168, 98)
 img[:] = FIELDC
 img[FLOOD] = (212, 230, 195)
 img[MARSH] = (178, 208, 172)
@@ -1904,7 +2009,7 @@ slope = np.hypot(gx, gy)
 del ELEV_INLAND
 gy, gx = np.gradient(ELEV, PX)
 creek_band = dilate((WCAT == 3) | (WCAT == 4), fk(9))
-WOODS = (((slope > 0.11) & (w_cut > 0.5)) | creek_band) & ~WATER & ~FP & ~RMASK
+WOODS = (((slope > 0.11) & (w_cut > 0.5)) | creek_band | ((WOODLOT | HEDGE) & FARM)) & ~WATER & ~FP & ~RMASK
 img[WOODS] = (134, 173, 109)
 speck = rng_np.random((WH, CW), dtype=np.float32) < 0.10
 img[WOODS & speck] = (96, 140, 78)
@@ -2434,7 +2539,7 @@ if "--game-data" in sys.argv:
     cls_[BEACH] = 6
     cls_[CLIFF] = 7
     cls_[WCAT > 0] = 0
-    lc = np.stack([cls_, (fid % 97).astype(np.uint8), np.zeros_like(cls_)], -1)[::RS, ::RS]
+    lc = np.stack([cls_, FIELD_G, np.zeros_like(cls_)], -1)[::RS, ::RS]        # G: crop + 8 * shade variant
     Image.fromarray(lc, "RGB").save(os.path.join(GD, "landcover.png"), optimize=True)
 
     def _save(name, arr, dt):

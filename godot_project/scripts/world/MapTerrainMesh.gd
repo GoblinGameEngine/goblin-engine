@@ -84,19 +84,46 @@ const AREA_TINT := {"lawn": Color(0.45, 0.6, 0.3), "park": Color(0.43, 0.58, 0.2
 	"schoolground": Color(0.44, 0.57, 0.3), "sportsfield": Color(0.4, 0.6, 0.27), "cemetery": Color(0.36, 0.5, 0.27),
 	"square": Color(0.62, 0.6, 0.55), "promenade": Color(0.66, 0.6, 0.5),
 	"parking": Color(0.28, 0.28, 0.28), "lot": Color(0.4, 0.38, 0.34), "culdesac": Color(0.3, 0.3, 0.3)}
-## farm fields by field id: corn, soybeans, wheat stubble, hay, fallow, pasture
-const FIELD_TINT := [Color(0.3, 0.46, 0.17), Color(0.4, 0.54, 0.2), Color(0.68, 0.6, 0.32), Color(0.56, 0.58, 0.3),
-	Color(0.46, 0.39, 0.27), Color(0.44, 0.57, 0.29)]
+## farm fields by crop (landcover G = crop + 8 * variant): corn, soybeans, small grain, hay, pasture, set-aside grass
+const FIELD_TINT := [Color(0.28, 0.45, 0.15), Color(0.5, 0.6, 0.24), Color(0.7, 0.6, 0.33), Color(0.4, 0.58, 0.27),
+	Color(0.45, 0.53, 0.3), Color(0.56, 0.53, 0.35)]
+const FIELD_VAR := [0.9, 0.97, 1.03, 1.1]
 const MUD := Color(0.4, 0.34, 0.25)
 const BED := Color(0.3, 0.27, 0.22)
 const EARTH := Color(0.5, 0.43, 0.32)
+
+
+static func make_material(detail: Texture2D) -> ShaderMaterial:
+	## The ground material: terrain_cover.gdshader (land cover per pixel) over the neutral detail grain.
+	var m := ShaderMaterial.new()
+	m.shader = load("res://remake/shaders/terrain_cover.gdshader")
+	m.set_shader_parameter("detail", detail)
+	set_cover_params(m)
+	return m
+
+
+static var _lc_tex: ImageTexture = null
+
+
+static func set_cover_params(m: ShaderMaterial) -> void:
+	## The uniforms of land_cover.gdshaderinc (one landcover texture shared by every material).
+	if _lc_tex == null:
+		_lc_tex = ImageTexture.create_from_image(MapTerrain.landcover_image())
+	m.set_shader_parameter("landcover", _lc_tex)
+	m.set_shader_parameter("tex_m", TEX_M)
+	m.set_shader_parameter("lc_step", MapTerrain.landcover_step())
+	m.set_shader_parameter("circ", StationGeo.CIRC)
+	m.set_shader_parameter("half_len", StationGeo.HALF_LEN)
 
 
 func _cover_tint(lc: Vector2i) -> Color:
 	match lc.x:
 		2: return Color(0.46, 0.6, 0.32)           # floodplain meadow
 		3: return Color(0.2, 0.32, 0.14)           # woods (the floor under the trees)
-		4: return FIELD_TINT[lc.y % 6]             # farm fields, by field
+		4:                                         # farm fields: the crop, a shade per parcel
+			var f: Color = FIELD_TINT[mini(lc.y % 8, 5)]
+			var k: float = FIELD_VAR[(lc.y / 8) % 4]
+			return Color(f.r * k, f.g * k, f.b * k)
 		5: return Color(0.22, 0.34, 0.15)          # windbreak grove
 		6: return Color(0.83, 0.76, 0.58)          # sandy beach
 		7: return Color(0.46, 0.43, 0.39)          # rock: the headland cliffs
@@ -156,7 +183,12 @@ func _gen(r: Rect2, step: float) -> Array:
 			for k in [0, 1, 2, 0, 2, 3]:            # counter-clockwise seen from above (toward the axis)
 				var a: int = q[k][0]
 				var b: int = q[k][1]
-				st.set_color(_tint(hs[a][b][1], slope, hs[a][b][2], hs[a][b][3]))
+				# alpha 1: the vertex colour wins (town areas, water beds, steep earth); 0: the shader's
+				# per-pixel land cover (sharp field and shore edges)
+				var own: bool = hs[a][b][2] != "" or hs[a][b][1] > 0.01 or slope > 0.35
+				var col := _tint(hs[a][b][1], slope, hs[a][b][2], hs[a][b][3])
+				col.a = 1.0 if own else 0.0
+				st.set_color(col)
 				st.set_normal(nrm[a][b])
 				st.set_uv2(StationGeo.farside_uv(r.position.x + r.size.x * a / float(ns), r.position.y + r.size.y * b / float(nx)))
 				st.set_uv(Vector2((r.position.y + r.size.y * b / float(nx)) / TEX_M, (r.position.x + r.size.x * a / float(ns)) / TEX_M))

@@ -2,142 +2,149 @@
 	"aerostats": [
 		{
 			"id": "AERO-Bellhaven-1",
-			"s": 8416.47,
+			"s": 6415.24,
 			"where": "Bellhaven",
-			"x": 3121.44,
+			"x": 1237.62,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Bellhaven-2",
-			"s": 8325.53,
+			"s": 6177.97,
 			"where": "Bellhaven",
-			"x": 3118.66,
+			"x": 1113.37,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-CedarFord-1",
-			"s": 13628.75,
+			"s": 7534.57,
 			"where": "Cedar Ford",
-			"x": -2685.36,
+			"x": -832.57,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-DunmoreCrossing-1",
-			"s": 16870,
+			"s": 3937.26,
 			"where": "Dunmore Crossing",
-			"x": -3126.68,
+			"x": -1319.15,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Fenwick-1",
-			"s": 18224.47,
+			"s": 12939.01,
 			"where": "Fenwick",
-			"x": -3261.55,
+			"x": -1282.56,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Fenwick-2",
-			"s": 18276.95,
+			"s": 12955.22,
 			"where": "Fenwick",
-			"x": -3262.28,
+			"x": -1234.69,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HarrowFalls-1",
-			"s": 10579.93,
+			"s": 2360.88,
 			"where": "Harrow Falls",
-			"x": 3180.07,
+			"x": 949.74,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HarrowFalls-2",
-			"s": 10291.33,
+			"s": 2401.1,
 			"where": "Harrow Falls",
-			"x": 2962.58,
+			"x": 1076.35,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HarrowFalls-3",
-			"s": 10234.82,
+			"s": 2525.96,
 			"where": "Harrow Falls",
-			"x": 2971.66,
+			"x": 1075.63,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HarrowFalls-4",
-			"s": 10307.12,
+			"s": 2488.74,
 			"where": "Harrow Falls",
-			"x": 3009.8,
+			"x": 1121.1,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HaskinsCorner-1",
-			"s": 1305.95,
+			"s": 17668.48,
 			"where": "Haskins Corner",
-			"x": -3161.1,
+			"x": -1247.83,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-HaskinsCorner-2",
-			"s": 1428.52,
+			"s": 17660.35,
 			"where": "Haskins Corner",
-			"x": -3063.44,
+			"x": -1303.3,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Kessler-1",
-			"s": 17675.28,
+			"s": 12810.63,
 			"where": "Kessler",
-			"x": 3125.65,
+			"x": 1192.36,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Kessler-2",
-			"s": 17726,
+			"s": 12748.44,
 			"where": "Kessler",
-			"x": 3121.61,
+			"x": 1202.69,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Kessler-3",
-			"s": 17602.23,
+			"s": 12841.34,
 			"where": "Kessler",
-			"x": 3108.4,
+			"x": 1112.87,
+			"yaw": 0
+		},
+		{
+			"id": "AERO-LoomisGrove-1",
+			"s": 15463.23,
+			"where": "Loomis Grove",
+			"x": -1768.92,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Marlowe-1",
-			"s": 1214.7,
+			"s": 8960.48,
 			"where": "Marlowe",
-			"x": -3284.71,
+			"x": -1364.54,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Marlowe-2",
-			"s": 1240.6,
+			"s": 9077.16,
 			"where": "Marlowe",
-			"x": -3230.92,
+			"x": -1238.25,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Pruett-1",
-			"s": 1621.99,
+			"s": 8980.57,
 			"where": "Pruett",
-			"x": 3182.28,
+			"x": 1442.02,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Tamarack-1",
-			"s": 16810.67,
+			"s": 17024.63,
 			"where": "Tamarack",
-			"x": 2937.93,
+			"x": 1272.44,
 			"yaw": 0
 		},
 		{
 			"id": "AERO-Tamarack-2",
-			"s": 16639,
+			"s": 16809.76,
 			"where": "Tamarack",
-			"x": 2910.41,
+			"x": 1136.2,
 			"yaw": 0
 		},
 		{
