@@ -1,0 +1,38 @@
+{
+ "structure": "SOL-024",
+ "files": [
+  {
+   "file": "commons_Huntington_Beach_CA_USA_-_panoramio_5_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Huntington_Beach,_CA,_USA_-_panoramio_(5).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Huntington_Beach%2C_CA%2C_USA_-_panoramio_%285%29.jpg/1920px-Huntington_Beach%2C_CA%2C_USA_-_panoramio_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Huntington Beach, CA, USA - panoramio (5).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "Huntington Beach, CA, USA"
+  },
+  {
+   "file": "commons_Huntington_Beach_CA_USA_-_panoramio_3_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Huntington_Beach,_CA,_USA_-_panoramio_(3).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Huntington_Beach%2C_CA%2C_USA_-_panoramio_%283%29.jpg/1920px-Huntington_Beach%2C_CA%2C_USA_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Huntington Beach, CA, USA - panoramio (3).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "Huntington Beach, CA, USA"
+  },
+  {
+   "file": "commons_Huntington_Beach_CA_USA_-_panoramio_16_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Huntington_Beach,_CA,_USA_-_panoramio_(16).jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Huntington_Beach%2C_CA%2C_USA_-_panoramio_%2816%29.jpg/1920px-Huntington_Beach%2C_CA%2C_USA_-_panoramio_%2816%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Huntington Beach, CA, USA - panoramio (16).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "Huntington Beach, CA, USA"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "structure": "SOL-021",
+ "files": [
+  {
+   "file": "commons_Huntington_Beach_CA_USA_-_panoramio_18_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Huntington_Beach,_CA,_USA_-_panoramio_(18).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Huntington_Beach%2C_CA%2C_USA_-_panoramio_%2818%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Huntington Beach, CA, USA - panoramio (18).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "Huntington Beach, CA, USA"
+  },
+  {
+   "file": "commons_Huntington_Beach_CA_USA_-_panoramio_20_.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Huntington_Beach,_CA,_USA_-_panoramio_(20).jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/Huntington_Beach%2C_CA%2C_USA_-_panoramio_%2820%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Huntington Beach, CA, USA - panoramio (20).jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 3.0",
+   "author": "Roman Eugeniusz",
+   "caption": "Huntington Beach, CA, USA"
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "structure": "OCV-049",
+ "files": [
+  {
+   "file": "commons_Facciata_principale_della_Gehry_House_a_Santa_Monica.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Facciata_principale_della_Gehry_House_a_Santa_Monica.jpg",
+   "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Facciata_principale_della_Gehry_House_a_Santa_Monica.jpg/1920px-Facciata_principale_della_Gehry_House_a_Santa_Monica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "title": "File:Facciata principale della Gehry House a Santa Monica.jpg",
+   "kind": "photo",
+   "license": "CC BY-SA 4.0",
+   "author": "Andr\u00e9 Corboz",
+   "caption": ""
+  },
+  {
+   "file": "commons_Gehry_House_-_Image01.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Gehry_House_-_Image01.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gehry_House_-_Image01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Gehry House - Image01.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "IK's World Trip",
+   "caption": "Frank Gehry's house in a posh area in Santa Monica. It is built upon an old house, with new elements added into the frame."
+  },
+  {
+   "file": "commons_Gehry_House_-_Image02.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Gehry_House_-_Image02.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/54/Gehry_House_-_Image02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Gehry House - Image02.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "IK's World Trip",
+   "caption": "Another angle."
+  },
+  {
+   "file": "commons_Gehry_House_-_Image03.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Gehry_House_-_Image03.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Gehry_House_-_Image03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Gehry House - Image03.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "IK's World Trip",
+   "caption": "Detail."
+  },
+  {
+   "file": "commons_Gehry_House_-_Image04.jpg",
+   "source": "Wikimedia Commons",
+   "record": "https://commons.wikimedia.org/wiki/File:Gehry_House_-_Image04.jpg",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Gehry_House_-_Image04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "title": "File:Gehry House - Image04.jpg",
+   "kind": "photo",
+   "license": "CC BY 2.0",
+   "author": "IK's World Trip",
+   "caption": "Entrance."
+  }
+ ]
+}
