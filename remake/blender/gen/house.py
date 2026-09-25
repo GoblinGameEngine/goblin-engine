@@ -420,7 +420,13 @@ ARCH = {
     "ranch": (1, "hip", None, 22), "minimal_traditional": (1, "gable", "x", 30), "side_gable_cottage": (1, "gable", "x", 35),
     "shotgun": (1, "gable", "y", 35), "dutch_colonial": (2, "gambrel", "x", 25), "tudor_revival": (1.5, "gable", "y", 50),
     "split_level": (1, "hip", None, 22), "american_small_house": (1, "gable", "x", 35), "prairie_box": (2, "hip", None, 20),
+    # the coasts (CATALOG_SPEC_COASTAL.md)
+    "raised_beach_house": (2, "gable", "x", 30), "contemporary_beach": (2, "shed", None, 18), "shingle_style": (2, "gable", "y", 42),
+    "nantucket_cape": (1.5, "gable", "x", 45), "charleston_single": (2, "gable", "y", 35), "lowcountry": (1.5, "hip", None, 30),
+    "california_bungalow": (1, "gable", "x", 25), "spanish_revival": (1, "gable", "x", 20), "a_frame": (1.5, "gable", "y", 55),
+    "cottage_lake": (1, "gable", "x", 32),
 }
+RAISED_ARCH = ("raised_beach_house",)
 
 
 def build(rec):
@@ -441,6 +447,11 @@ def _build(rec):
     arch = tr.get("archetype", "gable_front")
     d_storeys, d_roof, d_ridge, d_pitch = ARCH.get(arch, ARCH["gable_front"])
     storeys = tr.get("storeys") or d_storeys
+    # raised on piles (flood code): the living floors lifted a storey's worth above the grade; a three-
+    # storey shore house is two living floors over its raised base
+    raised = arch in RAISED_ARCH or tr.get("foundation") == "piles" or storeys >= 3
+    if storeys >= 3:
+        storeys = 2
     roof_tr = dget(tr, "roof")
     rtype = roof_tr.get("type") or d_roof
     cross_gables = 0
@@ -460,6 +471,9 @@ def _build(rec):
         lot_w, lot_d = min(lot_w, 22.0), min(lot_d, 22.0)
     porch_tr = dget(tr, "porch") or {"type": "stoop"}
     ptype = porch_tr.get("type", "stoop")
+    stacked = ptype == "stacked" or (raised and storeys >= 2 and ptype in ("front", "front_full", "wrap"))
+    if ptype in ("stacked", "front"):
+        ptype = "front_full"
     porch_d = {"none": 1.0, "stoop": 1.0, "front_full": 2.2, "front_partial": 2.0, "wrap": 2.2, "enclosed": 2.0,
                "side": 1.0, "recessed": 1.4}.get(ptype, 1.2)      # none/side: the front door still gets a stoop
     garage = tr.get("garage", "none") or "none"
@@ -468,6 +482,8 @@ def _build(rec):
     side_room = lot_w - 2.0 - (gar_w + 0.8 if garage.startswith("attached") or garage == "carport" else 0.0)
     W = clamp(ft(tr.get("main_w_ft") or 26), 5.2, max(5.2, side_room))
     fl1, h = storey_heights(tr)
+    if raised:
+        fl1 = 1.85                 # ~6 ft over grade: the base (lattice-skirted piles) below the first floor
     # front band: the porch steps' run (0.28 m per 0.18 m riser), a 0.9 m landing at their foot and a
     # front fence; a lot too shallow for that (a 2-storey house needs 5.8 m) gets no fence
     run = max(1, round(fl1 / 0.18)) * 0.28
@@ -640,6 +656,25 @@ def _build(rec):
                   steps=dict(at=(fd[0], yf + porch_d), dir=(0, 1), width=1.3, mat="porch"),
                   roof=dict(type="shed", high="S", high_z=top + 0.45, low_z=top + 0.12, oh=0.25), ceiling_light=True)
         spec["porches"].append(po)
+        if stacked and len(floors) >= 2:
+            # a deck on the upper floor over the porch (its floor is the porch's ceiling), with its own
+            # door out from the upper floor
+            uz = floors[1][0] - 0.12
+            po.pop("roof", None)
+            po["post_top"] = uz - 0.15
+            po["ceiling_light"] = False
+            utop = floors[1][0] + min(floors[1][1] - floors[1][0] - 0.1, 2.5)
+            upo = dict(rect=prect, z=uz, post_top=utop, posts=posts, rails=[[posts[k], posts[k + 1]] for k in range(len(posts) - 1)],
+                       post_style=post_style, skirt=False,
+                       roof=dict(type="shed", high="S", high_z=utop + 0.45, low_z=utop + 0.12, oh=0.25) if rtype != "flat" else None,
+                       ceiling_light=True)
+            if upo["roof"] is None:
+                upo.pop("roof")
+            spec["porches"].append(upo)
+            spec["doors"].append(dict(name="deck", at=(fd[0], yf), floor=1, w=0.9, ext=True, glazed=(0.1, 0.6, 0.9, 0.95)))
+        if raised:
+            po["skirt_mat"] = "trim"
+            po["rail_style"] = po.get("rail_style")
         if ptype == "wrap":
             wside_x = x1 if not mirror else x0
             wr = (x1, yf - D * 0.55, x1 + 2.0, yf + porch_d) if not mirror else (x0 - 2.0, yf - D * 0.55, x0, yf + porch_d)

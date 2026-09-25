@@ -494,7 +494,9 @@ class House:
 
     def build_stairs(self):
         for rl in self.s.get("rails", []):
-            bl = self.block_of(*rl["pts"][0])
+            pts = rl["pts"]
+            mid = (sum(q[0] for q in pts) / len(pts), sum(q[1] for q in pts) / len(pts))
+            bl = self.block_of(*pts[0]) or self.block_of(*mid) or self.s["blocks"][0]
             g.spindle_rail(self.b.part("well_rails-col"), rl["pts"], bl["floors"][rl.get("floor", 1)][0], 0.9, 0.12, self.m["door"])
         for i, st in enumerate(self.s.get("stairs", [])):
             G = self._stair_geom(st)

@@ -28,6 +28,7 @@ def shop_materials(pal):
     pal.solid("screen", (0.92, 0.92, 0.9), rough=0.8)
     pal.solid("cooler_body", (0.9, 0.9, 0.88), rough=0.3)
     pal.solid("black", (0.04, 0.04, 0.04), rough=0.5)
+    pal.solid("screen_lit", (0.3, 0.6, 0.9), rough=0.2, emission=(0.3, 0.6, 0.9))
 
 
 class Fit:
@@ -882,6 +883,59 @@ def _machine(p, pos, kind, mat="goods3", metal="steel"):
         p.cylinder((pos[0], pos[1]), 0.6, pos[2], pos[2] + 2.2, metal, n=14)
 
 
+# ------------------------------------------------------------------ the coasts
+def _cabinet(p, pos, yaw, body, screen):
+    """An upright arcade cabinet: body, lit screen, control deck, marquee."""
+    f = fu.F(pos, yaw)
+    p.obox(f, (-0.33, -0.4, 0.0), (0.33, 0.35, 1.85), body)
+    p.obox(f, (-0.27, -0.42, 1.05), (0.27, -0.4, 1.5), screen)
+    p.obox(f, (-0.33, -0.62, 0.85), (0.33, -0.4, 0.95), "black")
+    p.obox(f, (-0.33, -0.44, 1.62), (0.33, -0.4, 1.82), screen)
+
+
+def arcade(ctx):
+    """Rows of cabinets along the walls, skee-ball lanes down the middle, a prize counter at the back."""
+    ctx.wall(3.0, 0.7, True, lambda pos, yaw: fu.display_case(ctx.p, pos, yaw, 3.0, "furniture", "glass", h=1.0), prefer=["S"])
+    for k in range(max(2, int(ctx.w / 0.8))):
+        ctx.wall(0.7, 0.8, True, lambda pos, yaw, k=k: _cabinet(ctx.p, pos, yaw, ("vinyl_red", "goods1", "black", "goods3")[k % 4],
+                                                               "screen_lit"), prefer=["E", "W", "S"])
+    x0, y0, x1, y1 = ctx.rect
+    for k in range(max(1, int((ctx.w - 3.0) / 1.2))):
+        ctx.island(x0 + 1.5 + k * 1.2, (y0 + y1) / 2, 0.4, 1.6,
+                   lambda pos: (ctx.p.box((pos[0] - 0.38, pos[1] - 1.6, pos[2]), (pos[0] + 0.38, pos[1] + 1.6, pos[2] + 0.75), "furn_light"),
+                                ctx.p.box((pos[0] - 0.38, pos[1] - 1.6, pos[2] + 0.75), (pos[0] + 0.38, pos[1] - 1.1, pos[2] + 1.9), "vinyl_red")))
+
+
+def snack_stand(ctx):
+    """A boardwalk food stand: counter across the open front, fryers, griddle and fridges behind."""
+    L = max(1.5, ctx.w - 1.2)
+    ctx.wall(L, 0.7, False, lambda pos, yaw: fu.bar_counter(ctx.p, pos, yaw, L, "formica", "counter_top", "chrome_s", h=1.05),
+             prefer=["N"])
+    ctx.wall(1.2, 0.6, False, lambda pos, yaw: fu.fryer(ctx.p, pos, yaw, "steel", "goods2"), prefer=["S"])
+    ctx.wall(1.2, 0.6, False, lambda pos, yaw: fu.range_stove(ctx.p, pos, yaw, "steel", "iron", w=1.2), prefer=["S"])
+    ctx.wall(0.8, 0.7, True, lambda pos, yaw: fu.fridge(ctx.p, pos, yaw, "enamel", "chrome_s"), prefer=["S", "E", "W"])
+    ctx.wall(1.6, 0.4, True, lambda pos, yaw: fu.shelves(ctx.p, pos, yaw, 1.6, 0.35, 1.8, 5, "steel"), prefer=["E", "W"])
+
+
+def guest_room(ctx):
+    """A hotel / motel room: a bed or two against the far wall, nightstand, dresser with a TV, an
+    armchair by the window."""
+    x0, y0, x1, y1 = ctx.rect
+    two = ctx.w >= 3.6
+    for k in range(2 if two else 1):
+        ctx.wall(1.5, 2.1, False, lambda pos, yaw: fu.bed(ctx.p, pos, yaw, 1.4, 2.0, "furn_dark", "quilt"), prefer=["E", "W"])
+    ctx.wall(1.4, 0.5, False, lambda pos, yaw: (fu.dresser(ctx.p, pos, yaw, 1.4, 0.5, 0.8, "furn_dark", "brass"),
+                                               ctx.p.box((pos[0] - 0.4, pos[1] - 0.05, pos[2] + 0.8), (pos[0] + 0.4, pos[1] + 0.05, pos[2] + 1.3), "tv")),
+             prefer=["W", "E", "S"])
+    ctx.island(x0 + ctx.w * 0.3, y0 + ctx.d * 0.8, 0.45, 0.45, lambda pos: fu.armchair(ctx.p, pos, 180, "upholstery", "furn_dark"))
+
+
+def lifeguard_hut(ctx):
+    x0, y0, x1, y1 = ctx.rect
+    ctx.island((x0 + x1) / 2, (y0 + y1) / 2, 0.3, 0.3, lambda pos: fu.stool(ctx.p, pos, "steel", "vinyl_red", h=0.9))
+    ctx.wall(1.0, 0.4, True, lambda pos, yaw: fu.shelves(ctx.p, pos, yaw, 1.0, 0.3, 1.5, 3, "furniture"), prefer=["S", "E", "W"])
+
+
 RECIPES_INST = {
     "classroom": classroom, "lobby": lobby, "council": council, "courtroom": courtroom, "library": library, "ward": ward,
     "nurse_station": nurse_station, "fire_bay": fire_bay, "jail": jail, "auditorium": auditorium, "gym": gym,
@@ -907,6 +961,16 @@ RECIPES = {
     "stockroom": stockroom, "office": office,
 }
 RECIPES.update(RECIPES_INST)
+RECIPES.update({
+    "arcade": arcade, "games": arcade, "snack_stand": snack_stand, "food": snack_stand, "guest_room": guest_room,
+    "lifeguard_hut": lifeguard_hut,
+    # the coastal store vocabulary (CATALOG_SPEC_COASTAL.md) onto the nearest fit-out
+    "surf_shop": sporting_goods, "taffy_fudge": bakery, "ice_cream": cafe, "souvenir": variety_store, "t_shirts": clothing,
+    "beachwear": clothing, "bike_rental": sporting_goods, "golf_cart_rental": auto_repair, "kayak_rental": sporting_goods,
+    "bait_tackle": sporting_goods, "fish_market": butcher, "seafood_restaurant": diner, "raw_bar": bar,
+    "boardwalk_fries": snack_stand, "pizza_slice": pizza, "tattoo": barber, "art_gallery": jeweler, "wine_bar": bar,
+    "brewpub": bar, "marina_store": grocery, "restaurant": diner, "store": variety_store,
+})
 
 
 def fitout_for(business_type, rnd):

@@ -23,10 +23,10 @@ GENERATORS = {}
 
 def generator(kind):
     if kind not in GENERATORS:
-        if kind in ("house", "farmhouse"):
+        if kind in ("house", "farmhouse", "cottage", "beachhouse", "bungalow", "shingle", "singlehouse", "rowhouse"):
             import house
             GENERATORS[kind] = house.build
-        elif kind == "store":
+        elif kind in ("store", "restaurant", "bait", "market"):
             import store
             GENERATORS[kind] = store.build
         elif kind in ("civic", "school", "church"):
@@ -38,6 +38,11 @@ def generator(kind):
         elif kind == "farm":
             import farm
             GENERATORS[kind] = farm.build
+        elif kind in ("hotel", "condo", "motel", "arcade", "stand", "kiosk", "bait", "pavilion", "bandstand", "lifeguard",
+                      "lighthouse", "ride", "monument", "stack", "cannery", "fishhouse", "icehouse", "shed", "boatyard",
+                      "warehouse"):
+            import coastal
+            GENERATORS[kind] = coastal.build
         elif kind == "crossing":
             import bridges
             GENERATORS[kind] = bridges.build
