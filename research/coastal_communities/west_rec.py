@@ -10,6 +10,7 @@ spec.json is a list of {"id", "photos": ["File:..", ...], "claim": "source id" (
 "example": {"title", "place", "year", "source"?, "url"?}, "brief", "traits", "names"}.
 settlement / kind / lot / label come from remake/inventory/coastal_inventory.json.
 A claim already in the west or east claims file is refused."""
+import glob
 import json
 import os
 import sys
@@ -73,6 +74,11 @@ def make(spec_path):
     inv = {s["id"]: s for s in json.load(open(INV))["structures"]}
     inv.update({w["id"]: w for w in json.load(open(INV))["walks"]})
     taken = claimed()
+    photo_owner = {}
+    for p in glob.glob(os.path.join(ROOT, "remake", "reference", "*", "sources.json")):
+        m = json.load(open(p))
+        for f in m["files"]:
+            photo_owner.setdefault(f.get("title"), m.get("structure"))
     for r in json.load(open(spec_path)):
         sid = r["id"]
         r["photos"] = [resolve(t) for t in r["photos"]]
@@ -85,6 +91,11 @@ def make(spec_path):
             print(f"{sid}: REFUSED, {claim} already claimed")
             continue
         s = inv[sid]
+        if "#" not in claim:
+            dup = [t for t in r["photos"] if photo_owner.get(t, sid) != sid]
+            if dup:
+                print(f"{sid}: REFUSED, photo already used by {photo_owner[dup[0]]}: {dup[0]}")
+                continue
         if r.get("expect") and s["kind"] not in r["expect"]:
             print(f"{sid}: REFUSED, inventory kind {s['kind']} is not one of {r['expect']}")
             continue
