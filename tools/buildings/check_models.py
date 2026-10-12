@@ -45,6 +45,7 @@ from glbmesh import Glb, components, weld, world_prims  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
 BUILDINGS = os.path.join(ROOT, "godot_project", "remake", "buildings")
+DEFAULT_BUILDINGS = BUILDINGS
 REPORT = os.path.join(ROOT, "reference", "tmp", "model_check.json")
 FLAT_TOL = 0.002        # m: a piece this close to one plane is a sheet (open edges are fine)
 AREA_EPS = 1e-8         # m^2: below this a triangle is degenerate
@@ -428,7 +429,11 @@ def main(argv):
         return
     ids = [a for a in argv if not a.startswith("--")]
     jobs = int(argv[argv.index("--jobs") + 1]) if "--jobs" in argv else 3
-    report = argv[argv.index("--report") + 1] if "--report" in argv else REPORT
+    whole = "--all" in argv or not ids
+    # only a whole-library run of the game's glbs writes the default report: a few ids or a trial folder must not
+    # overwrite the hour-long one (they go to model_check_partial.json)
+    report = argv[argv.index("--report") + 1] if "--report" in argv else \
+        REPORT if whole and BUILDINGS == DEFAULT_BUILDINGS else REPORT.replace(".json", "_partial.json")
     lods = "--lods" in argv
     if "--jobs" in argv:
         ids.remove(str(jobs))

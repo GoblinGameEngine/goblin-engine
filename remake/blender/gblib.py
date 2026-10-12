@@ -498,9 +498,10 @@ def gable_roof(part, x0, x1, y0, y1, z_eave, pitch_deg, overhang_eave, overhang_
             part.face(list(reversed(bot)), mat_under)
             # eave edge (fascia) and rake edges
             e0, e1 = (xe, ya, zl), (xe, yb, zl)
-            part.face([e0, e1, (e1[0], e1[1], e1[2] - dz), (e0[0], e0[1], e0[2] - dz)] if side == 1 else
+            # (the eave faces out along side*x and the rakes out past ya / yb: both were wound inward, into the slab)
+            part.face([e0, e1, (e1[0], e1[1], e1[2] - dz), (e0[0], e0[1], e0[2] - dz)] if side == -1 else
                       [e1, e0, (e0[0], e0[1], e0[2] - dz), (e1[0], e1[1], e1[2] - dz)], fascia or mat_under)
-            for yy, flip in ((ya, side == 1), (yb, side == -1)):
+            for yy, flip in ((ya, side == -1), (yb, side == 1)):
                 q = [(xe, yy, zl), (xm, yy, z_ridge), (xm, yy, z_ridge - dz), (xe, yy, zl - dz)]
                 part.face(list(reversed(q)) if flip else q, fascia or mat_under)
         return z_ridge

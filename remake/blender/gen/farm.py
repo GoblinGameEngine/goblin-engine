@@ -410,12 +410,40 @@ def build_silo(rec, tr, rnd):
             p.face([P(a1, ri, zb), P(a0, ri, zb), P(a0, ri, h), P(a1, ri, h)], "silo_wall")
             if gap:
                 p.face([P(a1, ro, zb), P(a0, ro, zb), P(a0, ri, zb), P(a1, ri, zb)], "silo_wall")
-    # hoops (stave silos): open bands on a visual-only part.  Capped, each one was a solid disc
-    # across the silo in the collision mesh (the lowest ~0.3 m above the floor), sealing it off.
+            else:                                                       # the doorway's jambs (else open to the gap)
+                gp = lambda j: abs(math.atan2(math.sin((2 * j + 1) * math.pi / n - math.pi / 2),
+                                              math.cos((2 * j + 1) * math.pi / n - math.pi / 2))) < (door_w / 2) / r
+                if gp((i + 1) % n):
+                    p.face([P(a1, ri, door_h), P(a1, ro, door_h), P(a1, ro, 0.0), P(a1, ri, 0.0)], "silo_wall")
+                if gp(i - 1):
+                    p.face([P(a0, ri, 0.0), P(a0, ro, 0.0), P(a0, ro, door_h), P(a0, ri, door_h)], "silo_wall")
+    # hoops (stave silos), on a visual-only part: a band 3 cm proud of the wall, its top and bottom running back to
+    # the wall's corners (the same n-gon), so it is closed against the wall -- open bands were ~1,300 see-through
+    # edges a silo.  (Capped across, each was a solid disc through the silo in the collision mesh.)  Below the
+    # doorway's head a hoop stops at the jambs, with an end face, instead of running across the opening.
     if typ in ("concrete_stave", "wood_stave"):
         hp = b.part("silo_hoops")
+        P = lambda a, rr, z: (rr * math.cos(a), rr * math.sin(a), z)
+        ro = r + 0.03
         for k in range(int(h / 0.8)):
-            hp.cylinder((0.0, 0.0), r + 0.03, k * 0.8 + 0.4, k * 0.8 + 0.45, "steel", n=n, caps=False)
+            z0, z1 = k * 0.8 + 0.4, k * 0.8 + 0.45
+            segs = []
+            for i in range(n):
+                a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+                am = (a0 + a1) / 2
+                gap = abs(math.atan2(math.sin(am - math.pi / 2), math.cos(am - math.pi / 2))) < (door_w / 2) / r
+                segs.append(not (gap and z0 < door_h))
+            for i in range(n):
+                if not segs[i]:
+                    continue
+                a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+                hp.face([P(a0, ro, z0), P(a1, ro, z0), P(a1, ro, z1), P(a0, ro, z1)], "steel")
+                hp.face([P(a0, r, z1), P(a0, ro, z1), P(a1, ro, z1), P(a1, r, z1)], "steel")
+                hp.face([P(a1, r, z0), P(a1, ro, z0), P(a0, ro, z0), P(a0, r, z0)], "steel")
+                if not segs[i - 1]:
+                    hp.face([P(a0, r, z0), P(a0, ro, z0), P(a0, ro, z1), P(a0, r, z1)], "steel")
+                if not segs[(i + 1) % n]:
+                    hp.face([P(a1, r, z1), P(a1, ro, z1), P(a1, ro, z0), P(a1, r, z0)], "steel")
     # domed / conical roof; a painted checkerboard dome (and/or band) when the record has one
     checked_top = tr.get("checkered_top") or tr.get("checkered")
     checked_band = tr.get("checkered_band") or (tr.get("checkered") and not tr.get("checkered_top"))
@@ -428,13 +456,16 @@ def build_silo(rec, tr, rnd):
         z0 = h + r * 0.8 * math.sin(k / 6 * math.pi / 2)
         z1 = h + r * 0.8 * math.sin((k + 1) / 6 * math.pi / 2)
         if checked_top:
-            Q = lambda a, rr, z: ((rr + 0.05) * math.cos(a), (rr + 0.05) * math.sin(a), z)
+            Q = lambda a, rr, z: (rr * (r + 0.05) / r * math.cos(a), rr * (r + 0.05) / r * math.sin(a), z)  # 0 at the apex
             for i in range(n):
                 a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
                 p.face([Q(a0, rr0, z0), Q(a1, rr0, z0), Q(a1, rr1, z1), Q(a0, rr1, z1)],
                        "check_red" if (i // 2 + k) % 2 == 0 else "check_white")
         else:
             p.cylinder((0.0, 0.0), max(rr0, rr1) + 0.05, z0, z1, "silo_wall" if typ == "harvestore_blue" else "roof", n=n, r1=rr1 + 0.05)
+    if checked_top:                                     # the painted dome is a shell of faces: close it underneath
+        Q = lambda a: ((r + 0.05) * math.cos(a), (r + 0.05) * math.sin(a), h)
+        p.face([Q(-2 * math.pi * i / n) for i in range(n)], "roof")
     if checked_band:
         bnd = b.part("silo_band")
         for row in range(2):
@@ -445,6 +476,20 @@ def build_silo(rec, tr, rnd):
                     continue                                                # behind the chute (+x) stays plain
                 Q = lambda a, z: ((r + 0.04) * math.cos(a), (r + 0.04) * math.sin(a), z)
                 bnd.face([Q(a0, zz), Q(a1, zz), Q(a1, zz + 0.6), Q(a0, zz + 0.6)], "check_red" if (i + row) % 2 == 0 else "check_white")
+        # closed back to the wall (as the hoops): its top and bottom edge, and its two ends beside the chute
+        P = lambda a, rr, z: (rr * math.cos(a), rr * math.sin(a), z)
+        z0, z1, ro = h - 1.6, h - 0.4, r + 0.04
+        on = [abs(math.atan2(math.sin((2 * i + 1) * math.pi / n), math.cos((2 * i + 1) * math.pi / n))) >= 0.35 for i in range(n)]
+        for i in range(n):
+            if not on[i]:
+                continue
+            a0, a1 = 2 * math.pi * i / n, 2 * math.pi * (i + 1) / n
+            bnd.face([P(a0, r, z1), P(a0, ro, z1), P(a1, ro, z1), P(a1, r, z1)], "check_white")
+            bnd.face([P(a1, r, z0), P(a1, ro, z0), P(a0, ro, z0), P(a0, r, z0)], "check_white")
+            if not on[i - 1]:
+                bnd.face([P(a0, r, z0), P(a0, ro, z0), P(a0, ro, z1), P(a0, r, z1)], "check_white")
+            if not on[(i + 1) % n]:
+                bnd.face([P(a1, r, z1), P(a1, ro, z1), P(a1, ro, z0), P(a1, r, z0)], "check_white")
     p.cylinder((0.0, 0.0), r - 0.05, -0.05, 0.1, "concrete", n=n)
     # a feed room against the base (as on real silos): an ordinary hinged door to the yard, and a
     # cased opening through its back wall into the silo's doorway gap
@@ -465,6 +510,7 @@ def build_silo(rec, tr, rnd):
     ch.box((r - 0.05, -0.45, 0.0), (r + 0.8, 0.45, h + 0.3), "silo_wall" if typ != "harvestore_blue" else "steel")
     ladder(b, "silo", r + 0.9, 0.0, 0.0, h + 0.5, axis="y")
     b.empty("light_silo", (0.0, 0.0, 2.2))
+    b.audit_spaces = [(-r, -r, r, r)]                   # the feed room's back opening leads into the silo (gbaudit)
     return b
 
 
@@ -486,19 +532,26 @@ def build_shed(rec, tr, rnd):
         for i in range(n):
             a0, a1 = math.pi * i / n, math.pi * (i + 1) / n
             P = lambda a, y, dr=0.0: ((r + dr) * math.cos(a), y, (r + dr) * math.sin(a) * H / r)
-            p.face([P(a0, y0), P(a1, y0), P(a1, y1), P(a0, y1)], "ext")
-            p.face([P(a1, y0, -0.05), P(a0, y0, -0.05), P(a0, y1, -0.05), P(a1, y1, -0.05)], "ext")
+            # (outer layer faces out, inner in: they were the other way round, each seen through the other)
+            p.face([P(a1, y0), P(a0, y0), P(a0, y1), P(a1, y1)], "ext")
+            p.face([P(a0, y0, -0.05), P(a1, y0, -0.05), P(a1, y1, -0.05), P(a0, y1, -0.05)], "ext")
         # end walls: the back closed, the front with a big door opening (two leaves) + a man door
         for yy, front in ((y0, False), (y1, True)):
             pts = [(r * math.cos(math.pi * i / n), r * math.sin(math.pi * i / n) * H / r) for i in range(n + 1)]
-            for (xa, za), (xb, zb) in zip(pts, pts[1:]):
-                xm = (xa + xb) / 2
-                zlo = 3.0 if front and abs(xm) < 1.9 else 0.0
+            cut = [front and abs((xa + xb) / 2) < 1.9 for (xa, _), (xb, _) in zip(pts, pts[1:])]
+            for k, ((xa, za), (xb, zb)) in enumerate(zip(pts, pts[1:])):
+                zlo = 3.0 if cut[k] else 0.0
                 if max(za, zb) <= zlo:
                     continue
                 q = [(xa, yy, max(zlo, 0.0)), (xb, yy, max(zlo, 0.0)), (xb, yy, zb), (xa, yy, za)]
                 p.face(q if front else q[::-1], "ext")
                 p.face([(v[0], v[1] - 0.05 if front else v[1] + 0.05, v[2]) for v in (q[::-1] if front else q)], "ext")
+                if front and zlo > 0:                   # the big opening's head, and its jambs where it meets full height
+                    p.face([(xb, yy, zlo), (xa, yy, zlo), (xa, yy - 0.05, zlo), (xb, yy - 0.05, zlo)], "ext")
+                    for xe, nb in ((xa, k - 1), (xb, k + 1)):
+                        if 0 <= nb < len(cut) and not cut[nb]:                 # the neighbour runs to the floor
+                            j = [(xe, yy, 0.0), (xe, yy - 0.05, 0.0), (xe, yy - 0.05, zlo), (xe, yy, zlo)]
+                            p.face(j if xe > 0 else j[::-1], "ext")
         p.box((x0, y0, -0.02), (x1, y1, FL), "floor", sides="Z")
         for s in (-1, 1):
             hinge = g.Vector((s * 1.9, y1 + 0.02, FL))
@@ -524,7 +577,8 @@ def build_shed(rec, tr, rnd):
                     blocks=[dict(name="shed", rect=(x0, y0, x1, y1), floors=[(FL, H - 0.2)], wall_top=H, found_top=FL,
                                  roof=dict(type="gable", ridge="x", pitch=20 if typ != "corn_crib" else 35, eave_oh=0.4, rake_oh=0.3,
                                            thick=0.12))],
-                    rooms=[dict(name="SHED", rect=(x0, y0, x1, y1), type=None, no_furnish=True)], doors=doors,
+                    rooms=[dict(name="SHED", rect=(x0, y0, x1, y1), type=None, no_furnish=True,
+                                unsealed=open_front or drive)], doors=doors,
                     windows=[dict(at=(x0, 0.0), w=0.8, sill=1.3, h=0.6, kind="dh", cols=2)] if typ != "corn_crib" else [],
                     stairs=[], rails=[], porches=[], chimneys=[], fireplaces=[])
         if drive:

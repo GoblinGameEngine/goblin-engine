@@ -114,8 +114,13 @@ def audit(b):
     z_top = max(bl.get("wall_top", 3.0) for _, bl in blocks) + 12.0
     res = {"leaks": [], "clips": [], "doors": []}
     # --- sealed
+    # (b.audit_spaces: more closed footprints a room opens into that aren't planned blocks -- the silo a feed room's
+    # back opening leads into.  A ray may cross them; only the seal test uses them.)
+    seal_blocks = blocks + [(None, {"rect": tuple(r)}) for r in getattr(b, "audit_spaces", [])]
     for h in b.houses:
         for r in h.s.get("rooms", []):
+            if r.get("unsealed"):
+                continue                                 # open by design (a pole shed's open front, a drive-through alley)
             x0, y0, x1, y1 = r["rect"]
             cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
             hb = _block_at(blocks, cx, cy)
@@ -142,7 +147,7 @@ def audit(b):
                         if tree.find_nearest(p, 0.05)[0] is not None:
                             continue                     # (inside a wall or a stair: not a room point)
                         for d in DIRS:
-                            lim = _exit_dist(blocks, p, d, z_top) + SEAL_SLACK
+                            lim = _exit_dist(seal_blocks, p, d, z_top) + SEAL_SLACK
                             hit = tree.ray_cast(p, d, lim)
                             if hit[0] is None:
                                 bad += 1
