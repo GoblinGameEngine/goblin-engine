@@ -178,6 +178,9 @@ class Building:
         used = {m.name for ob in bpy.data.objects if ob.type == "MESH" for m in ob.data.materials if m}
         with open(os.path.splitext(out_glb)[0] + ".mats.json", "w") as f:
             json.dump({k: v for k, v in sorted(self.mat_defs.items()) if k in used}, f, indent=0)
+        if os.environ.get("SSC_BUILD_OUT"):                # a trial build (gen/common.py): no .blend, no rooms
+            print(f"EXPORTED {out_glb}")
+            return
         # the working .blend stays OUT of godot_project: Godot 4.3 tries to import .blend files
         # through an external Blender and stalls the whole import when it can't find one
         blend = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out",
@@ -327,27 +330,29 @@ class Part:
                 loop[self.uv].uv = (uv[0] / tile, uv[1] / tile)
         return f
 
-    def box(self, lo, hi, mat, sides=None, mats=None):
+    def box(self, lo, hi, mat, sides=None, mats=None, inward=False):
         """Axis-aligned box. sides: subset of 'xXyYzZ' to emit (default all).
         Corners are sorted per axis: a box given hi < lo would otherwise come out inside-out
-        (faces pointing inward -- invisible from outside and no collision from above)."""
+        (faces pointing inward -- invisible from outside and no collision from above).
+        inward=True: faces look into the box (the sides of a hole: a stair well seen from inside it)."""
         x0, x1 = sorted((lo[0], hi[0]))
         y0, y1 = sorted((lo[1], hi[1]))
         z0, z1 = sorted((lo[2], hi[2]))
         s = sides or "xXyYzZ"
         m = mats or {}
+        face = (lambda q, mt: self.face(list(reversed(q)), mt)) if inward else self.face
         if "x" in s:
-            self.face([(x0, y1, z0), (x0, y0, z0), (x0, y0, z1), (x0, y1, z1)], m.get("x", mat))
+            face([(x0, y1, z0), (x0, y0, z0), (x0, y0, z1), (x0, y1, z1)], m.get("x", mat))
         if "X" in s:
-            self.face([(x1, y0, z0), (x1, y1, z0), (x1, y1, z1), (x1, y0, z1)], m.get("X", mat))
+            face([(x1, y0, z0), (x1, y1, z0), (x1, y1, z1), (x1, y0, z1)], m.get("X", mat))
         if "y" in s:
-            self.face([(x0, y0, z0), (x1, y0, z0), (x1, y0, z1), (x0, y0, z1)], m.get("y", mat))
+            face([(x0, y0, z0), (x1, y0, z0), (x1, y0, z1), (x0, y0, z1)], m.get("y", mat))
         if "Y" in s:
-            self.face([(x1, y1, z0), (x0, y1, z0), (x0, y1, z1), (x1, y1, z1)], m.get("Y", mat))
+            face([(x1, y1, z0), (x0, y1, z0), (x0, y1, z1), (x1, y1, z1)], m.get("Y", mat))
         if "z" in s:
-            self.face([(x0, y1, z0), (x1, y1, z0), (x1, y0, z0), (x0, y0, z0)], m.get("z", mat))
+            face([(x0, y1, z0), (x1, y1, z0), (x1, y0, z0), (x0, y0, z0)], m.get("z", mat))
         if "Z" in s:
-            self.face([(x0, y0, z1), (x1, y0, z1), (x1, y1, z1), (x0, y1, z1)], m.get("Z", mat))
+            face([(x0, y0, z1), (x1, y0, z1), (x1, y1, z1), (x0, y1, z1)], m.get("Z", mat))
 
     def obox(self, frame, lo, hi, mat, mats=None):
         """Box in a local frame (origin o, unit axes u, v, w): lo/hi are (u, v, w) extents."""
@@ -529,7 +534,8 @@ def window(b, part_name, frame, off, w, sill, head, t, sash_rows=2, sash_cols=2,
     pt.obox(F, (off - casing, -0.025, sill), (off, 0.0, head + casing), trim)
     pt.obox(F, (off + w, -0.025, sill), (off + w + casing, 0.0, head + casing), trim)
     pt.obox(F, (off - casing - 0.02, -0.045, head + casing), (off + w + casing + 0.02, 0.0, head + casing + 0.04), trim)
-    pt.obox(F, (off - casing, -0.06, sill - 0.04), (off + w + casing, t * 0.35, sill), trim)
+    pt.obox(F, (off - casing, -0.06, sill - 0.04), (off + w + casing, t * 0.35, sill + 0.004), trim)   # (top just
+    # above the opening's floor, which it covers: level with it the two flicker)
     # interior casing
     pt.obox(F, (off - casing * 0.8, t, sill - 0.05), (off, t + 0.02, head + casing * 0.8), trim)
     pt.obox(F, (off + w, t, sill - 0.05), (off + w + casing * 0.8, t + 0.02, head + casing * 0.8), trim)
@@ -624,7 +630,7 @@ def door(b, frame_part, frame, off, w, head, t, name, swing_in=True, leaves=1, p
     fp.obox(F, (off, 0, threshold_z), (off + 0.035, t, head), trim)
     fp.obox(F, (off + w - 0.035, 0, threshold_z), (off + w, t, head), trim)
     # the threshold is the walkable floor across the wall thickness: give it collision
-    b.part("thresholds-col").obox(F, (off, -0.03, threshold_z - 0.02), (off + w, t, threshold_z + 0.015), "threshold")
+    b.part("thresholds-col").obox(F, (off, -0.03, threshold_z - 0.02), (off + w, t + 0.004, threshold_z + 0.015), "threshold")
     panels = [(0.15, 0.55, 0.85, 0.92), (0.15, 0.1, 0.85, 0.45)] if panels is None else panels
     leaf_depth = t * 0.25 if not swing_in else t * 0.75
     if leaves == 0:                     # cased opening: trim only, no leaf
@@ -776,11 +782,12 @@ def wall_profile(part, a, b, z0, top, t, openings, mat_out, mat_in, mat_reveal=N
             # reveal faces only where a strip edge borders an opening or the wall end
             for ue, sgn in ((u0, -1), (u1, 1)):
                 te = t0 if ue == u0 else t1
-                border = ue in (0.0, length) or any(abs(ue - op["off"]) < 1e-4 or abs(ue - op["off"] - op["w"]) < 1e-4
+                border = ue < 1e-4 or abs(ue - length) < 1e-4 or any(        # (cuts are rounded: not == length)
+                                                     abs(ue - op["off"]) < 1e-4 or abs(ue - op["off"] - op["w"]) < 1e-4
                                                      for op in openings)
                 if border:
-                    q = [P(ue, 0, zb), P(ue, t, zb), P(ue, t, te), P(ue, 0, te)]
-                    part.face(q if sgn < 0 else list(reversed(q)), mr)
+                    q = [P(ue, 0, zb), P(ue, t, zb), P(ue, t, te), P(ue, 0, te)]     # (faces +u as listed)
+                    part.face(list(reversed(q)) if sgn < 0 else q, mr)
     return (o, u, w_in, up)
 
 
@@ -799,7 +806,7 @@ def floor_with_holes(part, x0, x1, y0, y1, z, thick, holes, mat_top, mat_under):
                 continue
             part.box((xa, ya, z - thick), (xb, yb, z), mat_top, mats={"z": mat_under}, sides="zZ")
     for (hx0, hx1, hy0, hy1) in holes:        # well edges
-        part.box((hx0, hy0, z - thick), (hx1, hy1, z), mat_under, sides="xXyY")
+        part.box((hx0, hy0, z - thick), (hx1, hy1, z), mat_under, sides="xXyY", inward=True)
 
 
 def shutter_pair(part, frame, off, w, sill, head, mat, depth=-0.04):

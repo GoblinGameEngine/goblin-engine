@@ -19,7 +19,8 @@ import gblib as g  # noqa: E402
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 CATALOG = os.path.join(ROOT, "remake", "catalog")
 LIB = os.path.join(ROOT, "remake", "textures", "lib")
-OUT_DIR = os.path.join(ROOT, "godot_project", "remake", "buildings")
+# SSC_BUILD_OUT=dir builds somewhere else (a trial build: the game's glbs, rooms and .blends are left alone)
+OUT_DIR = os.environ.get("SSC_BUILD_OUT") or os.path.join(ROOT, "godot_project", "remake", "buildings")
 INVENTORY = os.path.join(ROOT, "remake", "inventory", "map_inventory.json")
 
 with open(os.path.join(LIB, "set.json")) as _f:

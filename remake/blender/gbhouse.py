@@ -225,7 +225,7 @@ class House:
             z0 = bl.get("found_top", fz[0] - 0.05)
             x0, y0, x1, y1 = bl["rect"]
             # foundation band
-            self.shell.box((x0 - 0.02, y0 - 0.02, -g.FOUND_DEPTH), (x1 + 0.02, y1 + 0.02, z0), self.m["found"], sides="xXyY")
+            self.shell.box((x0 - 0.02, y0 - 0.02, -g.FOUND_DEPTH), (x1 + 0.02, y1 + 0.02, z0), self.m["found"], sides="xXyYZ")   # (topped: it stands 2 cm proud of the wall)
             for side, (a, c) in self._block_edges(bl).items():
                 L = math.dist(a, c)
                 keep = _subtract((0.0, L), self._shared(bl, side))
@@ -1001,9 +1001,61 @@ class House:
                 lz = min(cz, self.roof_under(bl, cx, cy)) - 0.25
                 b.empty(f"light_locked_{typ}" if r.get("locked") else f"light_{typ}", (cx, cy, lz))
 
+    def clear_windows_of_partitions(self):
+        """A window that a partition runs into (the partition's open end showing through the glass, the casing
+        buried in the wall) slides along its wall until its casing clears the partition; if neither way fits it
+        stays and is reported.  The check found this in generated plans, whose rooms and windows are laid out
+        separately."""
+        CAS = 0.12                                              # window casing (gblib.window: 0.1) + a margin
+        moved = stuck = 0
+        for it in self.s.get("windows", []):
+            fl = it.get("floor", 0)
+            ax, ay = it["at"]
+            for bl in self.s["blocks"]:
+                x0, y0, x1, y1 = bl["rect"]
+                if fl >= len(bl["floors"]):
+                    continue
+                if (abs(ax - x0) <= self.te + 0.05 or abs(ax - x1) <= self.te + 0.05) and y0 - EPS <= ay <= y1 + EPS:
+                    wall_x = x0 if abs(ax - x0) <= abs(ax - x1) else x1
+                    along, lo, hi, k = ay, y0, y1, 1                    # wall along y: partitions are lines y = c
+                elif (abs(ay - y0) <= self.te + 0.05 or abs(ay - y1) <= self.te + 0.05) and x0 - EPS <= ax <= x1 + EPS:
+                    wall_x = y0 if abs(ay - y0) <= abs(ay - y1) else y1
+                    along, lo, hi, k = ax, x0, x1, 0
+                else:
+                    continue
+                # partition lines meeting this wall on this floor: room edges across it that end at the wall
+                cs = set()
+                for r in self.s["rooms"]:
+                    if r.get("floor", 0) != fl:
+                        continue
+                    rx0, ry0, rx1, ry1 = r["rect"]
+                    ends = (rx0, rx1) if k == 1 else (ry0, ry1)
+                    if not any(abs(e - wall_x) < EPS for e in ends):
+                        continue
+                    for c in ((ry0, ry1) if k == 1 else (rx0, rx1)):
+                        if lo + EPS < c < hi - EPS:
+                            cs.add(round(c, 3))
+                need = it["w"] / 2 + CAS + self.ti / 2
+                if not any(abs(along - c) < need for c in cs):
+                    break
+                ok = lambda v: (lo + self.te + it["w"] / 2 + CAS <= v <= hi - self.te - it["w"] / 2 - CAS and
+                                all(abs(v - c) >= need - 1e-6 for c in cs))
+                c = min(cs, key=lambda c: abs(along - c))
+                tries = sorted((c - need, c + need), key=lambda v: abs(v - along))
+                new = next((v for v in tries if ok(v)), None)
+                if new is None:
+                    stuck += 1
+                else:
+                    it["at"] = [ax, new] if k == 1 else [new, ay]
+                    moved += 1
+                break
+        if moved or stuck:
+            print("WINDOWS %s moved clear of partitions %d, could not %d" % (self.s.get("name", ""), moved, stuck))
+
     def build(self):
         self.b.plans.append(self.s)
         self.b.houses.append(self)
+        self.clear_windows_of_partitions()
         for bl in self.s["blocks"]:
             self.b.massing.append(dict(rect=bl["rect"], top=bl["wall_top"], mat=bl.get("ext", self.m["ext"])))
         self.build_exterior()

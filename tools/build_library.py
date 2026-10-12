@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""build_library.py [-j N] [--prefix P ...] [--force] -- build every catalog record that is its own model (a record with
+"""build_library.py [-j N] [--prefix P ...] [--force] [--ids FILE] -- build every catalog record that is its own model (a record with
 "model" pointing at another is placed as that one: tools/settlegen/city.py library_key) and has no glb newer than its
 record, in N parallel Blender batches (each builds, audits and writes its LODs: build_record.py).  Logs per batch in
 reference/tmp/build_logs/; a summary of what failed at the end (rerun picks up only what is missing).
@@ -49,8 +49,9 @@ def main():
     ap.add_argument("--prefix", action="append", default=[])
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--ids", help="file of record ids to build (one per line), instead of the catalog scan")
     a = ap.parse_args()
-    ids = todo(a.prefix, a.force)
+    ids = [ln.strip() for ln in open(a.ids) if ln.strip()] if a.ids else todo(a.prefix, a.force)
     print(f"{len(ids)} records to build", flush=True)
     if a.list or not ids:
         return

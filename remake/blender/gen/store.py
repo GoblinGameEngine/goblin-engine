@@ -382,8 +382,11 @@ def facade_dressing(b, tr, rec, fronts_info, x0, x1, y0, y1, floors, wall_top, p
     nm = (rec.get("names") or {}).get("block_name") or ""
     yr = rec.get("traits", {}).get("year_built")
     if nm or yr:
+        zb = wall_top + parapet * 0.35
+        if cornice == "corbelled_brick":
+            zb = min(zb, wall_top + parapet - 0.6 - 0.15)   # under the corbel courses, not sunk in the lowest one
         g.text_mesh(b, "sign_block", (nm.upper() + "  " if nm else "") + (str(yr) if yr else ""), 0.22,
-                    ((x0 + x1) / 2, y1 + 0.02, wall_top + parapet * 0.35), math.pi, "trim", extrude=0.03, font=FONT_SERIF)
+                    ((x0 + x1) / 2, y1 + 0.02, zb), math.pi, "trim", extrude=0.03, font=FONT_SERIF)
 
 
 def site(b, lot_w, lot_d, x0, x1, y0, y1, rnd, rear_doors=()):

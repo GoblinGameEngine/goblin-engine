@@ -48,7 +48,9 @@ func _initialize() -> void:
 		RoadFurniture.bake_bin()
 		Placement.bake_bin()
 		NpcPlaces.bake_bin()
-		NpcTraffic.bake_fleet()
+		# loaded when run, not named: NpcTraffic reaches the vehicles, which name the Controls / WeaponManager autoloads,
+		# and a --script main script is compiled before the autoloads exist (the whole bake then fails to compile)
+		load("res://remake/characters/npc_traffic.gd").bake_fleet()
 		var n := MapTerrain.bake_pads()
 		print("BAKED pads: %d in %.1f s -> %s" % [n, (Time.get_ticks_msec() - t0) / 1000.0, MapTerrain.PADS_BAKED])
 	if all or what.has("terrain"):
