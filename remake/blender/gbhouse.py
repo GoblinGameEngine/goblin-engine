@@ -1251,8 +1251,10 @@ def appliance(p, pos, yaw, mat, h):
 # ------------------------------------------------------------------ site: fences, gates, mailboxes
 def picket_fence(b, pts, h, mat, name="fence", gate=None, spacing=0.11):
     """Picket fence along a polyline.  gate=(segment_index, offset_m, width_m): that stretch gets a
-    real swinging gate (a door_* leaf, so Godot opens it like any door)."""
-    p = b.part(f"{name}-col")
+    real swinging gate (a door_* leaf, so Godot opens it like any door).  The pickets are visual only; each run
+    collides as one box (<name>_box-colonly)."""
+    p = b.part(name)
+    col = b.part(f"{name}_box-colonly")
     for si, (a, c) in enumerate(zip(pts, pts[1:])):
         A, C = Vector((a[0], a[1], 0)), Vector((c[0], c[1], 0))
         L = (C - A).length
@@ -1266,6 +1268,7 @@ def picket_fence(b, pts, h, mat, name="fence", gate=None, spacing=0.11):
         for (r0, r1) in runs:
             if r1 - r0 < 0.05:
                 continue
+            col.obox(F, (r0 - 0.045, -0.02, 0), (r1 + 0.045, 0.09, h + 0.1), mat)
             for z in (0.2, h - 0.25):
                 p.obox(F, (r0, 0.02, z), (r1, 0.06, z + 0.08), mat)
             k = r0 + 0.04
@@ -1330,8 +1333,10 @@ def std_house_materials(b, textures, tiles=None):
 
 
 def chainlink_fence(b, pts, h, name="chainlink", gate=None):
-    """Galvanised chain-link fence: pipe posts, top rail, semi-transparent mesh.  gate as picket_fence."""
-    p = b.part(f"{name}-col")
+    """Galvanised chain-link fence: pipe posts, top rail, semi-transparent mesh.  gate as picket_fence.  Each run
+    collides as one box (<name>_box-colonly): the mesh between the posts blocks, as a fence should."""
+    p = b.part(name)
+    col = b.part(f"{name}_box-colonly")
     b.mat("mesh", color=(0.6, 0.62, 0.64), rough=0.4, alpha=0.35)
     for si, (a, c) in enumerate(zip(pts, pts[1:])):
         A, C = Vector((a[0], a[1], 0)), Vector((c[0], c[1], 0))
@@ -1345,6 +1350,7 @@ def chainlink_fence(b, pts, h, name="chainlink", gate=None):
             if r1 - r0 < 0.05:
                 continue
             p.obox(F, (r0, -0.02, h - 0.04), (r1, 0.02, h), "chainlink")
+            col.obox(F, (r0 - 0.03, -0.03, 0), (r1 + 0.03, 0.03, h + 0.05), "chainlink")
             mesh = b.part(f"{name}_mesh")
             P = lambda s, z: tuple(A + u * s + Vector((0, 0, z)))
             mesh.face([P(r0, 0.05), P(r1, 0.05), P(r1, h - 0.04), P(r0, h - 0.04)], "mesh")

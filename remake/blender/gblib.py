@@ -702,7 +702,14 @@ def stairs(b, name, start, direction, width, rise_total, n_risers, run, mat, str
 
 
 def spindle_rail(p, pts, z0, height, spacing, mat, post_every=None, rail_w=0.06):
-    """Railing along a 2D polyline: bottom rail, top rail, square spindles."""
+    """Railing along a 2D polyline: bottom rail, top rail, square spindles.  Into a "-col" part, the railing is built
+    visual-only (the part's name without -col) and collides as one thin box per run (<name>_box-colonly): a spindle's
+    12 triangles each were ~16% of a building's collision, and nothing gets between them anyway."""
+    col = None
+    if p.name.endswith("-col") and p.parent is None and p.origin.length == 0 and not p.rot_z:
+        col = p.b.part(p.name[:-4] + "_box-colonly")
+        p = p.b.part(p.name[:-4])
+    hw = max(rail_w / 2, 0.03)
     for a, c in zip(pts, pts[1:]):
         A, C = Vector((a[0], a[1], 0)), Vector((c[0], c[1], 0))
         L = (C - A).length
@@ -715,6 +722,8 @@ def spindle_rail(p, pts, z0, height, spacing, mat, post_every=None, rail_w=0.06)
         for k in range(n + 1):
             s = L * k / n
             p.obox(F, (s - 0.018, -0.018, z0 + 0.1), (s + 0.018, 0.018, z0 + height - 0.05), mat)
+        if col is not None:
+            col.obox(F, (-0.018, -hw, z0), (L + 0.018, hw, z0 + height), mat)
 
 
 def text_mesh(b, name, text, size, loc, rot_z, mat, extrude=0.004, font=None, parent=None, align="CENTER"):
