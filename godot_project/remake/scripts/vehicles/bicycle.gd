@@ -112,7 +112,7 @@ func take_seat(p: StationPlayer) -> void:
 	if pilot == null or _rider:
 		return
 	var seed := 1
-	var life := NpcLife.shared() if FileAccess.file_exists(NpcLife.PATH) else null
+	var life := NpcLife.shared() if DataFile.exists(NpcLife.PATH) else null
 	if life:
 		seed = life.seed
 	var v := NpcTraits.shared().person(seed, "player", ["L0", "L1"], "", {"age": 30})

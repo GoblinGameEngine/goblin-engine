@@ -51,7 +51,7 @@ static func load_all() -> void:
 	if not _types.is_empty():
 		return
 	_types = (JSON.parse_string(FileAccess.get_file_as_string(PLACES)) as Dictionary).types
-	var ix: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(INDEX))
+	var ix: Dictionary = JSON.parse_string(DataFile.text(INDEX))
 	for u in ix.units:
 		_units[u.uid] = u
 		if not _of_type.has(u.type):
@@ -101,7 +101,7 @@ static func bake_bin() -> int:
 
 
 static func _pack_paths() -> Dictionary:
-	var paths: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(PATHS))
+	var paths: Dictionary = JSON.parse_string(DataFile.text(PATHS))
 	var d := {}
 	var pn := PackedVector2Array()
 	for nd in paths.nodes:

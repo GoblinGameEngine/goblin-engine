@@ -71,8 +71,8 @@ static func data() -> Dictionary:
 			f.close()
 			if typeof(d) == TYPE_DICTIONARY and str(d.get("_stamp", "")) == _stamp():
 				_C = d
-		if _C.is_empty() and FileAccess.file_exists(SRC):
-			_C = _compact(JSON.parse_string(FileAccess.get_file_as_string(SRC)))
+		if _C.is_empty() and DataFile.exists(SRC):
+			_C = _compact(JSON.parse_string(DataFile.text(SRC)))
 	return _C
 
 
@@ -81,7 +81,7 @@ static func _stamp() -> String:
 
 
 static func bake_bin() -> void:
-	var d := _compact(JSON.parse_string(FileAccess.get_file_as_string(SRC)))
+	var d := _compact(JSON.parse_string(DataFile.text(SRC)))
 	d["_stamp"] = _stamp()
 	var f := FileAccess.open(BIN, FileAccess.WRITE)
 	f.store_var(d)
@@ -151,7 +151,7 @@ static func sign_dict(i: int) -> Dictionary:
 
 
 func setup() -> void:
-	if not FileAccess.file_exists("res://remake/road_furniture.json"):
+	if not DataFile.exists("res://remake/road_furniture.json"):
 		return
 	var cd := data()
 	_d = {"xings": cd.xings, "signals": cd.signals}            # (the signs stay packed: sign_dict)

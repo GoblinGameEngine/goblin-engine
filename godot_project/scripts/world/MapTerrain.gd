@@ -170,7 +170,7 @@ static func _read_compact() -> Dictionary:
 		f.close()
 		if typeof(d) == TYPE_DICTIONARY and str(d.get("_stamp", "")) == _bin_stamp():
 			return d
-	return _pack(JSON.parse_string(FileAccess.get_file_as_string(PATH)))
+	return _pack(JSON.parse_string(DataFile.text(PATH)))
 
 
 static func _pack(d: Dictionary) -> Dictionary:
@@ -195,7 +195,7 @@ static func _packed_pts(a: Array) -> PackedVector2Array:
 
 static func bake_bin() -> void:
 	## (remake/tools/bake_world.gd pads) terrain.json packed, as terrain.bin
-	var d := _pack(JSON.parse_string(FileAccess.get_file_as_string(PATH)))
+	var d := _pack(JSON.parse_string(DataFile.text(PATH)))
 	d["_stamp"] = _bin_stamp()
 	var f := FileAccess.open(BIN, FileAccess.WRITE)
 	f.store_var(d)
@@ -713,7 +713,7 @@ static func _load_pads() -> void:
 	## Every placed structure's lot (its visual bounds, turned by its yaw) and pad height (the height
 	## RemakeWorld stands it at).  Crossings have no pad (a bridge spans its water): their deck
 	## height instead, which the roads ramp to.
-	if not FileAccess.file_exists(PLACEMENT):
+	if not DataFile.exists(PLACEMENT):
 		return
 	Placement.load_all()
 	_pad_h.resize(Placement.count())

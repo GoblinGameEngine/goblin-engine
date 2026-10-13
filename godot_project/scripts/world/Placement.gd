@@ -32,8 +32,8 @@ static func load_all() -> void:
 			f.close()
 			if typeof(d) == TYPE_DICTIONARY and str(d.get("_stamp", "")) == _stamp():
 				_d = d
-		if _d.is_empty() and FileAccess.file_exists(SRC):
-			_d = _compact((JSON.parse_string(FileAccess.get_file_as_string(SRC)) as Dictionary).structures)
+		if _d.is_empty() and DataFile.exists(SRC):
+			_d = _compact((JSON.parse_string(DataFile.text(SRC)) as Dictionary).structures)
 		var ids: PackedStringArray = _d.get("id", PackedStringArray())
 		for i in ids.size():
 			_ix[ids[i]] = i
@@ -41,7 +41,7 @@ static func load_all() -> void:
 
 
 static func bake_bin() -> int:
-	var d := _compact((JSON.parse_string(FileAccess.get_file_as_string(SRC)) as Dictionary).structures)
+	var d := _compact((JSON.parse_string(DataFile.text(SRC)) as Dictionary).structures)
 	d["_stamp"] = _stamp()
 	var f := FileAccess.open(BIN, FileAccess.WRITE)
 	f.store_var(d)

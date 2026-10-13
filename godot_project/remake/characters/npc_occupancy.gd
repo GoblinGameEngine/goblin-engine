@@ -47,7 +47,7 @@ static func manifest(town: String) -> Dictionary:
 	_mutex.lock()
 	if not _manifest.has(town):
 		var p := ROOMS + town + ".json"
-		_manifest[town] = (JSON.parse_string(FileAccess.get_file_as_string(p)) as Dictionary).get("buildings", {}) if FileAccess.file_exists(p) else {}
+		_manifest[town] = (JSON.parse_string(DataFile.text(p)) as Dictionary).get("buildings", {}) if DataFile.exists(p) else {}
 		# (a city's manifest is ~56 MB of JSON, ~600 MB parsed: the least recently used go past max_solved)
 		_manifest_lru.erase(town)
 		_manifest_lru.append(town)
@@ -118,12 +118,12 @@ static func _load_cache(town: String) -> Variant:
 		return null
 	if _cache_seed == -1:
 		_cache_seed = -2
-		if FileAccess.file_exists(CACHE + "_seed.json"):
-			_cache_seed = int((JSON.parse_string(FileAccess.get_file_as_string(CACHE + "_seed.json")) as Dictionary).seed)
+		if DataFile.exists(CACHE + "_seed.json"):
+			_cache_seed = int((JSON.parse_string(DataFile.text(CACHE + "_seed.json")) as Dictionary).seed)
 	var p := CACHE + town.replace(" ", "_") + ".json"
-	if not FileAccess.file_exists(p):
+	if not DataFile.exists(p):
 		return null
-	return JSON.parse_string(FileAccess.get_file_as_string(p))
+	return JSON.parse_string(DataFile.text(p))
 
 
 static func save_cache(seed: int, towns: Array) -> void:

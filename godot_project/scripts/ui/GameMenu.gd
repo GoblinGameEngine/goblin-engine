@@ -1475,7 +1475,7 @@ func _refresh_map() -> void:
 	if _map_tex == null:
 		_map_overview = load(PDA + "map_overview.png")      # (tools/pda_detail_map.py; the detail is PdaMapTiles)
 		_map_tex = _map_overview
-	if _towns.is_empty() and FileAccess.file_exists("res://remake/placement.json"):
+	if _towns.is_empty() and DataFile.exists("res://remake/placement.json"):
 		var acc := {}
 		for e in Placement.entries():
 			if e.settlement == null:

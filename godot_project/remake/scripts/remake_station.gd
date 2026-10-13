@@ -332,7 +332,7 @@ func _place_bicycles() -> void:
 	## Bicycles leaning by the front doors of the homes where someone keeps one (NpcLife's residents:
 	## about a third of people from 10 to 75 own a bike; one parked bike per such home, two homes in
 	## three), along the facade beside the door. Every one can be ridden (RemakeBicycle).
-	if not FileAccess.file_exists(NpcLife.PATH):
+	if not DataFile.exists(NpcLife.PATH):
 		return
 	var life := NpcLife.shared()
 	var make_bike := func(): return RemakeBicycle.new()     # (one constructor for all of them, not a closure each)

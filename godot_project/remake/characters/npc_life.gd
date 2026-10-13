@@ -52,7 +52,7 @@ static func shared() -> NpcLife:
 
 
 func _load() -> void:
-	var d: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(PATH))
+	var d: Dictionary = JSON.parse_string(DataFile.text(PATH))
 	seed = int(d.seed)
 	bikes = d.get("bikes", [])
 	people = {}

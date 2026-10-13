@@ -134,7 +134,7 @@ static var _defs_cache := {}
 static func prepare_lod(inst: Node, glb_path: String) -> void:
 	var sidecar := glb_path.get_basename().get_basename() + ".mats.json"
 	if not _defs_cache.has(sidecar):                    # one read per building, not per LOD
-		_defs_cache[sidecar] = JSON.parse_string(FileAccess.get_file_as_string(sidecar)) if FileAccess.file_exists(sidecar) else {}
+		_defs_cache[sidecar] = JSON.parse_string(DataFile.text(sidecar)) if DataFile.exists(sidecar) else {}
 	var defs: Dictionary = _defs_cache[sidecar]
 	_apply_defs(inst, defs)
 	# these ARE the level-of-detail chain: keep Godot's import-time automatic LOD from decimating
@@ -175,7 +175,7 @@ static var _kit_raw := {}            # piece -> [Mesh, its material defs]
 ## defs (to apply with the building's own).
 static func merge_kit(ps: PackedScene) -> Dictionary:
 	var kit_path := ps.resource_path.get_basename() + ".kit.json"
-	if not FileAccess.file_exists(kit_path):
+	if not DataFile.exists(kit_path):
 		return {}
 	_kit_lock.lock()
 	var n := ps.instantiate()
@@ -195,7 +195,7 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 	if m == null or m.has_meta("kit"):
 		_kit_lock.unlock()
 		return m.get_meta("kit", {}) if m else {}
-	var rows = JSON.parse_string(FileAccess.get_file_as_string(kit_path))
+	var rows = JSON.parse_string(DataFile.text(kit_path))
 	var defs := {}
 	var adds := {}                   # material name -> [[mesh, surface, transform], ...]
 	var mats := {}                   # material name -> the piece's material (for one the building doesn't have)
@@ -265,16 +265,16 @@ static func _kit_piece(pid: String):
 				if c is MeshInstance3D and (c as MeshInstance3D).mesh:
 					mesh = (c as MeshInstance3D).mesh
 			n.free()
-		var defs = JSON.parse_string(FileAccess.get_file_as_string(KIT_ROOT + pid + ".mats.json")) \
-			if FileAccess.file_exists(KIT_ROOT + pid + ".mats.json") else {}
+		var defs = JSON.parse_string(DataFile.text(KIT_ROOT + pid + ".mats.json")) \
+			if DataFile.exists(KIT_ROOT + pid + ".mats.json") else {}
 		_kit_raw[pid] = [mesh, defs if defs is Dictionary else {}] if mesh else null
 	return _kit_raw[pid]
 
 
 func _apply_materials(inst: Node, sidecar: String, extra := {}) -> void:
-	if not FileAccess.file_exists(sidecar):
+	if not DataFile.exists(sidecar):
 		return
-	var defs = JSON.parse_string(FileAccess.get_file_as_string(sidecar))
+	var defs = JSON.parse_string(DataFile.text(sidecar))
 	if defs is Dictionary:
 		defs.merge(extra)
 		_apply_defs(inst, defs)

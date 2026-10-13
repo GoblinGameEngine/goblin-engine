@@ -33,3 +33,5 @@ godot_project/remake/buildings/*.mats.json
 godot_project/remake/buildings/*.kit.json
 godot_project/remake/buildings/kit/
 godot_project/remake/textures/
+# gzipped twins of the big data files (tools/pack_data.py, run before an export)
+godot_project/remake/**/*.json.gz

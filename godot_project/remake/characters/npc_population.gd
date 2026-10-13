@@ -64,7 +64,7 @@ func _ready() -> void:
 		var pid := Placement.id(i)
 		if NpcHouseholds.is_residential(kd) and not (kd == "farm" and pid.begins_with("FARM-") and not pid.ends_with("-house")):
 			homes.append(i)
-	if FileAccess.file_exists(NpcLife.PATH):
+	if DataFile.exists(NpcLife.PATH):
 		_life = NpcLife.shared()
 		homes.append_array(NpcPlaces.flats_placed())
 		for uid in NpcPlaces.units():

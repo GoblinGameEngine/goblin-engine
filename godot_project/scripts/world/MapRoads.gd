@@ -103,12 +103,12 @@ static func stamp() -> String:
 
 
 func load_data() -> void:
-	var d: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(MapTerrain.PATH))
+	var d: Dictionary = JSON.parse_string(DataFile.text(MapTerrain.PATH))
 	_roads = d.roads
 	_turns = d.get("turns", [])
 	_roads.append({"cls": "rail", "w": 4.0, "pts": d.rail.pts})
-	if FileAccess.file_exists("res://remake/road_furniture.json"):
-		_fur = JSON.parse_string(FileAccess.get_file_as_string("res://remake/road_furniture.json"))
+	if DataFile.exists("res://remake/road_furniture.json"):
+		_fur = JSON.parse_string(DataFile.text("res://remake/road_furniture.json"))
 	MapTerrain.elevation(0.0, 0.0)                         # loads the terrain data (_body_profile reads it)
 
 

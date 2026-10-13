@@ -71,7 +71,7 @@ var _sites := {}                     # 40 m cell -> buildings (placement.json), 
 func _ready() -> void:
 	name = "NpcTraffic"
 	_clock = get_tree().current_scene.get_node_or_null("DaySkySystem")
-	if not FileAccess.file_exists(FLEET) or not FileAccess.file_exists(NpcLife.PATH):
+	if not DataFile.exists(FLEET) or not DataFile.exists(NpcLife.PATH):
 		return
 	_life = NpcLife.shared()
 	TrafficSigns.load_all()
@@ -156,7 +156,7 @@ func _load_fleet() -> void:
 
 static func _pack_fleet() -> Dictionary:
 	## the fleet's vehicles with a model, as columns
-	var all_v := ((JSON.parse_string(FileAccess.get_file_as_string(FLEET)) as Dictionary).vehicles as Array).filter(
+	var all_v := ((JSON.parse_string(DataFile.text(FLEET)) as Dictionary).vehicles as Array).filter(
 		func(x): return MODEL.has(str(x.type)) or FleetBodies.has(str(x.type)))
 	var ids := PackedStringArray()
 	var strs := PackedStringArray()

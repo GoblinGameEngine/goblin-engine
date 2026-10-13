@@ -16,7 +16,8 @@ static func fingerprint(paths: Array, version: int) -> String:
 	## the builder's version and the MD5 of every file it reads
 	var s := str(version)
 	for p in paths:
-		s += (FileAccess.get_md5(p) if FileAccess.file_exists(p) else "-") + ";"
+		var m := DataFile.md5(p)                  # (the plain file, or its packed .gz twin: the same MD5)
+		s += (m if m != "" else "-") + ";"
 	return s.md5_text()
 
 

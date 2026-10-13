@@ -16,7 +16,7 @@ static func _load() -> void:
 	var law = JSON.parse_string(FileAccess.get_file_as_string("res://remake/law/ordinances.json"))
 	if law is Dictionary and law.has("tram_stop_zone"):
 		_half = float(law.tram_stop_zone.half_length_m)
-	var tr = JSON.parse_string(FileAccess.get_file_as_string("res://remake/transit.json"))
+	var tr = JSON.parse_string(DataFile.text("res://remake/transit.json"))
 	if tr is Dictionary:
 		for l in tr.get("lines", []):
 			for sp in l.stops:
