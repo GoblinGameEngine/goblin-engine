@@ -30,4 +30,6 @@ godot_project/remake/buildings/*.webp.import
 godot_project/remake/buildings/*.glb
 godot_project/remake/buildings/*.glb.import
 godot_project/remake/buildings/*.mats.json
+godot_project/remake/buildings/*.kit.json
+godot_project/remake/buildings/kit/
 godot_project/remake/textures/

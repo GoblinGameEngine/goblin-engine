@@ -95,6 +95,7 @@ func lod1_pending() -> int:
 
 
 var _orphans: Array = []             # threaded loads to fetch and drop
+var _merging := {}                   # record -> [WorkerThreadPool task, its PackedScene]: loaded, kit folding in
 
 
 func _process(delta: float) -> void:
@@ -108,19 +109,24 @@ func _process(delta: float) -> void:
 		_stream_bands(delta)
 		_stream_tiles(delta)
 	_finish_lod1()
-	# finish background loads -- one into the world a frame (a building's full model takes 8-30 ms to put in)
-	var attached := false
+	# finish background loads: the shared parts folded in on a worker (RemakeBuilding.merge_kit), then one into the
+	# world a frame (a building's full model takes 8-30 ms to put in)
 	for i in _inflight.keys():
 		var path: String = _inflight[i]
 		var st := ResourceLoader.load_threaded_get_status(path)
 		if st == ResourceLoader.THREAD_LOAD_LOADED:
-			if attached:
-				continue
-			attached = true
 			_inflight.erase(i)
-			_attach(i, ResourceLoader.load_threaded_get(path))
+			var ps: PackedScene = ResourceLoader.load_threaded_get(path)
+			_merging[i] = [WorkerThreadPool.add_task(RemakeBuilding.merge_kit.bind(ps)), ps]
 		elif st == ResourceLoader.THREAD_LOAD_FAILED or st == ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
 			_inflight.erase(i)
+	for i in _merging.keys():
+		if WorkerThreadPool.is_task_completed(_merging[i][0]):
+			WorkerThreadPool.wait_for_task_completion(_merging[i][0])
+			var ps: PackedScene = _merging[i][1]
+			_merging.erase(i)
+			_attach(i, ps)
+			break
 	_t -= delta
 	if _t > 0.0 or target == null:
 		return
@@ -145,9 +151,9 @@ func _process(delta: float) -> void:
 	want.sort_custom(func(a, b): return a[0] < b[0])
 	for w in want:
 		var i: int = w[1]
-		if _loaded.has(i) or _inflight.has(i) or records[i].lod1 == null:
+		if _loaded.has(i) or _inflight.has(i) or _merging.has(i) or records[i].lod1 == null:
 			continue
-		if _inflight.size() >= MAX_INFLIGHT:
+		if _inflight.size() + _merging.size() >= MAX_INFLIGHT:
 			break
 		var path := "res://remake/buildings/%s.glb" % records[i].get("model", records[i].id)
 		if ResourceLoader.load_threaded_request(path) == OK:

@@ -170,7 +170,7 @@ def sink_counter(p, pos, yaw, length, body_mat, top_mat, basin_mat, d=0.6):
     f = F(pos, yaw)
     p.obox(f, (-length / 2, -d / 2, 0.1), (length / 2, d / 2, 0.88), body_mat)
     p.obox(f, (-length / 2 - 0.02, -d / 2 - 0.03, 0.88), (length / 2, d / 2, 0.92), top_mat)
-    p.obox(f, (-0.3, -0.2, 0.75), (0.3, 0.2, 0.921), basin_mat)
+    p.obox(f, (-0.3, -0.2, 0.75), (0.3, 0.2, 0.924), basin_mat)        # (rim 4 mm proud: 1 mm z-fought the top)
     p.obox(f, (-0.02, 0.18, 0.92), (0.02, 0.22, 1.2), basin_mat)
     p.obox(f, (-0.02, 0.05, 1.16), (0.02, 0.22, 1.2), basin_mat)
     for k in range(int(length / 0.45)):
@@ -340,7 +340,7 @@ def toilet(p, pos, yaw, china_mat, seat_mat):
 def sofa(p, pos, yaw, w, mat, frame_mat):
     f = F(pos, yaw)
     p.obox(f, (-w / 2, -0.45, 0.1), (w / 2, 0.45, 0.45), mat)
-    p.obox(f, (-w / 2, 0.25, 0.45), (w / 2, 0.45, 0.9), mat)
+    p.obox(f, (-w / 2, 0.25, 0.45), (w / 2, 0.45, 0.86), mat)          # (0.9 was the usual window sill: the back z-fought the stool)
     for x in (-w / 2, w / 2 - 0.15):
         p.obox(f, (x, -0.45, 0.45), (x + 0.15, 0.45, 0.65), mat)
     for sx in (-1, 1):

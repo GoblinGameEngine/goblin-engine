@@ -238,12 +238,17 @@ class House:
                     pc = (a[0] + u.x * s1, a[1] + u.y * s1)
                     ops, own = self._openings_on(pa, pc, self.te, fz, exterior=True)
                     mats = (bl.get("ext", self.m["ext"]), self.m["int"])
+                    # under a ground-floor door the wall left a strip from the foundation top to the floor, its top in
+                    # the floor slab's top plane (the slab runs to the block edge, 0.1 thick): a z-fight at every
+                    # outside door.  The slab fills that height, so the opening runs down to the foundation.
+                    wops = [dict(op, sill=z0) if kd != "windows" and abs(op["sill"] - fz[0]) < 1e-4 and 0 < fz[0] - z0 <= 0.1 + 1e-4
+                            else op for op, (kd, _) in zip(ops, own)]
                     if gable_end or shed_rise:
                         top = (lambda uu, pa=pa, u=u: self.roof_under(bl, pa[0] + u.x * uu, pa[1] + u.y * uu)
                                + rf.get("thick", 0.15) / math.cos(math.radians(rf["pitch"])) - 0.02)
-                        fr = g.wall_profile(self.shell, pa, pc, z0, top, self.te, ops, *mats)
+                        fr = g.wall_profile(self.shell, pa, pc, z0, top, self.te, wops, *mats)
                     else:
-                        fr = g.wall(self.shell, pa, pc, z0, bl["wall_top"], self.te, ops, *mats)
+                        fr = g.wall(self.shell, pa, pc, z0, bl["wall_top"], self.te, wops, *mats)
                     self.frames.append(dict(frame=fr, a=pa, c=pc, t=self.te, ops=ops, own=own, ext=True, block=bl))
                 # where a LOWER block abuts this side, the wall still has to close this block above it (the audit found a
                 # school's two-storey gym wing open for its whole width over the classroom block's flat roof)
@@ -521,7 +526,9 @@ class House:
                     else:
                         cx0, cx1 = max(cx0, x0 + d_in), min(cx1, x1 - d_in)
                 if cx1 > cx0 and cy1 > cy0:
-                    fl_part.box((cx0, cy0, cz), (cx1, cy1, cz + 0.02), self.m["ceiling"], sides="z")
+                    # (under a flat roof whose underside is AT the ceiling height the two z-fought: hang it 6 mm lower)
+                    dz = 0.006 if rf.get("type") == "flat" and abs(bl["wall_top"] - rf.get("thick", 0.25) - cz) < 1e-3 else 0.0
+                    fl_part.box((cx0, cy0, cz - dz), (cx1, cy1, cz + 0.02 - dz), self.m["ceiling"], sides="z")
             # intermediate ceilings under upper floors are the undersides of the floor slabs (built above)
             for i, (fz, cz) in enumerate(bl["floors"][:-1]):
                 nfz = bl["floors"][i + 1][0]

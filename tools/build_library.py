@@ -68,7 +68,8 @@ def main():
             b = batches.pop(0)
             n += 1
             log = open(os.path.join(LOGS, f"batch_{n:04d}.log"), "w")
-            p = subprocess.Popen(["flatpak", "run", "org.blender.Blender", "-b", "--factory-startup", "--python", script, "--"] + b,
+            env = [f"--env={k}={os.environ[k]}" for k in ("SSC_KIT",) if k in os.environ]     # (flatpak drops the env)
+            p = subprocess.Popen(["flatpak", "run"] + env + ["org.blender.Blender", "-b", "--factory-startup", "--python", script, "--"] + b,
                                  stdout=log, stderr=subprocess.STDOUT, cwd=ROOT)
             running.append((p, b, log, n))
         time.sleep(2)

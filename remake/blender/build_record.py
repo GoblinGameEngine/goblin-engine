@@ -81,6 +81,9 @@ def _install_recorder():
 
 
 _install_recorder()
+if os.environ.get("SSC_KIT", "1") != "0":   # shared parts (gbkit): repeated items stored once, placed by <ID>.kit.json
+    import gbkit  # noqa: E402
+    gbkit.install()
 
 
 def generator(kind):

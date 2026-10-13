@@ -566,8 +566,10 @@ def theater_rows_back(ctx):
                 if ctx.h._hits_swing(sx - 0.25, y - 0.25, sx + 0.25, y + 0.3, ctx.fl):
                     continue
                 f = fu.F((sx, y, ctx.fz), 0)
-                ctx.p.obox(f, (-0.24, -0.25, 0.0), (0.24, 0.25, 0.45), "black")
-                ctx.p.obox(f, (-0.22, -0.2, 0.4), (0.22, 0.25, 0.5), "vinyl_red")
+                # (the base stops under the seat and the seat at the back's front face: they overlapped, faces in
+                # one plane -- a third of all the z-fights in the library, an auditorium holds hundreds of seats)
+                ctx.p.obox(f, (-0.24, -0.25, 0.0), (0.24, 0.25, 0.4), "black")
+                ctx.p.obox(f, (-0.22, -0.2, 0.4), (0.22, 0.2, 0.5), "vinyl_red")
                 ctx.p.obox(f, (-0.22, 0.2, 0.4), (0.22, 0.28, 1.0), "vinyl_red")
 
 
@@ -777,8 +779,10 @@ def auditorium(ctx):
                 if ctx.h._hits_swing(sx - 0.25, y - 0.25, sx + 0.25, y + 0.3, ctx.fl):
                     continue
                 f = fu.F((sx, y, ctx.fz), 0)
-                ctx.p.obox(f, (-0.24, -0.25, 0.0), (0.24, 0.25, 0.45), "black")
-                ctx.p.obox(f, (-0.22, -0.2, 0.4), (0.22, 0.25, 0.5), "vinyl_red")
+                # (the base stops under the seat and the seat at the back's front face: they overlapped, faces in
+                # one plane -- a third of all the z-fights in the library, an auditorium holds hundreds of seats)
+                ctx.p.obox(f, (-0.24, -0.25, 0.0), (0.24, 0.25, 0.4), "black")
+                ctx.p.obox(f, (-0.22, -0.2, 0.4), (0.22, 0.2, 0.5), "vinyl_red")
                 ctx.p.obox(f, (-0.22, 0.2, 0.4), (0.22, 0.28, 1.0), "vinyl_red")
         y += 0.95
 

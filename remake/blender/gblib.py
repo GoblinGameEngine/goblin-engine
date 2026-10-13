@@ -718,11 +718,15 @@ def spindle_rail(p, pts, z0, height, spacing, mat, post_every=None, rail_w=0.06)
 
 
 def text_mesh(b, name, text, size, loc, rot_z, mat, extrude=0.004, font=None, parent=None, align="CENTER"):
-    """Real lettering: a Blender text object converted to a mesh (signs, plates, names)."""
+    """Real lettering: a Blender text object converted to a mesh (signs, plates, names).
+    Thin lettering (extrude <= 5 mm) is built flat and one-sided where its front face was (about 10x fewer
+    triangles: the extruded sides were most of a sign); thicker raised letters stay solid."""
+    flat = extrude <= 0.005
     cu = bpy.data.curves.new(name + "_crv", type="FONT")
     cu.body = text
     cu.size = size
-    cu.extrude = extrude
+    cu.extrude = 0.0 if flat else extrude
+    cu.resolution_u = 4
     cu.align_x = align
     cu.align_y = "CENTER"
     fp = font or "/run/host/usr/share/fonts/noto/NotoSerif-Bold.ttf"
@@ -734,6 +738,8 @@ def text_mesh(b, name, text, size, loc, rot_z, mat, extrude=0.004, font=None, pa
     tmp.rotation_euler = (math.pi / 2, 0, rot_z)
     dg = bpy.context.evaluated_depsgraph_get()
     me = bpy.data.meshes.new_from_object(tmp.evaluated_get(dg))
+    if flat:
+        me.transform(Matrix.Translation((0, 0, extrude)))        # (local +z faces the reader)
     ob = bpy.data.objects.new(name, me)
     ob.matrix_world = tmp.matrix_world.copy()
     bpy.data.objects.remove(tmp)

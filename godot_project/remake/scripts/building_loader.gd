@@ -25,9 +25,10 @@ const TEX_ROOT := "res://remake/textures/"
 
 
 func load_building(ps: PackedScene) -> void:
+	var kit_defs := merge_kit(ps)    # (the streamer has done it on a worker: then only the defs)
 	var inst := ps.instantiate()
 	add_child(inst)
-	_apply_materials(inst, ps.resource_path.get_basename() + ".mats.json")
+	_apply_materials(inst, ps.resource_path.get_basename() + ".mats.json", kit_defs)
 	var door_nodes: Array[Node3D] = []
 	var light_nodes: Array[Node3D] = []
 	var ladder_nodes: Array[Node3D] = []
@@ -159,10 +160,109 @@ static func lod_vc_material() -> StandardMaterial3D:
 	return _lod_vc
 
 
-func _apply_materials(inst: Node, sidecar: String) -> void:
+## Shared parts (research/buildings/kit_design.md, remake/blender/gbkit.py): a building's repeated items (windows,
+## furniture ...) are not in its glb.  <ID>.kit.json lists them as [piece, x, y, z, yaw] in the building's Blender
+## frame; each piece is one mesh in remake/buildings/kit/.  They are folded back into the building's visual mesh, one
+## surface per material as before, so the kit saves disk but no draw calls (a MultiMesh per piece cost Calder 17-21%
+## more draws and 10-14% fps).  Once per model: the merged mesh is the model's shared resource, marked with meta "kit".
+const KIT_ROOT := "res://remake/buildings/kit/"
+static var _kit_lock := Mutex.new()
+static var _kit_raw := {}            # piece -> [Mesh, its material defs]
+
+
+## Folds <ID>.kit.json's pieces into the model's visual mesh (safe on a worker thread).  Returns the kit's material
+## defs (to apply with the building's own).
+static func merge_kit(ps: PackedScene) -> Dictionary:
+	var kit_path := ps.resource_path.get_basename() + ".kit.json"
+	if not FileAccess.file_exists(kit_path):
+		return {}
+	_kit_lock.lock()
+	var n := ps.instantiate()
+	var vis: MeshInstance3D = null
+	var stack: Array[Node] = [n]
+	while stack.size() > 0 and vis == null:
+		var c: Node = stack.pop_back()
+		stack.append_array(c.get_children())
+		if c is MeshInstance3D and String(c.name).ends_with("_visual"):
+			vis = c
+	var m: ArrayMesh = vis.mesh as ArrayMesh if vis else null
+	var frame_inv := vis.transform.affine_inverse() if vis else Transform3D.IDENTITY
+	n.free()
+	if m == null or m.has_meta("kit"):
+		_kit_lock.unlock()
+		return m.get_meta("kit", {}) if m else {}
+	var rows = JSON.parse_string(FileAccess.get_file_as_string(kit_path))
+	var defs := {}
+	var adds := {}                   # material name -> [[mesh, surface, transform], ...]
+	var mats := {}                   # material name -> the piece's material (for one the building doesn't have)
+	for r in (rows if rows is Array else []):
+		var k = _kit_piece(String(r[0]))
+		if k == null:
+			continue
+		defs.merge(k[1])
+		# Blender (x, y, z) is the glb's (x, z, -y); a turn about Blender's z is the same turn about Godot's y
+		var xf := frame_inv * Transform3D(Basis(Vector3.UP, deg_to_rad(float(r[4]))),
+			Vector3(float(r[1]), float(r[3]), -float(r[2])))
+		var km: Mesh = k[0]
+		for si in km.get_surface_count():
+			var mat := km.surface_get_material(si)
+			var key := mat.resource_name if mat else ""
+			if not adds.has(key):
+				adds[key] = []
+				mats[key] = mat
+			adds[key].append([km, si, xf])
+	var surfs := []                  # [SurfaceTool, material]
+	for si in m.get_surface_count():
+		var mat := m.surface_get_material(si)
+		var key := mat.resource_name if mat else ""
+		var st := SurfaceTool.new()
+		st.create_from(m, si)
+		for a in adds.get(key, []):
+			st.append_from(a[0], a[1], a[2])
+		adds.erase(key)
+		surfs.append([st, mat])
+	for key in adds:
+		var st := SurfaceTool.new()
+		st.begin(Mesh.PRIMITIVE_TRIANGLES)
+		for a in adds[key]:
+			st.append_from(a[0], a[1], a[2])
+		surfs.append([st, mats[key]])
+	m.clear_surfaces()
+	m.shadow_mesh = null             # (the import's shadow copy has the old surfaces: the renderer indexes it in step)
+	for sm in surfs:
+		(sm[0] as SurfaceTool).commit(m)
+		m.surface_set_material(m.get_surface_count() - 1, sm[1])
+	m.set_meta("kit", defs)
+	_kit_lock.unlock()
+	return defs
+
+
+static func _kit_piece(pid: String):
+	if not _kit_raw.has(pid):
+		var mesh: Mesh = null
+		var ps := load(KIT_ROOT + pid + ".glb") as PackedScene
+		if ps:
+			var n := ps.instantiate()
+			var stack: Array[Node] = [n]
+			while stack.size() > 0 and mesh == null:
+				var c: Node = stack.pop_back()
+				stack.append_array(c.get_children())
+				if c is MeshInstance3D and (c as MeshInstance3D).mesh:
+					mesh = (c as MeshInstance3D).mesh
+			n.free()
+		var defs = JSON.parse_string(FileAccess.get_file_as_string(KIT_ROOT + pid + ".mats.json")) \
+			if FileAccess.file_exists(KIT_ROOT + pid + ".mats.json") else {}
+		_kit_raw[pid] = [mesh, defs if defs is Dictionary else {}] if mesh else null
+	return _kit_raw[pid]
+
+
+func _apply_materials(inst: Node, sidecar: String, extra := {}) -> void:
 	if not FileAccess.file_exists(sidecar):
 		return
-	_apply_defs(inst, JSON.parse_string(FileAccess.get_file_as_string(sidecar)))
+	var defs = JSON.parse_string(FileAccess.get_file_as_string(sidecar))
+	if defs is Dictionary:
+		defs.merge(extra)
+		_apply_defs(inst, defs)
 
 
 ## Lit windows at night (the user, 2026-10-05: "make the nights darker and the lights on buildings and cars more
