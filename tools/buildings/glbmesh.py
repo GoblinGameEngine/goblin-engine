@@ -5,6 +5,7 @@ model checker (check_models.py) and kit builder.
     g = Glb(path); for mesh, prim, P, N, U, I, mat in g.prims(): ...
 """
 import json
+import os
 import struct
 
 import numpy as np
@@ -106,6 +107,44 @@ def world_prims(g, mesh_filter=None):
                 if np.linalg.det(M[:3, :3]) < 0:
                     I = I[:, ::-1]
                 yield node_name, m.get("name", ""), P, N, U, I, g.mat_name(pr.get("material"))
+
+
+_KIT = {}
+
+
+def kit_prims(g, path):
+    """The building's shared parts (<ID>.kit.json beside it, pieces in kit/: remake/blender/gbkit.py) as world_prims
+    gives them: what the game draws once RemakeBuilding.merge_kit has folded them in.  A row [piece, x, y, z, yaw] is
+    in the Blender frame (the glb's x, z, -y; a turn about Blender z is the same turn about glb y); [piece, node] is a
+    door leaf drawn in that node's frame (the node's own mesh is a placeholder: leave out meshes named *_kit)."""
+    kp = path[:-4] + ".kit.json"
+    if not os.path.exists(kp):
+        return
+    node_m = {}
+    nodes = g.j.get("nodes", [])
+    stack = [(r, np.eye(4)) for r in g.j.get("scenes", [{"nodes": list(range(len(nodes)))}])[g.j.get("scene", 0)]["nodes"]]
+    while stack:
+        ni, M0 = stack.pop()
+        M = M0 @ _node_matrix(nodes[ni])
+        node_m[nodes[ni].get("name", "")] = M
+        stack.extend((ch, M) for ch in nodes[ni].get("children", []))
+    kd = os.path.join(os.path.dirname(path), "kit")
+    for r in json.load(open(kp)):
+        if r[0] not in _KIT:
+            pp = os.path.join(kd, r[0] + ".glb")
+            _KIT[r[0]] = list(world_prims(Glb(pp))) if os.path.exists(pp) else []
+        if len(r) == 2:
+            M = node_m.get(r[1])
+            if M is None:
+                continue
+        else:
+            c, s_ = np.cos(np.radians(r[4])), np.sin(np.radians(r[4]))
+            M = np.array([[c, 0, s_, r[1]], [0, 1, 0, r[3]], [-s_, 0, c, -r[2]], [0, 0, 0, 1.0]])
+        R = M[:3, :3]
+        Rn = np.linalg.inv(R).T
+        for node_name, mesh_name, P, N, U, I, mat in _KIT[r[0]]:
+            yield (r[1] if len(r) == 2 else "kit_" + r[0]), mesh_name, P @ R.T + M[:3, 3], \
+                (N @ Rn.T if N is not None else None), U, I, mat
 
 
 def components(I, nv):

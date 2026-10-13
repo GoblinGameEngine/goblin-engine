@@ -4,7 +4,8 @@ gbkit.py -- shared building parts (research/buildings/kit_design.md).
 A repeated item (a window unit, a chair, a shelf of goods ...) is built once, at the origin in its own frame, into the
 kit (<buildings>/kit/<piece>.glb + .mats.json), and each building only says where its copies stand
 (<ID>.kit.json: [[piece, x, y, z, yaw], ...] in the building's frame, Blender axes).  The game puts them back with
-MultiMeshes (remake/scripts/building_loader.gd).
+merging them back into each model's mesh at load (remake/scripts/building_loader.gd).
+A door leaf is a piece whole, placed by name: [piece, node name] (kit_leaves).
 
 How: the item functions are wrapped.  A top-level call is built as before; afterwards the faces it added are read back,
 moved into the item's frame and hashed -- the hash IS the piece id, so two calls that made the same geometry share a
@@ -50,6 +51,12 @@ def _window_frame(a, k):
     return Vector(o) + Vector(u) * off + Vector(up) * sill, (Vector(u), Vector(w_in), Vector(up))
 
 
+def _door_frame(a, k):
+    """door(b, frame_part, frame, off, w, head, t, name, ...): the opening's corner at the threshold"""
+    o, u, w_in, up = a[2]
+    return Vector(o) + Vector(u) * a[3] + Vector(up) * k.get("threshold_z", 0.0), (Vector(u), Vector(w_in), Vector(up))
+
+
 def _basis_yaw(basis):
     u, v, w = basis
     if abs(w.z - 1) > 1e-6 or abs(u.z) > 1e-6:
@@ -82,8 +89,9 @@ def _skip(why):
     return None
 
 
-def _capture(b, before, origin, yaw):
-    """the faces added since `before`, in the item frame; None if the item can't be kitted"""
+def _capture(b, before, origin, yaw, ignore=()):
+    """the faces added since `before`, in the item frame; None if the item can't be kitted.  Parts named with an
+    `ignore` prefix are left out (a door's leaves: kit_leaves takes those whole)"""
     c, s = math.cos(-yaw), math.sin(-yaw)
     faces = []
     touched = []
@@ -92,7 +100,7 @@ def _capture(b, before, origin, yaw):
         if bm is None or not bm.is_valid:
             continue
         f0 = before.get(n, 0)
-        if len(bm.faces) <= f0:
+        if len(bm.faces) <= f0 or (ignore and n.startswith(ignore)):
             continue
         if n.startswith(("door_", "ladder_", "light_")) or p.parent is not None or p.rot_z:
             return _skip("special part " + n.split("_")[0])
@@ -142,7 +150,7 @@ def _piece_id(b, faces):
     return "K" + h.hexdigest()[:13]
 
 
-def wrap(fn, frame_of):
+def wrap(fn, frame_of, ignore=()):
     def kitted(*a, **k):
         b = gblib.CURRENT
         if b is None or _State.depth or not enabled() or not getattr(b, "kit_on", True):
@@ -163,7 +171,7 @@ def wrap(fn, frame_of):
             if yaw is None:
                 _skip("frame not a turn: " + getattr(fn, "__name__", "?"))
                 return out
-            got = _capture(b, before, origin, yaw)
+            got = _capture(b, before, origin, yaw, ignore)
             if got is None:
                 return out
             faces, touched = got
@@ -185,6 +193,39 @@ def wrap(fn, frame_of):
     kitted.__name__ = getattr(fn, "__name__", "kitted")
     kitted.__wrapped__ = fn
     return kitted
+
+
+# ------------------------------------------------------------------ door leaves
+def kit_leaves(b):
+    """Each door leaf (a door_* object, built in its own hinge frame) becomes a piece whole: <ID>.kit.json gets
+    [piece, node name] and the node keeps a one-triangle placeholder mesh, which the game fills with the piece before
+    the building is instanced (so door.gd's hinge and its collision box, the mesh's bounds, are as before).  After the
+    audit and the LODs, like strip()."""
+    import hashlib as _h
+    for ob in list(bpy.data.objects):
+        if ob.type != "MESH" or not ob.name.startswith("door_") or ob.children:
+            continue
+        me = ob.data
+        if len(me.polygons) < MIN_FACES or not me.materials:
+            continue
+        uvl = me.uv_layers.active
+        faces = []
+        for poly in me.polygons:
+            m = me.materials[poly.material_index]
+            loc = [tuple(round(c, 4) for c in me.vertices[v].co) for v in poly.vertices]
+            uvs = [tuple(round(c, 5) for c in uvl.data[li].uv) for li in poly.loop_indices] if uvl else [(0.0, 0.0)] * len(loc)
+            faces.append((m.name, loc, uvs))
+        pid = "K" + _h.sha1(repr(faces).encode()).hexdigest()[:13]
+        if pid not in _State.pieces and pid not in b.kit_new:
+            b.kit_new[pid] = faces
+            for mname, _, _ in faces:
+                b.kit_defs[mname] = b.mat_defs.get(mname)
+        b.kit_inst.append([pid, ob.name])
+        ph = bpy.data.meshes.new(ob.name + "_kit")
+        ph.from_pydata([(0, 0, 0), (0.001, 0, 0), (0, 0, 0.001)], [], [(0, 1, 2)])
+        ph.materials.append(me.materials[0])
+        ob.data = ph
+        bpy.data.meshes.remove(me)
 
 
 # ------------------------------------------------------------------ strip + write
@@ -309,6 +350,7 @@ def install():
         if hasattr(gbhouse, n):
             setattr(gbhouse, n, wrap(getattr(gbhouse, n), _furn_frame))
     gblib.window = wrap(gblib.window, _window_frame)
+    gblib.door = wrap(gblib.door, _door_frame, ignore=("door_",))
 
     init = gblib.Building.__init__
 
@@ -320,6 +362,8 @@ def install():
     merge = gblib.Building.merge_meshes
 
     def merge_meshes(self):
+        if enabled() and getattr(self, "kit_on", True):
+            kit_leaves(self)
         if self.kit_inst:
             strip(self)
         return merge(self)

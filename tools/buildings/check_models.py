@@ -36,12 +36,13 @@ import os
 import sys
 import time
 from collections import Counter, defaultdict
+from itertools import chain
 from multiprocessing import Pool
 
 import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from glbmesh import Glb, components, weld, world_prims  # noqa: E402
+from glbmesh import Glb, components, kit_prims, weld, world_prims  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")
 BUILDINGS = os.path.join(ROOT, "godot_project", "remake", "buildings")
@@ -76,7 +77,8 @@ def check(path, explain=None):
     g = Glb(path)
     Ps, Ns, Is, Ms = [], [], [], []
     base = 0
-    for node, mesh, P, N, U, I, mat in world_prims(g, lambda n: not n.endswith("-colonly") and "collision" not in n):
+    for node, mesh, P, N, U, I, mat in chain(world_prims(g, lambda n: not n.endswith(("-colonly", "_kit")) and "collision" not in n),
+                                             kit_prims(g, path)):
         Ps.append(P)
         Ns.append(N if N is not None else np.zeros_like(P))
         Is.append(I + base)

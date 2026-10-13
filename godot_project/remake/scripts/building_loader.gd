@@ -161,10 +161,11 @@ static func lod_vc_material() -> StandardMaterial3D:
 
 
 ## Shared parts (research/buildings/kit_design.md, remake/blender/gbkit.py): a building's repeated items (windows,
-## furniture ...) are not in its glb.  <ID>.kit.json lists them as [piece, x, y, z, yaw] in the building's Blender
-## frame; each piece is one mesh in remake/buildings/kit/.  They are folded back into the building's visual mesh, one
-## surface per material as before, so the kit saves disk but no draw calls (a MultiMesh per piece cost Calder 17-21%
-## more draws and 10-14% fps).  Once per model: the merged mesh is the model's shared resource, marked with meta "kit".
+## doors, furniture ...) are not in its glb.  <ID>.kit.json lists them as [piece, x, y, z, yaw] in the building's
+## Blender frame, or [piece, node name] for a door leaf; each piece is one mesh in remake/buildings/kit/.  They are
+## folded back into the building's visual mesh, one surface per material as before, so the kit saves disk but no draw
+## calls (a MultiMesh per piece cost Calder 17-21% more draws and 10-14% fps); a leaf's placeholder mesh becomes its
+## piece.  Once per model: the merged meshes are the model's shared resources, marked with meta "kit".
 const KIT_ROOT := "res://remake/buildings/kit/"
 static var _kit_lock := Mutex.new()
 static var _kit_raw := {}            # piece -> [Mesh, its material defs]
@@ -179,12 +180,15 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 	_kit_lock.lock()
 	var n := ps.instantiate()
 	var vis: MeshInstance3D = null
+	var leaf := {}                   # door leaf node name -> its placeholder mesh
 	var stack: Array[Node] = [n]
-	while stack.size() > 0 and vis == null:
+	while stack.size() > 0:
 		var c: Node = stack.pop_back()
 		stack.append_array(c.get_children())
 		if c is MeshInstance3D and String(c.name).ends_with("_visual"):
 			vis = c
+		elif c is MeshInstance3D and String(c.name).begins_with("door_") and (c as MeshInstance3D).mesh is ArrayMesh:
+			leaf[String(c.name)] = (c as MeshInstance3D).mesh
 	var m: ArrayMesh = vis.mesh as ArrayMesh if vis else null
 	var frame_inv := vis.transform.affine_inverse() if vis else Transform3D.IDENTITY
 	n.free()
@@ -200,6 +204,17 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 		if k == null:
 			continue
 		defs.merge(k[1])
+		if r.size() == 2:            # a door leaf, placed by name: its placeholder becomes the piece
+			var lm: ArrayMesh = leaf.get(String(r[1]))
+			if lm != null:
+				lm.clear_surfaces()
+				lm.shadow_mesh = null
+				for si in (k[0] as Mesh).get_surface_count():
+					var lst := SurfaceTool.new()
+					lst.create_from(k[0], si)
+					lst.commit(lm)
+					lm.surface_set_material(lm.get_surface_count() - 1, (k[0] as Mesh).surface_get_material(si))
+			continue
 		# Blender (x, y, z) is the glb's (x, z, -y); a turn about Blender's z is the same turn about Godot's y
 		var xf := frame_inv * Transform3D(Basis(Vector3.UP, deg_to_rad(float(r[4]))),
 			Vector3(float(r[1]), float(r[3]), -float(r[2])))
