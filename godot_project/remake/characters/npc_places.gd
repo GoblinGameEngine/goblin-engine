@@ -59,10 +59,8 @@ static func load_all() -> void:
 		_of_type[u.type].append(u.uid)
 		_doors[u.building] = Vector2(float(u.door[0]), float(u.door[1]))
 	var d: Dictionary = {}
-	if FileAccess.file_exists(PATHS_BIN):
-		var f := FileAccess.open(PATHS_BIN, FileAccess.READ)
-		var v = f.get_var()
-		f.close()
+	if DataFile.exists(PATHS_BIN):
+		var v = DataFile.get_var(PATHS_BIN)
 		if typeof(v) == TYPE_DICTIONARY and str(v.get("_stamp", "")) == _paths_stamp():
 			d = v
 	if d.is_empty():

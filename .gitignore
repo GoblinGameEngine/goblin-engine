@@ -35,3 +35,10 @@ godot_project/remake/buildings/kit/
 godot_project/remake/textures/
 # gzipped twins of the big data files (tools/pack_data.py, run before an export)
 godot_project/remake/**/*.json.gz
+godot_project/remake/characters/lives/*.bin.gz
+godot_project/remake/characters/npc_*.bin.gz
+godot_project/remake/placement.bin.gz
+godot_project/remake/road_furniture.bin.gz
+godot_project/remake/terrain.bin.gz
+godot_project/remake/baked/pads.bin.gz
+godot_project/remake/baked/transit_lines.bin.gz

@@ -65,10 +65,8 @@ static var _C: Dictionary = {}
 
 static func data() -> Dictionary:
 	if _C.is_empty():
-		if FileAccess.file_exists(BIN):
-			var f := FileAccess.open(BIN, FileAccess.READ)
-			var d = f.get_var()
-			f.close()
+		if DataFile.exists(BIN):
+			var d = DataFile.get_var(BIN)
 			if typeof(d) == TYPE_DICTIONARY and str(d.get("_stamp", "")) == _stamp():
 				_C = d
 		if _C.is_empty() and DataFile.exists(SRC):

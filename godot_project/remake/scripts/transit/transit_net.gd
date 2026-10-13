@@ -40,26 +40,31 @@ static var _sites: Array = []         # buildings as [centre (s, x), radius] for
 
 
 const CACHE := "user://transit_lines.bin"
-const CACHE_VERSION := 5
+const BAKED := "res://remake/baked/transit_lines.bin"   # (shipped: a first launch read it instead of ~110 s building)
+const CACHE_VERSION := 6           # bump when _build changes (the stamp is the data's, not this script's: an exported
+                                   # game has no .gd to hash, so its stamp never matched and every first launch built)
 
 
 static func lines() -> Array:
-	## Built once and kept (user://): the routes are a pure function of the map and places data, so
-	## a launch reads them back unless that data has changed (the stamp).
+	## Built once and kept: the routes are a pure function of the map and places data, so a launch reads them back --
+	## the shipped bake, else user:// -- unless that data has changed (the stamp).  A project run that builds them
+	## writes the bake too (commit it with the data it came from).
 	if _lines.is_empty():
 		var stamp := BakedMeshes.fingerprint(["res://remake/characters/npc_paths.json", "res://remake/characters/npc_place_index.json",
-			"res://remake/terrain.json", "res://remake/placement.json", "res://remake/scripts/transit/transit_net.gd"], CACHE_VERSION)
-		if FileAccess.file_exists(CACHE):
-			var f := FileAccess.open(CACHE, FileAccess.READ)
-			var d = f.get_var()
-			if d is Dictionary and d.get("stamp", "") == stamp:
-				_lines = d.lines
-				loops = d.loops
-				return _lines
+			"res://remake/terrain.json", "res://remake/placement.json"], CACHE_VERSION)
+		for path in [BAKED, CACHE]:
+			if DataFile.exists(path):
+				var d = DataFile.get_var(path)
+				if d is Dictionary and d.get("stamp", "") == stamp:
+					_lines = d.lines
+					loops = d.loops
+					return _lines
 		_build()
-		var w := FileAccess.open(CACHE, FileAccess.WRITE)
-		if w:
-			w.store_var({"stamp": stamp, "lines": _lines, "loops": loops})
+		for path in ([CACHE, BAKED] if OS.has_feature("editor") else [CACHE]):
+			var w := FileAccess.open(path, FileAccess.WRITE)
+			if w:
+				w.store_var({"stamp": stamp, "lines": _lines, "loops": loops})
+				w.close()
 	return _lines
 
 

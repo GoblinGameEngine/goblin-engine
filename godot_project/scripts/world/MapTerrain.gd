@@ -164,10 +164,8 @@ static func _bin_stamp() -> String:
 
 
 static func _read_compact() -> Dictionary:
-	if FileAccess.file_exists(BIN):
-		var f := FileAccess.open(BIN, FileAccess.READ)
-		var d = f.get_var()
-		f.close()
+	if DataFile.exists(BIN):
+		var d = DataFile.get_var(BIN)
 		if typeof(d) == TYPE_DICTIONARY and str(d.get("_stamp", "")) == _bin_stamp():
 			return d
 	return _pack(JSON.parse_string(DataFile.text(PATH)))
@@ -776,11 +774,9 @@ static func pads_stamp() -> String:
 
 static func _read_pads_baked() -> Dictionary:
 	## {row: id -> its row in v, v: PAD_N a pad}, if the baked pads are of this data
-	if not FileAccess.file_exists(PADS_BAKED):
+	if not DataFile.exists(PADS_BAKED):
 		return {}
-	var f := FileAccess.open(PADS_BAKED, FileAccess.READ)
-	var d: Variant = f.get_var()
-	f.close()
+	var d: Variant = DataFile.get_var(PADS_BAKED)
 	if typeof(d) != TYPE_DICTIONARY or str(d.get("stamp", "")) != pads_stamp():
 		push_warning("MapTerrain: the baked pads are of other data -- working them out (rerun remake/tools/bake_world.gd pads)")
 		return {}

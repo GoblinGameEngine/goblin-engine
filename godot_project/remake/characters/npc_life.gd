@@ -224,10 +224,8 @@ func _ensure(sh: String) -> void:
 		return
 	var d := {}
 	var pb := DIR + sh + ".bin"
-	if FileAccess.file_exists(pb):
-		var f := FileAccess.open(pb, FileAccess.READ)
-		d = f.get_var()
-		f.close()
+	if DataFile.exists(pb):
+		d = DataFile.get_var(pb)
 	elif FileAccess.file_exists(DIR + sh + ".json"):
 		# (not packed yet: the JSON, packed here)
 		d = compact((JSON.parse_string(FileAccess.get_file_as_string(DIR + sh + ".json")) as Dictionary).get("people", {}), seed)

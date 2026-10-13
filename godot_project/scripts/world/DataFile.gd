@@ -9,6 +9,7 @@ class_name DataFile
 ##
 ##   DataFile.exists(p)    p or p.gz is there
 ##   DataFile.text(p)      the file's text (from p, else p.gz)
+##   DataFile.get_var(p)   a FileAccess.store_var() file's value (the .bin bakes: placement, terrain, lives ...)
 ##   DataFile.md5(p)       the MD5 of the plain file's bytes, from either -- so bake fingerprints (BakedMeshes) match in
 ##                         the project and in the game
 
@@ -32,6 +33,16 @@ static func text(p: String) -> String:
 	if FileAccess.file_exists(p):
 		return FileAccess.get_file_as_string(p)
 	return bytes(p).get_string_from_utf8()
+
+
+static func get_var(p: String) -> Variant:
+	if FileAccess.file_exists(p):
+		var f := FileAccess.open(p, FileAccess.READ)
+		var v = f.get_var()
+		f.close()
+		return v
+	var b := bytes(p)
+	return bytes_to_var(b.slice(4)) if b.size() > 4 else null      # (store_var: a 32-bit length, then the value)
 
 
 static func json(p: String):

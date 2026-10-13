@@ -130,10 +130,8 @@ static func bake_fleet() -> int:
 
 func _load_fleet() -> void:
 	var d := {}
-	if FileAccess.file_exists(FLEET_BIN):
-		var f := FileAccess.open(FLEET_BIN, FileAccess.READ)
-		var v = f.get_var()
-		f.close()
+	if DataFile.exists(FLEET_BIN):
+		var v = DataFile.get_var(FLEET_BIN)
 		if typeof(v) == TYPE_DICTIONARY and str(v.get("_stamp", "")) == _fleet_stamp():
 			d = v
 	if d.is_empty():
