@@ -10,8 +10,9 @@ A door leaf is a piece whole, placed by name: [piece, node name] (kit_leaves).
 How: the item functions are wrapped.  A top-level call is built as before; afterwards the faces it added are read back,
 moved into the item's frame and hashed -- the hash IS the piece id, so two calls that made the same geometry share a
 piece whatever their arguments were.  The faces are tagged (a face int layer "kit") and stay in the building until the
-audit and the LODs have seen them; then strip() takes them out of the visual mesh.  Faces of a "-col" part keep
-their collision (moved to a "-colonly" copy), so physics and the audit are unchanged.
+audit and the LODs have seen them; then strip() takes them out of the building.  Faces built in a "-col" part are the
+piece's collision too: exported with it as <pid>-colonly (Godot's importer makes that a trimesh shape), which the game
+places with each copy (building_loader.gd) -- so the building's own collision no longer carries every chair.
 
 An item is left in place (not kitted) when its frame isn't a pure turn about z, when it touches grade (the ground
 sink moves those vertices), or when it builds into a special part (door leaves, ladders, lights) or a parented or
@@ -21,6 +22,7 @@ import hashlib
 import json
 import math
 import os
+import uuid
 
 import bmesh
 import bpy
@@ -104,6 +106,8 @@ def _capture(b, before, origin, yaw, ignore=()):
             continue
         if n.startswith(("door_", "ladder_", "light_")) or p.parent is not None or p.rot_z:
             return _skip("special part " + n.split("_")[0])
+        if n.endswith("-colonly"):
+            return _skip("collision-only part")               # (it would show in the piece)
         bm.faces.ensure_lookup_table()
         new = [bm.faces[i] for i in range(f0, len(bm.faces))]
         touched.append((p, f0, len(bm.faces)))
@@ -144,6 +148,7 @@ def _uv(loc, tile):
 def _piece_id(b, faces):
     h = hashlib.sha1()
     for p, key, loc in faces:
+        h.update(b"c" if p.name.endswith("-col") else b"v")    # (a piece that collides is another piece)
         h.update(b.mats[key].name.encode())
         h.update(repr(loc).encode())
         h.update(repr(round(b.tile.get(key, 1.0), 4)).encode())
@@ -177,7 +182,8 @@ def wrap(fn, frame_of, ignore=()):
             faces, touched = got
             pid = _piece_id(b, faces)
             if pid not in _State.pieces and pid not in b.kit_new:
-                b.kit_new[pid] = [(b.mats[key].name, loc, _uv(loc, b.tile.get(key, 1.0))) for _, key, loc in faces]
+                b.kit_new[pid] = [(b.mats[key].name, loc, _uv(loc, b.tile.get(key, 1.0)), p.name.endswith("-col"))
+                                  for p, key, loc in faces]
                 for _, key, _ in faces:
                     b.kit_defs[b.mats[key].name] = b.mat_defs.get(b.mats[key].name)
             b.kit_inst.append([pid, round(origin.x, 4), round(origin.y, 4), round(origin.z, 4), round(math.degrees(yaw), 3)])
@@ -214,11 +220,11 @@ def kit_leaves(b):
             m = me.materials[poly.material_index]
             loc = [tuple(round(c, 4) for c in me.vertices[v].co) for v in poly.vertices]
             uvs = [tuple(round(c, 5) for c in uvl.data[li].uv) for li in poly.loop_indices] if uvl else [(0.0, 0.0)] * len(loc)
-            faces.append((m.name, loc, uvs))
+            faces.append((m.name, loc, uvs, False))
         pid = "K" + _h.sha1(repr(faces).encode()).hexdigest()[:13]
         if pid not in _State.pieces and pid not in b.kit_new:
             b.kit_new[pid] = faces
-            for mname, _, _ in faces:
+            for mname, _, _, _ in faces:
                 b.kit_defs[mname] = b.mat_defs.get(mname)
         b.kit_inst.append([pid, ob.name])
         ph = bpy.data.meshes.new(ob.name + "_kit")
@@ -230,7 +236,8 @@ def kit_leaves(b):
 
 # ------------------------------------------------------------------ strip + write
 def strip(b):
-    """take the kitted faces out of the visual mesh (after the audit and the LODs); a -col part's go to -colonly"""
+    """take the kitted faces out of the building (after the audit and the LODs): out of its collision too -- a piece
+    built in a -col part carries those faces as its own collision (<pid>-colonly), placed with it in the game"""
     for ob in list(bpy.data.objects):
         if ob.type != "MESH" or gblib._is_special(ob):
             continue
@@ -241,13 +248,6 @@ def strip(b):
         if not any(tags):
             ob.data.attributes.remove(att)
             continue
-        if ob.name.endswith("-col"):
-            dup = ob.copy()
-            dup.data = ob.data.copy()
-            bpy.context.scene.collection.objects.link(dup)
-            dup.name = ob.name[:-4] + "_kit-colonly"
-            _delete_faces(dup.data, [not t for t in tags])
-            dup.data.attributes.remove(dup.data.attributes[LAYER])
         _delete_faces(ob.data, [bool(t) for t in tags])
         if LAYER in ob.data.attributes:
             ob.data.attributes.remove(ob.data.attributes[LAYER])
@@ -291,7 +291,7 @@ def _export_piece(b, pid, faces, path):
     names = []
     bm = bmesh.new()
     uvl = bm.loops.layers.uv.verify()
-    for mname, loc, uvs in faces:
+    for mname, loc, uvs, _ in faces:
         if mname not in names:
             names.append(mname)
         vs = [bm.verts.new(q) for q in loc]
@@ -313,16 +313,37 @@ def _export_piece(b, pid, faces, path):
     for o in bpy.context.selected_objects:
         o.select_set(False)
     ob.select_set(True)
-    tmp = path + ".%d.tmp.glb" % os.getpid()
+    col = [loc for _, loc, _, c in faces if c]
+    cob = None
+    if col:
+        cbm = bmesh.new()
+        for loc in col:
+            try:
+                cbm.faces.new([cbm.verts.new(q) for q in loc])
+            except ValueError:
+                continue
+        bmesh.ops.remove_doubles(cbm, verts=cbm.verts, dist=0.0005)
+        cme = bpy.data.meshes.new(pid + "-colonly")
+        cbm.to_mesh(cme)
+        cbm.free()
+        cob = bpy.data.objects.new(pid + "-colonly", cme)
+        bpy.context.scene.collection.objects.link(cob)
+        cob.select_set(True)
+    tmp = path + ".%s.tmp.glb" % uuid.uuid4().hex          # (not the pid: every flatpak'd Blender is pid 2)
     bpy.ops.export_scene.gltf(filepath=tmp, export_format="GLB", export_yup=True, use_selection=True,
                               export_apply=True, export_image_format="NONE")
     os.replace(tmp, path)                                     # (atomic: parallel builds may race to the same piece)
     mp = os.path.splitext(path)[0] + ".mats.json"
-    with open(mp + ".%d.tmp" % os.getpid(), "w") as f:
+    mt = mp + ".%s.tmp" % uuid.uuid4().hex
+    with open(mt, "w") as f:
         json.dump({n: b.kit_defs.get(n) for n in names}, f, indent=0)
-    os.replace(mp + ".%d.tmp" % os.getpid(), mp)
+    os.replace(mt, mp)
     bpy.data.objects.remove(ob)
     bpy.data.meshes.remove(me)
+    if cob is not None:
+        cme = cob.data
+        bpy.data.objects.remove(cob)
+        bpy.data.meshes.remove(cme)
 
 
 # ------------------------------------------------------------------ install

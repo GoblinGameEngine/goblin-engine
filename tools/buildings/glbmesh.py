@@ -132,7 +132,7 @@ def kit_prims(g, path):
     for r in json.load(open(kp)):
         if r[0] not in _KIT:
             pp = os.path.join(kd, r[0] + ".glb")
-            _KIT[r[0]] = list(world_prims(Glb(pp))) if os.path.exists(pp) else []
+            _KIT[r[0]] = list(world_prims(Glb(pp), lambda n: not n.endswith("-colonly"))) if os.path.exists(pp) else []
         if len(r) == 2:
             M = node_m.get(r[1])
             if M is None:

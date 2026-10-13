@@ -165,10 +165,11 @@ static func lod_vc_material() -> StandardMaterial3D:
 ## Blender frame, or [piece, node name] for a door leaf; each piece is one mesh in remake/buildings/kit/.  They are
 ## folded back into the building's visual mesh, one surface per material as before, so the kit saves disk but no draw
 ## calls (a MultiMesh per piece cost Calder 17-21% more draws and 10-14% fps); a leaf's placeholder mesh becomes its
-## piece.  Once per model: the merged meshes are the model's shared resources, marked with meta "kit".
+## piece, and the pieces' collision (<pid>-colonly) joins the building's own trimesh.  Once per model: the merged
+## meshes and shape are the model's shared resources, marked with meta "kit".
 const KIT_ROOT := "res://remake/buildings/kit/"
 static var _kit_lock := Mutex.new()
-static var _kit_raw := {}            # piece -> [Mesh, its material defs]
+static var _kit_raw := {}            # piece -> [Mesh, its material defs, its collision faces]
 
 
 ## Folds <ID>.kit.json's pieces into the model's visual mesh (safe on a worker thread).  Returns the kit's material
@@ -181,12 +182,18 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 	var n := ps.instantiate()
 	var vis: MeshInstance3D = null
 	var leaf := {}                   # door leaf node name -> its placeholder mesh
+	var col: ConcavePolygonShape3D = null      # the building's collision (<ID>_collision-colonly)
+	var col_inv := Transform3D.IDENTITY
 	var stack: Array[Node] = [n]
 	while stack.size() > 0:
 		var c: Node = stack.pop_back()
 		stack.append_array(c.get_children())
 		if c is MeshInstance3D and String(c.name).ends_with("_visual"):
 			vis = c
+		elif c is CollisionShape3D and (c as CollisionShape3D).shape is ConcavePolygonShape3D and col == null \
+				and String(c.get_parent().name).contains("_collision"):
+			col = (c as CollisionShape3D).shape
+			col_inv = _frame_in(c, n).affine_inverse()
 		elif c is MeshInstance3D and String(c.name).begins_with("door_") and (c as MeshInstance3D).mesh is ArrayMesh:
 			leaf[String(c.name)] = (c as MeshInstance3D).mesh
 	var m: ArrayMesh = vis.mesh as ArrayMesh if vis else null
@@ -198,6 +205,7 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 	var rows = JSON.parse_string(DataFile.text(kit_path))
 	var defs := {}
 	var adds := {}                   # material name -> [[mesh, surface, transform], ...]
+	var col_add := PackedVector3Array()        # the pieces' collision faces, in the building's collision frame
 	var mats := {}                   # material name -> the piece's material (for one the building doesn't have)
 	for r in (rows if rows is Array else []):
 		var k = _kit_piece(String(r[0]))
@@ -216,8 +224,10 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 					lm.surface_set_material(lm.get_surface_count() - 1, (k[0] as Mesh).surface_get_material(si))
 			continue
 		# Blender (x, y, z) is the glb's (x, z, -y); a turn about Blender's z is the same turn about Godot's y
-		var xf := frame_inv * Transform3D(Basis(Vector3.UP, deg_to_rad(float(r[4]))),
-			Vector3(float(r[1]), float(r[3]), -float(r[2])))
+		var at := Transform3D(Basis(Vector3.UP, deg_to_rad(float(r[4]))), Vector3(float(r[1]), float(r[3]), -float(r[2])))
+		var xf := frame_inv * at
+		if not (k[2] as PackedVector3Array).is_empty():
+			col_add.append_array((col_inv * at) * (k[2] as PackedVector3Array))
 		var km: Mesh = k[0]
 		for si in km.get_surface_count():
 			var mat := km.surface_get_material(si)
@@ -247,6 +257,13 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 	for sm in surfs:
 		(sm[0] as SurfaceTool).commit(m)
 		m.surface_set_material(m.get_surface_count() - 1, sm[1])
+	if not col_add.is_empty():
+		if col != null:
+			var faces := col.get_faces()
+			faces.append_array(col_add)
+			col.set_faces(faces)
+		else:
+			push_warning("merge_kit: %s has piece collision but no collision shape of its own" % kit_path)
 	m.set_meta("kit", defs)
 	_kit_lock.unlock()
 	return defs
@@ -255,20 +272,33 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 static func _kit_piece(pid: String):
 	if not _kit_raw.has(pid):
 		var mesh: Mesh = null
+		var faces := PackedVector3Array()          # its collision (<pid>-colonly), in the piece's frame
 		var ps := load(KIT_ROOT + pid + ".glb") as PackedScene
 		if ps:
 			var n := ps.instantiate()
 			var stack: Array[Node] = [n]
-			while stack.size() > 0 and mesh == null:
+			while stack.size() > 0:
 				var c: Node = stack.pop_back()
 				stack.append_array(c.get_children())
-				if c is MeshInstance3D and (c as MeshInstance3D).mesh:
+				if c is MeshInstance3D and (c as MeshInstance3D).mesh and mesh == null:
 					mesh = (c as MeshInstance3D).mesh
+				elif c is CollisionShape3D and (c as CollisionShape3D).shape is ConcavePolygonShape3D:
+					faces.append_array(_frame_in(c, n) * ((c as CollisionShape3D).shape as ConcavePolygonShape3D).get_faces())
 			n.free()
 		var defs = JSON.parse_string(DataFile.text(KIT_ROOT + pid + ".mats.json")) \
 			if DataFile.exists(KIT_ROOT + pid + ".mats.json") else {}
-		_kit_raw[pid] = [mesh, defs if defs is Dictionary else {}] if mesh else null
+		_kit_raw[pid] = [mesh, defs if defs is Dictionary else {}, faces] if mesh else null
 	return _kit_raw[pid]
+
+
+static func _frame_in(c: Node, root: Node) -> Transform3D:
+	## c's transform in root's frame (nodes outside the tree: no global_transform)
+	var t := Transform3D.IDENTITY
+	while c != null and c != root:
+		if c is Node3D:
+			t = (c as Node3D).transform * t
+		c = c.get_parent()
+	return t
 
 
 func _apply_materials(inst: Node, sidecar: String, extra := {}) -> void:
