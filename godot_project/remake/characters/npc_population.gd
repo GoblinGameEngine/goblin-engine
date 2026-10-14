@@ -751,11 +751,21 @@ func _turn_body(e: Dictionary, delta: float) -> void:
 	e.yaw_body = lerp_angle(float(e.get("yaw_body", target)), target, 1.0 - exp(-6.0 * delta))
 
 
+const GROUND_STEP := 0.2            # m a walker moves before its ground height is sampled again
+
+
 func _place(e: Dictionary) -> void:
 	var s: float = e.s
 	var x: float = e.x
 	var npc: Node3D = e.npc
-	var xf := Transform3D(StationGeo.basis(s, float(e.get("yaw_body", e.get("yaw", 0.0)))), StationGeo.point(s, x, MapTerrain.elevation(s, x)))
+	# the ground under them, sampled again only every GROUND_STEP m: MapTerrain.elevation is ~150 us in a town (its road
+	# grading walks ~100 segments), and every walker placed it every frame -- 2-3 ms of Calder's frame (2026-10-13)
+	var gs := float(e.get("g_s", INF))
+	if absf(StationGeo.wrap_ds(s - gs)) + absf(x - float(e.get("g_x", 0.0))) > GROUND_STEP:
+		e.g_s = s
+		e.g_x = x
+		e.g_h = MapTerrain.elevation(s, x)
+	var xf := Transform3D(StationGeo.basis(s, float(e.get("yaw_body", e.get("yaw", 0.0)))), StationGeo.point(s, x, float(e.g_h)))
 	if e.has("bike"):
 		var bike: NpcBike = e.bike
 		bike.global_transform = xf
