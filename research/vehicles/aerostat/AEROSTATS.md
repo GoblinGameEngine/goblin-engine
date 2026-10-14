@@ -34,6 +34,7 @@ replaced by bodies built to the fleet's rules (research/vehicles/MODULAR_VEHICLE
 | supply_freighter | SF600 `steward_packhorse` | 6.8 m cockpit, 6 bays of 2 x 3 pods, the drive (about 34 m) | reference/grok/supply_freighter |
 | cargo_mule | SM450 `steward_mule` | 6.6 m tug, 4 thruster pods, 2 arms | reference/grok/cargo_mule |
 | spoke_elevator_car | EE600 `steward_ascender` | round cabin 5.8 m across, benches, standing room | reference/grok/spoke_elevator_car |
+| sky_skiff ("the lark") | AK480 `skyfolk_skiff` | 14 m streamlined hydrogen envelope (R 1.75) slung on a saddle over a 4.6 m two-seat tandem gondola (steward_keel5), X tail, 4 ducted fans (2 pusher on pylons, 2 on booms); 250 km/h, ceiling 1.5 km, climbs 12 m/s; patched envelope; clan livery at run time (RemakeFleetCraft.set_livery) | research/sky_islands (2026-10-14) |
 | eva_sled, travel_lift | recipes (parts.py) | open machines: their frames show by design | reference/grok/eva_sled, travel_lift |
 
 The Grok views disagree with each other on scale; the sizes were set from the 2.2 m rule (the gondola's height) and
@@ -57,3 +58,17 @@ the side elevations' proportions.
   one alike). Fans have the role "engine": separate meshes, each on a pivot the flight rig tilts (all fleet aerostats).
 - The winch's cable is drawn stowed; the game doesn't pay it out yet.
 - Spacecraft have no flight (they are for the port, which has no buildings yet).
+
+## The sky skiff, "the lark" (2026-10-14)
+
+The sky islands' craft (research/sky_islands/00_plan.md; canon in research/sky_islands/05 and remake/bible/sky_islands.json:
+the craft is "the lark", its pilot "the plumb"). Fleet type `sky_skiff`, standard AK480 on `steward_keel5`.
+- Envelope patches: spec `aero.patches` [(t0, t1, deg0, deg1)] -- mended gores in canvas2 (fleet/aero.py `_stripe`).
+- Interior: `interiors.skiff_cabin` -- tandem seats, lockers with a padded top at the back wall, an electric heater (no
+  open flame under hydrogen), a rug.
+- Game: `RemakeFleetCraft` per-type tables `SPEEDS` (250 km/h, climb 12 m/s), `CEILINGS` (1,500 m), `BUOYANT`,
+  `HANDLING`; `set_livery([main, second, accent])` recolours per instance (envelope main, patches accent, gondola main,
+  band and roof second). `VehiclePilot.fly_to(craft, node, local)` flies to a point on a moving node (an island's pad),
+  starting from an aerial pad it climbs 12 m and stays 15 m over its start within 250 m before descending.
+- Tests 2026-10-14: crossings clear, doors clear, forward view ok (86 %); tubes seen in the same class as AP460 (the
+  fleet-wide "tubes seen" failure: frame tubes glimpsed through the glass at the A-pillars).

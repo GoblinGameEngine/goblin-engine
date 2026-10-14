@@ -20,12 +20,13 @@ class_name RemakeRain
 ##   * Thunderstorms: lightning bolts from the cell's base to the floor at random under it, a flash
 ##     of light, and thunder that arrives distance / 343 m/s later.
 ##   * Drizzle under a weather front's core (RemakeClouds.drizzle_at): the near particles, thinly.
-##   * Coriolis: falling rain drifts spinward (east, +s) -- drops and shafts slant SLANT that way.
+##   * Coriolis: falling rain drifts antispinward (west, -s) -- drops and shafts slant SLANT that way (a falling body
+##     keeps the slower spin of the height it fell from, so the floor runs on ahead of it; the user, 2026-10-14).
 
 const NEAR_BOX := 36.0               # m: half-size of the particle box round the camera
 const DROP_SPEED := 26.0
 const THUNDER_EVERY := Vector2(4.0, 12.0)
-const SLANT := 0.1                   # m spinward per m fallen (~6 deg: the real ~2.5 deg, made visible)
+const SLANT := -0.1                  # m spinward per m fallen: negative, it lands west (~6 deg: the real ~2.5 deg, made visible)
 
 var camera: Camera3D
 var clouds: RemakeClouds
@@ -267,7 +268,7 @@ func _shaft(st: Dictionary) -> void:
 	mat2.set_shader_parameter("intensity", st.intensity)
 	mat2.set_shader_parameter("height", H)
 	# the unit cylinder stretched to the footprint's ellipse: fa along the wind (s), fb along the axis (x),
-	# its foot SLANT * H spinward of its top
+	# its foot SLANT * H spinward of its top (SLANT < 0: west of it)
 	var fwd := StationGeo.forward(st.s)
 	var upv := StationGeo.up(st.s)
 	mi.global_transform = Transform3D(Basis(fwd * float(st.fa), (upv - fwd * SLANT) * H, Vector3(1, 0, 0) * float(st.fb)),

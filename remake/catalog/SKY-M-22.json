@@ -1,0 +1,49 @@
+{
+ "id": "SKY-M-22",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/models.py",
+ "kind": "store",
+ "lot": {
+  "w": 30.0,
+  "d": 24.0
+ },
+ "traits": {
+  "storeys": 5,
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700,
+  "colors": {
+   "body": "#c9b79c",
+   "accent": "#3a3a48",
+   "trim": "#efeae0"
+  },
+  "form": "office_block",
+  "upper_use": "offices",
+  "facade": "stucco",
+  "cornice": "parapet_stepped",
+  "storefronts": [
+   {
+    "business": "School",
+    "type": "classroom",
+    "sign": "SCHOOL",
+    "sign_style": "flat_board"
+   },
+   {
+    "business": "School",
+    "type": "classroom",
+    "sign": "SCHOOL",
+    "sign_style": "flat_board"
+   }
+  ]
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "use": "school",
+  "size": "L",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island school (L, 5 storeys): a shared model"
+}

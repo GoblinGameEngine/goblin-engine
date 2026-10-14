@@ -33,6 +33,8 @@
 - surnames_2752: 8173
 - extinct_surnames_listed: 4000
 - given_names: 10103
+- sky_islands: 100
+- sky_population: 97070
 
 ## Rebuild
 

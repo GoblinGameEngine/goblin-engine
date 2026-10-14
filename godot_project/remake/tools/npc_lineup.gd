@@ -74,6 +74,12 @@ func _init() -> void:
 	for i in count:
 		var pid := "B%d:%d" % [first + i, i % 3] if not view in ["walk", "hands", "walkfront", "stances", "anim", "clip"] else "B%d:0" % first
 		var v := db.person(seed, pid, ["L0", "L1"], pop)
+		if pop == "sky":                 # the sky folk (NPC_SKY_ISLAND: an island id or * for a mix, NPC_SKY_JOB: job id(s), comma-separated)
+			var isl := OS.get_environment("NPC_SKY_ISLAND")
+			if isl == "*":                  # every figure from a different island
+				isl = "SKY-%03d" % (1 + (i * 7) % 100)
+			var role := OS.get_environment("NPC_SKY_JOB")
+			v = db.sky_folk(seed, pid, isl, role.split(",")[i % role.split(",").size()] if role != "" else "", ["L0", "L1"])
 		var npc := NpcCharacter.create(v, pid, seed)
 		npc.position = Vector3((i - (count - 1) / 2.0) * spacing, 0, 0)
 		npc.rotation_degrees.y = {"front": 0.0, "side": -90.0, "back": 180.0, "three": -35.0, "face": -15.0, "faceside": -75.0, "walk": -90.0, "walkfront": 0.0, "stances": -30.0}.get(view, 0.0)

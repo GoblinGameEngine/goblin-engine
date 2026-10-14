@@ -1,0 +1,49 @@
+{
+ "id": "SKY-M-11",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/models.py",
+ "kind": "store",
+ "lot": {
+  "w": 22.0,
+  "d": 20.0
+ },
+ "traits": {
+  "storeys": 5,
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700,
+  "colors": {
+   "body": "#a5553a",
+   "accent": "#6b3b5c",
+   "trim": "#efeae0"
+  },
+  "form": "office_block",
+  "upper_use": "apartments",
+  "facade": "stucco",
+  "cornice": "parapet_stepped",
+  "storefronts": [
+   {
+    "business": "Clan Hall",
+    "type": "council",
+    "sign": "CLAN HALL",
+    "sign_style": "flat_board"
+   },
+   {
+    "business": "Log Room",
+    "type": "library",
+    "sign": "LOG ROOM",
+    "sign_style": "flat_board"
+   }
+  ]
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "use": "hall",
+  "size": "S",
+  "storeys": 5,
+  "homes": 8
+ },
+ "brief": "sky island hall (S, 5 storeys): a shared model"
+}

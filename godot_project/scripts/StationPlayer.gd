@@ -88,6 +88,8 @@ var _water_volumes: Array[Area3D] = []
 # keeps a cloud's "water" out).
 var carrier_velocity := Vector3.ZERO
 var sheltered := false
+# Gravity's share where we stand (SkyIslands: aboard a sky island the Aloft's lighter deck, ~0.89; 1 elsewhere)
+var gravity_k := 1.0
 var _vehicle: Node = null
 var _last_carrier := Vector3.ZERO
 const SEATED_YAW_LIMIT := 1.9
@@ -366,7 +368,7 @@ func _physics_process(delta: float) -> void:
 			# means a jump/fall that drifts toward the axis genuinely gets
 			# lighter as it goes, same as it would get lighter walking
 			# inward through the bands on foot.
-			up_speed -= StationGeo.gravity_at(radial_len) * delta
+			up_speed -= StationGeo.gravity_at(radial_len) * gravity_k * delta
 		else:
 			up_speed = minf(up_speed, 0.0)       # grounded: no speed left over from the slope to carry off a crest
 

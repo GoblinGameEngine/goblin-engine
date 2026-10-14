@@ -58,6 +58,10 @@ def _stripe(A, t, ang):
     for t0, t1 in A.get("bands", []):
         if t0 <= t <= t1:
             return True
+    deg = math.degrees(ang % TAU)                        # (a patch: a gore sewn in where the fabric was mended -- the sky skiff's)
+    for t0, t1, a0, a1 in A.get("patches", []):
+        if t0 <= t <= t1 and a0 <= deg <= a1:
+            return True
     return t >= A.get("cap", 9.0)
 
 
@@ -69,10 +73,12 @@ def envelope(b, A, st):
     for e, w in A.get("stripes", []):
         for el in (e - w, e + w):
             angs |= {round(math.radians(90 - el), 5), round(math.radians(270 + el) % TAU, 5)}
+    for _t0, _t1, a0, a1 in A.get("patches", []):
+        angs |= {round(math.radians(a0), 5), round(math.radians(a1), 5)}
     angs = sorted(angs)
     n = len(angs)
     ts = [0.0, 0.004, 0.012, 0.025, 0.045, 0.07] + [0.07 + k * 0.025 for k in range(1, 37)]
-    ts = sorted({round(min(1.0, t), 4) for t in ts} | {1.0} | {t for bd in A.get("bands", []) for t in bd} | ({A["cap"]} if "cap" in A else set()))
+    ts = sorted({round(min(1.0, t), 4) for t in ts} | {1.0} | {t for bd in A.get("bands", []) for t in bd} | {t for pt in A.get("patches", []) for t in pt[:2]} | ({A["cap"]} if "cap" in A else set()))
     rings = [[env_pt(A, t, a) for a in angs] for t in ts]
     for i in range(len(ts) - 1):
         for k in range(n):

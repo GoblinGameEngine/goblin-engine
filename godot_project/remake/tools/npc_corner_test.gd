@@ -38,10 +38,14 @@ func _init() -> void:
 	# 2. real generated people
 	var db := NpcTraits.shared()
 	var pops := ["", "stable_town", "rust_belt", "exurban", "county_seat", "college_town", "lake_resort"]
+	var sky_jobs := ["", "rigger", "plumb", "knot_keeper", "roof_grower", "factor", "cook", "elder_counsel"]
 	for i in people:
 		var pid := "B%d:%d" % [50000 + i, i % 4]
 		var pop: String = pops[i % pops.size()]
 		var v := db.person(11, pid, ["L0", "L1"], pop)
+		if i % 8 == 7:                   # the sky folk (every island's colours, every outfit)
+			pop = "sky"
+			v = db.sky_folk(11, pid, "SKY-%03d" % (1 + i % 100), sky_jobs[(i / 8) % sky_jobs.size()], ["L0", "L1"])
 		_check(v, "%s (%s) %s %d %s %s" % [pid, pop, v.sex, v.age, v.occupation, v.hair_style], 11, pid)
 	times.sort()
 	var med: float = times[times.size() / 2]

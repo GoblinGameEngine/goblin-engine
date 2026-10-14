@@ -1,0 +1,55 @@
+{
+ "id": "SKY-M-17",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/models.py",
+ "kind": "store",
+ "lot": {
+  "w": 22.0,
+  "d": 20.0
+ },
+ "traits": {
+  "storeys": 4,
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700,
+  "colors": {
+   "body": "#d8a95b",
+   "accent": "#6b3b5c",
+   "trim": "#efeae0"
+  },
+  "form": "office_block",
+  "upper_use": "apartments",
+  "facade": "stucco",
+  "cornice": "parapet_stepped",
+  "storefronts": [
+   {
+    "business": "Market",
+    "type": "grocery",
+    "sign": "MARKET",
+    "sign_style": "flat_board"
+   },
+   {
+    "business": "Larder",
+    "type": "butcher",
+    "sign": "LARDER",
+    "sign_style": "flat_board"
+   },
+   {
+    "business": "Bakery",
+    "type": "bakery",
+    "sign": "BAKERY",
+    "sign_style": "flat_board"
+   }
+  ]
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "use": "market",
+  "size": "S",
+  "storeys": 4,
+  "homes": 6
+ },
+ "brief": "sky island market (S, 4 storeys): a shared model"
+}

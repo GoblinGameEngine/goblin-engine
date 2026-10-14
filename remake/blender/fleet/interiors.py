@@ -325,6 +325,30 @@ def crew_stowage(b, st):
         k += 0.6
 
 
+def skiff_cabin(b, st):
+    """The sky skiff's, the lark's (2026-10-14): the two seats in tandem; at the back wall, lockers the width of the cabin
+    (the trade samples, the plumb's papers) with a padded top to sit on; an electric heater on the port wall by the rear
+    seat -- it is cold at 1.5 km, and nothing burns under hydrogen -- and a felted rug down the aisle."""
+    L = b.L
+    yb = getattr(L, "tail_in", L.tail) + 0.12
+    f = L.floor
+    me = b.mod("fit_skiff", "fittings", "skiff_cabin", "C", hp=300, mass=60)
+    hw = L.half_w - L.int_off - 0.20                       # (in from the tumblehome's curve)
+    bd = 0.34                                              # the lockers' depth
+    y0 = yb + bd / 2
+    wbox(me, L, (0.0, y0, f + 0.30), (hw, bd / 2, 0.30), "wood")
+    for k in range(-2, 3):
+        me.box((k * hw * 0.4, y0 + bd / 2 + 0.003, f + 0.40), (0.012, 0.004, 0.05), "chrome")   # their pulls
+    wbox(me, L, (0.0, y0 + 0.01, f + 0.625), (hw - 0.02, bd / 2 - 0.02, 0.025), "seat")        # the pad on top
+    rows = _rows(L, st)
+    hy = rows[-1]["y"] if len(rows) > 1 else y0 + 0.8      # the heater: a cast box with a glowing grille, by the rear seat
+    wbox(me, L, (-(hw - 0.14), hy, f + 0.30), (0.13, 0.18, 0.30), "black")
+    for k in range(5):
+        me.box((-(hw - 0.28) - 0.003, hy, f + 0.14 + k * 0.08), (0.004, 0.14, 0.012), "lamp_amber")
+    ya, yz = rows[0]["y"] - 0.35, y0 + bd / 2 + 0.05
+    wbox(me, L, (0.0, (ya + yz) / 2, f + 0.006), (0.30, (ya - yz) / 2, 0.006), "carpet")     # the rug down the aisle
+
+
 BY_TYPE = {
     "transit_bus": grab_poles, "sightseeing_trolley": grab_poles, "hotel_shuttle": grab_poles, "paratransit_van": grab_poles,
     "school_bus": grab_poles, "spoke_elevator_car": grab_poles,
@@ -332,7 +356,7 @@ BY_TYPE = {
     "ambulance": medical, "rescue_aerostat": medical,
     "service_van": shelves, "parcel_van": shelves, "delivery_van": shelves, "mail_truck": shelves,
     "food_truck": counter, "ice_cream_truck": counter,
-    "cargo_aerostat": crew_stowage, "supply_freighter": crew_stowage, "cargo_mule": crew_stowage, "hearse": casket_deck, "limousine": partition, "motorhome": living,
+    "cargo_aerostat": crew_stowage, "sky_skiff": skiff_cabin, "supply_freighter": crew_stowage, "cargo_mule": crew_stowage, "hearse": casket_deck, "limousine": partition, "motorhome": living,
 }
 
 

@@ -12,7 +12,7 @@ class_name NpcCharacter
 
 const SHADER := preload("res://remake/characters/npc_toon.gdshader")
 const PATTERN_ID := {"solid": 0, "stripes": 1, "pinstripe": 2, "check": 3, "tartan": 4, "dots": 5, "floral": 6,
-	"knit": 7, "denim": 8, "pleats": 9, "weave": 10, "herring": 11}
+	"knit": 7, "denim": 8, "pleats": 9, "weave": 10, "herring": 11, "quilt": 12, "zigzag": 13, "patch": 14, "peerie": 15}
 const TUCKED := ["shirt", "shirt_short", "tunic_uniform", "blouse", "chef_jacket"]
 
 var traits: Dictionary
@@ -112,6 +112,8 @@ static func _clothes(v: Dictionary, id: String, seed: int, p_occasion: String, b
 	var surfaces := []
 	var tucked := outfit.any(func(g): return g.slot == "top" and g.garment in TUCKED)
 	var has_hat := outfit.any(func(g): return g.slot == "head")
+	var outer := 0.0                 # how far out the torso's outermost layer so far stands (sashes, scarves go over it)
+	var outer_sleeve := 0.0          # ... and the sleeves' (a glove's cuff goes over them)
 	for g in outfit:
 		var def: Dictionary = g.def.duplicate(true)
 		var extra := 0.0
@@ -126,6 +128,18 @@ static func _clothes(v: Dictionary, id: String, seed: int, p_occasion: String, b
 				extra = 0.004
 			"over":
 				extra = 0.01 + 0.005 * float(def.get("layer", 1))
+			"trim":                      # (built from its garment's own def: the same layering)
+				extra = 0.01 + 0.005 * float((def.of as Dictionary).get("layer", 1))
+			"skirt":                     # an over-skirt on trousers, under a jumper's hem
+				extra = 0.014
+			"sash", "neck", "harness":
+				extra = maxf(outer + 0.006 - float(def.get("ease", 0.015)), 0.012)
+			"hands":
+				extra = maxf(outer_sleeve + 0.004 - float(def.get("ease", 0.0035)), 0.0)
+		if g.slot in ["top", "dress", "over"]:
+			outer = maxf(outer, float(def.get("ease", 0.015)) + extra)
+			if float(def.get("sleeve", 0.0)) > 0.01:
+				outer_sleeve = maxf(outer_sleeve, float(def.get("ease", 0.015)) * 0.8 + extra * 0.35)
 		var parts := NpcGarments.build(def, built, extra)
 		if not parts.is_empty():
 			surfaces.append({"kind": "fabric", "g": g, "arrays": _arrays(parts)})

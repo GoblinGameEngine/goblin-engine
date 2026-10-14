@@ -62,6 +62,52 @@ func person(world_seed: int, pid: String, layers: Array = [], population := "", 
 	return ev.v
 
 
+func sky_folk(world_seed: int, pid: String, clan: Variant = "", job := "", layers: Array = []) -> Dictionary:
+	## One of the sky folk (research/sky_islands; canon remake/bible/sky_islands.json): the "sky" population,
+	## dressed by culture "sky" (npc_outfits.json cultures) in their clan's colours.  clan: an island id
+	## ("SKY-001"), a clan id ("clan_mcfadden"), or the colours themselves [main, second, accent]; "" = none (they
+	## wear one of the sky_* palettes).  job: a canon job id (rigger, plumb, roof_grower ...) picks their work
+	## clothes.  Born and raised at 0.925 g: a little longer in the leg and slighter in the shoulder than the
+	## floor's people (the population makes them taller and leaner).
+	var v := person(world_seed, pid, layers, "sky")
+	v["culture"] = "sky"
+	if job != "":
+		v["culture_role"] = job
+	var cc := sky_colors(clan)
+	if not cc.is_empty():
+		v["clan_colors"] = cc
+	if v.has("proportions"):
+		var pr: Array = (v.proportions as Array).duplicate()
+		pr[0] = clampf(float(pr[0]) * 0.75 + 0.4, -1.0, 1.0)
+		pr[1] = clampf(float(pr[1]) * 0.75 - 0.15, -1.0, 1.0)
+		v.proportions = pr
+	return v
+
+
+static var _sky_colors := {}          # island id / clan id -> [main, second, accent]
+static var _sky_lock := Mutex.new()
+const SKY_BIBLE := "res://remake/bible/sky_islands.json"
+
+
+static func sky_colors(clan: Variant) -> Array:
+	## A sky clan's colours [main, second, accent] (hex strings) by island id or clan id, or as given.
+	if typeof(clan) == TYPE_ARRAY:
+		return clan
+	var key := str(clan)
+	if key == "":
+		return []
+	_sky_lock.lock()
+	if _sky_colors.is_empty() and DataFile.exists(SKY_BIBLE):
+		var d: Dictionary = DataFile.json(SKY_BIBLE)
+		for i in d.get("islands", []):
+			_sky_colors[str(i.id)] = i.get("colors", [])
+		for c in d.get("clans", []):
+			_sky_colors[str(c.id)] = c.get("colors", [])
+	var out: Array = _sky_colors.get(key, [])
+	_sky_lock.unlock()
+	return out
+
+
 func some(world_seed: int, pid: String, ids: Array, population := "", pinned := {}) -> Dictionary:
 	## Only the traits named (and what they depend on): the same values person() gives them, since
 	## every trait draws from its own stream.

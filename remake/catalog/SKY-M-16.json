@@ -1,0 +1,49 @@
+{
+ "id": "SKY-M-16",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/models.py",
+ "kind": "store",
+ "lot": {
+  "w": 30.0,
+  "d": 24.0
+ },
+ "traits": {
+  "storeys": 6,
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700,
+  "colors": {
+   "body": "#e9e3d6",
+   "accent": "#3a3a48",
+   "trim": "#efeae0"
+  },
+  "form": "office_block",
+  "upper_use": "apartments",
+  "facade": "stucco",
+  "cornice": "parapet_stepped",
+  "storefronts": [
+   {
+    "business": "Workshop",
+    "type": "machine_floor",
+    "sign": "WORKSHOP",
+    "sign_style": "flat_board"
+   },
+   {
+    "business": "Chandlery",
+    "type": "hardware",
+    "sign": "CHANDLERY",
+    "sign_style": "flat_board"
+   }
+  ]
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "use": "workshop",
+  "size": "L",
+  "storeys": 6,
+  "homes": 20
+ },
+ "brief": "sky island workshop (L, 6 storeys): a shared model"
+}

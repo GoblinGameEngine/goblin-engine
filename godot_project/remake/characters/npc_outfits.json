@@ -5,7 +5,10 @@
   "_about": "Named colour sources. palette = a swatch of the person's palette family (npc_traits tables.palettes); accent = the person's one accent colour if this slot carries it, else palette.",
   "cream": "#e6dfcc", "white_shirt": "#e9e7dc", "black": "#2b2d38", "navy": "#2c3450", "denim": "#4d6181", "khaki": "#a8976c",
   "police_blue": "#3b4a6b", "postal_blue": "#4f6e8e", "scrubs_green": "#7fa896", "scrubs_blue": "#7d98b8", "chef_white": "#ebe8df",
-  "oilskin": "#d9b440", "oilskin_green": "#56684a", "grey": "#8b8d8f", "brown_leather": "#6b4a36", "straw": "#d8c38c", "clergy_black": "#25252c"
+  "oilskin": "#d9b440", "oilskin_green": "#56684a", "grey": "#8b8d8f", "brown_leather": "#6b4a36", "straw": "#d8c38c", "clergy_black": "#25252c",
+  "fleece": "#ddd3bd", "felt_grey": "#7a7771", "felt_brown": "#5e4a3a", "sheepskin": "#cdb894", "brass": "#9a8048", "boot_black": "#2e2a28",
+  "anorak": "#5d6266", "webbing": "#3a3a36", "floor_bright": "#2f6fb0",
+  "_sky": "clan / clan_second / clan_accent = the person's clan_colors (an island's [main, second, accent]), else swatches 0/1/2 of their palette; clan_dark = clan darkened; undyed = one of the wool greys and creams (#e8e2d0, #b8b0a0, #6f6a60)"
  },
 
  "garments": {
@@ -59,7 +62,36 @@
   "baker_cap":     {"build": "cap", "visor": 0.0, "tall": 0.35, "patterns": {"solid": 1}},
   "headscarf":     {"build": "headscarf", "patterns": {"solid": 3, "floral": 2, "dots": 1}},
   "police_cap":    {"build": "cap", "visor": 0.55, "tall": 0.2, "patterns": {"solid": 1}},
-  "hard_hat":      {"build": "cap", "visor": 0.2, "tall": 0.1, "hard": true, "patterns": {"solid": 1}}
+  "hard_hat":      {"build": "cap", "visor": 0.2, "tall": 0.1, "hard": true, "patterns": {"solid": 1}},
+
+  "_sky": "The sky folk's clothes (canon: remake/bible/sky_islands.json clothing.for_the_outfit_generator; research/sky_islands/05): warm, layered, light, knitted in the clan's colours. Neck 'funnel' is a stand-up collar. The slots skirt (over leggings), sash, harness, neck, hands and brow are theirs.",
+  "gansey":        {"build": "top", "torso": [1.6, 9.0], "sleeve": 1.0, "ease": 0.024, "neck": "funnel", "patterns": {"knit": 3, "peerie": 3, "stripes": 2, "zigzag": 1, "check": 0.5}},
+  "wool_trousers": {"build": "bottom", "top": 3.4, "legs": 1.0, "ease": 0.02, "patterns": {"solid": 6, "herring": 1, "patch": 1}},
+  "leggings_knit": {"build": "bottom", "top": 3.4, "legs": 1.0, "ease": 0.008, "patterns": {"peerie": 2, "stripes": 2, "knit": 2}},
+  "skirt_quilted": {"build": "skirt", "top": 3.5, "hem": 0.5, "flare": 0.5, "patterns": {"quilt": 1}},
+  "rigger_anorak": {"trim": "clan_accent", "build": "coat", "torso": [1.2, 9.0], "sleeve": 1.0, "ease": 0.05, "neck": "funnel", "hem": 0.06, "flare": 0.1, "layer": 2, "patterns": {"solid": 4, "patch": 1}},
+  "long_coat":     {"trim": "clan_second", "build": "coat", "torso": [1.2, 9.0], "sleeve": 1.0, "ease": 0.05, "neck": "funnel", "hem": 0.8, "flare": 0.3, "layer": 3, "patterns": {"quilt": 3, "solid": 1}},
+  "gakti_tunic":   {"trim": "clan_accent", "trim_pattern": "zigzag", "build": "coat", "torso": [1.1, 9.0], "sleeve": 1.0, "ease": 0.04, "neck": "collar", "hem": 0.35, "flare": 0.6, "layer": 2, "patterns": {"zigzag": 1}},
+  "parka":         {"trim": "fleece", "build": "coat", "torso": [1.2, 9.0], "sleeve": 1.0, "ease": 0.056, "neck": "funnel", "hem": 0.35, "flare": 0.3, "layer": 3, "patterns": {"solid": 3, "quilt": 2}},
+  "cape_coat":     {"trim": "clan", "build": "coat", "torso": [1.2, 9.0], "sleeve": 1.0, "ease": 0.04, "neck": "collar", "hem": 0.3, "flare": 0.3, "cape": 0.6, "layer": 3, "patterns": {"solid": 3, "herring": 1}},
+  "vest_quilted":  {"build": "top", "torso": [1.8, 8.6], "sleeve": 0.0, "ease": 0.036, "neck": "v", "layer": 2, "patterns": {"quilt": 1}},
+  "sash":          {"build": "sash", "y": [3.5, 4.5], "tail": 0.45, "patterns": {"solid": 4, "stripes": 1, "zigzag": 2}},
+  "knot_cord":     {"build": "sash", "y": [3.85, 4.15], "tail": 0.9, "patterns": {"solid": 1}},
+  "rim_harness":   {"build": "harness", "patterns": {"solid": 1}},
+  "scarf_long":    {"build": "scarf", "bulk": 0.022, "tail": 0.95, "patterns": {"stripes": 1}},
+  "cowl":          {"build": "scarf", "bulk": 0.03, "tail": 0.0, "patterns": {"knit": 4, "peerie": 2}},
+  "ruff":          {"build": "scarf", "bulk": 0.042, "tail": 0.0, "patterns": {"knit": 1}},
+  "hood_down":     {"build": "hood", "patterns": {"solid": 1}},
+  "mittens":       {"build": "mittens", "cuff": 0.15, "ease": 0.008, "patterns": {"peerie": 2, "solid": 1, "stripes": 1}},
+  "fingerless":    {"build": "gloves", "fingerless": true, "cuff": 0.2, "ease": 0.004, "patterns": {"knit": 1}},
+  "felt_boots":    {"build": "shoes", "height": 0.75, "ease": 0.02, "patterns": {"solid": 2, "zigzag": 1}},
+  "rigger_boots":  {"build": "shoes", "height": 0.42, "ease": 0.01, "patterns": {"solid": 1}},
+  "knit_cap":      {"build": "earflap", "crown": 0.16, "pom": 0.075, "patterns": {"peerie": 3, "stripes": 2, "knit": 2, "zigzag": 1}},
+  "fur_hat":       {"build": "earflap", "crown": 0.32, "patterns": {"solid": 1}},
+  "balaclava":     {"build": "cap", "visor": 0.0, "tall": 0.1, "low": 0.55, "patterns": {"knit": 1}},
+  "hood_up":       {"build": "hood_up", "colour": "clan", "patterns": {"solid": 1}},
+  "headband":      {"build": "headband", "patterns": {"peerie": 2, "knit": 1, "stripes": 1}},
+  "goggles":       {"build": "goggles", "patterns": {"solid": 1}}
  },
 
  "outfits": {
@@ -182,6 +214,109 @@
   "clergy": {"slots": {
      "bottom": {"trousers": 1}, "top": {"shirt": 1}, "over": {"cassock": 1, "jacket": 1},
      "feet": {"shoes": 1}, "head": {"none": 1}},
-   "colours": {"bottom": "clergy_black", "top": "clergy_black", "over": "clergy_black", "feet": "black", "head": "black"}}
+   "colours": {"bottom": "clergy_black", "top": "clergy_black", "over": "clergy_black", "feet": "black", "head": "black"}},
+
+  "_sky": "The sky folk (cultures.sky picks these; canon clothing.age_and_role): a gansey under a coat, the clan's colours (sources clan / clan_second / clan_accent; undyed = the wool greys and creams), a scarf or cowl, felt or rigger boots.",
+  "sky": {"slots": {
+     "bottom": {"wool_trousers": 5, "leggings_knit": {"w": 4, "if": ["female"]}},
+     "skirt": {"none": 5, "skirt_quilted": {"w": 5, "if": ["female"]}},
+     "top": {"gansey": 1},
+     "over": {"long_coat": 3, "gakti_tunic": 3, "parka": 1, "vest_quilted": 1.5, "rigger_anorak": 1},
+     "sash": {"none": 2, "sash": 2},
+     "neck": {"scarf_long": 3, "cowl": 2, "ruff": 1, "none": 1.5},
+     "feet": {"felt_boots": 3, "rigger_boots": 1},
+     "hands": {"none": 4, "mittens": 2},
+     "head": {"none": 3, "knit_cap": 3, "headband": 1.5, "hood_up": 0.7, "balaclava": 0.8}},
+   "colours": {"bottom": "undyed", "skirt": "clan_second", "top": "palette", "over": "clan", "sash": "clan_accent", "neck": "palette",
+      "feet": "undyed", "hands": "palette", "head": "palette"}},
+
+  "sky_rigger": {"slots": {
+     "bottom": {"wool_trousers": 1},
+     "top": {"gansey": 1},
+     "over": {"rigger_anorak": 1},
+     "harness": {"rim_harness": 1},
+     "neck": {"cowl": 3, "none": 1},
+     "feet": {"rigger_boots": 1},
+     "hands": {"fingerless": 1},
+     "head": {"knit_cap": 4, "hood_up": 1, "balaclava": 1},
+     "brow": {"none": 4, "goggles": 1}},
+   "colours": {"bottom": "undyed", "top": "palette", "over": "clan_or_grey", "harness": "webbing", "neck": "palette",
+      "feet": "boot_black", "hands": "palette", "head": "palette", "brow": "brass"}},
+
+  "sky_plumb": {"slots": {
+     "bottom": {"wool_trousers": 1},
+     "top": {"jacket": 1},
+     "over": {"parka": 1},
+     "sash": {"sash": 1},
+     "neck": {"scarf_long": 2, "cowl": 1},
+     "feet": {"rigger_boots": 1},
+     "hands": {"mittens": 1},
+     "head": {"knit_cap": 2, "fur_hat": 1},
+     "brow": {"goggles": 1}},
+   "colours": {"bottom": "undyed", "top": "floor_bright", "over": "clan", "sash": "clan_accent", "neck": "clan_second",
+      "feet": "boot_black", "hands": "clan_second", "head": "clan", "brow": "brass"}},
+
+  "sky_keeper": {"slots": {
+     "bottom": {"wool_trousers": 3, "leggings_knit": {"w": 2, "if": ["female"]}},
+     "skirt": {"none": 2, "skirt_quilted": {"w": 3, "if": ["female"]}},
+     "top": {"gansey": 1},
+     "over": {"cape_coat": 1},
+     "sash": {"knot_cord": 1},
+     "neck": {"cowl": 2, "scarf_long": 1, "none": 1},
+     "feet": {"felt_boots": 1},
+     "hands": {"none": 3, "mittens": 1},
+     "head": {"none": 3, "knit_cap": 1, "fur_hat": 1}},
+   "colours": {"bottom": "undyed", "skirt": "clan", "top": "palette", "over": "clan_second", "sash": "clan_accent", "neck": "palette",
+      "feet": "undyed", "hands": "palette", "head": "clan"}},
+
+  "sky_grower": {"slots": {
+     "bottom": {"wool_trousers": 3, "leggings_knit": {"w": 2, "if": ["female"]}},
+     "skirt": {"none": 3, "skirt_quilted": {"w": 3, "if": ["female"]}},
+     "top": {"gansey": 1},
+     "over": {"vest_quilted": 4, "gakti_tunic": 2, "apron_bib": 1},
+     "sash": {"none": 2, "sash": 1},
+     "neck": {"scarf_long": 1, "none": 2},
+     "feet": {"felt_boots": 2, "rubber_boots": 1},
+     "hands": {"none": 2, "fingerless": 2},
+     "head": {"knit_cap": 2, "headband": 2, "headscarf": 1, "none": 1}},
+   "colours": {"bottom": "undyed", "skirt": "clan_second", "top": "palette", "over": "clan_accent", "sash": "clan", "neck": "palette",
+      "feet": "felt_grey", "hands": "palette", "head": "palette"}},
+
+  "sky_elder": {"slots": {
+     "bottom": {"wool_trousers": 3},
+     "skirt": {"none": 2, "skirt_quilted": 2},
+     "top": {"gansey": 1},
+     "over": {"parka": 3, "long_coat": 3},
+     "neck": {"cowl": 2, "scarf_long": 2, "ruff": 2, "hood_down": 1},
+     "feet": {"felt_boots": 1},
+     "hands": {"mittens": 2, "none": 1},
+     "head": {"fur_hat": 3, "knit_cap": 1, "none": 1}},
+   "colours": {"bottom": "undyed", "skirt": "clan_second", "top": "palette", "over": "clan", "neck": "palette",
+      "feet": "undyed", "hands": "palette", "head": "felt_brown"}},
+
+  "sky_child": {"slots": {
+     "bottom": {"wool_trousers": 2, "leggings_knit": 2},
+     "skirt": {"none": 3, "skirt_quilted": {"w": 3, "if": ["female"]}},
+     "top": {"gansey": 1},
+     "over": {"parka": 3, "long_coat": 1, "gakti_tunic": 2},
+     "harness": {"rim_harness": 3, "none": 1},
+     "neck": {"scarf_long": 3, "cowl": 1},
+     "feet": {"felt_boots": 2, "rigger_boots": 1},
+     "hands": {"mittens": 3, "none": 1},
+     "head": {"knit_cap": 4, "headband": 1}},
+   "colours": {"bottom": "palette", "skirt": "clan_accent", "top": "clan_second", "over": "clan", "harness": "webbing", "neck": "clan_accent",
+      "feet": "undyed", "hands": "clan_accent", "head": "clan_accent"}}
+ },
+
+ "cultures": {
+  "_about": "A person with a 'culture' trait dresses from here instead of by occupation: by 'outfit_key' if they carry one, else by 'culture_role' (a canon job id: work clothes, occasion 'work'), else by age. 'clan_colors' [main, second, accent] colour the clan sources. NpcTraits.sky_folk() makes such a person.",
+  "sky": {"default": "sky", "child": "sky_child", "elder": "sky_elder",
+   "roles": {"rigger": "sky_rigger", "roper": "sky_rigger", "envelope_wright": "sky_rigger", "winch_hand": "sky_rigger", "line_rocketeer": "sky_rigger",
+    "bridgewright": "sky_rigger", "fence_warden": "sky_rigger", "hoist_master": "sky_rigger", "lark_wright": "sky_rigger", "sparks": "sky_rigger",
+    "snow_hand": "sky_rigger", "net_keeper": "sky_rigger", "gas_maker": "sky_rigger", "smith": "sky_rigger", "mender": "sky_rigger", "moss_grower": "sky_rigger",
+    "roof_grower": "sky_grower", "beekeeper": "sky_grower", "dove_keeper": "sky_grower", "herder": "sky_grower", "poultry_keeper": "sky_grower",
+    "pond_keeper": "sky_grower", "cleaner": "sky_grower",
+    "plumb": "sky_plumb",
+    "knot_keeper": "sky_keeper", "factor": "sky_keeper", "weigher": "sky_keeper", "box_tender": "sky_keeper", "elder_counsel": "sky_elder"}}
  }
 }

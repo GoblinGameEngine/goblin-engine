@@ -9,6 +9,7 @@ at H-point + 0.20); headroom H-point to headliner >= 1.13 m for our tallest peop
 0.56-1.37 m (FMVSS 108), tail lamps 0.38-1.83 m, bumpers in the Part 581 zone (0.41-0.51 m).
 Coordinates: Blender's (y forward, z up), y = 0 midway between the board's outer axles.
 """
+import math
 
 H_FRONT = 0.85                      # the front H-point's height (deck 0.50 + floor 0.05 + H30 0.30)
 BELT_OVER_H = 0.42                  # the belt above the H-point (FMVSS 214 / 226: a high belt)
@@ -893,6 +894,39 @@ STYLES["AP460"] = {"name": "steward_errand", "type": "personal_aerostat",
                    "equipment": ["envelope", "ducted_fans", "suspension", "aero_lamps"]}
 VARIANTS["AP460"] = [{"type": "summoned_aerostat", "name": "steward_errand_red",
                       "palette": dict(paint=(150, 24, 20), livery2=(150, 24, 20))}]
+
+# ======================================================================== the sky skiff (2026-10-14)
+# The sky islands' own craft, "the lark" (research/sky_islands/00_plan.md, 05): the two-person high-performance aerostat a clan's
+# descender flies down to the surface and back -- ceiling 1.5 km above the floor, 250 km/h. Not a works design: a slim
+# streamlined hydrogen envelope (the "cigar") slung tight over a narrow two-seat tandem gondola (the plumb ahead, the
+# passenger behind, lockers at the back, an electric heater -- no open flame under hydrogen), an X tail, two big pusher fans on pylons aft and two smaller ones on booms. Island-built: a warm saffron
+# envelope patched in the clan's rust, a deep-red gondola with a cream band.
+SKY_SKIFF = dict(AERO_GONDOLA, **{
+    "id": "AK480", "cls": "sky_skiff", "board": "steward_keel5",
+    "about": "sky skiffs (the sky islands' craft): a 15 m streamlined envelope slung over a 4.6 m two-seat gondola, four ducted fans, 250 km/h",
+    "nose": 2.30, "tail": -2.30, "half_w": 1.05, "belt": 1.15, "nose_round": 1.05, "tail_round": 0.95, "nose_taper": 0.16, "tail_taper": 0.10,
+    "front": {"kind": "flat", "toe": 2.10, "header": 1.45, "screen_base": 1.17, "hood_drop": 0.08},
+    "rear": {"kind": "wall", "tail_in": -2.23, "back_window": {"half_w": 0.45, "z": (1.40, 2.20), "corner": 0.08}},
+    "doors": [{"id": "S", "y0": 0.60, "y1": -0.50, "kind": "slide"}],
+    "windows": [{"id": "W2", "y0": -0.60, "y1": -1.62}],
+    "seats": [{"y": 1.05, "z": 0.95, "xs": [0.0], "w": 0.52}, {"y": -0.95, "z": 0.95, "xs": [0.0], "w": 0.52}],
+    "dash_y": 1.80, "driver": "R",
+    "aero": {"env": (14.0, 1.75, -1.0, 4.80), "stripes": [], "bands": [(0.47, 0.50)], "cap": 0.95,
+             "patches": [(0.20, 0.27, 30, 75), (0.36, 0.41, 250, 300), (0.58, 0.66, 95, 130), (0.74, 0.79, 200, 235),
+                         (0.30, 0.34, 140, 170), (0.83, 0.87, 20, 50)],
+             "fins": (0.03, 0.20, 1.85, 0.50, 0.75), "fin_band": (0.62, 0.80),
+             "fin_angles": (math.pi / 4, 3 * math.pi / 4, 5 * math.pi / 4, 7 * math.pi / 4),
+             "fans": [(2.20, -4.3, 4.15, 0.60, "env"), (1.45, -3.05, 2.05, 0.42, "boom")], "fan_len": 1.35,
+             "fan_paint": ("paint", "livery1"), "saddle": True, "foot_lamps": 3},
+})
+CLASSES[SKY_SKIFF["id"]] = SKY_SKIFF
+STYLES["AK480"] = {"name": "skyfolk_skiff", "type": "sky_skiff",
+                   "palette": palette(paint=(122, 36, 30), paint2=(234, 222, 192), livery1=(234, 222, 192), livery2=(122, 36, 30),
+                                      canvas1=(222, 160, 70), canvas2=(150, 64, 40), seat=(140, 92, 60), carpet=(110, 40, 34)),
+                   "panel": {"lower": "paint", "upper": "paint", "roof": "paint2", "sail": "paint"}, "head_lamp": "round", "grille": None,
+                   "tail_lamp": "pixel", "bumper": "none", "mirror": "none", "handle": "chrome", "belt_trim": "chrome", "rail": "black",
+                   "livery": {"m": "livery1", "z": (0.95, 1.08)},
+                   "equipment": ["envelope", "fins", "ducted_fans", "suspension", "aero_lamps"]}
 
 
 

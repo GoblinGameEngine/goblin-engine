@@ -11,6 +11,7 @@
   "people.json",
   "schema.json",
   "settlements.json",
+  "sky_islands.json",
   "world.json"
  ],
  "counts": {
@@ -33,7 +34,9 @@
   "spin_cups": 299,
   "surnames_2752": 8173,
   "extinct_surnames_listed": 4000,
-  "given_names": 10103
+  "given_names": 10103,
+  "sky_islands": 100,
+  "sky_population": 97070
  },
  "name_stats": {
   "surnames_2752": 8135,

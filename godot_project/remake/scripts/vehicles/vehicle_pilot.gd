@@ -9,6 +9,10 @@ class_name VehiclePilot
 ##
 ##   var p := VehiclePilot.drive(vehicle, target, 40.0)    # start (cruise 40 m up, if it flies)
 ##   p.arrived  -> emitted on reaching the target (within arrive_r); the vehicle is then left stopped
+## A flier's target may be up in the air -- a sky island's pad, 750 m up (2026-10-14) -- and may move: give it a node
+## and an offset in that node's frame (VehiclePilot.fly_to) and the target is followed each tick. It climbs off its
+## start straight up before going anywhere, cruises at cruise m over the ground or ARRIVE_OVER m over the target,
+## whichever is higher, and settles onto the target's own height; near a moving target it matches its speed.
 
 signal arrived
 
@@ -18,6 +22,16 @@ var cruise := 40.0                   # m above the ground (fliers)
 var arrive_r := 6.0                  # m
 var speed_kmh := 0.0                 # a ground vehicle's cruising speed; 0: its own (60 % of its top)
 var done := false
+var target_node: Node3D = null       # a moving target (an island): target = target_node.global_transform * target_local
+var target_local := Vector3.ZERO
+var _start_h := NAN                  # the flier's height (above the floor) where it took off
+var _last_target := Vector3.INF
+var _target_v := Vector3.ZERO        # the moving target's velocity (m/s)
+var _start_p := Vector3.ZERO
+var _start_aerial := false
+var _cleared := false
+const LEAVE_R := 250.0               # m from an aerial start it stays up over (an island's roofs)
+const ARRIVE_OVER := 25.0            # m over an aerial target it comes in at, before letting down onto it
 
 
 static func drive(v: RemakeAirVehicle, to: Vector3, cruise_m := 40.0) -> VehiclePilot:
@@ -33,6 +47,14 @@ static func drive(v: RemakeAirVehicle, to: Vector3, cruise_m := 40.0) -> Vehicle
 	return p
 
 
+static func fly_to(v: RemakeAirVehicle, node: Node3D, local: Vector3, cruise_m := 60.0) -> VehiclePilot:
+	## Fly to a point on a moving node (a sky island's pad): followed every tick till it's down on it.
+	var p := drive(v, node.global_transform * local, cruise_m)
+	p.target_node = node
+	p.target_local = local
+	return p
+
+
 func stop() -> void:
 	done = true
 	if vehicle is RemakeGroundVehicle:
@@ -44,6 +66,11 @@ func stop() -> void:
 func _physics_process(_delta: float) -> void:
 	if done or vehicle == null or vehicle.pilot != null:   # (a player took the seat: theirs to drive)
 		return
+	if target_node != null and is_instance_valid(target_node):
+		target = target_node.global_transform * target_local
+		if _last_target != Vector3.INF:
+			_target_v = (target - _last_target) / maxf(_delta, 1e-4)
+		_last_target = target
 	var p := vehicle.global_position
 	var s := StationGeo.s_of(p)
 	var up := StationGeo.up(s)
@@ -69,17 +96,36 @@ func _physics_process(_delta: float) -> void:
 	# it flies or floats
 	var lift := 0.0
 	var fwd_in := 0.0
+	var h_abs := StationGeo.h_of(p)                             # m above the floor (the target's height is in these)
+	var t_abs := StationGeo.h_of(target)
+	var t_over := t_abs - MapTerrain.elevation(StationGeo.s_of(target), target.x)
+	var aerial := t_over > 3.0                                  # (a target up in the air: an island's pad)
+	if is_nan(_start_h):
+		_start_h = h_abs
+		_start_p = p
+		_start_aerial = h > 3.0                                 # (taking off from up in the air: an island's pad)
+	var over_t := h_abs - t_abs                                 # m over the target's height (<= ~0: down on it)
 	if vehicle.can_climb:
-		var want_h := cruise if dist > arrive_r * 3.0 else 0.0     # (over the target: down)
-		lift = clampf((want_h - h) / 6.0, -1.0, 1.0)
-		if dist <= arrive_r * 3.0 and h < 1.0:
+		var near := dist <= arrive_r * 3.0
+		var want_abs := maxf(ground_h + cruise, t_abs + ARRIVE_OVER if aerial else -INF) if not near else t_abs
+		if _start_aerial and not near and p.distance_to(_start_p) < LEAVE_R:
+			want_abs = maxf(want_abs, _start_h + 15.0)          # (off an island: up over its roofs before going down)
+		lift = clampf((want_abs - h_abs) / 6.0, -1.0, 1.0)
+		if near and over_t < 1.0:
 			lift = -0.3
-		# forward once it's up (or near): never through the treetops on the way up
-		fwd_in = clampf(dist / 30.0, 0.15, 1.0) if (h > minf(cruise * 0.6, 15.0) or dist < arrive_r * 3.0) else 0.0
+		# forward once it's up (or near): never through the treetops -- or an island's roofs -- on the way up
+		if _start_aerial and h_abs - _start_h > 12.0:
+			_cleared = true                                     # (up off the pad: from here it may go down again)
+		var clear := _cleared if _start_aerial else h > minf(cruise * 0.6, 15.0)
+		fwd_in = clampf(dist / 30.0, 0.15, 1.0) if (clear or near) else 0.0
+		if target_node != null and _target_v.length() > 0.2:  # (a moving target: keep up with it, closing at what's left)
+			var fwd_v := -vehicle.global_transform.basis.z
+			var keep := (_target_v - vehicle.frame_velocity()).dot(fwd_v) / maxf(vehicle.max_speed, 1.0)   # (over the island its air moves with it already)
+			fwd_in = clampf(maxf(fwd_in if dist > arrive_r * 3.0 else dist / 40.0, 0.0) + keep, -1.0, 1.0)
 	else:
 		fwd_in = clampf(dist / 20.0, 0.2, 1.0)
 	fwd_in *= clampf(1.2 - absf(ang), 0.0, 1.0)                   # (turn first, then go)
-	if dist < arrive_r and (not vehicle.can_climb or h < 1.5):
+	if dist < arrive_r and (not vehicle.can_climb or (over_t < 1.5 if aerial else h < 1.5)):
 		stop()
 		arrived.emit()
 		return

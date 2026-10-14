@@ -1877,7 +1877,7 @@ func _nav_travel(dd: Dictionary, mins: int) -> void:
 ## so none is ever missing.
 const HAND_BUILT := ["aerostat", "pod", "van", "bicycle"]
 const SUMMON_KINDS := [
-	["Summon Aerostat", ["aerostat", "personal_aerostat", "summoned_aerostat", "cargo_aerostat", "rescue_aerostat"]],
+	["Summon Aerostat", ["aerostat", "personal_aerostat", "summoned_aerostat", "cargo_aerostat", "rescue_aerostat", "sky_skiff"]],
 	["Summon Boat", ["rowboat_dinghy", "canoe_kayak", "fishing_skiff", "pedal_boat", "personal_watercraft", "rescue_board", "sailboat",
 		"pontoon_boat", "cabin_cruiser", "lobster_boat", "coast_guard_boat", "workboat_tug", "trawler", "ferry", "barge", "travel_lift"]],
 	["Summon Passenger Car", ["city_car", "minivan", "station_wagon", "sedan", "luxury_sedan", "company_car", "police_car", "taxi", "fire_chief_car",
@@ -1902,7 +1902,7 @@ const SUMMON_KINDS := [
 		"low_loader"]],
 	["Summon Spacecraft", ["passenger_shuttle", "supply_freighter", "eva_sled", "cargo_mule", "spoke_elevator_car"]],
 ]
-const VEHICLE_NAMES := {"aerostat": "Personal aerostat", "pod": "City car (pod)", "van": "Minivan"}
+const VEHICLE_NAMES := {"aerostat": "Personal aerostat", "pod": "City car (pod)", "van": "Minivan", "sky_skiff": "Sky skiff (lark)"}
 var _tram_n := TransitVehicle.MIN_SECTIONS
 
 

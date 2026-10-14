@@ -73,8 +73,8 @@ def build(rec, vacant=False):
     office = tr.get("form") == "office_block"
     storeys = int(clamp(tr.get("storeys") or 2, 1, 12 if office else 3))
     upper = tr.get("upper_use") or ("apartments" if storeys > 1 else "none")
-    if office:
-        upper = "offices"
+    if office and not (tr.get("roof_access") and tr.get("upper_use") in ("apartments", "hotel_rooms")):
+        upper = "offices"                  # (a sky island's block may have homes or wards upstairs: roof_access records)
     if storeys == 1:
         upper = "none"
     year = tr.get("year_built", 1900)
@@ -82,6 +82,8 @@ def build(rec, vacant=False):
     facade_materials(b, tr, cond)
     # ---- block rectangle
     W = min(lot_w - 0.1, 40.0 if office else 24.0)
+    if tr.get("roof_access"):
+        W = min(lot_w - 4.6, 40.0 if office else 24.0)     # (room each side: the fire escape up one, a passage by the other)
     D = clamp(lot_d - 3.5, 10.0, 30.0 if office else 26.0)
     x0, x1 = -W / 2, W / 2
     y1 = lot_d / 2 - 0.3
@@ -277,6 +279,11 @@ def build(rec, vacant=False):
                 cx_, hw_ = w_["at"][0], w_["w"] / 2 + 0.06
                 ply.box((cx_ - hw_, y1 + 0.01, fz + w_["sill"] - 0.05), (cx_ + hw_, y1 + 0.05, fz + w_["sill"] + w_["h"] + 0.05), "plywood")
     facade_dressing(b, tr, rec, fronts_info, x0, x1, y0, y1, floors, wall_top, parapet, sb if has_up else None, rnd)
+    if tr.get("roof_access"):
+        import roofaccess
+        sx = -1 if mirror else 1                           # up the side away from the stair bay
+        roofaccess.fire_escape(b, "x", x1 if sx > 0 else x0, sx, y0 + 0.3, y1 - 0.3, [f[0] for f in floors[1:]], wall_top,
+                               parapet, TE)
     site(b, lot_w, lot_d, x0, x1, y0, y1, rnd, [d["at"][0] for d in spec["doors"] if d.get("ext") and d["at"][1] < y0 + 0.01])
     return b
 

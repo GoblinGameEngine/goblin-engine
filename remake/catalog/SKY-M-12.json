@@ -1,0 +1,49 @@
+{
+ "id": "SKY-M-12",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/models.py",
+ "kind": "store",
+ "lot": {
+  "w": 22.0,
+  "d": 20.0
+ },
+ "traits": {
+  "storeys": 4,
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700,
+  "colors": {
+   "body": "#6f9a8b",
+   "accent": "#2b4a6b",
+   "trim": "#efeae0"
+  },
+  "form": "office_block",
+  "upper_use": "apartments",
+  "facade": "stucco",
+  "cornice": "parapet_stepped",
+  "storefronts": [
+   {
+    "business": "Infirmary",
+    "type": "ward",
+    "sign": "INFIRMARY",
+    "sign_style": "flat_board"
+   },
+   {
+    "business": "Infirmary",
+    "type": "nurse_station",
+    "sign": "INFIRMARY",
+    "sign_style": "flat_board"
+   }
+  ]
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "use": "infirmary",
+  "size": "S",
+  "storeys": 4,
+  "homes": 6
+ },
+ "brief": "sky island infirmary (S, 4 storeys): a shared model"
+}

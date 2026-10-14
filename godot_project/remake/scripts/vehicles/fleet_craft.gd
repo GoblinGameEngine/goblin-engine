@@ -22,7 +22,15 @@ var boat := false
 
 # km/h, and how fast it climbs (m/s): by type
 const SPEEDS := {"cargo_aerostat": [60.0, 3.0], "rescue_aerostat": [110.0, 5.0], "passenger_shuttle": [160.0, 6.0],
-	"supply_freighter": [80.0, 3.0], "cargo_mule": [60.0, 4.0], "spoke_elevator_car": [36.0, 6.0], "eva_sled": [40.0, 4.0]}
+	"supply_freighter": [80.0, 3.0], "cargo_mule": [60.0, 4.0], "spoke_elevator_car": [36.0, 6.0], "eva_sled": [40.0, 4.0],
+	"sky_skiff": [250.0, 12.0]}
+## m above the floor (pressure altitude) each type may climb to; the rest keep RemakeAirVehicle's ceiling_h. The sky
+## islands' lark (sky_skiff, research/sky_islands/00_plan.md): 1.5 km, over the islands' decks at 750 m.
+const CEILINGS := {}                 # (per type; every aerostat now 2.5 km: air_vehicle.ceiling_h)
+## the lighter-than-air types that aren't named "...aerostat" (they hold their pressure altitude too)
+const BUOYANT := ["sky_skiff"]
+## a fast craft's own handling: [accel m/s^2, brake m/s^2, turn rad/s] (else by its size)
+const HANDLING := {"sky_skiff": [5.0, 7.0, 0.55]}
 
 
 func _init(t := "") -> void:
@@ -37,7 +45,8 @@ func _init(t := "") -> void:
 	roof_y = float(info.get("height", 2.9))
 	half_w = float(info.get("half_w", 1.2))
 	crash_physics = true
-	buoyant = "aerostat" in t                         # (the lighter-than-air ones hold their pressure altitude)
+	buoyant = "aerostat" in t or t in BUOYANT         # (the lighter-than-air ones hold their pressure altitude)
+	ceiling_h = float(CEILINGS.get(t, ceiling_h))
 	if boat:                                          # (a boat: by its length, 15-40 km/h; it doesn't fly)
 		var ln := tail - nose
 		max_speed = clampf(10.0 + ln * 1.5, 15.0, 40.0) / 3.6
@@ -57,6 +66,10 @@ func _init(t := "") -> void:
 		accel = 1.5 if heavy else 4.0
 		brake = 2.5 if heavy else 6.0
 		turn_rate = 0.2 if heavy else 0.5
+		if HANDLING.has(t):
+			accel = float(HANDLING[t][0])
+			brake = float(HANDLING[t][1])
+			turn_rate = float(HANDLING[t][2])
 	var crown := roof_y
 	cabin_box = AABB(Vector3(-half_w, floor_y - 0.1, nose), Vector3(half_w * 2.0, crown - floor_y + 0.1, tail - nose))
 	var st: Array = info.get("seat", []) if info.get("seat") != null else []
@@ -248,6 +261,46 @@ func take_seat(p: StationPlayer) -> void:
 	super(p)
 	if pilot:
 		_fc.open("F" + str(info.get("driver", "L")), false)
+
+
+## The palette materials a livery recolours, by the colour they take: a sky island clan's knit colours
+## [main, second, accent] (remake/bible/sky_islands.json "colors") -- the envelope in the main colour, patched in the
+## accent; the gondola's paint in the main colour, its band and roof in the second.
+const LIVERY_SLOTS := {"canvas1": 0, "canvas2": 2, "paint": 0, "livery2": 0, "paint2": 1, "livery1": 1}
+
+
+func set_livery(colors: Array) -> void:
+	## Paint this craft in a clan's colours (see LIVERY_SLOTS; colours as Color or "#rrggbb"). Per-instance surface
+	## overrides: the shared library materials and meshes are left alone.
+	var cs: Array = []
+	for c in colors:
+		cs.append(c if c is Color else Color(str(c)))
+	if cs.size() < 3:
+		return
+	var made := {}
+	var paint := func(m: Material) -> Material:
+		if m == null or not LIVERY_SLOTS.has(m.resource_name):
+			return null
+		if not made.has(m):
+			var c := m.duplicate() as Material
+			var col: Color = cs[int(LIVERY_SLOTS[m.resource_name])]
+			if c is ShaderMaterial:
+				(c as ShaderMaterial).set_shader_parameter("tint", col)
+			elif c is StandardMaterial3D:
+				(c as StandardMaterial3D).albedo_color = col
+			made[m] = c
+		return made[m]
+	for n in find_children("*", "MeshInstance3D", true, false):
+		var mi := n as MeshInstance3D
+		if mi.material_override != null:
+			var o: Material = paint.call(mi.material_override)
+			if o:
+				mi.material_override = o
+		elif mi.mesh:
+			for i in mi.mesh.get_surface_count():
+				var o: Material = paint.call(mi.get_surface_override_material(i) if mi.get_surface_override_material(i) else mi.mesh.surface_get_material(i))
+				if o:
+					mi.set_surface_override_material(i, o)
 
 
 func ground_offset() -> float:

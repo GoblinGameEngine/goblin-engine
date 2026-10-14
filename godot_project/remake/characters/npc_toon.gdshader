@@ -40,7 +40,7 @@ uniform bool hair_cut = false;       // hair: cut the hairline where UV2.y (hair
 uniform int debug_view = 0;          // 1: show UV2
 
 // fabric (UV in metres: u round the garment from the front, v along it)
-uniform int pattern = 0;   // 0 solid 1 stripes 2 pinstripe 3 check 4 tartan 5 dots 6 floral 7 knit 8 denim 9 pleats 10 weave 11 herring
+uniform int pattern = 0;   // 0 solid 1 stripes 2 pinstripe 3 check 4 tartan 5 dots 6 floral 7 knit 8 denim 9 pleats 10 weave 11 herring 12 quilt 13 zigzag 14 patch 15 peerie
 uniform vec3 col2 : source_color = vec3(0.9, 0.87, 0.8);
 uniform vec3 col3 : source_color = vec3(0.3, 0.3, 0.35);
 uniform float pat_scale = 1.0;
@@ -186,6 +186,42 @@ vec3 fabric(vec2 uv, vec3 base) {
 		float col = floor(uv.x / (0.02 * s));
 		float dir = mod(col, 2.0) * 2.0 - 1.0;
 		return base * (0.93 + 0.07 * band(uv.y + dir * uv.x, 0.012, 0.5, fwm));
+	} else if (pattern == 12) {                             // quilting: diamond stitch lines, the down puffed between
+		float p = 0.085 * s;
+		float a = band(uv.x + uv.y, p, 0.07, fwm);
+		float b = band(uv.x - uv.y, p, 0.07, fwm);
+		float puff = abs(fract((uv.x + uv.y) / p) - 0.5) + abs(fract((uv.x - uv.y) / p) - 0.5);
+		return base * (0.97 + 0.06 * (1.0 - puff)) * (1.0 - 0.22 * max(a, b));
+	} else if (pattern == 13) {                             // woven bands (the sky folk's trims): a zigzag between two rules
+		float per = 0.3 * s;
+		float v = fract(uv.y / per) * per;                  // m into this repeat
+		float h = 0.055;                                    // the band's height
+		if (v < h) {
+			float zx = abs(fract(uv.x / 0.035) - 0.5) * 2.0;     // 0..1..0 across each tooth
+			float zy = (v / h - 0.2) / 0.6;                      // 0..1 up the band, inside the rules
+			float zig = 1.0 - clamp((abs(zy - zx) - 0.16) / max(fwm / h * 1.5, 1e-3) + 0.5, 0.0, 1.0);
+			float rule = step(v, h * 0.12) + step(h * 0.88, v);
+			return mix(mix(col2, col3, zig), col3, clamp(rule, 0.0, 1.0));
+		}
+		return base;
+	} else if (pattern == 14) {                             // patchwork: mended with other cloths, stitched round
+		vec2 g = uv / vec2(0.16 * s, 0.2 * s);
+		g.x += 0.5 * mod(floor(g.y), 2.0);
+		vec2 id = floor(g);
+		float hsh = hash(id);
+		vec3 c = hsh < 0.55 ? base : (hsh < 0.8 ? col2 : col3);
+		vec2 q = abs(fract(g) - 0.5);
+		float seam = clamp((max(q.x, q.y) - 0.47) / max(fwm / (0.16 * s), 1e-3) + 0.5, 0.0, 1.0);
+		return mix(c, c * 0.7, seam);
+	} else if (pattern == 15) {                             // peerie (Fair Isle) bands: rows of small diamonds and dots
+		float per = 0.11 * s;
+		float row = floor(uv.y / per);
+		float v = fract(uv.y / per);
+		vec2 q = vec2(fract(uv.x / (0.03 * s) + 0.5 * mod(row, 2.0)) - 0.5, v - 0.5);
+		float motif = mod(row, 3.0) < 1.0 ? abs(q.x) + abs(q.y) * 0.6 - 0.24 : length(q * vec2(1.0, 0.6)) - 0.16;
+		float m = clamp(-motif / max(fwm / (0.03 * s), 1e-3) + 0.5, 0.0, 1.0);
+		float rule = step(0.9, v);
+		return mix(mix(base, col2, m), col3, rule * 0.85);
 	}
 	return base;
 }

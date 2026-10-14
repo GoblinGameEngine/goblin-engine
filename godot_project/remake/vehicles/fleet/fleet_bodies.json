@@ -3599,6 +3599,30 @@
     "sling": null
    },
    "ground": 0.0
+  },
+  "sky_skiff": {
+   "blueprint": "res://remake/vehicles/fleet/sky_skiff.blueprint.json",
+   "standard": "AK480",
+   "style": "skyfolk_skiff",
+   "board": "steward_keel5",
+   "phys": "sky_skiff",
+   "half_w": 1.05,
+   "height": 2.92,
+   "nose": 2.3,
+   "tail": -2.3,
+   "floor": 0.55,
+   "driver": "R",
+   "air": true,
+   "aero": {
+    "env": [
+     14.0,
+     1.75,
+     -1.0,
+     4.8
+    ],
+    "sling": null
+   },
+   "ground": 0.0
   }
  }
 }

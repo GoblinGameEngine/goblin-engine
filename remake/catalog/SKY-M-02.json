@@ -1,0 +1,39 @@
+{
+ "id": "SKY-M-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/models.py",
+ "kind": "condo",
+ "lot": {
+  "w": 22.0,
+  "d": 21.0
+ },
+ "traits": {
+  "storeys": 6,
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700,
+  "colors": {
+   "body": "#7d8c99",
+   "accent": "#2f5b3c",
+   "trim": "#efeae0"
+  },
+  "form": "slab",
+  "units": 36,
+  "balconies": "none",
+  "ground_floor": "apartments",
+  "walls": "stucco",
+  "roof": {
+   "type": "flat"
+  }
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "use": "dwelling",
+  "size": "S",
+  "storeys": 6,
+  "homes": 36
+ },
+ "brief": "sky island dwelling (S, 6 storeys): a shared model"
+}

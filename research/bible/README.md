@@ -27,6 +27,7 @@ The build writes the engine files to `godot_project/remake/bible/*.json` and the
 | [08_outside_world.md](08_outside_world.md) | history.json (scope earth) | Earth before the launch, the Earth-link, the other arks, the destination, the future |
 | [09_affinity.md](09_affinity.md) | factions.json | factions and the **affinity model**: priors between people and toward the player, and what's stored |
 | [10_engine.md](10_engine.md) | schema.json, index.json | how the engine uses each file |
+| [13_sky_islands.md](13_sky_islands.md) | sky_islands.json | the sky islands: the Hundred, the Skein and the Aloft -- 100 floating islands, their clans, jobs, people, customs, clothing, livestock; research in research/sky_islands |
 | [12_industry.md](12_industry.md) | industry.json | the Rock and the Spindle, the Drops, what the Steward makes and the limits it keeps (the Thirty-Two, panels, gauges, the Wire slot), the boards, how things are made, the three vehicle works and their histories |
 
 ## Sources

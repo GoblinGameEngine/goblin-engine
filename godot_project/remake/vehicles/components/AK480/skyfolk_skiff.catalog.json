@@ -1,0 +1,3423 @@
+{
+ "_about": "Vehicle component library (remake/blender/kit/components.py; research/vehicles/MODULAR_VEHICLES.md)",
+ "standard": "AK480",
+ "class": "sky_skiff",
+ "style": "skyfolk_skiff",
+ "pack": "res://remake/vehicles/components/AK480/skyfolk_skiff.pack",
+ "palette": {
+  "paint": {
+   "albedo": [
+    0.4784,
+    0.1412,
+    0.1176
+   ],
+   "rough": 0.3,
+   "metal": 0.15,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "paint2": {
+   "albedo": [
+    0.9176,
+    0.8706,
+    0.7529
+   ],
+   "rough": 0.32,
+   "metal": 0.05,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "black": {
+   "albedo": [
+    0.1176,
+    0.1216,
+    0.1333
+   ],
+   "rough": 0.5,
+   "metal": 0.1,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "chrome": {
+   "albedo": [
+    0.8235,
+    0.8314,
+    0.8471
+   ],
+   "rough": 0.1,
+   "metal": 1.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "rubber": {
+   "albedo": [
+    0.0941,
+    0.0941,
+    0.102
+   ],
+   "rough": 0.85,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "glass": {
+   "albedo": [
+    0.6667,
+    0.7686,
+    0.8
+   ],
+   "rough": 0.05,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 0.25
+  },
+  "glass_dark": {
+   "albedo": [
+    0.1569,
+    0.1804,
+    0.2039
+   ],
+   "rough": 0.08,
+   "metal": 0.4,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "lining": {
+   "albedo": [
+    0.7843,
+    0.7451,
+    0.6667
+   ],
+   "rough": 0.7,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "headliner": {
+   "albedo": [
+    0.8941,
+    0.8706,
+    0.8078
+   ],
+   "rough": 0.8,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "carpet": {
+   "albedo": [
+    0.4314,
+    0.1569,
+    0.1333
+   ],
+   "rough": 0.95,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "seat": {
+   "albedo": [
+    0.549,
+    0.3608,
+    0.2353
+   ],
+   "rough": 0.85,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "dash": {
+   "albedo": [
+    0.2039,
+    0.1804,
+    0.1647
+   ],
+   "rough": 0.6,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "gauge": {
+   "albedo": [
+    0.9255,
+    0.8941,
+    0.8
+   ],
+   "rough": 0.4,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    0.8392,
+    0.5882
+   ],
+   "emit_strength": 0.3,
+   "alpha": 1
+  },
+  "tub": {
+   "albedo": [
+    0.2275,
+    0.2275,
+    0.2353
+   ],
+   "rough": 0.8,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "wood": {
+   "albedo": [
+    0.502,
+    0.2902,
+    0.1569
+   ],
+   "rough": 0.45,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "sign": {
+   "albedo": [
+    0.9804,
+    0.9412,
+    0.7843
+   ],
+   "rough": 0.4,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    0.9412,
+    0.7451
+   ],
+   "emit_strength": 1.0,
+   "alpha": 1
+  },
+  "livery1": {
+   "albedo": [
+    0.9176,
+    0.8706,
+    0.7529
+   ],
+   "rough": 0.35,
+   "metal": 0.05,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "livery2": {
+   "albedo": [
+    0.4784,
+    0.1412,
+    0.1176
+   ],
+   "rough": 0.35,
+   "metal": 0.05,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "lamp_head": {
+   "albedo": [
+    1.0,
+    0.9804,
+    0.9255
+   ],
+   "rough": 0.3,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    0.9725,
+    0.902
+   ],
+   "emit_strength": 3.0,
+   "alpha": 1
+  },
+  "lamp_drl": {
+   "albedo": [
+    1.0,
+    0.9804,
+    0.9412
+   ],
+   "rough": 0.3,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    0.9804,
+    0.9412
+   ],
+   "emit_strength": 1.2,
+   "alpha": 1
+  },
+  "lamp_tail": {
+   "albedo": [
+    0.7451,
+    0.0706,
+    0.0549
+   ],
+   "rough": 0.4,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    0.1176,
+    0.0784
+   ],
+   "emit_strength": 1.6,
+   "alpha": 1
+  },
+  "lamp_brake": {
+   "albedo": [
+    0.7451,
+    0.0706,
+    0.0549
+   ],
+   "rough": 0.4,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    0.1176,
+    0.0784
+   ],
+   "emit_strength": 0.0,
+   "alpha": 1
+  },
+  "lamp_amber": {
+   "albedo": [
+    0.9255,
+    0.549,
+    0.0941
+   ],
+   "rough": 0.4,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    0.5882,
+    0.1176
+   ],
+   "emit_strength": 0.0,
+   "alpha": 1
+  },
+  "lamp_reverse": {
+   "albedo": [
+    0.9255,
+    0.9255,
+    0.9255
+   ],
+   "rough": 0.4,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "emit_strength": 0.0,
+   "alpha": 1
+  },
+  "lcd": {
+   "albedo": [
+    0.5882,
+    0.6588,
+    0.4627
+   ],
+   "rough": 0.5,
+   "metal": 0.0,
+   "emit": [
+    0.4706,
+    0.6667,
+    0.3529
+   ],
+   "emit_strength": 0.35,
+   "alpha": 1
+  },
+  "lamp_red": {
+   "albedo": [
+    0.7843,
+    0.0784,
+    0.0784
+   ],
+   "rough": 0.3,
+   "metal": 0.0,
+   "emit": [
+    1.0,
+    0.1176,
+    0.1176
+   ],
+   "emit_strength": 0.0,
+   "alpha": 1
+  },
+  "lamp_blue": {
+   "albedo": [
+    0.0784,
+    0.2353,
+    0.8627
+   ],
+   "rough": 0.3,
+   "metal": 0.0,
+   "emit": [
+    0.1569,
+    0.3529,
+    1.0
+   ],
+   "emit_strength": 0.0,
+   "alpha": 1
+  },
+  "lamp_green": {
+   "albedo": [
+    0.0784,
+    0.6667,
+    0.2353
+   ],
+   "rough": 0.3,
+   "metal": 0.0,
+   "emit": [
+    0.1569,
+    1.0,
+    0.3529
+   ],
+   "emit_strength": 0.0,
+   "alpha": 1
+  },
+  "canvas1": {
+   "albedo": [
+    0.8706,
+    0.6275,
+    0.2745
+   ],
+   "rough": 0.85,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  },
+  "canvas2": {
+   "albedo": [
+    0.5882,
+    0.251,
+    0.1569
+   ],
+   "rough": 0.85,
+   "metal": 0.0,
+   "emit": null,
+   "emit_strength": 0,
+   "alpha": 1
+  }
+ },
+ "components": {
+  "AK480.end_cap.nose.C.skyfolk_skiff.b69bf2": {
+   "id": "AK480.end_cap.nose.C.skyfolk_skiff.b69bf2",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "end_cap",
+   "slot": "nose",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/end_cap/nose/C",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     0,
+     363
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     0.772,
+     0.03,
+     1.8013,
+     0.744,
+     0.06
+    ]
+   ],
+   "wear": true,
+   "hp": 500,
+   "mass_kg": 14,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.trim.cowl.C.skyfolk_skiff.838bae": {
+   "id": "AK480.trim.cowl.C.skyfolk_skiff.838bae",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "cowl",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/cowl/C",
+   "reach": 0.0,
+   "mats": {
+    "paint2": [
+     10164,
+     96
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.2095,
+     0.07,
+     1.8685,
+     0.201,
+     0.14
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.glazing.screen.C.skyfolk_skiff.48884d": {
+   "id": "AK480.glazing.screen.C.skyfolk_skiff.48884d",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "glazing",
+   "slot": "screen",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/glazing/screen/C",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     12852,
+     144
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.045,
+     0.325,
+     1.8685,
+     1.75,
+     0.65
+    ]
+   ],
+   "wear": true,
+   "hp": 60,
+   "mass_kg": 14,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.trim.screen.C.skyfolk_skiff.7d09f6": {
+   "id": "AK480.trim.screen.C.skyfolk_skiff.7d09f6",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "screen",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/screen/C",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     16884,
+     84
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.9799,
+     0.325,
+     1.8685,
+     1.6277,
+     0.65
+    ]
+   ],
+   "wear": true,
+   "hp": 60,
+   "mass_kg": 1,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.side_bay.fender.R.skyfolk_skiff.998b5f": {
+   "id": "AK480.side_bay.fender.R.skyfolk_skiff.998b5f",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "side_bay",
+   "slot": "fender",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/side_bay/fender/R",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     19236,
+     105
+    ]
+   },
+   "boxes": [
+    [
+     0.8224,
+     0.785,
+     0.09,
+     0.2552,
+     0.77,
+     0.18
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 9,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.side_bay.fore.R.skyfolk_skiff.3688e9": {
+   "id": "AK480.side_bay.fore.R.skyfolk_skiff.3688e9",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "side_bay",
+   "slot": "fore",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/side_bay/fore/R",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     22176,
+     162
+    ]
+   },
+   "boxes": [
+    [
+     0.8914,
+     1.4,
+     0.73,
+     0.3171,
+     2.0,
+     1.46
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 10,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.trim.a_pillar.R.skyfolk_skiff.356ecb": {
+   "id": "AK480.trim.a_pillar.R.skyfolk_skiff.356ecb",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "a_pillar",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/a_pillar/R",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     26712,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     0.8876,
+     1.965,
+     0.325,
+     0.1248,
+     1.63,
+     0.65
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.side_bay.rocker_S.R.skyfolk_skiff.34fbc8": {
+   "id": "AK480.side_bay.rocker_S.R.skyfolk_skiff.34fbc8",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "side_bay",
+   "slot": "rocker_S",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/side_bay/rocker_S/R",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     27720,
+     6
+    ]
+   },
+   "boxes": [
+    [
+     0.8568,
+     0.49,
+     0.55,
+     0.0936,
+     0.18,
+     1.1
+    ]
+   ],
+   "wear": true,
+   "hp": 500,
+   "mass_kg": 5,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.side_bay.quarter.R.skyfolk_skiff.c15652": {
+   "id": "AK480.side_bay.quarter.R.skyfolk_skiff.c15652",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "side_bay",
+   "slot": "quarter",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/side_bay/quarter/R",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     27888,
+     144
+    ]
+   },
+   "boxes": [
+    [
+     0.8952,
+     1.4,
+     0.865,
+     0.3095,
+     2.0,
+     1.73
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 10,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.side_bay.fender.L.skyfolk_skiff.ecd53b": {
+   "id": "AK480.side_bay.fender.L.skyfolk_skiff.ecd53b",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "side_bay",
+   "slot": "fender",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/side_bay/fender/L",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     31920,
+     105
+    ]
+   },
+   "boxes": [
+    [
+     -0.8224,
+     0.785,
+     0.09,
+     0.2552,
+     0.77,
+     0.18
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 9,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.side_bay.fore.L.skyfolk_skiff.0bd1ad": {
+   "id": "AK480.side_bay.fore.L.skyfolk_skiff.0bd1ad",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "side_bay",
+   "slot": "fore",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/side_bay/fore/L",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     34860,
+     162
+    ]
+   },
+   "boxes": [
+    [
+     -0.8914,
+     1.4,
+     0.73,
+     0.3171,
+     2.0,
+     1.46
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 10,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.trim.a_pillar.L.skyfolk_skiff.a79141": {
+   "id": "AK480.trim.a_pillar.L.skyfolk_skiff.a79141",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "a_pillar",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/a_pillar/L",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     39396,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     -0.8876,
+     1.965,
+     0.325,
+     0.1248,
+     1.63,
+     0.65
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.side_bay.rocker_S.L.skyfolk_skiff.c2d3b6": {
+   "id": "AK480.side_bay.rocker_S.L.skyfolk_skiff.c2d3b6",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "side_bay",
+   "slot": "rocker_S",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/side_bay/rocker_S/L",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     40404,
+     6
+    ]
+   },
+   "boxes": [
+    [
+     -0.8568,
+     0.49,
+     0.55,
+     0.0936,
+     0.18,
+     1.1
+    ]
+   ],
+   "wear": true,
+   "hp": 500,
+   "mass_kg": 5,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.side_bay.quarter.L.skyfolk_skiff.780a60": {
+   "id": "AK480.side_bay.quarter.L.skyfolk_skiff.780a60",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "side_bay",
+   "slot": "quarter",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/side_bay/quarter/L",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     40572,
+     144
+    ]
+   },
+   "boxes": [
+    [
+     -0.8952,
+     1.4,
+     0.865,
+     0.3095,
+     2.0,
+     1.73
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 10,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.roof_bay.roof_0.C.skyfolk_skiff.d54ec2": {
+   "id": "AK480.roof_bay.roof_0.C.skyfolk_skiff.d54ec2",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "roof_bay",
+   "slot": "roof_0",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/roof_bay/roof_0/C",
+   "reach": 0.0,
+   "mats": {
+    "paint2": [
+     44604,
+     288
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.66,
+     0.425,
+     1.9,
+     0.52,
+     0.85
+    ]
+   ],
+   "wear": true,
+   "hp": 500,
+   "mass_kg": 12,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.roof_bay.roof_1.C.skyfolk_skiff.97de3a": {
+   "id": "AK480.roof_bay.roof_1.C.skyfolk_skiff.97de3a",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "roof_bay",
+   "slot": "roof_1",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/roof_bay/roof_1/C",
+   "reach": 0.0,
+   "mats": {
+    "paint2": [
+     52668,
+     216
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.66,
+     0.975,
+     1.9,
+     0.52,
+     1.95
+    ]
+   ],
+   "wear": true,
+   "hp": 500,
+   "mass_kg": 12,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.roof_bay.roof_2.C.skyfolk_skiff.fdf128": {
+   "id": "AK480.roof_bay.roof_2.C.skyfolk_skiff.fdf128",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "roof_bay",
+   "slot": "roof_2",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/roof_bay/roof_2/C",
+   "reach": 0.0,
+   "mats": {
+    "paint2": [
+     58716,
+     216
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.66,
+     0.44,
+     1.9,
+     0.52,
+     0.88
+    ]
+   ],
+   "wear": true,
+   "hp": 500,
+   "mass_kg": 12,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.end_cap.tail.C.skyfolk_skiff.07247c": {
+   "id": "AK480.end_cap.tail.C.skyfolk_skiff.07247c",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "end_cap",
+   "slot": "tail",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/end_cap/tail/C",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     64764,
+     429
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.66,
+     0.035,
+     1.9198,
+     2.52,
+     0.07
+    ]
+   ],
+   "wear": true,
+   "hp": 500,
+   "mass_kg": 14,
+   "breaks": "detach",
+   "tolerance": 0.16
+  },
+  "AK480.floor.floor.C.skyfolk_skiff.cce9c0": {
+   "id": "AK480.floor.floor.C.skyfolk_skiff.cce9c0",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "floor",
+   "slot": "floor",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/floor/floor/C",
+   "reach": 0.0,
+   "mats": {
+    "carpet": [
+     76776,
+     468
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     0.565,
+     2.165,
+     1.6871,
+     0.03,
+     4.33
+    ]
+   ],
+   "wear": true,
+   "hp": 2000,
+   "mass_kg": 20,
+   "breaks": "detach",
+   "tolerance": 1.0
+  },
+  "AK480.lining_bay.trim_0_0.R.skyfolk_skiff.8a3438": {
+   "id": "AK480.lining_bay.trim_0_0.R.skyfolk_skiff.8a3438",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lining_bay",
+   "slot": "trim_0_0",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lining_bay/trim_0_0/R",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     89880,
+     138
+    ]
+   },
+   "boxes": [
+    [
+     0.8726,
+     1.49,
+     0.75,
+     0.2349,
+     1.82,
+     1.5
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.lining_bay.trim_1_0.R.skyfolk_skiff.ff638e": {
+   "id": "AK480.lining_bay.trim_1_0.R.skyfolk_skiff.ff638e",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lining_bay",
+   "slot": "trim_1_0",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lining_bay/trim_1_0/R",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     93744,
+     114
+    ]
+   },
+   "boxes": [
+    [
+     0.8806,
+     1.49,
+     0.865,
+     0.2188,
+     1.82,
+     1.73
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.lining_bay.a_pillar.R.skyfolk_skiff.293766": {
+   "id": "AK480.lining_bay.a_pillar.R.skyfolk_skiff.293766",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lining_bay",
+   "slot": "a_pillar",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lining_bay/a_pillar/R",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     96936,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     0.8306,
+     1.9122,
+     0.325,
+     0.1302,
+     1.6156,
+     0.65
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 1.5,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.lining_bay.trim_0_0.L.skyfolk_skiff.02277e": {
+   "id": "AK480.lining_bay.trim_0_0.L.skyfolk_skiff.02277e",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lining_bay",
+   "slot": "trim_0_0",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lining_bay/trim_0_0/L",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     97944,
+     138
+    ]
+   },
+   "boxes": [
+    [
+     -0.8726,
+     1.49,
+     0.75,
+     0.2349,
+     1.82,
+     1.5
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.lining_bay.trim_1_0.L.skyfolk_skiff.a431bb": {
+   "id": "AK480.lining_bay.trim_1_0.L.skyfolk_skiff.a431bb",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lining_bay",
+   "slot": "trim_1_0",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lining_bay/trim_1_0/L",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     101808,
+     114
+    ]
+   },
+   "boxes": [
+    [
+     -0.8806,
+     1.49,
+     0.865,
+     0.2188,
+     1.82,
+     1.73
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.lining_bay.a_pillar.L.skyfolk_skiff.ce22bc": {
+   "id": "AK480.lining_bay.a_pillar.L.skyfolk_skiff.ce22bc",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lining_bay",
+   "slot": "a_pillar",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lining_bay/a_pillar/L",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     105000,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     -0.8306,
+     1.9122,
+     0.325,
+     0.1302,
+     1.6156,
+     0.65
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 1.5,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.ceiling_bay.roof_0.C.skyfolk_skiff.0b1f18": {
+   "id": "AK480.ceiling_bay.roof_0.C.skyfolk_skiff.0b1f18",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "ceiling_bay",
+   "slot": "roof_0",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/ceiling_bay/roof_0/C",
+   "reach": 0.0,
+   "mats": {
+    "headliner": [
+     106008,
+     288
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.61,
+     0.425,
+     1.78,
+     0.42,
+     0.85
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.ceiling_bay.roof_1.C.skyfolk_skiff.644ef5": {
+   "id": "AK480.ceiling_bay.roof_1.C.skyfolk_skiff.644ef5",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "ceiling_bay",
+   "slot": "roof_1",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/ceiling_bay/roof_1/C",
+   "reach": 0.0,
+   "mats": {
+    "headliner": [
+     114072,
+     216
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.61,
+     0.975,
+     1.78,
+     0.42,
+     1.95
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.ceiling_bay.roof_2.C.skyfolk_skiff.034beb": {
+   "id": "AK480.ceiling_bay.roof_2.C.skyfolk_skiff.034beb",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "ceiling_bay",
+   "slot": "roof_2",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/ceiling_bay/roof_2/C",
+   "reach": 0.0,
+   "mats": {
+    "headliner": [
+     120120,
+     216
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.61,
+     0.44,
+     1.78,
+     0.42,
+     0.88
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 3,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.end_lining.firewall.C.skyfolk_skiff.7bda05": {
+   "id": "AK480.end_lining.firewall.C.skyfolk_skiff.7bda05",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "end_lining",
+   "slot": "firewall",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/end_lining/firewall/C",
+   "reach": 0.0,
+   "mats": {
+    "dash": [
+     126168,
+     60
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     0.88,
+     -0.0,
+     1.7724,
+     0.66,
+     0.02
+    ]
+   ],
+   "wear": true,
+   "hp": 800,
+   "mass_kg": 8,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.end_lining.rear_wall.C.skyfolk_skiff.f38ef6": {
+   "id": "AK480.end_lining.rear_wall.C.skyfolk_skiff.f38ef6",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "end_lining",
+   "slot": "rear_wall",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/end_lining/rear_wall/C",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     127848,
+     144
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.685,
+     -0.0,
+     1.8101,
+     2.27,
+     0.02
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 4,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.rear_opening.C.skyfolk_skiff.615868": {
+   "id": "AK480.reveal.rear_opening.C.skyfolk_skiff.615868",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "rear_opening",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/rear_opening/C",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     131880,
+     120
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.8,
+     0.035,
+     0.9,
+     0.8,
+     0.07
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.glazing.back_window.C.skyfolk_skiff.e60556": {
+   "id": "AK480.glazing.back_window.C.skyfolk_skiff.e60556",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "glazing",
+   "slot": "back_window",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/glazing/back_window/C",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     135240,
+     54
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.8,
+     0.0,
+     0.9,
+     0.8,
+     0.02
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 6,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.reveal.door_S.R.skyfolk_skiff.199150": {
+   "id": "AK480.reveal.door_S.R.skyfolk_skiff.199150",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "door_S",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/door_S/R",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     136752,
+     72
+    ]
+   },
+   "boxes": [
+    [
+     0.9468,
+     1.49,
+     0.55,
+     0.2064,
+     1.82,
+     1.1
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.window_W2.R.skyfolk_skiff.0da6ef": {
+   "id": "AK480.reveal.window_W2.R.skyfolk_skiff.0da6ef",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "window_W2",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/window_W2/R",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     138768,
+     60
+    ]
+   },
+   "boxes": [
+    [
+     0.9664,
+     1.775,
+     0.51,
+     0.1672,
+     1.25,
+     1.02
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.window_WQR.R.skyfolk_skiff.baa3dd": {
+   "id": "AK480.reveal.window_WQR.R.skyfolk_skiff.baa3dd",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "window_WQR",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/window_WQR/R",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     140448,
+     60
+    ]
+   },
+   "boxes": [
+    [
+     0.9683,
+     1.775,
+     0.365,
+     0.1633,
+     1.25,
+     0.73
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.window_WAR.R.skyfolk_skiff.84a3d7": {
+   "id": "AK480.reveal.window_WAR.R.skyfolk_skiff.84a3d7",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "window_WAR",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/window_WAR/R",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     142128,
+     30
+    ]
+   },
+   "boxes": [
+    [
+     0.9577,
+     1.775,
+     0.2575,
+     0.158,
+     1.25,
+     0.515
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.door_S.L.skyfolk_skiff.98b892": {
+   "id": "AK480.reveal.door_S.L.skyfolk_skiff.98b892",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "door_S",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/door_S/L",
+   "reach": 0.0,
+   "mats": {
+    "paint": [
+     142968,
+     72
+    ]
+   },
+   "boxes": [
+    [
+     -0.9468,
+     1.49,
+     0.55,
+     0.2064,
+     1.82,
+     1.1
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.window_W2.L.skyfolk_skiff.1c655e": {
+   "id": "AK480.reveal.window_W2.L.skyfolk_skiff.1c655e",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "window_W2",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/window_W2/L",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     144984,
+     60
+    ]
+   },
+   "boxes": [
+    [
+     -0.9664,
+     1.775,
+     0.51,
+     0.1672,
+     1.25,
+     1.02
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.window_WQL.L.skyfolk_skiff.19c4ea": {
+   "id": "AK480.reveal.window_WQL.L.skyfolk_skiff.19c4ea",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "window_WQL",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/window_WQL/L",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     146664,
+     60
+    ]
+   },
+   "boxes": [
+    [
+     -0.9683,
+     1.775,
+     0.365,
+     0.1633,
+     1.25,
+     0.73
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.window_WAL.L.skyfolk_skiff.e9db75": {
+   "id": "AK480.reveal.window_WAL.L.skyfolk_skiff.e9db75",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "window_WAL",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/window_WAL/L",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     148344,
+     30
+    ]
+   },
+   "boxes": [
+    [
+     -0.9577,
+     1.775,
+     0.2575,
+     0.158,
+     1.25,
+     0.515
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.reveal.screen.C.skyfolk_skiff.a7d4dc": {
+   "id": "AK480.reveal.screen.C.skyfolk_skiff.a7d4dc",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "reveal",
+   "slot": "screen",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/reveal/screen/C",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     149184,
+     132
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.015,
+     0.325,
+     1.8685,
+     1.81,
+     0.65
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.glazing.window_W2.R.skyfolk_skiff.de07b9": {
+   "id": "AK480.glazing.window_W2.R.skyfolk_skiff.de07b9",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "glazing",
+   "slot": "window_W2",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/glazing/window_W2/R",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     152880,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     0.9962,
+     1.775,
+     0.51,
+     0.1077,
+     1.25,
+     1.02
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 6,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.glazing.window_W2.L.skyfolk_skiff.8447f4": {
+   "id": "AK480.glazing.window_W2.L.skyfolk_skiff.8447f4",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "glazing",
+   "slot": "window_W2",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/glazing/window_W2/L",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     153888,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     -0.9962,
+     1.775,
+     0.51,
+     0.1077,
+     1.25,
+     1.02
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 6,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.glazing.window_WQR.R.skyfolk_skiff.24eb23": {
+   "id": "AK480.glazing.window_WQR.R.skyfolk_skiff.24eb23",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "glazing",
+   "slot": "window_WQR",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/glazing/window_WQR/R",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     154896,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     0.9982,
+     1.775,
+     0.365,
+     0.1035,
+     1.25,
+     0.73
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 6,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.glazing.window_WQL.L.skyfolk_skiff.20f8d8": {
+   "id": "AK480.glazing.window_WQL.L.skyfolk_skiff.20f8d8",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "glazing",
+   "slot": "window_WQL",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/glazing/window_WQL/L",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     155904,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     -0.9982,
+     1.775,
+     0.365,
+     0.1035,
+     1.25,
+     0.73
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 6,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.glazing.window_WAR.R.skyfolk_skiff.73c454": {
+   "id": "AK480.glazing.window_WAR.R.skyfolk_skiff.73c454",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "glazing",
+   "slot": "window_WAR",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/glazing/window_WAR/R",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     156912,
+     9
+    ]
+   },
+   "boxes": [
+    [
+     0.9874,
+     1.775,
+     0.2575,
+     0.0987,
+     1.25,
+     0.515
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 6,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.glazing.window_WAL.L.skyfolk_skiff.6f3bcd": {
+   "id": "AK480.glazing.window_WAL.L.skyfolk_skiff.6f3bcd",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "glazing",
+   "slot": "window_WAL",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/glazing/window_WAL/L",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     157164,
+     9
+    ]
+   },
+   "boxes": [
+    [
+     -0.9874,
+     1.775,
+     0.2575,
+     0.0987,
+     1.25,
+     0.515
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 6,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.door_leaf.door_S.R.skyfolk_skiff.90ed77": {
+   "id": "AK480.door_leaf.door_S.R.skyfolk_skiff.90ed77",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "door_leaf",
+   "slot": "door_S",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/door_leaf/door_S/R",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     157416,
+     12
+    ],
+    "paint": [
+     157752,
+     48
+    ]
+   },
+   "boxes": [
+    [
+     0.9468,
+     0.865,
+     0.55,
+     0.2064,
+     0.57,
+     1.1
+    ]
+   ],
+   "wear": true,
+   "hp": 700,
+   "mass_kg": 22,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.door_glass.door_S.R.skyfolk_skiff.04c2bc": {
+   "id": "AK480.door_glass.door_S.R.skyfolk_skiff.04c2bc",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "door_glass",
+   "slot": "door_S",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/door_glass/door_S/R",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     159096,
+     18
+    ]
+   },
+   "boxes": [
+    [
+     1.0,
+     1.775,
+     0.55,
+     0.1,
+     1.25,
+     1.1
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 5,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.leaf_trim.handle_S.R.skyfolk_skiff.ab6375": {
+   "id": "AK480.leaf_trim.handle_S.R.skyfolk_skiff.ab6375",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "leaf_trim",
+   "slot": "handle_S",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/leaf_trim/handle_S/R",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     159600,
+     36
+    ],
+    "dash": [
+     160608,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     0.9873,
+     0.965,
+     0.125,
+     0.1146,
+     0.27,
+     0.25
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.5,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.door_leaf.door_S.L.skyfolk_skiff.02306e": {
+   "id": "AK480.door_leaf.door_S.L.skyfolk_skiff.02306e",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "door_leaf",
+   "slot": "door_S",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/door_leaf/door_S/L",
+   "reach": 0.0,
+   "mats": {
+    "lining": [
+     161616,
+     12
+    ],
+    "paint": [
+     161952,
+     48
+    ]
+   },
+   "boxes": [
+    [
+     -0.9468,
+     0.865,
+     0.55,
+     0.2064,
+     0.57,
+     1.1
+    ]
+   ],
+   "wear": true,
+   "hp": 700,
+   "mass_kg": 22,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.door_glass.door_S.L.skyfolk_skiff.ceb6a2": {
+   "id": "AK480.door_glass.door_S.L.skyfolk_skiff.ceb6a2",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "door_glass",
+   "slot": "door_S",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/door_glass/door_S/L",
+   "reach": 0.0,
+   "mats": {
+    "glass": [
+     163296,
+     18
+    ]
+   },
+   "boxes": [
+    [
+     -1.0,
+     1.775,
+     0.55,
+     0.1,
+     1.25,
+     1.1
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 5,
+   "breaks": "shatter",
+   "tolerance": 0.012
+  },
+  "AK480.leaf_trim.handle_S.L.skyfolk_skiff.70d6a8": {
+   "id": "AK480.leaf_trim.handle_S.L.skyfolk_skiff.70d6a8",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "leaf_trim",
+   "slot": "handle_S",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/leaf_trim/handle_S/L",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     163800,
+     36
+    ],
+    "dash": [
+     164808,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     -0.9873,
+     0.965,
+     0.125,
+     0.1146,
+     0.27,
+     0.25
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.5,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.underpan.underpan.C.skyfolk_skiff.16eafa": {
+   "id": "AK480.underpan.underpan.C.skyfolk_skiff.16eafa",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "underpan",
+   "slot": "underpan",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/underpan/underpan/C",
+   "reach": 0.0,
+   "mats": {
+    "rubber": [
+     165816,
+     504
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     0.4525,
+     2.3,
+     1.62,
+     0.105,
+     4.6
+    ]
+   ],
+   "wear": true,
+   "hp": 800,
+   "mass_kg": 16,
+   "breaks": "detach",
+   "tolerance": 0.12
+  },
+  "AK480.seat.row_0.C.skyfolk_skiff.d938dc": {
+   "id": "AK480.seat.row_0.C.skyfolk_skiff.d938dc",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "seat",
+   "slot": "row_0",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/seat/row_0/C",
+   "reach": 0.0,
+   "mats": {
+    "dash": [
+     179928,
+     36
+    ],
+    "seat": [
+     180936,
+     108
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.1746,
+     0.4335,
+     0.48,
+     1.1493,
+     0.8671
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 18,
+   "breaks": "detach",
+   "tolerance": 0.15
+  },
+  "AK480.seat.row_1.C.skyfolk_skiff.1231eb": {
+   "id": "AK480.seat.row_1.C.skyfolk_skiff.1231eb",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "seat",
+   "slot": "row_1",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/seat/row_1/C",
+   "reach": 0.0,
+   "mats": {
+    "dash": [
+     183960,
+     36
+    ],
+    "seat": [
+     184968,
+     108
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.1746,
+     0.4335,
+     0.48,
+     1.1493,
+     0.8671
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 18,
+   "breaks": "detach",
+   "tolerance": 0.15
+  },
+  "AK480.dash.dash.C.skyfolk_skiff.6ad96f": {
+   "id": "AK480.dash.dash.C.skyfolk_skiff.6ad96f",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "dash",
+   "slot": "dash",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/dash/dash/C",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     187992,
+     1632
+    ],
+    "chrome": [
+     233688,
+     168
+    ],
+    "dash": [
+     238392,
+     216
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.2622,
+     0.3886,
+     1.82,
+     0.5044,
+     0.7772
+    ]
+   ],
+   "wear": true,
+   "hp": 400,
+   "mass_kg": 14,
+   "breaks": "detach",
+   "tolerance": 0.1
+  },
+  "AK480.dash.readout.C.skyfolk_skiff.bd52c1": {
+   "id": "AK480.dash.readout.C.skyfolk_skiff.bd52c1",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "dash",
+   "slot": "readout",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/dash/readout/C",
+   "reach": 0.0,
+   "mats": {
+    "lcd": [
+     244440,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.2626,
+     0.0065,
+     0.056,
+     0.0208,
+     0.02
+    ]
+   ],
+   "wear": true,
+   "hp": 60,
+   "mass_kg": 0.3,
+   "breaks": "shatter",
+   "tolerance": 0.1
+  },
+  "AK480.lamp.head_lamp.C.skyfolk_skiff.372f1a": {
+   "id": "AK480.lamp.head_lamp.C.skyfolk_skiff.372f1a",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lamp",
+   "slot": "head_lamp",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lamp/head_lamp/C",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     245448,
+     480
+    ],
+    "lamp_amber": [
+     258888,
+     72
+    ],
+    "lamp_drl": [
+     260904,
+     480
+    ],
+    "lamp_head": [
+     274344,
+     480
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     0.95,
+     0.01,
+     1.7103,
+     0.18,
+     0.02
+    ]
+   ],
+   "wear": true,
+   "hp": 60,
+   "mass_kg": 4,
+   "breaks": "shatter",
+   "tolerance": 0.02
+  },
+  "AK480.lamp.tail_lamp.C.skyfolk_skiff.88c0d3": {
+   "id": "AK480.lamp.tail_lamp.C.skyfolk_skiff.88c0d3",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lamp",
+   "slot": "tail_lamp",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lamp/tail_lamp/C",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     287784,
+     12
+    ],
+    "lamp_amber": [
+     288120,
+     48
+    ],
+    "lamp_brake": [
+     289464,
+     36
+    ],
+    "lamp_reverse": [
+     290472,
+     48
+    ],
+    "lamp_tail": [
+     291816,
+     336
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.561,
+     0.006,
+     1.8269,
+     1.422,
+     0.02
+    ]
+   ],
+   "wear": true,
+   "hp": 60,
+   "mass_kg": 3,
+   "breaks": "shatter",
+   "tolerance": 0.02
+  },
+  "AK480.lamp.side_marker.C.skyfolk_skiff.076827": {
+   "id": "AK480.lamp.side_marker.C.skyfolk_skiff.076827",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lamp",
+   "slot": "side_marker",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lamp/side_marker/C",
+   "reach": 0.0,
+   "mats": {
+    "lamp_amber": [
+     301224,
+     72
+    ],
+    "lamp_tail": [
+     303240,
+     72
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     0.632,
+     2.14,
+     1.7279,
+     0.03,
+     4.28
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 0.4,
+   "breaks": "shatter",
+   "tolerance": 0.02
+  },
+  "AK480.lamp.id_lamp.C.skyfolk_skiff.8e5a09": {
+   "id": "AK480.lamp.id_lamp.C.skyfolk_skiff.8e5a09",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lamp",
+   "slot": "id_lamp",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lamp/id_lamp/C",
+   "reach": 0.0,
+   "mats": {
+    "lamp_amber": [
+     305256,
+     180
+    ],
+    "lamp_tail": [
+     310296,
+     180
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     2.861,
+     1.875,
+     1.6521,
+     0.166,
+     3.75
+    ]
+   ],
+   "wear": true,
+   "hp": 40,
+   "mass_kg": 0.6,
+   "breaks": "shatter",
+   "tolerance": 0.02
+  },
+  "AK480.trim.belt_fender.R.skyfolk_skiff.9eda27": {
+   "id": "AK480.trim.belt_fender.R.skyfolk_skiff.9eda27",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "belt_fender",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/belt_fender/R",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     315336,
+     96
+    ]
+   },
+   "boxes": [
+    [
+     0.9285,
+     1.111,
+     0.0891,
+     0.0624,
+     0.0693,
+     0.1781
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.5,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.trim.belt_fore.R.skyfolk_skiff.2ec728": {
+   "id": "AK480.trim.belt_fore.R.skyfolk_skiff.2ec728",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "belt_fore",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/belt_fore/R",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     318024,
+     528
+    ]
+   },
+   "boxes": [
+    [
+     1.0035,
+     1.138,
+     0.7267,
+     0.1143,
+     0.02,
+     1.4533
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.5,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.trim.belt_quarter.R.skyfolk_skiff.7ba448": {
+   "id": "AK480.trim.belt_quarter.R.skyfolk_skiff.7ba448",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "belt_quarter",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/belt_quarter/R",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     332808,
+     636
+    ]
+   },
+   "boxes": [
+    [
+     1.0085,
+     1.138,
+     0.8616,
+     0.1044,
+     0.02,
+     1.7232
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.5,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.trim.belt_fender.L.skyfolk_skiff.ccabf3": {
+   "id": "AK480.trim.belt_fender.L.skyfolk_skiff.ccabf3",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "belt_fender",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/belt_fender/L",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     350616,
+     96
+    ]
+   },
+   "boxes": [
+    [
+     -0.9286,
+     1.111,
+     0.0888,
+     0.0622,
+     0.0689,
+     0.1777
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.5,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.trim.belt_fore.L.skyfolk_skiff.51a7ba": {
+   "id": "AK480.trim.belt_fore.L.skyfolk_skiff.51a7ba",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "belt_fore",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/belt_fore/L",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     353304,
+     528
+    ]
+   },
+   "boxes": [
+    [
+     -1.0035,
+     1.138,
+     0.7267,
+     0.1143,
+     0.02,
+     1.4533
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.5,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.trim.belt_quarter.L.skyfolk_skiff.52aa52": {
+   "id": "AK480.trim.belt_quarter.L.skyfolk_skiff.52aa52",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "belt_quarter",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/belt_quarter/L",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     368088,
+     636
+    ]
+   },
+   "boxes": [
+    [
+     -1.0085,
+     1.138,
+     0.8616,
+     0.1044,
+     0.02,
+     1.7232
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.5,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.leaf_trim.belt_door_S.R.skyfolk_skiff.33d718": {
+   "id": "AK480.leaf_trim.belt_door_S.R.skyfolk_skiff.33d718",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "leaf_trim",
+   "slot": "belt_door_S",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/leaf_trim/belt_door_S/R",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     385896,
+     384
+    ]
+   },
+   "boxes": [
+    [
+     1.0529,
+     1.138,
+     0.547,
+     0.02,
+     0.02,
+     1.094
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.4,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.leaf_trim.belt_door_S.L.skyfolk_skiff.2404b6": {
+   "id": "AK480.leaf_trim.belt_door_S.L.skyfolk_skiff.2404b6",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "leaf_trim",
+   "slot": "belt_door_S",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/leaf_trim/belt_door_S/L",
+   "reach": 0.0,
+   "mats": {
+    "chrome": [
+     396648,
+     384
+    ]
+   },
+   "boxes": [
+    [
+     -1.0529,
+     1.138,
+     0.547,
+     0.02,
+     0.02,
+     1.094
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.4,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.trim.livery_fore.R.skyfolk_skiff.db6bcf": {
+   "id": "AK480.trim.livery_fore.R.skyfolk_skiff.db6bcf",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "livery_fore",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/livery_fore/R",
+   "reach": 0.0,
+   "mats": {
+    "livery1": [
+     407400,
+     264
+    ]
+   },
+   "boxes": [
+    [
+     0.9759,
+     1.015,
+     0.68,
+     0.1204,
+     0.13,
+     1.36
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.6,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.trim.livery_quarter.R.skyfolk_skiff.9f1dcf": {
+   "id": "AK480.trim.livery_quarter.R.skyfolk_skiff.9f1dcf",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "livery_quarter",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/livery_quarter/R",
+   "reach": 0.0,
+   "mats": {
+    "livery1": [
+     414792,
+     312
+    ]
+   },
+   "boxes": [
+    [
+     0.9811,
+     1.015,
+     0.815,
+     0.1099,
+     0.13,
+     1.63
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.6,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.leaf_trim.livery_door_S.R.skyfolk_skiff.73c3ed": {
+   "id": "AK480.leaf_trim.livery_door_S.R.skyfolk_skiff.73c3ed",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "leaf_trim",
+   "slot": "livery_door_S",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/leaf_trim/livery_door_S/R",
+   "reach": 0.0,
+   "mats": {
+    "livery1": [
+     423528,
+     192
+    ]
+   },
+   "boxes": [
+    [
+     1.0194,
+     1.015,
+     0.5,
+     0.0333,
+     0.13,
+     1.0
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.6,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.trim.livery_fore.L.skyfolk_skiff.1be6c4": {
+   "id": "AK480.trim.livery_fore.L.skyfolk_skiff.1be6c4",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "livery_fore",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/livery_fore/L",
+   "reach": 0.0,
+   "mats": {
+    "livery1": [
+     428904,
+     264
+    ]
+   },
+   "boxes": [
+    [
+     -0.9759,
+     1.015,
+     0.68,
+     0.1204,
+     0.13,
+     1.36
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.6,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.trim.livery_quarter.L.skyfolk_skiff.066c47": {
+   "id": "AK480.trim.livery_quarter.L.skyfolk_skiff.066c47",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "trim",
+   "slot": "livery_quarter",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/trim/livery_quarter/L",
+   "reach": 0.0,
+   "mats": {
+    "livery1": [
+     436296,
+     312
+    ]
+   },
+   "boxes": [
+    [
+     -0.9811,
+     1.015,
+     0.815,
+     0.1099,
+     0.13,
+     1.63
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.6,
+   "breaks": "detach",
+   "tolerance": 0.2
+  },
+  "AK480.leaf_trim.livery_door_S.L.skyfolk_skiff.24ef8b": {
+   "id": "AK480.leaf_trim.livery_door_S.L.skyfolk_skiff.24ef8b",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "leaf_trim",
+   "slot": "livery_door_S",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/leaf_trim/livery_door_S/L",
+   "reach": 0.0,
+   "mats": {
+    "livery1": [
+     445032,
+     192
+    ]
+   },
+   "boxes": [
+    [
+     -1.0194,
+     1.015,
+     0.5,
+     0.0333,
+     0.13,
+     1.0
+    ]
+   ],
+   "wear": true,
+   "hp": 100,
+   "mass_kg": 0.6,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.envelope.envelope.C.skyfolk_skiff.339527": {
+   "id": "AK480.envelope.envelope.C.skyfolk_skiff.339527",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "envelope",
+   "slot": "envelope",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/envelope/envelope/C",
+   "reach": 0.0,
+   "mats": {
+    "canvas1": [
+     450408,
+     19452
+    ],
+    "canvas2": [
+     995064,
+     2172
+    ],
+    "chrome": [
+     1055880,
+     192
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     4.8,
+     7.11,
+     3.4999,
+     3.4999,
+     14.22
+    ]
+   ],
+   "wear": true,
+   "hp": 4000,
+   "mass_kg": 180,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.equipment.fins.C.skyfolk_skiff.03630b": {
+   "id": "AK480.equipment.fins.C.skyfolk_skiff.03630b",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "equipment",
+   "slot": "fins",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/equipment/fins/C",
+   "reach": 0.0,
+   "mats": {
+    "canvas1": [
+     1061256,
+     1800
+    ],
+    "canvas2": [
+     1111656,
+     360
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     4.8,
+     1.19,
+     3.2004,
+     3.2004,
+     2.38
+    ]
+   ],
+   "wear": true,
+   "hp": 900,
+   "mass_kg": 60,
+   "breaks": "detach",
+   "tolerance": 0.25
+  },
+  "AK480.engine.fan_0.R.skyfolk_skiff.395d8c": {
+   "id": "AK480.engine.fan_0.R.skyfolk_skiff.395d8c",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "engine",
+   "slot": "fan_0",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/engine/fan_0/R",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     1121736,
+     348
+    ],
+    "chrome": [
+     1131480,
+     948
+    ],
+    "livery1": [
+     1158024,
+     168
+    ],
+    "paint": [
+     1162728,
+     1308
+    ]
+   },
+   "boxes": [
+    [
+     2.1068,
+     4.15,
+     0.4292,
+     1.5304,
+     1.344,
+     0.8583
+    ]
+   ],
+   "wear": true,
+   "hp": 600,
+   "mass_kg": 40,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.engine.fan_0.L.skyfolk_skiff.4384b3": {
+   "id": "AK480.engine.fan_0.L.skyfolk_skiff.4384b3",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "engine",
+   "slot": "fan_0",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/engine/fan_0/L",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     1199352,
+     348
+    ],
+    "chrome": [
+     1209096,
+     948
+    ],
+    "livery1": [
+     1235640,
+     168
+    ],
+    "paint": [
+     1240344,
+     1308
+    ]
+   },
+   "boxes": [
+    [
+     -2.1068,
+     4.15,
+     0.4292,
+     1.5304,
+     1.344,
+     0.8583
+    ]
+   ],
+   "wear": true,
+   "hp": 600,
+   "mass_kg": 40,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.engine.fan_1.R.skyfolk_skiff.6fb330": {
+   "id": "AK480.engine.fan_1.R.skyfolk_skiff.6fb330",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "engine",
+   "slot": "fan_1",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/engine/fan_1/R",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     1276968,
+     348
+    ],
+    "chrome": [
+     1286712,
+     948
+    ],
+    "livery1": [
+     1313256,
+     336
+    ],
+    "paint": [
+     1322664,
+     1200
+    ]
+   },
+   "boxes": [
+    [
+     1.3552,
+     2.05,
+     0.7838,
+     1.1304,
+     0.9408,
+     1.5677
+    ]
+   ],
+   "wear": true,
+   "hp": 600,
+   "mass_kg": 40,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.engine.fan_1.L.skyfolk_skiff.5d1dce": {
+   "id": "AK480.engine.fan_1.L.skyfolk_skiff.5d1dce",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "engine",
+   "slot": "fan_1",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/engine/fan_1/L",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     1356264,
+     348
+    ],
+    "chrome": [
+     1366008,
+     948
+    ],
+    "livery1": [
+     1392552,
+     336
+    ],
+    "paint": [
+     1401960,
+     1200
+    ]
+   },
+   "boxes": [
+    [
+     -1.3552,
+     2.05,
+     0.7838,
+     1.1304,
+     0.9408,
+     1.5677
+    ]
+   ],
+   "wear": true,
+   "hp": 600,
+   "mass_kg": 40,
+   "breaks": "detach",
+   "tolerance": 0.08
+  },
+  "AK480.equipment.suspension.C.skyfolk_skiff.3ca100": {
+   "id": "AK480.equipment.suspension.C.skyfolk_skiff.3ca100",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "equipment",
+   "slot": "suspension",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/equipment/suspension/C",
+   "reach": 0.0,
+   "mats": {
+    "livery2": [
+     1435560,
+     540
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     3.016,
+     1.9243,
+     2.0827,
+     0.3788,
+     3.8485
+    ]
+   ],
+   "wear": true,
+   "hp": 1500,
+   "mass_kg": 80,
+   "breaks": "detach",
+   "tolerance": 0.25
+  },
+  "AK480.lamp.aero_lamps.C.skyfolk_skiff.952f85": {
+   "id": "AK480.lamp.aero_lamps.C.skyfolk_skiff.952f85",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "lamp",
+   "slot": "aero_lamps",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/lamp/aero_lamps/C",
+   "reach": 0.0,
+   "mats": {
+    "lamp_red": [
+     1450680,
+     528
+    ],
+    "lamp_reverse": [
+     1465464,
+     480
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     3.5235,
+     1.61,
+     1.7887,
+     6.0927,
+     3.22
+    ]
+   ],
+   "wear": true,
+   "hp": 60,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.02
+  },
+  "AK480.leaf_trim.card_S.R.skyfolk_skiff.130533": {
+   "id": "AK480.leaf_trim.card_S.R.skyfolk_skiff.130533",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "leaf_trim",
+   "slot": "card_S",
+   "side": "R",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/leaf_trim/card_S/R",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     1478904,
+     36
+    ],
+    "carpet": [
+     1479912,
+     36
+    ],
+    "chrome": [
+     1480920,
+     204
+    ],
+    "seat": [
+     1486632,
+     72
+    ]
+   },
+   "boxes": [
+    [
+     0.8737,
+     0.846,
+     0.49,
+     0.07,
+     0.512,
+     0.98
+    ]
+   ],
+   "wear": true,
+   "hp": 80,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.leaf_trim.card_S.L.skyfolk_skiff.450c56": {
+   "id": "AK480.leaf_trim.card_S.L.skyfolk_skiff.450c56",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "leaf_trim",
+   "slot": "card_S",
+   "side": "L",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/leaf_trim/card_S/L",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     1488648,
+     36
+    ],
+    "carpet": [
+     1489656,
+     36
+    ],
+    "chrome": [
+     1490664,
+     204
+    ],
+    "seat": [
+     1496376,
+     72
+    ]
+   },
+   "boxes": [
+    [
+     -0.8737,
+     0.846,
+     0.49,
+     0.07,
+     0.512,
+     0.98
+    ]
+   ],
+   "wear": true,
+   "hp": 80,
+   "mass_kg": 2,
+   "breaks": "detach",
+   "tolerance": 0.06
+  },
+  "AK480.dash.cockpit.C.skyfolk_skiff.179395": {
+   "id": "AK480.dash.cockpit.C.skyfolk_skiff.179395",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "dash",
+   "slot": "cockpit",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/dash/cockpit/C",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     1498392,
+     180
+    ],
+    "chrome": [
+     1503432,
+     36
+    ],
+    "lining": [
+     1504440,
+     108
+    ],
+    "rubber": [
+     1507464,
+     72
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     1.6965,
+     1.2081,
+     1.18,
+     2.2311,
+     2.4163
+    ]
+   ],
+   "wear": true,
+   "hp": 200,
+   "mass_kg": 6,
+   "breaks": "detach",
+   "tolerance": 0.1
+  },
+  "AK480.fittings.skiff_cabin.C.skyfolk_skiff.38ecd6": {
+   "id": "AK480.fittings.skiff_cabin.C.skyfolk_skiff.38ecd6",
+   "standard": "AK480",
+   "class": "sky_skiff",
+   "role": "fittings",
+   "slot": "skiff_cabin",
+   "side": "C",
+   "style": "skyfolk_skiff",
+   "interface": "AK480/fittings/skiff_cabin/C",
+   "reach": 0.0,
+   "mats": {
+    "black": [
+     1509480,
+     36
+    ],
+    "carpet": [
+     1510488,
+     36
+    ],
+    "chrome": [
+     1511496,
+     180
+    ],
+    "lamp_amber": [
+     1516536,
+     180
+    ],
+    "seat": [
+     1521576,
+     36
+    ],
+    "wood": [
+     1522584,
+     36
+    ]
+   },
+   "boxes": [
+    [
+     0.0,
+     0.875,
+     1.405,
+     1.58,
+     0.65,
+     2.81
+    ]
+   ],
+   "wear": true,
+   "hp": 300,
+   "mass_kg": 60,
+   "breaks": "detach",
+   "tolerance": 0.1
+  }
+ }
+}

@@ -43,7 +43,7 @@ class_name RemakeAirVehicle
 @export var side_damp := 3.0         # m/s^2: sideslip bleeds off
 @export var max_tilt := 0.6          # rad, engine tilt at full command
 @export var tilt_rate := 1.2         # rad/s
-@export var ceiling_h := 350.0       # m above the floor: the highest it will fly
+@export var ceiling_h := 2500.0      # m above the floor: the highest it will fly (the user, 2026-10-14: 2.5 km for every aerostat -- over the sky islands' roofs)
 @export var cabin_box := AABB(Vector3(-1.2, 0.0, -1.8), Vector3(2.4, 2.5, 3.6))   # local: who's aboard
 @export var seat_eye := 0.72         # m from seat_pilot up to the pilot's eye node origin
 @export var seat_forward := 0.0      # m the pilot's eye sits ahead of seat_pilot (toward the nose)
@@ -57,6 +57,13 @@ var _doorways: Array = []            # [AABB (local, the side's leaves closed), 
 var _aboard := {}                    # player -> their place in the cabin last tick (local)
 var seat_pilot: Node3D
 var _lv := Vector3.ZERO              # velocity in the vehicle's own frame (x right, y up, -z forward)
+## The air it flies in may itself be moving: over a sky island (the user, 2026-10-14: "When you are above the island,
+## you and your vehicle automatically match speed with the island") the craft eases into the island's motion and flies
+## relative to it -- so it can set down on the deck, and stays there.  frame_source (SkyIslands) gives the frame's
+## velocity at a point, or Vector3.INF where there's none; _frame_v eases toward it at FRAME_ACCEL.
+static var frame_source := Callable()
+const FRAME_ACCEL := 6.0             # m/s2
+var _frame_v := Vector3.ZERO
 var _yaw_rate := 0.0
 var _spin := 0.0
 var _riders: Array = []
@@ -314,9 +321,22 @@ func pilot_transform() -> Transform3D:
 
 
 # ------------------------------------------------------------------ flight
+func frame_velocity() -> Vector3:
+	return _frame_v
+
+
+func _frame_target() -> Vector3:
+	if not frame_source.is_valid() or has_meta("riding"):
+		return Vector3.ZERO                 # (parked as a child of the island itself: it moves it already)
+	var v: Vector3 = frame_source.call(global_position)
+	return Vector3.ZERO if v == Vector3.INF else v
+
+
 func _physics_process(delta: float) -> void:
-	# parked and still, with nobody near: nothing to do (dozens of these stand about the map)
-	if pilot == null and fly_input.is_empty() and _lv.length_squared() < 1e-6 and absf(_yaw_rate) < 1e-5 and _spin == 0.0 and _riders.is_empty() \
+	var frame_to := _frame_target()
+	# parked and still, with nobody near: nothing to do (dozens of these stand about the map) -- unless it's on (or
+	# over) a moving island, which carries it
+	if frame_to == Vector3.ZERO and _frame_v == Vector3.ZERO and pilot == null and fly_input.is_empty() and _lv.length_squared() < 1e-6 and absf(_yaw_rate) < 1e-5 and _spin == 0.0 and _riders.is_empty() \
 			and _wob_w.length_squared() < 1e-8 and _wob.length_squared() < 1e-8 and not disabled:
 		var near := false
 		for p in get_tree().get_nodes_in_group("player"):
@@ -393,6 +413,11 @@ func _physics_process(delta: float) -> void:
 	if h > ceiling_h + 1.0:
 		_lv.y = minf(_lv.y, -1.0)                      # somehow above it: sink back
 	var vel := b * _lv
+	# the moving frame (a sky island under it): matched gradually, and its rise and fall carries the height it holds
+	_frame_v = _frame_v.move_toward(frame_to, FRAME_ACCEL * delta)
+	if buoyant and not is_nan(_trim_h):
+		_trim_h += _frame_v.dot(up) * delta
+	vel += _frame_v
 	# the ends of the station
 	var x_room := StationGeo.HALF_LEN - 12.0
 	if absf(global_position.x) > x_room and signf(vel.x) == signf(global_position.x):
@@ -614,7 +639,7 @@ func _carry(delta: float) -> void:
 	## an obstacle, dropped through the floor -- is put back where they stood last tick. A jump of
 	## metres in a tick is a teleport (fast travel, a respawn): it lets them go.
 	var w := global_transform.basis.y * _yaw_rate
-	var vel := global_transform.basis * _lv
+	var vel := global_transform.basis * _lv + _frame_v
 	var now: Array = []
 	for p in get_tree().get_nodes_in_group("player"):
 		if not p is StationPlayer or p == pilot or (p as StationPlayer).is_seated():

@@ -92,7 +92,7 @@ def _roof(tr, flat_default=True):
         return dict(type="hip", pitch=22 if r != "mansard" else 55, eave_oh=0.6, thick=0.2)
     if r in ("gable", "shed_angled", "butterfly") and not flat_default:
         return dict(type="gable", pitch=18, eave_oh=0.6, rake_oh=0.3, thick=0.15, ridge="x")
-    return dict(type="flat", thick=0.35, parapet=0.9, coping="stone")
+    return dict(type="flat", thick=0.35, parapet=1.2 if tr.get("roof_access") else 0.9, coping="stone")
 
 
 def _sign_text(b, name, text, x, y, z, width, mat="white_text", font=FONT_SANS, yaw=math.pi, max_size=1.2):
@@ -314,6 +314,9 @@ def build_apartments(rec):
     p = b.part("lodging_ext-col")
     p.box((-1.8, y1, floors[0][1] - 0.4), (1.8, y1 + 1.8, floors[0][1] - 0.2), "accent")      # entrance canopy
     _site_walk(b, 0.0, y1, lot_d, width=2.0)
+    if tr.get("roof_access"):
+        import roofaccess                                  # up the rear wall (the side walls have the exits)
+        roofaccess.fire_escape(b, "y", y0, -1, x0 + 0.5, x1 - 0.5, [f[0] for f in floors[1:]], wall_top, roof["parapet"], 0.3)
     return b
 
 

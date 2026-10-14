@@ -24,12 +24,12 @@ class_name RemakeClouds
 ##   Coriolis, for a cylinder spun east (+s: spinward is east -- the air lags the floor, hence the
 ##   prevailing east wind).  Its spin is ~0.031 rad/s, so at weather scales it is strong, but on a
 ##   cylinder it acts only in the plane round the axis: a wind along the axis feels nothing, rising air
-##   drifts antispinward and falling air (rain) spinward, an antispinward wind is lifted (it weighs less)
+##   drifts spinward and falling air (rain) antispinward, an antispinward wind is lifted (it weighs less)
 ##   and a spinward one pressed down, and the spin lines weather up along the axis (Taylor columns).
 ##   Muted for the game, but there to be seen: the fronts' bands run along the axis; their tops lean
 ##   antispinward (LEAN_K: the sheet and the upper clouds run ahead of the rain); a storm cell leans the
 ##   same way (CELL_LEAN); clouds riding the east wind sit higher than ones running spinward
-##   (CORIOLIS_LIFT); rain falls slanting spinward (RemakeRain.SLANT).
+##   (CORIOLIS_LIFT); rain falls slanting antispinward (RemakeRain.SLANT).
 ##
 ##   Storms (cumulus only).  Two clouds that touch (same layer) or line up one above the other
 ##   (different layers) reach a merge trigger; an RNG decides whether they merge (much likelier in a

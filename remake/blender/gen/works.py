@@ -191,7 +191,7 @@ def build_works(rec, tr, boarded=False):
                 mats=dict(ext="ext", int="plaster", roof="roof_m", roof_under="roof_under", found="found", floor="floor",
                           ceiling="ceiling", trim="trim", door="door", fascia="trim", porch="concrete", post="trim", furn="furniture"),
                 blocks=[dict(name="works", rect=(x0, y0, x1, y1), floors=floors, wall_top=wall_top, found_top=FL - 0.05,
-                             roof=dict(type="flat", thick=0.35, parapet=0.9, coping="trim"))],
+                             roof=dict(type="flat", thick=0.35, parapet=1.2 if tr.get("roof_access") else 0.9, coping="trim"))],
                 rooms=rooms, doors=doors, windows=wins, stairs=stairs, rails=[], porches=[], chimneys=[], fireplaces=[])
     stoops(spec, FL, skip=[d["name"] for d in doors if d["name"].startswith("freight")])
     gh.House(b, spec).build()
@@ -237,6 +237,9 @@ def build_works(rec, tr, boarded=False):
         for rx in (-0.72, 0.72):
             yd.box((-lot_w / 2, y0 - 4.8 + rx - 0.04, 0.18), (lot_w / 2, y0 - 4.8 + rx + 0.04, 0.32), "steel")
     b.part("walk-col").box((-1.0, y1 + 1.2, -0.02), (1.0, lot_d / 2, 0.03), "sidewalk", sides="Z")
+    if tr.get("roof_access"):
+        import roofaccess
+        roofaccess.fire_escape(b, "x", x1, 1, y0 + 0.3, y1 - 0.3, [f[0] for f in floors[1:]], wall_top, 1.2, TE)
     return b
 
 

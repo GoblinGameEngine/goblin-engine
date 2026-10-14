@@ -114,6 +114,11 @@ func _ready() -> void:
 	rain.name = "Rain"
 	add_child(rain)
 	rain.setup(player.get_node("Head/Camera3D"), clouds)
+	# the hundred sky islands of the Skein, adrift 750 m up (research/sky_islands/)
+	var sky_islands := SkyIslands.new()
+	sky_islands.name = "SkyIslands"
+	add_child(sky_islands)
+	sky_islands.setup(player, clouds, sky_system)
 	var water_amb := WaterAmbience.new()
 	water_amb.name = "WaterAmbience"
 	add_child(water_amb)
