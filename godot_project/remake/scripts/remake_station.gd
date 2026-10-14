@@ -103,6 +103,7 @@ func _ready() -> void:
 	# the sun is always overhead where the player is (one directional light can't be, everywhere on
 	# a cylinder: elsewhere it would shine up through the ground)
 	sky_system.sun_frame = func() -> Basis: return StationGeo.basis(StationGeo.s_of(player.global_position))
+	sky_system.viewer = func() -> Vector3: return player.global_position
 	sky_system.setup(self, sun, shell_mesh, StationGeo.R - StationGeo.SHAFT_R, WALL_TILE, environment)
 	_mark("sky")
 	var clouds := RemakeClouds.new()
@@ -527,9 +528,23 @@ func _build_shell() -> void:
 			shaft.set_normal(Vector3(0, v.y, v.z).normalized())       # facing out, toward the floor
 			shaft.set_uv(Vector2(v.x / WALL_TILE, TAU * r_in * (i + (1 if k in [1, 2] else 0)) / n / WALL_TILE))
 			shaft.add_vertex(v)
+	# the Spindle's ends, where it meets the caps' sky (seen end on, it was an open tube)
+	for end in [-1.0, 1.0]:
+		var xe: float = end * (x_cap - 1.0)
+		for i in n:
+			var a0 := TAU * i / n
+			var a1 := TAU * (i + 1) / n
+			var q := [Vector3(xe, 0, 0), Vector3(xe, r_in * cos(a0), r_in * sin(a0)), Vector3(xe, r_in * cos(a1), r_in * sin(a1))]
+			for k in ([0, 1, 2] if end > 0.0 else [0, 2, 1]):
+				var v: Vector3 = q[k]
+				shaft.set_normal(Vector3(-end, 0, 0))
+				shaft.set_uv(Vector2(v.y / WALL_TILE, v.z / WALL_TILE))
+				shaft.add_vertex(v)
 	shaft.set_material(StandardMaterial3D.new())
 	var sky_mat := ShaderMaterial.new()                # (moving clouds round the axis, in the sky's colour)
 	sky_mat.shader = load("res://remake/shaders/cap_sky.gdshader")
+	sky_mat.set_shader_parameter("r_in", r_in)
+	sky_mat.set_shader_parameter("r_rim", r_sky)
 	sky.set_material(sky_mat)
 	var mesh := ArrayMesh.new()
 	walls.commit(mesh)

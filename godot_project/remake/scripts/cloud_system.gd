@@ -52,11 +52,11 @@ const LOW_COUNT := 20                  # per layer (the 20 km ring: fronts gathe
 ## cloud's length, and its puffs with it)
 const LOW_LAYERS := [[200.0, 300.0, 12.0, 8.0], [500.0, 600.0, 15.0, 11.0], [900.0, 1000.0, 18.0, 14.0],
 	[1400.0, 1500.0, 21.0, 17.0], [2000.0, 2100.0, 24.0, 20.0]]
-const CUMULUS_CEILING := StationGeo.R - StationGeo.SHAFT_R - 300.0   # tops kept under the lower cirrus shell
+const CIRRUS_H := 5500.0             # m up: well under the 2 km Spindle (hugging it, the ribbons wound round it like a coil)
+const CUMULUS_CEILING := CIRRUS_H - 450.0   # tops kept under the lower cirrus shell
 const CIRRUS_ROWS := 24              # a cirrus shell: bands along the axis ...
 const CIRRUS_COLS := 6               # ... by slots round it, one jittered ribbon each
-const CIRRUS_H := StationGeo.R - StationGeo.SHAFT_R - 100.0  # 100 m off the central shaft
-## cirrus shells: [height, wind m/s east, size] -- 100 m and 250 m off the central shaft
+## cirrus shells: [height, wind m/s east, size] -- 5.5 km and 5.35 km up
 const CIRRUS_SHELLS := [[CIRRUS_H, 1.8, 3.0], [CIRRUS_H - 150.0, 2.4, 2.5]]
 const END_CLEAR := 40.0              # m kept between a cloud and an end cap
 const SEED := 20260924
@@ -346,7 +346,7 @@ func _make_cirrus_band(row: int, layer: Node3D, height: float, size: float) -> v
 	st.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var n := 24
 	for col in CIRRUS_COLS:
-		var span := minf(_rng.randf_range(0.45, 1.2) * size, 3.0)   # radians round the axis
+		var span := _rng.randf_range(0.12, 0.3) * size   # radians round the axis (longer ones ring the 2 km Spindle like a coil)
 		var th0 := TAU * (col + _rng.randf_range(0.15, 0.85)) / CIRRUS_COLS + row * 0.37
 		var width := minf(_rng.randf_range(25.0, 60.0) * size, band * 0.9)
 		var skew := _rng.randf_range(-0.3, 0.3) * width    # wisps lie a little aslant the wind

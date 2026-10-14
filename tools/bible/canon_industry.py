@@ -33,7 +33,7 @@ STEWARD_WORKS = {
         "known": "scholar", "popular": ["'the station is inside a mountain' (half the children believe it)", "'the Rock' is also slang for anything you can't change"],
     },
     "the_spindle": {
-        "name": "the Spindle", "what": "the central cylinder on the axis, 200 m across and running cap to cap (22.4 km); it does not turn with the land; its skin carries the Sunline",
+        "name": "the Spindle", "what": "the central cylinder on the axis, 4 km across and running cap to cap (22.4 km); it does not turn with the land; its sky-blue skin is the sky, and the Sunline's sleeve travels along it",
         "inside": ["the great refineries: vacuum smelting, electrolysis, zone refining", "foundries and wire-arc printers", "powder-bed printers (the boards' lattices)",
                    "the chip line: one fixed process, the Thirty-Two (see TECH_LIMITS)", "the panel line (LCD panels, few)", "cell works: the boards' sealed cells",
                    "the tool line: hand tools, bearings, fasteners, motors' laminations"],

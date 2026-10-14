@@ -6,8 +6,8 @@ class_name StationGeo
 ## (-HALF_LEN..HALF_LEN, 0 midway between the end caps).  Height h is measured up from the nominal
 ## floor, toward the axis.  Pure leaf: calls no other class_name script.
 ##
-##   radius 10 km (the floor), length 22.4 km wall to wall, central shaft (the Spindle) radius 100 m
-##   (the "ceiling", 9,900 m above the floor); the far side of the floor is 20 km overhead.
+##   radius 10 km (the floor), length 22.4 km wall to wall, central shaft (the Spindle) radius 2 km
+##   (the "ceiling", 8,000 m above the floor; it is the light: DaySkySystem); the far side of the floor is 20 km overhead.
 ##
 ## Conventions (the same as the earlier RingCoords, so yaws and the player's gravity carry over):
 ## point(s, x, 0) = (x, R cos th, R sin th) with th = s / R; up points at the axis; forward is +s;
@@ -16,7 +16,7 @@ class_name StationGeo
 const R := 10000.0            # (the user, 2026-10-06: "increase the ring diameter to 20km")
 const LENGTH := 22400.0       # (each land 2.5 km wider, each sea 5.5 km with its three islands)
 const HALF_LEN := 11200.0
-const SHAFT_R := 100.0                 # the Spindle: the great factories (the bible, canon_industry)
+const SHAFT_R := 2000.0                # the Spindle: the light, and the great factories inside (the user, 2026-10-14: 2 km)
 const CIRC := TAU * R
 
 

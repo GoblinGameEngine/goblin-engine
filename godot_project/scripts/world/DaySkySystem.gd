@@ -65,7 +65,18 @@ const SKY_KEYS := [
 var time_of_day: float = 0.27  # start mid-morning, already light out
 ## Days since the game began; day 0 is a Monday (NpcLife schedules: weekdays, weekends, errands).
 var day: int = 0
-var ceiling_material: StandardMaterial3D
+var ceiling_material: StandardMaterial3D   # (the sky's colour now; the Spindle draws with spindle_material)
+## The Spindle's skin (remake/shaders/spindle.gdshader): sky blue, the Sunline's sleeve and the moon's on it.
+var spindle_material: ShaderMaterial
+## The station's lighting (the user, 2026-10-14): the light comes from the Spindle.  Its whole skin glows (the
+## ambient light); the Sunline, a SLEEVE m sleeve of yellow-white light, runs along it from the south cap (+x) at dawn
+## to the north cap (-x) at dusk, and the sun light shines from it -- low from the south in the morning, overhead at
+## noon, low from the north in the evening, and weaker the further along the axis it is (morning comes to the south
+## first).  At night a pale moon sleeve runs the same way.  One clock for the whole station (the user's choice).
+const SLEEVE := 1000.0
+const SLEEVE_RUN := 600.0            # m past each end wall the sleeves start and finish (the caps' mountains hide them)
+## Optional: the viewer's position (the sun shines from the sleeve toward it).  Unset: from straight overhead.
+var viewer: Callable
 var sun: DirectionalLight3D
 ## Optional: returns the frame (right, up, back) the sun's angles are taken in. A
 ## cylinder station passes the local floor frame at the player -- one directional
@@ -104,7 +115,10 @@ func setup(p_station: Node3D, p_sun: DirectionalLight3D, ring_mesh: MeshInstance
 	ceiling_material = StandardMaterial3D.new()
 	ceiling_material.albedo_color = Color(0.45, 0.68, 0.92)
 	ceiling_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	ring_mesh.set_surface_override_material(1, ceiling_material)
+	spindle_material = ShaderMaterial.new()
+	spindle_material.shader = load("res://remake/shaders/spindle.gdshader")
+	spindle_material.set_shader_parameter("sleeve", SLEEVE)
+	ring_mesh.set_surface_override_material(1, spindle_material)
 
 	# Walls: explicitly NOT given the sky/cliff blend shader ("We do not
 	# need it on the walls") -- surface 2 is left as whatever the station builder set.
@@ -188,6 +202,12 @@ static func _sun_moon_state(t: float) -> Dictionary:
 		"moon_intensity": moon_intensity, "moon_pos": moon_pos,
 	}
 
+static func sleeve_x(pos: float) -> float:
+	## Where a sleeve is along the axis, 0..1 through its day (or night): the south cap (+x) to the north cap (-x).
+	var end := StationGeo.HALF_LEN + SLEEVE_RUN
+	return lerpf(end, -end, pos)
+
+
 func _process(delta: float) -> void:
 	var t := time_of_day + delta / DAY_LENGTH_SECONDS
 	day += int(floor(t))
@@ -231,18 +251,25 @@ func _apply(_delta: float) -> void:
 		var use_moon := moon_intensity > sun_intensity
 		var active_pos: float = moon_pos if use_moon else sun_pos
 		var active_intensity: float = maxf(sun_intensity, moon_intensity)
-		var sweep_deg: float = lerp(-55.0, 55.0, active_pos)
-		var local_rot := Basis.from_euler(Vector3(deg_to_rad(-35.0), deg_to_rad(40.0 + sweep_deg), 0.0))
+		# the light shines from the sleeve (on the Spindle's skin, over the viewer's line along the axis) toward
+		# the viewer: in the floor frame there (right = +x, up, back)
+		var vp: Vector3 = viewer.call() if viewer.is_valid() else Vector3.ZERO
+		var hgt := StationGeo.R - StationGeo.SHAFT_R - (StationGeo.h_of(vp) if viewer.is_valid() else 0.0)
+		var dx := vp.x - sleeve_x(active_pos)
+		var dir := Vector3(dx, -hgt, 0.0).normalized()
+		var local_rot := Basis.looking_at(dir, Vector3(0, 0, 1))
 		if sun_frame.is_valid():
 			sun.global_transform.basis = (sun_frame.call() as Basis) * local_rot
 		else:
-			sun.rotation_degrees = Vector3(-35.0, 40.0 + sweep_deg, 0.0)
+			sun.global_transform.basis = local_rot
+		# a long way down the axis the sleeve is further off and lower: weaker (never below a third)
+		var near := clampf(pow(hgt / sqrt(dx * dx + hgt * hgt), 1.5), 0.33, 1.0)
 		if use_moon:
 			sun.light_color = moon_color
-			sun.light_energy = 0.07 + moon_intensity * 0.16  # (darker nights, the user 2026-10-05: a faint moonlight)
+			sun.light_energy = (0.07 + moon_intensity * 0.16) * lerpf(0.6, 1.0, near)  # (darker nights, the user 2026-10-05)
 		else:
-			sun.light_color = Color(tint.r, tint.g * 0.97, tint.b * 0.9)
-			sun.light_energy = 0.2 + sun_intensity * 1.5  # "full daylight" -- brighter peak than before
+			sun.light_color = Color(tint.r, tint.g * 0.97, tint.b * 0.88)          # yellow-white, red at dawn and dusk
+			sun.light_energy = 0.2 + sun_intensity * 1.5 * near   # "full daylight" -- brighter peak than before
 		sun.shadow_enabled = active_intensity > 0.05
 
 	if env:
@@ -261,6 +288,10 @@ func _apply(_delta: float) -> void:
 		env.glow_hdr_threshold = lerpf(1.4, 0.9, night_mix)
 		env.glow_blend_mode = Environment.GLOW_BLEND_MODE_ADDITIVE
 	ceiling_material.albedo_color = sky_color(time_of_day)
+	spindle_material.set_shader_parameter("sun_x", sleeve_x(sun_pos))
+	spindle_material.set_shader_parameter("sun_k", sun_intensity)
+	spindle_material.set_shader_parameter("moon_x", sleeve_x(moon_pos))
+	spindle_material.set_shader_parameter("moon_k", moon_intensity)
 	RenderingServer.global_shader_parameter_set("daylight", 1.0 - night_mix)
 	RenderingServer.global_shader_parameter_set("sky_color", ceiling_material.albedo_color)   # (the caps' cloud sky)
 	RemakeBuilding.set_night(night_mix)
