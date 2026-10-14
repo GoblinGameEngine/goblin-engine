@@ -125,6 +125,33 @@ func _make_door(n: Node3D) -> void:
 	doors.append(body)
 
 
+## Interior doors are seen only up close (through a window, or inside): past INNER_DOOR_M they aren't drawn and they
+## never cast a shadow.  Calder's busy street had 104 door leaves in view, 90 of them inside buildings (~200 draws,
+## 2026-10-13).  A leaf within 1 m of the building's outer bounds is a facade's and keeps the building's range.
+## (After RemakeLodClusters._ranges, which sets every range of the building.)
+const INNER_DOOR_M := 18.0
+
+
+func cull_inner_doors() -> void:
+	var vis: MeshInstance3D = null
+	for mi in find_children("*_visual", "MeshInstance3D", true, false):
+		vis = mi
+	if vis == null:
+		return
+	var bx := vis.get_aabb()
+	var inv := vis.global_transform.affine_inverse()
+	for d in doors:
+		var lp := inv * d.global_position
+		var edge := minf(minf(lp.x - bx.position.x, bx.end.x - lp.x), minf(lp.z - bx.position.z, bx.end.z - lp.z))
+		if edge < 1.0:
+			continue
+		for mi in d.find_children("*", "GeometryInstance3D", true, false):
+			var g := mi as GeometryInstance3D
+			g.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			g.visibility_range_end = minf(g.visibility_range_end, INNER_DOOR_M) if g.visibility_range_end > 0.0 else INNER_DOOR_M
+			g.visibility_range_end_margin = 0.0
+
+
 ## A distance version (<id>.lodN.glb from gblod): its textured surfaces use the building's own
 ## sidecar, everything else the shared vertex-colour material (one material for every LOD2/3 mesh,
 ## so a district's worth of them can be merged into a single draw call).
@@ -279,6 +306,7 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 		for a in adds[key]:
 			st.append_from(a[0], a[1], a[2])
 		surfs.append([st, mats[key]])
+	surfs = _plain_merged(surfs, ps.resource_path.get_basename() + ".mats.json", defs)
 	m.clear_surfaces()
 	m.shadow_mesh = null             # (the import's shadow copy has the old surfaces: the renderer indexes it in step)
 	for sm in surfs:
@@ -319,6 +347,56 @@ static func _kit_piece(pid: String):
 			if DataFile.exists(KIT_ROOT + pid + ".mats.json") else {}
 		_kit_raw[pid] = [mesh, defs if defs is Dictionary else {}, faces] if mesh else null
 	return _kit_raw[pid]
+
+
+## Plain colours, one draw: a building's untextured, opaque, unlit surfaces (34 surfaces a building in Calder, 19 of
+## them plain) become one vertex-coloured surface per (roughness, metal) group -- each surface was a draw call, and
+## another per shadow cascade.  The colours go in as vertex colours (sRGB, as albedo_color has them).
+static var _plain_mat := {}
+
+
+static func _plain_merged(surfs: Array, sidecar: String, kit_defs: Dictionary) -> Array:
+	var all_defs = DataFile.json(sidecar)
+	if not all_defs is Dictionary:
+		return surfs
+	all_defs.merge(kit_defs)
+	var keep := []
+	var groups := {}                 # "rough|metal" -> SurfaceTool
+	for sm in surfs:
+		var mat: Material = sm[1]
+		var d = all_defs.get(mat.resource_name if mat else "")
+		if not (d is Dictionary) or d.get("tex") or d.get("alpha") != null or d.get("emission"):
+			keep.append(sm)
+			continue
+		var arrays: Array = (sm[0] as SurfaceTool).commit_to_arrays()
+		var n: int = (arrays[Mesh.ARRAY_VERTEX] as PackedVector3Array).size()
+		if n == 0:
+			continue
+		var c = d.get("color", [0.8, 0.8, 0.8])
+		var cols := PackedColorArray()
+		cols.resize(n)
+		cols.fill(Color(c[0], c[1], c[2]).linear_to_srgb())
+		arrays[Mesh.ARRAY_COLOR] = cols
+		var one := ArrayMesh.new()
+		one.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
+		var gk := "%.1f|%d" % [snappedf(float(d.get("rough", 0.6)), 0.2), 1 if float(d.get("metal", 0.0)) > 0.5 else 0]
+		if not groups.has(gk):
+			var gst := SurfaceTool.new()
+			gst.begin(Mesh.PRIMITIVE_TRIANGLES)
+			groups[gk] = gst
+		(groups[gk] as SurfaceTool).append_from(one, 0, Transform3D.IDENTITY)
+	for gk in groups:
+		if not _plain_mat.has(gk):
+			var pm := StandardMaterial3D.new()
+			pm.resource_name = "PLAIN_" + gk              # (no def by that name: _apply_defs leaves it as it is)
+			pm.vertex_color_use_as_albedo = true
+			pm.vertex_color_is_srgb = true
+			var parts: PackedStringArray = gk.split("|")
+			pm.roughness = float(parts[0])
+			pm.metallic = float(parts[1])
+			_plain_mat[gk] = pm
+		keep.append([groups[gk], _plain_mat[gk]])
+	return keep
 
 
 const FONTS := "res://remake/fonts/"

@@ -217,7 +217,8 @@ func _scan_step() -> void:
 		for bi in _index.get(cell, []):
 			var b: Dictionary = Placement.entry(bi) if bi is int else bi
 			if not _house_cache.has(b.id) and _dist(ps, px, float(b.s), float(b.x)) <= SPAWN_R:
-				if built >= HOUSES_PER_FRAME:
+				# (and within the frame's budget: 6 at 2-5 ms each was up to a 30 ms frame on arriving in town)
+				if built >= HOUSES_PER_FRAME or (built > 0 and Time.get_ticks_usec() - t0 > SCAN_BUDGET_USEC):
 					stop = true
 					break
 				_house_cache[b.id] = NpcHouseholds.of_building(world_seed, b)
@@ -253,7 +254,7 @@ func _scan_step() -> void:
 			while ui < pids2.size():
 				_consider(want, pids2[ui], ps, px)
 				ui += 1
-				if (ui & 7) == 0 and Time.get_ticks_usec() - t0 > SCAN_BUDGET_USEC:
+				if Time.get_ticks_usec() - t0 > SCAN_BUDGET_USEC:      # (each: a day's timeline the first time; every 8th was 6-11 ms)
 					break
 			_scan.ui = ui
 			if ui < pids2.size():
@@ -760,8 +761,7 @@ func _place(e: Dictionary) -> void:
 	var npc: Node3D = e.npc
 	# the ground under them, sampled again only every GROUND_STEP m: MapTerrain.elevation is ~150 us in a town (its road
 	# grading walks ~100 segments), and every walker placed it every frame -- 2-3 ms of Calder's frame (2026-10-13)
-	var gs := float(e.get("g_s", INF))
-	if absf(StationGeo.wrap_ds(s - gs)) + absf(x - float(e.get("g_x", 0.0))) > GROUND_STEP:
+	if not e.has("g_h") or absf(StationGeo.wrap_ds(s - float(e.g_s))) + absf(x - float(e.g_x)) > GROUND_STEP:
 		e.g_s = s
 		e.g_x = x
 		e.g_h = MapTerrain.elevation(s, x)

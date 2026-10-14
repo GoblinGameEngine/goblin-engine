@@ -108,7 +108,9 @@ func _process(delta: float) -> void:
 	if _banded and parent_node != null:
 		_stream_bands(delta)
 		_stream_tiles(delta)
+	Prof.begin("stream.lod1")
 	_finish_lod1()
+	Prof.end("stream.lod1")
 	# finish background loads: the shared parts folded in on a worker (RemakeBuilding.merge_kit), then one into the
 	# world a frame (a building's full model takes 8-30 ms to put in)
 	for i in _inflight.keys():
@@ -125,7 +127,9 @@ func _process(delta: float) -> void:
 			WorkerThreadPool.wait_for_task_completion(_merging[i][0])
 			var ps: PackedScene = _merging[i][1]
 			_merging.erase(i)
+			Prof.begin("stream.attach")
 			_attach(i, ps)
+			Prof.end("stream.attach")
 			break
 	_t -= delta
 	if _t > 0.0 or target == null:
@@ -501,6 +505,7 @@ func _attach(i: int, ps: PackedScene) -> void:
 	b.load_building(ps)
 	var d1: float = RemakeLodClusters.lod0_end(r.k)
 	RemakeLodClusters._ranges(b, 0.0, d1)
+	b.cull_inner_doors()
 	RemakeLodClusters._light_fade(b)
 	_set_lod1_begin(r.lod1, d1)
 	_loaded[i] = b

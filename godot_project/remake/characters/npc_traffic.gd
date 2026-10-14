@@ -263,7 +263,9 @@ func _locate_home(v: Dictionary, now: Array) -> Dictionary:
 		return {}
 	if not _life.is_loaded(pid):
 		return _parked(home, v)              # (a town whose people aren't in: its cars stay home rather than load them all)
+	Prof.begin("traffic.person")
 	var P := _life.person(pid)
+	Prof.end("traffic.person")
 	if P.is_empty():
 		return _parked(home, v)
 	var day: int = now[0]
@@ -324,23 +326,10 @@ func _round(v: Dictionary, now: Array) -> Dictionary:
 		return {"away": true}
 	var key := "round:" + str(v.id)
 	if not _route_cache.has(key):
-		var stops: Array = [v.at] + (v.rounds as Array) + [v.at]
-		var pts := PackedVector2Array()
-		var marks: Array = []                                      # distance along at each stop
-		for i in stops.size() - 1:
-			var ba := str(NpcPlaces.unit(str(stops[i])).get("building", ""))
-			var bb := str(NpcPlaces.unit(str(stops[i + 1])).get("building", ""))
-			if ba == "" or bb == "" or ba == bb:
-				continue
-			var came := pts[pts.size() - 2] if pts.size() >= 2 else Vector2.INF
-			var r := NpcPlaces.route(ba, bb, Vector2.INF, Vector2.INF, 0.0, ROADS, [], came, LANE)
-			if r.size() < 3:
-				continue
-			marks.append(NpcPlaces.route_length(pts))
-			for k in range(1, r.size() - 1):
-				if pts.size() == 0 or NpcPlaces.dist(pts[pts.size() - 1], r[k]) > 0.3:
-					pts.append(r[k])
-		_route_cache[key] = [pts, marks]
+		# planned on a worker (a round is several routes: 137 ms on the main thread when one came near, 2026-10-13); till
+		# it's back the vehicle counts as away, and is looked at again soon
+		_round_async(key, v)
+		return {"away": true, "soon": true}
 	var rc: Array = _route_cache[key]
 	var pts2: PackedVector2Array = rc[0]
 	var marks2: Array = rc[1]
@@ -386,6 +375,44 @@ func _route_async(from_b: String, to_b: String) -> void:
 	WorkerThreadPool.add_task(func():
 		var r := NpcPlaces.route(from_b, to_b, Vector2.INF, Vector2.INF, 0.0, ROADS, [], Vector2.INF, LANE)
 		_route_ready.call_deferred(key, r))
+
+
+func _round_async(key: String, v: Dictionary) -> void:
+	if _route_pending.has(key) or _route_pending.size() >= ROUTES_IN_FLIGHT:
+		return
+	var stops: Array = [v.at] + (v.rounds as Array) + [v.at]
+	var blds := PackedStringArray()                                # (looked up here: the worker gets plain values)
+	for st in stops:
+		blds.append(str(NpcPlaces.unit(str(st)).get("building", "")))
+	_route_pending[key] = true
+	var roads := ROADS
+	var lane := LANE
+	WorkerThreadPool.add_task(func():
+		var pts := PackedVector2Array()
+		var marks: Array = []                                      # distance along at each stop
+		for i in blds.size() - 1:
+			var ba := blds[i]
+			var bb := blds[i + 1]
+			if ba == "" or bb == "" or ba == bb:
+				continue
+			var came := pts[pts.size() - 2] if pts.size() >= 2 else Vector2.INF
+			var r := NpcPlaces.route(ba, bb, Vector2.INF, Vector2.INF, 0.0, roads, [], came, lane)
+			if r.size() < 3:
+				continue
+			marks.append(NpcPlaces.route_length(pts))
+			for k in range(1, r.size() - 1):
+				if pts.size() == 0 or NpcPlaces.dist(pts[pts.size() - 1], r[k]) > 0.3:
+					pts.append(r[k])
+		_round_ready.call_deferred(key, pts, marks))
+
+
+func _round_ready(key: String, pts: PackedVector2Array, marks: Array) -> void:
+	_route_pending.erase(key)
+	if not is_inside_tree():
+		return
+	if _route_cache.size() > 20000:
+		_route_cache.clear()
+	_route_cache[key] = [pts, marks]
 
 
 func _route_ready(key: String, r: PackedVector2Array) -> void:
@@ -475,10 +502,12 @@ func _parked(door: Vector2, v: Dictionary) -> Dictionary:
 	#  given that household's own car's spot, the two drawn in one another; WorldQuery check found it)
 	var key := "%.1f,%.1f#%s" % [door.x, door.y, str(v.id)]
 	if not _spot_cache.has(key):
-		if _spots_this_frame >= 2:
+		if _spots_this_frame >= 1:                            # (a spot is 2.5-9 ms in a town: one a frame)
 			return {"later": true}                                 # (found in a frame or two)
 		_spots_this_frame += 1
+		Prof.begin("traffic.spot")
 		_spot_cache[key] = _find_spot(door)
+		Prof.end("traffic.spot")
 	var sp: Dictionary = _spot_cache[key]
 	if sp.is_empty():
 		return {}
@@ -624,7 +653,11 @@ func _tick_traffic(delta: float) -> void:
 	var ts0 := Time.get_ticks_usec()
 	_spots_this_frame = 0
 	Prof.begin("traffic.sense")
-	_sense_world()
+	# the road users every other frame (~1 ms in Calder): at 30 Hz a car's place is a frame (~0.25 m at 15 m/s) old,
+	# well inside a driver's following gap
+	_sense_odd = not _sense_odd
+	if _sense_odd or agents.is_empty():
+		_sense_world()
 	Prof.end("traffic.sense")
 	var t_sense := Time.get_ticks_usec() - ts0
 	var t_loc := 0
@@ -707,6 +740,7 @@ func _tick_traffic(delta: float) -> void:
 
 var frame_ms := 0.0
 var prof := {}                  # how long this takes a frame (smoothed)
+var _sense_odd := false
 var agents: Array = []               # [{id, p, dir, v, len, kind}] -- moving vehicles, trams, trains, the player
 var peds: Array = []                 # [{id, p}] -- people out of doors near the player
 
