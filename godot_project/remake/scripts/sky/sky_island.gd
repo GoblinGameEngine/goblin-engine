@@ -21,7 +21,7 @@ class_name SkyIsland
 ## down and lets it go).  The line bends with the spin: a load going down drifts antispinward (west, +Z here), one
 ## coming up spinward -- the crews lead their drops for it.
 
-const NEAR := 800.0
+const NEAR := 450.0
 const MID := 3600.0
 const PART := "res://remake/sky/parts/%s.glb"
 const OMEGA := 0.0313                # rad/s, the station's spin (sqrt(9.8 / 10,000))
@@ -343,6 +343,12 @@ func deck_y(x: float, z: float) -> float:
 
 func _h(ix: int, iz: int, nx: int) -> float:
 	return _height.decode_s16((iz * nx + ix) * 2) * 0.01
+
+
+func radius() -> float:
+	## m from its centre to its furthest dock face
+	var f: Dictionary = data.faces
+	return maxf(maxf(absf(float(f.N)), absf(float(f.S))), maxf(absf(float(f.E)), absf(float(f.W))))
 
 
 func inside(lp: Vector3, margin := 2.0) -> bool:
@@ -904,6 +910,31 @@ static func _vertex_colours(n: Node) -> void:
 					d.vertex_color_is_srgb = true
 					_vc_mats[m] = d
 				mi.set_surface_override_material(si, _vc_mats[m])
+
+
+var _phys_on := true
+var _phys_seen := -1
+
+
+func set_physics_active(on: bool) -> void:
+	## Only the islands near the player keep their collision in the physics world: every body on an island moves
+	## every tick with it, and a moved body is put back into the broadphase -- a raft's worth of decks, buildings,
+	## fences and bridges cost ~8 ms a tick.  Off: removed (DISABLE_MODE_REMOVE), drawn as ever.
+	if _near == null:
+		_phys_on = true
+		_phys_seen = -1
+		return
+	var n := _near.get_child_count()
+	if on == _phys_on and (on or n == _phys_seen):
+		return
+	_phys_on = on
+	_phys_seen = n
+	for b in _near.find_children("*", "CollisionObject3D", true, false):
+		if b is RemakeAirVehicle:
+			continue                      # (a lark keeps its own body)
+		var co := b as CollisionObject3D
+		co.disable_mode = CollisionObject3D.DISABLE_MODE_REMOVE
+		co.process_mode = Node.PROCESS_MODE_INHERIT if on else Node.PROCESS_MODE_DISABLED
 
 
 static func _no_shadow(n: Node) -> void:

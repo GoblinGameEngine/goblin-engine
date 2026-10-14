@@ -271,6 +271,7 @@ func _process(delta: float) -> void:
 		for isl in islands:
 			var d := isl.global_position.distance_to(cam)
 			isl.set_tier(2 if d < SkyIsland.NEAR else (1 if d < SkyIsland.MID else 0))
+			isl.set_physics_active(d < PHYS_R + isl.radius())
 	_balloons()
 	_night_step(delta)
 	_draw_lines(cam)
@@ -286,6 +287,9 @@ func _process(delta: float) -> void:
 		if c[1] <= 0.0:
 			(c[0] as Node).queue_free()
 			_cargo.erase(c)
+
+
+const PHYS_R := 120.0                 # m past an island's edge within which its collision is live
 
 
 func _balloons() -> void:
