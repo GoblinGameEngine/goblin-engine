@@ -1,0 +1,2025 @@
+{
+ "stream": "c",
+ "version": 1,
+ "date": "2026-10-14",
+ "count": 18,
+ "styles": [
+  {
+   "id": "closes_lands",
+   "name": "Closes and Lands",
+   "sources": [
+    "Edinburgh Old Town, Scotland"
+   ],
+   "refs": [
+    {
+     "title": "Gladstone's Land (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Gladstone%27s_Land"
+    },
+    {
+     "title": "Canmore: Gladstone's Land",
+     "url": "https://canmore.org.uk/site/52528"
+    },
+    {
+     "title": "Pend (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Pend"
+    },
+    {
+     "title": "Glynn: tenements, towers, cul-de-sacs",
+     "url": "https://sarahglynn.net/tenements-towers-and-cul-de-sacs-the-building-blocks-of-scottish-towns/"
+    }
+   ],
+   "typology": "warren",
+   "massing": {
+    "storeys": [
+     7,
+     12
+    ],
+    "footprint_m": [
+     [
+      7,
+      18
+     ],
+     [
+      9,
+      22
+     ]
+    ],
+    "stack": "pile",
+    "stack_rules": "tall slabs shoulder to shoulder in rows down the slope: 6-8 storeys at the promenade, +2..5 below on the falling side; a 1.2-2 m CLOSE stair-alley between every 1-3 lands, PENDS (rooms bridged over) where a close runs under; a round TURNPIKE stair tower per land on the close; timber galleries cantilever 1.2 off floors 2-4; crow-stepped gables, 2 floors in the roof",
+    "skybridges": true,
+    "courtyard": true,
+    "lightwell": false
+   },
+   "roof": [
+    "gable_step",
+    "altana_deck",
+    "rooftop_stair_head",
+    "chimney_stack",
+    "hoist_beam"
+   ],
+   "walls": {
+    "materials": [
+     "skystone_rubble",
+     "lime_harl",
+     "timber_gallery",
+     "slate"
+    ],
+    "palette": [
+     "#6e6457",
+     "#3d3a36",
+     "#d8cfbf",
+     "#c9a66b",
+     "#3b4148"
+    ]
+   },
+   "openings": [
+    "window_small",
+    "shutters",
+    "bay_window_box"
+   ],
+   "components": [
+    "turnpike_stair",
+    "pend_passage",
+    "gallery_timber",
+    "arcade_pier",
+    "gable_step",
+    "altana_deck",
+    "hoist_beam",
+    "sign_blade",
+    "lantern_wall",
+    "name_board_close",
+    "chimney_stack",
+    "lights_festoon",
+    "laundry_line"
+   ],
+   "ground": "arcade",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "neon_blade",
+     "brass_letters",
+     "lantern_string"
+    ],
+    "density": 0.6,
+    "palette": [
+     "#ffcf7a",
+     "#ff5a4a",
+     "#7ad7ff",
+     "#f4e9d0"
+    ],
+    "animation": [
+     "steady",
+     "flicker",
+     "chase"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb867",
+     "#7a5cff",
+     "#ff6f91"
+    ],
+    "motifs": [
+     "window_glow",
+     "close_mouth_lamp",
+     "gallery_bulbs",
+     "gable_uplight"
+    ]
+   },
+   "floor_plan": "C-P1 Edinburgh land (plans/c_plans.md)",
+   "fantasy": "Diagon/Knockturn Alley: every close a black slit lit by one lamp, the lands glowing like cliffs of windows above",
+   "stream": "c"
+  },
+  {
+   "id": "jetty_lanes",
+   "name": "Jetty Lanes",
+   "sources": [
+    "Rothenburg, Strasbourg, York (The Shambles), Chester"
+   ],
+   "refs": [
+    {
+     "title": "Jettying (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Jettying"
+    },
+    {
+     "title": "Looking at Buildings: the jetty",
+     "url": "https://www.lookingatbuildings.org.uk/styles/medieval/walls-and-windows/timber-walls/the-jetty.html"
+    },
+    {
+     "title": "Rothenburg historic buildings",
+     "url": "https://www.rothenburg.de/en/entdecken/lieblingsorte/historische-gebaeude"
+    }
+   ],
+   "typology": "jettied_row",
+   "massing": {
+    "storeys": [
+     3,
+     5
+    ],
+    "footprint_m": [
+     [
+      5,
+      8
+     ],
+     [
+      8,
+      14
+     ]
+    ],
+    "stack": "overhang",
+    "stack_rules": "a stone ground floor, then 2-4 timber storeys each jettied 0.4-0.6 over the lane (both faces on a corner, dragon beam); opposite eaves 0.3-0.8 apart over a 3 m lane; steep 55 deg roofs with 2 rows of dormers and a hoist door in the gable",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "steep_gable",
+    "dormer_row",
+    "altana_deck",
+    "hoist_beam"
+   ],
+   "walls": {
+    "materials": [
+     "half_timber",
+     "lime_infill",
+     "plain_tile"
+    ],
+    "palette": [
+     "#6b2a22",
+     "#2e231c",
+     "#efe7d6",
+     "#e3c56a",
+     "#d99a8a",
+     "#9a4a33"
+    ]
+   },
+   "openings": [
+    "window_small",
+    "bay_window_box",
+    "shutters"
+   ],
+   "components": [
+    "jetty_upper",
+    "bracket_corbel",
+    "timber_band",
+    "dormer_row",
+    "hoist_beam",
+    "altana_deck",
+    "sign_blade",
+    "lantern_wall",
+    "planter",
+    "lights_festoon",
+    "wall_shrine"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "brass_letters",
+     "neon_script",
+     "lantern_string"
+    ],
+    "density": 0.55,
+    "palette": [
+     "#ffd27a",
+     "#ff9a3d",
+     "#9fe8ff",
+     "#fff4dc"
+    ],
+    "animation": [
+     "steady",
+     "flicker"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffc27a",
+     "#ff7f50",
+     "#a0c4ff"
+    ],
+    "motifs": [
+     "window_glow",
+     "under_jetty_lanterns",
+     "eave_bulbs"
+    ]
+   },
+   "floor_plan": "C-P2 jettied stack (plans/c_plans.md)",
+   "fantasy": "Hogsmeade in snow: leaning stacks nearly touching over the lanes, every jetty lit from beneath",
+   "stream": "c"
+  },
+  {
+   "id": "bridge_street",
+   "name": "Bridge Street",
+   "sources": [
+    "Ponte Vecchio (Florence)",
+    "Kramerbrucke (Erfurt)",
+    "Old London Bridge (to 1761)"
+   ],
+   "refs": [
+    {
+     "title": "Reid's Italy: Ponte Vecchio",
+     "url": "https://reidsitaly.com/destinations/tuscany/florence/sights/ponte-vecchio.html"
+    },
+    {
+     "title": "Kramerbrucke (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Kr%C3%A4merbr%C3%BCcke"
+    },
+    {
+     "title": "Amusing Planet: Nonsuch House",
+     "url": "https://www.amusingplanet.com/2020/08/london-bridges-nonsuch-house.html"
+    }
+   ],
+   "typology": "bridge_houses",
+   "massing": {
+    "storeys": [
+     3,
+     4
+    ],
+    "footprint_m": [
+     [
+      4,
+      6
+     ],
+     [
+      6,
+      8
+     ]
+    ],
+    "stack": "overhang",
+    "stack_rules": "houses line both sides of an internal span (between two lobes of a big island, or across a ravine in the rock); their back-shops hang off the span on brackets over the void; a covered corridor rides one row's roofline; a domed gatehouse (Nonsuch) spans the middle",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "steep_gable",
+    "corridor_roof",
+    "dome_onion"
+   ],
+   "walls": {
+    "materials": [
+     "half_timber",
+     "skystone_ashlar",
+     "copper"
+    ],
+    "palette": [
+     "#7a4a2c",
+     "#d6b98a",
+     "#c9a13b",
+     "#8a3a2a",
+     "#e9e0cc"
+    ]
+   },
+   "openings": [
+    "shopfront_shutter",
+    "window_small",
+    "bay_window_box"
+   ],
+   "components": [
+    "bracket_corbel",
+    "hanging_backshop",
+    "covered_corridor",
+    "gate_portal",
+    "dome_onion",
+    "sign_blade",
+    "sign_board",
+    "lights_festoon",
+    "luminarie_arch",
+    "lantern",
+    "awning"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "lightbox",
+     "neon_blade",
+     "brass_letters",
+     "luminarie"
+    ],
+    "density": 0.85,
+    "palette": [
+     "#ffd86b",
+     "#ff4f6d",
+     "#5ce1ff",
+     "#b6ff6b"
+    ],
+    "animation": [
+     "chase",
+     "flash",
+     "steady"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffd27a",
+     "#ff4f8b",
+     "#50e3c2"
+    ],
+    "motifs": [
+     "luminarie_arches",
+     "shopfront_glow",
+     "underside_lanterns"
+    ]
+   },
+   "floor_plan": "C-P3 bridge street (plans/c_plans.md)",
+   "fantasy": "the goldsmiths' bridge of a sky city: shops hanging over a 750 m drop, bulb arches every 6 m",
+   "stream": "c"
+  },
+  {
+   "id": "sassi_terraces",
+   "name": "Sassi Terraces",
+   "sources": [
+    "Matera's Sassi (Italy)",
+    "Oia, Santorini (Greece)"
+   ],
+   "refs": [
+    {
+     "title": "Sassi di Matera (Wikipedia)",
+     "url": "https://wikipedia.com/wiki/Sassi"
+    },
+    {
+     "title": "Studio Matrx: Santorini cave dwellings",
+     "url": "https://www.studiomatrx.org/architecture-canon/santorini-cave-dwellings"
+    }
+   ],
+   "typology": "terrace_stack",
+   "massing": {
+    "storeys": [
+     1,
+     2
+    ],
+    "footprint_m": [
+     [
+      4,
+      6
+     ],
+     [
+      6,
+      12
+     ]
+    ],
+    "stack": "setback",
+    "stack_rules": "rows of vaulted cells stepped up the deck's hill and DOWN the rim rock: each row's roof is the next row's path (2-3 m deep); zig-zag stairs every 20-30 m; 1-2 rows cut into the rock flank under the deck edge, windows over the void",
+    "skybridges": false,
+    "courtyard": true,
+    "lightwell": false
+   },
+   "roof": [
+    "vault_roof",
+    "flat_terrace",
+    "dome_small"
+   ],
+   "walls": {
+    "materials": [
+     "skystone_tufo",
+     "limewash"
+    ],
+    "palette": [
+     "#c9b08a",
+     "#8f7a5c",
+     "#ece5d6",
+     "#f4f3ee",
+     "#1e5aa8"
+    ]
+   },
+   "openings": [
+    "arch_opening",
+    "window_small",
+    "door_room"
+   ],
+   "components": [
+    "vault_cell",
+    "terrace_parapet",
+    "stair_cut",
+    "dome_small",
+    "lantern_wall",
+    "luminarie_arch",
+    "wall_shrine",
+    "planter",
+    "tile_panel"
+   ],
+   "ground": "market_stalls",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "lantern_string",
+     "luminarie",
+     "neon_script"
+    ],
+    "density": 0.4,
+    "palette": [
+     "#ffe2a8",
+     "#ff8c5a",
+     "#7fd1ff"
+    ],
+    "animation": [
+     "steady",
+     "chase"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffcf8a",
+     "#5f8bff",
+     "#ff9ec7"
+    ],
+    "motifs": [
+     "door_lamps",
+     "stair_luminarie",
+     "vault_uplight"
+    ]
+   },
+   "floor_plan": "C-P4 terrace stack (plans/c_plans.md)",
+   "fantasy": "a cliff city that continues UNDER the island: cave windows glowing in the rock beneath the deck",
+   "stream": "c"
+  },
+  {
+   "id": "hoist_gables",
+   "name": "Hoist Gables",
+   "sources": [
+    "Amsterdam canal ring",
+    "Brussels Grand-Place",
+    "Ghent Graslei"
+   ],
+   "refs": [
+    {
+     "title": "UNESCO: Amsterdam canal ring",
+     "url": "https://whc.unesco.org/en/urban-heritage-atlas/Amsterdam/"
+    },
+    {
+     "title": "Canal house (Wikipedia)",
+     "url": "https://en.wikipedia.com/wiki/Canal_house"
+    },
+    {
+     "title": "Expatica: crooked Amsterdam houses",
+     "url": "https://www.expatica.com/nl/about/culture-history/the-history-of-crooked-amsterdam-houses-are-they-safe-1126943/"
+    },
+    {
+     "title": "Amsterdam gables",
+     "url": "https://buffaloah.com/a/virtual/hol/amster/amstergables/index.html"
+    }
+   ],
+   "typology": "canal_house",
+   "massing": {
+    "storeys": [
+     4,
+     6
+    ],
+    "footprint_m": [
+     [
+      5,
+      7.5
+     ],
+     [
+      15,
+      20
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "very narrow tall houses packed in rows, fa\u00e7ades leaning out 1:30 so loads clear them; each crowned by a step/neck/bell/cornice gable with a HOIST BEAM and pulley; deep plans with a rear house across a court",
+    "skybridges": false,
+    "courtyard": true,
+    "lightwell": false
+   },
+   "roof": [
+    "gable_step",
+    "gable_neck",
+    "gable_bell",
+    "gable_cornice",
+    "altana_deck",
+    "hoist_beam"
+   ],
+   "walls": {
+    "materials": [
+     "skybrick",
+     "sandstone_trim",
+     "gilt"
+    ],
+    "palette": [
+     "#6b3a2c",
+     "#8a4a33",
+     "#1f2a24",
+     "#f2efe6",
+     "#c9a13b"
+    ]
+   },
+   "openings": [
+    "window_tall_sash",
+    "shutters",
+    "door_room"
+   ],
+   "components": [
+    "hoist_beam",
+    "gable_step",
+    "gable_neck",
+    "gable_bell",
+    "gable_cornice",
+    "altana_deck",
+    "loading_door",
+    "lights_outline",
+    "sign_board",
+    "name_letters",
+    "planter"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "lightbox",
+     "brass_letters",
+     "gilt_letters",
+     "neon_script"
+    ],
+    "density": 0.6,
+    "palette": [
+     "#ffd46b",
+     "#ff6b6b",
+     "#ffffff"
+    ],
+    "animation": [
+     "steady",
+     "chase"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffd9a0",
+     "#ff6b9d",
+     "#9ad0ff"
+    ],
+    "motifs": [
+     "gable_outline_bulbs",
+     "window_glow",
+     "hoist_lamps"
+    ]
+   },
+   "floor_plan": "C-P5 canal/gable house (plans/c_plans.md)",
+   "fantasy": "a skyline of stepped and belled gables outlined in bulbs, a hoist swinging crates up every face",
+   "stream": "c"
+  },
+  {
+   "id": "gard_wharf",
+   "name": "Gard Wharves",
+   "sources": [
+    "Bryggen, Bergen (Norway)"
+   ],
+   "refs": [
+    {
+     "title": "UNESCO: Bryggen",
+     "url": "https://whc.unesco.org/en/list/59"
+    },
+    {
+     "title": "Lonely Planet: Bryggen",
+     "url": "https://www.lonelyplanet.com/points-of-interest/bryggen/1292163"
+    }
+   ],
+   "typology": "wharf_row",
+   "massing": {
+    "storeys": [
+     2,
+     3
+    ],
+    "footprint_m": [
+     [
+      6,
+      8
+     ],
+     [
+      30,
+      60
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "pairs of long timber rows face each other across a plank passage that runs to the island's edge; external galleries on every upper floor; plank bridges cross the passage at each floor; at the rim, each row's gable carries a crane over the void",
+    "skybridges": true,
+    "courtyard": true,
+    "lightwell": false
+   },
+   "roof": [
+    "steep_gable",
+    "crane_gable"
+   ],
+   "walls": {
+    "materials": [
+     "tarred_timber",
+     "painted_board_cladding"
+    ],
+    "palette": [
+     "#d9a441",
+     "#8e2f25",
+     "#eee7da",
+     "#e9d9b0",
+     "#3a2d22"
+    ]
+   },
+   "openings": [
+    "window_small",
+    "loading_door"
+   ],
+   "components": [
+    "gallery_timber",
+    "plank_bridge",
+    "crane_gable",
+    "loading_door",
+    "hoist_beam",
+    "lantern",
+    "sign_board",
+    "merchant_mark",
+    "lights_festoon"
+   ],
+   "ground": "warehouses",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "lantern_string",
+     "brass_letters"
+    ],
+    "density": 0.45,
+    "palette": [
+     "#ffcf70",
+     "#ff7a59",
+     "#e8f1ff"
+    ],
+    "animation": [
+     "steady",
+     "flicker"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffc27a",
+     "#7ab8ff"
+    ],
+    "motifs": [
+     "gallery_lanterns",
+     "gable_crane_lamps",
+     "window_glow"
+    ]
+   },
+   "floor_plan": "C-P6 gard (plans/c_plans.md)",
+   "fantasy": "a Hanseatic wharf on the edge of the sky: cranes at every gable lowering crates to the floor",
+   "stream": "c"
+  },
+  {
+   "id": "plex_spirals",
+   "name": "Plex Spirals",
+   "sources": [
+    "Montreal plexes (Plateau, Rosemont, Verdun)"
+   ],
+   "refs": [
+    {
+     "title": "Atlas Obscura: Montreal plexes' outdoor staircases",
+     "url": "https://atlasobscura.com/articles/montreal-plexes-outdoor-staircases"
+    },
+    {
+     "title": "The Main: Montreal spiral staircases",
+     "url": "https://themain.com/articles/history-lesson-montreal-spiral-staircases"
+    }
+   ],
+   "typology": "plex_row",
+   "massing": {
+    "storeys": [
+     3,
+     4
+    ],
+    "footprint_m": [
+     [
+      7.5,
+      26
+     ],
+     [
+      15,
+      29
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "rows of 3-storey stacked flats (one per floor) behind 3 m setbacks; every upper flat reached by an OUTSIDE stair (spiral on narrow lots, L/S on wide) to a gallery at each floor; on the islands the stair continues to a roof terrace",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "flat_terrace",
+    "cornice_bracketed"
+   ],
+   "walls": {
+    "materials": [
+     "skybrick",
+     "pressed_metal",
+     "wrought_iron"
+    ],
+    "palette": [
+     "#8b3a2a",
+     "#c9a46b",
+     "#9a958c",
+     "#1d1d1d",
+     "#2d4a3a",
+     "#6c9cc8"
+    ]
+   },
+   "openings": [
+    "window_tall_sash",
+    "door_room",
+    "bay_window_box"
+   ],
+   "components": [
+    "stair_spiral_external",
+    "gallery_iron",
+    "cornice_bracketed",
+    "balcony_iron",
+    "rooftop_stair_head",
+    "lights_festoon",
+    "sign_board",
+    "lightbox_corner",
+    "ceiling_tile"
+   ],
+   "ground": "corner_shops",
+   "signage": {
+    "kinds": [
+     "lightbox",
+     "neon_script",
+     "dot_matrix"
+    ],
+    "density": 0.5,
+    "palette": [
+     "#ff3b6b",
+     "#4ad6ff",
+     "#ffe066"
+    ],
+    "animation": [
+     "steady",
+     "flicker",
+     "scroll"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb36b",
+     "#8a7dff",
+     "#4ee8c8"
+    ],
+    "motifs": [
+     "stair_bulbs",
+     "gallery_glow",
+     "cornice_strip"
+    ]
+   },
+   "floor_plan": "C-P7 plex row (plans/c_plans.md)",
+   "fantasy": "winter Montreal: iron spirals dusted with snow and wound with lights, a lit depanneur on every corner",
+   "stream": "c"
+  },
+  {
+   "id": "box_pile",
+   "name": "Box Pile",
+   "sources": [
+    "Habitat 67, Montreal (Moshe Safdie)"
+   ],
+   "refs": [
+    {
+     "title": "ArchDaily: AD Classics Habitat 67",
+     "url": "https://www.archdaily.com/404803/ad-classics-habitat-67-moshe-safdie/"
+    },
+    {
+     "title": "Canadian Encyclopedia: Habitat 67",
+     "url": "https://thecanadianencyclopedia.ca/index.php/en/article/habitat-67"
+    }
+   ],
+   "typology": "module_stack",
+   "massing": {
+    "storeys": [
+     6,
+     12
+    ],
+    "footprint_m": [
+     [
+      11.7,
+      5.3
+     ],
+     [
+      11.7,
+      5.3
+     ]
+    ],
+    "stack": "pile",
+    "stack_rules": "one identical box module (11.7 x 5.3 x 3) stacked in stepped ragged piles up to 12 levels, each offset from the one below so every roof is a terrace; pedestrian streets through the pile every 4 levels; balloon tethers on the top boxes",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "terrace_garden",
+    "dome_skylight"
+   ],
+   "walls": {
+    "materials": [
+     "skystone_cast",
+     "glass"
+    ],
+    "palette": [
+     "#cfc9bd",
+     "#a8a297",
+     "#3e4a52",
+     "#e8e4dc"
+    ]
+   },
+   "openings": [
+    "glazed_end",
+    "window_strip"
+   ],
+   "components": [
+    "box_module",
+    "terrace_rail",
+    "dome_skylight",
+    "planter",
+    "skybridge",
+    "lights_outline",
+    "rooftop_letters",
+    "stair_core_open"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "lightbox",
+     "dot_matrix",
+     "rooftop_billboard"
+    ],
+    "density": 0.35,
+    "palette": [
+     "#7af0ff",
+     "#ff7ae0",
+     "#ffffff"
+    ],
+    "animation": [
+     "steady",
+     "scroll"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#9fd8ff",
+     "#ffb0e0",
+     "#fff2c2"
+    ],
+    "motifs": [
+     "box_edge_strips",
+     "terrace_glow",
+     "street_band"
+    ]
+   },
+   "floor_plan": "C-P8 box pile (plans/c_plans.md)",
+   "fantasy": "a crystal of lit boxes; one part reused hundreds of times (cheapest warren to ship)",
+   "stream": "c"
+  },
+  {
+   "id": "laje_stack",
+   "name": "Laje Stack",
+   "sources": [
+    "Rocinha and Santa Marta, Rio de Janeiro"
+   ],
+   "refs": [
+    {
+     "title": "Martins & Farias 2019 (favela rooftop growth)",
+     "url": "https://ideas.repec.org/a/wly/sustdv/v27y2019i2p205-213.html"
+    },
+    {
+     "title": "Reis 2022: risk-sensitive growth of Rocinha",
+     "url": "https://tuprints.ulb.tu-darmstadt.de/21578/"
+    }
+   ],
+   "typology": "self_built_stack",
+   "massing": {
+    "storeys": [
+     3,
+     6
+    ],
+    "footprint_m": [
+     [
+      4,
+      6
+     ],
+     [
+      6,
+      10
+     ]
+    ],
+    "stack": "overhang",
+    "stack_rules": "concrete-frame boxes packed edge to edge up a slope; each storey added on the roof slab (roof rights sold), cantilevering 0.5-1 over the alley, a different size and colour per storey; outside stairs; rebar stubs and a water tank on top",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "flat_terrace",
+    "rebar_stubs",
+    "water_tank",
+    "rooftop_shack",
+    "laundry_line"
+   ],
+   "walls": {
+    "materials": [
+     "concrete_frame",
+     "skybrick_hollow",
+     "paint_patches"
+    ],
+    "palette": [
+     "#b5643f",
+     "#9b9a94",
+     "#e0332e",
+     "#f6c21c",
+     "#2a7fc4",
+     "#3aa457"
+    ]
+   },
+   "openings": [
+    "window_small",
+    "shutter_rolling",
+    "balcony_cantilever"
+   ],
+   "components": [
+    "frame_infill",
+    "rebar_stubs",
+    "water_tank",
+    "stair_steel_external",
+    "wire_bundle",
+    "laundry_line",
+    "rooftop_shack",
+    "mural_panel",
+    "lights_festoon",
+    "sign_board"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "lightbox",
+     "lantern_string",
+     "neon_script"
+    ],
+    "density": 0.6,
+    "palette": [
+     "#ff4d4d",
+     "#ffd23f",
+     "#3ec1ff",
+     "#7cff6b"
+    ],
+    "animation": [
+     "steady",
+     "flicker",
+     "flash"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb347",
+     "#ff5f9e",
+     "#5ad1ff"
+    ],
+    "motifs": [
+     "window_glow_mixed",
+     "bar_bulbs",
+     "stair_lamps"
+    ]
+   },
+   "floor_plan": "C-P9 laje stack (plans/c_plans.md)",
+   "fantasy": "a hillside that keeps growing upward, every floor a different colour; proud, painted and lit, not squalid",
+   "stream": "c"
+  },
+  {
+   "id": "cholet_ballroom",
+   "name": "Cholet Ballrooms",
+   "sources": [
+    "El Alto and La Paz, Bolivia (Freddy Mamani)"
+   ],
+   "refs": [
+    {
+     "title": "Dezeen: Freddy Mamani's New Andean architecture",
+     "url": "https://www.dezeen.com/2019/02/07/freddy-mamani-new-andean-architecture-bolivia/"
+    },
+    {
+     "title": "Pin-Up: cholet culture",
+     "url": "https://www.pinupmagazine.org/articles/freddy-mamani-jonathan-castro"
+    }
+   ],
+   "typology": "mixed_use_stack",
+   "massing": {
+    "storeys": [
+     5,
+     7
+    ],
+    "footprint_m": [
+     [
+      10,
+      18
+     ],
+     [
+      14,
+      25
+     ]
+    ],
+    "stack": "setback",
+    "stack_rules": "shops on the ground floor; a double-height BALLROOM (7 m) above with tall windows across the front; flats above that; the owner's pitched-roof CHALET set back on the roof; a symmetrical fa\u00e7ade of Andean geometric panels in coloured and mirror glass",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "roof_chalet",
+    "flat_terrace"
+   ],
+   "walls": {
+    "materials": [
+     "concrete_frame",
+     "mirror_glass",
+     "coloured_glass",
+     "paint"
+    ],
+    "palette": [
+     "#9ccc3c",
+     "#d1308a",
+     "#2bb3b1",
+     "#e2b23c",
+     "#5aa0c8",
+     "#222222"
+    ]
+   },
+   "openings": [
+    "ballroom_window",
+    "window_strip"
+   ],
+   "components": [
+    "geometric_panel",
+    "mirror_panel",
+    "ballroom_window",
+    "roof_chalet",
+    "lights_outline",
+    "rooftop_letters",
+    "shopfront_shutter",
+    "sign_board",
+    "column_mirrored"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "neon_script",
+     "lightbox",
+     "led_outline",
+     "rooftop_billboard"
+    ],
+    "density": 0.8,
+    "palette": [
+     "#ff2fa0",
+     "#39ff8f",
+     "#ffd23f",
+     "#3fd6ff"
+    ],
+    "animation": [
+     "chase",
+     "flash",
+     "steady"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ff5ec4",
+     "#4dffb0",
+     "#ffcf4d"
+    ],
+    "motifs": [
+     "ballroom_glow",
+     "geometric_led_outline",
+     "chalet_lamps"
+    ]
+   },
+   "floor_plan": "C-P10 cholet (plans/c_plans.md)",
+   "fantasy": "every clan's showpiece: a mirror-glass party palace whose ballroom blazes on moot nights",
+   "stream": "c"
+  },
+  {
+   "id": "cerro_tin",
+   "name": "Cerro Tin",
+   "sources": [
+    "Valparaiso's cerros, Chile"
+   ],
+   "refs": [
+    {
+     "title": "IOL: a colourful escape to Valparaiso",
+     "url": "https://www.iol.co.za/travel/a-colourful-escape-to-valparaiso-2007867"
+    },
+    {
+     "title": "Stanford: Valparaiso photos 2015",
+     "url": "https://ai.stanford.edu/~latombe/mountain/photo/chile-2015/valparaiso-2015.htm"
+    }
+   ],
+   "typology": "hill_stack",
+   "massing": {
+    "storeys": [
+     2,
+     5
+    ],
+    "footprint_m": [
+     [
+      5,
+      7
+     ],
+     [
+      8,
+      10
+     ]
+    ],
+    "stack": "setback",
+    "stack_rules": "timber-and-corrugated-tin houses climbing the island's main hill: 2 storeys on the uphill lane, +1..3 down the slope behind, bays and balconies over the drop; every house a different ship colour; an ASCENSOR (funicular) climbs the hill; stair lanes with painted risers",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "tin_roof_low",
+    "flat_terrace"
+   ],
+   "walls": {
+    "materials": [
+     "corrugated_tin",
+     "timber",
+     "paint"
+    ],
+    "palette": [
+     "#d2402c",
+     "#e6a532",
+     "#2c5aa0",
+     "#5fb89a",
+     "#9a7cc0",
+     "#f0d24a",
+     "#8a4b2c"
+    ]
+   },
+   "openings": [
+    "bay_window_box",
+    "window_tall_sash",
+    "balcony_cantilever"
+   ],
+   "components": [
+    "corrugated_panel",
+    "bay_window_box",
+    "balcony_timber_covered",
+    "funicular",
+    "stair_cut",
+    "mural_panel",
+    "lights_festoon",
+    "sign_board",
+    "laundry_line"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "lightbox",
+     "neon_script",
+     "lantern_string"
+    ],
+    "density": 0.5,
+    "palette": [
+     "#ffcf5a",
+     "#ff5a5a",
+     "#5ad7ff"
+    ],
+    "animation": [
+     "steady",
+     "chase"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#79b8ff",
+     "#ff7ab6"
+    ],
+    "motifs": [
+     "bowl_of_windows",
+     "stair_bulbs",
+     "ascensor_lamps"
+    ]
+   },
+   "floor_plan": "C-P11 cerro with ascensor (plans/c_plans.md)",
+   "fantasy": "an amphitheatre of tin in ship paint; funicular cars creeping up a lit hillside",
+   "stream": "c"
+  },
+  {
+   "id": "infilled_frame",
+   "name": "Infilled Frame",
+   "sources": [
+    "Torre David, Caracas"
+   ],
+   "refs": [
+    {
+     "title": "Urban-Think Tank: Torre David",
+     "url": "https://urban-thinktank-hk.ch/utt-archive/publication/torre-david-informal-vertical-communities/"
+    },
+    {
+     "title": "Daily Beast: inside the Tower of David",
+     "url": "https://thedailybeast.com/inside-the-tower-of-david-venezuelas-vertical-slum"
+    }
+   ],
+   "typology": "vertical_village",
+   "massing": {
+    "storeys": [
+     6,
+     12
+    ],
+    "footprint_m": [
+     [
+      20,
+      30
+     ],
+     [
+      20,
+      30
+     ]
+    ],
+    "stack": "pile",
+    "stack_rules": "a big concrete skeleton (6 m grid) whose every bay is filled differently by its occupants (brick, tin, glass or left open as a terrace, any colour); a helical cart/bike RAMP tower on one side; market hall below, shops/gym/chapel, homes above",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": true
+   },
+   "roof": [
+    "rooftop_shack",
+    "flat_terrace",
+    "rooftop_billboard"
+   ],
+   "walls": {
+    "materials": [
+     "concrete_frame",
+     "mixed_infill"
+    ],
+    "palette": [
+     "#9b9a94",
+     "#b5643f",
+     "#2a7fc4",
+     "#e0332e",
+     "#f2efe6"
+    ]
+   },
+   "openings": [
+    "window_strip",
+    "balcony_cantilever"
+   ],
+   "components": [
+    "frame_bay",
+    "frame_infill",
+    "ramp_helix",
+    "stair_core_open",
+    "rooftop_shack",
+    "lights_festoon",
+    "rooftop_letters",
+    "sign_board",
+    "laundry_line",
+    "skybridge"
+   ],
+   "ground": "market_hall",
+   "signage": {
+    "kinds": [
+     "lightbox",
+     "dot_matrix",
+     "rooftop_billboard",
+     "lantern_string"
+    ],
+    "density": 0.7,
+    "palette": [
+     "#ffe066",
+     "#ff5f5f",
+     "#5fe0ff",
+     "#b06bff"
+    ],
+    "animation": [
+     "scroll",
+     "flash",
+     "steady"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb86b",
+     "#6bd3ff",
+     "#ff6bd3"
+    ],
+    "motifs": [
+     "bay_mosaic_glow",
+     "ramp_light_spiral",
+     "billboard"
+    ]
+   },
+   "floor_plan": "C-P12 infilled frame (plans/c_plans.md)",
+   "fantasy": "a lantern-tower of a hundred mismatched rooms; carts spiral up the ramp at night like a stream of lights",
+   "stream": "c"
+  },
+  {
+   "id": "false_fronts",
+   "name": "False Fronts",
+   "sources": [
+    "Dawson City (Yukon)",
+    "Skagway",
+    "Gastown/Granville (Vancouver) neon"
+   ],
+   "refs": [
+    {
+     "title": "Historic Places: Yukon Hotel (false front)",
+     "url": "https://www.historicplaces.ca/en/rep-reg/place-lieu.aspx?id=9163"
+    },
+    {
+     "title": "Parks Canada: Winaut's Store",
+     "url": "https://www.pc.gc.ca/apps/dfhd/page_fhbro_eng.aspx?id=2934"
+    },
+    {
+     "title": "Burnaby Now: Vancouver's neon",
+     "url": "https://burnabynow.com/local-news/the-historic-past-of-some-of-metro-vancouvers-last-standing-neon-signs-3098854"
+    }
+   ],
+   "typology": "boomtown_row",
+   "massing": {
+    "storeys": [
+     1,
+     3
+    ],
+    "footprint_m": [
+     [
+      6,
+      12
+     ],
+     [
+      9,
+      20
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "1-2 storey gable-roofed timber shops gable to the street, each hidden behind a flat FALSE FRONT 1-3 m above the ridge: the front is the sign; boardwalks under shed awnings; the island's main road becomes a neon strip",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "steep_gable",
+    "false_front_parapet"
+   ],
+   "walls": {
+    "materials": [
+     "timber_board",
+     "paint"
+    ],
+    "palette": [
+     "#8a2e22",
+     "#ede1c4",
+     "#c9a03a",
+     "#4c5a63",
+     "#1f1f1f"
+    ]
+   },
+   "openings": [
+    "shopfront_shutter",
+    "window_tall_sash"
+   ],
+   "components": [
+    "false_front",
+    "cornice_bracketed",
+    "boardwalk_awning",
+    "sign_board",
+    "sign_blade",
+    "neon_outline",
+    "name_letters",
+    "lantern"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "neon_script",
+     "neon_blade",
+     "brass_letters"
+    ],
+    "density": 0.95,
+    "palette": [
+     "#ff3355",
+     "#33ddff",
+     "#ffe14d",
+     "#7dff4d"
+    ],
+    "animation": [
+     "chase",
+     "flash",
+     "flicker",
+     "steady"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ff9f43",
+     "#ff4f81",
+     "#4fd8ff"
+    ],
+    "motifs": [
+     "neon_strip",
+     "false_front_floods",
+     "boardwalk_lamps"
+    ]
+   },
+   "floor_plan": "C-P13 false-front row (plans/c_plans.md)",
+   "fantasy": "a Klondike main street turned Granville neon: every shop a billboard",
+   "stream": "c"
+  },
+  {
+   "id": "kulle_galleries",
+   "name": "Kulle Galleries",
+   "sources": [
+    "Gjirokaster and Berat (Albania)",
+    "Plovdiv (Bulgaria)",
+    "Mostar"
+   ],
+   "refs": [
+    {
+     "title": "Tower houses in the Balkans (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Tower_houses_in_the_Balkans"
+    },
+    {
+     "title": "Albania Travel Guide: Mangalem",
+     "url": "https://www.albaniatravelguide.net/berat/mangalem"
+    },
+    {
+     "title": "Old Town Plovdiv (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Old_Town_(Plovdiv)"
+    }
+   ],
+   "typology": "tower_house",
+   "massing": {
+    "storeys": [
+     3,
+     5
+    ],
+    "footprint_m": [
+     [
+      9,
+      10
+     ],
+     [
+      11,
+      13
+     ]
+    ],
+    "stack": "overhang",
+    "stack_rules": "a stone base of 2 storeys (storage, cistern, kitchen) under 1-2 timber storeys that oversail it 0.5-0.8 on brackets, ringed by a glazed gallery: a window wall; hipped stone-slab roofs with wide eaves; stacked down a slope so the window walls read as one ('thousand windows')",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "hipped_slab",
+    "wide_eave"
+   ],
+   "walls": {
+    "materials": [
+     "skystone_ashlar",
+     "timber_gallery",
+     "stone_slab"
+    ],
+    "palette": [
+     "#f1ece2",
+     "#5a3b26",
+     "#8b8a85",
+     "#3c6fa8",
+     "#d39b3a",
+     "#a8402f"
+    ]
+   },
+   "openings": [
+    "window_wall",
+    "shutters",
+    "bay_window_box"
+   ],
+   "components": [
+    "window_wall_gallery",
+    "bracket_corbel",
+    "stone_slab_roof",
+    "painted_motif",
+    "lantern_wall",
+    "sign_board",
+    "lights_outline"
+   ],
+   "ground": "workshops",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "lantern_string",
+     "brass_letters"
+    ],
+    "density": 0.35,
+    "palette": [
+     "#ffd99a",
+     "#ff9a5a"
+    ],
+    "animation": [
+     "steady",
+     "flicker"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffcb7a",
+     "#ffe2b0"
+    ],
+    "motifs": [
+     "window_wall_glow",
+     "eave_lanterns"
+    ]
+   },
+   "floor_plan": "C-P14 kulle/gallery (plans/c_plans.md)",
+   "fantasy": "upside-down wedding cakes: each floor bigger than the last, their window walls lit like lanterns",
+   "stream": "c"
+  },
+  {
+   "id": "spiral_high_street",
+   "name": "Spiral High Street",
+   "sources": [
+    "Mont-Saint-Michel",
+    "Rocamadour",
+    "Mdina and Valletta",
+    "Kotor"
+   ],
+   "refs": [
+    {
+     "title": "Le Mont-Saint-Michel: the mount",
+     "url": "https://www.le-mont-saint-michel.com/en/discover/the-mount/"
+    },
+    {
+     "title": "Gallarija (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Gallarija"
+    }
+   ],
+   "typology": "fortress_hill",
+   "massing": {
+    "storeys": [
+     3,
+     4
+    ],
+    "footprint_m": [
+     [
+      6,
+      10
+     ],
+     [
+      8,
+      12
+     ]
+    ],
+    "stack": "setback",
+    "stack_rules": "one high street spirals 1-1.5 turns up the island's central hill through 2-3 gatehouses; 3-4 storey stone houses tiered both sides (each row's roofs below the next row's doors), enclosed timber balconies (gallarija) on corbels; the clan hall at the summit",
+    "skybridges": true,
+    "courtyard": true,
+    "lightwell": false
+   },
+   "roof": [
+    "steep_gable",
+    "flat_terrace",
+    "tower_square"
+   ],
+   "walls": {
+    "materials": [
+     "skystone_ashlar",
+     "timber",
+     "slate"
+    ],
+    "palette": [
+     "#b9ad98",
+     "#7d7466",
+     "#2f6e4f",
+     "#a63d2f",
+     "#f0e9da"
+    ]
+   },
+   "openings": [
+    "galeria_glazed",
+    "window_small",
+    "arch_opening"
+   ],
+   "components": [
+    "galeria_glazed",
+    "bracket_corbel",
+    "gate_portal",
+    "tower_square",
+    "stair_cut",
+    "sign_blade",
+    "lantern",
+    "luminarie_arch",
+    "planter"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "brass_letters",
+     "neon_blade",
+     "lantern_string",
+     "luminarie"
+    ],
+    "density": 0.65,
+    "palette": [
+     "#ffd27a",
+     "#ff6b4a",
+     "#7ae0ff"
+    ],
+    "animation": [
+     "steady",
+     "chase"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffc06b",
+     "#6bc4ff",
+     "#ff7aa8"
+    ],
+    "motifs": [
+     "gate_luminarie",
+     "gallarija_glow",
+     "summit_floodlight"
+    ]
+   },
+   "floor_plan": "C-P15 spiral high street (plans/c_plans.md)",
+   "fantasy": "Minas Tirith on a raft: gates, tiers and a lit summit seen across the station",
+   "stream": "c"
+  },
+  {
+   "id": "patchwork_conventillo",
+   "name": "Patchwork Conventillos",
+   "sources": [
+    "La Boca and Caminito, Buenos Aires"
+   ],
+   "refs": [
+    {
+     "title": "Amusing Planet: La Boca",
+     "url": "https://www.amusingplanet.com/2016/10/la-boca-buenos-aires-colorful-district.html"
+    }
+   ],
+   "typology": "courtyard_tenement",
+   "massing": {
+    "storeys": [
+     2,
+     3
+    ],
+    "footprint_m": [
+     [
+      10,
+      14
+     ],
+     [
+      20,
+      30
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "patio tenements: rooms let a family a room on 2-3 galleried floors round a long courtyard, timber and corrugated tin, every board and sheet a different leftover colour (the patchwork is the motif); balconies with painted figures",
+    "skybridges": false,
+    "courtyard": true,
+    "lightwell": true
+   },
+   "roof": [
+    "tin_roof_low",
+    "flat_terrace"
+   ],
+   "walls": {
+    "materials": [
+     "corrugated_tin",
+     "timber_board",
+     "paint_patchwork"
+    ],
+    "palette": [
+     "#e63b2e",
+     "#f4c430",
+     "#2d6fb5",
+     "#3ea55f",
+     "#f08c3a",
+     "#8e44ad",
+     "#1f1f1f"
+    ]
+   },
+   "openings": [
+    "window_tall_sash",
+    "shutters",
+    "balcony_iron"
+   ],
+   "components": [
+    "corrugated_panel",
+    "gallery_iron",
+    "balcony_iron",
+    "stair_steel_external",
+    "mural_panel",
+    "lights_festoon",
+    "sign_board",
+    "painted_motif"
+   ],
+   "ground": "cafes",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "neon_script",
+     "lantern_string"
+    ],
+    "density": 0.55,
+    "palette": [
+     "#ff5a3c",
+     "#ffd23f",
+     "#4aa8ff"
+    ],
+    "animation": [
+     "steady",
+     "flicker"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ff8a5c",
+     "#ffd36b",
+     "#6bc1ff"
+    ],
+    "motifs": [
+     "patio_bulbs",
+     "patchwork_floods"
+    ]
+   },
+   "floor_plan": "C-P7 variant: conventillo (patio, galleries) -- see A/B courtyard plans",
+   "fantasy": "tango under bulb strings in a patchwork courtyard",
+   "stream": "c"
+  },
+  {
+   "id": "canyon_grid",
+   "name": "Canyon Grid",
+   "sources": [
+    "Quartieri Spagnoli (Naples)",
+    "Genoa's caruggi"
+   ],
+   "refs": [
+    {
+     "title": "Quartieri Spagnoli (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Quartieri_Spagnoli"
+    },
+    {
+     "title": "Napoli Sotterranea: the bassi",
+     "url": "https://www.napolisotterranea.org/en/?p=1324"
+    },
+    {
+     "title": "The vertical labyrinth: Genoa's carruggi",
+     "url": "https://blog.indiecinema.co/carruggi-genoa/"
+    }
+   ],
+   "typology": "canyon_block",
+   "massing": {
+    "storeys": [
+     5,
+     8
+    ],
+    "footprint_m": [
+     [
+      10,
+      20
+     ],
+     [
+      12,
+      24
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "a strict grid of 2.5-3 m lanes between 5-8 storey stucco blocks (height:width up to 10:1); a BASSO (one-room shop or home, door open on the lane) at every ground door; washing and sign strings cross every lane; trompe-l'oeil painted windows on blank walls; lit shrines in niches",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": true
+   },
+   "roof": [
+    "flat_terrace",
+    "altana_deck",
+    "water_tank"
+   ],
+   "walls": {
+    "materials": [
+     "stucco",
+     "skystone_ashlar"
+    ],
+    "palette": [
+     "#d9a441",
+     "#c46a3c",
+     "#9e3b2b",
+     "#e59a7a",
+     "#4f6b4a"
+    ]
+   },
+   "openings": [
+    "window_tall_sash",
+    "shutters",
+    "balcony_iron"
+   ],
+   "components": [
+    "basso_door",
+    "balcony_iron",
+    "shutters",
+    "laundry_line",
+    "wall_shrine",
+    "trompe_loeil_panel",
+    "sign_blade",
+    "lights_festoon",
+    "luminarie_arch",
+    "wire_bundle",
+    "altana_deck"
+   ],
+   "ground": "bassi",
+   "signage": {
+    "kinds": [
+     "neon_blade",
+     "lightbox",
+     "painted_board",
+     "luminarie"
+    ],
+    "density": 0.8,
+    "palette": [
+     "#ff4a6b",
+     "#ffd24a",
+     "#4af0ff",
+     "#ffffff"
+    ],
+    "animation": [
+     "flash",
+     "chase",
+     "steady"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb25c",
+     "#ff6ba1",
+     "#6bdcff"
+    ],
+    "motifs": [
+     "shrine_glow",
+     "luminarie_arches",
+     "bassi_doors_lit"
+    ]
+   },
+   "floor_plan": "A/B canyon plans + C-P1 arcade (no dedicated C plan: a block grid of 12x16 courts with 2.5 m lanes)",
+   "fantasy": "a ten-to-one canyon: luminarie arches stacked up the slot of sky between the walls",
+   "stream": "c"
+  },
+  {
+   "id": "cliff_town",
+   "name": "Cliff Town",
+   "sources": [
+    "Quebec City Upper and Lower Town",
+    "St. John's Jellybean Row",
+    "Lunenburg"
+   ],
+   "refs": [
+    {
+     "title": "Quebec City stairways",
+     "url": "https://www.quebec-cite.com/en/quebec-city/staircases"
+    },
+    {
+     "title": "Urban Guide Quebec: Breakneck Stairs",
+     "url": "https://urbanguidequebec.com/escalier-casse-cou-breakneck-steps/"
+    },
+    {
+     "title": "NL Tourism: the Jelly Bean palette",
+     "url": "https://newfoundlandlabrador.com/trip-ideas/travel-stories/the-jelly-bean-palette"
+    }
+   ],
+   "typology": "two_level_town",
+   "massing": {
+    "storeys": [
+     2,
+     4
+    ],
+    "footprint_m": [
+     [
+      6,
+      8
+     ],
+     [
+      9,
+      12
+     ]
+    ],
+    "stack": "setback",
+    "stack_rules": "a lower town on a shelf under the island's central rise and an upper town on its summit, linked by a BREAKNECK stair and a funicular; stone houses with steep tin roofs and dormer rows, firewalls with roof ladders; jellybean clapboard rows step up the slope; Lunenburg bump dormers",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "steep_tin_roof",
+    "dormer_row",
+    "dormer_bump",
+    "firewall_ladder"
+   ],
+   "walls": {
+    "materials": [
+     "fieldstone",
+     "clapboard",
+     "tin_roof"
+    ],
+    "palette": [
+     "#8c8780",
+     "#efece4",
+     "#a33a2b",
+     "#4a6e58",
+     "#c23b33",
+     "#1f8a8a",
+     "#f2c230",
+     "#6d3a7e"
+    ]
+   },
+   "openings": [
+    "window_small",
+    "shutters",
+    "door_room"
+   ],
+   "components": [
+    "dormer_row",
+    "dormer_bump",
+    "firewall_ladder",
+    "clapboard_panel",
+    "stair_cut",
+    "funicular",
+    "sign_blade",
+    "lights_festoon",
+    "lantern",
+    "planter"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "brass_letters",
+     "lightbox",
+     "lantern_string",
+     "neon_script"
+    ],
+    "density": 0.6,
+    "palette": [
+     "#ffd27a",
+     "#ff4d4d",
+     "#4dffb8",
+     "#ffffff"
+    ],
+    "animation": [
+     "steady",
+     "chase"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffcf80",
+     "#ff6b6b",
+     "#7ad0ff"
+    ],
+    "motifs": [
+     "winter_string_lights",
+     "dormer_lamps",
+     "stair_lights"
+    ]
+   },
+   "floor_plan": "C-P15/C-P11 (summit + stair + funicular) with jellybean rows",
+   "fantasy": "the closest real 'Christmas tree': steep snowy roofs, every eave wound with lights",
+   "stream": "c"
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "id": "SKY-patchwork_conventillo-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 39.4,
+  "d": 24.2
+ },
+ "traits": {
+  "style": "patchwork_conventillo",
+  "arch": "pile",
+  "model_kind": "tall",
+  "storeys": 4,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     7.4,
+     -1.0,
+     16.9,
+     10.0
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -2.1,
+     0.5,
+     7.4,
+     10.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -0.6,
+     -9.0,
+     7.4,
+     0.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -10.6,
+     -2.0,
+     -2.1,
+     9.0
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -10.1,
+     -11.5,
+     -2.1,
+     -2.0
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   },
+   {
+    "name": "B5",
+    "rect": [
+     -19.1,
+     0.0,
+     -10.6,
+     9.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 5
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "balcony",
+   "gallery",
+   "shutters",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#f4c430",
+    "#2d6fb5",
+    "#3ea55f"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#1f1f1f",
+   "canvas": "#ffd23f",
+   "tile": "#4aa8ff"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "neon",
+    "chochin"
+   ],
+   "density": 0.55
+  },
+  "mood": "#ffd36b",
+  "shops": [
+   {
+    "kind": "diner"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "ice_cream"
+   },
+   {
+    "kind": "diner"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "ice_cream"
+   },
+   {
+    "kind": "diner"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "ice_cream"
+   },
+   {
+    "kind": "diner"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "ice_cream"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "patchwork_conventillo",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Patchwork Conventillos style: a shared model"
+}

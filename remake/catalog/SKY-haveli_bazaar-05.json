@@ -1,0 +1,201 @@
+{
+ "id": "SKY-haveli_bazaar-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 22.2
+ },
+ "traits": {
+  "style": "haveli_bazaar",
+  "arch": "court",
+  "model_kind": "landmark",
+  "storeys": 8,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -0.5,
+     11.9,
+     9.5
+    ],
+    "storeys": 8,
+    "plan": "tower",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     2.9,
+     -10.5,
+     11.9,
+     -0.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     0.0,
+     2.9,
+     9.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.1,
+     -0.5,
+     -5.1,
+     9.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -14.1,
+     -10.5,
+     -5.1,
+     -0.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "shutters",
+   "screen",
+   "parapet_screen",
+   "eyebrow",
+   "arch",
+   "chhatri",
+   "shacks",
+   "tanks",
+   "awnings",
+   "lanterns",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "dome",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "pointed",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#7a3b2e",
+    "#efe6d2",
+    "#d9c27e"
+   ],
+   "trim": "#efe6d2",
+   "accent": "#ff3b3b",
+   "canvas": "#7dff4a",
+   "tile": "#ff3b3b"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "neon",
+    "dotmatrix",
+    "blade"
+   ],
+   "density": 0.85
+  },
+  "mood": "#ff5080",
+  "shops": [
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "haveli_bazaar",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Haveli Bazaar style: a shared model"
+}

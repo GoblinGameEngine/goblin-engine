@@ -1,0 +1,180 @@
+{
+ "id": "SKY-box_pile-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 21.7
+ },
+ "traits": {
+  "style": "box_pile",
+  "arch": "pile",
+  "model_kind": "home",
+  "storeys": 9,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.65,
+     -2.25,
+     11.65,
+     8.25
+    ],
+    "storeys": 9,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -0.75,
+     3.65,
+     9.25
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -4.35,
+     -10.25,
+     3.65,
+     -0.75
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.85,
+     -2.75,
+     -5.35,
+     7.75
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "dome",
+   "pergola",
+   "planter",
+   "lanterns",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "capsule",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#cfc9bd",
+    "#a8a297",
+    "#3e4a52"
+   ],
+   "trim": "#e8e4dc",
+   "accent": "#3e4a52",
+   "canvas": "#7af0ff",
+   "tile": "#ff7ae0"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "dotmatrix",
+    "billboard"
+   ],
+   "density": 0.35
+  },
+  "mood": "#9fd8ff",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "box_pile",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island home in the Box Pile style: a shared model"
+}

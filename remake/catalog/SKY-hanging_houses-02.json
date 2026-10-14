@@ -1,0 +1,179 @@
+{
+ "id": "SKY-hanging_houses-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 21.7
+ },
+ "traits": {
+  "style": "hanging_houses",
+  "arch": "tower_cluster",
+  "model_kind": "tall",
+  "storeys": 6,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.65,
+     -2.25,
+     11.65,
+     8.25
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -0.75,
+     3.65,
+     9.25
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -4.35,
+     -10.25,
+     3.65,
+     -0.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.85,
+     -2.75,
+     -5.35,
+     7.75
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "shutters",
+   "bands",
+   "pergola",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#6b3f22",
+    "#a0703f",
+    "#3a5a6b"
+   ],
+   "trim": "#d9cdb4",
+   "accent": "#6b3f22",
+   "canvas": "#ffd890",
+   "tile": "#ffd890"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin"
+   ],
+   "density": 0.3
+  },
+  "mood": "#ffcf8a",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "hanging_houses",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 6,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Hanging Houses style: a shared model"
+}

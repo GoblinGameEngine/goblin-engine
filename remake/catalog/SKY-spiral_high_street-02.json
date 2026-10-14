@@ -1,0 +1,179 @@
+{
+ "id": "SKY-spiral_high_street-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 27.9,
+  "d": 21.2
+ },
+ "traits": {
+  "style": "spiral_high_street",
+  "arch": "tower_cluster",
+  "model_kind": "tall",
+  "storeys": 5,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.15,
+     -2.5,
+     11.15,
+     8.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -0.5,
+     3.15,
+     9.0
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -4.85,
+     -10.0,
+     3.15,
+     -0.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.35,
+     -3.0,
+     -5.35,
+     7.0
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "arch",
+   "tower",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#7d7466",
+    "#2f6e4f",
+    "#a63d2f"
+   ],
+   "trim": "#f0e9da",
+   "accent": "#2f6e4f",
+   "canvas": "#ff6b4a",
+   "tile": "#7ae0ff"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "blade",
+    "chochin"
+   ],
+   "density": 0.65
+  },
+  "mood": "#6bc4ff",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "spiral_high_street",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Spiral High Street style: a shared model"
+}

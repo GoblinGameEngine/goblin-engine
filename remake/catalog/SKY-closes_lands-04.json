@@ -1,0 +1,132 @@
+{
+ "id": "SKY-closes_lands-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 30.4,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "closes_lands",
+  "arch": "tower_cluster",
+  "model_kind": "hall",
+  "storeys": 11,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.9,
+     -6.0,
+     12.4,
+     4.5
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -14.6,
+     -7.5,
+     3.9,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bay",
+   "gallery",
+   "shutters",
+   "gable_front",
+   "laundry",
+   "pergola",
+   "chimneys",
+   "lanterns",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#c9a66b",
+    "#3b4148",
+    "#6e6457"
+   ],
+   "trim": "#d8cfbf",
+   "accent": "#3d3a36",
+   "canvas": "#f4e9d0",
+   "tile": "#ffcf7a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "blade",
+    "brass",
+    "chochin"
+   ],
+   "density": 0.6
+  },
+  "mood": "#ffb867",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "closes_lands",
+  "model": "hall",
+  "use": "market",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Closes and Lands style: a shared model"
+}

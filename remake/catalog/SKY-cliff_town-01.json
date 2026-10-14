@@ -1,0 +1,164 @@
+{
+ "id": "SKY-cliff_town-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "cliff_town",
+  "arch": "gable_row",
+  "model_kind": "home",
+  "storeys": 4,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.15,
+     -7.0,
+     11.65,
+     6.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -4.85,
+     -7.0,
+     3.15,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -13.85,
+     -7.5,
+     -4.85,
+     6.0
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "shutters",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#8c8780",
+    "#efece4",
+    "#a33a2b"
+   ],
+   "trim": "#efece4",
+   "accent": "#a33a2b",
+   "canvas": "#ffd27a",
+   "tile": "#ff4d4d"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "lightbox",
+    "chochin",
+    "neon"
+   ],
+   "density": 0.6
+  },
+  "mood": "#ffcf80",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "cliff_town",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island home in the Cliff Town style: a shared model"
+}

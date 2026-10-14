@@ -102,8 +102,16 @@ func pos(i: int) -> Vector2:
 
 
 func transform(i: int) -> Transform3D:
-	var p := pos(i)
-	return Transform3D(StationGeo.basis(p.x), StationGeo.point(p.x, p.y, raft_of(i).h))
+	## A lone island lies level on its own patch of the cylinder.  A raft is lashed rigid: its islands share the frame
+	## of its root (one flat plane), so the bridges between them meet level, nose to nose (on separate curved frames a
+	## big island and a small one were up to a metre apart where their bridges met, and tilted).
+	var r := raft_of(i)
+	if r.members.size() == 1:
+		var p := pos(i)
+		return Transform3D(StationGeo.basis(p.x), StationGeo.point(p.x, p.y, r.h))
+	var off: Vector2 = islands[i].off
+	var root := Transform3D(StationGeo.basis(r.s), StationGeo.point(r.s, r.x, r.h))
+	return root * Transform3D(Basis(), Vector3(off.y, 0.0, -off.x))     # (local X south, -Z east)
 
 
 func altitude(i: int) -> float:

@@ -1,0 +1,1170 @@
+{
+ "stream": "c",
+ "version": 1,
+ "count": 87,
+ "components": [
+  {
+   "id": "altana_deck",
+   "description": "timber roof deck on posts over a pitched or flat roof, rail, short stair from the attic (roof access)",
+   "size_m": [
+    4.0,
+    1.4,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "canyon_grid",
+    "closes_lands",
+    "hoist_gables",
+    "jetty_lanes"
+   ],
+   "shared": false
+  },
+  {
+   "id": "arcade_pier",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "closes_lands"
+   ],
+   "shared": true
+  },
+  {
+   "id": "awning",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "bridge_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "balcony_iron",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "canyon_grid",
+    "patchwork_conventillo",
+    "plex_spirals"
+   ],
+   "shared": true
+  },
+  {
+   "id": "balcony_timber_covered",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "cerro_tin"
+   ],
+   "shared": true
+  },
+  {
+   "id": "ballroom_window",
+   "description": "tall double-height ballroom window bay",
+   "size_m": [
+    3.0,
+    6.5,
+    0.2
+   ],
+   "variants": [],
+   "used_by": [
+    "cholet_ballroom"
+   ],
+   "shared": false
+  },
+  {
+   "id": "basso_door",
+   "description": "ground-floor one-room shop/home with its door open onto the lane, interior lit",
+   "size_m": [
+    3.0,
+    3.2,
+    4.0
+   ],
+   "variants": [],
+   "used_by": [
+    "canyon_grid"
+   ],
+   "shared": false
+  },
+  {
+   "id": "bay_window_box",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "cerro_tin"
+   ],
+   "shared": true
+  },
+  {
+   "id": "boardwalk_awning",
+   "description": "timber boardwalk under a shed awning on posts",
+   "size_m": [
+    8.0,
+    3.0,
+    2.5
+   ],
+   "variants": [],
+   "used_by": [
+    "false_fronts"
+   ],
+   "shared": false
+  },
+  {
+   "id": "box_module",
+   "description": "Habitat box 11.7 x 5.3 x 3 with glazed end, door and roof rail (one shared part)",
+   "size_m": [
+    11.7,
+    3.0,
+    5.3
+   ],
+   "variants": [],
+   "used_by": [
+    "box_pile"
+   ],
+   "shared": false
+  },
+  {
+   "id": "bracket_corbel",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "bridge_street",
+    "jetty_lanes",
+    "kulle_galleries",
+    "spiral_high_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "ceiling_tile",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "plex_spirals"
+   ],
+   "shared": true
+  },
+  {
+   "id": "chimney_stack",
+   "description": "tall masonry chimney stack with pots (on the Aloft: vents of heat exchangers; no flame)",
+   "size_m": [
+    1.2,
+    3.0,
+    0.8
+   ],
+   "variants": [],
+   "used_by": [
+    "closes_lands"
+   ],
+   "shared": false
+  },
+  {
+   "id": "clapboard_panel",
+   "description": "painted clapboard siding (texture/trim variant of wall)",
+   "size_m": [
+    6.0,
+    3.0,
+    0.02
+   ],
+   "variants": [],
+   "used_by": [
+    "cliff_town"
+   ],
+   "shared": false
+  },
+  {
+   "id": "column_mirrored",
+   "description": "faceted mirrored column (ballroom interiors / arcades)",
+   "size_m": [
+    0.6,
+    6.5,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "cholet_ballroom"
+   ],
+   "shared": false
+  },
+  {
+   "id": "cornice_bracketed",
+   "description": "deep pressed-metal or timber cornice on brackets",
+   "size_m": [
+    7.0,
+    0.8,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "false_fronts",
+    "plex_spirals"
+   ],
+   "shared": false
+  },
+  {
+   "id": "corrugated_panel",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "cerro_tin",
+    "patchwork_conventillo"
+   ],
+   "shared": true
+  },
+  {
+   "id": "covered_corridor",
+   "description": "enclosed roofline corridor (Vasari) over a row of shops",
+   "size_m": [
+    2.4,
+    2.8,
+    10.0
+   ],
+   "variants": [],
+   "used_by": [
+    "bridge_street"
+   ],
+   "shared": false
+  },
+  {
+   "id": "crane_gable",
+   "description": "timber jib crane on a gable end over the island edge (shares the sky 'hoist' part)",
+   "size_m": [
+    1.0,
+    2.0,
+    4.0
+   ],
+   "variants": [],
+   "used_by": [
+    "gard_wharf"
+   ],
+   "shared": false
+  },
+  {
+   "id": "dome_onion",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "bridge_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "dome_skylight",
+   "description": "half-sphere glazed skylight dome on a box roof",
+   "size_m": [
+    2.5,
+    1.2,
+    2.5
+   ],
+   "variants": [],
+   "used_by": [
+    "box_pile"
+   ],
+   "shared": false
+  },
+  {
+   "id": "dome_small",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "sassi_terraces"
+   ],
+   "shared": true
+  },
+  {
+   "id": "dormer_bump",
+   "description": "Lunenburg 'bump': a five-sided dormer projecting from the roof over a bay window",
+   "size_m": [
+    2.4,
+    2.5,
+    1.4
+   ],
+   "variants": [],
+   "used_by": [
+    "cliff_town"
+   ],
+   "shared": false
+  },
+  {
+   "id": "dormer_row",
+   "description": "row of gabled dormers on a steep roof",
+   "size_m": [
+    1.4,
+    1.8,
+    1.6
+   ],
+   "variants": [],
+   "used_by": [
+    "cliff_town",
+    "jetty_lanes"
+   ],
+   "shared": false
+  },
+  {
+   "id": "false_front",
+   "description": "flat timber false front rising 1-3 m above a gable roof; square, stepped or curved top; the sign face",
+   "size_m": [
+    8.0,
+    9.0,
+    0.2
+   ],
+   "variants": [],
+   "used_by": [
+    "false_fronts"
+   ],
+   "shared": false
+  },
+  {
+   "id": "firewall_ladder",
+   "description": "firewall parapet rising between houses with a roof ladder and walkway (roof access)",
+   "size_m": [
+    0.5,
+    2.0,
+    8.0
+   ],
+   "variants": [],
+   "used_by": [
+    "cliff_town"
+   ],
+   "shared": false
+  },
+  {
+   "id": "frame_bay",
+   "description": "a concrete frame bay (columns + slab edge), 6 x 6 x 3.2",
+   "size_m": [
+    6.0,
+    3.2,
+    6.0
+   ],
+   "variants": [],
+   "used_by": [
+    "infilled_frame"
+   ],
+   "shared": false
+  },
+  {
+   "id": "frame_infill",
+   "description": "an infill panel for one structural bay: brick | tin | glass | open (variants)",
+   "size_m": [
+    6.0,
+    3.2,
+    0.2
+   ],
+   "variants": [],
+   "used_by": [
+    "infilled_frame",
+    "laje_stack"
+   ],
+   "shared": false
+  },
+  {
+   "id": "funicular",
+   "description": "funicular track + 2 cars + top/bottom stations (ascensor); or a vertical lift tower + footbridge",
+   "size_m": [
+    3.0,
+    2.5,
+    60.0
+   ],
+   "variants": [],
+   "used_by": [
+    "cerro_tin",
+    "cliff_town"
+   ],
+   "shared": false
+  },
+  {
+   "id": "gable_bell",
+   "description": "bell-shaped curved gable",
+   "size_m": [
+    6.0,
+    5.0,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "hoist_gables"
+   ],
+   "shared": false
+  },
+  {
+   "id": "gable_cornice",
+   "description": "flat cornice/spout gable crowning a narrow front",
+   "size_m": [
+    6.0,
+    1.2,
+    0.5
+   ],
+   "variants": [],
+   "used_by": [
+    "hoist_gables"
+   ],
+   "shared": false
+  },
+  {
+   "id": "gable_neck",
+   "description": "neck gable (tall central panel with scrolled shoulders)",
+   "size_m": [
+    6.0,
+    5.0,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "hoist_gables"
+   ],
+   "shared": false
+  },
+  {
+   "id": "gable_step",
+   "description": "crow-stepped gable parapet (stepped profile)",
+   "size_m": [
+    7.0,
+    5.0,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "closes_lands",
+    "hoist_gables"
+   ],
+   "shared": false
+  },
+  {
+   "id": "galeria_glazed",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "spiral_high_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "gallery_iron",
+   "description": "iron gallery/balcony running across a floor, reached by an outside stair",
+   "size_m": [
+    7.0,
+    1.1,
+    1.5
+   ],
+   "variants": [],
+   "used_by": [
+    "patchwork_conventillo",
+    "plex_spirals"
+   ],
+   "shared": false
+  },
+  {
+   "id": "gallery_timber",
+   "description": "timber gallery cantilevered off a facade at a floor",
+   "size_m": [
+    6.0,
+    1.1,
+    1.2
+   ],
+   "variants": [],
+   "used_by": [
+    "closes_lands",
+    "gard_wharf"
+   ],
+   "shared": true
+  },
+  {
+   "id": "gate_portal",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "bridge_street",
+    "spiral_high_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "geometric_panel",
+   "description": "Andean geometric facade panel (stepped crosses, zig-zags) in coloured glass",
+   "size_m": [
+    3.0,
+    3.0,
+    0.1
+   ],
+   "variants": [],
+   "used_by": [
+    "cholet_ballroom"
+   ],
+   "shared": false
+  },
+  {
+   "id": "hanging_backshop",
+   "description": "a back-shop box hung off a span on timber brackets",
+   "size_m": [
+    4.0,
+    3.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "bridge_street"
+   ],
+   "shared": false
+  },
+  {
+   "id": "hoist_beam",
+   "description": "hoist beam projecting 1.2-1.5 from a gable/roofline with hook and pulley, loading doors below",
+   "size_m": [
+    0.3,
+    0.3,
+    1.5
+   ],
+   "variants": [],
+   "used_by": [
+    "closes_lands",
+    "gard_wharf",
+    "hoist_gables",
+    "jetty_lanes"
+   ],
+   "shared": false
+  },
+  {
+   "id": "jetty_upper",
+   "description": "a jettied upper storey: bressummer + joist ends oversailing 0.4-0.6",
+   "size_m": [
+    8.0,
+    0.4,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "jetty_lanes"
+   ],
+   "shared": true
+  },
+  {
+   "id": "lantern",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "bridge_street",
+    "cliff_town",
+    "false_fronts",
+    "gard_wharf",
+    "spiral_high_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "lantern_wall",
+   "description": "wall-bracket lantern",
+   "size_m": [
+    0.3,
+    0.6,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "closes_lands",
+    "jetty_lanes",
+    "kulle_galleries",
+    "sassi_terraces"
+   ],
+   "shared": true
+  },
+  {
+   "id": "laundry_line",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "canyon_grid",
+    "cerro_tin",
+    "closes_lands",
+    "infilled_frame",
+    "laje_stack"
+   ],
+   "shared": true
+  },
+  {
+   "id": "lightbox_corner",
+   "description": "corner-shop lightbox wrapping a building corner",
+   "size_m": [
+    3.0,
+    0.8,
+    0.3
+   ],
+   "variants": [],
+   "used_by": [
+    "plex_spirals"
+   ],
+   "shared": false
+  },
+  {
+   "id": "lights_festoon",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "bridge_street",
+    "canyon_grid",
+    "cerro_tin",
+    "cliff_town",
+    "closes_lands",
+    "gard_wharf",
+    "infilled_frame",
+    "jetty_lanes",
+    "laje_stack",
+    "patchwork_conventillo",
+    "plex_spirals"
+   ],
+   "shared": true
+  },
+  {
+   "id": "lights_outline",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "box_pile",
+    "cholet_ballroom",
+    "hoist_gables",
+    "kulle_galleries"
+   ],
+   "shared": true
+  },
+  {
+   "id": "loading_door",
+   "description": "tall loading door per floor under a hoist",
+   "size_m": [
+    1.2,
+    2.2,
+    0.1
+   ],
+   "variants": [],
+   "used_by": [
+    "gard_wharf",
+    "hoist_gables"
+   ],
+   "shared": false
+  },
+  {
+   "id": "luminarie_arch",
+   "description": "Southern-Italian bulb arch/screen spanning a street (light dots on a timber/steel lattice)",
+   "size_m": [
+    6.0,
+    8.0,
+    0.3
+   ],
+   "variants": [],
+   "used_by": [
+    "bridge_street",
+    "canyon_grid",
+    "sassi_terraces",
+    "spiral_high_street"
+   ],
+   "shared": false
+  },
+  {
+   "id": "merchant_mark",
+   "description": "painted merchant's mark (house sign) on a gable board",
+   "size_m": [
+    1.0,
+    1.0,
+    0.05
+   ],
+   "variants": [],
+   "used_by": [
+    "gard_wharf"
+   ],
+   "shared": false
+  },
+  {
+   "id": "mirror_panel",
+   "description": "mirror-glass facade panel",
+   "size_m": [
+    1.5,
+    3.0,
+    0.05
+   ],
+   "variants": [],
+   "used_by": [
+    "cholet_ballroom"
+   ],
+   "shared": false
+  },
+  {
+   "id": "mural_panel",
+   "description": "a wall mural (decal-like painted panel, many variants)",
+   "size_m": [
+    6.0,
+    4.0,
+    0.02
+   ],
+   "variants": [],
+   "used_by": [
+    "cerro_tin",
+    "laje_stack",
+    "patchwork_conventillo"
+   ],
+   "shared": false
+  },
+  {
+   "id": "name_board_close",
+   "description": "small painted name board + lamp over a close mouth",
+   "size_m": [
+    1.2,
+    0.4,
+    0.05
+   ],
+   "variants": [],
+   "used_by": [
+    "closes_lands"
+   ],
+   "shared": false
+  },
+  {
+   "id": "name_letters",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "false_fronts",
+    "hoist_gables"
+   ],
+   "shared": true
+  },
+  {
+   "id": "neon_outline",
+   "description": "neon tube run outlining a facade/false front (glow anchor glow_outline_n)",
+   "size_m": [
+    8.0,
+    0.05,
+    0.05
+   ],
+   "variants": [],
+   "used_by": [
+    "false_fronts"
+   ],
+   "shared": false
+  },
+  {
+   "id": "painted_motif",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "kulle_galleries",
+    "patchwork_conventillo"
+   ],
+   "shared": true
+  },
+  {
+   "id": "pend_passage",
+   "description": "covered passage through a building's ground floor (rooms above), 2.4 high",
+   "size_m": [
+    2.0,
+    2.4,
+    6.0
+   ],
+   "variants": [],
+   "used_by": [
+    "closes_lands"
+   ],
+   "shared": false
+  },
+  {
+   "id": "plank_bridge",
+   "description": "plank footbridge with rails between two galleries across a passage",
+   "size_m": [
+    1.4,
+    1.1,
+    4.0
+   ],
+   "variants": [],
+   "used_by": [
+    "gard_wharf"
+   ],
+   "shared": false
+  },
+  {
+   "id": "planter",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "box_pile",
+    "cliff_town",
+    "hoist_gables",
+    "jetty_lanes",
+    "sassi_terraces",
+    "spiral_high_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "ramp_helix",
+   "description": "helical ramp tower for carts and bikes",
+   "size_m": [
+    12.0,
+    3.2,
+    12.0
+   ],
+   "variants": [],
+   "used_by": [
+    "infilled_frame"
+   ],
+   "shared": false
+  },
+  {
+   "id": "rebar_stubs",
+   "description": "rebar starter bars sticking up from a roof slab's column heads",
+   "size_m": [
+    0.3,
+    0.6,
+    0.3
+   ],
+   "variants": [],
+   "used_by": [
+    "laje_stack"
+   ],
+   "shared": false
+  },
+  {
+   "id": "roof_chalet",
+   "description": "small pitched-roof house set back on a flat roof (the owner's chalet)",
+   "size_m": [
+    8.0,
+    5.0,
+    10.0
+   ],
+   "variants": [],
+   "used_by": [
+    "cholet_ballroom"
+   ],
+   "shared": false
+  },
+  {
+   "id": "rooftop_letters",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "box_pile",
+    "cholet_ballroom",
+    "infilled_frame"
+   ],
+   "shared": true
+  },
+  {
+   "id": "rooftop_shack",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "infilled_frame",
+    "laje_stack"
+   ],
+   "shared": true
+  },
+  {
+   "id": "rooftop_stair_head",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "plex_spirals"
+   ],
+   "shared": true
+  },
+  {
+   "id": "shopfront_shutter",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "cholet_ballroom"
+   ],
+   "shared": true
+  },
+  {
+   "id": "shutters",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "canyon_grid"
+   ],
+   "shared": true
+  },
+  {
+   "id": "sign_blade",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "bridge_street",
+    "canyon_grid",
+    "cliff_town",
+    "closes_lands",
+    "false_fronts",
+    "jetty_lanes",
+    "spiral_high_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "sign_board",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "bridge_street",
+    "cerro_tin",
+    "cholet_ballroom",
+    "false_fronts",
+    "gard_wharf",
+    "hoist_gables",
+    "infilled_frame",
+    "kulle_galleries",
+    "laje_stack",
+    "patchwork_conventillo",
+    "plex_spirals"
+   ],
+   "shared": true
+  },
+  {
+   "id": "skybridge",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "box_pile",
+    "infilled_frame"
+   ],
+   "shared": true
+  },
+  {
+   "id": "stair_core_open",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "box_pile",
+    "infilled_frame"
+   ],
+   "shared": true
+  },
+  {
+   "id": "stair_cut",
+   "description": "straight external stair flight between levels, parapets both sides",
+   "size_m": [
+    1.4,
+    4.0,
+    6.0
+   ],
+   "variants": [],
+   "used_by": [
+    "cerro_tin",
+    "cliff_town",
+    "sassi_terraces",
+    "spiral_high_street"
+   ],
+   "shared": false
+  },
+  {
+   "id": "stair_spiral_external",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "plex_spirals"
+   ],
+   "shared": true
+  },
+  {
+   "id": "stair_steel_external",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "laje_stack",
+    "patchwork_conventillo"
+   ],
+   "shared": true
+  },
+  {
+   "id": "stone_slab_roof",
+   "description": "hipped roof of heavy stone slabs with wide eaves",
+   "size_m": [
+    11.0,
+    3.5,
+    13.0
+   ],
+   "variants": [],
+   "used_by": [
+    "kulle_galleries"
+   ],
+   "shared": false
+  },
+  {
+   "id": "terrace_parapet",
+   "description": "low parapet along a terrace path edge",
+   "size_m": [
+    3.0,
+    1.0,
+    0.25
+   ],
+   "variants": [],
+   "used_by": [
+    "sassi_terraces"
+   ],
+   "shared": false
+  },
+  {
+   "id": "terrace_rail",
+   "description": "roof-terrace rail and planter edge",
+   "size_m": [
+    5.0,
+    1.1,
+    0.2
+   ],
+   "variants": [],
+   "used_by": [
+    "box_pile"
+   ],
+   "shared": false
+  },
+  {
+   "id": "tile_panel",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "sassi_terraces"
+   ],
+   "shared": true
+  },
+  {
+   "id": "timber_band",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "jetty_lanes"
+   ],
+   "shared": true
+  },
+  {
+   "id": "tower_square",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "spiral_high_street"
+   ],
+   "shared": true
+  },
+  {
+   "id": "trompe_loeil_panel",
+   "description": "painted fake windows/balconies/quoins for blank walls (texture variants)",
+   "size_m": [
+    6.0,
+    9.0,
+    0.02
+   ],
+   "variants": [],
+   "used_by": [
+    "canyon_grid"
+   ],
+   "shared": false
+  },
+  {
+   "id": "turnpike_stair",
+   "description": "round stair tower with a spiral stair, door at the base, serving 2-6 flats a landing",
+   "size_m": [
+    3.0,
+    3.0,
+    20.0
+   ],
+   "variants": [],
+   "used_by": [
+    "closes_lands"
+   ],
+   "shared": false
+  },
+  {
+   "id": "vault_cell",
+   "description": "barrel-vaulted cell with a built facade, door and window; stackable down a slope",
+   "size_m": [
+    4.5,
+    4.0,
+    8.0
+   ],
+   "variants": [],
+   "used_by": [
+    "sassi_terraces"
+   ],
+   "shared": false
+  },
+  {
+   "id": "wall_shrine",
+   "description": "lit niche shrine on a wall (edicola) with candle-bulbs and a little canopy",
+   "size_m": [
+    0.6,
+    1.0,
+    0.25
+   ],
+   "variants": [],
+   "used_by": [
+    "canyon_grid",
+    "jetty_lanes",
+    "sassi_terraces"
+   ],
+   "shared": false
+  },
+  {
+   "id": "water_tank",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "laje_stack"
+   ],
+   "shared": true
+  },
+  {
+   "id": "window_wall_gallery",
+   "description": "timber upper storey ringed by a continuous glazed window wall on brackets",
+   "size_m": [
+    10.0,
+    3.0,
+    12.0
+   ],
+   "variants": [],
+   "used_by": [
+    "kulle_galleries"
+   ],
+   "shared": false
+  },
+  {
+   "id": "wire_bundle",
+   "description": "(shared with stream A: see components_a.json)",
+   "size_m": null,
+   "variants": [],
+   "used_by": [
+    "canyon_grid",
+    "laje_stack"
+   ],
+   "shared": true
+  }
+ ]
+}

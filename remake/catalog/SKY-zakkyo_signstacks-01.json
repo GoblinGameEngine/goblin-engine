@@ -1,0 +1,142 @@
+{
+ "id": "SKY-zakkyo_signstacks-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 20.9,
+  "d": 14.2
+ },
+ "traits": {
+  "style": "zakkyo_signstacks",
+  "arch": "tower_cluster",
+  "model_kind": "home",
+  "storeys": 9,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -0.85,
+     -4.5,
+     7.65,
+     5.5
+    ],
+    "storeys": 9,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -9.85,
+     -6.5,
+     -0.85,
+     5.0
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bands",
+   "shacks",
+   "tanks",
+   "awnings",
+   "ac",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shrine",
+   "chimney": "stack",
+   "ceiling": "batten",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e7e4dc",
+    "#b8bcc0",
+    "#6c7a83"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#6c7a83",
+   "canvas": "#ffffff",
+   "tile": "#ff2e4d"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "dotmatrix",
+    "neon",
+    "billboard",
+    "painted"
+   ],
+   "density": 0.95
+  },
+  "mood": "#ffe2b0",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "zakkyo_signstacks",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 9,
+  "homes": 0
+ },
+ "brief": "sky island home in the Zakkyo Signstacks style: a shared model"
+}

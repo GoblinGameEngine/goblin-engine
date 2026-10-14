@@ -1,0 +1,139 @@
+{
+ "id": "SKY-spiral_high_street-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 20.4,
+  "d": 13.2
+ },
+ "traits": {
+  "style": "spiral_high_street",
+  "arch": "tower_cluster",
+  "model_kind": "home",
+  "storeys": 5,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -1.1,
+     -5.5,
+     7.4,
+     5.0
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -9.6,
+     -6.0,
+     -1.1,
+     4.0
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "arch",
+   "tower",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#b9ad98",
+    "#7d7466",
+    "#2f6e4f"
+   ],
+   "trim": "#f0e9da",
+   "accent": "#2f6e4f",
+   "canvas": "#ffd27a",
+   "tile": "#ff6b4a"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "blade",
+    "chochin"
+   ],
+   "density": 0.65
+  },
+  "mood": "#ffc06b",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "spiral_high_street",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island home in the Spiral High Street style: a shared model"
+}

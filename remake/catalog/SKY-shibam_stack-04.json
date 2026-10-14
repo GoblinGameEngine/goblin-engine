@@ -1,0 +1,130 @@
+{
+ "id": "SKY-shibam_stack-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 30.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "shibam_stack",
+  "arch": "tower_cluster",
+  "model_kind": "hall",
+  "storeys": 11,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     4.15,
+     -6.0,
+     12.65,
+     4.5
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -14.85,
+     -7.5,
+     4.15,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "shutters",
+   "bands",
+   "crenel_round",
+   "shacks",
+   "laundry",
+   "lanterns",
+   "crenel",
+   "dome"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "round",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "loft",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#efe8da",
+    "#a8835c",
+    "#946f4b"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#946f4b",
+   "canvas": "#ffcf6b",
+   "tile": "#ff4f6d"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "chochin",
+    "painted"
+   ],
+   "density": 0.45
+  },
+  "mood": "#ffa65c",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "shibam_stack",
+  "model": "hall",
+  "use": "market",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Shibam Stack style: a shared model"
+}

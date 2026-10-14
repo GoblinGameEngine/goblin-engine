@@ -1,0 +1,1166 @@
+{
+ "stream": "B",
+ "version": 1,
+ "count": 94,
+ "note": "ids with shared_with_A are defined in components_a.json; B only adds its styles to used_by",
+ "components": [
+  {
+   "id": "ac_unit",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "cantilever_tenement",
+    "podium_bazaar",
+    "courtyard_canyon",
+    "zakkyo_signstacks",
+    "yokocho_lanes",
+    "retrofit_noir"
+   ]
+  },
+  {
+   "id": "alley_bar",
+   "description": "tiny 2-storey bar unit 3 x 4.5 with a counter and a steep stair",
+   "size_m": [
+    3.0,
+    6.0,
+    4.5
+   ],
+   "variants": [
+    "timber",
+    "tin"
+   ],
+   "used_by": [
+    "yokocho_lanes"
+   ]
+  },
+  {
+   "id": "antenna",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "cantilever_tenement",
+    "courtyard_canyon",
+    "capsule_skybox",
+    "retrofit_noir"
+   ]
+  },
+  {
+   "id": "arcade_pier",
+   "shared_with_A": true,
+   "used_by": [
+    "tong_lau_arcade",
+    "podium_bazaar"
+   ]
+  },
+  {
+   "id": "arch_opening",
+   "shared_with_A": true,
+   "used_by": [
+    "garden_terraces"
+   ]
+  },
+  {
+   "id": "balcony_band",
+   "description": "continuous balcony slab and rail along a facade (danchi)",
+   "size_m": [
+    3.0,
+    1.1
+   ],
+   "variants": [],
+   "used_by": [
+    "danchi_terraces"
+   ]
+  },
+  {
+   "id": "balcony_cage",
+   "description": "steel-bar cage enclosing a balcony or window bay (Kowloon); 1-3 bays",
+   "size_m": [
+    1.2,
+    1.4,
+    1.0
+   ],
+   "variants": [
+    "full",
+    "half",
+    "rusted"
+   ],
+   "used_by": [
+    "kowloon_warren",
+    "cantilever_tenement"
+   ]
+  },
+  {
+   "id": "balcony_iron",
+   "shared_with_A": true,
+   "used_by": [
+    "tong_lau_arcade"
+   ]
+  },
+  {
+   "id": "balcony_timber_covered",
+   "shared_with_A": true,
+   "used_by": [
+    "junk_castle"
+   ]
+  },
+  {
+   "id": "bamboo_scaffold",
+   "description": "bamboo scaffold grid with green or blue netting (a building under repair)",
+   "size_m": [
+    3.0,
+    3.0
+   ],
+   "variants": [
+    "bare",
+    "netted"
+   ],
+   "used_by": [
+    "cantilever_tenement"
+   ]
+  },
+  {
+   "id": "batten_ceiling",
+   "description": "sao-buchi batten ceiling module",
+   "size_m": [
+    0.455,
+    0.9
+   ],
+   "variants": [],
+   "used_by": [
+    "machiya_lattice"
+   ]
+  },
+  {
+   "id": "bay_window_box",
+   "shared_with_A": true,
+   "used_by": [
+    "cantilever_tenement",
+    "courtyard_canyon",
+    "junk_castle"
+   ]
+  },
+  {
+   "id": "bell_tower",
+   "shared_with_A": true,
+   "used_by": [
+    "tulou_ring",
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "brass_letters_set",
+   "description": "halo-lit separate letters on a facade (text at runtime)",
+   "size_m": [
+    3.0,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "junk_castle",
+    "exposition_fair",
+    "lamp_city"
+   ]
+  },
+  {
+   "id": "bunting",
+   "description": "cloth pennant line between anchors",
+   "size_m": [
+    6.0,
+    0.4
+   ],
+   "variants": [
+    "triangles",
+    "flags"
+   ],
+   "used_by": [
+    "exposition_fair",
+    "hangar_quarter",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "cable_tray",
+   "description": "cable tray and conduits on a facade",
+   "size_m": [
+    3.0,
+    0.15
+   ],
+   "variants": [],
+   "used_by": [
+    "retrofit_noir"
+   ]
+  },
+  {
+   "id": "cantilever_beam",
+   "description": "timber beams driven into the rim rock carrying a room or gallery over the void",
+   "size_m": [
+    0.3,
+    0.3,
+    4.0
+   ],
+   "variants": [],
+   "used_by": [
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "capsule_box",
+   "description": "2.5 x 2.5 x 4 m skybox home bolted to a core, porthole at the end",
+   "size_m": [
+    2.5,
+    2.5,
+    4.0
+   ],
+   "variants": [
+    "plain",
+    "ribbed",
+    "patched"
+   ],
+   "used_by": [
+    "capsule_skybox"
+   ]
+  },
+  {
+   "id": "ceiling_tile",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "tong_lau_arcade",
+    "podium_bazaar",
+    "zakkyo_signstacks",
+    "yokocho_lanes",
+    "machiya_lattice",
+    "bathhouse_tiers",
+    "exposition_fair",
+    "lamp_city"
+   ]
+  },
+  {
+   "id": "coffered_ceiling",
+   "description": "goutenjou coffered ceiling module 0.9 x 0.9",
+   "size_m": [
+    0.9,
+    0.9
+   ],
+   "variants": [
+    "plain",
+    "lattice"
+   ],
+   "used_by": [
+    "bathhouse_tiers"
+   ]
+  },
+  {
+   "id": "column_round",
+   "description": "round column with base and capital",
+   "size_m": [
+    0.5,
+    3.5
+   ],
+   "variants": [
+    "doric",
+    "plain"
+   ],
+   "used_by": [
+    "exposition_fair"
+   ]
+  },
+  {
+   "id": "cornice",
+   "description": "classical cornice run",
+   "size_m": [
+    3.0,
+    0.5
+   ],
+   "variants": [],
+   "used_by": [
+    "exposition_fair"
+   ]
+  },
+  {
+   "id": "corrugated_panel",
+   "shared_with_A": true,
+   "used_by": [
+    "yokocho_lanes",
+    "hangar_quarter",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "covered_alley",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren"
+   ]
+  },
+  {
+   "id": "directory_board",
+   "description": "backlit tenant directory, one row per tenant",
+   "size_m": [
+    0.8,
+    1.6
+   ],
+   "variants": [
+    "wall",
+    "pillar_wrap"
+   ],
+   "used_by": [
+    "podium_bazaar",
+    "zakkyo_signstacks"
+   ]
+  },
+  {
+   "id": "dome_small",
+   "shared_with_A": true,
+   "used_by": [
+    "garden_terraces",
+    "exposition_fair"
+   ]
+  },
+  {
+   "id": "dot_matrix_board",
+   "description": "canon LCD/LED moving-message board, 7-pixel characters",
+   "size_m": [
+    2.0,
+    0.3
+   ],
+   "variants": [
+    "band",
+    "panel",
+    "projecting"
+   ],
+   "used_by": [
+    "podium_bazaar",
+    "zakkyo_signstacks",
+    "capsule_skybox",
+    "retrofit_noir"
+   ]
+  },
+  {
+   "id": "eave_bulbs",
+   "description": "bulb line along an eave or ring (instanced)",
+   "size_m": [
+    1.0,
+    0.1
+   ],
+   "variants": [],
+   "used_by": [
+    "tulou_ring",
+    "bathhouse_tiers",
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "eave_stack",
+   "description": "one storey's pagoda eave ring (scaled per storey) with brackets",
+   "size_m": [
+    10.0,
+    1.2
+   ],
+   "variants": [
+    "upturned",
+    "straight",
+    "double"
+   ],
+   "used_by": [
+    "bathhouse_tiers",
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "fluoro_tube",
+   "description": "bare fluorescent tube fitting (emissive) for alleys and stairs",
+   "size_m": [
+    1.2,
+    0.05
+   ],
+   "variants": [
+    "single",
+    "twin"
+   ],
+   "used_by": [
+    "kowloon_warren"
+   ]
+  },
+  {
+   "id": "french_window",
+   "description": "tall double casement opening onto a verandah",
+   "size_m": [
+    1.2,
+    2.4
+   ],
+   "variants": [
+    "shuttered",
+    "glazed"
+   ],
+   "used_by": [
+    "tong_lau_arcade"
+   ]
+  },
+  {
+   "id": "gallery_rail",
+   "shared_with_A": true,
+   "used_by": [
+    "capsule_skybox",
+    "danchi_terraces",
+    "tulou_ring",
+    "bathhouse_tiers",
+    "garden_terraces",
+    "lamp_city",
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "gantry_crane",
+   "description": "light gantry crane over a hangar or yard",
+   "size_m": [
+    10.0,
+    6.0
+   ],
+   "variants": [],
+   "used_by": [
+    "hangar_quarter"
+   ]
+  },
+  {
+   "id": "gate_portal",
+   "shared_with_A": true,
+   "used_by": [
+    "tulou_ring",
+    "exposition_fair"
+   ]
+  },
+  {
+   "id": "hangar_door",
+   "description": "large sliding or folding hangar door with a painted logo",
+   "size_m": [
+    12.0,
+    6.0
+   ],
+   "variants": [
+    "sliding",
+    "folding"
+   ],
+   "used_by": [
+    "hangar_quarter"
+   ]
+  },
+  {
+   "id": "inverted_column",
+   "description": "column narrowing toward its base (Zonai)",
+   "size_m": [
+    0.6,
+    3.2
+   ],
+   "variants": [],
+   "used_by": [
+    "garden_terraces"
+   ]
+  },
+  {
+   "id": "jetty_upper",
+   "shared_with_A": true,
+   "used_by": [
+    "junk_castle"
+   ]
+  },
+  {
+   "id": "ladder_roof",
+   "description": "roof-to-roof ladder (climbable: ladder_* node) with hoops",
+   "size_m": [
+    0.5,
+    3.0
+   ],
+   "variants": [
+    "straight",
+    "cage"
+   ],
+   "used_by": [
+    "kowloon_warren",
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "lamp_post",
+   "description": "iron lamp post, Victorian",
+   "size_m": [
+    0.4,
+    3.5
+   ],
+   "variants": [
+    "single",
+    "double"
+   ],
+   "used_by": [
+    "lamp_city"
+   ]
+  },
+  {
+   "id": "lantern_cn",
+   "description": "Chinese round silk lantern with tassel, electric; dia 0.3-0.45",
+   "size_m": [
+    0.4,
+    0.6
+   ],
+   "variants": [
+    "red",
+    "gold",
+    "white"
+   ],
+   "used_by": [
+    "tong_lau_arcade",
+    "tulou_ring",
+    "bathhouse_tiers",
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "lantern_paper",
+   "shared_with_A": true,
+   "used_by": [
+    "yokocho_lanes",
+    "machiya_lattice",
+    "bathhouse_tiers"
+   ]
+  },
+  {
+   "id": "lantern_wall",
+   "shared_with_A": true,
+   "used_by": [
+    "garden_terraces",
+    "lamp_city"
+   ]
+  },
+  {
+   "id": "laundry_line",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "tong_lau_arcade",
+    "cantilever_tenement",
+    "courtyard_canyon",
+    "danchi_terraces"
+   ]
+  },
+  {
+   "id": "led_band",
+   "description": "LED strip outline along a floor slab or parapet (emissive line)",
+   "size_m": [
+    3.0,
+    0.05
+   ],
+   "variants": [],
+   "used_by": [
+    "podium_bazaar"
+   ]
+  },
+  {
+   "id": "light_shaft",
+   "shared_with_A": true,
+   "used_by": [
+    "tong_lau_arcade",
+    "machiya_lattice"
+   ]
+  },
+  {
+   "id": "lightbox_sign",
+   "description": "internally lit sign box (projecting or flush), face lettered at runtime",
+   "size_m": [
+    0.6,
+    2.0,
+    0.2
+   ],
+   "variants": [
+    "projecting",
+    "flush",
+    "round"
+   ],
+   "used_by": [
+    "cantilever_tenement",
+    "podium_bazaar",
+    "courtyard_canyon",
+    "zakkyo_signstacks",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "lights_fairy",
+   "shared_with_A": true,
+   "used_by": [
+    "garden_terraces"
+   ]
+  },
+  {
+   "id": "lights_festoon",
+   "shared_with_A": true,
+   "used_by": [
+    "courtyard_canyon",
+    "yokocho_lanes",
+    "danchi_terraces",
+    "junk_castle",
+    "hangar_quarter",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "lights_outline",
+   "shared_with_A": true,
+   "used_by": [
+    "capsule_skybox"
+   ]
+  },
+  {
+   "id": "louvre",
+   "shared_with_A": true,
+   "used_by": [
+    "podium_bazaar",
+    "retrofit_noir"
+   ]
+  },
+  {
+   "id": "market_stall",
+   "description": "stall frame with counter, awning and shelf, 2.5-6 m2",
+   "size_m": [
+    2.5,
+    2.4,
+    2.0
+   ],
+   "variants": [
+    "open",
+    "shuttered",
+    "cart"
+   ],
+   "used_by": [
+    "podium_bazaar",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "marquee_bulbs",
+   "description": "bulb border strip for arches and signs (instanced bulbs)",
+   "size_m": [
+    1.0,
+    0.1
+   ],
+   "variants": [
+    "straight",
+    "arc"
+   ],
+   "used_by": [
+    "exposition_fair"
+   ]
+  },
+  {
+   "id": "mural_wall",
+   "description": "painted end-wall mural panel (texture from the runtime set)",
+   "size_m": [
+    10.0,
+    15.0
+   ],
+   "variants": [],
+   "used_by": [
+    "danchi_terraces"
+   ]
+  },
+  {
+   "id": "neon_frame",
+   "description": "dark sign frame (box or open) that carries a neon tube outline; the runtime adds tube + text",
+   "size_m": [
+    1.0,
+    3.0
+   ],
+   "variants": [
+    "blade",
+    "flat",
+    "open"
+   ],
+   "used_by": [
+    "kowloon_warren",
+    "tong_lau_arcade",
+    "cantilever_tenement",
+    "podium_bazaar",
+    "yokocho_lanes",
+    "retrofit_noir",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "noren",
+   "description": "split cloth door curtain 0.85 x 0.9-1.5",
+   "size_m": [
+    0.85,
+    1.2
+   ],
+   "variants": [
+    "2_panel",
+    "3_panel",
+    "long"
+   ],
+   "used_by": [
+    "zakkyo_signstacks",
+    "yokocho_lanes",
+    "machiya_lattice",
+    "bathhouse_tiers"
+   ]
+  },
+  {
+   "id": "painted_board",
+   "description": "hand-painted timber sign board with a gooseneck lamp",
+   "size_m": [
+    2.0,
+    0.6
+   ],
+   "variants": [
+    "plain",
+    "framed",
+    "ghost"
+   ],
+   "used_by": [
+    "tong_lau_arcade",
+    "yokocho_lanes",
+    "machiya_lattice",
+    "hangar_quarter"
+   ]
+  },
+  {
+   "id": "pinnacle",
+   "shared_with_A": true,
+   "used_by": [
+    "lamp_city"
+   ]
+  },
+  {
+   "id": "pipe_run",
+   "description": "bundle of pipes or ducts run along a facade (retrofit), with brackets",
+   "size_m": [
+    3.0,
+    0.3
+   ],
+   "variants": [
+    "horizontal",
+    "vertical",
+    "elbow"
+   ],
+   "used_by": [
+    "kowloon_warren",
+    "junk_castle",
+    "retrofit_noir"
+   ]
+  },
+  {
+   "id": "plank_bridge",
+   "description": "light plank bridge with rope rails between roofs or galleries, span 2-8",
+   "size_m": [
+    1.0,
+    6.0
+   ],
+   "variants": [
+    "plank",
+    "grating"
+   ],
+   "used_by": [
+    "kowloon_warren",
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "planter",
+   "shared_with_A": true,
+   "used_by": [
+    "machiya_lattice",
+    "danchi_terraces",
+    "garden_terraces"
+   ]
+  },
+  {
+   "id": "porthole_window",
+   "shared_with_A": true,
+   "used_by": [
+    "capsule_skybox",
+    "junk_castle",
+    "garden_terraces"
+   ]
+  },
+  {
+   "id": "pressed_tin_ceiling",
+   "description": "pressed tin ceiling panel 0.6 x 0.6",
+   "size_m": [
+    0.6,
+    0.6
+   ],
+   "variants": [
+    "12in_floral",
+    "6in_squares",
+    "medallion"
+   ],
+   "used_by": [
+    "exposition_fair"
+   ]
+  },
+  {
+   "id": "red_girder",
+   "description": "exposed red steel frame bay (column + beam + brace)",
+   "size_m": [
+    4.0,
+    3.2,
+    4.0
+   ],
+   "variants": [
+    "bay",
+    "brace",
+    "corner"
+   ],
+   "used_by": [
+    "girder_market"
+   ]
+  },
+  {
+   "id": "ring_segment",
+   "description": "one sector of a ring house: room bay + gallery, bent to radius",
+   "size_m": [
+    4.0,
+    2.8,
+    8.0
+   ],
+   "variants": [
+    "outer",
+    "inner"
+   ],
+   "used_by": [
+    "tulou_ring",
+    "garden_terraces"
+   ]
+  },
+  {
+   "id": "roof_bridge_small",
+   "shared_with_A": true,
+   "used_by": [
+    "bathhouse_tiers"
+   ]
+  },
+  {
+   "id": "roof_shrine",
+   "description": "small roof shrine: a little red gate, two lanterns, an altar (Sunward / Our Lady of the Winds)",
+   "size_m": [
+    2.0,
+    2.5,
+    2.0
+   ],
+   "variants": [
+    "torii",
+    "bell"
+   ],
+   "used_by": [
+    "zakkyo_signstacks"
+   ]
+  },
+  {
+   "id": "rooftop_billboard",
+   "description": "billboard frame with a catwalk and lamps on a roof; face set at runtime",
+   "size_m": [
+    10.0,
+    5.0
+   ],
+   "variants": [
+    "small",
+    "large",
+    "double"
+   ],
+   "used_by": [
+    "podium_bazaar",
+    "zakkyo_signstacks",
+    "exposition_fair"
+   ]
+  },
+  {
+   "id": "rooftop_shack",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "tong_lau_arcade",
+    "cantilever_tenement"
+   ]
+  },
+  {
+   "id": "rose_window",
+   "shared_with_A": true,
+   "used_by": [
+    "lamp_city"
+   ]
+  },
+  {
+   "id": "round_tower",
+   "shared_with_A": true,
+   "used_by": [
+    "junk_castle"
+   ]
+  },
+  {
+   "id": "screen_lattice",
+   "shared_with_A": true,
+   "used_by": [
+    "yokocho_lanes",
+    "machiya_lattice",
+    "bathhouse_tiers",
+    "rim_cliffhangers"
+   ]
+  },
+  {
+   "id": "shutter_rolling",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "tong_lau_arcade",
+    "cantilever_tenement",
+    "courtyard_canyon"
+   ]
+  },
+  {
+   "id": "shutters",
+   "shared_with_A": true,
+   "used_by": [
+    "tong_lau_arcade"
+   ]
+  },
+  {
+   "id": "sign_blade",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "tong_lau_arcade",
+    "cantilever_tenement",
+    "retrofit_noir",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "sign_board",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "podium_bazaar",
+    "courtyard_canyon",
+    "capsule_skybox",
+    "danchi_terraces",
+    "junk_castle",
+    "garden_terraces",
+    "exposition_fair",
+    "hangar_quarter"
+   ]
+  },
+  {
+   "id": "sign_figure_3d",
+   "description": "giant figure sign with moving parts (goat, bee, bell, lark, fish, kettle)",
+   "size_m": [
+    3.0,
+    3.0,
+    2.0
+   ],
+   "variants": [
+    "goat",
+    "bee",
+    "bell",
+    "lark",
+    "fish",
+    "kettle"
+   ],
+   "used_by": [
+    "zakkyo_signstacks"
+   ]
+  },
+  {
+   "id": "sign_vertical_stack",
+   "description": "zakkyo projecting column: one lightbox panel 0.6 x 1 per floor",
+   "size_m": [
+    0.6,
+    1.0,
+    0.2
+   ],
+   "variants": [
+    "per_floor"
+   ],
+   "used_by": [
+    "zakkyo_signstacks"
+   ]
+  },
+  {
+   "id": "skybridge",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "podium_bazaar",
+    "courtyard_canyon",
+    "capsule_skybox",
+    "bathhouse_tiers",
+    "retrofit_noir",
+    "lamp_city"
+   ]
+  },
+  {
+   "id": "stair_core_open",
+   "shared_with_A": true,
+   "used_by": [
+    "capsule_skybox"
+   ]
+  },
+  {
+   "id": "stair_spiral_external",
+   "shared_with_A": true,
+   "used_by": [
+    "junk_castle"
+   ]
+  },
+  {
+   "id": "stair_steel_external",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "yokocho_lanes",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "tarp_cover",
+   "shared_with_A": true,
+   "used_by": [
+    "hangar_quarter",
+    "girder_market"
+   ]
+  },
+  {
+   "id": "tile_panel",
+   "shared_with_A": true,
+   "used_by": [
+    "cantilever_tenement"
+   ]
+  },
+  {
+   "id": "timber_eave",
+   "shared_with_A": true,
+   "used_by": [
+    "machiya_lattice",
+    "tulou_ring"
+   ]
+  },
+  {
+   "id": "turned_post",
+   "shared_with_A": true,
+   "used_by": [
+    "bathhouse_tiers"
+   ]
+  },
+  {
+   "id": "vending_machine",
+   "description": "vending machine with a glowing face (hot moss tea, hand warmers)",
+   "size_m": [
+    1.0,
+    1.8,
+    0.8
+   ],
+   "variants": [
+    "drinks",
+    "warmers",
+    "tickets"
+   ],
+   "used_by": [
+    "zakkyo_signstacks"
+   ]
+  },
+  {
+   "id": "vent_stack",
+   "description": "tin vent stack with a cowl (no flame: heat exhaust)",
+   "size_m": [
+    0.4,
+    2.5
+   ],
+   "variants": [
+    "straight",
+    "cowled",
+    "crooked"
+   ],
+   "used_by": [
+    "junk_castle",
+    "retrofit_noir"
+   ]
+  },
+  {
+   "id": "verandah",
+   "shared_with_A": true,
+   "used_by": [
+    "tong_lau_arcade"
+   ]
+  },
+  {
+   "id": "video_board",
+   "description": "tile-built two-colour screen bolted on a facade",
+   "size_m": [
+    4.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "retrofit_noir"
+   ]
+  },
+  {
+   "id": "water_tank",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "tong_lau_arcade",
+    "cantilever_tenement",
+    "podium_bazaar",
+    "courtyard_canyon",
+    "capsule_skybox",
+    "danchi_terraces",
+    "tulou_ring"
+   ]
+  },
+  {
+   "id": "window_arched",
+   "shared_with_A": true,
+   "used_by": [
+    "exposition_fair",
+    "lamp_city"
+   ]
+  },
+  {
+   "id": "window_grille",
+   "description": "bars or decorative grille over a window",
+   "size_m": [
+    1.0,
+    1.3
+   ],
+   "variants": [
+    "bars",
+    "diamond",
+    "flower"
+   ],
+   "used_by": [
+    "kowloon_warren",
+    "cantilever_tenement",
+    "courtyard_canyon"
+   ]
+  },
+  {
+   "id": "window_small",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "podium_bazaar",
+    "tulou_ring",
+    "hangar_quarter"
+   ]
+  },
+  {
+   "id": "wire_bundle",
+   "shared_with_A": true,
+   "used_by": [
+    "kowloon_warren",
+    "zakkyo_signstacks",
+    "yokocho_lanes",
+    "girder_market"
+   ]
+  }
+ ]
+}

@@ -114,6 +114,9 @@ def generator(kind):
         elif kind == "crossing":
             import bridges
             GENERATORS[kind] = bridges.build
+        elif kind == "sky":                     # the sky islands' style models (gen/sky.py; tools/sky/style_models.py)
+            import sky
+            GENERATORS[kind] = sky.build
         else:
             raise NotImplementedError(f"no generator for kind '{kind}' yet")
     return GENERATORS[kind]

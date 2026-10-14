@@ -1,0 +1,140 @@
+{
+ "id": "SKY-jharokha_towers-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 19.9,
+  "d": 13.7
+ },
+ "traits": {
+  "style": "jharokha_towers",
+  "arch": "tower_cluster",
+  "model_kind": "home",
+  "storeys": 10,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -1.35,
+     -4.75,
+     7.15,
+     5.25
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -9.35,
+     -6.25,
+     -1.35,
+     4.25
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "bay",
+   "screen",
+   "parapet_screen",
+   "eyebrow",
+   "chhatri",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "dome",
+   "bay_share": 0.75,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e09a7a",
+    "#d4786a",
+    "#f2e6d8"
+   ],
+   "trim": "#f2e6d8",
+   "accent": "#a4513b",
+   "canvas": "#ff4f9a",
+   "tile": "#ffd400"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "neon",
+    "dotmatrix"
+   ],
+   "density": 0.7
+  },
+  "mood": "#ff9ac0",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "jharokha_towers",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 10,
+  "homes": 0
+ },
+ "brief": "sky island home in the Jharokha Towers (hybrid) style: a shared model"
+}

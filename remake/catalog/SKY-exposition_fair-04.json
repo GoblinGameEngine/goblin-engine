@@ -1,0 +1,104 @@
+{
+ "id": "SKY-exposition_fair-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 22.4,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "exposition_fair",
+  "arch": "slab",
+  "model_kind": "hall",
+  "storeys": 3,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -10.6,
+     -7.5,
+     8.4,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.4,
+   "h": 1.9,
+   "sill": 0.7,
+   "spacing": 2.8
+  },
+  "dress": [
+   "arch",
+   "dome",
+   "lanterns",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "tin",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e6c46a",
+    "#ffffff",
+    "#f2eee2"
+   ],
+   "trim": "#ffffff",
+   "accent": "#2f5e8a",
+   "canvas": "#2f5e8a",
+   "tile": "#ffd38a"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "neon",
+    "painted",
+    "billboard"
+   ],
+   "density": 0.8
+  },
+  "mood": "#ffb35c",
+  "shops": [
+   {
+    "kind": "drug_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "exposition_fair",
+  "model": "hall",
+  "use": "market",
+  "storeys": 3,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Exposition Fair style: a shared model"
+}

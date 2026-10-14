@@ -1,0 +1,145 @@
+{
+ "id": "SKY-courtyard_canyon-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.9,
+  "d": 24.2
+ },
+ "traits": {
+  "style": "courtyard_canyon",
+  "arch": "court",
+  "model_kind": "hall",
+  "storeys": 10,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.15,
+     -1.5,
+     12.15,
+     8.5
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     3.15,
+     -11.5,
+     12.15,
+     -1.5
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -14.35,
+     -3.5,
+     3.15,
+     10.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bay",
+   "cage",
+   "shutters",
+   "tanks",
+   "antennas",
+   "laundry",
+   "ac",
+   "lanterns",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.75,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e9e2cf",
+    "#7e8f99",
+    "#d8c9a3"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#7e8f99",
+   "canvas": "#2bff88",
+   "tile": "#ffb02e"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "blade",
+    "chochin"
+   ],
+   "density": 0.6
+  },
+  "mood": "#c6ff9e",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "courtyard_canyon",
+  "model": "hall",
+  "use": "market",
+  "storeys": 10,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Courtyard Canyon style: a shared model"
+}

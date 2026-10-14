@@ -1,0 +1,128 @@
+{
+ "id": "SKY-hanging_houses-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 30.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "hanging_houses",
+  "arch": "tower_cluster",
+  "model_kind": "hall",
+  "storeys": 5,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     4.15,
+     -6.0,
+     12.65,
+     4.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -14.85,
+     -7.5,
+     4.15,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "shutters",
+   "bands",
+   "pergola",
+   "planter",
+   "lanterns",
+   "dome"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#3a5a6b",
+    "#d9cdb4",
+    "#6b3f22"
+   ],
+   "trim": "#d9cdb4",
+   "accent": "#6b3f22",
+   "canvas": "#ffd890",
+   "tile": "#ffd890"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin"
+   ],
+   "density": 0.3
+  },
+  "mood": "#ffcf8a",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "hanging_houses",
+  "model": "hall",
+  "use": "market",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Hanging Houses style: a shared model"
+}

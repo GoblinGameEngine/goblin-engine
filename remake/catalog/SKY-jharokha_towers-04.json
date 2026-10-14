@@ -1,0 +1,128 @@
+{
+ "id": "SKY-jharokha_towers-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "jharokha_towers",
+  "arch": "tower_cluster",
+  "model_kind": "hall",
+  "storeys": 11,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.65,
+     -6.0,
+     12.15,
+     4.5
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -14.35,
+     -7.5,
+     3.65,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "bay",
+   "screen",
+   "parapet_screen",
+   "eyebrow",
+   "chhatri",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "dome",
+   "bay_share": 0.75,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#a4513b",
+    "#e09a7a",
+    "#d4786a"
+   ],
+   "trim": "#f2e6d8",
+   "accent": "#a4513b",
+   "canvas": "#ff4f9a",
+   "tile": "#ffd400"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "neon",
+    "dotmatrix"
+   ],
+   "density": 0.7
+  },
+  "mood": "#ffd080",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "jharokha_towers",
+  "model": "hall",
+  "use": "market",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Jharokha Towers (hybrid) style: a shared model"
+}

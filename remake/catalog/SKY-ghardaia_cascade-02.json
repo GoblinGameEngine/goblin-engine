@@ -1,0 +1,177 @@
+{
+ "id": "SKY-ghardaia_cascade-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 37.9,
+  "d": 23.7
+ },
+ "traits": {
+  "style": "ghardaia_cascade",
+  "arch": "pile",
+  "model_kind": "tall",
+  "storeys": 5,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     7.65,
+     -1.25,
+     16.15,
+     9.75
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -0.85,
+     -0.25,
+     7.65,
+     10.25
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -0.35,
+     -9.75,
+     7.65,
+     -0.25
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -8.85,
+     -1.75,
+     -0.85,
+     8.25
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -8.85,
+     -11.25,
+     -0.85,
+     -1.75
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   },
+   {
+    "name": "B5",
+    "rect": [
+     -18.35,
+     -0.75,
+     -8.85,
+     10.25
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 5
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "screen",
+   "crenel_round",
+   "arch",
+   "tower",
+   "shacks",
+   "awnings",
+   "lanterns",
+   "crenel"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "round",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "pyramid",
+   "tower_round": true,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#b9d3e6",
+    "#e2c79a",
+    "#e7b9a6"
+   ],
+   "trim": "#f2efe8",
+   "accent": "#d8c3a0",
+   "canvas": "#7fd0ff",
+   "tile": "#ff9ab0"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin",
+    "neon"
+   ],
+   "density": 0.4
+  },
+  "mood": "#a0d8ff",
+  "shops": [
+   {
+    "kind": "grocery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "ghardaia_cascade",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Gharda\u00efa Cascade style: a shared model"
+}

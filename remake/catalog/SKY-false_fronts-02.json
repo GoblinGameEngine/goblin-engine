@@ -1,0 +1,192 @@
+{
+ "id": "SKY-false_fronts-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 37.9,
+  "d": 17.7
+ },
+ "traits": {
+  "style": "false_fronts",
+  "arch": "gable_row",
+  "model_kind": "tall",
+  "storeys": 4,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     7.15,
+     -7.75,
+     16.15,
+     6.25
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -1.85,
+     -7.25,
+     7.15,
+     7.25
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -10.35,
+     -8.25,
+     -1.85,
+     6.25
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -18.35,
+     -6.75,
+     -10.35,
+     5.75
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "shutters",
+   "false_front",
+   "awnings",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#ede1c4",
+    "#c9a03a",
+    "#4c5a63"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#1f1f1f",
+   "canvas": "#33ddff",
+   "tile": "#ffe14d"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "neon",
+    "blade",
+    "brass"
+   ],
+   "density": 0.95
+  },
+  "mood": "#ff4f81",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "false_fronts",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island tall in the False Fronts style: a shared model"
+}

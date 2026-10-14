@@ -1,0 +1,183 @@
+{
+ "id": "SKY-closes_lands-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.9,
+  "d": 22.7
+ },
+ "traits": {
+  "style": "closes_lands",
+  "arch": "tower_cluster",
+  "model_kind": "tall",
+  "storeys": 11,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.15,
+     -2.25,
+     12.15,
+     8.25
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -1.25,
+     3.15,
+     9.75
+    ],
+    "storeys": 9,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -4.85,
+     -10.75,
+     3.15,
+     -1.25
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.35,
+     -3.25,
+     -5.35,
+     7.75
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bay",
+   "gallery",
+   "shutters",
+   "gable_front",
+   "laundry",
+   "pergola",
+   "chimneys",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#3d3a36",
+    "#d8cfbf",
+    "#c9a66b"
+   ],
+   "trim": "#d8cfbf",
+   "accent": "#3d3a36",
+   "canvas": "#ff5a4a",
+   "tile": "#7ad7ff"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "blade",
+    "brass",
+    "chochin"
+   ],
+   "density": 0.6
+  },
+  "mood": "#7a5cff",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "closes_lands",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Closes and Lands style: a shared model"
+}

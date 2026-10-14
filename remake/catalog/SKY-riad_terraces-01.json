@@ -1,0 +1,196 @@
+{
+ "id": "SKY-riad_terraces-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.4,
+  "d": 22.2
+ },
+ "traits": {
+  "style": "riad_terraces",
+  "arch": "court",
+  "model_kind": "home",
+  "storeys": 4,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -0.5,
+     11.4,
+     9.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     2.9,
+     -10.5,
+     11.4,
+     -0.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     0.0,
+     2.9,
+     9.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.6,
+     -0.5,
+     -5.1,
+     9.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -13.6,
+     -10.5,
+     -5.1,
+     -0.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "screen",
+   "eyebrow",
+   "arch",
+   "tower",
+   "pergola",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "horseshoe",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#c4634a",
+    "#d98a5f",
+    "#e6dcc6"
+   ],
+   "trim": "#e6dcc6",
+   "accent": "#2e7d55",
+   "canvas": "#ffb347",
+   "tile": "#ff3c6e"
+  },
+  "signage": {
+   "kinds": [
+    "chochin",
+    "painted",
+    "brass",
+    "neon"
+   ],
+   "density": 0.5
+  },
+  "mood": "#ffa040",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "riad_terraces",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island home in the Riad Terraces style: a shared model"
+}

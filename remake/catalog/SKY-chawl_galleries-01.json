@@ -1,0 +1,116 @@
+{
+ "id": "SKY-chawl_galleries-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 17.4,
+  "d": 18.2
+ },
+ "traits": {
+  "style": "chawl_galleries",
+  "arch": "slab",
+  "model_kind": "home",
+  "storeys": 6,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -8.1,
+     -8.5,
+     5.9,
+     7.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "shutters",
+   "shacks",
+   "tanks",
+   "laundry",
+   "awnings",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e8d9b8",
+    "#9fc3c9",
+    "#e2a07a"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#3f6b4a",
+   "canvas": "#ffde59",
+   "tile": "#ff5e3a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "lightbox",
+    "chochin"
+   ],
+   "density": 0.55
+  },
+  "mood": "#ffd27a",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "chawl_galleries",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 6,
+  "homes": 0
+ },
+ "brief": "sky island home in the Chawl Galleries style: a shared model"
+}

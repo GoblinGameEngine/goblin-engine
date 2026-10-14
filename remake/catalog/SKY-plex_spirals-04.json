@@ -1,0 +1,127 @@
+{
+ "id": "SKY-plex_spirals-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 27.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "plex_spirals",
+  "arch": "gable_row",
+  "model_kind": "hall",
+  "storeys": 5,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.65,
+     -7.0,
+     11.15,
+     6.0
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -13.35,
+     -7.5,
+     2.65,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.1,
+   "h": 1.9,
+   "sill": 0.6,
+   "spacing": 1.8
+  },
+  "dress": [
+   "bay",
+   "balcony",
+   "gallery",
+   "lanterns",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#1d1d1d",
+    "#2d4a3a",
+    "#6c9cc8"
+   ],
+   "trim": "#c9a46b",
+   "accent": "#1d1d1d",
+   "canvas": "#ff3b6b",
+   "tile": "#4ad6ff"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "neon",
+    "dotmatrix"
+   ],
+   "density": 0.5
+  },
+  "mood": "#ffb36b",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "plex_spirals",
+  "model": "hall",
+  "use": "market",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Plex Spirals style: a shared model"
+}

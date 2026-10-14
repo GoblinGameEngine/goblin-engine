@@ -1,0 +1,178 @@
+{
+ "id": "SKY-retrofit_noir-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.9,
+  "d": 22.2
+ },
+ "traits": {
+  "style": "retrofit_noir",
+  "arch": "pile",
+  "model_kind": "home",
+  "storeys": 10,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.65,
+     -2.0,
+     12.15,
+     8.5
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -1.0,
+     2.65,
+     9.5
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.35,
+     -10.5,
+     2.65,
+     -1.0
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.35,
+     -2.0,
+     -5.35,
+     8.0
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bands",
+   "antennas",
+   "chimneys",
+   "ac"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#3a3e44",
+    "#5a5f66",
+    "#2b2f33"
+   ],
+   "trim": "#7d7a70",
+   "accent": "#2b2f33",
+   "canvas": "#ff3fa4",
+   "tile": "#3a7bff"
+  },
+  "signage": {
+   "kinds": [
+    "dotmatrix",
+    "blade",
+    "neon"
+   ],
+   "density": 0.85
+  },
+  "mood": "#3a7bff",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "retrofit_noir",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 10,
+  "homes": 0
+ },
+ "brief": "sky island home in the Retrofit Noir style: a shared model"
+}

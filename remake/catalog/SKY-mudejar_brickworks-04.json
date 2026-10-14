@@ -1,0 +1,126 @@
+{
+ "id": "SKY-mudejar_brickworks-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 27.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "mudejar_brickworks",
+  "arch": "tower_cluster",
+  "model_kind": "hall",
+  "storeys": 8,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.65,
+     -6.0,
+     11.15,
+     4.5
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -13.35,
+     -7.5,
+     2.65,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "machine_floor",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bands",
+   "arch",
+   "tower",
+   "shacks",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "pointed",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "coffer",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#f0ece0",
+    "#2a8c8c",
+    "#b9714a"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#2f7a4d",
+   "canvas": "#7dffa6",
+   "tile": "#ffffff"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "lightbox"
+   ],
+   "density": 0.4
+  },
+  "mood": "#7affb0",
+  "shops": [
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "mudejar_brickworks",
+  "model": "hall",
+  "use": "market",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Mud\u00e9jar Brickworks style: a shared model"
+}

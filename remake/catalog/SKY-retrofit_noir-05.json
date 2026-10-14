@@ -1,0 +1,180 @@
+{
+ "id": "SKY-retrofit_noir-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.4,
+  "d": 21.7
+ },
+ "traits": {
+  "style": "retrofit_noir",
+  "arch": "pile",
+  "model_kind": "landmark",
+  "storeys": 11,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -1.75,
+     11.4,
+     8.25
+    ],
+    "storeys": 11,
+    "plan": "tower",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.1,
+     -0.75,
+     2.9,
+     9.25
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     -10.25,
+     2.9,
+     -0.75
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.6,
+     -2.25,
+     -5.1,
+     8.25
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bands",
+   "antennas",
+   "chimneys",
+   "ac",
+   "billboard",
+   "tower"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#3a3e44",
+    "#5a5f66",
+    "#2b2f33"
+   ],
+   "trim": "#7d7a70",
+   "accent": "#ff3fa4",
+   "canvas": "#ff3fa4",
+   "tile": "#3a7bff"
+  },
+  "signage": {
+   "kinds": [
+    "dotmatrix",
+    "blade",
+    "neon"
+   ],
+   "density": 0.85
+  },
+  "mood": "#ff3fa4",
+  "shops": [
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "retrofit_noir",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Retrofit Noir style: a shared model"
+}

@@ -1,0 +1,191 @@
+{
+ "id": "SKY-chefchaouen_blue-03",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 36.9,
+  "d": 13.7
+ },
+ "traits": {
+  "style": "chefchaouen_blue",
+  "arch": "pile",
+  "model_kind": "row",
+  "storeys": 4,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     7.65,
+     -5.25,
+     15.65,
+     4.25
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -0.85,
+     -5.25,
+     7.65,
+     5.25
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -9.35,
+     -6.25,
+     -0.85,
+     4.25
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -17.85,
+     -5.25,
+     -9.35,
+     4.75
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "screen",
+   "eyebrow",
+   "arch",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "horseshoe",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#a9c8ec",
+    "#2b3f7a",
+    "#f4f6f8"
+   ],
+   "trim": "#f4f6f8",
+   "accent": "#2b3f7a",
+   "canvas": "#ff8a5a",
+   "tile": "#ffd27a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "lightbox",
+    "chochin"
+   ],
+   "density": 0.4
+  },
+  "mood": "#ffc070",
+  "shops": [
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "chefchaouen_blue",
+  "model": "row",
+  "use": "shops",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island row in the Chefchaouen Blue style: a shared model"
+}

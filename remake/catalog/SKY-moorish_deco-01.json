@@ -1,0 +1,115 @@
+{
+ "id": "SKY-moorish_deco-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 22.9,
+  "d": 18.2
+ },
+ "traits": {
+  "style": "moorish_deco",
+  "arch": "slab",
+  "model_kind": "home",
+  "storeys": 7,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -10.85,
+     -8.5,
+     8.65,
+     7.5
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.4,
+   "h": 1.9,
+   "sill": 0.7,
+   "spacing": 2.8
+  },
+  "dress": [
+   "balcony",
+   "screen",
+   "eyebrow",
+   "arch",
+   "dome",
+   "lanterns",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "horseshoe",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#efe1c6",
+    "#2e7d55",
+    "#1f5f8b"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#2e7d55",
+   "canvas": "#40ffcf",
+   "tile": "#ffd84a"
+  },
+  "signage": {
+   "kinds": [
+    "neon",
+    "chochin",
+    "brass"
+   ],
+   "density": 0.7
+  },
+  "mood": "#60ffd0",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "moorish_deco",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 7,
+  "homes": 0
+ },
+ "brief": "sky island home in the Moorish Deco (hybrid) style: a shared model"
+}

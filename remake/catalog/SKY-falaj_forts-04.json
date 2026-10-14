@@ -1,0 +1,141 @@
+{
+ "id": "SKY-falaj_forts-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 31.4,
+  "d": 24.2
+ },
+ "traits": {
+  "style": "falaj_forts",
+  "arch": "court",
+  "model_kind": "hall",
+  "storeys": 4,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.9,
+     -1.5,
+     12.9,
+     8.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     3.9,
+     -11.5,
+     12.9,
+     -1.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -15.1,
+     -3.5,
+     3.9,
+     10.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "machine_floor",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "crenel",
+   "beam_ends",
+   "tower",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "triangle",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "flat",
+   "tower_round": true,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#5a3c2a",
+    "#c8a27a",
+    "#b48a62"
+   ],
+   "trim": "#e8dcc4",
+   "accent": "#5a3c2a",
+   "canvas": "#ff9a4a",
+   "tile": "#ffd27a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "brass",
+    "chochin"
+   ],
+   "density": 0.35
+  },
+  "mood": "#ffe0a0",
+  "shops": [
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "falaj_forts",
+  "model": "hall",
+  "use": "market",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Falaj Forts style: a shared model"
+}

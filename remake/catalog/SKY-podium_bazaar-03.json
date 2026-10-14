@@ -1,0 +1,113 @@
+{
+ "id": "SKY-podium_bazaar-03",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 17.2
+ },
+ "traits": {
+  "style": "podium_bazaar",
+  "arch": "slab",
+  "model_kind": "row",
+  "storeys": 10,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -14.1,
+     -8.0,
+     11.9,
+     7.0
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bands",
+   "tanks",
+   "ac",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.75,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e6dfcc",
+    "#5c6b73",
+    "#c9c3b0"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#5c6b73",
+   "canvas": "#3a7bff",
+   "tile": "#2bff88"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "blade",
+    "dotmatrix",
+    "billboard"
+   ],
+   "density": 0.9
+  },
+  "mood": "#9a6bff",
+  "shops": [
+   {
+    "kind": "fish_market"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "butcher"
+   },
+   {
+    "kind": "food"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "podium_bazaar",
+  "model": "row",
+  "use": "shops",
+  "storeys": 10,
+  "homes": 0
+ },
+ "brief": "sky island row in the Podium Bazaar style: a shared model"
+}

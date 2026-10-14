@@ -1,0 +1,195 @@
+{
+ "id": "SKY-pueblo_blanco-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 22.7
+ },
+ "traits": {
+  "style": "pueblo_blanco",
+  "arch": "court",
+  "model_kind": "tall",
+  "storeys": 5,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -0.75,
+     11.9,
+     9.75
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     2.9,
+     -10.75,
+     11.9,
+     -0.75
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     0.25,
+     2.9,
+     9.75
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.1,
+     -0.75,
+     -5.1,
+     9.75
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -14.1,
+     -10.75,
+     -5.1,
+     -0.75
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "balcony",
+   "gallery",
+   "screen",
+   "eyebrow",
+   "tower",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "spire",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e7c98f",
+    "#2b4f9a",
+    "#b5552f"
+   ],
+   "trim": "#f6f3ec",
+   "accent": "#2b4f9a",
+   "canvas": "#ff4d6a",
+   "tile": "#5ad1ff"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "painted",
+    "neon"
+   ],
+   "density": 0.45
+  },
+  "mood": "#ff9a60",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "pueblo_blanco",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Pueblo Blanco style: a shared model"
+}

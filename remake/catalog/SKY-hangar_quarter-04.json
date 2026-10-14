@@ -1,0 +1,101 @@
+{
+ "id": "SKY-hangar_quarter-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 20.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "hangar_quarter",
+  "arch": "slab",
+  "model_kind": "hall",
+  "storeys": 2,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -9.85,
+     -7.5,
+     7.65,
+     6.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "machine_floor",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "lanterns",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#2e5e4e",
+    "#b0a58a",
+    "#7a5a40"
+   ],
+   "trim": "#e6d8be",
+   "accent": "#2e5e4e",
+   "canvas": "#ffd38a",
+   "tile": "#ff4a2a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "neon",
+    "chochin"
+   ],
+   "density": 0.5
+  },
+  "mood": "#ffe2b0",
+  "shops": [
+   {
+    "kind": "print_shop"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "hangar_quarter",
+  "model": "hall",
+  "use": "market",
+  "storeys": 2,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Hangar Quarter style: a shared model"
+}

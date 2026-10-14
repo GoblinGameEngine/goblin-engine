@@ -1,0 +1,182 @@
+{
+ "id": "SKY-cantilever_tenement-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 22.2
+ },
+ "traits": {
+  "style": "cantilever_tenement",
+  "arch": "pile",
+  "model_kind": "home",
+  "storeys": 7,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.65,
+     -1.5,
+     11.65,
+     8.5
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -1.0,
+     3.65,
+     9.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -4.35,
+     -10.5,
+     3.65,
+     -1.0
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.85,
+     -2.0,
+     -5.35,
+     8.0
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bay",
+   "cage",
+   "shutters",
+   "shacks",
+   "tanks",
+   "antennas",
+   "laundry",
+   "ac"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.75,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#d9cdb4",
+    "#b6c9c4",
+    "#e7b9a6"
+   ],
+   "trim": "#f0ece0",
+   "accent": "#8d9ca3",
+   "canvas": "#ff4a2a",
+   "tile": "#ff3fa4"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "lightbox",
+    "dotmatrix"
+   ],
+   "density": 0.85
+  },
+  "mood": "#ffcf8a",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "cantilever_tenement",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island home in the Cantilever Tenements style: a shared model"
+}

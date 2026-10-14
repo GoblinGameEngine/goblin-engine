@@ -15,14 +15,23 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "tools", "rooms"))
 sys.path.insert(0, HERE)
 import make_rooms as mr  # noqa: E402
-from models import MODELS  # noqa: E402
+from models import MODELS as OLD_MODELS  # noqa: E402
+import sky_models as SM  # noqa: E402
+
+# round 2: the islands are built from the style models (SKY-<style>-NN); the old SKY-M set only where still placed
+MODELS = SM.MODELS + [m for m in OLD_MODELS if os.path.exists(os.path.join(mr.RAW, m["id"] + ".json"))]
 
 
 def main():
     blds = {}
     for m in MODELS:
-        raw = json.load(open(os.path.join(mr.RAW, m["id"] + ".json")))
-        blds[m["id"]] = mr.building(m["id"], raw, m, {"households": m["sky"]["homes"]})
+        rp = os.path.join(mr.RAW, m["id"] + ".json")
+        if not os.path.exists(rp):
+            print("no raw plan:", m["id"])
+            continue
+        raw = json.load(open(rp))
+        homes = (SM.anchors(m["id"]) or {}).get("homes", 0) if m["kind"] == "sky" else m["sky"]["homes"]
+        blds[m["id"]] = mr.building(m["id"], raw, m, {"households": homes})
     out = os.path.join(mr.OUT, "Sky islands.json")
     with open(out, "w") as f:
         json.dump({"_about": "Rooms, units, doors, posts of the sky islands' building MODELS, keyed by model id (a placed "

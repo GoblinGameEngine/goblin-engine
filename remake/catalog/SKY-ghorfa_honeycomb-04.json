@@ -1,0 +1,155 @@
+{
+ "id": "SKY-ghorfa_honeycomb-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 38.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "ghorfa_honeycomb",
+  "arch": "pile",
+  "model_kind": "hall",
+  "storeys": 5,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     8.15,
+     -5.5,
+     16.65,
+     4.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -10.85,
+     -7.5,
+     8.15,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -18.85,
+     -5.0,
+     -10.85,
+     5.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "gallery",
+   "arch",
+   "tower",
+   "shacks",
+   "awnings",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "loft",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#7a5132",
+    "#3f7fb5",
+    "#d9b98c"
+   ],
+   "trim": "#e8d6b4",
+   "accent": "#7a5132",
+   "canvas": "#a6ff4d",
+   "tile": "#ffd27a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "lightbox",
+    "chochin",
+    "dotmatrix"
+   ],
+   "density": 0.8
+  },
+  "mood": "#70e0ff",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "ghorfa_honeycomb",
+  "model": "hall",
+  "use": "market",
+  "storeys": 6,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Ghorfa Honeycomb style: a shared model"
+}

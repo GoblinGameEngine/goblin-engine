@@ -1,0 +1,219 @@
+{
+ "id": "SKY-cerro_tin-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 39.9,
+  "d": 23.7
+ },
+ "traits": {
+  "style": "cerro_tin",
+  "arch": "pile",
+  "model_kind": "tall",
+  "storeys": 6,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     9.15,
+     -0.75,
+     17.15,
+     9.25
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -0.35,
+     -0.25,
+     9.15,
+     10.25
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     1.15,
+     -9.75,
+     9.15,
+     -0.25
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -9.85,
+     -1.75,
+     -0.35,
+     8.25
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -8.35,
+     -11.25,
+     -0.35,
+     -1.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   },
+   {
+    "name": "B5",
+    "rect": [
+     -19.35,
+     -0.25,
+     -9.85,
+     9.75
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 5
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "balcony",
+   "laundry",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e6a532",
+    "#2c5aa0",
+    "#5fb89a"
+   ],
+   "trim": "#f0d24a",
+   "accent": "#8a4b2c",
+   "canvas": "#ff5a5a",
+   "tile": "#5ad7ff"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "lightbox",
+    "neon",
+    "chochin"
+   ],
+   "density": 0.5
+  },
+  "mood": "#79b8ff",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "cerro_tin",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 6,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Cerro Tin style: a shared model"
+}

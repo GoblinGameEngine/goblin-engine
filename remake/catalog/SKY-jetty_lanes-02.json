@@ -1,0 +1,194 @@
+{
+ "id": "SKY-jetty_lanes-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 36.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "jetty_lanes",
+  "arch": "gable_row",
+  "model_kind": "tall",
+  "storeys": 6,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     7.15,
+     -7.5,
+     15.65,
+     6.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -1.35,
+     -6.5,
+     7.15,
+     6.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -9.85,
+     -7.5,
+     -1.35,
+     6.0
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -17.85,
+     -7.0,
+     -9.85,
+     6.0
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.1,
+   "h": 1.9,
+   "sill": 0.6,
+   "spacing": 1.8
+  },
+  "dress": [
+   "bay",
+   "shutters",
+   "bands",
+   "jetty",
+   "pergola",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shrine",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#2e231c",
+    "#efe7d6",
+    "#e3c56a"
+   ],
+   "trim": "#efe7d6",
+   "accent": "#2e231c",
+   "canvas": "#ff9a3d",
+   "tile": "#9fe8ff"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "brass",
+    "neon",
+    "chochin"
+   ],
+   "density": 0.55
+  },
+  "mood": "#ff7f50",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "jetty_lanes",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 6,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Jetty Lanes style: a shared model"
+}

@@ -1,0 +1,190 @@
+{
+ "id": "SKY-yokocho_lanes-03",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 39.4,
+  "d": 14.2
+ },
+ "traits": {
+  "style": "yokocho_lanes",
+  "arch": "pile",
+  "model_kind": "row",
+  "storeys": 2,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     7.4,
+     -6.0,
+     16.9,
+     4.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -0.6,
+     -4.5,
+     7.4,
+     5.0
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -9.6,
+     -6.5,
+     -0.6,
+     4.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -19.1,
+     -5.5,
+     -9.6,
+     5.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "screen",
+   "awnings",
+   "ac",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "batten",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#2e2a28",
+    "#b5643c",
+    "#e6d8be"
+   ],
+   "trim": "#e6d8be",
+   "accent": "#2e2a28",
+   "canvas": "#ff3fa4",
+   "tile": "#3a7bff"
+  },
+  "signage": {
+   "kinds": [
+    "chochin",
+    "neon",
+    "painted"
+   ],
+   "density": 0.85
+  },
+  "mood": "#ffb35c",
+  "shops": [
+   {
+    "kind": "wine_bar"
+   },
+   {
+    "kind": "brewpub"
+   },
+   {
+    "kind": "tavern_hotel"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "bar"
+   },
+   {
+    "kind": "wine_bar"
+   },
+   {
+    "kind": "brewpub"
+   },
+   {
+    "kind": "tavern_hotel"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "bar"
+   },
+   {
+    "kind": "wine_bar"
+   },
+   {
+    "kind": "brewpub"
+   },
+   {
+    "kind": "tavern_hotel"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "bar"
+   },
+   {
+    "kind": "wine_bar"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "yokocho_lanes",
+  "model": "row",
+  "use": "shops",
+  "storeys": 2,
+  "homes": 0
+ },
+ "brief": "sky island row in the Yokocho Lanes style: a shared model"
+}

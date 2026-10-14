@@ -1,0 +1,193 @@
+{
+ "id": "SKY-falaj_forts-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.4,
+  "d": 22.2
+ },
+ "traits": {
+  "style": "falaj_forts",
+  "arch": "court",
+  "model_kind": "home",
+  "storeys": 4,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -0.5,
+     11.4,
+     9.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     2.9,
+     -10.5,
+     11.4,
+     -0.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     0.0,
+     2.9,
+     9.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.6,
+     -0.5,
+     -5.1,
+     9.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -13.6,
+     -10.5,
+     -5.1,
+     -0.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "crenel",
+   "beam_ends",
+   "tower",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "triangle",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "flat",
+   "tower_round": true,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#c8a27a",
+    "#b48a62",
+    "#e8dcc4"
+   ],
+   "trim": "#e8dcc4",
+   "accent": "#5a3c2a",
+   "canvas": "#ffd27a",
+   "tile": "#ff9a4a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "brass",
+    "chochin"
+   ],
+   "density": 0.35
+  },
+  "mood": "#ffb070",
+  "shops": [
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "falaj_forts",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island home in the Falaj Forts style: a shared model"
+}

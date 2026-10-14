@@ -1,0 +1,113 @@
+{
+ "id": "SKY-exposition_fair-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 23.4,
+  "d": 18.2
+ },
+ "traits": {
+  "style": "exposition_fair",
+  "arch": "slab",
+  "model_kind": "home",
+  "storeys": 5,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -11.1,
+     -8.5,
+     8.9,
+     7.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.4,
+   "h": 1.9,
+   "sill": 0.7,
+   "spacing": 2.8
+  },
+  "dress": [
+   "arch",
+   "dome",
+   "lanterns",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "tin",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#f2eee2",
+    "#c94a3a",
+    "#2f5e8a"
+   ],
+   "trim": "#ffffff",
+   "accent": "#2f5e8a",
+   "canvas": "#ffd38a",
+   "tile": "#ff2a1a"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "neon",
+    "painted",
+    "billboard"
+   ],
+   "density": 0.8
+  },
+  "mood": "#ffe2b0",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "exposition_fair",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island home in the Exposition Fair style: a shared model"
+}

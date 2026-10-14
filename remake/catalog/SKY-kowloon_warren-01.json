@@ -1,0 +1,182 @@
+{
+ "id": "SKY-kowloon_warren-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 21.7
+ },
+ "traits": {
+  "style": "kowloon_warren",
+  "arch": "pile",
+  "model_kind": "home",
+  "storeys": 8,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.4,
+     -2.25,
+     11.9,
+     8.75
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.1,
+     -0.75,
+     3.4,
+     9.25
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -4.6,
+     -10.25,
+     3.4,
+     -0.75
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.1,
+     -2.75,
+     -5.1,
+     8.25
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "cage",
+   "shutters",
+   "shacks",
+   "tanks",
+   "antennas",
+   "laundry",
+   "ac"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.75,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#8a8f86",
+    "#b9b0a0",
+    "#6e6a60"
+   ],
+   "trim": "#d8d0bc",
+   "accent": "#6e6a60",
+   "canvas": "#ff4a2a",
+   "tile": "#ff3fa4"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "lightbox",
+    "painted",
+    "dotmatrix"
+   ],
+   "density": 1.0
+  },
+  "mood": "#ffcf8a",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "kowloon_warren",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island home in the Kowloon Warren style: a shared model"
+}

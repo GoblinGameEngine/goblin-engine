@@ -55,3 +55,40 @@ first: a component that serves many styles is better than many that serve one.
   uplight.
 - `lights_<n>`: the anchors of a string of lights. They are paired in order, and a catenary runs between each pair.
 - The building record's traits carry `style`, `use`, `shop_name` and `shop_kind` (per storefront), and `mood` (hex).
+
+## Round-2 build contract (2026-10-14, after the research)
+Merged by `tools/sky/styles.py`:
+- `styles.json` (67 styles, each with a `region`) and `components.json` (232 ids) here.
+- The game's copy, `godot_project/remake/sky/styles.json`, and `godot_project/remake/sky/style_assign.json`
+  (island → style; the canon's `islands[].style`).
+
+The user's additions: stacked warrens (Europe, South America, Canada, North Africa, Asia; no sub-Saharan Africa).
+
+**Footprint rules** (the user: "use all the tricks we've learned to reduce the footprint"):
+- Facades are built from modular panels: per style a set of bay panels at a standard bay width and storey height
+  (plain, window variants, door, balcony, bay box, shopfront), plus the shared components. gbkit's dedup then stores
+  each panel once (`SSC_KIT=1`).
+- Interiors are present but light, using shared furniture and the ceiling tiles.
+- Target: an average building glb under ~300 KB, and all island building models together under ~250 MB with their LODs.
+- About 5–6 models per style (~350–400 models). Varied at runtime by clan colours, unique signs and mood light.
+
+**Components library** (`remake/blender/sky/components/`), the API the generator calls:
+```
+import sky_components as SC
+SC.place(b, part, cid, frame, size=None, variant=None, mat=None, **kw) -> list of objects
+#   b: gblib.Building; part: its Part (or a new one); cid: a components.json id; frame: Matrix (Blender, z up)
+#   at the component's anchor (its documented origin); size overrides the default size_m.
+SC.panel(b, style_id, kind, frame, bay_w, storey_h, **kw)
+#   a facade bay: kind in {plain, window, window_pair, door, shopfront, balcony, bay_box, screen, arch}
+SC.ceiling(b, part, rect, z, variant)   # the ceiling tiles (suspended_grid_600, pressed_tin, artesonado_coffer,
+                                        # batten, coffered, painted_plaster)
+SC.catalogue() -> {cid: {"size_m":, "anchor":, "variants": [...]}}
+```
+Each component is built in one deterministic way, so gbkit recognises its repeats. A component may also leave
+anchors (`sign_*`, `glow_*`, `lights_*` empties) for SkySigns.
+
+**Generator**: a new kind `"sky"` (`remake/blender/gen/sky.py`, dispatched in build_record.py). It reads a record's
+`traits.style` and the style's massing, stack rules, plan and components; builds floors, rooms, stairs and roof access
+(roofaccess.py); and writes the anchors. Records are `remake/catalog/SKY-<style>-NN.json`. tools/sky/make_islands.py
+then lays out each island from its style's models, with stacked warrens: skybridges, plank bridges and covered alleys
+between buildings, as data drawn from shared parts.

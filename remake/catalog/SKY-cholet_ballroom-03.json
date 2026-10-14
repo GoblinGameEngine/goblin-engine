@@ -1,0 +1,166 @@
+{
+ "id": "SKY-cholet_ballroom-03",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 13.7
+ },
+ "traits": {
+  "style": "cholet_ballroom",
+  "arch": "tower_cluster",
+  "model_kind": "row",
+  "storeys": 6,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.4,
+     -6.25,
+     11.9,
+     5.25
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.6,
+     -5.25,
+     3.4,
+     4.75
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -14.1,
+     -6.25,
+     -5.6,
+     4.25
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "shutters",
+   "shacks",
+   "awnings",
+   "lanterns",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "chalet",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#2bb3b1",
+    "#e2b23c",
+    "#5aa0c8"
+   ],
+   "trim": "#e2b23c",
+   "accent": "#222222",
+   "canvas": "#ffd23f",
+   "tile": "#3fd6ff"
+  },
+  "signage": {
+   "kinds": [
+    "neon",
+    "lightbox",
+    "dotmatrix",
+    "billboard"
+   ],
+   "density": 0.8
+  },
+  "mood": "#ffcf4d",
+  "shops": [
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "cholet_ballroom",
+  "model": "row",
+  "use": "shops",
+  "storeys": 7,
+  "homes": 0
+ },
+ "brief": "sky island row in the Cholet Ballrooms style: a shared model"
+}

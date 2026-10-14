@@ -1,0 +1,1914 @@
+{
+ "stream": "A",
+ "version": 1,
+ "count": 138,
+ "components": [
+  {
+   "id": "ablaq_band",
+   "description": "alternating light/dark stone stripe courses (texture band)",
+   "size_m": [
+    3.0,
+    0.3
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market",
+    "ablaq_lanes"
+   ]
+  },
+  {
+   "id": "ac_unit",
+   "description": "wall heat-exchanger box (aloft: a HEATER exchanger, same look)",
+   "size_m": [
+    0.8,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "antenna",
+   "description": "aerial/dish (Floor-tech: a radio aerial)",
+   "size_m": [
+    0.6,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "arcade_pier",
+   "description": "pier/column for arcades and galleries (round, square, clustered)",
+   "size_m": [
+    0.5,
+    3.2
+   ],
+   "variants": [
+    "round",
+    "square",
+    "clustered"
+   ],
+   "used_by": [
+    "wikala_market",
+    "riad_terraces",
+    "saracenic_gothic",
+    "ghardaia_cascade"
+   ]
+  },
+  {
+   "id": "arch_cusped",
+   "description": "cusped (scalloped) arch",
+   "size_m": [
+    2.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "haveli_bazaar",
+    "mughal_crown",
+    "saracenic_gothic"
+   ]
+  },
+  {
+   "id": "arch_horseshoe",
+   "description": "horseshoe arch opening with frame",
+   "size_m": [
+    2.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "riad_terraces",
+    "moorish_deco",
+    "chefchaouen_blue",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "arch_lobed",
+   "description": "lobed/multifoil arch",
+   "size_m": [
+    2.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "mudejar_brickworks"
+   ]
+  },
+  {
+   "id": "arch_opening",
+   "description": "generic round arch opening (door/arcade bay)",
+   "size_m": [
+    2.4,
+    3.2
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market",
+    "roofstreet_oasis",
+    "ghardaia_cascade",
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "arch_pointed",
+   "description": "pointed Gothic arch",
+   "size_m": [
+    2.0,
+    3.4
+   ],
+   "variants": [],
+   "used_by": [
+    "saracenic_gothic"
+   ]
+  },
+  {
+   "id": "artesonado_ceiling",
+   "description": "interlaced geometric coffered timber ceiling panel (Mudéjar)",
+   "size_m": [
+    3.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "mudejar_brickworks"
+   ]
+  },
+  {
+   "id": "awning",
+   "description": "fabric awning (straight, scalloped)",
+   "size_m": [
+    3.0,
+    1.2
+   ],
+   "variants": [
+    "straight",
+    "scalloped",
+    "striped"
+   ],
+   "used_by": [
+    "roshan_quarter",
+    "wikala_market",
+    "roofstreet_oasis",
+    "festoon_bazaar",
+    "ghorfa_honeycomb",
+    "ghardaia_cascade",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "balcony_curved",
+   "description": "curved corner balcony (Deco)",
+   "size_m": [
+    3.0,
+    1.2
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco",
+    "moorish_deco"
+   ]
+  },
+  {
+   "id": "balcony_iron",
+   "description": "iron balcony with wrought rail (straight + wave variants)",
+   "size_m": [
+    1.4,
+    0.6
+   ],
+   "variants": [
+    "straight",
+    "wave",
+    "pot_ledge"
+   ],
+   "used_by": [
+    "pueblo_blanco",
+    "modernista_reef",
+    "festoon_bazaar"
+   ]
+  },
+  {
+   "id": "balcony_timber_covered",
+   "description": "long covered timber balcony on turned posts (canario / Konkan)",
+   "size_m": [
+    3.0,
+    1.2
+   ],
+   "variants": [],
+   "used_by": [
+    "balcon_canario",
+    "konkan_cottages"
+   ]
+  },
+  {
+   "id": "barrel_tile_eave",
+   "description": "terracotta barrel-tile eave",
+   "size_m": [
+    3.0,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "pueblo_blanco",
+    "chefchaouen_blue"
+   ]
+  },
+  {
+   "id": "bay_window_box",
+   "description": "projecting closed timber bay / oriel (generic: takhrima, jetty bay)",
+   "size_m": [
+    1.6,
+    2.2
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "ablaq_lanes"
+   ]
+  },
+  {
+   "id": "beam_ends",
+   "description": "protruding palm/timber beam ends (Oman)",
+   "size_m": [
+    0.2,
+    0.2
+   ],
+   "variants": [],
+   "used_by": [
+    "falaj_forts",
+    "tighremt_towers"
+   ]
+  },
+  {
+   "id": "beam_steps",
+   "description": "protruding beam/stone steps up a wall",
+   "size_m": [
+    0.25,
+    2.6
+   ],
+   "variants": [],
+   "used_by": [
+    "ghorfa_honeycomb"
+   ]
+  },
+  {
+   "id": "bell_tower",
+   "description": "bell/clock tower with an open belfry",
+   "size_m": [
+    4.0,
+    12.0
+   ],
+   "variants": [],
+   "used_by": [
+    "pueblo_blanco"
+   ]
+  },
+  {
+   "id": "bone_pier",
+   "description": "bone-like organic pier",
+   "size_m": [
+    0.6,
+    3.6
+   ],
+   "variants": [],
+   "used_by": [
+    "modernista_reef"
+   ]
+  },
+  {
+   "id": "bracket_corbel",
+   "description": "carved bracket/corbel (stone or timber)",
+   "size_m": [
+    0.3,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "hanging_houses",
+    "balcon_canario",
+    "haveli_bazaar",
+    "jharokha_towers"
+   ]
+  },
+  {
+   "id": "brick_relief_panel",
+   "description": "geometric brick relief panel (Mudéjar)",
+   "size_m": [
+    2.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "mudejar_brickworks"
+   ]
+  },
+  {
+   "id": "carved_stucco_panel",
+   "description": "carved stucco panel (sebka)",
+   "size_m": [
+    1.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "riad_terraces"
+   ]
+  },
+  {
+   "id": "ceiling_tile",
+   "description": "ceiling tile family: suspended 0.6x0.6 grid tile, pressed-tin tile, coffered artesonado tile, painted tile (variants)",
+   "size_m": [
+    0.6,
+    0.6
+   ],
+   "variants": [
+    "suspended_grid_600",
+    "pressed_tin",
+    "artesonado_coffer",
+    "painted_plaster"
+   ],
+   "used_by": [
+    "mudejar_brickworks"
+   ]
+  },
+  {
+   "id": "charbagh_court",
+   "description": "quartered garden court with water channels",
+   "size_m": [
+    10.0,
+    10.0
+   ],
+   "variants": [],
+   "used_by": [
+    "mughal_crown"
+   ]
+  },
+  {
+   "id": "chebek_grille",
+   "description": "roof grille over a covered court opening",
+   "size_m": [
+    3.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "ghardaia_cascade"
+   ]
+  },
+  {
+   "id": "chhajja",
+   "description": "thin projecting eave slab on brackets over openings/storeys",
+   "size_m": [
+    3.0,
+    0.8
+   ],
+   "variants": [],
+   "used_by": [
+    "haveli_bazaar",
+    "mughal_crown",
+    "saracenic_gothic",
+    "jharokha_towers"
+   ]
+  },
+  {
+   "id": "chhatri",
+   "description": "umbrella-domed pavilion on 4-8 columns; can host a stair head or lark cradle",
+   "size_m": [
+    3.0,
+    4.0
+   ],
+   "variants": [],
+   "used_by": [
+    "haveli_bazaar",
+    "mughal_crown",
+    "saracenic_gothic",
+    "jharokha_towers"
+   ]
+  },
+  {
+   "id": "clock_tower",
+   "description": "tower with clock faces",
+   "size_m": [
+    5.0,
+    18.0
+   ],
+   "variants": [],
+   "used_by": [
+    "saracenic_gothic"
+   ]
+  },
+  {
+   "id": "corrugated_panel",
+   "description": "corrugated sheet cladding panel",
+   "size_m": [
+    1.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "covered_alley",
+   "description": "covered passage under a building (sabat)",
+   "size_m": [
+    2.4,
+    2.6
+   ],
+   "variants": [],
+   "used_by": [
+    "roofstreet_oasis"
+   ]
+  },
+  {
+   "id": "dome_onion",
+   "description": "onion dome with finial (variants: white, striped, gilt)",
+   "size_m": [
+    5.0,
+    6.0
+   ],
+   "variants": [
+    "white",
+    "striped",
+    "gilt",
+    "green_tile"
+   ],
+   "used_by": [
+    "mughal_crown"
+   ]
+  },
+  {
+   "id": "dome_ribbed",
+   "description": "ribbed dome (Gothic-Saracenic)",
+   "size_m": [
+    8.0,
+    8.0
+   ],
+   "variants": [],
+   "used_by": [
+    "saracenic_gothic"
+   ]
+  },
+  {
+   "id": "dome_small",
+   "description": "small dome on drum (2-4 m)",
+   "size_m": [
+    3.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "ablaq_lanes",
+    "moorish_deco"
+   ]
+  },
+  {
+   "id": "door_room",
+   "description": "plain room door, 0.9x2.1, with a lamp above",
+   "size_m": [
+    0.9,
+    2.1
+   ],
+   "variants": [],
+   "used_by": [
+    "chawl_galleries",
+    "ghorfa_honeycomb",
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "door_studded",
+   "description": "heavy carved/studded timber door with wicket",
+   "size_m": [
+    1.4,
+    2.6
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "roshan_quarter",
+    "riad_terraces",
+    "falaj_forts",
+    "tighremt_towers",
+    "ghardaia_cascade",
+    "chefchaouen_blue"
+   ]
+  },
+  {
+   "id": "dragon_back_eave",
+   "description": "scaled, humped roof-edge crest",
+   "size_m": [
+    6.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "modernista_reef"
+   ]
+  },
+  {
+   "id": "eyebrow_shade",
+   "description": "thin horizontal sunshade over a window (Deco)",
+   "size_m": [
+    1.6,
+    0.5
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco",
+    "moorish_deco"
+   ]
+  },
+  {
+   "id": "fountain_kiosk",
+   "description": "courtyard fountain / sabil kiosk",
+   "size_m": [
+    2.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market",
+    "riad_terraces",
+    "ablaq_lanes",
+    "ghorfa_honeycomb"
+   ]
+  },
+  {
+   "id": "fretwork_eave",
+   "description": "timber fretwork valance",
+   "size_m": [
+    3.0,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "konkan_cottages",
+    "festoon_bazaar"
+   ]
+  },
+  {
+   "id": "galeria_glazed",
+   "description": "glazed enclosed balcony/gallery with white mullions",
+   "size_m": [
+    3.0,
+    2.6
+   ],
+   "variants": [],
+   "used_by": [
+    "modernista_reef",
+    "balcon_canario"
+   ]
+  },
+  {
+   "id": "gallery_rail",
+   "description": "open access gallery slab + rail bay (chawl)",
+   "size_m": [
+    3.0,
+    1.8
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market",
+    "chawl_galleries"
+   ]
+  },
+  {
+   "id": "gallery_timber",
+   "description": "long open timber gallery on brackets (Cuenca)",
+   "size_m": [
+    3.0,
+    1.2
+   ],
+   "variants": [],
+   "used_by": [
+    "hanging_houses"
+   ]
+  },
+  {
+   "id": "gate_portal",
+   "description": "monumental entrance portal / darwaza",
+   "size_m": [
+    4.0,
+    6.0
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market",
+    "haveli_bazaar",
+    "ghorfa_honeycomb"
+   ]
+  },
+  {
+   "id": "ghorfa_vault",
+   "description": "barrel-vaulted cell 2.8 x 6 x 2.4 with one door + vent; the stackable warren unit (shop/store/room)",
+   "size_m": [
+    2.8,
+    2.6
+   ],
+   "variants": [
+    "shop",
+    "store",
+    "home",
+    "blind"
+   ],
+   "used_by": [
+    "ghorfa_honeycomb"
+   ]
+  },
+  {
+   "id": "glazed_inlay_band",
+   "description": "band of green/white glazed ceramic inlays",
+   "size_m": [
+    3.0,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "mudejar_brickworks"
+   ]
+  },
+  {
+   "id": "green_tile_eave",
+   "description": "green glazed-tile pent eave",
+   "size_m": [
+    3.0,
+    0.8
+   ],
+   "variants": [],
+   "used_by": [
+    "riad_terraces"
+   ]
+  },
+  {
+   "id": "grille_geometric",
+   "description": "geometric Deco grille",
+   "size_m": [
+    1.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco"
+   ]
+  },
+  {
+   "id": "inlay_band",
+   "description": "white inlay band on red stone",
+   "size_m": [
+    3.0,
+    0.3
+   ],
+   "variants": [],
+   "used_by": [
+    "mughal_crown"
+   ]
+  },
+  {
+   "id": "iwan_arch",
+   "description": "tall vaulted open-fronted hall face",
+   "size_m": [
+    5.0,
+    6.0
+   ],
+   "variants": [],
+   "used_by": [
+    "ablaq_lanes"
+   ]
+  },
+  {
+   "id": "jali_screen",
+   "description": "pierced stone screen panel",
+   "size_m": [
+    1.0,
+    1.5
+   ],
+   "variants": [],
+   "used_by": [
+    "haveli_bazaar",
+    "mughal_crown",
+    "jharokha_towers"
+   ]
+  },
+  {
+   "id": "jetty_upper",
+   "description": "jettied timber upper storey overhang (a frame + brackets)",
+   "size_m": [
+    3.0,
+    0.8
+   ],
+   "variants": [],
+   "used_by": [
+    "ablaq_lanes",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "jharokha",
+   "description": "bracketed enclosed balcony with jali and a small chhatri or bangla roof",
+   "size_m": [
+    1.6,
+    2.4
+   ],
+   "variants": [],
+   "used_by": [
+    "haveli_bazaar",
+    "jharokha_towers"
+   ]
+  },
+  {
+   "id": "lantern",
+   "description": "hanging/wall lantern (generic, emissive)",
+   "size_m": [
+    0.3,
+    0.5
+   ],
+   "variants": [
+    "fanous",
+    "brass",
+    "bulb_cage"
+   ],
+   "used_by": [
+    "qamariya_towers",
+    "shibam_stack",
+    "roshan_quarter",
+    "wikala_market",
+    "falaj_forts",
+    "ablaq_lanes",
+    "roofstreet_oasis",
+    "mudejar_brickworks",
+    "hanging_houses",
+    "festoon_bazaar",
+    "ghorfa_honeycomb",
+    "tighremt_towers",
+    "ghardaia_cascade",
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "lantern_paper",
+   "description": "paper lantern",
+   "size_m": [
+    0.4,
+    0.5
+   ],
+   "variants": [],
+   "used_by": [
+    "chawl_galleries"
+   ]
+  },
+  {
+   "id": "lantern_star",
+   "description": "pierced-brass star lantern (casts patterns)",
+   "size_m": [
+    0.4,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "riad_terraces",
+    "moorish_deco",
+    "chefchaouen_blue",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "lantern_star_paper",
+   "description": "paper star lantern (Konkan Christmas)",
+   "size_m": [
+    0.6,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "konkan_cottages"
+   ]
+  },
+  {
+   "id": "lantern_wall",
+   "description": "iron wall lantern",
+   "size_m": [
+    0.3,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "pueblo_blanco",
+    "modernista_reef",
+    "balcon_canario",
+    "chefchaouen_blue"
+   ]
+  },
+  {
+   "id": "laundry_line",
+   "description": "laundry line with hung cloths (catenary between anchors)",
+   "size_m": [
+    4.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "shibam_stack",
+    "chawl_galleries",
+    "toolhouse_stack",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "light_shaft",
+   "description": "light shaft through a roof terrace with a low rail",
+   "size_m": [
+    2.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "roofstreet_oasis"
+   ]
+  },
+  {
+   "id": "lights_fairy",
+   "description": "fairy lights draped on a balcony rail",
+   "size_m": [
+    3.0,
+    0.3
+   ],
+   "variants": [],
+   "used_by": [
+    "konkan_cottages"
+   ]
+  },
+  {
+   "id": "lights_festoon",
+   "description": "bulb festoon strung between anchors (lights_ pairs)",
+   "size_m": [
+    6.0,
+    0.1
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market",
+    "roofstreet_oasis",
+    "haveli_bazaar",
+    "chawl_galleries",
+    "toolhouse_stack",
+    "festoon_bazaar",
+    "ghorfa_honeycomb",
+    "ghardaia_cascade",
+    "matmata_pits",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "lights_jhalar",
+   "description": "curtain of tiny bulbs hanging down a facade",
+   "size_m": [
+    3.0,
+    6.0
+   ],
+   "variants": [],
+   "used_by": [
+    "haveli_bazaar",
+    "festoon_bazaar",
+    "jharokha_towers"
+   ]
+  },
+  {
+   "id": "lights_outline",
+   "description": "bulb/neon outline along an edge or dome (glow_ anchor)",
+   "size_m": [
+    3.0,
+    0.1
+   ],
+   "variants": [],
+   "used_by": [
+    "mughal_crown",
+    "marine_deco",
+    "moorish_deco",
+    "tighremt_towers"
+   ]
+  },
+  {
+   "id": "lights_projection",
+   "description": "colour-cycling floodlight wash (glow_ uplight anchor)",
+   "size_m": [
+    1.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "saracenic_gothic"
+   ]
+  },
+  {
+   "id": "loggia_top",
+   "description": "arcaded top-floor loggia",
+   "size_m": [
+    3.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "mudejar_brickworks"
+   ]
+  },
+  {
+   "id": "louvre",
+   "description": "fixed louvre vent panel",
+   "size_m": [
+    0.8,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "mashrabiya_box",
+   "description": "smaller cantilevered lattice oriel on brackets",
+   "size_m": [
+    1.4,
+    1.8
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "menzeh_tower",
+   "description": "small belvedere room on the roof",
+   "size_m": [
+    3.0,
+    3.5
+   ],
+   "variants": [],
+   "used_by": [
+    "riad_terraces"
+   ]
+  },
+  {
+   "id": "minaret_pyramid",
+   "description": "truncated pyramidal minaret/watchtower (crown, sign mast)",
+   "size_m": [
+    4.0,
+    20.0
+   ],
+   "variants": [],
+   "used_by": [
+    "ghardaia_cascade"
+   ]
+  },
+  {
+   "id": "minaret_small",
+   "description": "slender tower with balconies and a cap; often a sign/light mast",
+   "size_m": [
+    2.5,
+    14.0
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market",
+    "mughal_crown",
+    "festoon_bazaar",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "motif_relief_band",
+   "description": "geometric relief band (chevrons, lozenges, saw-tooth) cut into render",
+   "size_m": [
+    3.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "tighremt_towers"
+   ]
+  },
+  {
+   "id": "muqarnas_hood",
+   "description": "honeycomb vault hood over a portal",
+   "size_m": [
+    3.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "wikala_market"
+   ]
+  },
+  {
+   "id": "name_letters",
+   "description": "relief building-name letters (TextMesh at runtime)",
+   "size_m": [
+    4.0,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco",
+    "moorish_deco"
+   ]
+  },
+  {
+   "id": "painted_dado",
+   "description": "painted base band 0.8 m high",
+   "size_m": [
+    3.0,
+    0.8
+   ],
+   "variants": [],
+   "used_by": [
+    "pueblo_blanco",
+    "chefchaouen_blue"
+   ]
+  },
+  {
+   "id": "painted_motif",
+   "description": "painted geometric motif round openings (Ghadames red)",
+   "size_m": [
+    1.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "roofstreet_oasis"
+   ]
+  },
+  {
+   "id": "palm_planter",
+   "description": "planter with a palm (low-g, cold-tolerant fan palm)",
+   "size_m": [
+    1.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "falaj_forts"
+   ]
+  },
+  {
+   "id": "parapet_crenel",
+   "description": "parapet with merlons (stepped, triangular or square variants)",
+   "size_m": [
+    3.0,
+    1.2
+   ],
+   "variants": [
+    "stepped",
+    "triangle",
+    "square"
+   ],
+   "used_by": [
+    "qamariya_towers",
+    "wikala_market",
+    "falaj_forts",
+    "tighremt_towers"
+   ]
+  },
+  {
+   "id": "parapet_rounded",
+   "description": "soft rounded clay parapet with irregular top",
+   "size_m": [
+    3.0,
+    0.9
+   ],
+   "variants": [],
+   "used_by": [
+    "shibam_stack",
+    "roofstreet_oasis",
+    "ghardaia_cascade",
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "parapet_screen",
+   "description": "timber lattice parapet screen",
+   "size_m": [
+    3.0,
+    1.2
+   ],
+   "variants": [],
+   "used_by": [
+    "roshan_quarter"
+   ]
+  },
+  {
+   "id": "patio_gallery",
+   "description": "arcaded courtyard gallery bay",
+   "size_m": [
+    3.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "pueblo_blanco",
+    "balcon_canario"
+   ]
+  },
+  {
+   "id": "pigeon_loft",
+   "description": "dovecote/pigeon loft (the canon's doves)",
+   "size_m": [
+    2.0,
+    2.2
+   ],
+   "variants": [],
+   "used_by": [
+    "shibam_stack",
+    "toolhouse_stack",
+    "ghorfa_honeycomb",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "pinnacle",
+   "description": "Gothic pinnacle",
+   "size_m": [
+    0.6,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "saracenic_gothic"
+   ]
+  },
+  {
+   "id": "pishtaq_portal",
+   "description": "tall rectangular frame round a deep arch",
+   "size_m": [
+    6.0,
+    9.0
+   ],
+   "variants": [],
+   "used_by": [
+    "mughal_crown"
+   ]
+  },
+  {
+   "id": "pit_court",
+   "description": "round sunken court cut into the deck with a pond/well (needs the rock glb)",
+   "size_m": [
+    12.0,
+    8.0
+   ],
+   "variants": [],
+   "used_by": [
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "pit_rim_canopy",
+   "description": "low parapet + fabric canopy round a pit rim",
+   "size_m": [
+    12.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "pit_room",
+   "description": "vaulted room carved into a pit wall",
+   "size_m": [
+    3.0,
+    2.6
+   ],
+   "variants": [],
+   "used_by": [
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "plank_landing",
+   "description": "plank landing/walkway along a tier of cells",
+   "size_m": [
+    3.0,
+    0.9
+   ],
+   "variants": [],
+   "used_by": [
+    "ghorfa_honeycomb"
+   ]
+  },
+  {
+   "id": "planter",
+   "description": "pot/planter (window ledge, terrace, hung on walls: planter_wall variant)",
+   "size_m": [
+    0.4,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "riad_terraces",
+    "hanging_houses",
+    "modernista_reef",
+    "balcon_canario",
+    "chawl_galleries",
+    "konkan_cottages",
+    "tighremt_towers",
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "planter_wall",
+   "description": "cluster of painted pots hung on a wall",
+   "size_m": [
+    1.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "pueblo_blanco",
+    "chefchaouen_blue"
+   ]
+  },
+  {
+   "id": "plaster_band",
+   "description": "white gypsum/lime frieze band round a facade at a floor line or framing an opening",
+   "size_m": [
+    1.0,
+    0.25
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "shibam_stack"
+   ]
+  },
+  {
+   "id": "plinth",
+   "description": "raised stone plinth with steps",
+   "size_m": [
+    3.0,
+    1.2
+   ],
+   "variants": [],
+   "used_by": [
+    "mughal_crown"
+   ]
+  },
+  {
+   "id": "porthole_window",
+   "description": "round window",
+   "size_m": [
+    0.8,
+    0.8
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco"
+   ]
+  },
+  {
+   "id": "qamariya_fanlight",
+   "description": "semicircular stained-glass/alabaster fanlight in gypsum tracery; EMISSIVE at night in a colour",
+   "size_m": [
+    0.8,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "jharokha_towers"
+   ]
+  },
+  {
+   "id": "reja_grille",
+   "description": "projecting iron window grille with pot ledge",
+   "size_m": [
+    0.9,
+    1.4
+   ],
+   "variants": [],
+   "used_by": [
+    "pueblo_blanco",
+    "chefchaouen_blue"
+   ]
+  },
+  {
+   "id": "roof_bridge_small",
+   "description": "plank bridge with low rails between roof terraces/over a light shaft",
+   "size_m": [
+    1.2,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "roofstreet_oasis",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "roof_loggia",
+   "description": "2-3 arch roof loggia on a terrace",
+   "size_m": [
+    6.0,
+    2.8
+   ],
+   "variants": [],
+   "used_by": [
+    "ghardaia_cascade"
+   ]
+  },
+  {
+   "id": "rooftop_letters",
+   "description": "big letters on a roof frame (Tío Pepe / Deco hoardings) anchor",
+   "size_m": [
+    8.0,
+    2.5
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco",
+    "festoon_bazaar"
+   ]
+  },
+  {
+   "id": "rooftop_shack",
+   "description": "lean-to shack/added room on a roof",
+   "size_m": [
+    3.0,
+    2.4
+   ],
+   "variants": [],
+   "used_by": [
+    "shibam_stack",
+    "haveli_bazaar"
+   ]
+  },
+  {
+   "id": "rooftop_stair_head",
+   "description": "stair bulkhead with a door onto a roof (generic; the roof access)",
+   "size_m": [
+    3.0,
+    2.8
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "shibam_stack",
+    "roshan_quarter",
+    "falaj_forts",
+    "roofstreet_oasis",
+    "pueblo_blanco",
+    "hanging_houses",
+    "balcon_canario",
+    "tighremt_towers",
+    "ghardaia_cascade",
+    "chefchaouen_blue",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "rooftop_stall",
+   "description": "market stall on a roof terrace",
+   "size_m": [
+    2.4,
+    2.4
+   ],
+   "variants": [],
+   "used_by": [
+    "roofstreet_oasis"
+   ]
+  },
+  {
+   "id": "rose_window",
+   "description": "round traceried window",
+   "size_m": [
+    3.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "saracenic_gothic"
+   ]
+  },
+  {
+   "id": "roshan_bay",
+   "description": "large projecting turned-wood lattice bay, stackable floor over floor into a continuous screen; EMISSIVE lattice at night",
+   "size_m": [
+    2.4,
+    2.8
+   ],
+   "variants": [],
+   "used_by": [
+    "roshan_quarter"
+   ]
+  },
+  {
+   "id": "round_tower",
+   "description": "crenellated round tower",
+   "size_m": [
+    6.0,
+    12.0
+   ],
+   "variants": [],
+   "used_by": [
+    "falaj_forts"
+   ]
+  },
+  {
+   "id": "sabat_bridge",
+   "description": "a room bridging a lane at first-floor level",
+   "size_m": [
+    3.0,
+    4.0
+   ],
+   "variants": [],
+   "used_by": [
+    "ablaq_lanes",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "saucer_terrace",
+   "description": "cantilevered round roof canopy (Deco)",
+   "size_m": [
+    6.0,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco"
+   ]
+  },
+  {
+   "id": "screen_lattice",
+   "description": "flat turned-wood or pierced lattice panel (generic infill: windows, parapets, railings)",
+   "size_m": [
+    1.0,
+    1.0
+   ],
+   "variants": [
+    "kanaysi",
+    "hexagonal",
+    "sahrigi",
+    "cross"
+   ],
+   "used_by": [
+    "qamariya_towers",
+    "roshan_quarter",
+    "wikala_market",
+    "riad_terraces",
+    "ablaq_lanes",
+    "moorish_deco",
+    "tighremt_towers"
+   ]
+  },
+  {
+   "id": "shopfront_shutter",
+   "description": "shop bay: opening + rolling shutter + fascia sign anchor",
+   "size_m": [
+    3.0,
+    3.2
+   ],
+   "variants": [],
+   "used_by": [
+    "haveli_bazaar",
+    "chawl_galleries",
+    "festoon_bazaar"
+   ]
+  },
+  {
+   "id": "shutter_rolling",
+   "description": "roll-up steel shopfront shutter (half open variants)",
+   "size_m": [
+    3.0,
+    2.8
+   ],
+   "variants": [],
+   "used_by": [
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "shutters",
+   "description": "pair of louvred/boarded wooden shutters",
+   "size_m": [
+    0.9,
+    1.4
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "shibam_stack",
+    "roshan_quarter",
+    "hanging_houses",
+    "balcon_canario",
+    "chawl_galleries",
+    "konkan_cottages"
+   ]
+  },
+  {
+   "id": "sign_blade",
+   "description": "vertical blade sign anchor projecting from a facade",
+   "size_m": [
+    0.8,
+    4.0
+   ],
+   "variants": [],
+   "used_by": [
+    "shibam_stack",
+    "haveli_bazaar",
+    "toolhouse_stack",
+    "festoon_bazaar",
+    "jharokha_towers",
+    "tighremt_towers",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "sign_board",
+   "description": "generic sign board anchor (fascia/wall); SkySigns fills it",
+   "size_m": [
+    2.0,
+    0.8
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "roshan_quarter",
+    "wikala_market",
+    "riad_terraces",
+    "falaj_forts",
+    "ablaq_lanes",
+    "pueblo_blanco",
+    "mudejar_brickworks",
+    "hanging_houses",
+    "modernista_reef",
+    "balcon_canario",
+    "haveli_bazaar",
+    "mughal_crown",
+    "chawl_galleries",
+    "marine_deco",
+    "saracenic_gothic",
+    "toolhouse_stack",
+    "konkan_cottages",
+    "festoon_bazaar",
+    "moorish_deco",
+    "jharokha_towers",
+    "ghorfa_honeycomb",
+    "tighremt_towers",
+    "ghardaia_cascade",
+    "matmata_pits",
+    "chefchaouen_blue",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "skybridge",
+   "description": "covered footbridge between buildings at height (rail, roof, lamps); span set at build",
+   "size_m": [
+    1.6,
+    2.4
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "shibam_stack",
+    "riad_terraces",
+    "ablaq_lanes",
+    "chawl_galleries",
+    "moorish_deco",
+    "jharokha_towers",
+    "ghorfa_honeycomb",
+    "tighremt_towers"
+   ]
+  },
+  {
+   "id": "souk_vault",
+   "description": "covered vaulted souk bay with 2 shop cells and a skylight option",
+   "size_m": [
+    4.0,
+    3.5
+   ],
+   "variants": [],
+   "used_by": [
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "stair_core_open",
+   "description": "open stair core bay",
+   "size_m": [
+    3.0,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "chawl_galleries"
+   ]
+  },
+  {
+   "id": "stair_external_steep",
+   "description": "steep external stair flight against a wall, no rail or a rope rail",
+   "size_m": [
+    0.7,
+    2.6
+   ],
+   "variants": [],
+   "used_by": [
+    "ghorfa_honeycomb",
+    "chefchaouen_blue"
+   ]
+  },
+  {
+   "id": "stair_spiral_external",
+   "description": "external spiral stair",
+   "size_m": [
+    1.8,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "konkan_cottages"
+   ]
+  },
+  {
+   "id": "stair_steel_external",
+   "description": "bolt-on external steel stair flight with landing",
+   "size_m": [
+    0.9,
+    2.8
+   ],
+   "variants": [],
+   "used_by": [
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "sunburst_panel",
+   "description": "Deco sunburst relief over a door",
+   "size_m": [
+    2.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco"
+   ]
+  },
+  {
+   "id": "tarp_cover",
+   "description": "tarpaulin cover/awning",
+   "size_m": [
+    3.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "tile_panel",
+   "description": "tile panel: zellij dado, azulejo plaque or trencadís (variants)",
+   "size_m": [
+    1.0,
+    1.0
+   ],
+   "variants": [
+    "zellij",
+    "azulejo_blue",
+    "azulejo_poly",
+    "trencadis"
+   ],
+   "used_by": [
+    "riad_terraces",
+    "pueblo_blanco",
+    "modernista_reef",
+    "moorish_deco",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "timber_band",
+   "description": "timber tie-beam band set in masonry",
+   "size_m": [
+    3.0,
+    0.2
+   ],
+   "variants": [],
+   "used_by": [
+    "roshan_quarter",
+    "hanging_houses"
+   ]
+  },
+  {
+   "id": "timber_eave",
+   "description": "deep timber eave on brackets",
+   "size_m": [
+    3.0,
+    1.0
+   ],
+   "variants": [],
+   "used_by": [
+    "balcon_canario"
+   ]
+  },
+  {
+   "id": "tower_corner_tapered",
+   "description": "lean tapering corner tower (stair core / sign mast), relief-topped",
+   "size_m": [
+    3.5,
+    14.0
+   ],
+   "variants": [],
+   "used_by": [
+    "tighremt_towers"
+   ]
+  },
+  {
+   "id": "tower_square",
+   "description": "square ornamented tower (Mudéjar)",
+   "size_m": [
+    5.0,
+    14.0
+   ],
+   "variants": [],
+   "used_by": [
+    "mudejar_brickworks"
+   ]
+  },
+  {
+   "id": "trencadis_chimney",
+   "description": "mosaic sculptural chimney/vent",
+   "size_m": [
+    1.2,
+    3.0
+   ],
+   "variants": [],
+   "used_by": [
+    "modernista_reef"
+   ]
+  },
+  {
+   "id": "tunnel_portal",
+   "description": "sloped tunnel entrance from the deck down into a pit",
+   "size_m": [
+    2.0,
+    2.6
+   ],
+   "variants": [],
+   "used_by": [
+    "matmata_pits"
+   ]
+  },
+  {
+   "id": "turned_post",
+   "description": "turned timber post",
+   "size_m": [
+    0.15,
+    2.4
+   ],
+   "variants": [],
+   "used_by": [
+    "balcon_canario"
+   ]
+  },
+  {
+   "id": "verandah",
+   "description": "ground-floor verandah bay with posts",
+   "size_m": [
+    3.0,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "konkan_cottages"
+   ]
+  },
+  {
+   "id": "water_channel",
+   "description": "open stone water channel (falaj) in the deck",
+   "size_m": [
+    0.6,
+    0.4
+   ],
+   "variants": [],
+   "used_by": [
+    "falaj_forts"
+   ]
+  },
+  {
+   "id": "water_drum",
+   "description": "black plastic drum tank",
+   "size_m": [
+    1.0,
+    1.2
+   ],
+   "variants": [],
+   "used_by": [
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "water_tank",
+   "description": "rooftop water tank on a stand",
+   "size_m": [
+    1.6,
+    2.0
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers",
+    "haveli_bazaar",
+    "chawl_galleries"
+   ]
+  },
+  {
+   "id": "wave_band",
+   "description": "undulating facade band (Modernisme)",
+   "size_m": [
+    3.0,
+    0.6
+   ],
+   "variants": [],
+   "used_by": [
+    "modernista_reef"
+   ]
+  },
+  {
+   "id": "window_arched",
+   "description": "rectangular window with a round-arch head; stack in columns",
+   "size_m": [
+    0.8,
+    1.8
+   ],
+   "variants": [],
+   "used_by": [
+    "qamariya_towers"
+   ]
+  },
+  {
+   "id": "window_small",
+   "description": "small deep-set window, 0.6x0.9, splayed reveal",
+   "size_m": [
+    0.6,
+    0.9
+   ],
+   "variants": [],
+   "used_by": [
+    "shibam_stack",
+    "riad_terraces",
+    "falaj_forts",
+    "roofstreet_oasis",
+    "hanging_houses",
+    "chawl_galleries",
+    "toolhouse_stack",
+    "tighremt_towers",
+    "ghardaia_cascade",
+    "chefchaouen_blue",
+    "medina_warren"
+   ]
+  },
+  {
+   "id": "wire_bundle",
+   "description": "sagging bundle of cables between buildings/poles",
+   "size_m": [
+    6.0,
+    0.1
+   ],
+   "variants": [],
+   "used_by": [
+    "haveli_bazaar",
+    "toolhouse_stack"
+   ]
+  },
+  {
+   "id": "ziggurat_crown",
+   "description": "stepped Deco crown",
+   "size_m": [
+    6.0,
+    5.0
+   ],
+   "variants": [],
+   "used_by": [
+    "marine_deco",
+    "moorish_deco"
+   ]
+  },
+  {
+   "id": "balcony_cantilever",
+   "description": "generic cantilevered balcony slab with rail",
+   "size_m": [
+    2.4,
+    1.0
+   ],
+   "variants": [],
+   "used_by": []
+  }
+ ]
+}

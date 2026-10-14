@@ -1,0 +1,139 @@
+{
+ "id": "SKY-podium_bazaar-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 31.4,
+  "d": 18.2
+ },
+ "traits": {
+  "style": "podium_bazaar",
+  "arch": "slab",
+  "model_kind": "tall",
+  "storeys": 11,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -5.1,
+     -8.5,
+     12.9,
+     7.5
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -15.1,
+     -6.0,
+     -5.1,
+     6.5
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bands",
+   "tanks",
+   "ac",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.75,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#8d8a80",
+    "#e6dfcc",
+    "#5c6b73"
+   ],
+   "trim": "#e6dfcc",
+   "accent": "#5c6b73",
+   "canvas": "#ff3fa4",
+   "tile": "#3a7bff"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "blade",
+    "dotmatrix",
+    "billboard"
+   ],
+   "density": 0.9
+  },
+  "mood": "#3fe0d0",
+  "shops": [
+   {
+    "kind": "butcher"
+   },
+   {
+    "kind": "food"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "fish_market"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "butcher"
+   },
+   {
+    "kind": "food"
+   },
+   {
+    "kind": "grocery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "podium_bazaar",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Podium Bazaar style: a shared model"
+}

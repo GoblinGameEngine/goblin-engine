@@ -1,0 +1,196 @@
+{
+ "id": "SKY-courtyard_canyon-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 22.7
+ },
+ "traits": {
+  "style": "courtyard_canyon",
+  "arch": "court",
+  "model_kind": "tall",
+  "storeys": 11,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -0.75,
+     11.9,
+     9.75
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     2.9,
+     -10.75,
+     11.9,
+     -0.75
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     0.25,
+     2.9,
+     9.75
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.1,
+     -0.75,
+     -5.1,
+     9.75
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -14.1,
+     -10.75,
+     -5.1,
+     -0.75
+    ],
+    "storeys": 9,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bay",
+   "cage",
+   "shutters",
+   "tanks",
+   "antennas",
+   "laundry",
+   "ac",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.75,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#9fb8a8",
+    "#c47e6a",
+    "#e9e2cf"
+   ],
+   "trim": "#e9e2cf",
+   "accent": "#7e8f99",
+   "canvas": "#ff3fa4",
+   "tile": "#3a7bff"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "blade",
+    "chochin"
+   ],
+   "density": 0.6
+  },
+  "mood": "#ff9ec4",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "courtyard_canyon",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Courtyard Canyon style: a shared model"
+}

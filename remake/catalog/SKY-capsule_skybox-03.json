@@ -1,0 +1,165 @@
+{
+ "id": "SKY-capsule_skybox-03",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 13.7
+ },
+ "traits": {
+  "style": "capsule_skybox",
+  "arch": "tower_cluster",
+  "model_kind": "row",
+  "storeys": 9,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.15,
+     -5.25,
+     11.65,
+     4.25
+    ],
+    "storeys": 9,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -5.75,
+     3.15,
+     5.25
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -13.85,
+     -6.25,
+     -5.35,
+     3.75
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bay",
+   "gallery",
+   "tanks",
+   "antennas",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "capsule",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "batten",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#2f6f8f",
+    "#e6b84a",
+    "#7aa36b"
+   ],
+   "trim": "#e8e6df",
+   "accent": "#2f6f8f",
+   "canvas": "#ff3fa4",
+   "tile": "#ffffff"
+  },
+  "signage": {
+   "kinds": [
+    "dotmatrix",
+    "lightbox",
+    "neon"
+   ],
+   "density": 0.5
+  },
+  "mood": "#9a6bff",
+  "shops": [
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "capsule_skybox",
+  "model": "row",
+  "use": "shops",
+  "storeys": 10,
+  "homes": 0
+ },
+ "brief": "sky island row in the Skybox Capsules style: a shared model"
+}

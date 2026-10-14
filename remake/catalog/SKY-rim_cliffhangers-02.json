@@ -1,0 +1,180 @@
+{
+ "id": "SKY-rim_cliffhangers-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.4,
+  "d": 23.2
+ },
+ "traits": {
+  "style": "rim_cliffhangers",
+  "arch": "tower_cluster",
+  "model_kind": "tall",
+  "storeys": 5,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -2.0,
+     11.4,
+     8.0
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.6,
+     -1.5,
+     2.9,
+     10.0
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     -11.0,
+     2.9,
+     -1.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.6,
+     -3.0,
+     -5.6,
+     7.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "screen",
+   "jetty",
+   "eaves",
+   "tower",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "spire",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#3b2c22",
+    "#d9c9a8",
+    "#5a6a5a"
+   ],
+   "trim": "#d9c9a8",
+   "accent": "#3b2c22",
+   "canvas": "#ffc23a",
+   "tile": "#ffd38a"
+  },
+  "signage": {
+   "kinds": [
+    "chochin",
+    "painted",
+    "neon"
+   ],
+   "density": 0.45
+  },
+  "mood": "#ff6a4a",
+  "shops": [
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "pizza"
+   },
+   {
+    "kind": "restaurant"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "diner"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "pizza"
+   },
+   {
+    "kind": "restaurant"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "diner"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "pizza"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "rim_cliffhangers",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Rim Cliffhangers style: a shared model"
+}

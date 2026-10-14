@@ -1,0 +1,169 @@
+{
+ "id": "SKY-balcon_canario-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 30.4,
+  "d": 16.7
+ },
+ "traits": {
+  "style": "balcon_canario",
+  "arch": "gable_row",
+  "model_kind": "landmark",
+  "storeys": 8,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.4,
+     -7.25,
+     12.4,
+     5.75
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.6,
+     -6.75,
+     3.4,
+     6.75
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -14.6,
+     -7.75,
+     -5.6,
+     5.75
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "balcony",
+   "gallery",
+   "shutters",
+   "eyebrow",
+   "shacks",
+   "planter",
+   "lanterns",
+   "billboard",
+   "tower"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#3f7a52",
+    "#e9e2d0",
+    "#c96b3c"
+   ],
+   "trim": "#e9e2d0",
+   "accent": "#fff0b0",
+   "canvas": "#fff0b0",
+   "tile": "#ff8a5a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "lightbox"
+   ],
+   "density": 0.4
+  },
+  "mood": "#ffe2a0",
+  "shops": [
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "balcon_canario",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Balc\u00f3n Canario style: a shared model"
+}

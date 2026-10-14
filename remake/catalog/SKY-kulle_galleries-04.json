@@ -1,0 +1,127 @@
+{
+ "id": "SKY-kulle_galleries-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 30.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "kulle_galleries",
+  "arch": "tower_cluster",
+  "model_kind": "hall",
+  "storeys": 5,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     4.15,
+     -6.0,
+     12.65,
+     4.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -14.85,
+     -7.5,
+     4.15,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "machine_floor",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "bay",
+   "gallery",
+   "shutters",
+   "lanterns",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.75,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#3c6fa8",
+    "#d39b3a",
+    "#a8402f"
+   ],
+   "trim": "#f1ece2",
+   "accent": "#5a3b26",
+   "canvas": "#ff9a5a",
+   "tile": "#ffd99a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin",
+    "brass"
+   ],
+   "density": 0.35
+  },
+  "mood": "#ffe2b0",
+  "shops": [
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "kulle_galleries",
+  "model": "hall",
+  "use": "market",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Kulle Galleries style: a shared model"
+}

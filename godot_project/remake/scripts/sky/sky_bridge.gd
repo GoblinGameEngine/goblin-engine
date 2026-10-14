@@ -16,6 +16,11 @@ var target := 0.0              # where it's going
 var seconds := 30.0            # stowed to down
 var _nodes: Array = []         # [Node3D, keys]
 var _bodies: Array[StaticBody3D] = []
+var nose_y := 0.0              # the style's nose deck height (telescoping decks step down a little)
+var reach := 13.0
+var _base := Transform3D()     # where the island mounted it (match() raises or lowers it from there)
+var _plate: Node3D             # the joint plate over the meeting noses (down only)
+const PLATE_LEN := 1.2
 
 
 static func styles() -> Dictionary:
@@ -31,6 +36,9 @@ func setup(p_style: String) -> void:
 		push_warning("SkyBridge: no style %s" % style)
 		return
 	seconds = float(st.get("seconds", 30.0))
+	nose_y = float(st.get("nose_y", 0.0))
+	reach = float(st.get("reach", 13.0))
+	_base = transform
 	if not _scenes.has(style):
 		_scenes[style] = load(st.glb)
 	var inst: Node3D = (_scenes[style] as PackedScene).instantiate()
@@ -52,7 +60,76 @@ func setup(p_style: String) -> void:
 		body.add_child(cs)
 		host.add_child(body)
 		_bodies.append(body)
+	# every part is solid (the user, 2026-10-14: "all part of the bridge need to be solid"): one body per moving node
+	# (and one for the fixed housing), holding a trimesh of each of its own meshes -- not a body per mesh: an island
+	# moves every tick, and every body on it moves with it
+	var movers := {}
+	for nk in _nodes:
+		movers[nk[0]] = true
+	var stack: Array = [[inst, inst]]                  # [node, the body-owner it belongs to]
+	var shapes := {}                                   # owner -> [[shape, transform in owner]]
+	while not stack.is_empty():
+		var it: Array = stack.pop_back()
+		var c: Node = it[0]
+		var owner_: Node3D = it[1]
+		if c != inst and movers.has(c):
+			owner_ = c
+		if c is MeshInstance3D and (c as MeshInstance3D).mesh:
+			var rel := _rel_to(c as Node3D, owner_)
+			shapes[owner_] = shapes.get(owner_, []) + [[(c as MeshInstance3D).mesh.create_trimesh_shape(), rel]]
+		for ch in c.get_children():
+			if ch is Node3D:
+				stack.append([ch, owner_])
+	for owner_ in shapes:
+		var body := StaticBody3D.new()
+		body.name = "solid"
+		for sh in shapes[owner_]:
+			var cs := CollisionShape3D.new()
+			cs.shape = sh[0]
+			cs.transform = sh[1]
+			body.add_child(cs)
+		(owner_ as Node3D).add_child(body)
+	_make_plate(float(st.get("width", 3.6)))
 	_pose()
+
+
+static func _rel_to(n: Node3D, owner_: Node3D) -> Transform3D:
+	## n's transform in owner_'s frame (owner_ an ancestor, or n itself)
+	var t := Transform3D.IDENTITY
+	var c: Node = n
+	while c != owner_ and c != null:
+		t = (c as Node3D).transform * t
+		c = c.get_parent()
+	return t
+
+
+func _make_plate(w: float) -> void:
+	## a steel plate laid over the two noses where they meet: one even surface across the joint
+	_plate = StaticBody3D.new()
+	_plate.name = "joint_plate"
+	var cs := CollisionShape3D.new()
+	var box := BoxShape3D.new()
+	box.size = Vector3(w, 0.04, PLATE_LEN)
+	cs.shape = box
+	_plate.add_child(cs)
+	var mi := MeshInstance3D.new()
+	var bm := BoxMesh.new()
+	bm.size = box.size
+	mi.mesh = bm
+	var m := StandardMaterial3D.new()
+	m.albedo_color = Color(0.32, 0.33, 0.35)
+	m.metallic = 0.6
+	m.roughness = 0.5
+	mi.material_override = m
+	_plate.add_child(mi)
+	_plate.position = Vector3(0.0, nose_y + 0.02, reach)
+	add_child(_plate)
+
+
+func match(partner_nose_y: float) -> void:
+	## two styles whose noses sit at different heights: each takes up half the difference at its mount, so they meet
+	var mid := (nose_y + partner_nose_y) * 0.5
+	transform = _base.translated_local(Vector3(0.0, mid - nose_y, 0.0))
 
 
 func _process(delta: float) -> void:
@@ -74,6 +151,9 @@ func _pose() -> void:
 	var down := deploy >= 0.98
 	for b in _bodies:
 		b.collision_layer = 1 if down else 0
+	if _plate:
+		_plate.visible = down
+		_plate.collision_layer = 1 if down else 0
 
 
 static func _at(keys: Array, d: float) -> Transform3D:

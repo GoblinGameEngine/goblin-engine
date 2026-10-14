@@ -1,0 +1,109 @@
+{
+ "id": "SKY-hangar_quarter-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 24.4,
+  "d": 18.2
+ },
+ "traits": {
+  "style": "hangar_quarter",
+  "arch": "slab",
+  "model_kind": "home",
+  "storeys": 4,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -11.6,
+     -8.5,
+     9.4,
+     7.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#7a5a40",
+    "#c94a3a",
+    "#e6d8be"
+   ],
+   "trim": "#e6d8be",
+   "accent": "#2e5e4e",
+   "canvas": "#ffd38a",
+   "tile": "#ff4a2a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "neon",
+    "chochin"
+   ],
+   "density": 0.5
+  },
+  "mood": "#ffb35c",
+  "shops": [
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "hangar_quarter",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island home in the Hangar Quarter style: a shared model"
+}

@@ -159,6 +159,8 @@ func _queue_near() -> void:
 	_build.append(_build_tethers)
 	_build.append(_build_bridges)
 	_build.append(_build_props)
+	_build.append(_build_links)
+	_build.append(_build_signs)                    # (SkySigns: the island's lights after dark)
 	var by_model := {}
 	for b in data.buildings:
 		by_model[b.model] = by_model.get(b.model, []) + [b]
@@ -226,15 +228,24 @@ func _load_building(model: String, list: Array) -> void:
 				_near.add_child(holder)
 				var l1: Node3D = ps1.instantiate()
 				RemakeBuilding.prepare_lod(l1, base + ".lod1.glb")
+				RemakeBuilding.light_windows(l1, _glow_of(b))
 				_ranges(l1, 0.0, LOD1_END)
 				holder.add_child(l1)
 				var l2: Node3D = ps2.instantiate()
 				RemakeBuilding.prepare_lod(l2, base + ".lod2.glb")
+				RemakeBuilding.light_windows(l2, _glow_of(b))
 				_ranges(l2, LOD1_END, 0.0)
 				_no_shadow(l2)
 				holder.add_child(l2)
 				_dress(holder)
-				_blds.append({"b": b, "holder": holder, "lod1": l1, "full": null, "loading": false})))
+				_blds.append({"b": b, "holder": holder, "lod1": l1, "lod2": l2, "full": null, "loading": false})))
+
+
+static func _glow_of(b: Dictionary) -> Color:
+	## a building's windows at night: its mood (make_islands.py, from the style's night moods), warmed toward lamplight
+	var m = b.get("mood", "")
+	var c := Color(m) if m is String and m != "" else RemakeBuilding.WINDOW_GLOW
+	return c.lerp(RemakeBuilding.WINDOW_GLOW, 0.35)
 
 
 const FULL_R := 55.0                 # m: full detail within (the main world's LOD0_MAX)
@@ -263,6 +274,7 @@ func _stream_full() -> void:
 				rb.name = "Full"
 				holder.add_child(rb)
 				rb.load_building(ps)
+				RemakeBuilding.light_windows(rb, _glow_of(e.b))
 				rb.cull_inner_doors()
 				_ranges(rb, 0.0, FULL_R * 1.3)
 				_ranges(e.lod1, FULL_R * 1.3, LOD1_END)
@@ -333,10 +345,10 @@ func _h(ix: int, iz: int, nx: int) -> float:
 	return _height.decode_s16((iz * nx + ix) * 2) * 0.01
 
 
-func inside(lp: Vector3) -> bool:
-	## lp (local) over the deck's bounds
+func inside(lp: Vector3, margin := 2.0) -> bool:
+	## lp (local) over the deck's bounds, and margin m past them
 	var f: Dictionary = data.faces
-	return lp.x > float(f.N) - 2.0 and lp.x < float(f.S) + 2.0 and lp.z > float(f.E) - 2.0 and lp.z < float(f.W) + 2.0
+	return lp.x > float(f.N) - margin and lp.x < float(f.S) + margin and lp.z > float(f.E) - margin and lp.z < float(f.W) + margin
 
 
 static func _mat(key: String, col: Color, rough := 0.95) -> StandardMaterial3D:
@@ -422,12 +434,37 @@ func _build_water() -> void:
 		var mi := MeshInstance3D.new()
 		mi.name = "Water"
 		mi.mesh = st.commit()
-		var m := _mat("sky_water", Color(0.25, 0.42, 0.5, 0.82), 0.08)
-		m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
-		m.metallic_specular = 0.8
-		mi.material_override = m
+		mi.material_override = _pond_mat(lv)
 		mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 		_near.add_child(mi)
+
+
+var _pond_mats := {}
+var _height_tex: ImageTexture
+
+
+func _pond_mat(level: float) -> ShaderMaterial:
+	## the frosty pond (sky_pond.gdshader): it reads the island's height grid to know how deep it is where
+	if _pond_mats.has(level):
+		return _pond_mats[level]
+	if _height_tex == null and not _hg.is_empty():
+		var nx: int = _hg.nx
+		var nz: int = _hg.nz
+		var img := Image.create(nx, nz, false, Image.FORMAT_RF)
+		for iz in nz:
+			for ix in nx:
+				img.set_pixel(ix, iz, Color(_h(ix, iz, nx), 0, 0))
+		_height_tex = ImageTexture.create_from_image(img)
+	var m := ShaderMaterial.new()
+	m.shader = load("res://remake/shaders/sky_pond.gdshader")
+	m.set_shader_parameter("level", level)
+	if _height_tex:
+		var st: float = _hg.step
+		# (sample i sits at x0 + i * step: the texture's cell i spans half a step either side)
+		m.set_shader_parameter("grid", Vector4(float(_hg.x0) - st * 0.5, float(_hg.z0) - st * 0.5, int(_hg.nx) * st, int(_hg.nz) * st))
+		m.set_shader_parameter("height_tex", _height_tex)
+	_pond_mats[level] = m
+	return m
 
 
 func _build_fence() -> void:
@@ -559,6 +596,9 @@ func _build_bridges() -> void:
 		for d in down:
 			if d[0] == b.side and absf(float(d[1]) - al) < 0.01:
 				br.snap(1.0)
+				var other := _partner_of(b.side, al)
+				if other >= 0:
+					br.match(float(SkyBridge.styles().get(sys.islands[other].bridge_style(), {}).get("nose_y", 0.0)))
 		_dress(br)
 
 
@@ -578,10 +618,101 @@ func _park_lark(at: Transform3D) -> void:
 	_ranges(k, 0.0, 350.0)
 
 
-func set_bridge(side: String, along: float, down: bool) -> void:
+func _partner_of(side: String, along: float) -> int:
+	## the island lashed to this one at that bridge (-1: none)
+	for e in sys.drift.raft_of(idx).edges:
+		if e.a == idx and e.side == side and absf(float(e.along_a) - along) < 0.01:
+			return e.b
+		if e.b == idx and SkyDrift._opp(e.side) == side and absf(float(e.along_b) - along) < 0.01:
+			return e.a
+	return -1
+
+
+func set_bridge(side: String, along: float, down: bool, partner_style := "") -> void:
 	var br: SkyBridge = bridge_at.get("%s:%.2f" % [side, along])
 	if br:
 		br.target = 1.0 if down else 0.0
+		if down and partner_style != "":
+			br.match(float(SkyBridge.styles().get(partner_style, {}).get("nose_y", 0.0)))
+
+
+func bridge_style() -> String:
+	return data.get("bridge_style", canon.get("bridge_style", "bascule_timber"))
+
+
+func _build_links() -> void:
+	## The warren's links between buildings (make_islands.py "links"): skybridges (steel deck, rails), planks (a narrow
+	## timber walk with rope rails) and covered alleys (a passage with low walls and a roof) -- one mesh per material
+	## for the island, and one body holding a box per walking surface, wall and roof.
+	var links: Array = data.get("links", [])
+	if links.is_empty():
+		return
+	var sts := {}
+	var body := StaticBody3D.new()
+	body.name = "LinksBody"
+	for l in links:
+		var a := Vector3(l.from[0], l.from[1], l.from[2])
+		var b := Vector3(l.to[0], l.to[1], l.to[2])
+		var L := a.distance_to(b)
+		if L < 0.2:
+			continue
+		var w: float = l.get("width", 1.5)
+		var x := (b - a) / L
+		var side := x.cross(Vector3.UP).normalized()
+		if side.length() < 0.5:
+			continue
+		var up := side.cross(x).normalized()
+		var bas := Basis(x, up, side)
+		var mid := (a + b) * 0.5
+		match str(l.kind):
+			"plank":
+				_lbox(sts, "plank", body, bas, mid + up * -0.04, Vector3(L + 0.4, 0.08, w))
+				for sgn in [-1.0, 1.0]:
+					_lbox(sts, "rope", null, bas, mid + up * 0.95 + side * (w * 0.5 * sgn), Vector3(L, 0.03, 0.03))
+					_lbox(sts, "rope", body, bas, mid + up * 0.55 + side * (w * 0.5 * sgn), Vector3(L, 1.1, 0.04), true)
+			"covered_alley":
+				_lbox(sts, "alley", body, bas, mid + up * -0.1, Vector3(L + 0.3, 0.2, w + 0.3))
+				for sgn in [-1.0, 1.0]:
+					_lbox(sts, "alley", body, bas, mid + up * 0.55 + side * ((w * 0.5 + 0.08) * sgn), Vector3(L, 1.1, 0.16))
+				_lbox(sts, "alley_roof", body, bas, mid + up * 2.55, Vector3(L + 0.6, 0.18, w + 0.7))
+				for sgn in [-1.0, 1.0]:
+					for e in [-0.5, 0.5]:
+						_lbox(sts, "alley", null, bas, mid + x * (L * e) + up * 1.8 + side * ((w * 0.5 + 0.08) * sgn), Vector3(0.18, 1.5, 0.18))
+			_:
+				_lbox(sts, "bridge", body, bas, mid + up * -0.08, Vector3(L + 0.4, 0.16, w))
+				for sgn in [-1.0, 1.0]:
+					_lbox(sts, "rail", body, bas, mid + up * 0.55 + side * ((w * 0.5 - 0.03) * sgn), Vector3(L, 1.1, 0.06), true)
+					_lbox(sts, "rail", null, bas, mid + up * 1.1 + side * ((w * 0.5 - 0.03) * sgn), Vector3(L, 0.06, 0.1))
+	var cols := {"plank": Color(0.52, 0.38, 0.24), "rope": Color(0.62, 0.55, 0.42), "alley": Color(0.70, 0.62, 0.52),
+		"alley_roof": Color(0.38, 0.30, 0.26), "bridge": Color(0.30, 0.32, 0.36), "rail": Color(0.22, 0.24, 0.27)}
+	for k in sts:
+		var mi := MeshInstance3D.new()
+		mi.name = "Links_" + k
+		mi.mesh = (sts[k] as SurfaceTool).commit()
+		mi.material_override = _mat("sky_link_" + k, cols.get(k, Color.GRAY))
+		_near.add_child(mi)
+		_dress(mi)
+	_near.add_child(body)
+
+
+func _lbox(sts: Dictionary, k: String, body: StaticBody3D, bas: Basis, c: Vector3, size: Vector3, invisible := false) -> void:
+	## an oriented box: drawn (unless invisible: a rail's collision panel) and, with a body, solid
+	var xf := Transform3D(bas, c)
+	if not invisible:
+		if not sts.has(k):
+			var st := SurfaceTool.new()
+			st.begin(Mesh.PRIMITIVE_TRIANGLES)
+			sts[k] = st
+		var bm := BoxMesh.new()
+		bm.size = size
+		(sts[k] as SurfaceTool).append_from(bm, 0, xf)
+	if body:
+		var cs := CollisionShape3D.new()
+		var box := BoxShape3D.new()
+		box.size = size
+		cs.shape = box
+		cs.transform = xf
+		body.add_child(cs)
 
 
 func _build_props() -> void:
@@ -782,3 +913,66 @@ static func _no_shadow(n: Node) -> void:
 		stack.append_array(c.get_children())
 		if c is GeometryInstance3D:
 			(c as GeometryInstance3D).cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+
+
+# ------------------------------------------------------------------ lights after dark (SkySigns, sky_glitter)
+var _glitter_mat: ShaderMaterial
+var _glittered := {}                 # the LOD node -> true once its glitter twins are in
+
+
+func _build_signs() -> void:
+	## every store's sign, every building's mood lighting, the string lights: built over the next frames
+	if _near == null:
+		return
+	var s := SkySigns.new()
+	_near.add_child(s)
+	s.setup(self)
+
+
+func set_night(n: float) -> void:
+	## (SkyIslands, every second or so) far off at night the island glitters: its far and mid LODs get twins drawn
+	## with sky_glitter (lit windows, roof signs, rim bulbs) -- added the first night they're seen, shown only at night
+	var on := n > 0.02
+	var lods: Array = [_far, _mid]
+	for e in _blds:                      # (and every building's distant forms: their windows are only vertex colour)
+		lods.append(e.lod1)
+		lods.append(e.get("lod2"))
+	for lod in lods:
+		if lod == null or not is_instance_valid(lod):
+			continue
+		if on and not _glittered.has(lod):
+			_glitter(lod)
+		for g in (lod as Node).get_meta("glitter", []):
+			if is_instance_valid(g):
+				(g as Node3D).visible = on
+
+
+func _glitter(lod: Node3D) -> void:
+	_glittered[lod] = true
+	if _glitter_mat == null:
+		_glitter_mat = ShaderMaterial.new()
+		_glitter_mat.shader = load("res://remake/shaders/sky_glitter.gdshader")
+		_glitter_mat.set_shader_parameter("seed", float(idx) * 1.37)
+		var cols: Array = canon.get("colors", [])
+		if not cols.is_empty():
+			_glitter_mat.set_shader_parameter("mood", Color(str(cols[0])).lightened(0.35))
+	var twins: Array = []
+	var stack: Array[Node] = [lod]
+	while not stack.is_empty():
+		var c: Node = stack.pop_back()
+		stack.append_array(c.get_children())
+		if c is MeshInstance3D and (c as MeshInstance3D).mesh and not c.has_meta("glitter_twin"):
+			var t := MeshInstance3D.new()
+			t.mesh = (c as MeshInstance3D).mesh
+			t.material_override = _glitter_mat
+			var gi := c as GeometryInstance3D              # (a twin shows over the same distances as its LOD)
+			t.visibility_range_begin = gi.visibility_range_begin
+			t.visibility_range_begin_margin = gi.visibility_range_begin_margin
+			t.visibility_range_end = gi.visibility_range_end
+			t.visibility_range_end_margin = gi.visibility_range_end_margin
+			t.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			t.set_meta("glitter_twin", true)
+			c.add_child(t)
+			twins.append(t)
+	lod.set_meta("glitter", twins)
+

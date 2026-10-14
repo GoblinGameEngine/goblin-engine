@@ -1,0 +1,178 @@
+{
+ "id": "SKY-sassi_terraces-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 22.7
+ },
+ "traits": {
+  "style": "sassi_terraces",
+  "arch": "pile",
+  "model_kind": "home",
+  "storeys": 2,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.65,
+     -2.25,
+     11.65,
+     8.25
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -1.25,
+     2.65,
+     9.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.35,
+     -10.75,
+     2.65,
+     -1.25
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.85,
+     -2.75,
+     -5.35,
+     7.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "arch",
+   "dome",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shrine",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#c9b08a",
+    "#8f7a5c",
+    "#ece5d6"
+   ],
+   "trim": "#f4f3ee",
+   "accent": "#1e5aa8",
+   "canvas": "#ffe2a8",
+   "tile": "#ff8c5a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin",
+    "neon"
+   ],
+   "density": 0.4
+  },
+  "mood": "#ffcf8a",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "fish_market"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "butcher"
+   },
+   {
+    "kind": "food"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "fish_market"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "butcher"
+   },
+   {
+    "kind": "food"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "fish_market"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "sassi_terraces",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 2,
+  "homes": 0
+ },
+ "brief": "sky island home in the Sassi Terraces style: a shared model"
+}

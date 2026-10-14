@@ -8,7 +8,15 @@ calls build() and writes godot_project/remake/bible/sky_islands.json and researc
 Deterministic: every pick hashes (seed, island) -- no RNG state.
 """
 import hashlib
+import json
 import math
+import os
+
+# each island's architectural style (tools/sky/styles.py assigns them from this canon's own fields, so it runs after a
+# first pass: make_bible -> styles.py -> make_bible)
+_STYLE_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                           "godot_project", "remake", "sky", "style_assign.json")
+_STYLES = json.load(open(_STYLE_FILE))["assign"] if os.path.exists(_STYLE_FILE) else {}
 
 SEED = "sky-2026-10-14"
 
@@ -565,6 +573,7 @@ def build(names, faction_ids, settlement_ids, lineage_surnames):
             "specialty": spec[0], "trade": spec[3], "needs": spec[4] + ["metal", "grain", "medicine"],
             "bridge_style": bstyle[i], "aerostats": nl, "founded_vy": founded, "governance": gov[0], "customs": customs, "faith": faith,
             "heritage": heritage, "colors": pal, "landmark": landmark, "character": character, "seed": int(h01("seed", i) * 2 ** 31),
+            "style": _STYLES.get(iid),          # its architecture (tools/sky/styles.py; research/sky_islands/architecture)
         })
         clans.append({"id": clan_id, "name": clan, "surname": sn, "island": iid, "heritage": heritage, "colors": pal, "governance": gov[0],
                       "customs": customs, "faith": faith})

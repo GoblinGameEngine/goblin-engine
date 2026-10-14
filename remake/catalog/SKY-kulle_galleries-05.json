@@ -1,0 +1,166 @@
+{
+ "id": "SKY-kulle_galleries-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 27.9,
+  "d": 14.7
+ },
+ "traits": {
+  "style": "kulle_galleries",
+  "arch": "tower_cluster",
+  "model_kind": "landmark",
+  "storeys": 7,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.65,
+     -6.25,
+     11.15,
+     3.75
+    ],
+    "storeys": 7,
+    "plan": "tower",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.35,
+     -5.75,
+     2.65,
+     5.75
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -13.35,
+     -6.75,
+     -5.35,
+     2.75
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "bay",
+   "gallery",
+   "shutters",
+   "lanterns",
+   "billboard",
+   "tower"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.75,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#d39b3a",
+    "#a8402f",
+    "#f1ece2"
+   ],
+   "trim": "#f1ece2",
+   "accent": "#ffd99a",
+   "canvas": "#ffd99a",
+   "tile": "#ff9a5a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin",
+    "brass"
+   ],
+   "density": 0.35
+  },
+  "mood": "#ffcb7a",
+  "shops": [
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "kulle_galleries",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 7,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Kulle Galleries style: a shared model"
+}

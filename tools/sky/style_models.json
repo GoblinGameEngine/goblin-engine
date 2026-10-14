@@ -1,0 +1,3687 @@
+[
+{
+"id": "SKY-ablaq_lanes-01",
+"style": "ablaq_lanes",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-ablaq_lanes-02",
+"style": "ablaq_lanes",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-ablaq_lanes-03",
+"style": "ablaq_lanes",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-ablaq_lanes-04",
+"style": "ablaq_lanes",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.9,
+"d": 24.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-ablaq_lanes-05",
+"style": "ablaq_lanes",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-balcon_canario-01",
+"style": "balcon_canario",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-balcon_canario-02",
+"style": "balcon_canario",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 36.4,
+"d": 16.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-balcon_canario-03",
+"style": "balcon_canario",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 16.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-balcon_canario-04",
+"style": "balcon_canario",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 31.9,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-balcon_canario-05",
+"style": "balcon_canario",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 30.4,
+"d": 16.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-bathhouse_tiers-01",
+"style": "bathhouse_tiers",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 26.4,
+"d": 15.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-bathhouse_tiers-02",
+"style": "bathhouse_tiers",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 15.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-bathhouse_tiers-03",
+"style": "bathhouse_tiers",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 14.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-bathhouse_tiers-04",
+"style": "bathhouse_tiers",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 32.9,
+"d": 16.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-bathhouse_tiers-05",
+"style": "bathhouse_tiers",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 24.9,
+"d": 14.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-box_pile-01",
+"style": "box_pile",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 21.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-box_pile-02",
+"style": "box_pile",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 39.9,
+"d": 23.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-box_pile-03",
+"style": "box_pile",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 36.9,
+"d": 14.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-box_pile-04",
+"style": "box_pile",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 38.4,
+"d": 16.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-box_pile-05",
+"style": "box_pile",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-bridge_street-01",
+"style": "bridge_street",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 17.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-bridge_street-02",
+"style": "bridge_street",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 36.9,
+"d": 15.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-bridge_street-03",
+"style": "bridge_street",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 16.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-bridge_street-04",
+"style": "bridge_street",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.9,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-bridge_street-05",
+"style": "bridge_street",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.9,
+"d": 16.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-cantilever_tenement-01",
+"style": "cantilever_tenement",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 22.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-cantilever_tenement-02",
+"style": "cantilever_tenement",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.4,
+"d": 23.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-cantilever_tenement-03",
+"style": "cantilever_tenement",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 38.9,
+"d": 13.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-cantilever_tenement-04",
+"style": "cantilever_tenement",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 40.4,
+"d": 16.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-cantilever_tenement-05",
+"style": "cantilever_tenement",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 30.9,
+"d": 21.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-canyon_grid-01",
+"style": "canyon_grid",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 27.4,
+"d": 16.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-canyon_grid-02",
+"style": "canyon_grid",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.4,
+"d": 17.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-canyon_grid-03",
+"style": "canyon_grid",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.9,
+"d": 16.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-canyon_grid-04",
+"style": "canyon_grid",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.4,
+"d": 16.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-canyon_grid-05",
+"style": "canyon_grid",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 16.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-capsule_skybox-01",
+"style": "capsule_skybox",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 13.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-capsule_skybox-02",
+"style": "capsule_skybox",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 21.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-capsule_skybox-03",
+"style": "capsule_skybox",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 13.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-capsule_skybox-04",
+"style": "capsule_skybox",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 27.9,
+"d": 16.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-capsule_skybox-05",
+"style": "capsule_skybox",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 14.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-cerro_tin-01",
+"style": "cerro_tin",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-cerro_tin-02",
+"style": "cerro_tin",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 39.9,
+"d": 23.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-cerro_tin-03",
+"style": "cerro_tin",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 37.9,
+"d": 13.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-cerro_tin-04",
+"style": "cerro_tin",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 37.4,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-cerro_tin-05",
+"style": "cerro_tin",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 21.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-chawl_galleries-01",
+"style": "chawl_galleries",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 17.4,
+"d": 18.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-chawl_galleries-02",
+"style": "chawl_galleries",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.4,
+"d": 18.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-chawl_galleries-03",
+"style": "chawl_galleries",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 21.4,
+"d": 17.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-chawl_galleries-04",
+"style": "chawl_galleries",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 22.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-chawl_galleries-05",
+"style": "chawl_galleries",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 27.4,
+"d": 18.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-chefchaouen_blue-01",
+"style": "chefchaouen_blue",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.9,
+"d": 21.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-chefchaouen_blue-02",
+"style": "chefchaouen_blue",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.9,
+"d": 23.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-chefchaouen_blue-03",
+"style": "chefchaouen_blue",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 36.9,
+"d": 13.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-chefchaouen_blue-04",
+"style": "chefchaouen_blue",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 37.4,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-chefchaouen_blue-05",
+"style": "chefchaouen_blue",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-cholet_ballroom-01",
+"style": "cholet_ballroom",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 19.9,
+"d": 13.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-cholet_ballroom-02",
+"style": "cholet_ballroom",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-cholet_ballroom-03",
+"style": "cholet_ballroom",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.4,
+"d": 13.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-cholet_ballroom-04",
+"style": "cholet_ballroom",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 29.4,
+"d": 16.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-cholet_ballroom-05",
+"style": "cholet_ballroom",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 14.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-cliff_town-01",
+"style": "cliff_town",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-cliff_town-02",
+"style": "cliff_town",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 38.4,
+"d": 16.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-cliff_town-03",
+"style": "cliff_town",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.4,
+"d": 16.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-cliff_town-04",
+"style": "cliff_town",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.4,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-cliff_town-05",
+"style": "cliff_town",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-closes_lands-01",
+"style": "closes_lands",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.9,
+"d": 13.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-closes_lands-02",
+"style": "closes_lands",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.9,
+"d": 22.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-closes_lands-03",
+"style": "closes_lands",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 14.7
+},
+"storeys": 9
+},
+{
+"id": "SKY-closes_lands-04",
+"style": "closes_lands",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.4,
+"d": 16.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-closes_lands-05",
+"style": "closes_lands",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 14.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-courtyard_canyon-01",
+"style": "courtyard_canyon",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-courtyard_canyon-02",
+"style": "courtyard_canyon",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-courtyard_canyon-03",
+"style": "courtyard_canyon",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-courtyard_canyon-04",
+"style": "courtyard_canyon",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 29.9,
+"d": 24.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-courtyard_canyon-05",
+"style": "courtyard_canyon",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-danchi_terraces-01",
+"style": "danchi_terraces",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 17.4,
+"d": 18.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-danchi_terraces-02",
+"style": "danchi_terraces",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.4,
+"d": 18.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-danchi_terraces-03",
+"style": "danchi_terraces",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 21.4,
+"d": 17.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-danchi_terraces-04",
+"style": "danchi_terraces",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 22.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-danchi_terraces-05",
+"style": "danchi_terraces",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 27.4,
+"d": 18.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-exposition_fair-01",
+"style": "exposition_fair",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 23.4,
+"d": 18.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-exposition_fair-02",
+"style": "exposition_fair",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-exposition_fair-03",
+"style": "exposition_fair",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.4,
+"d": 17.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-exposition_fair-04",
+"style": "exposition_fair",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 22.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-exposition_fair-05",
+"style": "exposition_fair",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-falaj_forts-01",
+"style": "falaj_forts",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-falaj_forts-02",
+"style": "falaj_forts",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-falaj_forts-03",
+"style": "falaj_forts",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-falaj_forts-04",
+"style": "falaj_forts",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 31.4,
+"d": 24.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-falaj_forts-05",
+"style": "falaj_forts",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-false_fronts-01",
+"style": "false_fronts",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 16.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-false_fronts-02",
+"style": "false_fronts",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.9,
+"d": 17.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-false_fronts-03",
+"style": "false_fronts",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-false_fronts-04",
+"style": "false_fronts",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.9,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-false_fronts-05",
+"style": "false_fronts",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-festoon_bazaar-01",
+"style": "festoon_bazaar",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 18.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-festoon_bazaar-02",
+"style": "festoon_bazaar",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 30.4,
+"d": 16.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-festoon_bazaar-03",
+"style": "festoon_bazaar",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 17.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-festoon_bazaar-04",
+"style": "festoon_bazaar",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 21.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-festoon_bazaar-05",
+"style": "festoon_bazaar",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 30.4,
+"d": 16.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-gard_wharf-01",
+"style": "gard_wharf",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 16.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-gard_wharf-02",
+"style": "gard_wharf",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 36.4,
+"d": 17.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-gard_wharf-03",
+"style": "gard_wharf",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 17.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-gard_wharf-04",
+"style": "gard_wharf",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.4,
+"d": 16.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-gard_wharf-05",
+"style": "gard_wharf",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 16.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-garden_terraces-01",
+"style": "garden_terraces",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 26.4,
+"d": 15.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-garden_terraces-02",
+"style": "garden_terraces",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 15.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-garden_terraces-03",
+"style": "garden_terraces",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 14.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-garden_terraces-04",
+"style": "garden_terraces",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 34.9,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-garden_terraces-05",
+"style": "garden_terraces",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 24.9,
+"d": 14.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-ghardaia_cascade-01",
+"style": "ghardaia_cascade",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-ghardaia_cascade-02",
+"style": "ghardaia_cascade",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.9,
+"d": 23.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-ghardaia_cascade-03",
+"style": "ghardaia_cascade",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 38.9,
+"d": 13.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-ghardaia_cascade-04",
+"style": "ghardaia_cascade",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 37.9,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-ghardaia_cascade-05",
+"style": "ghardaia_cascade",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-ghorfa_honeycomb-01",
+"style": "ghorfa_honeycomb",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 22.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-ghorfa_honeycomb-02",
+"style": "ghorfa_honeycomb",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.9,
+"d": 23.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-ghorfa_honeycomb-03",
+"style": "ghorfa_honeycomb",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 39.9,
+"d": 13.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-ghorfa_honeycomb-04",
+"style": "ghorfa_honeycomb",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 38.9,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-ghorfa_honeycomb-05",
+"style": "ghorfa_honeycomb",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 22.7
+},
+"storeys": 9
+},
+{
+"id": "SKY-girder_market-01",
+"style": "girder_market",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-girder_market-02",
+"style": "girder_market",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 36.9,
+"d": 23.7
+},
+"storeys": 9
+},
+{
+"id": "SKY-girder_market-03",
+"style": "girder_market",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 39.4,
+"d": 13.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-girder_market-04",
+"style": "girder_market",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 38.9,
+"d": 16.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-girder_market-05",
+"style": "girder_market",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 30.4,
+"d": 21.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-hangar_quarter-01",
+"style": "hangar_quarter",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 24.4,
+"d": 18.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-hangar_quarter-02",
+"style": "hangar_quarter",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 18.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-hangar_quarter-03",
+"style": "hangar_quarter",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 24.9,
+"d": 17.2
+},
+"storeys": 2
+},
+{
+"id": "SKY-hangar_quarter-04",
+"style": "hangar_quarter",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 20.9,
+"d": 16.2
+},
+"storeys": 2
+},
+{
+"id": "SKY-hangar_quarter-05",
+"style": "hangar_quarter",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-hanging_houses-01",
+"style": "hanging_houses",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 14.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-hanging_houses-02",
+"style": "hanging_houses",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 21.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-hanging_houses-03",
+"style": "hanging_houses",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.9,
+"d": 13.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-hanging_houses-04",
+"style": "hanging_houses",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.9,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-hanging_houses-05",
+"style": "hanging_houses",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 14.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-haveli_bazaar-01",
+"style": "haveli_bazaar",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-haveli_bazaar-02",
+"style": "haveli_bazaar",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-haveli_bazaar-03",
+"style": "haveli_bazaar",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-haveli_bazaar-04",
+"style": "haveli_bazaar",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.9,
+"d": 24.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-haveli_bazaar-05",
+"style": "haveli_bazaar",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-hoist_gables-01",
+"style": "hoist_gables",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.9,
+"d": 16.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-hoist_gables-02",
+"style": "hoist_gables",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 38.9,
+"d": 16.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-hoist_gables-03",
+"style": "hoist_gables",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 17.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-hoist_gables-04",
+"style": "hoist_gables",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 31.9,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-hoist_gables-05",
+"style": "hoist_gables",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 16.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-infilled_frame-01",
+"style": "infilled_frame",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 30.9,
+"d": 22.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-infilled_frame-02",
+"style": "infilled_frame",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 38.4,
+"d": 23.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-infilled_frame-03",
+"style": "infilled_frame",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 38.4,
+"d": 13.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-infilled_frame-04",
+"style": "infilled_frame",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 40.4,
+"d": 16.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-infilled_frame-05",
+"style": "infilled_frame",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 21.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-jetty_lanes-01",
+"style": "jetty_lanes",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 16.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-jetty_lanes-02",
+"style": "jetty_lanes",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 36.9,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-jetty_lanes-03",
+"style": "jetty_lanes",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 17.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-jetty_lanes-04",
+"style": "jetty_lanes",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 29.4,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-jetty_lanes-05",
+"style": "jetty_lanes",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 16.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-jharokha_towers-01",
+"style": "jharokha_towers",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 19.9,
+"d": 13.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-jharokha_towers-02",
+"style": "jharokha_towers",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.4,
+"d": 23.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-jharokha_towers-03",
+"style": "jharokha_towers",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 12.7
+},
+"storeys": 9
+},
+{
+"id": "SKY-jharokha_towers-04",
+"style": "jharokha_towers",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 29.9,
+"d": 16.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-jharokha_towers-05",
+"style": "jharokha_towers",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 14.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-junk_castle-01",
+"style": "junk_castle",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 21.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-junk_castle-02",
+"style": "junk_castle",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 38.4,
+"d": 24.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-junk_castle-03",
+"style": "junk_castle",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 38.9,
+"d": 13.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-junk_castle-04",
+"style": "junk_castle",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 38.9,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-junk_castle-05",
+"style": "junk_castle",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 21.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-konkan_cottages-01",
+"style": "konkan_cottages",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 16.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-konkan_cottages-02",
+"style": "konkan_cottages",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.9,
+"d": 16.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-konkan_cottages-03",
+"style": "konkan_cottages",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-konkan_cottages-04",
+"style": "konkan_cottages",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.9,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-konkan_cottages-05",
+"style": "konkan_cottages",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 16.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-kowloon_warren-01",
+"style": "kowloon_warren",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 21.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-kowloon_warren-02",
+"style": "kowloon_warren",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 38.4,
+"d": 24.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-kowloon_warren-03",
+"style": "kowloon_warren",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 39.9,
+"d": 13.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-kowloon_warren-04",
+"style": "kowloon_warren",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 38.4,
+"d": 16.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-kowloon_warren-05",
+"style": "kowloon_warren",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.9,
+"d": 21.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-kulle_galleries-01",
+"style": "kulle_galleries",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 13.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-kulle_galleries-02",
+"style": "kulle_galleries",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 21.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-kulle_galleries-03",
+"style": "kulle_galleries",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 27.4,
+"d": 13.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-kulle_galleries-04",
+"style": "kulle_galleries",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.9,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-kulle_galleries-05",
+"style": "kulle_galleries",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 27.9,
+"d": 14.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-laje_stack-01",
+"style": "laje_stack",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 30.9,
+"d": 22.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-laje_stack-02",
+"style": "laje_stack",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 36.9,
+"d": 23.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-laje_stack-03",
+"style": "laje_stack",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 38.9,
+"d": 13.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-laje_stack-04",
+"style": "laje_stack",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 38.4,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-laje_stack-05",
+"style": "laje_stack",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 21.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-lamp_city-01",
+"style": "lamp_city",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 13.7
+},
+"storeys": 9
+},
+{
+"id": "SKY-lamp_city-02",
+"style": "lamp_city",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 21.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-lamp_city-03",
+"style": "lamp_city",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 14.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-lamp_city-04",
+"style": "lamp_city",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 31.4,
+"d": 16.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-lamp_city-05",
+"style": "lamp_city",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 27.9,
+"d": 14.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-machiya_lattice-01",
+"style": "machiya_lattice",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 26.4,
+"d": 15.2
+},
+"storeys": 2
+},
+{
+"id": "SKY-machiya_lattice-02",
+"style": "machiya_lattice",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 15.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-machiya_lattice-03",
+"style": "machiya_lattice",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 14.7
+},
+"storeys": 2
+},
+{
+"id": "SKY-machiya_lattice-04",
+"style": "machiya_lattice",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 35.4,
+"d": 16.2
+},
+"storeys": 2
+},
+{
+"id": "SKY-machiya_lattice-05",
+"style": "machiya_lattice",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 24.9,
+"d": 14.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-marine_deco-01",
+"style": "marine_deco",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 21.4,
+"d": 17.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-marine_deco-02",
+"style": "marine_deco",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-marine_deco-03",
+"style": "marine_deco",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 27.9,
+"d": 17.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-marine_deco-04",
+"style": "marine_deco",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 23.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-marine_deco-05",
+"style": "marine_deco",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 18.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-matmata_pits-01",
+"style": "matmata_pits",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 2
+},
+{
+"id": "SKY-matmata_pits-02",
+"style": "matmata_pits",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-matmata_pits-03",
+"style": "matmata_pits",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-matmata_pits-04",
+"style": "matmata_pits",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 29.4,
+"d": 24.2
+},
+"storeys": 2
+},
+{
+"id": "SKY-matmata_pits-05",
+"style": "matmata_pits",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-medina_warren-01",
+"style": "medina_warren",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 21.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-medina_warren-02",
+"style": "medina_warren",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 36.9,
+"d": 24.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-medina_warren-03",
+"style": "medina_warren",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 36.9,
+"d": 13.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-medina_warren-04",
+"style": "medina_warren",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 39.9,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-medina_warren-05",
+"style": "medina_warren",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-modernista_reef-01",
+"style": "modernista_reef",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 27.4,
+"d": 18.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-modernista_reef-02",
+"style": "modernista_reef",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-modernista_reef-03",
+"style": "modernista_reef",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.4,
+"d": 17.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-modernista_reef-04",
+"style": "modernista_reef",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 21.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-modernista_reef-05",
+"style": "modernista_reef",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 30.4,
+"d": 17.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-moorish_deco-01",
+"style": "moorish_deco",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 22.9,
+"d": 18.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-moorish_deco-02",
+"style": "moorish_deco",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-moorish_deco-03",
+"style": "moorish_deco",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 24.4,
+"d": 16.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-moorish_deco-04",
+"style": "moorish_deco",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 21.9,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-moorish_deco-05",
+"style": "moorish_deco",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-mudejar_brickworks-01",
+"style": "mudejar_brickworks",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 19.9,
+"d": 14.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-mudejar_brickworks-02",
+"style": "mudejar_brickworks",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 21.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-mudejar_brickworks-03",
+"style": "mudejar_brickworks",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.9,
+"d": 13.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-mudejar_brickworks-04",
+"style": "mudejar_brickworks",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 27.9,
+"d": 16.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-mudejar_brickworks-05",
+"style": "mudejar_brickworks",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 14.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-mughal_crown-01",
+"style": "mughal_crown",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-mughal_crown-02",
+"style": "mughal_crown",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-mughal_crown-03",
+"style": "mughal_crown",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-mughal_crown-04",
+"style": "mughal_crown",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 32.4,
+"d": 24.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-mughal_crown-05",
+"style": "mughal_crown",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-patchwork_conventillo-01",
+"style": "patchwork_conventillo",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 21.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-patchwork_conventillo-02",
+"style": "patchwork_conventillo",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 39.4,
+"d": 24.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-patchwork_conventillo-03",
+"style": "patchwork_conventillo",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 37.9,
+"d": 12.7
+},
+"storeys": 2
+},
+{
+"id": "SKY-patchwork_conventillo-04",
+"style": "patchwork_conventillo",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 37.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-patchwork_conventillo-05",
+"style": "patchwork_conventillo",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 22.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-plex_spirals-01",
+"style": "plex_spirals",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-plex_spirals-02",
+"style": "plex_spirals",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.4,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-plex_spirals-03",
+"style": "plex_spirals",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.4,
+"d": 16.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-plex_spirals-04",
+"style": "plex_spirals",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 27.9,
+"d": 16.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-plex_spirals-05",
+"style": "plex_spirals",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 16.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-podium_bazaar-01",
+"style": "podium_bazaar",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 27.4,
+"d": 18.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-podium_bazaar-02",
+"style": "podium_bazaar",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-podium_bazaar-03",
+"style": "podium_bazaar",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.4,
+"d": 17.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-podium_bazaar-04",
+"style": "podium_bazaar",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 22.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-podium_bazaar-05",
+"style": "podium_bazaar",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-pueblo_blanco-01",
+"style": "pueblo_blanco",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-pueblo_blanco-02",
+"style": "pueblo_blanco",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-pueblo_blanco-03",
+"style": "pueblo_blanco",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-pueblo_blanco-04",
+"style": "pueblo_blanco",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.9,
+"d": 24.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-pueblo_blanco-05",
+"style": "pueblo_blanco",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-qamariya_towers-01",
+"style": "qamariya_towers",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.9,
+"d": 14.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-qamariya_towers-02",
+"style": "qamariya_towers",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 22.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-qamariya_towers-03",
+"style": "qamariya_towers",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.4,
+"d": 14.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-qamariya_towers-04",
+"style": "qamariya_towers",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 29.4,
+"d": 16.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-qamariya_towers-05",
+"style": "qamariya_towers",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 14.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-retrofit_noir-01",
+"style": "retrofit_noir",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.9,
+"d": 22.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-retrofit_noir-02",
+"style": "retrofit_noir",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 37.9,
+"d": 23.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-retrofit_noir-03",
+"style": "retrofit_noir",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 38.9,
+"d": 13.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-retrofit_noir-04",
+"style": "retrofit_noir",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 39.9,
+"d": 16.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-retrofit_noir-05",
+"style": "retrofit_noir",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 21.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-riad_terraces-01",
+"style": "riad_terraces",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-riad_terraces-02",
+"style": "riad_terraces",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-riad_terraces-03",
+"style": "riad_terraces",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-riad_terraces-04",
+"style": "riad_terraces",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.9,
+"d": 24.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-riad_terraces-05",
+"style": "riad_terraces",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-rim_cliffhangers-01",
+"style": "rim_cliffhangers",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 15.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-rim_cliffhangers-02",
+"style": "rim_cliffhangers",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 23.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-rim_cliffhangers-03",
+"style": "rim_cliffhangers",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.9,
+"d": 13.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-rim_cliffhangers-04",
+"style": "rim_cliffhangers",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.4,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-rim_cliffhangers-05",
+"style": "rim_cliffhangers",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.9,
+"d": 14.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-roofstreet_oasis-01",
+"style": "roofstreet_oasis",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-roofstreet_oasis-02",
+"style": "roofstreet_oasis",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-roofstreet_oasis-03",
+"style": "roofstreet_oasis",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-roofstreet_oasis-04",
+"style": "roofstreet_oasis",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.4,
+"d": 24.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-roofstreet_oasis-05",
+"style": "roofstreet_oasis",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-roshan_quarter-01",
+"style": "roshan_quarter",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 19.9,
+"d": 13.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-roshan_quarter-02",
+"style": "roshan_quarter",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 21.7
+},
+"storeys": 9
+},
+{
+"id": "SKY-roshan_quarter-03",
+"style": "roshan_quarter",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.9,
+"d": 13.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-roshan_quarter-04",
+"style": "roshan_quarter",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.9,
+"d": 16.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-roshan_quarter-05",
+"style": "roshan_quarter",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 27.9,
+"d": 14.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-saracenic_gothic-01",
+"style": "saracenic_gothic",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 27.4,
+"d": 18.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-saracenic_gothic-02",
+"style": "saracenic_gothic",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-saracenic_gothic-03",
+"style": "saracenic_gothic",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.4,
+"d": 17.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-saracenic_gothic-04",
+"style": "saracenic_gothic",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 22.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-saracenic_gothic-05",
+"style": "saracenic_gothic",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 31.4,
+"d": 18.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-sassi_terraces-01",
+"style": "sassi_terraces",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 22.7
+},
+"storeys": 2
+},
+{
+"id": "SKY-sassi_terraces-02",
+"style": "sassi_terraces",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 38.9,
+"d": 23.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-sassi_terraces-03",
+"style": "sassi_terraces",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 37.9,
+"d": 13.7
+},
+"storeys": 2
+},
+{
+"id": "SKY-sassi_terraces-04",
+"style": "sassi_terraces",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 36.9,
+"d": 16.2
+},
+"storeys": 2
+},
+{
+"id": "SKY-sassi_terraces-05",
+"style": "sassi_terraces",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.9,
+"d": 21.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-shibam_stack-01",
+"style": "shibam_stack",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 13.7
+},
+"storeys": 10
+},
+{
+"id": "SKY-shibam_stack-02",
+"style": "shibam_stack",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 23.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-shibam_stack-03",
+"style": "shibam_stack",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.9,
+"d": 13.7
+},
+"storeys": 9
+},
+{
+"id": "SKY-shibam_stack-04",
+"style": "shibam_stack",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 30.9,
+"d": 16.2
+},
+"storeys": 11
+},
+{
+"id": "SKY-shibam_stack-05",
+"style": "shibam_stack",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 14.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-spiral_high_street-01",
+"style": "spiral_high_street",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 13.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-spiral_high_street-02",
+"style": "spiral_high_street",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 21.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-spiral_high_street-03",
+"style": "spiral_high_street",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 27.9,
+"d": 13.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-spiral_high_street-04",
+"style": "spiral_high_street",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 31.4,
+"d": 16.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-spiral_high_street-05",
+"style": "spiral_high_street",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 28.4,
+"d": 14.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-tighremt_towers-01",
+"style": "tighremt_towers",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.4,
+"d": 13.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-tighremt_towers-02",
+"style": "tighremt_towers",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 28.9,
+"d": 22.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-tighremt_towers-03",
+"style": "tighremt_towers",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 13.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-tighremt_towers-04",
+"style": "tighremt_towers",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 27.9,
+"d": 16.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-tighremt_towers-05",
+"style": "tighremt_towers",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 27.9,
+"d": 14.7
+},
+"storeys": 9
+},
+{
+"id": "SKY-tong_lau_arcade-01",
+"style": "tong_lau_arcade",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 17.4,
+"d": 15.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-tong_lau_arcade-02",
+"style": "tong_lau_arcade",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.4,
+"d": 15.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-tong_lau_arcade-03",
+"style": "tong_lau_arcade",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 21.4,
+"d": 14.7
+},
+"storeys": 3
+},
+{
+"id": "SKY-tong_lau_arcade-04",
+"style": "tong_lau_arcade",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 22.9,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-tong_lau_arcade-05",
+"style": "tong_lau_arcade",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 27.4,
+"d": 16.7
+},
+"storeys": 7
+},
+{
+"id": "SKY-toolhouse_stack-01",
+"style": "toolhouse_stack",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-toolhouse_stack-02",
+"style": "toolhouse_stack",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 38.4,
+"d": 23.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-toolhouse_stack-03",
+"style": "toolhouse_stack",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 39.9,
+"d": 13.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-toolhouse_stack-04",
+"style": "toolhouse_stack",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 40.4,
+"d": 16.2
+},
+"storeys": 6
+},
+{
+"id": "SKY-toolhouse_stack-05",
+"style": "toolhouse_stack",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 21.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-tulou_ring-01",
+"style": "tulou_ring",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-tulou_ring-02",
+"style": "tulou_ring",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-tulou_ring-03",
+"style": "tulou_ring",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 4
+},
+{
+"id": "SKY-tulou_ring-04",
+"style": "tulou_ring",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 32.4,
+"d": 24.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-tulou_ring-05",
+"style": "tulou_ring",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 7
+},
+{
+"id": "SKY-wikala_market-01",
+"style": "wikala_market",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 28.4,
+"d": 22.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-wikala_market-02",
+"style": "wikala_market",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 29.4,
+"d": 22.7
+},
+"storeys": 6
+},
+{
+"id": "SKY-wikala_market-03",
+"style": "wikala_market",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 28.4,
+"d": 12.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-wikala_market-04",
+"style": "wikala_market",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.9,
+"d": 24.2
+},
+"storeys": 5
+},
+{
+"id": "SKY-wikala_market-05",
+"style": "wikala_market",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.4,
+"d": 22.2
+},
+"storeys": 8
+},
+{
+"id": "SKY-yokocho_lanes-01",
+"style": "yokocho_lanes",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 30.4,
+"d": 21.7
+},
+"storeys": 2
+},
+{
+"id": "SKY-yokocho_lanes-02",
+"style": "yokocho_lanes",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 39.4,
+"d": 23.2
+},
+"storeys": 4
+},
+{
+"id": "SKY-yokocho_lanes-03",
+"style": "yokocho_lanes",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 39.4,
+"d": 14.2
+},
+"storeys": 2
+},
+{
+"id": "SKY-yokocho_lanes-04",
+"style": "yokocho_lanes",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 38.4,
+"d": 16.2
+},
+"storeys": 3
+},
+{
+"id": "SKY-yokocho_lanes-05",
+"style": "yokocho_lanes",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 29.9,
+"d": 21.7
+},
+"storeys": 5
+},
+{
+"id": "SKY-zakkyo_signstacks-01",
+"style": "zakkyo_signstacks",
+"model": "home",
+"use": "dwelling",
+"lot": {
+"w": 20.9,
+"d": 14.2
+},
+"storeys": 9
+},
+{
+"id": "SKY-zakkyo_signstacks-02",
+"style": "zakkyo_signstacks",
+"model": "tall",
+"use": "dwelling",
+"lot": {
+"w": 27.9,
+"d": 22.7
+},
+"storeys": 11
+},
+{
+"id": "SKY-zakkyo_signstacks-03",
+"style": "zakkyo_signstacks",
+"model": "row",
+"use": "shops",
+"lot": {
+"w": 29.9,
+"d": 14.7
+},
+"storeys": 8
+},
+{
+"id": "SKY-zakkyo_signstacks-04",
+"style": "zakkyo_signstacks",
+"model": "hall",
+"use": "market",
+"lot": {
+"w": 28.4,
+"d": 16.2
+},
+"storeys": 10
+},
+{
+"id": "SKY-zakkyo_signstacks-05",
+"style": "zakkyo_signstacks",
+"model": "landmark",
+"use": "hall",
+"lot": {
+"w": 27.9,
+"d": 14.2
+},
+"storeys": 11
+}
+]

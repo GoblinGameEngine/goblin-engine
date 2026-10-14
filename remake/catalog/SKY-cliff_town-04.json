@@ -1,0 +1,127 @@
+{
+ "id": "SKY-cliff_town-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.4,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "cliff_town",
+  "arch": "gable_row",
+  "model_kind": "hall",
+  "storeys": 4,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -7.0,
+     11.4,
+     6.0
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -13.6,
+     -7.5,
+     2.9,
+     6.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "shutters",
+   "planter",
+   "lanterns",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#4a6e58",
+    "#c23b33",
+    "#1f8a8a"
+   ],
+   "trim": "#efece4",
+   "accent": "#a33a2b",
+   "canvas": "#ffffff",
+   "tile": "#ffd27a"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "lightbox",
+    "chochin",
+    "neon"
+   ],
+   "density": 0.6
+  },
+  "mood": "#ffcf80",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "cliff_town",
+  "model": "hall",
+  "use": "market",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Cliff Town style: a shared model"
+}

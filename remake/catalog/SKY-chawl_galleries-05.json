@@ -1,0 +1,144 @@
+{
+ "id": "SKY-chawl_galleries-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 27.4,
+  "d": 18.2
+ },
+ "traits": {
+  "style": "chawl_galleries",
+  "arch": "slab",
+  "model_kind": "landmark",
+  "storeys": 9,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     0.9,
+     -8.0,
+     10.9,
+     4.5
+    ],
+    "storeys": 9,
+    "plan": "tower",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -13.1,
+     -8.5,
+     0.9,
+     7.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "shutters",
+   "shacks",
+   "tanks",
+   "laundry",
+   "awnings",
+   "planter",
+   "lanterns",
+   "billboard",
+   "tower"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#3f6b4a",
+    "#e8d9b8",
+    "#9fc3c9"
+   ],
+   "trim": "#e8d9b8",
+   "accent": "#ffde59",
+   "canvas": "#ff5e3a",
+   "tile": "#5ce1e6"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "lightbox",
+    "chochin"
+   ],
+   "density": 0.55
+  },
+  "mood": "#ff9ad5",
+  "shops": [
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "chawl_galleries",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 9,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Chawl Galleries style: a shared model"
+}

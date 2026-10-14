@@ -1,0 +1,130 @@
+{
+ "id": "SKY-gard_wharf-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 16.7
+ },
+ "traits": {
+  "style": "gard_wharf",
+  "arch": "gable_row",
+  "model_kind": "home",
+  "storeys": 3,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -7.25,
+     11.9,
+     6.25
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.6,
+     -7.75,
+     2.9,
+     6.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -14.1,
+     -7.75,
+     -5.6,
+     5.25
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "gable_front",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#d9a441",
+    "#8e2f25",
+    "#eee7da"
+   ],
+   "trim": "#eee7da",
+   "accent": "#3a2d22",
+   "canvas": "#ffcf70",
+   "tile": "#ff7a59"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin",
+    "brass"
+   ],
+   "density": 0.45
+  },
+  "mood": "#ffc27a",
+  "shops": [
+   {
+    "kind": "hardware"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "gard_wharf",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island home in the Gard Wharves style: a shared model"
+}

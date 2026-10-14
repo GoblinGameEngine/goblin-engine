@@ -1,0 +1,168 @@
+{
+ "id": "SKY-roshan_quarter-03",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.9,
+  "d": 13.7
+ },
+ "traits": {
+  "style": "roshan_quarter",
+  "arch": "tower_cluster",
+  "model_kind": "row",
+  "storeys": 6,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.15,
+     -4.75,
+     12.15,
+     4.75
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.85,
+     -4.75,
+     3.15,
+     5.25
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -14.35,
+     -6.25,
+     -5.85,
+     4.75
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "bay",
+   "shutters",
+   "screen",
+   "bands",
+   "parapet_screen",
+   "awnings",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "flat",
+   "bay_share": 0.75,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#8a5a3b",
+    "#2f6f6a",
+    "#3b7fa6"
+   ],
+   "trim": "#e9e1cf",
+   "accent": "#2f6f6a",
+   "canvas": "#ff7ab8",
+   "tile": "#7dffcc"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "dotmatrix",
+    "chochin",
+    "neon"
+   ],
+   "density": 0.6
+  },
+  "mood": "#6ef0d0",
+  "shops": [
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "roshan_quarter",
+  "model": "row",
+  "use": "shops",
+  "storeys": 7,
+  "homes": 0
+ },
+ "brief": "sky island row in the Roshan Quarter style: a shared model"
+}

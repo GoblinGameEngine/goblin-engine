@@ -1,0 +1,176 @@
+{
+ "id": "SKY-girder_market-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 22.2
+ },
+ "traits": {
+  "style": "girder_market",
+  "arch": "pile",
+  "model_kind": "home",
+  "storeys": 7,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -1.5,
+     11.9,
+     8.5
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -6.1,
+     -1.0,
+     2.9,
+     9.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     -10.5,
+     2.9,
+     -1.0
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.1,
+     -2.5,
+     -6.1,
+     8.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#a8322a",
+    "#6a6058",
+    "#c9b28f"
+   ],
+   "trim": "#e6c46a",
+   "accent": "#3a3e44",
+   "canvas": "#ff4a2a",
+   "tile": "#ff3fa4"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "lightbox",
+    "chochin",
+    "painted"
+   ],
+   "density": 0.9
+  },
+  "mood": "#ffb35c",
+  "shops": [
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "fish_market"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "butcher"
+   },
+   {
+    "kind": "food"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "fish_market"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "butcher"
+   },
+   {
+    "kind": "food"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "fish_market"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "girder_market",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 7,
+  "homes": 0
+ },
+ "brief": "sky island home in the Girder Market style: a shared model"
+}

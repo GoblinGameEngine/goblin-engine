@@ -3757,7 +3757,8 @@
    ],
    "landmark": "the dove lofts, a tower of white birds",
    "character": "Across the Skein, the McFadden kin of Halyard are the factors and brokers everyone knows. They are warm to strangers and loud at lashings. Rope marks: rigger lines tattoo a turn of rope round the wrist for each envelope they've walked; and at sixteen every youth may choose to cross to any island at a lashing; most stay. Founded VY 273 by forty-one Warden families from Bellhaven (the First Boarding). Faith: Full Gospel. Landmark: the dove lofts, a tower of white birds.",
-   "seed": 1165441411
+   "seed": 1165441411,
+   "style": "closes_lands"
   },
   {
    "id": "SKY-002",
@@ -3877,7 +3878,8 @@
    ],
    "landmark": "the long kitchen with a glass roof",
    "character": "Bowline is a middling flat-topped island; its people are shepherds and spinners and proud of it. They are old-fashioned: they keep floor ways the floor forgot. Feather-trimmed coats for elders; the more lashings, the more feathers; and a plumb who goes down owes the island a story at the long kitchen on return. Founded VY 305 by Returner families after the Reconciliation. Faith: the Sunward. Landmark: the long kitchen with a glass roof.",
-   "seed": 799118948
+   "seed": 799118948,
+   "style": "gard_wharf"
   },
   {
    "id": "SKY-003",
@@ -3995,7 +3997,8 @@
    ],
    "landmark": "the lark cradles on the tallest roof",
    "character": "Spindrift is a small island of pond fishers, governed by the mother house. They are curious about the floor, and send their plumb down more than most. Weighing Day: every person is weighed at midwinter and the weight book read aloud; and the snow feast: the first snow of every cloud is eaten with honey before it's swept. Founded VY 302 by Côte families from Port Carrow. Faith: the Waymakers. Landmark: the lark cradles on the tallest roof.",
-   "seed": 45615686
+   "seed": 45615686,
+   "style": "pueblo_blanco"
   },
   {
    "id": "SKY-004",
@@ -4113,7 +4116,8 @@
    ],
    "landmark": "the lark cradles on the tallest roof",
    "character": "On Gunwale, a middling rolling island, the Feld kin are weather readers. They are shrewd traders who never give the first price. The Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor; and no one says the Steward's name within sight of the Box; they call it 'the neighbour'. Founded VY 275 by Solano families from Playa Verde. Faith: the Lakes Union Church. Landmark: the lark cradles on the tallest roof.",
-   "seed": 1047521271
+   "seed": 1047521271,
+   "style": "hoist_gables"
   },
   {
    "id": "SKY-005",
@@ -4233,7 +4237,8 @@
    ],
    "landmark": "the Box mast, the Steward's sealed cloud engine, with its prayer flags",
    "character": "Mizzen is a middling island of knitters and dyers, governed by the Helm. They are restless: their youth cross bridges more than any. No one speaks while the Sunline leaves the sky; the island watches it go north in silence; and marriages are vowed with a tether splice: the couple splice two ropes into one. Founded VY 320 by cannery families from Tern Harbor. Faith: none in particular. Landmark: the Box mast, the Steward's sealed cloud engine, with its prayer flags.",
-   "seed": 2125180246
+   "seed": 2125180246,
+   "style": "cliff_town"
   },
   {
    "id": "SKY-006",
@@ -4346,7 +4351,8 @@
    ],
    "landmark": "a bell tower hung with forty bells",
    "character": "Topgallant is a one-block flat-topped island; its people are lark wrights and proud of it. They are warm to strangers and loud at lashings. Rope marks: rigger lines tattoo a turn of rope round the wrist for each envelope they've walked; and a husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan. Founded VY 315 by Harrow Falls millworkers. Faith: the Sunward. Landmark: a bell tower hung with forty bells.",
-   "seed": 834307566
+   "seed": 834307566,
+   "style": "cliff_town"
   },
   {
    "id": "SKY-007",
@@ -4467,7 +4473,8 @@
    ],
    "landmark": "the bridge house, where the bridges are kept and painted",
    "character": "Crow's Nest is a great rolling island; its people are factors and brokers and proud of it. They are warm to strangers and loud at lashings. A husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan; and the young dance on the rim rails at lashings (illegal on the floor; a rite aloft). Founded VY 289 by cannery families from Tern Harbor. Faith: none in particular. Landmark: the bridge house, where the bridges are kept and painted.",
-   "seed": 2118132472
+   "seed": 2118132472,
+   "style": "podium_bazaar"
   },
   {
    "id": "SKY-008",
@@ -4583,7 +4590,8 @@
    ],
    "landmark": "a library of knotted cords",
    "character": "Fathom is a middling island of air-post carriers, governed by the mother house. They are the Skein's best riggers, and they know it. At sixteen every youth may choose to cross to any island at a lashing; most stay; and a guest brings their weight in gifts (in practice a token, weighed with ceremony). Founded VY 275 by Kessler clerks who walked out of the Registry. Faith: the Sunward. Landmark: a library of knotted cords.",
-   "seed": 1699034598
+   "seed": 1699034598,
+   "style": "hanging_houses"
   },
   {
    "id": "SKY-009",
@@ -4696,7 +4704,8 @@
    ],
    "landmark": "a terraced hill of gardens",
    "character": "Windlass is a one-block island of food driers, governed by a council drawn by lot every season from all over sixteen. They are gentle, slow-spoken and stubborn. Each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at; and Weighing Day: every person is weighed at midwinter and the weight book read aloud. Founded VY 353 by Côte families from Port Carrow. Faith: the Waymakers. Landmark: a terraced hill of gardens.",
-   "seed": 554363888
+   "seed": 554363888,
+   "style": "sassi_terraces"
   },
   {
    "id": "SKY-010",
@@ -4809,7 +4818,8 @@
    ],
    "landmark": "a frozen waterfall of cistern overflow on the rim",
    "character": "Cat's Paw is a one-block island of ice cutters, governed by the work-crews govern. They are restless: their youth cross bridges more than any. Each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at; and the young dance on the rim rails at lashings (illegal on the floor; a rite aloft). Founded VY 275 by debtors from Port Carrow. Faith: the Waymakers. Landmark: a frozen waterfall of cistern overflow on the rim.",
-   "seed": 865474898
+   "seed": 865474898,
+   "style": "gard_wharf"
   },
   {
    "id": "SKY-011",
@@ -4930,7 +4940,8 @@
    ],
    "landmark": "the lark cradles on the tallest roof",
    "character": "On Capstan, a great flat-topped island, the Pacheco kin are down pluckers and quilters. They are warm to strangers and loud at lashings. The young dance on the rim rails at lashings (illegal on the floor; a rite aloft); and no one says the Steward's name within sight of the Box; they call it 'the neighbour'. Founded VY 356 by Returner families after the Reconciliation. Faith: Catholic. Landmark: the lark cradles on the tallest roof.",
-   "seed": 1650138629
+   "seed": 1650138629,
+   "style": "hanging_houses"
   },
   {
    "id": "SKY-012",
@@ -5047,7 +5058,8 @@
    ],
    "landmark": "the dove lofts, a tower of white birds",
    "character": "Taffrail is a middling flat-topped island; its people are map makers and proud of it. They are old-fashioned: they keep floor ways the floor forgot. No one says the Steward's name within sight of the Box; they call it 'the neighbour'; and a guest brings their weight in gifts (in practice a token, weighed with ceremony). Founded VY 278 by Gray Years families from the Northland. Faith: the Waymakers. Landmark: the dove lofts, a tower of white birds.",
-   "seed": 1108110924
+   "seed": 1108110924,
+   "style": "false_fronts"
   },
   {
    "id": "SKY-013",
@@ -5166,7 +5178,8 @@
    ],
    "landmark": "the old Warden service hatch, kept as a shrine",
    "character": "Bosun's Chair is a middling island of knitters and dyers, governed by the mother house. They are the Skein's best riggers, and they know it. Children are 'ballast' -- a blessing: the island is steadier for them; and kite mail: messages flown on kites to islands downwind. Founded VY 354 by Kessler clerks who walked out of the Registry. Faith: the Waymakers. Landmark: the old Warden service hatch, kept as a shrine.",
-   "seed": 594786651
+   "seed": 594786651,
+   "style": "balcon_canario"
   },
   {
    "id": "SKY-014",
@@ -5281,7 +5294,8 @@
    ],
    "landmark": "a stair cut down through the rock to a window in the underside",
    "character": "Clove Hitch is a one-block island of food driers, governed by a council of elders. They are famous for their music. A guest brings their weight in gifts (in practice a token, weighed with ceremony); and children are 'ballast' -- a blessing: the island is steadier for them. Founded VY 310 by Warden lines from Bellhaven. Faith: Catholic. Landmark: a stair cut down through the rock to a window in the underside.",
-   "seed": 862668073
+   "seed": 862668073,
+   "style": "tong_lau_arcade"
   },
   {
    "id": "SKY-015",
@@ -5401,7 +5415,8 @@
    ],
    "landmark": "the bridge house, where the bridges are kept and painted",
    "character": "Lee Rail is a small flat-topped island; its people are lark wrights and proud of it. They are shrewd traders who never give the first price. Everyone has a sky name and a floor name; the floor name is for dealing with groundfolk; and the Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor. Founded VY 284 by Returner families after the Reconciliation. Faith: the Lakes Union Church. Landmark: the bridge house, where the bridges are kept and painted.",
-   "seed": 470026722
+   "seed": 470026722,
+   "style": "hoist_gables"
   },
   {
    "id": "SKY-016",
@@ -5518,7 +5533,8 @@
    ],
    "landmark": "an observatory roof where the Far Side is charted",
    "character": "Sheet Bend is a small island of knitters and dyers, governed by the plumb and the weigher jointly. They are gentle, slow-spoken and stubborn. Children are 'ballast' -- a blessing: the island is steadier for them; and a plumb who goes down owes the island a story at the long kitchen on return. Founded VY 275 by children of other islands sent to found it. Faith: the Sunward. Landmark: an observatory roof where the Far Side is charted.",
-   "seed": 783573281
+   "seed": 783573281,
+   "style": "plex_spirals"
   },
   {
    "id": "SKY-017",
@@ -5637,7 +5653,8 @@
    ],
    "landmark": "a frozen waterfall of cistern overflow on the rim",
    "character": "On Weather Gauge, a small rolling island, the Nalley kin are pond fishers. They are curious about the floor, and send their plumb down more than most. A husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan; and every meal is eaten together in the long kitchen; eating alone is for the sick. Founded VY 295 by Marlowe orchard families. Faith: the Waymakers. Landmark: a frozen waterfall of cistern overflow on the rim.",
-   "seed": 1179103088
+   "seed": 1179103088,
+   "style": "hangar_quarter"
   },
   {
    "id": "SKY-018",
@@ -5758,7 +5775,8 @@
    ],
    "landmark": "a rope-walk 200 m long on the roofs",
    "character": "Spritsail is a great rolling island; its people are weather readers and proud of it. They are superstitious about the Box. The snow feast: the first snow of every cloud is eaten with honey before it's swept; and a wife crosses to her husband's island at a lashing; children take their father's clan. Founded VY 311 by Côte families from Port Carrow. Faith: none in particular. Landmark: a rope-walk 200 m long on the roofs.",
-   "seed": 572417776
+   "seed": 572417776,
+   "style": "cantilever_tenement"
   },
   {
    "id": "SKY-019",
@@ -5877,7 +5895,8 @@
    ],
    "landmark": "the bridge house, where the bridges are kept and painted",
    "character": "Across the Skein, the Najera kin of Dogwatch are the air-post carriers everyone knows. They are famous for their music. The Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor; and they keep doves but never eat birds: a bird is a cousin who flies without help. Founded VY 283 by debtors from Port Carrow. Faith: Catholic. Landmark: the bridge house, where the bridges are kept and painted.",
-   "seed": 563916370
+   "seed": 563916370,
+   "style": "balcon_canario"
   },
   {
    "id": "SKY-020",
@@ -5995,7 +6014,8 @@
    ],
    "landmark": "a spiral of prayer kites flown from the roofs",
    "character": "Sounding Line is a middling flat-topped island; its people are bell founders and music and proud of it. They are devout and quiet. Each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at; and kite mail: messages flown on kites to islands downwind. Founded VY 332 by cannery families from Tern Harbor. Faith: Dharmic. Landmark: a spiral of prayer kites flown from the roofs.",
-   "seed": 2134992778
+   "seed": 2134992778,
+   "style": "capsule_skybox"
   },
   {
    "id": "SKY-021",
@@ -6120,7 +6140,8 @@
    ],
    "landmark": "the lark cradles on the tallest roof",
    "character": "Fairlead is a great island of lark wrights, governed by a council of elders. They are old-fashioned: they keep floor ways the floor forgot. The snow feast: the first snow of every cloud is eaten with honey before it's swept; and a plumb who goes down owes the island a story at the long kitchen on return. Founded VY 280 by Returner families after the Reconciliation. Faith: Catholic. Landmark: the lark cradles on the tallest roof.",
-   "seed": 1968469507
+   "seed": 1968469507,
+   "style": "festoon_bazaar"
   },
   {
    "id": "SKY-022",
@@ -6246,7 +6267,8 @@
    ],
    "landmark": "a terraced hill of gardens",
    "character": "On Main Brace, a great rolling island, the Schieble kin are beekeepers. They are superstitious about the Box. No one speaks while the Sunline leaves the sky; the island watches it go north in silence; and the snow feast: the first snow of every cloud is eaten with honey before it's swept. Founded VY 279 by children of other islands sent to found it. Faith: Muslim. Landmark: a terraced hill of gardens.",
-   "seed": 1020546805
+   "seed": 1020546805,
+   "style": "canyon_grid"
   },
   {
    "id": "SKY-023",
@@ -6364,7 +6386,8 @@
    ],
    "landmark": "a rim garden of dwarf apples that leans over the edge",
    "character": "Kedge is a middling flat-topped island; its people are bell founders and music and proud of it. They are gentle, slow-spoken and stubborn. Feather-trimmed coats for elders; the more lashings, the more feathers; and rope marks: rigger lines tattoo a turn of rope round the wrist for each envelope they've walked. Founded VY 276 by Gray Years families from the Northland. Faith: none in particular. Landmark: a rim garden of dwarf apples that leans over the edge.",
-   "seed": 104813629
+   "seed": 104813629,
+   "style": "bridge_street"
   },
   {
    "id": "SKY-024",
@@ -6488,7 +6511,8 @@
    ],
    "landmark": "the oldest envelope in the Skein, patched in a hundred colours",
    "character": "On Ratline, a great flat-topped island, the Borsheim kin are knitters and dyers. They are quarrelsome among themselves and loyal to outsiders. No one says the Steward's name within sight of the Box; they call it 'the neighbour'; and bell-speech: islands talk across the gap in rung patterns before the lines are shot. Founded VY 288 by Kessler clerks who walked out of the Registry. Faith: the Sunward. Landmark: the oldest envelope in the Skein, patched in a hundred colours.",
-   "seed": 1539957017
+   "seed": 1539957017,
+   "style": "jetty_lanes"
   },
   {
    "id": "SKY-025",
@@ -6604,7 +6628,8 @@
    ],
    "landmark": "the long kitchen with a glass roof",
    "character": "On Jollyboat, a middling rolling island, the English kin are ice cutters. They are quarrelsome among themselves and loyal to outsiders. The walls of the long kitchen are painted with every island they've lashed with; and the young dance on the rim rails at lashings (illegal on the floor; a rite aloft). Founded VY 283 by Gray Years families from the Northland. Faith: Muslim. Landmark: the long kitchen with a glass roof.",
-   "seed": 1323214167
+   "seed": 1323214167,
+   "style": "rim_cliffhangers"
   },
   {
    "id": "SKY-026",
@@ -6725,7 +6750,8 @@
    ],
    "landmark": "the dove lofts, a tower of white birds",
    "character": "Aureole is a small rolling island; its people are knot keepers and teachers and proud of it. They are devout and quiet. They keep doves but never eat birds: a bird is a cousin who flies without help; and no one says the Steward's name within sight of the Box; they call it 'the neighbour'. Founded VY 302 by Marlowe orchard families. Faith: none in particular. Landmark: the dove lofts, a tower of white birds.",
-   "seed": 1701034221
+   "seed": 1701034221,
+   "style": "plex_spirals"
   },
   {
    "id": "SKY-027",
@@ -6843,7 +6869,8 @@
    ],
    "landmark": "a moss cradle you can ride down under the island",
    "character": "Across the Skein, the Cooney kin of Halcyon are the food driers everyone knows. They are warm to strangers and loud at lashings. The walls of the long kitchen are painted with every island they've lashed with; and everyone has a sky name and a floor name; the floor name is for dealing with groundfolk. Founded VY 290 by Gray Years families from the Northland. Faith: Catholic. Landmark: a moss cradle you can ride down under the island.",
-   "seed": 470601025
+   "seed": 470601025,
+   "style": "lamp_city"
   },
   {
    "id": "SKY-028",
@@ -6954,7 +6981,8 @@
    ],
    "landmark": "the long kitchen with a glass roof",
    "character": "Across the Skein, the Mangieri kin of Evenstar are the air-post carriers everyone knows. They are old-fashioned: they keep floor ways the floor forgot. Cloud singing: the whole island sings in a cloud, so no one is lost in the white; and the walls of the long kitchen are painted with every island they've lashed with. Founded VY 289 by children of other islands sent to found it. Faith: the Sunward. Landmark: the long kitchen with a glass roof.",
-   "seed": 1535345577
+   "seed": 1535345577,
+   "style": "yokocho_lanes"
   },
   {
    "id": "SKY-029",
@@ -7072,7 +7100,8 @@
    ],
    "landmark": "a rim garden of dwarf apples that leans over the edge",
    "character": "Hollow Bell is a small flat-topped island; its people are gas makers and proud of it. They are the Skein's best riggers, and they know it. Each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at; and children are 'ballast' -- a blessing: the island is steadier for them. Founded VY 340 by Returner families after the Reconciliation. Faith: Dharmic. Landmark: a rim garden of dwarf apples that leans over the edge.",
-   "seed": 1083790688
+   "seed": 1083790688,
+   "style": "machiya_lattice"
   },
   {
    "id": "SKY-030",
@@ -7196,7 +7225,8 @@
    ],
    "landmark": "a stair cut down through the rock to a window in the underside",
    "character": "Whisperwind is a great island of skycloth weavers, governed by the whole island in the long kitchen until all agree. They are famous for their music. Weighing Day: every person is weighed at midwinter and the weight book read aloud; and children are 'ballast' -- a blessing: the island is steadier for them. Founded VY 279 by Harrow Falls millworkers. Faith: the Lakes Union Church. Landmark: a stair cut down through the rock to a window in the underside.",
-   "seed": 1933674923
+   "seed": 1933674923,
+   "style": "courtyard_canyon"
   },
   {
    "id": "SKY-031",
@@ -7309,7 +7339,8 @@
    ],
    "landmark": "the ice houses, deep in the rock's cells",
    "character": "Sibyl's Rest is a one-block island of lark wrights, governed by the whole island in the long kitchen until all agree. They are the Skein's best riggers, and they know it. Kite mail: messages flown on kites to islands downwind; and a guest brings their weight in gifts (in practice a token, weighed with ceremony). Founded VY 330 by Kessler clerks who walked out of the Registry. Faith: Catholic. Landmark: the ice houses, deep in the rock's cells.",
-   "seed": 31595592
+   "seed": 31595592,
+   "style": "machiya_lattice"
   },
   {
    "id": "SKY-032",
@@ -7427,7 +7458,8 @@
    ],
    "landmark": "a spiral of prayer kites flown from the roofs",
    "character": "Across the Skein, the Mueller kin of Moonward are the map makers everyone knows. They are superstitious about the Box. Kite mail: messages flown on kites to islands downwind; and feather-trimmed coats for elders; the more lashings, the more feathers. Founded VY 294 by Solano families from Playa Verde. Faith: the Sunward. Landmark: a spiral of prayer kites flown from the roofs.",
-   "seed": 1219779350
+   "seed": 1219779350,
+   "style": "yokocho_lanes"
   },
   {
    "id": "SKY-033",
@@ -7549,7 +7581,8 @@
    ],
    "landmark": "a rim garden of dwarf apples that leans over the edge",
    "character": "Vesper is a middling flat-topped island; its people are knot keepers and teachers and proud of it. They are famous for their music. Children are 'ballast' -- a blessing: the island is steadier for them; and kite mail: messages flown on kites to islands downwind. Founded VY 355 by Returner families after the Reconciliation. Faith: Muslim. Landmark: a rim garden of dwarf apples that leans over the edge.",
-   "seed": 1517215772
+   "seed": 1517215772,
+   "style": "girder_market"
   },
   {
    "id": "SKY-034",
@@ -7671,7 +7704,8 @@
    ],
    "landmark": "the dove lofts, a tower of white birds",
    "character": "Glimmerhold is a middling flat-topped island; its people are pond fishers and proud of it. They are curious about the floor, and send their plumb down more than most. The Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor; and the walls of the long kitchen are painted with every island they've lashed with. Founded VY 355 by Côte families from Port Carrow. Faith: the Lakes Union Church. Landmark: the dove lofts, a tower of white birds.",
-   "seed": 1251503073
+   "seed": 1251503073,
+   "style": "zakkyo_signstacks"
   },
   {
    "id": "SKY-035",
@@ -7787,7 +7821,8 @@
    ],
    "landmark": "a library of knotted cords",
    "character": "Ninth Wave is a one-block flat-topped island; its people are bell founders and music and proud of it. They are quarrelsome among themselves and loyal to outsiders. Each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at; and cloud singing: the whole island sings in a cloud, so no one is lost in the white. Founded VY 300 by Returner families after the Reconciliation. Faith: the Sunward. Landmark: a library of knotted cords.",
-   "seed": 1080886658
+   "seed": 1080886658,
+   "style": "tulou_ring"
   },
   {
    "id": "SKY-036",
@@ -7906,7 +7941,8 @@
    ],
    "landmark": "the ice houses, deep in the rock's cells",
    "character": "On Cloudhallow, a great flat-topped island, the Mohammed kin are knitters and dyers. They are quarrelsome among themselves and loyal to outsiders. Feather-trimmed coats for elders; the more lashings, the more feathers; and the snow feast: the first snow of every cloud is eaten with honey before it's swept. Founded VY 337 by debtors from Port Carrow. Faith: Catholic. Landmark: the ice houses, deep in the rock's cells.",
-   "seed": 277304147
+   "seed": 277304147,
+   "style": "retrofit_noir"
   },
   {
    "id": "SKY-037",
@@ -8027,7 +8063,8 @@
    ],
    "landmark": "a stair cut down through the rock to a window in the underside",
    "character": "On Starwell, a great rolling island, the Golinski kin are down pluckers and quilters. They are warm to strangers and loud at lashings. A husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan; and bell-speech: islands talk across the gap in rung patterns before the lines are shot. Founded VY 280 by Gray Years families from the Northland. Faith: none in particular. Landmark: a stair cut down through the rock to a window in the underside.",
-   "seed": 1170185055
+   "seed": 1170185055,
+   "style": "bridge_street"
   },
   {
    "id": "SKY-038",
@@ -8143,7 +8180,8 @@
    ],
    "landmark": "an observatory roof where the Far Side is charted",
    "character": "Elsewhen is a middling island of factors and brokers, governed by the Helm. They are curious about the floor, and send their plumb down more than most. A wife crosses to her husband's island at a lashing; children take their father's clan; and every meal is eaten together in the long kitchen; eating alone is for the sick. Founded VY 331 by Kessler clerks who walked out of the Registry. Faith: the Waymakers. Landmark: an observatory roof where the Far Side is charted.",
-   "seed": 562594936
+   "seed": 562594936,
+   "style": "hangar_quarter"
   },
   {
    "id": "SKY-039",
@@ -8261,7 +8299,8 @@
    ],
    "landmark": "a library of knotted cords",
    "character": "Farsight is a small flat-topped island; its people are down pluckers and quilters and proud of it. They are famous for their music. Weighing Day: every person is weighed at midwinter and the weight book read aloud; and no one speaks while the Sunline leaves the sky; the island watches it go north in silence. Founded VY 289 by children of other islands sent to found it. Faith: Catholic. Landmark: a library of knotted cords.",
-   "seed": 531617684
+   "seed": 531617684,
+   "style": "exposition_fair"
   },
   {
    "id": "SKY-040",
@@ -8385,7 +8424,8 @@
    ],
    "landmark": "the ice houses, deep in the rock's cells",
    "character": "Silver Bough is a great flat-topped island; its people are map makers and proud of it. They are warm to strangers and loud at lashings. Rope marks: rigger lines tattoo a turn of rope round the wrist for each envelope they've walked; and kite mail: messages flown on kites to islands downwind. Founded VY 358 by Gray Years families from the Northland. Faith: the Sunward. Landmark: the ice houses, deep in the rock's cells.",
-   "seed": 629968165
+   "seed": 629968165,
+   "style": "jharokha_towers"
   },
   {
    "id": "SKY-041",
@@ -8509,7 +8549,8 @@
    ],
    "landmark": "a spiral of prayer kites flown from the roofs",
    "character": "On Lumen, a great rolling island, the Contreras kin are gas makers. They are gentle, slow-spoken and stubborn. Children are 'ballast' -- a blessing: the island is steadier for them; and feather-trimmed coats for elders; the more lashings, the more feathers. Founded VY 325 by Marlowe orchard families. Faith: the Waymakers. Landmark: a spiral of prayer kites flown from the roofs.",
-   "seed": 2065597358
+   "seed": 2065597358,
+   "style": "bathhouse_tiers"
   },
   {
    "id": "SKY-042",
@@ -8627,7 +8668,8 @@
    ],
    "landmark": "a hanging chapel slung under the rim",
    "character": "Across the Skein, the Plante kin of Quiet Choir are the down pluckers and quilters everyone knows. They are curious about the floor, and send their plumb down more than most. The walls of the long kitchen are painted with every island they've lashed with; and Weighing Day: every person is weighed at midwinter and the weight book read aloud. Founded VY 340 by Marlowe orchard families. Faith: the Waymakers. Landmark: a hanging chapel slung under the rim.",
-   "seed": 807396949
+   "seed": 807396949,
+   "style": "false_fronts"
   },
   {
    "id": "SKY-043",
@@ -8750,7 +8792,8 @@
    ],
    "landmark": "a hanging chapel slung under the rim",
    "character": "Across the Skein, the Simmons kin of Augury are the moss gatherers and healers everyone knows. They are curious about the floor, and send their plumb down more than most. Kite mail: messages flown on kites to islands downwind; and Weighing Day: every person is weighed at midwinter and the weight book read aloud. Founded VY 329 by Marlowe orchard families. Faith: the Waymakers. Landmark: a hanging chapel slung under the rim.",
-   "seed": 284127912
+   "seed": 284127912,
+   "style": "marine_deco"
   },
   {
    "id": "SKY-044",
@@ -8870,7 +8913,8 @@
    ],
    "landmark": "a library of knotted cords",
    "character": "Mistcrown is a small flat-topped island; its people are beekeepers and proud of it. They are warm to strangers and loud at lashings. No one says the Steward's name within sight of the Box; they call it 'the neighbour'; and they keep doves but never eat birds: a bird is a cousin who flies without help. Founded VY 319 by Waymakers from Oceanview. Faith: Catholic. Landmark: a library of knotted cords.",
-   "seed": 1407442639
+   "seed": 1407442639,
+   "style": "patchwork_conventillo"
   },
   {
    "id": "SKY-045",
@@ -8990,7 +9034,8 @@
    ],
    "landmark": "an observatory roof where the Far Side is charted",
    "character": "Gloaming is a middling island of moss gatherers and healers, governed by the whole island in the long kitchen until all agree. They are superstitious about the Box. The walls of the long kitchen are painted with every island they've lashed with; and bell-speech: islands talk across the gap in rung patterns before the lines are shot. Founded VY 275 by cannery families from Tern Harbor. Faith: Dharmic. Landmark: an observatory roof where the Far Side is charted.",
-   "seed": 2020664343
+   "seed": 2020664343,
+   "style": "garden_terraces"
   },
   {
    "id": "SKY-046",
@@ -9113,7 +9158,8 @@
    ],
    "landmark": "a spiral of prayer kites flown from the roofs",
    "character": "On Hallowmere, a great rolling island, the Hallowmerekin kin are shepherds and spinners. They are curious about the floor, and send their plumb down more than most. Feather-trimmed coats for elders; the more lashings, the more feathers; and at sixteen every youth may choose to cross to any island at a lashing; most stay. Founded VY 351 by cannery families from Tern Harbor. Faith: the Waymakers. Landmark: a spiral of prayer kites flown from the roofs.",
-   "seed": 1765410265
+   "seed": 1765410265,
+   "style": "rim_cliffhangers"
   },
   {
    "id": "SKY-047",
@@ -9228,7 +9274,8 @@
    ],
    "landmark": "a spiral of prayer kites flown from the roofs",
    "character": "Across the Skein, the Velazquez kin of Wyrd Lantern are the knitters and dyers everyone knows. They are restless: their youth cross bridges more than any. Children are 'ballast' -- a blessing: the island is steadier for them; and the Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor. Founded VY 350 by Solano families from Playa Verde. Faith: Catholic. Landmark: a spiral of prayer kites flown from the roofs.",
-   "seed": 1666872800
+   "seed": 1666872800,
+   "style": "danchi_terraces"
   },
   {
    "id": "SKY-048",
@@ -9349,7 +9396,8 @@
    ],
    "landmark": "a stair cut down through the rock to a window in the underside",
    "character": "Seventh Veil is a middling island of shepherds and spinners, governed by the plumb and the weigher jointly. They are curious about the floor, and send their plumb down more than most. Weighing Day: every person is weighed at midwinter and the weight book read aloud; and bell-speech: islands talk across the gap in rung patterns before the lines are shot. Founded VY 292 by cannery families from Tern Harbor. Faith: Catholic. Landmark: a stair cut down through the rock to a window in the underside.",
-   "seed": 1587248502
+   "seed": 1587248502,
+   "style": "moorish_deco"
   },
   {
    "id": "SKY-049",
@@ -9473,7 +9521,8 @@
    ],
    "landmark": "the Box mast, the Steward's sealed cloud engine, with its prayer flags",
    "character": "Saint Elmo is a great island of moss gatherers and healers, governed by the whole island in the long kitchen until all agree. They are the Skein's best riggers, and they know it. The Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor; and cloud singing: the whole island sings in a cloud, so no one is lost in the white. Founded VY 335 by Gray Years families from the Northland. Faith: the Sunward. Landmark: the Box mast, the Steward's sealed cloud engine, with its prayer flags.",
-   "seed": 432970525
+   "seed": 432970525,
+   "style": "mudejar_brickworks"
   },
   {
    "id": "SKY-050",
@@ -9596,7 +9645,8 @@
    ],
    "landmark": "the oldest envelope in the Skein, patched in a hundred colours",
    "character": "Across the Skein, the Benton kin of Candlemoor are the factors and brokers everyone knows. They are quarrelsome among themselves and loyal to outsiders. A guest brings their weight in gifts (in practice a token, weighed with ceremony); and no one says the Steward's name within sight of the Box; they call it 'the neighbour'. Founded VY 329 by Harrow Falls millworkers. Faith: Full Gospel. Landmark: the oldest envelope in the Skein, patched in a hundred colours.",
-   "seed": 903316394
+   "seed": 903316394,
+   "style": "qamariya_towers"
   },
   {
    "id": "SKY-051",
@@ -9716,7 +9766,8 @@
    ],
    "landmark": "a spiral of prayer kites flown from the roofs",
    "character": "On Puddingstone, a great flat-topped island, the Leduc kin are knitters and dyers. They are devout and quiet. No one says the Steward's name within sight of the Box; they call it 'the neighbour'; and a plumb who goes down owes the island a story at the long kitchen on return. Founded VY 284 by Gray Years families from the Northland. Faith: the Waymakers. Landmark: a spiral of prayer kites flown from the roofs.",
-   "seed": 1251276612
+   "seed": 1251276612,
+   "style": "infilled_frame"
   },
   {
    "id": "SKY-052",
@@ -9832,7 +9883,8 @@
    ],
    "landmark": "the lark cradles on the tallest roof",
    "character": "On Thistledown, a middling flat-topped island, the McGowan kin are factors and brokers. They are famous for their music. Bell-speech: islands talk across the gap in rung patterns before the lines are shot; and cloud singing: the whole island sings in a cloud, so no one is lost in the white. Founded VY 316 by Gray Years families from the Northland. Faith: the Waymakers. Landmark: the lark cradles on the tallest roof.",
-   "seed": 1576135097
+   "seed": 1576135097,
+   "style": "closes_lands"
   },
   {
    "id": "SKY-053",
@@ -9950,7 +10002,8 @@
    ],
    "landmark": "a windmill that turns only in the envelopes' shear (a kite turbine)",
    "character": "Higgledy is a middling rolling island; its people are weather readers and proud of it. They are restless: their youth cross bridges more than any. At sixteen every youth may choose to cross to any island at a lashing; most stay; and each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at. Founded VY 294 by Harrow Falls millworkers. Faith: the Waymakers. Landmark: a windmill that turns only in the envelopes' shear (a kite turbine).",
-   "seed": 766239174
+   "seed": 766239174,
+   "style": "jetty_lanes"
   },
   {
    "id": "SKY-054",
@@ -10066,7 +10119,8 @@
    ],
    "landmark": "a bathhouse warmed by the electrolysis halls",
    "character": "Across the Skein, the Highsmith kin of Teacup Rise are the factors and brokers everyone knows. They are gentle, slow-spoken and stubborn. Marriages are vowed with a tether splice: the couple splice two ropes into one; and cloud singing: the whole island sings in a cloud, so no one is lost in the white. Founded VY 330 by debtors from Port Carrow. Faith: the Waymakers. Landmark: a bathhouse warmed by the electrolysis halls.",
-   "seed": 857932873
+   "seed": 857932873,
+   "style": "patchwork_conventillo"
   },
   {
    "id": "SKY-055",
@@ -10184,7 +10238,8 @@
    ],
    "landmark": "the Box mast, the Steward's sealed cloud engine, with its prayer flags",
    "character": "Across the Skein, the Kapoor kin of Mumblecrust are the ice cutters everyone knows. They are reserved, proud and exacting about weight. At sixteen every youth may choose to cross to any island at a lashing; most stay; and cloud singing: the whole island sings in a cloud, so no one is lost in the white. Founded VY 359 by Solano families from Playa Verde. Faith: Jewish. Landmark: the Box mast, the Steward's sealed cloud engine, with its prayer flags.",
-   "seed": 541271353
+   "seed": 541271353,
+   "style": "cholet_ballroom"
   },
   {
    "id": "SKY-056",
@@ -10299,7 +10354,8 @@
    ],
    "landmark": "a bathhouse warmed by the electrolysis halls",
    "character": "Across the Skein, the Horton kin of Pennywhistle are the down pluckers and quilters everyone knows. They are shrewd traders who never give the first price. They keep doves but never eat birds: a bird is a cousin who flies without help; and a wife crosses to her husband's island at a lashing; children take their father's clan. Founded VY 350 by Solano families from Playa Verde. Faith: none in particular. Landmark: a bathhouse warmed by the electrolysis halls.",
-   "seed": 1987120322
+   "seed": 1987120322,
+   "style": "spiral_high_street"
   },
   {
    "id": "SKY-057",
@@ -10417,7 +10473,8 @@
    ],
    "landmark": "the schoolhouse on stilts over the main path",
    "character": "On Dandelion Clock, a small flat-topped island, the Dandelionkin kin are factors and brokers. They are famous for their music. At sixteen every youth may choose to cross to any island at a lashing; most stay; and the walls of the long kitchen are painted with every island they've lashed with. Founded VY 275 by Warden lines from Bellhaven. Faith: Jewish. Landmark: the schoolhouse on stilts over the main path.",
-   "seed": 793086266
+   "seed": 793086266,
+   "style": "cerro_tin"
   },
   {
    "id": "SKY-058",
@@ -10533,7 +10590,8 @@
    ],
    "landmark": "a bathhouse warmed by the electrolysis halls",
    "character": "On Hobnob, a middling flat-topped island, the Bell kin are moss gatherers and healers. They are warm to strangers and loud at lashings. At sixteen every youth may choose to cross to any island at a lashing; most stay; and a husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan. Founded VY 291 by Harrow Falls millworkers. Faith: none in particular. Landmark: a bathhouse warmed by the electrolysis halls.",
-   "seed": 1784560452
+   "seed": 1784560452,
+   "style": "konkan_cottages"
   },
   {
    "id": "SKY-059",
@@ -10650,7 +10708,8 @@
    ],
    "landmark": "the Box mast, the Steward's sealed cloud engine, with its prayer flags",
    "character": "Bumbleby is a middling flat-topped island; its people are skycloth weavers and proud of it. They are restless: their youth cross bridges more than any. They keep doves but never eat birds: a bird is a cousin who flies without help; and the snow feast: the first snow of every cloud is eaten with honey before it's swept. Founded VY 326 by Warden lines from Bellhaven. Faith: none in particular. Landmark: the Box mast, the Steward's sealed cloud engine, with its prayer flags.",
-   "seed": 638093079
+   "seed": 638093079,
+   "style": "infilled_frame"
   },
   {
    "id": "SKY-060",
@@ -10771,7 +10830,8 @@
    ],
    "landmark": "the old Warden service hatch, kept as a shrine",
    "character": "Gooseberry Fool is a middling flat-topped island; its people are lark wrights and proud of it. They are famous for their music. A plumb who goes down owes the island a story at the long kitchen on return; and no one says the Steward's name within sight of the Box; they call it 'the neighbour'. Founded VY 290 by Solano families from Playa Verde. Faith: none in particular. Landmark: the old Warden service hatch, kept as a shrine.",
-   "seed": 432104535
+   "seed": 432104535,
+   "style": "cerro_tin"
   },
   {
    "id": "SKY-061",
@@ -10887,7 +10947,8 @@
    ],
    "landmark": "the oldest envelope in the Skein, patched in a hundred colours",
    "character": "On Hullabaloo, a middling flat-topped island, the Caldwell kin are down pluckers and quilters. They are warm to strangers and loud at lashings. Kite mail: messages flown on kites to islands downwind; and feather-trimmed coats for elders; the more lashings, the more feathers. Founded VY 323 by debtors from Port Carrow. Faith: Catholic. Landmark: the oldest envelope in the Skein, patched in a hundred colours.",
-   "seed": 1361193828
+   "seed": 1361193828,
+   "style": "modernista_reef"
   },
   {
    "id": "SKY-062",
@@ -11006,7 +11067,8 @@
    ],
    "landmark": "an observatory roof where the Far Side is charted",
    "character": "Tumbledown is a great rolling island; its people are orchard keepers and proud of it. They are the Skein's best riggers, and they know it. A husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan; and each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at. Founded VY 284 by Warden lines from Bellhaven. Faith: the Sunward. Landmark: an observatory roof where the Far Side is charted.",
-   "seed": 1941561537
+   "seed": 1941561537,
+   "style": "toolhouse_stack"
   },
   {
    "id": "SKY-063",
@@ -11129,7 +11191,8 @@
    ],
    "landmark": "a bathhouse warmed by the electrolysis halls",
    "character": "On Tiddlywink, a great flat-topped island, the Mercier kin are weather readers. They are curious about the floor, and send their plumb down more than most. The snow feast: the first snow of every cloud is eaten with honey before it's swept; and the young dance on the rim rails at lashings (illegal on the floor; a rite aloft). Founded VY 278 by Côte families from Port Carrow. Faith: Catholic. Landmark: a bathhouse warmed by the electrolysis halls.",
-   "seed": 497409533
+   "seed": 497409533,
+   "style": "junk_castle"
   },
   {
    "id": "SKY-064",
@@ -11247,7 +11310,8 @@
    ],
    "landmark": "the ice houses, deep in the rock's cells",
    "character": "On Fiddlesticks, a small flat-topped island, the Myrtil kin are bell founders and music. They are famous for their music. The Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor; and a husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan. Founded VY 311 by children of other islands sent to found it. Faith: none in particular. Landmark: the ice houses, deep in the rock's cells.",
-   "seed": 347292912
+   "seed": 347292912,
+   "style": "chefchaouen_blue"
   },
   {
    "id": "SKY-065",
@@ -11368,7 +11432,8 @@
    ],
    "landmark": "a windmill that turns only in the envelopes' shear (a kite turbine)",
    "character": "On Marmalade Moon, a middling rolling island, the Poulin kin are rope makers. They are gentle, slow-spoken and stubborn. Bell-speech: islands talk across the gap in rung patterns before the lines are shot; and marriages are vowed with a tether splice: the couple splice two ropes into one. Founded VY 359 by debtors from Port Carrow. Faith: the Sunward. Landmark: a windmill that turns only in the envelopes' shear (a kite turbine).",
-   "seed": 154475369
+   "seed": 154475369,
+   "style": "box_pile"
   },
   {
    "id": "SKY-066",
@@ -11486,7 +11551,8 @@
    ],
    "landmark": "a weathervane taller than any building",
    "character": "On Cockleshell, a middling flat-topped island, the Ceja kin are pond fishers. They are superstitious about the Box. A night vigil with electric lanterns on the rim whenever an island is lost from sight; and each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at. Founded VY 275 by Kessler clerks who walked out of the Registry. Faith: the Sunward. Landmark: a weathervane taller than any building.",
-   "seed": 1304455915
+   "seed": 1304455915,
+   "style": "laje_stack"
   },
   {
    "id": "SKY-067",
@@ -11607,7 +11673,8 @@
    ],
    "landmark": "a bathhouse warmed by the electrolysis halls",
    "character": "Pipsqueak is a middling island of beekeepers, governed by the mother house. They are shrewd traders who never give the first price. Cloud singing: the whole island sings in a cloud, so no one is lost in the white; and Weighing Day: every person is weighed at midwinter and the weight book read aloud. Founded VY 340 by Solano families from Playa Verde. Faith: Catholic. Landmark: a bathhouse warmed by the electrolysis halls.",
-   "seed": 1987941636
+   "seed": 1987941636,
+   "style": "modernista_reef"
   },
   {
    "id": "SKY-068",
@@ -11725,7 +11792,8 @@
    ],
    "landmark": "a carved figurehead on the east face",
    "character": "On Wobblewick, a one-block flat-topped island, the McKay kin are ice cutters. They are reserved, proud and exacting about weight. A husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan; and every meal is eaten together in the long kitchen; eating alone is for the sick. Founded VY 339 by Gray Years families from the Northland. Faith: the Sunward. Landmark: a carved figurehead on the east face.",
-   "seed": 26958732
+   "seed": 26958732,
+   "style": "garden_terraces"
   },
   {
    "id": "SKY-069",
@@ -11840,7 +11908,8 @@
    ],
    "landmark": "the oldest envelope in the Skein, patched in a hundred colours",
    "character": "Merriweather is a one-block island of skycloth weavers, governed by the work-crews govern. They are the Skein's best riggers, and they know it. A plumb who goes down owes the island a story at the long kitchen on return; and a night vigil with electric lanterns on the rim whenever an island is lost from sight. Founded VY 281 by Waymakers from Oceanview. Faith: none in particular. Landmark: the oldest envelope in the Skein, patched in a hundred colours.",
-   "seed": 1631164889
+   "seed": 1631164889,
+   "style": "exposition_fair"
   },
   {
    "id": "SKY-070",
@@ -11964,7 +12033,8 @@
    ],
    "landmark": "an observatory roof where the Far Side is charted",
    "character": "On Sixpence Spire, a great rolling island, the Holland kin are brewers. They are superstitious about the Box. A night vigil with electric lanterns on the rim whenever an island is lost from sight; and the snow feast: the first snow of every cloud is eaten with honey before it's swept. Founded VY 282 by Waymakers from Oceanview. Faith: none in particular. Landmark: an observatory roof where the Far Side is charted.",
-   "seed": 437805297
+   "seed": 437805297,
+   "style": "kulle_galleries"
   },
   {
    "id": "SKY-071",
@@ -12083,7 +12153,8 @@
    ],
    "landmark": "the long kitchen with a glass roof",
    "character": "Across the Skein, the Truong kin of Lollygag are the orchard keepers everyone knows. They are famous for their music. A husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan; and Weighing Day: every person is weighed at midwinter and the weight book read aloud. Founded VY 326 by Warden lines from Bellhaven. Faith: the Sunward. Landmark: the long kitchen with a glass roof.",
-   "seed": 2123225927
+   "seed": 2123225927,
+   "style": "kowloon_warren"
   },
   {
    "id": "SKY-072",
@@ -12201,7 +12272,8 @@
    ],
    "landmark": "a bathhouse warmed by the electrolysis halls",
    "character": "On Hopscotch, a middling flat-topped island, the Kanter kin are orchard keepers. They are gentle, slow-spoken and stubborn. A plumb who goes down owes the island a story at the long kitchen on return; and the young dance on the rim rails at lashings (illegal on the floor; a rite aloft). Founded VY 291 by Waymakers from Oceanview. Faith: Jewish. Landmark: a bathhouse warmed by the electrolysis halls.",
-   "seed": 1647015922
+   "seed": 1647015922,
+   "style": "laje_stack"
   },
   {
    "id": "SKY-073",
@@ -12322,7 +12394,8 @@
    ],
    "landmark": "a terraced hill of gardens",
    "character": "Across the Skein, the Roloff kin of Kerfuffle are the brewers everyone knows. They are quarrelsome among themselves and loyal to outsiders. Every meal is eaten together in the long kitchen; eating alone is for the sick; and they keep doves but never eat birds: a bird is a cousin who flies without help. Founded VY 359 by cannery families from Tern Harbor. Faith: the Lakes Union Church. Landmark: a terraced hill of gardens.",
-   "seed": 160488714
+   "seed": 160488714,
+   "style": "junk_castle"
   },
   {
    "id": "SKY-074",
@@ -12443,7 +12516,8 @@
    ],
    "landmark": "a library of knotted cords",
    "character": "Crumpet Hill is a great island of rope makers, governed by the whole island in the long kitchen until all agree. They are shrewd traders who never give the first price. Cloud singing: the whole island sings in a cloud, so no one is lost in the white; and no one says the Steward's name within sight of the Box; they call it 'the neighbour'. Founded VY 295 by debtors from Port Carrow. Faith: Dharmic. Landmark: a library of knotted cords.",
-   "seed": 635490393
+   "seed": 635490393,
+   "style": "box_pile"
   },
   {
    "id": "SKY-075",
@@ -12564,7 +12638,8 @@
    ],
    "landmark": "a windmill that turns only in the envelopes' shear (a kite turbine)",
    "character": "Ragamuffin is a middling rolling island; its people are beekeepers and proud of it. They are the Skein's best riggers, and they know it. No one speaks while the Sunline leaves the sky; the island watches it go north in silence; and the snow feast: the first snow of every cloud is eaten with honey before it's swept. Founded VY 362 by children of other islands sent to found it (the Hundredth Boarding). Faith: the Sunward. Landmark: a windmill that turns only in the envelopes' shear (a kite turbine).",
-   "seed": 93307689
+   "seed": 93307689,
+   "style": "cholet_ballroom"
   },
   {
    "id": "SKY-076",
@@ -12683,7 +12758,8 @@
    ],
    "landmark": "the dove lofts, a tower of white birds",
    "character": "On Ophir, a middling rolling island, the Nation kin are food driers. They are devout and quiet. No one says the Steward's name within sight of the Box; they call it 'the neighbour'; and at sixteen every youth may choose to cross to any island at a lashing; most stay. Founded VY 307 by Côte families from Port Carrow. Faith: none in particular. Landmark: the dove lofts, a tower of white birds.",
-   "seed": 287324817
+   "seed": 287324817,
+   "style": "saracenic_gothic"
   },
   {
    "id": "SKY-077",
@@ -12801,7 +12877,8 @@
    ],
    "landmark": "a rim garden of dwarf apples that leans over the edge",
    "character": "Across the Skein, the Niemczyk kin of Tarshish are the moss gatherers and healers everyone knows. They are restless: their youth cross bridges more than any. No one speaks while the Sunline leaves the sky; the island watches it go north in silence; and rope marks: rigger lines tattoo a turn of rope round the wrist for each envelope they've walked. Founded VY 277 by Waymakers from Oceanview. Faith: the Waymakers. Landmark: a rim garden of dwarf apples that leans over the edge.",
-   "seed": 10751442
+   "seed": 10751442,
+   "style": "sassi_terraces"
   },
   {
    "id": "SKY-078",
@@ -12924,7 +13001,8 @@
    ],
    "landmark": "a rope-walk 200 m long on the roofs",
    "character": "Thule is a great rolling island; its people are down pluckers and quilters and proud of it. They are warm to strangers and loud at lashings. A wife crosses to her husband's island at a lashing; children take their father's clan; and a night vigil with electric lanterns on the rim whenever an island is lost from sight. Founded VY 356 by Harrow Falls millworkers. Faith: the Sunward. Landmark: a rope-walk 200 m long on the roofs.",
-   "seed": 900868308
+   "seed": 900868308,
+   "style": "haveli_bazaar"
   },
   {
    "id": "SKY-079",
@@ -13045,7 +13123,8 @@
    ],
    "landmark": "a hanging chapel slung under the rim",
    "character": "Across the Skein, the Small kin of Dilmun are the moss gatherers and healers everyone knows. They are gentle, slow-spoken and stubborn. Kite mail: messages flown on kites to islands downwind; and a guest brings their weight in gifts (in practice a token, weighed with ceremony). Founded VY 275 by Solano families from Playa Verde. Faith: the Waymakers. Landmark: a hanging chapel slung under the rim.",
-   "seed": 1300560629
+   "seed": 1300560629,
+   "style": "chefchaouen_blue"
   },
   {
    "id": "SKY-080",
@@ -13161,7 +13240,8 @@
    ],
    "landmark": "a bathhouse warmed by the electrolysis halls",
    "character": "On Punt, a small flat-topped island, the Emmons kin are bell founders and music. They are the Skein's best riggers, and they know it. Rope marks: rigger lines tattoo a turn of rope round the wrist for each envelope they've walked; and a guest brings their weight in gifts (in practice a token, weighed with ceremony). Founded VY 276 by Warden lines from Bellhaven. Faith: the Waymakers. Landmark: a bathhouse warmed by the electrolysis halls.",
-   "seed": 737073985
+   "seed": 737073985,
+   "style": "roofstreet_oasis"
   },
   {
    "id": "SKY-081",
@@ -13280,7 +13360,8 @@
    ],
    "landmark": "the lark cradles on the tallest roof",
    "character": "Byblos is a small flat-topped island; its people are knitters and dyers and proud of it. They are gentle, slow-spoken and stubborn. A wife crosses to her husband's island at a lashing; children take their father's clan; and each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at. Founded VY 296 by Kessler clerks who walked out of the Registry. Faith: Full Gospel. Landmark: the lark cradles on the tallest roof.",
-   "seed": 1639174467
+   "seed": 1639174467,
+   "style": "spiral_high_street"
   },
   {
    "id": "SKY-082",
@@ -13399,7 +13480,8 @@
    ],
    "landmark": "the Box mast, the Steward's sealed cloud engine, with its prayer flags",
    "character": "Across the Skein, the Clayberger kin of Ugarit are the skycloth weavers everyone knows. They are restless: their youth cross bridges more than any. The young dance on the rim rails at lashings (illegal on the floor; a rite aloft); and a plumb who goes down owes the island a story at the long kitchen on return. Founded VY 327 by children of other islands sent to found it. Faith: the Waymakers. Landmark: the Box mast, the Steward's sealed cloud engine, with its prayer flags.",
-   "seed": 885883194
+   "seed": 885883194,
+   "style": "mughal_crown"
   },
   {
    "id": "SKY-083",
@@ -13513,7 +13595,8 @@
    ],
    "landmark": "the bridge house, where the bridges are kept and painted",
    "character": "Across the Skein, the Reams kin of Meroë are the orchard keepers everyone knows. They are shrewd traders who never give the first price. Everyone has a sky name and a floor name; the floor name is for dealing with groundfolk; and each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at. Founded VY 354 by Warden lines from Bellhaven. Faith: none in particular. Landmark: the bridge house, where the bridges are kept and painted.",
-   "seed": 1020312605
+   "seed": 1020312605,
+   "style": "ghardaia_cascade"
   },
   {
    "id": "SKY-084",
@@ -13635,7 +13718,8 @@
    ],
    "landmark": "a library of knotted cords",
    "character": "Across the Skein, the Hemby kin of Sardis are the knot keepers and teachers everyone knows. They are restless: their youth cross bridges more than any. They keep doves but never eat birds: a bird is a cousin who flies without help; and a night vigil with electric lanterns on the rim whenever an island is lost from sight. Founded VY 315 by Gray Years families from the Northland. Faith: the Sunward. Landmark: a library of knotted cords.",
-   "seed": 695026918
+   "seed": 695026918,
+   "style": "roofstreet_oasis"
   },
   {
    "id": "SKY-085",
@@ -13753,7 +13837,8 @@
    ],
    "landmark": "a windmill that turns only in the envelopes' shear (a kite turbine)",
    "character": "Hattusa is a small island of ice cutters, governed by a council of elders. They are restless: their youth cross bridges more than any. A husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan; and a night vigil with electric lanterns on the rim whenever an island is lost from sight. Founded VY 292 by Côte families from Port Carrow. Faith: Dharmic. Landmark: a windmill that turns only in the envelopes' shear (a kite turbine).",
-   "seed": 517183934
+   "seed": 517183934,
+   "style": "matmata_pits"
   },
   {
    "id": "SKY-086",
@@ -13872,7 +13957,8 @@
    ],
    "landmark": "a carved figurehead on the east face",
    "character": "On Elam, a small flat-topped island, the Gillette kin are pond fishers. They are shrewd traders who never give the first price. Every meal is eaten together in the long kitchen; eating alone is for the sick; and feather-trimmed coats for elders; the more lashings, the more feathers. Founded VY 283 by Returner families after the Reconciliation. Faith: the Lakes Union Church. Landmark: a carved figurehead on the east face.",
-   "seed": 703231295
+   "seed": 703231295,
+   "style": "ghardaia_cascade"
   },
   {
    "id": "SKY-087",
@@ -13994,7 +14080,8 @@
    ],
    "landmark": "the schoolhouse on stilts over the main path",
    "character": "Arcady is a great island of moss gatherers and healers, governed by the Helm. They are reserved, proud and exacting about weight. Children are 'ballast' -- a blessing: the island is steadier for them; and bell-speech: islands talk across the gap in rung patterns before the lines are shot. Founded VY 295 by Solano families from Playa Verde. Faith: Full Gospel. Landmark: the schoolhouse on stilts over the main path.",
-   "seed": 1429299459
+   "seed": 1429299459,
+   "style": "ablaq_lanes"
   },
   {
    "id": "SKY-088",
@@ -14112,7 +14199,8 @@
    ],
    "landmark": "the old Warden service hatch, kept as a shrine",
    "character": "Hyperborea is a middling flat-topped island; its people are down pluckers and quilters and proud of it. They are famous for their music. At sixteen every youth may choose to cross to any island at a lashing; most stay; and every meal is eaten together in the long kitchen; eating alone is for the sick. Founded VY 308 by debtors from Port Carrow. Faith: the Waymakers. Landmark: the old Warden service hatch, kept as a shrine.",
-   "seed": 1602642256
+   "seed": 1602642256,
+   "style": "shibam_stack"
   },
   {
    "id": "SKY-089",
@@ -14227,7 +14315,8 @@
    ],
    "landmark": "the ice houses, deep in the rock's cells",
    "character": "Across the Skein, the Gross kin of Avalon are the weather readers everyone knows. They are warm to strangers and loud at lashings. The young dance on the rim rails at lashings (illegal on the floor; a rite aloft); and a night vigil with electric lanterns on the rim whenever an island is lost from sight. Founded VY 275 by Marlowe orchard families. Faith: the Waymakers. Landmark: the ice houses, deep in the rock's cells.",
-   "seed": 2068691258
+   "seed": 2068691258,
+   "style": "wikala_market"
   },
   {
    "id": "SKY-090",
@@ -14347,7 +14436,8 @@
    ],
    "landmark": "a bell tower hung with forty bells",
    "character": "Ys is a middling rolling island; its people are pond fishers and proud of it. They are curious about the floor, and send their plumb down more than most. Bell-speech: islands talk across the gap in rung patterns before the lines are shot; and each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at. Founded VY 311 by Solano families from Playa Verde. Faith: the Sunward. Landmark: a bell tower hung with forty bells.",
-   "seed": 1495587460
+   "seed": 1495587460,
+   "style": "riad_terraces"
   },
   {
    "id": "SKY-091",
@@ -14456,7 +14546,8 @@
    ],
    "landmark": "an observatory roof where the Far Side is charted",
    "character": "On Nineveh, a one-block flat-topped island, the Farley kin are food driers. They are warm to strangers and loud at lashings. A plumb who goes down owes the island a story at the long kitchen on return; and every meal is eaten together in the long kitchen; eating alone is for the sick. Founded VY 287 by debtors from Port Carrow. Faith: the Lakes Union Church. Landmark: an observatory roof where the Far Side is charted.",
-   "seed": 1362325518
+   "seed": 1362325518,
+   "style": "wikala_market"
   },
   {
    "id": "SKY-092",
@@ -14570,7 +14661,8 @@
    ],
    "landmark": "a windmill that turns only in the envelopes' shear (a kite turbine)",
    "character": "Ebla is a one-block flat-topped island; its people are knitters and dyers and proud of it. They are superstitious about the Box. Children are 'ballast' -- a blessing: the island is steadier for them; and cloud singing: the whole island sings in a cloud, so no one is lost in the white. Founded VY 328 by Marlowe orchard families. Faith: Catholic. Landmark: a windmill that turns only in the envelopes' shear (a kite turbine).",
-   "seed": 717230799
+   "seed": 717230799,
+   "style": "matmata_pits"
   },
   {
    "id": "SKY-093",
@@ -14685,7 +14777,8 @@
    ],
    "landmark": "a weathervane taller than any building",
    "character": "Lothal is a one-block flat-topped island; its people are factors and brokers and proud of it. They are curious about the floor, and send their plumb down more than most. Everyone has a sky name and a floor name; the floor name is for dealing with groundfolk; and the Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor. Founded VY 276 by Gray Years families from the Northland. Faith: the Sunward. Landmark: a weathervane taller than any building.",
-   "seed": 1146626610
+   "seed": 1146626610,
+   "style": "falaj_forts"
   },
   {
    "id": "SKY-094",
@@ -14805,7 +14898,8 @@
    ],
    "landmark": "the map wall, painted with every lashing since the boarding",
    "character": "On Akrotiri, a middling flat-topped island, the Rollins kin are knot keepers and teachers. They are devout and quiet. At sixteen every youth may choose to cross to any island at a lashing; most stay; and a husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan. Founded VY 336 by cannery families from Tern Harbor. Faith: the Sunward. Landmark: the map wall, painted with every lashing since the boarding.",
-   "seed": 1918702614
+   "seed": 1918702614,
+   "style": "tighremt_towers"
   },
   {
    "id": "SKY-095",
@@ -14923,7 +15017,8 @@
    ],
    "landmark": "the bridge house, where the bridges are kept and painted",
    "character": "Uruk is a middling island of moss gatherers and healers, governed by the Helm. They are the Skein's best riggers, and they know it. The walls of the long kitchen are painted with every island they've lashed with; and children are 'ballast' -- a blessing: the island is steadier for them. Founded VY 334 by Returner families after the Reconciliation. Faith: the Waymakers. Landmark: the bridge house, where the bridges are kept and painted.",
-   "seed": 1207288589
+   "seed": 1207288589,
+   "style": "roshan_quarter"
   },
   {
    "id": "SKY-096",
@@ -15040,7 +15135,8 @@
    ],
    "landmark": "a library of knotted cords",
    "character": "On Kish, a middling flat-topped island, the Pinter kin are map makers. They are reserved, proud and exacting about weight. Bell-speech: islands talk across the gap in rung patterns before the lines are shot; and they keep doves but never eat birds: a bird is a cousin who flies without help. Founded VY 287 by Returner families after the Reconciliation. Faith: the Sunward. Landmark: a library of knotted cords.",
-   "seed": 1529717732
+   "seed": 1529717732,
+   "style": "chawl_galleries"
   },
   {
    "id": "SKY-097",
@@ -15162,7 +15258,8 @@
    ],
    "landmark": "the bridge house, where the bridges are kept and painted",
    "character": "Sheba is a great flat-topped island; its people are beekeepers and proud of it. They are curious about the floor, and send their plumb down more than most. Every meal is eaten together in the long kitchen; eating alone is for the sick; and children are 'ballast' -- a blessing: the island is steadier for them. Founded VY 286 by Returner families after the Reconciliation. Faith: Muslim. Landmark: the bridge house, where the bridges are kept and painted.",
-   "seed": 1859373856
+   "seed": 1859373856,
+   "style": "ghorfa_honeycomb"
   },
   {
    "id": "SKY-098",
@@ -15277,7 +15374,8 @@
    ],
    "landmark": "a moss cradle you can ride down under the island",
    "character": "On Colchis, a middling rolling island, the Munoz kin are air-post carriers. They are famous for their music. Feather-trimmed coats for elders; the more lashings, the more feathers; and each child is given a knotted cord at birth; a knot is added for every lashing they cross a bridge at. Founded VY 327 by Returner families after the Reconciliation. Faith: Muslim. Landmark: a moss cradle you can ride down under the island.",
-   "seed": 1818087211
+   "seed": 1818087211,
+   "style": "falaj_forts"
   },
   {
    "id": "SKY-099",
@@ -15396,7 +15494,8 @@
    ],
    "landmark": "a library of knotted cords",
    "character": "On Tyre, a middling rolling island, the Kaquatosh kin are food driers. They are famous for their music. The Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor; and rope marks: rigger lines tattoo a turn of rope round the wrist for each envelope they've walked. Founded VY 319 by children of other islands sent to found it. Faith: the Lakes Union Church. Landmark: a library of knotted cords.",
-   "seed": 916715020
+   "seed": 916715020,
+   "style": "medina_warren"
   },
   {
    "id": "SKY-100",
@@ -15513,7 +15612,8 @@
    ],
    "landmark": "a spiral of prayer kites flown from the roofs",
    "character": "Across the Skein, the Singleton kin of Ithaca are the down pluckers and quilters everyone knows. They are old-fashioned: they keep floor ways the floor forgot. Everyone has a sky name and a floor name; the floor name is for dealing with groundfolk; and a husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan. Founded VY 298 by Marlowe orchard families. Faith: the Waymakers. Landmark: a spiral of prayer kites flown from the roofs.",
-   "seed": 843784291
+   "seed": 843784291,
+   "style": "konkan_cottages"
   }
  ],
  "totals": {

@@ -1,0 +1,130 @@
+{
+ "id": "SKY-bridge_street-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 30.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "bridge_street",
+  "arch": "gable_row",
+  "model_kind": "hall",
+  "storeys": 5,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     4.65,
+     -7.0,
+     12.65,
+     6.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -14.85,
+     -7.5,
+     4.65,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "shutters",
+   "jetty",
+   "arch",
+   "dome",
+   "awnings",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": true,
+   "tower_cap": "onion",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#8a3a2a",
+    "#e9e0cc",
+    "#7a4a2c"
+   ],
+   "trim": "#e9e0cc",
+   "accent": "#8a3a2a",
+   "canvas": "#b6ff6b",
+   "tile": "#ffd86b"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "blade",
+    "brass",
+    "chochin"
+   ],
+   "density": 0.85
+  },
+  "mood": "#ffd27a",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "bridge_street",
+  "model": "hall",
+  "use": "market",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Bridge Street style: a shared model"
+}

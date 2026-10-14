@@ -1,0 +1,138 @@
+{
+ "id": "SKY-machiya_lattice-03",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.4,
+  "d": 14.7
+ },
+ "traits": {
+  "style": "machiya_lattice",
+  "arch": "pagoda",
+  "model_kind": "row",
+  "storeys": 2,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -4.6,
+     -6.75,
+     11.4,
+     5.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -13.6,
+     -4.75,
+     -4.6,
+     5.25
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "screen",
+   "eyebrow",
+   "awnings",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "batten",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e8e0cf",
+    "#2d3236",
+    "#8a6b4a"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#3b2c22",
+   "canvas": "#22355e",
+   "tile": "#d8261c"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin"
+   ],
+   "density": 0.35
+  },
+  "mood": "#ffb35c",
+  "shops": [
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "machiya_lattice",
+  "model": "row",
+  "use": "shops",
+  "storeys": 2,
+  "homes": 0
+ },
+ "brief": "sky island row in the Machiya Lattice style: a shared model"
+}

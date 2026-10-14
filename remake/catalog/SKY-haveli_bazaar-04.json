@@ -1,0 +1,148 @@
+{
+ "id": "SKY-haveli_bazaar-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 24.2
+ },
+ "traits": {
+  "style": "haveli_bazaar",
+  "arch": "court",
+  "model_kind": "hall",
+  "storeys": 4,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.65,
+     -1.5,
+     11.65,
+     8.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     2.65,
+     -11.5,
+     11.65,
+     -1.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -13.85,
+     -3.5,
+     2.65,
+     10.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "shutters",
+   "screen",
+   "parapet_screen",
+   "eyebrow",
+   "arch",
+   "chhatri",
+   "shacks",
+   "tanks",
+   "awnings",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "dome",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "pointed",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#a4513b",
+    "#7a3b2e",
+    "#efe6d2"
+   ],
+   "trim": "#efe6d2",
+   "accent": "#7a3b2e",
+   "canvas": "#ff7ad9",
+   "tile": "#7dff4a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "neon",
+    "dotmatrix",
+    "blade"
+   ],
+   "density": 0.85
+  },
+  "mood": "#ffb050",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "haveli_bazaar",
+  "model": "hall",
+  "use": "market",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Haveli Bazaar style: a shared model"
+}

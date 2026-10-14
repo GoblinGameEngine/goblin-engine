@@ -1,0 +1,224 @@
+{
+ "id": "SKY-medina_warren-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 36.9,
+  "d": 24.2
+ },
+ "traits": {
+  "style": "medina_warren",
+  "arch": "pile",
+  "model_kind": "tall",
+  "storeys": 8,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     7.65,
+     -0.5,
+     15.65,
+     9.0
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -0.35,
+     -0.5,
+     7.65,
+     10.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -0.35,
+     -10.0,
+     7.65,
+     -0.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -8.85,
+     -2.0,
+     -0.35,
+     8.0
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -8.35,
+     -11.5,
+     -0.35,
+     -2.0
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   },
+   {
+    "name": "B5",
+    "rect": [
+     -17.85,
+     -0.5,
+     -8.85,
+     9.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 5
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bay",
+   "jetty",
+   "arch",
+   "tower",
+   "shacks",
+   "laundry",
+   "awnings",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "horseshoe",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": true,
+   "gable": "step",
+   "shack": "loft",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#d9c7a4",
+    "#b98f5f",
+    "#2e7d55"
+   ],
+   "trim": "#e6dcc6",
+   "accent": "#2e7d55",
+   "canvas": "#66ffcc",
+   "tile": "#ff6699"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin",
+    "neon",
+    "lightbox",
+    "dotmatrix"
+   ],
+   "density": 0.85
+  },
+  "mood": "#60ffc0",
+  "shops": [
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "souvenir"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "souvenir"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "souvenir"
+   },
+   {
+    "kind": "dry_goods"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "medina_warren",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Medina Warren style: a shared model"
+}

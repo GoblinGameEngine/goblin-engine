@@ -1,0 +1,157 @@
+{
+ "id": "SKY-kowloon_warren-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 38.4,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "kowloon_warren",
+  "arch": "pile",
+  "model_kind": "hall",
+  "storeys": 8,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     7.9,
+     -5.5,
+     16.4,
+     4.5
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -9.1,
+     -7.5,
+     7.9,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -18.6,
+     -5.0,
+     -9.1,
+     5.0
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "cage",
+   "shutters",
+   "shacks",
+   "tanks",
+   "antennas",
+   "laundry",
+   "ac",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.75,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#a3c2b5",
+    "#d8d0bc",
+    "#8a8f86"
+   ],
+   "trim": "#d8d0bc",
+   "accent": "#6e6a60",
+   "canvas": "#2bff88",
+   "tile": "#ffb02e"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "lightbox",
+    "painted",
+    "dotmatrix"
+   ],
+   "density": 1.0
+  },
+  "mood": "#ffcf8a",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "kowloon_warren",
+  "model": "hall",
+  "use": "market",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Kowloon Warren style: a shared model"
+}

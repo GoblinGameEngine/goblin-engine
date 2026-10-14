@@ -1,0 +1,156 @@
+{
+ "id": "SKY-junk_castle-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 38.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "junk_castle",
+  "arch": "pile",
+  "model_kind": "hall",
+  "storeys": 5,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     8.15,
+     -5.5,
+     16.65,
+     4.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -10.35,
+     -7.5,
+     8.15,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "machine_floor",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -18.85,
+     -5.0,
+     -10.35,
+     5.0
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "balcony",
+   "jetty",
+   "arch",
+   "tower",
+   "chimneys",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": true,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#d76b4a",
+    "#e6d6a8",
+    "#4e6e7a"
+   ],
+   "trim": "#e6d6a8",
+   "accent": "#7b5b3a",
+   "canvas": "#ffd38a",
+   "tile": "#ff7a3d"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "brass",
+    "neon",
+    "chochin"
+   ],
+   "density": 0.55
+  },
+  "mood": "#ffb35c",
+  "shops": [
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "junk_castle",
+  "model": "hall",
+  "use": "market",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Junk Castle style: a shared model"
+}

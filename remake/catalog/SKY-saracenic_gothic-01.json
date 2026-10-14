@@ -1,0 +1,104 @@
+{
+ "id": "SKY-saracenic_gothic-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 27.4,
+  "d": 18.2
+ },
+ "traits": {
+  "style": "saracenic_gothic",
+  "arch": "slab",
+  "model_kind": "home",
+  "storeys": 6,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -13.1,
+     -8.5,
+     10.9,
+     7.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.4,
+   "h": 1.9,
+   "sill": 0.7,
+   "spacing": 2.8
+  },
+  "dress": [
+   "eyebrow",
+   "arch",
+   "dome",
+   "chhatri",
+   "tower",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "pointed",
+   "onion": false,
+   "tower_cap": "spire",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#c8b48a",
+    "#6a6e72",
+    "#9c4a36"
+   ],
+   "trim": "#f0eee6",
+   "accent": "#9c4a36",
+   "canvas": "#ffffff",
+   "tile": "#ffffff"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "lightbox"
+   ],
+   "density": 0.2
+  },
+  "mood": "#ff6080",
+  "shops": [
+   {
+    "kind": "cafe"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "saracenic_gothic",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 6,
+  "homes": 0
+ },
+ "brief": "sky island home in the Saracenic Gothic style: a shared model"
+}

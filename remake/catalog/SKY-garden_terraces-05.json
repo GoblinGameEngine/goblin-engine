@@ -1,0 +1,141 @@
+{
+ "id": "SKY-garden_terraces-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 24.9,
+  "d": 14.7
+ },
+ "traits": {
+  "style": "garden_terraces",
+  "arch": "pagoda",
+  "model_kind": "landmark",
+  "storeys": 8,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -2.85,
+     -6.75,
+     9.65,
+     5.75
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -11.85,
+     -4.25,
+     -2.85,
+     5.75
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "arch",
+   "dome",
+   "pergola",
+   "planter",
+   "lanterns",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e9e4d6",
+    "#cfc7b0",
+    "#7f9a6a"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#ffd38a",
+   "canvas": "#ffd38a",
+   "tile": "#bfffd9"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "chochin",
+    "painted"
+   ],
+   "density": 0.35
+  },
+  "mood": "#ffe2b0",
+  "shops": [
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "garden_terraces",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Garden Terraces style: a shared model"
+}

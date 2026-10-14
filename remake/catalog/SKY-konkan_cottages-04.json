@@ -1,0 +1,119 @@
+{
+ "id": "SKY-konkan_cottages-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "konkan_cottages",
+  "arch": "gable_row",
+  "model_kind": "hall",
+  "storeys": 4,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     3.15,
+     -7.0,
+     11.65,
+     6.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -13.85,
+     -7.5,
+     3.15,
+     6.5
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "balcony",
+   "gallery",
+   "shutters",
+   "eyebrow",
+   "planter",
+   "lanterns",
+   "dome"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#5c9a5a",
+    "#b8432f",
+    "#f4efe2"
+   ],
+   "trim": "#f4efe2",
+   "accent": "#b8432f",
+   "canvas": "#ffef9a",
+   "tile": "#ffef9a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin"
+   ],
+   "density": 0.2
+  },
+  "mood": "#ffb0b0",
+  "shops": [
+   {
+    "kind": "drug_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "konkan_cottages",
+  "model": "hall",
+  "use": "market",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Konkan Cottages style: a shared model"
+}

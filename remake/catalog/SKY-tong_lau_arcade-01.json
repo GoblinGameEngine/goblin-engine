@@ -1,0 +1,116 @@
+{
+ "id": "SKY-tong_lau_arcade-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 17.4,
+  "d": 15.2
+ },
+ "traits": {
+  "style": "tong_lau_arcade",
+  "arch": "slab",
+  "model_kind": "home",
+  "storeys": 4,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -8.1,
+     -7.0,
+     5.9,
+     6.0
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "balcony",
+   "gallery",
+   "shutters",
+   "shacks",
+   "tanks",
+   "laundry",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.75,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e9d9b8",
+    "#9fbf9a",
+    "#c8705a"
+   ],
+   "trim": "#f2eee2",
+   "accent": "#6b7f6a",
+   "canvas": "#ff4a2a",
+   "tile": "#ff3fa4"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "chochin",
+    "painted",
+    "lightbox"
+   ],
+   "density": 0.75
+  },
+  "mood": "#ffb35c",
+  "shops": [
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "tong_lau_arcade",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island home in the Tong Lau Arcades style: a shared model"
+}

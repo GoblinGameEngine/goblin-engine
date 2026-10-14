@@ -1,0 +1,149 @@
+{
+ "id": "SKY-infilled_frame-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.4,
+  "d": 21.7
+ },
+ "traits": {
+  "style": "infilled_frame",
+  "arch": "pile",
+  "model_kind": "landmark",
+  "storeys": 11,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -1.75,
+     11.4,
+     8.25
+    ],
+    "storeys": 11,
+    "plan": "tower",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.6,
+     -0.75,
+     2.9,
+     9.25
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     -10.25,
+     2.9,
+     -0.75
+    ],
+    "storeys": 9,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -13.6,
+     -2.25,
+     -5.6,
+     8.25
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "balcony",
+   "shacks",
+   "laundry",
+   "lanterns",
+   "billboard",
+   "tower"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#f2efe6",
+    "#9b9a94",
+    "#b5643f"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#ffe066",
+   "canvas": "#ffe066",
+   "tile": "#ff5f5f"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "dotmatrix",
+    "billboard",
+    "chochin"
+   ],
+   "density": 0.7
+  },
+  "mood": "#6bd3ff",
+  "shops": [
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "infilled_frame",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Infilled Frame style: a shared model"
+}

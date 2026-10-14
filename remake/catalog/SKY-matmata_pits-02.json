@@ -1,0 +1,159 @@
+{
+ "id": "SKY-matmata_pits-02",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 22.7
+ },
+ "traits": {
+  "style": "matmata_pits",
+  "arch": "court",
+  "model_kind": "tall",
+  "storeys": 3,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -0.75,
+     11.9,
+     9.75
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     2.9,
+     -10.75,
+     11.9,
+     -0.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.1,
+     0.25,
+     2.9,
+     9.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.1,
+     -0.75,
+     -5.1,
+     9.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 3
+   },
+   {
+    "name": "B4",
+    "rect": [
+     -14.1,
+     -10.75,
+     -5.1,
+     -0.75
+    ],
+    "storeys": 2,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 4
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "crenel_round",
+   "arch",
+   "planter",
+   "lanterns",
+   "crenel"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "round",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#bfa57e",
+    "#f4efe4",
+    "#3f7fb5"
+   ],
+   "trim": "#f4efe4",
+   "accent": "#3f7fb5",
+   "canvas": "#90e8ff",
+   "tile": "#ffd890"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "chochin"
+   ],
+   "density": 0.3
+  },
+  "mood": "#80d8ff",
+  "shops": [
+   {
+    "kind": "grocery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "matmata_pits",
+  "model": "tall",
+  "use": "dwelling",
+  "storeys": 3,
+  "homes": 0
+ },
+ "brief": "sky island tall in the Matmata Pits style: a shared model"
+}

@@ -1,0 +1,2121 @@
+{
+ "stream": "B",
+ "version": 1,
+ "date": "2026-10-14",
+ "count": 20,
+ "styles": [
+  {
+   "id": "kowloon_warren",
+   "name": "Kowloon Warren",
+   "sources": [
+    "Kowloon Walled City, Hong Kong"
+   ],
+   "refs": [
+    {
+     "title": "Kowloon Walled City (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Kowloon_Walled_City"
+    },
+    {
+     "title": "Rooftop slum (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Rooftop_slum"
+    }
+   ],
+   "typology": "warren",
+   "massing": {
+    "storeys": [
+     6,
+     12
+    ],
+    "footprint_m": [
+     [
+      4,
+      6
+     ],
+     [
+      8,
+      12
+     ]
+    ],
+    "stack": "overhang",
+    "stack_rules": "plan B-KWC: lots accrete storeys in rounds to one flat cap; upper storeys overhang alleys 0.6-1.5; caged balconies; every roof linked by ladders and plank bridges; alleys 1.2-2 m, a third roofed",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": true
+   },
+   "roof": [
+    "flat_terrace",
+    "rooftop_shacks",
+    "water_tanks",
+    "antennas",
+    "laundry"
+   ],
+   "walls": {
+    "materials": [
+     "corrugated_sheet",
+     "skystone_render",
+     "timber",
+     "steel_bar"
+    ],
+    "palette": [
+     "#8a8f86",
+     "#b9b0a0",
+     "#6e6a60",
+     "#a3c2b5",
+     "#d8d0bc"
+    ]
+   },
+   "openings": [
+    "window_grille",
+    "balcony_cage",
+    "window_small"
+   ],
+   "components": [
+    "balcony_cage",
+    "window_grille",
+    "window_small",
+    "ac_unit",
+    "laundry_line",
+    "water_tank",
+    "antenna",
+    "rooftop_shack",
+    "covered_alley",
+    "skybridge",
+    "stair_steel_external",
+    "ladder_roof",
+    "plank_bridge",
+    "wire_bundle",
+    "pipe_run",
+    "shutter_rolling",
+    "sign_blade",
+    "neon_frame",
+    "sign_board",
+    "fluoro_tube",
+    "ceiling_tile"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "neon_blade",
+     "lightbox",
+     "painted_board",
+     "dot_matrix"
+    ],
+    "density": 1.0,
+    "palette": [
+     "#ff4a2a",
+     "#ff3fa4",
+     "#3a7bff",
+     "#2bff88",
+     "#ffb02e",
+     "#e8f4ff"
+    ],
+    "animation": [
+     "steady",
+     "flicker",
+     "sequence"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffcf8a",
+     "#e8f4ff",
+     "#9fe6c0"
+    ],
+    "motifs": [
+     "window_glow",
+     "fluoro_alleys",
+     "laundry_lights"
+    ]
+   },
+   "floor_plan": "B-KWC (plans/b_kowloon_block.md)",
+   "fantasy": "the whole island one fused block: you cross it on the roofs; the outer face a wall of neon"
+  },
+  {
+   "id": "tong_lau_arcade",
+   "name": "Tong Lau Arcades",
+   "sources": [
+    "Hong Kong pre-war shophouses (Wan Chai, Sham Shui Po, Shanghai Street)"
+   ],
+   "refs": [
+    {
+     "title": "cityunseen: tong lau ghost buildings",
+     "url": "https://cityunseen.hk/?p=626"
+    },
+    {
+     "title": "URA: 186-190 Queen's Road East",
+     "url": "https://ura.org.hk/en/project/heritage-preservation-and-revitalisation/186-190-queen-s-road-east"
+    }
+   ],
+   "typology": "tong_lau",
+   "massing": {
+    "storeys": [
+     3,
+     5
+    ],
+    "footprint_m": [
+     [
+      4,
+      12
+     ],
+     [
+      5,
+      18
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "rows of 4-12 narrow lots on shared walls; a pillared verandah over the promenade, French windows; light well; flat roofs with shacks",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": true
+   },
+   "roof": [
+    "flat_terrace",
+    "parapet",
+    "rooftop_shacks",
+    "water_tanks"
+   ],
+   "walls": {
+    "materials": [
+     "painted_render",
+     "timber",
+     "green_glazed_tile"
+    ],
+    "palette": [
+     "#e9d9b8",
+     "#9fbf9a",
+     "#c8705a",
+     "#f2eee2",
+     "#6b7f6a"
+    ]
+   },
+   "openings": [
+    "french_window",
+    "shutters",
+    "verandah"
+   ],
+   "components": [
+    "verandah",
+    "arcade_pier",
+    "french_window",
+    "shutters",
+    "balcony_iron",
+    "light_shaft",
+    "rooftop_shack",
+    "water_tank",
+    "laundry_line",
+    "shutter_rolling",
+    "lantern_cn",
+    "sign_blade",
+    "neon_frame",
+    "painted_board",
+    "ceiling_tile"
+   ],
+   "ground": "arcade",
+   "signage": {
+    "kinds": [
+     "neon_blade",
+     "lantern_cn",
+     "painted_board",
+     "lightbox"
+    ],
+    "density": 0.75,
+    "palette": [
+     "#ff4a2a",
+     "#ff3fa4",
+     "#3a7bff",
+     "#2bff88",
+     "#ffb02e",
+     "#e0201a",
+     "#ffc23a"
+    ],
+    "animation": [
+     "steady",
+     "sequence",
+     "sway"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ffe2b0"
+    ],
+    "motifs": [
+     "lantern_balconies",
+     "window_glow"
+    ]
+   },
+   "floor_plan": "B-TL pre-war (plans/b_tong_lau.md)",
+   "fantasy": "the verandah is a lantern-lit street of its own one floor up"
+  },
+  {
+   "id": "cantilever_tenement",
+   "name": "Cantilever Tenements",
+   "sources": [
+    "Hong Kong post-war tong lau and walk-ups (1955-60s)"
+   ],
+   "refs": [
+    {
+     "title": "cityunseen: tong lau ghost buildings",
+     "url": "https://cityunseen.hk/?p=626"
+    },
+    {
+     "title": "Rooftop slum (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Rooftop_slum"
+    }
+   ],
+   "typology": "tong_lau",
+   "massing": {
+    "storeys": [
+     6,
+     9
+    ],
+    "footprint_m": [
+     [
+      4,
+      12
+     ],
+     [
+      6,
+      18
+     ]
+    ],
+    "stack": "overhang",
+    "stack_rules": "post-war rows without columns: from 1F every floor cantilevers 1.0-1.5 over the path; bay boxes and AC units on every flat; rooftop huts two storeys high",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": true
+   },
+   "roof": [
+    "flat_terrace",
+    "rooftop_shacks",
+    "water_tanks",
+    "antennas"
+   ],
+   "walls": {
+    "materials": [
+     "mosaic_tile",
+     "painted_render",
+     "steel_bar"
+    ],
+    "palette": [
+     "#d9cdb4",
+     "#b6c9c4",
+     "#e7b9a6",
+     "#8d9ca3",
+     "#f0ece0"
+    ]
+   },
+   "openings": [
+    "window_grille",
+    "bay_window_box",
+    "balcony_cage"
+   ],
+   "components": [
+    "bay_window_box",
+    "window_grille",
+    "balcony_cage",
+    "ac_unit",
+    "laundry_line",
+    "rooftop_shack",
+    "water_tank",
+    "antenna",
+    "bamboo_scaffold",
+    "shutter_rolling",
+    "sign_blade",
+    "neon_frame",
+    "lightbox_sign",
+    "tile_panel"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "neon_blade",
+     "lightbox",
+     "dot_matrix"
+    ],
+    "density": 0.85,
+    "palette": [
+     "#ff4a2a",
+     "#ff3fa4",
+     "#3a7bff",
+     "#2bff88",
+     "#ffb02e"
+    ],
+    "animation": [
+     "steady",
+     "flicker",
+     "flash"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffcf8a",
+     "#dfe9ff",
+     "#ff9ec4"
+    ],
+    "motifs": [
+     "window_glow",
+     "laundry_lights"
+    ]
+   },
+   "floor_plan": "B-TL post-war (plans/b_tong_lau.md)",
+   "fantasy": "Ghost-in-the-Shell sign canyons over the island's lake"
+  },
+  {
+   "id": "podium_bazaar",
+   "name": "Podium Bazaar",
+   "sources": [
+    "Chungking Mansions, Tsim Sha Tsui"
+   ],
+   "refs": [
+    {
+     "title": "Chungking Mansions (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Chungking_Mansions"
+    }
+   ],
+   "typology": "podium_towers",
+   "massing": {
+    "storeys": [
+     10,
+     16
+    ],
+    "footprint_m": [
+     [
+      20,
+      30
+     ],
+     [
+      40,
+      50
+     ]
+    ],
+    "stack": "setback",
+    "stack_rules": "a 2-3 storey podium of market stalls covering the lot; a roof terrace; 2-5 slim towers of 8-14 storeys on it, odd/even lifts; LED bands on every slab",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": true
+   },
+   "roof": [
+    "flat_terrace",
+    "rooftop_billboard",
+    "water_tanks"
+   ],
+   "walls": {
+    "materials": [
+     "mosaic_tile",
+     "glass",
+     "steel"
+    ],
+    "palette": [
+     "#c9c3b0",
+     "#8d8a80",
+     "#e6dfcc",
+     "#5c6b73"
+    ]
+   },
+   "openings": [
+    "window_small",
+    "louvre"
+   ],
+   "components": [
+    "market_stall",
+    "arcade_pier",
+    "ac_unit",
+    "window_small",
+    "louvre",
+    "led_band",
+    "rooftop_billboard",
+    "skybridge",
+    "water_tank",
+    "sign_board",
+    "lightbox_sign",
+    "dot_matrix_board",
+    "neon_frame",
+    "directory_board",
+    "ceiling_tile"
+   ],
+   "ground": "market_stalls",
+   "signage": {
+    "kinds": [
+     "lightbox",
+     "neon_blade",
+     "dot_matrix",
+     "rooftop_billboard",
+     "directory_board"
+    ],
+    "density": 0.9,
+    "palette": [
+     "#ff4a2a",
+     "#ff3fa4",
+     "#3a7bff",
+     "#2bff88",
+     "#ffb02e",
+     "#ffaa1e"
+    ],
+    "animation": [
+     "steady",
+     "scroll",
+     "swap",
+     "flash"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#3fe0d0",
+     "#9a6bff"
+    ],
+    "motifs": [
+     "strip_outline",
+     "window_glow"
+    ]
+   },
+   "floor_plan": "B-PT (plans/b_podium_towers.md)",
+   "fantasy": "the island's whole trade in one building: a bazaar below, a guest-house city above"
+  },
+  {
+   "id": "courtyard_canyon",
+   "name": "Courtyard Canyon",
+   "sources": [
+    "Monster Building (Yick Cheong), Quarry Bay"
+   ],
+   "refs": [
+    {
+     "title": "Monster Building (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Monster_Building"
+    }
+   ],
+   "typology": "courtyard",
+   "massing": {
+    "storeys": [
+     10,
+     16
+    ],
+    "footprint_m": [
+     [
+      30,
+      40
+     ],
+     [
+      50,
+      60
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "an E- or U-shaped ring of slab blocks round a narrow court 8-14 m wide; every face a grid of small flats with bay boxes, AC and laundry; shops on the street side",
+    "skybridges": true,
+    "courtyard": true,
+    "lightwell": false
+   },
+   "roof": [
+    "flat_terrace",
+    "water_tanks",
+    "antennas"
+   ],
+   "walls": {
+    "materials": [
+     "mosaic_tile",
+     "painted_render"
+    ],
+    "palette": [
+     "#d8c9a3",
+     "#9fb8a8",
+     "#c47e6a",
+     "#e9e2cf",
+     "#7e8f99"
+    ]
+   },
+   "openings": [
+    "bay_window_box",
+    "window_grille"
+   ],
+   "components": [
+    "bay_window_box",
+    "window_grille",
+    "ac_unit",
+    "laundry_line",
+    "water_tank",
+    "antenna",
+    "skybridge",
+    "shutter_rolling",
+    "lightbox_sign",
+    "sign_board",
+    "lights_festoon"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "lightbox",
+     "neon_blade",
+     "lantern_string"
+    ],
+    "density": 0.6,
+    "palette": [
+     "#ff4a2a",
+     "#ff3fa4",
+     "#3a7bff",
+     "#2bff88",
+     "#ffb02e"
+    ],
+    "animation": [
+     "steady",
+     "chase"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffcf8a",
+     "#ff9ec4",
+     "#bfe3ff",
+     "#c6ff9e"
+    ],
+    "motifs": [
+     "window_glow",
+     "laundry_lights"
+    ]
+   },
+   "floor_plan": "B-PT court variant (b_warrens.md)",
+   "fantasy": "look up from the court into a wall of a thousand lit windows, each a different colour"
+  },
+  {
+   "id": "zakkyo_signstacks",
+   "name": "Zakkyo Signstacks",
+   "sources": [
+    "Ginza, Shinjuku, Shibuya zakkyo biru"
+   ],
+   "refs": [
+    {
+     "title": "Varnelis: The Zakkyo Biru of Ginza",
+     "url": "https://varnelis.net/works_and_projects/the-zakkyo-biru-of-ginza/"
+    },
+    {
+     "title": "Dotonbori (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/D%C5%8Dtonbori"
+    }
+   ],
+   "typology": "zakkyo",
+   "massing": {
+    "storeys": [
+     6,
+     10
+    ],
+    "footprint_m": [
+     [
+      5,
+      10
+     ],
+     [
+      9,
+      16
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "narrow tall blocks, one tenant per floor, a different window treatment per floor; back core with one lift; a projecting lightbox column up the corner, one panel per floor",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "flat_terrace",
+    "rooftop_billboard",
+    "roof_shrine",
+    "water_tanks"
+   ],
+   "walls": {
+    "materials": [
+     "tile_cladding",
+     "glass",
+     "aluminium"
+    ],
+    "palette": [
+     "#e7e4dc",
+     "#b8bcc0",
+     "#6c7a83",
+     "#c9b28f",
+     "#d5e0dd"
+    ]
+   },
+   "openings": [
+    "window_band",
+    "louvre",
+    "glass_front"
+   ],
+   "components": [
+    "sign_vertical_stack",
+    "directory_board",
+    "vending_machine",
+    "noren",
+    "lightbox_sign",
+    "dot_matrix_board",
+    "rooftop_billboard",
+    "roof_shrine",
+    "sign_figure_3d",
+    "ac_unit",
+    "wire_bundle",
+    "ceiling_tile"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "lightbox",
+     "dot_matrix",
+     "neon_script",
+     "sign_figure_3d",
+     "rooftop_billboard",
+     "noren"
+    ],
+    "density": 0.95,
+    "palette": [
+     "#ffffff",
+     "#ff2e4d",
+     "#ffd400",
+     "#00b7ff",
+     "#ff7a00",
+     "#3cff6a"
+    ],
+    "animation": [
+     "steady",
+     "scroll",
+     "swap",
+     "flash"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffe2b0",
+     "#dfe9ff"
+    ],
+    "motifs": [
+     "window_glow",
+     "strip_outline"
+    ]
+   },
+   "floor_plan": "B-ZK (plans/b_zakkyo.md)",
+   "fantasy": "a giant moving figure sign on every corner: a goat, a bee, a lark with flapping fans"
+  },
+  {
+   "id": "yokocho_lanes",
+   "name": "Yokocho Lanes",
+   "sources": [
+    "Golden Gai and Omoide Yokocho, Shinjuku"
+   ],
+   "refs": [
+    {
+     "title": "Golden Gai (Wikipedia)",
+     "url": "https://en.wikipedia.com/wiki/Golden_Gai"
+    }
+   ],
+   "typology": "alley_cluster",
+   "massing": {
+    "storeys": [
+     2,
+     3
+    ],
+    "footprint_m": [
+     [
+      2.8,
+      4
+     ],
+     [
+      4,
+      5
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "clusters of tiny 2-storey bars on shared walls, alleys 1.2-1.8, one-person passages; steep outside stairs; wires and lanterns across every alley",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "low_pitched",
+    "flat_terrace",
+    "ac_units"
+   ],
+   "walls": {
+    "materials": [
+     "timber",
+     "corrugated_sheet",
+     "painted_render"
+    ],
+    "palette": [
+     "#4a3a2e",
+     "#7a5a40",
+     "#2e2a28",
+     "#b5643c",
+     "#e6d8be"
+    ]
+   },
+   "openings": [
+    "sliding_door",
+    "screen_lattice"
+   ],
+   "components": [
+    "alley_bar",
+    "noren",
+    "lantern_paper",
+    "screen_lattice",
+    "stair_steel_external",
+    "wire_bundle",
+    "ac_unit",
+    "lights_festoon",
+    "painted_board",
+    "neon_frame",
+    "corrugated_panel",
+    "ceiling_tile"
+   ],
+   "ground": "bars",
+   "signage": {
+    "kinds": [
+     "chochin",
+     "neon_script",
+     "painted_board",
+     "lantern_string",
+     "noren"
+    ],
+    "density": 0.85,
+    "palette": [
+     "#d8261c",
+     "#ffd38a",
+     "#ff3fa4",
+     "#3a7bff"
+    ],
+    "animation": [
+     "steady",
+     "sway",
+     "flicker"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ff6a4a"
+    ],
+    "motifs": [
+     "lantern_balconies",
+     "window_glow"
+    ]
+   },
+   "floor_plan": "B-YK (plans/b_yokocho.md)",
+   "fantasy": "200 bars, each with its own name in neon script and a red lantern; the smoke of the long kitchens"
+  },
+  {
+   "id": "capsule_skybox",
+   "name": "Skybox Capsules",
+   "sources": [
+    "Nakagin Capsule Tower, Tokyo (Kurokawa, 1972)"
+   ],
+   "refs": [
+    {
+     "title": "Nakagin Capsule Tower (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Nakagin_Capsule_Tower"
+    }
+   ],
+   "typology": "core_capsules",
+   "massing": {
+    "storeys": [
+     8,
+     14
+    ],
+    "footprint_m": [
+     [
+      5,
+      5
+     ],
+     [
+      14,
+      14
+     ]
+    ],
+    "stack": "pile",
+    "stack_rules": "square service cores with 2.5 x 2.5 x 4 m boxes bolted on all faces, turned and offset, each repainted by its owner; gangways to each; skybridges between cores every third storey",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "flat_terrace",
+    "water_tanks",
+    "antennas"
+   ],
+   "walls": {
+    "materials": [
+     "painted_steel",
+     "aluminium"
+    ],
+    "palette": [
+     "#e8e6df",
+     "#c94a3a",
+     "#2f6f8f",
+     "#e6b84a",
+     "#7aa36b"
+    ]
+   },
+   "openings": [
+    "porthole_window"
+   ],
+   "components": [
+    "capsule_box",
+    "porthole_window",
+    "gallery_rail",
+    "skybridge",
+    "stair_core_open",
+    "water_tank",
+    "antenna",
+    "dot_matrix_board",
+    "sign_board",
+    "lights_outline"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "dot_matrix",
+     "lightbox",
+     "neon_script"
+    ],
+    "density": 0.5,
+    "palette": [
+     "#ffaa1e",
+     "#3cff6a",
+     "#ff3fa4",
+     "#ffffff"
+    ],
+    "animation": [
+     "steady",
+     "scroll",
+     "breathe"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#3fe0d0",
+     "#ffb35c",
+     "#9a6bff"
+    ],
+    "motifs": [
+     "porthole_glow",
+     "strip_outline"
+    ]
+   },
+   "floor_plan": "B-CC (plans/b_capsule_core.md)",
+   "fantasy": "homes are skyboxes: you can see one being hoisted up and bolted on (canon: every kilo weighed)"
+  },
+  {
+   "id": "machiya_lattice",
+   "name": "Machiya Lattice",
+   "sources": [
+    "Kyoto machiya townhouses"
+   ],
+   "refs": [
+    {
+     "title": "Machiya (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Machiya"
+    }
+   ],
+   "typology": "townhouse",
+   "massing": {
+    "storeys": [
+     2,
+     3
+    ],
+    "footprint_m": [
+     [
+      5.4,
+      20
+     ],
+     [
+      6,
+      30
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "long narrow 'eel's bed' lots, koshi lattice fronts, an earthen passage down one side, one or two tsubo-niwa courtyards; quiet residential lanes",
+    "skybridges": false,
+    "courtyard": true,
+    "lightwell": true
+   },
+   "roof": [
+    "tiled_pitched",
+    "low_eave"
+   ],
+   "walls": {
+    "materials": [
+     "dark_timber",
+     "plaster",
+     "tile"
+    ],
+    "palette": [
+     "#3b2c22",
+     "#5a4334",
+     "#e8e0cf",
+     "#2d3236",
+     "#8a6b4a"
+    ]
+   },
+   "openings": [
+    "screen_lattice",
+    "sliding_door"
+   ],
+   "components": [
+    "screen_lattice",
+    "noren",
+    "lantern_paper",
+    "light_shaft",
+    "timber_eave",
+    "planter",
+    "batten_ceiling",
+    "ceiling_tile",
+    "painted_board"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "noren",
+     "chochin",
+     "painted_board"
+    ],
+    "density": 0.35,
+    "palette": [
+     "#d8261c",
+     "#f6efe0",
+     "#22355e"
+    ],
+    "animation": [
+     "steady",
+     "sway"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ffe2b0"
+    ],
+    "motifs": [
+     "lattice_glow",
+     "lantern_balconies"
+    ]
+   },
+   "floor_plan": "machiya (b_tokyo.md)",
+   "fantasy": "the calm island: lattice fronts glowing like paper lanterns"
+  },
+  {
+   "id": "danchi_terraces",
+   "name": "Danchi Terraces",
+   "sources": [
+    "Japanese danchi estates, 1955-75"
+   ],
+   "refs": [
+    {
+     "title": "Danchi (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Danchi"
+    }
+   ],
+   "typology": "slab",
+   "massing": {
+    "storeys": [
+     4,
+     6
+    ],
+    "footprint_m": [
+     [
+      10,
+      30
+     ],
+     [
+      12,
+      60
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "parallel walk-up slabs with continuous balcony bands on the sunny side and open galleries on the other; generous gaps planted as gardens and pens",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "flat_terrace",
+    "water_tanks",
+    "roof_garden"
+   ],
+   "walls": {
+    "materials": [
+     "painted_render"
+    ],
+    "palette": [
+     "#efe9dc",
+     "#c9d6cf",
+     "#e8c9b0",
+     "#b7c4d6"
+    ]
+   },
+   "openings": [
+    "balcony_band",
+    "gallery"
+   ],
+   "components": [
+    "balcony_band",
+    "gallery_rail",
+    "laundry_line",
+    "planter",
+    "water_tank",
+    "mural_wall",
+    "lights_festoon",
+    "sign_board"
+   ],
+   "ground": "none",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "lantern_string",
+     "mural"
+    ],
+    "density": 0.25,
+    "palette": [
+     "#ffd38a",
+     "#ffffff"
+    ],
+    "animation": [
+     "steady",
+     "breathe"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ff7aa8",
+     "#3fe0d0",
+     "#9a6bff",
+     "#ffe2b0"
+    ],
+    "motifs": [
+     "mural",
+     "laundry_lights",
+     "window_glow"
+    ]
+   },
+   "floor_plan": "danchi 2DK rows (b_tokyo.md)",
+   "fantasy": "the painted end walls are the island's ads: each slab a giant mural"
+  },
+  {
+   "id": "tulou_ring",
+   "name": "Tulou Ring",
+   "sources": [
+    "Hakka tulou, Fujian (Chengqi Lou)"
+   ],
+   "refs": [
+    {
+     "title": "Fujian gov: Chengqi Lou",
+     "url": "https://fujian.gov.cn/english/services/travel/placetovisit/201701/t20170125_1869537.htm"
+    }
+   ],
+   "typology": "ring_house",
+   "massing": {
+    "storeys": [
+     3,
+     5
+    ],
+    "footprint_m": [
+     [
+      30,
+      30
+     ],
+     [
+      62,
+      62
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "one or two great clan rings (diameter 30-62, ring 6-8 deep, gallery to the court); kitchens on G, stores on 1F, rooms above; an inner ring of school and workshops; the bell tower in the court",
+    "skybridges": false,
+    "courtyard": true,
+    "lightwell": false
+   },
+   "roof": [
+    "pitched_ring",
+    "flat_ring_terrace"
+   ],
+   "walls": {
+    "materials": [
+     "rammed_skyearth",
+     "timber",
+     "tile"
+    ],
+    "palette": [
+     "#c9a37a",
+     "#8a5a3a",
+     "#3b2c22",
+     "#e7dcc6"
+    ]
+   },
+   "openings": [
+    "gallery",
+    "window_small"
+   ],
+   "components": [
+    "ring_segment",
+    "gallery_rail",
+    "window_small",
+    "lantern_cn",
+    "bell_tower",
+    "gate_portal",
+    "timber_eave",
+    "water_tank",
+    "eave_bulbs"
+   ],
+   "ground": "long_kitchen",
+   "signage": {
+    "kinds": [
+     "lantern_cn",
+     "painted_board",
+     "brass_letters"
+    ],
+    "density": 0.4,
+    "palette": [
+     "#e0201a",
+     "#ffc23a"
+    ],
+    "animation": [
+     "sway",
+     "steady"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ff6a4a"
+    ],
+    "motifs": [
+     "eave_bulbs",
+     "lantern_balconies"
+    ]
+   },
+   "floor_plan": "B-TU (plans/b_tulou_ring.md)",
+   "fantasy": "the clan under one round roof: at night a ring of lanterns round a lit bell"
+  },
+  {
+   "id": "bathhouse_tiers",
+   "name": "Bathhouse Tiers",
+   "sources": [
+    "Dogo Onsen Honkan; Spirited Away's Aburaya"
+   ],
+   "refs": [
+    {
+     "title": "Dogo Onsen (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/D%C5%8Dgo_Onsen"
+    }
+   ],
+   "typology": "tower",
+   "massing": {
+    "storeys": [
+     5,
+     9
+    ],
+    "footprint_m": [
+     [
+      12,
+      12
+     ],
+     [
+      24,
+      20
+     ]
+    ],
+    "stack": "setback",
+    "stack_rules": "tall halls of stacked pagoda eaves, each storey a little narrower and differently trimmed; a red bridge to the main hall; a lantern lane of eateries below",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "pagoda_eave",
+    "turret",
+    "finial"
+   ],
+   "walls": {
+    "materials": [
+     "red_lacquer",
+     "dark_timber",
+     "green_tile"
+    ],
+    "palette": [
+     "#b8322a",
+     "#2e5e4e",
+     "#e8dcc0",
+     "#3b2c22",
+     "#d9a441"
+    ]
+   },
+   "openings": [
+    "screen_lattice",
+    "window_arched"
+   ],
+   "components": [
+    "eave_stack",
+    "screen_lattice",
+    "turned_post",
+    "gallery_rail",
+    "lantern_paper",
+    "lantern_cn",
+    "noren",
+    "roof_bridge_small",
+    "skybridge",
+    "eave_bulbs",
+    "coffered_ceiling",
+    "ceiling_tile"
+   ],
+   "ground": "eateries",
+   "signage": {
+    "kinds": [
+     "chochin",
+     "lantern_cn",
+     "noren",
+     "brass_letters",
+     "neon_script"
+    ],
+    "density": 0.7,
+    "palette": [
+     "#d8261c",
+     "#ffc23a",
+     "#ffd38a",
+     "#2bff88"
+    ],
+    "animation": [
+     "sway",
+     "steady"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ff6a4a",
+     "#ffe2b0"
+    ],
+    "motifs": [
+     "eave_bulbs",
+     "lantern_balconies"
+    ]
+   },
+   "floor_plan": "tower hall (b_fantasy.md)",
+   "fantasy": "Spirited Away: a red-and-green tower of eaves with a bridge and a lantern street"
+  },
+  {
+   "id": "junk_castle",
+   "name": "Junk Castle",
+   "sources": [
+    "Howl's Moving Castle; Colmar (Maison Pfister)"
+   ],
+   "refs": [
+    {
+     "title": "Outlook Traveller: Colmar and Howl's Moving Castle",
+     "url": "https://www.outlooktraveller.com/destinations/international/did-you-know-about-this-french-town-that-inspired-miyazakis-howls-moving-castle"
+    }
+   ],
+   "typology": "accretion",
+   "massing": {
+    "storeys": [
+     4,
+     8
+    ],
+    "footprint_m": [
+     [
+      10,
+      10
+     ],
+     [
+      20,
+      20
+     ]
+    ],
+    "stack": "pile",
+    "stack_rules": "a core building with bolted-on turrets, rooms, balconies and vent stacks, every add-on a different material and colour; half-timber, tin, cloth, brass",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "turret",
+    "conical_cap",
+    "vent_stacks",
+    "flat_terrace"
+   ],
+   "walls": {
+    "materials": [
+     "half_timber",
+     "tin",
+     "skycloth",
+     "brass"
+    ],
+    "palette": [
+     "#c8a47a",
+     "#7b5b3a",
+     "#a9b8b0",
+     "#d76b4a",
+     "#e6d6a8",
+     "#4e6e7a"
+    ]
+   },
+   "openings": [
+    "bay_window_box",
+    "porthole_window",
+    "window_arched"
+   ],
+   "components": [
+    "bay_window_box",
+    "porthole_window",
+    "round_tower",
+    "vent_stack",
+    "jetty_upper",
+    "balcony_timber_covered",
+    "pipe_run",
+    "stair_spiral_external",
+    "sign_board",
+    "brass_letters_set",
+    "lights_festoon"
+   ],
+   "ground": "workshops",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "brass_letters",
+     "neon_script",
+     "lantern_string"
+    ],
+    "density": 0.55,
+    "palette": [
+     "#ffd38a",
+     "#ff7a3d",
+     "#7ad7ff"
+    ],
+    "animation": [
+     "steady",
+     "flicker"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#c47aff",
+     "#7ad7ff"
+    ],
+    "motifs": [
+     "window_glow",
+     "porthole_glow"
+    ]
+   },
+   "floor_plan": "accretion core (b_fantasy.md)",
+   "fantasy": "every building looks like it could walk away; no two windows alike"
+  },
+  {
+   "id": "garden_terraces",
+   "name": "Garden Terraces",
+   "sources": [
+    "Laputa: Castle in the Sky; Zelda TotK sky islands"
+   ],
+   "refs": [
+    {
+     "title": "Zelda Wiki: Sky Islands / Circular Design",
+     "url": "https://zeldawiki.wiki/wiki/Circular_Design"
+    }
+   ],
+   "typology": "terraced",
+   "massing": {
+    "storeys": [
+     3,
+     6
+    ],
+    "footprint_m": [
+     [
+      20,
+      20
+     ],
+     [
+      50,
+      50
+     ]
+    ],
+    "stack": "setback",
+    "stack_rules": "round stepped terraces of arcades rising to a crown, every terrace a garden; round doors and porthole windows; moss and vines spill down; a great tree or green crown on top",
+    "skybridges": true,
+    "courtyard": true,
+    "lightwell": false
+   },
+   "roof": [
+    "roof_garden",
+    "dome_small",
+    "terrace"
+   ],
+   "walls": {
+    "materials": [
+     "pale_stone",
+     "moss",
+     "bronze"
+    ],
+    "palette": [
+     "#cfc7b0",
+     "#7f9a6a",
+     "#5a7a5c",
+     "#b08a4a",
+     "#e9e4d6"
+    ]
+   },
+   "openings": [
+    "arch_opening",
+    "porthole_window"
+   ],
+   "components": [
+    "ring_segment",
+    "arch_opening",
+    "porthole_window",
+    "planter",
+    "inverted_column",
+    "dome_small",
+    "lights_fairy",
+    "lantern_wall",
+    "gallery_rail",
+    "sign_board"
+   ],
+   "ground": "arcade",
+   "signage": {
+    "kinds": [
+     "brass_letters",
+     "lantern_string",
+     "painted_board"
+    ],
+    "density": 0.35,
+    "palette": [
+     "#ffd38a",
+     "#bfffd9"
+    ],
+    "animation": [
+     "steady",
+     "breathe"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#bfffd9",
+     "#ffe2b0",
+     "#9fd0ff"
+    ],
+    "motifs": [
+     "rooftop_garden_lights",
+     "porthole_glow"
+    ]
+   },
+   "floor_plan": "stepped rings (b_fantasy.md)",
+   "fantasy": "the most beautiful island: a hanging garden; fairy lights in every planter"
+  },
+  {
+   "id": "exposition_fair",
+   "name": "Exposition Fair",
+   "sources": [
+    "BioShock Infinite's Columbia; the 1893 Columbian Exposition"
+   ],
+   "refs": [
+    {
+     "title": "Columbia: World Tour",
+     "url": "https://www.nettosgameroom.com/2025/02/bioshock-infinites-columbia-world-tour.html?m=1"
+    }
+   ],
+   "typology": "civic_fair",
+   "massing": {
+    "storeys": [
+     3,
+     7
+    ],
+    "footprint_m": [
+     [
+      12,
+      12
+     ],
+     [
+      40,
+      30
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "white colonnaded halls and gilt-lettered shopfronts on promenades; bunting between everything; marquee bulbs on every arch; clapboard fronts in bright colours",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "dome_small",
+    "cornice",
+    "flagpoles"
+   ],
+   "walls": {
+    "materials": [
+     "white_render",
+     "clapboard",
+     "gilt"
+    ],
+    "palette": [
+     "#f2eee2",
+     "#c94a3a",
+     "#2f5e8a",
+     "#e6c46a",
+     "#ffffff"
+    ]
+   },
+   "openings": [
+    "window_arched",
+    "column_round"
+   ],
+   "components": [
+    "column_round",
+    "window_arched",
+    "cornice",
+    "dome_small",
+    "bunting",
+    "marquee_bulbs",
+    "brass_letters_set",
+    "sign_board",
+    "rooftop_billboard",
+    "pressed_tin_ceiling",
+    "ceiling_tile",
+    "gate_portal"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "brass_letters",
+     "marquee_bulbs",
+     "painted_board",
+     "rooftop_billboard",
+     "balloon_ad"
+    ],
+    "density": 0.8,
+    "palette": [
+     "#ffd38a",
+     "#ff2a1a",
+     "#ffffff",
+     "#2f5e8a"
+    ],
+    "animation": [
+     "chase",
+     "steady",
+     "flash"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffe2b0",
+     "#ffb35c"
+    ],
+    "motifs": [
+     "arch_bulbs",
+     "uplight"
+    ]
+   },
+   "floor_plan": "civic halls (b_fantasy.md)",
+   "fantasy": "a permanent world's fair: carnival bulbs, gilt letters, banners, and balloon-sized ads"
+  },
+  {
+   "id": "retrofit_noir",
+   "name": "Retrofit Noir",
+   "sources": [
+    "Blade Runner's Los Angeles (Scott/Mead retrofit)"
+   ],
+   "refs": [
+    {
+     "title": "American Cinematographer: Blade Runner production design",
+     "url": "https://scrapsfromtheloft.com/movies/blade-runner-1982-production-design-and-photography-american-cinematographer/"
+    }
+   ],
+   "typology": "retrofit",
+   "massing": {
+    "storeys": [
+     6,
+     12
+    ],
+    "footprint_m": [
+     [
+      10,
+      10
+     ],
+     [
+      24,
+      24
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "older solid blocks wrapped in add-ons: ducts, pipes, cable trays, AC boxes, video and dot-matrix boards bolted to the faces; the ground an access corridor; walkways above",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": true
+   },
+   "roof": [
+    "flat_terrace",
+    "vent_stacks",
+    "antennas"
+   ],
+   "walls": {
+    "materials": [
+     "dark_render",
+     "steel",
+     "glass"
+    ],
+    "palette": [
+     "#3a3e44",
+     "#5a5f66",
+     "#2b2f33",
+     "#7d7a70"
+    ]
+   },
+   "openings": [
+    "window_band",
+    "louvre"
+   ],
+   "components": [
+    "pipe_run",
+    "cable_tray",
+    "ac_unit",
+    "vent_stack",
+    "video_board",
+    "dot_matrix_board",
+    "neon_frame",
+    "skybridge",
+    "louvre",
+    "antenna",
+    "sign_blade"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "video_board",
+     "dot_matrix",
+     "neon_blade",
+     "neon_script"
+    ],
+    "density": 0.85,
+    "palette": [
+     "#ff3fa4",
+     "#3a7bff",
+     "#ffaa1e",
+     "#2bff88"
+    ],
+    "animation": [
+     "flicker",
+     "scroll",
+     "swap"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#3a7bff",
+     "#ff3fa4",
+     "#ffaa1e"
+    ],
+    "motifs": [
+     "strip_outline",
+     "window_glow"
+    ]
+   },
+   "floor_plan": "retrofit block (b_fantasy.md)",
+   "fantasy": "snow instead of rain, but the same: haze, screens, steam from every vent"
+  },
+  {
+   "id": "lamp_city",
+   "name": "Lamp City",
+   "sources": [
+    "Hollow Knight's City of Tears"
+   ],
+   "refs": [
+    {
+     "title": "Hollow Knight wiki: City of Tears",
+     "url": "https://hollowknight.wiki/w/City_of_Tears"
+    }
+   ],
+   "typology": "tower",
+   "massing": {
+    "storeys": [
+     6,
+     12
+    ],
+    "footprint_m": [
+     [
+      8,
+      8
+     ],
+     [
+      16,
+      16
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "slim towers of very tall arched windows, iron lamp posts and rails; one cold blue palette with warm lamps; the rich quarter red and purple",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "spire",
+    "dome_small",
+    "pinnacle"
+   ],
+   "walls": {
+    "materials": [
+     "blue_slate",
+     "iron",
+     "glass"
+    ],
+    "palette": [
+     "#2c3a52",
+     "#465a7a",
+     "#1f2633",
+     "#8aa0c0",
+     "#6a4a7a"
+    ]
+   },
+   "openings": [
+    "window_arched",
+    "rose_window"
+   ],
+   "components": [
+    "window_arched",
+    "rose_window",
+    "pinnacle",
+    "lamp_post",
+    "gallery_rail",
+    "skybridge",
+    "brass_letters_set",
+    "lantern_wall",
+    "ceiling_tile"
+   ],
+   "ground": "shops",
+   "signage": {
+    "kinds": [
+     "brass_letters",
+     "lantern_string",
+     "neon_script"
+    ],
+    "density": 0.45,
+    "palette": [
+     "#ffd38a",
+     "#9fd0ff"
+    ],
+    "animation": [
+     "steady",
+     "breathe"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#9fd0ff",
+     "#b98aff"
+    ],
+    "motifs": [
+     "window_glow",
+     "uplight"
+    ]
+   },
+   "floor_plan": "tower (b_fantasy.md)",
+   "fantasy": "tall blue towers whose huge windows glow warm in the snow"
+  },
+  {
+   "id": "hangar_quarter",
+   "name": "Hangar Quarter",
+   "sources": [
+    "Porco Rosso's seaplane yards; FFIX Lindblum"
+   ],
+   "refs": [
+    {
+     "title": "Siliconera: FFIX airships",
+     "url": "https://www.siliconera.com/creating-the-concept-of-the-osiris-and-airships-in-final-fantasy-ix/"
+    }
+   ],
+   "typology": "hangar",
+   "massing": {
+    "storeys": [
+     2,
+     5
+    ],
+    "footprint_m": [
+     [
+      14,
+      20
+     ],
+     [
+      30,
+      40
+     ]
+    ],
+    "stack": "none",
+    "stack_rules": "big-doored lark hangars with lofts over them, workshops and hand-painted signs; a fine pavilion top on a rough timber-and-rope base (Lindblum's two languages)",
+    "skybridges": false,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "barrel_roof",
+    "pavilion_top",
+    "flagpoles"
+   ],
+   "walls": {
+    "materials": [
+     "timber",
+     "corrugated_sheet",
+     "skycloth"
+    ],
+    "palette": [
+     "#7a5a40",
+     "#c94a3a",
+     "#e6d8be",
+     "#2e5e4e",
+     "#b0a58a"
+    ]
+   },
+   "openings": [
+    "hangar_door",
+    "window_small"
+   ],
+   "components": [
+    "hangar_door",
+    "corrugated_panel",
+    "window_small",
+    "gantry_crane",
+    "painted_board",
+    "bunting",
+    "lights_festoon",
+    "sign_board",
+    "tarp_cover"
+   ],
+   "ground": "workshops",
+   "signage": {
+    "kinds": [
+     "painted_board",
+     "neon_script",
+     "lantern_string"
+    ],
+    "density": 0.5,
+    "palette": [
+     "#ffd38a",
+     "#ff4a2a",
+     "#3a7bff"
+    ],
+    "animation": [
+     "steady",
+     "flash"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ffe2b0"
+    ],
+    "motifs": [
+     "uplight",
+     "window_glow"
+    ]
+   },
+   "floor_plan": "hangar row (b_fantasy.md)",
+   "fantasy": "the larks' island: every hangar a different painted logo; fans spinning in the doors"
+  },
+  {
+   "id": "girder_market",
+   "name": "Girder Market",
+   "sources": [
+    "Midgar's Wall Market and slums (FFVII Remake)"
+   ],
+   "refs": [
+    {
+     "title": "Square Enix: The Architects of Midgar",
+     "url": "https://www.square-enix-games.com/news/final-fantasy-vii-remake-designing-midgar"
+    }
+   ],
+   "typology": "market_frame",
+   "massing": {
+    "storeys": [
+     3,
+     8
+    ],
+    "footprint_m": [
+     [
+      10,
+      10
+     ],
+     [
+      30,
+      30
+     ]
+    ],
+    "stack": "pile",
+    "stack_rules": "an exposed red steel frame, several storeys, filled in bay by bay with junk-built shops and stalls; banners hang between the girders; open stairs everywhere",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "open_frame",
+    "tarp_roofs",
+    "flat_terrace"
+   ],
+   "walls": {
+    "materials": [
+     "red_steel",
+     "corrugated_sheet",
+     "skycloth",
+     "timber"
+    ],
+    "palette": [
+     "#a8322a",
+     "#6a6058",
+     "#c9b28f",
+     "#3a3e44",
+     "#e6c46a"
+    ]
+   },
+   "openings": [
+    "shop_front",
+    "window_small"
+   ],
+   "components": [
+    "red_girder",
+    "market_stall",
+    "tarp_cover",
+    "bunting",
+    "stair_steel_external",
+    "corrugated_panel",
+    "neon_frame",
+    "sign_blade",
+    "lightbox_sign",
+    "lights_festoon",
+    "wire_bundle"
+   ],
+   "ground": "market_stalls",
+   "signage": {
+    "kinds": [
+     "neon_blade",
+     "lightbox",
+     "lantern_string",
+     "painted_board"
+    ],
+    "density": 0.9,
+    "palette": [
+     "#ff4a2a",
+     "#ff3fa4",
+     "#3a7bff",
+     "#2bff88",
+     "#ffb02e"
+    ],
+    "animation": [
+     "steady",
+     "chase",
+     "flicker"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ff3fa4"
+    ],
+    "motifs": [
+     "strip_outline",
+     "laundry_lights"
+    ]
+   },
+   "floor_plan": "frame infill (b_fantasy.md)",
+   "fantasy": "Kabukicho-on-girders: the loudest market in the sky"
+  },
+  {
+   "id": "rim_cliffhangers",
+   "name": "Rim Cliffhangers",
+   "sources": [
+    "Xuankong Si (the Hanging Temple), Shanxi"
+   ],
+   "refs": [
+    {
+     "title": "Hanging Temple (Wikipedia)",
+     "url": "https://en.wikipedia.org/wiki/Hanging_Temple"
+    }
+   ],
+   "typology": "rim_gallery",
+   "massing": {
+    "storeys": [
+     2,
+     4
+    ],
+    "footprint_m": [
+     [
+      6,
+      4
+     ],
+     [
+      20,
+      6
+     ]
+    ],
+    "stack": "cantilever",
+    "stack_rules": "halls and rooms cantilevered off the island's rim on timber beams over the void, linked by clinging walkways and ladders; the inland side an ordinary street",
+    "skybridges": true,
+    "courtyard": false,
+    "lightwell": false
+   },
+   "roof": [
+    "pitched_eave",
+    "pagoda_eave"
+   ],
+   "walls": {
+    "materials": [
+     "timber",
+     "red_lacquer",
+     "tile"
+    ],
+    "palette": [
+     "#8a3a2a",
+     "#3b2c22",
+     "#d9c9a8",
+     "#5a6a5a"
+    ]
+   },
+   "openings": [
+    "screen_lattice",
+    "window_small"
+   ],
+   "components": [
+    "cantilever_beam",
+    "gallery_rail",
+    "screen_lattice",
+    "eave_stack",
+    "lantern_cn",
+    "ladder_roof",
+    "plank_bridge",
+    "bell_tower",
+    "eave_bulbs"
+   ],
+   "ground": "eateries",
+   "signage": {
+    "kinds": [
+     "lantern_cn",
+     "chochin",
+     "painted_board",
+     "neon_script"
+    ],
+    "density": 0.45,
+    "palette": [
+     "#e0201a",
+     "#ffc23a",
+     "#ffd38a"
+    ],
+    "animation": [
+     "sway",
+     "steady"
+    ]
+   },
+   "night": {
+    "mood": [
+     "#ffb35c",
+     "#ff6a4a"
+    ],
+    "motifs": [
+     "eave_bulbs",
+     "lantern_balconies"
+    ]
+   },
+   "floor_plan": "rim gallery (b_warrens.md)",
+   "fantasy": "tea houses hanging over 750 m of air: the view for hire (canon trade)"
+  }
+ ]
+}

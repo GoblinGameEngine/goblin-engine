@@ -1,0 +1,131 @@
+{
+ "id": "SKY-jetty_lanes-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "jetty_lanes",
+  "arch": "gable_row",
+  "model_kind": "hall",
+  "storeys": 5,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -7.5,
+     11.9,
+     6.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -14.1,
+     -7.5,
+     2.9,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.1,
+   "h": 1.9,
+   "sill": 0.6,
+   "spacing": 1.8
+  },
+  "dress": [
+   "bay",
+   "shutters",
+   "bands",
+   "jetty",
+   "pergola",
+   "planter",
+   "lanterns",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shrine",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e3c56a",
+    "#d99a8a",
+    "#9a4a33"
+   ],
+   "trim": "#efe7d6",
+   "accent": "#2e231c",
+   "canvas": "#fff4dc",
+   "tile": "#ffd27a"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "brass",
+    "neon",
+    "chochin"
+   ],
+   "density": 0.55
+  },
+  "mood": "#ffc27a",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "jetty_lanes",
+  "model": "hall",
+  "use": "market",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Jetty Lanes style: a shared model"
+}

@@ -1,0 +1,115 @@
+{
+ "id": "SKY-modernista_reef-03",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 17.2
+ },
+ "traits": {
+  "style": "modernista_reef",
+  "arch": "slab",
+  "model_kind": "row",
+  "storeys": 5,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -14.1,
+     -8.0,
+     11.9,
+     7.0
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "balcony",
+   "bands",
+   "eaves",
+   "chimneys",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "mosaic",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#6fb39b",
+    "#e2b33f",
+    "#c8513d"
+   ],
+   "trim": "#e3d8c0",
+   "accent": "#c8513d",
+   "canvas": "#ff5fa2",
+   "tile": "#5af0ff"
+  },
+  "signage": {
+   "kinds": [
+    "neon",
+    "lightbox",
+    "brass"
+   ],
+   "density": 0.6
+  },
+  "mood": "#ff70b0",
+  "shops": [
+   {
+    "kind": "music_store"
+   },
+   {
+    "kind": "florist"
+   },
+   {
+    "kind": "jeweler"
+   },
+   {
+    "kind": "drug_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "modernista_reef",
+  "model": "row",
+  "use": "shops",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island row in the Modernista Reef style: a shared model"
+}

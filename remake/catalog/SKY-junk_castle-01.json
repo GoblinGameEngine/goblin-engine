@@ -1,0 +1,182 @@
+{
+ "id": "SKY-junk_castle-01",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 21.7
+ },
+ "traits": {
+  "style": "junk_castle",
+  "arch": "pile",
+  "model_kind": "home",
+  "storeys": 8,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.4,
+     -1.25,
+     11.9,
+     8.25
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.6,
+     -0.75,
+     2.4,
+     9.25
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -5.6,
+     -10.25,
+     2.4,
+     -0.75
+    ],
+    "storeys": 7,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 2
+   },
+   {
+    "name": "B3",
+    "rect": [
+     -14.1,
+     -2.25,
+     -5.6,
+     7.25
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 3
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "bay",
+   "balcony",
+   "jetty",
+   "arch",
+   "tower",
+   "chimneys",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "timber",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": true,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#c8a47a",
+    "#7b5b3a",
+    "#a9b8b0"
+   ],
+   "trim": "#e6d6a8",
+   "accent": "#7b5b3a",
+   "canvas": "#ffd38a",
+   "tile": "#ff7a3d"
+  },
+  "signage": {
+   "kinds": [
+    "painted",
+    "brass",
+    "neon",
+    "chochin"
+   ],
+   "density": 0.55
+  },
+  "mood": "#ffb35c",
+  "shops": [
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "print_shop"
+   },
+   {
+    "kind": "appliance_repair"
+   },
+   {
+    "kind": "shoe_repair"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "junk_castle",
+  "model": "home",
+  "use": "dwelling",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island home in the Junk Castle style: a shared model"
+}

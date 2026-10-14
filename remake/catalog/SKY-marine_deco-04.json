@@ -1,0 +1,105 @@
+{
+ "id": "SKY-marine_deco-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 23.4,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "marine_deco",
+  "arch": "slab",
+  "model_kind": "hall",
+  "storeys": 3,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     -11.1,
+     -7.5,
+     8.9,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 0
+   }
+  ],
+  "window": {
+   "w": 1.4,
+   "h": 1.9,
+   "sill": 0.7,
+   "spacing": 2.8
+  },
+  "dress": [
+   "balcony",
+   "screen",
+   "eyebrow",
+   "lanterns",
+   "billboard",
+   "dome"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#d8b067",
+    "#2f5d50",
+    "#efe1c6"
+   ],
+   "trim": "#efe1c6",
+   "accent": "#2f5d50",
+   "canvas": "#ffffff",
+   "tile": "#ff4fa0"
+  },
+  "signage": {
+   "kinds": [
+    "neon",
+    "brass",
+    "lightbox"
+   ],
+   "density": 0.65
+  },
+  "mood": "#ffb0d0",
+  "shops": [
+   {
+    "kind": "drug_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "marine_deco",
+  "model": "hall",
+  "use": "market",
+  "storeys": 3,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Marine Deco style: a shared model"
+}

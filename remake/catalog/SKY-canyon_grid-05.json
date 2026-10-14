@@ -1,0 +1,169 @@
+{
+ "id": "SKY-canyon_grid-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "canyon_grid",
+  "arch": "gable_row",
+  "model_kind": "landmark",
+  "storeys": 10,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -7.0,
+     11.9,
+     6.0
+    ],
+    "storeys": 10,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -6.1,
+     -6.0,
+     2.9,
+     6.5
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -14.1,
+     -7.5,
+     -6.1,
+     5.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "balcony",
+   "shutters",
+   "tanks",
+   "laundry",
+   "pergola",
+   "lanterns",
+   "billboard",
+   "tower"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shrine",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#4f6b4a",
+    "#d9a441",
+    "#c46a3c"
+   ],
+   "trim": "#e59a7a",
+   "accent": "#ff4a6b",
+   "canvas": "#ff4a6b",
+   "tile": "#ffd24a"
+  },
+  "signage": {
+   "kinds": [
+    "blade",
+    "lightbox",
+    "painted",
+    "chochin"
+   ],
+   "density": 0.8
+  },
+  "mood": "#ff6ba1",
+  "shops": [
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "canyon_grid",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 10,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Canyon Grid style: a shared model"
+}

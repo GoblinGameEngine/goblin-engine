@@ -1,0 +1,128 @@
+{
+ "id": "SKY-garden_terraces-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 34.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "garden_terraces",
+  "arch": "pagoda",
+  "model_kind": "hall",
+  "storeys": 4,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.15,
+     -7.0,
+     14.65,
+     5.5
+    ],
+    "storeys": 4,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -16.85,
+     -7.5,
+     2.15,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.0,
+   "h": 1.5,
+   "sill": 0.9,
+   "spacing": 2.3
+  },
+  "dress": [
+   "gallery",
+   "arch",
+   "dome",
+   "pergola",
+   "planter",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#b08a4a",
+    "#e9e4d6",
+    "#cfc7b0"
+   ],
+   "trim": "#e9e4d6",
+   "accent": "#5a7a5c",
+   "canvas": "#bfffd9",
+   "tile": "#ffd38a"
+  },
+  "signage": {
+   "kinds": [
+    "brass",
+    "chochin",
+    "painted"
+   ],
+   "density": 0.35
+  },
+  "mood": "#bfffd9",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "garden_terraces",
+  "model": "hall",
+  "use": "market",
+  "storeys": 4,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Garden Terraces style: a shared model"
+}

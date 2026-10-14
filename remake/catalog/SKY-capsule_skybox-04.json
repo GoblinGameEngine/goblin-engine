@@ -1,0 +1,128 @@
+{
+ "id": "SKY-capsule_skybox-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 27.9,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "capsule_skybox",
+  "arch": "tower_cluster",
+  "model_kind": "hall",
+  "storeys": 11,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.65,
+     -6.0,
+     11.15,
+     4.5
+    ],
+    "storeys": 11,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -13.35,
+     -7.5,
+     2.65,
+     6.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 1
+   }
+  ],
+  "window": {
+   "w": 1.2,
+   "h": 1.4,
+   "sill": 0.9,
+   "spacing": 1.9
+  },
+  "dress": [
+   "bay",
+   "gallery",
+   "tanks",
+   "antennas",
+   "lanterns",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "capsule",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "step",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "batten",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#e6b84a",
+    "#7aa36b",
+    "#e8e6df"
+   ],
+   "trim": "#e8e6df",
+   "accent": "#2f6f8f",
+   "canvas": "#ffffff",
+   "tile": "#ffaa1e"
+  },
+  "signage": {
+   "kinds": [
+    "dotmatrix",
+    "lightbox",
+    "neon"
+   ],
+   "density": 0.5
+  },
+  "mood": "#3fe0d0",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "capsule_skybox",
+  "model": "hall",
+  "use": "market",
+  "storeys": 11,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Skybox Capsules style: a shared model"
+}

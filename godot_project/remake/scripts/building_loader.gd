@@ -481,6 +481,37 @@ static func lit_glass(key: String, d: Dictionary) -> StandardMaterial3D:
 	return m
 
 
+static func light_windows(inst: Node, glow: Color) -> void:
+	## Every window of inst glowing glow at night (the sky islands: every home lit, in its block's mood colour --
+	## the user, 2026-10-14: "At night they should light up like a christmas tree").  Shared per (material, colour).
+	var stack: Array[Node] = [inst]
+	while stack.size() > 0:
+		var n: Node = stack.pop_back()
+		stack.append_array(n.get_children())
+		var mi := n as MeshInstance3D
+		if mi == null or mi.mesh == null:
+			continue
+		for i in mi.mesh.get_surface_count():
+			var m := mi.get_active_material(i) as StandardMaterial3D
+			if m == null or m.transparency != BaseMaterial3D.TRANSPARENCY_ALPHA:
+				continue
+			var a0: float = m.get_meta("alpha") if m.has_meta("alpha") else m.albedo_color.a
+			if a0 >= 0.6:
+				continue
+			var k := m.resource_name.trim_suffix("#lit") + "#glow" + glow.to_html(false)
+			if not _mat_cache.has(k):
+				var g := m.duplicate() as StandardMaterial3D
+				g.resource_name = k
+				g.emission_enabled = true
+				g.emission = glow
+				g.set_meta("alpha", a0)
+				g.emission_energy_multiplier = night_level * 2.4
+				g.albedo_color.a = lerpf(a0, 0.92, night_level)
+				night_glass.append(g)
+				_mat_cache[k] = g
+			mi.set_surface_override_material(i, _mat_cache[k])
+
+
 static func _apply_defs(inst: Node, defs: Dictionary) -> void:
 	var lit := posmod(hash(str(inst.name)), 100) < LIT_SHARE
 	var stack: Array[Node] = [inst]

@@ -1,0 +1,166 @@
+{
+ "id": "SKY-hoist_gables-05",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 29.4,
+  "d": 16.2
+ },
+ "traits": {
+  "style": "hoist_gables",
+  "arch": "gable_row",
+  "model_kind": "landmark",
+  "storeys": 8,
+  "storey_h": 3.2,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.9,
+     -7.5,
+     11.9,
+     5.5
+    ],
+    "storeys": 8,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     -5.6,
+     -7.5,
+     2.9,
+     6.5
+    ],
+    "storeys": 6,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -14.1,
+     -7.5,
+     -5.6,
+     5.0
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 1.1,
+   "h": 1.9,
+   "sill": 0.6,
+   "spacing": 1.8
+  },
+  "dress": [
+   "shutters",
+   "gable_front",
+   "pergola",
+   "planter",
+   "lanterns",
+   "billboard"
+  ],
+  "variants": {
+   "bay": "glass",
+   "bay_roof": "slope",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "dome",
+   "tower_round": false,
+   "gable": "neck",
+   "shack": "shack",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": false,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#c9a13b",
+    "#6b3a2c",
+    "#8a4a33"
+   ],
+   "trim": "#f2efe6",
+   "accent": "#ffd46b",
+   "canvas": "#ff6b6b",
+   "tile": "#ffffff"
+  },
+  "signage": {
+   "kinds": [
+    "lightbox",
+    "brass",
+    "neon"
+   ],
+   "density": 0.6
+  },
+  "mood": "#ff6b9d",
+  "shops": [
+   {
+    "kind": "art_gallery"
+   },
+   {
+    "kind": "dry_goods"
+   },
+   {
+    "kind": "games"
+   },
+   {
+    "kind": "tattoo"
+   },
+   {
+    "kind": "pet"
+   },
+   {
+    "kind": "cafe"
+   },
+   {
+    "kind": "clothing"
+   },
+   {
+    "kind": "bakery"
+   },
+   {
+    "kind": "grocery"
+   },
+   {
+    "kind": "bookstore"
+   },
+   {
+    "kind": "hardware"
+   },
+   {
+    "kind": "music_store"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "hoist_gables",
+  "model": "landmark",
+  "use": "hall",
+  "storeys": 8,
+  "homes": 0
+ },
+ "brief": "sky island landmark in the Hoist Gables style: a shared model"
+}

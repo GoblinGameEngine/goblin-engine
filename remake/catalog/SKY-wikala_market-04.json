@@ -1,0 +1,148 @@
+{
+ "id": "SKY-wikala_market-04",
+ "settlement": "Sky islands",
+ "generated": "tools/sky/style_models.py",
+ "kind": "sky",
+ "lot": {
+  "w": 28.9,
+  "d": 24.2
+ },
+ "traits": {
+  "style": "wikala_market",
+  "arch": "court",
+  "model_kind": "hall",
+  "storeys": 5,
+  "storey_h": 3.4,
+  "blocks": [
+   {
+    "name": "B0",
+    "rect": [
+     2.65,
+     -1.5,
+     11.65,
+     8.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "shops",
+    "hall_kind": "grocery",
+    "ext": 0
+   },
+   {
+    "name": "B1",
+    "rect": [
+     2.65,
+     -11.5,
+     11.65,
+     -1.5
+    ],
+    "storeys": 5,
+    "plan": "auto",
+    "ground": "dwelling",
+    "hall_kind": "grocery",
+    "ext": 1
+   },
+   {
+    "name": "B2",
+    "rect": [
+     -13.85,
+     -3.5,
+     2.65,
+     10.5
+    ],
+    "storeys": 3,
+    "plan": "auto",
+    "ground": "hall",
+    "hall_kind": "grocery",
+    "ext": 2
+   }
+  ],
+  "window": {
+   "w": 0.8,
+   "h": 1.2,
+   "sill": 1.0,
+   "spacing": 2.0
+  },
+  "dress": [
+   "bay",
+   "gallery",
+   "screen",
+   "bands",
+   "crenel",
+   "arch",
+   "tower",
+   "shacks",
+   "laundry",
+   "awnings",
+   "lanterns"
+  ],
+  "variants": {
+   "bay": "lattice",
+   "bay_roof": "flat",
+   "bay_share": 0.45,
+   "balcony_rail": "iron",
+   "cage_share": 0.4,
+   "crenel": "square",
+   "arch": "round",
+   "onion": false,
+   "tower_cap": "flat",
+   "tower_round": true,
+   "gable": "step",
+   "shack": "loft",
+   "chimney": "stack",
+   "ceiling": "grid",
+   "ablaq": true,
+   "eave_tiers": 2,
+   "gallery_side": "N"
+  },
+  "colors": {
+   "body": [
+    "#efe5cf",
+    "#d8c7a5",
+    "#b99a6b"
+   ],
+   "trim": "#ece6d8",
+   "accent": "#7a3b2e",
+   "canvas": "#ffffff",
+   "tile": "#3dff8a"
+  },
+  "signage": {
+   "kinds": [
+    "chochin",
+    "lightbox",
+    "neon",
+    "painted"
+   ],
+   "density": 0.7
+  },
+  "mood": "#5fff9a",
+  "shops": [
+   {
+    "kind": "drug_store"
+   },
+   {
+    "kind": "barber"
+   },
+   {
+    "kind": "shoe_store"
+   },
+   {
+    "kind": "art_gallery"
+   }
+  ],
+  "roof_access": "fire_escape",
+  "condition": "kept",
+  "year_built": 2700
+ },
+ "names": {
+  "name": ""
+ },
+ "sky": {
+  "style": "wikala_market",
+  "model": "hall",
+  "use": "market",
+  "storeys": 5,
+  "homes": 0
+ },
+ "brief": "sky island hall in the Wikala Market Courts style: a shared model"
+}

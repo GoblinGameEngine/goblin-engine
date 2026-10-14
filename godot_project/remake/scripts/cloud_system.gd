@@ -50,8 +50,11 @@ class_name RemakeClouds
 const LOW_COUNT := 20                  # per layer (the 20 km ring: fronts gather them; 12 was too thin a sky, 2026-10-14)
 ## cumulus layers: [base, lowest top, wind m/s, size] -- the clouds grow with height (size scales a
 ## cloud's length, and its puffs with it)
-const LOW_LAYERS := [[200.0, 300.0, 12.0, 8.0], [500.0, 600.0, 15.0, 11.0], [900.0, 1000.0, 18.0, 14.0],
+## (the 700 m layer rides at the sky islands' height, 600-900 m: they float through its clouds, and snow -- the user,
+## 2026-10-14: "make sure that it snows on the islands when they float through a cloud")
+const LOW_LAYERS := [[200.0, 300.0, 12.0, 8.0], [500.0, 600.0, 15.0, 11.0], [700.0, 760.0, 16.0, 10.0], [900.0, 1000.0, 18.0, 14.0],
 	[1400.0, 1500.0, 21.0, 17.0], [2000.0, 2100.0, 24.0, 20.0]]
+const ISLAND_LAYER := 2              # (the layer at the sky islands' height: SkyIslands steers its clouds through them)
 const CIRRUS_H := 5500.0             # m up: well under the 2 km Spindle (hugging it, the ribbons wound round it like a coil)
 const CUMULUS_CEILING := CIRRUS_H - 450.0   # tops kept under the lower cirrus shell
 const CIRRUS_ROWS := 24              # a cirrus shell: bands along the axis ...

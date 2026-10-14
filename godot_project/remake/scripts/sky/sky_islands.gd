@@ -59,6 +59,7 @@ func setup(p_player: StationPlayer, p_clouds: RemakeClouds, p_sky: DaySkySystem)
 	for c in can.islands:
 		by_id[c.id] = c
 	layouts = lay.islands
+	models = lay.get("models", {})
 	var defs := []
 	for L in layouts:
 		defs.append({"id": L.id, "faces": L.faces, "bridges": L.bridges})
@@ -73,6 +74,7 @@ func setup(p_player: StationPlayer, p_clouds: RemakeClouds, p_sky: DaySkySystem)
 		add_child(isl)
 		islands.append(isl)
 	_make_balloons()
+	_balloon_looks(by_id)
 	_lines = MeshInstance3D.new()
 	_lines.name = "Lines"
 	_lines.mesh = ImmediateMesh.new()
@@ -81,6 +83,9 @@ func setup(p_player: StationPlayer, p_clouds: RemakeClouds, p_sky: DaySkySystem)
 	add_child(_lines)
 	_rockets = _mm("Rockets", SkyIsland.part_mesh("rocket"))
 	_make_flakes()
+	var tg := Time.get_ticks_msec()
+	SkySigns.warm_glyphs()                          # (the signs' letters, once, while loading)
+	print("SkyIslands: sign glyphs %d ms" % (Time.get_ticks_msec() - tg))
 	RemakeAirVehicle.frame_source = frame_at
 	var folk := SkyFolk.new()
 	folk.name = "SkyFolk"
@@ -105,6 +110,7 @@ func _make_balloons() -> void:
 	_mm_far = _mm("BalloonsFar", SkyIsland.part_mesh("balloon_far"))
 	# (the envelopes are a kilometre tall: never culled for being off-centre, always drawn)
 	for m in [_mm_near, _mm_far]:
+		(m as MultiMeshInstance3D).multimesh.use_custom_data = true     # (the clan's colour and its ad: sky_balloon)
 		(m as MultiMeshInstance3D).custom_aabb = AABB(Vector3.ONE * -StationGeo.R * 1.2, Vector3.ONE * StationGeo.R * 2.4)
 
 
@@ -124,10 +130,63 @@ func _physics_process(delta: float) -> void:
 			print("SkyIslands: %d islands aloft (%s)" % [islands.size(), drift.summary()])
 		return
 	drift.step(delta)
-	for i in islands.size():
-		islands[i].global_transform = drift.transform(i)
+	_place_islands(delta)
 	_events()
-	_carry()
+	_carry(delta)
+
+
+# Where SkyDrift's frame for an island jumps (lashed into a raft's shared frame, cast off back onto its own), the
+# island doesn't: the jump goes into its correction (_corr: its actual = SkyDrift's * _corr), which then eases out at
+# CORR_MOVE / CORR_TURN -- slowly enough to stand on.  _prev: last tick's actual transforms (what moved the deck under a
+# point: the player's carry, an aircraft's frame).
+const CORR_MOVE := 0.4               # m/s
+const CORR_TURN := 0.004             # rad/s
+var _corr: Array[Transform3D] = []
+var _prev: Array[Transform3D] = []
+var _target_prev: Array[Transform3D] = []
+var _dt := 1.0 / 60.0
+
+
+func _place_islands(delta: float) -> void:
+	_dt = maxf(delta, 1e-4)
+	var n := islands.size()
+	if _corr.size() != n:
+		_corr.resize(n)
+		_corr.fill(Transform3D.IDENTITY)
+		_prev.resize(n)
+		_target_prev.resize(n)
+		for i in n:
+			_target_prev[i] = drift.transform(i)
+			_prev[i] = _target_prev[i]
+	var jump := 18.0 * delta + 0.25                  # m: more than any drift or winch moves it in a tick
+	for i in n:
+		var t := drift.transform(i)
+		var tp := _target_prev[i]
+		if t.origin.distance_to(tp.origin) > jump or t.basis.get_rotation_quaternion().angle_to(tp.basis.get_rotation_quaternion()) > 0.002:
+			# the frame jumped: keep the island where it was (its actual transform last tick), and ease from there
+			_corr[i] = t.affine_inverse() * islands[i].global_transform
+		_target_prev[i] = t
+		var c := _corr[i]
+		if c != Transform3D.IDENTITY:
+			var q := c.basis.get_rotation_quaternion()
+			var ang := q.get_angle()
+			if ang > 1e-6:
+				q = q.slerp(Quaternion.IDENTITY, minf(1.0, CORR_TURN * delta / ang))
+			var o := c.origin.move_toward(Vector3.ZERO, CORR_MOVE * delta)
+			c = Transform3D(Basis(q), o)
+			if o.length() < 1e-4 and q.get_angle() < 1e-6:
+				c = Transform3D.IDENTITY
+			_corr[i] = c
+		var actual := t * c
+		_prev[i] = islands[i].global_transform if islands[i].is_inside_tree() else actual
+		islands[i].global_transform = actual
+
+
+func deck_velocity(i: int, p: Vector3) -> Vector3:
+	## m/s the island's deck (and everything on it: buildings, bridges) moved at the point p over the last tick --
+	## its drift, climb, the raft frame's turn and any easing correction, all at once
+	var lp := _prev[i].affine_inverse() * p
+	return (islands[i].global_transform * lp - p) / _dt
 
 
 func _events() -> void:
@@ -136,13 +195,17 @@ func _events() -> void:
 		if ev[0] == "lash" or ev[0] == "cast_off":
 			var e: Dictionary = ev[1]
 			var down: bool = ev[0] == "lash"
-			islands[e.a].set_bridge(e.side, e.along_a, down)
-			islands[e.b].set_bridge(SkyDrift._opp(e.side), e.along_b, down)
+			islands[e.a].set_bridge(e.side, e.along_a, down, islands[e.b].bridge_style())
+			islands[e.b].set_bridge(SkyDrift._opp(e.side), e.along_b, down, islands[e.a].bridge_style())
 	drift.events.clear()
 
 
-func _carry() -> void:
-	## the player aboard: carried by the deck, and lighter
+const CARRY_MARGIN := 16.0             # m past a deck's faces still aboard: the bridges (13 m) and their noses
+
+
+func _carry(_delta: float) -> void:
+	## the player aboard -- on the deck, a roof, or out on a bridge: carried by the island (its actual motion where
+	## they stand), and lighter
 	if player == null or player.is_seated():
 		if _aboard >= 0 and player:
 			player.gravity_k = 1.0
@@ -155,11 +218,11 @@ func _carry() -> void:
 		if isl.tier < 2:
 			continue
 		var lp := isl.global_transform.affine_inverse() * p
-		if isl.inside(lp) and lp.y > -4.0 and lp.y < 120.0:
+		if isl.inside(lp, CARRY_MARGIN) and lp.y > -4.0 and lp.y < 120.0:
 			on = i
 			break
 	if on >= 0:
-		player.carrier_velocity = drift.velocity(on, p)
+		player.carrier_velocity = deck_velocity(on, p)
 		player.gravity_k = ABOARD_G
 	elif _aboard >= 0:
 		player.carrier_velocity = Vector3.ZERO
@@ -174,8 +237,8 @@ const FRAME_MARGIN := 30.0            # m round the deck's edges
 func frame_at(p: Vector3) -> Vector3:
 	## the moving air over an island (to land on it, an aircraft flies relative to this): the island's velocity
 	## anywhere over its deck up to FRAME_OVER m above it, else Vector3.INF
-	if not ready_:
-		return Vector3.INF
+	if not ready_ or StationGeo.h_of(p) < SkyDrift.DECK_H - SkyDrift.H_SWING - 20.0:
+		return Vector3.INF                    # (down by the floor: nowhere near an island -- most callers, at once)
 	for i in islands.size():
 		var isl := islands[i]
 		if isl.global_position.distance_squared_to(p) > 640000.0:          # (800 m)
@@ -184,7 +247,7 @@ func frame_at(p: Vector3) -> Vector3:
 		var f: Dictionary = layouts[i].faces
 		if lp.y > -10.0 and lp.y < FRAME_OVER and lp.x > float(f.N) - FRAME_MARGIN and lp.x < float(f.S) + FRAME_MARGIN \
 				and lp.z > float(f.E) - FRAME_MARGIN and lp.z < float(f.W) + FRAME_MARGIN:
-			return drift.velocity(i, p)
+			return deck_velocity(i, p)
 	return Vector3.INF
 
 
@@ -209,7 +272,12 @@ func _process(delta: float) -> void:
 			var d := isl.global_position.distance_to(cam)
 			isl.set_tier(2 if d < SkyIsland.NEAR else (1 if d < SkyIsland.MID else 0))
 	_balloons()
+	_night_step(delta)
 	_draw_lines(cam)
+	_steer_t -= delta
+	if _steer_t <= 0.0:
+		_steer_t = 1.0
+		_steer_clouds()
 	_snow_step(delta)
 	_flakes_step(cam)
 	_plumb_step(delta)
@@ -223,24 +291,33 @@ func _process(delta: float) -> void:
 func _balloons() -> void:
 	var near: Array[Transform3D] = []
 	var far: Array[Transform3D] = []
+	var near_c: Array[Color] = []
+	var far_c: Array[Color] = []
 	for i in islands.size():
 		var isl := islands[i]
 		var xf := isl.global_transform
-		for b in layouts[i].balloons:
+		var bl: Array = layouts[i].balloons
+		for k in bl.size():
+			var b: Dictionary = bl[k]
 			var t := xf * Transform3D(Basis(), Vector3(b.x, BALLOON_BASE, b.z))
+			var c: Color = _bal_look[i][k] if i < _bal_look.size() and k < _bal_look[i].size() else Color(1, 1, 1, 0)
 			if isl.tier >= 1:
 				near.append(t)
+				near_c.append(c)
 			else:
 				far.append(t)
-	_fill(_mm_near.multimesh, near)
-	_fill(_mm_far.multimesh, far)
+				far_c.append(c)
+	_fill(_mm_near.multimesh, near, near_c)
+	_fill(_mm_far.multimesh, far, far_c)
 
 
-static func _fill(mm: MultiMesh, xf: Array[Transform3D]) -> void:
+static func _fill(mm: MultiMesh, xf: Array[Transform3D], custom: Array[Color] = []) -> void:
 	if mm.instance_count != xf.size():
 		mm.instance_count = xf.size()
 	for k in xf.size():
 		mm.set_instance_transform(k, xf[k])
+		if k < custom.size():
+			mm.set_instance_custom_data(k, custom[k])
 
 
 func _launcher(i: int, side: String) -> Vector3:
@@ -282,6 +359,40 @@ func _draw_lines(cam: Vector3) -> void:
 	if any:
 		im.surface_end()
 	_fill(_rockets.multimesh, heads)
+
+
+var _steer_t := 0.0
+const STEER_SHARE := 0.65             # of the island layer's clouds: the rest wander as before
+const STEER_AHEAD := 6000.0           # m ahead (west) a cloud looks for an island to pass through
+
+
+func _steer_clouds() -> void:
+	## The clouds at the islands' height run west faster than the islands drift, so they overtake them from the east;
+	## most of them (STEER_SHARE) also edge north or south onto the line of the nearest island ahead and settle to its
+	## height -- so the islands float through clouds now and then, and it snows on them (the user, 2026-10-14)
+	if clouds == null:
+		return
+	for c in clouds._low:
+		if c.layer != RemakeClouds.ISLAND_LAYER or c.state != "free" or c.kind != 0:
+			continue
+		if float(absi(hash(c.uid)) % 1000) / 1000.0 >= STEER_SHARE:
+			continue
+		var best := -1
+		var bd := INF
+		for i in islands.size():
+			var p := drift.pos(i)
+			var ahead := -StationGeo.wrap_ds(p.x - float(c.s))          # (> 0: the island is west of the cloud)
+			if ahead < 0.0 or ahead > STEER_AHEAD:
+				continue
+			var d := ahead + absf(p.y - float(c.x)) * 2.0
+			if d < bd:
+				bd = d
+				best = i
+		if best < 0:
+			continue
+		var dx: float = drift.pos(best).y - float(c.x)
+		c.vx = clampf(dx / 120.0, -RemakeClouds.DRIFT_NS, RemakeClouds.DRIFT_NS)
+		c.h0 = drift.altitude(best) - 30.0                               # (its base just under the deck: the town's in it)
 
 
 func _snow_step(_delta: float) -> void:
@@ -455,3 +566,53 @@ func drop_cargo(c: Node3D, at: Vector3) -> void:
 func debug_snow(v: float) -> void:
 	for isl in islands:
 		isl.set_snow(v)
+
+
+# ------------------------------------------------------------------ the balloons' looks, and the night
+var models := {}                      # the layout's shared building models (SkySigns reads their sizes / anchors)
+var _bal_look: Array = []             # per island, per balloon: Color(clan rgb, (ad row + 1) / 128)
+var _night_t := 0.0
+const BALLOON_ADS := ["LIGHT HANDS LONG LINES", "BERRY WINE", "SNOW HONEY", "SKYCLOTH", "ROPE THAT HOLDS",
+	"NO FLAME NO FALL", "LASHING SALE", "WARM GANSEYS", "HOT TEA", "THE SKEIN", "LARK REPAIRS", "DOWN QUILTS",
+	"FRESH SKYBOXES", "GOGGLES", "MEAD", "CLOUD PORRIDGE", "NOODLES", "BELLS", "TRADE HERE", "WEIGH IT"]
+
+
+func _balloon_looks(by_id: Dictionary) -> void:
+	## every balloon: its clan's colour, and on about a third of them an advert -- the island's own wares or a slogan
+	var ads: Array = BALLOON_ADS.duplicate()
+	for i in layouts.size():
+		var c: Dictionary = by_id.get(layouts[i].id, {})
+		ads.append(("%s %s" % [str(c.get("name", "")), str(c.get("specialty", ""))]).to_upper().left(22))
+	var tex := SkyDotFont.strip_texture(ads, 22 * SkyDotFont.ADVANCE)
+	var mat := ShaderMaterial.new()
+	mat.shader = load("res://remake/shaders/sky_balloon.gdshader")
+	mat.set_shader_parameter("ads", tex)
+	for m in [_mm_near, _mm_far]:
+		(m as MultiMeshInstance3D).material_override = mat
+	var r := RandomNumberGenerator.new()
+	for i in layouts.size():
+		var c: Dictionary = by_id.get(layouts[i].id, {})
+		var cols: Array = c.get("colors", ["#c08040"])
+		var clan := Color(str(cols[0]))
+		var own := BALLOON_ADS.size() + i            # (this island's own advert's row)
+		r.seed = hash(str(layouts[i].id) + ":balloons")
+		var row: Array = []
+		for k in (layouts[i].balloons as Array).size():
+			var ad := -1
+			if r.randf() < 0.36:
+				ad = own if r.randf() < 0.5 else r.randi() % BALLOON_ADS.size()
+			var tint := clan.lerp(Color(str(cols[k % cols.size()])), 0.5) if k % 3 == 2 else clan
+			row.append(Color(tint.r, tint.g, tint.b, float(ad + 1) / 128.0))
+		_bal_look.append(row)
+
+
+func _night_step(delta: float) -> void:
+	## once a second: every island's far glitter on or off
+	_night_t -= delta
+	if _night_t > 0.0:
+		return
+	_night_t = 1.0
+	var n := 1.0 - (sky.daylight() if sky else 1.0)
+	for isl in islands:
+		isl.set_night(n)
+

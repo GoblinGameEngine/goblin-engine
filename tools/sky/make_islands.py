@@ -57,6 +57,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import glb  # noqa: E402
 from models import MODELS  # noqa: E402
+import sky_models as SM  # noqa: E402  (the style models: round 2, research/sky_islands/architecture)
 
 ROOT = os.path.dirname(os.path.dirname(HERE))
 CANON = os.path.join(ROOT, "godot_project", "remake", "bible", "sky_islands.json")
@@ -80,6 +81,7 @@ HSTEP = 4.0                   # the height grid
 MESH_STEP = 4.0               # the deck mesh's grid
 
 MODEL = {m["id"]: m for m in MODELS}
+MODEL.update(SM.MODEL)
 STYLES_JSON = os.path.join(ROOT, "godot_project", "remake", "sky", "bridges", "bridge_styles.json")
 STYLES = json.load(open(STYLES_JSON))["styles"] if os.path.exists(STYLES_JSON) else {}
 PARTS = "res://remake/sky/parts/parts.json"
@@ -102,6 +104,8 @@ def rng_for(seed, salt):
 
 def model_dims(m):
     """(lot w, lot d, height to the parapet top, storeys)"""
+    if m["kind"] == "sky":
+        return SM.dims(m)
     tr, st = m["traits"], m["traits"]["storeys"]
     w, d = m["lot"]["w"], m["lot"]["d"]
     if m["kind"] == "condo":
@@ -114,12 +118,16 @@ def model_dims(m):
 
 
 def body_color(m):
+    if m["kind"] == "sky":
+        return SM.body_color(m)
     h = m["traits"]["colors"]["body"].lstrip("#")
     return tuple(int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4))
 
 
 def roof_top(m):
     """the roof surface (wall_top), below the parapet"""
+    if m["kind"] == "sky":
+        return SM.roof_top(m)
     return model_dims(m)[2] - (1.2 if m["kind"] != "store" else 1.4)
 
 
@@ -240,12 +248,12 @@ def axis_cells(rnd, lo, hi, sizes, road_at0):
     return cells, seps
 
 
-def choose_model(rnd, cw, cd, use, prefer_tall=False, ok=None):
+def choose_model(rnd, cw, cd, use, prefer_tall=False, ok=None, pool=None):
     """the best model for a cell cw (along X) x cd (along Z) whose door would open on a path (ok(model, yaw)):
-    returns (model, yaw) or None"""
+    returns (model, yaw) or None.  pool: the island's style's models (sky_models.BY_STYLE), else the old SKY-M set"""
     best = []
-    for m in MODELS:
-        if m["sky"]["use"] != use:
+    for m in (pool or MODELS):
+        if (not SM.serves(m, use)) if m["kind"] == "sky" else m["sky"]["use"] != use:
             continue
         w, d, h, st = model_dims(m)
         for yaw in (0.0, math.pi, math.pi / 2, -math.pi / 2):
@@ -299,6 +307,11 @@ def layout(isl):
     # cells sized to the models' lots (22/30/40 x 20-28; turned either way), so the buildings fill them
     sizes_x = [22.0, 22.0, 24.0, 30.0, 30.0, 40.0]
     sizes_z = [21.0, 21.0, 23.0, 24.0, 24.0, 28.0]
+    # round 2: the island's own style's models (and cells cut to their lots: tight in the warrens)
+    style_pool = SM.BY_STYLE.get(isl.get("style")) or None
+    warren = SM.is_warren(isl.get("style", ""))
+    if style_pool:
+        sizes_x, sizes_z = SM.cell_sizes(style_pool, warren)
     xc, xs = axis_cells(rnd, minx, maxx, sizes_x, big)
     zc, zs = axis_cells(rnd, minz, maxz, sizes_z, big)
 
@@ -395,7 +408,12 @@ def layout(isl):
         if "fits" not in c:
             x0, z0, x1, z1 = c["rect"]
             c["fits"] = False
-            for (ex, ez) in ((22.0, 21.0), (21.0, 22.0)):
+            lots = ((22.0, 21.0), (21.0, 22.0))
+            if style_pool:                                  # (round 2: the style's own smallest home)
+                hm = min((m for m in style_pool if m["sky"]["model"] in ("home", "tall")),
+                         key=lambda m: m["lot"]["w"] * m["lot"]["d"])
+                lots = ((hm["lot"]["w"], hm["lot"]["d"]), (hm["lot"]["d"], hm["lot"]["w"]))
+            for (ex, ez) in lots:
                 if ex > x1 - x0 + 0.01 or ez > z1 - z0 + 0.01:
                     continue
                 for fx, fz in ((1, 0), (-1, 0), (0, 1), (0, -1)):
@@ -412,6 +430,8 @@ def layout(isl):
     # cells kept for buildings: what the island's trades and halls need, and homes for its people (~160 a block of
     # flats), but never more than three quarters of the whole cells
     reserve = min(len(needed_uses(isl)) + math.ceil(isl["population"] / 110.0), int(len(free_cells()) * 0.8))
+    if os.environ.get("SKY_DEBUG"):
+        print("DEBUG cells", len(cells), "whole", len(whole), "free", len(free_cells()), "reserve", reserve, "sizes", sizes_x[:4])
 
     if lake_m2 > 0:
         cands = sorted(free_cells(), key=lambda c: -dist0(c))
@@ -569,6 +589,8 @@ def layout(isl):
                 return True
         return road_net is not None and Point(dx + fx * ROAD_W / 2, dz + fz * ROAD_W / 2).distance(road_net) < 0.35
 
+    if os.environ.get("SKY_DEBUG"):
+        print("DEBUG before buildings: free", len(free_cells()))
     # ---- buildings: the uses the island needs first (hall and school near the middle), dwellings in the rest
     buildings = []
     uses = needed_uses(isl)
@@ -586,17 +608,24 @@ def layout(isl):
         pool.sort(key=dist0)
         if where == "any":
             rnd.shuffle(pool)
-        for c in pool:
-            x0, z0, x1, z1 = c["rect"]
-            pick = choose_model(rnd, x1 - x0, z1 - z0, u, ok=lambda m, y, c=c: fronts_path(c, m, y))
-            if pick:
-                used_cells.add(id(c))
-                c["use"] = u
-                buildings.append((c, pick[0], pick[1]))
+        for alt in ((u, "dwelling") if style_pool else (u,)):
+            # (round 2: a use no model of the style fits -- a landmark too big for a small island -- takes a home)
+            done = False
+            for c in pool:
+                x0, z0, x1, z1 = c["rect"]
+                pick = choose_model(rnd, x1 - x0, z1 - z0, alt, ok=lambda m, y, c=c: fronts_path(c, m, y), pool=style_pool)
+                if pick:
+                    used_cells.add(id(c))
+                    c["use"] = u
+                    buildings.append((c, pick[0], pick[1]))
+                    done = True
+                    break
+            if done:
                 break
     for c in free_cells():
         x0, z0, x1, z1 = c["rect"]
-        pick = choose_model(rnd, x1 - x0, z1 - z0, "dwelling", prefer_tall=True, ok=lambda m, y, c=c: fronts_path(c, m, y))
+        pick = choose_model(rnd, x1 - x0, z1 - z0, "dwelling", prefer_tall=True, ok=lambda m, y, c=c: fronts_path(c, m, y),
+                            pool=style_pool)
         if pick:
             used_cells.add(id(c))
             c["use"] = "dwelling"
@@ -674,10 +703,20 @@ def layout(isl):
         cz += fz * (cd - ez) / 2
         door = (cx + fx * d / 2, cz + fz * d / 2)
         y = ground_at(*door)
-        bout.append({"id": f"{isl['id']}-{n + 1:02d}", "model": m["id"], "use": m["sky"]["use"], "x": round(cx, 2),
+        bout.append({"id": f"{isl['id']}-{n + 1:02d}", "model": m["id"], "use": c.get("use") or m["sky"]["use"], "x": round(cx, 2),
                      "z": round(cz, 2), "yaw": round(yaw, 4), "w": w, "d": d, "h": round(h, 2), "y": round(y, 2),
                      "storeys": st, "homes": m["sky"]["homes"], "door": [round(door[0], 2), round(door[1], 2)],
                      "_rect": (cx - ex / 2, cz - ez / 2, cx + ex / 2, cz + ez / 2)})
+        if m["kind"] == "sky":
+            # round 2: the model's blocks where they stand (the warrens' links, the LOD boxes), its homes, its shops'
+            # names (each its own sign), the block's mood light
+            bb = bout[-1]
+            an = SM.anchors(m["id"]) or {}
+            bb["homes"] = int(an.get("homes", 0))
+            bb["_blocks"] = SM.blocks_world(bb, m)
+            bb["style"] = m["traits"]["style"]
+            bb["mood"] = m["traits"].get("mood")
+            bb["shops"] = SM.shops_of(bb, m, isl["name"])
 
     # ---- hoists (cargo lines) at the edge between the faces, facing out; line-rocket launchers, one per side
     hoists = []
@@ -707,9 +746,16 @@ def layout(isl):
 
     # ---- lark cradles on the tallest roofs (the canon: "larks sit in cradles on the island's tallest roofs")
     pads = []
-    tall = sorted([b for b in bout if min(MODEL[b["model"]]["lot"]["w"], MODEL[b["model"]]["lot"]["d"]) >= 20],
-                  key=lambda b: -b["h"])
-    for b in tall[: max(2, int(isl.get("aerostats", 2)))]:
+    if style_pool:
+        # (the style models: a cradle where the generator left the main roof clear, gen/sky.py)
+        tall = sorted([b for b in bout if SM.pad_of(b, MODEL[b["model"]])], key=lambda b: -b["h"])
+        for b in tall[: max(2, int(isl.get("aerostats", 2)))]:
+            px, py, pz = SM.pad_of(b, MODEL[b["model"]])
+            pads.append({"x": px, "z": pz, "yaw": b["yaw"], "y": py, "roof": b["id"]})
+    else:
+        tall = sorted([b for b in bout if min(MODEL[b["model"]]["lot"]["w"], MODEL[b["model"]]["lot"]["d"]) >= 20],
+                      key=lambda b: -b["h"])
+    for b in ([] if style_pool else tall[: max(2, int(isl.get("aerostats", 2)))]):
         m = MODEL[b["model"]]
         pads.append({"x": b["x"], "z": b["z"], "yaw": b["yaw"], "y": round(b["y"] + roof_top(m), 2), "roof": b["id"]})
     while len(pads) < max(2, int(isl.get("aerostats", 2))):
@@ -876,6 +922,7 @@ def layout(isl):
            "relief": {"kind": isl["relief"], "hills": hills}, "depth": depth,
            "height": pack_height(H, gx, gz),
            "buildings": [{k: v for k, v in b.items() if not k.startswith("_")} for b in bout],
+           "links": SM.links(bout, isl.get("style", ""), rng_for(isl["seed"], "links")) if style_pool else [],
            "paths": [rnd_pts(np.array(l.coords)) for l in paths],
            "roads": [rnd_pts(np.array(l.coords)) for l in roads],
            "promenade": rnd_pts(np.array(promenade.coords)),
@@ -1177,14 +1224,11 @@ def rock_mesh(out, ctx, ring, step, lip=1.6, ridges=True):
 
 
 def boxes_mesh(bout, roof=True):
+    """every building as boxes (the LODs): a style model's blocks each to its own height, an old model's lot; each
+    triangle wound outward from its box's centre as it's made"""
     V, T, C = [], [], []
-    for b in bout:
-        m = MODEL[b["model"]]
-        bc = np.array(body_color(m))
-        x0, z0, x1, z1 = b["_rect"]
-        # (the lot's building, not the whole lot: shrink by the passage and escape)
-        x0, z0, x1, z1 = x0 + 1.5, z0 + 1.5, x1 - 1.5, z1 - 1.5
-        y0, y1 = b["y"] - 0.5, b["y"] + b["h"]
+
+    def add_box(x0, z0, x1, z1, y0, y1, bc):
         base = len(V)
         for (x, z) in ((x0, z0), (x1, z0), (x1, z1), (x0, z1)):
             V.append((x, y0, z))
@@ -1192,39 +1236,43 @@ def boxes_mesh(bout, roof=True):
         for (x, z) in ((x0, z0), (x1, z0), (x1, z1), (x0, z1)):
             V.append((x, y1, z))
             C.append(bc * 0.85)
+        tris = []
         for i in range(4):
             j = (i + 1) % 4
-            T += [(base + i, base + j, base + 4 + j), (base + i, base + 4 + j, base + 4 + i)]
+            tris += [(base + i, base + j, base + 4 + j), (base + i, base + 4 + j, base + 4 + i)]
         if roof:
             r = len(V)
             for (x, z) in ((x0, z0), (x1, z0), (x1, z1), (x0, z1)):
                 V.append((x, y1, z))
                 C.append((0.42, 0.42, 0.42))
-            T += [(r, r + 2, r + 1), (r, r + 3, r + 2)]
+            tris += [(r, r + 2, r + 1), (r, r + 3, r + 2)]
+        ctr = np.array(((x0 + x1) / 2, (y0 + y1) / 2, (z0 + z1) / 2))
+        for tri in tris:
+            a, b_, c = (np.array(V[k]) for k in tri)
+            n = np.cross(b_ - a, c - a)
+            o = (a + b_ + c) / 3 - ctr
+            if abs(n[1]) > 1e-6 and abs(n[0]) + abs(n[2]) < 1e-6:
+                o = np.array((0, 1.0, 0))
+            T.append(tri if np.dot(n, o) >= 0 else tri[::-1])
+
+    for b in bout:
+        m = MODEL[b["model"]]
+        bc = np.array(body_color(m))
+        if b.get("_blocks"):
+            for (x0, z0, x1, z1, top, _n) in b["_blocks"]:
+                add_box(x0, z0, x1, z1, b["y"] - 0.5, top + 1.0, bc)
+            continue
+        x0, z0, x1, z1 = b["_rect"]
+        # (the lot's building, not the whole lot: shrink by the passage and escape)
+        add_box(x0 + 1.5, z0 + 1.5, x1 - 1.5, z1 - 1.5, b["y"] - 0.5, b["y"] + b["h"], bc)
     if not V:
         return None
-    V, T, C = np.array(V, float), np.array(T), np.array(C)
-    # outward from each box: fix the winding per triangle against the box centre
-    return V, T, C
+    return np.array(V, float), np.array(T), np.array(C)
 
 
 def fix_boxes(V, T, bout):
-    out = []
-    T = T.reshape(-1, 3)
-    per = 10 if True else 8
-    for k, tri in enumerate(T):
-        a, b_, c = V[tri]
-        n = np.cross(b_ - a, c - a)
-        bi = k // per
-        bx = bout[bi]
-        cx = (bx["_rect"][0] + bx["_rect"][2]) / 2
-        cz = (bx["_rect"][1] + bx["_rect"][3]) / 2
-        mid = (a + b_ + c) / 3
-        o = mid - np.array((cx, bx["y"] + bx["h"] / 2, cz))
-        if abs(n[1]) > 1e-6 and abs(n[0]) + abs(n[2]) < 1e-6:
-            o = np.array((0, 1.0, 0))
-        out.append(tri if np.dot(n, o) >= 0 else tri[::-1])
-    return np.array(out).ravel()
+    """(boxes_mesh winds its triangles already)"""
+    return np.asarray(T).ravel()
 
 
 def write_glbs(out, ctx):
@@ -1364,6 +1412,20 @@ def preview(out, ctx, path):
 
 
 # ------------------------------------------------------------------ main
+def _model_entry(m):
+    """a model as the game reads it (SkyIsland, SkySigns): its lot, heights, glb -- and for the style models the
+    generator's anchors (signs, mood-light runs, string lights; Godot frame), the lark cradle, blocks and style"""
+    e = {"use": m["sky"]["use"], "kind": m["kind"], "w": m["lot"]["w"], "d": m["lot"]["d"],
+         "h": round(model_dims(m)[2], 2), "roof": round(roof_top(m), 2), "storeys": m["traits"]["storeys"],
+         "glb": "res://remake/buildings/%s.glb" % m["id"]}
+    if m["kind"] == "sky":
+        an = SM.anchors(m["id"]) or {}
+        e.update({"style": m["traits"]["style"], "model": m["sky"]["model"], "anchors": an.get("anchors", []),
+                  "pad": an.get("pad"), "homes": an.get("homes", 0), "mood": m["traits"].get("mood"),
+                  "signage": m["traits"].get("signage"), "blocks": an.get("blocks", [])})
+    return e
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ids", nargs="*")
@@ -1407,10 +1469,8 @@ def main():
     with open(path, "w") as f:
         json.dump({"version": 1, "generated": "tools/sky/make_islands.py", "contract": "research/sky_islands/00_plan.md",
                    "parts": PARTS, "bridge_styles": "res://remake/sky/bridges/bridge_styles.json",
-                   "models": {m["id"]: {"use": m["sky"]["use"], "kind": m["kind"], "w": m["lot"]["w"], "d": m["lot"]["d"],
-                                        "h": round(model_dims(m)[2], 2), "roof": round(roof_top(m), 2),
-                                        "storeys": m["traits"]["storeys"],
-                                        "glb": "res://remake/buildings/%s.glb" % m["id"]} for m in MODELS},
+                   "models": {m["id"]: _model_entry(m) for m in [MODEL[k] for k in sorted(
+                       {b["model"] for i in allisl for b in i["buildings"]})]},
                    "islands": allisl}, f, separators=(",", ":"))
     print(f"{len(isls)} islands in {time.time() - t0:.0f} s: {tot['buildings']} buildings; uses {uses}")
     print(f"glbs: rock {tot['rock'] / 1e6:.1f} MB ({tot['tri_rock']} tris), lod1 {tot['lod1'] / 1e6:.1f} MB "
