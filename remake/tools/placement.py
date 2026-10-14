@@ -93,6 +93,7 @@ def road_heading(s, x, reach=15.0):
 
 
 ROAD_MARGIN = 1.0      # m past a carriageway's edge a building must stand (the shoulder and a little)
+CARRIAGEWAY_ONLY = False   # (True: clear the carriageways alone -- tools/clear_structures.py, after road_fix2)
 MAX_SHIFT = 30.0
 
 
@@ -118,6 +119,8 @@ def _road_lines():
             # lawn and the sidewalk (tools/street_rules.py); a building clears the back of the walk
             verge = rd.get("lawn", 0.0) + rd.get("walk", 0.0)
             margin = 0.3 if rd.get("walk", 0.0) > 0 else ROAD_MARGIN
+            if CARRIAGEWAY_ONLY:
+                verge, margin = 0.0, 0.3               # (tools/clear_structures.py: out of the road, the walks as they are)
             segs.append((a[0] % C, a[1], ds / L, dx / L, L, rd["w"] * 0.5,
                          rd.get("hl", rd["w"] * 0.5) + verge + margin, rd.get("hr", rd["w"] * 0.5) + verge + margin))
             for t in range(0, int(L // G) + 2):
@@ -126,6 +129,24 @@ def _road_lines():
                 for i in (-1, 0, 1):
                     for j in (-1, 0, 1):
                         grid.setdefault(((cs + i) % int(C // G + 1), cx + j), set()).add(k)
+    # the Ring Line: its 8 m corridor (track and ballast) kept clear like a road's (95 houses stood on the track:
+    # where.py check, 2026-10-13)
+    rail = ter.get("rail", {})
+    rhw = float(rail.get("w", 8.0)) * 0.5
+    rpts = rail.get("pts", [])
+    for a, b in zip(rpts, rpts[1:]):
+        ds, dx = wrap(b[0] - a[0]), b[1] - a[1]
+        L = math.hypot(ds, dx)
+        if L < 1e-6:
+            continue
+        k = len(segs)
+        segs.append((a[0] % C, a[1], ds / L, dx / L, L, rhw, rhw + ROAD_MARGIN, rhw + ROAD_MARGIN))
+        for t in range(0, int(L // G) + 2):
+            u = min(t * G, L)
+            cs, cx = int(((a[0] + ds / L * u) % C) // G), int((a[1] + dx / L * u) // G)
+            for i in (-1, 0, 1):
+                for j in (-1, 0, 1):
+                    grid.setdefault(((cs + i) % int(C // G + 1), cx + j), set()).add(k)
     _road_lines.cache = (C, wrap, G, grid, segs)
     return _road_lines.cache
 

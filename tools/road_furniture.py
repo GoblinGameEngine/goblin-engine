@@ -138,9 +138,21 @@ def nearest_town(p):
 # ------------------------------------------------------------------ spatial index of road points
 G = 30.0
 grid = {}
+# every segment in every cell it passes through (it was the points only: a long segment -- a highway's, 60-200 m between
+# points -- was missed by a search of the cells round a point beside its middle, and signs were left standing in it:
+# where.py poles, 2026-10-13)
 for ri, rd in enumerate(ROADS):
-    for k, p in enumerate(rd["pts"]):
-        grid.setdefault((int((p[0] % C) // G), int(p[1] // G)), []).append((ri, k))
+    pts = rd["pts"]
+    for k in range(len(pts) - 1):
+        a, b = pts[k], pts[k + 1]
+        L = math.hypot(wd(b[0] - a[0]), b[1] - a[1])
+        cells = set()
+        for i in range(int(L // (G * 0.5)) + 2):
+            t = min(1.0, i * G * 0.5 / L) if L > 0 else 0.0
+            q = (a[0] + wd(b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)
+            cells.add((int((q[0] % C) // G), int(q[1] // G)))
+        for c in cells:
+            grid.setdefault(c, []).append((ri, k + 1))      # (near_roads looks at the segments either side of k)
 NCOL = int(math.ceil(C / G))
 
 
@@ -992,10 +1004,102 @@ for sg in SIGNS_OUT:
     else:
         sg["_drop"] = True
         n_drop += 1
+# last: every post SIGN_CLEAR m behind every kerb (one left on the kerb line has its post over the gutter: where.py
+# poles found 189 standing on it, 2026-10-13) -- out square to the road, else the nearest clear place, else dropped
+SIGN_CLEAR = 0.3
+n_kerb = 0
+for sg in SIGNS_OUT:
+    if sg.get("_drop") or not in_carriageway((sg["s"], sg["x"]), SIGN_CLEAR):
+        continue
+    p = (sg["s"], sg["x"])
+    for _ in range(4):
+        near = [(d, ri, k, proj) for d, ri, k, proj in near_roads(p, 12.0)
+                if d < max(float(ROADS[ri].get("hl", ROADS[ri]["w"] * 0.5)), float(ROADS[ri].get("hr", ROADS[ri]["w"] * 0.5))) + SIGN_CLEAR]
+        if not near:
+            break
+        d, ri, k, proj = near[0]
+        half = max(float(ROADS[ri].get("hl", ROADS[ri]["w"] * 0.5)), float(ROADS[ri].get("hr", ROADS[ri]["w"] * 0.5)))
+        n = (wd(p[0] - proj[0]) / d, (p[1] - proj[1]) / d) if d > 0.05 else right_of(heading(ri, min(k, len(ROADS[ri]["pts"]) - 2)))
+        p = (proj[0] + n[0] * (half + SIGN_CLEAR + 0.3), proj[1] + n[1] * (half + SIGN_CLEAR + 0.3))
+    if in_carriageway(p, SIGN_CLEAR):
+        q, ok = None, False
+        for r in (0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 6.0):
+            for i in range(16):
+                c = (p[0] + math.cos(i * math.pi / 8) * r, p[1] + math.sin(i * math.pi / 8) * r)
+                if not in_carriageway(c, SIGN_CLEAR):
+                    q, ok = c, True
+                    break
+            if ok:
+                break
+        if not ok:
+            sg["_drop"] = True
+            n_drop += 1
+            continue
+        p = q
+    sg["s"], sg["x"] = round(p[0] % C, 2), round(p[1], 2)
+    n_kerb += 1
+print(f"signs set back behind the kerb: {n_kerb}")
 SIGNS_OUT[:] = [{k: v for k, v in sg.items() if not k.startswith("_")} for sg in SIGNS_OUT if not sg.get("_drop")]
 print(f"signs: {n_dup} duplicates dropped, {n_post} blades onto their stop sign's post, {n_moved} moved along the kerb "
       f"out of another's way, {n_slid} slid out of a carriageway, {n_orphan} stop/yield with no junction dropped, "
       f"{n_drop} dropped as clutter (no clear place)")
+
+# ------------------------------------------------------------------ masts clear of every carriageway
+# A signal's mast stands at each approach's right-hand corner, a rail crossing's at each side: RoadFurniture.gd put them
+# by its own rule (hw + 6 m back, hw + 1 m right of the approach's centre line), and half of the signal masts stood in a
+# road -- where Main St runs with US 30 the other road was the wider one, and a road with a parking lane on one side is
+# wider on it (where.py poles, 2026-10-13: 370 signal masts, 132 crossing masts).  Here each mast is placed as the game
+# did, then moved out -- right, away from the road, then back from the junction -- to the first place POST_CLEAR m clear
+# of every carriageway; its place is written (signals[].masts, xings[].masts) and the game puts it there.
+POST_CLEAR = 0.5
+
+
+def clear_post(m, right, back):
+    if not in_carriageway(m, POST_CLEAR):
+        return m, True
+    for along in (0.0, 2.0, 4.0, 6.0, 9.0, 12.0):
+        for side in (0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 5.0, 6.0, 8.0):
+            q = (m[0] + right[0] * side + back[0] * along, m[1] + right[1] * side + back[1] * along)
+            if not in_carriageway(q, POST_CLEAR):
+                return q, True
+    # hemmed in where three roads meet at odd angles (US 30 across Main St beside a side street): the nearest clear
+    # place in any direction
+    for r in (1.0, 2.0, 3.0, 4.0, 5.0, 6.5, 8.0, 10.0, 12.5, 15.0, 20.0, 25.0):
+        for i in range(24):
+            ang = i * math.pi / 12.0
+            q = (m[0] + math.cos(ang) * r, m[1] + math.sin(ang) * r)
+            if not in_carriageway(q, POST_CLEAR):
+                return q, True
+    return m, False
+
+
+N_MAST = {"moved": 0, "kept": 0, "stuck": 0}
+for sig in SIGNALS:
+    masts = []
+    for arm in sig["arms"]:
+        a = (arm[0], arm[1])
+        hw = float(arm[2]) * 0.5
+        right = (a[1], -a[0])                                 # (right of travel = -a)
+        m = (sig["s"] + a[0] * (hw + 6.0) + right[0] * (hw + 1.0), sig["x"] + a[1] * (hw + 6.0) + right[1] * (hw + 1.0))
+        q, ok = clear_post(m, right, a)
+        N_MAST["stuck" if not ok else ("kept" if q == m else "moved")] += 1
+        masts.append([round(q[0] % C, 2), round(q[1], 2)])
+    sig["masts"] = masts
+for X in XINGS:
+    masts = []
+    if X["level"] != "P":
+        u, n = X["u"], X["ru"]
+        hw = float(X["w"]) * 0.5
+        for sgn in (1.0, -1.0):
+            arm = (u[0] * sgn, u[1] * sgn)
+            right = (arm[1], -arm[0])                         # (right of travel = -arm)
+            back = 4.2 / max(0.35, abs(arm[0] * n[0] + arm[1] * n[1]))
+            m = (X["p"][0] + arm[0] * back + right[0] * (hw + 1.1), X["p"][1] + arm[1] * back + right[1] * (hw + 1.1))
+            q, ok = clear_post(m, right, arm)
+            N_MAST["stuck" if not ok else ("kept" if q == m else "moved")] += 1
+            masts.append([round(q[0] % C, 2), round(q[1], 2)])
+    X["masts"] = masts
+print("signal and crossing masts:", N_MAST)
 
 out = {
     "ctx": CTX,
@@ -1006,7 +1110,8 @@ out = {
     "decals": DECALS,
     "signs": SIGNS_OUT,
     "xings": [{"s": round(X["p"][0] % C, 2), "x": round(X["p"][1], 2), "u": [round(v, 4) for v in X["u"]],
-               "ru": [round(v, 4) for v in X["ru"]], "level": X["level"], "w": X["w"], "cls": X["cls"], "ctx": X["ctx"]}
+               "ru": [round(v, 4) for v in X["ru"]], "level": X["level"], "w": X["w"], "cls": X["cls"], "ctx": X["ctx"],
+               "masts": X["masts"]}
               for X in XINGS],
     "signals": SIGNALS,
 }

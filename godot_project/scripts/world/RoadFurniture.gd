@@ -477,12 +477,16 @@ func _xing(xg: Dictionary) -> void:
 				rs.add_vertex(q[k])
 	if lvl == "P":
 		return
-	for sgn in [1.0, -1.0]:
+	var xmasts: Array = xg.get("masts", [])
+	for si in 2:
+		var sgn := 1.0 if si == 0 else -1.0
 		var arm: Vector2 = u * sgn                               # away from the crossing, toward the approaching traffic
 		var travel: Vector2 = -arm
 		var right := Vector2(-travel.y, travel.x)
 		var back := 4.2 / maxf(0.35, absf(arm.dot(n)))
 		var m: Vector2 = p + arm * back + right * (hw + 1.1)
+		if si < xmasts.size():
+			m = Vector2(float(xmasts[si][0]), float(xmasts[si][1]))     # (clear of every carriageway: road_furniture.py)
 		var yaw := atan2(-arm.y, arm.x)                  # the faces look back along the arm, at the traffic
 		var b := StationGeo.basis(m.x, yaw)
 		var base := StationGeo.point(m.x, m.y, _ground(m.x, m.y))
@@ -513,19 +517,27 @@ func _xing(xg: Dictionary) -> void:
 
 func _signal(sig: Dictionary) -> void:
 	var p := Vector2(sig.s, sig.x)
-	for arm in sig.arms:
+	var masts: Array = sig.get("masts", [])
+	for ai in sig.arms.size():
+		var arm: Array = sig.arms[ai]
 		var a := Vector2(arm[0], arm[1])
 		var hw: float = float(arm[2]) * 0.5
 		var travel := -a
 		var right := Vector2(-travel.y, travel.x)
 		var m := p + a * (hw + 6.0) + right * (hw + 1.0)
+		if ai < masts.size():
+			# (tools/road_furniture.py places each mast clear of every carriageway: where.py poles found half of them
+			# standing in a road)
+			m = Vector2(float(masts[ai][0]), float(masts[ai][1]))
 		var yaw := atan2(-a.y, a.x)
 		var b := StationGeo.basis(m.x, yaw)
 		var base := StationGeo.point(m.x, m.y, _ground(m.x, m.y))
 		var up := b.y
 		_box(_st(m.x, m.y, "post"), base + up * 2.9, b, Vector3(0.1, 2.9, 0.1))
-		# the mast arm reaches over the approach's lane (toward the road's middle: the viewer's left)
-		var reach := hw * 0.5 + 1.0
+		# the mast arm reaches over the approach's lane (toward the road's middle: the viewer's left) -- from wherever
+		# the mast stands: its head over the right-hand lane's middle, hw / 2 right of the centre line
+		var lateral := Vector2(StationGeo.wrap_ds(m.x - p.x), m.y - p.y).dot(right)
+		var reach := maxf(1.0, lateral - hw * 0.5)
 		var arm_c := base + up * 5.6 + b.x * (reach * 0.5)
 		_box(_st(m.x, m.y, "post"), arm_c, b, Vector3(reach * 0.5, 0.06, 0.06))
 		var head := base + up * 5.0 + b.x * reach

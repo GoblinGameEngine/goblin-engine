@@ -6,6 +6,7 @@ render_mode blend_mix, cull_disabled, depth_draw_never, specular_disabled, shado
 
 uniform vec3 color : source_color = vec3(1.0, 1.0, 1.0);
 uniform float opacity = 0.75;
+instance uniform float fade = 1.0;      // a front's sheet: its front's strength (RemakeClouds._fronts_step)
 varying float seed;
 
 float hash2(vec2 p) {
@@ -46,7 +47,7 @@ void fragment() {
 	a *= smoothstep(0.0, 0.2, uv.x) * smoothstep(1.0, 0.8, uv.x);
 	a *= smoothstep(0.0, 0.35, uv.y) * smoothstep(1.0, 0.65, uv.y);
 	ALBEDO = color;
-	ALPHA = a * opacity;
+	ALPHA = a * opacity * fade;
 	ROUGHNESS = 1.0;
 }
 

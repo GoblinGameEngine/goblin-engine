@@ -73160,7 +73160,7 @@
 "glb": "res://remake/buildings/SOL-0443.glb",
 "model": "SOL-0443",
 "s": 36101.62,
-"x": 5975.08,
+"x": 5976.39,
 "yaw": -1.5708,
 "min": [
 -25.26,
@@ -139711,8 +139711,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2967.glb",
 "model": "SOL-2967",
-"s": 34873.43,
-"x": 3309.19,
+"s": 34873.46,
+"x": 3308.21,
 "yaw": -2.9594,
 "min": [
 -17.8,
@@ -141589,8 +141589,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2778.glb",
 "model": "SOL-2778",
-"s": 35309.81,
-"x": 7829.14,
+"s": 35309.86,
+"x": 7828.11,
 "yaw": -0.0,
 "min": [
 -16.1,
@@ -141618,7 +141618,7 @@
 "glb": "res://remake/buildings/SOL-3312.glb",
 "model": "SOL-3312",
 "s": 35308.64,
-"x": 7797.94,
+"x": 7796.91,
 "yaw": -0.0,
 "min": [
 -16.75,
@@ -159112,8 +159112,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2967.glb",
 "model": "SOL-2967",
-"s": 35292.4,
-"x": 2503.2,
+"s": 35292.51,
+"x": 2508.49,
 "yaw": -0.0,
 "min": [
 -17.8,
@@ -159140,8 +159140,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2778.glb",
 "model": "SOL-2778",
-"s": 35292.2,
-"x": 2467.1,
+"s": 35292.13,
+"x": 2463.4,
 "yaw": 0.0026,
 "min": [
 -16.1,
@@ -159168,8 +159168,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-3977.glb",
 "model": "SOL-3977",
-"s": 35373.7,
-"x": 2505.1,
+"s": 35373.72,
+"x": 2506.21,
 "yaw": 3.1388,
 "min": [
 -15.9,
@@ -159196,8 +159196,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-3978.glb",
 "model": "SOL-3978",
-"s": 35374.0,
-"x": 2473.0,
+"s": 35373.83,
+"x": 2464.47,
 "yaw": -3.1416,
 "min": [
 -14.5,
@@ -159733,7 +159733,7 @@
 "glb": "res://remake/buildings/SOL-3998.glb",
 "model": "SOL-3998",
 "s": 34650.8,
-"x": 2513.7,
+"x": 2521.09,
 "yaw": 0.1823,
 "min": [
 -25.81,
@@ -159762,7 +159762,7 @@
 "glb": "res://remake/buildings/SOL-2726.glb",
 "model": "SOL-2726",
 "s": 34725.6,
-"x": 2507.8,
+"x": 2512.87,
 "yaw": -2.9562,
 "min": [
 -17.75,
@@ -159790,7 +159790,7 @@
 "glb": "res://remake/buildings/SOL-4000.glb",
 "model": "SOL-4000",
 "s": 34718.3,
-"x": 2472.6,
+"x": 2461.29,
 "yaw": -2.9554,
 "min": [
 -17.95,
@@ -167039,8 +167039,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2647.glb",
 "model": "SOL-2647",
-"s": 37650.8,
-"x": 4419.2,
+"s": 37650.94,
+"x": 4419.48,
 "yaw": -1.9217,
 "min": [
 -11.03,
@@ -168457,8 +168457,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0419.glb",
 "model": "SOL-0419",
-"s": 35748.21,
-"x": 3947.83,
+"s": 35748.61,
+"x": 3947.93,
 "yaw": -1.5708,
 "min": [
 -9.95,
@@ -169450,8 +169450,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0504.glb",
 "model": "SOL-0504",
-"s": 34830.2,
-"x": 3898.3,
+"s": 34832.08,
+"x": 3896.01,
 "yaw": -1.4743,
 "min": [
 -9.13,
@@ -174759,8 +174759,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-1766.glb",
 "model": "SOL-1766",
-"s": 38165.11,
-"x": 4621.21,
+"s": 38167.25,
+"x": 4621.05,
 "yaw": -2.1943,
 "min": [
 -12.45,
@@ -177848,8 +177848,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2306.glb",
 "model": "SOL-2306",
-"s": 34832.25,
-"x": 3833.73,
+"s": 34828.95,
+"x": 3831.16,
 "yaw": -1.5862,
 "min": [
 -12.33,
@@ -181040,8 +181040,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0540.glb",
 "model": "SOL-0540",
-"s": 32280.49,
-"x": 4801.43,
+"s": 32280.23,
+"x": 4801.3,
 "yaw": -0.8341,
 "min": [
 -24.21,
@@ -184428,8 +184428,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-3990.glb",
 "model": "SOL-3990",
-"s": 36580.62,
-"x": 3947.69,
+"s": 36580.47,
+"x": 3947.56,
 "yaw": 1.274,
 "min": [
 -16.3,
@@ -187429,8 +187429,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2778.glb",
 "model": "SOL-2778",
-"s": 32412.68,
-"x": 4629.78,
+"s": 32412.54,
+"x": 4632.25,
 "yaw": 2.0744,
 "min": [
 -16.1,
@@ -193644,34 +193644,6 @@
 ]
 },
 {
-"id": "SOL-5261",
-"kind": "house",
-"settlement": "Solana Point",
-"glb": "res://remake/buildings/SOL-4167.glb",
-"model": "SOL-4167",
-"s": 33123.5,
-"x": 4077.2,
-"yaw": 2.0645,
-"min": [
--15.5,
--4,
--11.6
-],
-"max": [
-15.5,
-5.95,
-11.8
-],
-"fmin": [
--15.5,
--10.56
-],
-"fmax": [
-15.5,
-11.8
-]
-},
-{
 "id": "SOL-5262",
 "kind": "house",
 "settlement": "Solana Point",
@@ -194998,8 +194970,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2778.glb",
 "model": "SOL-2778",
-"s": 31925.34,
-"x": 4912.06,
+"s": 31925.25,
+"x": 4912.27,
 "yaw": -0.2806,
 "min": [
 -16.1,
@@ -196009,8 +195981,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2776.glb",
 "model": "SOL-2776",
-"s": 39171.08,
-"x": 5414.22,
+"s": 39171.07,
+"x": 5413.36,
 "yaw": 3.0016,
 "min": [
 -18.6,
@@ -197497,8 +197469,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2726.glb",
 "model": "SOL-2726",
-"s": 37499.42,
-"x": 4032.55,
+"s": 37498.59,
+"x": 4031.3,
 "yaw": 1.3491,
 "min": [
 -17.75,
@@ -197553,8 +197525,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-3943.glb",
 "model": "SOL-3943",
-"s": 37438.95,
-"x": 4003.01,
+"s": 37431.49,
+"x": 4008.6,
 "yaw": 1.3588,
 "min": [
 -16.9,
@@ -201542,8 +201514,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-3990.glb",
 "model": "SOL-3990",
-"s": 32111.63,
-"x": 4503.99,
+"s": 32110.46,
+"x": 4501.03,
 "yaw": -1.8647,
 "min": [
 -16.3,
@@ -201879,8 +201851,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-3532.glb",
 "model": "SOL-3532",
-"s": 31751.14,
-"x": 4909.72,
+"s": 31748.35,
+"x": 4915.04,
 "yaw": -0.2406,
 "min": [
 -15.75,
@@ -202132,8 +202104,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2778.glb",
 "model": "SOL-2778",
-"s": 31614.4,
-"x": 5173.7,
+"s": 31614.33,
+"x": 5174.02,
 "yaw": 0.0142,
 "min": [
 -16.1,
@@ -202330,8 +202302,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4167.glb",
 "model": "SOL-4167",
-"s": 31579.38,
-"x": 5327.3,
+"s": 31579.34,
+"x": 5328.0,
 "yaw": -0.3873,
 "min": [
 -15.5,
@@ -202444,8 +202416,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-3943.glb",
 "model": "SOL-3943",
-"s": 39075.8,
-"x": 5638.2,
+"s": 39072.04,
+"x": 5640.11,
 "yaw": 0.0314,
 "min": [
 -16.9,
@@ -202556,8 +202528,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2776.glb",
 "model": "SOL-2776",
-"s": 39127.95,
-"x": 5605.68,
+"s": 39127.91,
+"x": 5606.49,
 "yaw": -2.9303,
 "min": [
 -18.6,
@@ -212907,8 +212879,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4716.glb",
 "model": "SOL-4716",
-"s": 39333.76,
-"x": 5141.68,
+"s": 39335.93,
+"x": 5144.96,
 "yaw": 0.7038,
 "min": [
 -12.33,
@@ -213419,8 +213391,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-1766.glb",
 "model": "SOL-1766",
-"s": 39192.37,
-"x": 4831.94,
+"s": 39192.13,
+"x": 4830.52,
 "yaw": -2.3371,
 "min": [
 -12.45,
@@ -215136,8 +215108,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0997.glb",
 "model": "SOL-0997",
-"s": 36925.56,
-"x": 3642.48,
+"s": 36925.4,
+"x": 3641.99,
 "yaw": -1.8847,
 "min": [
 -8.78,
@@ -221942,8 +221914,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0472.glb",
 "model": "SOL-0472",
-"s": 31342.42,
-"x": 5190.43,
+"s": 31339.92,
+"x": 5189.45,
 "yaw": -0.6158,
 "min": [
 -26.46,
@@ -227031,8 +227003,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2480.glb",
 "model": "SOL-2480",
-"s": 35014.44,
-"x": 3356.77,
+"s": 35014.88,
+"x": 3354.1,
 "yaw": -1.4842,
 "min": [
 -20.44,
@@ -233837,8 +233809,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0497.glb",
 "model": "SOL-0497",
-"s": 39375.7,
-"x": 4625.3,
+"s": 39376.87,
+"x": 4625.55,
 "yaw": -2.3889,
 "min": [
 -9.49,
@@ -233866,8 +233838,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-1766.glb",
 "model": "SOL-1766",
-"s": 39341.5,
-"x": 4574.5,
+"s": 39341.89,
+"x": 4572.28,
 "yaw": -2.6861,
 "min": [
 -12.45,
@@ -249892,8 +249864,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2498.glb",
 "model": "SOL-2498",
-"s": 34276.54,
-"x": 3303.76,
+"s": 34276.3,
+"x": 3303.88,
 "yaw": -1.486,
 "min": [
 -12.33,
@@ -257625,8 +257597,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-7611.glb",
 "model": "SOL-7611",
-"s": 38875.91,
-"x": 4003.27,
+"s": 38879.32,
+"x": 4000.64,
 "yaw": -2.1851,
 "min": [
 -18.61,
@@ -262275,8 +262247,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4716.glb",
 "model": "SOL-4716",
-"s": 33887.38,
-"x": 3248.52,
+"s": 33889.27,
+"x": 3247.29,
 "yaw": -1.4458,
 "min": [
 -12.33,
@@ -269838,8 +269810,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-1766.glb",
 "model": "SOL-1766",
-"s": 38060.88,
-"x": 3498.28,
+"s": 38060.89,
+"x": 3497.95,
 "yaw": -0.9474,
 "min": [
 -12.45,
@@ -273275,8 +273247,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2498.glb",
 "model": "SOL-2498",
-"s": 34209.85,
-"x": 3168.65,
+"s": 34210.04,
+"x": 3168.62,
 "yaw": 1.7083,
 "min": [
 -12.33,
@@ -273303,8 +273275,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2498.glb",
 "model": "SOL-2498",
-"s": 34186.12,
-"x": 3170.62,
+"s": 34186.3,
+"x": 3170.58,
 "yaw": 1.7573,
 "min": [
 -12.33,
@@ -273331,8 +273303,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-6423.glb",
 "model": "SOL-6423",
-"s": 34167.63,
-"x": 3173.94,
+"s": 34167.84,
+"x": 3173.83,
 "yaw": 1.7662,
 "min": [
 -11.19,
@@ -285438,8 +285410,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2498.glb",
 "model": "SOL-2498",
-"s": 34091.61,
-"x": 3097.87,
+"s": 34090.27,
+"x": 3098.55,
 "yaw": 1.6255,
 "min": [
 -12.33,
@@ -301922,8 +301894,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0504.glb",
 "model": "SOL-0504",
-"s": 34190.28,
-"x": 8059.8,
+"s": 34190.3,
+"x": 8059.46,
 "yaw": 1.4169,
 "min": [
 -9.13,
@@ -312834,8 +312806,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2498.glb",
 "model": "SOL-2498",
-"s": 33942.09,
-"x": 8053.35,
+"s": 33942.71,
+"x": 8053.69,
 "yaw": -1.6392,
 "min": [
 -12.33,
@@ -312862,8 +312834,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4112.glb",
 "model": "SOL-4112",
-"s": 33521.64,
-"x": 8039.82,
+"s": 33521.6,
+"x": 8039.79,
 "yaw": 1.4898,
 "min": [
 -14.3,
@@ -313566,34 +313538,6 @@
 14.75
 ],
 "households": 2
-},
-{
-"id": "SOL-9671",
-"kind": "house",
-"settlement": "Solana Point",
-"glb": "res://remake/buildings/SOL-1766.glb",
-"model": "SOL-1766",
-"s": 34736.91,
-"x": 8094.22,
-"yaw": -1.636,
-"min": [
--12.45,
--4,
--10
-],
-"max": [
-12.45,
-5.43,
-10.2
-],
-"fmin": [
--12.45,
--8.96
-],
-"fmax": [
-12.45,
-10.2
-]
 },
 {
 "id": "SOL-9672",
@@ -316139,8 +316083,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4341.glb",
 "model": "SOL-4341",
-"s": 37564.59,
-"x": 3084.21,
+"s": 37565.62,
+"x": 3084.98,
 "yaw": 1.2764,
 "min": [
 -12.23,
@@ -318731,7 +318675,7 @@
 "glb": "res://remake/buildings/SOL-4627.glb",
 "model": "SOL-4627",
 "s": 35491.52,
-"x": 2766.43,
+"x": 2766.47,
 "yaw": -1.5803,
 "min": [
 -12.23,
@@ -321296,8 +321240,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4075.glb",
 "model": "SOL-4075",
-"s": 33181.0,
-"x": 2985.0,
+"s": 33182.0,
+"x": 2982.48,
 "yaw": -1.3018,
 "min": [
 -12.38,
@@ -321662,8 +321606,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-1766.glb",
 "model": "SOL-1766",
-"s": 32658.23,
-"x": 3150.53,
+"s": 32658.59,
+"x": 3150.11,
 "yaw": 1.8353,
 "min": [
 -12.45,
@@ -327581,8 +327525,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0287.glb",
 "model": "SOL-0287",
-"s": 38646.5,
-"x": 3325.5,
+"s": 38662.74,
+"x": 3343.74,
 "yaw": 1.3334,
 "min": [
 -21.23,
@@ -334123,8 +334067,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-1766.glb",
 "model": "SOL-1766",
-"s": 32936.9,
-"x": 2945.5,
+"s": 32937.29,
+"x": 2943.49,
 "yaw": -1.39,
 "min": [
 -12.45,
@@ -334433,8 +334377,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-0997.glb",
 "model": "SOL-0997",
-"s": 32424.23,
-"x": 3117.93,
+"s": 32423.35,
+"x": 3118.75,
 "yaw": 1.7672,
 "min": [
 -8.78,
@@ -338067,8 +338011,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4075.glb",
 "model": "SOL-4075",
-"s": 34425.2,
-"x": 8292.3,
+"s": 34425.78,
+"x": 8292.79,
 "yaw": 1.5868,
 "min": [
 -12.38,
@@ -342126,8 +342070,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2306.glb",
 "model": "SOL-2306",
-"s": 37845.6,
-"x": 2918.0,
+"s": 37847.52,
+"x": 2917.34,
 "yaw": -1.9176,
 "min": [
 -12.33,
@@ -342805,8 +342749,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-1766.glb",
 "model": "SOL-1766",
-"s": 37067.54,
-"x": 2763.56,
+"s": 37067.87,
+"x": 2763.32,
 "yaw": -1.6363,
 "min": [
 -12.45,
@@ -343113,8 +343057,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4075.glb",
 "model": "SOL-4075",
-"s": 36701.5,
-"x": 2708.7,
+"s": 36701.3,
+"x": 2708.49,
 "yaw": -1.6976,
 "min": [
 -12.38,
@@ -343197,8 +343141,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4112.glb",
 "model": "SOL-4112",
-"s": 36563.14,
-"x": 2695.0,
+"s": 36562.91,
+"x": 2688.85,
 "yaw": -1.5708,
 "min": [
 -14.3,
@@ -349851,8 +349795,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-1964.glb",
 "model": "SOL-1964",
-"s": 30892.69,
-"x": 3639.7,
+"s": 30892.72,
+"x": 3639.62,
 "yaw": -1.9603,
 "min": [
 -12.33,
@@ -350500,8 +350444,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-4075.glb",
 "model": "SOL-4075",
-"s": 33581.02,
-"x": 8275.09,
+"s": 33581.03,
+"x": 8278.32,
 "yaw": 1.5099,
 "min": [
 -12.38,
@@ -351092,8 +351036,8 @@
 "settlement": "Solana Point",
 "glb": "res://remake/buildings/SOL-2306.glb",
 "model": "SOL-2306",
-"s": 34017.88,
-"x": 8354.98,
+"s": 34018.12,
+"x": 8355.09,
 "yaw": 1.5423,
 "min": [
 -12.33,
@@ -360807,8 +360751,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0288.glb",
 "model": "HF-0288",
-"s": 7729.3,
-"x": 1408.8,
+"s": 7729.4,
+"x": 1409.3,
 "yaw": -3.1388,
 "min": [
 -8.55,
@@ -361174,8 +361118,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0301.glb",
 "model": "HF-0301",
-"s": 7566.85,
-"x": 1376.11,
+"s": 7566.79,
+"x": 1375.95,
 "yaw": 1.5708,
 "min": [
 -7.8,
@@ -361847,35 +361791,6 @@
 "households": 2
 },
 {
-"id": "HF-0327",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 7616.0,
-"x": 1412.8,
-"yaw": -1.5708,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
-],
-"households": 2
-},
-{
 "id": "HF-0328",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -362475,8 +362390,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0243.glb",
 "model": "HF-0243",
-"s": 7769.5,
-"x": 1496.6,
+"s": 7769.69,
+"x": 1506.09,
 "yaw": -0.0,
 "min": [
 -7.65,
@@ -362503,8 +362418,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0350.glb",
 "model": "HF-0350",
-"s": 7830.8,
-"x": 1493.5,
+"s": 7830.93,
+"x": 1499.98,
 "yaw": -3.1416,
 "min": [
 -8.53,
@@ -362532,7 +362447,7 @@
 "glb": "res://remake/buildings/HF-0351.glb",
 "model": "HF-0351",
 "s": 7829.6,
-"x": 1509.8,
+"x": 1511.38,
 "yaw": -3.1416,
 "min": [
 -4.52,
@@ -362579,35 +362494,6 @@
 "fmax": [
 5,
 20.8
-],
-"households": 2
-},
-{
-"id": "HF-0353",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 7728.7,
-"x": 1491.9,
-"yaw": -3.1416,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
 ],
 "households": 2
 },
@@ -362984,7 +362870,7 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0367.glb",
 "model": "HF-0367",
-"s": 7535.5,
+"s": 7555.3,
 "x": 1413.6,
 "yaw": -1.5708,
 "min": [
@@ -363005,35 +362891,6 @@
 26.3,
 14.35
 ]
-},
-{
-"id": "HF-0368",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 7567.8,
-"x": 1412.82,
-"yaw": -1.5744,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
-],
-"households": 2
 },
 {
 "id": "HF-0369",
@@ -363434,8 +363291,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0383.glb",
 "model": "HF-0383",
-"s": 8071.8,
-"x": 1494.0,
+"s": 8071.98,
+"x": 1502.91,
 "yaw": -0.0,
 "min": [
 -7.23,
@@ -363681,35 +363538,6 @@
 35.2,
 14.75
 ]
-},
-{
-"id": "HF-0392",
-"kind": "townhouse",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-3444.glb",
-"model": "SOL-3444",
-"s": 7629.8,
-"x": 1494.4,
-"yaw": -1.5708,
-"min": [
--19.62,
--4,
--20.9
-],
-"max": [
-19.62,
-8.81,
--5.48
-],
-"fmin": [
--19.62,
--19.56
-],
-"fmax": [
-19.62,
--5.48
-],
-"households": 6
 },
 {
 "id": "HF-0393",
@@ -364441,42 +364269,13 @@
 ]
 },
 {
-"id": "HF-0420",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 8171.7,
-"x": 1489.7,
-"yaw": 0.003,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
-],
-"households": 2
-},
-{
 "id": "HF-0421",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 8171.6,
-"x": 1501.7,
+"s": 8171.62,
+"x": 1509.94,
 "yaw": 0.003,
 "min": [
 -6.41,
@@ -365128,8 +364927,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4941.glb",
 "model": "SOL-4941",
-"s": 7530.4,
-"x": 1497.3,
+"s": 7530.49,
+"x": 1501.88,
 "yaw": -1.5674,
 "min": [
 -18.61,
@@ -365150,35 +364949,6 @@
 0.78
 ],
 "households": 6
-},
-{
-"id": "HF-0445",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 7557.4,
-"x": 1496.9,
-"yaw": -1.5708,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
-],
-"households": 2
 },
 {
 "id": "HF-0446",
@@ -366396,35 +366166,6 @@
 ]
 },
 {
-"id": "HF-0489",
-"kind": "condo",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0048.glb",
-"model": "HF-0048",
-"s": 8377.9,
-"x": 1471.5,
-"yaw": -0.0,
-"min": [
--24.41,
--4,
--12.75
-],
-"max": [
-24.41,
-13.41,
-8.31
-],
-"fmin": [
--24.41,
--10.55
-],
-"fmax": [
-24.41,
-8.29
-],
-"households": 12
-},
-{
 "id": "HF-0490",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -366510,35 +366251,6 @@
 3.27
 ],
 "households": 6
-},
-{
-"id": "HF-0493",
-"kind": "condo",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0493.glb",
-"model": "HF-0493",
-"s": 7430.2,
-"x": 1496.9,
-"yaw": -1.5708,
-"min": [
--21.26,
--4,
--15.05
-],
-"max": [
-21.26,
-13.41,
-6.01
-],
-"fmin": [
--21.26,
--12.85
-],
-"fmax": [
-21.26,
-5.99
-],
-"households": 24
 },
 {
 "id": "HF-0494",
@@ -368281,64 +367993,6 @@
 "households": 2
 },
 {
-"id": "HF-0556",
-"kind": "condo",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0493.glb",
-"model": "HF-0493",
-"s": 7329.8,
-"x": 1496.9,
-"yaw": -1.5675,
-"min": [
--21.26,
--4,
--15.05
-],
-"max": [
-21.26,
-13.41,
-6.01
-],
-"fmin": [
--21.26,
--12.85
-],
-"fmax": [
-21.26,
-5.99
-],
-"households": 24
-},
-{
-"id": "HF-0557",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0557.glb",
-"model": "HF-0557",
-"s": 7358.3,
-"x": 1496.1,
-"yaw": -1.5708,
-"min": [
--4.31,
--4,
--15.15
-],
-"max": [
-4.31,
-10.94,
-0.88
-],
-"fmin": [
--4.31,
--14.11
-],
-"fmax": [
-4.31,
-0.88
-],
-"households": 2
-},
-{
 "id": "HF-0558",
 "kind": "store",
 "settlement": "Harrow Falls",
@@ -369451,8 +369105,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0598.glb",
 "model": "HF-0598",
-"s": 8470.7,
-"x": 1495.2,
+"s": 8470.78,
+"x": 1499.06,
 "yaw": 0.0,
 "min": [
 -7.76,
@@ -370612,35 +370266,6 @@
 ]
 },
 {
-"id": "HF-0639",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 7176.0,
-"x": 1488.96,
-"yaw": -0.0037,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
-],
-"households": 2
-},
-{
 "id": "HF-0640",
 "kind": "townhouse",
 "settlement": "Harrow Falls",
@@ -370723,121 +370348,6 @@
 "fmax": [
 1.6,
 14.7
-],
-"households": 2
-},
-{
-"id": "HF-0643",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0643.glb",
-"model": "HF-0643",
-"s": 7216.5,
-"x": 1496.6,
-"yaw": -1.5746,
-"min": [
--6.53,
--4,
--13.35
-],
-"max": [
-6.92,
-9.48,
-13.23
-],
-"fmin": [
--6.5,
--12.31
-],
-"fmax": [
-6.92,
-13.2
-]
-},
-{
-"id": "HF-0644",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0644.glb",
-"model": "HF-0644",
-"s": 7232.8,
-"x": 1496.78,
-"yaw": -1.5743,
-"min": [
--9.48,
--4,
--14.4
-],
-"max": [
-9.48,
-11.49,
-14.28
-],
-"fmin": [
--9.45,
--13.36
-],
-"fmax": [
-9.45,
-14.25
-],
-"households": 2
-},
-{
-"id": "HF-0645",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0521.glb",
-"model": "HF-0521",
-"s": 7254.0,
-"x": 1496.1,
-"yaw": -1.5671,
-"min": [
--8.75,
--4,
--13.8
-],
-"max": [
-6.87,
-11.78,
-10.66
-],
-"fmin": [
--2.67,
--12.76
-],
-"fmax": [
-6.87,
-10.66
-],
-"households": 2
-},
-{
-"id": "HF-0646",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0287.glb",
-"model": "HF-0287",
-"s": 7268.7,
-"x": 1496.3,
-"yaw": -1.5708,
-"min": [
--5.2,
--4,
--12.3
-],
-"max": [
-6.85,
-10.94,
-10.32
-],
-"fmin": [
--0.25,
--11.62
-],
-"fmax": [
-6.85,
-3.88
 ],
 "households": 2
 },
@@ -374274,64 +373784,6 @@
 "households": 8
 },
 {
-"id": "HF-0767",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 7115.1,
-"x": 1496.8,
-"yaw": -1.5708,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
-],
-"households": 2
-},
-{
-"id": "HF-0768",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 7129.9,
-"x": 1496.8,
-"yaw": -1.5708,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
-],
-"households": 2
-},
-{
 "id": "HF-0769",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -375532,8 +374984,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 7016.5,
-"x": 1467.7,
+"s": 7015.91,
+"x": 1467.12,
 "yaw": 1.5708,
 "min": [
 -6.41,
@@ -375561,8 +375013,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0812.glb",
 "model": "HF-0812",
-"s": 7030.2,
-"x": 1468.3,
+"s": 7026.51,
+"x": 1468.28,
 "yaw": 1.5708,
 "min": [
 -6.3,
@@ -378107,8 +377559,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
-"s": 7016.3,
-"x": 1498.3,
+"s": 7016.01,
+"x": 1483.65,
 "yaw": -1.5708,
 "min": [
 -5.2,
@@ -378136,8 +377588,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
-"s": 7033.9,
-"x": 1498.7,
+"s": 7037.48,
+"x": 1483.52,
 "yaw": -1.5751,
 "min": [
 -5.2,
@@ -379787,8 +379239,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0854.glb",
 "model": "HF-0854",
-"s": 8770.1,
-"x": 1494.2,
+"s": 8770.12,
+"x": 1495.1,
 "yaw": 0.0,
 "min": [
 -6.83,
@@ -379808,35 +379260,6 @@
 7.15,
 20.15
 ]
-},
-{
-"id": "HF-0961",
-"kind": "condo",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0777.glb",
-"model": "HF-0777",
-"s": 8830.1,
-"x": 1486.2,
-"yaw": 3.1416,
-"min": [
--24.16,
--4,
--20.6
-],
-"max": [
-24.16,
-10.41,
-0.46
-],
-"fmin": [
--24.16,
--18.4
-],
-"fmax": [
-24.16,
-0.44
-],
-"households": 12
 },
 {
 "id": "HF-0962",
@@ -380928,7 +380351,7 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0286.glb",
 "model": "HF-0286",
-"s": 6919.55,
+"s": 6916.9,
 "x": 1471.8,
 "yaw": 1.5733,
 "min": [
@@ -386003,8 +385426,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 6870.8,
-"x": 1494.2,
+"s": 6870.72,
+"x": 1490.41,
 "yaw": 0.0027,
 "min": [
 -6.41,
@@ -386032,8 +385455,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 6930.7,
-"x": 1498.3,
+"s": 6933.17,
+"x": 1489.24,
 "yaw": -3.1416,
 "min": [
 -6.41,
@@ -389884,7 +389307,7 @@
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
 "s": 6830.0,
-"x": 1492.5,
+"x": 1484.01,
 "yaw": -1.568,
 "min": [
 -6.41,
@@ -391026,8 +390449,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
-"s": 8976.7,
-"x": 1483.3,
+"s": 8976.75,
+"x": 1485.81,
 "yaw": -0.004,
 "min": [
 -5.2,
@@ -391083,8 +390506,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0243.glb",
 "model": "HF-0243",
-"s": 9031.8,
-"x": 1470.8,
+"s": 9031.72,
+"x": 1466.98,
 "yaw": -3.1416,
 "min": [
 -7.65,
@@ -392946,8 +392369,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1421.glb",
 "model": "HF-1421",
-"s": 6769.9,
-"x": 1501.7,
+"s": 6769.68,
+"x": 1490.7,
 "yaw": 0.0025,
 "min": [
 -6.85,
@@ -394228,7 +393651,7 @@
 "glb": "res://remake/buildings/HF-0812.glb",
 "model": "HF-0812",
 "s": 6715.7,
-"x": 1467.3,
+"x": 1464.8,
 "yaw": 1.5708,
 "min": [
 -6.3,
@@ -396569,8 +395992,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
-"s": 6714.89,
-"x": 1499.6,
+"s": 6714.62,
+"x": 1486.28,
 "yaw": -1.5708,
 "min": [
 -5.2,
@@ -396598,8 +396021,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
-"s": 6728.1,
-"x": 1498.8,
+"s": 6727.85,
+"x": 1486.12,
 "yaw": -1.5708,
 "min": [
 -5.2,
@@ -398483,8 +397906,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
-"s": 6671.8,
-"x": 1496.9,
+"s": 6671.69,
+"x": 1491.32,
 "yaw": 0.003,
 "min": [
 -5.2,
@@ -401961,7 +401384,7 @@
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
 "s": 6586.3,
-"x": 1491.3,
+"x": 1487.38,
 "yaw": -1.5708,
 "min": [
 -5.2,
@@ -401989,8 +401412,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0866.glb",
 "model": "HF-0866",
-"s": 6619.5,
-"x": 1494.5,
+"s": 6619.32,
+"x": 1485.71,
 "yaw": -1.5708,
 "min": [
 -9.83,
@@ -402018,8 +401441,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1739.glb",
 "model": "HF-1739",
-"s": 6637.6,
-"x": 1494.5,
+"s": 6637.43,
+"x": 1485.75,
 "yaw": -1.5745,
 "min": [
 -7.93,
@@ -406063,7 +405486,7 @@
 "glb": "res://remake/buildings/HF-1420.glb",
 "model": "HF-1420",
 "s": 6548.0,
-"x": 1467.8,
+"x": 1467.02,
 "yaw": 1.5735,
 "min": [
 -6.08,
@@ -406091,7 +405514,7 @@
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
 "s": 6563.2,
-"x": 1468.3,
+"x": 1467.38,
 "yaw": 1.5708,
 "min": [
 -6.41,
@@ -408817,8 +408240,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3444.glb",
 "model": "SOL-3444",
-"s": 6529.6,
-"x": 1494.4,
+"s": 6529.3,
+"x": 1479.36,
 "yaw": -1.5708,
 "min": [
 -19.62,
@@ -408846,8 +408269,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1509.glb",
 "model": "HF-1509",
-"s": 6561.1,
-"x": 1499.6,
+"s": 6560.91,
+"x": 1489.9,
 "yaw": -1.5758,
 "min": [
 -8.78,
@@ -413592,8 +413015,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1195.glb",
 "model": "HF-1195",
-"s": 6419.1,
-"x": 1468.6,
+"s": 6419.11,
+"x": 1465.54,
 "yaw": 1.5679,
 "min": [
 -9.1,
@@ -413621,7 +413044,7 @@
 "glb": "res://remake/buildings/HF-2147.glb",
 "model": "HF-2147",
 "s": 6439.8,
-"x": 1468.3,
+"x": 1466.83,
 "yaw": 1.5708,
 "min": [
 -9.9,
@@ -414584,8 +414007,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0243.glb",
 "model": "HF-0243",
-"s": 9346.5,
-"x": 1469.4,
+"s": 9346.48,
+"x": 1468.17,
 "yaw": 1.568,
 "min": [
 -7.65,
@@ -414612,8 +414035,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1101.glb",
 "model": "HF-1101",
-"s": 9364.8,
-"x": 1469.4,
+"s": 9364.46,
+"x": 1452.39,
 "yaw": 1.568,
 "min": [
 -9.6,
@@ -414640,8 +414063,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 9383.9,
-"x": 1469.8,
+"s": 9383.63,
+"x": 1456.19,
 "yaw": 1.5681,
 "min": [
 -6.41,
@@ -415600,8 +415023,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1200.glb",
 "model": "HF-1200",
-"s": 6418.8,
-"x": 1498.6,
+"s": 6418.64,
+"x": 1490.67,
 "yaw": -1.5708,
 "min": [
 -4.63,
@@ -415628,8 +415051,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0749.glb",
 "model": "HF-0749",
-"s": 6436.6,
-"x": 1497.9,
+"s": 6436.42,
+"x": 1488.91,
 "yaw": -1.5708,
 "min": [
 -9.57,
@@ -418359,7 +417782,7 @@
 "glb": "res://remake/buildings/SOL-3901.glb",
 "model": "SOL-3901",
 "s": 9418.3,
-"x": 1492.1,
+"x": 1497.15,
 "yaw": -1.5708,
 "min": [
 -9.7,
@@ -418444,8 +417867,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 9466.3,
-"x": 1491.7,
+"s": 9466.14,
+"x": 1495.59,
 "yaw": -1.5739,
 "min": [
 -6.41,
@@ -420120,8 +419543,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 6319.0,
-"x": 1467.6,
+"s": 6317.0,
+"x": 1467.59,
 "yaw": 1.5708,
 "min": [
 -6.41,
@@ -420859,8 +420282,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4346.glb",
 "model": "SOL-4346",
-"s": 7924.57,
-"x": 2591.28,
+"s": 7924.15,
+"x": 2591.29,
 "yaw": -3.1416,
 "min": [
 -11.65,
@@ -421143,8 +420566,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-2422.glb",
 "model": "HF-2422",
-"s": 9448.3,
-"x": 1462.7,
+"s": 9448.39,
+"x": 1458.24,
 "yaw": 1.5708,
 "min": [
 -8.65,
@@ -421171,8 +420594,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0803.glb",
 "model": "HF-0803",
-"s": 9468.3,
-"x": 1462.9,
+"s": 9468.53,
+"x": 1457.2,
 "yaw": 1.5708,
 "min": [
 -9.63,
@@ -421199,8 +420622,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
-"s": 9482.9,
-"x": 1468.2,
+"s": 9482.92,
+"x": 1467.72,
 "yaw": 1.5708,
 "min": [
 -5.2,
@@ -421537,8 +420960,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1575.glb",
 "model": "HF-1575",
-"s": 9530.43,
-"x": 1466.52,
+"s": 9530.67,
+"x": 1463.53,
 "yaw": -3.1416,
 "min": [
 -9.13,
@@ -421594,8 +421017,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1051.glb",
 "model": "HF-1051",
-"s": 6282.22,
-"x": 1497.4,
+"s": 6282.05,
+"x": 1495.68,
 "yaw": -1.5666,
 "min": [
 -9.7,
@@ -421622,8 +421045,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0287.glb",
 "model": "HF-0287",
-"s": 6315.5,
-"x": 1497.2,
+"s": 6315.06,
+"x": 1491.74,
 "yaw": -1.5708,
 "min": [
 -5.2,
@@ -421651,8 +421074,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0253.glb",
 "model": "HF-0253",
-"s": 6330.7,
-"x": 1496.8,
+"s": 6330.32,
+"x": 1490.4,
 "yaw": -1.5747,
 "min": [
 -9.4,
@@ -422334,8 +421757,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4352.glb",
 "model": "SOL-4352",
-"s": 6939.51,
-"x": 2339.23,
+"s": 6939.53,
+"x": 2339.0,
 "yaw": 1.414,
 "min": [
 -11.6,
@@ -427614,63 +427037,6 @@
 ]
 },
 {
-"id": "HF-2655",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-3270.glb",
-"model": "SOL-3270",
-"s": 9560.39,
-"x": 1463.22,
-"yaw": 1.5708,
-"min": [
--9.15,
--4,
--18.5
-],
-"max": [
-9.15,
-5.0,
-18.7
-],
-"fmin": [
--9.15,
--17.18
-],
-"fmax": [
-9.15,
-18.7
-],
-"households": 2
-},
-{
-"id": "HF-2656",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0715.glb",
-"model": "HF-0715",
-"s": 9578.5,
-"x": 1468.8,
-"yaw": 1.5708,
-"min": [
--9.1,
--4,
--17.2
-],
-"max": [
-9.1,
-10.52,
-17.4
-],
-"fmin": [
--9.1,
--16.16
-],
-"fmax": [
-9.1,
-17.4
-]
-},
-{
 "id": "HF-2657",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -428555,8 +427921,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-2079.glb",
 "model": "HF-2079",
-"s": 6233.5,
-"x": 1500.4,
+"s": 6233.0,
+"x": 1496.23,
 "yaw": -1.5665,
 "min": [
 -24.76,
@@ -431964,8 +431330,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1552.glb",
 "model": "HF-1552",
-"s": 9618.6,
-"x": 1497.6,
+"s": 9617.98,
+"x": 1502.73,
 "yaw": -1.5708,
 "min": [
 -8.28,
@@ -431992,8 +431358,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 9638.9,
-"x": 1497.5,
+"s": 9637.92,
+"x": 1505.7,
 "yaw": -1.5708,
 "min": [
 -10.1,
@@ -432305,8 +431671,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4677.glb",
 "model": "SOL-4677",
-"s": 7553.25,
-"x": 2709.43,
+"s": 7553.42,
+"x": 2709.47,
 "yaw": -0.1419,
 "min": [
 -11.98,
@@ -435203,8 +434569,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2453.glb",
 "model": "SOL-2453",
-"s": 6078.2,
-"x": 1553.1,
+"s": 6080.31,
+"x": 1561.28,
 "yaw": 1.5708,
 "min": [
 -9.58,
@@ -435232,8 +434598,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-2930.glb",
 "model": "HF-2930",
-"s": 6126.6,
-"x": 1545.4,
+"s": 6126.63,
+"x": 1545.58,
 "yaw": 1.5658,
 "min": [
 -8.93,
@@ -435339,63 +434705,6 @@
 3.27
 ],
 "households": 6
-},
-{
-"id": "HF-2934",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-2194.glb",
-"model": "HF-2194",
-"s": 9670.2,
-"x": 1495.6,
-"yaw": -0.0,
-"min": [
--9.95,
--4,
--18.75
-],
-"max": [
-9.95,
-9.91,
-18.95
-],
-"fmin": [
--9.95,
--17.71
-],
-"fmax": [
-9.95,
-18.95
-]
-},
-{
-"id": "HF-2935",
-"kind": "condo",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0993.glb",
-"model": "HF-0993",
-"s": 9728.0,
-"x": 1473.7,
-"yaw": 3.1388,
-"min": [
--25.76,
--4,
--17.1
-],
-"max": [
-25.76,
-10.41,
-3.96
-],
-"fmin": [
--25.76,
--14.9
-],
-"fmax": [
-25.76,
-3.94
-],
-"households": 12
 },
 {
 "id": "HF-2936",
@@ -437815,7 +437124,7 @@
 "glb": "res://remake/buildings/SOL-2453.glb",
 "model": "SOL-2453",
 "s": 6068.0,
-"x": 1581.8,
+"x": 1586.48,
 "yaw": -0.0,
 "min": [
 -9.58,
@@ -440624,62 +439933,6 @@
 ]
 },
 {
-"id": "HF-3126",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0781.glb",
-"model": "HF-0781",
-"s": 5977.8,
-"x": 1552.0,
-"yaw": 1.5739,
-"min": [
--10.15,
--4,
--16.7
-],
-"max": [
-10.15,
-10.71,
-16.9
-],
-"fmin": [
--10.15,
--15.66
-],
-"fmax": [
-10.15,
-16.9
-]
-},
-{
-"id": "HF-3127",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-3127.glb",
-"model": "HF-3127",
-"s": 6017.9,
-"x": 1545.8,
-"yaw": 1.5708,
-"min": [
--8.95,
--4,
--10
-],
-"max": [
-8.95,
-10.01,
-10.2
-],
-"fmin": [
--8.95,
--8.96
-],
-"fmax": [
-8.95,
-10.2
-]
-},
-{
 "id": "HF-3128",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -441509,8 +440762,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1311.glb",
 "model": "HF-1311",
-"s": 9829.0,
-"x": 1538.99,
+"s": 9828.89,
+"x": 1539.48,
 "yaw": 3.1386,
 "min": [
 -8.9,
@@ -446072,35 +445325,6 @@
 ]
 },
 {
-"id": "HF-3324",
-"kind": "condo",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-1036.glb",
-"model": "HF-1036",
-"s": 5930.2,
-"x": 1576.7,
-"yaw": -1.5734,
-"min": [
--20.46,
--4,
--18.65
-],
-"max": [
-20.46,
-7.41,
-2.41
-],
-"fmin": [
--20.46,
--16.45
-],
-"fmax": [
-20.46,
-2.39
-],
-"households": 8
-},
-{
 "id": "HF-3325",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -446305,8 +445529,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0301.glb",
 "model": "HF-0301",
-"s": 9870.1,
-"x": 1539.4,
+"s": 9868.75,
+"x": 1545.01,
 "yaw": -0.0,
 "min": [
 -7.8,
@@ -447885,42 +447109,13 @@
 "households": 2
 },
 {
-"id": "HF-3394",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-0259.glb",
-"model": "HF-0259",
-"s": 9931.6,
-"x": 1577.7,
-"yaw": 3.1388,
-"min": [
--6.41,
--4,
--14.45
-],
-"max": [
-5.98,
-12.1,
-14.33
-],
-"fmin": [
--6.41,
--12.87
-],
-"fmax": [
-5.95,
-14.3
-],
-"households": 2
-},
-{
 "id": "HF-3395",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
 "s": 9931.5,
-"x": 1589.7,
+"x": 1592.18,
 "yaw": -3.1416,
 "min": [
 -6.41,
@@ -448488,8 +447683,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0781.glb",
 "model": "HF-0781",
-"s": 9919.5,
-"x": 1550.7,
+"s": 9915.75,
+"x": 1565.05,
 "yaw": 1.5708,
 "min": [
 -10.15,
@@ -448516,8 +447711,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0993.glb",
 "model": "HF-0993",
-"s": 9955.0,
-"x": 1551.3,
+"s": 9949.81,
+"x": 1577.4,
 "yaw": 1.5682,
 "min": [
 -25.76,
@@ -451241,8 +450436,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1247.glb",
 "model": "HF-1247",
-"s": 5832.4,
-"x": 1574.1,
+"s": 5832.09,
+"x": 1573.12,
 "yaw": -1.5708,
 "min": [
 -9.73,
@@ -451525,8 +450720,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5448.glb",
 "model": "SOL-5448",
-"s": 7482.74,
-"x": 3072.74,
+"s": 7480.48,
+"x": 3072.95,
 "yaw": -0.1449,
 "min": [
 -15.15,
@@ -451864,8 +451059,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-2637.glb",
 "model": "HF-2637",
-"s": 10029.96,
-"x": 1541.07,
+"s": 10028.76,
+"x": 1539.0,
 "yaw": 3.1416,
 "min": [
 -9.8,
@@ -451885,35 +451080,6 @@
 9.8,
 17.65
 ]
-},
-{
-"id": "HF-3539",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2453.glb",
-"model": "SOL-2453",
-"s": 10030.2,
-"x": 1560.3,
-"yaw": -3.1416,
-"min": [
--9.58,
--4,
--17.45
-],
-"max": [
-9.58,
-6.04,
-17.33
-],
-"fmin": [
--9.55,
--16.13
-],
-"fmax": [
-9.55,
-17.3
-],
-"households": 2
 },
 {
 "id": "HF-3540",
@@ -453001,8 +452167,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0288.glb",
 "model": "HF-0288",
-"s": 5768.9,
-"x": 1622.6,
+"s": 5770.94,
+"x": 1628.6,
 "yaw": -0.0031,
 "min": [
 -8.55,
@@ -454052,7 +453218,7 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1009.glb",
 "model": "HF-1009",
-"s": 9981.0,
+"s": 9982.2,
 "x": 1582.9,
 "yaw": -1.5758,
 "min": [
@@ -454080,8 +453246,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0857.glb",
 "model": "HF-0857",
-"s": 10018.6,
-"x": 1582.7,
+"s": 10014.9,
+"x": 1587.1,
 "yaw": -1.5708,
 "min": [
 -9.65,
@@ -454101,63 +453267,6 @@
 9.3,
 10.2
 ]
-},
-{
-"id": "HF-3617",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-2232.glb",
-"model": "HF-2232",
-"s": 10035.5,
-"x": 1582.8,
-"yaw": -1.5708,
-"min": [
--8.55,
--4,
--11.2
-],
-"max": [
-8.23,
-10.15,
-11.4
-],
-"fmin": [
--8.55,
--10.16
-],
-"fmax": [
-8.2,
-11.4
-]
-},
-{
-"id": "HF-3618",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4318.glb",
-"model": "SOL-4318",
-"s": 10052.0,
-"x": 1580.9,
-"yaw": -1.5666,
-"min": [
--9.03,
--4,
--13.15
-],
-"max": [
-9.03,
-5.33,
-13.03
-],
-"fmin": [
--9,
--11.83
-],
-"fmax": [
-9,
-13
-],
-"households": 2
 },
 {
 "id": "HF-3619",
@@ -455670,8 +454779,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1452.glb",
 "model": "HF-1452",
-"s": 5718.4,
-"x": 1629.8,
+"s": 5716.71,
+"x": 1624.82,
 "yaw": 1.5708,
 "min": [
 -6.75,
@@ -455698,8 +454807,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1955.glb",
 "model": "HF-1955",
-"s": 5737.8,
-"x": 1637.3,
+"s": 5743.09,
+"x": 1652.85,
 "yaw": 1.5708,
 "min": [
 -10.9,
@@ -456713,8 +455822,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-0806.glb",
 "model": "HF-0806",
-"s": 10074.6,
-"x": 1569.7,
+"s": 10075.02,
+"x": 1568.39,
 "yaw": -0.0039,
 "min": [
 -8.03,
@@ -456732,34 +455841,6 @@
 ],
 "fmax": [
 9.04,
-9.85
-]
-},
-{
-"id": "HF-3713",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-1461.glb",
-"model": "HF-1461",
-"s": 10075.7,
-"x": 1587.1,
-"yaw": -0.0045,
-"min": [
--9.68,
--4,
--10
-],
-"max": [
-9.68,
-9.34,
-9.88
-],
-"fmin": [
--9.65,
--8.96
-],
-"fmax": [
-9.65,
 9.85
 ]
 },
@@ -458069,34 +457150,6 @@
 "fmax": [
 12.2,
 17.5
-]
-},
-{
-"id": "HF-3760",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2280.glb",
-"model": "SOL-2280",
-"s": 5668.7,
-"x": 1659.3,
-"yaw": -1.5674,
-"min": [
--10.88,
--4,
--15.5
-],
-"max": [
-10.88,
-5.8,
-15.38
-],
-"fmin": [
--10.85,
--14.18
-],
-"fmax": [
-10.85,
-15.35
 ]
 },
 {
@@ -460315,8 +459368,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-2095.glb",
 "model": "HF-2095",
-"s": 5643.3,
-"x": 1638.0,
+"s": 5642.93,
+"x": 1637.03,
 "yaw": 1.574,
 "min": [
 -12.33,
@@ -461651,8 +460704,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 10173.6,
-"x": 1625.0,
+"s": 10170.23,
+"x": 1634.91,
 "yaw": -0.0,
 "min": [
 -10.1,
@@ -461681,7 +460734,7 @@
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
 "s": 10174.3,
-"x": 1649.4,
+"x": 1653.51,
 "yaw": -0.0046,
 "min": [
 -10.1,
@@ -461702,63 +460755,6 @@
 10.2
 ],
 "households": 2
-},
-{
-"id": "HF-3893",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2453.glb",
-"model": "SOL-2453",
-"s": 10231.3,
-"x": 1623.64,
-"yaw": 3.1385,
-"min": [
--9.58,
--4,
--17.45
-],
-"max": [
-9.58,
-6.04,
-17.33
-],
-"fmin": [
--9.55,
--16.13
-],
-"fmax": [
-9.55,
-17.3
-],
-"households": 2
-},
-{
-"id": "HF-3894",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-2606.glb",
-"model": "HF-2606",
-"s": 10231.2,
-"x": 1642.8,
-"yaw": -3.1386,
-"min": [
--11.08,
--4,
--17.5
-],
-"max": [
-11.4,
-9.09,
-17.7
-],
-"fmin": [
--11.05,
--15.92
-],
-"fmax": [
-11.4,
-17.7
-]
 },
 {
 "id": "HF-3895",
@@ -461816,35 +460812,6 @@
 3.19
 ],
 "households": 12
-},
-{
-"id": "HF-3897",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-3270.glb",
-"model": "SOL-3270",
-"s": 5632.6,
-"x": 1665.1,
-"yaw": 3.1387,
-"min": [
--9.15,
--4,
--18.5
-],
-"max": [
-9.15,
-5.0,
-18.7
-],
-"fmin": [
--9.15,
--17.18
-],
-"fmax": [
-9.15,
-18.7
-],
-"households": 2
 },
 {
 "id": "HF-3898",
@@ -465627,35 +464594,6 @@
 "households": 2
 },
 {
-"id": "HF-4036",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2453.glb",
-"model": "SOL-2453",
-"s": 10261.0,
-"x": 1656.8,
-"yaw": -1.5708,
-"min": [
--9.58,
--4,
--17.45
-],
-"max": [
-9.58,
-6.04,
-17.33
-],
-"fmin": [
--9.55,
--16.13
-],
-"fmax": [
-9.55,
-17.3
-],
-"households": 2
-},
-{
 "id": "HF-4037",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -465943,8 +464881,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4941.glb",
 "model": "SOL-4941",
-"s": 10329.2,
-"x": 1658.8,
+"s": 10333.92,
+"x": 1645.68,
 "yaw": -3.1416,
 "min": [
 -18.61,
@@ -466113,8 +465051,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 5472.8,
-"x": 1714.2,
+"s": 5471.5,
+"x": 1710.95,
 "yaw": 1.5658,
 "min": [
 -10.1,
@@ -468494,8 +467432,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4627.glb",
 "model": "SOL-4627",
-"s": 10391.4,
-"x": 1740.2,
+"s": 10389.84,
+"x": 1740.02,
 "yaw": 2.2368,
 "min": [
 -12.23,
@@ -468522,8 +467460,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1888.glb",
 "model": "HF-1888",
-"s": 10369.9,
-"x": 1749.1,
+"s": 10369.67,
+"x": 1749.28,
 "yaw": 2.2334,
 "min": [
 -11,
@@ -469425,8 +468363,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2003.glb",
 "model": "SOL-2003",
-"s": 10422.9,
-"x": 1723.3,
+"s": 10418.68,
+"x": 1733.85,
 "yaw": 1.5735,
 "min": [
 -10.93,
@@ -470292,34 +469230,6 @@
 10.2
 ],
 "households": 2
-},
-{
-"id": "HF-4217",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-2409.glb",
-"model": "HF-2409",
-"s": 5421.5,
-"x": 1743.5,
-"yaw": -1.5708,
-"min": [
--11.78,
--4,
--15
-],
-"max": [
-11.78,
-9.39,
-14.88
-],
-"fmin": [
--11.75,
--13.96
-],
-"fmax": [
-11.75,
-14.85
-]
 },
 {
 "id": "HF-4218",
@@ -471734,62 +470644,6 @@
 ]
 },
 {
-"id": "HF-4268",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4336.glb",
-"model": "SOL-4336",
-"s": 10455.9,
-"x": 1721.6,
-"yaw": 1.5708,
-"min": [
--12.45,
--4,
--16.85
-],
-"max": [
-12.45,
-5.96,
-17.05
-],
-"fmin": [
--12.45,
--15.53
-],
-"fmax": [
-12.45,
-17.05
-]
-},
-{
-"id": "HF-4269",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4336.glb",
-"model": "SOL-4336",
-"s": 10478.9,
-"x": 1721.9,
-"yaw": 1.5675,
-"min": [
--12.45,
--4,
--16.85
-],
-"max": [
-12.45,
-5.96,
-17.05
-],
-"fmin": [
--12.45,
--15.53
-],
-"fmax": [
-12.45,
-17.05
-]
-},
-{
 "id": "HF-4270",
 "kind": "townhouse",
 "settlement": "Harrow Falls",
@@ -472995,34 +471849,6 @@
 "fmax": [
 11.65,
 18.05
-]
-},
-{
-"id": "HF-4321",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4627.glb",
-"model": "SOL-4627",
-"s": 5271.57,
-"x": 1805.53,
-"yaw": 1.5741,
-"min": [
--12.23,
--4,
--16.75
-],
-"max": [
-12.23,
-5.89,
-16.63
-],
-"fmin": [
--12.2,
--15.43
-],
-"fmax": [
-12.2,
-16.6
 ]
 },
 {
@@ -477371,8 +476197,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3346.glb",
 "model": "SOL-3346",
-"s": 10480.48,
-"x": 2247.71,
+"s": 10480.74,
+"x": 2247.27,
 "yaw": 1.0299,
 "min": [
 -16.3,
@@ -482839,8 +481665,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5485.glb",
 "model": "SOL-5485",
-"s": 4372.97,
-"x": 1957.02,
+"s": 4373.14,
+"x": 1957.61,
 "yaw": -1.2338,
 "min": [
 -14.6,
@@ -484811,8 +483637,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4681.glb",
 "model": "SOL-4681",
-"s": 10561.7,
-"x": 1741.1,
+"s": 10563.41,
+"x": 1743.4,
 "yaw": -0.9303,
 "min": [
 -11.95,
@@ -484839,8 +483665,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 10536.2,
-"x": 1746.9,
+"s": 10539.96,
+"x": 1730.93,
 "yaw": -1.0326,
 "min": [
 -10.88,
@@ -484867,8 +483693,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4051.glb",
 "model": "SOL-4051",
-"s": 10517.6,
-"x": 1758.8,
+"s": 10514.22,
+"x": 1770.5,
 "yaw": -1.087,
 "min": [
 -9.1,
@@ -484891,41 +483717,13 @@
 "households": 2
 },
 {
-"id": "HF-4860",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-1292.glb",
-"model": "HF-1292",
-"s": 10500.9,
-"x": 1769.5,
-"yaw": -1.0893,
-"min": [
--9.88,
--4,
--13.8
-],
-"max": [
-9.88,
-8.71,
-13.68
-],
-"fmin": [
--9.85,
--12.76
-],
-"fmax": [
-9.85,
-13.65
-]
-},
-{
 "id": "HF-4861",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2456.glb",
 "model": "SOL-2456",
-"s": 10477.6,
-"x": 1778.3,
+"s": 10476.21,
+"x": 1779.01,
 "yaw": -1.1029,
 "min": [
 -12.5,
@@ -488624,8 +487422,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 7976.71,
-"x": 2507.4,
+"s": 7976.76,
+"x": 2506.35,
 "yaw": 1.6737,
 "min": [
 -10.88,
@@ -489416,8 +488214,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-2551.glb",
 "model": "HF-2551",
-"s": 6081.41,
-"x": 2170.58,
+"s": 6081.34,
+"x": 2170.53,
 "yaw": 1.3015,
 "min": [
 -12.03,
@@ -490912,8 +489710,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1782.glb",
 "model": "HF-1782",
-"s": 4873.55,
-"x": 1318.35,
+"s": 4873.38,
+"x": 1317.11,
 "yaw": 1.6866,
 "min": [
 -11.93,
@@ -491530,34 +490328,6 @@
 ]
 },
 {
-"id": "HF-5100",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4346.glb",
-"model": "SOL-4346",
-"s": 4759.0,
-"x": 774.8,
-"yaw": -0.3377,
-"min": [
--11.65,
--4,
--17.85
-],
-"max": [
-11.65,
-6.19,
-18.05
-],
-"fmin": [
--11.65,
--16.53
-],
-"fmax": [
-11.65,
-18.05
-]
-},
-{
 "id": "HF-5101",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -491931,34 +490701,6 @@
 "s": 4828.07,
 "x": 564.89,
 "yaw": -0.7221,
-"min": [
--12.7,
--4,
--16.9
-],
-"max": [
-12.7,
-6.63,
-17.1
-],
-"fmin": [
--12.7,
--15.86
-],
-"fmax": [
-12.7,
-17.1
-]
-},
-{
-"id": "HF-5115",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-2134.glb",
-"model": "HF-2134",
-"s": 4889.9,
-"x": 513.17,
-"yaw": -0.6272,
 "min": [
 -12.7,
 -4,
@@ -493255,8 +491997,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 10936.0,
-"x": 685.32,
+"s": 10936.65,
+"x": 685.49,
 "yaw": -2.7371,
 "min": [
 -10.88,
@@ -493368,8 +492110,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4651.glb",
 "model": "SOL-4651",
-"s": 10940.79,
-"x": 708.85,
+"s": 10940.95,
+"x": 709.23,
 "yaw": -1.5065,
 "min": [
 -11.43,
@@ -494187,8 +492929,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 10712.7,
-"x": 1787.6,
+"s": 10708.22,
+"x": 1786.3,
 "yaw": 2.0844,
 "min": [
 -10.1,
@@ -494216,8 +492958,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-2019.glb",
 "model": "HF-2019",
-"s": 10659.7,
-"x": 1827.0,
+"s": 10658.49,
+"x": 1832.29,
 "yaw": 2.1779,
 "min": [
 -11.83,
@@ -494244,8 +492986,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4350.glb",
 "model": "SOL-4350",
-"s": 10637.41,
-"x": 1833.19,
+"s": 10635.98,
+"x": 1834.18,
 "yaw": 2.2611,
 "min": [
 -8.98,
@@ -494444,8 +493186,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-1855.glb",
 "model": "SOL-1855",
-"s": 10736.79,
-"x": 1798.82,
+"s": 10731.53,
+"x": 1791.73,
 "yaw": 1.2832,
 "min": [
 -11.23,
@@ -495067,8 +493809,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1888.glb",
 "model": "HF-1888",
-"s": 9879.8,
-"x": 2236.3,
+"s": 9880.15,
+"x": 2236.33,
 "yaw": 2.052,
 "min": [
 -11,
@@ -495095,8 +493837,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-1990.glb",
 "model": "HF-1990",
-"s": 9823.75,
-"x": 2274.54,
+"s": 9822.29,
+"x": 2276.21,
 "yaw": 2.0993,
 "min": [
 -12.18,
@@ -500126,34 +498868,6 @@
 ]
 },
 {
-"id": "HF-5418",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4341.glb",
-"model": "SOL-4341",
-"s": 5225.82,
-"x": 1856.59,
-"yaw": 0.8522,
-"min": [
--12.23,
--4,
--17.65
-],
-"max": [
-12.23,
-5.8,
-17.53
-],
-"fmin": [
--12.2,
--16.07
-],
-"fmax": [
-12.2,
-17.5
-]
-},
-{
 "id": "HF-5419",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -502190,34 +500904,6 @@
 ]
 },
 {
-"id": "HF-5495",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-2702.glb",
-"model": "HF-2702",
-"s": 4962.29,
-"x": 274.51,
-"yaw": -0.5638,
-"min": [
--11.33,
--4,
--16.75
-],
-"max": [
-11.33,
-5.58,
-16.63
-],
-"fmin": [
--11.3,
--15.71
-],
-"fmax": [
-11.3,
-16.6
-]
-},
-{
 "id": "HF-5496",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -503100,8 +501786,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 11065.5,
-"x": 703.2,
+"s": 11066.91,
+"x": 701.56,
 "yaw": 3.0987,
 "min": [
 -10.88,
@@ -503128,8 +501814,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 11056.93,
-"x": 759.77,
+"s": 11061.57,
+"x": 766.04,
 "yaw": 3.0122,
 "min": [
 -10.88,
@@ -503213,7 +501899,7 @@
 "glb": "res://remake/buildings/SOL-4000.glb",
 "model": "SOL-4000",
 "s": 11200.53,
-"x": 1043.54,
+"x": 1043.52,
 "yaw": 0.1526,
 "min": [
 -17.95,
@@ -504003,8 +502689,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4937.glb",
 "model": "SOL-4937",
-"s": 10765.9,
-"x": 1803.4,
+"s": 10773.4,
+"x": 1803.04,
 "yaw": -0.6354,
 "min": [
 -14.5,
@@ -504026,41 +502712,13 @@
 ]
 },
 {
-"id": "HF-5563",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/HF-5563.glb",
-"model": "HF-5563",
-"s": 10744.11,
-"x": 1831.08,
-"yaw": -0.7101,
-"min": [
--16.95,
--4,
--11.3
-],
-"max": [
-16.95,
-10.92,
-11.5
-],
-"fmin": [
--16.95,
--10.26
-],
-"fmax": [
-16.95,
-11.5
-]
-},
-{
 "id": "HF-5564",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3241.glb",
 "model": "SOL-3241",
-"s": 10715.6,
-"x": 1848.7,
+"s": 10712.5,
+"x": 1859.45,
 "yaw": -0.895,
 "min": [
 -15.9,
@@ -504080,35 +502738,6 @@
 15.9,
 17.05
 ]
-},
-{
-"id": "HF-5565",
-"kind": "condo",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-8565.glb",
-"model": "SOL-8565",
-"s": 10681.6,
-"x": 1879.3,
-"yaw": -1.0596,
-"min": [
--26.26,
--4,
--13.7
-],
-"max": [
-26.26,
-10.41,
-7.36
-],
-"fmin": [
--26.26,
--11.5
-],
-"fmax": [
-26.26,
-7.34
-],
-"households": 12
 },
 {
 "id": "HF-5566",
@@ -504285,8 +502914,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3473.glb",
 "model": "SOL-3473",
-"s": 10503.52,
-"x": 1964.83,
+"s": 10503.09,
+"x": 1965.87,
 "yaw": -0.9883,
 "min": [
 -18.2,
@@ -504313,8 +502942,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5469.glb",
 "model": "SOL-5469",
-"s": 10448.09,
-"x": 2023.35,
+"s": 10448.96,
+"x": 2021.82,
 "yaw": -0.8026,
 "min": [
 -16.25,
@@ -504878,8 +503507,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4924.glb",
 "model": "SOL-4924",
-"s": 9868.46,
-"x": 2309.37,
+"s": 9869.18,
+"x": 2309.22,
 "yaw": -1.3711,
 "min": [
 -18.65,
@@ -504906,8 +503535,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3128.glb",
 "model": "SOL-3128",
-"s": 9834.58,
-"x": 2306.69,
+"s": 9835.82,
+"x": 2307.78,
 "yaw": -1.3518,
 "min": [
 -15.4,
@@ -508171,8 +506800,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4004.glb",
 "model": "SOL-4004",
-"s": 5376.29,
-"x": 2077.4,
+"s": 5376.0,
+"x": 2079.43,
 "yaw": 1.9862,
 "min": [
 -15.9,
@@ -508222,34 +506851,6 @@
 ]
 },
 {
-"id": "HF-5727",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-3473.glb",
-"model": "SOL-3473",
-"s": 5173.0,
-"x": 1873.7,
-"yaw": -2.4434,
-"min": [
--18.2,
--4,
--18.95
-],
-"max": [
-18.2,
-8.34,
-19.15
-],
-"fmin": [
--18.2,
--17.91
-],
-"fmax": [
-18.2,
-19.15
-]
-},
-{
 "id": "HF-5728",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -508283,8 +506884,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4963.glb",
 "model": "SOL-4963",
-"s": 5113.91,
-"x": 1833.13,
+"s": 5114.26,
+"x": 1834.24,
 "yaw": -2.1993,
 "min": [
 -16.1,
@@ -508339,8 +506940,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4000.glb",
 "model": "SOL-4000",
-"s": 5118.4,
-"x": 1919.5,
+"s": 5118.59,
+"x": 1919.89,
 "yaw": 0.6995,
 "min": [
 -17.95,
@@ -508388,35 +506989,6 @@
 14.5,
 11.75
 ]
-},
-{
-"id": "HF-5733",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2224.glb",
-"model": "SOL-2224",
-"s": 5098.8,
-"x": 1896.3,
-"yaw": 1.8941,
-"min": [
--8.5,
--4,
--10
-],
-"max": [
-8.18,
-5.48,
-10.2
-],
-"fmin": [
--8.5,
--8.96
-],
-"fmax": [
-8.15,
-10.2
-],
-"households": 2
 },
 {
 "id": "HF-5734",
@@ -509552,8 +508124,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5531.glb",
 "model": "SOL-5531",
-"s": 11107.2,
-"x": 494.8,
+"s": 11108.46,
+"x": 492.03,
 "yaw": -2.5513,
 "min": [
 -15.45,
@@ -511023,8 +509595,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3530.glb",
 "model": "SOL-3530",
-"s": 10926.0,
-"x": 1894.3,
+"s": 10926.88,
+"x": 1892.21,
 "yaw": 2.1246,
 "min": [
 -15.2,
@@ -511046,41 +509618,13 @@
 ]
 },
 {
-"id": "HF-5835",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-3089.glb",
-"model": "SOL-3089",
-"s": 10896.2,
-"x": 1909.2,
-"yaw": 2.0463,
-"min": [
--17.2,
--4,
--17.85
-],
-"max": [
-17.2,
-7.74,
-18.05
-],
-"fmin": [
--17.2,
--16.81
-],
-"fmax": [
-17.2,
-18.05
-]
-},
-{
 "id": "HF-5836",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4029.glb",
 "model": "SOL-4029",
-"s": 10864.1,
-"x": 1925.2,
+"s": 10863.15,
+"x": 1927.46,
 "yaw": 2.0163,
 "min": [
 -18.75,
@@ -511615,8 +510159,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2453.glb",
 "model": "SOL-2453",
-"s": 10383.3,
-"x": 2265.4,
+"s": 10382.36,
+"x": 2267.16,
 "yaw": 2.1771,
 "min": [
 -9.58,
@@ -512181,8 +510725,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3853.glb",
 "model": "SOL-3853",
-"s": 9933.39,
-"x": 2468.16,
+"s": 9933.51,
+"x": 2468.0,
 "yaw": 1.9536,
 "min": [
 -17.7,
@@ -517009,8 +515553,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4963.glb",
 "model": "SOL-4963",
-"s": 11607.37,
-"x": 1027.86,
+"s": 11608.07,
+"x": 1027.91,
 "yaw": -2.9673,
 "min": [
 -16.1,
@@ -517517,8 +516061,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3708.glb",
 "model": "SOL-3708",
-"s": 11395.65,
-"x": 1555.5,
+"s": 11396.35,
+"x": 1554.94,
 "yaw": 2.8326,
 "min": [
 -15.5,
@@ -518023,8 +516567,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-6106.glb",
 "model": "HF-6106",
-"s": 10927.58,
-"x": 1949.09,
+"s": 10926.72,
+"x": 1951.15,
 "yaw": -0.8196,
 "min": [
 -14.65,
@@ -518051,8 +516595,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3765.glb",
 "model": "SOL-3765",
-"s": 10909.38,
-"x": 1973.02,
+"s": 10908.09,
+"x": 1974.43,
 "yaw": -0.7413,
 "min": [
 -15.5,
@@ -518249,8 +516793,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5224.glb",
 "model": "SOL-5224",
-"s": 10891.0,
-"x": 2104.21,
+"s": 10890.97,
+"x": 2104.29,
 "yaw": 1.211,
 "min": [
 -18.75,
@@ -518333,8 +516877,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5531.glb",
 "model": "SOL-5531",
-"s": 10462.52,
-"x": 2280.19,
+"s": 10463.78,
+"x": 2280.17,
 "yaw": -1.2616,
 "min": [
 -15.45,
@@ -518361,8 +516905,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5224.glb",
 "model": "SOL-5224",
-"s": 10430.23,
-"x": 2286.61,
+"s": 10431.59,
+"x": 2286.21,
 "yaw": -1.283,
 "min": [
 -18.75,
@@ -518389,8 +516933,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4985.glb",
 "model": "SOL-4985",
-"s": 10397.72,
-"x": 2291.51,
+"s": 10399.29,
+"x": 2292.44,
 "yaw": -1.2733,
 "min": [
 -15.55,
@@ -519351,8 +517895,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5479.glb",
 "model": "SOL-5479",
-"s": 9078.74,
-"x": 2719.22,
+"s": 9078.8,
+"x": 2719.21,
 "yaw": 1.6774,
 "min": [
 -18.25,
@@ -520142,8 +518686,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3128.glb",
 "model": "SOL-3128",
-"s": 8056.52,
-"x": 2808.7,
+"s": 8058.89,
+"x": 2808.52,
 "yaw": 1.5933,
 "min": [
 -15.4,
@@ -520764,8 +519308,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4051.glb",
 "model": "SOL-4051",
-"s": 6934.51,
-"x": 2690.95,
+"s": 6933.45,
+"x": 2690.4,
 "yaw": -1.779,
 "min": [
 -9.1,
@@ -522366,8 +520910,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3473.glb",
 "model": "SOL-3473",
-"s": 4957.3,
-"x": 2010.2,
+"s": 4966.5,
+"x": 2014.57,
 "yaw": -2.0591,
 "min": [
 -18.2,
@@ -522394,8 +520938,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3834.glb",
 "model": "SOL-3834",
-"s": 4924.5,
-"x": 1994.5,
+"s": 4932.0,
+"x": 2012.56,
 "yaw": -2.0149,
 "min": [
 -14.75,
@@ -522422,8 +520966,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3473.glb",
 "model": "SOL-3473",
-"s": 4895.6,
-"x": 1981.0,
+"s": 4893.88,
+"x": 1965.27,
 "yaw": -2.0023,
 "min": [
 -18.2,
@@ -522450,8 +520994,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3346.glb",
 "model": "SOL-3346",
-"s": 4864.5,
-"x": 1965.4,
+"s": 4858.36,
+"x": 1962.87,
 "yaw": -2.0344,
 "min": [
 -16.3,
@@ -522478,8 +521022,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5224.glb",
 "model": "SOL-5224",
-"s": 4829.0,
-"x": 1956.8,
+"s": 4823.4,
+"x": 1954.85,
 "yaw": -2.1686,
 "min": [
 -18.75,
@@ -522501,42 +521045,13 @@
 ]
 },
 {
-"id": "HF-6273",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2453.glb",
-"model": "SOL-2453",
-"s": 4812.6,
-"x": 1932.2,
-"yaw": -2.3464,
-"min": [
--9.58,
--4,
--17.45
-],
-"max": [
-9.58,
-6.04,
-17.33
-],
-"fmin": [
--9.55,
--16.13
-],
-"fmax": [
-9.55,
-17.3
-],
-"households": 2
-},
-{
 "id": "HF-6274",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5234.glb",
 "model": "SOL-5234",
-"s": 4790.5,
-"x": 1918.9,
+"s": 4790.14,
+"x": 1918.55,
 "yaw": -2.4493,
 "min": [
 -15.6,
@@ -522583,34 +521098,6 @@
 "fmax": [
 17.05,
 17.3
-]
-},
-{
-"id": "HF-6276",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-5213.glb",
-"model": "SOL-5213",
-"s": 4841.0,
-"x": 2020.99,
-"yaw": 1.1051,
-"min": [
--14.75,
--4,
--10.65
-],
-"max": [
-14.75,
-7.87,
-10.85
-],
-"fmin": [
--14.75,
--9.61
-],
-"fmax": [
-14.75,
-10.85
 ]
 },
 {
@@ -522956,8 +521443,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4324.glb",
 "model": "SOL-4324",
-"s": 4226.86,
-"x": 905.96,
+"s": 4231.88,
+"x": 902.95,
 "yaw": 2.8006,
 "min": [
 -8.63,
@@ -524514,8 +523001,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2775.glb",
 "model": "SOL-2775",
-"s": 11671.21,
-"x": 1286.48,
+"s": 11672.69,
+"x": 1285.88,
 "yaw": 2.796,
 "min": [
 -9.85,
@@ -524543,8 +523030,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-3901.glb",
 "model": "SOL-3901",
-"s": 11635.9,
-"x": 1346.1,
+"s": 11636.25,
+"x": 1347.87,
 "yaw": 2.4563,
 "min": [
 -9.7,
@@ -525555,8 +524042,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6168.glb",
 "model": "SOL-6168",
-"s": 11111.9,
-"x": 2013.3,
+"s": 11107.1,
+"x": 2023.82,
 "yaw": -0.8953,
 "min": [
 -12.45,
@@ -525583,8 +524070,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-7338.glb",
 "model": "SOL-7338",
-"s": 11092.8,
-"x": 2028.3,
+"s": 11088.95,
+"x": 2033.86,
 "yaw": -0.9925,
 "min": [
 -12.8,
@@ -525611,8 +524098,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4627.glb",
 "model": "SOL-4627",
-"s": 11069.33,
-"x": 2027.43,
+"s": 11068.27,
+"x": 2025.81,
 "yaw": -1.0602,
 "min": [
 -12.23,
@@ -532409,8 +530896,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5730.glb",
 "model": "SOL-5730",
-"s": 4728.1,
-"x": 2080.4,
+"s": 4737.09,
+"x": 2098.38,
 "yaw": 1.1276,
 "min": [
 -11.15,
@@ -532493,8 +530980,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 4600.22,
-"x": 1986.74,
+"s": 4599.51,
+"x": 1984.56,
 "yaw": 0.7081,
 "min": [
 -10.1,
@@ -536940,8 +535427,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6804.glb",
 "model": "SOL-6804",
-"s": 11273.7,
-"x": 2015.4,
+"s": 11274.57,
+"x": 2014.98,
 "yaw": -1.0814,
 "min": [
 -11.8,
@@ -536968,8 +535455,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5217.glb",
 "model": "SOL-5217",
-"s": 11252.6,
-"x": 2026.7,
+"s": 11256.03,
+"x": 2021.58,
 "yaw": -1.1205,
 "min": [
 -14.25,
@@ -536996,8 +535483,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4318.glb",
 "model": "SOL-4318",
-"s": 11233.3,
-"x": 2038.1,
+"s": 11233.96,
+"x": 2032.29,
 "yaw": -1.1071,
 "min": [
 -9.03,
@@ -537018,34 +535505,6 @@
 13
 ],
 "households": 2
-},
-{
-"id": "HF-6803",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-6437.glb",
-"model": "SOL-6437",
-"s": 11216.1,
-"x": 2049.63,
-"yaw": -1.1005,
-"min": [
--12.94,
--4,
--10
-],
-"max": [
-12.94,
-5.19,
-9.9
-],
-"fmin": [
--10.46,
--8.68
-],
-"fmax": [
-10.11,
-2.72
-]
 },
 {
 "id": "HF-6805",
@@ -546381,8 +544840,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4627.glb",
 "model": "SOL-4627",
-"s": 4008.63,
-"x": 384.11,
+"s": 4008.35,
+"x": 382.37,
 "yaw": -0.7431,
 "min": [
 -12.23,
@@ -549173,8 +547632,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-7769.glb",
 "model": "SOL-7769",
-"s": 11343.3,
-"x": 2080.4,
+"s": 11343.35,
+"x": 2080.26,
 "yaw": -0.7335,
 "min": [
 -12.24,
@@ -549342,8 +547801,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5217.glb",
 "model": "SOL-5217",
-"s": 11383.4,
-"x": 2116.5,
+"s": 11377.75,
+"x": 2135.22,
 "yaw": 2.4083,
 "min": [
 -14.25,
@@ -549370,8 +547829,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-7723.glb",
 "model": "SOL-7723",
-"s": 11364.2,
-"x": 2136.3,
+"s": 11362.82,
+"x": 2135.15,
 "yaw": 2.4473,
 "min": [
 -13.3,
@@ -557027,8 +555486,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-7769.glb",
 "model": "SOL-7769",
-"s": 4589.8,
-"x": 2136.0,
+"s": 4586.08,
+"x": 2127.92,
 "yaw": -2.0924,
 "min": [
 -12.24,
@@ -557272,35 +555731,6 @@
 9.7,
 -1.64
 ]
-},
-{
-"id": "HF-7543",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2193.glb",
-"model": "SOL-2193",
-"s": 4562.41,
-"x": 2170.47,
-"yaw": 1.0474,
-"min": [
--10.1,
--4,
--10
-],
-"max": [
-10.1,
-5.63,
-10.2
-],
-"fmin": [
--10.1,
--8.68
-],
-"fmax": [
-10.1,
-10.2
-],
-"households": 2
 },
 {
 "id": "HF-7544",
@@ -562097,8 +560527,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5730.glb",
 "model": "SOL-5730",
-"s": 11452.6,
-"x": 2128.7,
+"s": 11456.0,
+"x": 2119.24,
 "yaw": -1.0133,
 "min": [
 -11.15,
@@ -562125,8 +560555,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5822.glb",
 "model": "SOL-5822",
-"s": 11646.15,
-"x": 2027.08,
+"s": 11646.09,
+"x": 2029.06,
 "yaw": 2.1373,
 "min": [
 -11.8,
@@ -562176,41 +560606,13 @@
 ]
 },
 {
-"id": "HF-7720",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-5730.glb",
-"model": "SOL-5730",
-"s": 11528.1,
-"x": 2147.1,
-"yaw": 2.2964,
-"min": [
--11.15,
--4,
--14.25
-],
-"max": [
-11.15,
-9.13,
-14.15
-],
-"fmin": [
--8.9,
--13.21
-],
-"fmax": [
-8.28,
--2.69
-]
-},
-{
 "id": "HF-7721",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4318.glb",
 "model": "SOL-4318",
-"s": 11509.8,
-"x": 2159.2,
+"s": 11518.01,
+"x": 2141.61,
 "yaw": 2.2531,
 "min": [
 -9.03,
@@ -562238,8 +560640,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6190.glb",
 "model": "SOL-6190",
-"s": 11491.5,
-"x": 2174.6,
+"s": 11491.43,
+"x": 2174.79,
 "yaw": 2.1276,
 "min": [
 -12.19,
@@ -565929,8 +564331,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5735.glb",
 "model": "SOL-5735",
-"s": 8370.93,
-"x": 3107.33,
+"s": 8373.56,
+"x": 3107.4,
 "yaw": 1.59,
 "min": [
 -13.3,
@@ -565950,35 +564352,6 @@
 9.04,
 -3.24
 ]
-},
-{
-"id": "HF-7856",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4324.glb",
-"model": "SOL-4324",
-"s": 8354.22,
-"x": 3097.31,
-"yaw": 1.543,
-"min": [
--8.63,
--4,
--12.15
-],
-"max": [
-8.63,
-5.28,
-12.03
-],
-"fmin": [
--8.6,
--10.83
-],
-"fmax": [
-8.6,
-12
-],
-"households": 2
 },
 {
 "id": "HF-7857",
@@ -570212,34 +568585,6 @@
 "households": 12
 },
 {
-"id": "HF-8009",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4341.glb",
-"model": "SOL-4341",
-"s": 4521.72,
-"x": 2183.77,
-"yaw": -2.2967,
-"min": [
--12.23,
--4,
--17.65
-],
-"max": [
-12.23,
-5.8,
-17.53
-],
-"fmin": [
--12.2,
--16.07
-],
-"fmax": [
-12.2,
-17.5
-]
-},
-{
 "id": "HF-8010",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -570464,34 +568809,6 @@
 ]
 },
 {
-"id": "HF-8018",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-6437.glb",
-"model": "SOL-6437",
-"s": 4459.1,
-"x": 2209.7,
-"yaw": 1.051,
-"min": [
--12.94,
--4,
--10
-],
-"max": [
-12.94,
-5.19,
-9.9
-],
-"fmin": [
--10.46,
--8.68
-],
-"fmax": [
-10.11,
-2.72
-]
-},
-{
 "id": "HF-8020",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -570545,34 +568862,6 @@
 "fmax": [
 8.53,
 2.97
-]
-},
-{
-"id": "HF-8022",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2088.glb",
-"model": "SOL-2088",
-"s": 4431.0,
-"x": 2216.4,
-"yaw": 1.9155,
-"min": [
--11.98,
--4,
--15.6
-],
-"max": [
-11.98,
-6.04,
-15.48
-],
-"fmin": [
--11.95,
--14.28
-],
-"fmax": [
-11.95,
-15.45
 ]
 },
 {
@@ -575536,8 +573825,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4318.glb",
 "model": "SOL-4318",
-"s": 11623.6,
-"x": 2178.5,
+"s": 11624.13,
+"x": 2176.86,
 "yaw": 2.0526,
 "min": [
 -9.03,
@@ -575565,8 +573854,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6539.glb",
 "model": "SOL-6539",
-"s": 11604.6,
-"x": 2191.5,
+"s": 11607.47,
+"x": 2183.07,
 "yaw": 2.0523,
 "min": [
 -11.4,
@@ -580664,8 +578953,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 7111.57,
-"x": 3132.88,
+"s": 7112.93,
+"x": 3133.36,
 "yaw": 1.5954,
 "min": [
 -10.1,
@@ -584103,8 +582392,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6437.glb",
 "model": "SOL-6437",
-"s": 4364.0,
-"x": 2239.7,
+"s": 4359.35,
+"x": 2229.13,
 "yaw": -2.2189,
 "min": [
 -12.94,
@@ -584131,8 +582420,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6119.glb",
 "model": "SOL-6119",
-"s": 4348.1,
-"x": 2219.1,
+"s": 4346.25,
+"x": 2217.7,
 "yaw": -2.3346,
 "min": [
 -12.49,
@@ -587717,8 +586006,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2453.glb",
 "model": "SOL-2453",
-"s": 11697.2,
-"x": 2193.3,
+"s": 11700.41,
+"x": 2190.64,
 "yaw": -0.8792,
 "min": [
 -9.58,
@@ -587746,8 +586035,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6034.glb",
 "model": "SOL-6034",
-"s": 11679.4,
-"x": 2208.9,
+"s": 11682.9,
+"x": 2197.22,
 "yaw": -0.7854,
 "min": [
 -12.1,
@@ -587774,8 +586063,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 11662.8,
-"x": 2226.7,
+"s": 11660.99,
+"x": 2232.75,
 "yaw": -0.7376,
 "min": [
 -10.88,
@@ -588047,34 +586336,6 @@
 "fmax": [
 9.55,
 -3.58
-]
-},
-{
-"id": "HF-8652",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2088.glb",
-"model": "SOL-2088",
-"s": 11732.8,
-"x": 2242.1,
-"yaw": 2.2707,
-"min": [
--11.98,
--4,
--15.6
-],
-"max": [
-11.98,
-6.04,
-15.48
-],
-"fmin": [
--11.95,
--14.28
-],
-"fmax": [
-11.95,
-15.45
 ]
 },
 {
@@ -588647,8 +586908,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-7723.glb",
 "model": "SOL-7723",
-"s": 11306.25,
-"x": 2561.4,
+"s": 11306.02,
+"x": 2561.88,
 "yaw": 2.1125,
 "min": [
 -13.3,
@@ -596233,8 +594494,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6437.glb",
 "model": "SOL-6437",
-"s": 4228.2,
-"x": 2298.9,
+"s": 4222.89,
+"x": 2284.92,
 "yaw": -2.1158,
 "min": [
 -12.94,
@@ -598207,8 +596468,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-7265.glb",
 "model": "SOL-7265",
-"s": 11868.4,
-"x": 2250.8,
+"s": 11868.85,
+"x": 2248.92,
 "yaw": -0.7273,
 "min": [
 -12.99,
@@ -598235,8 +596496,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 11854.7,
-"x": 2270.4,
+"s": 11846.96,
+"x": 2282.34,
 "yaw": -0.8524,
 "min": [
 -10.1,
@@ -598264,8 +596525,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4318.glb",
 "model": "SOL-4318",
-"s": 11832.6,
-"x": 2278.0,
+"s": 11825.92,
+"x": 2284.12,
 "yaw": -0.9881,
 "min": [
 -9.03,
@@ -598547,8 +596808,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6195.glb",
 "model": "SOL-6195",
-"s": 11893.8,
-"x": 2292.4,
+"s": 11893.78,
+"x": 2292.47,
 "yaw": 2.2751,
 "min": [
 -13.24,
@@ -606551,8 +604812,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5217.glb",
 "model": "SOL-5217",
-"s": 4754.73,
-"x": 2723.97,
+"s": 4754.51,
+"x": 2723.75,
 "yaw": 1.0231,
 "min": [
 -14.25,
@@ -607397,41 +605658,13 @@
 "households": 12
 },
 {
-"id": "HF-9353",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-8749.glb",
-"model": "SOL-8749",
-"s": 4102.0,
-"x": 2357.1,
-"yaw": -2.0297,
-"min": [
--12.85,
--4,
--15.8
-],
-"max": [
-12.89,
-7.66,
-15.69
-],
-"fmin": [
--6.3,
--14.76
-],
-"fmax": [
-6.85,
--0.58
-]
-},
-{
 "id": "HF-9354",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-8209.glb",
 "model": "SOL-8209",
-"s": 4079.2,
-"x": 2344.9,
+"s": 4076.91,
+"x": 2338.16,
 "yaw": -2.0693,
 "min": [
 -12.55,
@@ -607627,8 +605860,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6150.glb",
 "model": "SOL-6150",
-"s": 4041.0,
-"x": 2382.1,
+"s": 4043.24,
+"x": 2388.7,
 "yaw": 1.0312,
 "min": [
 -11.85,
@@ -607795,8 +606028,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6437.glb",
 "model": "SOL-6437",
-"s": 4014.8,
-"x": 2388.9,
+"s": 4016.34,
+"x": 2394.05,
 "yaw": 1.9277,
 "min": [
 -12.94,
@@ -608389,8 +606622,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6925.glb",
 "model": "SOL-6925",
-"s": 12007.0,
-"x": 2279.4,
+"s": 12007.69,
+"x": 2275.55,
 "yaw": -1.128,
 "min": [
 -12.19,
@@ -608690,34 +606923,6 @@
 "fmax": [
 9.39,
 0.42
-]
-},
-{
-"id": "HF-9402",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-2280.glb",
-"model": "SOL-2280",
-"s": 12114.8,
-"x": 2311.0,
-"yaw": 1.2608,
-"min": [
--10.88,
--4,
--15.5
-],
-"max": [
-10.88,
-5.8,
-15.38
-],
-"fmin": [
--10.85,
--14.18
-],
-"fmax": [
-10.85,
-15.35
 ]
 },
 {
@@ -617349,8 +615554,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 4147.45,
-"x": 2547.31,
+"s": 4147.69,
+"x": 2547.83,
 "yaw": 0.796,
 "min": [
 -10.1,
@@ -617518,8 +615723,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-7265.glb",
 "model": "SOL-7265",
-"s": 3953.0,
-"x": 2385.4,
+"s": 3950.91,
+"x": 2378.44,
 "yaw": -2.0142,
 "min": [
 -12.99,
@@ -617546,8 +615751,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 3932.77,
-"x": 2377.89,
+"s": 3932.05,
+"x": 2377.62,
 "yaw": -2.0985,
 "min": [
 -10.1,
@@ -617575,8 +615780,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2136.glb",
 "model": "SOL-2136",
-"s": 3916.24,
-"x": 2371.12,
+"s": 3915.58,
+"x": 2370.73,
 "yaw": -2.1719,
 "min": [
 -8.43,
@@ -617716,8 +615921,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 3906.3,
-"x": 2426.0,
+"s": 3908.57,
+"x": 2434.74,
 "yaw": 1.0456,
 "min": [
 -10.88,
@@ -617828,8 +616033,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 3879.0,
-"x": 2421.2,
+"s": 3880.43,
+"x": 2434.11,
 "yaw": 1.9226,
 "min": [
 -10.1,
@@ -618223,8 +616428,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6034.glb",
 "model": "SOL-6034",
-"s": 12202.8,
-"x": 2325.8,
+"s": 12200.9,
+"x": 2344.78,
 "yaw": 2.1163,
 "min": [
 -12.1,
@@ -627775,41 +625980,13 @@
 ]
 },
 {
-"id": "HF-10089",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-7338.glb",
-"model": "SOL-7338",
-"s": 3886.41,
-"x": 2444.92,
-"yaw": -1.9857,
-"min": [
--12.8,
--4,
--10.75
-],
-"max": [
-12.8,
-10.06,
-10.65
-],
-"fmin": [
--9.2,
--9.71
-],
-"fmax": [
-8.59,
-3.47
-]
-},
-{
 "id": "HF-10090",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6161.glb",
 "model": "SOL-6161",
-"s": 3856.4,
-"x": 2434.0,
+"s": 3857.31,
+"x": 2437.79,
 "yaw": -2.0236,
 "min": [
 -10.99,
@@ -628117,8 +626294,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4051.glb",
 "model": "SOL-4051",
-"s": 3756.3,
-"x": 2430.5,
+"s": 3755.21,
+"x": 2425.05,
 "yaw": 0.9303,
 "min": [
 -9.1,
@@ -628141,42 +626318,13 @@
 "households": 2
 },
 {
-"id": "HF-10102",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4324.glb",
-"model": "SOL-4324",
-"s": 12277.0,
-"x": 2322.3,
-"yaw": -0.6812,
-"min": [
--8.63,
--4,
--12.15
-],
-"max": [
-8.63,
-5.28,
-12.03
-],
-"fmin": [
--8.6,
--10.83
-],
-"fmax": [
-8.6,
-12
-],
-"households": 2
-},
-{
 "id": "HF-10103",
 "kind": "house",
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-9071.glb",
 "model": "SOL-9071",
-"s": 12262.0,
-"x": 2338.0,
+"s": 12261.94,
+"x": 2339.62,
 "yaw": -0.6673,
 "min": [
 -12.69,
@@ -630203,8 +628351,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4341.glb",
 "model": "SOL-4341",
-"s": 10814.2,
-"x": 3136.3,
+"s": 10813.3,
+"x": 3138.79,
 "yaw": 2.0318,
 "min": [
 -12.23,
@@ -631947,35 +630095,6 @@
 ]
 },
 {
-"id": "HF-10238",
-"kind": "house",
-"settlement": "Harrow Falls",
-"glb": "res://remake/buildings/SOL-4618.glb",
-"model": "SOL-4618",
-"s": 9261.97,
-"x": 3443.65,
-"yaw": -1.35,
-"min": [
--8.13,
--4,
--16.9
-],
-"max": [
-8.13,
-5.75,
-16.78
-],
-"fmin": [
--8.1,
--15.58
-],
-"fmax": [
-8.1,
-16.75
-],
-"households": 2
-},
-{
 "id": "HF-10239",
 "kind": "house",
 "settlement": "Harrow Falls",
@@ -632629,7 +630748,7 @@
 "glb": "res://remake/buildings/SOL-3855.glb",
 "model": "SOL-3855",
 "s": 8765.36,
-"x": 3536.73,
+"x": 3536.45,
 "yaw": 1.7545,
 "min": [
 -9.3,
@@ -638247,8 +636366,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4627.glb",
 "model": "SOL-4627",
-"s": 3734.6,
-"x": 2424.3,
+"s": 3732.12,
+"x": 2422.68,
 "yaw": -2.1482,
 "min": [
 -12.23,
@@ -638360,8 +636479,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2224.glb",
 "model": "SOL-2224",
-"s": 3726.98,
-"x": 2479.11,
+"s": 3729.93,
+"x": 2480.62,
 "yaw": 0.9023,
 "min": [
 -8.5,
@@ -638389,8 +636508,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 3705.1,
-"x": 2476.6,
+"s": 3707.0,
+"x": 2481.93,
 "yaw": 0.9874,
 "min": [
 -10.88,
@@ -638417,8 +636536,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-6471.glb",
 "model": "SOL-6471",
-"s": 3685.6,
-"x": 2462.8,
+"s": 3685.31,
+"x": 2482.38,
 "yaw": 1.0827,
 "min": [
 -11.99,
@@ -640931,8 +639050,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-5822.glb",
 "model": "SOL-5822",
-"s": 10673.11,
-"x": 3289.83,
+"s": 10671.65,
+"x": 3294.71,
 "yaw": 1.9897,
 "min": [
 -11.8,
@@ -641523,8 +639642,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 10132.3,
-"x": 3434.9,
+"s": 10130.01,
+"x": 3439.8,
 "yaw": 1.9154,
 "min": [
 -10.88,
@@ -642084,8 +640203,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4341.glb",
 "model": "SOL-4341",
-"s": 9473.53,
-"x": 3551.35,
+"s": 9469.35,
+"x": 3557.52,
 "yaw": 1.6595,
 "min": [
 -12.23,
@@ -642506,8 +640625,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/SOL-4627.glb",
 "model": "SOL-4627",
-"s": 9015.0,
-"x": 3595.4,
+"s": 9016.27,
+"x": 3596.22,
 "yaw": 1.6739,
 "min": [
 -12.23,
@@ -648116,8 +646235,8 @@
 "settlement": "Harrow Falls",
 "glb": "res://remake/buildings/HF-10825.glb",
 "model": "HF-10825",
-"s": 8250.0,
-"x": 1480.0,
+"s": 8249.98,
+"x": 1479.1,
 "yaw": 1.5708,
 "min": [
 -4.12,
@@ -678416,7 +676535,7 @@
 "glb": "res://remake/buildings/PCR-1033.glb",
 "model": "PCR-1033",
 "s": 35450.2,
-"x": -5538.73,
+"x": -5538.87,
 "yaw": 1.5739,
 "min": [
 -7.33,
@@ -715355,8 +713474,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-1115.glb",
 "model": "PCR-1115",
-"s": 36358.47,
-"x": -3721.06,
+"s": 36357.99,
+"x": -3721.04,
 "yaw": 3.1387,
 "min": [
 -8.95,
@@ -784336,8 +782455,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-0747.glb",
 "model": "PCR-0747",
-"s": 34833.64,
-"x": -3940.36,
+"s": 34833.69,
+"x": -3940.3,
 "yaw": 1.3839,
 "min": [
 -24.06,
@@ -788952,8 +787071,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-2199.glb",
 "model": "PCR-2199",
-"s": 38141.0,
-"x": -3899.3,
+"s": 38140.1,
+"x": -3895.82,
 "yaw": 2.0344,
 "min": [
 -9.5,
@@ -795328,7 +793447,7 @@
 "glb": "res://remake/buildings/PCR-4210.glb",
 "model": "PCR-4210",
 "s": 39201.9,
-"x": -4373.1,
+"x": -4372.93,
 "yaw": 2.2138,
 "min": [
 -14.85,
@@ -797855,8 +795974,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-4209.glb",
 "model": "PCR-4209",
-"s": 35368.2,
-"x": -3690.3,
+"s": 35362.77,
+"x": -3694.5,
 "yaw": -1.6368,
 "min": [
 -17.25,
@@ -797883,8 +796002,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-3542.glb",
 "model": "PCR-3542",
-"s": 35336.7,
-"x": -3704.2,
+"s": 35331.89,
+"x": -3704.76,
 "yaw": -1.6863,
 "min": [
 -15.65,
@@ -801912,8 +800031,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-5294.glb",
 "model": "PCR-5294",
-"s": 38110.72,
-"x": -3731.43,
+"s": 38110.78,
+"x": -3731.48,
 "yaw": -1.2925,
 "min": [
 -18.85,
@@ -802591,8 +800710,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-3144.glb",
 "model": "PCR-3144",
-"s": 37102.8,
-"x": -3525.51,
+"s": 37105.24,
+"x": -3526.54,
 "yaw": 1.74,
 "min": [
 -16.1,
@@ -803411,8 +801530,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-5306.glb",
 "model": "PCR-5306",
-"s": 36086.98,
-"x": -3493.92,
+"s": 36084.96,
+"x": -3494.16,
 "yaw": 1.6121,
 "min": [
 -15.95,
@@ -809928,8 +808047,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-3008.glb",
 "model": "PCR-3008",
-"s": 35601.2,
-"x": -3445.3,
+"s": 35602.64,
+"x": -3441.48,
 "yaw": 1.4162,
 "min": [
 -17.9,
@@ -811364,7 +809483,7 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-3935.glb",
 "model": "PCR-3935",
-"s": 32696.0,
+"s": 32696.04,
 "x": -5324.36,
 "yaw": 0.1225,
 "min": [
@@ -813193,8 +811312,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-0398.glb",
 "model": "PCR-0398",
-"s": 39665.92,
-"x": -4364.21,
+"s": 39663.83,
+"x": -4364.05,
 "yaw": -0.9307,
 "min": [
 -20.44,
@@ -817819,8 +815938,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/SOL-2193.glb",
 "model": "SOL-2193",
-"s": 35549.78,
-"x": -3386.57,
+"s": 35551.12,
+"x": -3385.98,
 "yaw": 1.35,
 "min": [
 -10.1,
@@ -819429,8 +817548,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-0818.glb",
 "model": "PCR-0818",
-"s": 32543.36,
-"x": -5086.9,
+"s": 32540.81,
+"x": -5084.72,
 "yaw": -0.1706,
 "min": [
 -9.78,
@@ -819458,8 +817577,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-0824.glb",
 "model": "PCR-0824",
-"s": 32554.8,
-"x": -5144.3,
+"s": 32553.62,
+"x": -5146.63,
 "yaw": -0.1078,
 "min": [
 -9.35,
@@ -820586,8 +818705,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-2346.glb",
 "model": "PCR-2346",
-"s": 40205.6,
-"x": -4928.6,
+"s": 40205.88,
+"x": -4928.8,
 "yaw": 3.0084,
 "min": [
 -12.5,
@@ -830862,8 +828981,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-0382.glb",
 "model": "PCR-0382",
-"s": 39094.09,
-"x": -3677.77,
+"s": 39094.57,
+"x": -3678.6,
 "yaw": 1.0668,
 "min": [
 -7.97,
@@ -835574,8 +833693,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-6027.glb",
 "model": "PCR-6027",
-"s": 32592.95,
-"x": -4394.61,
+"s": 32588.27,
+"x": -4390.1,
 "yaw": 0.86,
 "min": [
 -13.1,
@@ -840544,8 +838663,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-2346.glb",
 "model": "PCR-2346",
-"s": 37211.62,
-"x": -3137.89,
+"s": 37211.61,
+"x": -3138.32,
 "yaw": 1.6374,
 "min": [
 -12.5,
@@ -851594,8 +849713,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-0398.glb",
 "model": "PCR-0398",
-"s": 32372.34,
-"x": -4218.87,
+"s": 32369.39,
+"x": -4215.73,
 "yaw": 0.6959,
 "min": [
 -20.44,
@@ -853660,8 +851779,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-2300.glb",
 "model": "PCR-2300",
-"s": 38223.03,
-"x": -3186.91,
+"s": 38223.07,
+"x": -3186.94,
 "yaw": -1.4254,
 "min": [
 -12.18,
@@ -872702,8 +870821,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-0481.glb",
 "model": "PCR-0481",
-"s": 39389.73,
-"x": -3245.83,
+"s": 39391.83,
+"x": -3245.2,
 "yaw": 1.9641,
 "min": [
 -7.07,
@@ -881846,8 +879965,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/PCR-2346.glb",
 "model": "PCR-2346",
-"s": 37655.66,
-"x": -2718.77,
+"s": 37654.8,
+"x": -2718.31,
 "yaw": 1.8062,
 "min": [
 -12.5,
@@ -896378,8 +894497,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/SOL-2300.glb",
 "model": "SOL-2300",
-"s": 38577.58,
-"x": -2713.46,
+"s": 38577.39,
+"x": -2713.1,
 "yaw": 1.7075,
 "min": [
 -10.53,
@@ -900303,8 +898422,8 @@
 "settlement": "Port Carrow",
 "glb": "res://remake/buildings/SOL-5723.glb",
 "model": "SOL-5723",
-"s": 35023.2,
-"x": -2572.01,
+"s": 35023.36,
+"x": -2571.93,
 "yaw": 1.5106,
 "min": [
 -11.55,
@@ -911752,8 +909871,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/K-0264.glb",
 "model": "K-0264",
-"s": 43028.99,
-"x": 2086.36,
+"s": 43029.08,
+"x": 2086.79,
 "yaw": 1.5708,
 "min": [
 -8.62,
@@ -918176,7 +916295,7 @@
 "glb": "res://remake/buildings/K-0491.glb",
 "model": "K-0491",
 "s": 43148.31,
-"x": 2166.78,
+"x": 2166.55,
 "yaw": 1.5676,
 "min": [
 -30,
@@ -927136,7 +925255,7 @@
 "glb": "res://remake/buildings/HF-1160.glb",
 "model": "HF-1160",
 "s": 43286.68,
-"x": 2084.08,
+"x": 2083.98,
 "yaw": 1.5744,
 "min": [
 -6.98,
@@ -930765,7 +928884,7 @@
 "glb": "res://remake/buildings/HF-0997.glb",
 "model": "HF-0997",
 "s": 41831.0,
-"x": 2166.74,
+"x": 2166.15,
 "yaw": 1.5708,
 "min": [
 -7.3,
@@ -1012448,8 +1010567,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-4364.glb",
 "model": "SOL-4364",
-"s": 44498.19,
-"x": 1430.66,
+"s": 44498.43,
+"x": 1431.38,
 "yaw": -1.2313,
 "min": [
 -20.44,
@@ -1012758,8 +1010877,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 40568.31,
-"x": 2093.47,
+"s": 40567.97,
+"x": 2095.16,
 "yaw": 1.5743,
 "min": [
 -10.88,
@@ -1013800,8 +1011919,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-2727.glb",
 "model": "SOL-2727",
-"s": 40328.47,
-"x": 2095.9,
+"s": 40328.7,
+"x": 2095.93,
 "yaw": 1.5678,
 "min": [
 -14.9,
@@ -1014447,8 +1012566,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-3089.glb",
 "model": "SOL-3089",
-"s": 40259.54,
-"x": 2092.31,
+"s": 40259.55,
+"x": 2093.63,
 "yaw": 1.5678,
 "min": [
 -17.2,
@@ -1030010,8 +1028129,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/HF-1292.glb",
 "model": "HF-1292",
-"s": 43446.42,
-"x": 3394.01,
+"s": 43446.78,
+"x": 3394.59,
 "yaw": -1.3559,
 "min": [
 -9.88,
@@ -1031196,8 +1029315,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/HF-1877.glb",
 "model": "HF-1877",
-"s": 42246.32,
-"x": 3586.01,
+"s": 42246.41,
+"x": 3585.28,
 "yaw": 1.5008,
 "min": [
 -11.13,
@@ -1034075,8 +1032194,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-2223.glb",
 "model": "SOL-2223",
-"s": 40821.76,
-"x": 1405.49,
+"s": 40822.4,
+"x": 1406.05,
 "yaw": -0.4931,
 "min": [
 -9.3,
@@ -1035680,8 +1033799,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 42486.24,
-"x": 527.76,
+"s": 42486.36,
+"x": 528.47,
 "yaw": -1.5202,
 "min": [
 -10.88,
@@ -1037375,8 +1035494,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/HF-1888.glb",
 "model": "HF-1888",
-"s": 44399.27,
-"x": 1673.14,
+"s": 44400.35,
+"x": 1673.25,
 "yaw": 0.4481,
 "min": [
 -11,
@@ -1042283,34 +1040402,6 @@
 ]
 },
 {
-"id": "K-5128",
-"kind": "house",
-"settlement": "Kessler",
-"glb": "res://remake/buildings/SOL-3973.glb",
-"model": "SOL-3973",
-"s": 40905.93,
-"x": 1180.95,
-"yaw": -0.7874,
-"min": [
--15.8,
--4,
--17.85
-],
-"max": [
-15.8,
-6.19,
-18.05
-],
-"fmin": [
--15.8,
--16.53
-],
-"fmax": [
-15.8,
-18.05
-]
-},
-{
 "id": "K-5129",
 "kind": "house",
 "settlement": "Kessler",
@@ -1043301,8 +1041392,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-5460.glb",
 "model": "SOL-5460",
-"s": 42309.42,
-"x": 473.41,
+"s": 42309.97,
+"x": 475.68,
 "yaw": -1.563,
 "min": [
 -16.4,
@@ -1043497,8 +1041588,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-3978.glb",
 "model": "SOL-3978",
-"s": 42733.4,
-"x": 454.9,
+"s": 42732.86,
+"x": 458.93,
 "yaw": -1.7825,
 "min": [
 -14.5,
@@ -1048711,8 +1046802,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-3833.glb",
 "model": "SOL-3833",
-"s": 40492.07,
-"x": 2264.78,
+"s": 40491.11,
+"x": 2262.37,
 "yaw": -0.0028,
 "min": [
 -8.95,
@@ -1049495,34 +1047586,6 @@
 "fmax": [
 15.15,
 16.9
-]
-},
-{
-"id": "K-5411",
-"kind": "house",
-"settlement": "Kessler",
-"glb": "res://remake/buildings/SOL-5179.glb",
-"model": "SOL-5179",
-"s": 40742.5,
-"x": 1251.38,
-"yaw": -0.4931,
-"min": [
--17.05,
--4,
--15.35
-],
-"max": [
-17.05,
-5.39,
-15.55
-],
-"fmin": [
--17.05,
--14.03
-],
-"fmax": [
-17.05,
-15.55
 ]
 },
 {
@@ -1050685,8 +1048748,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-5469.glb",
 "model": "SOL-5469",
-"s": 42741.8,
-"x": 427.5,
+"s": 42737.36,
+"x": 430.86,
 "yaw": 1.4368,
 "min": [
 -16.25,
@@ -1056204,8 +1054267,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/HF-5563.glb",
 "model": "HF-5563",
-"s": 40441.49,
-"x": 2311.48,
+"s": 40439.93,
+"x": 2310.93,
 "yaw": -3.0871,
 "min": [
 -16.95,
@@ -1059473,8 +1057536,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-3092.glb",
 "model": "SOL-3092",
-"s": 44703.38,
-"x": 1880.04,
+"s": 44703.39,
+"x": 1880.11,
 "yaw": 0.3691,
 "min": [
 -17.2,
@@ -1071208,8 +1069271,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 44670.6,
-"x": 2973.3,
+"s": 44672.06,
+"x": 2973.28,
 "yaw": 2.4075,
 "min": [
 -10.88,
@@ -1098597,8 +1096660,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-6168.glb",
 "model": "SOL-6168",
-"s": 40453.54,
-"x": 1011.92,
+"s": 40452.75,
+"x": 1011.55,
 "yaw": 2.3315,
 "min": [
 -12.45,
@@ -1123068,8 +1121131,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-2775.glb",
 "model": "SOL-2775",
-"s": 45326.5,
-"x": 2761.2,
+"s": 45326.73,
+"x": 2761.62,
 "yaw": 2.5448,
 "min": [
 -9.85,
@@ -1143321,8 +1141384,8 @@
 "settlement": "Kessler",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 40315.31,
-"x": 541.95,
+"s": 40314.8,
+"x": 539.36,
 "yaw": -0.9582,
 "min": [
 -10.88,
@@ -1149779,7 +1147842,7 @@
 "glb": "res://remake/buildings/SOL-0447.glb",
 "model": "SOL-0447",
 "s": 59907.9,
-"x": 5105.86,
+"x": 5107.23,
 "yaw": -1.5738,
 "min": [
 -8.73,
@@ -1152683,7 +1150746,7 @@
 "glb": "res://remake/buildings/SOL-0577.glb",
 "model": "SOL-0577",
 "s": 60091.9,
-"x": 5014.47,
+"x": 5014.62,
 "yaw": -1.5737,
 "min": [
 -5.98,
@@ -1152711,7 +1150774,7 @@
 "glb": "res://remake/buildings/SOL-1105.glb",
 "model": "SOL-1105",
 "s": 60123.9,
-"x": 5014.93,
+"x": 5015.06,
 "yaw": -1.5737,
 "min": [
 -5.45,
@@ -1153332,7 +1151395,7 @@
 "glb": "res://remake/buildings/SOL-0577.glb",
 "model": "SOL-0577",
 "s": 59796.5,
-"x": 5014.49,
+"x": 5014.6,
 "yaw": -1.5708,
 "min": [
 -5.98,
@@ -1154936,7 +1152999,7 @@
 "glb": "res://remake/buildings/SOL-0577.glb",
 "model": "SOL-0577",
 "s": 60365.8,
-"x": 5106.49,
+"x": 5106.6,
 "yaw": -1.5708,
 "min": [
 -5.98,
@@ -1194261,8 +1192324,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-2455.glb",
 "model": "SOL-2455",
-"s": 61956.76,
-"x": 5369.24,
+"s": 61957.07,
+"x": 5369.15,
 "yaw": -1.5738,
 "min": [
 -11.43,
@@ -1195026,8 +1193089,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-2726.glb",
 "model": "SOL-2726",
-"s": 61547.9,
-"x": 4062.1,
+"s": 61547.52,
+"x": 4062.49,
 "yaw": 2.3631,
 "min": [
 -17.75,
@@ -1195054,8 +1193117,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-2778.glb",
 "model": "SOL-2778",
-"s": 61565.24,
-"x": 4034.09,
+"s": 61564.01,
+"x": 4033.47,
 "yaw": 2.3671,
 "min": [
 -16.1,
@@ -1201152,8 +1199215,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-2306.glb",
 "model": "SOL-2306",
-"s": 61807.29,
-"x": 5204.09,
+"s": 61809.82,
+"x": 5197.62,
 "yaw": -3.0595,
 "min": [
 -12.33,
@@ -1201180,8 +1199243,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-0419.glb",
 "model": "SOL-0419",
-"s": 61803.2,
-"x": 5179.1,
+"s": 61802.23,
+"x": 5175.82,
 "yaw": -2.8531,
 "min": [
 -9.95,
@@ -1201667,8 +1199730,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-2306.glb",
 "model": "SOL-2306",
-"s": 61611.23,
-"x": 5007.04,
+"s": 61611.44,
+"x": 5009.04,
 "yaw": -2.521,
 "min": [
 -12.33,
@@ -1201695,8 +1199758,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-0582.glb",
 "model": "SOL-0582",
-"s": 61578.2,
-"x": 4955.1,
+"s": 61578.79,
+"x": 4952.38,
 "yaw": -2.571,
 "min": [
 -9.13,
@@ -1202062,8 +1200125,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-2306.glb",
 "model": "SOL-2306",
-"s": 61401.2,
-"x": 4784.95,
+"s": 61401.37,
+"x": 4785.32,
 "yaw": -2.0274,
 "min": [
 -12.33,
@@ -1204351,8 +1202414,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-0997.glb",
 "model": "SOL-0997",
-"s": 59012.97,
-"x": 4692.08,
+"s": 59013.4,
+"x": 4688.26,
 "yaw": 2.0525,
 "min": [
 -8.78,
@@ -1205934,8 +1203997,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-4682.glb",
 "model": "SOL-4682",
-"s": 58133.4,
-"x": 5298.74,
+"s": 58133.35,
+"x": 5298.69,
 "yaw": 0.0545,
 "min": [
 -12.7,
@@ -1206921,8 +1204984,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-2726.glb",
 "model": "SOL-2726",
-"s": 61771.25,
-"x": 4942.01,
+"s": 61772.69,
+"x": 4937.05,
 "yaw": -2.432,
 "min": [
 -17.75,
@@ -1209698,8 +1207761,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-4167.glb",
 "model": "SOL-4167",
-"s": 58044.33,
-"x": 5210.18,
+"s": 58044.22,
+"x": 5210.11,
 "yaw": -0.3484,
 "min": [
 -15.5,
@@ -1212165,7 +1210228,7 @@
 "glb": "res://remake/buildings/SOL-3614.glb",
 "model": "SOL-3614",
 "s": 59813.25,
-"x": 4290.86,
+"x": 4291.06,
 "yaw": -1.5143,
 "min": [
 -16.5,
@@ -1212893,8 +1210956,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-3378.glb",
 "model": "SOL-3378",
-"s": 58868.64,
-"x": 4474.15,
+"s": 58868.11,
+"x": 4474.33,
 "yaw": -1.376,
 "min": [
 -16.65,
@@ -1233041,34 +1231104,6 @@
 ]
 },
 {
-"id": "OCV-3193",
-"kind": "house",
-"settlement": "Oceanview",
-"glb": "res://remake/buildings/SOL-0357.glb",
-"model": "SOL-0357",
-"s": 60800.41,
-"x": 4064.44,
-"yaw": -1.7213,
-"min": [
--8.17,
--4,
--12.1
-],
-"max": [
-7.8,
-6.22,
-12.0
-],
-"fmin": [
--4.48,
--11.62
-],
-"fmax": [
-4.21,
-1.15
-]
-},
-{
 "id": "OCV-3194",
 "kind": "house",
 "settlement": "Oceanview",
@@ -1233496,8 +1231531,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-2306.glb",
 "model": "SOL-2306",
-"s": 60436.2,
-"x": 4004.2,
+"s": 60434.38,
+"x": 4002.6,
 "yaw": -1.5513,
 "min": [
 -12.33,
@@ -1234597,8 +1232632,8 @@
 "settlement": "Oceanview",
 "glb": "res://remake/buildings/SOL-4716.glb",
 "model": "SOL-4716",
-"s": 59002.38,
-"x": 4120.99,
+"s": 59002.33,
+"x": 4121.02,
 "yaw": 1.6815,
 "min": [
 -12.33,
@@ -1242682,7 +1240717,7 @@
 "glb": "res://remake/buildings/HF-0301.glb",
 "model": "HF-0301",
 "s": 29715.46,
-"x": -1998.17,
+"x": -2000.4,
 "yaw": 1.5708,
 "min": [
 -7.8,
@@ -1245971,7 +1244006,7 @@
 "glb": "res://remake/buildings/HF-1512.glb",
 "model": "HF-1512",
 "s": 30416.6,
-"x": -2095.75,
+"x": -2096.77,
 "yaw": 1.5738,
 "min": [
 -7.73,
@@ -1252008,7 +1250043,7 @@
 "glb": "res://remake/buildings/M-0529.glb",
 "model": "M-0529",
 "s": 30514.2,
-"x": -2095.6,
+"x": -2096.0,
 "yaw": 1.5708,
 "min": [
 -6.43,
@@ -1252630,7 +1250665,7 @@
 "glb": "res://remake/buildings/K-1470.glb",
 "model": "K-1470",
 "s": 30518.5,
-"x": -2001.61,
+"x": -2004.47,
 "yaw": 1.5678,
 "min": [
 -6.33,
@@ -1278726,8 +1276761,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-4677.glb",
 "model": "SOL-4677",
-"s": 29033.73,
-"x": -1524.19,
+"s": 29033.12,
+"x": -1525.3,
 "yaw": -1.0281,
 "min": [
 -11.98,
@@ -1279485,8 +1277520,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-4671.glb",
 "model": "SOL-4671",
-"s": 28849.99,
-"x": -2054.16,
+"s": 28850.2,
+"x": -2052.36,
 "yaw": -1.5708,
 "min": [
 -11.7,
@@ -1279513,8 +1277548,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-2088.glb",
 "model": "SOL-2088",
-"s": 28926.24,
-"x": -2054.37,
+"s": 28926.22,
+"x": -2053.85,
 "yaw": -1.5675,
 "min": [
 -11.98,
@@ -1279682,8 +1277717,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/HF-2134.glb",
 "model": "HF-2134",
-"s": 29001.12,
-"x": -1507.53,
+"s": 29000.88,
+"x": -1507.97,
 "yaw": -1.0239,
 "min": [
 -12.7,
@@ -1295219,8 +1293254,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-2607.glb",
 "model": "SOL-2607",
-"s": 30380.7,
-"x": -2866.1,
+"s": 30380.19,
+"x": -2865.79,
 "yaw": 1.2611,
 "min": [
 -11.6,
@@ -1295361,8 +1293396,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-3833.glb",
 "model": "SOL-3833",
-"s": 30467.9,
-"x": -2856.9,
+"s": 30467.62,
+"x": -2858.65,
 "yaw": -2.0728,
 "min": [
 -8.95,
@@ -1296916,8 +1294951,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-5485.glb",
 "model": "SOL-5485",
-"s": 30847.34,
-"x": -1368.86,
+"s": 30848.66,
+"x": -1370.42,
 "yaw": -1.027,
 "min": [
 -14.6,
@@ -1296944,8 +1294979,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-5485.glb",
 "model": "SOL-5485",
-"s": 30998.57,
-"x": -1437.65,
+"s": 30998.6,
+"x": -1435.02,
 "yaw": 2.4319,
 "min": [
 -14.6,
@@ -1300489,8 +1298524,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-4924.glb",
 "model": "SOL-4924",
-"s": 31226.72,
-"x": -2263.49,
+"s": 31227.21,
+"x": -2263.73,
 "yaw": -3.044,
 "min": [
 -18.65,
@@ -1302379,8 +1300414,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-3531.glb",
 "model": "SOL-3531",
-"s": 28879.89,
-"x": -1498.56,
+"s": 28879.41,
+"x": -1499.52,
 "yaw": -2.294,
 "min": [
 -17.45,
@@ -1309714,8 +1307749,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-3002.glb",
 "model": "SOL-3002",
-"s": 31261.56,
-"x": -2471.44,
+"s": 31261.18,
+"x": -2472.61,
 "yaw": 0.7475,
 "min": [
 -17.45,
@@ -1315539,8 +1313574,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-5822.glb",
 "model": "SOL-5822",
-"s": 29173.86,
-"x": -3121.64,
+"s": 29172.85,
+"x": -3122.38,
 "yaw": -2.4652,
 "min": [
 -11.8,
@@ -1318716,8 +1316751,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-2280.glb",
 "model": "SOL-2280",
-"s": 31574.2,
-"x": -1608.1,
+"s": 31574.75,
+"x": -1604.5,
 "yaw": 2.603,
 "min": [
 -10.88,
@@ -1318940,8 +1316975,8 @@
 "settlement": "Marlowe",
 "glb": "res://remake/buildings/SOL-4341.glb",
 "model": "SOL-4341",
-"s": 31482.7,
-"x": -1399.3,
+"s": 31483.09,
+"x": -1393.22,
 "yaw": 2.354,
 "min": [
 -12.23,
@@ -1323346,146 +1321381,6 @@
 ]
 },
 {
-"id": "T-0080",
-"kind": "industrial",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0080.glb",
-"model": "T-0080",
-"s": 56337.2,
-"x": 2327.98,
-"yaw": 1.5737,
-"min": [
--8.15,
--4,
--17.5
-],
-"max": [
-8.15,
-22.91,
-17.5
-],
-"fmin": [
--8.15,
--15.26
-],
-"fmax": [
-8.15,
-17.5
-]
-},
-{
-"id": "T-0081",
-"kind": "store",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0081.glb",
-"model": "T-0081",
-"s": 56353.2,
-"x": 2329.9,
-"yaw": 1.568,
-"min": [
--8.12,
--4,
--17.9
-],
-"max": [
-7.95,
-9.01,
-17.9
-],
-"fmin": [
--8.12,
--17.76
-],
-"fmax": [
-7.94,
-8.44
-]
-},
-{
-"id": "T-0082",
-"kind": "industrial",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0082.glb",
-"model": "T-0082",
-"s": 56369.5,
-"x": 2327.7,
-"yaw": 1.5708,
-"min": [
--8.3,
--4,
--17.8
-],
-"max": [
-8.3,
-22.91,
-17.8
-],
-"fmin": [
--8.3,
--15.56
-],
-"fmax": [
-8.3,
-17.8
-]
-},
-{
-"id": "T-0083",
-"kind": "store",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0083.glb",
-"model": "T-0083",
-"s": 56388.0,
-"x": 2328.8,
-"yaw": 1.5678,
-"min": [
--8.3,
--4,
--16.85
-],
-"max": [
-8.47,
-10.65,
-16.85
-],
-"fmin": [
--8.29,
--16.71
-],
-"fmax": [
-8.47,
-9.49
-]
-},
-{
-"id": "T-0084",
-"kind": "store",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0084.glb",
-"model": "T-0084",
-"s": 56426.0,
-"x": 2329.9,
-"yaw": 1.568,
-"min": [
--7.7,
--4,
--18.9
-],
-"max": [
-7.87,
-12.66,
-17.9
-],
-"fmin": [
--7.69,
--18.8
-],
-"fmax": [
-7.87,
-8.44
-]
-},
-{
 "id": "T-0085",
 "kind": "store",
 "settlement": "Tamarack",
@@ -1324019,69 +1321914,13 @@
 ]
 },
 {
-"id": "T-0104",
-"kind": "industrial",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0104.glb",
-"model": "T-0104",
-"s": 56450.6,
-"x": 2327.65,
-"yaw": 1.5708,
-"min": [
--9.15,
--4,
--17.85
-],
-"max": [
-9.25,
-33.95,
-17.85
-],
-"fmin": [
--9.15,
--15.61
-],
-"fmax": [
-9.25,
-17.85
-]
-},
-{
-"id": "T-0105",
-"kind": "industrial",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0105.glb",
-"model": "T-0105",
-"s": 56470.3,
-"x": 2327.53,
-"yaw": 1.5736,
-"min": [
--8.55,
--4,
--17.95
-],
-"max": [
-9.1,
-29.75,
-17.95
-],
-"fmin": [
--8.55,
--15.71
-],
-"fmax": [
-9.1,
-17.95
-]
-},
-{
 "id": "T-0106",
 "kind": "store",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/T-0106.glb",
 "model": "T-0106",
-"s": 56486.8,
-"x": 2324.5,
+"s": 56486.85,
+"x": 2323.3,
 "yaw": 1.5708,
 "min": [
 -8.17,
@@ -1324579,118 +1322418,6 @@
 ]
 },
 {
-"id": "T-0124",
-"kind": "industrial",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0124.glb",
-"model": "T-0124",
-"s": 56224.9,
-"x": 2327.8,
-"yaw": 1.5708,
-"min": [
--8.3,
--4,
--17.7
-],
-"max": [
-8.3,
-14.51,
-17.7
-],
-"fmin": [
--8.3,
--15.46
-],
-"fmax": [
-8.3,
-17.7
-]
-},
-{
-"id": "T-0125",
-"kind": "store",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0125.glb",
-"model": "T-0125",
-"s": 56241.3,
-"x": 2329.4,
-"yaw": 1.5708,
-"min": [
--8.32,
--4,
--17.55
-],
-"max": [
-8.15,
-12.76,
-17.4
-],
-"fmin": [
--8.32,
--17.55
-],
-"fmax": [
-8.15,
-8.94
-]
-},
-{
-"id": "T-0126",
-"kind": "store",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0126.glb",
-"model": "T-0126",
-"s": 56257.6,
-"x": 2328.8,
-"yaw": 1.5678,
-"min": [
--8.2,
--4,
--17.8
-],
-"max": [
-8.37,
-9.11,
-16.8
-],
-"fmin": [
--8.2,
--17.7
-],
-"fmax": [
-8.37,
-9.54
-]
-},
-{
-"id": "T-0127",
-"kind": "store",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0127.glb",
-"model": "T-0127",
-"s": 56275.7,
-"x": 2329.6,
-"yaw": 1.5708,
-"min": [
--7.97,
--4,
--18.68
-],
-"max": [
-7.8,
-9.11,
-17.55
-],
-"fmin": [
--7.97,
--18.65
-],
-"fmax": [
-7.8,
-8.79
-]
-},
-{
 "id": "T-0128",
 "kind": "store",
 "settlement": "Tamarack",
@@ -1324744,34 +1322471,6 @@
 "fmax": [
 8.04,
 5.54
-]
-},
-{
-"id": "T-0130",
-"kind": "store",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0130.glb",
-"model": "T-0130",
-"s": 56546.5,
-"x": 2337.45,
-"yaw": -3.1392,
-"min": [
--8,
--4,
--21.5
-],
-"max": [
-8.17,
-9.11,
-20.5
-],
-"fmin": [
--8,
--21.4
-],
-"fmax": [
-8.17,
-5.84
 ]
 },
 {
@@ -1325510,8 +1323209,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0835.glb",
 "model": "HF-0835",
-"s": 56590.0,
-"x": 2329.3,
+"s": 56590.42,
+"x": 2318.76,
 "yaw": 1.5708,
 "min": [
 -8.93,
@@ -1326644,63 +1324343,6 @@
 "households": 2
 },
 {
-"id": "T-0197",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-2316.glb",
-"model": "HF-2316",
-"s": 56112.2,
-"x": 2327.57,
-"yaw": 1.5738,
-"min": [
--8.75,
--4,
--17.7
-],
-"max": [
-8.43,
-8.16,
-17.9
-],
-"fmin": [
--8.75,
--16.66
-],
-"fmax": [
-8.4,
-17.9
-]
-},
-{
-"id": "T-0198",
-"kind": "condo",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-8712.glb",
-"model": "SOL-8712",
-"s": 56148.7,
-"x": 2329.8,
-"yaw": 1.5736,
-"min": [
--25.66,
--4,
--17.6
-],
-"max": [
-25.66,
-10.41,
-3.46
-],
-"fmin": [
--25.66,
--15.4
-],
-"fmax": [
-25.66,
-3.44
-],
-"households": 12
-},
-{
 "id": "T-0199",
 "kind": "house",
 "settlement": "Tamarack",
@@ -1327333,7 +1324975,7 @@
 "glb": "res://remake/buildings/K-0325.glb",
 "model": "K-0325",
 "s": 56055.3,
-"x": 2236.41,
+"x": 2235.3,
 "yaw": 1.5708,
 "min": [
 -7.68,
@@ -1329137,34 +1326779,6 @@
 "households": 2
 },
 {
-"id": "T-0285",
-"kind": "industrial",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-0285.glb",
-"model": "T-0285",
-"s": 56701.2,
-"x": 2328.65,
-"yaw": 1.5708,
-"min": [
--24.3,
--4,
--16.85
-],
-"max": [
-24.3,
-22.91,
-16.85
-],
-"fmin": [
--24.3,
--14.61
-],
-"fmax": [
-24.3,
-16.85
-]
-},
-{
 "id": "T-0286",
 "kind": "house",
 "settlement": "Tamarack",
@@ -1329312,7 +1326926,7 @@
 "glb": "res://remake/buildings/HF-1653.glb",
 "model": "HF-1653",
 "s": 56325.4,
-"x": 2512.51,
+"x": 2511.4,
 "yaw": 1.5708,
 "min": [
 -6,
@@ -1329453,7 +1327067,7 @@
 "glb": "res://remake/buildings/HF-1019.glb",
 "model": "HF-1019",
 "s": 56438.3,
-"x": 2512.11,
+"x": 2511.23,
 "yaw": 1.568,
 "min": [
 -7.3,
@@ -1329669,63 +1327283,6 @@
 "fmax": [
 2.52,
 9.59
-]
-},
-{
-"id": "T-0304",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-0310.glb",
-"model": "HF-0310",
-"s": 55985.55,
-"x": 2148.13,
-"yaw": 1.5677,
-"min": [
--9.13,
--4,
--16.85
-],
-"max": [
-9.13,
-10.69,
-16.73
-],
-"fmin": [
--9.1,
--16.17
-],
-"fmax": [
-9.1,
-16.7
-],
-"households": 2
-},
-{
-"id": "T-0305",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-1092.glb",
-"model": "HF-1092",
-"s": 56003.45,
-"x": 2148.21,
-"yaw": 1.5708,
-"min": [
--6.6,
--4,
--17.05
-],
-"max": [
-6.28,
-9.55,
-17.25
-],
-"fmin": [
--6.6,
--16.57
-],
-"fmax": [
-6.25,
-17.25
 ]
 },
 {
@@ -1330614,8 +1328171,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-1192.glb",
 "model": "HF-1192",
-"s": 56045.7,
-"x": 2318.6,
+"s": 56045.84,
+"x": 2315.11,
 "yaw": -0.0,
 "min": [
 -7.23,
@@ -1330634,34 +1328191,6 @@
 "fmax": [
 7.2,
 20.45
-]
-},
-{
-"id": "T-0338",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-0547.glb",
-"model": "HF-0547",
-"s": 56045.9,
-"x": 2334.5,
-"yaw": -0.0,
-"min": [
--5.93,
--4,
--21.05
-],
-"max": [
-7.66,
-12.02,
-21.25
-],
-"fmin": [
--5.9,
--20.57
-],
-"fmax": [
-7.66,
-21.25
 ]
 },
 {
@@ -1331059,35 +1328588,6 @@
 ]
 },
 {
-"id": "T-0353",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-0310.glb",
-"model": "HF-0310",
-"s": 56001.4,
-"x": 2328.77,
-"yaw": 1.5677,
-"min": [
--9.13,
--4,
--16.85
-],
-"max": [
-9.13,
-10.69,
-16.73
-],
-"fmin": [
--9.1,
--16.17
-],
-"fmax": [
-9.1,
-16.7
-],
-"households": 2
-},
-{
 "id": "T-0354",
 "kind": "house",
 "settlement": "Tamarack",
@@ -1331292,8 +1328792,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0286.glb",
 "model": "HF-0286",
-"s": 56767.0,
-"x": 2319.0,
+"s": 56767.01,
+"x": 2316.75,
 "yaw": 3.1392,
 "min": [
 -5.03,
@@ -1331321,8 +1328821,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0310.glb",
 "model": "HF-0310",
-"s": 56766.9,
-"x": 2336.4,
+"s": 56767.19,
+"x": 2329.24,
 "yaw": -3.1416,
 "min": [
 -9.13,
@@ -1331865,7 +1329365,7 @@
 "glb": "res://remake/buildings/HF-0691.glb",
 "model": "HF-0691",
 "s": 56604.4,
-"x": 2512.86,
+"x": 2511.05,
 "yaw": 1.5708,
 "min": [
 -7.03,
@@ -1335372,8 +1332872,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 56809.0,
-"x": 2330.5,
+"s": 56809.2,
+"x": 2325.59,
 "yaw": 1.5738,
 "min": [
 -6.41,
@@ -1335401,8 +1332901,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 56824.5,
-"x": 2330.5,
+"s": 56824.59,
+"x": 2326.18,
 "yaw": 1.5678,
 "min": [
 -6.41,
@@ -1335421,35 +1332921,6 @@
 "fmax": [
 5.95,
 14.3
-],
-"households": 2
-},
-{
-"id": "T-0508",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-0286.glb",
-"model": "HF-0286",
-"s": 56862.9,
-"x": 2333.4,
-"yaw": 1.5682,
-"min": [
--5.03,
--4,
--20.95
-],
-"max": [
-5.03,
-11.69,
-20.83
-],
-"fmin": [
--5,
--20.27
-],
-"fmax": [
-5,
-20.8
 ],
 "households": 2
 },
@@ -1336505,8 +1333976,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0243.glb",
 "model": "HF-0243",
-"s": 55935.2,
-"x": 2320.0,
+"s": 55935.32,
+"x": 2316.92,
 "yaw": -0.0026,
 "min": [
 -7.65,
@@ -1336782,34 +1334253,6 @@
 14.3
 ],
 "households": 2
-},
-{
-"id": "T-0556",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-0912.glb",
-"model": "HF-0912",
-"s": 55887.7,
-"x": 2146.7,
-"yaw": 1.5678,
-"min": [
--8.07,
--4,
--19.1
-],
-"max": [
-6.78,
-11.46,
-18.98
-],
-"fmin": [
--8.07,
--18.62
-],
-"fmax": [
-6.75,
-18.95
-]
 },
 {
 "id": "T-0557",
@@ -1337809,8 +1335252,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0832.glb",
 "model": "HF-0832",
-"s": 55886.6,
-"x": 2332.2,
+"s": 55885.95,
+"x": 2348.51,
 "yaw": 1.5708,
 "min": [
 -7.98,
@@ -1337838,8 +1335281,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-1733.glb",
 "model": "HF-1733",
-"s": 55902.1,
-"x": 2332.1,
+"s": 55901.76,
+"x": 2348.97,
 "yaw": 1.5708,
 "min": [
 -7.28,
@@ -1338432,7 +1335875,7 @@
 "glb": "res://remake/buildings/K-1540.glb",
 "model": "K-1540",
 "s": 55889.7,
-"x": 1960.91,
+"x": 1959.0,
 "yaw": 1.5708,
 "min": [
 -7.13,
@@ -1341579,8 +1339022,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0259.glb",
 "model": "HF-0259",
-"s": 56900.3,
-"x": 2332.2,
+"s": 56900.48,
+"x": 2327.66,
 "yaw": 1.5708,
 "min": [
 -6.41,
@@ -1341601,63 +1339044,6 @@
 14.3
 ],
 "households": 2
-},
-{
-"id": "T-0726",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-0855.glb",
-"model": "HF-0855",
-"s": 56917.9,
-"x": 2332.7,
-"yaw": 1.5733,
-"min": [
--9.63,
--4,
--19.25
-],
-"max": [
-9.63,
-10.73,
-19.13
-],
-"fmin": [
--9.6,
--18.77
-],
-"fmax": [
-9.6,
-19.1
-],
-"households": 2
-},
-{
-"id": "T-0727",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-0882.glb",
-"model": "HF-0882",
-"s": 56934.9,
-"x": 2332.1,
-"yaw": 1.5708,
-"min": [
--6.92,
--4,
--18.65
-],
-"max": [
-6.03,
-11.72,
-18.53
-],
-"fmin": [
--6.92,
--18.17
-],
-"fmax": [
-6,
-18.5
-]
 },
 {
 "id": "T-0728",
@@ -1343808,34 +1341194,6 @@
 ]
 },
 {
-"id": "T-0804",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-1246.glb",
-"model": "HF-1246",
-"s": 55825.3,
-"x": 2322.3,
-"yaw": -0.0,
-"min": [
--9.1,
--4,
--18.95
-],
-"max": [
-9.18,
-11.95,
-18.83
-],
-"fmin": [
--1.72,
--17.91
-],
-"fmax": [
-9.15,
-18.8
-]
-},
-{
 "id": "T-0805",
 "kind": "house",
 "settlement": "Tamarack",
@@ -1344461,8 +1341819,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-1093.glb",
 "model": "HF-1093",
-"s": 55774.8,
-"x": 2332.7,
+"s": 55774.3,
+"x": 2345.25,
 "yaw": 1.5708,
 "min": [
 -7.98,
@@ -1344489,8 +1341847,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-2378.glb",
 "model": "HF-2378",
-"s": 55791.2,
-"x": 2329.7,
+"s": 55790.97,
+"x": 2341.11,
 "yaw": 1.5708,
 "min": [
 -8.75,
@@ -1347818,7 +1345176,7 @@
 "glb": "res://remake/buildings/HF-0036.glb",
 "model": "HF-0036",
 "s": 55779.8,
-"x": 2368.3,
+"x": 2368.99,
 "yaw": -1.5708,
 "min": [
 -24.76,
@@ -1348036,34 +1345394,6 @@
 "fmax": [
 10.1,
 18.5
-]
-},
-{
-"id": "T-0954",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-0652.glb",
-"model": "HF-0652",
-"s": 55720.2,
-"x": 2319.1,
-"yaw": -0.0,
-"min": [
--8.55,
--4,
--12.6
-],
-"max": [
-8.55,
-8.43,
-12.8
-],
-"fmin": [
--8.55,
--11.56
-],
-"fmax": [
-8.55,
-12.8
 ]
 },
 {
@@ -1350050,8 +1347380,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-1231.glb",
 "model": "HF-1231",
-"s": 55664.9,
-"x": 2332.8,
+"s": 55664.7,
+"x": 2341.0,
 "yaw": 1.5708,
 "min": [
 -9.75,
@@ -1350078,8 +1347408,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-0598.glb",
 "model": "HF-0598",
-"s": 55681.7,
-"x": 2333.6,
+"s": 55681.51,
+"x": 2343.17,
 "yaw": 1.568,
 "min": [
 -7.76,
@@ -1353177,8 +1350507,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-2775.glb",
 "model": "SOL-2775",
-"s": 55655.2,
-"x": 2367.1,
+"s": 55655.18,
+"x": 2372.45,
 "yaw": -1.5742,
 "min": [
 -9.85,
@@ -1353207,7 +1350537,7 @@
 "glb": "res://remake/buildings/HF-0866.glb",
 "model": "HF-0866",
 "s": 55675.6,
-"x": 2368.7,
+"x": 2370.44,
 "yaw": -1.5748,
 "min": [
 -9.83,
@@ -1356386,8 +1353716,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-2316.glb",
 "model": "SOL-2316",
-"s": 55876.23,
-"x": 1427.58,
+"s": 55875.81,
+"x": 1427.88,
 "yaw": -1.5677,
 "min": [
 -11.63,
@@ -1356498,8 +1353828,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-1443.glb",
 "model": "HF-1443",
-"s": 57252.7,
-"x": 2333.0,
+"s": 57252.74,
+"x": 2331.99,
 "yaw": 1.568,
 "min": [
 -8.48,
@@ -1358436,8 +1355766,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4681.glb",
 "model": "SOL-4681",
-"s": 55563.1,
-"x": 2279.6,
+"s": 55562.28,
+"x": 2275.07,
 "yaw": 1.7515,
 "min": [
 -11.95,
@@ -1358464,8 +1355794,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4651.glb",
 "model": "SOL-4651",
-"s": 55538.8,
-"x": 2285.0,
+"s": 55537.88,
+"x": 2282.64,
 "yaw": 1.7466,
 "min": [
 -11.43,
@@ -1359254,8 +1356584,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4352.glb",
 "model": "SOL-4352",
-"s": 55503.4,
-"x": 2353.1,
+"s": 55503.54,
+"x": 2353.45,
 "yaw": 0.3736,
 "min": [
 -11.6,
@@ -1359274,34 +1356604,6 @@
 "fmax": [
 11.6,
 17.85
-]
-},
-{
-"id": "T-1372",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-1887.glb",
-"model": "HF-1887",
-"s": 57235.5,
-"x": 2358.6,
-"yaw": -0.4812,
-"min": [
--11.23,
--4,
--14.65
-],
-"max": [
-11.23,
-5.59,
-14.53
-],
-"fmin": [
--11.2,
--13.07
-],
-"fmax": [
-11.2,
-14.5
 ]
 },
 {
@@ -1359731,8 +1357033,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-2223.glb",
 "model": "SOL-2223",
-"s": 55555.8,
-"x": 2302.5,
+"s": 55556.52,
+"x": 2297.33,
 "yaw": -2.7696,
 "min": [
 -9.3,
@@ -1359760,8 +1357062,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-2453.glb",
 "model": "SOL-2453",
-"s": 55493.8,
-"x": 2328.2,
+"s": 55493.47,
+"x": 2336.41,
 "yaw": 0.3765,
 "min": [
 -9.58,
@@ -1359901,8 +1357203,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4677.glb",
 "model": "SOL-4677",
-"s": 57332.04,
-"x": 1987.48,
+"s": 57331.64,
+"x": 1987.49,
 "yaw": -2.9709,
 "min": [
 -11.98,
@@ -1360266,8 +1357568,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4341.glb",
 "model": "SOL-4341",
-"s": 57342.44,
-"x": 2051.07,
+"s": 57342.0,
+"x": 2051.17,
 "yaw": -3.0119,
 "min": [
 -12.23,
@@ -1360964,91 +1358266,6 @@
 "households": 2
 },
 {
-"id": "T-1441",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-4627.glb",
-"model": "SOL-4627",
-"s": 55460.2,
-"x": 2307.66,
-"yaw": 1.7486,
-"min": [
--12.23,
--4,
--16.75
-],
-"max": [
-12.23,
-5.89,
-16.63
-],
-"fmin": [
--12.2,
--15.43
-],
-"fmax": [
-12.2,
-16.6
-]
-},
-{
-"id": "T-1442",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-1886.glb",
-"model": "HF-1886",
-"s": 55438.16,
-"x": 2307.58,
-"yaw": 1.7501,
-"min": [
--11.33,
--4,
--16.1
-],
-"max": [
-11.33,
-5.4,
-15.98
-],
-"fmin": [
--11.3,
--15.06
-],
-"fmax": [
-11.3,
-15.95
-]
-},
-{
-"id": "T-1443",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-4318.glb",
-"model": "SOL-4318",
-"s": 55394.38,
-"x": 2321.31,
-"yaw": 1.7503,
-"min": [
--9.03,
--4,
--13.15
-],
-"max": [
-9.03,
-5.33,
-13.03
-],
-"fmin": [
--9,
--11.83
-],
-"fmax": [
-9,
-13
-],
-"households": 2
-},
-{
 "id": "T-1446",
 "kind": "house",
 "settlement": "Tamarack",
@@ -1361390,8 +1358607,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4671.glb",
 "model": "SOL-4671",
-"s": 55335.87,
-"x": 2093.83,
+"s": 55335.85,
+"x": 2094.37,
 "yaw": -1.5708,
 "min": [
 -11.7,
@@ -1361759,90 +1358976,6 @@
 "s": 55291.33,
 "x": 2275.5,
 "yaw": -1.397,
-"min": [
--11.43,
--4,
--11.3
-],
-"max": [
-11.43,
-5.93,
-11.18
-],
-"fmin": [
--11.4,
--10.26
-],
-"fmax": [
-11.4,
-11.15
-]
-},
-{
-"id": "T-1491",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-4352.glb",
-"model": "SOL-4352",
-"s": 55344.45,
-"x": 2329.32,
-"yaw": 1.7464,
-"min": [
--11.6,
--4,
--17.65
-],
-"max": [
-11.6,
-6.07,
-17.85
-],
-"fmin": [
--11.6,
--16.61
-],
-"fmax": [
-11.6,
-17.85
-]
-},
-{
-"id": "T-1492",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-1784.glb",
-"model": "HF-1784",
-"s": 55325.76,
-"x": 2339.87,
-"yaw": 1.7486,
-"min": [
--10.48,
--4,
--15.6
-],
-"max": [
-10.48,
-8.69,
-15.48
-],
-"fmin": [
--10.45,
--14.56
-],
-"fmax": [
-10.45,
-15.45
-]
-},
-{
-"id": "T-1493",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-4651.glb",
-"model": "SOL-4651",
-"s": 55311.72,
-"x": 2318.14,
-"yaw": 1.7466,
 "min": [
 -11.43,
 -4,
@@ -1363547,62 +1360680,6 @@
 ]
 },
 {
-"id": "T-1579",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/T-1579.glb",
-"model": "T-1579",
-"s": 55092.41,
-"x": 2302.63,
-"yaw": -1.3963,
-"min": [
--16.6,
--4,
--15.85
-],
-"max": [
-16.6,
-9.03,
-16.05
-],
-"fmin": [
--16.6,
--14.81
-],
-"fmax": [
-16.6,
-16.05
-]
-},
-{
-"id": "T-1580",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-5448.glb",
-"model": "SOL-5448",
-"s": 55062.44,
-"x": 2306.5,
-"yaw": -1.3907,
-"min": [
--15.15,
--4,
--16.7
-],
-"max": [
-15.15,
-5.25,
-16.9
-],
-"fmin": [
--15.15,
--15.38
-],
-"fmax": [
-15.15,
-16.9
-]
-},
-{
 "id": "T-1581",
 "kind": "house",
 "settlement": "Tamarack",
@@ -1364526,62 +1361603,6 @@
 "fmax": [
 18.1,
 18.2
-]
-},
-{
-"id": "T-1621",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-5435.glb",
-"model": "SOL-5435",
-"s": 54983.38,
-"x": 2308.0,
-"yaw": -1.3893,
-"min": [
--16.45,
--4,
--11.25
-],
-"max": [
-16.45,
-7.91,
-11.45
-],
-"fmin": [
--16.45,
--10.21
-],
-"fmax": [
-16.45,
-11.45
-]
-},
-{
-"id": "T-1622",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-4000.glb",
-"model": "SOL-4000",
-"s": 54949.79,
-"x": 2306.47,
-"yaw": -1.3942,
-"min": [
--17.95,
--4,
--17.6
-],
-"max": [
-17.95,
-8.49,
-17.8
-],
-"fmin": [
--17.95,
--16.56
-],
-"fmax": [
-17.95,
-17.8
 ]
 },
 {
@@ -1367623,8 +1364644,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4346.glb",
 "model": "SOL-4346",
-"s": 57395.5,
-"x": 2323.8,
+"s": 57396.12,
+"x": 2318.47,
 "yaw": 3.0648,
 "min": [
 -11.65,
@@ -1367651,8 +1364672,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4346.glb",
 "model": "SOL-4346",
-"s": 57393.4,
-"x": 2347.3,
+"s": 57393.27,
+"x": 2340.56,
 "yaw": 3.0268,
 "min": [
 -11.65,
@@ -1370860,8 +1367881,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-2497.glb",
 "model": "SOL-2497",
-"s": 55445.51,
-"x": 1832.65,
+"s": 55445.62,
+"x": 1832.24,
 "yaw": -0.5095,
 "min": [
 -12.2,
@@ -1373310,8 +1370331,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/HF-1767.glb",
 "model": "HF-1767",
-"s": 57373.87,
-"x": 1877.56,
+"s": 57376.85,
+"x": 1879.19,
 "yaw": -2.7263,
 "min": [
 -12.08,
@@ -1373587,41 +1370608,13 @@
 ]
 },
 {
-"id": "T-1956",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/HF-1891.glb",
-"model": "HF-1891",
-"s": 57515.13,
-"x": 2322.69,
-"yaw": 3.0627,
-"min": [
--10.85,
--4,
--17.75
-],
-"max": [
-10.53,
-7.0,
-17.95
-],
-"fmin": [
--10.85,
--16.71
-],
-"fmax": [
-10.5,
-17.95
-]
-},
-{
 "id": "T-1957",
 "kind": "house",
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4352.glb",
 "model": "SOL-4352",
-"s": 57511.9,
-"x": 2347.3,
+"s": 57510.37,
+"x": 2341.66,
 "yaw": 2.92,
 "min": [
 -11.6,
@@ -1374350,8 +1371343,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4681.glb",
 "model": "SOL-4681",
-"s": 56853.32,
-"x": 2946.4,
+"s": 56852.73,
+"x": 2945.59,
 "yaw": -1.2727,
 "min": [
 -11.95,
@@ -1377656,8 +1374649,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4327.glb",
 "model": "SOL-4327",
-"s": 56114.1,
-"x": 1255.5,
+"s": 56112.6,
+"x": 1254.96,
 "yaw": -1.2862,
 "min": [
 -11.68,
@@ -1379233,8 +1376226,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-5172.glb",
 "model": "SOL-5172",
-"s": 57566.42,
-"x": 2285.16,
+"s": 57566.43,
+"x": 2285.1,
 "yaw": -0.042,
 "min": [
 -18.3,
@@ -1379261,8 +1376254,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-5172.glb",
 "model": "SOL-5172",
-"s": 57555.91,
-"x": 2337.59,
+"s": 57555.92,
+"x": 2337.26,
 "yaw": -0.3737,
 "min": [
 -18.3,
@@ -1379366,34 +1376359,6 @@
 "fmax": [
 16.8,
 16.5
-]
-},
-{
-"id": "T-2173",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-3530.glb",
-"model": "SOL-3530",
-"s": 57606.5,
-"x": 2365.6,
-"yaw": 2.7162,
-"min": [
--15.2,
--4,
--17.95
-],
-"max": [
-15.2,
-5.67,
-18.15
-],
-"fmin": [
--15.2,
--16.63
-],
-"fmax": [
-15.2,
-18.15
 ]
 },
 {
@@ -1379768,8 +1376733,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4924.glb",
 "model": "SOL-4924",
-"s": 57338.69,
-"x": 2791.94,
+"s": 57337.56,
+"x": 2793.58,
 "yaw": 2.5342,
 "min": [
 -18.65,
@@ -1381846,8 +1378811,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4318.glb",
 "model": "SOL-4318",
-"s": 55595.14,
-"x": 1392.62,
+"s": 55595.19,
+"x": 1392.55,
 "yaw": -1.046,
 "min": [
 -9.03,
@@ -1383449,8 +1380414,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4985.glb",
 "model": "SOL-4985",
-"s": 57656.5,
-"x": 2288.39,
+"s": 57656.81,
+"x": 2286.42,
 "yaw": -0.3066,
 "min": [
 -15.55,
@@ -1383526,63 +1380491,6 @@
 18.65,
 17.35
 ]
-},
-{
-"id": "T-2338",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-3978.glb",
-"model": "SOL-3978",
-"s": 57685.5,
-"x": 2362.4,
-"yaw": 2.6032,
-"min": [
--14.5,
--4,
--17.65
-],
-"max": [
-14.5,
-8.26,
-17.85
-],
-"fmin": [
--14.5,
--16.61
-],
-"fmax": [
-14.5,
-17.85
-]
-},
-{
-"id": "T-2339",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-3901.glb",
-"model": "SOL-3901",
-"s": 57709.07,
-"x": 2275.54,
-"yaw": 1.4743,
-"min": [
--9.7,
--4,
--16.45
-],
-"max": [
-9.7,
-5.07,
-16.65
-],
-"fmin": [
--9.7,
--15.13
-],
-"fmax": [
-9.7,
-16.65
-],
-"households": 2
 },
 {
 "id": "T-2340",
@@ -1384629,8 +1381537,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-3834.glb",
 "model": "SOL-3834",
-"s": 56230.9,
-"x": 3116.0,
+"s": 56227.63,
+"x": 3114.07,
 "yaw": -1.6188,
 "min": [
 -14.75,
@@ -1385527,8 +1382435,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-5485.glb",
 "model": "SOL-5485",
-"s": 55138.78,
-"x": 2513.95,
+"s": 55138.74,
+"x": 2513.85,
 "yaw": 0.5439,
 "min": [
 -14.6,
@@ -1386847,8 +1383755,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-4924.glb",
 "model": "SOL-4924",
-"s": 55917.58,
-"x": 1118.68,
+"s": 55917.62,
+"x": 1118.66,
 "yaw": -1.1817,
 "min": [
 -18.65,
@@ -1391367,8 +1388275,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-3473.glb",
 "model": "SOL-3473",
-"s": 55757.7,
-"x": 1094.32,
+"s": 55757.59,
+"x": 1094.34,
 "yaw": -1.2815,
 "min": [
 -18.2,
@@ -1396623,8 +1393531,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-6407.glb",
 "model": "SOL-6407",
-"s": 54930.12,
-"x": 2299.66,
+"s": 54930.33,
+"x": 2289.25,
 "yaw": -2.9412,
 "min": [
 -13.05,
@@ -1396699,34 +1393607,6 @@
 "fmax": [
 10.11,
 2.72
-]
-},
-{
-"id": "T-2843",
-"kind": "house",
-"settlement": "Tamarack",
-"glb": "res://remake/buildings/SOL-6034.glb",
-"model": "SOL-6034",
-"s": 54872.9,
-"x": 2308.3,
-"yaw": 0.1994,
-"min": [
--12.1,
--4,
--15.3
-],
-"max": [
-12.09,
-7.6,
-15.19
-],
-"fmin": [
--8.48,
--14.26
-],
-"fmax": [
-8.13,
--4.13
 ]
 },
 {
@@ -1397158,8 +1394038,8 @@
 "settlement": "Tamarack",
 "glb": "res://remake/buildings/SOL-5822.glb",
 "model": "SOL-5822",
-"s": 54942.25,
-"x": 1758.73,
+"s": 54942.12,
+"x": 1758.83,
 "yaw": -0.362,
 "min": [
 -11.8,
@@ -1406046,7 +1402926,7 @@
 "glb": "res://remake/buildings/HF-0800.glb",
 "model": "HF-0800",
 "s": 21056.1,
-"x": 2439.73,
+"x": 2437.84,
 "yaw": 1.568,
 "min": [
 -7.17,
@@ -1410119,7 +1406999,7 @@
 "glb": "res://remake/buildings/HF-0812.glb",
 "model": "HF-0812",
 "s": 21483.2,
-"x": 2163.63,
+"x": 2161.93,
 "yaw": 1.5738,
 "min": [
 -6.3,
@@ -1414535,7 +1411415,7 @@
 "glb": "res://remake/buildings/HF-1512.glb",
 "model": "HF-1512",
 "s": 20477.3,
-"x": 2162.76,
+"x": 2162.23,
 "yaw": 1.5737,
 "min": [
 -7.73,
@@ -1433762,7 +1430642,7 @@
 "glb": "res://remake/buildings/HF-1990.glb",
 "model": "HF-1990",
 "s": 21046.01,
-"x": 2918.25,
+"x": 2918.28,
 "yaw": -3.1416,
 "min": [
 -12.18,
@@ -1434995,8 +1431875,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-4651.glb",
 "model": "SOL-4651",
-"s": 20159.5,
-"x": 2642.37,
+"s": 20158.37,
+"x": 2640.82,
 "yaw": 2.1999,
 "min": [
 -11.43,
@@ -1436733,8 +1433613,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-3269.glb",
 "model": "SOL-3269",
-"s": 19658.48,
-"x": 2087.66,
+"s": 19658.05,
+"x": 2087.8,
 "yaw": 1.5708,
 "min": [
 -17.05,
@@ -1437765,40 +1434645,12 @@
 ]
 },
 {
-"id": "B-1482",
-"kind": "house",
-"settlement": "Bellhaven",
-"glb": "res://remake/buildings/SOL-5196.glb",
-"model": "SOL-5196",
-"s": 19550.9,
-"x": 2083.8,
-"yaw": 1.5683,
-"min": [
--16.05,
--4,
--16.05
-],
-"max": [
-16.05,
-10.36,
-16.25
-],
-"fmin": [
--16.05,
--15.01
-],
-"fmax": [
-16.05,
-16.25
-]
-},
-{
 "id": "B-1483",
 "kind": "house",
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-3765.glb",
 "model": "SOL-3765",
-"s": 19582.19,
+"s": 19576.98,
 "x": 2084.0,
 "yaw": 1.5708,
 "min": [
@@ -1437826,8 +1434678,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-3530.glb",
 "model": "SOL-3530",
-"s": 19611.24,
-"x": 2084.71,
+"s": 19606.03,
+"x": 2085.97,
 "yaw": 1.5708,
 "min": [
 -15.2,
@@ -1443195,8 +1440047,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-2003.glb",
 "model": "SOL-2003",
-"s": 20290.95,
-"x": 1533.0,
+"s": 20292.67,
+"x": 1532.6,
 "yaw": 2.3647,
 "min": [
 -10.93,
@@ -1443223,8 +1440075,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-4651.glb",
 "model": "SOL-4651",
-"s": 20304.7,
-"x": 1513.9,
+"s": 20304.96,
+"x": 1513.64,
 "yaw": 2.2201,
 "min": [
 -11.43,
@@ -1452698,8 +1449550,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-4953.glb",
 "model": "SOL-4953",
-"s": 19891.41,
-"x": 2172.24,
+"s": 19891.39,
+"x": 2172.09,
 "yaw": -2.7209,
 "min": [
 -17.9,
@@ -1452774,34 +1449626,6 @@
 "fmax": [
 15.5,
 19.4
-]
-},
-{
-"id": "B-2045",
-"kind": "house",
-"settlement": "Bellhaven",
-"glb": "res://remake/buildings/SOL-4937.glb",
-"model": "SOL-4937",
-"s": 19822.98,
-"x": 2158.3,
-"yaw": 0.4032,
-"min": [
--14.5,
--4,
--11.55
-],
-"max": [
-14.5,
-5.54,
-11.75
-],
-"fmin": [
--14.5,
--10.23
-],
-"fmax": [
-14.5,
-11.75
 ]
 },
 {
@@ -1453232,8 +1450056,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-5469.glb",
 "model": "SOL-5469",
-"s": 20214.49,
-"x": 1376.05,
+"s": 20214.78,
+"x": 1375.69,
 "yaw": 2.0894,
 "min": [
 -16.25,
@@ -1454384,8 +1451208,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-3973.glb",
 "model": "SOL-3973",
-"s": 22029.95,
-"x": 1559.9,
+"s": 22029.72,
+"x": 1559.8,
 "yaw": -2.736,
 "min": [
 -15.8,
@@ -1456693,7 +1453517,7 @@
 "glb": "res://remake/buildings/SOL-3473.glb",
 "model": "SOL-3473",
 "s": 19780.74,
-"x": 2231.85,
+"x": 2230.48,
 "yaw": 3.0979,
 "min": [
 -18.2,
@@ -1462227,8 +1459051,8 @@
 "settlement": "Bellhaven",
 "glb": "res://remake/buildings/SOL-5435.glb",
 "model": "SOL-5435",
-"s": 20652.9,
-"x": 942.5,
+"s": 20654.42,
+"x": 941.41,
 "yaw": -1.5322,
 "min": [
 -16.45,
@@ -1469394,7 +1466218,7 @@
 "glb": "res://remake/buildings/HF-1744.glb",
 "model": "HF-1744",
 "s": 42999.0,
-"x": -1757.63,
+"x": -1757.97,
 "yaw": 1.5737,
 "min": [
 -7.68,
@@ -1476913,7 +1473737,7 @@
 "glb": "res://remake/buildings/HF-1019.glb",
 "model": "HF-1019",
 "s": 42705.9,
-"x": -1757.39,
+"x": -1758.76,
 "yaw": 1.5736,
 "min": [
 -7.3,
@@ -1476969,7 +1473793,7 @@
 "glb": "res://remake/buildings/HF-1019.glb",
 "model": "HF-1019",
 "s": 42733.3,
-"x": -1757.41,
+"x": -1758.75,
 "yaw": 1.5708,
 "min": [
 -7.3,
@@ -1477709,7 +1474533,7 @@
 "glb": "res://remake/buildings/HF-0589.glb",
 "model": "HF-0589",
 "s": 43425.4,
-"x": -2216.83,
+"x": -2218.76,
 "yaw": 1.5736,
 "min": [
 -5.9,
@@ -1500089,8 +1496913,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-3977.glb",
 "model": "SOL-3977",
-"s": 44220.16,
-"x": -2095.92,
+"s": 44220.34,
+"x": -2093.79,
 "yaw": -1.5737,
 "min": [
 -15.9,
@@ -1509380,8 +1506204,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/HF-1990.glb",
 "model": "HF-1990",
-"s": 43828.09,
-"x": -2521.72,
+"s": 43828.22,
+"x": -2521.58,
 "yaw": -2.597,
 "min": [
 -12.18,
@@ -1510029,8 +1506853,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/HF-1990.glb",
 "model": "HF-1990",
-"s": 44063.14,
-"x": -1898.93,
+"s": 44063.1,
+"x": -1898.65,
 "yaw": 1.449,
 "min": [
 -12.18,
@@ -1518782,8 +1515606,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-5234.glb",
 "model": "SOL-5234",
-"s": 44202.3,
-"x": -2128.15,
+"s": 44203.19,
+"x": -2126.08,
 "yaw": -3.0587,
 "min": [
 -15.6,
@@ -1519539,8 +1516363,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-4924.glb",
 "model": "SOL-4924",
-"s": 43739.72,
-"x": -1219.3,
+"s": 43741.77,
+"x": -1219.67,
 "yaw": 2.1533,
 "min": [
 -18.65,
@@ -1520355,8 +1517179,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-4985.glb",
 "model": "SOL-4985",
-"s": 42144.94,
-"x": -1342.13,
+"s": 42144.35,
+"x": -1342.83,
 "yaw": 1.0112,
 "min": [
 -15.55,
@@ -1520776,8 +1517600,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-3002.glb",
 "model": "SOL-3002",
-"s": 41781.58,
-"x": -1862.02,
+"s": 41779.54,
+"x": -1865.62,
 "yaw": 0.0413,
 "min": [
 -17.45,
@@ -1520804,8 +1517628,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-2453.glb",
 "model": "SOL-2453",
-"s": 41780.8,
-"x": -1888.9,
+"s": 41780.85,
+"x": -1891.94,
 "yaw": -0.0177,
 "min": [
 -9.58,
@@ -1521001,8 +1517825,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-4000.glb",
 "model": "SOL-4000",
-"s": 41796.35,
-"x": -2233.29,
+"s": 41794.46,
+"x": -2229.7,
 "yaw": -0.2004,
 "min": [
 -17.95,
@@ -1521901,8 +1518725,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-3765.glb",
 "model": "SOL-3765",
-"s": 42840.95,
-"x": -3082.12,
+"s": 42844.32,
+"x": -3084.07,
 "yaw": -1.5733,
 "min": [
 -15.5,
@@ -1522211,8 +1519035,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-3128.glb",
 "model": "SOL-3128",
-"s": 43391.13,
-"x": -2998.43,
+"s": 43390.89,
+"x": -3004.34,
 "yaw": -1.6321,
 "min": [
 -15.4,
@@ -1522239,8 +1519063,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-3632.glb",
 "model": "SOL-3632",
-"s": 43509.41,
-"x": -2966.97,
+"s": 43515.28,
+"x": -2967.2,
 "yaw": -2.062,
 "min": [
 -16.1,
@@ -1522267,8 +1519091,8 @@
 "settlement": "Fenwick",
 "glb": "res://remake/buildings/SOL-4924.glb",
 "model": "SOL-4924",
-"s": 43538.96,
-"x": -2949.72,
+"s": 43543.09,
+"x": -2947.11,
 "yaw": -2.1344,
 "min": [
 -18.65,
@@ -1527325,7 +1524149,7 @@
 "glb": "res://remake/buildings/PCR-1024.glb",
 "model": "PCR-1024",
 "s": 54163.8,
-"x": -5013.01,
+"x": -5012.38,
 "yaw": -1.5679,
 "min": [
 -7.03,
@@ -1533424,7 +1530248,7 @@
 "glb": "res://remake/buildings/PCR-0297.glb",
 "model": "PCR-0297",
 "s": 53945.3,
-"x": -5013.57,
+"x": -5011.63,
 "yaw": -1.5738,
 "min": [
 -6.13,
@@ -1533565,7 +1530389,7 @@
 "glb": "res://remake/buildings/PCR-1294.glb",
 "model": "PCR-1294",
 "s": 54736.4,
-"x": -5106.07,
+"x": -5103.33,
 "yaw": -1.5738,
 "min": [
 -6.83,
@@ -1551689,8 +1548513,8 @@
 "settlement": "Brightwater",
 "glb": "res://remake/buildings/PCR-0964.glb",
 "model": "PCR-0964",
-"s": 54570.06,
-"x": -4472.81,
+"s": 54569.99,
+"x": -4472.79,
 "yaw": -2.9317,
 "min": [
 -9.08,
@@ -1554241,8 +1551065,8 @@
 "settlement": "Brightwater",
 "glb": "res://remake/buildings/PCR-5958.glb",
 "model": "PCR-5958",
-"s": 53700.8,
-"x": -4586.2,
+"s": 53700.64,
+"x": -4586.92,
 "yaw": 1.5708,
 "min": [
 -13.2,
@@ -1571153,8 +1567977,8 @@
 "settlement": "Brightwater",
 "glb": "res://remake/buildings/PCR-1778.glb",
 "model": "PCR-1778",
-"s": 55931.7,
-"x": -5228.7,
+"s": 55932.09,
+"x": -5229.06,
 "yaw": 1.5708,
 "min": [
 -9.83,
@@ -1574418,8 +1571242,8 @@
 "settlement": "Brightwater",
 "glb": "res://remake/buildings/PCR-0327.glb",
 "model": "PCR-0327",
-"s": 55915.9,
-"x": -5163.1,
+"s": 55916.27,
+"x": -5162.01,
 "yaw": 2.616,
 "min": [
 -9.8,
@@ -1575786,8 +1572610,8 @@
 "settlement": "Brightwater",
 "glb": "res://remake/buildings/PCR-2300.glb",
 "model": "PCR-2300",
-"s": 54831.9,
-"x": -4536.1,
+"s": 54832.03,
+"x": -4536.02,
 "yaw": 1.6332,
 "min": [
 -12.18,
@@ -1575842,8 +1572666,8 @@
 "settlement": "Brightwater",
 "glb": "res://remake/buildings/PCR-2300.glb",
 "model": "PCR-2300",
-"s": 54694.9,
-"x": -4521.4,
+"s": 54694.51,
+"x": -4520.96,
 "yaw": 1.7088,
 "min": [
 -12.18,
@@ -1580017,8 +1576841,8 @@
 "settlement": "Brightwater",
 "glb": "res://remake/buildings/PCR-0824.glb",
 "model": "PCR-0824",
-"s": 55761.5,
-"x": -4797.8,
+"s": 55761.69,
+"x": -4796.02,
 "yaw": 2.4792,
 "min": [
 -9.35,
@@ -1583707,7 +1580531,7 @@
 "glb": "res://remake/buildings/SOL-0249.glb",
 "model": "SOL-0249",
 "s": 14149.0,
-"x": 5198.15,
+"x": 5198.47,
 "yaw": -1.5738,
 "min": [
 -7.7,
@@ -1583764,7 +1580588,7 @@
 "glb": "res://remake/buildings/SOL-0577.glb",
 "model": "SOL-0577",
 "s": 14396.9,
-"x": 5106.0,
+"x": 5106.6,
 "yaw": -1.5708,
 "min": [
 -5.98,
@@ -1585311,7 +1582135,7 @@
 "glb": "res://remake/buildings/SOL-0742.glb",
 "model": "SOL-0742",
 "s": 14567.0,
-"x": 5159.07,
+"x": 5157.99,
 "yaw": 1.5737,
 "min": [
 -5.5,
@@ -1585651,7 +1582475,7 @@
 "glb": "res://remake/buildings/SOL-0249.glb",
 "model": "SOL-0249",
 "s": 14084.4,
-"x": 5158.87,
+"x": 5158.55,
 "yaw": 1.5737,
 "min": [
 -7.7,
@@ -1622343,8 +1619167,8 @@
 "settlement": "Playa Verde",
 "glb": "res://remake/buildings/SOL-0930.glb",
 "model": "SOL-0930",
-"s": 13283.14,
-"x": 4906.07,
+"s": 13283.09,
+"x": 4906.16,
 "yaw": -0.9186,
 "min": [
 -9.73,
@@ -1628812,8 +1625636,8 @@
 "settlement": "Playa Verde",
 "glb": "res://remake/buildings/SOL-0448.glb",
 "model": "SOL-0448",
-"s": 15708.92,
-"x": 4809.77,
+"s": 15708.71,
+"x": 4808.42,
 "yaw": -2.0356,
 "min": [
 -8.98,
@@ -1628840,8 +1625664,8 @@
 "settlement": "Playa Verde",
 "glb": "res://remake/buildings/SOL-3943.glb",
 "model": "SOL-3943",
-"s": 15641.38,
-"x": 4782.64,
+"s": 15641.62,
+"x": 4783.09,
 "yaw": -2.1819,
 "min": [
 -16.9,
@@ -1635255,7 +1632079,7 @@
 "glb": "res://remake/buildings/PCR-0651.glb",
 "model": "PCR-0651",
 "s": 12213.8,
-"x": -5434.95,
+"x": -5436.85,
 "yaw": 1.5708,
 "min": [
 -6.13,
@@ -1638625,7 +1635449,7 @@
 "glb": "res://remake/buildings/PCR-1024.glb",
 "model": "PCR-1024",
 "s": 12089.7,
-"x": -5435.6,
+"x": -5436.2,
 "yaw": 1.5708,
 "min": [
 -7.03,
@@ -1665582,64 +1662406,6 @@
 "over_water": true
 },
 {
-"id": "HVN-1250",
-"kind": "fishhouse",
-"settlement": "Haven Point",
-"glb": "res://remake/buildings/HVN-1250.glb",
-"model": "HVN-1250",
-"s": 12519.0,
-"x": -5384.6,
-"yaw": 1.5708,
-"min": [
--7.65,
--4,
--4.5
-],
-"max": [
-7.65,
-10.31,
-12
-],
-"fmin": [
--7.65,
--2.26
-],
-"fmax": [
-7.65,
-12
-],
-"over_water": true
-},
-{
-"id": "HVN-1251",
-"kind": "shingle",
-"settlement": "Haven Point",
-"glb": "res://remake/buildings/HVN-1251.glb",
-"model": "HVN-1251",
-"s": 12519.0,
-"x": -5414.6,
-"yaw": 1.5708,
-"min": [
--7.65,
--4,
--4.5
-],
-"max": [
-7.65,
-10.31,
-12
-],
-"fmin": [
--7.65,
--2.26
-],
-"fmax": [
-7.65,
-12
-],
-"over_water": true
-},
-{
 "id": "HVN-1252",
 "kind": "shed",
 "settlement": "Haven Point",
@@ -1671256,8 +1668022,8 @@
 "settlement": "Port Tamsin",
 "glb": "res://remake/buildings/HF-0301.glb",
 "model": "HF-0301",
-"s": 8236.89,
-"x": -2186.68,
+"s": 8236.82,
+"x": -2186.75,
 "yaw": 1.5672,
 "min": [
 -7.8,
@@ -1699642,7 +1696408,7 @@
 "glb": "res://remake/buildings/HF-0629.glb",
 "model": "HF-0629",
 "s": 58965.4,
-"x": -1625.73,
+"x": -1627.87,
 "yaw": 1.5679,
 "min": [
 -6.73,
@@ -1703067,7 +1699833,7 @@
 "glb": "res://remake/buildings/HF-0912.glb",
 "model": "HF-0912",
 "s": 59394.0,
-"x": -1901.83,
+"x": -1903.77,
 "yaw": 1.5678,
 "min": [
 -8.07,
@@ -1724414,7 +1721180,7 @@
 "glb": "res://remake/buildings/SOL-0758.glb",
 "model": "SOL-0758",
 "s": 48718.3,
-"x": 5526.26,
+"x": 5528.1,
 "yaw": -1.5708,
 "min": [
 -7.2,
@@ -1737451,7 +1734217,7 @@
 "glb": "res://remake/buildings/PCR-1024.glb",
 "model": "PCR-1024",
 "s": 18749.6,
-"x": -5089.6,
+"x": -5090.2,
 "yaw": 1.5708,
 "min": [
 -7.03,
@@ -1738325,7 +1735091,7 @@
 "glb": "res://remake/buildings/PCR-1244.glb",
 "model": "PCR-1244",
 "s": 18836.6,
-"x": -5457.38,
+"x": -5458.62,
 "yaw": 1.568,
 "min": [
 -6.18,
@@ -1747779,7 +1744545,7 @@
 "glb": "res://remake/buildings/HF-1512.glb",
 "model": "HF-1512",
 "s": 24920.8,
-"x": -464.24,
+"x": -464.77,
 "yaw": 1.5738,
 "min": [
 -7.73,
@@ -1750785,7 +1747551,7 @@
 "glb": "res://remake/buildings/HF-0589.glb",
 "model": "HF-0589",
 "s": 25254.0,
-"x": -608.68,
+"x": -607.24,
 "yaw": -1.5678,
 "min": [
 -5.9,
@@ -1766787,7 +1763553,7 @@
 "glb": "res://remake/buildings/HF-1719.glb",
 "model": "HF-1719",
 "s": 30191.9,
-"x": 2202.33,
+"x": 2200.0,
 "yaw": 1.5708,
 "min": [
 -8.65,
@@ -1775318,7 +1772084,7 @@
 "glb": "res://remake/buildings/HF-2297.glb",
 "model": "HF-2297",
 "s": 51614.0,
-"x": -3094.56,
+"x": -3095.95,
 "yaw": 1.5708,
 "min": [
 -6.7,
@@ -1775374,7 +1772140,7 @@
 "glb": "res://remake/buildings/HF-2084.glb",
 "model": "HF-2084",
 "s": 51641.6,
-"x": -3094.42,
+"x": -3096.0,
 "yaw": 1.5708,
 "min": [
 -6.28,

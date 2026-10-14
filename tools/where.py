@@ -13,6 +13,7 @@ h (m above the sea-level datum).
     python3 tools/where.py check [S X R]          problems (the whole world without S X R): structures on a road, in
                                                   water or overlapping; parked vehicles on a road, in a building or water
     python3 tools/where.py town NAME              a settlement's extent, its structures by kind, its roads
+    python3 tools/where.py poles [S X R] [--dump F]  sign posts, signal and crossing masts standing in a carriageway
 
 The game's own answer, live (drawn bounds, LOD state, what the camera sees): tools/gcmd.py query ...
 (scripts/autoload/WorldQuery.gd).
@@ -72,11 +73,12 @@ class World:
             for a, b in zip(pts, pts[1:]):
                 for c in self._cells((a[0] + b[0]) / 2 if abs(b[0] - a[0]) < self.C / 2 else a[0], (a[1] + b[1]) / 2,
                                      math.hypot(self.wrap(b[0] - a[0]), b[1] - a[1]) / 2 + hw + 2):
-                    self.rgrid[c].append((a, b, hw, rd.get("name", ""), rd["cls"], ri))
+                    self.rgrid[c].append((a, b, hw, rd.get("name", ""), rd["cls"], ri,
+                                          (rd.get("hl", rd["w"] / 2), rd.get("hr", rd["w"] / 2))))
         rail = self.ter.get("rail", {}).get("pts", [])
         for a, b in zip(rail, rail[1:]):
             for c in self._cells(a[0], a[1], 12.0):
-                self.rgrid[c].append((a, b, 3.0, "the Ring Line", "rail", -1))
+                self.rgrid[c].append((a, b, 3.0, "the Ring Line", "rail", -1, (3.0, 3.0)))
 
     def wrap(self, d):
         return (d + self.C / 2) % self.C - self.C / 2
@@ -127,16 +129,19 @@ class World:
         j = min(self._lc.shape[0] - 1, max(0, int((x + self.HW) / st)))
         return int(self._lc[j, i, 0]), int(self._lc[j, i, 1])
 
-    def roads_near(self, s, x, r=CELL):
-        """[(distance from the centreline, half width, name, cls)] nearest first"""
+    def roads_near(self, s, x, r=CELL, sided=False):
+        """[(distance from the centreline, half width, name, cls)] nearest first; sided: the half width on the point's
+        own side (hr right of the way along the points, hl left: a parking lane widens one side only)"""
         out = {}
         for c in self._cells(s, x, r):
-            for a, b, hw, name, cls, ri in self.rgrid.get(c, ()):
+            for a, b, hw, name, cls, ri, lr in self.rgrid.get(c, ()):
                 bs, bx = self.wrap(b[0] - a[0]), b[1] - a[1]
                 ps, px = self.wrap(s - a[0]), x - a[1]
                 L2 = bs * bs + bx * bx or 1e-9
                 t = max(0.0, min(1.0, (ps * bs + px * bx) / L2))
                 d = math.hypot(ps - bs * t, px - bx * t)
+                if sided:
+                    hw = lr[1] if (bs * px - bx * ps) > 0.0 else lr[0]
                 k = (ri, name)
                 if d <= r and (k not in out or d < out[k][0]):
                     out[k] = (d, hw, name, cls)
@@ -342,7 +347,7 @@ def cmd_check(w, s=None, x=None, r=None):
         roads = set()
         wet = 0
         for p in fp:
-            for d, hw, n, c in w.roads_near(p[0], p[1], 30.0):
+            for d, hw, n, c in w.roads_near(p[0], p[1], 30.0, sided=True):
                 if d < hw - 0.3:
                     roads.add("%s %s" % (c, n or "(unnamed)"))
             h, lv, dep = w.height(p[0], p[1])
@@ -394,6 +399,88 @@ def cmd_check(w, s=None, x=None, r=None):
             print("  ... %d more" % (len(v) - 40))
 
 
+POLE_R = 0.1           # a post's half width, near enough (signs 0.035-0.05, signal and crossing masts 0.07-0.1)
+
+
+def poles(w):
+    """every post the game stands by a road: [(kind, s, x, label)] -- signs (road_furniture.json "signs"), signal masts
+    and crossing masts (where RoadFurniture.gd puts them: _signal and the crossing's sgn loop, mirrored here)"""
+    rf = json.load(open(os.path.join(GD, "road_furniture.json")))
+    out = [("sign", g["s"], g["x"], "%s %s" % (g.get("t", ""), g.get("txt", "")[:30])) for g in rf.get("signs", [])]
+    for sig in rf.get("signals", []):
+        if sig.get("masts"):                      # (placed clear of the roads by road_furniture.py: the game uses these)
+            out += [("signal mast", m[0], m[1], "signal at s %.1f x %.1f" % (sig["s"], sig["x"])) for m in sig["masts"]]
+            continue
+        for arm in sig["arms"]:
+            a = (arm[0], arm[1])
+            hw = float(arm[2]) * 0.5
+            right = (a[1], -a[0])                 # (right of travel = -a: (-t.y, t.x) with t = -a)
+            m = (sig["s"] + a[0] * (hw + 6.0) + right[0] * (hw + 1.0), sig["x"] + a[1] * (hw + 6.0) + right[1] * (hw + 1.0))
+            out.append(("signal mast", m[0], m[1], "signal at s %.1f x %.1f" % (sig["s"], sig["x"])))
+    for xg in rf.get("xings", []):
+        if xg.get("level") == "P":
+            continue
+        if xg.get("masts"):
+            out += [("crossing mast", m[0], m[1], "rail crossing at s %.1f x %.1f" % (xg["s"], xg["x"])) for m in xg["masts"]]
+            continue
+        u, n = xg["u"], xg["ru"]
+        hw = float(xg["w"]) * 0.5
+        for sgn in (1.0, -1.0):
+            arm = (u[0] * sgn, u[1] * sgn)
+            travel = (-arm[0], -arm[1])
+            right = (-travel[1], travel[0])
+            back = 4.2 / max(0.35, abs(arm[0] * n[0] + arm[1] * n[1]))
+            m = (xg["s"] + arm[0] * back + right[0] * (hw + 1.1), xg["x"] + arm[1] * back + right[1] * (hw + 1.1))
+            out.append(("crossing mast", m[0], m[1], "rail crossing at s %.1f x %.1f" % (xg["s"], xg["x"])))
+    return out
+
+
+def in_roadway(w, s, x, margin=0.0):
+    """the carriageways this point stands in: [(how far in, m; road name, cls, road index)] -- each side by its own kerb
+    (hr right of the way along the points, hl left), as MapTerrain._road_grade does"""
+    hits = {}
+    for c in w._cells(s, x, 30.0):
+        for a, b, hw, name, cls, ri, _lr in w.rgrid.get(c, ()):
+            if ri < 0:
+                continue                          # (the rail line: its own check)
+            bs, bx = w.wrap(b[0] - a[0]), b[1] - a[1]
+            ps, px = w.wrap(s - a[0]), x - a[1]
+            L2 = bs * bs + bx * bx or 1e-9
+            t = max(0.0, min(1.0, (ps * bs + px * bx) / L2))
+            d = math.hypot(ps - bs * t, px - bx * t)
+            rd = w.ter["roads"][ri]
+            kerb = rd.get("hr", rd["w"] / 2) if (bs * px - bx * ps) > 0.0 else rd.get("hl", rd["w"] / 2)
+            depth = kerb + POLE_R + margin - d
+            if depth > 0.0 and (ri not in hits or depth > hits[ri][0]):
+                hits[ri] = (depth, name or "(unnamed)", cls, ri)
+    return sorted(hits.values(), reverse=True)
+
+
+def cmd_poles(w, s=None, x=None, r=None, dump=None):
+    """posts standing in a carriageway (and those within 0.3 m of a kerb: a car's mirror clips them)"""
+    ps = poles(w)
+    if s is not None:
+        ps = [p for p in ps if w.dist(s, x, p[1], p[2]) <= r]
+    bad, near = [], []
+    for kind, ps_, px_, label in ps:
+        hits = in_roadway(w, ps_, px_)
+        if hits:
+            bad.append((hits[0][0], kind, ps_, px_, label, hits[0]))
+        elif in_roadway(w, ps_, px_, 0.3):
+            near.append((kind, ps_, px_, label))
+    bad.sort(reverse=True)
+    by = Counter(b[1] for b in bad)
+    print("checked %d posts: %d in a carriageway (%s), %d within 0.3 m of a kerb" % (len(ps), len(bad), dict(by), len(near)))
+    for depth, kind, ps_, px_, label, h in bad[:40]:
+        print("  %-13s s %9.1f x %8.1f  %.2f m into %s %s  (%s)" % (kind, ps_, px_, depth, h[2], h[1], label))
+    if len(bad) > 40:
+        print("  ... %d more" % (len(bad) - 40))
+    if dump:
+        json.dump([{"kind": k, "s": a, "x": b_, "depth": round(d, 3), "road": h[3], "label": l} for d, k, a, b_, l, h in bad],
+                  open(dump, "w"), indent=0)
+        print("wrote", dump)
+
+
 def cmd_town(w, name):
     es = [e for e in w.st if (e.get("settlement") or "").lower() == name.lower()]
     if not es:
@@ -433,6 +520,13 @@ def main():
             cmd_check(w, f(1), f(2), f(3, 150.0))
         else:
             cmd_check(w)
+    elif op == "poles":
+        dump = a[a.index("--dump") + 1] if "--dump" in a else None
+        a = [t for t in a if t != "--dump" and t != dump]
+        if len(a) >= 3:
+            cmd_poles(w, f(1), f(2), f(3, 150.0), dump)
+        else:
+            cmd_poles(w, dump=dump)
     elif op == "town":
         cmd_town(w, " ".join(a[1:]))
     else:

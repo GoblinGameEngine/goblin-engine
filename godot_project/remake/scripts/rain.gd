@@ -19,10 +19,13 @@ class_name RemakeRain
 ##     Thunder alone carries across the station.
 ##   * Thunderstorms: lightning bolts from the cell's base to the floor at random under it, a flash
 ##     of light, and thunder that arrives distance / 343 m/s later.
+##   * Drizzle under a weather front's core (RemakeClouds.drizzle_at): the near particles, thinly.
+##   * Coriolis: falling rain drifts spinward (east, +s) -- drops and shafts slant SLANT that way.
 
 const NEAR_BOX := 36.0               # m: half-size of the particle box round the camera
 const DROP_SPEED := 26.0
 const THUNDER_EVERY := Vector2(4.0, 12.0)
+const SLANT := 0.1                   # m spinward per m fallen (~6 deg: the real ~2.5 deg, made visible)
 
 var camera: Camera3D
 var clouds: RemakeClouds
@@ -158,6 +161,8 @@ func _process(delta: float) -> void:
 		_sound(st, cs, cp, ch, roofed)
 		if st.thunder:
 			_thunder_step(st, delta, d)
+	if ch < StationGeo.R * 0.1:
+		here = maxf(here, clouds.drizzle_at(cs, cp.x))
 	for id in _shafts.keys():
 		if not live.has(id):
 			(_shafts[id] as Node).queue_free()
@@ -170,8 +175,9 @@ func _process(delta: float) -> void:
 	var basis := StationGeo.basis(cs)
 	_rig.global_transform = Transform3D(basis, cp + up * 28.0)
 	_hf.global_transform = Transform3D(basis, cp)
-	_pm.gravity = -up * 9.8
-	_pm.direction = basis.inverse() * -up
+	var fall := (-up + StationGeo.forward(cs) * SLANT).normalized()
+	_pm.gravity = fall * 9.8
+	_pm.direction = basis.inverse() * fall
 	_spm.gravity = -up * 9.8
 	_spm.direction = up
 	_rain.amount_ratio = clampf(here, 0.0, 1.0)
@@ -260,11 +266,12 @@ func _shaft(st: Dictionary) -> void:
 	var mat2: ShaderMaterial = mi.material_override
 	mat2.set_shader_parameter("intensity", st.intensity)
 	mat2.set_shader_parameter("height", H)
-	# the unit cylinder stretched to the footprint's ellipse: fa along the wind (s), fb along the axis (x)
+	# the unit cylinder stretched to the footprint's ellipse: fa along the wind (s), fb along the axis (x),
+	# its foot SLANT * H spinward of its top
 	var fwd := StationGeo.forward(st.s)
 	var upv := StationGeo.up(st.s)
-	mi.global_transform = Transform3D(Basis(fwd * float(st.fa), upv * H, Vector3(1, 0, 0) * float(st.fb)),
-		StationGeo.point(st.s, st.x, g + H * 0.5))
+	mi.global_transform = Transform3D(Basis(fwd * float(st.fa), (upv - fwd * SLANT) * H, Vector3(1, 0, 0) * float(st.fb)),
+		StationGeo.point(st.s + SLANT * H * 0.5, st.x, g + H * 0.5))
 
 
 func _thunder_step(st: Dictionary, delta: float, dist: float) -> void:
@@ -292,7 +299,7 @@ func _bolt(st: Dictionary, dist: float) -> void:
 		var f := i / float(n)
 		if i > 0 and i < n:
 			off += Vector2(_rng.randf_range(-18.0, 18.0), _rng.randf_range(-18.0, 18.0))
-		pts.append(StationGeo.point(bs + off.x, bx + off.y, lerpf(st.base, g, f)))
+		pts.append(StationGeo.point(bs + off.x + SLANT * (float(st.base) - g) * f, bx + off.y, lerpf(st.base, g, f)))
 	var st_ := SurfaceTool.new()
 	st_.begin(Mesh.PRIMITIVE_TRIANGLES)
 	for i in n:
