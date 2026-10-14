@@ -130,6 +130,8 @@ def kit_prims(g, path):
         stack.extend((ch, M) for ch in nodes[ni].get("children", []))
     kd = os.path.join(os.path.dirname(path), "kit")
     for r in json.load(open(kp)):
+        if r[0] == "T":                       # (lettering: the game sets it from the font, there's no geometry here)
+            continue
         if r[0] not in _KIT:
             pp = os.path.join(kd, r[0] + ".glb")
             _KIT[r[0]] = list(world_prims(Glb(pp), lambda n: not n.endswith("-colonly"))) if os.path.exists(pp) else []

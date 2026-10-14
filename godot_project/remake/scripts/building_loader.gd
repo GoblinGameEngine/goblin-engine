@@ -168,13 +168,21 @@ static func lod_vc_material() -> StandardMaterial3D:
 ## piece, and the pieces' collision (<pid>-colonly) joins the building's own trimesh.  Once per model: the merged
 ## meshes and shape are the model's shared resources, marked with meta "kit".
 const KIT_ROOT := "res://remake/buildings/kit/"
-static var _kit_lock := Mutex.new()
+static var _kit_lock := Mutex.new()       # (held while a model merges -- on a worker; the main thread asks _merged)
+static var _merged := {}                  # PackedScene instance id -> its kit defs: merged already
+static var _merged_mx := Mutex.new()      # (guards _merged only, never held across engine calls)
 static var _kit_raw := {}            # piece -> [Mesh, its material defs, its collision faces]
 
 
 ## Folds <ID>.kit.json's pieces into the model's visual mesh (safe on a worker thread).  Returns the kit's material
 ## defs (to apply with the building's own).
 static func merge_kit(ps: PackedScene) -> Dictionary:
+	var pkey := ps.get_instance_id()         # (a reloaded scene is a new instance: merged afresh)
+	_merged_mx.lock()
+	var done = _merged.get(pkey)
+	_merged_mx.unlock()
+	if done != null:
+		return done
 	var kit_path := ps.resource_path.get_basename() + ".kit.json"
 	if not DataFile.exists(kit_path):
 		return {}
@@ -201,13 +209,32 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 	n.free()
 	if m == null or m.has_meta("kit"):
 		_kit_lock.unlock()
-		return m.get_meta("kit", {}) if m else {}
+		var d: Dictionary = m.get_meta("kit", {}) if m else {}
+		_merged_mx.lock()
+		_merged[pkey] = d
+		_merged_mx.unlock()
+		return d
 	var rows = JSON.parse_string(DataFile.text(kit_path))
 	var defs := {}
 	var adds := {}                   # material name -> [[mesh, surface, transform], ...]
 	var col_add := PackedVector3Array()        # the pieces' collision faces, in the building's collision frame
 	var mats := {}                   # material name -> the piece's material (for one the building doesn't have)
 	for r in (rows if rows is Array else []):
+		if str(r[0]) == "T":         # lettering: ["T", text, font, material, 3x4 matrix taking a 1 m em to the sign]
+			var tmesh := _text_mesh(String(r[2]), String(r[1]))
+			if tmesh == null:
+				continue
+			var mm: Array = r[4]
+			var tx := Transform3D(Basis(Vector3(mm[0], mm[4], mm[8]), Vector3(mm[1], mm[5], mm[9]), Vector3(mm[2], mm[6], mm[10])),
+				Vector3(mm[3], mm[7], mm[11]))
+			var tkey := String(r[3])
+			if not adds.has(tkey):
+				adds[tkey] = []
+				var named := StandardMaterial3D.new()
+				named.resource_name = tkey               # (_apply_defs dresses it from the building's sidecar)
+				mats[tkey] = named
+			adds[tkey].append([tmesh, 0, frame_inv * tx])
+			continue
 		var k = _kit_piece(String(r[0]))
 		if k == null:
 			continue
@@ -266,6 +293,9 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 			push_warning("merge_kit: %s has piece collision but no collision shape of its own" % kit_path)
 	m.set_meta("kit", defs)
 	_kit_lock.unlock()
+	_merged_mx.lock()
+	_merged[pkey] = defs
+	_merged_mx.unlock()
 	return defs
 
 
@@ -289,6 +319,32 @@ static func _kit_piece(pid: String):
 			if DataFile.exists(KIT_ROOT + pid + ".mats.json") else {}
 		_kit_raw[pid] = [mesh, defs if defs is Dictionary else {}, faces] if mesh else null
 	return _kit_raw[pid]
+
+
+const FONTS := "res://remake/fonts/"
+static var _texts := {}              # font|text -> TextMesh (an em of 1 m, centred as Blender centres it)
+
+
+static func _text_mesh(font_name: String, text: String) -> Mesh:
+	var key := font_name + "|" + text
+	if not _texts.has(key):
+		if _texts.size() > 4000:
+			_texts.clear()
+		var font := load(FONTS + font_name + ".ttf") as Font
+		if font == null:
+			_texts[key] = null
+		else:
+			var tm := TextMesh.new()
+			tm.font = font
+			tm.text = text
+			tm.font_size = 64
+			tm.pixel_size = 1.0 / 64.0
+			tm.depth = 0.0                   # (flat, one-sided: the front faces +z, as the sign's reader)
+			tm.curve_step = 4.0              # (about Blender's resolution_u 4)
+			tm.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			tm.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+			_texts[key] = tm
+	return _texts[key]
 
 
 static func _frame_in(c: Node, root: Node) -> Transform3D:

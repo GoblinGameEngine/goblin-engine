@@ -26,7 +26,7 @@ import uuid
 
 import bmesh
 import bpy
-from mathutils import Vector
+from mathutils import Matrix, Vector
 
 import gblib
 
@@ -201,6 +201,46 @@ def wrap(fn, frame_of, ignore=()):
     return kitted
 
 
+# ------------------------------------------------------------------ lettering
+# Flat lettering (gblib.text_mesh, extrude <= 5 mm) in a font the game ships (godot_project/remake/fonts) isn't built at
+# all: <ID>.kit.json gets ["T", text, font, material, [3x4 matrix]] and the game sets it with a TextMesh of an em of 1 m
+# (RemakeBuilding.merge_kit).  FONT_EM: Blender's text size 1 in ems of the font (measured 2026-10-13: bounds of five
+# strings each agree to 0.5%, baselines exactly) -- the matrix takes the TextMesh's 1 m em to the size Blender set.
+FONT_EM = {"NotoSans-Bold": 0.6857, "NotoSerif-Bold": 0.6905}
+TO_GLB = Matrix(((1, 0, 0, 0), (0, 0, 1, 0), (0, -1, 0, 0), (0, 0, 0, 1)))     # Blender (x, y, z) -> glb (x, z, -y)
+
+
+def wrap_text(fn):
+    import inspect
+    sig = inspect.signature(fn)
+
+    def lettering(*a, **k):
+        ob = fn(*a, **k)
+        try:
+            ba = sig.bind(*a, **k)
+            ba.apply_defaults()
+            x = ba.arguments
+            b = x["b"]
+            fname = os.path.splitext(os.path.basename(x["font"] or "NotoSerif-Bold.ttf"))[0]
+            if (ob is None or not enabled() or not getattr(b, "kit_on", True) or x["extrude"] > 0.005 or x["align"] != "CENTER"
+                    or x["parent"] not in (None, b.root) or fname not in FONT_EM or "\n" in x["text"]):
+                return ob
+            m = TO_GLB @ ob.matrix_world @ Matrix.Translation((0, 0, x["extrude"])) @ Matrix.Scale(FONT_EM[fname] * x["size"], 4)
+            mname = b.mats[x["mat"]].name
+            b.kit_inst.append(["T", x["text"], fname, mname, [round(m[i][j], 5) for i in range(3) for j in range(4)]])
+            b.kit_text_defs[mname] = b.mat_defs.get(mname)
+            me = ob.data
+            bpy.data.objects.remove(ob)
+            bpy.data.meshes.remove(me)
+            return None
+        except Exception as e:                                # (never break a build over the kit)
+            print("KIT text skip", e)
+            return ob
+    lettering.__name__ = fn.__name__
+    lettering.__wrapped__ = fn
+    return lettering
+
+
 # ------------------------------------------------------------------ door leaves
 def kit_leaves(b):
     """Each door leaf (a door_* object, built in its own hinge frame) becomes a piece whole: <ID>.kit.json gets
@@ -276,6 +316,12 @@ def write(b, out_glb):
         return
     with open(base + ".kit.json", "w") as f:
         json.dump(b.kit_inst, f, separators=(",", ":"))
+    if b.kit_text_defs:                       # (the lettering's materials: no object of the glb has them any more)
+        mp = base + ".mats.json"
+        md = json.load(open(mp)) if os.path.exists(mp) else {}
+        md.update({k: v for k, v in b.kit_text_defs.items() if k not in md})
+        with open(mp, "w") as f:
+            json.dump(dict(sorted(md.items())), f, indent=0)
     kd = kit_dir(out_glb)
     os.makedirs(kd, exist_ok=True)
     for pid, faces in b.kit_new.items():
@@ -372,12 +418,13 @@ def install():
             setattr(gbhouse, n, wrap(getattr(gbhouse, n), _furn_frame))
     gblib.window = wrap(gblib.window, _window_frame)
     gblib.door = wrap(gblib.door, _door_frame, ignore=("door_",))
+    gblib.text_mesh = wrap_text(gblib.text_mesh)
 
     init = gblib.Building.__init__
 
     def __init__(self, *a, **k):
         init(self, *a, **k)
-        self.kit_inst, self.kit_new, self.kit_defs = [], {}, {}
+        self.kit_inst, self.kit_new, self.kit_defs, self.kit_text_defs = [], {}, {}, {}
     gblib.Building.__init__ = __init__
 
     merge = gblib.Building.merge_meshes
