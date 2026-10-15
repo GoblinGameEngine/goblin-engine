@@ -1660,7 +1660,7 @@
     "frame": "#2f7a5a",
     "glass": "#2c3a42",
     "screen": "#2f7a5a",
-    "roof": "#f0b8b0",
+    "roof": "#b85a3a",
     "metal": "#4a4744",
     "fabric": "#c8d8a8",
     "emissive": "#ffd890",
@@ -1677,7 +1677,7 @@
     "frame": "#2f7a5a",
     "glass": "#2c3a42",
     "screen": "#2f7a5a",
-    "roof": "#c8d8a8",
+    "roof": "#b85a3a",
     "metal": "#4a4744",
     "fabric": "#e8e2d4",
     "emissive": "#ffd890",
@@ -1694,7 +1694,7 @@
     "frame": "#2f7a5a",
     "glass": "#2c3a42",
     "screen": "#2f7a5a",
-    "roof": "#e8e2d4",
+    "roof": "#b85a3a",
     "metal": "#4a4744",
     "fabric": "#4a6a8a",
     "emissive": "#ffd890",
@@ -1711,7 +1711,7 @@
     "frame": "#2f7a5a",
     "glass": "#2c3a42",
     "screen": "#2f7a5a",
-    "roof": "#4a6a8a",
+    "roof": "#b85a3a",
     "metal": "#4a4744",
     "fabric": "#2f7a5a",
     "emissive": "#ffd890",
@@ -11547,7 +11547,7 @@
    "lod1": "drop",
    "collide": false,
    "slots": [
-    "accent2"
+    "trim"
    ],
    "tris": 18,
    "bounds": [
@@ -17785,12 +17785,12 @@
    "tris": 134,
    "bounds": [
     [
-     0.875,
+     0.86,
      0.3,
      0.0
     ],
     [
-     1.125,
+     1.14,
      6.0,
      1.15
     ]
@@ -18383,12 +18383,12 @@
     [
      -1.501,
      4.409,
-     -0.504
+     -0.503
     ],
     [
      1.501,
      7.605,
-     0.606
+     0.612
     ]
    ],
    "notes": "laundry lines along X at 5.2 / 7.6 m"

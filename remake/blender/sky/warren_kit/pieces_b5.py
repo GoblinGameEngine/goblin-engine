@@ -708,12 +708,12 @@ def stair_plex_outdoor():
 
 
 def ov_snow_cap():
-    """snow lying along a roof edge or sill: a soft white ridge 3 m long (edge overlay; accent2 = snow white)"""
+    """snow lying along a roof edge or sill: a soft white ridge 3 m long (edge overlay; the trim slot, brightened)"""
     def b():
         m = Mesh()
         prof = [(0.0, 0.0), (0.38, 0.0), (0.4, 0.06), (0.3, 0.13), (0.12, 0.16), (0.0, 0.14)]
         sub = Mesh()
-        _flat_prism(sub, prof, -HB, HB, "accent2", open_edges=(0,))
+        _flat_prism(sub, prof, -HB, HB, "trim", 1.15, open_edges=(0,))       # (trim, brightened: white in the snowy families)
         m.add(sub, lambda p: (-p[2], p[1], p[0] - 0.3))
         return m
     return b

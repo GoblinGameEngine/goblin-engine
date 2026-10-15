@@ -25,13 +25,21 @@ OUT = os.path.join(ROOT, "research", "sky_islands", "warrens", "kit_requests.md"
 def main():
     kit = json.load(open(KIT_JSON))
     have = kit["pieces"]
+    # KIT's own map (research/sky_islands/warrens/kit_status.md): requested id -> the kit id(s) to use
+    mapped = {}
+    st = os.path.join(ROOT, "research", "sky_islands", "warrens", "kit_status.md")
+    if os.path.exists(st):
+        for line in open(st):
+            parts = [p.strip() for p in line.split("|")]
+            if len(parts) >= 4 and parts[2].startswith("`") and "missing" not in parts[3]:
+                mapped[parts[2].strip("`")] = parts[3]
     L = ["# Kit requests from the GENERATOR (warren families)", "",
          "Written by `tools/sky/warren/kit_requests.py` from each civ module's SPEC (`tools/sky/warren/civ/`).",
          "Frames as pieces.json (`wall`/`edge`: +Z out of the cell, face plane at z 0; `cell`: centred). The generator",
          "uses the stand-in until the piece exists, then switches by id (tell it the id).", ""]
     L += ["## All families", "", "| piece | what | stand-in | status |", "|---|---|---|---|"]
     for pid, what, stand in GENERAL:
-        L.append("| `%s` | %s | %s | %s |" % (pid, what, stand, "in the kit" if pid in have else "wanted"))
+        L.append("| `%s` | %s | %s | %s |" % (pid, what, stand, "in the kit" if pid in have or pid in mapped else "wanted"))
     L.append("")
     nopal = [c for c in sorted(CIVS) if c not in kit.get("palettes", {})]
     if nopal:
@@ -43,7 +51,8 @@ def main():
             continue
         L += ["## %s" % cid, "", "| piece | what | stand-in | status |", "|---|---|---|---|"]
         for pid, what, stand in reqs:
-            L.append("| `%s` | %s | %s | %s |" % (pid, what, stand, "in the kit" if pid in have else "wanted"))
+            stat = "in the kit" if pid in have else ("in the kit as " + mapped[pid] if pid in mapped else "wanted")
+            L.append("| `%s` | %s | %s | %s |" % (pid, what, stand, stat))
         L.append("")
     open(OUT, "w").write("\n".join(L) + "\n")
     print(OUT)

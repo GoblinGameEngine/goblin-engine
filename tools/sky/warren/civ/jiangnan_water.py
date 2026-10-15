@@ -40,7 +40,7 @@ class JiangnanWater(FamilyCiv):
         "roof": {"field": "roof_terrace", "edge": None, "crown_civic": "roof_tile_flying_eave",
                  "edge_street": [("edge_horsehead_wall", 1.0)],
                  "pitched": {"run": "roof_black_tile_curved", "end": "roof_black_tile_curved_end", "share": 0.95}},
-        "marks": [{"type": "bank_steps", "piece": "water_steps_private", "toward_water": True}, {"type": "stalls", "share": 0.1}],
+        "marks": [{"type": "water_bridge", "piece": "bridge_humpback_stone", "max": 3}, {"type": "bank_steps", "piece": "water_steps_private", "toward_water": True}, {"type": "stalls", "share": 0.1}],
         "overlay": {"lantern": 0.6, "festoon": 0.45, "cable": 0.15, "dish": 0.03, "lane_laundry": 0.06},
         "foliage": {"bank": ["weeping_willow", "weeping_willow", "lotus"], "green": ["osmanthus", "plum", "camellia", "bamboo"],
                     "plaza": ["weeping_willow"], "court": ["osmanthus", "bamboo"], "rates": {"bank": 0.5, "court": 0.4}},

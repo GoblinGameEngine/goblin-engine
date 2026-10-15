@@ -300,6 +300,30 @@ class FamilyCiv(Civ):
                     else:
                         if m.get("top") and k + n < L.L:
                             emit(m["top"], i, j, k + n, 0, 0, 0, 0, 3)
+            elif t == "water_bridge":
+                # bridges over the narrow necks of the ponds: land, 1-2 water cells, land (span 3 along +Z from the
+                # first cell)
+                from lattice import WATER, WALKABLE
+                n = 0
+                for i in range(L.nx):
+                    for j in range(L.nz):
+                        if n >= m.get("max", 3):
+                            break
+                        for d, kr in (((0, 1), 0), ((1, 0), 1)):
+                            a = (i - d[0], j - d[1])
+                            if not (L.inb(*a) and L.plan[a] in WALKABLE and L.plan[a] != WATER and L.plan[i, j] == WATER):
+                                continue
+                            c1, c2 = (i + d[0], j + d[1]), (i + 2 * d[0], j + 2 * d[1])
+                            if L.inb(*c2) and L.plan[c1] != WATER and L.plan[c1] in WALKABLE:
+                                s0 = a                        # land, water, land: start on the near bank
+                            elif L.inb(*c2) and L.plan[c1] == WATER and L.plan[c2] in WALKABLE and L.plan[c2] != WATER:
+                                s0 = (i, j)                   # water, water, land
+                            else:
+                                continue
+                            # (the generator's rot whose kit rot turns +Z along d: kit = gen + 2)
+                            emit(m["piece"], s0[0], s0[1], 0, (kr + 2) & 3, 4, 0, 0, 2)
+                            n += 1
+                            break
             elif t == "plan_piece":
                 # a piece on a share of the cells of a plan class (a tram on the main street, a windmill on a green,
                 # a basketball court): along the street where it has an axis
@@ -421,7 +445,12 @@ class FamilyCiv(Civ):
         if o.get("pole"):
             for (i, j) in cells["junctions"]:
                 if rng.random() < o["pole"]:
-                    emit("utility_pole", i, j, 0, rng.randrange(4), 4, 0, 0, 4)
+                    emit(o.get("pole_piece", "utility_pole"), i, j, 0, rng.randrange(4), 4, 0, 0, 4)
+        if o.get("covered_piece"):
+            # a vault carrying the lane under the houses (abbara): on a share of the covered lane cells
+            for (i, j, k, rot) in cells["covered"]:
+                if rng.random() < o["covered_piece"][1]:
+                    emit(o["covered_piece"][0], i, j, int(L.gk[i, j]), rot, 0, 0, 0, 1)
         for pid, p in o.get("roof_items", []):
             for (i, j, k) in cells["roofs"]:
                 if rng.random() < p:

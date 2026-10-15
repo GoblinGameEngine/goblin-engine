@@ -233,6 +233,7 @@ def run(L, civ, rng):
                             best = (dh, rot)
             if best and best[0] >= 0.12:
                 piece = "step_low_1" if best[0] < 0.45 else ("step_low_4" if best[0] < 1.2 else "steps")
+                piece = getattr(civ, "steps_map", {}).get(piece, piece)
                 o.emit(piece, i, j, 0, best[1], DECK, 0, civ.slot("paving"), 0)
             else:
                 o.emit(civ.pave(L, pc, (i, j), PAVE[pc]), i, j, 0, 0, DECK, 0, civ.slot("paving"), 0)

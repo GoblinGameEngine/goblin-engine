@@ -9,6 +9,7 @@ from civ.family import FamilyCiv
 
 class KnightsHarbour(FamilyCiv):
     id = "knights_harbour"
+    steps_map = {"steps": "stair_knight", "step_low_4": "stair_knight"}
     name = "Knights' harbour city"
     arch_mouth = "wall_arch_round"
     kerb = "quay_edge_stone"
@@ -29,7 +30,8 @@ class KnightsHarbour(FamilyCiv):
         "facade": {
             "door": "wall_door",
             "shop": [("wall_shopfront_arcade", 0.6), ("wall_arch_round", 0.4)],
-            "ground": {"street": [("wall_arch_round", 0.3), ("wall_door", 0.25), ("wall_window_m", 0.25), ("wall_plain", 0.2)],
+            "ground": {"green": [("bastion_wall_slope", 0.6), ("wall_plain", 0.4)],
+                       "street": [("wall_arch_round", 0.3), ("wall_door", 0.25), ("wall_window_m", 0.25), ("wall_plain", 0.2)],
                        "lane": [("wall_door", 0.25), ("wall_window_m", 0.3), ("wall_plain", 0.45)]},
             "upper": {"street": [("wall_gallarija_k", 0.5), ("wall_window_m", 0.3), ("wall_plain", 0.2)],
                       "lane": [("wall_gallarija_k", 0.35), ("wall_window_m", 0.35), ("wall_plain", 0.3)],
@@ -38,6 +40,7 @@ class KnightsHarbour(FamilyCiv):
             "civic_upper": [("wall_window_l", 0.4), ("wall_blind_arch", 0.3), ("wall_plain", 0.3)],
         },
         "cull_slots": True,
+        "corner_extra": ("corner_statue_niche", 0.04),
         "corner": "corner_quoin",
         "roof": {"field": "roof_terrace", "edge": "parapet_plain", "crown_civic": "dome_cap",
                  "pitched": {"run": "roof_tile_roman_low", "end": "roof_tile_roman_low_end", "share": 0.2}},

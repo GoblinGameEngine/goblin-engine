@@ -10,7 +10,7 @@ from civ.family import FamilyCiv
 class ScotsLands(FamilyCiv):
     id = "scots_lands"
     name = "Scots lands and closes"
-    arch_mouth = "wall_arch_round"
+    arch_mouth = "wall_pend_k"
     covered_ceiling = "floor_slab"
     SPEC = {
         "lanes": "grid",
@@ -42,10 +42,12 @@ class ScotsLands(FamilyCiv):
         "corner": None,
         "roof": {"field": "roof_terrace", "edge": None, "crown_civic": "green_hip",
                  "edge_street": [("edge_gable_step", 1.0)],
-                 "pitched": {"run": "roof_pitched_pantile", "end": "roof_pitched_pantile_end", "civic": True}},
-        "marks": [{"type": "civic_tower", "pieces": ["minaret_base", "minaret_shaft", "church_spire_copper"], "storeys": 6},
-                  {"type": "roof_towers", "piece": "minaret_base", "share": 0.02, "storeys": (1, 1)}],
-        "overlay": {"lantern": 0.45, "cable": 0.08, "dish": 0.06, "laundry": 0.02, "pipe": 0.15},
+                 "pitched": {"run": "roof_slate_steep", "end": "roof_slate_steep_end", "civic": True}},
+        "marks": [{"type": "civic_tower", "pieces": ["minaret_base", "minaret_shaft", "crown_spire"], "storeys": 6},
+                  {"type": "roof_towers", "piece": "turret_stair_shaft", "top": "turret_stair_conical", "share": 0.01,
+                   "storeys": (1, 1)},
+                  {"type": "fountain", "piece": "mercat_cross"}],
+        "overlay": {"roof_items": [("chimney_stack_pots", 0.08)], "lantern": 0.45, "cable": 0.08, "dish": 0.06, "laundry": 0.02, "pipe": 0.15},
         "foliage": {"plaza": ["sycamore"], "green": ["rowan", "sycamore", "beech", "holly", "heather"],
                     "bank": ["willow", "heather"], "lane_wall": ["ivy_ferns"], "rates": {"lane_wall": 0.12}},
         "kit_requests": [

@@ -29,8 +29,9 @@ def _laundry(m, x0, x1, y, z, n, slots=("fabric", "accent2", "trim", "accent")):
         yy = y - 0.25 * math.sin(math.pi * f)
         w, h = 0.18 + 0.1 * (k % 2), 0.35 + 0.2 * ((k * 7) % 3) / 2
         sl = slots[k % len(slots)]
-        m.quad_facing((x - w / 2, yy, z), (x + w / 2, yy, z), (x + w / 2, yy - h, z), (x - w / 2, yy - h, z), (0, 0, 1), sl)
-        m.quad_facing((x - w / 2, yy, z - 0.004), (x + w / 2, yy, z - 0.004), (x + w / 2, yy - h, z - 0.004), (x - w / 2, yy - h, z - 0.004), (0, 0, -1), sl, 0.85)
+        zc = z + 0.012                                                      # (hung just in front of the line)
+        m.quad_facing((x - w / 2, yy, zc), (x + w / 2, yy, zc), (x + w / 2, yy - h, zc), (x - w / 2, yy - h, zc), (0, 0, 1), sl)
+        m.quad_facing((x - w / 2, yy, zc - 0.004), (x + w / 2, yy, zc - 0.004), (x + w / 2, yy - h, zc - 0.004), (x - w / 2, yy - h, zc - 0.004), (0, 0, -1), sl, 0.85)
 
 
 def _louvre_leaf(m, x0, y0, x1, y1, z, slot="accent", n=10, nrm=(0, 0, 1)):
@@ -149,7 +150,7 @@ def minaret_square_carved(part):
             m.box((-a - 0.35, 0.6, -a - 0.35), (a + 0.35, 0.72, a + 0.35), "trim", 0.9)
             for k in range(4):
                 sub = Mesh()
-                sub.box((-a - 0.35, 0.72, a + 0.27), (a + 0.35, 1.5, a + 0.35), "trim", 0.95, skip=("y-",))
+                sub.box((-a - 0.35, 0.72, a + 0.27), (a + 0.27, 1.5, a + 0.35), "trim", 0.95, skip=("y-",))     # (each side owns one corner)
                 m.add(sub, _rot(k))
             m.cyl(0, 0, 0.7, 0.72, 2.2, "wall", n=8, caps=False)
             _ribbed_dome(m, 0.75, 2.2, 0.8, n=8, slot="trim")
@@ -482,8 +483,8 @@ def ov_gold_shop_neon():
             m.box((0.95, y, 0.0), (1.05, y + 0.1, 0.3), "metal", skip=("z-",))
         for k in range(6):
             y = 0.6 + k * 0.92
-            _strip(m, (1.125, y, 0.3), (1.125, y + 0.5, 1.1), 0.06, (1, 0, 0), "accent2")
-            _strip(m, (0.875, y, 0.3), (0.875, y + 0.5, 1.1), 0.06, (-1, 0, 0), "accent2")
+            _strip(m, (1.14, y, 0.3), (1.14, y + 0.5, 1.1), 0.06, (1, 0, 0), "accent2")
+            _strip(m, (0.86, y, 0.3), (0.86, y + 0.5, 1.1), 0.06, (-1, 0, 0), "accent2")
         return m
     return b
 
@@ -936,7 +937,7 @@ PIECES["ov_roof_shrine"] = _w("cell", ov_roof_shrine(), VT, lod1="drop", kind="o
 PIECES["bridge_red_lake"] = _w("cell", bridge_red_lake(), VT, lod1="keep", kind="bridge", span=(1, 3), notes="VIET MARK: red arched timber bridge along +Z")
 
 for civ, acc, extra in (("mardin_terraces", ("#c9a23a", "#e8dcc0"), {}), ("ottoman_timber", None, {}), ("rupestrian_terraces", ("#6b4a2e", "#f2d03a"), {"trim": "#f2efe6"}),
-                        ("scots_lands", ("#a8542e", "#c9a23a"), {}), ("straits_shophouse", ("#3f7a5a", "#e8c43a"), {"tile": "#3a8aa8"}),
+                        ("scots_lands", ("#a8542e", "#c9a23a"), {}), ("straits_shophouse", ("#3f7a5a", "#e8c43a"), {"tile": "#3a8aa8", "roof": "#b85a3a"}),
                         ("tibetan_lhasa", ("#7a1e1e", "#d8a83a"), {"fabric": "#d8c8a8", "tile": "#2a6ab0"}), ("tyrrhenian_canyon", ("#3f6a4a", "#2a55a8"), {}),
                         ("viet_tube", ("#3f6a4a", "#f2c43a"), {})):
     for v in PALETTES.get(civ, []):

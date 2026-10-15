@@ -98,10 +98,12 @@ FACE_HUNG = ("ov_ac", "ov_lantern", "ov_fluoro", "ov_planter", "ov_pipe_run", "l
              "ov_roller_shutter", "band_zocalo", "ov_blue_pots", "dukkana_bench", "ov_snow_cap",
              "ov_sign_vertical_stack", "ov_mastaba", "roshan_crest", "ov_marigold_garland", "band_flood",
              "ov_truck_art_panel", "ov_wedding_curtain", "edge_chhajja", "edge_horsehead_wall", "ov_machicolation",
-             "stair_external_white", "roof_dormer_attic")   # on a face plane (not by kind)
-CORNER_HUNG = ("kerb_post",)
+             "stair_external_white", "roof_dormer_attic", "cesme_fountain", "band_damp", "band_peranakan_tile",
+             "ov_wall_shrine", "ov_gold_shop_neon", "edge_pembe_frieze", "edge_firewall_gable")   # on a face plane
+CORNER_HUNG = ("kerb_post", "corner_statue_niche", "ov_prayer_flag_pole")
 ACROSS = ("ov_cables", "shoring_beam", "ov_festoon", "ov_chochin_string", "torii", "cable_car", "ov_toldo",
-          "ov_suq_canopy", "ov_prayer_flags", "ov_wire_net", "tram_rail", "ov_jeepney")      # spans laid along the kit's X: the generator's rot is the span's
+          "ov_suq_canopy", "ov_prayer_flags", "ov_wire_net", "tram_rail", "ov_jeepney", "ov_laundry_line_lane",
+          "abbara_vault")      # spans laid along the kit's X: the generator's rot is the span's
 
 
 def mount(kid, pieces):
@@ -211,6 +213,9 @@ def translate(L, civ, recs, kit, shacks=()):
             if pid in ("roof_terrace", "roof_tile", "roof_tin"):
                 kid, kr = pitched[(i, j, lv)]
                 put(kid, i, j, lv, 0, 0, ep, kit_rot=kr)
+                ge = getattr(civ, "gable_end_piece", None)
+                if ge and kid.endswith("_end"):
+                    put(ge, i, j, lv, 0, 0, ep, kit_rot=(kr + 2) & 3)   # (the firewall gable on the run's end)
                 continue
             if pid.startswith("parapet") or pid.startswith("edge_eave") or pid == "edge_rail":
                 continue                                        # (no parapet round a pitched roof)
@@ -242,6 +247,9 @@ def translate(L, civ, recs, kit, shacks=()):
         if kid in pieces and (i, j, lv) in shack_at and pieces[kid].get("kind") in ("overlay", "decor"):
             continue                                    # (a roof hut stands here: no dish or aerial inside it)
         put(kid, i, j, lv, rot, flags, ep)
+        ce = getattr(civ, "SPEC", {}).get("corner_extra")
+        if ce and pieces[kid].get("kind") == "corner" and lv == int(L.gk[i, j]) and h01(L.seed, "ce", i, j, rot) < ce[1]:
+            put(ce[0], i, j, lv, rot, flags, ep)            # (a saint's niche on a street corner)
         if kid.startswith("edge_parapet") and hasattr(civ, "edge_extra"):
             for x in civ.edge_extra():                      # (e.g. the medina's white gypsum line under every roof edge)
                 put(x, i, j, lv, rot, flags, ep)
@@ -343,11 +351,21 @@ SHED = [
               "roof_tile_hip_struts": "roof_terrace", "roof_thai_gable": "roof_terrace",
               "wall_tbilisi_balcony_t": "wall_tbilisi_balcony_lite_t", "wall_capiz_t": "wall_window_m_t",
               "wall_gallarija_k": "wall_balcony_timber_k", "wall_azulejo_k": "wall_balcony_iron_k",
-              "wall_shushabandi_t": "wall_window_m_t", "wall_window_band_k": "wall_window_pair_k"}),
+              "wall_shushabandi_t": "wall_window_m_t", "wall_window_band_k": "wall_window_pair_k",
+              "wall_triple_arch_loggia_k": "wall_arch_pointed_k", "wall_casement_louvre_t": "wall_window_pair_t",
+              "wall_window_trapezoid_k": "wall_window_m_k", "wall_cumba_t": "wall_window_m_t",
+              "wall_french_door_balcony_t": "wall_balcony_iron_t", "wall_carved_frame_k": "wall_window_s_k",
+              "wall_kafes_t": "wall_window_pair_t", "wall_five_foot_way_t": "wall_shopfront_b_t",
+              "abbara_vault": "floor_slab", "crown_spire": "green_hip", "tower_kasbah_corner_top": "minaret_base",
+              "edge_parapet_pinnacle_k": "edge_parapet_plain_k", "wall_beam_ends_k": "wall_plain_k",
+              "wall_earth_relief_k": "wall_plain_k"}),
     ("drop", ("ov_truck_art_panel", "ov_wedding_curtain", "ov_wire_net", "edge_chhajja", "ov_marigold_garland",
               "band_flood", "ov_mastaba", "ov_suq_canopy", "ov_prayer_flags", "roshan_crest", "ov_tank_drum",
               "pigeon_cote", "malqaf_scoop", "ov_arish_shade", "stupa", "tram_rail", "ov_jeepney", "ov_jangdok_jars",
-              "chimney_stone", "ov_machicolation", "stair_external_white", "roof_dormer_attic", "miradouro_kiosk")),
+              "chimney_stone", "ov_machicolation", "stair_external_white", "roof_dormer_attic", "miradouro_kiosk",
+              "chimney_stack_pots", "lemon_pergola", "ov_wall_shrine", "band_damp", "band_peranakan_tile",
+              "ov_gold_shop_neon", "ov_laundry_line_lane", "edge_pembe_frieze", "ov_prayer_flag_pole", "ov_roof_shrine",
+              "corner_statue_niche", "cesme_fountain", "ov_wire_tangle")),
     ("drop", ("int_ceiling", "int_counter", "int_floor", "ov_tank", "ov_tank_round_blue", "ov_water_tower_steel")),
     ("swap", {"wall_window_pair_k": "wall_window_s_k", "wall_window_pair_t": "wall_window_s_t",
               "wall_balcony_timber_k": "wall_window_m_k", "wall_balcony_timber_t": "wall_window_m_t",

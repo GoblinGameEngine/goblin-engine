@@ -8,8 +8,8 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `pave_*_skirt` | paving with a 0.6 m skirt down its four sides (or a riser piece): ground pieces stand flat at each cell's deck height, so on sloping streets the step between two cells shows a gap to the sky | none (gaps) | wanted |
-| `edge_parapet_rounded_k (cheaper)` | the rounded merlon parapet at <= 60 tris; at 172 it is the first thing the budget pass sheds in every medina/Yemeni/M'zab chunk | edge_parapet_plain_k when over budget | wanted |
+| `pave_*_skirt` | paving with a 0.6 m skirt down its four sides (or a riser piece): ground pieces stand flat at each cell's deck height, so on sloping streets the step between two cells shows a gap to the sky | none (gaps) | in the kit |
+| `edge_parapet_rounded_k (cheaper)` | the rounded merlon parapet at <= 60 tris; at 172 it is the first thing the budget pass sheds in every medina/Yemeni/M'zab chunk | edge_parapet_plain_k when over budget | in the kit |
 
 ## andean_neo
 
@@ -28,7 +28,7 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 |---|---|---|---|
 | `wall_mashrabiya_box_k` | the turned-bead mashrabiya oriel stepping 0.25 m out per storey (wall) | wall_screen_k | in the kit |
 | `wall_ablaq_portal_k` | striped ablaq pointed portal with a muqarnas hood (wall, door) | wall_arch_pointed_k | in the kit |
-| `minaret_mamluk` | Mamluk minaret: square base, octagonal shaft, balconies, bulb top (3 parts) | minaret_base/shaft/top | wanted |
+| `minaret_mamluk` | Mamluk minaret: square base, octagonal shaft, balconies, bulb top (3 parts) | minaret_base/shaft/top | in the kit as minaret_mamluk_base, minaret_mamluk_shaft, minaret_mamluk_top |
 | `dome_ribbed` | ribbed carved stone dome on a drum (crown) | dome_cap | in the kit |
 | `malqaf_scoop` | the roof wind scoop (roof decor) | minaret_base stub | in the kit |
 | `pigeon_cote` | the mud pigeon tower on a roof (roof decor) | none | in the kit |
@@ -38,11 +38,11 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_tbilisi_balcony_t (lighter)` | the carved balcony at <= 300 tris (692: shed to timber balconies when over budget) | wall_balcony_timber_t | wanted |
-| `wall_shushabandi_t` | the small-pane stained-glass gallery (shushabandi) (wall, emissive glass) | wall_tbilisi_balcony_t | wanted |
-| `svan_tower` | the Svan defensive stone tower 20-25 m with a slate gable top (base, shaft, top) | rooms (tower_cells 1) | wanted |
-| `dome_bath_brick` | the low brick bath dome with a lantern (crown) | dome_cap | wanted |
-| `stair_spiral_courtyard` | the spiral iron stair of an Italian courtyard (cell) | stair_spiral | wanted |
+| `wall_tbilisi_balcony_t (lighter)` | the carved balcony at <= 300 tris (692: shed to timber balconies when over budget) | wall_balcony_timber_t | in the kit as wall_tbilisi_balcony_lite_t (108) |
+| `wall_shushabandi_t` | the small-pane stained-glass gallery (shushabandi) (wall, emissive glass) | wall_tbilisi_balcony_t | in the kit |
+| `svan_tower` | the Svan defensive stone tower 20-25 m with a slate gable top (base, shaft, top) | rooms (tower_cells 1) | in the kit as svan_tower_base, svan_tower_shaft, svan_tower_top |
+| `dome_bath_brick` | the low brick bath dome with a lantern (crown) | dome_cap | in the kit |
+| `stair_spiral_courtyard` | the spiral iron stair of an Italian courtyard (cell) | stair_spiral | in the kit |
 
 ## chongqing_cliff
 
@@ -61,7 +61,7 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 | `wall_window_medio_punto_k` | floor-to-ceiling window with turned bars, louvred shutters and a stained-glass medio punto lunette (emissive at night) | wall_window_l_k | in the kit |
 | `wall_balcony_covered_k` | Cartagena's long covered timber balcony on corbels with turned balusters and a small roof | wall_balcony_timber_k | in the kit |
 | `wall_door_carriage_k` | the zaguan carriage door with a small inset door, stone surround | wall_door_k | in the kit |
-| `bell_tower_baroque` | a baroque bell tower (base, belfry, cupola crown) for the cathedral | minaret_base/shaft/top | wanted |
+| `bell_tower_baroque` | a baroque bell tower (base, belfry, cupola crown) for the cathedral | minaret_base/shaft/top | in the kit as bell_tower_baroque_base, bell_tower_baroque_belfry, bell_tower_baroque_cupola |
 | `kiosco_gazebo` | the plaza bandstand gazebo (cell decor) | fountain_riad | in the kit |
 | `edge_parapet_urns_k` | an azotea parapet with urns/balusters (edge) | edge_parapet_plain_k | in the kit |
 
@@ -69,32 +69,32 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `chapel_cycladic` | the little white chapel with a blue dome and bell gable (crown over 1-2 cells) | minaret_base x2 + dome_cap | wanted |
-| `windmill_round` | the round white windmill with sails (cell, 3 storeys) | none | wanted |
-| `edge_parapet_lip_k` | the rounded whitewashed roof lip (edge, cheaper than parapet_rounded) | edge_parapet_rounded_k | wanted |
-| `pave_slate_whitejoint` | slate paving with whitewashed joints (ground) | pave_lane | wanted |
-| `stair_external_white` | the external whitewashed stair up a house face to the roof (face overlay) | none | wanted |
+| `chapel_cycladic` | the little white chapel with a blue dome and bell gable (crown over 1-2 cells) | minaret_base x2 + dome_cap | in the kit |
+| `windmill_round` | the round white windmill with sails (cell, 3 storeys) | none | in the kit |
+| `edge_parapet_lip_k` | the rounded whitewashed roof lip (edge, cheaper than parapet_rounded) | edge_parapet_rounded_k | in the kit |
+| `pave_slate_whitejoint` | slate paving with whitewashed joints (ground) | pave_lane | in the kit |
+| `stair_external_white` | the external whitewashed stair up a house face to the roof (face overlay) | none | in the kit |
 
 ## ganga_ghat
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `ghat_steps_wide` | broad stone ghat steps down into the water with a landing (stair, span [1, 2], water side) | steps_up on banks | wanted |
-| `shikhara_spire` | the nagara temple spire (curvilinear tower with amalaka and finial; base, shaft, top) | minaret_base/shaft/top | wanted |
-| `ghat_umbrella` | the cane umbrella over a priest's platform on the steps (cell decor) | none | wanted |
-| `chhatri` | the domed corner pavilion (roof crown) | arcade_pier + dome_cap | wanted |
-| `ov_marigold_garland` | marigold garlands over a door / along a balcony (face overlay) | none | wanted |
-| `band_flood` | the dark flood-mark band on the lower storeys (face overlay) | none | wanted |
+| `ghat_steps_wide` | broad stone ghat steps down into the water with a landing (stair, span [1, 2], water side) | steps_up on banks | in the kit |
+| `shikhara_spire` | the nagara temple spire (curvilinear tower with amalaka and finial; base, shaft, top) | minaret_base/shaft/top | in the kit as shikhara_spire_base, shikhara_spire_shaft, shikhara_spire_top |
+| `ghat_umbrella` | the cane umbrella over a priest's platform on the steps (cell decor) | none | in the kit |
+| `chhatri` | the domed corner pavilion (roof crown) | arcade_pier + dome_cap | in the kit |
+| `ov_marigold_garland` | marigold garlands over a door / along a balcony (face overlay) | none | in the kit |
+| `band_flood` | the dark flood-mark band on the lower storeys (face overlay) | none | in the kit |
 
 ## hakka_tulou
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `tulou_ring_wall` | a curved rammed-earth ring segment (outer face, stone base, slits) for rings of R 15-35 m (wall, curved) | straight earth bays on a cell ring | wanted |
-| `tulou_gallery_ring` | the inner timber gallery ring with lattice doors (wall, curved) | wall_gallery_timber_t | wanted |
-| `roof_ring_tile` | the continuous ring roof with a 2-3 m outer eave (roof, curved run) | roof_kawara_low runs | wanted |
-| `tulou_gate` | the single massive gate with a stone frame (wall, door) | wall_door_portal_k | wanted |
-| `ancestral_hall` | the central ancestral hall pavilion (crown) | roof_tile_flying_eave | wanted |
+| `tulou_ring_wall` | a curved rammed-earth ring segment (outer face, stone base, slits) for rings of R 15-35 m (wall, curved) | straight earth bays on a cell ring | in the kit |
+| `tulou_gallery_ring` | the inner timber gallery ring with lattice doors (wall, curved) | wall_gallery_timber_t | in the kit |
+| `roof_ring_tile` | the continuous ring roof with a 2-3 m outer eave (roof, curved run) | roof_kawara_low runs | in the kit |
+| `tulou_gate` | the single massive gate with a stone frame (wall, door) | wall_door_portal_k | in the kit |
+| `ancestral_hall` | the central ancestral hall pavilion (crown) | roof_tile_flying_eave | in the kit |
 
 ## hanseatic_gable
 
@@ -114,7 +114,7 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_roshan_k (lighter)` | the roshan at <= 250 tris: at 616 the budget pass turns most roshan columns back into windows | wall_window_m_k when over budget | wanted |
+| `wall_roshan_k (lighter)` | the roshan at <= 250 tris: at 616 the budget pass turns most roshan columns back into windows | wall_window_m_k when over budget | in the kit as wall_roshan_lite_k / wall_roshan_lite_t (186) |
 | `edge_mangour_k` | the 1.8 m mangour lattice roof parapet of Jeddah (edge) | edge_parapet_jali_k (one per house) | in the kit |
 | `roshan_crest` | the carved wooden crest crowning a roshan column (face overlay) | none | in the kit |
 | `wall_coral_bands_k` | coral-stone bay with the timber tie-beam bands every 1 m (wall) | wall_plain_k | in the kit |
@@ -138,7 +138,7 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 | `band_zocalo` | the ochre/blue painted base band 0.8 m (face overlay at ground) | none | in the kit |
 | `ov_blue_pots` | blue pots hung on a white wall (face overlay) | ov_planter | in the kit |
 | `roof_tile_roman_low` | low 15-20 deg Roman-tile roof (cell roof) | green_hip | in the kit |
-| `tower_mudejar` | Mudejar brick tower with sebka lozenge panels and belfry (base, shaft, top) | minaret_base/shaft/top | wanted |
+| `tower_mudejar` | Mudejar brick tower with sebka lozenge panels and belfry (base, shaft, top) | minaret_base/shaft/top | in the kit as tower_mudejar_shaft, tower_mudejar_belfry, tower_mudejar_top |
 | `ov_toldo` | summer awning stretched across a shopping lane (along X) | ov_awning_cane | in the kit |
 
 ## japan_yokocho
@@ -159,40 +159,40 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `edge_horsehead_wall` | the stepped horse-head firewall at a house end, white with black tile copings (edge, gable end) | none | wanted |
-| `roof_black_tile_curved` | black double-pitched tile roof, gentle curve, upturned ridge ends (cell roof run + end) | roof_kawara_low | wanted |
-| `wall_shopboards_t` | the full-width removable timber shop boards (wall, ground) | wall_screen_t | wanted |
-| `wall_moon_gate` | a round moon gate in a garden wall (passage) | wall_arch_round | wanted |
-| `bridge_humpback_stone` | the humpbacked stone canal bridge (bridge, span [1, 3]) | none | wanted |
-| `water_steps_private` | the private stone steps from a house down into the canal (stair, water side) | step_low_4 | wanted |
+| `edge_horsehead_wall` | the stepped horse-head firewall at a house end, white with black tile copings (edge, gable end) | none | in the kit |
+| `roof_black_tile_curved` | black double-pitched tile roof, gentle curve, upturned ridge ends (cell roof run + end) | roof_kawara_low | in the kit |
+| `wall_shopboards_t` | the full-width removable timber shop boards (wall, ground) | wall_screen_t | in the kit |
+| `wall_moon_gate` | a round moon gate in a garden wall (passage) | wall_arch_round | in the kit |
+| `bridge_humpback_stone` | the humpbacked stone canal bridge (bridge, span [1, 3]) | none | in the kit |
+| `water_steps_private` | the private stone steps from a house down into the canal (stair, water side) | step_low_4 | in the kit |
 
 ## karachi
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `ov_tank_drum` | the black/blue plastic water-tank drum, clustered on roofs (roof overlay) | ov_tank | wanted |
-| `wall_jharokha_k` | Gizri-stone jharokha bay on carved brackets (wall) | wall_bay_box | wanted |
-| `wall_veranda_gothic_t` | colonial Indo-Gothic arcaded veranda storey (wall) | wall_arch_pointed | wanted |
-| `ov_truck_art_panel` | a truck-art painted panel / shutter (face overlay, emissive) | none | wanted |
-| `ov_wedding_curtain` | wedding fairy-light curtain down a facade (face overlay, emissive) | none | wanted |
-| `edge_parapet_date_plaque` | a balustrade parapet with urns and a date plaque (edge) | edge_parapet_plain_t | wanted |
+| `ov_tank_drum` | the black/blue plastic water-tank drum, clustered on roofs (roof overlay) | ov_tank | in the kit |
+| `wall_jharokha_k` | Gizri-stone jharokha bay on carved brackets (wall) | wall_bay_box | in the kit |
+| `wall_veranda_gothic_t` | colonial Indo-Gothic arcaded veranda storey (wall) | wall_arch_pointed | in the kit |
+| `ov_truck_art_panel` | a truck-art painted panel / shutter (face overlay, emissive) | none | in the kit |
+| `ov_wedding_curtain` | wedding fairy-light curtain down a facade (face overlay, emissive) | none | in the kit |
+| `edge_parapet_date_plaque` | a balustrade parapet with urns and a date plaque (edge) | edge_parapet_plain_t | in the kit |
 
 ## knights_harbour
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_gallarija_k` | the gallarija: an enclosed painted timber balcony 1-1.4 m deep, glazed, stacked, wrapping corners (wall) | wall_balcony_timber_k | wanted |
-| `corner_statue_niche` | a saint in a niche at a street corner, lit at night (corner) | corner_quoin_k | wanted |
-| `stair_knight` | the knight's stair-street: low risers 0.1 m, deep treads, 3-5 m wide (stair, span [1, 2]) | steps | wanted |
-| `bastion_wall_slope` | the sloped bastion wall at the island rim (wall, 2 storeys) | none | wanted |
+| `wall_gallarija_k` | the gallarija: an enclosed painted timber balcony 1-1.4 m deep, glazed, stacked, wrapping corners (wall) | wall_balcony_timber_k | in the kit |
+| `corner_statue_niche` | a saint in a niche at a street corner, lit at night (corner) | corner_quoin_k | in the kit |
+| `stair_knight` | the knight's stair-street: low risers 0.1 m, deep treads, 3-5 m wide (stair, span [1, 2]) | steps | in the kit |
+| `bastion_wall_slope` | the sloped bastion wall at the island rim (wall, 2 storeys) | none | in the kit |
 
 ## korean_hillside
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `ov_jangdok_jars` | a cluster of brown soy-sauce jars on a roof (roof decor) | foliage stand-in | wanted |
-| `roof_painted_green` | the green-painted waterproofed flat roof (cell roof) | roof_terrace | wanted |
-| `oktapbang` | the rooftop room box with a small door and window (roof overlay) | E5 roof huts (ov_shack) | wanted |
+| `ov_jangdok_jars` | a cluster of brown soy-sauce jars on a roof (roof decor) | foliage stand-in | in the kit |
+| `roof_painted_green` | the green-painted waterproofed flat roof (cell roof) | roof_terrace | in the kit |
+| `oktapbang` | the rooftop room box with a small door and window (roof overlay) | E5 roof huts (ov_shack) | in the kit |
 | `wall_mural_t` | a mural-painted blank wall (wall) | wall_plain_t | in the kit |
 | `stair_street_long` | the long straight stair street (exists: placed by the slope rule when it lands) | steps | in the kit |
 
@@ -200,11 +200,11 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `roof_stone_slab_steep` | the 30-35 deg hip roof of stone slabs (mosaic, lichen) with deep timber eaves (cell roof run + end) | green_hip per cell | wanted |
-| `wall_window_band_k` | the corbelled top storey: a continuous window band, 50% glass, timber, on corbels (wall) | wall_window_pair_k | wanted |
-| `wall_arrow_slit_k` | an arrow-slit window in the fortress base (wall) | wall_window_s_k | wanted |
-| `chimney_stone` | the tall stone chimney stack (roof decor) | none | wanted |
-| `ov_machicolation` | a machicolation box over the door (face overlay) | none | wanted |
+| `roof_stone_slab_steep` | the 30-35 deg hip roof of stone slabs (mosaic, lichen) with deep timber eaves (cell roof run + end) | green_hip per cell | in the kit |
+| `wall_window_band_k` | the corbelled top storey: a continuous window band, 50% glass, timber, on corbels (wall) | wall_window_pair_k | in the kit |
+| `wall_arrow_slit_k` | an arrow-slit window in the fortress base (wall) | wall_window_s_k | in the kit |
+| `chimney_stone` | the tall stone chimney stack (roof decor) | none | in the kit |
+| `ov_machicolation` | a machicolation box over the door (face overlay) | none | in the kit |
 
 ## latin_hillside
 
@@ -222,7 +222,7 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_jetty_t (lighter)` | the timber jetty at <= 250 tris (622 now: the budget pass turns many into windows) | wall_window_m_t when over budget | wanted |
+| `wall_jetty_t (lighter)` | the timber jetty at <= 250 tris (622 now: the budget pass turns many into windows) | wall_window_m_t when over budget | in the kit as wall_jetty_lite_t (176) |
 | `wall_ablaq_portal_k` | black-and-white striped pointed portal with a muqarnas hood (wall, door) | wall_arch_pointed_k | in the kit |
 | `wall_liwan_k` | the liwan: a tall pointed arch opening a whole storey and a half to the court (wall, 2 storeys) | wall_arch_pointed_k | in the kit |
 | `dome_stone_low` | Jerusalem's low walkable stone roof dome (crown) | dome_cap | in the kit |
@@ -232,50 +232,50 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_azulejo_k` | a facade bay fully clad in patterned azulejo tiles (tile slot), tall window with an iron cage balcony (wall) | wall_balcony_iron_k on the tile-coloured variants | wanted |
-| `wall_granite_window_k` | a tall window in a granite frame (wall) | wall_window_l_k | wanted |
-| `roof_dormer_attic` | the aguas-furtadas attic dormer on a tile roof (roof decor) | none | wanted |
-| `pave_calcada` | calcada portuguesa black-and-white mosaic paving (ground) | pave_plaza | wanted |
-| `tram_rail` | tram rails in the street with a tram (decor along X) | none | wanted |
-| `miradouro_kiosk` | a miradouro kiosk with a pergola (cell decor) | none | wanted |
+| `wall_azulejo_k` | a facade bay fully clad in patterned azulejo tiles (tile slot), tall window with an iron cage balcony (wall) | wall_balcony_iron_k on the tile-coloured variants | in the kit |
+| `wall_granite_window_k` | a tall window in a granite frame (wall) | wall_window_l_k | in the kit |
+| `roof_dormer_attic` | the aguas-furtadas attic dormer on a tile roof (roof decor) | none | in the kit |
+| `pave_calcada` | calcada portuguesa black-and-white mosaic paving (ground) | pave_plaza | in the kit |
+| `tram_rail` | tram rails in the street with a tram (decor along X) | none | in the kit |
+| `miradouro_kiosk` | a miradouro kiosk with a pergola (cell decor) | none | in the kit |
 
 ## manila_estero
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_capiz_t` | the capiz-shell sliding window storey over balustered ventanillas, timber, overhanging (wall) | wall_screen_t | wanted |
-| `wall_adobe_ground_k` | the adobe/stone ground storey of a bahay na bato (wall) | wall_plain on the stone variant | wanted |
-| `ov_shanty_gi` | a plywood and galvanized-iron shanty box on stilts with tyres on the roof (roof/cell overlay) | ov_shack + stilts | wanted |
-| `basketball_court` | a half basketball court with hoop (cell decor, 2x3) | ov_playground | wanted |
-| `ov_jeepney` | a parked jeepney (street decor) | none | wanted |
+| `wall_capiz_t` | the capiz-shell sliding window storey over balustered ventanillas, timber, overhanging (wall) | wall_screen_t | in the kit |
+| `wall_adobe_ground_k` | the adobe/stone ground storey of a bahay na bato (wall) | wall_plain on the stone variant | in the kit |
+| `ov_shanty_gi` | a plywood and galvanized-iron shanty box on stilts with tyres on the roof (roof/cell overlay) | ov_shack + stilts | in the kit |
+| `basketball_court` | a half basketball court with hoop (cell decor, 2x3) | ov_playground | in the kit |
+| `ov_jeepney` | a parked jeepney (street decor) | none | in the kit |
 
 ## mardin_terraces
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_triple_arch_loggia_k` | the triple-arched south loggia of an upper eyvan (wall) | wall_arch_pointed_k | wanted |
-| `edge_balustrade_carved_k` | the carved stone balustrade round a roof terrace (edge) | edge_parapet_jali_k | wanted |
-| `abbara_vault` | the vaulted tunnel carrying a lane under a house (ceiling + portal) | sabat_beams + arch mouth | wanted |
-| `wall_carved_frame_k` | a pointed window in a carved frame with a geometric grille (wall) | wall_window_grille | wanted |
-| `minaret_square_carved` | the square carved Artuqid minaret (3 parts) | minaret_base/shaft/top | wanted |
+| `wall_triple_arch_loggia_k` | the triple-arched south loggia of an upper eyvan (wall) | wall_arch_pointed_k | in the kit |
+| `edge_balustrade_carved_k` | the carved stone balustrade round a roof terrace (edge) | edge_parapet_jali_k | in the kit |
+| `abbara_vault` | the vaulted tunnel carrying a lane under a house (ceiling + portal) | sabat_beams + arch mouth | in the kit |
+| `wall_carved_frame_k` | a pointed window in a carved frame with a geometric grille (wall) | wall_window_grille | in the kit |
+| `minaret_square_carved` | the square carved Artuqid minaret (3 parts) | minaret_base/shaft/top | in the kit as minaret_square_carved_base, minaret_square_carved_shaft, minaret_square_carved_top |
 
 ## mughal_walled
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_jharokha_bangla_k` | the jharokha with a curved bangla roof on carved brackets (wall) | wall_bay_box_k | wanted |
-| `edge_chhajja` | the deep stone chhajja eave over every storey (edge overlay at the storey top) | none | wanted |
-| `chhatri` | the domed corner pavilion on four columns (roof crown) | arcade_pier + dome_cap | wanted |
-| `wall_cusped_arch_k` | the cusped (multifoil) arch bay (wall) | wall_arch_pointed_k | wanted |
-| `dome_bulbous_marble` | the bulbous white marble dome with finial (crown) | dome_cap | wanted |
-| `ov_wire_net` | the overhead tangle of wires over a gali at storey 2-3 (along X) | ov_cables | wanted |
+| `wall_jharokha_bangla_k` | the jharokha with a curved bangla roof on carved brackets (wall) | wall_bay_box_k | in the kit |
+| `edge_chhajja` | the deep stone chhajja eave over every storey (edge overlay at the storey top) | none | in the kit |
+| `chhatri` | the domed corner pavilion on four columns (roof crown) | arcade_pier + dome_cap | in the kit |
+| `wall_cusped_arch_k` | the cusped (multifoil) arch bay (wall) | wall_arch_pointed_k | in the kit |
+| `dome_bulbous_marble` | the bulbous white marble dome with finial (crown) | dome_cap | in the kit |
+| `ov_wire_net` | the overhead tangle of wires over a gali at storey 2-3 (along X) | ov_cables | in the kit |
 
 ## mzab_ghadames
 
 | piece | what | stand-in | status |
 |---|---|---|---|
 | `edge_parapet_horn_k` | Ghadames/M'zab parapet with whitewashed triangular corner horns (trim slot) | edge_parapet_rounded_k | in the kit |
-| `minaret_pyramid` | the M'zab minaret: square battered truncated pyramid 15-25 m, four corner horns on top (3 parts: base, shaft taper, horned top) | minaret_base x5 + minaret_top | wanted |
+| `minaret_pyramid` | the M'zab minaret: square battered truncated pyramid 15-25 m, four corner horns on top (3 parts: base, shaft taper, horned top) | minaret_base x5 + minaret_top | in the kit as minaret_pyramid_base, minaret_pyramid_shaft, minaret_pyramid_top |
 | `dukkana_bench` | a mud bench along a covered-lane wall (face overlay at ground) | none | in the kit |
 | `well_pulley` | a well with a timber pulley frame (cell decor) | fountain_riad | in the kit |
 | `wall_triangles_k` | a door bay with painted red/green triangles and diamonds round it (Ghadames) | wall_door_k | in the kit |
@@ -307,60 +307,60 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `edge_parapet_triangle_k` | Omani triangle merlons along a parapet (edge) | edge_parapet_crenel_k | wanted |
-| `wall_beam_ends_k` | earth bay with a row of projecting palm-beam ends at the floor line (wall) | wall_plain_k | wanted |
-| `wall_door_omani_k` | carved studded double door painted blue/green in a lintel frame (wall) | wall_door_k | wanted |
-| `fort_round_tower` | Nizwa's great round fort tower, battered, crenellated (3 parts) | minaret_base x6 + minaret_top | wanted |
-| `ground_falaj` | lane paving with the falaj channel down its middle (ground; water slot) | pave_lane | wanted |
-| `ov_arish_shade` | palm-frond arish shade on poles (roof/lane overlay) | ov_awning_cane | wanted |
+| `edge_parapet_triangle_k` | Omani triangle merlons along a parapet (edge) | edge_parapet_crenel_k | in the kit |
+| `wall_beam_ends_k` | earth bay with a row of projecting palm-beam ends at the floor line (wall) | wall_plain_k | in the kit |
+| `wall_door_omani_k` | carved studded double door painted blue/green in a lintel frame (wall) | wall_door_k | in the kit |
+| `fort_round_tower` | Nizwa's great round fort tower, battered, crenellated (3 parts) | minaret_base x6 + minaret_top | in the kit as fort_round_tower_base, fort_round_tower_shaft, fort_round_tower_top |
+| `ground_falaj` | lane paving with the falaj channel down its middle (ground; water slot) | pave_lane | in the kit |
+| `ov_arish_shade` | palm-frond arish shade on poles (roof/lane overlay) | ov_awning_cane | in the kit |
 
 ## ottoman_timber
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_jetty_t (lighter)` | the jettied storey at <= 250 tris (622: the budget pass turns most into windows) | wall_window_m_t when over budget | wanted |
-| `wall_cumba_t` | the three-sided cumba oriel on brackets (wall) | wall_jetty_t | wanted |
-| `wall_kafes_t` | sash windows behind kafes lattice (wall) | wall_window_pair_t | wanted |
-| `wall_himis_t` | timber-frame bay with plaster infill (himis) or clapboard (wall) | wall_plain_t | wanted |
-| `eave_soffit_deep` | the 1.0-1.5 m eave with a boarded soffit under a low hip (edge) | edge_eave_tin | wanted |
-| `cesme_fountain` | the stone wall fountain with a trough (face overlay) | wall_fountain_k | wanted |
+| `wall_jetty_t (lighter)` | the jettied storey at <= 250 tris (622: the budget pass turns most into windows) | wall_window_m_t when over budget | in the kit as wall_jetty_lite_t (176) |
+| `wall_cumba_t` | the three-sided cumba oriel on brackets (wall) | wall_jetty_t | in the kit |
+| `wall_kafes_t` | sash windows behind kafes lattice (wall) | wall_window_pair_t | in the kit |
+| `wall_himis_t` | timber-frame bay with plaster infill (himis) or clapboard (wall) | wall_plain_t | in the kit |
+| `eave_soffit_deep` | the 1.0-1.5 m eave with a boarded soffit under a low hip (edge) | edge_eave_tin | in the kit |
+| `cesme_fountain` | the stone wall fountain with a trough (face overlay) | wall_fountain_k | in the kit |
 
 ## persian_desert
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `badgir` | the wind tower: a square shaft 3-30 m with vertical slot vents and a crown; 1-, 2-, 4- or 8-sided (base, shaft, crown) | minaret_base stacks 1-3 storeys | wanted |
-| `roof_vault_barrel` | a walkable mud-brick barrel vault roof over a cell (cell roof) | roof_terrace | wanted |
-| `dome_mud` | a plain mud-brick dome with an oculus (crown) | dome_cap | wanted |
-| `wall_orsi_k` | the orsi: a sash window of coloured glass in a wooden grid, glowing (wall, court side) | wall_screen_k | wanted |
-| `wall_portal_knockers_k` | the street portal: a recessed door with two knockers and a bench niche (wall, door) | wall_door_k | wanted |
-| `wall_talar_k` | the iwan/talar opening a full storey to the court with two columns (wall) | wall_arch_pointed_k | wanted |
+| `badgir` | the wind tower: a square shaft 3-30 m with vertical slot vents and a crown; 1-, 2-, 4- or 8-sided (base, shaft, crown) | minaret_base stacks 1-3 storeys | in the kit as badgir_base, badgir_shaft, badgir_crown |
+| `roof_vault_barrel` | a walkable mud-brick barrel vault roof over a cell (cell roof) | roof_terrace | in the kit |
+| `dome_mud` | a plain mud-brick dome with an oculus (crown) | dome_cap | in the kit |
+| `wall_orsi_k` | the orsi: a sash window of coloured glass in a wooden grid, glowing (wall, court side) | wall_screen_k | in the kit |
+| `wall_portal_knockers_k` | the street portal: a recessed door with two knockers and a bench niche (wall, door) | wall_door_k | in the kit |
+| `wall_talar_k` | the iwan/talar opening a full storey to the court with two columns (wall) | wall_arch_pointed_k | in the kit |
 
 ## rajput_sandstone
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_jharokha_canted_k` | the canted octagonal carved sandstone jharokha with a domed top (wall) | wall_bay_box_k | wanted |
-| `wall_jali_carved_k` | a full-bay finely carved stone jali screen, backlit at night (wall) | wall_screen_k | wanted |
-| `chhatri` | the domed corner pavilion on four columns (roof crown) | arcade_pier + dome_cap | wanted |
-| `bastion_round` | the fort's round crenellated bastion (3 parts) | minaret_base + dome_cap | wanted |
-| `edge_parapet_jali_k (lighter)` | the jali parapet at <= 150 tris (456 now: the budget pass turns them plain) | edge_parapet_plain_k when over budget | wanted |
+| `wall_jharokha_canted_k` | the canted octagonal carved sandstone jharokha with a domed top (wall) | wall_bay_box_k | in the kit |
+| `wall_jali_carved_k` | a full-bay finely carved stone jali screen, backlit at night (wall) | wall_screen_k | in the kit |
+| `chhatri` | the domed corner pavilion on four columns (roof crown) | arcade_pier + dome_cap | in the kit |
+| `bastion_round` | the fort's round crenellated bastion (3 parts) | minaret_base + dome_cap | in the kit as bastion_round_base, bastion_round_shaft, bastion_round_top |
+| `edge_parapet_jali_k (lighter)` | the jali parapet at <= 150 tris (456 now: the budget pass turns them plain) | edge_parapet_plain_k when over budget | in the kit as edge_parapet_jali_k (150) |
 
 ## rupestrian_terraces
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `vault_roof_hump` | the whitewashed barrel/cross vault hump over a rock-cut cell (cell roof) | dome_cap at 8% | wanted |
-| `wall_cave_door_k` | deep arched door with a lunette into a rock-cut vault (wall, ground) | wall_arch_round_k | wanted |
-| `rock_face_cut` | the raw rock face the cells are cut into (wall, rock material) | wall_plain_k | wanted |
-| `cistern_well` | the vicinato cistern well head (cell decor) | none | wanted |
-| `lemon_pergola` | a vine/lemon pergola on posts over a roof terrace (roof decor) | grapevine_pergola foliage | wanted |
+| `vault_roof_hump` | the whitewashed barrel/cross vault hump over a rock-cut cell (cell roof) | dome_cap at 8% | in the kit |
+| `wall_cave_door_k` | deep arched door with a lunette into a rock-cut vault (wall, ground) | wall_arch_round_k | in the kit |
+| `rock_face_cut` | the raw rock face the cells are cut into (wall, rock material) | wall_plain_k | in the kit |
+| `cistern_well` | the vicinato cistern well head (cell decor) | none | in the kit |
+| `lemon_pergola` | a vine/lemon pergola on posts over a roof terrace (roof decor) | grapevine_pergola foliage | in the kit |
 
 ## saharan_kasbah
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `tower_kasbah_corner` | the tapering earth corner tower with pinnacled crenel top and relief panels (base, shaft, top) | rooms + edge_parapet_crenel_k | wanted |
+| `tower_kasbah_corner` | the tapering earth corner tower with pinnacled crenel top and relief panels (base, shaft, top) | rooms + edge_parapet_crenel_k | in the kit as tower_kasbah_corner_base, tower_kasbah_corner_shaft, tower_kasbah_corner_top |
 | `wall_earth_relief_k` | earth wall bay with chevron/lozenge relief in the top third (wall) | band_brick_relief overlay | in the kit |
 | `ghorfa_cell` | the vaulted ghorfa granary cell with a small painted door, stackable 3-6 high round a court (cell) | rooms | in the kit |
 | `wall_slit_k` | a defensive slit window in a thick earth wall (wall) | wall_window_s_k | in the kit |
@@ -370,43 +370,43 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `roof_slate_steep` | steep 45-55 deg slate roof run (cell roof run + end) | roof_pitched_pantile | wanted |
-| `chimney_stack_pots` | the many-pot chimney stack on a gable (roof decor) | minaret_base stubs | wanted |
-| `turret_stair_conical` | the turnpike stair tower with a conical slate cap (corner tower) | none | wanted |
-| `wall_pend_k` | the arched pend: a close entering under a land (passage) | wall_arch_round_k | wanted |
-| `crown_spire` | St Giles' crown spire (crown) | church_spire_copper | wanted |
-| `mercat_cross` | the mercat cross on its octagonal base (cell decor) | none | wanted |
+| `roof_slate_steep` | steep 45-55 deg slate roof run (cell roof run + end) | roof_pitched_pantile | in the kit |
+| `chimney_stack_pots` | the many-pot chimney stack on a gable (roof decor) | minaret_base stubs | in the kit |
+| `turret_stair_conical` | the turnpike stair tower with a conical slate cap (corner tower) | none | in the kit |
+| `wall_pend_k` | the arched pend: a close entering under a land (passage) | wall_arch_round_k | in the kit |
+| `crown_spire` | St Giles' crown spire (crown) | church_spire_copper | in the kit |
+| `mercat_cross` | the mercat cross on its octagonal base (cell decor) | none | in the kit |
 
 ## siam_khlong
 
 | piece | what | stand-in | status |
 |---|---|---|---|
 | `roof_thai_gable` | the steep (45 deg+) teak-house gable roof with curling chofa finials (cell roof run + end) | roof_pitched_pantile | in the kit |
-| `wall_teak_panel_t` | teak plank bay with a wide panel window hinged to swing out (wall) | wall_screen_t | wanted |
-| `pier_steps_khlong` | the pier and steps down from a stilt house into the canal (stair, water side) | step_low_4 on banks | wanted |
-| `temple_tiered_roof` | the wat's tiered layered roof with naga gables (crown) | roof_pagoda | wanted |
-| `ov_gold_shop_neon` | the big vertical gold-shop neon signs of Yaowarat (face overlay) | wall_sign_column_t | wanted |
+| `wall_teak_panel_t` | teak plank bay with a wide panel window hinged to swing out (wall) | wall_screen_t | in the kit as wall_thai_teak_t |
+| `pier_steps_khlong` | the pier and steps down from a stilt house into the canal (stair, water side) | step_low_4 on banks | in the kit |
+| `temple_tiered_roof` | the wat's tiered layered roof with naga gables (crown) | roof_pagoda | in the kit as roof_thai_gable (+ roof_pagoda) |
+| `ov_gold_shop_neon` | the big vertical gold-shop neon signs of Yaowarat (face overlay) | wall_sign_column_t | in the kit |
 
 ## silk_road
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `portal_pishtaq` | the monumental tiled portal 15-30 m (Registan): a tall pointed iwan in a tiled frame (wall, 3-5 storeys) | wall_zellij_k + blind arches | wanted |
-| `minaret_round_tapered` | round tapering brick minaret with tile bands and a lantern (base, shaft, top) | minaret_base/shaft/top | wanted |
-| `dome_turquoise_ribbed` | the ribbed turquoise tile dome on a drum (crown, tile slot) | dome_cap | wanted |
-| `aivan_column` | the carved wooden column of the aivan porch (corner/decor) | corner_column | wanted |
-| `tapchan` | the raised bed-platform of the chaikhana by the hauz (cell decor) | none | wanted |
-| `dome_bazaar_crossing` | the domed bazaar crossing (taq) over a lane junction (cell crown over a passage) | none | wanted |
+| `portal_pishtaq` | the monumental tiled portal 15-30 m (Registan): a tall pointed iwan in a tiled frame (wall, 3-5 storeys) | wall_zellij_k + blind arches | in the kit |
+| `minaret_round_tapered` | round tapering brick minaret with tile bands and a lantern (base, shaft, top) | minaret_base/shaft/top | in the kit as minaret_round_tapered_base, minaret_round_tapered_shaft, minaret_round_tapered_top |
+| `dome_turquoise_ribbed` | the ribbed turquoise tile dome on a drum (crown, tile slot) | dome_cap | in the kit |
+| `aivan_column` | the carved wooden column of the aivan porch (corner/decor) | corner_column | in the kit |
+| `tapchan` | the raised bed-platform of the chaikhana by the hauz (cell decor) | none | in the kit |
+| `dome_bazaar_crossing` | the domed bazaar crossing (taq) over a lane junction (cell crown over a passage) | none | in the kit |
 
 ## straits_shophouse
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_five_foot_way_t` | the shophouse ground bay with the covered five-foot way (column at the street edge, arcade behind, pintu pagar shopfront) (wall) | wall_shopfront_b_t | wanted |
-| `wall_casement_louvre_t` | a pair/triplet of full-height timber casements with louvres, stucco frame (wall) | wall_window_pair_t | wanted |
-| `band_peranakan_tile` | the glazed Peranakan tile dado (face overlay, tile slot) | none | wanted |
-| `edge_firewall_gable` | the stepped gable firewall between units (edge on the roof) | none | wanted |
-| `temple_chinese_roof` | the Chinese temple roof with swallowtail ridges and porcelain dragons (crown) | roof_tile_flying_eave | wanted |
+| `wall_five_foot_way_t` | the shophouse ground bay with the covered five-foot way (column at the street edge, arcade behind, pintu pagar shopfront) (wall) | wall_shopfront_b_t | in the kit |
+| `wall_casement_louvre_t` | a pair/triplet of full-height timber casements with louvres, stucco frame (wall) | wall_window_pair_t | in the kit |
+| `band_peranakan_tile` | the glazed Peranakan tile dado (face overlay, tile slot) | none | in the kit |
+| `edge_firewall_gable` | the stepped gable firewall between units (edge on the roof) | none | in the kit |
+| `temple_chinese_roof` | the Chinese temple roof with swallowtail ridges and porcelain dragons (crown) | roof_tile_flying_eave | in the kit |
 
 ## taipei_tiepi
 
@@ -421,33 +421,33 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_battered_k` | the battered (5-8 deg) whitewashed stone bay (wall) | wall_plain_k | wanted |
-| `wall_window_trapezoid_k` | the window in a black trapezoid surround with tiered painted lintels and a pleated valance (wall) | wall_window_m_k | wanted |
-| `edge_pembe_frieze` | the maroon twig (pembe) frieze under a parapet (edge band) | crown_band | wanted |
-| `ov_prayer_flag_pole` | the prayer-flag pole at a roof corner (corner decor) | ov_antennas | wanted |
+| `wall_battered_k` | the battered (5-8 deg) whitewashed stone bay (wall) | wall_plain_k | in the kit |
+| `wall_window_trapezoid_k` | the window in a black trapezoid surround with tiered painted lintels and a pleated valance (wall) | wall_window_m_k | in the kit |
+| `edge_pembe_frieze` | the maroon twig (pembe) frieze under a parapet (edge band) | crown_band | in the kit |
+| `ov_prayer_flag_pole` | the prayer-flag pole at a roof corner (corner decor) | ov_antennas | in the kit |
 | `ov_prayer_flags` | prayer flag strings across lanes and roofs (along X) | ov_festoon | in the kit |
-| `incense_burner` | the big whitewashed incense burner on the kora (cell decor) | fountain_riad | wanted |
-| `roof_gilded_temple` | the gilded temple roof with victory banners (crown) | green_hip | wanted |
+| `incense_burner` | the big whitewashed incense burner on the kora (cell decor) | fountain_riad | in the kit |
+| `roof_gilded_temple` | the gilded temple roof with victory banners (crown) | green_hip | in the kit |
 
 ## tyrrhenian_canyon
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_basso_t` | the basso: a glazed street door into a one-room home, a chair outside (wall, ground) | wall_door | wanted |
-| `ov_wall_shrine` | a wall shrine (edicola) with a lamp and flowers at a corner (face overlay, emissive) | none | wanted |
-| `wall_french_balcony_k` | tall french window, green louvred shutters, shallow iron balcony (wall) | wall_balcony_iron_k | wanted |
-| `ov_laundry_line_lane` | laundry lines across a vicolo between opposite balconies (along X) | ov_laundry | wanted |
-| `band_damp` | the dark damp band 0-1.5 m on the ground storey (face overlay) | none | wanted |
+| `wall_basso_t` | the basso: a glazed street door into a one-room home, a chair outside (wall, ground) | wall_door | in the kit |
+| `ov_wall_shrine` | a wall shrine (edicola) with a lamp and flowers at a corner (face overlay, emissive) | none | in the kit |
+| `wall_french_balcony_k` | tall french window, green louvred shutters, shallow iron balcony (wall) | wall_balcony_iron_k | in the kit |
+| `ov_laundry_line_lane` | laundry lines across a vicolo between opposite balconies (along X) | ov_laundry | in the kit |
+| `band_damp` | the dark damp band 0-1.5 m on the ground storey (face overlay) | none | in the kit |
 
 ## viet_tube
 
 | piece | what | stand-in | status |
 |---|---|---|---|
-| `wall_french_door_balcony_t` | full-height french doors with louvred shutters onto a narrow balcony full of pots (wall) | wall_balcony_iron_t | wanted |
-| `ov_wire_tangle` | the knotted wire tangles on the street poles (cell decor) | utility_pole | wanted |
-| `wall_side_ad_t` | a painted advertisement on a blank side wall (wall) | wall_plain_t | wanted |
-| `ov_roof_shrine` | the small rooftop ancestor shrine (roof decor, emissive) | none | wanted |
-| `bridge_red_lake` | the red wooden bridge to the lake island (bridge, span [1, 3]) | none | wanted |
+| `wall_french_door_balcony_t` | full-height french doors with louvred shutters onto a narrow balcony full of pots (wall) | wall_balcony_iron_t | in the kit |
+| `ov_wire_tangle` | the knotted wire tangles on the street poles (cell decor) | utility_pole | in the kit |
+| `wall_side_ad_t` | a painted advertisement on a blank side wall (wall) | wall_plain_t | in the kit |
+| `ov_roof_shrine` | the small rooftop ancestor shrine (roof decor, emissive) | none | in the kit |
+| `bridge_red_lake` | the red wooden bridge to the lake island (bridge, span [1, 3]) | none | in the kit |
 
 ## yemeni_tower
 
@@ -458,7 +458,7 @@ uses the stand-in until the piece exists, then switches by id (tell it the id).
 | `edge_parapet_crenel_white_k` | the stepped Sana'a merlon in white gypsum (trim slot) | edge_parapet_rounded_k | in the kit |
 | `band_brick_relief` | brick relief band per storey (used: 45% of upper faces from the 2nd storey) | - | in the kit |
 | `wall_gypsum_window_k` | gypsum-framed window with small qamariya (used) | - | in the kit |
-| `minaret_brick_round` | Sana'a minaret: round brick shaft with relief bands, gallery and white top | minaret_base/shaft/top | wanted |
+| `minaret_brick_round` | Sana'a minaret: round brick shaft with relief bands, gallery and white top | minaret_base/shaft/top | in the kit as minaret_brick_round_shaft + _top |
 | `drain_spout` | a 0.6 m timber roof spout (decor on a roof edge) | none | in the kit |
 | `skybridge_timber` | a 1-cell enclosed bridge between towers at an upper storey (Shibam) | sabat rooms | in the kit |
 

@@ -9,6 +9,7 @@ from civ.family import FamilyCiv
 
 class StraitsShophouse(FamilyCiv):
     id = "straits_shophouse"
+    gable_end_piece = "edge_firewall_gable"
     name = "Straits shophouses"
     arch_mouth = "wall_arch_round"
     covered_ceiling = "floor_slab"
@@ -27,18 +28,18 @@ class StraitsShophouse(FamilyCiv):
         "thick": 0,
         "facade": {
             "door": "wall_door",
-            "shop": [("wall_shopfront_arcade", 0.85), ("wall_arch_round", 0.15)],
-            "ground": {"street": [("wall_shopfront_arcade", 0.6), ("wall_arch_round", 0.3), ("wall_door", 0.1)],
+            "shop": [("wall_five_foot_way_t", 0.85), ("wall_shopfront_arcade", 0.15)],
+            "ground": {"street": [("wall_five_foot_way_t", 0.7), ("wall_shopfront_arcade", 0.2), ("wall_door", 0.1)],
                        "lane": [("wall_door", 0.3), ("wall_window_m", 0.3), ("wall_plain", 0.4)]},
-            "upper": {"street": [("wall_window_pair", 0.7), ("wall_window_l", 0.2), ("wall_plain", 0.1)],
+            "upper": {"street": [("wall_casement_louvre_t", 0.45), ("wall_window_pair", 0.25), ("wall_window_l", 0.2), ("wall_plain", 0.1)],
                       "lane": [("wall_window_pair", 0.4), ("wall_window_m", 0.25), ("wall_plain", 0.35)]},
         },
         "cull_slots": True,
         "corner": None,
-        "roof": {"field": "roof_terrace", "edge": None, "crown_civic": "roof_tile_flying_eave",
+        "roof": {"field": "roof_terrace", "edge": None, "crown_civic": "temple_chinese_roof",
                  "pitched": {"run": "roof_tile_red_low", "end": "roof_tile_red_low_end", "share": 0.9}},
         "marks": [{"type": "stalls", "share": 0.3}, {"type": "fountain"}],
-        "overlay": {"lantern": 0.6, "festoon": 0.45, "cable": 0.2, "ac": 0.12, "dish": 0.05, "sign_column": 0.08,
+        "overlay": {"face_items": [{"piece": "band_peranakan_tile", "p": 0.5}], "lantern": 0.6, "festoon": 0.45, "cable": 0.2, "ac": 0.12, "dish": 0.05, "sign_column": 0.08,
                     "wall_pots": 0.06},
         "foliage": {"plaza": ["rain_tree", "rain_tree"], "green": ["rain_tree", "frangipani", "coconut_palm", "areca_palm"],
                     "bank": ["coconut_palm"], "lane_wall": ["potted_plants"], "rates": {"plaza": 0.12, "lane_wall": 0.1}},
