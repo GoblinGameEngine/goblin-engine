@@ -300,6 +300,24 @@ class FamilyCiv(Civ):
                     else:
                         if m.get("top") and k + n < L.L:
                             emit(m["top"], i, j, k + n, 0, 0, 0, 0, 3)
+            elif t == "plan_piece":
+                # a piece on a share of the cells of a plan class (a tram on the main street, a windmill on a green,
+                # a basketball court): along the street where it has an axis
+                from lattice import PLAN_NAMES
+                from pick import h01
+                cls = PLAN_NAMES.index(m["cls"]) if isinstance(m["cls"], str) else m["cls"]
+                n = 0
+                for i in range(L.nx):
+                    for j in range(L.nz):
+                        if L.plan[i, j] != cls or L.occ[i, j, int(L.gk[i, j])] or h01(L.seed, m["piece"], i, j) >= m["share"]:
+                            continue
+                        alongx = L.inb(i + 1, j) and L.plan[i + 1, j] == cls and L.inb(i - 1, j) and L.plan[i - 1, j] == cls
+                        emit(m["piece"], i, j, 0, 3 if alongx else 0, 4, 0, 0, m.get("epoch", 5))
+                        n += 1
+                        if n >= m.get("max", 99):
+                            break
+                    if n >= m.get("max", 99):
+                        break
             elif t == "door_face" and lot and lot.get("door"):
                 # a monumental portal on the civic door's face (pishtaq)
                 (c, rot) = lot["door"]

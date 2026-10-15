@@ -97,10 +97,11 @@ FACE_HUNG = ("ov_ac", "ov_lantern", "ov_fluoro", "ov_planter", "ov_pipe_run", "l
              "hoist_beam", "drain_spout", "stair_steel_external", "ov_gold_eave_led", "ov_sign_arm_big",
              "ov_roller_shutter", "band_zocalo", "ov_blue_pots", "dukkana_bench", "ov_snow_cap",
              "ov_sign_vertical_stack", "ov_mastaba", "roshan_crest", "ov_marigold_garland", "band_flood",
-             "ov_truck_art_panel", "ov_wedding_curtain", "edge_chhajja")   # on a face plane (not by kind)
+             "ov_truck_art_panel", "ov_wedding_curtain", "edge_chhajja", "edge_horsehead_wall", "ov_machicolation",
+             "stair_external_white", "roof_dormer_attic")   # on a face plane (not by kind)
 CORNER_HUNG = ("kerb_post",)
 ACROSS = ("ov_cables", "shoring_beam", "ov_festoon", "ov_chochin_string", "torii", "cable_car", "ov_toldo",
-          "ov_suq_canopy", "ov_prayer_flags", "ov_wire_net")      # spans laid along the kit's X: the generator's rot is the span's
+          "ov_suq_canopy", "ov_prayer_flags", "ov_wire_net", "tram_rail", "ov_jeepney")      # spans laid along the kit's X: the generator's rot is the span's
 
 
 def mount(kid, pieces):
@@ -201,6 +202,11 @@ def translate(L, civ, recs, kit, shacks=()):
                    for a, b in ((1, 0), (-1, 0), (0, 1), (0, -1)))
 
     for (pid, i, j, lv, rot, flags, var, slot, ep) in recs:
+        if pid in ("roof_terrace", "roof_tile", "roof_tin") and hasattr(civ, "roof_piece"):
+            rp = civ.roof_piece(L, i, j, lv)
+            if rp:
+                put(rp[0], i, j, lv, 0, 0, ep, kit_rot=rp[1])
+                continue
         if (i, j, lv) in pitched:
             if pid in ("roof_terrace", "roof_tile", "roof_tin"):
                 kid, kr = pitched[(i, j, lv)]
@@ -334,11 +340,20 @@ SHED = [
               "edge_mangour_k": "edge_parapet_plain_k", "wall_ablaq_portal_k": "wall_door_k",
               "wall_portal_knockers_k": "wall_door_k", "wall_door_omani_k": "wall_door_k",
               "wall_orsi_k": "wall_window_m_k", "wall_kowloon_stack_t": "wall_balcony_cage_t",
-              "roof_tile_hip_struts": "roof_terrace", "roof_thai_gable": "roof_terrace"}),
+              "roof_tile_hip_struts": "roof_terrace", "roof_thai_gable": "roof_terrace",
+              "wall_tbilisi_balcony_t": "wall_tbilisi_balcony_lite_t", "wall_capiz_t": "wall_window_m_t",
+              "wall_gallarija_k": "wall_balcony_timber_k", "wall_azulejo_k": "wall_balcony_iron_k",
+              "wall_shushabandi_t": "wall_window_m_t", "wall_window_band_k": "wall_window_pair_k"}),
     ("drop", ("ov_truck_art_panel", "ov_wedding_curtain", "ov_wire_net", "edge_chhajja", "ov_marigold_garland",
               "band_flood", "ov_mastaba", "ov_suq_canopy", "ov_prayer_flags", "roshan_crest", "ov_tank_drum",
-              "pigeon_cote", "malqaf_scoop", "ov_arish_shade", "stupa")),
+              "pigeon_cote", "malqaf_scoop", "ov_arish_shade", "stupa", "tram_rail", "ov_jeepney", "ov_jangdok_jars",
+              "chimney_stone", "ov_machicolation", "stair_external_white", "roof_dormer_attic", "miradouro_kiosk")),
     ("drop", ("int_ceiling", "int_counter", "int_floor", "ov_tank", "ov_tank_round_blue", "ov_water_tower_steel")),
+    ("swap", {"wall_window_pair_k": "wall_window_s_k", "wall_window_pair_t": "wall_window_s_t",
+              "wall_balcony_timber_k": "wall_window_m_k", "wall_balcony_timber_t": "wall_window_m_t",
+              "wall_balcony_iron_k": "wall_window_m_k", "wall_balcony_iron_t": "wall_window_m_t",
+              "tulou_gallery_ring": "wall_window_m_t", "corner_quoin_k": "corner_chamfer_k",
+              "corner_quoin_t": "corner_chamfer_k", "wall_window_m_k": "wall_window_s_k", "wall_window_m_t": "wall_window_s_t"}),
     ("drop", ("crown_band", "int_lamp", "green_hip", "plinth_t", "plinth_k")),
     ("swap", {"stilt_frame": "floor_slab", "dome_cap": "green_hip", "roof_pagoda": "green_hip"}),
     ("drop", ("edge_gable_step", "edge_gable_neck", "edge_gable_bell")),

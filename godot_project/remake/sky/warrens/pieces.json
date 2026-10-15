@@ -1452,14 +1452,14 @@
     "screen": "#303030",
     "roof": "#7a2a24",
     "metal": "#4a4744",
-    "fabric": "#2a2a2a",
+    "fabric": "#d8c8a8",
     "emissive": "#ffd890",
-    "tile": "#3d5f8f",
+    "tile": "#2a6ab0",
     "water": "#3d7f8c",
     "ground": "#e5ddcd",
     "plant": "#5b7f3a",
-    "accent": "#2a2a2a",
-    "accent2": "#f0ece2"
+    "accent": "#7a1e1e",
+    "accent2": "#d8a83a"
    },
    {
     "wall": "#e5ddcd",
@@ -1469,14 +1469,14 @@
     "screen": "#303030",
     "roof": "#2a2a2a",
     "metal": "#4a4744",
-    "fabric": "#c9a33a",
+    "fabric": "#d8c8a8",
     "emissive": "#ffd890",
-    "tile": "#3d5f8f",
+    "tile": "#2a6ab0",
     "water": "#3d7f8c",
     "ground": "#7a2a24",
     "plant": "#5b7f3a",
-    "accent": "#2a2a2a",
-    "accent2": "#f1ede4"
+    "accent": "#7a1e1e",
+    "accent2": "#d8a83a"
    },
    {
     "wall": "#7a2a24",
@@ -1486,14 +1486,14 @@
     "screen": "#303030",
     "roof": "#c9a33a",
     "metal": "#4a4744",
-    "fabric": "#3d5f8f",
+    "fabric": "#d8c8a8",
     "emissive": "#ffd890",
-    "tile": "#3d5f8f",
+    "tile": "#2a6ab0",
     "water": "#3d7f8c",
     "ground": "#2a2a2a",
     "plant": "#5b7f3a",
-    "accent": "#2a2a2a",
-    "accent2": "#f1ede4"
+    "accent": "#7a1e1e",
+    "accent2": "#d8a83a"
    },
    {
     "wall": "#2a2a2a",
@@ -1503,14 +1503,14 @@
     "screen": "#303030",
     "roof": "#3d5f8f",
     "metal": "#4a4744",
-    "fabric": "#f1ede4",
+    "fabric": "#d8c8a8",
     "emissive": "#ffd890",
-    "tile": "#3d5f8f",
+    "tile": "#2a6ab0",
     "water": "#3d7f8c",
     "ground": "#c9a33a",
     "plant": "#5b7f3a",
-    "accent": "#2a2a2a",
-    "accent2": "#f1ede4"
+    "accent": "#7a1e1e",
+    "accent2": "#d8a83a"
    }
   ],
   "japan_yokocho": [
@@ -1598,8 +1598,8 @@
     "water": "#3d7f8c",
     "ground": "#7fb0a8",
     "plant": "#5b7f3a",
-    "accent": "#9a4a3a",
-    "accent2": "#f2eee4"
+    "accent": "#3f6a4a",
+    "accent2": "#f2c43a"
    },
    {
     "wall": "#7fb0a8",
@@ -1615,8 +1615,8 @@
     "water": "#3d7f8c",
     "ground": "#e8a07a",
     "plant": "#5b7f3a",
-    "accent": "#9a4a3a",
-    "accent2": "#f2eee4"
+    "accent": "#3f6a4a",
+    "accent2": "#f2c43a"
    },
    {
     "wall": "#e8a07a",
@@ -1632,8 +1632,8 @@
     "water": "#3d7f8c",
     "ground": "#b9cfe0",
     "plant": "#5b7f3a",
-    "accent": "#9a4a3a",
-    "accent2": "#f2eee4"
+    "accent": "#3f6a4a",
+    "accent2": "#f2c43a"
    },
    {
     "wall": "#b9cfe0",
@@ -1649,8 +1649,8 @@
     "water": "#3d7f8c",
     "ground": "#f2eee4",
     "plant": "#5b7f3a",
-    "accent": "#9a4a3a",
-    "accent2": "#f2eee4"
+    "accent": "#3f6a4a",
+    "accent2": "#f2c43a"
    }
   ],
   "straits_shophouse": [
@@ -1664,12 +1664,12 @@
     "metal": "#4a4744",
     "fabric": "#c8d8a8",
     "emissive": "#ffd890",
-    "tile": "#2f7a5a",
+    "tile": "#3a8aa8",
     "water": "#3d7f8c",
     "ground": "#a8d0c8",
     "plant": "#5b7f3a",
-    "accent": "#2f7a5a",
-    "accent2": "#e8e2d4"
+    "accent": "#3f7a5a",
+    "accent2": "#e8c43a"
    },
    {
     "wall": "#a8d0c8",
@@ -1681,12 +1681,12 @@
     "metal": "#4a4744",
     "fabric": "#e8e2d4",
     "emissive": "#ffd890",
-    "tile": "#2f7a5a",
+    "tile": "#3a8aa8",
     "water": "#3d7f8c",
     "ground": "#f0b8b0",
     "plant": "#5b7f3a",
-    "accent": "#2f7a5a",
-    "accent2": "#e8e2d4"
+    "accent": "#3f7a5a",
+    "accent2": "#e8c43a"
    },
    {
     "wall": "#f0b8b0",
@@ -1698,12 +1698,12 @@
     "metal": "#4a4744",
     "fabric": "#4a6a8a",
     "emissive": "#ffd890",
-    "tile": "#2f7a5a",
+    "tile": "#3a8aa8",
     "water": "#3d7f8c",
     "ground": "#c8d8a8",
     "plant": "#5b7f3a",
-    "accent": "#2f7a5a",
-    "accent2": "#e8e2d4"
+    "accent": "#3f7a5a",
+    "accent2": "#e8c43a"
    },
    {
     "wall": "#c8d8a8",
@@ -1715,12 +1715,12 @@
     "metal": "#4a4744",
     "fabric": "#2f7a5a",
     "emissive": "#ffd890",
-    "tile": "#2f7a5a",
+    "tile": "#3a8aa8",
     "water": "#3d7f8c",
     "ground": "#e8e2d4",
     "plant": "#5b7f3a",
-    "accent": "#2f7a5a",
-    "accent2": "#e8e2d4"
+    "accent": "#3f7a5a",
+    "accent2": "#e8c43a"
    }
   ],
   "siam_khlong": [
@@ -2018,8 +2018,8 @@
     "water": "#3d7f8c",
     "ground": "#d4a05a",
     "plant": "#5b7f3a",
-    "accent": "#3f5d3a",
-    "accent2": "#5e6166"
+    "accent": "#3f6a4a",
+    "accent2": "#2a55a8"
    },
    {
     "wall": "#d4a05a",
@@ -2035,8 +2035,8 @@
     "water": "#3d7f8c",
     "ground": "#a8432f",
     "plant": "#5b7f3a",
-    "accent": "#3f5d3a",
-    "accent2": "#3f5d3a"
+    "accent": "#3f6a4a",
+    "accent2": "#2a55a8"
    },
    {
     "wall": "#a8432f",
@@ -2052,8 +2052,8 @@
     "water": "#3d7f8c",
     "ground": "#d9a3a0",
     "plant": "#5b7f3a",
-    "accent": "#3f5d3a",
-    "accent2": "#5e6166"
+    "accent": "#3f6a4a",
+    "accent2": "#2a55a8"
    },
    {
     "wall": "#d9a3a0",
@@ -2069,14 +2069,14 @@
     "water": "#3d7f8c",
     "ground": "#e6c48a",
     "plant": "#5b7f3a",
-    "accent": "#3f5d3a",
-    "accent2": "#3f5d3a"
+    "accent": "#3f6a4a",
+    "accent2": "#2a55a8"
    }
   ],
   "rupestrian_terraces": [
    {
     "wall": "#cbb48b",
-    "trim": "#2f6f8f",
+    "trim": "#f2efe6",
     "frame": "#4a3a2a",
     "glass": "#2c3a42",
     "screen": "#5a4632",
@@ -2088,12 +2088,12 @@
     "water": "#3d7f8c",
     "ground": "#e2d6bb",
     "plant": "#5b7f3a",
-    "accent": "#4a3a2a",
-    "accent2": "#2f6f8f"
+    "accent": "#6b4a2e",
+    "accent2": "#f2d03a"
    },
    {
     "wall": "#e2d6bb",
-    "trim": "#2f6f8f",
+    "trim": "#f2efe6",
     "frame": "#4a3a2a",
     "glass": "#2c3a42",
     "screen": "#5a4632",
@@ -2105,12 +2105,12 @@
     "water": "#3d7f8c",
     "ground": "#8a7a5c",
     "plant": "#5b7f3a",
-    "accent": "#4a3a2a",
-    "accent2": "#2f6f8f"
+    "accent": "#6b4a2e",
+    "accent2": "#f2d03a"
    },
    {
     "wall": "#8a7a5c",
-    "trim": "#2f6f8f",
+    "trim": "#f2efe6",
     "frame": "#4a3a2a",
     "glass": "#2c3a42",
     "screen": "#5a4632",
@@ -2122,12 +2122,12 @@
     "water": "#3d7f8c",
     "ground": "#f3eee2",
     "plant": "#5b7f3a",
-    "accent": "#4a3a2a",
-    "accent2": "#2f6f8f"
+    "accent": "#6b4a2e",
+    "accent2": "#f2d03a"
    },
    {
     "wall": "#f3eee2",
-    "trim": "#2f6f8f",
+    "trim": "#f2efe6",
     "frame": "#4a3a2a",
     "glass": "#2c3a42",
     "screen": "#5a4632",
@@ -2139,8 +2139,8 @@
     "water": "#3d7f8c",
     "ground": "#efc9a4",
     "plant": "#5b7f3a",
-    "accent": "#4a3a2a",
-    "accent2": "#2f6f8f"
+    "accent": "#6b4a2e",
+    "accent2": "#f2d03a"
    }
   ],
   "cycladic": [
@@ -2508,8 +2508,8 @@
     "water": "#3d7f8c",
     "ground": "#eadcb8",
     "plant": "#5b7f3a",
-    "accent": "#4a3a2a",
-    "accent2": "#eadcb8"
+    "accent": "#c9a23a",
+    "accent2": "#e8dcc0"
    },
    {
     "wall": "#eadcb8",
@@ -2525,8 +2525,8 @@
     "water": "#3d7f8c",
     "ground": "#d9b39a",
     "plant": "#5b7f3a",
-    "accent": "#4a3a2a",
-    "accent2": "#f0ece2"
+    "accent": "#c9a23a",
+    "accent2": "#e8dcc0"
    },
    {
     "wall": "#d9b39a",
@@ -2542,8 +2542,8 @@
     "water": "#3d7f8c",
     "ground": "#9d8255",
     "plant": "#5b7f3a",
-    "accent": "#4a3a2a",
-    "accent2": "#eadcb8"
+    "accent": "#c9a23a",
+    "accent2": "#e8dcc0"
    },
    {
     "wall": "#9d8255",
@@ -2559,8 +2559,8 @@
     "water": "#3d7f8c",
     "ground": "#d8b77e",
     "plant": "#5b7f3a",
-    "accent": "#4a3a2a",
-    "accent2": "#eadcb8"
+    "accent": "#c9a23a",
+    "accent2": "#e8dcc0"
    }
   ],
   "kulla_stone": [
@@ -2788,8 +2788,8 @@
     "water": "#3d7f8c",
     "ground": "#4a4640",
     "plant": "#5b7f3a",
-    "accent": "#4a4640",
-    "accent2": "#f0ece2"
+    "accent": "#a8542e",
+    "accent2": "#c9a23a"
    },
    {
     "wall": "#4a4640",
@@ -2805,8 +2805,8 @@
     "water": "#3d7f8c",
     "ground": "#6e675c",
     "plant": "#5b7f3a",
-    "accent": "#4a4640",
-    "accent2": "#cfc7b6"
+    "accent": "#a8542e",
+    "accent2": "#c9a23a"
    },
    {
     "wall": "#6e675c",
@@ -2822,8 +2822,8 @@
     "water": "#3d7f8c",
     "ground": "#9a907e",
     "plant": "#5b7f3a",
-    "accent": "#4a4640",
-    "accent2": "#cfc7b6"
+    "accent": "#a8542e",
+    "accent2": "#c9a23a"
    },
    {
     "wall": "#9a907e",
@@ -2839,8 +2839,8 @@
     "water": "#3d7f8c",
     "ground": "#cfc7b6",
     "plant": "#5b7f3a",
-    "accent": "#4a4640",
-    "accent2": "#cfc7b6"
+    "accent": "#a8542e",
+    "accent2": "#c9a23a"
    }
   ],
   "andean_neo": [
@@ -16765,6 +16765,1869 @@
     ]
    ],
    "notes": "MANILA MARK: parked jeepney along X"
+  },
+  "wall_triple_arch_loggia_k": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_triple_arch_loggia_k",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "mardin_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame"
+   ],
+   "tris": 630,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.6
+    ],
+    [
+     1.511,
+     3.2,
+     0.04
+    ]
+   ],
+   "notes": "MARDIN MARK: triple-arched loggia, carved balustrade"
+  },
+  "edge_balustrade_carved_k": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "edge_balustrade_carved_k",
+   "group": "edge",
+   "kind": "edge",
+   "civs": [
+    "mardin_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame"
+   ],
+   "tris": 118,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.28
+    ],
+    [
+     1.5,
+     0.95,
+     0.03
+    ]
+   ],
+   "notes": "carved stone balustrade round a terrace"
+  },
+  "abbara_vault": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "abbara_vault",
+   "group": "cell",
+   "kind": "passage",
+   "civs": [
+    "mardin_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim"
+   ],
+   "tris": 252,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -1.54
+    ],
+    [
+     1.5,
+     3.2,
+     1.54
+    ]
+   ],
+   "notes": "MARDIN MARK: vault over a lane along Z, portals at both ends"
+  },
+  "wall_carved_frame_k": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_carved_frame_k",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "mardin_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "glass",
+    "metal"
+   ],
+   "tris": 256,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.6
+    ],
+    [
+     1.5,
+     3.2,
+     0.13
+    ]
+   ],
+   "notes": "pointed window in a carved frame, iron grille"
+  },
+  "minaret_square_carved_base": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "minaret_square_carved_base",
+   "group": "cell",
+   "kind": "tower",
+   "civs": [
+    "mardin_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall"
+   ],
+   "tris": 8,
+   "bounds": [
+    [
+     -1.2,
+     0.0,
+     -1.2
+    ],
+    [
+     1.2,
+     3.2,
+     1.2
+    ]
+   ],
+   "notes": "MARDIN MARK: carved square minaret base"
+  },
+  "minaret_square_carved_shaft": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "minaret_square_carved_shaft",
+   "group": "cell",
+   "kind": "tower",
+   "civs": [
+    "mardin_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame"
+   ],
+   "tris": 464,
+   "bounds": [
+    [
+     -1.25,
+     0.0,
+     -1.25
+    ],
+    [
+     1.25,
+     3.2,
+     1.25
+    ]
+   ],
+   "notes": "MARDIN MARK: carved square minaret shaft"
+  },
+  "minaret_square_carved_top": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "minaret_square_carved_top",
+   "group": "cell",
+   "kind": "tower",
+   "civs": [
+    "mardin_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim"
+   ],
+   "tris": 534,
+   "bounds": [
+    [
+     -1.55,
+     0.0,
+     -1.55
+    ],
+    [
+     1.55,
+     3.0,
+     1.55
+    ]
+   ],
+   "notes": "MARDIN MARK: carved square minaret top"
+  },
+  "wall_cumba_t": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_cumba_t",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "ottoman_timber",
+    "levantine_courtyard"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "glass",
+    "roof"
+   ],
+   "tris": 312,
+   "bounds": [
+    [
+     -1.5,
+     -0.55,
+     -0.25
+    ],
+    [
+     1.5,
+     3.3,
+     0.75
+    ]
+   ],
+   "notes": "OTTOMAN MARK: cumba oriel 0.6 m out on brackets"
+  },
+  "wall_kafes_t": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_kafes_t",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "ottoman_timber"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "glass",
+    "screen"
+   ],
+   "tris": 212,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.25
+    ],
+    [
+     1.5,
+     3.2,
+     0.06
+    ]
+   ],
+   "notes": "sash pair behind kafes lattice"
+  },
+  "wall_himis_t": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_himis_t",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "ottoman_timber",
+    "caucasian_balcony"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "glass"
+   ],
+   "tris": 110,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.25
+    ],
+    [
+     1.5,
+     3.2,
+     0.05
+    ]
+   ],
+   "notes": "himis timber frame with braces, plaster infill"
+  },
+  "eave_soffit_deep": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "eave_soffit_deep",
+   "group": "edge",
+   "kind": "edge",
+   "civs": [
+    "ottoman_timber"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "trim",
+    "frame",
+    "roof"
+   ],
+   "tris": 26,
+   "bounds": [
+    [
+     -1.5,
+     -0.105,
+     -0.3
+    ],
+    [
+     1.5,
+     0.55,
+     1.2
+    ]
+   ],
+   "notes": "1.2 m eave, boarded soffit"
+  },
+  "cesme_fountain": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "cesme_fountain",
+   "group": "wall",
+   "kind": "overlay",
+   "civs": [
+    "ottoman_timber"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "trim",
+    "frame",
+    "roof",
+    "metal",
+    "water",
+    "accent",
+    "accent2"
+   ],
+   "tris": 120,
+   "bounds": [
+    [
+     -0.95,
+     0.0,
+     0.0
+    ],
+    [
+     0.95,
+     2.75,
+     0.65
+    ]
+   ],
+   "notes": "marble wall fountain, trough, canopy"
+  },
+  "vault_roof_hump": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "vault_roof_hump",
+   "group": "cell",
+   "kind": "roof",
+   "civs": [
+    "rupestrian_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "trim"
+   ],
+   "tris": 54,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -1.5
+    ],
+    [
+     1.5,
+     1.2,
+     1.5
+    ]
+   ],
+   "notes": "whitewashed vault hump along Z, walkable"
+  },
+  "wall_cave_door_k": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_cave_door_k",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "rupestrian_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "frame",
+    "glass",
+    "ground"
+   ],
+   "tris": 202,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.6
+    ],
+    [
+     1.5,
+     3.2,
+     0.04
+    ]
+   ],
+   "notes": "MATERA MARK: deep arched door with a lunette"
+  },
+  "rock_face_cut": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "rock_face_cut",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "rupestrian_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "ground"
+   ],
+   "tris": 34,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.6
+    ],
+    [
+     1.5,
+     3.2,
+     0.157
+    ]
+   ],
+   "notes": "raw faceted rock face (ground slot)"
+  },
+  "cistern_well": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "cistern_well",
+   "group": "cell",
+   "kind": "cell",
+   "civs": [
+    "rupestrian_terraces"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "trim",
+    "frame",
+    "metal"
+   ],
+   "tris": 244,
+   "bounds": [
+    [
+     -0.75,
+     0.0,
+     -0.713
+    ],
+    [
+     0.75,
+     1.824,
+     0.713
+    ]
+   ],
+   "notes": "carved well head with iron arch"
+  },
+  "lemon_pergola": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "lemon_pergola",
+   "group": "cell",
+   "kind": "overlay",
+   "civs": [
+    "rupestrian_terraces",
+    "tyrrhenian_canyon"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": false,
+   "slots": [
+    "frame",
+    "plant",
+    "accent2"
+   ],
+   "tris": 256,
+   "bounds": [
+    [
+     -1.45,
+     0.0,
+     -1.649
+    ],
+    [
+     1.45,
+     2.52,
+     1.45
+    ]
+   ],
+   "notes": "lemon/vine pergola (accent2 = lemons)"
+  },
+  "roof_slate_steep": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "roof_slate_steep",
+   "group": "cell",
+   "kind": "roof",
+   "civs": [
+    "scots_lands"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "frame",
+    "roof"
+   ],
+   "tris": 50,
+   "bounds": [
+    [
+     -1.7,
+     -0.298,
+     -1.5
+    ],
+    [
+     1.7,
+     1.888,
+     1.5
+    ]
+   ],
+   "notes": "50-deg slate gable segment, ridge along Z"
+  },
+  "roof_slate_steep_end": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "roof_slate_steep_end",
+   "group": "cell",
+   "kind": "roof",
+   "civs": [
+    "scots_lands"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "frame",
+    "roof"
+   ],
+   "tris": 56,
+   "bounds": [
+    [
+     -1.7,
+     -0.298,
+     -1.5
+    ],
+    [
+     1.7,
+     1.888,
+     1.5
+    ]
+   ],
+   "notes": "its end segment (gable at -Z)"
+  },
+  "chimney_stack_pots": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "chimney_stack_pots",
+   "group": "cell",
+   "kind": "overlay",
+   "civs": [
+    "scots_lands",
+    "hanseatic_gable"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "accent"
+   ],
+   "tris": 286,
+   "bounds": [
+    [
+     -1.0,
+     0.0,
+     -0.4
+    ],
+    [
+     1.0,
+     1.95,
+     0.4
+    ]
+   ],
+   "notes": "SCOTS MARK: long stack with six pots"
+  },
+  "turret_stair_shaft": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "turret_stair_shaft",
+   "group": "corner",
+   "kind": "tower",
+   "civs": [
+    "scots_lands"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "frame"
+   ],
+   "tris": 22,
+   "bounds": [
+    [
+     -0.6,
+     0.0,
+     -0.558
+    ],
+    [
+     1.1,
+     3.2,
+     1.058
+    ]
+   ],
+   "notes": "SCOTS MARK: stair turret storey at a corner (stack)"
+  },
+  "turret_stair_conical": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "turret_stair_conical",
+   "group": "corner",
+   "kind": "tower",
+   "civs": [
+    "scots_lands"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "roof",
+    "metal"
+   ],
+   "tris": 84,
+   "bounds": [
+    [
+     -0.7,
+     0.0,
+     -0.654
+    ],
+    [
+     1.2,
+     3.6,
+     1.154
+    ]
+   ],
+   "notes": "SCOTS MARK: the turret's conical slate cap"
+  },
+  "wall_pend_k": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_pend_k",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "scots_lands"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "accent"
+   ],
+   "tris": 176,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.6
+    ],
+    [
+     1.5,
+     3.2,
+     0.045
+    ]
+   ],
+   "notes": "arched pend into a close, name panel"
+  },
+  "crown_spire": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "crown_spire",
+   "group": "cell",
+   "kind": "crown",
+   "civs": [
+    "scots_lands"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall"
+   ],
+   "tris": 638,
+   "bounds": [
+    [
+     -1.44,
+     0.0,
+     -1.44
+    ],
+    [
+     1.44,
+     6.6,
+     1.44
+    ]
+   ],
+   "notes": "SCOTS MARK: St Giles' crown spire"
+  },
+  "mercat_cross": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "mercat_cross",
+   "group": "cell",
+   "kind": "cell",
+   "civs": [
+    "scots_lands"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "accent2"
+   ],
+   "tris": 296,
+   "bounds": [
+    [
+     -1.275,
+     0.0,
+     -1.275
+    ],
+    [
+     1.275,
+     5.809,
+     1.275
+    ]
+   ],
+   "notes": "octagonal mercat cross with unicorn"
+  },
+  "pier_steps_khlong": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "pier_steps_khlong",
+   "group": "cell",
+   "kind": "stair",
+   "civs": [
+    "siam_khlong"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": "ramp",
+   "slots": [
+    "frame"
+   ],
+   "tris": 256,
+   "bounds": [
+    [
+     -0.81,
+     -2.6,
+     -1.5
+    ],
+    [
+     0.81,
+     0.915,
+     1.65
+    ]
+   ],
+   "notes": "timber pier steps 2 m down along +Z"
+  },
+  "ov_gold_shop_neon": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "ov_gold_shop_neon",
+   "group": "wall",
+   "kind": "overlay",
+   "civs": [
+    "siam_khlong",
+    "straits_shophouse"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": false,
+   "slots": [
+    "frame",
+    "metal",
+    "emissive",
+    "accent2"
+   ],
+   "tris": 134,
+   "bounds": [
+    [
+     0.875,
+     0.3,
+     0.0
+    ],
+    [
+     1.125,
+     6.0,
+     1.15
+    ]
+   ],
+   "notes": "SIAM MARK: 2-storey gold-shop sign, faces +-X"
+  },
+  "wall_five_foot_way_t": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_five_foot_way_t",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "straits_shophouse"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "tile",
+    "accent",
+    "accent2"
+   ],
+   "tris": 220,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -1.85
+    ],
+    [
+     1.54,
+     3.2,
+     0.04
+    ]
+   ],
+   "notes": "STRAITS MARK: five-foot way bay (front 1.6 m of the cell), pintu pagar"
+  },
+  "wall_casement_louvre_t": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_casement_louvre_t",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "straits_shophouse"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "glass",
+    "accent"
+   ],
+   "tris": 400,
+   "bounds": [
+    [
+     -1.59,
+     0.0,
+     -0.25
+    ],
+    [
+     1.59,
+     3.2,
+     0.12
+    ]
+   ],
+   "notes": "three casements with louvred leaves"
+  },
+  "band_peranakan_tile": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "band_peranakan_tile",
+   "group": "wall",
+   "kind": "overlay",
+   "civs": [
+    "straits_shophouse"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "drop",
+   "collide": false,
+   "slots": [
+    "trim",
+    "tile",
+    "accent",
+    "accent2"
+   ],
+   "tris": 126,
+   "bounds": [
+    [
+     -1.5,
+     0.08,
+     0.0
+    ],
+    [
+     1.5,
+     1.03,
+     0.015
+    ]
+   ],
+   "notes": "STRAITS MARK: Peranakan tile dado 1 m"
+  },
+  "edge_firewall_gable": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "edge_firewall_gable",
+   "group": "edge",
+   "kind": "crown",
+   "civs": [
+    "straits_shophouse"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim"
+   ],
+   "tris": 102,
+   "bounds": [
+    [
+     -1.536,
+     0.0,
+     -0.25
+    ],
+    [
+     1.536,
+     2.0,
+     0.004
+    ]
+   ],
+   "notes": "curved firewall gable between units (on the party wall)"
+  },
+  "temple_chinese_roof": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "temple_chinese_roof",
+   "group": "cell",
+   "kind": "crown",
+   "civs": [
+    "straits_shophouse",
+    "taipei_tiepi",
+    "hk_neon_canyon"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "frame",
+    "roof",
+    "accent",
+    "accent2"
+   ],
+   "tris": 394,
+   "bounds": [
+    [
+     -2.3,
+     0.0,
+     -2.3
+    ],
+    [
+     2.3,
+     3.021,
+     2.3
+    ]
+   ],
+   "notes": "STRAITS MARK: temple roof, swallowtails, dragons"
+  },
+  "wall_battered_k": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_battered_k",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "tibetan_lhasa"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall"
+   ],
+   "tris": 10,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.6
+    ],
+    [
+     1.5,
+     3.2,
+     0.0
+    ]
+   ],
+   "notes": "battered whitewashed bay (leans back 0.35 m a storey)"
+  },
+  "wall_window_trapezoid_k": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_window_trapezoid_k",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "tibetan_lhasa"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "glass",
+    "fabric",
+    "accent",
+    "accent2"
+   ],
+   "tris": 424,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.6
+    ],
+    [
+     1.5,
+     3.2,
+     0.22
+    ]
+   ],
+   "notes": "TIBET MARK: black trapezoid surround, tiered lintels, valance"
+  },
+  "edge_pembe_frieze": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "edge_pembe_frieze",
+   "group": "edge",
+   "kind": "overlay",
+   "civs": [
+    "tibetan_lhasa"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "trim",
+    "accent",
+    "accent2"
+   ],
+   "tris": 130,
+   "bounds": [
+    [
+     -1.5,
+     -0.71,
+     -0.02
+    ],
+    [
+     1.5,
+     0.0,
+     0.12
+    ]
+   ],
+   "notes": "TIBET MARK: maroon pembe band under a parapet (y -0.7..0)"
+  },
+  "ov_prayer_flag_pole": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "ov_prayer_flag_pole",
+   "group": "corner",
+   "kind": "decor",
+   "civs": [
+    "tibetan_lhasa"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": false,
+   "slots": [
+    "trim",
+    "frame",
+    "fabric",
+    "tile",
+    "plant",
+    "accent",
+    "accent2"
+   ],
+   "tris": 55,
+   "bounds": [
+    [
+     0.05,
+     0.0,
+     0.05
+    ],
+    [
+     0.45,
+     4.8,
+     0.85
+    ]
+   ],
+   "notes": "prayer-flag pole at a roof corner"
+  },
+  "incense_burner": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "incense_burner",
+   "group": "cell",
+   "kind": "cell",
+   "civs": [
+    "tibetan_lhasa"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "trim",
+    "emissive",
+    "accent2"
+   ],
+   "tris": 102,
+   "bounds": [
+    [
+     -0.9,
+     0.0,
+     -0.9
+    ],
+    [
+     0.9,
+     2.95,
+     0.9
+    ]
+   ],
+   "notes": "whitewashed sang-khang, lit mouth"
+  },
+  "roof_gilded_temple": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "roof_gilded_temple",
+   "group": "cell",
+   "kind": "crown",
+   "civs": [
+    "tibetan_lhasa"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "accent",
+    "accent2"
+   ],
+   "tris": 290,
+   "bounds": [
+    [
+     -2.1,
+     0.0,
+     -2.1
+    ],
+    [
+     2.1,
+     2.95,
+     2.1
+    ]
+   ],
+   "notes": "TIBET MARK: gilt roof, victory banners"
+  },
+  "wall_basso_t": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_basso_t",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "tyrrhenian_canyon"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "glass",
+    "accent",
+    "accent2"
+   ],
+   "tris": 140,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.25
+    ],
+    [
+     1.5,
+     3.2,
+     0.75
+    ]
+   ],
+   "notes": "NAPLES MARK: glazed basso door, chair outside"
+  },
+  "ov_wall_shrine": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "ov_wall_shrine",
+   "group": "wall",
+   "kind": "overlay",
+   "civs": [
+    "tyrrhenian_canyon",
+    "knights_harbour"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": false,
+   "slots": [
+    "trim",
+    "roof",
+    "fabric",
+    "emissive",
+    "accent",
+    "accent2"
+   ],
+   "tris": 164,
+   "bounds": [
+    [
+     -0.6,
+     1.35,
+     0.0
+    ],
+    [
+     0.6,
+     2.85,
+     0.35
+    ]
+   ],
+   "notes": "NAPLES MARK: lit edicola"
+  },
+  "wall_french_balcony_k": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_french_balcony_k",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "tyrrhenian_canyon"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "glass",
+    "metal",
+    "accent"
+   ],
+   "tris": 178,
+   "bounds": [
+    [
+     -1.5,
+     -0.08,
+     -0.6
+    ],
+    [
+     1.5,
+     3.2,
+     0.35
+    ]
+   ],
+   "notes": "french window, green shutters, shallow iron balcony"
+  },
+  "ov_laundry_line_lane": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "ov_laundry_line_lane",
+   "group": "cell",
+   "kind": "overlay",
+   "civs": [
+    "tyrrhenian_canyon",
+    "viet_tube",
+    "kowloon_walled"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "drop",
+   "collide": false,
+   "slots": [
+    "trim",
+    "frame",
+    "fabric",
+    "accent",
+    "accent2"
+   ],
+   "tris": 140,
+   "bounds": [
+    [
+     -1.501,
+     4.409,
+     -0.504
+    ],
+    [
+     1.501,
+     7.605,
+     0.606
+    ]
+   ],
+   "notes": "laundry lines along X at 5.2 / 7.6 m"
+  },
+  "band_damp": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "band_damp",
+   "group": "wall",
+   "kind": "overlay",
+   "civs": [
+    "tyrrhenian_canyon"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "drop",
+   "collide": false,
+   "slots": [
+    "wall"
+   ],
+   "tris": 40,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     0.0
+    ],
+    [
+     1.5,
+     1.498,
+     0.006
+    ]
+   ],
+   "notes": "damp band 0-1.5 m"
+  },
+  "wall_french_door_balcony_t": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_french_door_balcony_t",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "viet_tube"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "glass",
+    "metal",
+    "fabric",
+    "tile",
+    "plant",
+    "accent"
+   ],
+   "tris": 330,
+   "bounds": [
+    [
+     -1.5,
+     -0.12,
+     -0.25
+    ],
+    [
+     1.5,
+     3.2,
+     0.85
+    ]
+   ],
+   "notes": "VIET MARK: french doors, louvred shutters, balcony of pots"
+  },
+  "ov_wire_tangle": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "ov_wire_tangle",
+   "group": "cell",
+   "kind": "cell",
+   "civs": [
+    "viet_tube"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "keep",
+   "collide": false,
+   "slots": [
+    "trim",
+    "frame",
+    "metal"
+   ],
+   "tris": 480,
+   "bounds": [
+    [
+     -1.803,
+     0.0,
+     -1.505
+    ],
+    [
+     1.803,
+     8.5,
+     1.505
+    ]
+   ],
+   "notes": "VIET MARK: pole with a knotted wire tangle"
+  },
+  "wall_side_ad_t": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "wall_side_ad_t",
+   "group": "wall",
+   "kind": "wall",
+   "civs": [
+    "viet_tube"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "box",
+   "collide": true,
+   "slots": [
+    "wall",
+    "trim",
+    "frame",
+    "fabric",
+    "accent",
+    "accent2"
+   ],
+   "tris": 88,
+   "bounds": [
+    [
+     -1.5,
+     0.0,
+     -0.25
+    ],
+    [
+     1.5,
+     3.2,
+     0.014
+    ]
+   ],
+   "notes": "painted advertisement on a side wall"
+  },
+  "ov_roof_shrine": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "ov_roof_shrine",
+   "group": "cell",
+   "kind": "overlay",
+   "civs": [
+    "viet_tube"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    1
+   ],
+   "lod1": "drop",
+   "collide": true,
+   "slots": [
+    "trim",
+    "roof",
+    "emissive",
+    "accent",
+    "accent2"
+   ],
+   "tris": 68,
+   "bounds": [
+    [
+     -0.708,
+     0.0,
+     -0.5
+    ],
+    [
+     0.714,
+     1.55,
+     0.569
+    ]
+   ],
+   "notes": "rooftop ancestor shrine, lit"
+  },
+  "bridge_red_lake": {
+   "glb": "res://remake/sky/warrens/kit/kit.glb",
+   "mesh": "bridge_red_lake",
+   "group": "cell",
+   "kind": "bridge",
+   "civs": [
+    "viet_tube"
+   ],
+   "bay": [
+    3.0,
+    3.2
+   ],
+   "span": [
+    1,
+    3
+   ],
+   "lod1": "keep",
+   "collide": true,
+   "slots": [
+    "frame",
+    "accent"
+   ],
+   "tris": 460,
+   "bounds": [
+    [
+     -1.14,
+     -1.5,
+     -1.57
+    ],
+    [
+     1.14,
+     1.89,
+     7.512
+    ]
+   ],
+   "notes": "VIET MARK: red arched timber bridge along +Z"
   }
  }
 }

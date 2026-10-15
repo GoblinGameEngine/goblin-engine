@@ -29,20 +29,19 @@ class HakkaTulou(FamilyCiv):
         "variants": (0.35, 0.3, 0.25, 0.1), "civic_variant": 3,
         "thick": 1,
         "facade": {
-            "door": "wall_door",
+            "door": "tulou_gate",
             "shop": [("wall_shopfront", 0.6), ("wall_door", 0.4)],
-            "ground": {"street": [("wall_plain", 1.0)], "lane": [("wall_plain", 1.0)], "green": [("wall_plain", 1.0)],
-                       "court": [("wall_door", 0.4), ("wall_screen", 0.4), ("wall_plain", 0.2)]},
-            "upper": {"street": [("wall_plain", 0.85), ("wall_window_s", 0.15)],
-                      "lane": [("wall_plain", 0.88), ("wall_window_s", 0.12)],
-                      "green": [("wall_plain", 0.85), ("wall_window_s", 0.15)],
-                      "air": [("wall_plain", 0.9), ("wall_window_s", 0.1)],
-                      "court": [("wall_gallery_timber_t", 0.7), ("wall_screen", 0.3)]},
+            "ground": {"street": [("tulou_ring_wall", 1.0)], "lane": [("tulou_ring_wall", 1.0)],
+                       "green": [("tulou_ring_wall", 1.0)],
+                       "court": [("tulou_gallery_ring", 0.6), ("wall_door", 0.4)]},
+            "upper": {"street": [("tulou_ring_wall", 1.0)], "lane": [("tulou_ring_wall", 1.0)],
+                      "green": [("tulou_ring_wall", 1.0)], "air": [("tulou_ring_wall", 1.0)],
+                      "court": [("tulou_gallery_ring", 1.0)]},
         },
         "corner": None,
-        "roof": {"field": "roof_terrace", "edge": "edge_eave_pagoda", "crown_civic": "roof_tile_flying_eave",
+        "roof": {"field": "roof_terrace", "edge": None, "crown_civic": "roof_tile_flying_eave",
                  "pitched": {"run": "roof_kawara_low", "end": "roof_kawara_low_end", "share": 1.0}},
-        "marks": [{"type": "stalls", "share": 0.08}],
+        "marks": [{"type": "stalls", "share": 0.08}],      # (+ an ancestral hall in every ring: marks() below)
         "overlay": {"lantern": 0.5, "festoon": 0.3, "cable": 0.08, "dish": 0.03},
         "foliage": {"green": ["tea_bushes", "tea_bushes", "china_fir", "camphor", "bamboo", "banana"],
                     "bank": ["bamboo", "banana"], "plaza": ["camphor"], "rates": {"green": 0.55}},
@@ -110,12 +109,13 @@ class HakkaTulou(FamilyCiv):
     def after_lanes(self, L, rng):
         from collections import deque
         from lattice import GREEN, WALKABLE
-        # the valley between the rings stays tea terraces (no infill) while the island has rings
+        # tea terraces round every ring (2 cells clear); farther out, the later infill villages
         if self.rings:
             ring_cells = set(c for r in self.rings for c in r[3] + r[4])
             for i in range(L.nx):
                 for j in range(L.nz):
-                    if L.plan[i, j] == FREE and (i, j) not in ring_cells:
+                    if L.plan[i, j] == FREE and (i, j) not in ring_cells and \
+                            any(math.hypot(i - r[0], j - r[1]) <= r[2] + 2.5 for r in self.rings):
                         L.plan[i, j] = GREEN
         for (ci, cj, R, band, hall) in self.rings:
             for c in band + hall:
@@ -153,3 +153,25 @@ class HakkaTulou(FamilyCiv):
                 while L.inb(*cur) and cur in bset:
                     L.plan[cur] = LANE
                     cur = (cur[0] - a, cur[1] - b)
+
+    def marks(self, L, rng, emit):
+        super().marks(L, rng, emit)
+        for (ci, cj, R, band, hall) in getattr(self, "rings", []):
+            if L.inb(ci, cj) and not L.occ[ci, cj, int(L.gk[ci, cj])]:
+                emit("ancestral_hall", ci, cj, 0, 0, 4, 0, 0, 1)
+
+    def roof_piece(self, L, i, j, lv):
+        """the ring roof: a tile segment on every ring cell, its ridge tangential and its 2.5 m eave out (+X radial)"""
+        for (ci, cj, R, band, hall) in getattr(self, "rings", []):
+            if (i, j) in self._bands.get((ci, cj), ()):
+                dx, dz = i - ci, j - cj
+                if abs(dx) >= abs(dz):
+                    return ("roof_ring_tile", 0 if dx > 0 else 2)
+                return ("roof_ring_tile", 3 if dz > 0 else 1)
+        return None
+
+    @property
+    def _bands(self):
+        if not hasattr(self, "_bands_c"):
+            self._bands_c = {(r[0], r[1]): set(r[3]) for r in getattr(self, "rings", [])}
+        return self._bands_c

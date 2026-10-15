@@ -790,10 +790,10 @@ def wall_capiz():
         for x0 in (-1.4, -0.7, 0.0, 0.7):                                    # capiz sashes
             m.quad_facing((x0 + 0.02, 0.82, z - 0.12), (x0 + 0.68, 0.82, z - 0.12), (x0 + 0.68, 2.53, z - 0.12), (x0 + 0.02, 2.53, z - 0.12), (0, 0, 1), "trim", 0.95)
             _grid(m, x0 + 0.02, 0.82, x0 + 0.68, 2.53, z - 0.11, 6, 12, 0.02, "frame")
-        m.box((-HB, -0.15, -T), (HB, 0.0, z), "frame", 0.75, skip=("z-",))
+        m.box((-HB, -0.15, -T), (HB, -0.005, z), "frame", 0.75, skip=("z-",))
         for x in (-1.2, 0.0, 1.2):
             m.tube((x, -0.8, 0.02), (x, -0.15, z - 0.1), 0.05, "frame", n=4)
-        m.box((-HB, ST - 0.12, z), (HB, ST, z + 0.05), "frame", 0.85, skip=("z-",))
+        m.box((-HB, ST - 0.12, z), (HB, ST - 0.005, z + 0.05), "frame", 0.85, skip=("z-",))
         return m
     return b
 

@@ -9,6 +9,7 @@ from civ.family import FamilyCiv
 
 class KoreanHillside(FamilyCiv):
     id = "korean_hillside"
+    shack_pieces = ("oktapbang",)
     name = "Korean hillside village"
     arch_mouth = None
     covered_ceiling = "floor_slab"
@@ -35,9 +36,9 @@ class KoreanHillside(FamilyCiv):
         },
         "cull_slots": True,
         "corner": None,
-        "roof": {"field": "roof_terrace", "edge": "edge_rail", "crown_civic": "green_hip"},
+        "roof": {"field": "roof_painted_green", "edge": "edge_rail", "crown_civic": "green_hip"},
         "marks": [{"type": "playground"}],
-        "overlay": {"tank": 0.3, "laundry": 0.15, "roof_items": [("satellite_dish", 0.05)], "cable": 0.4, "pole": 0.3,
+        "overlay": {"tank": 0.3, "laundry": 0.15, "roof_items": [("satellite_dish", 0.05), ("ov_jangdok_jars", 0.12)], "cable": 0.4, "pole": 0.3,
                     "lantern": 0.25},
         "foliage": {"green": ["persimmon", "korean_red_pine", "cherry"], "bank": ["willow", "cherry"],
                     "plaza": ["persimmon"], "roof": ["pepper_boxes", "jangdok_jars"], "lane_wall": ["potted_plants"],

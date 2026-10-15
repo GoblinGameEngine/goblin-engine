@@ -9,6 +9,7 @@ from civ.family import FamilyCiv
 
 class ManilaEstero(FamilyCiv):
     id = "manila_estero"
+    shack_pieces = ("ov_shanty_gi",)
     name = "Manila estero city"
     arch_mouth = "wall_arch_round"
     covered_ceiling = "floor_slab"
@@ -31,9 +32,9 @@ class ManilaEstero(FamilyCiv):
         "facade": {
             "door": "wall_door",
             "shop": [("wall_shopfront_arcade", 0.6), ("wall_shopfront", 0.4)],
-            "ground": {"street": [("wall_arch_round", 0.25), ("wall_shopfront", 0.3), ("wall_door", 0.2), ("wall_plain", 0.25)],
+            "ground": {"street": [("wall_adobe_ground_k", 0.25), ("wall_shopfront", 0.3), ("wall_door", 0.2), ("wall_plain", 0.25)],
                        "lane": [("wall_door", 0.3), ("wall_window_grille", 0.2), ("wall_plain", 0.5)]},
-            "upper": {"street": [("wall_screen", 0.45), ("wall_window_m", 0.2), ("wall_balcony_timber", 0.1), ("wall_plain", 0.25)],
+            "upper": {"street": [("wall_capiz_t", 0.45), ("wall_window_m", 0.2), ("wall_balcony_timber", 0.1), ("wall_plain", 0.25)],
                       "lane": [("wall_screen", 0.3), ("wall_window_s", 0.25), ("wall_plain", 0.45)],
                       "green": [("wall_window_s", 0.3), ("wall_plain", 0.7)]},
             "civic_ground": [("wall_arch_round", 0.6), ("wall_plain", 0.4)],
@@ -43,7 +44,9 @@ class ManilaEstero(FamilyCiv):
         "roof": {"field": "roof_tin", "edge": "edge_eave_tin", "crown_civic": "dome_cap",
                  "pitched": {"run": "roof_tile_red_low", "end": "roof_tile_red_low_end", "share": 0.5}},
         "marks": [{"type": "civic_tower", "pieces": ["minaret_base", "minaret_shaft", "minaret_top"], "storeys": 5},
-                  {"type": "playground"}, {"type": "stalls", "share": 0.2}],
+                  {"type": "plan_piece", "cls": "green", "piece": "basketball_court", "share": 0.02, "max": 2},
+                  {"type": "plan_piece", "cls": "main", "piece": "ov_jeepney", "share": 0.04, "max": 6},
+                  {"type": "stalls", "share": 0.2}],
         "overlay": {"cable": 0.6, "pole": 0.25, "laundry": 0.15, "lane_laundry": 0.15, "tank": 0.15, "dish": 0.1,
                     "festoon": 0.4, "lantern": 0.35, "roof_items": [("ov_rebar_stubs", 0.04)]},
         "foliage": {"plaza": ["acacia", "narra"], "green": ["mango", "acacia", "banana", "coconut_palm"],

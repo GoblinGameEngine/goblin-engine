@@ -1,7 +1,7 @@
 # KIT status for kit_requests.md
 
 Written by the KIT stream (remake/blender/sky/warren_kit). For each requested id: the kit id(s) to switch to.
-Parts named `_base/_shaft/_top` (or `_belfry`, `_cupola`, `_crown`) stack a cell a part. All in pieces.json + kit.glb.
+Parts named `_base/_shaft/_top` (or `_belfry`, `_cupola`, `_crown`) stack a cell a part; `_end` roof segments close -Z. All in pieces.json + kit.glb.
 
 | family | requested | kit id(s) |
 |---|---|---|
@@ -20,11 +20,11 @@ Parts named `_base/_shaft/_top` (or `_belfry`, `_cupola`, `_crown`) stack a cell
 | cairene_mamluk | `malqaf_scoop` | malqaf_scoop |
 | cairene_mamluk | `pigeon_cote` | pigeon_cote |
 | cairene_mamluk | `ov_mastaba` | ov_mastaba |
-| caucasian_balcony | `wall_tbilisi_balcony_t (lighter)` | **missing** |
-| caucasian_balcony | `wall_shushabandi_t` | **missing** |
-| caucasian_balcony | `svan_tower` | **missing** |
-| caucasian_balcony | `dome_bath_brick` | **missing** |
-| caucasian_balcony | `stair_spiral_courtyard` | **missing** |
+| caucasian_balcony | `wall_tbilisi_balcony_t (lighter)` | wall_tbilisi_balcony_lite_t (108) |
+| caucasian_balcony | `wall_shushabandi_t` | wall_shushabandi_t |
+| caucasian_balcony | `svan_tower` | svan_tower_base, svan_tower_shaft, svan_tower_top |
+| caucasian_balcony | `dome_bath_brick` | dome_bath_brick |
+| caucasian_balcony | `stair_spiral_courtyard` | stair_spiral_courtyard |
 | chongqing_cliff | `stair_street_long` | stair_street_long |
 | chongqing_cliff | `roof_tile_flying_eave` | roof_tile_flying_eave |
 | chongqing_cliff | `wall_gallery_timber_t` | wall_gallery_timber_t |
@@ -36,22 +36,22 @@ Parts named `_base/_shaft/_top` (or `_belfry`, `_cupola`, `_crown`) stack a cell
 | creole_colonial | `bell_tower_baroque` | bell_tower_baroque_base, bell_tower_baroque_belfry, bell_tower_baroque_cupola |
 | creole_colonial | `kiosco_gazebo` | kiosco_gazebo |
 | creole_colonial | `edge_parapet_urns_k` | edge_parapet_urns_k |
-| cycladic | `chapel_cycladic` | **missing** |
-| cycladic | `windmill_round` | **missing** |
-| cycladic | `edge_parapet_lip_k` | **missing** |
-| cycladic | `pave_slate_whitejoint` | **missing** |
-| cycladic | `stair_external_white` | **missing** |
+| cycladic | `chapel_cycladic` | chapel_cycladic |
+| cycladic | `windmill_round` | windmill_round |
+| cycladic | `edge_parapet_lip_k` | edge_parapet_lip_k |
+| cycladic | `pave_slate_whitejoint` | pave_slate_whitejoint |
+| cycladic | `stair_external_white` | stair_external_white |
 | ganga_ghat | `ghat_steps_wide` | ghat_steps_wide |
 | ganga_ghat | `shikhara_spire` | shikhara_spire_base, shikhara_spire_shaft, shikhara_spire_top |
 | ganga_ghat | `ghat_umbrella` | ghat_umbrella |
 | ganga_ghat | `chhatri` | chhatri |
 | ganga_ghat | `ov_marigold_garland` | ov_marigold_garland |
 | ganga_ghat | `band_flood` | band_flood |
-| hakka_tulou | `tulou_ring_wall` | **missing** |
-| hakka_tulou | `tulou_gallery_ring` | **missing** |
-| hakka_tulou | `roof_ring_tile` | **missing** |
-| hakka_tulou | `tulou_gate` | **missing** |
-| hakka_tulou | `ancestral_hall` | **missing** |
+| hakka_tulou | `tulou_ring_wall` | tulou_ring_wall |
+| hakka_tulou | `tulou_gallery_ring` | tulou_gallery_ring |
+| hakka_tulou | `roof_ring_tile` | roof_ring_tile |
+| hakka_tulou | `tulou_gate` | tulou_gate |
+| hakka_tulou | `ancestral_hall` | ancestral_hall |
 | hanseatic_gable | `edge_gable_step` | edge_gable_step |
 | hanseatic_gable | `edge_gable_neck` | edge_gable_neck |
 | hanseatic_gable | `edge_gable_bell` | edge_gable_bell |
@@ -86,32 +86,32 @@ Parts named `_base/_shaft/_top` (or `_belfry`, `_cupola`, `_crown`) stack a cell
 | japan_yokocho | `torii` | torii |
 | japan_yokocho | `roof_kawara_low` | roof_kawara_low |
 | japan_yokocho | `wall_koshi_t` | wall_koshi_t |
-| jiangnan_water | `edge_horsehead_wall` | **missing** |
-| jiangnan_water | `roof_black_tile_curved` | **missing** |
-| jiangnan_water | `wall_shopboards_t` | **missing** |
-| jiangnan_water | `wall_moon_gate` | **missing** |
-| jiangnan_water | `bridge_humpback_stone` | **missing** |
-| jiangnan_water | `water_steps_private` | **missing** |
+| jiangnan_water | `edge_horsehead_wall` | edge_horsehead_wall |
+| jiangnan_water | `roof_black_tile_curved` | roof_black_tile_curved |
+| jiangnan_water | `wall_shopboards_t` | wall_shopboards_t |
+| jiangnan_water | `wall_moon_gate` | wall_moon_gate |
+| jiangnan_water | `bridge_humpback_stone` | bridge_humpback_stone |
+| jiangnan_water | `water_steps_private` | water_steps_private |
 | karachi | `ov_tank_drum` | ov_tank_drum |
 | karachi | `wall_jharokha_k` | wall_jharokha_k |
 | karachi | `wall_veranda_gothic_t` | wall_veranda_gothic_t |
 | karachi | `ov_truck_art_panel` | ov_truck_art_panel |
 | karachi | `ov_wedding_curtain` | ov_wedding_curtain |
 | karachi | `edge_parapet_date_plaque` | edge_parapet_date_plaque |
-| knights_harbour | `wall_gallarija_k` | **missing** |
-| knights_harbour | `corner_statue_niche` | **missing** |
-| knights_harbour | `stair_knight` | **missing** |
-| knights_harbour | `bastion_wall_slope` | **missing** |
-| korean_hillside | `ov_jangdok_jars` | **missing** |
-| korean_hillside | `roof_painted_green` | **missing** |
-| korean_hillside | `oktapbang` | **missing** |
+| knights_harbour | `wall_gallarija_k` | wall_gallarija_k |
+| knights_harbour | `corner_statue_niche` | corner_statue_niche |
+| knights_harbour | `stair_knight` | stair_knight |
+| knights_harbour | `bastion_wall_slope` | bastion_wall_slope |
+| korean_hillside | `ov_jangdok_jars` | ov_jangdok_jars |
+| korean_hillside | `roof_painted_green` | roof_painted_green |
+| korean_hillside | `oktapbang` | oktapbang |
 | korean_hillside | `wall_mural_t` | wall_mural_t |
 | korean_hillside | `stair_street_long` | stair_street_long |
-| kulla_stone | `roof_stone_slab_steep` | **missing** |
-| kulla_stone | `wall_window_band_k` | **missing** |
-| kulla_stone | `wall_arrow_slit_k` | **missing** |
-| kulla_stone | `chimney_stone` | **missing** |
-| kulla_stone | `ov_machicolation` | **missing** |
+| kulla_stone | `roof_stone_slab_steep` | roof_stone_slab_steep |
+| kulla_stone | `wall_window_band_k` | wall_window_band_k |
+| kulla_stone | `wall_arrow_slit_k` | wall_arrow_slit_k |
+| kulla_stone | `chimney_stone` | chimney_stone |
+| kulla_stone | `ov_machicolation` | ov_machicolation |
 | latin_hillside | `ov_rebar_stubs` | ov_rebar_stubs |
 | latin_hillside | `ov_tank_round_blue` | ov_tank_round_blue |
 | latin_hillside | `wall_brick_raw_t` | wall_brick_raw_t |
@@ -124,22 +124,22 @@ Parts named `_base/_shaft/_top` (or `_belfry`, `_cupola`, `_crown`) stack a cell
 | levantine_courtyard | `wall_liwan_k` | wall_liwan_k |
 | levantine_courtyard | `dome_stone_low` | dome_stone_low |
 | levantine_courtyard | `ov_suq_canopy` | ov_suq_canopy |
-| lusitanian_hill | `wall_azulejo_k` | **missing** |
-| lusitanian_hill | `wall_granite_window_k` | **missing** |
-| lusitanian_hill | `roof_dormer_attic` | **missing** |
-| lusitanian_hill | `pave_calcada` | **missing** |
-| lusitanian_hill | `tram_rail` | **missing** |
-| lusitanian_hill | `miradouro_kiosk` | **missing** |
-| manila_estero | `wall_capiz_t` | **missing** |
-| manila_estero | `wall_adobe_ground_k` | **missing** |
-| manila_estero | `ov_shanty_gi` | **missing** |
-| manila_estero | `basketball_court` | **missing** |
-| manila_estero | `ov_jeepney` | **missing** |
-| mardin_terraces | `wall_triple_arch_loggia_k` | **missing** |
-| mardin_terraces | `edge_balustrade_carved_k` | **missing** |
-| mardin_terraces | `abbara_vault` | **missing** |
-| mardin_terraces | `wall_carved_frame_k` | **missing** |
-| mardin_terraces | `minaret_square_carved` | **missing** |
+| lusitanian_hill | `wall_azulejo_k` | wall_azulejo_k |
+| lusitanian_hill | `wall_granite_window_k` | wall_granite_window_k |
+| lusitanian_hill | `roof_dormer_attic` | roof_dormer_attic |
+| lusitanian_hill | `pave_calcada` | pave_calcada |
+| lusitanian_hill | `tram_rail` | tram_rail |
+| lusitanian_hill | `miradouro_kiosk` | miradouro_kiosk |
+| manila_estero | `wall_capiz_t` | wall_capiz_t |
+| manila_estero | `wall_adobe_ground_k` | wall_adobe_ground_k |
+| manila_estero | `ov_shanty_gi` | ov_shanty_gi |
+| manila_estero | `basketball_court` | basketball_court |
+| manila_estero | `ov_jeepney` | ov_jeepney |
+| mardin_terraces | `wall_triple_arch_loggia_k` | **not yet** |
+| mardin_terraces | `edge_balustrade_carved_k` | **not yet** |
+| mardin_terraces | `abbara_vault` | **not yet** |
+| mardin_terraces | `wall_carved_frame_k` | **not yet** |
+| mardin_terraces | `minaret_square_carved` | **not yet** |
 | mughal_walled | `wall_jharokha_bangla_k` | wall_jharokha_bangla_k |
 | mughal_walled | `edge_chhajja` | edge_chhajja |
 | mughal_walled | `chhatri` | chhatri |
@@ -171,11 +171,11 @@ Parts named `_base/_shaft/_top` (or `_belfry`, `_cupola`, `_crown`) stack a cell
 | omani_oasis | `ground_falaj` | ground_falaj |
 | omani_oasis | `ov_arish_shade` | ov_arish_shade |
 | ottoman_timber | `wall_jetty_t (lighter)` | wall_jetty_lite_t (176) |
-| ottoman_timber | `wall_cumba_t` | **missing** |
-| ottoman_timber | `wall_kafes_t` | **missing** |
-| ottoman_timber | `wall_himis_t` | **missing** |
-| ottoman_timber | `eave_soffit_deep` | **missing** |
-| ottoman_timber | `cesme_fountain` | **missing** |
+| ottoman_timber | `wall_cumba_t` | **not yet** |
+| ottoman_timber | `wall_kafes_t` | **not yet** |
+| ottoman_timber | `wall_himis_t` | **not yet** |
+| ottoman_timber | `eave_soffit_deep` | **not yet** |
+| ottoman_timber | `cesme_fountain` | **not yet** |
 | persian_desert | `badgir` | badgir_base, badgir_shaft, badgir_crown |
 | persian_desert | `roof_vault_barrel` | roof_vault_barrel |
 | persian_desert | `dome_mud` | dome_mud |
@@ -187,59 +187,59 @@ Parts named `_base/_shaft/_top` (or `_belfry`, `_cupola`, `_crown`) stack a cell
 | rajput_sandstone | `chhatri` | chhatri |
 | rajput_sandstone | `bastion_round` | bastion_round_base, bastion_round_shaft, bastion_round_top |
 | rajput_sandstone | `edge_parapet_jali_k (lighter)` | edge_parapet_jali_k (150) |
-| rupestrian_terraces | `vault_roof_hump` | **missing** |
-| rupestrian_terraces | `wall_cave_door_k` | **missing** |
-| rupestrian_terraces | `rock_face_cut` | **missing** |
-| rupestrian_terraces | `cistern_well` | **missing** |
-| rupestrian_terraces | `lemon_pergola` | **missing** |
+| rupestrian_terraces | `vault_roof_hump` | **not yet** |
+| rupestrian_terraces | `wall_cave_door_k` | **not yet** |
+| rupestrian_terraces | `rock_face_cut` | **not yet** |
+| rupestrian_terraces | `cistern_well` | **not yet** |
+| rupestrian_terraces | `lemon_pergola` | **not yet** |
 | saharan_kasbah | `tower_kasbah_corner` | tower_kasbah_corner_base, tower_kasbah_corner_shaft, tower_kasbah_corner_top |
 | saharan_kasbah | `wall_earth_relief_k` | wall_earth_relief_k |
 | saharan_kasbah | `ghorfa_cell` | ghorfa_cell |
 | saharan_kasbah | `wall_slit_k` | wall_slit_k |
 | saharan_kasbah | `edge_parapet_pinnacle_k` | edge_parapet_pinnacle_k |
-| scots_lands | `roof_slate_steep` | **missing** |
-| scots_lands | `chimney_stack_pots` | **missing** |
-| scots_lands | `turret_stair_conical` | **missing** |
-| scots_lands | `wall_pend_k` | **missing** |
-| scots_lands | `crown_spire` | **missing** |
-| scots_lands | `mercat_cross` | **missing** |
+| scots_lands | `roof_slate_steep` | **not yet** |
+| scots_lands | `chimney_stack_pots` | **not yet** |
+| scots_lands | `turret_stair_conical` | **not yet** |
+| scots_lands | `wall_pend_k` | **not yet** |
+| scots_lands | `crown_spire` | **not yet** |
+| scots_lands | `mercat_cross` | **not yet** |
 | siam_khlong | `roof_thai_gable` | roof_thai_gable |
-| siam_khlong | `wall_teak_panel_t` | **missing** |
-| siam_khlong | `pier_steps_khlong` | **missing** |
-| siam_khlong | `temple_tiered_roof` | **missing** |
-| siam_khlong | `ov_gold_shop_neon` | **missing** |
+| siam_khlong | `wall_teak_panel_t` | wall_thai_teak_t |
+| siam_khlong | `pier_steps_khlong` | **not yet** |
+| siam_khlong | `temple_tiered_roof` | roof_thai_gable (+ roof_pagoda) |
+| siam_khlong | `ov_gold_shop_neon` | **not yet** |
 | silk_road | `portal_pishtaq` | portal_pishtaq |
 | silk_road | `minaret_round_tapered` | minaret_round_tapered_base, minaret_round_tapered_shaft, minaret_round_tapered_top |
 | silk_road | `dome_turquoise_ribbed` | dome_turquoise_ribbed |
 | silk_road | `aivan_column` | aivan_column |
 | silk_road | `tapchan` | tapchan |
 | silk_road | `dome_bazaar_crossing` | dome_bazaar_crossing |
-| straits_shophouse | `wall_five_foot_way_t` | **missing** |
-| straits_shophouse | `wall_casement_louvre_t` | **missing** |
-| straits_shophouse | `band_peranakan_tile` | **missing** |
+| straits_shophouse | `wall_five_foot_way_t` | **not yet** |
+| straits_shophouse | `wall_casement_louvre_t` | **not yet** |
+| straits_shophouse | `band_peranakan_tile` | **not yet** |
 | straits_shophouse | `edge_firewall_gable` | edge_firewall_gable_k |
-| straits_shophouse | `temple_chinese_roof` | **missing** |
+| straits_shophouse | `temple_chinese_roof` | **not yet** |
 | taipei_tiepi | `ov_tiepi_house` | ov_tiepi_house |
 | taipei_tiepi | `wall_qilou_t` | wall_qilou_t |
 | taipei_tiepi | `wall_tile_t` | wall_tile_t |
 | taipei_tiepi | `ov_water_tower_steel` | ov_water_tower_steel |
-| tibetan_lhasa | `wall_battered_k` | **missing** |
-| tibetan_lhasa | `wall_window_trapezoid_k` | **missing** |
-| tibetan_lhasa | `edge_pembe_frieze` | **missing** |
-| tibetan_lhasa | `ov_prayer_flag_pole` | **missing** |
+| tibetan_lhasa | `wall_battered_k` | **not yet** |
+| tibetan_lhasa | `wall_window_trapezoid_k` | **not yet** |
+| tibetan_lhasa | `edge_pembe_frieze` | **not yet** |
+| tibetan_lhasa | `ov_prayer_flag_pole` | **not yet** |
 | tibetan_lhasa | `ov_prayer_flags` | ov_prayer_flags |
-| tibetan_lhasa | `incense_burner` | **missing** |
-| tibetan_lhasa | `roof_gilded_temple` | **missing** |
-| tyrrhenian_canyon | `wall_basso_t` | **missing** |
-| tyrrhenian_canyon | `ov_wall_shrine` | **missing** |
-| tyrrhenian_canyon | `wall_french_balcony_k` | **missing** |
-| tyrrhenian_canyon | `ov_laundry_line_lane` | **missing** |
-| tyrrhenian_canyon | `band_damp` | **missing** |
-| viet_tube | `wall_french_door_balcony_t` | **missing** |
-| viet_tube | `ov_wire_tangle` | **missing** |
-| viet_tube | `wall_side_ad_t` | **missing** |
-| viet_tube | `ov_roof_shrine` | **missing** |
-| viet_tube | `bridge_red_lake` | **missing** |
+| tibetan_lhasa | `incense_burner` | **not yet** |
+| tibetan_lhasa | `roof_gilded_temple` | **not yet** |
+| tyrrhenian_canyon | `wall_basso_t` | **not yet** |
+| tyrrhenian_canyon | `ov_wall_shrine` | **not yet** |
+| tyrrhenian_canyon | `wall_french_balcony_k` | **not yet** |
+| tyrrhenian_canyon | `ov_laundry_line_lane` | **not yet** |
+| tyrrhenian_canyon | `band_damp` | **not yet** |
+| viet_tube | `wall_french_door_balcony_t` | **not yet** |
+| viet_tube | `ov_wire_tangle` | **not yet** |
+| viet_tube | `wall_side_ad_t` | **not yet** |
+| viet_tube | `ov_roof_shrine` | **not yet** |
+| viet_tube | `bridge_red_lake` | **not yet** |
 | yemeni_tower | `wall_door_carved_k` | wall_door_carved_k |
 | yemeni_tower | `wall_window_grille_k` | wall_window_grille_k |
 | yemeni_tower | `edge_parapet_crenel_white_k` | edge_parapet_crenel_white_k |
