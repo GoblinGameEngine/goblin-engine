@@ -1,12 +1,21 @@
-# Space Station Columbia
+# Goblin Game Engine
 
-A first-person game set inside Space Station Columbia: an O'Neill cylinder 3 km in radius and 8 km
-long. Its floor holds a research-derived American landscape, with towns, farms, rivers, a lake,
-two seas and a railway. You can walk it, drive its ground vehicles or fly its aerostats. The
-NYNEX Communicator, a mid-90s PDA running "The System", is the menu.
+The Goblin Game Engine is a Godot 4 based engine and toolchain for building large, procedurally generated, inhabited
+worlds -- research-driven map and town generators, a modular building and vehicle pipeline (Blender), a shared-parts
+kit, streaming and level-of-detail systems, a living population (procedural characters with daily lives), and agent
+tooling (`tools/gcmd.py` talking to the in-game `DevBridge.gd`) through which the worlds are built and tested.
 
-Forked from Goblin Engine on 2026-09-25. The engine's agent tooling (`tools/gcmd.py` talking to the
-in-game `DevBridge.gd`) is how the game is built and tested.
+## The sample game: Space Station Columbia
+
+**Space Station Columbia** is the engine's sample game: a first-person game inside an O'Neill cylinder 20 km across
+and 22.4 km long, an ark ship 500 years into a 1,500-year voyage. Its floor holds a research-derived American
+landscape -- towns and cities at full scale, farms, rivers, a lake, two seas and a railway -- lit by the Sunline
+travelling the central Spindle. A hundred floating sky islands of the Skein drift 750 m up, docking into rafts. You
+can walk it, drive its ground vehicles or fly its aerostats. The NYNEX Communicator, a mid-90s PDA running "The
+System", is the menu.
+
+The game was developed in its own repo, [space-station-columbia](https://github.com/GoblinGameEngine/space-station-columbia),
+from 2026-09-25; development continues here.
 
 ## Download
 
@@ -93,7 +102,8 @@ Each versioned push is tagged in git as `v<version>` (e.g. `v0.1.0-prealpha.1`).
 
 ## GitHub
 
-Repo: **https://github.com/GoblinGameEngine/space-station-columbia** (public)
+Repo: **https://github.com/GoblinGameEngine/goblin-engine** -- the Goblin Game Engine, with Space Station Columbia as
+its sample game. (The earlier game repo, space-station-columbia, holds its releases up to 0.8.1.)
 
 Pushed with `gh` CLI, authenticated as the `GoblinGameEngine` account.
 
