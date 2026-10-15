@@ -135,6 +135,10 @@ sky_color={
 "type": "color",
 "value": Color(0.45, 0.68, 0.92, 1)
 }
+moon_sleeve={
+"type": "vec4",
+"value": Vector4(0, 1, 0, 0)
+}
 farside_player_s={
 "type": "float",
 "value": 0.0

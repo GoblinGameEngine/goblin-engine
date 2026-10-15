@@ -57,7 +57,8 @@ func setup() -> void:
 		if key == "bulb":
 			m.emission_enabled = true
 			m.emission = SOLID[key]
-			m.emission_energy_multiplier = 2.0
+			m.emission_energy_multiplier = 0.0                 # (lit at night only: set_night, from StreetLights)
+			bulb_mat = m
 		_mats[key] = m
 	MapTerrain.elevation(0.0, 0.0)
 	if ResourceLoader.exists(BAKED):
@@ -65,6 +66,16 @@ func setup() -> void:
 	else:
 		_task = WorkerThreadPool.add_task(_build_all, false, "coastal walks")
 	set_process(true)
+
+
+## The lamp bulbs' material: lit after dark (StreetLights calls set_night with DaySkySystem's night 0..1).
+static var bulb_mat: StandardMaterial3D
+
+
+static func set_night(n: float) -> void:
+	if bulb_mat:
+		bulb_mat.emission_energy_multiplier = n * 4.0
+		bulb_mat.albedo_color = SOLID["bulb"].darkened(0.55 * (1.0 - n))
 
 
 const BAKED := "res://remake/baked/walks.res"

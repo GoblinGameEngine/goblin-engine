@@ -271,6 +271,9 @@ func _apply(_delta: float) -> void:
 			sun.light_color = Color(tint.r, tint.g * 0.97, tint.b * 0.88)          # yellow-white, red at dawn and dusk
 			sun.light_energy = 0.2 + sun_intensity * 1.5 * near   # "full daylight" -- brighter peak than before
 		sun.shadow_enabled = active_intensity > 0.05
+		# the same light everywhere else on the ring, each point from its own Spindle overhead
+		# (remake/shaders/spindle_light.gdshaderinc): where the sleeve is, and its fall-off here at the viewer
+		RenderingServer.global_shader_parameter_set("moon_sleeve", Vector4(sleeve_x(active_pos), near, 0.0, 0.0))
 
 	if env:
 		# 2.3 by day, 1.15 by night -- down from 2.8 / 1.6, then 2.0 / 1.0

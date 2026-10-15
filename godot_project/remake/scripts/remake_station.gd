@@ -78,6 +78,12 @@ func _ready() -> void:
 	furniture.setup()
 	furniture.target = player
 	_mark("road furniture setup")
+	# street lamps on every street with buildings, the town centres' festoons, the south coast's beach lights
+	var street_lights := StreetLights.new()
+	add_child(street_lights)
+	street_lights.target = player
+	street_lights.setup()
+	_mark("street lights setup")
 	var walks := CoastalWalks.new()
 	walks.name = "Walks"
 	add_child(walks)

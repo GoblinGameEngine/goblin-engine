@@ -965,9 +965,7 @@ func set_night(n: float) -> void:
 	## with sky_glitter (lit windows, roof signs, rim bulbs) -- added the first night they're seen, shown only at night
 	var on := n > 0.02
 	var lods: Array = [_far, _mid]
-	for e in _blds:                      # (and every building's distant forms: their windows are only vertex colour)
-		lods.append(e.lod1)
-		lods.append(e.get("lod2"))
+	# (the buildings' own distant forms glow by themselves now: lod_vc.gdshader)
 	for lod in lods:
 		if lod == null or not is_instance_valid(lod):
 			continue

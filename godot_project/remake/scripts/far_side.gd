@@ -12,6 +12,7 @@ class_name RemakeFarSide
 const FLAT_ARC := 1500.0             # m of arc round the ring: beyond it the far side is the flat baked image (3,000 on the
                                      # 20 km ring doubled the merged district and road cells drawn: Calder fell to ~36 fps)
 const HYST := 30.0
+const FARSIDE_NIGHT := "res://remake/farside/n_%02d_%02d.webp"   # a far tile's night lights (tools/farside_night.py)
 const CHECK := 0.25
 
 var target: Node3D
@@ -45,6 +46,11 @@ func _material_for(key: Vector2i) -> Material:
 	var path := StationGeo.farside_path(key)
 	if ResourceLoader.exists(path):
 		m.set_shader_parameter("farside", load(path))
+	# its night: the towns' lights (tools/farside_night.py), glowing after dark (farside.gdshader)
+	var npath := FARSIDE_NIGHT % [key.x, key.y]
+	if ResourceLoader.exists(npath):
+		m.set_shader_parameter("night_lights", load(npath))
+		m.set_shader_parameter("has_night", true)
 	m.set_shader_parameter("detail", _detail)
 	m.set_shader_parameter("flat_arc", FLAT_ARC)
 	MapTerrainMesh.set_cover_params(m)

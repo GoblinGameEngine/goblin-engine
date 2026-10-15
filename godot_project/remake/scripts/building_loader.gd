@@ -40,12 +40,7 @@ func load_building(ps: PackedScene) -> void:
 	for l in light_nodes:
 		if l.name.begins_with("light_locked_"):
 			continue            # a closed-up room (vacant store): no power
-		var lamp := OmniLight3D.new()
-		lamp.omni_range = 7.0
-		lamp.light_energy = light_energy
-		lamp.light_color = Color(1.0, 0.9, 0.75)
-		lamp.shadow_enabled = false
-		l.add_child(lamp)
+		l.add_child(_room_lamp(str(l.name).trim_prefix("light_"), ps.resource_path + str(inst.get_path_to(l)) + (str(global_position.snapped(Vector3.ONE)) if is_inside_tree() else "")))
 	# pair up the leaves of double doors (same id before the _L/_R suffix)
 	var by_id := {}
 	for d in doors:
@@ -163,7 +158,7 @@ static func prepare_lod(inst: Node, glb_path: String) -> void:
 	if not _defs_cache.has(sidecar):                    # one read per building, not per LOD
 		_defs_cache[sidecar] = JSON.parse_string(DataFile.text(sidecar)) if DataFile.exists(sidecar) else {}
 	var defs: Dictionary = _defs_cache[sidecar]
-	_apply_defs(inst, defs)
+	_apply_defs(inst, defs, not glb_path.contains(".lod1."))
 	# these ARE the level-of-detail chain: keep Godot's import-time automatic LOD from decimating
 	# them further (it strips exactly the thin truss outlines and small panes they keep on purpose)
 	var stack: Array[Node] = [inst]
@@ -174,17 +169,26 @@ static func prepare_lod(inst: Node, glb_path: String) -> void:
 			(n as GeometryInstance3D).lod_bias = 1000.0
 
 
-static var _lod_vc: StandardMaterial3D = null
+static var _lod_vc: ShaderMaterial = null       # LOD2/3 and the merged clusters (no panes: a window grid at night)
+static var _lod_vc1: ShaderMaterial = null      # LOD1 (its panes glow at night)
 
 
-static func lod_vc_material() -> StandardMaterial3D:
+static func lod_vc_material(massing := true) -> ShaderMaterial:
+	## The distant forms' one shared material (remake/shaders/lod_vc.gdshader): the vertex colour by day, lit windows
+	## at night.  One for LOD1 (panes) and one for LOD2/3 (a grid), each shared, so clusters still merge into one draw.
 	if _lod_vc == null:
-		_lod_vc = StandardMaterial3D.new()
-		_lod_vc.resource_name = "LOD_VC"
-		_lod_vc.vertex_color_use_as_albedo = true
-		_lod_vc.vertex_color_is_srgb = false
-		_lod_vc.roughness = 0.9
-	return _lod_vc
+		var sh: Shader = load("res://remake/shaders/lod_vc.gdshader")
+		for k in 2:
+			var m := ShaderMaterial.new()
+			m.resource_name = "LOD_VC"
+			m.shader = sh
+			m.set_shader_parameter("massing", k == 0)
+			m.set_shader_parameter("lit_share", _lit_share)
+			if k == 0:
+				_lod_vc = m
+			else:
+				_lod_vc1 = m
+	return _lod_vc if massing else _lod_vc1
 
 
 ## Shared parts (research/buildings/kit_design.md, remake/blender/gbkit.py): a building's repeated items (windows,
@@ -447,7 +451,7 @@ func _apply_materials(inst: Node, sidecar: String, extra := {}) -> void:
 ## Lit windows at night (the user, 2026-10-05: "make the nights darker and the lights on buildings and cars more
 ## pronounced"): about LIT_SHARE of buildings get warm glowing glass, chosen by the building's name (the same
 ## windows every load); DaySkySystem drives the glow with set_night().
-const LIT_SHARE := 60
+const LIT_SHARE := 85
 const WINDOW_GLOW := Color(1.0, 0.76, 0.42)
 static var night_glass: Array[StandardMaterial3D] = []
 static var night_level := 0.0
@@ -456,13 +460,152 @@ static var night_level := 0.0
 static func set_night(n: float) -> void:
 	night_level = n
 	for m in night_glass:
-		m.emission_energy_multiplier = n * 2.4
-		m.albedo_color.a = lerpf(float(m.get_meta("alpha")), 0.92, n)
+		# (a soft glow: the room's own light, through the glass, does the rest -- the panes stay see-through)
+		m.emission_energy_multiplier = n * 1.1
+		m.albedo_color.a = lerpf(float(m.get_meta("alpha")), 0.6, n)
+	_night_rooms()
+
+
+# ------------------------------------------------------------------ rooms at night
+## Each room's light by its kind (light_<kind>, gbhouse: the room's type): homes warm, kitchens and baths whiter, shops
+## and offices bright and cool; porches and lots like street lamps.  Homes' lights come on at dusk and go off through
+## the night as people go to bed (_lit_share by the hour: most at 20-22, a few at 3, risers at 5-6); shops and offices
+## are lit through their hours and keep a night light after.  By day, homes dark (the sun does it), work places lit.
+const ROOM_LIGHT := {
+	"living": [Color(1.0, 0.76, 0.5), 1.4, 7.5], "sitting": [Color(1.0, 0.76, 0.5), 1.3, 7.0],
+	"dining": [Color(1.0, 0.8, 0.55), 1.5, 7.0], "kitchen": [Color(1.0, 0.9, 0.75), 1.7, 6.5],
+	"bed": [Color(1.0, 0.7, 0.42), 0.9, 6.0], "bath": [Color(0.95, 0.96, 1.0), 1.4, 5.0],
+	"hall": [Color(1.0, 0.82, 0.6), 0.8, 5.5], "closet": [Color(1.0, 0.85, 0.65), 0.5, 3.5],
+	"laundry": [Color(0.95, 0.97, 1.0), 1.0, 5.0], "fire": [Color(1.0, 0.62, 0.3), 1.0, 5.0],
+	"porch": [Color(1.0, 0.8, 0.52), 1.5, 8.0], "drive": [Color(1.0, 0.85, 0.6), 1.8, 12.0],
+	"lot": [Color(1.0, 0.88, 0.7), 2.2, 16.0], "arcade": [Color(1.0, 0.82, 0.55), 1.6, 8.0],
+	"beacon": [Color(1.0, 0.9, 0.7), 3.0, 20.0], "stage": [Color(1.0, 0.9, 0.8), 2.4, 14.0],
+}
+const WORK := ["store", "shop", "sales", "office", "counter", "class", "ward", "clinic", "hall_", "lobby", "bar", "cafe",
+	"diner", "market", "bank", "post", "work", "factory", "mill", "shed", "barn", "gallery", "stage", "kitchen_c"]
+const OUTDOOR := ["porch", "drive", "lot", "arcade", "beacon", "silo"]
+static var _rooms: Array = []          # [OmniLight3D, kind 0 home / 1 work / 2 outdoor, hash 0..1, base energy]
+static var _lit_share := 0.65
+static var _rooms_t := 0
+static var _sky: Node = null
+
+
+static func _room_lamp(kind: String, key: String) -> OmniLight3D:
+	var k := kind.split("_")[0] if not ROOM_LIGHT.has(kind) else kind
+	var spec: Array = ROOM_LIGHT.get(k, [Color(1.0, 0.84, 0.62), 1.2, 7.0])
+	var role := 0
+	for w in WORK:
+		if kind.contains(w):
+			role = 1
+	for w in OUTDOOR:
+		if kind.begins_with(w):
+			role = 2
+	if role == 1 and not ROOM_LIGHT.has(k):
+		spec = [Color(0.94, 0.97, 1.0), 2.0, 9.0]                    # shop and office floors: bright, cool white
+	var lamp := OmniLight3D.new()
+	lamp.omni_range = spec[2]
+	lamp.light_energy = spec[1]
+	lamp.light_color = spec[0]
+	lamp.shadow_enabled = false
+	lamp.omni_attenuation = 1.4
+	var hk := float(posmod(hash(key), 1000)) / 1000.0
+	_rooms.append([lamp, role, hk, float(spec[1])])
+	lamp.visible = _room_on(role, hk)
+	return lamp
+
+
+static func _hour() -> float:
+	if _sky == null or not is_instance_valid(_sky):
+		var ml := Engine.get_main_loop() as SceneTree
+		_sky = ml.current_scene.get_node_or_null("DaySkySystem") if ml and ml.current_scene else null
+		if _sky == null:
+			return 21.0
+	return float(_sky.get("time_of_day")) * 24.0
+
+
+static func _share_at(h: float) -> float:
+	## the share of homes with a light on at hour h (evening peak, the small hours dark, early risers)
+	var pts := [[0.0, 0.38], [1.5, 0.22], [3.0, 0.1], [4.5, 0.14], [6.0, 0.4], [7.5, 0.3], [9.0, 0.1], [17.0, 0.12],
+		[18.5, 0.55], [20.0, 0.8], [22.0, 0.72], [24.0, 0.38]]
+	for i in pts.size() - 1:
+		if h >= pts[i][0] and h <= pts[i + 1][0]:
+			return lerpf(pts[i][1], pts[i + 1][1], (h - pts[i][0]) / (pts[i + 1][0] - pts[i][0]))
+	return 0.4
+
+
+static func _room_on(role: int, hk: float) -> bool:
+	var h := _hour()
+	match role:
+		1: return (h >= 7.0 and h < 23.5) or hk < 0.25                 # work places: open late, a night light after
+		2: return night_level > 0.35 or hk < 0.02                       # porches and lots: dusk to dawn
+		_: return night_level > 0.15 and hk < _lit_share                # homes: by the evening's share
+	return false
+
+
+static func _night_rooms() -> void:
+	## (every frame from set_night; the work only every ~0.25 s) each room light on or off for the hour -- and an
+	## indoor one only while the player is inside its building: the lamps cast no shadows, so from outside they lit the
+	## building's own outer walls through them (a flat glare on every facade near the player).  From outside, a lit
+	## room is its glowing window (lit glass; LOD_VC panes).  Porches and lots light the outside, as they should.
+	_rooms_t += 1
+	if _rooms_t % 15 != 0:
+		return
+	if _rooms_t % 120 == 0:
+		_lit_share = _share_at(_hour())
+	if _lod_vc:
+		_lod_vc.set_shader_parameter("lit_share", lerpf(0.35, 0.75, _lit_share))
+		_lod_vc1.set_shader_parameter("lit_share", lerpf(0.35, 0.75, _lit_share))
+	var keep: Array = []
+	for r in _rooms:
+		var l = r[0]
+		if not is_instance_valid(l):
+			continue
+		keep.append(r)
+		var on := _room_on(r[1], r[2])
+		if on and int(r[1]) != 2:
+			on = _player_inside(l as Node3D)
+		(l as OmniLight3D).visible = on
+	_rooms = keep
+
+
+static func _player_inside(lamp: Node3D) -> bool:
+	## is the player inside the building this lamp belongs to? (its bounds, worked out once and kept on it)
+	var ml := Engine.get_main_loop() as SceneTree
+	var pl := ml.get_first_node_in_group("player") as Node3D if ml else null
+	if pl == null:
+		return false
+	var b: Node = lamp
+	while b != null and not (b is RemakeBuilding):
+		b = b.get_parent()
+	if b == null:
+		return false
+	var bn := b as Node3D
+	if not bn.has_meta("bounds"):
+		var box := AABB()
+		var first := true
+		var inv := bn.global_transform.affine_inverse()
+		for mi in bn.find_children("*", "MeshInstance3D", true, false):
+			var m := mi as MeshInstance3D
+			if m.mesh == null:
+				continue
+			var a := (inv * m.global_transform) * m.get_aabb()
+			box = a if first else box.merge(a)
+			first = false
+		bn.set_meta("bounds", box)
+	var bx: AABB = bn.get_meta("bounds")
+	return bx.grow(0.3).has_point(bn.global_transform.affine_inverse() * pl.global_position)
 
 
 static func _is_glass(d: Dictionary) -> bool:
+	## a window pane (that glows at night) -- not the gbhouse "mesh" (insect and porch screens, the long screen fences
+	## of the beach lots: grey 0.6, alpha 0.35), which lit up at night as flat orange walls
 	var a = d.get("alpha")
-	return a != null and float(a) < 0.6
+	if a == null or float(a) >= 0.6:
+		return false
+	var c = d.get("color")
+	if c is Array and c.size() >= 3 and absf(float(a) - 0.35) < 0.01 and absf(float(c[0]) - 0.6) < 0.01 and absf(float(c[2]) - 0.64) < 0.01:
+		return false
+	return true
 
 
 static func lit_glass(key: String, d: Dictionary) -> StandardMaterial3D:
@@ -512,7 +655,7 @@ static func light_windows(inst: Node, glow: Color) -> void:
 			mi.set_surface_override_material(i, _mat_cache[k])
 
 
-static func _apply_defs(inst: Node, defs: Dictionary) -> void:
+static func _apply_defs(inst: Node, defs: Dictionary, massing := true) -> void:
 	var lit := posmod(hash(str(inst.name)), 100) < LIT_SHARE
 	var stack: Array[Node] = [inst]
 	while stack.size() > 0:
@@ -524,7 +667,7 @@ static func _apply_defs(inst: Node, defs: Dictionary) -> void:
 		for i in mi.mesh.get_surface_count():
 			var m := mi.mesh.surface_get_material(i)
 			if m and m.resource_name == "LOD_VC":
-				mi.set_surface_override_material(i, lod_vc_material())
+				mi.set_surface_override_material(i, lod_vc_material(massing))
 			elif m and defs.has(m.resource_name):
 				var d: Dictionary = defs[m.resource_name]
 				mi.set_surface_override_material(i, lit_glass(m.resource_name, d) if lit and _is_glass(d)

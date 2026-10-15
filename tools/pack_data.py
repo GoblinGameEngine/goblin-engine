@@ -22,6 +22,7 @@ PACKED = [
     "remake/characters/lives/_index.json",
     "remake/rooms/*.json", "remake/rooms/solved/*.json",
     "remake/sky/islands.json",
+    "remake/street_lamps.json",
     "remake/buildings/*.mats.json", "remake/buildings/*.kit.json", "remake/buildings/kit/*.mats.json",
     # the .bin bakes (FileAccess.store_var; read by DataFile.get_var): 185 MB -> 44 MB
     "remake/terrain.bin", "remake/placement.bin", "remake/road_furniture.bin", "remake/baked/pads.bin",
