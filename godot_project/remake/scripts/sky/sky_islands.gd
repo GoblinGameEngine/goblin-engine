@@ -128,6 +128,9 @@ func _physics_process(delta: float) -> void:
 			for i in islands.size():
 				islands[i].visible = true
 			print("SkyIslands: %d islands aloft (%s)" % [islands.size(), drift.summary()])
+			var t0 := Time.get_ticks_msec()
+			SkyIsland.lark_bake(self)                 # (the parked larks' impostor, once, while still loading: ~0.8 s)
+			print("SkyIslands: lark impostor baked in %d ms" % (Time.get_ticks_msec() - t0))
 		return
 	Prof.begin("sky.step")
 	_sim_step(delta)
@@ -136,7 +139,9 @@ func _physics_process(delta: float) -> void:
 	_place_islands(delta)
 	Prof.end("sky.place")
 	_events()
+	Prof.begin("sky.travel")
 	_travel_step(delta)
+	Prof.end("sky.travel")
 	Prof.begin("sky.carry")
 	_carry(delta)
 	Prof.end("sky.carry")
@@ -151,14 +156,17 @@ const CORR_TURN := 0.004             # rad/s
 var _corr: Array[Transform3D] = []
 var _prev: Array[Transform3D] = []
 var _target_prev: Array[Transform3D] = []
+var _last: Array[Transform3D] = []      # each island's transform as last set (its node's, without asking the node)
 var _dt := 1.0 / 60.0
 
 
 # The drift is stepped at SIM_HZ (its rafts and meetings change slowly), and each island's transform is interpolated
 # between its last two sim states every tick -- smooth to stand on, and the sim (~0.5 ms a step) runs a sixth as often.
-# Far islands (tier 0: a few hundred triangles 3.6 km off) are placed every FAR_EVERY ticks, staggered.
+# Far islands (tier 0: a few hundred triangles 3.6 km off) are placed every FAR_EVERY ticks, staggered; mid ones
+# (tier 1: the LOD1 model, hundreds of metres off) every MID_EVERY.
 const SIM_HZ := 10.0
-const FAR_EVERY := 4
+const FAR_EVERY := 6
+const MID_EVERY := 2
 var _sim_acc := 0.0
 var _sim_a: Array[Transform3D] = []     # each island's sim transform a step ago ...
 var _sim_b: Array[Transform3D] = []     # ... and now
@@ -202,14 +210,17 @@ func _place_islands(delta: float) -> void:
 		_corr.fill(Transform3D.IDENTITY)
 		_prev.resize(n)
 		_target_prev.resize(n)
+		_last.resize(n)
 		_moved_dt.resize(n)
 		_moved_dt.fill(delta)
 		for i in n:
 			_target_prev[i] = _sim_transform(i)
 			_prev[i] = _target_prev[i]
+			_last[i] = islands[i].global_transform if islands[i].is_inside_tree() else _target_prev[i]
 	for i in n:
 		_moved_dt[i] += delta
-		if islands[i].tier <= 0 and i != _aboard and (_tick + i) % FAR_EVERY != 0:
+		var every := FAR_EVERY if islands[i].tier <= 0 else (MID_EVERY if islands[i].tier == 1 else 1)
+		if every > 1 and i != _aboard and (_tick + i) % every != 0:
 			continue                                  # (far: placed every few ticks)
 		var dtm: float = _moved_dt[i]
 		_moved_dt[i] = 0.0
@@ -221,9 +232,11 @@ func _place_one(i: int, delta: float) -> void:
 	if true:
 		var t := _sim_transform(i)
 		var tp := _target_prev[i]
-		if t.origin.distance_to(tp.origin) > jump or t.basis.get_rotation_quaternion().angle_to(tp.basis.get_rotation_quaternion()) > 0.002:
+		# (a turn of more than ~0.002 rad moves the basis' columns by about that: compared without quaternions)
+		if t.origin.distance_squared_to(tp.origin) > jump * jump or (t.basis.x - tp.basis.x).length_squared() \
+				+ (t.basis.z - tp.basis.z).length_squared() > 8e-6:
 			# the frame jumped: keep the island where it was (its actual transform last tick), and ease from there
-			_corr[i] = t.affine_inverse() * islands[i].global_transform
+			_corr[i] = t.affine_inverse() * _last[i]
 		_target_prev[i] = t
 		var c := _corr[i]
 		if c != Transform3D.IDENTITY:
@@ -237,8 +250,10 @@ func _place_one(i: int, delta: float) -> void:
 				c = Transform3D.IDENTITY
 			_corr[i] = c
 		var actual := t * c
-		_prev[i] = islands[i].global_transform if islands[i].is_inside_tree() else actual
+		_prev[i] = _last[i]
+		_last[i] = actual
 		islands[i].global_transform = actual
+		islands[i].moved()
 
 
 func deck_velocity(i: int, p: Vector3) -> Vector3:
@@ -328,10 +343,34 @@ func travel_names() -> Array:
 	return out
 
 
+var _travel_side := {}               # island index -> its warren side file's travel point (read once)
+
+
 func travel_local(i: int) -> Vector3:
 	## where one arrives on island i (its own frame): the layout's "travel" point if it has one (the city's main square or
 	## landing), else the walkway node nearest the island's middle
 	var L: Dictionary = layouts[i]
+	var wv: SkyWarren = islands[i].warren
+	if wv and wv.travel().size() >= 3:
+		var tw: Array = wv.travel()
+		return Vector3(float(tw[0]), float(tw[1]), float(tw[2]))
+	if SkyWarren.has_file(str(L.id)):
+		# (the city not built yet: its side file says where -- a megabyte of json: parsed once, not every frame of the
+		# fast travel's hold)
+		if not _travel_side.has(i):
+			_travel_side[i] = []
+			var sp := SkyWarren.DIR + str(L.id) + ".json"
+			if DataFile.exists(sp):
+				# (just its "travel": [x, y, z, yaw], found in the text: parsing the whole file took ~50 ms)
+				var txt := DataFile.text(sp)
+				var at := txt.find("\"travel\":")
+				if at >= 0:
+					var tr = JSON.parse_string(txt.substr(txt.find("[", at), txt.find("]", at) - txt.find("[", at) + 1))
+					if tr is Array and tr.size() >= 3:
+						_travel_side[i] = tr
+		var tj: Array = _travel_side[i]
+		if tj.size() >= 3:
+			return Vector3(float(tj[0]), float(tj[1]), float(tj[2]))
 	if L.has("travel"):
 		var t: Array = L.travel
 		return Vector3(float(t[0]), islands[i].deck_y(float(t[0]), float(t[1])), float(t[1]))
@@ -373,7 +412,7 @@ func _travel_step(delta: float) -> void:
 	_travel_t += delta
 	_hold_traveller()
 	var isl := islands[_travel_to]
-	if isl.has_node("Near/Rock") or _travel_t > 20.0:
+	if (isl.has_node("Near/Rock") and (isl.warren == null or isl.warren.near_ready())) or _travel_t > 25.0:
 		player.set_physics_process(true)
 		_travel_to = -1
 
@@ -390,10 +429,12 @@ func _process(delta: float) -> void:
 	_tier_t -= delta
 	if _tier_t <= 0.0:
 		_tier_t = 0.4
+		Prof.begin("sky.tier")
 		for isl in islands:
 			var d := isl.global_position.distance_to(cam)
 			isl.set_tier(2 if d < SkyIsland.NEAR else (1 if d < SkyIsland.MID else 0))
 			isl.set_physics_active(d < PHYS_R + isl.radius())
+		Prof.end("sky.tier")
 	Prof.begin("sky.balloons")
 	_balloons()
 	Prof.end("sky.balloons")

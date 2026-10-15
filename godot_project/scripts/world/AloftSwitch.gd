@@ -40,6 +40,12 @@ func _process(delta: float) -> void:
 
 
 func set_aloft(on: bool) -> void:
+	Prof.begin("aloft")
+	_set_aloft(on)
+	Prof.end("aloft")
+
+
+func _set_aloft(on: bool) -> void:
 	StationGeo.aloft = on
 	print("AloftSwitch: %s" % ("aloft: the ground as images" if on else "down: the ground's models back"))
 	var terrain := station.get_node_or_null("Terrain")

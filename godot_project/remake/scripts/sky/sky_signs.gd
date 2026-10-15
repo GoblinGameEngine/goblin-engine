@@ -100,6 +100,19 @@ func setup(p_isl: Node3D) -> void:
 		var st := SurfaceTool.new()
 		st.begin(Mesh.PRIMITIVE_TRIANGLES)
 		_st[b] = st
+	var wv = isl.get("warren")
+	if wv != null:
+		# a warren city (SkyWarren): its signs, glows and light strings come from its anchors, in the island's frame
+		var anc: Array = wv.anchors()
+		for k in range(0, anc.size(), 60):
+			var r := RandomNumberGenerator.new()
+			r.seed = hash("%s:w%d" % [data.id, k])
+			_todo.append(_from_anchors.bind({"id": "%s:w%d" % [data.id, k], "warren": true}, Transform3D.IDENTITY, anc.slice(k, k + 60), r))
+		_todo.append(_fence_lights)
+		_todo.append(_tether_lights)
+		_todo.append(_pad_lights)
+		_todo.append(_commit)
+		return
 	var blds: Array = data.buildings
 	for i in blds.size():
 		_todo.append(_building.bind(blds[i]))
@@ -511,7 +524,9 @@ func _from_anchors(b: Dictionary, bx: Transform3D, anchors: Array, r: RandomNumb
 			var sw := float(wh[0]) if wh.size() == 2 else 3.0
 			var shh := float(wh[1]) if wh.size() == 2 else 1.0
 			var txt := _name("%s:%s" % [b.id, nm])
-			if kind == "blade":
+			if kind == "blade" and b.get("warren", false):
+				_wblade(xf, sw, shh, _short(txt), _neon_col(r), r)
+			elif kind == "blade":
 				_blade(xf * Transform3D(Basis(), Vector3(0, shh * 0.5, 0)), _short(txt), _neon_col(r), r)
 			elif kind == "billboard":
 				_sign("lightbox", xf, sw, shh, txt, _neon_col(r), 0.0, r)
@@ -650,6 +665,33 @@ func _blade(xf: Transform3D, text: String, col: Color, r: RandomNumberGenerator)
 	var c2 := Color(NEON[(_accent + 2) % NEON.size()], 0.8)
 	_tube(xf * Vector3(0, 0, -0.2), xf * Vector3(0, -H, -0.2), 0.04, c2, 2.0, ph)
 	_tube(xf * Vector3(0, 0, 0.2), xf * Vector3(0, -H, 0.2), 0.04, c2, 2.0, ph + 0.5)
+
+
+func _wblade(xf: Transform3D, w: float, h: float, text: String, col: Color, r: RandomNumberGenerator) -> void:
+	## a warren's blade sign, its anchor's size (sign_blade_<w>x<h>: centred on the anchor; +Z along the street, +X
+	## into the wall -- tools/sky/warren/pick.py): a painted board standing out from the wall on a bracket, its letters
+	## stacked on both faces; by night softly lit (the old _blade is a tower's: metres tall, at full neon)
+	count["blade"] = count.get("blade", 0) + 1
+	var c := xf * Transform3D(Basis(), Vector3(-w * 0.5 - 0.08, 0, 0))
+	var board := col.lerp(Color(0.88, 0.85, 0.78), 0.55)
+	_box(c, Vector3(w, h, 0.12), board)
+	_box(xf * Transform3D(Basis(), Vector3(-0.04, h * 0.5 - 0.12, 0)), Vector3(0.12, 0.05, 0.05), Color(0.2, 0.2, 0.2))
+	_box(xf * Transform3D(Basis(), Vector3(-0.04, -h * 0.5 + 0.12, 0)), Vector3(0.12, 0.05, 0.05), Color(0.2, 0.2, 0.2))
+	var n := maxi(text.replace(" ", "").length(), 1)
+	var cap := minf(w * 0.68, (h - 0.2) / (n * 1.35 - 0.35))
+	var y0 := (n * cap * 1.35 - cap * 0.35) * 0.5
+	var lit := r.randf() < 0.5                    # (half are lightboxes: a soft face behind dark letters)
+	var ph := r.randf()
+	var mode: float = [0.0, 0.0, 2.0, 5.0][r.randi() % 4]
+	for side in [1.0, -1.0]:
+		var face := c * Transform3D(Basis(Vector3.UP, 0.0 if side > 0 else PI), Vector3(0, 0, 0.065 * side))
+		if lit:
+			_quad("neon", face, w - 0.1, h - 0.1, Color(col.lerp(Color.WHITE, 0.4), 0.1))
+			_vtext("solid", face * Transform3D(Basis(), Vector3(0, y0, 0.01)), text, cap, col.darkened(0.6), 0, 0, 0)
+		else:
+			_vtext("solid", face * Transform3D(Basis(), Vector3(0, y0, 0.005)), text, cap, col.darkened(0.35), 0, 0, 0)
+			_vtext("neon", face * Transform3D(Basis(), Vector3(0, y0, 0.012)), text, cap, Color(col, 0.4), mode, ph, 0)
+	_tube(c * Vector3(-w * 0.5, h * 0.5, 0), c * Vector3(-w * 0.5, -h * 0.5, 0), 0.02, Color(col, 0.3), 1.0, ph)
 
 
 func _stack(xf: Transform3D, storeys: int, sh: float, r: RandomNumberGenerator) -> void:

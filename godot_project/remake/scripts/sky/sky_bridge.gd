@@ -110,7 +110,7 @@ func _merge_fixed(inst: Node3D, movers: Dictionary) -> void:
 		var mi: MeshInstance3D = it[0]
 		for si in mi.mesh.get_surface_count():
 			var m: Material = mi.get_active_material(si)
-			var k := "%d|%d" % [m.get_instance_id() if m else 0, 1 if mi.mesh.surface_get_format(si) & Mesh.ARRAY_FORMAT_BONES else 0]
+			var k := "%d|%d" % [m.get_instance_id() if m else 0, 1 if mi.mesh is ArrayMesh and (mi.mesh as ArrayMesh).surface_get_format(si) & Mesh.ARRAY_FORMAT_BONES else 0]
 			if not groups.has(k):
 				var st := SurfaceTool.new()
 				st.begin(Mesh.PRIMITIVE_TRIANGLES)

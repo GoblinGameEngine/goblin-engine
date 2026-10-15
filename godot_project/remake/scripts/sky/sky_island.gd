@@ -39,6 +39,7 @@ var snowing := 0.0                   # how hard it's snowing here now (SkyIsland
 var bridges: Array[SkyBridge] = []
 var larks_parked: Array = []
 var _blds: Array = []               # {b, holder, lod1, full, loading}
+var warren: SkyWarren                # the island's city, when it has one (remake/sky/warrens/<id>.bin.gz)
 var _full_t := 0.0
 var bridge_at := {}                  # "side:along" -> SkyBridge
 var _far: Node3D
@@ -78,6 +79,7 @@ func setup(p_sys: Node, p_idx: int, p_data: Dictionary, p_canon: Dictionary) -> 
 		add_child(_far)
 		_no_shadow(_far)
 		_vertex_colours(_far)
+		_warren_hull(_far)
 		_far.visible = tier <= 0)
 
 
@@ -94,6 +96,7 @@ func set_tier(t: int) -> void:
 			add_child(_mid)
 			_no_shadow(_mid)
 			_vertex_colours(_mid)
+			_warren_hull(_mid)
 			_dress(_mid)
 			_mid.visible = tier == 1)
 	if _mid:
@@ -105,11 +108,16 @@ func set_tier(t: int) -> void:
 		_queue_near()
 	if _near:
 		_near.visible = t == 2
+	if warren:
+		warren.set_visible(t == 2)
 	if t < 2 and _near and t == 0:
 		_drop_near()
 
 
 func _drop_near() -> void:
+	if warren:
+		warren.free_all()
+		warren = null
 	_near.queue_free()
 	_near = null
 	_build.clear()
@@ -134,44 +142,71 @@ func _process_inner(delta: float) -> void:
 	# the near tier: a piece a frame
 	if not _build.is_empty() and _near:
 		var f: Callable = _build.pop_front()
+		var nm := "isl.b." + str(f.get_method())
+		Prof.begin(nm)
 		f.call()
+		Prof.end(nm)
+	Prof.begin("isl.loads")
 	_poll_loads()
+	Prof.end("isl.loads")
 	for k in larks_parked.duplicate():
 		if is_instance_valid(k) and ((k as RemakeAirVehicle).pilot != null or not (k as RemakeAirVehicle).fly_input.is_empty()):
 			# someone has taken it up: off the island's books (over the island, the moving frame carries it now)
 			larks_parked.erase(k)
 			(k as Node).reparent(sys, true)
 			(k as Node).remove_meta("riding")
+	if warren and _near:
+		Prof.begin("isl.warren")
+		warren.step(delta)
+		Prof.end("isl.warren")
 	if _near and tier == 2:
 		_hoist_step(delta)
 		_full_t -= delta
 		if _full_t <= 0.0:
 			_full_t = 0.5
+			Prof.begin("isl.full")
 			_stream_full()
 			_lark_step()
+			Prof.end("isl.full")
+
+
+func _build_rock() -> void:
+	_load(data.lod.rock, func(ps: PackedScene) -> void:
+		if _near == null:
+			return
+		var rock: Node3D = ps.instantiate()
+		rock.name = "Rock"
+		_near.add_child(rock)
+		_vertex_colours(rock)
+		_dress(rock)
+		if _mid:
+			_mid.visible = false)
+
+
+func _build_warren() -> void:
+	if _near and warren == null:
+		warren = SkyWarren.new(self)
+		warren.set_visible(tier == 2)
 
 
 func _queue_near() -> void:
-	_build.append(func() -> void:
-		_load(data.lod.rock, func(ps: PackedScene) -> void:
-			if _near == null:
-				return
-			var rock: Node3D = ps.instantiate()
-			rock.name = "Rock"
-			_near.add_child(rock)
-			_vertex_colours(rock)
-			_dress(rock)
-			if _mid:
-				_mid.visible = false))
-	_build.append(_build_paths)
+	_build.append(_build_rock)
+	var has_warren := SkyWarren.has_file(str(data.id))
+	if has_warren:
+		_build.append(_build_warren)
+	else:
+		_build.append(_build_paths)                # (a warren paves its own streets)
 	_build.append(_build_water)
 	_build.append(_build_fence)
 	_build.append(_build_moss)
 	_build.append(_build_tethers)
 	_build.append(_build_bridges)
 	_build.append(_build_props)
-	_build.append(_build_links)
+	if not has_warren:
+		_build.append(_build_links)
 	_build.append(_build_signs)                    # (SkySigns: the island's lights after dark)
+	if has_warren:
+		return                                     # (the city replaces the round-2 buildings)
 	var by_model := {}
 	for b in data.buildings:
 		by_model[b.model] = by_model.get(b.model, []) + [b]
@@ -350,26 +385,104 @@ static func part_mark(n: String, node_name: String) -> Transform3D:
 	return _part_marks[n].get(node_name, Transform3D.IDENTITY)
 
 
+static var _flat := {}               # Mesh instance id | surface -> its triangles unindexed [v, n, uv, uv2, colour]
+
+
+static func _flat_of(mesh: Mesh, si: int) -> Array:
+	## (once a surface) its arrays as plain triangles: a placement is then `xf * verts` and append_array, in C++
+	var key := "%d|%d" % [mesh.get_instance_id(), si]
+	if _flat.has(key):
+		return _flat[key]
+	var src := mesh.surface_get_arrays(si)
+	var v: PackedVector3Array = src[Mesh.ARRAY_VERTEX]
+	var ix: PackedInt32Array = src[Mesh.ARRAY_INDEX] if src[Mesh.ARRAY_INDEX] != null else PackedInt32Array()
+	if ix.is_empty():
+		ix.resize(v.size())
+		for k in v.size():
+			ix[k] = k
+	var n = src[Mesh.ARRAY_NORMAL]
+	var u = src[Mesh.ARRAY_TEX_UV]
+	var u2 = src[Mesh.ARRAY_TEX_UV2]
+	var c = src[Mesh.ARRAY_COLOR]
+	var ov := PackedVector3Array()
+	var on := PackedVector3Array()
+	var ou := PackedVector2Array()
+	var ou2 := PackedVector2Array()
+	var oc := PackedColorArray()
+	ov.resize(ix.size())
+	on.resize(ix.size())
+	ou.resize(ix.size())
+	ou2.resize(ix.size())
+	oc.resize(ix.size())
+	var hn: bool = n != null and (n as PackedVector3Array).size() == v.size()
+	var hu: bool = u != null and (u as PackedVector2Array).size() == v.size()
+	var hu2: bool = u2 != null and (u2 as PackedVector2Array).size() == v.size()
+	var hc: bool = c != null and (c as PackedColorArray).size() == v.size()
+	for k in ix.size():
+		var a := ix[k]
+		ov[k] = v[a]
+		on[k] = n[a] if hn else Vector3.UP
+		ou[k] = u[a] if hu else Vector2.ZERO
+		ou2[k] = u2[a] if hu2 else Vector2.ZERO
+		oc[k] = c[a] if hc else Color(1, 1, 1)
+	var out := [ov, on, ou, ou2, oc, hu2, hc]
+	_flat[key] = out
+	return out
+
+
 static func batch_mesh(items: Array) -> ArrayMesh:
-	## items: [part name, Transform3D] -> one ArrayMesh, a surface per material
-	var groups := {}                    # material -> SurfaceTool
+	## items: [part name, Transform3D] -> one ArrayMesh, a surface per material.  (Each part surface is flattened once
+	## and then copied with its placement's transform in C++: SurfaceTool.append_from read the source mesh back from the
+	## RenderingServer per placement -- a deck of props took ~0.1 s of a frame.)  No skin weights: there's no skeleton.
+	var groups := {}                    # material key -> [v, n, uv, uv2, colour, any uv2, any colour]
 	var mats := {}
+	var scaled := false
 	for it in items:
 		for sf in _surfs_of(it[0]):
 			var m: Material = sf[3]
-			var key := "%d|%d" % [m.get_instance_id() if m else 0, 1 if (sf[0] as Mesh).surface_get_format(sf[1]) & Mesh.ARRAY_FORMAT_BONES else 0]
+			var key := m.get_instance_id() if m else 0
+			var fa := _flat_of(sf[0], sf[1])
+			var xf: Transform3D = (it[1] as Transform3D) * (sf[2] as Transform3D)
+			if not scaled and not xf.basis.get_scale().is_equal_approx(Vector3.ONE):
+				scaled = true
 			if not groups.has(key):
-				var st := SurfaceTool.new()
-				st.begin(Mesh.PRIMITIVE_TRIANGLES)
-				groups[key] = st
+				groups[key] = [PackedVector3Array(), PackedVector3Array(), PackedVector2Array(), PackedVector2Array(),
+					PackedColorArray(), false, false]
 				mats[key] = m
-			(groups[key] as SurfaceTool).append_from(sf[0], sf[1], (it[1] as Transform3D) * (sf[2] as Transform3D))
+			var g: Array = groups[key]
+			var gv: PackedVector3Array = g[0]
+			var gn: PackedVector3Array = g[1]
+			var gu: PackedVector2Array = g[2]
+			var gu2: PackedVector2Array = g[3]
+			var gc: PackedColorArray = g[4]
+			gv.append_array(xf * (fa[0] as PackedVector3Array))
+			gn.append_array(Transform3D(xf.basis.inverse().transposed(), Vector3.ZERO) * (fa[1] as PackedVector3Array))
+			gu.append_array(fa[2])
+			gu2.append_array(fa[3])
+			gc.append_array(fa[4])
+			groups[key] = [gv, gn, gu, gu2, gc, bool(g[5]) or bool(fa[5]), bool(g[6]) or bool(fa[6])]
 	var am := ArrayMesh.new()
 	for key in groups:
-		(groups[key] as SurfaceTool).commit(am)
+		var g: Array = groups[key]
+		if (g[0] as PackedVector3Array).is_empty():
+			continue
+		var nn: PackedVector3Array = g[1]
+		if scaled:
+			for k in nn.size():             # (scaled placements: the normals back to unit length)
+				nn[k] = nn[k].normalized()
+		var arr := []
+		arr.resize(Mesh.ARRAY_MAX)
+		arr[Mesh.ARRAY_VERTEX] = g[0]
+		arr[Mesh.ARRAY_NORMAL] = nn
+		arr[Mesh.ARRAY_TEX_UV] = g[2]
+		if g[5]:
+			arr[Mesh.ARRAY_TEX_UV2] = g[3]
+		if g[6]:
+			arr[Mesh.ARRAY_COLOR] = g[4]
+		am.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr)
 		if mats[key]:
 			am.surface_set_material(am.get_surface_count() - 1, mats[key])
-	return unskinned(am)
+	return am
 
 
 func _batched(n: String, items: Array) -> MeshInstance3D:
@@ -401,18 +514,51 @@ var _lark_mm: MultiMeshInstance3D
 var _lark_t := 0.0
 
 
+static var _lark_base: Array = []    # [[primitive, arrays, material]]: the craft in the library's own colours, baked once
+
+
 func _lark_impostor() -> ArrayMesh:
+	## The craft is built and merged once (a RemakeFleetCraft, ~0.8 s); each livery after that is the same arrays with
+	## their livery materials painted (fleet_craft.gd set_livery's slots): milliseconds, not a craft per clan.
 	var cols: Array = canon.get("colors", [])
 	var key := str(cols)
 	if _lark_meshes.has(key):
 		return _lark_meshes[key]
+	if _lark_base.is_empty():
+		lark_bake(self)
+	var cs: Array = []
+	for c in cols:
+		cs.append(c if c is Color else Color(str(c)))
+	var made := {}
+	var am := ArrayMesh.new()
+	for sf in _lark_base:
+		am.add_surface_from_arrays(sf[0], sf[1])
+		var m: Material = sf[2]
+		if m and cs.size() >= 3 and RemakeFleetCraft.LIVERY_SLOTS.has(m.resource_name):
+			if not made.has(m):
+				var c := m.duplicate() as Material
+				var col: Color = cs[int(RemakeFleetCraft.LIVERY_SLOTS[m.resource_name])]
+				if c is ShaderMaterial:
+					(c as ShaderMaterial).set_shader_parameter("tint", col)
+				elif c is StandardMaterial3D:
+					(c as StandardMaterial3D).albedo_color = col
+				made[m] = c
+			m = made[m]
+		if m:
+			am.surface_set_material(am.get_surface_count() - 1, m)
+	_lark_meshes[key] = am
+	return am
+
+
+static func lark_bake(parent: Node) -> void:
+	## (once) the parked lark's impostor arrays: a craft built under parent, its meshes merged per material, unskinned
+	if not _lark_base.is_empty():
+		return
 	var holder := Node3D.new()
-	add_child(holder)
+	parent.add_child(holder)
 	var k := RemakeFleetCraft.new("sky_skiff")
 	k.process_mode = Node.PROCESS_MODE_DISABLED
 	holder.add_child(k)
-	if cols.size() >= 3:
-		k.set_livery(cols)
 	var inv := k.global_transform.affine_inverse()
 	var groups := {}
 	var mats := {}
@@ -424,22 +570,19 @@ func _lark_impostor() -> ArrayMesh:
 		for si in m3.mesh.get_surface_count():
 			var m: Material = m3.get_active_material(si)
 			# (one merge per material and per skinned-or-not: a SurfaceTool mixing them drops the weights' sizes)
-			var gk := "%d|%d" % [m.get_instance_id() if m else 0, 1 if m3.mesh.surface_get_format(si) & Mesh.ARRAY_FORMAT_BONES else 0]
+			var gk := "%d|%d" % [m.get_instance_id() if m else 0, 1 if m3.mesh is ArrayMesh and (m3.mesh as ArrayMesh).surface_get_format(si) & Mesh.ARRAY_FORMAT_BONES else 0]
 			if not groups.has(gk):
 				var st := SurfaceTool.new()
 				st.begin(Mesh.PRIMITIVE_TRIANGLES)
 				groups[gk] = st
 				mats[gk] = m
 			(groups[gk] as SurfaceTool).append_from(m3.mesh, si, rel)
-	var am := ArrayMesh.new()
 	for gk in groups:
-		(groups[gk] as SurfaceTool).commit(am)
-		if mats[gk]:
-			am.surface_set_material(am.get_surface_count() - 1, mats[gk])
+		var arr := (groups[gk] as SurfaceTool).commit_to_arrays()
+		arr[Mesh.ARRAY_BONES] = null                   # (the craft's parts carry skin weights: no skeleton in a MultiMesh)
+		arr[Mesh.ARRAY_WEIGHTS] = null
+		_lark_base.append([Mesh.PRIMITIVE_TRIANGLES, arr, mats[gk]])
 	holder.free()
-	am = unskinned(am)                         # (the craft's parts carry skin weights: no skeleton in a MultiMesh)
-	_lark_meshes[key] = am
-	return am
 
 
 static func unskinned(am: ArrayMesh) -> ArrayMesh:
@@ -588,6 +731,14 @@ func deck_y(x: float, z: float) -> float:
 
 func _h(ix: int, iz: int, nx: int) -> float:
 	return _height.decode_s16((iz * nx + ix) * 2) * 0.01
+
+
+func moved() -> void:
+	## (SkyIslands, each time it places this island) the warren's instances are not nodes: they follow by hand
+	if warren:
+		Prof.begin("sky.warren_place")
+		warren.place(global_transform)
+		Prof.end("sky.warren_place")
 
 
 func radius() -> float:
@@ -1103,6 +1254,14 @@ func _dress(n: Node) -> void:
 static var _vc_mats := {}
 
 
+static func _warren_hull(n: Node) -> void:
+	## an island with a warren: its distant city is the lattice's hull (tools/sky/warren/lods.py), drawn as the
+	## buildings' distant forms are (lod_vc: a window grid lit at night)
+	var h := n.find_child("warren_hull*", true, false) as MeshInstance3D
+	if h:
+		h.material_override = RemakeBuilding.lod_vc_material(true)
+
+
 static func _vertex_colours(n: Node) -> void:
 	## the island glbs (make_islands.py) carry their colour per vertex: their materials must use it
 	var stack: Array[Node] = [n]
@@ -1165,6 +1324,9 @@ var _glittered := {}                 # the LOD node -> true once its glitter twi
 func _build_signs() -> void:
 	## every store's sign, every building's mood lighting, the string lights: built over the next frames
 	if _near == null:
+		return
+	if warren and warren.head.is_empty():
+		_build.append(_build_signs)                # (the city still decoding: its anchors come with it -- try later)
 		return
 	var s := SkySigns.new()
 	_near.add_child(s)

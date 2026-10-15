@@ -17,6 +17,9 @@ import os
 _STYLE_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
                            "godot_project", "remake", "sky", "style_assign.json")
 _STYLES = json.load(open(_STYLE_FILE))["assign"] if os.path.exists(_STYLE_FILE) else {}
+# each island's warren family (tools/sky/warren/assign.py; research/sky_islands/warrens r1-r3): the city it is built as
+_WARREN_FILE = os.path.join(os.path.dirname(_STYLE_FILE), "warrens", "assign.json")
+_WARRENS = json.load(open(_WARREN_FILE))["assign"] if os.path.exists(_WARREN_FILE) else {}
 
 SEED = "sky-2026-10-14"
 
@@ -573,7 +576,7 @@ def build(names, faction_ids, settlement_ids, lineage_surnames):
             "specialty": spec[0], "trade": spec[3], "needs": spec[4] + ["metal", "grain", "medicine"],
             "bridge_style": bstyle[i], "aerostats": nl, "founded_vy": founded, "governance": gov[0], "customs": customs, "faith": faith,
             "heritage": heritage, "colors": pal, "landmark": landmark, "character": character, "seed": int(h01("seed", i) * 2 ** 31),
-            "style": _STYLES.get(iid),          # its architecture (tools/sky/styles.py; research/sky_islands/architecture)
+            "style": _STYLES.get(iid), "warren": _WARRENS.get(iid),          # its architecture (tools/sky/styles.py; research/sky_islands/architecture)
         })
         clans.append({"id": clan_id, "name": clan, "surname": sn, "island": iid, "heritage": heritage, "colors": pal, "governance": gov[0],
                       "customs": customs, "faith": faith})

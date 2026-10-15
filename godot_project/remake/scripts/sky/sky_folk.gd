@@ -41,10 +41,16 @@ func _process_inner(delta: float) -> void:
 	_t -= delta
 	if _t <= 0.0:
 		_t = 1.0
+		Prof.begin("folk.populate")
 		_populate()
+		Prof.end("folk.populate")
+	Prof.begin("folk.collect")
 	_collect()
+	Prof.end("folk.collect")
+	Prof.begin("folk.move")
 	for pid in live.keys():
 		_move(live[pid], delta)
+	Prof.end("folk.move")
 
 
 # ------------------------------------------------------------------ who's out
@@ -69,9 +75,13 @@ func _populate() -> void:
 		var e: Dictionary = live[pid]
 		if not is_instance_valid(e.npc) or not want.has(pid) or sys.islands[e.at].tier < 2:
 			_despawn(pid)
+	var started := 0
 	for pid in want:
 		if not live.has(pid) and not _pending.has(pid):
 			_spawn(pid, want[pid])
+			started += 1
+			if started >= 4:
+				break                               # (a few a second: each one's traits are drawn here, ~5-25 ms)
 
 
 func _dist(i: int) -> float:
@@ -113,18 +123,29 @@ func _collect() -> void:
 		var isl: SkyIsland = sys.islands[i]
 		if job.data.is_empty() or isl.tier < 2 or not isl.has_node("Near"):
 			continue
+		Prof.begin("folk.graph")
 		var g := _graph(i)
+		Prof.end("folk.graph")
 		if g.nodes.is_empty():
 			continue
+		Prof.begin("folk.make")
 		var npc := NpcCharacter.from_prepared(job.data)
+		Prof.end("folk.make")
+		Prof.begin("folk.add")
 		isl.get_node("Near").add_child(npc)
 		SkyIsland._ranges(npc, 0.0, 250.0)
+		Prof.end("folk.add")
+		Prof.begin("folk.anim")
 		var anim := NpcAnimator.attach(npc)
+		Prof.end("folk.anim")
 		var at: int = _rng.randi() % g.nodes.size()
 		var e := {"npc": npc, "anim": anim, "home": i, "at": i, "node": at, "pos": g.nodes[at], "path": [],
 			"wait": _rng.randf_range(0.0, 4.0), "speed": WALK * _rng.randf_range(0.85, 1.15), "yaw": _rng.randf() * TAU}
+		var gys: PackedFloat32Array = g.get("ys", PackedFloat32Array())
+		if gys.size() > at:
+			e.y = gys[at]
 		var age := int(job.v.get("age", 30))
-		if age >= 10 and age < 70 and absi(hash(pid + "bike")) % 100 < int(BIKE_SHARE * 100.0):
+		if gys.is_empty() and age >= 10 and age < 70 and absi(hash(pid + "bike")) % 100 < int(BIKE_SHARE * 100.0):
 			var bike := NpcBike.make()
 			isl.get_node("Near").add_child(bike)
 			e.bike = bike
@@ -149,10 +170,23 @@ func _graph(i: int) -> Dictionary:
 		return _graphs[i]
 	var L: Dictionary = sys.layouts[i]
 	var g: Dictionary = L.get("graph", {})
+	var ys := PackedFloat32Array()
+	var wv: SkyWarren = sys.islands[i].warren
+	if SkyWarren.has_file(str(L.id)):
+		# a warren: its walk graph (every level, [x, y, z] nodes), made ready on the warren's worker -- thousands of
+		# nodes: built here it took ~100 ms of a frame; and not cached before it is (else the old paths stick)
+		if wv == null or wv.folk_graph.is_empty():
+			return {"nodes": PackedVector2Array(), "adj": [], "bridge_node": {}, "ys": ys}
+		_graphs[i] = wv.folk_graph
+		return _graphs[i]
 	var nodes := PackedVector2Array()
 	var adj: Array = []
 	for n in g.get("nodes", []):
-		nodes.append(Vector2(n[0], n[1]))
+		if (n as Array).size() >= 3:
+			nodes.append(Vector2(n[0], n[2]))
+			ys.append(float(n[1]))
+		else:
+			nodes.append(Vector2(n[0], n[1]))
 		adj.append([])
 	for e in g.get("edges", []):
 		adj[e[0]].append(e[1])
@@ -171,8 +205,25 @@ func _graph(i: int) -> Dictionary:
 				best = k
 		if best >= 0 and bd < 15.0:
 			bn["%s:%.2f" % [b.side, al]] = best
-	_graphs[i] = {"nodes": nodes, "adj": adj, "bridge_node": bn}
+	_graphs[i] = {"nodes": nodes, "adj": adj, "bridge_node": bn, "ys": ys}
 	return _graphs[i]
+
+
+func _wander(g: Dictionary, from: int, steps: int) -> Array:
+	## a walk of up to `steps` nodes on from `from`, never straight back the way it came unless at a dead end
+	var out := []
+	var at := from
+	var prev := -1
+	for k in steps:
+		var nb: Array = g.adj[at]
+		if nb.is_empty():
+			break
+		var opts: Array = nb.filter(func(m): return m != prev)
+		var nxt: int = (opts if not opts.is_empty() else nb)[_rng.randi() % (opts.size() if not opts.is_empty() else nb.size())]
+		out.append(nxt)
+		prev = at
+		at = nxt
+	return out
 
 
 func _route(g: Dictionary, from: int, to: int) -> Array:
@@ -222,14 +273,21 @@ func _move(e: Dictionary, delta: float) -> void:
 	var d := to.length()
 	var step: float = e.speed * delta
 	var yaw0: float = e.yaw
+	var ys: PackedFloat32Array = g.get("ys", PackedFloat32Array())
 	if d <= step:
 		e.pos = tgt
-		e.node = path.pop_front()
+		var arrived: int = path.pop_front()
+		e.node = arrived
+		if ys.size() > arrived:
+			e.y = ys[arrived]
 		if path.is_empty() and e.has("to_bridge"):
 			_start_cross(e)
 	else:
 		e.pos += to / d * step
 		e.yaw = atan2(-to.x, -to.y)            # (local -Z is a model's front)
+		if ys.size() > int(path[0]) and ys.size() > int(e.node):
+			var seg: float = (g.nodes[path[0]] as Vector2).distance_to(g.nodes[e.node])
+			e.y = lerpf(ys[e.node], ys[path[0]], 1.0 - (d - step) / maxf(seg, 0.01))
 	anim.speed = e.speed if not e.has("bike") else 0.0
 	if e.has("bike"):
 		(e.bike as NpcBike).update(delta, e.speed, angle_difference(yaw0, float(e.yaw)) / maxf(delta, 1e-3))
@@ -251,7 +309,10 @@ func _next_errand(e: Dictionary) -> void:
 			if e.path.is_empty():
 				_start_cross(e)
 			return
-	e.path = _route(g, e.node, _rng.randi() % g.nodes.size())
+	if not (g.get("ys", PackedFloat32Array()) as PackedFloat32Array).is_empty():
+		e.path = _wander(g, e.node, _rng.randi_range(10, 40))   # (a warren's graph is big: a stroll, not a search)
+	else:
+		e.path = _route(g, e.node, _rng.randi() % g.nodes.size())
 
 
 func _start_cross(e: Dictionary) -> void:
@@ -303,6 +364,10 @@ func _crossing(e: Dictionary, delta: float) -> void:
 	var key := "%s:%.2f" % [to.side, al]
 	e.node = g.bridge_node.get(key, 0)
 	e.path = [e.node]
+	e.erase("y")
+	var gy: PackedFloat32Array = g.get("ys", PackedFloat32Array())
+	if gy.size() > int(e.node):
+		e.y = gy[e.node]
 	_place(e)
 
 
@@ -316,7 +381,7 @@ func _despawn_entry(e: Dictionary) -> void:
 func _place(e: Dictionary, y := NAN) -> void:
 	var isl: SkyIsland = sys.islands[e.at]
 	var p: Vector2 = e.pos
-	var h := isl.deck_y(p.x, p.y) if is_nan(y) else y
+	var h := (float(e.y) if e.has("y") else isl.deck_y(p.x, p.y)) if is_nan(y) else y
 	var xf := Transform3D(Basis(Vector3.UP, float(e.yaw)), Vector3(p.x, h, p.y))
 	if e.has("bike"):
 		var bike: NpcBike = e.bike

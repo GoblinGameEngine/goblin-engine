@@ -58,3 +58,27 @@ There was no warren, no layering, no twisting streets, and no true regional buil
     traditional street hierarchies);
   - laid out with ponds and public green spaces, plazas, and large paved main streets.
 - **Fast travel:** each floating city gets a fast-travel location, wired into the game's fast-travel system.
+
+## Build, milestone 1 (2026-10-15)
+Following r4_design.md §9, steps 1–3. Two civilizations on two test islands:
+- `maghrebi_medina` (r1, Fez/Marrakesh, with tower houses) on SKY-100 "Ithaca" (3 blocks);
+- `kowloon_walled` (r2) on SKY-071 "Lollygag" (7 blocks).
+
+### Streams
+- **GENERATOR:** `tools/sky/warren/`.
+- **KIT:** shared pieces in remake/blender/sky/components, plus the piece export.
+- **RUNTIME:** `godot_project/remake/scripts/sky/sky_warren.gd`, plus hooks in sky_island.gd.
+
+### Contracts
+- **Pieces:**
+  - `godot_project/remake/sky/warrens/pieces.json` (written by KIT) maps
+    `{piece_id: {"glb": res path, "mesh": name, "bay": [3, 3.2], "slots": [...], "lod1": "box|keep|drop",
+    "collide": bool}}`.
+  - Piece ids are stable strings; the binary format uses a u16 index into the `pieces` list, written by the
+    generator from pieces.json.
+  - KIT publishes a first pieces.json (ids and placeholder boxes) early so GENERATOR and RUNTIME can start.
+- **Placements:** `godot_project/remake/sky/warrens/<SKY-id>.bin.gz`, as r4 §5, written by GENERATOR. GENERATOR also
+  writes a readable `<SKY-id>.json` (debug: units, doors, travel, anchors, walk graph). RUNTIME reads both.
+- **Frame:** the island's local frame (+X south, +Y up, +Z west; y 0 the deck at the faces). Lattice cell (i, j, k) has
+  its centre at (x0 + 3i + 1.5, 3.2k, z0 + 3j + 1.5).
+- **Shared:** the game lock (research/perf_islands_brief.md), and no commits; the coordinator integrates.
