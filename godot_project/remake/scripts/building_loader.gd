@@ -28,6 +28,14 @@ func load_building(ps: PackedScene) -> void:
 	var kit_defs := merge_kit(ps)    # (the streamer has done it on a worker: then only the defs)
 	var inst := ps.instantiate()
 	add_child(inst)
+	for vis in inst.find_children("*_visual", "MeshInstance3D", true, false):
+		var vm := (vis as MeshInstance3D).mesh
+		if vm and vm.has_meta("interior"):
+			var imi := MeshInstance3D.new()
+			imi.name = "interior"
+			imi.mesh = vm.get_meta("interior")
+			imi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			vis.add_child(imi)
 	_apply_materials(inst, ps.resource_path.get_basename() + ".mats.json", kit_defs)
 	var door_nodes: Array[Node3D] = []
 	var light_nodes: Array[Node3D] = []
@@ -133,6 +141,13 @@ func cull_inner_doors() -> void:
 		vis = mi
 	if vis == null:
 		return
+	var imi := vis.get_node_or_null("interior") as GeometryInstance3D
+	if imi:
+		# (a range is measured to the mesh's centre: a deep building's front is that much nearer than its middle)
+		var ab := imi.get_aabb()
+		var reach := INTERIOR_M + maxf(ab.size.x, ab.size.z) * 0.5
+		imi.visibility_range_end = minf(imi.visibility_range_end, reach) if imi.visibility_range_end > 0.0 else reach
+		imi.visibility_range_end_margin = 2.0
 	var bx := vis.get_aabb()
 	var inv := vis.global_transform.affine_inverse()
 	for d in doors:
@@ -205,6 +220,42 @@ static var _merged_mx := Mutex.new()      # (guards _merged only, never held acr
 static var _kit_raw := {}            # piece -> [Mesh, its material defs, its collision faces]
 
 
+## Interiors only where needed (the user, 2026-10-14: "See where we don't need to render the interior of buildings"):
+## the kit pieces that stand inside a room (furniture, fittings: their origin inside a room's rectangle, inset, and no
+## glass) go into a separate interior mesh, drawn only within INTERIOR_M (cull_inner_doors) -- beyond it the windows
+## are reflections over fake rooms (window_glass.gdshader).  Rooms: remake/rooms/_rects.json (tools/rooms/room_rects.py).
+const INTERIOR_M := 16.0
+const ROOM_INSET := 0.3
+static var _rects = null
+static var _rects_mx := Mutex.new()
+
+
+static func _room_rects(model: String) -> Array:
+	_rects_mx.lock()
+	if _rects == null:
+		var d = DataFile.json("res://remake/rooms/_rects.json") if DataFile.exists("res://remake/rooms/_rects.json") else {}
+		_rects = d if d is Dictionary else {}
+	var r: Array = _rects.get(model, [])
+	_rects_mx.unlock()
+	return r
+
+
+static func _in_room(p: Vector3, rects: Array) -> bool:
+	for r in rects:
+		if p.x > float(r[0]) + ROOM_INSET and p.x < float(r[2]) - ROOM_INSET and p.z > float(r[1]) + ROOM_INSET \
+				and p.z < float(r[3]) - ROOM_INSET and p.y > float(r[4]) - 0.3 and p.y < float(r[5]):
+			return true
+	return false
+
+
+static func _has_glass(defs: Dictionary) -> bool:
+	for k in defs:
+		var d = defs[k]
+		if d is Dictionary and d.get("alpha") != null and float(d.alpha) < 0.6:
+			return true
+	return false
+
+
 ## Folds <ID>.kit.json's pieces into the model's visual mesh (safe on a worker thread).  Returns the kit's material
 ## defs (to apply with the building's own).
 static func merge_kit(ps: PackedScene) -> Dictionary:
@@ -248,6 +299,8 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 	var rows = JSON.parse_string(DataFile.text(kit_path))
 	var defs := {}
 	var adds := {}                   # material name -> [[mesh, surface, transform], ...]
+	var iadds := {}                  # ... the same for the pieces standing inside rooms: the interior mesh
+	var rects := _room_rects(ps.resource_path.get_file().get_basename())
 	var col_add := PackedVector3Array()        # the pieces' collision faces, in the building's collision frame
 	var mats := {}                   # material name -> the piece's material (for one the building doesn't have)
 	for r in (rows if rows is Array else []):
@@ -287,13 +340,15 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 		if not (k[2] as PackedVector3Array).is_empty():
 			col_add.append_array((col_inv * at) * (k[2] as PackedVector3Array))
 		var km: Mesh = k[0]
+		var into := iadds if _in_room(at.origin, rects) and not _has_glass(k[1]) else adds
 		for si in km.get_surface_count():
 			var mat := km.surface_get_material(si)
 			var key := mat.resource_name if mat else ""
-			if not adds.has(key):
-				adds[key] = []
+			if not into.has(key):
+				into[key] = []
+			if not mats.has(key):
 				mats[key] = mat
-			adds[key].append([km, si, xf])
+			into[key].append([km, si, xf])
 	var surfs := []                  # [SurfaceTool, material]
 	for si in m.get_surface_count():
 		var mat := m.surface_get_material(si)
@@ -311,6 +366,20 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 			st.append_from(a[0], a[1], a[2])
 		surfs.append([st, mats[key]])
 	surfs = _plain_merged(surfs, ps.resource_path.get_basename() + ".mats.json", defs)
+	if not iadds.is_empty():
+		var isurfs := []
+		for key in iadds:
+			var ist := SurfaceTool.new()
+			ist.begin(Mesh.PRIMITIVE_TRIANGLES)
+			for a in iadds[key]:
+				ist.append_from(a[0], a[1], a[2])
+			isurfs.append([ist, mats[key]])
+		isurfs = _plain_merged(isurfs, ps.resource_path.get_basename() + ".mats.json", defs)
+		var im := ArrayMesh.new()
+		for sm in isurfs:
+			(sm[0] as SurfaceTool).commit(im)
+			im.surface_set_material(im.get_surface_count() - 1, sm[1])
+		m.set_meta("interior", im)
 	m.clear_surfaces()
 	m.shadow_mesh = null             # (the import's shadow copy has the old surfaces: the renderer indexes it in step)
 	for sm in surfs:
@@ -555,6 +624,8 @@ static func _night_rooms() -> void:
 	if _lod_vc:
 		_lod_vc.set_shader_parameter("lit_share", lerpf(0.35, 0.75, _lit_share))
 		_lod_vc1.set_shader_parameter("lit_share", lerpf(0.35, 0.75, _lit_share))
+	for gm in _glass_mats:
+		gm.set_shader_parameter("lit_share", lerpf(0.35, 0.75, _lit_share))
 	var keep: Array = []
 	for r in _rooms:
 		var l = r[0]
@@ -568,8 +639,12 @@ static func _night_rooms() -> void:
 	_rooms = keep
 
 
+const LAMP_NEAR_M := 10.0             # m round a building within which its rooms' lamps are on (the windows show them)
+
+
 static func _player_inside(lamp: Node3D) -> bool:
-	## is the player inside the building this lamp belongs to? (its bounds, worked out once and kept on it)
+	## is the player in or near (LAMP_NEAR_M) the building this lamp belongs to? (its bounds, worked out once and kept
+	## on it).  Further off its lit rooms are window_glass's fake rooms; the furniture isn't drawn there either.
 	var ml := Engine.get_main_loop() as SceneTree
 	var pl := ml.get_first_node_in_group("player") as Node3D if ml else null
 	if pl == null:
@@ -593,7 +668,7 @@ static func _player_inside(lamp: Node3D) -> bool:
 			first = false
 		bn.set_meta("bounds", box)
 	var bx: AABB = bn.get_meta("bounds")
-	return bx.grow(0.3).has_point(bn.global_transform.affine_inverse() * pl.global_position)
+	return bx.grow(LAMP_NEAR_M).has_point(bn.global_transform.affine_inverse() * pl.global_position)
 
 
 static func _is_glass(d: Dictionary) -> bool:
@@ -606,6 +681,30 @@ static func _is_glass(d: Dictionary) -> bool:
 	if c is Array and c.size() >= 3 and absf(float(a) - 0.35) < 0.01 and absf(float(c[0]) - 0.6) < 0.01 and absf(float(c[2]) - 0.64) < 0.01:
 		return false
 	return true
+
+
+static var _glass_mats: Array[ShaderMaterial] = []
+
+
+static func window_glass(key: String, d: Dictionary, lit: bool) -> ShaderMaterial:
+	## a full-detail building's panes (window_glass.gdshader): see-through near, a reflection over a fake room further
+	## off (where the furniture isn't drawn), lit by the hour at night
+	var k := key + ("#wg1" if lit else "#wg0")
+	if _mat_cache.has(k):
+		return _mat_cache[k]
+	var m := ShaderMaterial.new()
+	m.resource_name = k
+	m.shader = load("res://remake/shaders/window_glass.gdshader")
+	var c = d.get("color", [0.72, 0.8, 0.84])
+	m.set_shader_parameter("tint", Color(c[0], c[1], c[2]).linear_to_srgb())
+	m.set_shader_parameter("alpha", float(d.get("alpha", 0.2)))
+	m.set_shader_parameter("lit", lit)
+	m.set_shader_parameter("lit_share", lerpf(0.35, 0.75, _lit_share))
+	m.set_shader_parameter("far_m", INTERIOR_M)
+	m.set_shader_parameter("near_m", INTERIOR_M - 6.0)
+	_glass_mats.append(m)
+	_mat_cache[k] = m
+	return m
 
 
 static func lit_glass(key: String, d: Dictionary) -> StandardMaterial3D:
@@ -670,7 +769,7 @@ static func _apply_defs(inst: Node, defs: Dictionary, massing := true) -> void:
 				mi.set_surface_override_material(i, lod_vc_material(massing))
 			elif m and defs.has(m.resource_name):
 				var d: Dictionary = defs[m.resource_name]
-				mi.set_surface_override_material(i, lit_glass(m.resource_name, d) if lit and _is_glass(d)
+				mi.set_surface_override_material(i, window_glass(m.resource_name, d, lit) if _is_glass(d)
 					else library_material(m.resource_name, d))
 
 

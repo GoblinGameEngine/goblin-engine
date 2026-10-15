@@ -52,7 +52,8 @@ func _material_for(key: Vector2i) -> Material:
 		m.set_shader_parameter("night_lights", load(npath))
 		m.set_shader_parameter("has_night", true)
 	m.set_shader_parameter("detail", _detail)
-	m.set_shader_parameter("flat_arc", FLAT_ARC)
+	m.set_shader_parameter("flat_arc", 0.0 if _aloft else FLAT_ARC)
+	m.set_shader_parameter("aloft", _aloft)
 	MapTerrainMesh.set_cover_params(m)
 	var px := StationGeo.farside_px(_terrain.far_rect(key))
 	var mp := StationGeo.FARSIDE_M
@@ -60,6 +61,21 @@ func _material_for(key: Vector2i) -> Material:
 		px.size.x * mp, px.size.y * mp))
 	_mats[key] = m
 	return m
+
+
+var _aloft := false
+
+
+func set_aloft(on: bool) -> void:
+	## (AloftSwitch) high above the floor the whole floor is the image: every far tile shows it right under the player,
+	## its night lights at full strength, and everything registered here is hidden
+	_aloft = on
+	for k in _mats:
+		var m: ShaderMaterial = _mats[k]
+		m.set_shader_parameter("flat_arc", 0.0 if on else FLAT_ARC)
+		m.set_shader_parameter("aloft", on)
+	_last_sp = INF                       # (check every entry now)
+	_t = 0.0
 
 
 func add_node(n: Node3D) -> void:
@@ -125,7 +141,7 @@ func _check(i: int, sp: float) -> void:
 		return                                           # (a streamed mesh freed with its band)
 	var nd: Node3D = e[0]
 	var d := absf(StationGeo.wrap_ds(e[1] - sp))
-	var far: bool = d > FLAT_ARC + (-HYST if e[2] else HYST)
+	var far: bool = _aloft or d > FLAT_ARC + (-HYST if e[2] else HYST)
 	if far != e[2]:
 		e[2] = far
 		nd.visible = not far

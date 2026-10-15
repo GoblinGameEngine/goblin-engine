@@ -30,6 +30,12 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	Prof.begin("sky.folk")
+	_process_inner(delta)
+	Prof.end("sky.folk")
+
+
+func _process_inner(delta: float) -> void:
 	if sys == null or not sys.is_ready():
 		return
 	_t -= delta

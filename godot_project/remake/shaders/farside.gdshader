@@ -18,6 +18,7 @@ uniform sampler2D farside : source_color, filter_linear_mipmap_anisotropic, repe
 uniform sampler2D detail : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
 uniform sampler2D night_lights : source_color, filter_linear_mipmap, repeat_disable;
 uniform bool has_night = false;
+uniform bool aloft = false;           // (RemakeFarSide.set_aloft: high above the floor, the image is the whole floor)
 uniform float night_gain = 9.0;
 uniform float flat_arc = 916.0;
 uniform vec4 tile_rect = vec4(0.0, 0.0, 1.0, 1.0);    // (s0, x0, w, h) m: the area this tile's image covers
@@ -58,8 +59,8 @@ void fragment() {
 		// (within flat_arc the real buildings' windows and the street lamps are drawn: the baked lights only beyond it,
 		// and the towns' soft halo only from well across the ring -- seen low from inside a town, the halo of the
 		// ground round it read as a blinding white band at the horizon)
-		float reach = smoothstep(flat_arc, flat_arc + 1000.0, d);
-		float near_k = 1.0 - smoothstep(flat_arc + 1000.0, 6000.0, d);
+		float reach = aloft ? 1.0 : smoothstep(flat_arc, flat_arc + 1000.0, d);
+		float near_k = aloft ? 0.0 : 1.0 - smoothstep(flat_arc + 1000.0, 6000.0, d);
 		if (night * reach > 0.001) {
 			vec3 nl = texture(night_lights, tuv).rgb;
 			nl = mix(nl, max(nl - vec3(0.35), vec3(0.0)) * 1.5, near_k);     // (near: the points, not the halo)

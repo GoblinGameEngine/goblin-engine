@@ -1,0 +1,2758 @@
+{
+ "stream": "r3",
+ "version": 1,
+ "date": "2026-10-15",
+ "scope": "Europe, the Caucasus, Latin America, the Caribbean, Canada (no sub-Saharan Africa; North Africa in stream 1)",
+ "note": "Units: metres. Kit ids refer to research/sky_islands/architecture/components.json (shared); 'unique' ids are new pieces proposed for the shared library. 'params' are the knobs that make common pieces read as this civilization.",
+ "families": [
+  {
+   "id": "tyrrhenian_canyon",
+   "name": "Tyrrhenian canyon towns",
+   "doc": "r3_tyrrhenian_canyon.md",
+   "examples": [
+    "Naples Quartieri Spagnoli",
+    "Naples Sanità",
+    "Genoa caruggi",
+    "Palermo Albergheria/Ballarò"
+   ],
+   "mark": "10:1 canyon lanes, bassi at street level, laundry and shrines, tuff and pastel facades",
+   "cell": {
+    "bay": 4.5,
+    "storey_ground": 4.2,
+    "storey_upper": 3.6,
+    "storeys": [
+     5,
+     8
+    ],
+    "lane": [
+     1.5,
+     4.0
+    ],
+    "main_street": [
+     8,
+     12
+    ]
+   },
+   "walls": {
+    "material": "tuff/rubble masonry, lime render",
+    "thickness": [
+     0.6,
+     0.9
+    ],
+    "palette": [
+     "#c9a85c",
+     "#d4a05a",
+     "#a8432f",
+     "#d9a3a0",
+     "#e6c48a",
+     "#c87e5a"
+    ],
+    "trim": [
+     "#5e6166",
+     "#3f5d3a"
+    ],
+    "weathering": "heavy: damp bands 0-1.5 m, flaking render, streaks"
+   },
+   "mass": "perimeter blocks round small courtyards with a portone; lanes are the void",
+   "streets": {
+    "main": "via 8-12 m with shops",
+    "lanes": "vicoli 2-4 m",
+    "stairs": "gradoni 2-3 m",
+    "squares": "largo every ~120 m (6-15 m)",
+    "paving": "#3b3a38 basalt"
+   },
+   "growth": [
+    "greek/roman tuff vaults + bassi",
+    "renaissance/baroque palazzi",
+    "19th c raised storeys",
+    "20th c rooftop tin rooms",
+    "cyberpunk superfetazioni towers"
+   ],
+   "openings": "french windows 1.1x2.6 with shallow iron balconies on every opening; green louvred shutters; glazed basso doors",
+   "roofs": "flat lastrico terraces with parapets; slate hips (Genoa)",
+   "public_spaces": [
+    "largo at junctions",
+    "covered market lane",
+    "church steps",
+    "courtyard fountains"
+   ],
+   "water": "courtyard fountains, cisterns",
+   "foliage": [
+    {
+     "species": "lemon in tubs",
+     "h": 2.5,
+     "colour": "#4f7a2e",
+     "place": "terraces"
+    },
+    {
+     "species": "bougainvillea",
+     "colour": "#c2185b",
+     "place": "terrace edges"
+    },
+    {
+     "species": "fig",
+     "h": 5,
+     "place": "courts"
+    },
+    {
+     "species": "umbrella pine",
+     "h": 14,
+     "place": "main street/plaza"
+    },
+    {
+     "species": "oleander",
+     "colour": "#e48aa8",
+     "place": "pots"
+    },
+    {
+     "species": "geranium",
+     "colour": "#d1323b",
+     "place": "window boxes"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "rooftop tin/polycarbonate towers",
+     "cable web across lanes",
+     "LED votive shrines",
+     "video murals",
+     "dish clusters",
+     "drone docks on balconies"
+    ],
+    "night": "dim warm canyon floor (#ffb35c), neon sky slot above, shrine hot spots"
+   },
+   "kit": {
+    "shared": [
+     "french_window",
+     "shutters",
+     "balcony_iron",
+     "window_arched",
+     "gate_portal",
+     "door_studded",
+     "cornice",
+     "cornice_bracketed",
+     "plaster_band",
+     "painted_motif",
+     "trompe_loeil_panel",
+     "wall_shrine",
+     "laundry_line",
+     "covered_alley",
+     "sabat_bridge",
+     "water_tank",
+     "rooftop_shack",
+     "antenna",
+     "wire_bundle",
+     "awning",
+     "market_stall",
+     "terrace_parapet",
+     "rooftop_stair_head",
+     "lantern_wall",
+     "luminarie_arch"
+    ],
+    "unique": [
+     "basso_door",
+     "edicola_majolica",
+     "iron_balcony_shallow",
+     "slate_hip_roof",
+     "lane_buttress_beam"
+    ],
+    "params": {
+     "height_to_width": "6-10:1",
+     "window_wall": 0.3,
+     "window_aspect": "1:2.4",
+     "balcony_every_opening": true,
+     "cornice_depth": 0.6,
+     "reveal": 0.2,
+     "colour_per_building": "saturated earth, never white",
+     "weathering": "heavy"
+    }
+   }
+  },
+  {
+   "id": "rupestrian_terraces",
+   "name": "Rupestrian terraces",
+   "doc": "r3_rupestrian_terraces.md",
+   "examples": [
+    "Matera Sassi",
+    "Amalfi",
+    "Positano"
+   ],
+   "mark": "rock-cut vault cells in an inverted amphitheatre; roofs are the streets; vault humps and pergolas",
+   "cell": {
+    "bay": 4.0,
+    "depth": 6.0,
+    "storey": 3.3,
+    "storeys": [
+     1,
+     4
+    ],
+    "lane": [
+     1.5,
+     3.0
+    ],
+    "main_street": [
+     6,
+     8
+    ]
+   },
+   "walls": {
+    "material": "calcarenite blocks / rubble with crushed-stone render",
+    "thickness": [
+     0.5,
+     0.8
+    ],
+    "palette": [
+     "#cbb48b",
+     "#e2d6bb",
+     "#8a7a5c",
+     "#f3eee2",
+     "#efc9a4",
+     "#f2dc8e"
+    ],
+    "trim": [
+     "#2f6f8f"
+    ],
+    "weathering": "lichen and soot at cave mouths"
+   },
+   "mass": "contour rows of vault cells cut into the slope; each row's roof = the lane above; vicinato courts of 4-8 dwellings round a cistern",
+   "streets": {
+    "main": "crest promenade 6-8 m",
+    "lanes": "contour roof-lanes 2-3 m",
+    "stairs": "gradinate 1.5-2.5 m straight downhill",
+    "tunnels": true,
+    "squares": "belvedere every 40-60 m of descent",
+    "vehicles": false
+   },
+   "growth": [
+    "caves, cisterns, rock churches",
+    "built vault fronts",
+    "baroque palazzi on the rim",
+    "whitewashed vault houses + pergolas",
+    "cyberpunk capsule vaults in new cuts"
+   ],
+   "openings": "deep arched doors 1.0x2.2 with lunette; small square windows; reveals >= 0.5",
+   "roofs": "exposed barrel/cross vault humps, whitewashed; flat parts with vine pergolas",
+   "public_spaces": [
+    "belvederes",
+    "cathedral piazza on the crest",
+    "vicinato cistern courts",
+    "lemon-garden terraces"
+   ],
+   "water": "rock-cut cisterns and runnels, pond at the foot",
+   "foliage": [
+    {
+     "species": "lemon grove under pergola",
+     "h": 3,
+     "colour": "#f2d33c",
+     "place": "terraces"
+    },
+    {
+     "species": "grape vine",
+     "place": "roof pergolas"
+    },
+    {
+     "species": "wisteria",
+     "colour": "#9b7bd0",
+     "place": "facades"
+    },
+    {
+     "species": "bougainvillea",
+     "colour": "#c2185b"
+    },
+    {
+     "species": "carob/almond",
+     "h": 6,
+     "place": "rocky slopes"
+    },
+    {
+     "species": "prickly pear/caper",
+     "place": "walls"
+    },
+    {
+     "species": "cypress",
+     "h": 14,
+     "place": "crest"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "composite capsule pods socketed into rock",
+     "inclined lifts with LED rails",
+     "cave server rooms venting steam",
+     "cliff holo-fresco",
+     "solar-film pergolas"
+    ],
+    "night": "starfield of small warm windows (#ffcf7a) over the slope, cool LED stair rails (#7fd8ff), glowing cave mouths"
+   },
+   "kit": {
+    "shared": [
+     "vault_cell",
+     "ghorfa_vault",
+     "arch_opening",
+     "door_room",
+     "qamariya_fanlight",
+     "window_small",
+     "stair_cut",
+     "stair_external_steep",
+     "beam_steps",
+     "tunnel_portal",
+     "terrace_parapet",
+     "terrace_rail",
+     "planter_wall",
+     "bell_tower",
+     "funicular",
+     "light_shaft",
+     "water_channel"
+    ],
+    "unique": [
+     "rock_face_cut",
+     "vault_roof_hump",
+     "cistern_well",
+     "lemon_pergola"
+    ],
+    "params": {
+     "roofs_walkable": true,
+     "parapet": 0.6,
+     "reveal": [
+      0.5,
+      0.8
+     ],
+     "wall_ratio": 0.85,
+     "max_storeys_at_any_point": 4,
+     "corner_radius": [
+      0.1,
+      0.2
+     ],
+     "colour": "stone-matched render or whitewash/pastel"
+    }
+   }
+  },
+  {
+   "id": "cycladic",
+   "name": "Cycladic islands",
+   "doc": "r3_cycladic.md",
+   "examples": [
+    "Santorini Oia",
+    "Mykonos Chora",
+    "Hydra"
+   ],
+   "mark": "rounded whitewashed cubes in a deliberate maze; cave-houses in the rim; chapel domes; slate paving with white joints",
+   "cell": {
+    "bay": 4.0,
+    "storey": 3.0,
+    "storeys": [
+     1,
+     3
+    ],
+    "lane": [
+     1.5,
+     3.0
+    ],
+    "main_street": [
+     10,
+     15
+    ]
+   },
+   "walls": {
+    "material": "rubble + many lime coats",
+    "thickness": [
+     0.6,
+     0.8
+    ],
+    "palette": [
+     "#f7f5ef",
+     "#d9dde2"
+    ],
+    "accents": [
+     "#1f5fa8",
+     "#4da3d8",
+     "#7a2a24",
+     "#5f7a3a",
+     "#e8c547"
+    ],
+    "hydra": [
+     "#8d8a84",
+     "#ffffff",
+     "#b5563a"
+    ],
+    "weathering": "very light; grey-green at gutters"
+   },
+   "mass": "wall-to-wall cube clusters of 6-20; external stairs to roof terraces; rim yposkafa vault rows; a chapel per 20-40 houses",
+   "streets": {
+    "main": "harbour quay 10-15 m",
+    "market": "3-4 m bending",
+    "lanes": "1.5-2.5 m, a bend every 15-25 m, dead ends",
+    "covered": "stegasta",
+    "paving": "slate #6b6e70 with white joints"
+   },
+   "growth": [
+    "kastro ring",
+    "cube infill outward",
+    "captains' mansions + windmills",
+    "hotels/pools",
+    "cyberpunk white pods"
+   ],
+   "openings": "small deep windows 0.6x0.9 painted frames; painted doors; timber balconies on corbels",
+   "roofs": "flat with rounded lip or barrel vaults; chapel domes r 1.5-3; bell gables",
+   "public_spaces": [
+    "harbour quay",
+    "church squares with a tree",
+    "windmill ridge",
+    "sea-view platforms"
+   ],
+   "water": "cisterns; harbour basin as pond",
+   "foliage": [
+    {
+     "species": "bougainvillea",
+     "colour": "#c2185b",
+     "place": "over white walls"
+    },
+    {
+     "species": "tamarisk/pepper tree",
+     "h": 6,
+     "place": "squares"
+    },
+    {
+     "species": "olive",
+     "h": 5
+    },
+    {
+     "species": "geranium/basil in white tins"
+    },
+    {
+     "species": "hibiscus",
+     "colour": "#e8304a"
+    },
+    {
+     "species": "agave/prickly pear",
+     "place": "rim"
+    },
+    {
+     "species": "washingtonia palm",
+     "h": 14,
+     "place": "quay"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "white composite pods with rounded windows",
+     "blue LED edge outlines",
+     "domes as dishes/projection",
+     "neon wind turbines",
+     "white water-recycler tanks",
+     "robot mules"
+    ],
+    "night": "white walls take on neon; tiny warm windows; blue edge glow; dome uplights; wall lamps every 15 m (#ffd6a0)"
+   },
+   "kit": {
+    "shared": [
+     "vault_cell",
+     "dome_small",
+     "bell_tower",
+     "stair_external_steep",
+     "terrace_rail",
+     "parapet_rounded",
+     "window_small",
+     "shutters",
+     "door_room",
+     "balcony_timber_covered",
+     "covered_alley",
+     "lantern_wall",
+     "market_stall",
+     "awning",
+     "water_tank",
+     "planter",
+     "saucer_terrace"
+    ],
+    "unique": [
+     "chapel_cycladic",
+     "windmill_round",
+     "rounded_parapet_lip",
+     "slate_paving_whitejoint",
+     "dovecote_tinos"
+    ],
+    "params": {
+     "storeys_typical": [
+      1,
+      2
+     ],
+     "window_wall": [
+      0.08,
+      0.12
+     ],
+     "corner_radius": 0.15,
+     "accent_colours_per_house": 1,
+     "block_jog": [
+      0.5,
+      1.0
+     ],
+     "vertex_jitter": [
+      0.03,
+      0.06
+     ]
+    }
+   }
+  },
+  {
+   "id": "knights_harbour",
+   "name": "Knights' harbour cities",
+   "doc": "r3_knights_harbour.md",
+   "examples": [
+    "Valletta",
+    "Mdina",
+    "Dubrovnik"
+   ],
+   "mark": "honey limestone grid with stair-streets and stacked coloured gallarija balconies; a polished stone main street",
+   "cell": {
+    "bay": 5.0,
+    "storey_ground": 4.0,
+    "storey_upper": 3.6,
+    "storeys": [
+     3,
+     5
+    ],
+    "grid_spacing": [
+     18,
+     22
+    ],
+    "main_street": [
+     10,
+     12
+    ]
+   },
+   "walls": {
+    "material": "Globigerina limestone ashlar",
+    "thickness": [
+     0.7,
+     1.0
+    ],
+    "palette": [
+     "#d9b77a",
+     "#e8d3a6",
+     "#b8925a",
+     "#e6dfd0"
+    ],
+    "balcony_colours": [
+     "#1f7a4c",
+     "#7d1f24",
+     "#1f3557",
+     "#c9932f",
+     "#2f8f8a"
+    ],
+    "roof": "#b24a2c",
+    "weathering": "salt-eroded honeycomb at street level"
+   },
+   "mass": "continuous terraced frontages on a strict grid; blocks 18-22 m deep round light wells; bastion rim",
+   "streets": {
+    "main": "polished limestone 10-12 m on the ridge (mirror-like)",
+    "grid": "4-8 m",
+    "stair_streets": "3-5 m, risers 0.10-0.12 / treads 0.6-0.8",
+    "squares": "church fronts, bastion gardens"
+   },
+   "growth": [
+    "bastions + cisterns",
+    "16-17th c grid palazzi + corner statues",
+    "18-19th c gallarija on every upper storey",
+    "set-back penthouses",
+    "cyberpunk LCD gallarija"
+   ],
+   "openings": "gallarija 1.0-1.4 deep, 2.5-5 wide, stacked, corner-wrapping; arched shop fanlights; green shutters",
+   "roofs": "flat stone roofs with low parapets (Valletta); red Roman-tile hips (Dubrovnik)",
+   "public_spaces": [
+    "main street with cafe terraces",
+    "church squares",
+    "upper bastion arcade gardens"
+   ],
+   "water": "harbour, fountains, bastion-garden pond",
+   "foliage": [
+    {
+     "species": "bougainvillea",
+     "place": "bastions"
+    },
+    {
+     "species": "oleander/hibiscus",
+     "place": "planters"
+    },
+    {
+     "species": "orange",
+     "h": 4,
+     "place": "bastion gardens"
+    },
+    {
+     "species": "aleppo pine / date palm",
+     "h": 12,
+     "place": "squares"
+    },
+    {
+     "species": "geranium",
+     "place": "gallarija sills"
+    },
+    {
+     "species": "carob"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "LCD purtelli panes",
+     "hologram corner saints",
+     "fibre trunks on cornices",
+     "e-ink shutters",
+     "bastion drone pads and dishes"
+    ],
+    "night": "amber-uplit stone (#ffb062), balconies as coloured lanterns, mirror-polished main street (roughness 0.15)"
+   },
+   "kit": {
+    "shared": [
+     "bay_window_box",
+     "galeria_glazed",
+     "balcony_timber_covered",
+     "bracket_corbel",
+     "shutters",
+     "louvre",
+     "window_arched",
+     "door_studded",
+     "gate_portal",
+     "cornice",
+     "wall_shrine",
+     "terrace_parapet",
+     "parapet_crenel",
+     "round_tower",
+     "stone_slab_roof",
+     "barrel_tile_eave",
+     "beam_steps"
+    ],
+    "unique": [
+     "gallarija",
+     "corner_statue_niche",
+     "bastion_wall_slope",
+     "knight_stair"
+    ],
+    "params": {
+     "grid": "orthogonal",
+     "gallarija_share": [
+      0.4,
+      0.7
+     ],
+     "balcony_colour": "one strong colour each",
+     "render": "almost none",
+     "upper_window": [
+      1.1,
+      2.4
+     ],
+     "ground_openings": "arched"
+    }
+   }
+  },
+  {
+   "id": "lusitanian_hill",
+   "name": "Lusitanian hill towns",
+   "doc": "r3_lusitanian_hill.md",
+   "examples": [
+    "Lisbon Alfama",
+    "Lisbon Mouraria",
+    "Porto Ribeira"
+   ],
+   "mark": "azulejo-tiled narrow tall houses on a steep Moorish maze; iron balconies; miradouros; calçada mosaics; trams",
+   "cell": {
+    "frontage": [
+     4,
+     6
+    ],
+    "depth": [
+     10,
+     15
+    ],
+    "storey": 3.2,
+    "storeys": [
+     3,
+     5
+    ],
+    "lane": [
+     1.2,
+     2.5
+    ],
+    "main_street": [
+     6,
+     8
+    ]
+   },
+   "walls": {
+    "material": "rubble/granite rendered or fully tiled",
+    "thickness": [
+     0.5,
+     0.7
+    ],
+    "render": [
+     "#e9cd6e",
+     "#e3a6a0",
+     "#c78b45",
+     "#f2efe6"
+    ],
+    "tiles": [
+     "#1f4e9c",
+     "#2e7d5b",
+     "#d4a72c",
+     "#7d8b95"
+    ],
+    "granite": "#9a958c",
+    "roof": "#b8603d",
+    "weathering": "missing tile patches, damp bases, rust streaks"
+   },
+   "mass": "tight terraces of tall narrow houses stepping a storey down every 1-2 plots along contours",
+   "streets": {
+    "main": "tram switchback 6-8 m",
+    "quay": "15 m",
+    "lanes": "becos 1.5-2.5 m",
+    "stairs": "escadinhas 2-3 m with centre rail",
+    "paving": "calçada #f0ede4/#2b2b2b",
+    "squares": "largo at tram bends, miradouro at ridge turns"
+   },
+   "growth": [
+    "moorish wall fragments",
+    "medieval houses",
+    "18-19th c tiled facades + iron balconies",
+    "tin attics/terraces",
+    "cyberpunk azulejo LED facades"
+   ],
+   "openings": "tall windows 0.9x2.2 with iron cage balconies 0.3-0.6; arched shop doors",
+   "roofs": "tile 20-25 deg, aguas-furtadas attics, chimney pots",
+   "public_spaces": [
+    "miradouros",
+    "largo fountains",
+    "riverside cais",
+    "fado lanes"
+   ],
+   "water": "river quay (canal/pond), chafarizes",
+   "foliage": [
+    {
+     "species": "jacaranda",
+     "h": 10,
+     "colour": "#8d6cc8",
+     "place": "streets/largos"
+    },
+    {
+     "species": "bougainvillea"
+    },
+    {
+     "species": "lemon/orange",
+     "place": "back yards"
+    },
+    {
+     "species": "geranium in tins",
+     "place": "balconies"
+    },
+    {
+     "species": "basil pots"
+    },
+    {
+     "species": "strelitzia"
+    },
+    {
+     "species": "washingtonia palm",
+     "h": 14,
+     "place": "miradouros"
+    },
+    {
+     "species": "vine pergola",
+     "place": "yards"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "azulejo LED pixel facades",
+     "autonomous tram pods",
+     "AC units on iron balconies",
+     "holo fado",
+     "rooftop micro turbines"
+    ],
+    "night": "glazed tiles reflect neon (gloss 0.25), mosaics under warm lanterns (#ffd08a), outlined miradouros"
+   },
+   "kit": {
+    "shared": [
+     "tile_panel",
+     "glazed_inlay_band",
+     "balcony_iron",
+     "french_window",
+     "window_arched",
+     "shutters",
+     "dormer_row",
+     "dormer_bump",
+     "barrel_tile_eave",
+     "chimney_stack",
+     "stair_external_steep",
+     "beam_steps",
+     "terrace_rail",
+     "fountain_kiosk",
+     "lantern_wall",
+     "laundry_line",
+     "wall_shrine",
+     "funicular"
+    ],
+    "unique": [
+     "azulejo_facade_field",
+     "granite_window_frame",
+     "calcada_mosaic",
+     "tram_rail",
+     "miradouro_kiosk"
+    ],
+    "params": {
+     "frontage": [
+      4,
+      6
+     ],
+     "height_to_width": "3:1",
+     "tile_roughness": 0.25,
+     "render_roughness": 0.9,
+     "balcony_every_upper_window": true,
+     "alternate_tiled_rendered": true,
+     "step_down_storey_every_plots": [
+      1,
+      2
+     ]
+    }
+   }
+  },
+  {
+   "id": "iberian_white",
+   "name": "Iberian white towns",
+   "doc": "r3_iberian_white.md",
+   "examples": [
+    "Vejer",
+    "Arcos",
+    "Frigiliana",
+    "Toledo",
+    "Cuenca"
+   ],
+   "mark": "blank whitewashed street walls with box rejas and blue pots; inward flower patios; cobertizos; Mudéjar brick towers; hanging houses",
+   "cell": {
+    "bay": 4.5,
+    "storey": 3.2,
+    "storeys": [
+     2,
+     3
+    ],
+    "patio": [
+     4,
+     8
+    ],
+    "lane": [
+     1.5,
+     3.5
+    ],
+    "main_street": [
+     6,
+     8
+    ]
+   },
+   "walls": {
+    "material": "rubble/rammed earth limewashed; Mudéjar brick",
+    "thickness": [
+     0.5,
+     0.7
+    ],
+    "palette": [
+     "#f6f3ea"
+    ],
+    "zocalo": [
+     "#d8a85a",
+     "#2f5f9a"
+    ],
+    "brick": "#a8603e",
+    "reja": "#1d1d1d",
+    "doors": [
+     "#6b2a24",
+     "#2f5a3a"
+    ],
+    "roof": "#b5643a",
+    "cuenca": [
+     "#7a5434",
+     "#3d6fa6",
+     "#d0a04a"
+    ],
+    "weathering": "dirt splash at base"
+   },
+   "mass": "introverted courtyard houses in irregular blocks; zaguan to patio; cantilevered timber rooms on cliff rim",
+   "streets": {
+    "main": "calle Real 6-8 m",
+    "lanes": "2-3.5 m, a bend every 10-20 m, ramps",
+    "cobertizos": "bridging rooms 4-12 m long",
+    "paving": "empedrado pebble mosaics",
+    "awnings": "toldos across shopping lanes"
+   },
+   "growth": [
+    "roman/moorish walls + aljibes",
+    "moorish courtyard houses",
+    "mudejar brick churches",
+    "baroque palaces",
+    "cyberpunk LED rejas, ETFE patios"
+   ],
+   "openings": "box rejas 0.8x1.4 projecting 0.3 with pot shelf; studded doors; miradors; horseshoe arches in patios",
+   "roofs": "Roman tile 15-20 deg; azoteas; hooded chimneys",
+   "public_spaces": [
+    "plaza mayor arcaded 30x40 with fountain and orange trees",
+    "summit church square",
+    "cliff mirador",
+    "public patio garden with pond"
+   ],
+   "water": "patio fountains/pools, aljibes, plaza pond, acequia rills",
+   "foliage": [
+    {
+     "species": "seville orange",
+     "h": 5,
+     "colour": "#f28c28",
+     "place": "plaza rows"
+    },
+    {
+     "species": "geranium in blue wall pots",
+     "colour": "#d1323b"
+    },
+    {
+     "species": "bougainvillea/jasmine"
+    },
+    {
+     "species": "cypress pair",
+     "h": 14,
+     "place": "church"
+    },
+    {
+     "species": "date palm",
+     "h": 12,
+     "place": "patios"
+    },
+    {
+     "species": "olive",
+     "place": "outskirts"
+    },
+    {
+     "species": "grape parra",
+     "place": "patio trellis"
+    },
+    {
+     "species": "ivy",
+     "place": "towers"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "LED rejas with screens",
+     "ETFE-domed hydroponic patios",
+     "glowing glazed cobertizo data bridges",
+     "pulsing sebka circuits",
+     "solar toldos"
+    ],
+    "night": "white walls blue-grey, warm pools at rejas (#ffcf86), glowing patios via zaguan, lanterns in orange trees"
+   },
+   "kit": {
+    "shared": [
+     "reja_grille",
+     "arch_horseshoe",
+     "arch_pointed",
+     "door_studded",
+     "window_small",
+     "shutters",
+     "galeria_glazed",
+     "patio_gallery",
+     "fountain_kiosk",
+     "covered_alley",
+     "sabat_bridge",
+     "planter_wall",
+     "brick_relief_panel",
+     "glazed_inlay_band",
+     "bell_tower",
+     "barrel_tile_eave",
+     "chimney_stack",
+     "awning",
+     "hanging_backshop",
+     "cantilever_beam",
+     "lantern_wall",
+     "arcade_pier"
+    ],
+    "unique": [
+     "zocalo_band",
+     "pot_bracket_wall",
+     "sebka_brick_panel",
+     "casa_colgada_balcony",
+     "patio_pool_tiled"
+    ],
+    "params": {
+     "street_window_wall": [
+      0.1,
+      0.15
+     ],
+     "patio_window_wall": 0.4,
+     "white_share": 0.98,
+     "patio_share": [
+      0.15,
+      0.25
+     ],
+     "lane_bends": "continuous",
+     "block_jog": [
+      0.5,
+      1.5
+     ]
+    }
+   }
+  },
+  {
+   "id": "ottoman_timber",
+   "name": "Ottoman timber towns",
+   "doc": "r3_ottoman_timber.md",
+   "examples": [
+    "Istanbul Fener/Balat/Zeyrek",
+    "Safranbolu",
+    "Plovdiv",
+    "Berat Mangalem"
+   ],
+   "mark": "stone ground floor, timber upper storeys jettied on angled brackets with cumba oriels; ranks of windows; 'upside-down wedding cake'",
+   "cell": {
+    "bay": 3.75,
+    "storey_ground": 3.0,
+    "storey_upper": 2.9,
+    "storeys": [
+     2,
+     4
+    ],
+    "jetty": [
+     0.6,
+     1.2
+    ],
+    "cumba": 0.8,
+    "lane": [
+     2.5,
+     4.0
+    ],
+    "main_street": [
+     5,
+     7
+    ]
+   },
+   "walls": {
+    "material": "rubble ground; himis timber frame w/ plaster or clapboard above",
+    "thickness": {
+     "ground": [
+      0.6,
+      0.8
+     ],
+     "upper": 0.2
+    },
+    "palette": [
+     "#d9a441",
+     "#9a3b2e",
+     "#4f74a8",
+     "#8fa58a",
+     "#f0ece2"
+    ],
+    "timber": [
+     "#5a3d28",
+     "#8a8a80"
+    ],
+    "roof": [
+     "#b6553a",
+     "#6f6c66"
+    ],
+    "weathering": "silvered clapboard, sag, peeling paint"
+   },
+   "mass": "houses on sloping plots with walled back gardens; upper floors square off crooked plots; window rows wrap corners",
+   "streets": {
+    "main": "carsi bazaar 5-7 m part-roofed, shop cells 3x4",
+    "lanes": "2.5-4 m cobbled, overhangs close sky to 1 m",
+    "stairs": "stepped lanes to castle",
+    "squares": "mosque/church square with plane tree + fountain"
+   },
+   "growth": [
+    "byzantine base + kale",
+    "ottoman stone ground floors",
+    "timber upper storeys + cumbas",
+    "revival painted symmetric facades",
+    "concrete infill",
+    "cyberpunk LED cumba pods"
+   ],
+   "openings": "ranks of timber sashes 0.7x1.6 (4-8/facade); kafes lattice; 3-sided cumba oriel; door in courtyard wall",
+   "roofs": "low hips 25 deg, eaves 1.0-1.5 with soffits; tile or stone slab",
+   "public_spaces": [
+    "carsi",
+    "plane-tree square with cesme",
+    "coffee-house terraces",
+    "walled gardens"
+   ],
+   "water": "cesme fountains, sadirvan, pond garden",
+   "foliage": [
+    {
+     "species": "oriental plane (cinar)",
+     "h": 22,
+     "place": "squares"
+    },
+    {
+     "species": "linden",
+     "h": 15
+    },
+    {
+     "species": "walnut/mulberry",
+     "place": "gardens"
+    },
+    {
+     "species": "grape pergola"
+    },
+    {
+     "species": "roses/hollyhock/geranium",
+     "place": "sills"
+    },
+    {
+     "species": "cypress",
+     "h": 15,
+     "place": "cemeteries"
+    },
+    {
+     "species": "fig/quince"
+    },
+    {
+     "species": "wisteria",
+     "place": "timber facades"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "glass/LED cumba pods",
+     "steel/carbon sistered frames",
+     "solar shingle clapboard",
+     "drone perches on brackets",
+     "neon-vaulted bazaar"
+    ],
+    "night": "rows of warm windows wrapping corners (#ffc46b), patterned light through kafes, uplit brackets make floating bands"
+   },
+   "kit": {
+    "shared": [
+     "jetty_upper",
+     "bracket_corbel",
+     "bay_window_box",
+     "screen_lattice",
+     "timber_band",
+     "clapboard_panel",
+     "timber_eave",
+     "fretwork_eave",
+     "turned_post",
+     "market_stall",
+     "shopfront_shutter",
+     "fountain_kiosk",
+     "stone_slab_roof",
+     "barrel_tile_eave",
+     "chimney_stack",
+     "lantern_wall",
+     "door_studded",
+     "gate_portal"
+    ],
+    "unique": [
+     "angled_strut_bracket",
+     "cumba_oriel",
+     "painted_soffit_sunburst",
+     "cesme_niche",
+     "carsi_cell",
+     "window_rank_row"
+    ],
+    "params": {
+     "storey_growth": [
+      0.6,
+      1.2
+     ],
+     "upper_window_wall": [
+      0.45,
+      0.6
+     ],
+     "ground_window_wall": 0.1,
+     "eave": 1.2,
+     "material_break_at_first_floor": true,
+     "symmetry": "revival symmetric / old asymmetric"
+    }
+   }
+  },
+  {
+   "id": "mardin_terraces",
+   "name": "Upper Mesopotamian stone terraces",
+   "doc": "r3_mardin_terraces.md",
+   "examples": [
+    "Mardin",
+    "Midyat"
+   ],
+   "mark": "honey limestone cascade, every roof a terrace for the house above; carved south facades; abbara tunnels under houses",
+   "cell": {
+    "bay": 4.0,
+    "depth": 5.0,
+    "storey": 3.75,
+    "storeys": [
+     2,
+     3
+    ],
+    "row_rise": [
+     3,
+     6
+    ],
+    "lane": [
+     1.5,
+     2.5
+    ],
+    "main_street": [
+     5,
+     7
+    ]
+   },
+   "walls": {
+    "material": "cut limestone ashlar",
+    "thickness": [
+     0.7,
+     1.0
+    ],
+    "palette": [
+     "#d8b77e",
+     "#eadcb8",
+     "#d9b39a",
+     "#9d8255"
+    ],
+    "doors": [
+     "#2e8a86",
+     "#5b3a24"
+    ],
+    "weathering": "warm patina, salt efflorescence"
+   },
+   "mass": "avlu courtyard houses with upper eyvan, terraced in contour rows; abbaras link rows",
+   "streets": {
+    "main": "contour bazaar 5-7 m part-vaulted",
+    "contour": "3-4 m",
+    "stairs": "1.5-2.5 m",
+    "abbara": "vaulted tunnels 2.5-3 w x 3-4 h, 10-30 long",
+    "squares": "plain-view terrace every ~80 m"
+   },
+   "growth": [
+    "citadel + rock cisterns",
+    "artuqid madrasas/minarets",
+    "ottoman avlu houses",
+    "late-ottoman carved mansions",
+    "concrete roof storeys",
+    "cyberpunk fibre-lit carvings"
+   ],
+   "openings": "pointed/segmental arches in carved frames with grilles; triple-arched south loggias; carved portals with stone benches",
+   "roofs": "flat terraces with carved balustrades; ribbed domes; square carved minarets",
+   "public_spaces": [
+    "contour bazaar",
+    "madrasa courts with pools",
+    "view terraces",
+    "plane-tree squares"
+   ],
+   "water": "cisterns, madrasa pools with rills, terrace pond",
+   "foliage": [
+    {
+     "species": "pomegranate",
+     "h": 4,
+     "colour": "#c2272d"
+    },
+    {
+     "species": "fig/mulberry/walnut",
+     "place": "courtyards"
+    },
+    {
+     "species": "grape vine",
+     "place": "terrace pergolas"
+    },
+    {
+     "species": "pistachio"
+    },
+    {
+     "species": "oleander/jasmine"
+    },
+    {
+     "species": "basil/roses in pots"
+    },
+    {
+     "species": "cypress/plane",
+     "density": "sparse"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "fibre-lit tulip reliefs",
+     "laser-cut stone screens",
+     "abbaras as lit transit tubes",
+     "roof solar farms / holo-cinemas",
+     "sintered honey-stone printed storeys"
+    ],
+    "night": "honey cascade under warm flood (#ffbf6b), raking light on carving, glowing abbara tunnels"
+   },
+   "kit": {
+    "shared": [
+     "vault_cell",
+     "iwan_arch",
+     "arch_pointed",
+     "window_arched",
+     "muqarnas_hood",
+     "carved_stucco_panel",
+     "motif_relief_band",
+     "grille_geometric",
+     "terrace_parapet",
+     "parapet_screen",
+     "covered_alley",
+     "tunnel_portal",
+     "minaret_small",
+     "dome_ribbed",
+     "souk_vault",
+     "fountain_kiosk",
+     "water_channel",
+     "stair_cut"
+    ],
+    "unique": [
+     "carved_balustrade_stone",
+     "abbara_vault",
+     "triple_arch_loggia",
+     "artuqid_minaret_square"
+    ],
+    "params": {
+     "material": "single limestone, colour +-8%",
+     "row_rise": [
+      3,
+      6
+     ],
+     "openings": "arched with carved frames",
+     "south_ornament": "heavy",
+     "north": "blank",
+     "reveal": 0.8
+    }
+   }
+  },
+  {
+   "id": "kulla_stone",
+   "name": "Balkan stone tower-houses",
+   "doc": "r3_kulla_stone.md",
+   "examples": [
+    "Gjirokaster",
+    "Mostar"
+   ],
+   "mark": "fortress-base grey kulla with corbelled window-band top storey under heavy stone-slab roofs",
+   "cell": {
+    "footprint": [
+     6,
+     8
+    ],
+    "storey": 3.4,
+    "storeys": [
+     3,
+     4
+    ],
+    "top_corbel": [
+     0.5,
+     0.9
+    ],
+    "lane": [
+     2,
+     4
+    ],
+    "main_street": [
+     5,
+     6
+    ]
+   },
+   "walls": {
+    "material": "limestone rubble, thinning upward; plastered timber top",
+    "thickness": [
+     0.9,
+     1.2
+    ],
+    "palette": [
+     "#8f8b84",
+     "#b3aea5",
+     "#55524c",
+     "#ece6d8"
+    ],
+    "timber": "#6a4b33",
+    "roof": [
+     "#76736d",
+     "#9a968e"
+    ],
+    "weathering": "black lichen roofs, lime streaks"
+   },
+   "mass": "detached near-cube towers on terraced plots along switchbacks; courtyard walls with gates; castle on the ridge",
+   "streets": {
+    "main": "bazaar 5-6 m cobbled with white-stone patterns",
+    "lanes": "switchbacks 2-4 m with centre gutter",
+    "stairs": "1.5-2 m",
+    "bridges": "stone arch over gorge",
+    "squares": "bazaar crossroads, castle forecourt"
+   },
+   "growth": [
+    "fortress",
+    "early kulla",
+    "ottoman mansions w/ corbelled tops + painted rooms",
+    "communist blocks (sparse)",
+    "cyberpunk server-vault bases, PV slates"
+   ],
+   "openings": "base arrow slits 0.3x0.6, studded door; top continuous window band 50%; machicolation box",
+   "roofs": "steep hips 30-35 deg of slab mosaic; deep timber eaves; stone chimney stacks",
+   "public_spaces": [
+    "bazaar crossroads",
+    "mosque yards",
+    "fortress terraces",
+    "viewpoints"
+   ],
+   "water": "stone fountains, castle cisterns, pond below the bridge",
+   "foliage": [
+    {
+     "species": "holm oak",
+     "h": 10
+    },
+    {
+     "species": "cypress",
+     "h": 14
+    },
+    {
+     "species": "fig/walnut/mulberry",
+     "place": "yards"
+    },
+    {
+     "species": "grape over gates"
+    },
+    {
+     "species": "pomegranate"
+    },
+    {
+     "species": "lavender/sage",
+     "place": "walls"
+    },
+    {
+     "species": "plane",
+     "h": 20,
+     "place": "fountains"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "blast-door server bases",
+     "machicolation drone ports",
+     "PV slates in the slab mosaic",
+     "citadel searchlights",
+     "zip-lines between towers"
+    ],
+    "night": "dark bases with glowing top window bands (#ffc777); citadel floodlit white"
+   },
+   "kit": {
+    "shared": [
+     "tower_square",
+     "stone_slab_roof",
+     "bracket_corbel",
+     "shutters",
+     "door_studded",
+     "gate_portal",
+     "chimney_stack",
+     "timber_eave",
+     "parapet_crenel",
+     "round_tower",
+     "fountain_kiosk",
+     "market_stall",
+     "souk_vault",
+     "stair_cut",
+     "window_small"
+    ],
+    "unique": [
+     "kulla_machicolation_box",
+     "slab_roof_mosaic",
+     "arrow_slit",
+     "corbelled_top_storey",
+     "stone_arch_bridge",
+     "window_rank_row"
+    ],
+    "params": {
+     "height_to_width": 1.5,
+     "openings_by_height": [
+      0.05,
+      0.5
+     ],
+     "palette": "grey stone + white plaster",
+     "eave": 0.8,
+     "roof_share_of_height": 0.3
+    }
+   }
+  },
+  {
+   "id": "caucasian_balcony",
+   "name": "Caucasian balcony towns",
+   "doc": "r3_caucasian_balcony.md",
+   "examples": [
+    "Tbilisi Kala",
+    "Tbilisi Abanotubani",
+    "Tbilisi Sololaki",
+    "Svaneti Ushguli"
+   ],
+   "mark": "full-width carved timber and stained-glass balconies stacked over cliffs and courtyards; bath domes; Svan towers on the skyline",
+   "cell": {
+    "bay": 4.5,
+    "storey": 3.7,
+    "storeys": [
+     2,
+     4
+    ],
+    "balcony_depth": [
+     1.5,
+     2.5
+    ],
+    "svan_tower": {
+     "plan": 5,
+     "h": [
+      20,
+      25
+     ]
+    },
+    "lane": [
+     3,
+     5
+    ],
+    "main_street": [
+     8,
+     10
+    ]
+   },
+   "walls": {
+    "material": "thin Persian brick (limewashed), rubble, stucco; timber balconies",
+    "palette": [
+     "#a65a3a",
+     "#efe9dc"
+    ],
+    "timber": [
+     "#3a9a9a",
+     "#6aa6cf",
+     "#7a8a4a",
+     "#6b4a2e"
+    ],
+    "glass": [
+     "#b0283a",
+     "#e0a030",
+     "#2a4a9a",
+     "#2a8a4a"
+    ],
+    "tower": "#6f6d68",
+    "roof": "#9a3a2a",
+    "weathering": "sagging balconies, lean 1-3 deg, flaking paint"
+   },
+   "mass": "perimeter houses round 'Italian courtyards' ringed by 2-3 levels of galleries with spiral stairs; houses on posts over cliffs; Svan tower clusters on upper terraces",
+   "streets": {
+    "main": "riverside avenue 8-10 m",
+    "lanes": "3-5 m cobbled winding",
+    "stairs": true,
+    "bridges": "over the gorge",
+    "squares": "bath square, church yards, fortress terrace"
+   },
+   "growth": [
+    "fortress, sulphur baths, churches",
+    "persian brick flat-roof houses",
+    "19th c courtyard tenements w/ carved balconies + art nouveau",
+    "soviet enclosed balconies in tin/glass",
+    "cyberpunk LED stained-glass gallery stacks"
+   ],
+   "openings": "fretwork balconies with turned balusters and carved pelmets; shushabandi small-pane stained-glass galleries; tall double doors",
+   "roofs": "low tin 15-20 deg (red/grey); flat brick with bath domes; slate gables on towers",
+   "public_spaces": [
+    "shared courtyards",
+    "bath-quarter square",
+    "riverside promenade",
+    "church yards",
+    "fortress terrace + cable-car station"
+   ],
+   "water": "river gorge + waterfall (pond with fall), sulphur pools",
+   "foliage": [
+    {
+     "species": "grape vine",
+     "place": "balconies, courtyard pergolas, wires across lanes"
+    },
+    {
+     "species": "persimmon/fig/pomegranate",
+     "place": "courts"
+    },
+    {
+     "species": "plane (chinar)",
+     "h": 20,
+     "place": "avenue"
+    },
+    {
+     "species": "walnut"
+    },
+    {
+     "species": "roses/geraniums",
+     "place": "balconies"
+    },
+    {
+     "species": "cypress",
+     "place": "churches"
+    },
+    {
+     "species": "birch/fir",
+     "place": "around Svan towers"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "stacked stained-glass LED gallery pods",
+     "vines on fibre trellises",
+     "Svan towers as comms masts",
+     "cable-car pods over the gorge",
+     "purple-lit sulphur steam"
+    ],
+    "night": "jewel-coloured glowing balconies, warm courtyard wells, lit gorge bridges, glowing bath domes, red aviation lamps on towers (#ff3030)"
+   },
+   "kit": {
+    "shared": [
+     "balcony_timber_covered",
+     "gallery_timber",
+     "galeria_glazed",
+     "fretwork_eave",
+     "turned_post",
+     "stair_spiral_external",
+     "patio_gallery",
+     "bracket_corbel",
+     "cantilever_beam",
+     "dome_small",
+     "dome_ribbed",
+     "tower_square",
+     "stone_slab_roof",
+     "corrugated_panel",
+     "laundry_line",
+     "lantern_wall",
+     "bell_tower",
+     "door_room"
+    ],
+    "unique": [
+     "shushabandi_gallery",
+     "fretwork_balustrade",
+     "svan_tower",
+     "bath_dome_cluster",
+     "cliff_post_frame"
+    ],
+    "params": {
+     "balcony_share": [
+      0.6,
+      0.9
+     ],
+     "balcony_full_width": true,
+     "balcony_depth": [
+      1.5,
+      2.5
+     ],
+     "lean_jitter_deg": [
+      1,
+      3
+     ],
+     "courtyard_galleries_all_faces": true,
+     "tower_height_x_houses": [
+      4,
+      6
+     ],
+     "tower_spacing": [
+      25,
+      60
+     ]
+    }
+   }
+  },
+  {
+   "id": "hanseatic_gable",
+   "name": "Hanseatic gable towns",
+   "doc": "r3_hanseatic_gable.md",
+   "examples": [
+    "Amsterdam",
+    "Tallinn",
+    "Bergen Bryggen",
+    "Copenhagen Nyhavn"
+   ],
+   "mark": "row of narrow tall gabled merchant houses with hoist beams, each gable type and colour different, reflected in canals",
+   "cell": {
+    "frontage": [
+     4,
+     8
+    ],
+    "depth": [
+     15,
+     20
+    ],
+    "storey": 3.2,
+    "storeys": [
+     4,
+     6
+    ],
+    "canal": [
+     12,
+     25
+    ],
+    "quay": [
+     6,
+     8
+    ],
+    "lane": [
+     1,
+     2
+    ]
+   },
+   "walls": {
+    "material": "brick / plastered gothic / timber clapboard",
+    "thickness": [
+     0.35,
+     0.5
+    ],
+    "brick": [
+     "#4a2a20",
+     "#8c3b2a"
+    ],
+    "plaster": [
+     "#ece6d6",
+     "#d8b25a",
+     "#b2402e",
+     "#e7b84a",
+     "#3f6fa8",
+     "#4f7a52"
+    ],
+    "timber": [
+     "#d39b3a",
+     "#7a2a22",
+     "#f0ebe0"
+    ],
+    "frames": "#f5f3ee",
+    "shutters": "#2a4a32",
+    "roof": "#5a3a2e",
+    "copper": "#4f8f78",
+    "weathering": "soot, efflorescence, moss, forward lean"
+   },
+   "mass": "rows of narrow full-depth houses with back hof yards; warehouse attics with hatch columns; Bryggen timber rows facing plank passages",
+   "streets": {
+    "main": "canal quays 6-8 m each side with trees",
+    "market": "8-10 m harbour-to-square",
+    "lanes": "stegen 1-2 m",
+    "bridges": "humped every 80-120 m",
+    "paving": "#8a5a44 brick"
+   },
+   "growth": [
+    "timber wharves, gothic guild hall/church",
+    "gothic brick stepped-gable houses",
+    "golden-age neck/bell gables",
+    "19th c cornice tops + dormers",
+    "cyberpunk drone hoists, neon gables"
+   ],
+   "openings": "large small-paned windows 60%; attic luiken hatch column + hoist beam; raised stoep doors",
+   "roofs": "steep 50-60 deg pantile/slate behind gables; dormers; verdigris spires",
+   "public_spaces": [
+    "market square 40x60 with town hall spire",
+    "canal quays",
+    "guild halls",
+    "harbour wharf with cranes",
+    "hofjes lawn courts"
+   ],
+   "water": "canals every 120-200 m as long ponds; harbour basin",
+   "foliage": [
+    {
+     "species": "elm/linden canal lines",
+     "h": 18,
+     "spacing": 8
+    },
+    {
+     "species": "hollyhock",
+     "colour": "#d84a8a",
+     "place": "facade foot"
+    },
+    {
+     "species": "geranium/ivy",
+     "place": "window boxes"
+    },
+    {
+     "species": "pear",
+     "place": "courtyard lawns"
+    },
+    {
+     "species": "chestnut",
+     "place": "squares"
+    },
+    {
+     "species": "rowan/birch",
+     "place": "Bryggen"
+    },
+    {
+     "species": "willow",
+     "place": "water"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "drone docks on hoist beams",
+     "attic data lofts",
+     "neon-traced gables by type",
+     "barge markets/server boats",
+     "capsule-hostel galleries",
+     "e-bike racks"
+    ],
+    "night": "big warm windows doubled in canals, bulb-lit bridge arches (#ffd08a), coloured gable outlines, canal fog"
+   },
+   "kit": {
+    "shared": [
+     "gable_step",
+     "gable_neck",
+     "gable_bell",
+     "gable_cornice",
+     "hoist_beam",
+     "loading_door",
+     "crane_gable",
+     "french_window",
+     "shutters",
+     "dormer_row",
+     "chimney_stack",
+     "clapboard_panel",
+     "gallery_timber",
+     "plank_bridge",
+     "plank_landing",
+     "bell_tower",
+     "cornice",
+     "lantern_wall",
+     "lights_festoon"
+    ],
+    "unique": [
+     "luiken_hatch_column",
+     "gevelsteen_plaque",
+     "humped_canal_bridge",
+     "wall_anchor_iron",
+     "bryggen_row_passage",
+     "canal_edge"
+    ],
+    "params": {
+     "frontage": [
+      4,
+      8
+     ],
+     "height_to_width": "3:1",
+     "gable_every_house_type_varies": true,
+     "window_wall": [
+      0.5,
+      0.65
+     ],
+     "forward_lean_deg": 0.5,
+     "lean_share": 0.3,
+     "canal_every": [
+      120,
+      200
+     ]
+    }
+   }
+  },
+  {
+   "id": "scots_lands",
+   "name": "Scots lands and closes",
+   "doc": "r3_scots_lands.md",
+   "examples": [
+    "Edinburgh Old Town / Royal Mile"
+   ],
+   "mark": "ridge spine street with fishbone closes dropping through pends between 6-12 storey soot-dark rubble lands; crowsteps and many-pot chimneys",
+   "cell": {
+    "frontage": [
+     6,
+     10
+    ],
+    "plot_depth": [
+     50,
+     150
+    ],
+    "storey": 3.0,
+    "storeys": [
+     6,
+     12
+    ],
+    "close": [
+     1,
+     2.5
+    ],
+    "wynd": [
+     3,
+     4
+    ],
+    "main_street": [
+     15,
+     20
+    ]
+   },
+   "walls": {
+    "material": "harled rubble / sooted sandstone with ashlar margins",
+    "thickness": [
+     0.6,
+     0.9
+    ],
+    "palette": [
+     "#cfc7b6",
+     "#4a4640",
+     "#6e675c",
+     "#9a907e"
+    ],
+    "shopfronts": [
+     "#1f3a6a",
+     "#6a1f22",
+     "#1f4a33",
+     "#1a1a1a"
+    ],
+    "roof": "#4b4f55",
+    "weathering": "very heavy soot, damp, moss"
+   },
+   "mass": "continuous slabs on the spine; tall narrow ranges down each close; turnpike stair towers; small close courts",
+   "streets": {
+    "main": "spine 15-20 m setts",
+    "closes": "1-2.5 m every 10-20 m through pends 2-3 w x 3 h, descending in steps",
+    "wynds": "3-4 m",
+    "bridges": "high-level cross-ridge",
+    "paving": "#5a5a58 setts"
+   },
+   "growth": [
+    "castle rock + burgage plots",
+    "16-17th c lands w/ timber galleries",
+    "18-19th c rebuilt tenements + baronial turrets",
+    "high bridges + under-street vaults",
+    "cyberpunk glass-roofed neon closes"
+   ],
+   "openings": "small regular sashes 0.9x1.6; arched pends; timber galleries; shopfront signboards",
+   "roofs": "steep slate 45-55 deg, crowstepped gables, many-pot chimney stacks, dormers, conical turrets",
+   "public_spaces": [
+    "spine street with mercat cross + crown-spire cathedral",
+    "close courts",
+    "terraced slope gardens",
+    "loch garden park at the foot"
+   ],
+   "water": "loch-garden pond, spine pump wells",
+   "foliage": [
+    {
+     "species": "ivy/ferns/moss",
+     "place": "closes"
+    },
+    {
+     "species": "rowan",
+     "colour": "#c0302a",
+     "place": "slope gardens"
+    },
+    {
+     "species": "sycamore/beech/holly/yew"
+    },
+    {
+     "species": "heather",
+     "colour": "#9a5a9a",
+     "place": "window boxes"
+    },
+    {
+     "species": "elm/cherry",
+     "place": "loch-garden lawns"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "glass-roofed vertical arcade closes",
+     "exterior cable risers + heat exchangers",
+     "glowing vent-tower chimneys",
+     "gargoyle cameras",
+     "haar fog machines",
+     "holo close-name signs"
+    ],
+    "night": "dark slabs with scattered warm sashes (#ffcf86), wet setts reflecting sodium lamps, closes as coloured lit tunnels into fog"
+   },
+   "kit": {
+    "shared": [
+     "gable_step",
+     "pend_passage",
+     "turnpike_stair",
+     "chimney_stack",
+     "dormer_row",
+     "french_window",
+     "gallery_timber",
+     "round_tower",
+     "pinnacle",
+     "cornice",
+     "name_board_close",
+     "lantern_wall",
+     "stair_cut",
+     "beam_steps",
+     "bell_tower",
+     "stone_slab_roof"
+    ],
+    "unique": [
+     "harl_wall",
+     "marriage_lintel",
+     "corbelled_turret_cone",
+     "close_mouth_pend_sign",
+     "mercat_cross"
+    ],
+    "params": {
+     "storeys": [
+      6,
+      12
+     ],
+     "tallest_downhill": true,
+     "close_every": [
+      10,
+      20
+     ],
+     "window_wall": 0.25,
+     "palette": "soot-dark",
+     "chimney_every": [
+      6,
+      8
+     ]
+    }
+   }
+  },
+  {
+   "id": "andean_neo",
+   "name": "Andean layered towns",
+   "doc": "r3_andean_neo.md",
+   "examples": [
+    "Cusco",
+    "La Paz",
+    "El Alto"
+   ],
+   "mark": "Inca polygonal stone base, white colonial storeys with box balconies, raw-brick self-built stacks, and neon mirror-glass cholets with a chalet on top",
+   "cell": {
+    "bay": 4.5,
+    "storey": 3.0,
+    "ballroom": [
+     5,
+     6
+    ],
+    "storeys": {
+     "colonial": [
+      2,
+      3
+     ],
+     "cholet": [
+      5,
+      8
+     ]
+    },
+    "lane": [
+     2.5,
+     3.5
+    ],
+    "main_street": [
+     10,
+     15
+    ]
+   },
+   "walls": {
+    "inca_base": {
+     "material": "polygonal fitted stone, battered 5 deg",
+     "h": [
+      1.0,
+      1.5
+     ],
+     "t": 0.8,
+     "colour": "#8a857a"
+    },
+    "colonial": "#f1ece0",
+    "brick": "#a85a3a",
+    "concrete": "#9a958c",
+    "cholet": [
+     "#9ab8c8",
+     "#d6337a",
+     "#9acd32",
+     "#25b5b0",
+     "#f28a1e",
+     "#6a3a9a",
+     "#e0b030"
+    ],
+    "balcony_wood": "#4a2e1e",
+    "roof": "#a8442e",
+    "weathering": "UV bleaching, dust"
+   },
+   "mass": "colonial casonas with arcaded patios on Inca bases; slope stacks of brick boxes with rebar; cholet towers (shops / ballroom / flats / roof chalet)",
+   "streets": {
+    "main": "plaza avenue 10-15 m",
+    "grid": "6-8 m Laws-of-Indies",
+    "inca_lanes": "2.5-3.5 m with centre water channel",
+    "stairs": "2-3 m steep",
+    "cable_car": true
+   },
+   "growth": [
+    "inca walls + andenes",
+    "colonial casonas + churches",
+    "self-built brick",
+    "cholets",
+    "cyberpunk LED Andean geometry"
+   ],
+   "openings": "trapezoid Inca doors/niches; Lima box balconies 1.0 deep latticed; mirror-glass bands with zigzag frames",
+   "roofs": "red tile 25-30 deg wide eaves; flat brick with rebar; cholet chalet crown",
+   "public_spaces": [
+    "plaza de armas 60x80 arcaded with fountain",
+    "market halls",
+    "andenes terrace gardens",
+    "miradores",
+    "cholet ballrooms"
+   ],
+   "water": "inca stone channels + paccha fountains, plaza fountain, terrace pond",
+   "foliage": [
+    {
+     "species": "queñua (Polylepis)",
+     "h": 6,
+     "colour": "#a8502e bark",
+     "place": "terraces"
+    },
+    {
+     "species": "eucalyptus",
+     "h": 20
+    },
+    {
+     "species": "molle",
+     "h": 8,
+     "form": "weeping"
+    },
+    {
+     "species": "kantuta",
+     "colour": "#c8102e",
+     "place": "plazas"
+    },
+    {
+     "species": "agave/cactus",
+     "place": "dry slopes"
+    },
+    {
+     "species": "potato/quinoa plots",
+     "place": "terraces"
+    },
+    {
+     "species": "geraniums in tins"
+    },
+    {
+     "species": "ichu grass",
+     "place": "upper levels"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "cholet LED Andean geometry + ballroom light shows",
+     "lit cable-car pods",
+     "fibre-lit Inca joints",
+     "rebar antenna forests",
+     "holo-condors"
+    ],
+    "night": "pulsing cholet colour (#ff2fa0, #30e0d0), amber colonial lanterns, slope sea of small warm windows under cable-car light lines"
+   },
+   "kit": {
+    "shared": [
+     "balcony_timber_covered",
+     "screen_lattice",
+     "arcade_pier",
+     "patio_gallery",
+     "gate_portal",
+     "door_studded",
+     "barrel_tile_eave",
+     "bell_tower",
+     "frame_bay",
+     "frame_infill",
+     "rebar_stubs",
+     "water_tank",
+     "corrugated_panel",
+     "mirror_panel",
+     "geometric_panel",
+     "ballroom_window",
+     "roof_chalet",
+     "column_mirrored",
+     "funicular",
+     "fountain_kiosk",
+     "water_channel",
+     "market_stall"
+    ],
+    "unique": [
+     "inca_wall_base",
+     "inca_trapezoid_door",
+     "chakana_relief",
+     "cholet_crown_chalet",
+     "teleferico_pylon_cabin"
+    ],
+    "params": {
+     "stone_base_course": [
+      1.0,
+      1.5
+     ],
+     "colour_by_era": [
+      "stone",
+      "white stucco",
+      "raw brick",
+      "saturated cholet"
+     ],
+     "colonial_box_balconies": [
+      1,
+      2
+     ],
+     "cholet": "narrow tall symmetric saturated",
+     "self_built": "irregular boxes, brick tone per storey, rebar on top"
+    }
+   }
+  },
+  {
+   "id": "latin_hillside",
+   "name": "Latin hillside self-built cities",
+   "doc": "r3_latin_hillside.md",
+   "examples": [
+    "Rio Rocinha",
+    "Medellin Comuna 13",
+    "Valparaiso cerros"
+   ],
+   "mark": "endless stepping self-built boxes (laje slab terraces with water tanks) or painted corrugated-tin houses, stair alleys, murals, public escalators and cable cars",
+   "cell": {
+    "box": [
+     3,
+     5
+    ],
+    "storey": 2.75,
+    "storeys": [
+     2,
+     6
+    ],
+    "alley": [
+     0.8,
+     2.0
+    ],
+    "main_street": [
+     5,
+     7
+    ]
+   },
+   "walls": {
+    "favela": {
+     "frame": "RC 0.2 columns, 0.12 slabs",
+     "infill": "#b2603e hollow clay brick",
+     "paint": [
+      "#a8d14a",
+      "#5bb7e5",
+      "#f07ca8",
+      "#f6cf3a",
+      "#f08a2a"
+     ],
+     "concrete": "#8f8d88"
+    },
+    "valparaiso": {
+     "material": "timber frame + corrugated iron (vertical ribs, 0.05 pitch)",
+     "paint": [
+      "#c23a2e",
+      "#2a55a8",
+      "#f0c43a",
+      "#3a9a5a",
+      "#2a8a8a"
+     ]
+    },
+    "weathering": "rust streaks, half-painted walls, exposed rebar"
+   },
+   "mass": "edge-to-edge offset boxes stepping up the slope; every roof a laje terrace with tank, laundry, stair; palafitos on stilts over ravines",
+   "streets": {
+    "main": "switchback estrada 5-7 m",
+    "alleys": "becos 0.8-2 m branching",
+    "stairs": "1.2-2 m concrete with coloured rails",
+    "escalator_funicular": "3 m on the fall line",
+    "cable_car": true,
+    "murals": "along stairs"
+   },
+   "growth": [
+    "hill, fort/chapel crest, 19th c port town at foot",
+    "timber/tin shacks",
+    "brick+concrete first storeys",
+    "laje additions 2-6 storeys",
+    "state upgrades: escalators, library parks, cable cars",
+    "cyberpunk 10+ storey module stacks"
+   ],
+   "openings": "mismatched aluminium/timber windows, iron grades on everything, roller-shuttered corner shops; Valparaiso bay windows",
+   "roofs": "flat laje with rebar stubs and round blue fibreglass tanks (#2a6ab0); fibre-cement sheets; shallow tin gables",
+   "public_spaces": [
+    "library park plazas at stations",
+    "concrete football courts cut into the hill",
+    "lookouts",
+    "laje rooftops",
+    "stair landings with benches"
+   ],
+   "water": "blue roof tanks, stair channels, library-park pond",
+   "foliage": [
+    {
+     "species": "banana",
+     "h": 3.5,
+     "place": "gaps"
+    },
+    {
+     "species": "papaya"
+    },
+    {
+     "species": "mango",
+     "h": 10
+    },
+    {
+     "species": "bougainvillea",
+     "place": "walls"
+    },
+    {
+     "species": "philodendron/monstera",
+     "place": "roof edges"
+    },
+    {
+     "species": "coconut palm",
+     "h": 15,
+     "place": "foot"
+    },
+    {
+     "species": "herbs/aloe pots",
+     "place": "lajes"
+    },
+    {
+     "species": "chilean wine palm/eucalyptus/hydrangea/ice plant",
+     "place": "valparaiso"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "10+ storey improvised module stacks",
+     "antenna/dish forests",
+     "moto-taxi drones",
+     "LED escalators",
+     "neon gondolas",
+     "animated murals",
+     "gato cable clouds"
+    ],
+    "night": "dense field of mismatched tiny lights (#e8f4ff, #ffcf7a, TV blue), zigzag stair-rail LEDs, cable-car necklace"
+   },
+   "kit": {
+    "shared": [
+     "frame_bay",
+     "frame_infill",
+     "rebar_stubs",
+     "water_tank",
+     "water_drum",
+     "corrugated_panel",
+     "window_grille",
+     "shutter_rolling",
+     "laundry_line",
+     "wire_bundle",
+     "antenna",
+     "rooftop_shack",
+     "stair_external_steep",
+     "stair_steel_external",
+     "mural_wall",
+     "mural_panel",
+     "funicular",
+     "ramp_helix",
+     "plank_bridge",
+     "terrace_rail",
+     "wall_shrine",
+     "market_stall"
+    ],
+    "unique": [
+     "laje_slab_terrace",
+     "public_escalator_section",
+     "cable_car_station",
+     "painted_stair_flight",
+     "palafito_stilts",
+     "gato_cable_cloud"
+    ],
+    "params": {
+     "footprint_jitter": 1.0,
+     "cantilever": 1.0,
+     "storeys_random": [
+      2,
+      6
+     ],
+     "rise_toward_crest": true,
+     "paint_coverage": [
+      0.3,
+      1.0
+     ],
+     "window_alignment": "none",
+     "tank_every_roof": true,
+     "mural_share_blank_faces": 0.15
+    }
+   }
+  },
+  {
+   "id": "creole_colonial",
+   "name": "Creole colonial port cities",
+   "doc": "r3_creole_colonial.md",
+   "examples": [
+    "Havana Vieja",
+    "Cartagena",
+    "San Juan",
+    "Willemstad",
+    "Guanajuato",
+    "Oaxaca"
+   ],
+   "mark": "candy-pastel thick-walled courtyard houses with arcades, stained-glass medio puntos and bougainvillea balconies; palm-and-flame-tree plazas; ravine variant with tunnel streets",
+   "cell": {
+    "bay": 5.0,
+    "storey": [
+     4.5,
+     5.5
+    ],
+    "storeys": [
+     2,
+     3
+    ],
+    "block": [
+     80,
+     100
+    ],
+    "house": [
+     15,
+     30
+    ],
+    "portal_depth": [
+     4,
+     5
+    ],
+    "lane": [
+     1,
+     3
+    ],
+    "main_street": [
+     8,
+     10
+    ]
+   },
+   "walls": {
+    "material": "coral stone/rubble + lime stucco painted",
+    "thickness": [
+     0.6,
+     1.0
+    ],
+    "palette": [
+     "#f29aa8",
+     "#f6b03c",
+     "#3ac0c0",
+     "#b8d85a",
+     "#6ab8e8",
+     "#b8a0d8",
+     "#f07a5a"
+    ],
+    "trim": "#fbf7ee",
+    "shutters": [
+     "#2e7a4a",
+     "#2a5aa8",
+     "#5a3a28"
+    ],
+    "roof": "#b8603a",
+    "glass": [
+     "#c8202a",
+     "#2050b0",
+     "#e8a020",
+     "#2a9a4a"
+    ],
+    "weathering": "tropical: layered peeling colours, black mould, ferns in cornices, collapsed upper floors"
+   },
+   "mass": "grid blocks of contiguous courtyard houses (two-level arcaded patio, fountain, zaguan carriage entry); ravine variant terraced with callejones and tunnel roads",
+   "streets": {
+    "main": "arcaded calle Real 8-10 m + portales",
+    "malecon": "20 m rim promenade",
+    "grid": "6-8 m cobbled",
+    "callejones": "1-3 m + stairs",
+    "tunnel_road": "8 m arched stone (lower level)"
+   },
+   "growth": [
+    "walled fortress, bastions, cathedral",
+    "16-17th c timber-balcony houses",
+    "18th c baroque palaces with portales + medio puntos",
+    "19-20th c neoclassical/deco, dutch gables",
+    "decay + barbacoa infill + roof shacks",
+    "cyberpunk RGB fanlights"
+   ],
+   "openings": "floor-to-ceiling windows 1.2x3.5 with barrotes/iron + louvres; medio punto lunettes r 0.6-0.9; long covered timber balconies; carriage doors with inset doors",
+   "roofs": "flat azoteas with parapets and urns; tile; dutch clock gables (Willemstad); bell towers, domes",
+   "public_spaces": [
+    "plaza mayor 100x70 with royal palms, flame trees, fountain, kiosco, arcades",
+    "church plazas every 3-4 blocks",
+    "malecon",
+    "patio gardens",
+    "market plazas"
+   ],
+   "water": "plaza + patio fountains and cisterns, bay as pond, malecon edge pool",
+   "foliage": [
+    {
+     "species": "royal palm",
+     "h": 18,
+     "place": "plazas/avenues"
+    },
+    {
+     "species": "flamboyant",
+     "h": 10,
+     "colour": "#e8402a",
+     "place": "plazas/streets"
+    },
+    {
+     "species": "ficus/jaguey",
+     "h": 15,
+     "place": "parks"
+    },
+    {
+     "species": "bougainvillea",
+     "colour": "#c2185b",
+     "place": "every balcony"
+    },
+    {
+     "species": "hibiscus",
+     "colour": "#e8304a"
+    },
+    {
+     "species": "banana/plantain",
+     "place": "patios"
+    },
+    {
+     "species": "hanging ferns"
+    },
+    {
+     "species": "ceiba",
+     "h": 25,
+     "place": "main plaza"
+    },
+    {
+     "species": "jacaranda/indian laurel (round clipped)",
+     "place": "guanajuato plazas"
+    },
+    {
+     "species": "divi-divi/cactus",
+     "place": "willemstad"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "RGB LED medio puntos",
+     "neon signs and screens in portales",
+     "solar-glass patio jungles",
+     "vintage-shaped e-taxis",
+     "dripping AC stacks on balconies",
+     "holographic revolutionary murals",
+     "malecon light strips"
+    ],
+    "night": "deep pastels under sodium (#ffb060), jewel-glowing fanlights, bulb strings in plaza palms, coloured spill from portal bars"
+   },
+   "kit": {
+    "shared": [
+     "arcade_pier",
+     "patio_gallery",
+     "balcony_timber_covered",
+     "balcony_iron",
+     "french_window",
+     "shutters",
+     "louvre",
+     "qamariya_fanlight",
+     "rose_window",
+     "gate_portal",
+     "cornice",
+     "turned_post",
+     "fountain_kiosk",
+     "bell_tower",
+     "dome_small",
+     "gable_bell",
+     "gable_cornice",
+     "tunnel_portal",
+     "lights_festoon",
+     "palm_planter",
+     "market_stall"
+    ],
+    "unique": [
+     "medio_punto_fan",
+     "barrotes_window",
+     "portal_arcade_bay",
+     "plaza_kiosco",
+     "malecon_wall",
+     "carriage_door_inset"
+    ],
+    "params": {
+     "storey": [
+      4.5,
+      5.5
+     ],
+     "opening_aspect": "1:3",
+     "pastel_per_house": true,
+     "white_trim": true,
+     "portal_on_main_streets": 4.0,
+     "courtyard_share": [
+      0.2,
+      0.3
+     ],
+     "weathering": "heavy layered",
+     "bougainvillea_every_balcony": true
+    }
+   }
+  },
+  {
+   "id": "nouvelle_france",
+   "name": "Nouvelle-France winter towns",
+   "doc": "r3_nouvelle_france.md",
+   "examples": [
+    "Quebec City Lower Town / Petit-Champlain",
+    "Montreal plexes"
+   ],
+   "mark": "steep snow-shedding tin roofs with dormer rows over grey rubble; brick plex rows each wearing a twisting outdoor iron stair; snow on every ledge",
+   "cell": {
+    "house_width": [
+     8,
+     10
+    ],
+    "plex_frontage": 7.5,
+    "plex_depth": [
+     18,
+     20
+    ],
+    "storey": 3.0,
+    "storeys": [
+     2,
+     3
+    ],
+    "roof_share": [
+     0.4,
+     0.6
+    ],
+    "setback": [
+     2,
+     4
+    ],
+    "lane": [
+     4,
+     6
+    ],
+    "main_street": [
+     12,
+     15
+    ]
+   },
+   "walls": {
+    "quebec": {
+     "material": "rubble stone + dressed quoins",
+     "thickness": [
+      0.7,
+      0.9
+     ],
+     "palette": [
+      "#a39d90",
+      "#c4bdae",
+      "#efebe2"
+     ],
+     "roof_tin": [
+      "#b8bcc0",
+      "#a8322a",
+      "#3f6a4a",
+      "#1d1d1d"
+     ]
+    },
+    "plex": {
+     "brick": [
+      "#8a3e2c",
+      "#b06040"
+     ],
+     "greystone": "#9a968e",
+     "iron": [
+      "#1d1d1d",
+      "#2a5a3a",
+      "#6a2a28"
+     ],
+     "cornice": "#d8d0c0"
+    },
+    "weathering": "salt base stains, winter grime, permanent snow caps"
+   },
+   "mass": "lower-town stone terraces under a cliff, upper town walled on top; plex rows of 7.5 m units with 2-3 front doors each; back ruelles with sheds and tangled galleries",
+   "streets": {
+    "main": "cliff-top boardwalk terrace 15 m",
+    "lower_main": "6 m",
+    "lanes": "4-6 m cobbled",
+    "stairs": "breakneck straight flights + funicular",
+    "plex_avenues": "12-15 m tree-lined",
+    "ruelles": "4-5 m green alleys"
+   },
+   "growth": [
+    "fortifications + citadel",
+    "new france steep-roof stone houses",
+    "british mansards / second empire",
+    "plex rows with outdoor stairs",
+    "ruelle galleries/sheds",
+    "cyberpunk heated stairs, greenhouse ruelles"
+   ],
+   "openings": "small casements 0.9x1.5 many-paned with shutters; dormer rows 2-4 per roof; plex paired tall windows, oriels, stacked doors at each landing",
+   "roofs": "quebec 50-60 deg tin/shingle gables with dormers and gable-end firewall chimneys on corbels; plex flat with pressed-metal bracket cornices",
+   "public_spaces": [
+    "place royale church square",
+    "cliff-top boardwalk with kiosks",
+    "park with skating pond",
+    "green ruelles",
+    "church squares"
+   ],
+   "water": "river quay at foot, frozen park pond",
+   "foliage": [
+    {
+     "species": "sugar maple",
+     "h": 18,
+     "colour": "#d8401a",
+     "place": "streets/parks"
+    },
+    {
+     "species": "silver maple/elm lines",
+     "place": "plex avenues"
+    },
+    {
+     "species": "lilac",
+     "colour": "#b48ad0",
+     "place": "front gardens"
+    },
+    {
+     "species": "hydrangea"
+    },
+    {
+     "species": "boston ivy",
+     "place": "walls"
+    },
+    {
+     "species": "birch/spruce",
+     "place": "cliff"
+    },
+    {
+     "species": "petunia window boxes"
+    },
+    {
+     "species": "ruelle vegetable beds"
+    },
+    {
+     "note": "snow on branches"
+    }
+   ],
+   "cyberpunk": {
+    "additions": [
+     "heated glowing stair treads",
+     "solar-seam tin roofs",
+     "glass funicular pods",
+     "LED grow-light greenhouse ruelles (magenta)",
+     "capsule dormers",
+     "neon cliff-stair rails"
+    ],
+    "night": "warm windows in steep roofs, snow reflecting (#ffd8a0), iron stair silhouettes, white bulb strings on the boardwalk, magenta ruelles"
+   },
+   "kit": {
+    "shared": [
+     "stair_spiral_external",
+     "stair_steel_external",
+     "balcony_iron",
+     "gallery_iron",
+     "dormer_row",
+     "dormer_bump",
+     "chimney_stack",
+     "firewall_ladder",
+     "cornice_bracketed",
+     "bay_window_box",
+     "french_window",
+     "shutters",
+     "clapboard_panel",
+     "funicular",
+     "terrace_rail",
+     "lights_festoon",
+     "bell_tower",
+     "stone_slab_roof"
+    ],
+    "unique": [
+     "steep_tin_roof",
+     "firewall_gable_corbels",
+     "plex_twist_stair",
+     "ruelle_shed_gallery",
+     "snow_cap"
+    ],
+    "params": {
+     "quebec_roof_share": 0.45,
+     "quebec_window_wall": 0.15,
+     "plex_rhythm": 7.5,
+     "outdoor_stair_every_unit_mirrored": true,
+     "balcony_per_storey": true,
+     "colours": "sober stone/brick, coloured doors and stairs",
+     "snow_on_horizontals": true
+    }
+   }
+  }
+ ]
+}

@@ -160,6 +160,10 @@ func _ready() -> void:
 	var grav := StationGravity.new()
 	grav.player = player
 	add_child(grav)
+	# high aloft (the sky islands, a lark at height): the ground as images only (AloftSwitch)
+	var aloft := AloftSwitch.new()
+	aloft.station = self
+	add_child(aloft)
 	var signs := SignPhysics.new()
 	signs.name = "SignPhysics"
 	signs.player = player

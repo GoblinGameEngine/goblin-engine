@@ -160,6 +160,8 @@ func _process(delta: float) -> void:
 	var best := {}
 	var bd := INF
 	for c in _near_items:
+		if _aloft:
+			break
 		if _near_nodes.has(c):
 			continue
 		var d := _cell_dist(c, CELL, sp, xp)
@@ -415,9 +417,25 @@ func _update_night() -> void:
 	CoastalWalks.set_night(_night)
 
 
+var _aloft := false
+
+
+func set_aloft(on: bool) -> void:
+	## (AloftSwitch) high above the floor: the near tier (posts, palms, pools, near bulbs) and the real lights go -- the
+	## far bulbs stay, and the far side's night image shows the rest; back down, the near cells build again
+	_aloft = on
+	if on:
+		for c in _near_nodes.keys():
+			_free(_near_nodes, c)
+		_near_lights.clear()
+		for l in _lights:
+			l.visible = false
+	_check_t = 0.0
+
+
 func _place_lights() -> void:
 	## the real lights on the lamps nearest the player
-	if _night < 0.02 or target == null:
+	if _night < 0.02 or target == null or _aloft:
 		for l in _lights:
 			l.visible = false
 		return

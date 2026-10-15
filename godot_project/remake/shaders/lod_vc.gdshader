@@ -20,11 +20,18 @@ const vec3 GLASS = vec3(0.09, 0.105, 0.12);
 varying vec3 wpos;
 varying vec3 wnrm;
 varying float lh;                  // height in the mesh's own frame (LOD1: above the building's base)
+varying vec3 lpos;                 // the mesh's own frame: which pane is lit is decided here, so a building that moves
+varying vec3 lnrm;                 // (a sky island's) keeps its pattern -- hashed in world space, the panes of every
+varying vec3 lup;                  // drifting island reshuffled each frame: a flicker all over the islands at night
 
 void vertex() {
 	wpos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	wnrm = normalize((MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz);
 	lh = VERTEX.y;
+	lpos = VERTEX;
+	lnrm = NORMAL;
+	vec3 upw = -normalize(vec3(0.0, wpos.y, wpos.z));
+	lup = normalize((vec4(upw, 0.0) * MODEL_MATRIX).xyz);     // (the world's up in the mesh's frame)
 }
 
 float hash3(vec3 p) {
@@ -49,8 +56,8 @@ void fragment() {
 	if (night > 0.001) {
 		vec3 up = -normalize(vec3(0.0, wpos.y, wpos.z));
 		float wall = 1.0 - smoothstep(0.25, 0.45, abs(dot(wnrm, up)));
-		vec3 t = normalize(cross(up, wnrm) + vec3(1e-5));
-		float h = 10000.0 - length(wpos.yz);          // m above the floor's nominal radius
+		vec3 t = normalize(cross(lup, lnrm) + vec3(1e-5));   // (along the wall, in the mesh's frame)
+		float h = dot(lpos, lup);                      // m up, in the mesh's frame
 		vec3 cell;
 		float pane = 0.0;
 		bool shop = false;
@@ -58,15 +65,15 @@ void fragment() {
 			// LOD1: its own panes
 			if (distance(col, GLASS) < 0.012) {
 				pane = 1.0;
-				cell = floor(vec3(dot(wpos, t) / 1.4, h / 3.1, dot(wpos, wnrm) / 3.0));
+				cell = floor(vec3(dot(lpos, t) / 1.4, h / 3.1, dot(lpos, lnrm) / 3.0));
 				shop = lh < 3.6;
 			}
 		} else if (wall > 0.5) {
 			// LOD2/3: a grid of windows on the walls
-			vec2 g = vec2(dot(wpos, t) / 2.6, h / 3.1);
+			vec2 g = vec2(dot(lpos, t) / 2.6, h / 3.1);
 			vec2 f = fract(g);
 			pane = step(0.14, f.x) * step(f.x, 0.86) * step(0.2, f.y) * step(f.y, 0.84);
-			cell = vec3(floor(g), floor(dot(wpos, wnrm) / 3.0));
+			cell = vec3(floor(g), floor(dot(lpos, lnrm) / 3.0));
 		}
 		// far off, single panes go below a pixel and alias away: the walls take on their windows' average glow instead
 		float far_k = smoothstep(350.0, 1400.0, length(wpos - CAMERA_POSITION_WORLD));

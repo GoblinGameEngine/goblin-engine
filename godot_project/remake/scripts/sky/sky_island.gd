@@ -118,9 +118,19 @@ func _drop_near() -> void:
 	_hoists.clear()
 	larks_parked.clear()
 	_blds.clear()
+	_lark_pads.clear()
+	_lark_mm = null
 
 
 func _process(delta: float) -> void:
+	Prof.begin("sky.island")
+	_process_inner(delta)
+	Prof.end("sky.island")
+
+
+func _process_inner(delta: float) -> void:
+	if tier <= 0 and _pending.is_empty() and _merging.is_empty() and _build.is_empty():
+		return                                     # (a far island with nothing loading: nothing to do)
 	# the near tier: a piece a frame
 	if not _build.is_empty() and _near:
 		var f: Callable = _build.pop_front()
@@ -138,6 +148,7 @@ func _process(delta: float) -> void:
 		if _full_t <= 0.0:
 			_full_t = 0.5
 			_stream_full()
+			_lark_step()
 
 
 func _queue_near() -> void:
@@ -297,6 +308,240 @@ static func _ranges(n: Node, begin: float, end: float) -> void:
 			g.visibility_range_begin_margin = begin * 0.08
 			g.visibility_range_end = end
 			g.visibility_range_end_margin = end * 0.08
+
+
+# ------------------------------------------------------------------ batching (an island moves every tick: every node
+# on it moves too -- ~0.3 us a node plus a physics-server update a body.  Static pieces are merged into one mesh per
+# material; parked larks are one impostor MultiMesh; collision shapes live on their body (shape owners), not as nodes.)
+static var _part_surfs := {}         # part name -> [[mesh, surface, transform in the part, material], ...]
+static var _part_marks := {}         # part name -> {node name: transform in the part}
+
+
+static func _surfs_of(n: String) -> Array:
+	if not _part_surfs.has(n):
+		var inst := part(n).instantiate()
+		var out: Array = []
+		var marks := {}
+		var stack: Array = [[inst, Transform3D.IDENTITY]]
+		while not stack.is_empty():
+			var it: Array = stack.pop_back()
+			var nd: Node = it[0]
+			var xf: Transform3D = it[1]
+			for c in nd.get_children():
+				if not (c is Node3D):
+					continue
+				var cx: Transform3D = xf * (c as Node3D).transform
+				marks[str(c.name)] = cx
+				if c is MeshInstance3D and (c as MeshInstance3D).mesh:
+					var mi := c as MeshInstance3D
+					for si in mi.mesh.get_surface_count():
+						var m: Material = mi.material_override if mi.material_override else mi.mesh.surface_get_material(si)
+						out.append([mi.mesh, si, cx, m])
+				stack.append([c, cx])
+		inst.free()
+		_part_surfs[n] = out
+		_part_marks[n] = marks
+	return _part_surfs[n]
+
+
+static func part_mark(n: String, node_name: String) -> Transform3D:
+	## a named node's transform within a part (a hoist's hook, a launcher's muzzle)
+	_surfs_of(n)
+	return _part_marks[n].get(node_name, Transform3D.IDENTITY)
+
+
+static func batch_mesh(items: Array) -> ArrayMesh:
+	## items: [part name, Transform3D] -> one ArrayMesh, a surface per material
+	var groups := {}                    # material -> SurfaceTool
+	var mats := {}
+	for it in items:
+		for sf in _surfs_of(it[0]):
+			var m: Material = sf[3]
+			var key := "%d|%d" % [m.get_instance_id() if m else 0, 1 if (sf[0] as Mesh).surface_get_format(sf[1]) & Mesh.ARRAY_FORMAT_BONES else 0]
+			if not groups.has(key):
+				var st := SurfaceTool.new()
+				st.begin(Mesh.PRIMITIVE_TRIANGLES)
+				groups[key] = st
+				mats[key] = m
+			(groups[key] as SurfaceTool).append_from(sf[0], sf[1], (it[1] as Transform3D) * (sf[2] as Transform3D))
+	var am := ArrayMesh.new()
+	for key in groups:
+		(groups[key] as SurfaceTool).commit(am)
+		if mats[key]:
+			am.surface_set_material(am.get_surface_count() - 1, mats[key])
+	return unskinned(am)
+
+
+func _batched(n: String, items: Array) -> MeshInstance3D:
+	var mi := MeshInstance3D.new()
+	mi.name = n
+	mi.mesh = batch_mesh(items)
+	_near.add_child(mi)
+	_dress(mi)
+	return mi
+
+
+static func add_box(body: CollisionObject3D, size: Vector3, xf: Transform3D) -> void:
+	## a box on body without a node of its own
+	var box := BoxShape3D.new()
+	box.size = size
+	var o := body.create_shape_owner(body)
+	body.shape_owner_add_shape(o, box)
+	body.shape_owner_set_transform(o, xf)
+
+
+# ------------------------------------------------------------------ parked larks
+# Each pad's lark is drawn as one instance of a merged impostor (the craft's meshes in this clan's livery, baked once
+# per livery); within LARK_REAL of the player, or when a plumb takes one up, the real RemakeFleetCraft stands there.
+const LARK_REAL := 40.0
+const LARK_DROP := 70.0
+static var _lark_meshes := {}        # livery key -> ArrayMesh
+var _lark_pads: Array = []           # {at: Transform3D, real: craft or null, away: bool}
+var _lark_mm: MultiMeshInstance3D
+var _lark_t := 0.0
+
+
+func _lark_impostor() -> ArrayMesh:
+	var cols: Array = canon.get("colors", [])
+	var key := str(cols)
+	if _lark_meshes.has(key):
+		return _lark_meshes[key]
+	var holder := Node3D.new()
+	add_child(holder)
+	var k := RemakeFleetCraft.new("sky_skiff")
+	k.process_mode = Node.PROCESS_MODE_DISABLED
+	holder.add_child(k)
+	if cols.size() >= 3:
+		k.set_livery(cols)
+	var inv := k.global_transform.affine_inverse()
+	var groups := {}
+	var mats := {}
+	for mi in k.find_children("*", "MeshInstance3D", true, false):
+		var m3 := mi as MeshInstance3D
+		if m3.mesh == null or not m3.is_visible_in_tree():
+			continue
+		var rel := inv * m3.global_transform
+		for si in m3.mesh.get_surface_count():
+			var m: Material = m3.get_active_material(si)
+			# (one merge per material and per skinned-or-not: a SurfaceTool mixing them drops the weights' sizes)
+			var gk := "%d|%d" % [m.get_instance_id() if m else 0, 1 if m3.mesh.surface_get_format(si) & Mesh.ARRAY_FORMAT_BONES else 0]
+			if not groups.has(gk):
+				var st := SurfaceTool.new()
+				st.begin(Mesh.PRIMITIVE_TRIANGLES)
+				groups[gk] = st
+				mats[gk] = m
+			(groups[gk] as SurfaceTool).append_from(m3.mesh, si, rel)
+	var am := ArrayMesh.new()
+	for gk in groups:
+		(groups[gk] as SurfaceTool).commit(am)
+		if mats[gk]:
+			am.surface_set_material(am.get_surface_count() - 1, mats[gk])
+	holder.free()
+	am = unskinned(am)                         # (the craft's parts carry skin weights: no skeleton in a MultiMesh)
+	_lark_meshes[key] = am
+	return am
+
+
+static func unskinned(am: ArrayMesh) -> ArrayMesh:
+	## the same mesh without bone indices and weights
+	var out := ArrayMesh.new()
+	for i in am.get_surface_count():
+		var arr := am.surface_get_arrays(i)
+		arr[Mesh.ARRAY_BONES] = null
+		arr[Mesh.ARRAY_WEIGHTS] = null
+		out.add_surface_from_arrays(am.surface_get_primitive_type(i), arr)
+		out.surface_set_material(i, am.surface_get_material(i))
+	return out
+
+
+func _build_larks() -> void:
+	if _near == null or _lark_pads.is_empty():
+		return
+	var mm := MultiMesh.new()
+	mm.transform_format = MultiMesh.TRANSFORM_3D
+	mm.mesh = _lark_impostor()
+	mm.instance_count = _lark_pads.size()
+	_lark_mm = MultiMeshInstance3D.new()
+	_lark_mm.name = "Larks"
+	_lark_mm.multimesh = mm
+	_near.add_child(_lark_mm)
+	_ranges(_lark_mm, 0.0, 600.0)
+	_lark_show()
+
+
+func _lark_show() -> void:
+	if _lark_mm == null:
+		return
+	var mm := _lark_mm.multimesh
+	for i in _lark_pads.size():
+		var pd: Dictionary = _lark_pads[i]
+		mm.set_instance_transform(i, pd.at if pd.real == null and not pd.away else Transform3D(Basis.from_scale(Vector3.ONE * 1e-4), pd.at.origin))
+
+
+func _lark_step() -> void:
+	## (tier 2, every half second) real craft on the pads the player is near; impostors elsewhere
+	if _near == null or _lark_pads.is_empty() or sys.player == null:
+		return
+	var lp := global_transform.affine_inverse() * (sys.player as Node3D).global_position
+	var changed := false
+	for pd in _lark_pads:
+		if pd.away:
+			continue
+		var d: float = (pd.at.origin as Vector3).distance_to(lp)
+		if pd.real == null and d < LARK_REAL:
+			pd.real = _spawn_lark(pd.at)
+			changed = true
+		elif pd.real != null and d > LARK_DROP and is_instance_valid(pd.real):
+			var k: RemakeAirVehicle = pd.real
+			if k.pilot == null and k.fly_input.is_empty() and k.position.distance_to(pd.at.origin) < 1.0:
+				larks_parked.erase(k)
+				k.queue_free()
+				pd.real = null
+				changed = true
+	if changed:
+		_lark_show()
+
+
+func _spawn_lark(at: Transform3D) -> RemakeFleetCraft:
+	var k := RemakeFleetCraft.new("sky_skiff")
+	k.name = "Lark_%d" % larks_parked.size()
+	k.set_meta("riding", true)
+	_near.add_child(k)
+	k.transform = at
+	var cols: Array = canon.get("colors", [])
+	if cols.size() >= 3:
+		k.set_livery(cols)
+	larks_parked.append(k)
+	_ranges(k, 0.0, 350.0)
+	return k
+
+
+func take_lark() -> RemakeFleetCraft:
+	## a lark for a plumb's flight: the real craft on a pad (made now if the pad shows its impostor)
+	for pd in _lark_pads:
+		if pd.away:
+			continue
+		if pd.real == null:
+			pd.real = _spawn_lark(pd.at)
+		var k: RemakeFleetCraft = pd.real
+		larks_parked.erase(k)
+		pd.away = true
+		pd.real = null
+		_lark_show()
+		return k
+	return null
+
+
+func return_lark(k: Node3D, at: Transform3D) -> void:
+	## a plumb back on its pad
+	for pd in _lark_pads:
+		if pd.away and (pd.at.origin as Vector3).distance_to(at.origin) < 0.5:
+			pd.away = false
+			pd.real = k
+			larks_parked.append(k)
+			_lark_show()
+			return
+	larks_parked.append(k)
 
 
 static func part(n: String) -> PackedScene:
@@ -507,12 +752,8 @@ func _build_fence() -> void:
 			var yb := Vector3.UP
 			var zb := xa.normalized().cross(yb).normalized()
 			xf.append(Transform3D(Basis(xa, yb, zb), Vector3(p0.x, y0, p0.y)))
-			var cs := CollisionShape3D.new()
-			var box := BoxShape3D.new()
-			box.size = Vector3(v.length(), 1.4, 0.12)
-			cs.shape = box
-			cs.transform = Transform3D(Basis(xa.normalized(), yb, zb), Vector3((p0.x + p1.x) * 0.5, (y0 + y1) * 0.5 + 0.7, (p0.y + p1.y) * 0.5))
-			body.add_child(cs)
+			add_box(body, Vector3(v.length(), 1.4, 0.12),
+				Transform3D(Basis(xa.normalized(), yb, zb), Vector3((p0.x + p1.x) * 0.5, (y0 + y1) * 0.5 + 0.7, (p0.y + p1.y) * 0.5)))
 	_near.add_child(body)
 	_near.add_child(_multi("Fence", part_mesh("fence"), xf))
 
@@ -562,12 +803,10 @@ func _build_tethers() -> void:
 	## each balloon's hub (SkyIslands draws the envelopes) and its tethers down to the deck anchor
 	var im := ImmediateMesh.new()
 	im.surface_begin(Mesh.PRIMITIVE_LINES)
-	var hub := part("balloon_hub")
+	var hubs: Array = []
 	for b in data.balloons:
 		var top := Vector3(b.x, sys.BALLOON_BASE, b.z)
-		var h := hub.instantiate() as Node3D
-		h.position = top
-		_near.add_child(h)
+		hubs.append(["balloon_hub", Transform3D(Basis(), top)])
 		var a := Vector3(b.anchor[0], b.anchor[1], b.anchor[2])
 		for o in [Vector3(1.2, 0, 0), Vector3(-1.2, 0, 0), Vector3(0, 0, 1.2), Vector3(0, 0, -1.2)]:
 			im.surface_add_vertex(top + o * 3.0)
@@ -579,6 +818,7 @@ func _build_tethers() -> void:
 	mi.material_override = _mat("sky_tether", Color(0.2, 0.18, 0.15))
 	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	_near.add_child(mi)
+	_batched("Hubs", hubs)
 
 
 func _build_bridges() -> void:
@@ -606,22 +846,6 @@ func _build_bridges() -> void:
 				if other >= 0:
 					br.match(float(SkyBridge.styles().get(sys.islands[other].bridge_style(), {}).get("nose_y", 0.0)))
 		_dress(br)
-
-
-func _park_lark(at: Transform3D) -> void:
-	## the clan's lark in its cradle (fleet type sky_skiff): a child of the island while parked, so it rides along
-	if _near == null:
-		return
-	var k := RemakeFleetCraft.new("sky_skiff")
-	k.name = "Lark_%d" % larks_parked.size()
-	k.set_meta("riding", true)
-	_near.add_child(k)
-	k.transform = at
-	var cols: Array = canon.get("colors", [])
-	if cols.size() >= 3:
-		k.set_livery(cols)
-	larks_parked.append(k)
-	_ranges(k, 0.0, 350.0)
 
 
 func _partner_of(side: String, along: float) -> int:
@@ -713,43 +937,28 @@ func _lbox(sts: Dictionary, k: String, body: StaticBody3D, bas: Basis, c: Vector
 		bm.size = size
 		(sts[k] as SurfaceTool).append_from(bm, 0, xf)
 	if body:
-		var cs := CollisionShape3D.new()
-		var box := BoxShape3D.new()
-		box.size = size
-		cs.shape = box
-		cs.transform = xf
-		body.add_child(cs)
+		add_box(body, size, xf)
 
 
 func _build_props() -> void:
+	## pads, cloud nets, line launchers and hoists: one merged mesh (they don't move); the larks as impostors
 	var larks: int = canon.get("aerostats", 2)
+	var items: Array = []
 	for p in data.get("pads", []):
-		var n := part("pad").instantiate() as Node3D
 		var at := Transform3D(Basis(Vector3.UP, float(p.yaw)), Vector3(p.x, p.get("y", deck_y(p.x, p.z)) + 0.02, p.z))
-		n.transform = at
-		_near.add_child(n)
-		_dress(n)
+		items.append(["pad", at])
 		if larks > 0:
 			larks -= 1
-			_build.push_front(func() -> void: _park_lark(at))     # (the craft is heavier: a frame of its own)
+			_lark_pads.append({"at": at, "real": null, "away": false})
 	for c in data.get("cloud_nets", []):
-		var n := part("cloud_net").instantiate() as Node3D
-		n.transform = Transform3D(Basis(Vector3.UP, float(c[3])), Vector3(c[0], c[1], c[2]))
-		_near.add_child(n)
-		_dress(n)
+		items.append(["cloud_net", Transform3D(Basis(Vector3.UP, float(c[3])), Vector3(c[0], c[1], c[2]))])
 	for l in data.get("launchers", []):
-		var n := part("launcher").instantiate() as Node3D
 		var yaw: float = {"N": -PI * 0.5, "S": PI * 0.5, "E": PI, "W": 0.0}[l.side]
-		n.transform = Transform3D(Basis(Vector3.UP, yaw), Vector3(l.x, deck_y(l.x, l.z), l.z))
-		n.name = "Launcher_" + str(l.side)
-		_near.add_child(n)
-		_dress(n)
+		items.append(["launcher", Transform3D(Basis(Vector3.UP, yaw), Vector3(l.x, deck_y(l.x, l.z), l.z))])
+	var hook := part_mark("hoist", "hook")
 	for h in data.get("hoists", []):
-		var n := part("hoist").instantiate() as Node3D
-		n.transform = Transform3D(Basis(Vector3.UP, float(h.yaw)), Vector3(h.x, deck_y(h.x, h.z), h.z))
-		_near.add_child(n)
-		_dress(n)
-		var hook := n.find_child("hook", true, false) as Node3D
+		var hx := Transform3D(Basis(Vector3.UP, float(h.yaw)), Vector3(h.x, deck_y(h.x, h.z), h.z))
+		items.append(["hoist", hx])
 		var im := ImmediateMesh.new()
 		var line := MeshInstance3D.new()
 		line.mesh = im
@@ -758,14 +967,16 @@ func _build_props() -> void:
 		_near.add_child(line)
 		var rng := RandomNumberGenerator.new()
 		rng.seed = hash(data.id + str(h.x))
-		_hoists.append({"node": n, "hook": hook, "im": im, "state": "idle", "t": rng.randf_range(20.0, 240.0),
+		_hoists.append({"top": (hx * hook).origin, "im": im, "line": line, "state": "idle", "t": rng.randf_range(20.0, 240.0),
 			"len": 0.0, "cargo": null, "up": rng.randf() < 0.6, "rng": rng})
+	_batched("Props", items)
+	_build.push_front(_build_larks)                # (the impostor bakes a craft once per livery: a frame of its own)
 
 
 # ------------------------------------------------------------------ cargo
 func _hoist_step(delta: float) -> void:
 	for h in _hoists:
-		var top: Vector3 = _near.to_local((h.hook as Node3D).global_position) if h.hook else (h.node as Node3D).position + Vector3(0, 4, 0)
+		var top: Vector3 = h.top
 		var depth := _ground_depth(top)
 		match h.state:
 			"idle":

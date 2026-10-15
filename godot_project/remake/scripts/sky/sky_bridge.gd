@@ -52,12 +52,7 @@ func setup(p_style: String) -> void:
 		if host == null:
 			continue
 		var body := StaticBody3D.new()
-		var cs := CollisionShape3D.new()
-		var box := BoxShape3D.new()
-		box.size = Vector3(c.size[0], c.size[1], c.size[2])
-		cs.shape = box
-		cs.position = Vector3(c.center[0], c.center[1], c.center[2])
-		body.add_child(cs)
+		SkyIsland.add_box(body, Vector3(c.size[0], c.size[1], c.size[2]), Transform3D(Basis(), Vector3(c.center[0], c.center[1], c.center[2])))
 		host.add_child(body)
 		_bodies.append(body)
 	# every part is solid (the user, 2026-10-14: "all part of the bridge need to be solid"): one body per moving node
@@ -84,13 +79,55 @@ func setup(p_style: String) -> void:
 		var body := StaticBody3D.new()
 		body.name = "solid"
 		for sh in shapes[owner_]:
-			var cs := CollisionShape3D.new()
-			cs.shape = sh[0]
-			cs.transform = sh[1]
-			body.add_child(cs)
+			var o := body.create_shape_owner(body)            # (shapes on the body, not nodes: the island moves them all)
+			body.shape_owner_add_shape(o, sh[0])
+			body.shape_owner_set_transform(o, sh[1])
 		(owner_ as Node3D).add_child(body)
+	_merge_fixed(inst, movers)
 	_make_plate(float(st.get("width", 3.6)))
 	_pose()
+
+
+func _merge_fixed(inst: Node3D, movers: Dictionary) -> void:
+	## the housing's meshes (everything not under a moving node) into one mesh at the bridge's root
+	var items: Array = []                      # [mesh instance, transform in inst]
+	var stack: Array = [[inst, Transform3D.IDENTITY]]
+	while not stack.is_empty():
+		var it: Array = stack.pop_back()
+		var nd: Node = it[0]
+		for c in nd.get_children():
+			if not (c is Node3D) or movers.has(c):
+				continue
+			var cx: Transform3D = (it[1] as Transform3D) * (c as Node3D).transform
+			if c is MeshInstance3D and (c as MeshInstance3D).mesh and c.get_child_count() == 0:
+				items.append([c, cx])
+			stack.append([c, cx])
+	if items.size() < 2:
+		return
+	var groups := {}
+	var mats := {}
+	for it in items:
+		var mi: MeshInstance3D = it[0]
+		for si in mi.mesh.get_surface_count():
+			var m: Material = mi.get_active_material(si)
+			var k := "%d|%d" % [m.get_instance_id() if m else 0, 1 if mi.mesh.surface_get_format(si) & Mesh.ARRAY_FORMAT_BONES else 0]
+			if not groups.has(k):
+				var st := SurfaceTool.new()
+				st.begin(Mesh.PRIMITIVE_TRIANGLES)
+				groups[k] = st
+				mats[k] = m
+			(groups[k] as SurfaceTool).append_from(mi.mesh, si, it[1])
+	var am := ArrayMesh.new()
+	for k in groups:
+		(groups[k] as SurfaceTool).commit(am)
+		if mats[k]:
+			am.surface_set_material(am.get_surface_count() - 1, mats[k])
+	for it in items:
+		(it[0] as Node).queue_free()
+	var merged := MeshInstance3D.new()
+	merged.name = "housing"
+	merged.mesh = am
+	inst.add_child(merged)
 
 
 static func _rel_to(n: Node3D, owner_: Node3D) -> Transform3D:

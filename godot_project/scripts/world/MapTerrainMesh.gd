@@ -362,10 +362,21 @@ func _process(delta: float) -> void:
 		_tasks[id] = jk
 
 
+var aloft := false                    # (AloftSwitch) high above the floor: only the far tiles, the far side's image everywhere
+
+
+func set_aloft(on: bool) -> void:
+	## Aloft the near tiers (T0/T1/T2/T4) are dropped and every far tile drawn whole (its image: RemakeFarSide);
+	## back down they stream in again, the tile under the player first (_ground_under_target)
+	aloft = on
+	_t = 0.0
+	_cut_dirty = true
+
+
 func _ground_under_target() -> void:
 	## The tile the player is over must be solid now -- after a teleport, or if streaming fell
 	## behind -- so it's built here and then, collision and all (a one-off ~130 ms).
-	if not near_tier:
+	if not near_tier or aloft:
 		return
 	var p := target.global_position
 	var key := Vector2i(posmod(floori(StationGeo.s_of(p) / (StationGeo.CIRC / CHUNKS_ROUND)), _n_cs),
@@ -480,7 +491,8 @@ func _update() -> void:
 	var want0 := {}
 	var want_near_groups := {}
 	var want2 := {}
-	var near := NEAR if near_tier else -1.0
+	var near := NEAR if near_tier and not aloft else -1.0
+	var mid := -1.0 if aloft else MID
 	for c in range(floori((s_here - near) / cs), floori((s_here + near) / cs) + 1):
 		for cx in range(maxi(0, floori((x_here + half_w - near) / CHUNK_X)), mini(_n_cx - 1, floori((x_here + half_w + near) / CHUNK_X)) + 1):
 			var key := Vector2i(posmod(c, _n_cs), cx)
@@ -495,7 +507,7 @@ func _update() -> void:
 		var rg := _group_rect(g)
 		var dx := maxf(0.0, maxf(rg.position.y - x_here, x_here - rg.end.y))
 		var ds := maxf(0.0, absf(_wrap_s(rg.get_center().x - s_here)) - rg.size.x * 0.5)
-		if not want_near_groups.has(g) and Vector2(ds, dx).length() < MID:
+		if not want_near_groups.has(g) and Vector2(ds, dx).length() < mid:
 			want2[g] = true
 	# a far tile with near or mid groups in it is drawn in pieces: its other groups each on their own
 	var split := {}
@@ -606,7 +618,7 @@ func _cut() -> void:
 	## clips in and looks like the player is standing in the ground ... most noticable in the coastal cities on the
 	## slopes. It appears momentarily and disappears"). The circle is fixed in the world where it was worked out.
 	_cut_dirty = false
-	if not near_tier or target == null:
+	if not near_tier or target == null or aloft:
 		RenderingServer.global_shader_parameter_set("terrain_cut", Vector4.ZERO)
 		return
 	var p := target.global_position

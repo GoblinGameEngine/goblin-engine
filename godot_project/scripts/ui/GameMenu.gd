@@ -1746,7 +1746,23 @@ func _fast_travel_groups() -> Array:
 		groups.append({"name": t, "centre": c, "pop": int(st.get("pop", us.size())), "dests": dests})
 	groups.sort_custom(func(a, b): return int(a.pop) > int(b.pop))
 	groups.append({"name": "Landmarks", "dests": _landmark_dests()})
+	var sky := _sky_dests()
+	if not sky.is_empty():
+		groups.append({"name": "Floating Cities", "dests": sky})
 	return groups
+
+
+func _sky_dests() -> Array:
+	## The hundred cities of the Skein (the user, 2026-10-14: "We need fast travel locations for each floating city"):
+	## they drift, so where each is is asked of SkyIslands at the moment you go (SkyIslands.fast_travel)
+	var sk := get_tree().current_scene.get_node_or_null("SkyIslands") if get_tree().current_scene else null
+	if sk == null or not sk.has_method("travel_names"):
+		return []
+	var out: Array = []
+	for t in sk.travel_names():
+		out.append({"name": str(t[1]), "sky": int(t[0]), "s": 0.0, "x": 0.0})
+	out.sort_custom(func(a, b): return str(a.name) < str(b.name))
+	return out
 
 
 func _sx_dist(door: Array, c: Vector2) -> float:
@@ -1797,6 +1813,12 @@ func _fill_fast_travel(i: int) -> void:
 
 
 func _ft_confirm(dd: Dictionary, where: String) -> void:
+	if dd.has("sky"):
+		var sk := get_tree().current_scene.get_node_or_null("SkyIslands")
+		if sk:
+			var sp: Vector2 = sk.travel_point_sx(int(dd.sky))
+			dd.s = sp.x
+			dd.x = sp.y
 	var p := _player_sx()
 	var km := Vector2(StationGeo.wrap_ds(float(dd.s) - p.x), float(dd.x) - p.y).length() / 1000.0
 	var mins := int(round(4.0 + km * 3.2))
@@ -1814,6 +1836,15 @@ func _fast_travel(dd: Dictionary, mins: int, title: String) -> void:
 	if pl.is_seated() and pl._vehicle and pl._vehicle.has_method("leave_seat"):
 		pl._vehicle.leave_seat()
 	set_open(false)
+	if dd.has("sky"):                                   # (a floating city: SkyIslands sets you down aboard)
+		var sk := get_tree().current_scene.get_node_or_null("SkyIslands")
+		if sk:
+			sk.fast_travel(int(dd.sky))
+		var skc := get_tree().current_scene.get_node_or_null("DaySkySystem")
+		if skc:
+			skc.time_of_day = fposmod(float(skc.time_of_day) + mins / 1440.0, 1.0)
+		_tell(title)
+		return
 	var s := float(dd.s)
 	var x := float(dd.x)
 	if MapTerrain.water_at(s, x).x > -9000.0:          # (in the water: the nearest dry ground round it)

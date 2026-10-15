@@ -38,7 +38,12 @@ const LOD0_MAX := 55.0               # full detail (interiors, doors, lights) ne
 
 
 static func lod0_end(k: float) -> float:
-	return minf(D1 * k, LOD0_MAX)
+	## by size (k: the building's height or width / 12 m, 0.7..4): a cottage goes to its LOD1 at ~26 m, a 12 m block at
+	## 36 m, the big ones at LOD0_MAX -- full detail (the interiors are already off past RemakeBuilding.INTERIOR_M) only
+	## as far as its detail can be seen (granular LODs, the user 2026-10-14)
+	return clampf(LOD0_K * k, LOD0_MIN, LOD0_MAX)
+const LOD0_K := 36.0
+const LOD0_MIN := 26.0
 
 
 static func _is_crossing(id: String) -> bool:

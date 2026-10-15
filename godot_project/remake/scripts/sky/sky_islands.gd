@@ -129,10 +129,17 @@ func _physics_process(delta: float) -> void:
 				islands[i].visible = true
 			print("SkyIslands: %d islands aloft (%s)" % [islands.size(), drift.summary()])
 		return
-	drift.step(delta)
+	Prof.begin("sky.step")
+	_sim_step(delta)
+	Prof.end("sky.step")
+	Prof.begin("sky.place")
 	_place_islands(delta)
+	Prof.end("sky.place")
 	_events()
+	_travel_step(delta)
+	Prof.begin("sky.carry")
 	_carry(delta)
+	Prof.end("sky.carry")
 
 
 # Where SkyDrift's frame for an island jumps (lashed into a raft's shared frame, cast off back onto its own), the
@@ -147,20 +154,72 @@ var _target_prev: Array[Transform3D] = []
 var _dt := 1.0 / 60.0
 
 
+# The drift is stepped at SIM_HZ (its rafts and meetings change slowly), and each island's transform is interpolated
+# between its last two sim states every tick -- smooth to stand on, and the sim (~0.5 ms a step) runs a sixth as often.
+# Far islands (tier 0: a few hundred triangles 3.6 km off) are placed every FAR_EVERY ticks, staggered.
+const SIM_HZ := 10.0
+const FAR_EVERY := 4
+var _sim_acc := 0.0
+var _sim_a: Array[Transform3D] = []     # each island's sim transform a step ago ...
+var _sim_b: Array[Transform3D] = []     # ... and now
+var _tick := 0
+var _moved_dt := PackedFloat32Array()   # seconds since each island was last placed
+
+
+func _sim_step(delta: float) -> void:
+	var n := islands.size()
+	if _sim_b.size() != n:
+		_sim_a.resize(n)
+		_sim_b.resize(n)
+		for i in n:
+			_sim_b[i] = drift.transform(i)
+			_sim_a[i] = _sim_b[i]
+	_sim_acc += delta
+	var h := 1.0 / SIM_HZ
+	while _sim_acc >= h:
+		_sim_acc -= h
+		drift.step(h)
+		for i in n:
+			_sim_a[i] = _sim_b[i]
+			_sim_b[i] = drift.transform(i)
+
+
+func _sim_transform(i: int) -> Transform3D:
+	var f := clampf(_sim_acc * SIM_HZ, 0.0, 1.0)
+	var a := _sim_a[i]
+	var b := _sim_b[i]
+	if a.origin.distance_to(b.origin) > 40.0:
+		return b                                   # (a jump in the frame: the correction below takes it up)
+	return Transform3D(Basis(a.basis.get_rotation_quaternion().slerp(b.basis.get_rotation_quaternion(), f)), a.origin.lerp(b.origin, f))
+
+
 func _place_islands(delta: float) -> void:
 	_dt = maxf(delta, 1e-4)
+	_tick += 1
 	var n := islands.size()
 	if _corr.size() != n:
 		_corr.resize(n)
 		_corr.fill(Transform3D.IDENTITY)
 		_prev.resize(n)
 		_target_prev.resize(n)
+		_moved_dt.resize(n)
+		_moved_dt.fill(delta)
 		for i in n:
-			_target_prev[i] = drift.transform(i)
+			_target_prev[i] = _sim_transform(i)
 			_prev[i] = _target_prev[i]
-	var jump := 18.0 * delta + 0.25                  # m: more than any drift or winch moves it in a tick
 	for i in n:
-		var t := drift.transform(i)
+		_moved_dt[i] += delta
+		if islands[i].tier <= 0 and i != _aboard and (_tick + i) % FAR_EVERY != 0:
+			continue                                  # (far: placed every few ticks)
+		var dtm: float = _moved_dt[i]
+		_moved_dt[i] = 0.0
+		_place_one(i, dtm)
+
+
+func _place_one(i: int, delta: float) -> void:
+	var jump := 18.0 * delta + 0.25                  # m: more than any drift or winch moves it in a tick
+	if true:
+		var t := _sim_transform(i)
 		var tp := _target_prev[i]
 		if t.origin.distance_to(tp.origin) > jump or t.basis.get_rotation_quaternion().angle_to(tp.basis.get_rotation_quaternion()) > 0.002:
 			# the frame jumped: keep the island where it was (its actual transform last tick), and ease from there
@@ -186,7 +245,7 @@ func deck_velocity(i: int, p: Vector3) -> Vector3:
 	## m/s the island's deck (and everything on it: buildings, bridges) moved at the point p over the last tick --
 	## its drift, climb, the raft frame's turn and any easing correction, all at once
 	var lp := _prev[i].affine_inverse() * p
-	return (islands[i].global_transform * lp - p) / _dt
+	return (islands[i].global_transform * lp - p) / _dt     # (near islands are placed every tick: _dt is theirs)
 
 
 func _events() -> void:
@@ -256,6 +315,69 @@ func _exit_tree() -> void:
 		RemakeAirVehicle.frame_source = Callable()
 
 
+# ------------------------------------------------------------------ fast travel (GameMenu's Navigator, "Floating Cities")
+var _travel_to := -1
+var _travel_t := 0.0
+
+
+func travel_names() -> Array:
+	## [[index, name], ...] for the Navigator
+	var out := []
+	for i in islands.size():
+		out.append([i, str(islands[i].canon.get("name", layouts[i].id))])
+	return out
+
+
+func travel_local(i: int) -> Vector3:
+	## where one arrives on island i (its own frame): the layout's "travel" point if it has one (the city's main square or
+	## landing), else the walkway node nearest the island's middle
+	var L: Dictionary = layouts[i]
+	if L.has("travel"):
+		var t: Array = L.travel
+		return Vector3(float(t[0]), islands[i].deck_y(float(t[0]), float(t[1])), float(t[1]))
+	var best := Vector2.ZERO
+	var bd := INF
+	for n in L.get("graph", {}).get("nodes", []):
+		var v := Vector2(float(n[0]), float(n[1]))
+		if v.length() < bd:
+			bd = v.length()
+			best = v
+	return Vector3(best.x, islands[i].deck_y(best.x, best.y), best.y)
+
+
+func travel_point_sx(i: int) -> Vector2:
+	var p := islands[i].global_transform * travel_local(i)
+	return Vector2(StationGeo.s_of(p), p.x)
+
+
+func fast_travel(i: int) -> void:
+	## held over the city (no gravity) until its deck has loaded, then set down on it
+	if i < 0 or i >= islands.size() or player == null:
+		return
+	_travel_to = i
+	_travel_t = 0.0
+	player.set_physics_process(false)
+	_hold_traveller()
+
+
+func _hold_traveller() -> void:
+	var isl := islands[_travel_to]
+	var lp := travel_local(_travel_to) + Vector3(0, 1.5, 0)
+	player.global_transform = Transform3D(isl.global_transform.basis, isl.global_transform * lp)
+	player.velocity = Vector3.ZERO
+
+
+func _travel_step(delta: float) -> void:
+	if _travel_to < 0:
+		return
+	_travel_t += delta
+	_hold_traveller()
+	var isl := islands[_travel_to]
+	if isl.has_node("Near/Rock") or _travel_t > 20.0:
+		player.set_physics_process(true)
+		_travel_to = -1
+
+
 func aboard() -> int:
 	return _aboard
 
@@ -272,15 +394,22 @@ func _process(delta: float) -> void:
 			var d := isl.global_position.distance_to(cam)
 			isl.set_tier(2 if d < SkyIsland.NEAR else (1 if d < SkyIsland.MID else 0))
 			isl.set_physics_active(d < PHYS_R + isl.radius())
+	Prof.begin("sky.balloons")
 	_balloons()
+	Prof.end("sky.balloons")
+	Prof.begin("sky.night")
 	_night_step(delta)
+	Prof.end("sky.night")
+	Prof.begin("sky.lines")
 	_draw_lines(cam)
-	_steer_t -= delta
-	if _steer_t <= 0.0:
-		_steer_t = 1.0
-		_steer_clouds()
+	Prof.end("sky.lines")
+	Prof.begin("sky.steer")
+	_steer_clouds()                               # (a few clouds a frame)
+	Prof.end("sky.steer")
+	Prof.begin("sky.snow")
 	_snow_step(delta)
 	_flakes_step(cam)
+	Prof.end("sky.snow")
 	_plumb_step(delta)
 	for c in _cargo.duplicate():
 		c[1] -= delta
@@ -292,27 +421,67 @@ func _process(delta: float) -> void:
 const PHYS_R := 120.0                 # m past an island's edge within which its collision is live
 
 
+var _bal_frame := 0
+var _buf_near := PackedFloat32Array()
+var _buf_far := PackedFloat32Array()
+
+
 func _balloons() -> void:
-	var near: Array[Transform3D] = []
-	var far: Array[Transform3D] = []
-	var near_c: Array[Color] = []
-	var far_c: Array[Color] = []
+	## both envelope MultiMeshes from flat buffers (one call each, not two per balloon); the far set -- islands 3.6 km
+	## and more away, moving a few metres a second -- only every fourth frame
+	_bal_frame += 1
+	var do_far := _bal_frame % 4 == 0 or _buf_far.is_empty()
+	var nn := 0
+	var nf := 0
+	for i in islands.size():
+		var c: int = layouts[i].balloons.size()
+		if islands[i].tier >= 1:
+			nn += c
+		else:
+			nf += c
+	_buf_near.resize(nn * 16)
+	if do_far:
+		_buf_far.resize(nf * 16)
+	var kn := 0
+	var kf := 0
 	for i in islands.size():
 		var isl := islands[i]
+		var near := isl.tier >= 1
+		if not near and not do_far:
+			continue
 		var xf := isl.global_transform
+		var bs := xf.basis
 		var bl: Array = layouts[i].balloons
+		var looks: Array = _bal_look[i] if i < _bal_look.size() else []
 		for k in bl.size():
 			var b: Dictionary = bl[k]
-			var t := xf * Transform3D(Basis(), Vector3(b.x, BALLOON_BASE, b.z))
-			var c: Color = _bal_look[i][k] if i < _bal_look.size() and k < _bal_look[i].size() else Color(1, 1, 1, 0)
-			if isl.tier >= 1:
-				near.append(t)
-				near_c.append(c)
+			var o: Vector3 = xf * Vector3(b.x, BALLOON_BASE, b.z)
+			var c: Color = looks[k] if k < looks.size() else Color(1, 1, 1, 0)
+			# (packed arrays copy on assignment: each buffer is written in place)
+			if near:
+				var j := kn * 16
+				_buf_near[j] = bs.x.x; _buf_near[j + 1] = bs.y.x; _buf_near[j + 2] = bs.z.x; _buf_near[j + 3] = o.x
+				_buf_near[j + 4] = bs.x.y; _buf_near[j + 5] = bs.y.y; _buf_near[j + 6] = bs.z.y; _buf_near[j + 7] = o.y
+				_buf_near[j + 8] = bs.x.z; _buf_near[j + 9] = bs.y.z; _buf_near[j + 10] = bs.z.z; _buf_near[j + 11] = o.z
+				_buf_near[j + 12] = c.r; _buf_near[j + 13] = c.g; _buf_near[j + 14] = c.b; _buf_near[j + 15] = c.a
+				kn += 1
 			else:
-				far.append(t)
-				far_c.append(c)
-	_fill(_mm_near.multimesh, near, near_c)
-	_fill(_mm_far.multimesh, far, far_c)
+				var j := kf * 16
+				_buf_far[j] = bs.x.x; _buf_far[j + 1] = bs.y.x; _buf_far[j + 2] = bs.z.x; _buf_far[j + 3] = o.x
+				_buf_far[j + 4] = bs.x.y; _buf_far[j + 5] = bs.y.y; _buf_far[j + 6] = bs.z.y; _buf_far[j + 7] = o.y
+				_buf_far[j + 8] = bs.x.z; _buf_far[j + 9] = bs.y.z; _buf_far[j + 10] = bs.z.z; _buf_far[j + 11] = o.z
+				_buf_far[j + 12] = c.r; _buf_far[j + 13] = c.g; _buf_far[j + 14] = c.b; _buf_far[j + 15] = c.a
+				kf += 1
+	_set_buf(_mm_near.multimesh, _buf_near, nn)
+	if do_far:
+		_set_buf(_mm_far.multimesh, _buf_far, nf)
+
+
+static func _set_buf(mm: MultiMesh, buf: PackedFloat32Array, n: int) -> void:
+	if mm.instance_count != n:
+		mm.instance_count = n
+	if n > 0:
+		mm.buffer = buf
 
 
 static func _fill(mm: MultiMesh, xf: Array[Transform3D], custom: Array[Color] = []) -> void:
@@ -366,6 +535,7 @@ func _draw_lines(cam: Vector3) -> void:
 
 
 var _steer_t := 0.0
+var _steer_i := 0
 const STEER_SHARE := 0.65             # of the island layer's clouds: the rest wander as before
 const STEER_AHEAD := 6000.0           # m ahead (west) a cloud looks for an island to pass through
 
@@ -374,9 +544,11 @@ func _steer_clouds() -> void:
 	## The clouds at the islands' height run west faster than the islands drift, so they overtake them from the east;
 	## most of them (STEER_SHARE) also edge north or south onto the line of the nearest island ahead and settle to its
 	## height -- so the islands float through clouds now and then, and it snows on them (the user, 2026-10-14)
-	if clouds == null:
+	if clouds == null or clouds._low.is_empty():
 		return
-	for c in clouds._low:
+	for step in 3:
+		_steer_i = (_steer_i + 1) % clouds._low.size()
+		var c: Dictionary = clouds._low[_steer_i]
 		if c.layer != RemakeClouds.ISLAND_LAYER or c.state != "free" or c.kind != 0:
 			continue
 		if float(absi(hash(c.uid)) % 1000) / 1000.0 >= STEER_SHARE:
@@ -433,7 +605,16 @@ func _snowfall(i: int, storms: Array) -> float:
 	var xf := isl.global_transform
 	var f: Dictionary = layouts[i].faces
 	var depth := 0.0
-	for p in [Vector2.ZERO, Vector2(f.N, 0) * 0.7, Vector2(f.S, 0) * 0.7, Vector2(0, f.E) * 0.7, Vector2(0, f.W) * 0.7]:
+	# (a cheap first look: any cloud whose reach touches the island at all? the full test below samples ten points
+	# against every cloud -- ~1.7 ms a frame when every island got it)
+	var near := false
+	var c0 := isl.global_position
+	var rad := isl.radius() + 100.0
+	for c in clouds._low:
+		if c.state != "hidden" and (c.node as Node3D).global_position.distance_to(c0) < float(c.reach) + rad + 60.0:
+			near = true
+			break
+	for p in ([Vector2.ZERO, Vector2(f.N, 0) * 0.7, Vector2(f.S, 0) * 0.7, Vector2(0, f.E) * 0.7, Vector2(0, f.W) * 0.7] if near else []):
 		for y in [25.0, 90.0]:
 			depth = maxf(depth, clouds.inside(xf * Vector3(p.x, y, p.y)))
 		if depth > 0.0:
@@ -520,9 +701,9 @@ func _plumb_step(delta: float) -> void:
 		return
 	_plumb_t = randf_range(PLUMB_EVERY.x, PLUMB_EVERY.y)
 	for isl in islands:
-		if isl.tier == 2 and isl.larks_parked.size() > 0 and isl.global_position.distance_to(player.global_position) < 2500.0:
-			var k: Node3D = isl.larks_parked.pop_back()
-			if not is_instance_valid(k):
+		if isl.tier == 2 and isl.global_position.distance_to(player.global_position) < 2500.0:
+			var k: Node3D = isl.take_lark()
+			if k == null or not is_instance_valid(k):
 				continue
 			var pad := k.transform
 			k.reparent(self, true)
@@ -554,7 +735,7 @@ func _landed(f: Dictionary) -> void:
 	k.transform = f.pad
 	k.set_meta("riding", true)
 	SkyIsland._ranges(k, 0.0, 350.0)
-	isl.larks_parked.append(k)
+	isl.return_lark(k, f.pad)
 
 
 func drop_cargo(c: Node3D, at: Vector3) -> void:

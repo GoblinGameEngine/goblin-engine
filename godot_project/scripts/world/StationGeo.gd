@@ -28,6 +28,8 @@ static var GRAVITY_BANDS := 10
 const AXIS := Vector3.RIGHT
 ## true while the loading screen is up (RemakeStation sets it): builders that spread their work over
 ## frames to keep the game smooth may then take much longer frames -- nobody is watching them
+## true while the camera is high above the floor (AloftSwitch): the ground is drawn as the far side's images only
+static var aloft := false
 static var loading := true          # the cylinder's axis (world x)
 
 
