@@ -49,7 +49,7 @@ class CaucasianBalcony(FamilyCiv):
                  "pitched": {"run": "roof_tin_steep", "end": "roof_tin_steep_end", "share": 0.55}},
         "marks": [{"type": "civic_tower", "pieces": ["svan_tower_base", "svan_tower_shaft", "svan_tower_top"], "storeys": 6},
                   {"type": "roof_towers", "piece": "dome_bath_brick", "share": 0.01, "storeys": (1, 1)}],
-        "overlay": {"street_stair": 0.08, "street_stair_piece": "stair_spiral_courtyard", "spans": [("laundry", 0.15)], "lantern": 0.4, "festoon": 0.3, "cable": 0.3, "dish": 0.1},
+        "overlay": {"spans": [("laundry", 0.15)], "lantern": 0.4, "festoon": 0.3, "cable": 0.3, "dish": 0.1},
         "foliage": {"plaza": ["chinar_plane"], "green": ["persimmon", "fig", "pomegranate", "chinar_plane"],
                     "bank": ["willow"], "court": ["grapevine_pergola", "persimmon", "fig"], "lane": ["grapevine_pergola"],
                     "rates": {"court": 0.55, "lane": 0.08}},

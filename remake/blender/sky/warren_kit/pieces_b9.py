@@ -150,7 +150,7 @@ def minaret_square_carved(part):
             m.box((-a - 0.35, 0.6, -a - 0.35), (a + 0.35, 0.72, a + 0.35), "trim", 0.9)
             for k in range(4):
                 sub = Mesh()
-                sub.box((-a - 0.35, 0.72, a + 0.27), (a + 0.27, 1.5, a + 0.35), "trim", 0.95, skip=("y-",))     # (each side owns one corner)
+                sub.box((-a - 0.35, 0.72, a + 0.27), (a + 0.265, 1.5, a + 0.35), "trim", 0.95, skip=("y-",))    # (each side owns one corner)
                 m.add(sub, _rot(k))
             m.cyl(0, 0, 0.7, 0.72, 2.2, "wall", n=8, caps=False)
             _ribbed_dome(m, 0.75, 2.2, 0.8, n=8, slot="trim")
@@ -273,15 +273,15 @@ def wall_cave_door():
     """MATERA MARK: the deep arched door into a rock-cut vault: a round arch in the tufa face, a lunette window over
     the door, the door deep in its reveal"""
     def b():
-        o = arch("round", 1.6, 2.9, 0.0, n=8)
+        o = arch("round", 1.6, 3.1, 0.0, n=8)
         m = _wall(K, [o], reveal="ground")
-        m.box((-0.5, 0.0, -0.5), (0.5, 2.1, -0.45), "frame", 0.8)
-        lun = [(-0.8, 2.1), (0.8, 2.1)] + [(0.8 * math.cos(math.pi * k / 8), 2.1 + 0.8 * math.sin(math.pi * k / 8)) for k in range(1, 8)]
+        m.box((-0.5, 0.0, -0.5), (0.5, 2.3, -0.45), "frame", 0.8)
+        lun = [(-0.8, 2.3), (0.8, 2.3)] + [(0.8 * math.cos(math.pi * k / 8), 2.3 + 0.8 * math.sin(math.pi * k / 8)) for k in range(1, 8)]
         m.wall_cut(lun, [], -0.48, -0.44, "glass")
         for k in range(1, 4):
             a = math.pi * k / 4
-            _strip(m, (0.0, 2.1, -0.43), (0.8 * math.cos(a), 2.1 + 0.8 * math.sin(a), -0.43), 0.03, (0, 0, 1), "frame")
-        m.box((-0.8, 2.08, -0.5), (0.8, 2.14, -0.4), "frame", 0.9)
+            _strip(m, (0.0, 2.3, -0.43), (0.8 * math.cos(a), 2.3 + 0.8 * math.sin(a), -0.43), 0.03, (0, 0, 1), "frame")
+        m.box((-0.8, 2.28, -0.5), (0.8, 2.34, -0.4), "frame", 0.9)
         _arch_band(m, o, 0.15, -0.01, 0.04, "ground", 0.9)
         return m
     return b
@@ -741,7 +741,7 @@ def wall_french_balcony():
         m = _wall(K, [_rect(x0, y0, x1, y1)], reveal="trim")
         m.pane(x0, y0, x1, y1, -0.3)
         _grid(m, x0, y0, x1, y1, -0.28, 2, 4, 0.04, "trim")
-        for xa, xb in ((x0 - 0.58, x0 - 0.02), (x1 + 0.02, x1 + 0.58)):
+        for xa, xb in ((x0 - 0.62, x0 - 0.15), (x1 + 0.15, x1 + 0.62)):          # (clear of the stone frame)
             _louvre_leaf(m, xa, y0 + 0.05, xb, y1, 0.04, "accent", n=12)
         _u_frame(m, x0, y1, x1, 0.12, 0.0, 0.035, "trim")
         d = 0.35

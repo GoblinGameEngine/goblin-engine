@@ -16,6 +16,21 @@ LEVELS = 16
 
 # plan classes (2D)
 OUT, RIM, FREE, WATER, BANK, GREEN, PASTURE, MAIN, PLAZA, GATE, LANE, COURT, RESERVED, LOT, ARTERY = range(15)
+FENCE_CLEAR = 1.6          # m in from the outline: the first walkable cell centre (fence at 1.0 m, capsule + margin)
+BRIDGE_M = 0.25            # m round a bridge's footprint: the capsule (0.18) and a margin
+_BRIDGE_STYLES = {}
+
+
+def _bridge_styles():
+    """remake/sky/bridges/bridge_styles.json styles (the bridges' "clear" inland depth and width)"""
+    if not _BRIDGE_STYLES:
+        import json
+        import os
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "godot_project", "remake", "sky",
+                         "bridges", "bridge_styles.json")
+        if os.path.exists(p):
+            _BRIDGE_STYLES.update(json.load(open(p)).get("styles", {}))
+    return _BRIDGE_STYLES
 PLAN_NAMES = ["out", "rim", "free", "water", "bank", "green", "pasture", "main", "plaza", "gate", "lane", "court",
               "reserved", "lot", "artery"]
 WALKABLE = {RIM, BANK, GREEN, MAIN, PLAZA, GATE, LANE, COURT, RESERVED, ARTERY}
@@ -87,7 +102,10 @@ class Lattice:
         outline = Polygon([(p[0], p[1]) for p in isl["outline"]]).buffer(0)
         self.outline = outline
         inner = prep(outline.buffer(-4.5))              # the fence band and a rim walk kept free
-        edge = prep(outline.buffer(-1.0))
+        # (the rim fence stands 1.0 m in from the outline, 0.12 m thick: a walk cell's centre at least FENCE_CLEAR
+        # in from the outline keeps the player's capsule clear of it -- the audit found rim cells centred on the
+        # fence, their walk edges blocked by it)
+        edge = prep(outline.buffer(-FENCE_CLEAR))
         water = [Polygon([(p[0], p[1]) for p in w["outline"]]).buffer(0) for w in isl.get("water", [])]
         self.water_polys = water
         wp = [prep(w.buffer(0.8)) for w in water]
@@ -121,6 +139,7 @@ class Lattice:
         # the bridges' landings and working room: a gate strip in from the face
         f = isl["faces"]
         self.gates = []
+        self.bridge_cells = set()
         for bi, b in enumerate(isl.get("bridges", [])):
             side, al, w = b["side"], float(b["along"]), float(b.get("width", 3.6))
             depth = float(b.get("clear", 6.0)) + 7.0
@@ -136,6 +155,26 @@ class Lattice:
             cells = self._rect(x0, x1, z0, z1, GATE)
             inner_end = {"N": (float(f["N"]) + depth, al), "S": (float(f["S"]) - depth, al),
                          "E": (al, float(f["E"]) + depth), "W": (al, float(f["W"]) - depth)}[side]
+            # the bridge's own footprint: its housing and its span stowed upright (sky_bridge.gd: every mesh solid)
+            # stand here -- no walk, no paving (the audit: SKY-022's arrival walk and rim lanes ran into them)
+            st = _bridge_styles().get(isl.get("bridge_style", "bascule_timber") + ("_road" if w >= 5.0 else ""), {})
+            inland = float(st.get("clear", {}).get("inland", 4.6)) + BRIDGE_M
+            hw = float(st.get("width", w)) / 2 + 0.45 + BRIDGE_M
+            fx = {"N": float(f["N"]), "S": float(f["S"])}.get(side)
+            fz = {"E": float(f["E"]), "W": float(f["W"])}.get(side)
+            keep = []
+            for c in cells:
+                x, _, z = self.centre(*c)
+                if side in ("N", "S"):
+                    inside = abs(x - fx) <= inland and abs(z - al) <= hw
+                else:
+                    inside = abs(z - fz) <= inland and abs(x - al) <= hw
+                if inside:
+                    self.plan[c] = OUT
+                    self.bridge_cells.add(c)
+                else:
+                    keep.append(c)
+            cells = keep
             self.gates.append({"bridge": bi, "side": side, "along": al, "width": w, "cells": cells,
                                "end": self.cell_of(*inner_end)})
         # tether corridors: the lines from each balloon's hub (60 m up) to its anchor, kept clear at every level

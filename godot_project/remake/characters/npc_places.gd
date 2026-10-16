@@ -15,7 +15,6 @@ class_name NpcPlaces
 const PLACES := "res://remake/characters/npc_places.json"
 const INDEX := "res://remake/characters/npc_place_index.json"
 const PATHS := "res://remake/characters/npc_paths.json"
-const DAYS := {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
 const PAVEMENT := 1.2            # m beyond the road's edge (where it has no sidewalk)
 const PARK_LANE_W := 2.4         # a parking lane (remake/law ordinances park_lane_m)
 
@@ -309,19 +308,11 @@ static func hours_of(t: Dictionary) -> Vector2:
 
 
 static func open_on(t: Dictionary, day: int) -> bool:
+	## Open at all on game day `day` (the weekday and the season from StationCalendar: day 0 is a Wednesday).
 	var d: String = t.hours.days
-	var wd := posmod(day, 7)
-	match d:
-		"daily":
-			return true
-		"never":
-			return false
-		"seasonal":
-			return posmod(day, 364) < 182 or wd >= 5           # the season, and weekends out of it
-	var p := d.split("-")
-	if p.size() == 2 and DAYS.has(p[0]) and DAYS.has(p[1]):
-		return wd >= int(DAYS[p[0]]) and wd <= int(DAYS[p[1]])
-	return true
+	if d == "seasonal":
+		return StationCalendar.in_season(day) or StationCalendar.is_weekend(day)     # the season, and weekends out of it
+	return StationCalendar.days_in_range(day, d)
 
 
 static func is_open(uid: String, day: int, hour: float) -> bool:

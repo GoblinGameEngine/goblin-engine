@@ -118,6 +118,7 @@ func _drop_near() -> void:
 	if warren:
 		warren.free_all()
 		warren = null
+	_near.name = "NearDropped"                    # (free at the frame's end: a new Near this frame keeps its name)
 	_near.queue_free()
 	_near = null
 	_build.clear()

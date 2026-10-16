@@ -27,19 +27,28 @@ Canon data: sky_islands.json → `confederation`, `clans`, `governance`, `custom
   - This is the model for the **weather readers**: the island goes where the wind goes, and the reader knows where that
     is.
 
-## Why they live aloft (and rarely come down)
-1. **They can't easily get back up.**
+## Why they live aloft, and why so many come down
+(Canon revised 2026-10-15: the islanders come down often and settle in large numbers. `tools/bible/canon_sky.py`
+`market_moorings`, `settled`; research/flea_markets/00_plan.md §8–9.)
+
+1. **Getting back up was hard, and now it isn't.**
    - Since VY 301 the hulks are never lowered. Until VY 417, going up meant riding a cargo container up a 750 m hoist
-     line.
-   - Even now, the larks carry two people.
-   - A child born aloft may never stand on the floor until they are carried down dead (the **Long Drop**, a custom on
-     many islands).
-2. **Weight is life.** Every person is ~70 kg of lift. An island can't take in more people than its lift allows, so
-   people don't come and go lightly.
+     line, and the larks carry only two.
+   - Since the **Mooring Compact (VY 418)** islands moor at every town's flea market. From the first gondolas
+     (VY 431), the Aloft ride down in their thousands to trade, shop and visit kin.
+   - Coming down is now **routine**, and ground-weight is a joke, not a fear.
+   - The **Long Drop** is still how the dead go down, with the family riding the gondola beside them.
+2. **Weight is life.** Every person is ~70 kg of lift. An island can't take in more people than its lift allows.
    - Births are counted against the weight book, as the floor counts birth shares: *a child is ballast, and a
      blessing*.
-3. **Ground-weight.** On the floor the Aloft feel 12% heavier. The young get **ground-sickness**: heavy limbs,
-   dizziness and homesickness.
+   - Families are **large** (four or five children). Since **the Full Book (VY 486)**, when the weight books filled,
+     **about half of all island children grow up to settle on the floor**, some 1,500 a year: **the Line or the
+     Ground**. A youth's going-down is feasted like a wedding.
+   - Those who settle are the **Lowliners**: ~29,000 people, 12 % of the floor. Most live on the South Sea shore
+     (where whole Line Rows are built as warrens) and fewest on the North Sea shore. They are liked in the north; in
+     the South's poorer streets there is real friction over Draw housing and entry work.
+3. **Ground-weight.** On the floor the Aloft feel 12% heavier. The young get **ground-sickness** in their first days
+   below: heavy limbs, dizziness and homesickness. It passes, and settlers get used to it.
 4. **The bargain.** The hulks fly because people keep them flying. Abandon an island, and it and its Box come down.
 5. **Pride and freedom.**
    - Aloft there is no Assembly, no Marshal, no Registry and no Draw: the Aloft are free and also on their own.
@@ -105,7 +114,10 @@ Canon data: sky_islands.json → `confederation`, `clans`, `governance`, `custom
 ## The plumb
 - One per clan at a time, for about seven years, with a **second** who flies behind and learns.
   - A plumb is a trader, a diplomat and a pilot.
-  - They book the hoists, buy what the factors ask for, carry letters and bring back news and stories.
+  - They book the hoists and the market moorings, buy what the factors ask for, carry letters and bring back news
+    and stories.
+  - The plumb still speaks for the clan. But since the moorings, most Aloft meet groundfolk themselves at the
+    markets, and the **Lines** (the mooring crews of 24) are the island's most honoured trade.
 - **Aloft** the plumb is honoured and a little pitied: they carry the ground-weight for everyone.
 - **Below**, plumbs are glamorous and aloof, with cold hands. Floor children chase their larks.
 - **The lark** is the clan's two-person high aerostat: 1.5 km ceiling, 250 km/h. Each island keeps at least two, in
@@ -151,7 +163,9 @@ Canon data: sky_islands.json → `confederation`, `clans`, `governance`, `custom
 - Piggledy's wreck in the North Sea.
 - The Box: what the Steward's cloud engines really do, and who has opened one.
 - The VY 500 Notice raft: the Skein debates the voyage, and a Wardens' circle contact is aboard.
-- A youth runs away to the floor, or a floor youth stows away in a skybox.
+- A youth's going-down feast, a new Lowliner's first week in Solana Point's Line Rows, or a floor youth who wants to
+  go up (rare: it needs the moot's consent and room in the weight book).
+- An island fair at a town's flea market: the gondolas, the trading tents and the lights.
 - A fire-setter is handed down to the Marshals: an innocent?
 
 ## Sources

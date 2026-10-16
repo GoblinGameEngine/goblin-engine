@@ -1,5 +1,6 @@
 extends Node
 class_name RemakeDetailStreamer
+const CitySigns := preload("res://remake/scripts/city_signs.gd")
 
 ## Buildings near the player, in two tiers.  Records come from RemakeLodClusters.build(..., full=false):
 ## {id, model, root, lod1, k, landmark, xform, parent, key2}, and cells: key2 -> {node (its merged LOD2 mesh), recs}.
@@ -460,6 +461,7 @@ func _put_lod1(i: int) -> void:
 	root.name = r.id
 	root.transform = r.xform
 	(r.parent as Node3D).add_child(root)
+	CitySigns.attach(root, r.id)
 	var lod1: Node3D = (_lod1_scenes[model] as PackedScene).instantiate()
 	root.add_child(lod1)
 	RemakeBuilding.prepare_lod(lod1, "res://remake/buildings/%s.lod1.glb" % model)

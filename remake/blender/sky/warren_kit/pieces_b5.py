@@ -150,7 +150,7 @@ def bell_tower_baroque(part):
             op = arch("round", 1.4, 2.3, 0.4, n=5)
             for k in range(4):
                 sub = Mesh()
-                sub.wall_cut(_rect(-a, 0.2, a, ST - 0.24), [op], a - 0.3, a, "wall", reveal_slot="trim")
+                sub.wall_cut(_rect(-a, 0.2, a - 0.3, ST - 0.24), [op], a - 0.3, a, "wall", reveal_slot="trim")   # (each side owns one corner)
                 sub.wall_cut(_off(op, 0.12), [_off(op, 0.005)], a - 0.01, a + 0.05, "trim")
                 for x in (-1.15, 1.15):
                     sub.box((x - 0.12, 0.2, a), (x + 0.12, ST - 0.25, a + 0.08), "trim", 0.9, skip=("z-",))
@@ -416,7 +416,7 @@ def tower_mudejar(part):
                 sub = Mesh()
                 ops = [arch("round", 0.7, 2.0, 0.5, n=4), [(x + 0.75, y) for x, y in arch("round", 0.7, 2.0, 0.5, n=4)]]
                 ops = [[(x - 0.375, y) for x, y in ops[0]], [(x - 0.375, y) for x, y in ops[1]]]
-                sub.wall_cut(_rect(-a, 0.0, a, ST), ops, a - 0.3, a, "roof", reveal_slot="roof")
+                sub.wall_cut(_rect(-a, 0.0, a - 0.3, ST), ops, a - 0.3, a, "roof", reveal_slot="roof")   # (each side owns one corner)
                 for o in ops:
                     sub.wall_cut(_off(o, 0.1), [_off(o, 0.005)], a - 0.01, a + 0.04, "tile")
                 _place(m, sub, 90 * k)
@@ -607,7 +607,7 @@ def wall_triangles():
     """the Ghadames door bay: a low door in a thick whitewashed wall, painted red and green triangles and diamonds
     round it"""
     def b():
-        x0, x1, y1 = -0.5, 0.5, 2.0
+        x0, x1, y1 = -0.55, 0.55, 2.3                                         # (1.1 x 2.3 m clear: walk-through)
         m = _wall(K, [_rect(x0, 0.0, x1, y1)])
         _door_leaf(m, x0, y1, x1, -0.3, "frame")
         z = 0.006

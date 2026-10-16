@@ -29,7 +29,7 @@ const SAMPLE := 16                                   # candidates a post looks a
 const VACANCY := {"stable_town": 0.02, "county_seat": 0.02, "college_town": 0.025, "exurban": 0.015, "lake_resort": 0.03,
 	"rust_belt": 0.06, "_default": 0.03}               # (posts standing empty, by the town's economy: npc_settlements.json)
 const VACANT_WHY := ["unfilled", "chute_shortage", "just_quit", "budget_cut", "on_leave"]
-const DAYS := ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+const DAYS := StationCalendar.DAYS3
 
 static var _manifest := {}                           # town -> {buildings}
 static var _manifest_lru: Array = []
@@ -428,11 +428,11 @@ static func _covers(p: Dictionary, day: int, hour: float) -> bool:
 		var h: float = hour + 24.0 * back
 		if h < float(p.shift[0]) or h >= float(p.shift[1]):
 			continue
-		var wd: String = DAYS[posmod(d, 7)]
+		var wd: String = StationCalendar.day_key(d)
 		var days: String = p.get("days", "mon-fri")
-		if days == "mon-fri" and posmod(d, 7) >= 5:
+		if days == "mon-fri" and StationCalendar.weekday(d) >= 5:
 			continue
-		if days == "mon-sat" and posmod(d, 7) == 6:
+		if days == "mon-sat" and StationCalendar.weekday(d) == 6:
 			continue
 		if p.has("off") and wd in p.off:
 			continue

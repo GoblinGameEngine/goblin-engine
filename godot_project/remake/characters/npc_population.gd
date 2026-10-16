@@ -80,6 +80,8 @@ func _ready() -> void:
 			_index[k] = []
 		_index[k].append(b)
 	_clock = get_tree().current_scene.get_node_or_null("DaySkySystem")
+	if _clock and _clock.has_signal("clock_set"):
+		_clock.clock_set.connect(_on_clock_set)
 	# one hidden person during loading: the character shader's pipelines compile now, not as the
 	# first resident steps out (that first assembly cost ~25 ms; the rest ~1 ms)
 	var warm := NpcCharacter.create(NpcTraits.shared().person(world_seed, "warmup:0", ["L0", "L1"]), "warmup:0", world_seed)
@@ -94,6 +96,24 @@ static func _cell(s: float, x: float) -> Vector2i:
 
 func hour() -> float:
 	return (float(_clock.time_of_day) if _clock else 0.4) * 24.0
+
+
+var _clock_gen := 0              # bumped when the clock is set: people still being built for the old time are dropped
+
+
+func _on_clock_set(from_h: float, to_h: float) -> void:
+	## The clock was set (Date & Time, fast travel): everyone out was out at the old time. They all go, the "indoors
+	## till" and "gone in" memories with them (a jump back would otherwise keep people indoors till the old time
+	## came round again), and the street fills again from the schedules at the new time.
+	if absf(to_h - from_h) < 1.0 / 60.0:
+		return
+	_clock_gen += 1
+	for pid in live.keys():
+		_despawn(pid)
+	_next.clear()
+	_gone_in.clear()
+	_scan = {}
+	_tick = 0.0
 
 
 func today() -> int:
@@ -500,7 +520,7 @@ func _dist(s0: float, x0: float, s1: float, x1: float) -> float:
 
 func _spawn(m: Dictionary, b: Dictionary, pop: String, seg := {}) -> void:
 	var v := NpcTraits.shared().person(world_seed, m.pid, ["L0", "L1"], pop, m.pinned)
-	var job := {"v": v, "pid": m.pid, "b": b, "m": m, "pop": pop, "data": {}, "seg": seg}
+	var job := {"v": v, "pid": m.pid, "b": b, "m": m, "pop": pop, "data": {}, "seg": seg, "gen": _clock_gen}
 	job.task = WorkerThreadPool.add_task(func(): job.data = NpcCharacter.prepare(v, m.pid, world_seed, "work"), false, "npc " + m.pid)
 	_pending[m.pid] = job
 
@@ -514,8 +534,8 @@ func _collect() -> void:
 			continue
 		WorkerThreadPool.wait_for_task_completion(job.task)
 		_pending.erase(pid)
-		if job.data.is_empty():
-			continue
+		if job.data.is_empty() or int(job.get("gen", 0)) != _clock_gen:
+			continue                                           # (or made for a time the clock has since left)
 		var t0 := Time.get_ticks_usec()
 		var npc := NpcCharacter.from_prepared(job.data)
 		add_child(npc)

@@ -268,6 +268,10 @@ func _move(e: Dictionary, delta: float) -> void:
 		_next_errand(e)
 		return
 	var g := _graph(e.at)
+	if int(path[0]) >= (g.nodes as PackedVector2Array).size():
+		e.path = []                             # (over on an island whose city isn't in yet: wait for it)
+		e.wait = 1.0
+		return
 	var tgt: Vector2 = g.nodes[path[0]]
 	var to: Vector2 = tgt - e.pos
 	var d := to.length()
@@ -299,6 +303,8 @@ func _next_errand(e: Dictionary) -> void:
 	## somewhere else on the island -- or, where a bridge is down, over to the docked neighbour
 	var g := _graph(e.at)
 	e.wait = _rng.randf_range(1.0, 8.0)
+	if (g.nodes as PackedVector2Array).size() <= int(e.node):
+		return                                  # (its island's city not in yet)
 	var downs: Array = sys.drift.deployed(e.at)
 	if not downs.is_empty() and not e.has("bike") and _rng.randf() < CROSS_CHANCE:
 		var d: Array = downs[_rng.randi() % downs.size()]

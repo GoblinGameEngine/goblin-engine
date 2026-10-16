@@ -92,6 +92,7 @@ def kit_id(pid, var, civ_id, kit):
 
 
 FACE_KINDS = ("wall", "edge", "sign", "passage", "water_edge")
+FACE_GEN = {0: (0, -1), 1: (-1, 0), 2: (0, 1), 3: (1, 0)}      # (the generator's FACE: pick.FACE)
 FACE_HUNG = ("ov_ac", "ov_lantern", "ov_fluoro", "ov_planter", "ov_pipe_run", "ladder", "band_brick_relief",
              "edge_gable_step", "edge_gable_neck", "edge_gable_bell", "wall_sign_column_t", "ov_vending_machine",
              "hoist_beam", "drain_spout", "stair_steel_external", "ov_gold_eave_led", "ov_sign_arm_big",
@@ -148,7 +149,30 @@ def translate(L, civ, recs, kit, shacks=()):
     mina = [r for r in recs if r[0] == "minaret_square"]
     mina_low = {(r[1], r[2]): min(q[3] for q in mina if (q[1], q[2]) == (r[1], r[2])) for r in mina}
 
+    # the cells a stair's ramp meets (its head and its foot): their paving must be flush with the ramp's ends
+    # (y 0 / the storey line): a raised paving top there (pave_garden +5 cm, brick +10 cm) is a lip the player's
+    # capsule cannot roll over from a 28 deg ramp (the audit's strict walk; in game ~30-80 % of walks stuck there)
+    ramp_ends = set()
+    for (si, sj), st in getattr(L, "stair", {}).items():
+        di, dj = FACE_GEN[st[0]]
+        ramp_ends.add((si + di, sj + dj))
+        ramp_ends.add((si - di, sj - dj))
+    L.flush_swapped = 0
+
+    def flush(kid, i, j):
+        sp = pieces.get(kid, {})
+        if sp.get("kind") != "ground" or (i, j) not in ramp_ends or sp.get("bounds", [[0, 0, 0], [0, 0, 0]])[1][1] <= 0.01:
+            return kid
+        for c in (("pave_lane_skirt", "pave_lane") if kid.endswith("_skirt") else ("pave_lane",)):
+            if c in pieces and pieces[c].get("bounds", [[0, 0, 0], [0, 1, 0]])[1][1] <= 0.01:
+                L.flush_swapped += 1
+                return c
+        return kid
+
     def put(kid, i, j, lv, rot, flags, ep, pal=None, kit_rot=None):
+        if kid not in pieces and kid.endswith("_skirt") and kid[:-6] in pieces:
+            kid = kid[:-6]                                  # (a civ paving with no skirted twin: the plain one)
+        kid = flush(kid, i, j)
         if kid not in pieces:
             dropped[kid] = dropped.get(kid, 0) + 1
             return
@@ -161,7 +185,11 @@ def translate(L, civ, recs, kit, shacks=()):
                 pal = civ.base_palette
         if kit_rot is None:
             kit_rot = (rot + 1) & 3 if kid in ACROSS else (rot + 2) & 3
-        out.append((kid, i, j, lv, kit_rot, flags & 12, m, pal, ep))
+        if flags & 4 and (i, j) in getattr(L, "q", {}):
+            # (a piece standing on the ground: on the graded surface, not the raw deck)
+            qq = L.q[(i, j)]
+            lv, flags = qq // 4, (flags & ~4) | ((qq % 4) << 4)
+        out.append((kid, i, j, lv, kit_rot, flags & 60, m, pal, ep))
 
     # pitched roof runs (the civ's choice per house): ridge along the house's longer side at that level; a run
     # segment where the run continues, the end piece (gable wall closing its -Z) at each end
@@ -241,6 +269,8 @@ def translate(L, civ, recs, kit, shacks=()):
                 continue                                # (Kowloon: the alley ceiling is the mouth)
             pid = am
         kid = kit_id(pid, var, civ.id, pieces)
+        if kid is None and pid.endswith("_skirt"):
+            kid = kit_id(pid[:-6], var, civ.id, pieces)        # (a civ paving with no skirted twin: the plain one)
         if kid is None:
             dropped[pid] = dropped.get(pid, 0) + 1
             continue
@@ -262,7 +292,15 @@ def translate(L, civ, recs, kit, shacks=()):
         kid = sp[int(h01(L.seed, "shack", i, j) * len(sp))]
         put(kid, i, j, k, 0, 0, 5, pal=civ.lot_palette(L.lots[L.lot[i, j]]) if L.lot[i, j] >= 0 else civ.base_palette,
             kit_rot=int(h01(L.seed, "shr", i, j) * 4))
-    return out, dropped
+    # (one piece once: the same piece at the same place, turn and mount twice is a z-fight and a double collider)
+    seen, uniq = set(), []
+    for r in out:
+        key = r[:7] if r[0] != "bridge_plank" else r[:4] + r[5:7]   # (two planks crossing in one cell: one)
+        if key not in seen:
+            seen.add(key)
+            uniq.append(r)
+    L.dup_removed = len(out) - len(uniq)
+    return uniq, dropped
 
 
 # the night: every lamp the kit pieces carry, for the runtime's flares and light pools -- (kind, mount offset: across,
@@ -289,7 +327,7 @@ def lights(L, civ, recs, kit):
         if kind == "door" and h01(L.seed, "doorlamp", i, j, rot) > 0.5:
             continue
         x, _, z = L.centre(i, j)
-        y = L.deck_y(x, z) if flags & 4 else lv * 3.2
+        y = L.deck_y(x, z) if flags & 4 else lv * 3.2 + ((flags >> 4) & 3) * 0.8
         dx, dz = DIR[rot]
         out_d = az + (1.5 if mnt == 1 else 0.0)
         x += dx * out_d
@@ -416,4 +454,29 @@ def budget(L, recs, kit, limit=25000, chunk=8):
                         continue
                     total -= tri(kid) - tri(new)
                     recs[n] = (new,) + tuple(recs[n][1:])
+        if total > limit:
+            # (still over: the heaviest decoration of any kind goes, the walls and the ground stay)
+            cand = [n for n in ns if n not in gone and pieces[recs[n][0]].get("kind") in ("overlay", "decor", "sign", "crown")]
+            cand.sort(key=lambda n: (-tri(recs[n][0]), h01(L.seed, "shed2", recs[n][1], recs[n][2], recs[n][3])))
+            for n in cand:
+                if total <= limit:
+                    break
+                gone.add(n)
+                total -= tri(recs[n][0])
+        if total > limit:
+            # (and then: interiors go, the richest walls turn plain)
+            cand = [n for n in ns if n not in gone and pieces[recs[n][0]].get("kind") in ("interior", "wall")]
+            cand.sort(key=lambda n: (-tri(recs[n][0]), h01(L.seed, "shed3", recs[n][1], recs[n][2], recs[n][3])))
+            for n in cand:
+                if total <= limit:
+                    break
+                kid = recs[n][0]
+                if pieces[kid].get("kind") == "interior":
+                    gone.add(n)
+                    total -= tri(kid)
+                    continue
+                plain = "wall_plain_t" if kid.endswith("_t") else "wall_plain_k"
+                if plain in pieces and plain != kid and tri(plain) < tri(kid) and "door" not in kid:
+                    total -= tri(kid) - tri(plain)
+                    recs[n] = (plain,) + tuple(recs[n][1:])
     return [r for n, r in enumerate(recs) if n not in gone], log

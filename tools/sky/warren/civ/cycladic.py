@@ -44,7 +44,7 @@ class Cycladic(FamilyCiv):
         "marks": [{"type": "civic_tower", "pieces": ["minaret_base", "minaret_base", "chapel_cycladic"], "storeys": 1},
                   {"type": "plan_piece", "cls": "green", "piece": "windmill_round", "share": 0.04, "max": 3},
                   {"type": "stalls", "share": 0.06}],
-        "overlay": {"face_items": [{"piece": "stair_external_white", "p": 0.04, "where": "upper", "dk": -1}], "lantern": 0.45, "festoon": 0.25, "awning": 0.3, "wall_pots": 0.08, "dish": 0.03, "cable": 0.04},
+        "overlay": {"lantern": 0.45, "festoon": 0.25, "awning": 0.3, "wall_pots": 0.08, "dish": 0.03, "cable": 0.04},
         "foliage": {"plaza": ["tamarisk", "pepper_tree"], "green": ["olive", "tamarisk", "fig"],
                     "bank": ["tamarisk", "reeds"], "lane_wall": ["bougainvillea", "bougainvillea", "hibiscus"],
                     "roof": ["geranium_tins", "basil_pots"], "rates": {"lane_wall": 0.12, "roof": 0.08}},

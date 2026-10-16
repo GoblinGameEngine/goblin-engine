@@ -217,11 +217,11 @@ def wall_veranda_gothic():
     """KARACHI: a colonial Indo-Gothic veranda storey -- two pointed arches on slender columns at the front (1.8 m out),
     a pierced balustrade, louvred doors behind"""
     def b():
-        m = _wall(T, [_rect(-1.1, 0.0, -0.3, 2.5), _rect(0.3, 0.0, 1.1, 2.5)], reveal="frame")
-        for x0 in (-1.1, 0.3):
-            m.box((x0 + 0.005, 0.0, -0.16), (x0 + 0.795, 2.495, -0.12), "accent", 0.85)
+        m = _wall(T, [_rect(-1.25, 0.0, -0.2, 2.5), _rect(0.2, 0.0, 1.25, 2.5)], reveal="frame")   # (doors 1.05 x 2.5)
+        for x0 in (-1.25, 0.2):
+            m.box((x0 + 0.005, 0.0, -0.16), (x0 + 1.045, 2.495, -0.12), "accent", 0.85)
             for j in range(10):
-                _strip(m, (x0 + 0.06, 0.15 + j * 0.22, -0.115), (x0 + 0.74, 0.15 + j * 0.22, -0.115), 0.06, (0, 0.4, 1), "accent")
+                _strip(m, (x0 + 0.06, 0.15 + j * 0.22, -0.115), (x0 + 0.99, 0.15 + j * 0.22, -0.115), 0.06, (0, 0.4, 1), "accent")
         d = 1.8
         front = Mesh()
         ops = [[(x + dx, y) for x, y in arch("pointed", 1.2, 2.7, 0.0, n=6)] for dx in (-0.72, 0.72)]
@@ -300,12 +300,12 @@ def wall_jharokha_bangla():
             _corbel(m, x, 0.35, d, 0.75, 0.1, "trim", 0.85)
         m.box((x0, 0.25, 0.0), (x1, 0.4, d + 0.05), "trim", skip=("z-",))
         m.box((x0 + 0.05, 0.4, d - 0.08), (x1 - 0.05, 0.95, d - 0.02), "trim", 0.95)
-        _diag(m, x0 + 0.1, 0.45, x1 - 0.1, 0.9, d - 0.01, 0.12, 0.03, "trim")
+        _diag(m, x0 + 0.1, 0.45, x1 - 0.1, 0.9, d + 0.01, 0.12, 0.03, "trim")              # (3 cm proud of the apron)
         o = arch("lobed", 1.2, 1.25, 0.95, n=3)
         m.wall_cut(_rect(x0 + 0.05, 0.95, x1 - 0.05, 2.25), [o], d - 0.08, d - 0.02, "trim", reveal_slot="trim")
         m.pane(-0.6, 0.95, 0.6, 2.2, d - 0.3)
         for x in (x0 + 0.08, x1 - 0.08):
-            m.cyl(x, d - 0.05, 0.05, 0.4, 2.25, "trim", n=6, caps=False)
+            m.cyl(x, d + 0.02, 0.05, 0.4, 2.25, "trim", n=6, caps=False)            # (standing clear of the apron's face)
         n = 8                                                            # the bangla roof: an arched ridge, drooping corners
         xs = [x0 - 0.2 + (x1 - x0 + 0.4) * i / n for i in range(n + 1)]
         ys = [2.25 + 0.35 * math.sin(math.pi * i / n) for i in range(n + 1)]
@@ -497,7 +497,7 @@ def badgir(part):
             m.box((-a + 0.25, 0.0, -a + 0.25), (a - 0.25, h, a - 0.25), "frame", 0.35, skip=("y-", "y+"))
             for k in range(4):
                 sub = Mesh()
-                for i in range(6):                                       # the fins between the slots
+                for i in range(5):                                       # the fins between the slots (the corner fin belongs to the next face)
                     x = -a + i * 0.4 - (0.0 if i else 0.0)
                     sub.box((min(x, a - 0.08), 0.0, a - 0.25), (min(x + 0.08, a), h, a), "wall", 0.95, skip=("y-", "y+", "z-"))
                 m.add(sub, _rot(k))
@@ -738,7 +738,7 @@ def dome_turquoise_ribbed():
         m = Mesh()
         m.box((-1.45, 0.0, -1.45), (1.45, 0.5, 1.45), "wall", skip=("y-",))
         m.cyl(0, 0, 1.15, 0.5, 1.6, "wall", n=16, caps=False)
-        m.cyl(0, 0, 1.16, 1.25, 1.55, "accent2", n=16, caps=False)
+        m.cyl(0, 0, 1.19, 1.25, 1.55, "accent2", n=16, caps=False)        # (4 cm proud of the drum)
         _ribbed_dome(m, 1.2, 1.6, 1.9, n=20, slot="tile", drum=0.0, sh=(1.0, 0.75))
         m.lathe([(0.0, 3.45), (0.08, 3.55), (0.0, 3.85)], "accent2", n=6)
         return m

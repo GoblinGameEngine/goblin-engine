@@ -45,7 +45,7 @@ class SaharanKasbah(FamilyCiv):
                                                      "tower_kasbah_corner_top"], "storeys": 5},
                   {"type": "roof_towers", "piece": "tower_kasbah_corner_shaft", "top": "tower_kasbah_corner_top",
                    "share": 0.02, "storeys": (1, 2)},
-                  {"type": "plan_piece", "cls": "court", "piece": "ghorfa_cell", "share": 0.12, "max": 16, "epoch": 1},
+                  {"type": "plan_piece", "cls": "green", "piece": "ghorfa_cell", "share": 0.12, "max": 16, "epoch": 1},
                   {"type": "stalls", "share": 0.08}],
         "overlay": {"band": {"piece": "band_brick_relief", "p": 0.4, "from": 2}, "lantern": 0.35, "dish": 0.1,
                     "cable": 0.05, "awning": 0.3},

@@ -55,11 +55,11 @@ func _next() -> void:
 	var stop: Array = _plan[_i]
 	var sky := get_tree().current_scene.get_node_or_null("DaySkySystem")
 	if sky:
-		sky.time_of_day = RUSH[_i % RUSH.size()]
+		sky.set_clock(sky.day, float(RUSH[_i % RUSH.size()]) * 24.0)
 	var gm := get_tree().root.find_child("GameMenu", true, false)
 	gm._fast_travel(stop[1], 0, "%s, %s" % [stop[0], stop[1].name])
 	if sky:
-		sky.time_of_day = RUSH[_i % RUSH.size()]           # (the trip's minutes back off: a rush hour each stop)
+		sky.set_clock(sky.day, float(RUSH[_i % RUSH.size()]) * 24.0)       # (the trip's minutes back off: a rush hour each stop)
 	_t = DWELL_S
 	_crashes0 = int(RoadDriver.tally.get("crashes", 0))
 	_fps.clear()

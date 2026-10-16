@@ -28,7 +28,7 @@ def foliage_instances(L, civ, items):
         else:
             i, j = where
             x, _, z = L.centre(i, j)
-            y = L.deck_y(x, z)
+            y = L.q[(i, j)] * 0.8 if (i, j) in getattr(L, "q", {}) else L.deck_y(x, z)
         from pick import FACE, h01
         if isinstance(rot, int) and not isinstance(rot, bool):
             # a climber on a wall: rot is the face (pick.FACE); stand it on the face plane, yaw turning its +Z out
@@ -67,7 +67,7 @@ def write(L, civ, o, units, doors, foliage, out_bin, out_json, stats, kit):
     keys = sorted(by)
     b = io.BytesIO()
     b.write(b"WRN1")
-    b.write(struct.pack("<H", 2))
+    b.write(struct.pack("<H", 3))
     _str(b, civ.id)
     b.write(struct.pack("<ffff", L.x0, L.z0, CELL, STOREY))
     b.write(struct.pack("<HHB", L.nx, L.nz, LEVELS))
@@ -94,7 +94,8 @@ def write(L, civ, o, units, doors, foliage, out_bin, out_json, stats, kit):
     b.write(struct.pack("<I", len(o.recs)))
     for k in keys:
         for (p, i, j, lv, rot, flags, mnt, pal_v, ep) in by[k]:
-            b.write(struct.pack("<HBBBBB", pid[p], i, j, lv, (rot & 3) | (flags & 12) | ((mnt & 15) << 4),
+            b.write(struct.pack("<HBBBBB", pid[p], i, j, lv,
+                                (rot & 3) | (flags & 12) | ((mnt & 3) << 4) | (((flags >> 4) & 3) << 6),
                                 (pal_v & 15) | ((ep & 15) << 4)))
     b.write(struct.pack("<H", len(units)))
     for u in units:
@@ -129,7 +130,7 @@ def write(L, civ, o, units, doors, foliage, out_bin, out_json, stats, kit):
         lv.append({"level": k, "rows": rows})
     plan_rows = ["".join("o.,~bgpMPGLCrhA"[int(L.plan[i, j])] for j in range(L.nz)) for i in range(L.nx)]
     doc = {
-        "version": 2, "island": L.isl["id"], "name": L.isl.get("name"), "civ": civ.id, "civ_name": civ.name,
+        "version": 3, "island": L.isl["id"], "name": L.isl.get("name"), "civ": civ.id, "civ_name": civ.name,
         "variant": getattr(civ, "city", None), "seed": L.seed,
         "frame": {"x0": L.x0, "z0": L.z0, "cell": CELL, "storey": STOREY, "nx": L.nx, "nz": L.nz, "levels": LEVELS,
                   "chunk": CHUNK},

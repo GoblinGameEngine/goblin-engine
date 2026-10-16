@@ -12,12 +12,16 @@ research/sky_islands/warrens/00_brief.md "Build, milestone 1" and r4_design.md Â
   "plinths_missing").
 - Chunks are 8 x 8 cells (all levels): chunk (ci, cj) holds cells i in [8 ci, 8 ci + 7], j likewise.
 
-## A piece placement (version 2: the KIT's ids, frames and palettes)
+## A piece placement (version 3: the KIT's ids, frames and palettes; quarter storeys)
 `[u16 piece, u8 i, u8 j, u8 level, u8 rot_flags, u8 pal_epoch]` (7 bytes, little endian).
 - `piece`: index into the file's piece-id table; every id is a piece of `godot_project/remake/sky/warrens/pieces.json`
   (mesh of the same name in `kit/kit.glb`).
-- `rot_flags`: bits 0-1 `rot`; bit 2 `DECK` -- y = the deck height at the cell centre (paving, garden beds, steps,
-  stalls, fountains follow the deck), else y = 3.2 * level; bit 3 `MIRROR` (x -> -x, unused so far); bits 4-7 `mount`.
+- `rot_flags`: bits 0-1 `rot`; bit 2 `DECK` -- y = the deck height at the cell centre, else
+  **y = 3.2 * level + 0.8 * quarter**; bit 3 `MIRROR` (x -> -x, unused so far); bits 4-5 `mount`; **bits 6-7 `quarter`
+  (0-3: quarter storeys, 0.8 m)**.  Version 3: the open ground is GRADED (tools/sky/warren/walk.py) -- paving, stairs,
+  kerbs, plinths, stalls, fountains and every other piece standing on open ground carry level + quarter, not DECK, so
+  they meet the doors and each other exactly (the walk check); DECK remains only for the odd piece off the graded
+  ground.
 - `pal_epoch`: bits 0-3 the **palette variant** -- `pieces.json palettes[civ][variant]` (a slot -> colour dict: wall,
   trim, frame, glass, screen, roof, metal, fabric, emissive, tile, water, ground, plant), chosen per HOUSE (lot), so a
   house's walls, corners, parapets and roof share one colour; bits 4-7 the epoch that built it (0-5).
@@ -62,6 +66,17 @@ u32 n_foliage, then n_foliage x [u8 species, i16 x (dm), i16 z (dm), u8 y (0.25 
 `use`: 0 home, 1 shop, 2 work, 3 civic, 4 stair, 5 passage, 6 storeroom, 7 vacant.  Homes beyond the island's
 canon population are repurposed (workshops, factories, dentists, stores, shrines, storerooms, vacant); the twin's
 units carry the `kind`.
+
+## Walking (version 3)
+The player has no step-up (~0.3 m lip at most) and climbs only ramp-collision pieces.  The generator grades every
+walkable cell to whole quarters (never below the deck; raised where needed), adjacent walkable cells differ by at most
+2 quarters, and every 1-2 quarter rise on a walk is a stair piece (step_low_4 0.8 m, steps_up 1.6 m) in the lower cell
+rising toward the higher; every entrance (each lot's door, every shop) stands at a whole storey whose floor equals the
+ground outside, or a stoop stair on the outside cell climbs to it; flats above reach the street through the lot's
+door (an internal stair core).  Retaining walls (plinth pieces) close drops of more than 0.6 m.  The twin's
+`stats.walk_check` reports doors / shops / public cells reached from the travel point, stairs connected at both ends,
+stoops and raised cells; `walk` nodes stand on the graded surface (stair nodes mid-ramp), edges only where the surfaces
+meet.
 
 ## The readable twin `<id>.json`
 `"palette_mode": "kit_variant"`: every slot of a piece takes `pieces.json palettes[civ][variant][slot]` (no

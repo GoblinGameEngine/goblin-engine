@@ -29,7 +29,7 @@ def make_units(L, civ):
         use = lot["use"]
         if use == CIVIC:
             units.append({"use": CIVIC, "homes": 0, "floors": floors, "cells": sum(cells.values()), "lot": lot["id"]})
-            doors.append((len(units) - 1, dc, int(L.gk[dc]), drot, 1))
+            doors.append((len(units) - 1, dc, lot["door_k"], drot, 1))
             continue
         shops = lot.get("shop_cells", set())
         if shops:
@@ -37,7 +37,7 @@ def make_units(L, civ):
             for c in sorted(shops):
                 for rot, (di, dj) in FACE.items():
                     m = (c[0] + di, c[1] + dj)
-                    if L.inb(*m) and L.plan[m] in WALKABLE and not L.occ[m[0], m[1], int(L.gk[c])]:
+                    if m in L.W and L.q[m] == 4 * int(L.gk[c]) and m not in L.stoop:
                         doors.append((len(units) - 1, c, int(L.gk[c]), rot, 1))
                         break
         if flats:
@@ -45,12 +45,12 @@ def make_units(L, civ):
                 if k == g0 and (shops or use == WORK):
                     if use == WORK:
                         units.append({"use": WORK, "homes": 0, "floors": 1, "cells": cells[k], "lot": lot["id"]})
-                        doors.append((len(units) - 1, dc, int(L.gk[dc]), drot, 0))
+                        doors.append((len(units) - 1, dc, lot["door_k"], drot, 0))
                     continue
                 homes = max(1, cells[k] // 3)          # (Kowloon's flats: ~23 m2 -- three cells a flat, roughly)
                 units.append({"use": HOME, "homes": homes, "floors": 1, "cells": cells[k], "lot": lot["id"],
                               "level": k})
-                doors.append((len(units) - 1, dc, int(L.gk[dc]), drot, 0))
+                doors.append((len(units) - 1, dc, lot["door_k"], drot, 0))
         else:
             rooms = sum(cells.values())
             homes = 1 if rooms < 18 else 2               # (extended families: one house, sometimes two)
@@ -58,7 +58,7 @@ def make_units(L, civ):
                 units.append({"use": WORK, "homes": 0, "floors": floors, "cells": rooms, "lot": lot["id"]})
             else:
                 units.append({"use": HOME, "homes": homes, "floors": floors, "cells": rooms, "lot": lot["id"]})
-            doors.append((len(units) - 1, dc, int(L.gk[dc]), drot, 0))
+            doors.append((len(units) - 1, dc, lot["door_k"], drot, 0))
     # the enter flags: shops always (select.py made their interiors), a share of house doors
     enter = set((c[0], c[1], c[2]) for c in getattr(L, "enter", []))
     doors = [(u, c, k, rot, 1 if (c[0], c[1], k) in enter else e) for (u, c, k, rot, e) in doors]
@@ -122,30 +122,31 @@ def walk_graph(L, civ):
     def add(key, x, y, z, kind):
         index[key] = len(nodes)
         nodes.append([round(x, 2), round(y, 2), round(z, 2), kind])
-    for i in range(L.nx):
-        for j in range(L.nz):
-            p = int(L.plan[i, j])
-            if p in WALKABLE and p != WATER and not L.occ[i, j, int(L.gk[i, j])]:
-                x, _, z = L.centre(i, j)
-                add(("g", i, j), x, L.ground[i, j], z, "ground")
+    import walk
+    for (i, j) in sorted(L.W):
+        x, _, z = L.centre(i, j)
+        # (a stair cell's node at the middle of its ramp)
+        st = L.stair.get((i, j))
+        y = L.q[(i, j)] * walk.Q + (st[1] * walk.Q / 2 if st else 0.0)
+        add(("g", i, j), x, y, z, "stair" if st else "ground")
     edges = []
-    L.stairs_out = []                       # (i, j, rot): an outdoor stair up a drop between walkable cells
+    L.stairs_out = []
     L.ladders = []                          # (i, j, level, rot): a ladder up a roof step
     L.planks = []                           # (i, j, level, rot): a plank across a gap between roofs
-    for (t, i, j), a in list(index.items()):
+    L.edge_extra = {}                       # edge index -> the ladder / planks it needs
+    L.walk_keys = None
+    for (i, j) in sorted(L.W):
+        a = index[("g", i, j)]
         for di, dj in ((1, 0), (0, 1)):
-            b = index.get(("g", i + di, j + dj))
-            if b is None:
-                continue
-            dh = float(L.ground[i + di, j + dj] - L.ground[i, j])
-            if abs(dh) < 2.0:
-                edges.append([a, b])
-            elif abs(dh) < 7.0:
-                # a stair up the drop (on the lower cell, facing the higher)
-                lo = (i, j) if dh > 0 else (i + di, j + dj)
-                d = (di, dj) if dh > 0 else (-di, -dj)
-                L.stairs_out.append((lo[0], lo[1], {(0, -1): 0, (-1, 0): 1, (0, 1): 2, (1, 0): 3}[d]))
-                edges.append([a, b])
+            n = (i + di, j + dj)
+            if n in L.W and walk.connected(L, (i, j), n):
+                sa, sb = L.stair.get((i, j)), L.stair.get(n)
+                if sa and sb and walk.FACE[sa[0]] != (di, dj) and walk.FACE[sa[0]] != (-di, -dj):
+                    # (side by side across a wide flight: the kit's ramps are 2.8 m wide in their 3 m cells, a 20 cm
+                    # slot between them the capsule can't cross mid-flight -- the audit's walk; up one ramp instead)
+                    L.walk_side_cut = getattr(L, "walk_side_cut", 0) + 1
+                    continue
+                edges.append([a, index[("g", n[0], n[1])]])
     # a courtyard house's court: reached through its door (the court is the house's own, but it is on the graph)
     for lot in L.lots:
         if not lot.get("court") or not lot.get("door"):
@@ -176,6 +177,7 @@ def walk_graph(L, civ):
                     if kb != k:                       # a ladder up the step, on the lower roof
                         lo, d = ((i, j), (di, dj)) if kb > k else ((i + di, j + dj), (-di, -dj))
                         L.ladders.append((lo[0], lo[1], min(k, kb), rot_of[d]))
+                        L.edge_extra[len(edges) - 1] = ("ladder", L.ladders[-1])
                     continue
                 # a plank across a one- or two-cell gap to a roof at the same height (over a lane or a light well)
                 for gap in (2, 3):
@@ -186,6 +188,7 @@ def walk_graph(L, civ):
                         edges.append([a, index[("r", i + di * gap, j + dj * gap)]])
                         for m in mid:
                             L.planks.append((m[0], m[1], k, rot_of[(di, dj)] & 1))
+                        L.edge_extra[len(edges) - 1] = ("planks", [(m[0], m[1], k, rot_of[(di, dj)] & 1) for m in mid])
                         break
         # stair cores: a public stair from the ground to the roof every ~40 m, at a door on a lane
         stairs = 0
@@ -210,6 +213,7 @@ def walk_graph(L, civ):
         L.stair_cores = stairs
     # the doors' own nodes link to the ground outside them
     L.walk = {"nodes": nodes, "edges": edges}
+    L.walk_index = index
     return L.walk
 
 

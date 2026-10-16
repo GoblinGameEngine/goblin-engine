@@ -31,6 +31,7 @@ var islands: Array[SkyIsland] = []
 var layouts: Array = []
 var ready_ := false
 var _task := -1
+var banners: SkyBanners              # every island's banners, dock flags and pennants (three MultiMeshes in all)
 var _mm_near: MultiMeshInstance3D
 var _mm_far: MultiMeshInstance3D
 var _lines: MeshInstance3D
@@ -74,6 +75,9 @@ func setup(p_player: StationPlayer, p_clouds: RemakeClouds, p_sky: DaySkySystem)
 		add_child(isl)
 		islands.append(isl)
 	_make_balloons()
+	banners = SkyBanners.new()
+	add_child(banners)
+	banners.setup(self)
 	_balloon_looks(by_id)
 	_lines = MeshInstance3D.new()
 	_lines.name = "Lines"
@@ -301,7 +305,27 @@ func _carry(_delta: float) -> void:
 	elif _aboard >= 0:
 		player.carrier_velocity = Vector3.ZERO
 		player.gravity_k = 1.0
+	if (on >= 0) != (_aboard >= 0):
+		_sun_soft(on >= 0)
 	_aboard = on
+
+
+## Aboard, the camera always moves (the island drifts ~5 m/s): the sun's shadow cascades re-snap to their texels every
+## frame or two and every shadow edge on the island crawls -- a flicker (frame diffs: 0.06 % of the pixels changing a
+## frame with shadows, 0.001 % without, 0.001 % with the shadow blurred).  So aboard the sun's shadows are softened.
+const SUN_BLUR_ABOARD := 2.5
+var _sun: DirectionalLight3D
+var _sun_blur := 1.0
+
+
+func _sun_soft(on: bool) -> void:
+	if _sun == null or not is_instance_valid(_sun):
+		var ls := get_tree().current_scene.find_children("*", "DirectionalLight3D", true, false)
+		if ls.is_empty():
+			return
+		_sun = ls[0]
+		_sun_blur = _sun.shadow_blur
+	_sun.shadow_blur = SUN_BLUR_ABOARD if on else _sun_blur
 
 
 const FRAME_OVER := 500.0             # m over a deck a flier takes on the island's motion (RemakeAirVehicle)
@@ -438,6 +462,10 @@ func _process(delta: float) -> void:
 	Prof.begin("sky.balloons")
 	_balloons()
 	Prof.end("sky.balloons")
+	Prof.begin("sky.banners")
+	if banners:
+		banners.step(delta)
+	Prof.end("sky.banners")
 	Prof.begin("sky.night")
 	_night_step(delta)
 	Prof.end("sky.night")

@@ -406,10 +406,10 @@ def wall_shopboards():
 def wall_moon_gate():
     """JIANGNAN MARK: a garden wall with its round moon gate (a passage), a black-tile coping, a leak window"""
     def b():
-        r = 1.15
-        o = [(r * math.cos(math.tau * k / 16 - math.pi / 2), 1.15 + r * math.sin(math.tau * k / 16 - math.pi / 2)) for k in range(16)]
+        r = 1.3                                                            # (1.2 x 2.25 m clear through the circle)
+        o = [(r * math.cos(math.tau * k / 16 - math.pi / 2), 1.3 + r * math.sin(math.tau * k / 16 - math.pi / 2)) for k in range(16)]
         o = [(x, max(y, 0.0)) for x, y in o]
-        o = _dedupe([(-0.45, 0.0), (0.45, 0.0)] + [p for p in o if p[1] > 0.0])
+        o = _dedupe([(-0.55, 0.0), (0.55, 0.0)] + [p for p in o if p[1] > 0.0])
         m = _wall(T, [o])
         _arch_band(m, o, 0.1, -0.01, 0.03, "ground")
         m.quad_facing((-HB, ST, 0.15), (HB, ST, 0.15), (HB, ST + 0.25, -T / 2), (-HB, ST + 0.25, -T / 2), (0, 1, 0.5), "roof")

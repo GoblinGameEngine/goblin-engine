@@ -9,7 +9,8 @@ render_mode unshaded, blend_add, depth_draw_never, cull_disabled, fog_disabled, 
 
 global uniform float daylight;
 uniform float day_k = 0.22;          // how much of it shows by day (an unlit tube's colour)
-uniform float night_k = 4.5;
+uniform float night_k = 2.0;         // SIGN_EMIT (2026-10-16): letters 2.0 at night, just over the glow threshold (1.5)
+                                      // for a thin halo; lit faces at alpha <= 0.45 stay under it (no wash)
 
 varying vec4 col;
 varying vec2 prm;

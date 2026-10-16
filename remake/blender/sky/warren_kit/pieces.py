@@ -68,7 +68,7 @@ def _lattice(m, x0, y0, x1, y1, z0, z1, nx, ny, slot="screen", bar=0.035):
         _strip(m, (x, y0 + 0.06, zc), (x, y1 - 0.06, zc), bar, (0, 0, 1), slot)
     for j in range(1, ny):
         y = y0 + (y1 - y0) * j / ny
-        _strip(m, (x0 + 0.06, y, zc + 0.004), (x1 - 0.06, y, zc + 0.004), bar, (0, 0, 1), slot)
+        _strip(m, (x0 + 0.06, y, zc + 0.03), (x1 - 0.06, y, zc + 0.03), bar, (0, 0, 1), slot)   # (3 cm proud of the uprights)
 
 
 def _bars(m, x0, y0, x1, y1, z, n, slot="metal", r=0.012):
@@ -114,11 +114,11 @@ def wall_window_pair(t):
 
 def wall_door(t):
     def b():
-        m = _wall(t, [_rect(-0.5, 0.0, 0.5, 2.2)])
+        m = _wall(t, [_rect(-0.55, 0.0, 0.55, 2.35)])                       # (1.1 x 2.35 m clear: walk-through)
         g = -min(t * 0.6, 0.35)
-        m.box((-0.5, 0.02, g - 0.05), (0.5, 2.2, g), "frame")                  # the leaf, set back
-        m.box((-0.42, 0.9, g), (-0.34, 1.05, g + 0.04), "metal")               # a handle plate
-        m.box((-0.62, 2.2, -0.02), (0.62, 2.34, 0.08), "trim")                 # lintel
+        m.box((-0.545, 0.02, g - 0.05), (0.545, 2.345, g), "frame")            # the leaf, set back
+        m.box((-0.47, 0.9, g), (-0.39, 1.05, g + 0.04), "metal")               # a handle plate
+        m.box((-0.67, 2.35, -0.02), (0.67, 2.49, 0.08), "trim")                # lintel
         return m
     return b
 
@@ -322,7 +322,7 @@ def wall_zellij():
         _window(m, K, -0.3, 2.2, 0.3, 2.75, sill=False, depth=0.3)
         for k in range(5):
             m.tube((-0.25 + k * 0.125, 2.2, -0.08), (-0.25 + k * 0.125, 2.75, -0.08), 0.012, "metal", n=4)
-        m.box((-HB, 0.0, 0.0), (HB, 0.6, 0.025), "tile", skip=("z-",))
+        m.box((-HB, 0.005, 0.0), (HB, 0.6, 0.03), "tile", skip=("z-",))     # (off the wall's foot edge: no 3-face edge)
         for r in range(2):                                     # a zellige checker over the base: two colours in squares
             for c in range(10):
                 slot = "tile" if (r + c) % 2 else "trim"
@@ -404,7 +404,7 @@ def corner_quoin(t):
             y = k * 0.64
             w = 0.45 if k % 2 else 0.3
             m.box((-w, y + 0.02, -0.05), (0.05, y + 0.6, 0.05), "trim")
-            m.box((-0.05, y + 0.02, -(0.75 - w)), (0.05, y + 0.6, 0.05), "trim")
+            m.box((-0.05, y + 0.02, -(0.75 - w)), (0.05, y + 0.6, -0.05), "trim")      # (meets the first, no overlap)
         return m
     return b
 
@@ -604,7 +604,7 @@ def pave(kind):
     read as lines between them; stones shaded by a hash for variety, the court a two-colour checker.  <= 20 tris."""
     def b():
         m = Mesh()
-        m.quad_facing((-HB, -0.01, -HB), (HB, -0.01, -HB), (HB, -0.01, HB), (-HB, -0.01, HB), (0, 1, 0), "ground", 0.55)
+        m.quad_facing((-HB, -0.035, -HB), (HB, -0.035, -HB), (HB, -0.035, HB), (-HB, -0.035, HB), (0, 1, 0), "ground", 0.55)   # (the joints 3.5 cm down: no shimmer)
         n = {"main": 2, "lane": 3, "plaza": 3, "court": 3}.get(kind, 2)
         g = {"main": 0.06, "lane": 0.05, "plaza": 0.05, "court": 0.03}.get(kind, 0.05)
         sz = BAY / n
@@ -630,7 +630,7 @@ def pave_garden():
         for side in range(4):
             r = rot_y(90 * side)
             e = Mesh()
-            e.box((-HB, -0.12, HB - 0.15), (HB - 0.15, 0.08, HB), "trim")
+            e.box((-HB + 0.06, -0.12, HB - 0.18), (HB - 0.21, 0.08, HB - 0.06), "trim")      # (6 cm in from the cell face: clear of skirts)
             m.add(e, r)
         return m
     return b
@@ -675,9 +675,9 @@ def stair_run():
             y = (k + 1) * ST / n
             m.box((-0.65, y - 0.1, z0), (0.65, y, z0 + 6.0 / n + 0.03), "ground")
         for x in (-0.7, 0.7):
-            m.quad_facing((x, 0.0, -HB), (x, 0.0, -HB + 0.4), (x, ST, -HB + 6.0), (x, ST - 0.4, -HB + 6.0), (math.copysign(1, x), 0, 0), "metal")
+            m.quad_facing((x, 0.0, -HB), (x, 0.0, -HB + 0.4), (x, ST - 0.4, -HB + 6.0), (x, ST, -HB + 6.0), (math.copysign(1, x), 0, 0), "metal")   # (in order round the band: no bow-tie)
             m.quad_facing((x - 0.04 * math.copysign(1, x), 0.0, -HB), (x - 0.04 * math.copysign(1, x), 0.0, -HB + 0.4),
-                          (x - 0.04 * math.copysign(1, x), ST, -HB + 6.0), (x - 0.04 * math.copysign(1, x), ST - 0.4, -HB + 6.0),
+                          (x - 0.04 * math.copysign(1, x), ST - 0.4, -HB + 6.0), (x - 0.04 * math.copysign(1, x), ST, -HB + 6.0),
                           (-math.copysign(1, x), 0, 0), "metal", 0.8)
             m.tube((x, 1.0, -HB), (x, ST + 1.0, -HB + 6.0), 0.025, "metal")
             for k in range(4):

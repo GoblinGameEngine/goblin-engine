@@ -1,5 +1,6 @@
 extends Node3D
 class_name RemakeBuilding
+const CitySigns := preload("res://remake/scripts/city_signs.gd")
 
 ## Instances one remake building .glb and wires up what the Blender side encoded in node
 ## names (see remake/blender/gblib.py header):
@@ -303,8 +304,13 @@ static func merge_kit(ps: PackedScene) -> Dictionary:
 	var rects := _room_rects(ps.resource_path.get_file().get_basename())
 	var col_add := PackedVector3Array()        # the pieces' collision faces, in the building's collision frame
 	var mats := {}                   # material name -> the piece's material (for one the building doesn't have)
+	var drop: Dictionary = CitySigns.drop_rows(ps.resource_path.get_file().get_basename())   # (lettering the bitmap signs replace)
+	var ri := -1
 	for r in (rows if rows is Array else []):
+		ri += 1
 		if str(r[0]) == "T":         # lettering: ["T", text, font, material, 3x4 matrix taking a 1 m em to the sign]
+			if drop.has(ri):
+				continue
 			var tmesh := _text_mesh(String(r[2]), String(r[1]))
 			if tmesh == null:
 				continue
@@ -528,6 +534,7 @@ static var night_level := 0.0
 
 static func set_night(n: float) -> void:
 	night_level = n
+	CitySigns.set_night(n)
 	for m in night_glass:
 		# (a soft glow: the room's own light, through the glass, does the rest -- the panes stay see-through)
 		m.emission_energy_multiplier = n * 1.1

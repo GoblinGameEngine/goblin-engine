@@ -44,7 +44,7 @@ def _voussoirs(m, o, z, n, slot_a="accent", slot_b="trim", w=0.16):
 def _arch_band(m, o, w, z0, z1, slot, shade=1.0):
     """the moulded band round a door / passage arch, stopping at the threshold (y 0) instead of wrapping under it"""
     from shapely.geometry import Polygon, box as sbox
-    g = Polygon(_off(o, w)).difference(Polygon(_off(o, 0.005))).intersection(sbox(-50, 0.0, 50, 50))
+    g = Polygon(_off(o, w)).difference(Polygon(_off(o, 0.03))).intersection(sbox(-50, 0.0, 50, 50))   # (3 cm off the reveal)
     for q in getattr(g, "geoms", [g]):
         if q.geom_type == "Polygon" and q.area > 1e-4:
             m.wall_cut(_dedupe([tuple(p) for p in list(q.exterior.coords)[:-1]]), [], z0, z1, slot, shade)
@@ -264,15 +264,15 @@ def wall_ablaq_portal():
     """CAIRO / LEVANT MARK: the ablaq portal -- a pointed arch door recessed in a tall frame of alternating dark and light
     stone courses, a joggled voussoir lintel, a stepped muqarnas hood in the arch head"""
     def b():
-        o = arch("pointed", 1.4, 2.9, 0.0, n=8)
+        o = arch("pointed", 1.4, 3.05, 0.0, n=8)
         m = _wall(K, [o])
-        _door_leaf(m, -0.7, 1.95, 0.7, -0.45, "frame", studs=0)
-        m.wall_cut(o, [_rect(-0.7, -1.0, 0.7, 2.0)], -0.47, -0.43, "trim", 0.9)        # the tympanum over the door
+        _door_leaf(m, -0.7, 2.3, 0.7, -0.45, "frame", studs=0)                          # (1.4 x 2.3 m clear)
+        m.wall_cut(o, [_rect(-0.7, -1.0, 0.7, 2.35)], -0.47, -0.43, "trim", 0.9)        # the tympanum over the door
         for j in range(3):                                                             # muqarnas tiers
-            yb = 2.05 + j * 0.25
+            yb = 2.38 + j * 0.2
             for i in range(5 - j):
                 x = -0.55 + j * 0.12 + i * 0.25
-                m.box((x, yb, -0.43), (x + 0.2, yb + 0.22, -0.43 + 0.08 + 0.06 * j), "trim", 0.8 + 0.06 * (i % 2), skip=("z-",))
+                m.box((x, yb, -0.43), (x + 0.2, yb + 0.18, -0.43 + 0.08 + 0.06 * j), "trim", 0.8 + 0.06 * (i % 2), skip=("z-",))
         frame = _rect(-1.2, 0.0, 1.2, 3.2)
         n = 8
         for k in range(n):                                                             # ablaq courses

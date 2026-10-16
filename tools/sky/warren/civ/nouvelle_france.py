@@ -57,7 +57,7 @@ class NouvelleFrance(FamilyCiv):
                  "pitched": {"run": "roof_tin_steep", "end": "roof_tin_steep_end", "variants": [0, 1], "civic": True}},
         "marks": [{"type": "civic_tower", "pieces": ["minaret_base", "minaret_shaft", "green_hip"], "storeys": 5},
                   {"type": "fountain"}],
-        "overlay": {"face_items": [{"piece": "ov_snow_cap", "p": 0.5, "where": "upper"}], "street_stair": 0.3, "street_stair_piece": "stair_plex_outdoor", "lantern": 0.4, "cable": 0.12, "dish": 0.04, "chimney": 0.0},
+        "overlay": {"face_items": [{"piece": "ov_snow_cap", "p": 0.5, "where": "upper"}], "street_stair": 0.0, "lantern": 0.4, "cable": 0.12, "dish": 0.04, "chimney": 0.0},
         "foliage": {"plaza": ["maple", "elm"], "green": ["maple", "elm", "spruce", "lilac"], "bank": ["willow", "spruce"],
                     "lane": ["lilac"], "lane_wall": ["ivy"], "rates": {"plaza": 0.08, "lane": 0.03}},
         "kit_requests": [

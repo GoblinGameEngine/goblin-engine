@@ -96,7 +96,7 @@ func setup(p_isl: Node3D) -> void:
 	_rng.seed = hash(str(data.id) + ":signs")
 	_accent = _rng.randi() % NEON.size()
 	_use_style(str(isl.canon.get("style", data.get("style", ""))))
-	for b in ["neon", "led", "wash", "solid"]:
+	for b in ["neon", "led", "wash", "solid", "atlas_sky_a", "atlas_sky_b"]:
 		var st := SurfaceTool.new()
 		st.begin(Mesh.PRIMITIVE_TRIANGLES)
 		_st[b] = st
@@ -172,13 +172,16 @@ static func _glyph(fi: int, ch: String) -> Array:
 			else:
 				for p in v:
 					tris.append(Vector3(p.x, p.y - base, 0.0))
-			# only the front faces (a depth-0 TextMesh can still carry its back): keep the +Z-facing triangles
+			# only the front faces (a depth-0 TextMesh can still carry its back): Godot's front face winds clockwise,
+			# so a +Z-facing triangle's (b - a) x (c - a) points -Z.  (The old test kept n.z >= 0 -- with this TextMesh
+			# that is none of them, and no island sign had letters: tools, 2026-10-16, "A" = 33 tris, all n.z < 0.)
 			var front := PackedVector3Array()
 			for k in range(0, tris.size() - 2, 3):
 				var n := (tris[k + 1] - tris[k]).cross(tris[k + 2] - tris[k])
-				if n.z >= 0.0:
+				if n.z < 0.0:
 					front.append_array([tris[k], tris[k + 1], tris[k + 2]])
-			tris = front
+			if not front.is_empty():
+				tris = front
 	_glyphs[key] = [tris, adv]
 	return _glyphs[key]
 
@@ -524,7 +527,9 @@ func _from_anchors(b: Dictionary, bx: Transform3D, anchors: Array, r: RandomNumb
 			var sw := float(wh[0]) if wh.size() == 2 else 3.0
 			var shh := float(wh[1]) if wh.size() == 2 else 1.0
 			var txt := _name("%s:%s" % [b.id, nm])
-			if kind == "blade" and b.get("warren", false):
+			if b.get("warren", false) and _blank(kind) != {}:
+				_wblank(xf, kind, sw, shh, txt, r)
+			elif kind == "blade" and b.get("warren", false):
 				_wblade(xf, sw, shh, _short(txt), _neon_col(r), r)
 			elif kind == "blade":
 				_blade(xf * Transform3D(Basis(), Vector3(0, shh * 0.5, 0)), _short(txt), _neon_col(r), r)
@@ -665,6 +670,79 @@ func _blade(xf: Transform3D, text: String, col: Color, r: RandomNumberGenerator)
 	var c2 := Color(NEON[(_accent + 2) % NEON.size()], 0.8)
 	_tube(xf * Vector3(0, 0, -0.2), xf * Vector3(0, -H, -0.2), 0.04, c2, 2.0, ph)
 	_tube(xf * Vector3(0, 0, 0.2), xf * Vector3(0, -H, 0.2), 0.04, c2, 2.0, ph + 0.5)
+
+
+# ------------------------------------------------------------------ the SIGNS agent's island blanks (signs.json)
+## A warren's shop signs on its family's blank -- the fascia over a shop, the blade standing out (sky_<civ>_fascia /
+## _blade cells of the sky_a / sky_b atlases) -- with the shop's name set in the blank's content rect, dark letters
+## by day and lit at SIGN_EMIT by night (the user, 2026-10-16: the signs washed out and the dot-matrix text didn't
+## form).  SIGN_EMIT, shared with the SIGNS agent: letters 2.0 at night, lit faces <= 0.9, backings dark.
+static var _signs_json := {}
+static var _atlas_mats := {}
+
+
+func _blank(kind: String) -> Dictionary:
+	if _signs_json.is_empty():
+		var d = DataFile.json("res://remake/signs/signs.json")
+		_signs_json = d if d is Dictionary else {"cells": {}}
+	var wv = isl.get("warren")
+	if wv == null or (wv.head as Dictionary).is_empty():
+		return {}
+	var fam := "blade" if kind == "blade" else "fascia"
+	var cells: Dictionary = _signs_json.get("cells", {})
+	return cells.get("sky_%s_%s" % [str(wv.head.civ), fam], {})
+
+
+func _atlas_mat(atlas: String) -> Material:
+	if _atlas_mats.has(atlas):
+		return _atlas_mats[atlas]
+	var a: Dictionary = (_signs_json.get("atlases", {}) as Dictionary).get(atlas, {})
+	var m := ShaderMaterial.new()
+	m.shader = load("res://remake/shaders/sign_atlas.gdshader")
+	m.set_shader_parameter("albedo_tex", load(str(a.get("png", ""))))
+	if a.has("emit"):
+		m.set_shader_parameter("emit_tex", load(str(a.emit)))
+	_atlas_mats[atlas] = m
+	return m
+
+
+func _wblank(xf: Transform3D, kind: String, w: float, h: float, text: String, r: RandomNumberGenerator) -> void:
+	var cell := _blank(kind)
+	count[kind] = count.get(kind, 0) + 1
+	var uv: Array = cell.uv                                  # [u0, v0, du, dv] of the 256-px cell
+	var reg: Array = cell.region
+	var con: Array = cell.content                            # [x0, y0, x1, y1] px in the cell: the blank's ground
+	var cw := float(reg[2])
+	var chh := float(reg[3])
+	# the whole cell drawn at the sign's height; its width kept to the cell's aspect, within the anchor's width
+	var blade := kind == "blade"
+	var H := h * (1.0 if blade else 1.35)
+	var W := minf(H * cw / chh, w * (1.0 if blade else 1.1))
+	H = W * chh / cw
+	var bx := xf * Transform3D(Basis(), Vector3(-W * 0.5 - 0.06 if blade else 0.0, 0.0, 0.04 if not blade else 0.0))
+	var u0 := Vector2(float(uv[0]), float(uv[1]) + float(uv[3]))
+	var u1 := Vector2(float(uv[0]) + float(uv[2]), float(uv[1]))
+	var bucket := "atlas_" + str(cell.atlas)
+	_box(bx * Transform3D(Basis(), Vector3(0, 0, -0.04)), Vector3(W, H, 0.05), Color(0.1, 0.09, 0.08))
+	for side in ([1.0, -1.0] if blade else [1.0]):
+		var f := bx * Transform3D(Basis(Vector3.UP, 0.0 if side > 0 else PI), Vector3(0, 0, 0.0))
+		_quad(bucket, f, W, H, Color(1, 1, 1, 1), u0, u1)
+		# the name, centred on the blank's content rect, a little proud of it
+		var cx := ((float(con[0]) + float(con[2])) * 0.5 / cw - 0.5) * W
+		var cy := (0.5 - (float(con[1]) + float(con[3])) * 0.5 / chh) * H
+		var tw := (float(con[2]) - float(con[0])) / cw * W * 0.86
+		var th := (float(con[3]) - float(con[1])) / chh * H
+		var col := _neon_col(r).lerp(Color(1.0, 0.92, 0.75), 0.35)
+		if blade:
+			var nm := _short(text)
+			var cap := minf(tw * 0.8, th * 0.9 / maxf(nm.length() * 1.35 - 0.35, 1.0))
+			var y0 := (nm.length() * cap * 1.35 - cap * 0.35) * 0.5
+			_vtext("solid", f * Transform3D(Basis(), Vector3(cx, cy + y0, 0.012)), nm, cap, Color(0.1, 0.08, 0.06), 0, 0, 0)
+			_vtext("neon", f * Transform3D(Basis(), Vector3(cx, cy + y0, 0.02)), nm, cap, Color(col, 1.0), 0.0, 0.0, 0)
+		else:
+			var cap := minf(th * 0.62, 0.32)
+			_text("solid", f * Transform3D(Basis(), Vector3(cx, cy - cap * 0.5, 0.012)), text, cap, Color(0.1, 0.08, 0.06), 0, 0, 0, tw)
+			_text("neon", f * Transform3D(Basis(), Vector3(cx, cy - cap * 0.5, 0.02)), text, cap, Color(col, 1.0), 0.0, 0.0, 0, tw)
 
 
 func _wblade(xf: Transform3D, w: float, h: float, text: String, col: Color, r: RandomNumberGenerator) -> void:
@@ -1083,7 +1161,7 @@ static func _mat(key: String) -> Material:
 
 
 func _commit() -> void:
-	for key in ["neon", "wash", "solid", "led"]:
+	for key in ["neon", "wash", "solid", "led", "atlas_sky_a", "atlas_sky_b"]:
 		var st: SurfaceTool = _st[key]
 		var mesh := st.commit()
 		if mesh.get_surface_count() == 0:
@@ -1091,7 +1169,9 @@ func _commit() -> void:
 		var mi := MeshInstance3D.new()
 		mi.name = "Signs_" + key
 		mi.mesh = mesh
-		if key == "led":
+		if key.begins_with("atlas_"):
+			mi.material_override = _atlas_mat(key.trim_prefix("atlas_"))
+		elif key == "led":
 			var lm := ShaderMaterial.new()
 			lm.shader = load("res://remake/shaders/sky_led.gdshader")
 			lm.set_shader_parameter("msg", SkyDotFont.strip_texture(_leds))

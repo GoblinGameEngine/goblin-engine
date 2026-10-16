@@ -9,7 +9,7 @@ from civ.family import FamilyCiv
 
 class KnightsHarbour(FamilyCiv):
     id = "knights_harbour"
-    steps_map = {"steps": "stair_knight", "step_low_4": "stair_knight"}
+    # (stair_knight spans two cells: it overlapped the next cell of the graded ground -- the plain flights instead)
     name = "Knights' harbour city"
     arch_mouth = "wall_arch_round"
     kerb = "quay_edge_stone"

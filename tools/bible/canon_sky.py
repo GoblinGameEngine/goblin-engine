@@ -191,7 +191,7 @@ CUSTOMS = [
     ("rope_marks", "rope marks: rigger lines tattoo a turn of rope round the wrist for each envelope they've walked"),
     ("snow_feast", "the snow feast: the first snow of every cloud is eaten with honey before it's swept"),
     ("weighing_day", "Weighing Day: every person is weighed at midwinter and the weight book read aloud"),
-    ("dead_go_down", "the Long Drop: the dead go down in a hoist container to the floor's Return halls -- the only time most go to the floor"),
+    ("dead_go_down", "the Long Drop: the dead go down in a hoist container to the floor's Return halls, the family riding the gondola beside them"),
     ("matrilocal", "a husband crosses the bridge to his wife's island at a lashing; children are of their mother's clan"),
     ("patrilocal", "a wife crosses to her husband's island at a lashing; children take their father's clan"),
     ("chosen_island", "at sixteen every youth may choose to cross to any island at a lashing; most stay"),
@@ -383,6 +383,12 @@ SKEIN = {
     "why_ten": "the Great Tangle (VY 388): seventeen islands lashed for a jubilee were caught by a squall line; the raft twisted, lines parted, Higgledy's sister "
                "island Piggledy was torn loose, holed on Tumbledown's rim and fell into the North Sea (212 lost). Ten is what the lines and the winches hold in a squall",
     "between_islands": "kin: marriage across bridges means everyone has cousins on a dozen islands; clan feuds and alliances follow the kin",
+    "families": "large: four or five children is usual aloft (children are 'ballast', a blessing), so the Skein is young and its weight books are always full",
+    "coming_down": "routine since the Mooring Compact (VY 418): islands moor at the floor's flea markets every few weeks, and the Aloft ride the gondolas down "
+                   "to trade, shop and visit kin in their thousands; ground-weight is a joke, not a fear. About half of all island children grow up to settle "
+                   "on the floor (the Full Book, VY 486): the Lowliners",
+    "line_or_ground": "the Line or the Ground: since the Full Book (VY 486) every family raises its children knowing about half will go down the line to "
+                      "settle on the floor; a youth's going-down is feasted like a wedding, with a knotted cord to carry and a lantern to hang in the new home",
 }
 
 HISTORY = [
@@ -407,8 +413,22 @@ HISTORY = [
      "strip them for parts", "known": "living"},
     {"vy": 417, "id": "the_first_lark", "what": "the first lark: Topgallant's wrights build a two-person aerostat from Gift parts, skycloth and a winch motor that climbs "
      "from the floor to an island in four minutes; the plumbs stop riding containers down the hoist lines", "known": "living", "island": "SKY-006"},
+    {"vy": 418, "id": "the_mooring_compact", "what": "the Mooring Compact: Harrow Falls and the Skein's factors agree that every town keeps a mooring ground "
+     "beside its weekend flea market -- anchor blocks, masts and, in the cities, whole Mooring Fields (the old name, from the hulks' service days) -- and the "
+     "islands moor there to trade by gondola; Traders' Landing is the first", "known": "living"},
+    {"vy": 431, "id": "first_gondolas", "what": "the first passenger gondolas: Andean-style jig-back cabins on track ropes from the islands' rims, crewed by the "
+     "new Lines; within a decade every island keeps a mooring crew of twenty-four", "known": "living"},
     {"vy": 446, "id": "air_post", "what": "the air post: Fathom and Dogwatch start carrying urgent letters for the floor by lark", "known": "living"},
+    {"vy": 452, "id": "first_line_rows", "what": "the first Line Rows: island-born settlers fill the old cannery streets behind Solana Point's harbour and build "
+     "up and over them in their islands' styles; the South Shore becomes the Lowliners' heartland", "known": "living"},
     {"vy": 471, "id": "guild_quarrel", "what": "the Lark Quarrel: the Aerostat Pilots' Guild tries to bar larks from the Kettle Cup; the Aloft win three of the next five", "known": "living"},
+    {"vy": 474, "id": "settlers_shares", "what": "the Settlers' Shares Act: island-born settlers receive a birth share after two years' registration (the "
+     "floor-born get theirs at 18); until then the Registry had refused them shares, and settler couples borrowed shares to marry -- a wound still felt", "known": "living"},
+    {"vy": 486, "id": "the_full_book", "what": "the Full Book: the islands' weight books fill as the Skein's numbers peak; at a raft of ten the knot keepers agree "
+     "that no island will carry more than its lift, and that each family's children choose the Line or the Ground. Since then about half go down, some "
+     "1,500 a year", "known": "living"},
+    {"vy": 489, "id": "draw_housing_ruling", "what": "the Draw Housing Ruling: after a hard summer of disputes in Solana Point and Oceanview, the Assembly rules "
+     "that settlers queue for Draw homes like everyone else; the South Shore's poorer streets resent it, the Line Halls call it fair", "known": "living"},
     {"vy": 500, "id": "notice_aloft", "what": "the Launch Day Notice (VOYAGE ONE THIRD COMPLETE) reaches the Skein by dove in two days; the knot keepers call a raft to talk of it", "known": "living"},
 ]
 
@@ -604,6 +624,10 @@ def build(names, faction_ids, settlement_ids, lineage_surnames):
         for j in x["jobs"]:
             if j not in JOBS:
                 errs.append("sky: job %s" % j)
+    if sum(r[3] for r in LINE_RANKS) != 24:
+        errs.append("sky: mooring crew is %d, not 24" % sum(r[3] for r in LINE_RANKS))
+    if sum(SETTLED["by_region"].values()) != SETTLED["population"]:
+        errs.append("sky: settled regions %d != %d" % (sum(SETTLED["by_region"].values()), SETTLED["population"]))
     for f in FACTION_STANCE:
         if f not in faction_ids:
             errs.append("sky: faction %s" % f)
@@ -614,7 +638,8 @@ def build(names, faction_ids, settlement_ids, lineage_surnames):
         "confederation": SKEIN, "physics": physics(), "history": HISTORY, "physiology": PHYSIOLOGY,
         "water": WATER, "livestock": {k: dict(zip(("name", "where", "why", "per_block", "model"), v)) for k, v in LIVESTOCK.items()},
         "wildlife": {k: dict(zip(("name", "where", "what"), v)) for k, v in WILDLIFE.items()},
-        "lark": LARK, "plumb": PLUMB, "hoist_trade": HOIST,
+        "lark": LARK, "plumb": PLUMB, "hoist_trade": HOIST, "market_moorings": MOORINGS,
+        "line_ranks": [dict(zip(("id", "name", "what", "per_crew", "shares"), r)) for r in LINE_RANKS], "settled": SETTLED,
         "jobs": {k: {"name": v[0], "what": v[1], "why": v[3]} for k, v in JOBS.items()},
         "specialties": {s[0]: {"name": s[1], "trade": s[3], "needs": s[4]} for s in SPECIALTIES},
         "governance": dict(GOVERNANCE), "customs": dict(CUSTOMS), "faiths": {f[0]: f[1] for f in SKY_FAITHS},
@@ -638,11 +663,59 @@ LARK = {
     "per_island": "at least two: one for the plumb, one spare and for rescue; great islands keep more",
     "first": "VY 417, Topgallant",
 }
+MOORINGS = {
+    "what": "the market moorings: every town on the floor keeps a mooring ground beside its weekend flea market; an island trims to arrive, descends to about 600 m, drops its mooring crew of 24 in a free-hanging drop cage, makes fast its hawsers to the anchor blocks or masts, raises logistics tents (the Mooring Office, the Weigh House, the Crew Tent) and then runs gondolas: passenger cabins of 28 with a cabin warden, and cargo cabins carrying skyboxes",
+    "how_often": "a city sees an island about two weekends in five, a small town less often; islands drawn to a moored island lash on and drop their own lines; at three moored islands the market becomes a fair and the islanders' trading tents ring the parking lot",
+    "stay": "most islands stay one weekend, some two or three; none more than three weeks. The Three-Day Knot is kept by the market knot: the lashings are renewed at a short moot every third day",
+    "anchors": "cities keep Mooring Fields of buried anchor blocks and two mooring masts; towns a mast and an anchor ring; villages an anchor ring. Only the first "
+               "islands make fast to the ground (six at a city, four at a town, three at a village); the rest lash to them as a raft, up to the Ten Knot's ten",
+    "bright_week": "Bright Week: when five or more islands moor at one market it is a celebration, and the whole market -- the town's own booths too -- stays "
+                   "open every day while they stay. Customs: every island strings its lights across the whole market and lot (the brightest week of the "
+                   "town's year); the islands' bells ring the market open each morning; a lantern market runs in the aisles every evening; on the first "
+                   "night the Lines dance the rope-dance on the anchor field; floor children are given a first knot on a cord",
+    "sky_holiday": "the Sky Holiday (the Aloft say 'the Low Sky', for a sky hung low with islands): when seven or more islands moor at a town's or "
+                   "village's market, the town council declares a holiday for the town and every place within eight kilometres. Work stops but for "
+                   "the essential trades; schools close; every house hangs a lantern; the islands bring the long kitchen down to the market field and "
+                   "the whole district eats together; children ride the gondolas free; the town band and the island bells play in turn. It lasts while "
+                   "seven stay, three days at most -- the Three-Day Knot again. Most towns see one in a lifetime, and date things by it",
+    "weather": "islands moor only in light air; in a storm the gondolas stop and the island rides out on its hawsers, or casts off",
+    "weight": "every person and load is weighed down and up at the Weigh House; the island takes on water ballast as its people go down",
+    "the_lines": "the mooring crews (the Lines) are the most honoured trade aloft, paid in shares of the line toll (a fifth of every fare and freight fee)",
+}
+LINE_RANKS = [
+    ("mooring_master", "the Mooring", "commands the mooring: booking, approach, anchoring, the strike; sits with the Helm at lashings", 1, 4.0),
+    ("anchor_master", "anchor master", "the hawsers, the anchor blocks and the three-day load survey", 1, 3.0),
+    ("sheave_keeper", "sheave keeper", "the stations' bull wheels, drives and brakes; the daily inspection run", 2, 2.5),
+    ("rope_reader", "rope reader", "walks and reads every rope and keeps the rope log", 1, 2.5),
+    ("cabin_warden", "cabin warden", "rides every passenger cabin: fares, safety and the visitors", 4, 2.0),
+    ("line_hand", "line hand", "shackling, rigging the tents, cargo and rescue on the rope", 13, 1.5),
+    ("greenline", "greenline", "an apprentice of up to three years: knots, rope lore, the weigh book", 2, 1.0),
+]
+SETTLED = {
+    "name": "Lowliners: island-born settlers on the floor and their floor-born children who keep the identity (their own word, said with pride). "
+            "[ETHNONYM placeholders: the floor's formal census term and the other peoples' proper names wait for the political work]",
+    "population": 29000, "share_of_floor": 0.12, "arrivals_per_year": 1500,
+    "by_region": {"south_shore": 15000, "southland": 7000, "kettle_valley": 4800, "northland": 1400, "north_shore": 800},
+    "by_region_note": "most settle on the South Sea shore (a quarter of Solana Point is Lowliner); they are found everywhere, fewest on the North Sea shore",
+    "why_south": "chain migration to the first Line Rows (VY 452), the canneries' and harbours' work, the South Shore's open weekend markets, and the island "
+                 "routes, which moor most often at the Starlite Swap",
+    "neighbourhoods": "Line Rows: in the South Sea cities whole blocks are rebuilt as warrens in a hodge-podge of every island's style -- the city turns into "
+                      "warrens for blocks at a time; smaller Line Rows elsewhere; a Line Hall (guild, savings club, chapel, dance floor) in every city",
+    "regional_feeling": {"north": "few and liked: neighbours, craftspeople and riggers; prejudice is hardly felt",
+                         "south": "many, and real friction in the poorer streets: Draw housing queues, entry work at the canneries, docks and building sites, "
+                                  "crowded schools, the lights and music late; warmer in the affluent districts and among those who work beside them"},
+    "trades": "market trading, the ropeways' ground ends, building at height, rigging, lighting and sign work (the islanders' love of lights became a "
+              "trade), knitwear, rope, bells and music, cooking; and every other trade, as any people",
+    "institutions": "the Line Halls; the Low Lashing, a reunion fair at Traders' Landing every June when as many islands as can moor at once; their own "
+                    "knot keepers for disputes",
+    "the_other_way": "surface people seldom settle aloft -- it takes a moot's consent, a place in the weight book and usually a marriage or a needed trade -- "
+                     "but it is not unheard of: perhaps fifty a year",
+}
 PLUMB = {
     "name": "the plumb", "plural": "plumbs", "why": "a plumb line drops straight down",
     "who": "one chosen from the clan, usually for seven years: a trader, a diplomat and a pilot; with a second who flies behind and learns",
     "does": "goes down by lark to trade at the floor's markets and the Chutes, books the hoist schedule, carries letters and news, buys what the factors ask for, "
-            "and brings back stories; most of the Aloft meet groundfolk only through their plumb",
+            "and brings back stories; the plumb still speaks for the clan, but since the moorings most Aloft meet groundfolk at the markets themselves",
     "how_seen_aloft": "honoured and a little pitied: the plumb carries the ground-weight for everyone",
     "how_seen_below": "glamorous, aloof, cold-handed; floor children chase their larks",
 }
@@ -666,6 +739,11 @@ FACTION_STANCE = {
     "cannery_union": [0.1, "dock hands work the hoist grounds"],
 }
 LEXICON = [
+    ("Lowliner", "an island-born settler on the floor, or their floor-born child (the settlers' own word, said with pride)", "'Her mother's a Lowliner from Halyard.'"),
+    ("going down the line", "leaving the island to settle on the floor", "'Two of the five went down the line.'"),
+    ("the Lines", "the mooring crews: the island's most honoured trade", "'He's on the Lines now, cold hands and all.'"),
+    ("Bright Week", "a celebration: five or more islands moored at one market, the whole market open all week", "'Bright Week at the Starlite -- bring a lantern.'"),
+    ("the Low Sky", "the Sky Holiday: seven or more islands over a small town", "'I was born the year of the Low Sky at Cedar Ford.'"),
     ("the floor / the Ground", "the land below", "'She went to the Ground for a week and came back walking like a heavy.'"),
     ("groundfolk, heavies", "floor people", "'Mind the heavy, he's never seen the edge.'"),
     ("a lashing", "the three days two or more islands are lashed together; the market and moot", "'We'll marry at the next lashing.'"),
@@ -763,6 +841,11 @@ def doc_lines(d):
     L += ["", "## The people", ""] + ["- " + p for p in d["physiology"]]
     L += ["", "## The plumb and the lark", ""] + ["- **%s:** %s" % (k, v) for k, v in d["plumb"].items()] + ["- **lark %s:** %s" % (k, v) for k, v in d["lark"].items()]
     L += ["", "## Hoist trade", ""] + ["- **%s:** %s" % (k, v) for k, v in d["hoist_trade"].items()]
+    L += ["", "## The market moorings", ""] + ["- **%s:** %s" % (k.replace("_", " "), v) for k, v in d["market_moorings"].items()]
+    L += ["", "| rank | name | what | per crew of 24 | shares |", "|---|---|---|---|---|"] + \
+         ["| %s | %s | %s | %d | %.1f |" % (r["id"], r["name"], r["what"], r["per_crew"], r["shares"]) for r in d["line_ranks"]]
+    L += ["", "## The settled: Lowliners", ""] + ["- **%s:** %s" % (k.replace("_", " "), v if not isinstance(v, dict) else "; ".join("%s %s" % kv for kv in v.items()))
+                                                for k, v in d["settled"].items()]
     L += ["", "## Jobs (all islands)", "", "| job | workers | what | why aloft |", "|---|---|---|---|"]
     for k, n in t["jobs"].items():
         j = d["jobs"][k]

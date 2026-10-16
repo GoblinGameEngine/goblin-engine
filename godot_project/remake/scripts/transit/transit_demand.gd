@@ -18,9 +18,6 @@ const WORK_TIERS := ["city", "town"]
 
 static var _sets: Array = []          # [centre Vector2, pop, tier, name]
 static var _events: Array = []
-static var _start := {"y": 2752, "m": 5, "d": 24}
-static var _start_wd := 2             # a Wednesday (0 = Monday)
-static var _date_cache := {}
 
 
 static func _load() -> void:
@@ -34,9 +31,7 @@ static func _load() -> void:
 	var ev = JSON.parse_string(FileAccess.get_file_as_string("res://remake/events.json")) if FileAccess.file_exists("res://remake/events.json") else null
 	if ev is Dictionary:
 		_events = ev.events
-		var parts := str(ev.get("start_date", "2752-05-24")).split("-")
-		_start = {"y": int(parts[0]), "m": int(parts[1]), "d": int(parts[2])}
-		_start_wd = int(ev.get("start_weekday", 2))
+		# (its start_date / start_weekday: StationCalendar reads them, the one calendar)
 
 
 static func load_at(p: Vector2, hour: float, day: int) -> float:
@@ -100,17 +95,8 @@ static func events_on(day: int) -> Array:
 # -- the calendar -----------------------------------------------------------------------------------
 
 static func date(day: int) -> Dictionary:
-	## {y, m, d, wd (0 = Monday)} of a game day (day 0 = the start date).
-	if _date_cache.has(day):
-		return _date_cache[day]
-	_load()
-	var jd := _jdn(int(_start.y), int(_start.m), int(_start.d)) + day
-	var out := _from_jdn(jd)
-	out["wd"] = posmod(_start_wd + day, 7)
-	if _date_cache.size() > 64:
-		_date_cache.clear()
-	_date_cache[day] = out
-	return out
+	## {y, m, d, wd (0 = Monday)} of a game day: StationCalendar's.
+	return StationCalendar.date(day)
 
 
 static func _on(rule: Dictionary, day: int) -> bool:
@@ -156,24 +142,11 @@ static func _md(s: String) -> Vector2i:
 
 
 static func _jdn(y: int, m: int, d: int) -> int:
-	var a := (14 - m) / 12
-	var yy := y + 4800 - a
-	var mm := m + 12 * a - 3
-	return d + (153 * mm + 2) / 5 + 365 * yy + yy / 4 - yy / 100 + yy / 400 - 32045
-
-
-static func _from_jdn(j: int) -> Dictionary:
-	var a := j + 32044
-	var b := (4 * a + 3) / 146097
-	var c := a - 146097 * b / 4
-	var d := (4 * c + 3) / 1461
-	var e := c - 1461 * d / 4
-	var m := (5 * e + 2) / 153
-	return {"y": 100 * b + d - 4800 + m / 10, "m": m + 3 - 12 * (m / 10), "d": e - (153 * m + 2) / 5 + 1}
+	return StationCalendar.jdn(y, m, d)
 
 
 static func _month_len(y: int, m: int) -> int:
-	return _jdn(y + (1 if m == 12 else 0), 1 if m == 12 else m + 1, 1) - _jdn(y, m, 1)
+	return StationCalendar.month_len(y, m)
 
 
 static func _easter(y: int) -> Vector2i:

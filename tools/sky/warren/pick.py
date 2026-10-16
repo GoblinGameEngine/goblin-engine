@@ -44,6 +44,17 @@ class Out:
                           int(slot) & 15, int(epoch) & 15))
 
 
+def walk_ground(L, n):
+    """the surface next door: graded ground, a building's ground floor, the deck"""
+    if n in L.q:
+        return L.q[n] * 0.8
+    if not L.inb(*n):
+        return -99.0
+    if L.occ[n[0], n[1], int(L.gk[n])]:
+        return int(L.gk[n]) * STOREY
+    return float(L.ground[n])
+
+
 def lane_width(L, n, d):
     """open walkable cells in a row from n onward along d (the lane's width across this face)"""
     w = 0
@@ -68,6 +79,14 @@ def is_slot(L, c, d, k):
             and bool(L.occ[b[0], b[1], k]))
 
 
+DOORLIKE = ("door", "noren", "basso", "gate", "portal", "pend", "moon_gate", "five_foot_way", "qilou", "shopboards",
+            "shopfront", "triangles")
+
+
+def _is_doorlike(pid):
+    return any(t in pid for t in DOORLIKE)
+
+
 def choose_doors(L, rng, civ):
     """each lot's front door (prefer lanes for homes, the street for shops), and its shop cells"""
     for lot in L.lots:
@@ -90,12 +109,19 @@ def choose_doors(L, rng, civ):
 def run(L, civ, rng):
     o = Out()
     choose_doors(L, rng, civ)
+    # the walkable ground graded, the entrances placed where the ground meets them, the walk check (walk.py)
+    import walk
+    tc = L.cell_of(L.travel[0], L.travel[2])
+    import walknet
+    L.walk_stats = walknet.solve(L, civ, tc)
+    x, _, z = L.centre(*L.travel_cell)
+    L.travel[1] = round(walk.ground_y(L, L.travel_cell), 2)
     door_at = {}
     shop_cell = {}
     lot_use = {}
     for lot in L.lots:
         if lot.get("door"):
-            door_at[(lot["door"][0], lot["door"][1])] = lot["id"]
+            door_at[(lot["door"][0], lot["door"][1], lot["door_k"])] = lot["id"]
         for c in lot.get("shop_cells", ()):
             shop_cell[c] = lot["id"]
         for c in lot["cells"]:
@@ -147,18 +173,26 @@ def run(L, civ, rng):
                                 slot = "end"                # (the slot opens here: seen from outside)
                                 break
                     ctx = {"level": k, "gk": g, "ground": k == g, "use": use, "epoch": ep, "outward": outward,
-                           "door": k == g and door_at.get(((i, j), rot)) is not None, "i": i, "j": j, "rot": rot,
+                           "door": door_at.get(((i, j), rot, k)) is not None, "i": i, "j": j, "rot": rot,
                            "lane_w": lane_width(L, n, (di, dj)) if L.inb(*n) else 0,
                            "stack": h01(L.seed, "stack", i, j, rot), "rnd": h01(L.seed, "f", i, j, k, rot),
                            "covered": L.inb(*n) and pn in (LANE, ARTERY) and covered_at(L, n), "slot": slot}
                     pc = civ.facade(ctx)
+                    if pc and not ctx["door"] and _is_doorlike(pc[0]):
+                        # no door onto air, none onto ground that does not meet its floor: a door is an entrance only
+                        ok = k == g and n in L.W and L.q[n] == 4 * k and not (use == SHOP and n in L.stoop)
+                        if not ok:
+                            pc = ("wall_window_s" if k > g else "wall_plain", pc[1], pc[2])
+                    if pc and ctx["door"] and not _is_doorlike(pc[0]):
+                        pc = (getattr(civ, "SPEC", {}).get("facade", {}).get("door", "wall_door"), pc[1], pc[2])
                     if pc:
                         o.emit(pc[0], i, j, k, rot, 0, pc[1], pc[2], ep)
                         if k == g and L.ground[i, j] < g * STOREY - 0.05:
                             # the base course down to the sloping deck, under this bay
                             o.emit("plinth", i, j, k, rot, 0, pc[1], pc[2], min(ep, 1))
                             L.plinths = getattr(L, "plinths", 0) + 1
-                        if ctx["door"] or (use == SHOP and outward in ("main", "plaza", "artery") and k == g):
+                        if ctx["door"] or (use == SHOP and outward in ("main", "plaza", "artery") and k == g
+                                           and n in L.W and L.q[n] == 4 * k):
                             L.shop_faces.append((i, j, k, rot, use, bool(ctx["door"])))
                         if pn in (LANE, ARTERY):
                             L.faces_on_lanes.append((i, j, rot, k, ep))
@@ -206,37 +240,43 @@ def run(L, civ, rng):
             pc = int(L.plan[i, j])
             if pc not in PAVE:
                 continue
-            # a pond's kerb on every edge of open ground against the water (the runtime draws the water)
+            g = int(L.gk[i, j])
+            if occ[i, j, g] or (i, j) not in L.q:
+                continue
+            # the graded ground (walk.py): flat paving at q quarters, or the stair up to the higher cell; never on
+            # the deck any more (QBITS carry the quarter, the level the storey)
+            qv = L.q[(i, j)]
+            lv, qf = qv // 4, (qv % 4) << 4
+            st = L.stair.get((i, j))
+            low = False
             for rot, (di, dj) in FACE.items():
                 n = (i + di, j + dj)
-                if L.inb(*n) and L.plan[n] == WATER and not occ[i, j, int(L.gk[i, j])]:
-                    o.emit(getattr(civ, "kerb", "kerb_straight"), i, j, 0, rot, DECK, 0, civ.slot("paving"), 0)
-            # a post where the water only touches this cell's corner (closes the kerbs' notch)
+                ny = walk_ground(L, n)
+                if ny < qv * 0.8 - 0.05:
+                    low = True
+                # a retaining wall where the neighbour lies more than the skirt below (not where a stair climbs up)
+                ns = L.stair.get(n)
+                if ny < qv * 0.8 - 0.6 and not (ns and FACE[ns[0]] == (-di, -dj)) and not (L.inb(*n) and occ[n[0], n[1], int(L.gk[n])]):
+                    drop = qv * 0.8 - max(ny, -12.8)
+                    for t in range(int(math.ceil(drop / 1.6))):
+                        qq = qv - 2 * t
+                        if qq < 0:
+                            break
+                        o.emit("plinth", i, j, qq // 4, rot, (qq % 4) << 4, 1, civ.slot("wall", 1, (i, j)), 0)
+                if L.inb(*n) and L.plan[n] == WATER:
+                    o.emit(getattr(civ, "kerb", "kerb_straight"), i, j, lv, rot, qf, 0, civ.slot("paving"), 0)
             for (sx, sz), crot in CORNER_ROT.items():
                 dg = (i + sx, j + sz)
-                if L.inb(*dg) and L.plan[dg] == WATER and L.plan[i + sx, j] != WATER and L.plan[i, j + sz] != WATER \
-                        and not occ[i, j, int(L.gk[i, j])]:
-                    o.emit("kerb_post", i, j, 0, crot, DECK, 0, civ.slot("paving"), 0)
-            g = int(L.gk[i, j])
-            if occ[i, j, g]:
-                continue
-            # DECK ground stands flat at the deck height of the cell centre; where the next walkable cell is higher, the
-            # cell's paving is a flight up to it instead (one per cell, toward the steepest rise): one 0.2 m riser,
-            # four (0.8 m), or the 1.6 m block on a real drop
-            best = None
-            if not occ[i, j, g]:
-                for rot, (di, dj) in FACE.items():
-                    n = (i + di, j + dj)
-                    if L.inb(*n) and L.plan[n] in WALKABLE and L.plan[n] != WATER:
-                        dh = float(L.ground[n] - L.ground[i, j])
-                        if best is None or dh > best[0]:
-                            best = (dh, rot)
-            if best and best[0] >= 0.12:
-                piece = "step_low_1" if best[0] < 0.45 else ("step_low_4" if best[0] < 1.2 else "steps")
+                if L.inb(*dg) and L.plan[dg] == WATER and L.plan[i + sx, j] != WATER and L.plan[i, j + sz] != WATER:
+                    o.emit("kerb_post", i, j, lv, crot, qf, 0, civ.slot("paving"), 0)
+            if st:
+                piece = "step_low_4" if st[1] == 1 else "steps"
                 piece = getattr(civ, "steps_map", {}).get(piece, piece)
-                o.emit(piece, i, j, 0, best[1], DECK, 0, civ.slot("paving"), 0)
+                o.emit(piece, i, j, lv, st[0], qf, 0, civ.slot("paving"), 0)
             else:
-                o.emit(civ.pave(L, pc, (i, j), PAVE[pc]), i, j, 0, 0, DECK, 0, civ.slot("paving"), 0)
+                pv = civ.pave(L, pc, (i, j), PAVE[pc])
+                o.emit(pv + ("_skirt" if low and not pv.endswith("_skirt") else ""), i, j, lv, 0, qf, 0,
+                       civ.slot("paving"), 0)
             if pc in (LANE, ARTERY):
                 cov = covered_at(L, (i, j))
                 if not cov:
@@ -258,7 +298,9 @@ def run(L, civ, rng):
                     for rot, (di, dj) in FACE.items():
                         n = (i + di, j + dj)
                         if L.inb(*n) and L.plan[n] in WALKABLE and not covered_at(L, n) and not occ[n[0], n[1], int(L.gk[n])]:
-                            o.emit("arch_mouth", i, j, g, rot, 0, 1, civ.slot("wall", 1, (i, j)), 1)
+                            # (on the paving, at its height on that edge: a stair's head is 2 quarters up)
+                            qa = qv + (st[1] if st and st[0] == rot else 0)
+                            o.emit("arch_mouth", i, j, qa // 4, rot, (qa % 4) << 4, 1, civ.slot("wall", 1, (i, j)), 1)
                 else:
                     # an open lane between two walls of at least 2 storeys: a place for spans (beams, cables, laundry)
                     hi = g + 1
@@ -267,11 +309,13 @@ def run(L, civ, rng):
                         collect["lane_spans"].append((i, j, span_rot, hi))
     # ---------------------------------------------------------------- interiors (only where one can go in)
     L.enter = []
+    entered = set()
     for n, (i, j, k, rot, use, is_door) in enumerate(L.shop_faces):
         enter = use == SHOP or (is_door and h01(L.seed, "enter", i, j) < civ.params.get("enter_doors", 0.25)) or \
             (L.lot[i, j] >= 0 and L.lots[L.lot[i, j]]["use"] == CIVIC)
-        if not enter:
-            continue
+        if not enter or (i, j, k) in entered:
+            continue                         # (a cell with two shop/door faces: its interior once)
+        entered.add((i, j, k))
         L.enter.append((i, j, k))
         o.emit("interior_floor", i, j, k, 0, 0, 0, civ.slot("paving"), 1)
         o.emit("interior_ceiling", i, j, k, 0, 0, h01(L.seed, "ceil", i, j) * 6, civ.slot("trim"), 1)
@@ -285,6 +329,11 @@ def run(L, civ, rng):
         o.emit("lamp", i, j, k, 0, 0, 0, civ.slot("emissive"), 3)
     # ---------------------------------------------------------------- the civ's marks, the newest layer, signs
     civ.marks(L, rng, o.emit)
+    ks = getattr(L, "kerb_skip", None)
+    if ks:
+        # (no kerb across the head of a flight down into the water)
+        kp = getattr(civ, "kerb", "kerb_straight")
+        o.recs = [r for r in o.recs if not (r[0] == kp and (r[1], r[2], r[4]) in ks)]
     civ.overlay(L, rng, o.emit, collect)
     sign_anchors(L, civ, o)
     L.collect = collect

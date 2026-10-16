@@ -51,6 +51,9 @@ vec3 lamp(float k) {
 void fragment() {
 	vec3 col = COLOR.rgb;
 	ALBEDO = col;
+	// a window bay's size on screen (taken here, in uniform control flow): one under ~4 pixels shimmers as the view
+	// moves -- seen from the sky islands and across Calder at 200-300 m (research/sky_islands/warrens/flicker.md)
+	float bay_px = 2.6 / max(length(fwidth(lpos)), 1e-5);
 	ROUGHNESS = 0.9;
 	float night = clamp((0.78 - daylight) / 0.45, 0.0, 1.0);
 	if (night > 0.001) {
@@ -77,6 +80,7 @@ void fragment() {
 		}
 		// far off, single panes go below a pixel and alias away: the walls take on their windows' average glow instead
 		float far_k = smoothstep(350.0, 1400.0, length(wpos - CAMERA_POSITION_WORLD));
+		far_k = max(far_k, 1.0 - smoothstep(3.0, 6.0, bay_px));
 		if (far_k > 0.0 && wall > 0.5 && (massing || pane > 0.0)) {
 			EMISSION += vec3(1.0, 0.72, 0.45) * glow * lit_share * 0.45 * far_k * night * wall;
 			pane *= 1.0 - far_k;

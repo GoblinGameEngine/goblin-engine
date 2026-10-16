@@ -182,6 +182,8 @@ class MaghrebiMedina(Civ):
         lot = getattr(self, "mosque", None)
         if lot:
             cs = [c for c in lot["cells"] if L.plan[c] == LOT]
+            doorc = set(tuple(o["door"][0]) for o in L.lots if o.get("door"))
+            cs = [c for c in cs if tuple(c) not in doorc] or cs        # (the minaret not in a doorway)
             if cs:
                 c = max(cs, key=lambda c: (c[0] + c[1]))
                 g = int(L.gk[c])
@@ -192,11 +194,15 @@ class MaghrebiMedina(Civ):
                 emit("minaret_top", c[0], c[1], top, 0, 0, 0, ZELLIGE, 1)
                 L.landmark = c
         # zellige fountains: the central plaza's middle, and the gate plazas
-        pc = L.plaza_c
+        pc = (int(L.plaza_c[0]), int(L.plaza_c[1]))
+        kc = getattr(L, "keep_clear", set())
+        free = [tuple(c) for c in L.plaza if tuple(c) not in kc]
+        if pc in kc and free:
+            pc = min(free, key=lambda c: abs(c[0] - pc[0]) + abs(c[1] - pc[1]))   # (off the doorsteps and stairs)
         emit("zellige_fountain", int(pc[0]), int(pc[1]), 0, 0, 4, 0, ZELLIGE, 1)
         # souq stalls round the plaza's edge
         for c in L.plaza:
-            if rng.random() < 0.18:
+            if rng.random() < 0.18 and tuple(c) not in kc:
                 emit("market_stall", c[0], c[1], 0, rng.randrange(4), 4, 0, TERRA, 2)
 
     def overlay(self, L, rng, emit, cells):

@@ -47,8 +47,22 @@ void fragment() {
 	float s = UV2.x;
 	float d = abs(mod(s - farside_player_s + circ * 0.5, circ) - circ * 0.5);
 	vec2 tuv = (UV2 - tile_rect.xy) / tile_rect.zw;
+	vec2 tsz = vec2(textureSize(farside, 0));
+	vec2 fw = fwidth(tuv * tsz);                // (taken in uniform control flow)
 	if (d > flat_arc) {
-		ALBEDO = texture(farside, tuv).rgb;
+		// Seen from the islands the 4 m texels are magnified ~5x and the bake's roads have hard 1-texel stair-steps,
+		// which crawl as the island drifts over them (a shimmer, research/sky_islands/warrens/flicker.md).  Where
+		// a texel covers more than a pixel, the image is box-filtered over ~0.7 texel (4 taps): the steps become
+		// ramps that slide smoothly.  Minified, the mipmaps do it.
+		float mag = 1.0 - smoothstep(0.6, 1.2, max(fw.x, fw.y));
+		vec3 c = texture(farside, tuv).rgb;
+		if (mag > 0.0) {
+			vec2 o = 0.35 / tsz;
+			vec3 b = 0.25 * (texture(farside, tuv + vec2(o.x, o.y)).rgb + texture(farside, tuv + vec2(-o.x, o.y)).rgb
+				+ texture(farside, tuv + vec2(o.x, -o.y)).rgb + texture(farside, tuv + vec2(-o.x, -o.y)).rgb);
+			c = mix(c, b, mag);
+		}
+		ALBEDO = c;
 	} else {
 		vec3 c = to_linear(mix(cover(UV), COLOR.rgb, COLOR.a));
 		ALBEDO = c * texture(detail, UV).rgb;
@@ -64,10 +78,12 @@ void fragment() {
 		if (night * reach > 0.001) {
 			vec3 nl = texture(night_lights, tuv).rgb;
 			nl = mix(nl, max(nl - vec3(0.35), vec3(0.0)) * 1.5, near_k);     // (near: the points, not the halo)
-			// a slow twinkle, per 8 m cell: the far towns glitter
+			// a very slow breathing, per 8 m cell: the towns look lived in.  (It was a 0.6-2.8 Hz twinkle at 20 %: from
+			// the islands every lit pixel of the floor changed frame to frame -- the night "flicker", 0.64 % of the
+			// pixels a frame, 0.09 % without it: research/sky_islands/warrens/flicker.md)
 			vec2 cell = floor(UV2 / 8.0);
 			float h = hash12(cell);
-			float tw = 0.8 + 0.2 * sin(TIME * (0.6 + 2.2 * h) + h * 40.0);
+			float tw = 0.95 + 0.05 * sin(TIME * (0.12 + 0.3 * h) + h * 40.0);
 			EMISSION = min(nl * nl * night_gain, vec3(mix(2.2, 1.0, near_k))) * night * reach * tw;   // (squared: the bright points stay bright, the halo dim; capped: no white blow-outs)
 		}
 	}

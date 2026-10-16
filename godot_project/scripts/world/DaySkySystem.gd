@@ -63,8 +63,15 @@ const SKY_KEYS := [
 ]
 
 var time_of_day: float = 0.27  # start mid-morning, already light out
-## Days since the game began; day 0 is a Monday (NpcLife schedules: weekdays, weekends, errands).
+## Days since the game began. Day 0 is 2752-05-24, a WEDNESDAY: the date and the weekday of a day come from
+## StationCalendar (the one calendar), never from day % 7 here or anywhere else.
 var day: int = 0
+
+## The clock was set (the Communicator's Date & Time, fast travel, a test): from and to are hours since day 0's
+## midnight. Whatever keeps state by the clock (who's out, which cars are on the road) listens and starts over at
+## the new time; everything else reads the clock each frame and simply follows. Forward-only by the app; a jump
+## back (tests) is handled the same way.
+signal clock_set(from_hours: float, to_hours: float)
 var ceiling_material: StandardMaterial3D   # (the sky's colour now; the Spindle draws with spindle_material)
 ## The Spindle's skin (remake/shaders/spindle.gdshader): sky blue, the Sunline's sleeve and the moon's on it.
 var spindle_material: ShaderMaterial
@@ -138,6 +145,9 @@ static func sky_color(t: float) -> Color:
 	return Color(SKY_KEYS[0][1], SKY_KEYS[0][2], SKY_KEYS[0][3])
 
 
+const AIR_AMBIENT := 0.06           # the night ambient's lift in fully lit air (LightField.glow 1): a hint only -- the
+                                     # light is in pools (the street pools, the warrens' lamp field), dark between them
+const AIR_TINT := Color(1.0, 0.78, 0.55)   # lamplight
 ## 1 by day, 0 at night (for the fog, the lights)
 func daylight() -> float:
 	return 1.0 - float(_lerp_color_keyframes(time_of_day)[0])
@@ -206,6 +216,37 @@ static func sleeve_x(pos: float) -> float:
 	## Where a sleeve is along the axis, 0..1 through its day (or night): the south cap (+x) to the north cap (-x).
 	var end := StationGeo.HALF_LEN + SLEEVE_RUN
 	return lerpf(end, -end, pos)
+
+
+## Hours since day 0's midnight.
+func now_hours() -> float:
+	return day * 24.0 + time_of_day * 24.0
+
+
+func hour() -> float:
+	return time_of_day * 24.0
+
+
+func weekday() -> int:
+	## 0 = Monday .. 6 = Sunday (StationCalendar).
+	return StationCalendar.weekday(day)
+
+
+func set_clock(p_day: int, p_hour: float) -> void:
+	## THE way to set the time: the sky, the light, the lamps and the lit windows change at once (even under the
+	## paused Communicator), and clock_set tells the people and the traffic to start over at the new time.
+	var from := now_hours()
+	var total := p_day * 24.0 + p_hour
+	day = floori(total / 24.0)
+	time_of_day = clampf((total - day * 24.0) / 24.0, 0.0, 0.99999)
+	_apply(0.0)
+	clock_set.emit(from, now_hours())
+
+
+func advance_minutes(mins: float) -> void:
+	## The clock moves on (a trip, a wait): over midnight the day turns too.
+	var to := now_hours() + maxf(0.0, mins) / 60.0
+	set_clock(0, to)
 
 
 func _process(delta: float) -> void:
@@ -285,10 +326,17 @@ func _apply(_delta: float) -> void:
 		#  0.2, cooler; glow blooms the lit windows, signs and lamps as it gets dark)
 		env.ambient_light_energy = lerp(0.13, 2.3, 1.0 - night_mix)
 		env.ambient_light_color = Color(0.5, 0.5, 0.55).lerp(Color(0.32, 0.38, 0.6), night_mix)
+		# (2026-10-16, the user: the lights' glow carried by the air, fading with distance from them -- LightField: how
+		#  lit the air is round the viewer; it lifts and warms the night ambient; the fog is cloud_system's, left alone)
+		var air := LightField.glow * night_mix
+		env.ambient_light_energy += air * AIR_AMBIENT
+		env.ambient_light_color = env.ambient_light_color.lerp(AIR_TINT, air * 0.7)
 		env.glow_enabled = true
-		env.glow_intensity = lerpf(0.25, 1.1, night_mix)
-		env.glow_bloom = lerpf(0.0, 0.08, night_mix)
-		env.glow_hdr_threshold = lerpf(1.4, 0.9, night_mix)
+		# (2026-10-16, the user: "I cannot read the illuminated signs. They are washed out at night": the glow takes only
+		#  the brightest -- bulb cores, lit panes -- and no bloom over the whole image; signs' letters sit at SIGN_EMIT)
+		env.glow_intensity = lerpf(0.25, 0.7, night_mix)
+		env.glow_bloom = 0.0
+		env.glow_hdr_threshold = lerpf(1.4, 1.5, night_mix)
 		env.glow_blend_mode = Environment.GLOW_BLEND_MODE_ADDITIVE
 	ceiling_material.albedo_color = sky_color(time_of_day)
 	spindle_material.set_shader_parameter("sun_x", sleeve_x(sun_pos))

@@ -42,7 +42,7 @@ func _initialize() -> void:
 				if s.kind == "trip":
 					moving += 1
 			row.append("%02d:%3d%%%s" % [h, 100 * away / sample.size(), "" if moving == 0 else "(%d)" % moving])
-		print("day %d %s  %s" % [day, ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][day], " ".join(row)])
+		print("day %d %s  %s" % [day, StationCalendar.DAY_SHORT[StationCalendar.weekday(day)], " ".join(row)])
 		for pid in sample:
 			var tl := life.timeline(pid, day)
 			var last := 0.0

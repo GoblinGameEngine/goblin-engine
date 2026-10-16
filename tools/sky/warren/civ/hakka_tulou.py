@@ -117,9 +117,15 @@ class HakkaTulou(FamilyCiv):
                     if L.plan[i, j] == FREE and (i, j) not in ring_cells and \
                             any(math.hypot(i - r[0], j - r[1]) <= r[2] + 2.5 for r in self.rings):
                         L.plan[i, j] = GREEN
+        from lattice import PLAZA
         for (ci, cj, R, band, hall) in self.rings:
             for c in band + hall:
                 L.plan[c] = FREE
+            # (the ring's court is the clan's shared courtyard: public, paved, reached through the gate)
+            for i in range(ci - R, ci + R + 1):
+                for j in range(cj - R, cj + R + 1):
+                    if L.inb(i, j) and L.plan[i, j] == COURT and math.hypot(i - ci, j - cj) <= R - 1.7:
+                        L.plan[i, j] = PLAZA
             # the gate: a passage through the band toward the nearest walkable cell outside
             bset = set(band)
             best = None

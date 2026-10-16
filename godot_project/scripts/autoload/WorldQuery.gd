@@ -55,7 +55,7 @@ static func _clock() -> Vector2:
 
 static func occupancy(op: String, args: Array) -> String:
 	## who PLACE [DAY HOUR] | duty UNIT|ROOM [DAY HOUR] | person PID | roster UNIT   (NpcOccupancy; places: "C-077",
-	## "C-077/B0", "C-077#R1F0_0"; day 0 = a Monday; default now)
+	## "C-077/B0", "C-077#R1F0_0"; day 0 = the start, a Wednesday (StationCalendar); default now)
 	var seed := NpcLife.shared().seed
 	var place := str(args[0]) if args.size() > 0 else ""
 	var now := _clock()

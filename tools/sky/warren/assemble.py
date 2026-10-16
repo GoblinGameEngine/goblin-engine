@@ -105,11 +105,12 @@ def main():
     r = f["recs"]
     rot = r["rf"] & 3
     deck = (r["rf"] & 4) > 0
-    mount = r["rf"] >> 4
+    mount = (r["rf"] >> 4) & 3
+    quarter = (r["rf"] >> 6) & 3
     pv = r["pe"] & 15
     cx = f["x0"] + f["cell"] * r["i"] + f["cell"] / 2
     cz = f["z0"] + f["cell"] * r["j"] + f["cell"] / 2
-    cy = np.where(deck, [L.deck_y(x, z) for x, z in zip(cx, cz)], f["storey"] * r["k"].astype(np.float32))
+    cy = np.where(deck, [L.deck_y(x, z) for x, z in zip(cx, cz)], f["storey"] * r["k"].astype(np.float32) + 0.8 * quarter.astype(np.float32))
     keep = np.ones(len(r), bool)
     if box:
         keep = (r["i"] >= box[0]) & (r["j"] >= box[1]) & (r["i"] <= box[2]) & (r["j"] <= box[3])

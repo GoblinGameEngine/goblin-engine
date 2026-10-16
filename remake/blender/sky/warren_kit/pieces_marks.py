@@ -64,7 +64,7 @@ def _beads(m, x0, x1, y0, y1, z0, z1, n, slot, shade=1.0):
 def _diag(m, x0, y0, x1, y1, z, step, bar, slot):
     """a diagonal lattice (Newar tikijhya, kafes): two sets of 45-degree flat bars clipped to the rect"""
     w, h = x1 - x0, y1 - y0
-    for sgn, dz in ((1, 0.0), (-1, 0.004)):
+    for sgn, dz in ((1, 0.0), (-1, 0.03)):                       # (the second set 3 cm proud: no shimmer where they cross)
         c = -h + step / 2
         while c < w:
             xa, xb = max(0.0, c), min(w, c + h)

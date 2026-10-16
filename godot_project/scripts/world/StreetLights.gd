@@ -46,6 +46,16 @@ const HEAD := {
 const BEACH_COLS := [Color(1.0, 0.2, 0.25), Color(0.25, 1.0, 0.35), Color(0.3, 0.5, 1.0), Color(1.0, 0.85, 0.2),
 	Color(1.0, 0.3, 0.9), Color(0.2, 0.95, 1.0), Color(1.0, 0.55, 0.15)]
 const WARM := Color(1.0, 0.82, 0.52)
+## (2026-10-16, the user: pools of light spilling from the lamps, dark between them -- no ambient lift; the pools
+##  themselves made to read: wider and stronger)
+const POOL_REACH := 1.3
+const POOL_GAIN := 1.8
+## lit storefronts: a pool on the pavement in front of every shop sign below SHOP_MAX_Y (remake/signs/city_signs.json,
+## the SIGNS agent's quads in each building's placement frame; plaques skipped), SHOP_OUT m out from the board
+const SHOP_OUT := 2.2
+const SHOP_MAX_Y := 6.0
+const SHOP_R := 5.0
+const SHOP_COL := Color(1.0, 0.86, 0.62, 0.85)
 
 var target: Node3D
 var ready_ := false
@@ -54,6 +64,7 @@ var _strings: Array = []
 var _palms: Array = []
 var _walk: Array = []
 var _wkinds: Array = []
+var _shops := PackedFloat32Array()   # [s, x] per lit storefront (its pool centre)
 var _near_items := {}                 # Vector2i -> {l, s, p, w: [index]}
 var _far_items := {}
 var _near_nodes := {}                 # Vector2i -> [Node]
@@ -108,6 +119,35 @@ func _load() -> void:
 		_bucket("p", i, _palms[i], _palms[i + 1])
 	for i in range(0, _walk.size(), 3):
 		_bucket("w", i, _walk[i], _walk[i + 1])
+	_load_shops()
+	for i in range(0, _shops.size(), 2):
+		_bucket("f", i, _shops[i], _shops[i + 1])
+
+
+func _load_shops() -> void:
+	## (worker) a pool centre in front of each storefront sign: the sign's quad (building frame) pushed SHOP_OUT along its
+	## outward normal, through the building's placement transform (as RemakeWorld._entry places it)
+	var d = DataFile.json("res://remake/signs/city_signs.json")
+	if not (d is Dictionary):
+		return
+	var bs: Dictionary = d.get("buildings", {})
+	for id in bs:
+		var i := Placement.index(str(id))
+		if i < 0:
+			continue
+		var ps := Placement.s(i)
+		var px := Placement.x(i)
+		var h := MapTerrain.pad_height(str(id))
+		if is_nan(h):
+			h = MapTerrain.elevation(ps, px)
+		var xf := Transform3D(StationGeo.basis(ps, Placement.yaw(i)), StationGeo.point(ps, px, h))
+		for q in bs[id].get("quads", []):
+			if str(q.get("type", "")) == "plaque" or float(q.c[1]) > SHOP_MAX_Y:
+				continue
+			var n := Vector3(q.r[0], q.r[1], q.r[2]).cross(Vector3(q.u[0], q.u[1], q.u[2])).normalized()
+			var w := xf * (Vector3(q.c[0], 0.0, q.c[2]) + Vector3(n.x, 0.0, n.z).normalized() * SHOP_OUT)
+			_shops.append(StationGeo.s_of(w))
+			_shops.append(w.x)
 
 
 func _bucket(k: String, i: int, s: float, x: float) -> void:
@@ -115,7 +155,7 @@ func _bucket(k: String, i: int, s: float, x: float) -> void:
 		var c := Vector2i(floori(fposmod(s, StationGeo.CIRC) / float(pair[1])), floori(x / float(pair[1])))
 		var cells: Dictionary = pair[0]
 		if not cells.has(c):
-			cells[c] = {"l": [], "s": [], "p": [], "w": []}
+			cells[c] = {"l": [], "s": [], "p": [], "w": [], "f": []}
 		cells[c][k].append(i)
 
 
@@ -231,7 +271,7 @@ func _build(job: Dictionary) -> void:
 			if kind == 1:
 				centre = Vector3.ZERO
 			var head: Vector3 = xf * Vector3(centre.x, 0.0, centre.z)
-			_pool(pool, float(_lamps[i]) + 0.0, head, float(hd[3]), Color(hd[1], float(hd[4])))
+			_pool(pool, float(_lamps[i]) + 0.0, head, float(hd[3]) * POOL_REACH, Color(hd[1], minf(float(hd[4]) * POOL_GAIN, 1.6)))
 			pooled = true
 			lights.append([xf * (hd[0][0] as Vector3), kind])
 	for i in it.w:
@@ -245,6 +285,12 @@ func _build(job: Dictionary) -> void:
 		bu.append(Color(0.0, fposmod(s * 0.31, 1.0), HEAD[4][2], 0.0))
 		if near:
 			lights.append([head, 4])
+	if near:
+		for i in it.f:
+			var cs: float = _shops[i]
+			var cx: float = _shops[i + 1]
+			_pool(pool, cs, StationGeo.point(cs, cx, MapTerrain.elevation(cs, cx)), SHOP_R, SHOP_COL)
+			pooled = true
 	for i in it.s:
 		_festoon(i, bx, bc, bu)
 	for i in it.p:

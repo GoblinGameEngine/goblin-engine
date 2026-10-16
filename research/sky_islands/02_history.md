@@ -42,8 +42,8 @@ history (research/bible/03_history.md). This page explains the choices.
   - Solano, Côte and Polish-Lakes families;
   - cannery workers.
 - **VY 301:** the Mooring Fields close, and the Steward stops lowering the hulks. From then on, **the only way up is a
-  line.** This is why the Aloft so seldom go down: coming back up is hard. Until VY 417 it meant riding a container up
-  a hoist line.
+  line.** For more than a century the Aloft seldom went down, because coming back up was hard: until VY 417 it meant
+  riding a container up a hoist line. The moorings changed that (VY 418 on).
 - **VY 318, the First Lashing.** Halyard and Bowline are tied together by ropes fired from spring guns. The lashing
   breaks on the fourth day in a quarrel over water, and the three-day custom begins.
 - **VY 350, the Lockout.** The Floor is set. The Aloft lose little because they had little, and they gain trade: the
@@ -62,9 +62,21 @@ history (research/bible/03_history.md). This page explains the choices.
   within a year and strip them for parts.
 - **VY 417, the first lark.** Topgallant's wrights build a two-person aerostat from Gift parts, skycloth and a winch
   motor. It climbs from the floor to an island in about four minutes. The plumbs stop riding containers.
+- **VY 418, the Mooring Compact.** Every town keeps a mooring ground beside its weekend flea market, and the islands
+  moor there to trade. Traders' Landing at Harrow Falls is the first.
+- **VY 431, the first gondolas:** Andean-style jig-back cabins on track ropes, crewed by the new **Lines**. Within a
+  decade every island keeps a mooring crew of twenty-four, and coming down becomes routine.
 - **VY 446:** Fathom and Dogwatch start the **air post**.
+- **VY 452, the first Line Rows:** settlers rebuild the old cannery streets behind Solana Point's harbour in their
+  islands' styles. The South Shore becomes the Lowliners' heartland.
 - **VY 471, the Lark Quarrel.** The Aerostat Pilots' Guild tries to bar larks from the Kettle Cup, and the Aloft win
   three of the next five.
+- **VY 474, the Settlers' Shares Act:** island-born settlers receive a birth share after two years' registration.
+  Until then the Registry had refused them shares, a wound still felt.
+- **VY 486, the Full Book:** the weight books fill. The knot keepers agree that each family's children choose the Line
+  or the Ground, and since then about half go down, some 1,500 a year.
+- **VY 489, the Draw Housing Ruling:** settlers queue for Draw homes like everyone else. The South Shore's poorer
+  streets resent it, and the Line Halls call it fair.
 - **VY 500:** the Launch Day Notice reaches the Skein by dove in two days, and the knot keepers call a raft to talk of
   it. This is a hook.
 

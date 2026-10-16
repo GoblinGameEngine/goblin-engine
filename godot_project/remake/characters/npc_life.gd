@@ -26,7 +26,7 @@ const SPEED := {"walk": 1.3, "bike": 4.2, "car": 10.0, "transit": 5.0, "bus": 6.
 const OVERHEAD := {"walk": 0.0, "bike": 2.0, "car": 4.0, "transit": 8.0, "bus": 5.0}    # min: parking, waiting
 const DETOUR := 1.3                                # street distance over straight-line
 const NOT_ERRANDS := ["school", "classes", "childcare", "worship", "visit_elder"]
-const DAYS3 := ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+const DAYS3 := StationCalendar.DAYS3
 const LATE := ["drinks", "film", "games", "dinner_out", "meeting"]
 
 static var _shared: NpcLife
@@ -349,6 +349,9 @@ func door(P: Dictionary, uid: String) -> Vector2:
 	if uid == "":
 		return Vector2(float(P.door[0]), float(P.door[1]))
 	var u := NpcPlaces.unit(uid)
+	if not u.has("door"):
+		# a place unit the loaded registry doesn't know (another area's, or a stale id): the person's own door
+		return Vector2(float(P.door[0]), float(P.door[1]))
 	return Vector2(float(u.door[0]), float(u.door[1]))
 
 
@@ -391,13 +394,13 @@ func travel_h(m: String, metres: float) -> float:
 # -- the day's plan --------------------------------------------------------------------------------------
 
 func stays(pid: String, day: int) -> Array:
-	## Where they'll be, away from home, on day `day` (0 = a Monday): [{t0, t1, uid, what}] in
+	## Where they'll be, away from home, on game day `day` (StationCalendar: 0 = the start, a Wednesday): [{t0, t1, uid, what}] in
 	## hours of that day (a night shift runs past 24), sorted, not overlapping.
 	var P := person(pid)
 	if P.is_empty():
 		return []
-	var wd := posmod(day, 7)
-	var week := floori(day / 7.0)
+	var wd := StationCalendar.weekday(day)                         # 0 = Monday
+	var week := StationCalendar.week(day)
 	var out: Array = []
 	var occ: String = P.occupation
 	var jit := _r(pid, "habit")                                      # the same every day: their habits

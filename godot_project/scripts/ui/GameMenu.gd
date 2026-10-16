@@ -101,6 +101,7 @@ const APPS := [
 	["ai", "NPC AI", "icon_ai.png"],
 	["nav", "Navigation", "icon_nav.png"],
 	["control", "Control Panel", "icon_control.png"],
+	["datetime", "Date & Time", "icon_datetime.png"],
 	["help", "Help", "icon_help.png"],
 ]
 
@@ -185,6 +186,7 @@ func _process(delta: float) -> void:
 	if not _is_open:
 		return
 	_move_stylus(delta)
+	_dt_tick(delta)
 	_update_clock()
 	_update_backlight()
 	if _current == "map":
@@ -717,9 +719,7 @@ func _update_clock() -> void:
 	var scene := get_tree().current_scene
 	var sky: Node = scene.get("sky_system") if scene else null
 	var t: float = sky.time_of_day if sky else 0.5
-	var mins := int(t * 24.0 * 60.0)
-	var h := (mins / 60) % 24
-	_clock.text = "%d:%02d %s" % [12 if h % 12 == 0 else h % 12, mins % 60, "AM" if h < 12 else "PM"]
+	_clock.text = StationCalendar.format_time(t * 24.0)       # (as the Date & Time app rounds: a set 8:55 reads 8:55)
 
 
 # ------------------------------------------------------------------ The System
@@ -911,7 +911,9 @@ func _build_system() -> void:
 	for i in APPS.size():
 		var ic := DeskIcon.new()
 		ic.tex = load(PDA + APPS[i][2])
-		ic.text = String(APPS[i][1]).replace(" ", "\n") if String(APPS[i][1]).length() > 10 else APPS[i][1]
+		var nm := String(APPS[i][1])
+		var sp := nm.rfind(" ")
+		ic.text = nm.substr(0, sp) + "\n" + nm.substr(sp + 1) if nm.length() > 10 and sp > 0 else nm      # (two lines at most)
 		ic.font = _font
 		ic.font_size = TEXT_SIZE
 		ic.position = Vector2(4 + (i % 3) * 78, 10 + (i / 3) * 84)
@@ -927,6 +929,7 @@ func _build_system() -> void:
 	_app("ai", "NPC AI", _ai_tabs(), "The station's people talk through an AI service.  Setup: get a free Groq key and paste it in.  Voice: choose the model.  Try it: talk to someone.")
 	_app("nav", "Navigation", _nav_tabs(), "The political map: whose law runs where (the dotted shades), town limits, roads, tram lines.  Drag to look round, + and - to zoom: the closer, the more is named.  Boxed T: a fast-travel tram stop -- tap it, or pick a town under Travel.  Law: the rules where you stand.")
 	_app("control", "Control Panel", _control_tabs(), "Sound, Display and Controls settings.")
+	_app("datetime", "Date & Time", _dt_tabs(), "The station's date and time.  Set: choose the time, a day of the week or a date, then Set Clock -- the clock only goes forward (a time already past today means tomorrow).  Calendar: the month; tap a day to choose it.  Speed: how fast the clock runs.")
 	_app("help", "Help", _help_tabs(), "The System Help.")
 	for a in _apps.values():
 		a.visible = false
@@ -1276,6 +1279,8 @@ func _open_app(name: String) -> void:
 		_refresh_ai()
 	if name == "nav":
 		_refresh_nav()
+	if name == "datetime":
+		_dt_reset()
 
 
 func _show_page(i: int) -> void:
@@ -1289,6 +1294,8 @@ func _show_page(i: int) -> void:
 	bar.title = t if tabs.get_tab_count() < 2 else "%s: %s" % [t, tabs.get_tab_title(i)]
 	bar.queue_redraw()
 	_set_menus(_app_menus(_current))
+	if _current == "datetime":
+		_dt_show()
 
 
 func _close_app() -> void:
@@ -1842,7 +1849,7 @@ func _fast_travel(dd: Dictionary, mins: int, title: String) -> void:
 			sk.fast_travel(int(dd.sky))
 		var skc := get_tree().current_scene.get_node_or_null("DaySkySystem")
 		if skc:
-			skc.time_of_day = fposmod(float(skc.time_of_day) + mins / 1440.0, 1.0)
+			skc.advance_minutes(mins)                     # (past midnight the day turns too)
 		_tell(title)
 		return
 	var s := float(dd.s)
@@ -1867,7 +1874,7 @@ func _fast_travel(dd: Dictionary, mins: int, title: String) -> void:
 	pl.stand_up(StationGeo.point(s, x, MapTerrain.elevation(s, x) + 1.0), StationGeo.basis(s, yaw))
 	var sky := get_tree().current_scene.get_node_or_null("DaySkySystem")
 	if sky:
-		sky.time_of_day = fposmod(float(sky.time_of_day) + mins / 1440.0, 1.0)
+		sky.advance_minutes(mins)                         # (past midnight the day turns too)
 	_tell(title)
 
 
@@ -1896,7 +1903,7 @@ func _nav_travel(dd: Dictionary, mins: int) -> void:
 	pl.stand_up(StationGeo.point(s, at.y, MapTerrain.elevation(s, at.y) + 1.0), StationGeo.basis(s, yaw))
 	var sky := get_tree().current_scene.get_node_or_null("DaySkySystem")
 	if sky:
-		sky.time_of_day = fposmod(float(sky.time_of_day) + mins / 1440.0, 1.0)
+		sky.advance_minutes(mins)                         # (past midnight the day turns too)
 	_tell("%s: %s" % [dd.name, dd.stop])
 
 
@@ -2577,6 +2584,353 @@ func _format_binding(action: String) -> String:
 			MOUSE_BUTTON_WHEEL_DOWN: return "Wheel Down"
 			_: return "Mouse %d" % e.button_index
 	return "?"
+
+
+# ------------------------------------------------------------------ Date & Time
+## The station's clock (the user, 2026-10-15: "a Date & Time app in the Communicator to change the time and day of
+## the week"), after System 7's Date & Time control panel. Set: the weekday, the date and the time now; choose the
+## hour and minute, a day of the week, or a date (or a day on the Calendar page), then Set Clock. The clock only goes
+## FORWARD: no date before today can be chosen, a time already past today means tomorrow, a weekday means its next one.
+## Setting goes through DaySkySystem.set_clock (the one way to set the time): the sky, the light, the street lamps and
+## the lit windows change at once; the people and the traffic start over at the new time from their schedules (NpcLife,
+## the places' hours by StationCalendar's weekday); the trams keep their timetable by the clock; the weather and the
+## sky islands carry on. Speed: how fast the clock runs (DaySkySystem.DAY_LENGTH_SECONDS, read by everything that moves
+## with the clock).
+const DT_SPEEDS := [["Normal", "an hour in 2 minutes", 2880.0], ["Slow", "an hour in 10 minutes", 14400.0],
+	["Real time", "an hour in an hour", 86400.0], ["Fast", "an hour in 30 seconds", 720.0]]
+const DT_WD := ["M", "T", "W", "T", "F", "S", "S"]
+var _dt_day := 0                     # the draft: the day chosen ...
+var _dt_min := 0                     # ... and the minute of it (0..1439)
+var _dt_dirty := false               # (changed since it was the time now)
+var _dt_month := Vector2i.ZERO       # the Calendar page's month (y, m)
+var _dt_now_l: Array = []            # the Now box: weekday, date, time
+var _dt_vals := {}                   # "hour", "min", "ampm", "d", "m", "y" -> what shows the draft
+var _dt_wd: Array = []               # the seven weekday buttons
+var _dt_target: Label
+var _dt_set: Button
+var _dt_cal_title: Label
+var _dt_cal_grid: GridContainer
+var _dt_cal_events: Label
+var _dt_speed: Array = []
+var _dt_hold := {}                   # a -/+ held down: {cb, t} (it repeats)
+
+
+func _dt_sky() -> Node:
+	var scene := get_tree().current_scene
+	return scene.get_node_or_null("DaySkySystem") if scene else null
+
+
+func _dt_now() -> Vector2i:
+	## (day, minute of the day) now.
+	var sky := _dt_sky()
+	if sky == null:
+		return Vector2i(0, 12 * 60)
+	return Vector2i(int(sky.day), clampi(int(floor(float(sky.time_of_day) * 1440.0 + 1e-3)), 0, 1439))
+
+
+func _dt_target_dm() -> Vector2i:
+	## The draft as it will be set: never before now (a time already past today is tomorrow's).
+	var now := _dt_now()
+	var d := maxi(_dt_day, now.x)
+	if d == now.x and _dt_min <= now.y:
+		d += 1
+	return Vector2i(d, _dt_min)
+
+
+func _dt_tabs() -> TabContainer:
+	var tabs := TabContainer.new()
+	# -- Set
+	var pg := _tab_page(tabs, "Set")
+	var box := PanelContainer.new()
+	var bv := VBoxContainer.new()
+	bv.add_theme_constant_override("separation", 0)
+	box.add_child(bv)
+	_dt_now_l = [_label("", true, false), _label("", false, false), _label("", true, false)]
+	for l in _dt_now_l:
+		l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		bv.add_child(l)
+	pg.add_child(box)
+	pg.add_child(_label("Time", true, false))
+	var tr := _dt_row()
+	_dt_spin(tr, "hour", 24, func(k): _dt_add_min(k * 60))
+	var colon := _label(":", true, false)
+	tr.add_child(colon)
+	_dt_spin(tr, "min", 24, func(k): _dt_add_min(k))
+	var ap := _button("AM", func(): _dt_add_min(720 if _dt_min < 720 else -720))
+	ap.custom_minimum_size = Vector2(36, 18)
+	tr.add_child(ap)
+	_dt_vals["ampm"] = ap
+	pg.add_child(tr)
+	pg.add_child(_label("Day of the week", true, false))
+	var wr := _dt_row()
+	wr.add_theme_constant_override("separation", 2)
+	for i in 7:
+		var b := _button(DT_WD[i], _dt_pick_wd.bind(i))
+		b.toggle_mode = true
+		b.custom_minimum_size = Vector2(29, 18)
+		wr.add_child(b)
+		_dt_wd.append(b)
+	pg.add_child(wr)
+	pg.add_child(_label("Date", true, false))
+	var dr := _dt_row()
+	_dt_spin(dr, "d", 20, func(k): _dt_add_day(k))
+	_dt_spin(dr, "m", 28, func(k): _dt_add_month(k))
+	_dt_spin(dr, "y", 34, func(k): _dt_add_month(12 * k))
+	pg.add_child(dr)
+	pg.add_child(HSeparator.new())
+	_dt_target = _label("")
+	pg.add_child(_dt_target)
+	var br := _dt_row()
+	br.add_theme_constant_override("separation", 8)
+	var nowb := _button("Now", _dt_reset)
+	nowb.custom_minimum_size = Vector2(52, 18)
+	br.add_child(nowb)
+	_dt_set = _button("Set Clock", _dt_apply)
+	_dt_set.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	br.add_child(_dt_set)
+	pg.add_child(br)
+	# -- Calendar
+	var cp := _tab_page(tabs, "Calendar")
+	var hr := _dt_row()
+	var prev := _button("<", func(): _dt_month_page(-1))
+	prev.custom_minimum_size = Vector2(24, 18)
+	hr.add_child(prev)
+	_dt_cal_title = _label("", true, false)
+	_dt_cal_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_dt_cal_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	hr.add_child(_dt_cal_title)
+	var nxt := _button(">", func(): _dt_month_page(1))
+	nxt.custom_minimum_size = Vector2(24, 18)
+	hr.add_child(nxt)
+	cp.add_child(hr)
+	_dt_cal_grid = GridContainer.new()
+	_dt_cal_grid.columns = 7
+	_dt_cal_grid.add_theme_constant_override("h_separation", 2)
+	_dt_cal_grid.add_theme_constant_override("v_separation", 1)
+	cp.add_child(_dt_cal_grid)
+	cp.add_child(HSeparator.new())
+	_dt_cal_events = _label("")
+	cp.add_child(_dt_cal_events)
+	# -- Speed
+	var sp := _tab_page(tabs, "Speed")
+	sp.add_child(_label("How fast the clock runs", true, false))
+	for i in DT_SPEEDS.size():
+		var b := _button("%s: %s" % [DT_SPEEDS[i][0], DT_SPEEDS[i][1]], _dt_pick_speed.bind(i))
+		b.toggle_mode = true
+		b.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		sp.add_child(b)
+		_dt_speed.append(b)
+	sp.add_child(_label("The sky, the people, the traffic and the trams all keep to the clock."))
+	return tabs
+
+
+func _dt_row() -> HBoxContainer:
+	var r := HBoxContainer.new()
+	r.add_theme_constant_override("separation", 3)
+	return r
+
+
+func _dt_spin(row: HBoxContainer, key: String, w: int, step: Callable) -> void:
+	## [-] value [+]: tap to step, hold to run.
+	for k in [-1, 1]:
+		var b := Button.new()
+		b.text = "-" if k < 0 else "+"
+		b.custom_minimum_size = Vector2(18, 18)
+		b.button_down.connect(func():
+			step.call(k)
+			_dt_hold = {"cb": step.bind(k), "t": 0.45})
+		b.button_up.connect(func(): _dt_hold = {})
+		row.add_child(b)
+		if k < 0:
+			var v := _label("", true, false)
+			v.custom_minimum_size = Vector2(w, 0)
+			v.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			row.add_child(v)
+			_dt_vals[key] = v
+
+
+func _dt_tick(delta: float) -> void:
+	if _dt_hold.is_empty():
+		return
+	_dt_hold.t = float(_dt_hold.t) - delta
+	if float(_dt_hold.t) <= 0.0:
+		_dt_hold.t = 0.08
+		(_dt_hold.cb as Callable).call()
+
+
+func _dt_reset() -> void:
+	## The draft back to the time now.
+	var now := _dt_now()
+	_dt_day = now.x
+	_dt_min = now.y
+	_dt_dirty = false
+	var t := StationCalendar.date(now.x)
+	_dt_month = Vector2i(int(t.y), int(t.m))
+	_dt_show()
+
+
+func _dt_changed() -> void:
+	_dt_dirty = true
+	_dt_day = maxi(_dt_day, _dt_now().x)                     # (never before today)
+	var t := StationCalendar.date(_dt_day)
+	_dt_month = Vector2i(int(t.y), int(t.m))
+	_dt_show()
+
+
+func _dt_add_min(k: int) -> void:
+	_dt_min = posmod(_dt_min + k, 1440)                      # (the time of day: the date stays as chosen)
+	_dt_changed()
+
+
+func _dt_add_day(k: int) -> void:
+	_dt_day += k
+	_dt_changed()
+
+
+func _dt_add_month(k: int) -> void:
+	## A month (or twelve: a year) on or back, the day of the month kept (the 31st in a short month: its last).
+	var t := StationCalendar.date(_dt_day)
+	var mi := int(t.y) * 12 + int(t.m) - 1 + k
+	var y := mi / 12
+	var m := mi % 12 + 1
+	_dt_day = StationCalendar.day_of(y, m, mini(int(t.d), StationCalendar.month_len(y, m)))
+	_dt_changed()
+
+
+func _dt_pick_wd(wd: int) -> void:
+	## The next such day (today if the time chosen is still to come today).
+	var now := _dt_now()
+	var d := StationCalendar.next_weekday(now.x, wd)
+	if d == now.x and _dt_min <= now.y:
+		d += 7
+	_dt_day = d
+	_dt_changed()
+
+
+func _dt_pick_day(day: int) -> void:
+	_dt_day = day
+	_dt_changed()
+
+
+func _dt_month_page(k: int) -> void:
+	var mi := _dt_month.x * 12 + _dt_month.y - 1 + k
+	var now := StationCalendar.date(_dt_now().x)
+	if mi < int(now.y) * 12 + int(now.m) - 1:
+		return                                               # (no going back past this month)
+	_dt_month = Vector2i(mi / 12, mi % 12 + 1)
+	_dt_fill_calendar()
+
+
+func _dt_pick_speed(i: int) -> void:
+	DaySkySystem.DAY_LENGTH_SECONDS = float(DT_SPEEDS[i][2])
+	_dt_show()
+
+
+func _dt_apply() -> void:
+	var sky := _dt_sky()
+	if sky == null or not _dt_dirty:
+		return
+	var t := _dt_target_dm()
+	sky.set_clock(t.x, t.y / 60.0)
+	_dt_dirty = false
+	_dt_day = t.x
+	_dt_min = t.y
+	_update_clock()
+	_update_backlight()
+	_dt_show()
+	_dt_target.text = "The clock is set:\n%s, %s." % [StationCalendar.format_date(t.x), StationCalendar.format_time(t.y / 60.0)]
+
+
+func _dt_show() -> void:
+	if _dt_target == null:
+		return
+	var now := _dt_now()
+	var nd := StationCalendar.date(now.x)
+	_dt_now_l[0].text = StationCalendar.DAY_NAMES[nd.wd]
+	_dt_now_l[1].text = "%d %s %d,  VY %d" % [nd.d, StationCalendar.MONTH_NAMES[int(nd.m) - 1], nd.y, nd.vy]
+	_dt_now_l[2].text = StationCalendar.format_time(now.y / 60.0)
+	var t := _dt_target_dm() if _dt_dirty else now
+	var td := StationCalendar.date(t.x)
+	var h := t.y / 60
+	_dt_vals.hour.text = str(12 if h % 12 == 0 else h % 12)
+	_dt_vals.min.text = "%02d" % (t.y % 60)
+	_dt_vals.ampm.text = "AM" if h < 12 else "PM"
+	_dt_vals.d.text = str(td.d)
+	_dt_vals.m.text = StationCalendar.MONTH_SHORT[int(td.m) - 1]
+	_dt_vals.y.text = str(td.y)
+	for i in 7:
+		(_dt_wd[i] as Button).set_pressed_no_signal(i == int(td.wd))
+	if _dt_dirty:
+		var mins := (t.x - now.x) * 1440 + t.y - now.y
+		var on: Array = []
+		if mins >= 1440:
+			on.append("%d day%s" % [mins / 1440, "" if mins / 1440 == 1 else "s"])
+		if (mins % 1440) / 60 > 0:
+			on.append("%d h" % ((mins % 1440) / 60))
+		if mins % 60 > 0:
+			on.append("%d min" % (mins % 60))
+		var when: String = "Tomorrow" if t.x == now.x + 1 else ("Today" if t.x == now.x else StationCalendar.DAY_NAMES[td.wd])
+		_dt_target.text = "%s, %d %s, %s\n(%s on)" % [when, td.d, StationCalendar.MONTH_SHORT[int(td.m) - 1],
+			StationCalendar.format_time(t.y / 60.0), " ".join(on)]
+	else:
+		_dt_target.text = "Choose a time, a day or a date: the clock only goes forward."
+	_dt_set.disabled = not _dt_dirty
+	for i in _dt_speed.size():
+		(_dt_speed[i] as Button).set_pressed_no_signal(is_equal_approx(DaySkySystem.DAY_LENGTH_SECONDS, float(DT_SPEEDS[i][2])))
+	_dt_fill_calendar()
+
+
+func _dt_fill_calendar() -> void:
+	## The month, Sunday first (as the station's calendars hang): today ringed, the day chosen black, the past greyed.
+	if _dt_cal_grid == null:
+		return
+	for c in _dt_cal_grid.get_children():
+		_dt_cal_grid.remove_child(c)
+		c.queue_free()
+	var y := _dt_month.x
+	var m := _dt_month.y
+	_dt_cal_title.text = "%s %d" % [StationCalendar.MONTH_NAMES[m - 1], y]
+	for n in ["S", "M", "T", "W", "T", "F", "S"]:
+		var hl := _label(n, true, false)
+		hl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		hl.custom_minimum_size = Vector2(30, 0)
+		_dt_cal_grid.add_child(hl)
+	var now := _dt_now()
+	var chosen := _dt_target_dm().x if _dt_dirty else -99999
+	var d1 := StationCalendar.day_of(y, m, 1)
+	var lead := (StationCalendar.weekday(d1) + 1) % 7         # (Sunday = column 0)
+	for i in lead:
+		_dt_cal_grid.add_child(Control.new())
+	for k in StationCalendar.month_len(y, m):
+		var day := d1 + k
+		var b := Button.new()
+		b.text = str(k + 1)
+		b.custom_minimum_size = Vector2(30, 17)
+		b.add_theme_font_override("font", _font)
+		b.add_theme_font_size_override("font_size", TEXT_SIZE)
+		var ring := day == now.x
+		var st: StyleBox = StyleBoxEmpty.new()
+		if day == chosen:
+			st = _flat(K, K, 1, 3, 0)
+		elif ring:
+			st = _flat(W, K, 1, 3, 0)
+		for sn in ["normal", "hover", "disabled", "focus"]:
+			b.add_theme_stylebox_override(sn, st)
+		b.add_theme_stylebox_override("pressed", _flat(K, K, 1, 3, 0))
+		b.add_theme_color_override("font_color", W if day == chosen else K)
+		b.add_theme_color_override("font_hover_color", W if day == chosen else K)
+		b.disabled = day < now.x
+		b.pressed.connect(_dt_pick_day.bind(day))
+		_dt_cal_grid.add_child(b)
+	# what's on, on the day chosen (or today): the station's calendar of events (TransitDemand, remake/events.json)
+	var show_day := chosen if chosen != -99999 else now.x
+	var names: Array = []
+	for e in TransitDemand.events_on(show_day):
+		var nm := str(e.get("name", ""))
+		if nm != "" and not names.has(nm):
+			names.append(nm)
+	_dt_cal_events.text = "%s:  %s" % [StationCalendar.format_date(show_day, false), ", ".join(names) if not names.is_empty() else "nothing on"]
 
 
 # ------------------------------------------------------------------ Help

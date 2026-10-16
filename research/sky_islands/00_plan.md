@@ -32,6 +32,13 @@
 > (follow-up) When the islands dock, they will stay together for 3days and break apart. They will not dock more than
 > 10 islands together.
 
+**Canon change, 2026-10-15** (the user, via research/flea_markets):
+- The brief's "rarely ever go to the surface" is superseded. The islanders now come down **often**: islands moor at
+  every town's flea market and run gondolas.
+- They **settle on the surface in large numbers**: half of all island children, the Lowliners. Most settle on the South
+  Sea shore.
+- See `research/flea_markets/00_plan.md` §8–9 and `tools/bible/canon_sky.py` (`market_moorings`, `settled`).
+
 ## Fixed numbers (everyone uses these)
 - Deck altitude: **750 m** above the nominal floor (StationGeo h = 750, radius 9,250 m).
 - Spin gravity there: 9.8 × 9,250 / 10,000 = **0.925 g**. Drifting antispinward (west) lightens an island further

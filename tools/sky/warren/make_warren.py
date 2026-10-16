@@ -30,7 +30,8 @@ import units as U  # noqa: E402
 import writer  # noqa: E402
 from civ import civ_for  # noqa: E402
 from lattice import LANE, Lattice  # noqa: E402
-import kitmap  # noqa: E402
+import kitmap
+import walk as walkmod  # noqa: E402
 from spine import connect_leftovers, lay_spine  # noqa: E402
 
 ISLANDS = os.path.join(ROOT, "godot_project", "remake", "sky", "islands.json")
@@ -83,17 +84,17 @@ def build(isl, civ_id, do_preview=True):
     shacks = [(int(i), int(j), int(k)) for i, j, k in zip(*np.nonzero((L.occ > 0) & (L.epoch == 5)))]
     for (i, j, k) in shacks:
         L.clear(i, j, k)
-    # the pieces, units, walking
+    # paved paths through the greens (walk.py), then the pieces, units, walking
+    import walk
+    paths = walk.green_paths(L)
     o = pick.run(L, civ, rng)
     units, doors = U.make_units(L, civ)
     lattice_homes = sum(u["homes"] for u in units)
     surplus = U.balance_homes(L, civ, units, isl.get("population"))
     walk = U.walk_graph(L, civ)
-    for (i, j, rot) in L.stairs_out:
-        o.emit("stair_ext", i, j, 0, rot, pick.DECK, 0, civ.slot("metal"), 3)
-    for (i, j, k, rot) in L.ladders:
+    for (i, j, k, rot) in dict.fromkeys(L.ladders):
         o.emit("ladder", i, j, k, rot, 0, 0, civ.slot("metal"), 5)
-    for (i, j, k, rot) in L.planks:
+    for (i, j, k, rot) in dict.fromkeys(L.planks):
         o.emit("bridge_plank", i, j, k, rot, 0, 0, civ.slot("frame"), 5)
     kit = kitmap.load_kit()
     if kit is None:
@@ -101,7 +102,47 @@ def build(isl, civ_id, do_preview=True):
     if civ.id not in kit["palettes"] and hasattr(civ, "PALETTES"):
         kit["palettes"][civ.id] = civ.PALETTES          # (the family's own until the KIT stream adds them)
     o.recs, dropped = kitmap.translate(L, civ, o.recs, kit, shacks)
-    o.recs, shed = kitmap.budget(L, o.recs, kit, civ.params.get("chunk_tris", 25000))
+    walkmod.physical(L, o.recs, kit["pieces"])
+    # the player's clear box through every way and door (openings.py): what blocks is cleared (decor dropped, a
+    # balcony/shopfront/arch over the walk swapped for a plain or wider piece), then the budget, then again (the
+    # budget's own swaps), then the check
+    import openings
+    o.recs, ostats = openings.fix(L, o.recs, kit["pieces"], L.phys_h)
+    shed = {}
+    for _ in range(3):
+        o.recs, sh = kitmap.budget(L, o.recs, kit, civ.params.get("chunk_tris", 25000))
+        shed.update(sh)
+        if not sh:
+            break
+        o.recs, ostats2 = openings.fix(L, o.recs, kit["pieces"], L.phys_h)
+        for k in ("edges_blocked_after", "doors_blocked_after", "still_blocking", "kit_door_too_small"):
+            ostats[k] = ostats2[k]
+        ostats["pieces_swapped"] += ostats2["pieces_swapped"]
+        ostats["pieces_removed"] += ostats2["pieces_removed"]
+        if not ostats2["pieces_swapped"] and not ostats2["pieces_removed"]:
+            break
+    occ = openings.occupied(L, o.recs, kit["pieces"], L.phys_h)
+    for c in occ:
+        L.W.discard(c)                                   # (a landmark's footprint: off the walk)
+    left = openings.scan(L, o.recs, kit["pieces"], L.phys_h)
+    # (a door whose only obstruction is its own door piece -- the KIT's frame 2.17 m clear, not 2.2 -- is a KIT
+    # request; the door stays)
+    L.doors_blocked = set(lid for lid, bl in left["doors"] if not all(openings.is_door_piece(L, o.recs[n], lid, kit["pieces"]) for n in bl))
+    L.walk_stats["physical"] = walkmod.physical(L, o.recs, kit["pieces"], set((c, n) for c, n, _ in left["edges"]))
+    L.walk_stats["physical"]["openings"] = ostats
+    L.walk_stats["physical"]["landmark_cells"] = len(occ)
+    o.recs, gstats = openings.prune_graph(L, o.recs, kit["pieces"], [(c, n) for c, n, _ in left["edges"]], occ)
+    L.walk_stats["physical"]["graph"] = gstats
+    if os.environ.get("WALK_DEBUG"):
+        S = openings.Scene(L, o.recs, kit["pieces"])
+        for lid, bl in left["doors"][:3]:
+            lot = L.lots[lid]
+            print("BLOCKED DOOR", lid, lot["door"], lot["door_k"], [(o.recs[k][:7]) for k in bl])
+            for k in bl:
+                W, a, b = S.world(k)
+                print("   piece world aabb", a.round(2), b.round(2))
+        for c, n, bl in left["edges"][:6]:
+            print("BLOCKED EDGE", c, n, L.q.get(c), L.stair.get(c), L.q.get(n), L.stair.get(n), [o.recs[k][:7] for k in bl])
     L.lights = kitmap.lights(L, civ, o.recs, kit)
     comps = U.components(L)
     U.mark_private_roofs(L)
@@ -124,7 +165,7 @@ def build(isl, civ_id, do_preview=True):
         "placements": len(o.recs), "anchors": len(o.anchors), "lights": len(L.lights), "foliage": len(fol),
         "walk_nodes": len(walk["nodes"]), "walk_edges": len(walk["edges"]), "walk_components": comps[:5],
         "tether_violations": tether_hits, "unsupported": unsup, "settle_removed": removed,
-        "roof_shacks": len(shacks), "chunks_shed": len(shed), "plinths": getattr(L, "plinths", 0), "missing_from_kit": dropped,
+        "roof_shacks": len(shacks), "green_path_cells": paths, "walk_check": L.walk_stats, "chunks_shed": len(shed), "plinths": getattr(L, "plinths", 0), "missing_from_kit": dropped, "duplicates_removed": getattr(L, "dup_removed", 0),
         "build_s": round(time.time() - t0, 2),
     }
     os.makedirs(OUT, exist_ok=True)

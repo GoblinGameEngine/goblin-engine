@@ -60,6 +60,13 @@ func _set_aloft(on: bool) -> void:
 	# what's only near the ground: hidden and stopped (process off also takes the parked and NPC bodies out of physics)
 	for n in ["RoadFurniture", "Walks", "GroundVehicles", "Bicycles"]:
 		_park(station.get_node_or_null(n), on)
+	# ... and the ground's buildings, roads and trees: the far-side image already shows them from up here, and drawn
+	# as well they were thousands of 2-6 px shapes whose screen outlines crawled as an island drifted -- the floor's
+	# "flicker" seen from the sky islands (research/sky_islands/warrens/flicker.md)
+	for n in ["World", "Roads", "Trees"]:
+		var nd := station.get_node_or_null(n) as Node3D
+		if nd:
+			nd.visible = not on
 	for v in ["npcs", "traffic", "transit"]:
 		var nd = station.get(v)
 		if nd is Node:

@@ -83,6 +83,11 @@ func _ready() -> void:
 	add_child(street_lights)
 	street_lights.target = player
 	street_lights.setup()
+	# the night air lit by the lamps round the viewer (DaySkySystem lifts the night ambient by LightField.glow)
+	var light_field := LightField.new()
+	light_field.station = self
+	add_child(light_field)
+	light_field.build(street_lights)
 	_mark("street lights setup")
 	var walks := CoastalWalks.new()
 	walks.name = "Walks"

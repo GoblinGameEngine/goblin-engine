@@ -1,4 +1,5 @@
 class_name RemakeLodClusters
+const CitySigns := preload("res://remake/scripts/city_signs.gd")
 ## Hierarchical LOD for many placed buildings (the distance versions gblod.py exports beside each
 ## glb: <id>.lod1/2/3.glb).
 ##
@@ -282,6 +283,8 @@ static func build(parent: Node3D, entries: Array, full := true, bake_into: Baked
 		root.name = id
 		root.transform = e.xform
 		parent.add_child(root)
+		if bake_into == null:
+			CitySigns.attach(root, id)            # (streamed ordinary buildings get theirs from the streamer's _put_lod1)
 		var lod1: Node3D = sc[0].instantiate()
 		root.add_child(lod1)
 		RemakeBuilding.prepare_lod(lod1, "res://remake/buildings/%s.lod1.glb" % model)

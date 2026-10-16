@@ -7,11 +7,13 @@ class_name SkyWarren
 ## instances, not scene nodes: an island moves every tick, and nodes on it cost per node per tick (the lesson of
 ## research/perf_learnings.md).  SkyIsland calls place() whenever it is placed.
 ##
-##   LOD0  < LOD0_M     the pieces themselves, a surface per material slot (wall, trim, frame, glass, ...): the
+##   LOD0  < LOD0_M     the pieces themselves, a surface per material group (solid, metal, glass, emissive, water): the
 ##                      glass interior-mapped (window_glass.gdshader: a fake room, lit by the hour at night)
-##   LOD1  .. LOD1_M    each piece as its bounding box (lod1 "box"), crowns kept ("keep"), clutter dropped: one surface,
-##                      lod_vc.gdshader (lit window grid at night)
-##   LOD2  .. near end  a quadrant of 4 x 4 chunks' LOD1 merged into one instance
+##   LOD1  .. MID_M     each piece's MID model (pieces.json "mid": KIT's simplified piece -- or its "lod1" rule while it
+##                      has none: its box, kept whole, or dropped), the same material groups
+##   LOD2  .. near end  each piece as its bounding box (lod1 "box"), crowns kept ("keep"), clutter dropped, a quadrant of
+##                      4 x 4 chunks in one instance, lod_vc.gdshader (a lit window grid at night)
+## The levels switch hard at exact, non-overlapping distances (a dithered fade flickers under the outline pass).
 ## Colour: the placement's kit palette variant (pieces.json palettes[civ][variant][slot], FORMAT.md v2 "kit_variant")
 ## baked into the vertex colour of a per-(piece, variant, mirror) copy of the piece, then copied with the placement's
 ## transform (`xf * verts`, append_array: in C++, no per-vertex GDScript).
@@ -23,14 +25,18 @@ const DIR := "res://remake/sky/warrens/"
 const PIECES := "res://remake/sky/warrens/pieces.json"
 const CELL := 3.0
 const STOREY := 3.2
-const LOD0_M := 70.0                 # the pieces within (per civ: LOD0_CIV, or the twin json's "lod0_m")
+const LOD0_M := 45.0                 # the pieces within (per civ: LOD0_CIV, or the twin json's "lod0_m")
 ## heavy civs draw full detail nearer: Kowloon averages ~44k triangles a chunk, ~1M within 87 m (r4: <= 700k near)
 const LOD0_CIV := {"kowloon_walled": 40.0}
-const LOD1_M := 220.0
+const MID_M := 200.0                 # the MID pieces to here; the boxes beyond
+const LOD1_M := MID_M
+const APRON_M := 0.8                 # m a ground-level paving's slope down to a lower deck
+const FADE_M := 8.0                  # m over which a level fades into the next (LOD2's: 2 x)
 const NEAR_END := 520.0              # (SkyIsland.NEAR + margin: past it the island's own LOD glbs draw)
 const CH := 8                        # cells a chunk's side
 const COLLIDE_M := 40.0
 const COLLIDE_DROP := 55.0
+const CLOSE_M := 6.0                 # m: a chunk this near the player gets its shape at once
 const UPLOAD_USEC := 3000            # main-thread time a frame for uploads
 const MAX_TASKS := 2                 # merges at once, an island
 const MAX_TASKS_ALL := 3             # ... and all the near warrens together (48 islands have one: several build at once)
@@ -40,6 +46,7 @@ static var _up_used := 0
 const FLARES := 300
 const FLARE_M := 150.0
 const POOLS := 700
+const SOLID_SH := preload("res://remake/shaders/warren_solid.gdshader")
 const FLARE_SH := preload("res://remake/shaders/warren_flare.gdshader")
 const POOL_SH := preload("res://remake/shaders/warren_pool.gdshader")
 const POOL_M := 120.0
@@ -105,8 +112,9 @@ func _init(p_isl: Node3D) -> void:
 ## The file is tools/sky/warren/FORMAT.md's (the GENERATOR's writer.py): "WRN1", u16 version, civ, x0 z0 cell storey,
 ## nx nz levels, the palette (sRGB), the piece-id and species tables, the chunk table [ci, cj, first, count], the records
 ## (7 bytes: u16 piece, u8 i, u8 j (GLOBAL cells), u8 level, u8 rot_flags, u8 pal_epoch), units, doors, the arrival point,
-## the foliage.  Version 2: rot_flags bits 0-1 rot, bit 2 DECK (y = the deck at the cell centre), bit 3 MIRROR, bits 4-7
-## the mount (0 cell centre, 1 face, 2 corner); pal_epoch bits 0-3 the kit palette variant, 4-7 the epoch.
+## the foliage.  Version 3: rot_flags bits 0-1 rot, bit 2 DECK (y = the deck at the cell centre), bit 3 MIRROR, bits 4-5
+## the mount (0 cell centre, 1 face, 2 corner), bits 6-7 a quarter storey (y = 3.2 level + 0.8 quarter; v2: 0); pal_epoch
+## bits 0-3 the kit palette variant, 4-7 the epoch.
 var _buf := PackedByteArray()
 var _p := 0
 
@@ -237,6 +245,7 @@ func step(delta: float) -> void:
 		for k in ["solid", "metal", "glass", "emissive", "water"]:   # (the workers only read them)
 			_mat(k)
 		_lod_vc = RemakeBuilding.lod_vc_material(true)
+		_field_materials()
 		_queue = chunks.duplicate()
 		# nearest the player first
 		var pl := _player_local()
@@ -296,7 +305,10 @@ func step(delta: float) -> void:
 		Prof.begin("warren.lights")
 		_make_flares()
 		_make_plants()
+		_make_grass()
 		Prof.end("warren.lights")
+	if not _tucked and isl.get_node_or_null("Near/Rock"):
+		_tuck_deck()
 	_ref_t -= delta
 	_refresh()
 	_col_t -= delta
@@ -335,19 +347,29 @@ static var _kit_mutex := Mutex.new()
 
 func _prepare() -> void:
 	## (a worker) the kit, once for all islands, then this island's variants
-	_kit_mutex.lock()
-	_load_pieces()
-	_kit_mutex.unlock()
+	_ensure_kit()
 	_prepare_variants()
 	_lights_prep()
 	_plants_prep()
 	_walk_prep()
+	_grass_prep()
+	_ground_prep()
+	_field_prep()
+
+
+static func _ensure_kit() -> void:
+	## the kit, once, before any piece is asked for (a piece asked for before it was in drew as a placeholder box for
+	## good: the flag is set only once the kit is loaded)
+	if _pieces_loaded:
+		return
+	_kit_mutex.lock()
+	if not _pieces_loaded:
+		_load_pieces()
+		_pieces_loaded = true
+	_kit_mutex.unlock()
 
 
 static func _load_pieces() -> void:
-	if _pieces_loaded:
-		return
-	_pieces_loaded = true
 	if not DataFile.exists(PIECES):
 		return
 	var d = JSON.parse_string(DataFile.text(PIECES))
@@ -366,30 +388,171 @@ static func _load_pieces() -> void:
 		if mi == null or mi.mesh == null:
 			continue
 		var group := str(spec.get("group", "cell"))
-		var surfs: Array = []
 		var slots: Array = spec.get("slots", [])
+		var surfs := _surfs_of(mi.mesh, slots)
 		var box := AABB()
 		var first := true
-		for si in mi.mesh.get_surface_count():
-			var m: Material = mi.mesh.surface_get_material(si)
-			var slot := str(m.resource_name).trim_prefix("wk_") if m else ""
-			if not SLOTS.has(slot):
-				slot = str(slots[si]) if si < slots.size() else "wall"
-			var arrays: Array = mi.mesh.surface_get_arrays(si)
-			var vs: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
-			for k in vs.size():
-				box = AABB(vs[k], Vector3.ZERO) if first else box.expand(vs[k])
+		for sf in surfs:
+			for v in (sf[1][Mesh.ARRAY_VERTEX] as PackedVector3Array):
+				box = AABB(v, Vector3.ZERO) if first else box.expand(v)
 				first = false
-			arrays[Mesh.ARRAY_TANGENT] = null
-			surfs.append([slot, arrays])
-		_kit[pid] = {"surfs": surfs, "aabb": box, "lod1": str(spec.get("lod1", "box")), "group": group,
-			"collide": spec.get("collide", true) is bool and bool(spec.get("collide", true)) or str(spec.get("collide")) == "ramp"}
+		# the MID model (KIT): a mesh of its own in the glb, or a rule (box / keep / drop); none yet: the lod1 rule
+		var lod1 := str(spec.get("lod1", "box"))
+		var mid = spec.get("mid")
+		var mid_rule := lod1
+		var mid_surfs: Array = []
+		if spec.has("mid") and mid == null:
+			mid_rule = "drop"                             # (thin overlays: nothing at mid range)
+		elif mid is Dictionary:
+			# KIT's MID piece: {glb, mesh, tris, slots} -- kit_mid.glb's relief impostor, or the full piece if it's cheap
+			var mglb := str(mid.get("glb", glb))
+			if ResourceLoader.exists(mglb):
+				if not scenes.has(mglb):
+					scenes[mglb] = (load(mglb) as PackedScene).instantiate()
+				var mm := (scenes[mglb] as Node).find_child(str(mid.get("mesh", pid)), true, false) as MeshInstance3D
+				if mm and mm.mesh:
+					mid_surfs = _surfs_of(mm.mesh, mid.get("slots", slots))
+					mid_rule = "mesh"
+		elif mid is String and not (mid in ["box", "keep", "drop"]):
+			var mm := root.find_child(str(mid), true, false) as MeshInstance3D
+			if mm and mm.mesh:
+				mid_surfs = _surfs_of(mm.mesh, slots)
+				mid_rule = "mesh"
+		elif mid is String:
+			mid_rule = str(mid)
+		var col = spec.get("collide", true)
+		var collide: bool = (col is bool and bool(col)) or str(col) == "ramp" or str(col) == "frame"
+		var kind := str(spec.get("kind", ""))
+		# its collision (the player has no step-up and catches on every seam and lip):
+		#   ramp   a stair's inclined quad (_ramp_of)
+		#   top    paving, slabs, roofs, floors: their top face only -- and none where placed on the deck (DECK), whose
+		#          own collision is the walking surface there (per-cell boxes made a step at every seam on a slope)
+		#   mesh   what's walked through or over (arched passages, bridges): the piece's own triangles
+		#   box    the rest: its bounds -- a wall's clipped to its body (z <= 0.12), so awnings, portals and balconies
+		#          don't wall off the lane in front
+		var cmode := "box" if collide else ""
+		var cdata = box
+		if str(col) == "ramp":
+			# KIT's own ramp quads (pieces.json "ramp": [[4 points], ...], the piece frame: inclines over the treads,
+			# landings, a spiral's run of quads) -- or, from an older kit, one fitted to the treads
+			var rq := PackedVector3Array()
+			for q in spec.get("ramp", []):
+				for p in q:
+					rq.append(Vector3(float(p[0]), float(p[1]), float(p[2])))
+			cdata = rq if not rq.is_empty() else _ramp_of(surfs, box)
+			cmode = "ramp" if not (cdata as PackedVector3Array).is_empty() else "top"
+		elif str(col) == "frame":
+			# KIT's walk-through pieces (arches, doorways, gates): ONLY their "frame" boxes -- jambs, piers, lintel,
+			# wall mass -- never the triangles; leaves, grilles and screens in the opening don't collide
+			var fb: Array = []
+			for b in spec.get("frame", []):
+				var lo := Vector3(float(b[0][0]), float(b[0][1]), float(b[0][2]))
+				var hi := Vector3(float(b[1][0]), float(b[1][1]), float(b[1][2]))
+				fb.append(AABB(lo, hi - lo))
+			cmode = "frames"
+			cdata = fb
+		elif not collide:
+			pass
+		elif kind in ["ground", "slab", "roof"] or (kind == "interior" and box.size.y < 0.3):
+			cmode = "top"
+		elif kind in ["passage", "bridge"] or (pid.contains("arch") and not pid.contains("blind")):
+			cmode = "mesh"
+			cdata = _tris_of(surfs)
+		elif kind in ["wall", "edge"] and box.end.z > 0.12:
+			cdata = AABB(box.position, Vector3(box.size.x, box.size.y, 0.12 - box.position.z))
+		if cmode == "top":
+			var y := box.end.y
+			cdata = PackedVector3Array([Vector3(box.position.x, y, box.position.z), Vector3(box.end.x, y, box.position.z),
+				Vector3(box.end.x, y, box.end.z), Vector3(box.position.x, y, box.end.z)])
+		_kit[pid] = {"surfs": surfs, "aabb": box, "lod1": lod1, "group": group, "mid": mid_surfs, "mid_rule": mid_rule,
+			"collide": collide, "cmode": cmode, "cdata": cdata}
 	for k in scenes:
 		(scenes[k] as Node).free()
 	_palettes = d.get("palettes", {})
 
 
+static func _surfs_of(mesh: Mesh, slots: Array) -> Array:
+	## [[slot, arrays]] of a kit mesh: the slot from its material's name (wk_<slot>), else pieces.json's slots list
+	var surfs: Array = []
+	for si in mesh.get_surface_count():
+		var m: Material = mesh.surface_get_material(si)
+		var slot := str(m.resource_name).trim_prefix("wk_") if m else ""
+		if not SLOTS.has(slot):
+			slot = str(slots[si]) if si < slots.size() else "wall"
+		var arrays: Array = mesh.surface_get_arrays(si)
+		arrays[Mesh.ARRAY_TANGENT] = null
+		surfs.append([slot, arrays])
+	return surfs
+
+
+static func _tris_of(surfs: Array) -> PackedVector3Array:
+	## a piece's triangles, unindexed (collision faces)
+	var out := PackedVector3Array()
+	for sf in surfs:
+		var a: Array = sf[1]
+		var v: PackedVector3Array = a[Mesh.ARRAY_VERTEX]
+		var ix = a[Mesh.ARRAY_INDEX]
+		if ix == null:
+			out.append_array(v)
+		else:
+			for k in (ix as PackedInt32Array):
+				out.append(v[k])
+	return out
+
+
+static func _ramp_of(surfs: Array, box: AABB) -> PackedVector3Array:
+	## A stair's walking surface as one inclined quad (the player has no step-up: pieces.json "collide": "ramp").  Fitted
+	## to its treads (upward faces in the middle half of its width, clear of the rails): the line through the first and
+	## the last tread along +Z, run out to y 0 (the cell's walking surface) at whichever end meets the ground, and across
+	## the treads' width.  Rising or falling along +Z alike (ghat steps go down to the water).
+	var pts: Array = []                 # [z, y] of each tread triangle's centre
+	var x0 := INF
+	var x1 := -INF
+	var cx := box.get_center().x
+	var hw := box.size.x * 0.25
+	for sf in surfs:
+		var a: Array = sf[1]
+		var v: PackedVector3Array = a[Mesh.ARRAY_VERTEX]
+		var ix: PackedInt32Array = a[Mesh.ARRAY_INDEX] if a[Mesh.ARRAY_INDEX] != null else PackedInt32Array()
+		var n := ix.size() if not ix.is_empty() else v.size()
+		for t in range(0, n - 2, 3):
+			var p0 := v[ix[t] if not ix.is_empty() else t]
+			var p1 := v[ix[t + 1] if not ix.is_empty() else t + 1]
+			var p2 := v[ix[t + 2] if not ix.is_empty() else t + 2]
+			var nn := (p1 - p0).cross(p2 - p0)
+			if nn.length_squared() < 1e-10 or absf(nn.normalized().y) < 0.85:
+				continue
+			var c := (p0 + p1 + p2) / 3.0
+			if absf(c.x - cx) > hw:
+				continue
+			pts.append([c.z, c.y])
+			x0 = minf(x0, minf(p0.x, minf(p1.x, p2.x)))
+			x1 = maxf(x1, maxf(p0.x, maxf(p1.x, p2.x)))
+	if pts.size() < 2:
+		return PackedVector3Array()
+	pts.sort_custom(func(p, q): return float(p[0]) < float(q[0]))
+	var za: float = pts[0][0]
+	var ya: float = pts[0][1]
+	var zb: float = pts[pts.size() - 1][0]
+	var yb: float = pts[pts.size() - 1][1]
+	if zb - za < 0.3 or absf(yb - ya) < 0.05:
+		return PackedVector3Array()
+	var k := (yb - ya) / (zb - za)
+	var z0 := box.position.z
+	var z1 := box.end.z
+	# the end at the ground (the -Z end, whether it climbs or descends from there): where the line meets y 0, set exactly
+	# on the cell's walking surface
+	var zg := za - ya / k
+	z0 = clampf(zg, box.position.z - 0.5, za)
+	x0 = minf(x0, cx - 0.4)
+	x1 = maxf(x1, cx + 0.4)
+	var y0 := 0.0
+	var y1 := ya + k * (z1 - za)
+	return PackedVector3Array([Vector3(x0, y0, z0), Vector3(x1, y0, z0), Vector3(x1, y1, z1), Vector3(x0, y1, z1)])
+
+
 static func _piece(gid: String) -> Dictionary:
+	_ensure_kit()
 	var key := gid
 	_vmutex.lock()
 	var have = _pieces.get(key)
@@ -528,6 +691,7 @@ func _vkey(pk: int, pv: int, mirror: bool) -> String:
 ## `xf * verts` and `append_array` -- both in C++ -- with no reads back from the RenderingServer (SurfaceTool.append_from
 ## read each source mesh's arrays back from the server per call: a near island took minutes).
 var _vlocal := {}                    # Vector3i(piece, palette variant, mirror) -> variant (this island's, ready)
+var _mlocal := {}                    # the same -> its MID model's variant (pieces with one)
 var _blocal := {}                    # Vector2i(piece, palette variant) -> its LOD1 box variant
 var _plocal := {}                    # piece index -> the piece (lod1, collide, aabb)
 
@@ -545,6 +709,9 @@ func _prepare_variants() -> void:
 			if _vlocal.has(key):
 				continue
 			_vlocal[key] = _variant(pk, pv, mir == 1)
+			var pcm := _piece(str(head.pieces[pk]))
+			if not (pcm.get("mid", []) as Array).is_empty():
+				_mlocal[key] = _variant(pk, pv, mir == 1, true)
 			var bk := Vector2i(pk, pv)
 			if not _blocal.has(bk):
 				_blocal[bk] = _box_variant(pk, pv)
@@ -590,8 +757,8 @@ static func _unindex(src: Array, mirror: bool) -> Array:
 	return [ov, on, ou, oc]
 
 
-func _variant(pk: int, pv: int, mirror: bool) -> Dictionary:
-	var key := _vkey(pk, pv, mirror)
+func _variant(pk: int, pv: int, mirror: bool, mid := false) -> Dictionary:
+	var key := _vkey(pk, pv, mirror) + ("|mid" if mid else "") + ("" if fix_flicker else "|raw")
 	_vmutex.lock()
 	var have = _variants.get(key)
 	_vmutex.unlock()
@@ -599,7 +766,7 @@ func _variant(pk: int, pv: int, mirror: bool) -> Dictionary:
 		return have
 	var pc := _piece(str(head.pieces[pk]))
 	var out := {}
-	for sf in pc.surfs:
+	for sf in (pc.mid if mid else pc.surfs):
 		var slot: String = sf[0]
 		var a := _unindex(sf[1], mirror)
 		var col := _pal(pv, slot)
@@ -662,10 +829,11 @@ func _rec_xf(c: Dictionary, recs: PackedByteArray, o: int) -> Transform3D:
 	var fl := recs.decode_u8(o + 5)
 	var x := float(head.x0) + CELL * i + 1.5
 	var z := float(head.z0) + CELL * j + 1.5
-	var y: float = isl.deck_y(x, z) if (fl & 4) != 0 else STOREY * k
+	# (v3: a quarter storey in bits 6-7 -- graded ground, stairs and stoops meet the doors exactly)
+	var y: float = isl.deck_y(x, z) if (fl & 4) != 0 else STOREY * k + STOREY * 0.25 * float(fl >> 6)
 	var b := Basis(Vector3.UP, (fl & 3) * PI * 0.5)
 	var p := Vector3(x, y, z) - (c.centre as Vector3)
-	match fl >> 4:
+	match (fl >> 4) & 3:
 		1:
 			p += b * Vector3(0, 0, 1.5)
 		2:
@@ -691,14 +859,17 @@ static func _acc(dst: Dictionary, slot: String, a: Array, xf: Transform3D) -> vo
 func _merge_chunk(c: Dictionary) -> void:
 	var t0 := Time.get_ticks_usec()
 	var recs: PackedByteArray = c.recs
-	var lod0 := {}                      # slot -> [verts, normals, uvs, colours]
-	var lod1 := {}                      # "lod1" -> the same, one run
+	var lod0 := {}                      # material group -> [verts, normals, uvs, colours]
+	var lmid := {}                      # (LOD1) the MID models, by material group ("boxvc": boxes, lod_vc)
+	var lod1 := {}                      # (LOD2's) "lod1" -> the boxes, one run
 	var faces := PackedVector3Array()
+	var floors := {}                    # Vector2i cell -> its whole-cell floor's top (about the chunk's centre)
 	for r in int(c.n):
 		var o := r * 7
 		var pk := recs.decode_u16(o)
 		var pv := recs.decode_u8(o + 6) & 15
-		var vm = _vlocal.get(Vector3i(pk, pv, (recs.decode_u8(o + 5) >> 3) & 1))
+		var vkey := Vector3i(pk, pv, (recs.decode_u8(o + 5) >> 3) & 1)
+		var vm = _vlocal.get(vkey)
 		var pc = _plocal.get(pk)
 		if vm == null or pc == null:
 			continue
@@ -711,8 +882,46 @@ func _merge_chunk(c: Dictionary) -> void:
 					_acc(lod1, "lod1", vm[slot], xf)
 			"box":
 				_acc(lod1, "lod1", _blocal[Vector2i(pk, pv)], xf)
-		if bool(pc.collide):
-			_box_faces(faces, xf, pc.aabb)
+		match str(pc.get("mid_rule", pc.lod1)):
+			"mesh":
+				var mv: Dictionary = _mlocal[vkey]
+				for slot in mv:
+					_acc(lmid, MAT_OF.get(slot, "solid"), mv[slot], xf)
+			"keep":
+				for slot in vm:
+					_acc(lmid, MAT_OF.get(slot, "solid"), vm[slot], xf)
+			"box":
+				_acc(lmid, "boxvc", _blocal[Vector2i(pk, pv)], xf)
+		match str(pc.get("cmode", "box" if bool(pc.collide) else "")):
+			"ramp":
+				var q: PackedVector3Array = xf * (pc.cdata as PackedVector3Array)
+				for b in range(0, q.size() - 3, 4):
+					faces.append_array([q[b], q[b + 1], q[b + 2], q[b], q[b + 2], q[b + 3]])
+			"top":
+				if (recs.decode_u8(o + 5) & 4) == 0:
+					var q: PackedVector3Array = xf * (pc.cdata as PackedVector3Array)
+					var ab: AABB = pc.aabb
+					if ab.position.x <= -1.45 and ab.end.x >= 1.45 and ab.position.z <= -1.45 and ab.end.z >= 1.45 \
+							and (recs.decode_u8(o + 5) >> 4) & 3 == 0:
+						# a whole cell's floor: merged below with its neighbours at the same height
+						# (keyed by height too: a lane under a room bridging it has two floors in one cell)
+						floors[Vector3i(recs.decode_u8(o + 2), recs.decode_u8(o + 3), roundi(q[0].y * 100.0))] = true
+					else:
+						faces.append_array([q[0], q[1], q[2], q[0], q[2], q[3]])
+						if int(head.version) < 3 and int(recs.decode_u8(o + 4)) == 0 and str(pc.get("group", "")) == "ground":
+							_aprons(faces, q, c.centre)
+			"mesh":
+				faces.append_array(xf * (pc.cdata as PackedVector3Array))
+			"frames":
+				for b in pc.cdata:
+					_box_faces(faces, xf, b)
+			"box":
+				_box_faces(faces, xf, pc.get("cdata", pc.aabb))
+	_floor_slabs(faces, floors, c)
+	# (welded: vertices snapped to the millimetre, so neighbouring quads share their edges exactly and Jolt's internal-
+	# edge removal treats a seam between two ramps or slabs as inside one surface, not an edge to catch the player on)
+	for k in faces.size():
+		faces[k] = faces[k].snapped(Vector3(0.001, 0.001, 0.001))
 	# the meshes made here too (resources not in the tree may be made on a worker; the RenderingServer queues the
 	# upload): an ArrayMesh made on the main thread from a big chunk's arrays took 25-40 ms of a frame
 	var m0: ArrayMesh = null
@@ -724,17 +933,88 @@ func _merge_chunk(c: Dictionary) -> void:
 		if m0 == null:
 			m0 = ArrayMesh.new()
 		m0.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, _arrays(a))
-		m0.surface_set_material(m0.get_surface_count() - 1, _mats[str(slot)])
+		m0.surface_set_material(m0.get_surface_count() - 1, _imats.get(str(slot), _mats[str(slot)]))
 		tris += (a[0] as PackedVector3Array).size() / 3
 	var l1: Array = lod1.get("lod1", [])
 	var m1: ArrayMesh = null
-	if not l1.is_empty() and not (l1[0] as PackedVector3Array).is_empty():
-		m1 = ArrayMesh.new()
-		m1.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, _arrays(l1))
-		m1.surface_set_material(0, _lod_vc)
+	for slot in lmid:
+		var a: Array = lmid[slot]
+		if (a[0] as PackedVector3Array).is_empty():
+			continue
+		if m1 == null:
+			m1 = ArrayMesh.new()
+		m1.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, _arrays(a))
+		m1.surface_set_material(m1.get_surface_count() - 1, _lod_vc if slot == "boxvc" else _imats.get(str(slot), _mats[str(slot)]))
 	_rmutex.lock()
 	_results.append([c, m0, l1, faces, Time.get_ticks_usec() - t0, m1, tris])
 	_rmutex.unlock()
+
+
+const SLAB_M := 0.4                  # m thick: a floor the player can't drop through or catch the edge of
+
+
+func _floor_slabs(faces: PackedVector3Array, floors: Dictionary, c: Dictionary) -> void:
+	## Whole-cell floors (paving, slabs, roofs, floors) as few slabs: at each height, runs of cells merged into rectangles
+	## (greedy, rows then matching rows), each a SLAB_M box.  Per-cell quads left an edge at every cell boundary that the
+	## player's capsule caught on (Jolt reports the seam as a wall: found walking SKY-099's plaza), and a thin quad over
+	## a deck lower down could be fallen through.  floors: Vector3i(i, j, y cm) -> true -- every floor of a cell (a lane
+	## and the room bridging it over it are two; keeping only the higher once left the lane with no floor at all).
+	if floors.is_empty():
+		return
+	var x0 := float(head.x0) - (c.centre as Vector3).x
+	var z0 := float(head.z0) - (c.centre as Vector3).z
+	var by_y := {}                      # y cm -> [i_lo, i_hi, j_lo, j_hi]
+	for k: Vector3i in floors:
+		if not by_y.has(k.z):
+			by_y[k.z] = [k.x, k.x, k.y, k.y]
+		var r: Array = by_y[k.z]
+		by_y[k.z] = [mini(r[0], k.x), maxi(r[1], k.x), mini(r[2], k.y), maxi(r[3], k.y)]
+	for ycm: int in by_y:
+		var bb: Array = by_y[ycm]
+		var open := {}                  # Vector2i(j0, j1) -> i0 (a rectangle growing along i)
+		for i in range(int(bb[0]), int(bb[1]) + 2):
+			var runs := {}
+			if i <= int(bb[1]):
+				var j := int(bb[2])
+				while j <= int(bb[3]):
+					if not floors.has(Vector3i(i, j, ycm)):
+						j += 1
+						continue
+					var e := j
+					while e + 1 <= int(bb[3]) and floors.has(Vector3i(i, e + 1, ycm)):
+						e += 1
+					runs[Vector2i(j, e)] = true
+					j = e + 1
+			for r: Vector2i in open.keys():
+				if not runs.has(r):
+					var a := Vector3(x0 + CELL * int(open[r]), ycm / 100.0 - SLAB_M, z0 + CELL * r.x)
+					var b := Vector3(x0 + CELL * i, ycm / 100.0, z0 + CELL * (r.y + 1))
+					_box_faces(faces, Transform3D.IDENTITY, AABB(a, b - a))
+					open.erase(r)
+			for r: Vector2i in runs:
+				if not open.has(r):
+					open[r] = i
+
+
+func _aprons(faces: PackedVector3Array, q: PackedVector3Array, cen: Vector3) -> void:
+	## Ground-level paving stands at its level's height, the deck around it up to ~0.4 m lower (FORMAT.md: the gap the
+	## generator's skirts hide): with no step-up the player would meet a ledge.  So each edge with the deck below it
+	## gets a slope down to the deck over APRON_M (an apron under a neighbouring paving is buried beneath its top).
+	var mid := (q[0] + q[1] + q[2] + q[3]) * 0.25
+	for e in 4:
+		var a := q[e]
+		var b := q[(e + 1) % 4]
+		var out := ((a + b) * 0.5 - mid)
+		out.y = 0.0
+		out = out.normalized() * APRON_M
+		var a2 := a + out
+		var b2 := b + out
+		a2.y = isl.deck_y(a2.x + cen.x, a2.z + cen.z) - cen.y
+		b2.y = isl.deck_y(b2.x + cen.x, b2.z + cen.z) - cen.y
+		if a.y - a2.y > 0.03 or b.y - b2.y > 0.03:
+			a2.y = minf(a2.y, a.y)
+			b2.y = minf(b2.y, b.y)
+			faces.append_array([a, b, b2, a, b2, a2])
 
 
 static func _box_faces(faces: PackedVector3Array, xf: Transform3D, b: AABB) -> void:
@@ -821,12 +1101,14 @@ func _upload_chunk(r: Array) -> void:
 		c.mesh0_res = m0
 		c.tris0 = int(r[6])
 		c.surfs0 = m0.get_surface_count()
-		c.inst0 = _instance(m0.get_rid(), 0.0, lod0_m, true)
+		c.inst0 = _instance(m0.get_rid(), 0.0, lod0_m, true, 0.0, FADE_M)
+		RenderingServer.instance_geometry_set_shader_parameter(c.inst0, "chunk_origin", c.centre)
 		_entry(c.inst0, c.centre, (c.centre as Vector3) + m0.get_aabb().get_center(), 0.0, lod0_m)
 	var m1: ArrayMesh = r[5]
 	if m1:
 		c.mesh1_res = m1
-		c.inst1 = _instance(m1.get_rid(), lod0_m, LOD1_M, false)
+		c.inst1 = _instance(m1.get_rid(), lod0_m, MID_M, false, FADE_M, FADE_M * 2.0)
+		RenderingServer.instance_geometry_set_shader_parameter(c.inst1, "chunk_origin", c.centre)
 		_entry(c.inst1, c.centre, (c.centre as Vector3) + m1.get_aabb().get_center(), lod0_m, LOD1_M)
 	c.state = 2
 	built += 1
@@ -842,14 +1124,18 @@ func _upload_group(g: Array) -> void:
 		gr.state = 2
 		return
 	gr.mesh_res = m
-	gr.inst = _instance(m.get_rid(), LOD1_M, NEAR_END, false)
+	gr.inst = _instance(m.get_rid(), MID_M, NEAR_END, false, FADE_M * 2.0, 0.0)
 	gr.state = 2
 	_entry(gr.inst, gr.centre, (gr.centre as Vector3) + m.get_aabb().get_center(), LOD1_M, NEAR_END)
 
 
-func _instance(mesh: RID, begin: float, end: float, shadows: bool) -> RID:
+func _instance(mesh: RID, begin: float, end: float, shadows: bool, _fade_in := 0.0, _fade_out := 0.0) -> RID:
+	## The levels' ranges meet exactly and don't overlap: a hard switch.  (A dithered cross-fade -- VISIBILITY_RANGE_
+	## FADE_SELF -- was tried: Godot draws it as a per-pixel stipple, which the screen outline pass reads as a band of
+	## flickering false edges at each switch distance; scripts/world/DistanceCulling.gd found the same.  The MID pieces
+	## are what make the switch quiet.)
 	var inst := RenderingServer.instance_create2(mesh, _scenario)
-	RenderingServer.instance_geometry_set_visibility_range(inst, begin, end, begin * 0.06, end * 0.06,
+	RenderingServer.instance_geometry_set_visibility_range(inst, begin, end, 0.0, 0.0,
 		RenderingServer.VISIBILITY_RANGE_FADE_DISABLED)
 	RenderingServer.instance_geometry_set_cast_shadows_setting(inst,
 		RenderingServer.SHADOW_CASTING_SETTING_ON if shadows else RenderingServer.SHADOW_CASTING_SETTING_OFF)
@@ -952,10 +1238,11 @@ func free_all() -> void:
 		for k in ["inst"]:
 			if groups[gk].get(k, RID()).is_valid():
 				RenderingServer.free_rid(groups[gk][k])
-	for p in _plants:
+	for p in _plants + _grass:
 		RenderingServer.free_rid(p[0])
 		RenderingServer.free_rid(p[1])
 	_plants.clear()
+	_grass.clear()
 	chunks.clear()
 	groups.clear()
 	_ents.clear()
@@ -974,25 +1261,40 @@ func _make_body() -> void:
 
 
 func _collision() -> void:
+	## Shapes for the chunks within COLLIDE_M of the player, nearest first; dropped past COLLIDE_DROP.  A chunk's shape
+	## is built once (set_faces: ~10 ms for a big one) and kept, so coming back costs only re-adding it.  Building is one
+	## a call, but a chunk the player is on or beside (CLOSE_M) is added at once, built or not: walking or teleported
+	## back onto a chunk whose floor wasn't in yet, the player fell through it to the deck below.
 	if _body == null or not is_instance_valid(_body):
 		return
 	var pl := _player_local()
-	var added := 0
+	var want: Array = []
 	for c in chunks:
 		if int(c.state) != 2:
 			continue
-		var d := (c.box as AABB).grow(0.0).get_center().distance_to(pl) - (c.box as AABB).size.x * 0.7
-		if int(c.owner) < 0 and d < COLLIDE_M and (c.faces as PackedVector3Array).size() > 0 and added < 1:
-			added += 1                                    # (one shape a call: a big chunk's takes ~10 ms to build)
-			var sh := ConcavePolygonShape3D.new()
-			sh.set_faces(c.faces)
-			var o := _body.create_shape_owner(_body)
-			_body.shape_owner_add_shape(o, sh)
-			_body.shape_owner_set_transform(o, Transform3D(Basis(), c.centre))   # (the faces are about the chunk's centre)
-			c.owner = o
+		var d := (c.box as AABB).get_center().distance_to(pl) - (c.box as AABB).size.x * 0.7
+		if int(c.owner) < 0 and d < COLLIDE_M and (c.faces as PackedVector3Array).size() > 0:
+			want.append([d, c])
 		elif int(c.owner) >= 0 and d > COLLIDE_DROP:
 			_body.remove_shape_owner(int(c.owner))
 			c.owner = -1
+	want.sort_custom(func(p, q): return float(p[0]) < float(q[0]))
+	var built := 0
+	for e in want:
+		var c: Dictionary = e[1]
+		var close := float(e[0]) < CLOSE_M
+		if not c.has("shape"):
+			if built >= 1 and not close:
+				continue
+			built += 1
+			var sh := ConcavePolygonShape3D.new()
+			sh.backface_collision = true              # (the stairs' ramps are quads: walkable whichever way they wind)
+			sh.set_faces(c.faces)
+			c.shape = sh
+		var o := _body.create_shape_owner(_body)
+		_body.shape_owner_add_shape(o, c.shape)
+		_body.shape_owner_set_transform(o, Transform3D(Basis(), c.centre))   # (the faces are about the chunk's centre)
+		c.owner = o
 
 
 func near_ready() -> bool:
@@ -1024,8 +1326,11 @@ func walk() -> Dictionary:
 
 
 ## kind -> [flare strength (0: none), pool radius m (0: none)]; "lamp" is an interior lamp (it lights its window)
-const LIGHT_KIND := {"lantern": [0.9, 3.2], "festoon": [0.5, 2.6], "fluoro": [0.6, 3.0], "shop": [0.8, 3.6],
-	"door": [0.6, 2.8], "stall": [0.7, 3.4], "fountain": [0.5, 3.0], "minaret": [1.0, 0.0], "tower": [0.7, 0.0],
+## (2026-10-16: the shops' and doors' flares were washing out the signs over them -- halved; lanterns and towers keep theirs)
+## (2026-10-16: no glare at all on the shop, door, fluoro and stall lights -- it hid the shopfronts and signs; their light
+##  is the pool on the ground and the lamp field on the walls)
+const LIGHT_KIND := {"lantern": [0.5, 3.2], "festoon": [0.3, 2.6], "fluoro": [0.0, 3.0], "shop": [0.0, 3.6],
+	"door": [0.0, 2.8], "stall": [0.0, 3.4], "fountain": [0.3, 3.0], "minaret": [1.0, 0.0], "tower": [0.6, 0.0],
 	"lamp": [0.0, 0.0]}
 
 
@@ -1061,7 +1366,7 @@ func _lights_prep() -> void:
 	# the brightest first and street level before rooftops; the pools lowest first
 	fl = _top(fl, FLARES)
 	pools = _top(pools, POOLS)
-	_fl_buf = _mm_buf(fl, func(e): return Transform3D(Basis().scaled(Vector3.ONE * (0.6 + float(e[1]))), e[0]))
+	_fl_buf = _mm_buf(fl, func(e): return Transform3D(Basis().scaled(Vector3.ONE * (0.25 + 0.5 * float(e[1]))), e[0]))
 	_pl_buf = _mm_buf(pools, func(e): return Transform3D(Basis().scaled(Vector3(e[1], 1.0, e[1])), e[0]))
 
 
@@ -1220,6 +1525,311 @@ func _make_plants() -> void:
 		_entry(inst, cen, cen + RenderingServer.multimesh_get_aabb(mm).get_center(), 0.0, PLANT_M)
 
 
+# ------------------------------------------------------------------ grass (blades near the player)
+const GRASS_M := 40.0
+const GRASS_CELLS := "gpb."            # plan: green, pasture, bank, rim (and the cells with a garden bed)
+const GRASS_PER_CELL := 14
+const GRASS_SH := preload("res://remake/shaders/warren_grass.gdshader")
+static var _grass_mesh: ArrayMesh
+var _gprep: Array = []               # (a worker: _grass_prep) [centre, buffer, count] a chunk
+var _grass: Array = []               # [instance, multimesh]
+
+
+func _grass_prep() -> void:
+	## (a worker) clumps of blades on the island's greens: GRASS_PER_CELL a cell, hashed in the island's frame, on the deck
+	## (a garden bed's cell: on its bed), grouped by chunk; tinted from the civ's "plant" colour
+	var plan: Array = side.get("plan", [])
+	var beds := {}                       # Vector2i cell -> y of a garden bed there
+	var gid := (head.pieces as Array).find("pave_garden")
+	if gid >= 0:
+		for c in chunks:
+			var recs: PackedByteArray = c.recs
+			for r in int(c.n):
+				var o := r * 7
+				if recs.decode_u16(o) == gid:
+					var xf := _rec_xf(c, recs, o)
+					beds[Vector2i(recs.decode_u8(o + 2), recs.decode_u8(o + 3))] = xf.origin.y + (c.centre as Vector3).y + 0.12
+	var vs: Array = _palettes.get(str(head.civ), [])
+	var base := Color.html(str((vs[0] as Dictionary).get("plant", "#5b7f3a"))) if not vs.is_empty() else Color(0.36, 0.5, 0.23)
+	base = base.lerp(Color(0.55, 0.7, 0.3), 0.25)
+	var by := {}                         # Vector2i chunk -> [[pos, colour, phase]]
+	for i in plan.size():
+		var row := str(plan[i])
+		for j in row.length():
+			var bed := Vector2i(i, j)
+			if not (GRASS_CELLS.contains(row[j]) or beds.has(bed)):
+				continue
+			for k in GRASS_PER_CELL:
+				var h := absi(hash(Vector3i(i, j, k) + Vector3i(id.hash() % 1000, 0, 0)))
+				var x := float(head.x0) + CELL * (i + float(h % 1000) / 1000.0)
+				var z := float(head.z0) + CELL * (j + float(h / 1000 % 1000) / 1000.0)
+				var y: float = beds[bed] if beds.has(bed) else isl.deck_y(x, z)
+				var tint := base.lerp(Color(0.62, 0.62, 0.3), float(h / 7 % 100) / 100.0 * 0.3).darkened(float(h / 13 % 100) / 100.0 * 0.15)
+				var ck := Vector2i(i / CH, j / CH)
+				if not by.has(ck):
+					by[ck] = []
+				by[ck].append([Vector3(x, y, z), tint, float(h % 997) / 997.0, 0.75 + float(h / 31 % 100) / 200.0])
+	for ck: Vector2i in by:
+		var list: Array = by[ck]
+		var cen := Vector3(float(head.x0) + CELL * CH * (ck.x + 0.5), 0.0, float(head.z0) + CELL * CH * (ck.y + 0.5))
+		var buf := PackedFloat32Array()
+		buf.resize(list.size() * 20)
+		var o := 0
+		for e in list:
+			var p: Vector3 = (e[0] as Vector3) - cen
+			var sc: float = e[3]
+			var c: Color = e[1]
+			for v in [sc, 0.0, 0.0, p.x, 0.0, sc, 0.0, p.y, 0.0, 0.0, sc, p.z, c.r, c.g, c.b, 1.0, e[2], 0.0, 0.0, 0.0]:
+				buf[o] = v
+				o += 1
+		_gprep.append([cen, buf, list.size()])
+
+
+static func _grass_clump() -> ArrayMesh:
+	## nine blades in a 0.5 m clump: each a tapered pair of triangles, 0.25-0.45 m tall, leaning out a little
+	if _grass_mesh:
+		return _grass_mesh
+	var v := PackedVector3Array()
+	var n := PackedVector3Array()
+	var u := PackedVector2Array()
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 7
+	for k in 9:
+		var a := rng.randf() * TAU
+		var r := rng.randf() * 0.25
+		var root := Vector3(cos(a) * r, 0.0, sin(a) * r)
+		var yaw := rng.randf() * PI
+		var side := Vector3(cos(yaw), 0, sin(yaw)) * 0.025
+		var hgt := rng.randf_range(0.25, 0.45)
+		var tip := root + Vector3(cos(a) * 0.08, hgt, sin(a) * 0.08)
+		var mid := root.lerp(tip, 0.5)
+		for q in [[root - side, root + side, mid + side * 0.6, 0.0, 0.0, 0.5], [root - side, mid + side * 0.6, mid - side * 0.6, 0.0, 0.5, 0.5],
+				[mid - side * 0.6, mid + side * 0.6, tip, 0.5, 0.5, 1.0]]:
+			v.append_array([q[0], q[1], q[2]])
+			u.append_array([Vector2(0, q[3]), Vector2(1, q[4]), Vector2(0.5, q[5])])
+			for m in 3:
+				n.append(Vector3.UP)
+	var arr := []
+	arr.resize(Mesh.ARRAY_MAX)
+	arr[Mesh.ARRAY_VERTEX] = v
+	arr[Mesh.ARRAY_NORMAL] = n
+	arr[Mesh.ARRAY_TEX_UV] = u
+	_grass_mesh = ArrayMesh.new()
+	_grass_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr)
+	var m := ShaderMaterial.new()
+	m.shader = GRASS_SH
+	m.set_shader_parameter("range_m", GRASS_M)
+	m.set_shader_parameter("fade_from", GRASS_M * 0.65)
+	_grass_mesh.surface_set_material(0, m)
+	return _grass_mesh
+
+
+func _make_grass() -> void:
+	var mesh := _grass_clump()
+	for g in _gprep:
+		var mm := RenderingServer.multimesh_create()
+		RenderingServer.multimesh_allocate_data(mm, int(g[2]), RenderingServer.MULTIMESH_TRANSFORM_3D, true, true)
+		RenderingServer.multimesh_set_mesh(mm, mesh.get_rid())
+		RenderingServer.multimesh_set_buffer(mm, g[1])
+		var inst := RenderingServer.instance_create2(mm, _scenario)
+		# (to the chunk's far corner: each blade sinks away by GRASS_M in the shader, so the chunk ends unseen)
+		RenderingServer.instance_geometry_set_visibility_range(inst, 0.0, GRASS_M + CELL * CH * 0.75, 0.0, 0.0,
+			RenderingServer.VISIBILITY_RANGE_FADE_DISABLED)
+		RenderingServer.instance_geometry_set_cast_shadows_setting(inst, RenderingServer.SHADOW_CASTING_SETTING_OFF)
+		RenderingServer.instance_set_visible(inst, false)
+		_grass.append([inst, mm, int(g[2])])
+		var cen: Vector3 = g[0]
+		_entry(inst, cen, cen + RenderingServer.multimesh_get_aabb(mm).get_center(), 0.0, GRASS_M + CELL * CH * 0.7)
+
+
+# ------------------------------------------------------------------ the lamp field (pools of light at night)
+## Every light of the twin json splatted into a 3D grid over the island (FIELD_XZ across, FIELD_Y up), each falling off
+## over its kind's reach; warren_solid.gdshader samples it per fragment in the island's frame, so walls and paving are
+## lit at and under each lamp and dark between them (the user, 2026-10-16: pools, fading with distance -- not an
+## ambient lift over the whole lane).  One small RGB8 3D texture an island (Kowloon ~72 x 31 x 54).
+const FIELD_XZ := 2.0
+const FIELD_Y := 2.0
+## kind -> [reach m, strength]; "lamp" is an interior lamp (it lights its room's window, not the lane).  Lane lights
+## stand ~3 m apart (a door light and a shop light every shopfront), so door lights throw nothing (the shop's own pool
+## covers its step), the reaches are short, the falloff cubic, light climbs a wall FIELD_UP x slower than it falls, and
+## the sum is stored 1 - exp(-sum): pools overlap without merging into a lit sheet (tuned live 2026-10-16 on SKY-071 /
+## SKY-099 lanes, reference/tmp/tune.sh + fieldtune.gd; the 4 m / quadratic / door-lit first try read as daylight).
+const FIELD_KIND := {"lantern": [5.0, 1.0], "festoon": [3.0, 0.3], "fluoro": [4.0, 0.7], "shop": [3.5, 0.6],
+	"door": [0.0, 0.0], "stall": [4.0, 0.7], "fountain": [3.5, 0.4], "minaret": [0.0, 0.0], "tower": [0.0, 0.0],
+	"lamp": [0.0, 0.0]}
+const FIELD_UP := 3.0
+const FIELD_POW := 3.0
+var _field_imgs: Array[Image] = []
+var _field_o := Vector3.ZERO
+var _field_s := Vector3.ONE
+var _imats := {}                     # this island's own opaque materials (its lamp field bound)
+
+
+func _field_prep() -> void:
+	## (a worker) the grid
+	var lights: Array = side.get("lights", [])
+	var w := int(ceil(float(head.nx) * CELL / FIELD_XZ)) + 1
+	var d := int(ceil(float(head.nz) * CELL / FIELD_XZ)) + 1
+	var h := int(ceil((float(head.levels) * STOREY + 8.0) / FIELD_Y)) + 1
+	_field_o = Vector3(float(head.x0), -2.0, float(head.z0))
+	_field_s = Vector3(w * FIELD_XZ, h * FIELD_Y, d * FIELD_XZ)
+	var acc := PackedFloat32Array()
+	acc.resize(w * h * d * 3)
+	for l in lights:
+		var kv: Array = FIELD_KIND.get(str(l[3]) if l.size() > 3 else "lantern", [5.0, 0.6])
+		var R: float = kv[0]
+		if R <= 0.0:
+			continue
+		var col := Color.html(str(l[4])) if l.size() > 4 else Color(1.0, 0.85, 0.6)
+		col = col.lerp(Color(1.0, 0.85, 0.65), 0.4)             # (the light a lamp throws: warmer, paler than its glass)
+		var p := Vector3(float(l[0]), float(l[1]), float(l[2])) - _field_o
+		var i0 := maxi(0, int((p.x - R) / FIELD_XZ))
+		var i1 := mini(w - 1, int((p.x + R) / FIELD_XZ) + 1)
+		var k0 := maxi(0, int((p.z - R) / FIELD_XZ))
+		var k1 := mini(d - 1, int((p.z + R) / FIELD_XZ) + 1)
+		var j0 := maxi(0, int((p.y - R) / FIELD_Y))
+		var j1 := mini(h - 1, int((p.y + R / FIELD_UP) / FIELD_Y) + 1)  # (it falls more below the lamp than above)
+		for j in range(j0, j1 + 1):
+			for k in range(k0, k1 + 1):
+				for i in range(i0, i1 + 1):
+					var v := Vector3((i + 0.5) * FIELD_XZ, (j + 0.5) * FIELD_Y, (k + 0.5) * FIELD_XZ) - p
+					if v.y > 0.0:
+						v.y *= FIELD_UP
+					var dist := v.length()
+					if dist >= R:
+						continue
+					var f := pow(1.0 - dist / R, FIELD_POW) * float(kv[1])
+					var o := ((j * d + k) * w + i) * 3
+					acc[o] += col.r * f
+					acc[o + 1] += col.g * f
+					acc[o + 2] += col.b * f
+	_field_imgs.clear()
+	for j in h:
+		var bytes := PackedByteArray()
+		bytes.resize(w * d * 3)
+		var base := j * d * w * 3
+		for q in w * d * 3:
+			var a: float = acc[base + q]
+			if a > 0.0:
+				bytes[q] = int((1.0 - exp(-a)) * 255.0)       # (soft saturation: 1 - exp(-sum))
+		_field_imgs.append(Image.create_from_data(w, d, false, Image.FORMAT_RGB8, bytes))
+
+
+func _field_materials() -> void:
+	## (main thread, before the chunks merge) this island's opaque materials, its lamp field bound
+	if _field_imgs.is_empty():
+		return
+	var tex := ImageTexture3D.new()
+	# (the images are x across, z down; the layers y up: so the texture's (u, v, w) is (x, z, y) -- the shader swizzles)
+	tex.create(Image.FORMAT_RGB8, _field_imgs[0].get_width(), _field_imgs[0].get_height(), _field_imgs.size(), false, _field_imgs)
+	for slot in ["solid", "metal"]:
+		var m := ShaderMaterial.new()
+		m.shader = SOLID_SH
+		m.set_shader_parameter("field", tex)
+		m.set_shader_parameter("field_origin", _field_o)
+		m.set_shader_parameter("field_size", _field_s)
+		m.set_shader_parameter("roughness_k", 0.35 if slot == "metal" else 0.9)
+		m.set_shader_parameter("metallic_k", 0.3 if slot == "metal" else 0.0)
+		_imats[slot] = m
+
+
+# ------------------------------------------------------------------ the deck under the paving
+## The island's own deck mesh (its <id>.rock.glb "deck") and the warren's graded paving meet within millimetres over a
+## third of the open cells, and the deck pokes up through a fifth of them (tools: research/sky_islands/warrens/
+## flicker.md): coplanar faces z-fight, shimmering as the island moves -- the "texture flicker".  So the deck's DRAWN
+## mesh is tucked TUCK_M under the paving wherever paving lies within reach of a vertex; its collision (made from the
+## glb at import) is left alone.
+const TUCK_M := 0.1
+static var fix_flicker := true       # (dev: false draws the deck and the kit's overlays as they come, to compare)
+const TUCK_R := 2.2                  # m: a vertex goes under the lowest paving top within this (its triangles' span)
+var _ground_top := {}                # Vector2i cell -> its paving's (or stair's foot's) top, island frame
+var _tucked := false
+
+
+func _ground_prep() -> void:
+	## (a worker) every cell's ground piece top: paving, stairs (their foot), kerbs
+	for c in chunks:
+		var recs: PackedByteArray = c.recs
+		for r in int(c.n):
+			var o := r * 7
+			var pc = _plocal.get(recs.decode_u16(o))
+			if pc == null or not (str(pc.get("cmode", "")) in ["top", "ramp"]) or str(pc.get("group", "")) == "":
+				continue
+			if (recs.decode_u8(o + 5) >> 4) & 3 != 0:
+				continue                                  # (cell mounts only)
+			var xf := _rec_xf(c, recs, o)
+			var top: float = xf.origin.y + (c.centre as Vector3).y + (0.0 if str(pc.cmode) == "ramp" else (pc.aabb as AABB).end.y)
+			var key := Vector2i(recs.decode_u8(o + 2), recs.decode_u8(o + 3))
+			if not _ground_top.has(key) or top < float(_ground_top[key]):
+				_ground_top[key] = top
+
+
+func _tuck_deck() -> void:
+	_tucked = true
+	if _ground_top.is_empty() or not fix_flicker:
+		return
+	var rock := isl.get_node("Near/Rock")
+	for n in rock.find_children("deck*", "MeshInstance3D", true, false):
+		var mi := n as MeshInstance3D
+		var inv := (isl.global_transform.affine_inverse() * mi.global_transform)
+		var back := inv.affine_inverse()
+		var am := ArrayMesh.new()
+		for si in mi.mesh.get_surface_count():
+			var arr := mi.mesh.surface_get_arrays(si)
+			var vs: PackedVector3Array = arr[Mesh.ARRAY_VERTEX]
+			var moved := 0
+			for k in vs.size():
+				var p: Vector3 = inv * vs[k]
+				var lo := _lowest_ground(p)
+				if lo < INF and p.y > lo - TUCK_M:
+					p.y = lo - TUCK_M
+					vs[k] = back * p
+					moved += 1
+			arr[Mesh.ARRAY_VERTEX] = vs
+			am.add_surface_from_arrays(mi.mesh.surface_get_primitive_type(si), arr)
+			am.surface_set_material(si, mi.get_active_material(si))
+			tucked_verts += moved
+		mi.mesh = am
+	# ... and its collision the same: the deck rising through the paving at a cell's edge is a lip the player (no
+	# step-up) can't get over -- found walking SKY-099 from its arrival point
+	for n in rock.find_children("*", "CollisionShape3D", true, false):
+		var cs := n as CollisionShape3D
+		if not (cs.shape is ConcavePolygonShape3D):
+			continue
+		var inv := (isl.global_transform.affine_inverse() * cs.global_transform)
+		var back := inv.affine_inverse()
+		var fs: PackedVector3Array = (cs.shape as ConcavePolygonShape3D).get_faces()
+		for k in fs.size():
+			var p: Vector3 = inv * fs[k]
+			var lo := _lowest_ground(p)
+			if lo < INF and p.y > lo - TUCK_M:
+				p.y = lo - TUCK_M
+				fs[k] = back * p
+				tucked_col += 1
+		var sh := ConcavePolygonShape3D.new()
+		sh.set_faces(fs)
+		cs.shape = sh
+
+
+var tucked_verts := 0
+var tucked_col := 0
+
+
+func _lowest_ground(p: Vector3) -> float:
+	## the lowest paving top within TUCK_R of p (island frame; INF: none)
+	var lo := INF
+	var i0 := floori((p.x - TUCK_R - float(head.x0)) / CELL)
+	var i1 := floori((p.x + TUCK_R - float(head.x0)) / CELL)
+	var j0 := floori((p.z - TUCK_R - float(head.z0)) / CELL)
+	var j1 := floori((p.z + TUCK_R - float(head.z0)) / CELL)
+	for i in range(i0, i1 + 1):
+		for j in range(j0, j1 + 1):
+			var t = _ground_top.get(Vector2i(i, j))
+			if t != null:
+				lo = minf(lo, float(t))
+	return lo
+
+
 # ------------------------------------------------------------------ the islanders' graph (SkyFolk)
 var folk_graph := {}                 # {nodes: PackedVector2Array (x, z), ys, adj, bridge_node} -- SkyFolk._graph's shape
 
@@ -1235,8 +1845,10 @@ func _walk_prep() -> void:
 		ys.append(float(n[1]))
 		adj.append([])
 	for e in w.get("edges", []):
-		adj[e[0]].append(e[1])
-		adj[e[1]].append(e[0])
+		var ea := int(e[0])                          # (json numbers are floats: as dictionary keys 43.0 != 43)
+		var eb := int(e[1])
+		adj[ea].append(eb)
+		adj[eb].append(ea)
 	var bn := {}
 	var d: Dictionary = isl.data
 	var f: Dictionary = d.get("faces", {})
@@ -1270,4 +1882,4 @@ func stats() -> Dictionary:
 		mx = maxi(mx, int(u))
 	return {"chunks": chunks.size(), "built": built, "built_ms": built_ms, "merge_ms_avg": mu / 1000.0 / maxf(1, merge_usec.size()),
 		"merge_ms_max": mx / 1000.0, "variants": _vlocal.size(), "lod0_tris": tris, "lod0_surfaces": draws, "groups": groups.size(),
-		"ready": ready, "plants": _plants.size(), "active": _act_rid.size(), "entries": _ents.size(), "place_us": place_usec}
+		"ready": ready, "tucked": tucked_verts, "tucked_col": tucked_col, "plants": _plants.size(), "grass_mm": _grass.size(), "grass_clumps": _grass.reduce(func(t, g): return t + int(g[2]), 0), "active": _act_rid.size(), "entries": _ents.size(), "place_us": place_usec}

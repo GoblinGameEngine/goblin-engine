@@ -262,6 +262,8 @@ class FamilyCiv(Civ):
             t = m["type"]
             if t == "civic_tower" and lot:
                 cs = [c for c in lot["cells"] if L.plan[c] == LOT]
+                doorc = set(tuple(o["door"][0]) for o in L.lots if o.get("door"))
+                cs = [c for c in cs if tuple(c) not in doorc] or cs   # (the tower not in a doorway)
                 if not cs:
                     continue
                 c = max(cs, key=lambda c: (c[0] + c[1]))
@@ -279,11 +281,17 @@ class FamilyCiv(Civ):
                         emit(cr, c[0], c[1], g + n + 1 + q, 0, 0, 0, 0, 1)
                 L.landmark = c
             elif t == "fountain":
-                pc = L.plaza_c
-                emit(m.get("piece", "fountain_basin"), int(pc[0]), int(pc[1]), 0, 0, 4, 0, 0, 1)
+                pc = (int(L.plaza_c[0]), int(L.plaza_c[1]))
+                kc = getattr(L, "keep_clear", set())
+                if pc in kc:
+                    # (not on a door's step or a stair: the nearest clear plaza cell)
+                    free = [c for c in L.plaza if tuple(c) not in kc]
+                    pc = min(free, key=lambda c: abs(c[0] - pc[0]) + abs(c[1] - pc[1])) if free else None
+                if pc is not None:
+                    emit(m.get("piece", "fountain_basin"), int(pc[0]), int(pc[1]), 0, 0, 4, 0, 0, 1)
             elif t == "stalls":
                 for c in L.plaza:
-                    if rng.random() < m.get("share", 0.15):
+                    if rng.random() < m.get("share", 0.15) and tuple(c) not in getattr(L, "keep_clear", ()):
                         emit("market_stall", c[0], c[1], 0, rng.randrange(4), 4, 0, 0, 2)
             elif t == "roof_towers":
                 # wind towers, corner towers: small stacks standing on a share of the roofs
@@ -333,7 +341,8 @@ class FamilyCiv(Civ):
                 n = 0
                 for i in range(L.nx):
                     for j in range(L.nz):
-                        if L.plan[i, j] != cls or L.occ[i, j, int(L.gk[i, j])] or h01(L.seed, m["piece"], i, j) >= m["share"]:
+                        if L.plan[i, j] != cls or L.occ[i, j, int(L.gk[i, j])] or h01(L.seed, m["piece"], i, j) >= m["share"] \
+                                or (i, j) in getattr(L, "keep_clear", ()):
                             continue
                         alongx = L.inb(i + 1, j) and L.plan[i + 1, j] == cls and L.inb(i - 1, j) and L.plan[i - 1, j] == cls
                         emit(m["piece"], i, j, 0, 3 if alongx else 0, 4, 0, 0, m.get("epoch", 5))
@@ -355,20 +364,34 @@ class FamilyCiv(Civ):
                 if L.inb(*n) and not L.occ[n[0], n[1], int(L.gk[n])]:
                     emit(m["piece"], n[0], n[1], 0, 1 if di == 0 else 0, 4, 0, 0, 1)
             elif t == "bank_steps":
-                # ghats: broad steps down to the water along the pond banks (rising away from the water)
+                # ghats: broad steps down into the water from the pond banks.  The flight stands IN the water cell
+                # (2026-10-15: the bank stays flat paving for the walk), its top at the bank's graded edge: a
+                # toward_water piece hangs down from y 0 along +Z; the plain "steps" rise out of the water to the bank
                 from lattice import BANK, WATER
                 from pick import FACE
+                used = set()
+                L.kerb_skip = getattr(L, "kerb_skip", set())
+                span = 2 if m.get("piece") == "ghat_steps_wide" else 1
                 for i in range(L.nx):
                     for j in range(L.nz):
-                        if L.plan[i, j] != BANK or L.occ[i, j, int(L.gk[i, j])]:
+                        if L.plan[i, j] != BANK or L.occ[i, j, int(L.gk[i, j])] or (i, j) not in getattr(L, "q", {}):
                             continue
+                        qb = L.q[(i, j)]
                         for rot, (di, dj) in FACE.items():
                             n = (i + di, j + dj)
-                            if L.inb(*n) and L.plan[n] == WATER:
-                                # (rising away from the water, or -- toward_water -- a flight going down into it)
-                                emit(m.get("piece", "steps"), i, j, 0, rot if m.get("toward_water") else (rot + 2) & 3,
-                                     4, 0, 0, 0)
-                                break
+                            if n in used or not all(L.inb(i + di * s, j + dj * s) and L.plan[i + di * s, j + dj * s] == WATER
+                                                    for s in range(1, span + 1)):
+                                continue
+                            if m.get("toward_water"):
+                                emit(m["piece"], n[0], n[1], qb // 4, rot, (qb % 4) << 4, 0, 0, 0)
+                            elif qb >= 2:
+                                qq = qb - 2
+                                emit(m.get("piece", "steps"), n[0], n[1], qq // 4, (rot + 2) & 3, (qq % 4) << 4, 0, 0, 0)
+                            else:
+                                continue
+                            used.update((i + di * s, j + dj * s) for s in range(1, span + 1))
+                            L.kerb_skip.add((i, j, rot))
+                            break
             elif t == "playground" and L.roof_cells:
                 k = max(c[2] for c in L.roof_cells)
                 flat = [c for c in L.roof_cells if c[2] >= k - 1]

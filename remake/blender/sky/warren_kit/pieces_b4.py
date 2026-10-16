@@ -47,13 +47,17 @@ def _gable_seg(pitch, eave=0.45, ribs=7, end=False, rib_slot="roof", seam=0.06, 
         m.quad_facing(a, b, c, d, (s * tn, 1, 0), "roof")
         m.quad_facing((s * lx, ly - 0.06, -HB), (s * lx, ly - 0.06, HB), (s * HB, -0.02, HB), (s * HB, -0.02, -HB), (0, -1, 0), "frame", 0.55)
         m.quad_facing((s * lx, ly - 0.06, -HB), (s * lx, ly - 0.06, HB), (s * lx, ly, HB), (s * lx, ly, -HB), (s, 0, 0), "frame", 0.7)
+        nl = math.hypot(tn, 1.0)
+        off = (s * tn / nl * 0.03, 1.0 / nl * 0.03)               # 3 cm off the slope, along its normal
         for k in range(ribs):                                     # ribs / seams down the slope
             z = -HB + BAY * (k + 0.5) / ribs
-            _strip(m, (s * (lx - 0.02), ly + 0.02, z), (s * 0.08, h - 0.06 + 0.02, z), seam, (s * tn, 1, 0), rib_slot)
+            xa, xb = s * (lx - 0.02), s * 0.08
+            ya, yb = ly + 0.02 * tn, h - 0.08 * tn
+            _strip(m, (xa + off[0], ya + off[1], z), (xb + off[0], yb + off[1], z), seam, (s * tn, 1, 0), rib_slot)
     if ridge:
         m.box((-0.1, h - 0.04, -HB), (0.1, h + 0.1, HB), "roof", 0.8, skip=("y-", "z-", "z+"))
     if end:
-        _flat_prism(m, [(-HB, 0.0), (HB, 0.0), (0.0, h)], -HB, -HB + 0.25, wall_slot, open_edges=(0,))
+        _flat_prism(m, [(-HB + 0.05, 0.0), (HB - 0.05, 0.0), (0.0, h - 0.07)], -HB, -HB + 0.25, wall_slot, open_edges=(0,))   # (tucked under the slopes)
     return m, h
 
 
@@ -69,7 +73,7 @@ def pave_skirt(top=0.0):
         m = Mesh()
         for k in range(4):
             sub = Mesh()
-            sub.quad_facing((-HB, -0.6, HB), (HB, -0.6, HB), (HB, top, HB), (-HB, top, HB), (0, 0, 1), "ground", 0.62)
+            sub.quad_facing((-HB, -0.6, HB - 0.03), (HB, -0.6, HB - 0.03), (HB, top, HB - 0.03), (-HB, top, HB - 0.03), (0, 0, 1), "ground", 0.62)   # (3 cm in: off kerbs' faces)
             _place(m, sub, 90 * k)
         return m
     return b
@@ -135,9 +139,9 @@ def wall_door_carved():
     """the heavy carved door (1.2 x 2.2 m) in a white gypsum frame inside a dark basalt surround, studs and a small
     qamariya over it"""
     def b():
-        m = _wall(K, [_rect(-0.6, 0.0, 0.6, 2.2)], reveal="wall")
-        m.box((-0.6, 0.0, -0.36), (0.6, 2.2, -0.3), "frame", 0.8)
-        for k, (y0, y1) in enumerate(((0.15, 0.95), (1.1, 2.05))):          # carved panels, two leaves
+        m = _wall(K, [_rect(-0.6, 0.0, 0.6, 2.35)], reveal="wall")
+        m.box((-0.6, 0.0, -0.36), (0.6, 2.35, -0.3), "frame", 0.8)
+        for k, (y0, y1) in enumerate(((0.15, 1.0), (1.15, 2.2))):          # carved panels, two leaves
             for x0 in (-0.52, 0.04):
                 m.box((x0, y0, -0.3), (x0 + 0.48, y1, -0.27), "frame", 0.95 - 0.1 * k, skip=("z-",))
                 _beads(m, x0 + 0.04, x0 + 0.44, y1 - 0.12, y1 - 0.05, -0.27, -0.25, 5, "frame", 0.8)
@@ -145,9 +149,9 @@ def wall_door_carved():
             for y in (0.5, 1.5):
                 m.box((x - 0.025, y - 0.025, -0.27), (x + 0.025, y + 0.025, -0.24), "metal", skip=("z-",))
         e = 0.005                                                           # U frames (no sill: a door)
-        m.wall_cut(_rect(-0.74, 0.0, 0.74, 2.34), [_rect(-0.6 - e, -1.0, 0.6 + e, 2.2 + e)], -0.01, 0.04, "trim")
-        m.wall_cut(_rect(-0.96, 0.0, 0.96, 2.56), [_rect(-0.74 - e, -1.0, 0.74 + e, 2.34 + e)], -0.01, 0.025, "wall", 0.55)
-        r, top = 0.36, 2.72
+        m.wall_cut(_rect(-0.74, 0.0, 0.74, 2.49), [_rect(-0.6 - e, -1.0, 0.6 + e, 2.35 + e)], -0.01, 0.04, "trim")
+        m.wall_cut(_rect(-0.96, 0.0, 0.96, 2.66), [_rect(-0.74 - e, -1.0, 0.74 + e, 2.49 + e)], -0.01, 0.025, "wall", 0.55)
+        r, top = 0.3, 2.78
         fan = [(-r, top), (r, top)] + [(r * math.cos(math.pi * k / 8), top + r * math.sin(math.pi * k / 8)) for k in range(1, 8)]
         m.wall_cut(fan, [], 0.0, 0.03, "emissive")
         m.wall_cut(_off(fan, 0.1), [_off(fan, 0.005)], -0.01, 0.06, "trim")
@@ -496,10 +500,10 @@ def wall_gallery_timber():
     """a storey of timber gallery: the deck 1 m out along the whole bay, posts, a carved rail with balusters, a plank
     door and a lattice window behind"""
     def b():
-        m = _wall(T, [_rect(-1.15, 0.0, -0.45, 2.2), _rect(0.0, 0.9, 1.15, 2.2)], reveal="frame")
-        m.box((-1.145, 0.0, -0.2), (-0.455, 2.195, -0.16), "frame", 0.75)
-        m.pane(0.0, 0.9, 1.15, 2.2, -0.16)
-        _lattice(m, 0.005, 0.905, 1.145, 2.195, -0.12, -0.06, 6, 5, slot="frame")
+        m = _wall(T, [_rect(-1.25, 0.0, -0.2, 2.3), _rect(0.15, 0.9, 1.2, 2.2)], reveal="frame")   # (door 1.05 x 2.3)
+        m.box((-1.245, 0.0, -0.2), (-0.205, 2.295, -0.16), "frame", 0.75)
+        m.pane(0.15, 0.9, 1.2, 2.2, -0.16)
+        _lattice(m, 0.155, 0.905, 1.195, 2.195, -0.12, -0.06, 6, 5, slot="frame")
         d = 1.0
         m.box((-HB, -0.1, 0.004), (HB, 0.0, d), "frame", 0.85, skip=("z-", "x-", "x+"))
         m.box((-HB, 0.95, d - 0.07), (HB, 1.03, d), "frame", skip=("x-", "x+"))
@@ -572,7 +576,7 @@ def wall_inca_base(door):
     """an Inca polygonal fitted-stone ground bay (Cusco): irregular stones pillowed out of a dark joint, battered back
     5 degrees; door: the trapezoid doorway (narrower at the top)"""
     def b():
-        trap = [(-0.6, 0.0), (0.6, 0.0), (0.45, 2.3), (-0.45, 2.3)]
+        trap = [(-0.65, 0.0), (0.65, 0.0), (0.55, 2.4), (-0.55, 2.4)]   # (1.1 m clear at the top, 2.4 m: walk-through)
         m = Mesh()
         m.wall_cut(_rect(-HB, 0.0, HB, ST), [trap] if door else [], -K, -0.04, "wall", 0.45, reveal_slot="ground")
         tilt = math.tan(math.radians(5))
@@ -582,8 +586,8 @@ def wall_inca_base(door):
             _flat_prism(sub, s, -0.05, 0.0, "ground", 0.82 + 0.18 * ((k * 37) % 7) / 6)
             m.add(sub, lambda p: (p[0], p[1], p[2] + (ST - p[1]) * tilt * 0.4))
         if door:
-            m.box((-0.62, 2.3, -0.06), (0.62, 2.55, 0.05), "ground", 0.75, skip=("z-",))          # the lintel stone
-            m.box((-0.45, 0.0, -0.4), (0.45, 2.3, -0.36), "frame", 0.7)
+            m.box((-0.72, 2.4, -0.06), (0.72, 2.65, 0.05), "ground", 0.75, skip=("z-",))          # the lintel stone
+            m.box((-0.55, 0.0, -0.4), (0.55, 2.4, -0.36), "frame", 0.7)
         return m
     return b
 

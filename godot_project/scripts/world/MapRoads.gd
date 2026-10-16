@@ -71,10 +71,11 @@ func setup(near := Vector2(INF, INF)) -> void:
 	(_mats["kerb"] as StandardMaterial3D).albedo_color = Color(1.15, 1.15, 1.12)
 	(_mats["walk"] as StandardMaterial3D).albedo_color = Color(1.05, 1.04, 1.0)
 	for key in ["paint_w", "paint_y"]:
-		var m := StandardMaterial3D.new()
-		m.albedo_color = Color(0.93, 0.93, 0.9) if key == "paint_w" else Color(0.95, 0.72, 0.1)
-		m.roughness = 0.7
-		m.cull_mode = BaseMaterial3D.CULL_DISABLED
+		# (remake/shaders/road_paint.gdshader: the thin lines fade into the asphalt as they shrink under a pixel --
+		# they shimmered across every road at middle distance)
+		var m := ShaderMaterial.new()
+		m.shader = load("res://remake/shaders/road_paint.gdshader")
+		m.set_shader_parameter("paint", Color(0.93, 0.93, 0.9) if key == "paint_w" else Color(0.95, 0.72, 0.1))
 		_mats[key] = m
 	var dm := StandardMaterial3D.new()
 	dm.albedo_texture = load("res://remake/textures/road_signs.png")

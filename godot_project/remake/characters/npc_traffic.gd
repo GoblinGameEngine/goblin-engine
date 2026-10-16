@@ -71,6 +71,8 @@ var _sites := {}                     # 40 m cell -> buildings (placement.json), 
 func _ready() -> void:
 	name = "NpcTraffic"
 	_clock = get_tree().current_scene.get_node_or_null("DaySkySystem")
+	if _clock and _clock.has_signal("clock_set"):
+		_clock.clock_set.connect(_on_clock_set)
 	if not DataFile.exists(FLEET) or not DataFile.exists(NpcLife.PATH):
 		return
 	_life = NpcLife.shared()
@@ -227,6 +229,27 @@ func _refresh_candidates() -> void:
 
 func _game_h_per_s() -> float:
 	return 24.0 / DaySkySystem.DAY_LENGTH_SECONDS
+
+
+func _on_clock_set(from_h: float, to_h: float) -> void:
+	## The clock was set (Date & Time, fast travel): the cars on the road were on the old time's trips, the parked
+	## ones where the old time left them. All but the wrecks go, and every car is looked at again at once -- placed
+	## by the timetable at the new time (parked, or on its way), as when the player arrives somewhere new.
+	if absf(to_h - from_h) < 1.0 / 60.0:
+		return
+	for id in live.keys():
+		var e: Dictionary = live[id]
+		if e.get("crashed", false):
+			continue
+		(e.node as Node).queue_free()
+		live.erase(id)
+	for v in vehicles:
+		v.erase("far_until")
+		v.where = {}
+	_cand_t = 0.0
+	agents.clear()                                                 # (the cars just freed: not in anyone's way)
+	_agrid.clear()
+	_near_cache.clear()
 
 
 func _now() -> Array:
