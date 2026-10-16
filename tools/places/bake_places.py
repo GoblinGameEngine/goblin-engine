@@ -176,6 +176,23 @@ def main():
             typ = FIXED_KIND.get(kind, typ)
         add(SHELL_OF_KIND[kind], typ)
 
+    # the flea markets (research/flea_markets/00_plan.md §3.5): a market unit (the floor: shoppers and vendors) and its
+    # office, at the market's walk entrance and gate (remake/markets/flea_markets.json; tools/markets/site_markets.py)
+    fmp = os.path.join(ROOT, "godot_project", "remake", "markets", "flea_markets.json")
+    if os.path.exists(fmp):
+        for m in json.load(open(fmp))["markets"]:
+            if not m.get("sited"):
+                continue
+            f = m["frame"]
+            ca, sa = math.cos(f["yaw"]), math.sin(f["yaw"])
+            at = lambda u, v: [round((f["s"] + u * ca - v * sa) % CIRC, 2), round(f["x"] + u * sa + v * ca, 2)]
+            walk = next((e for e in m["entrances"] if e[3] == "walk"), [0.0, 0.0])
+            arch = m["arch"]
+            for uid, shell, typ, door_at in (("M", "stall", "flea_stall", at(walk[0], walk[1])),
+                                             ("O", "market_office", "flea_office", at(arch[0] + 10.0, arch[1]))):
+                units.append(dict(building=m["id"], settlement=m["town"], door=door_at, uid="%s/%s" % (m["id"], uid), shell=shell,
+                                  type=typ, hint=None, flexible=False, area=1.0, market=m["id"]))
+
     # a college town's largest school is its college
     for st, kind in settle["settlements"].items():
         if kind != "college_town":

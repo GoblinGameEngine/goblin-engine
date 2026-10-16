@@ -2,6 +2,55 @@
 
 Each entry gets its own screenshots in `docs/media/<date>/`.
 
+## 0.8.2-beta.2 (2026-10-16): the flea markets — a weekend market in every town, and the islands come down to trade
+
+**The markets (the ground side)**
+- **All 22 towns and cities have a flea market**, built to a researched plan: 2,660 stalls in all. Each market has
+  its gravel lot (striped bays, poles with lamps), covered shed rows, open back-to-back rows with fire lanes, a food
+  truck row and court, an entrance arch, a lettered market board, a pylon sign, a bus stop, a vendor lane and
+  an apron — in six layout variants fitted to each town's free land by a siting search (slope, roads, schools and
+  hospitals kept clear; the market takes only free land).
+- **Victory Bay's market floats**: The Regatta Swap stands on a pier deck over the water — gangway, mast and guys,
+  clan-coloured tent raft, lit at night by strings over the deck — because its island has no free land.
+- **A real market week.** Markets open Friday to Sunday (hours differ by tier), with setup, lantern-lit evening,
+  teardown and after-hours phases. 21,280 townsfolk hold stalls as a weekend second job, drawn from the real
+  population (the occupancy model's worst market runs 81 % full, the mean is 91 %). On a market Friday, hundreds of
+  out-of-town shoppers travel in (Calder: 377).
+- **New kit models**: food trucks (two variants), the market office, gate house and restroom — 162 pieces in the
+  market kit, all audit-clean.
+- **Holidays close the town.** When seven islands moor at a small town, it's a Sky Holiday: most shops shut (Loomis
+  Grove: 91 of 105 units), the market rings with islander tents, overflow parking opens on the apron, and three
+  quarters of the town holds a holiday fair stay.
+
+**The moorings (the sky side)**
+- **Every island got a mooring quarter** from the warren generator: 191 gondola stations (166 passenger, 25 cargo),
+  255 line houses, 88 crew drop-cage davits, with station halls, plinths, signal masts and walks joined to each
+  island's street net — 188 of 191 stations reachable on foot in the offline audit.
+- **Islands now book, approach and moor.** A pure weekly calendar books islands to markets (no island at two
+  markets, a month between visits). A moored stay runs TRIM → APPROACH (down to 600 m) → crew drop → anchor →
+  logistics → rigging → SERVICE → strike → cast off. Hawsers run to deadmen, rafts lash together, banners furl,
+  and winds over 9 m/s hold the descent.
+- **Gondolas you can ride**: jig-back cabins at 8 m/s between the island and its ground station, with doors, dwell
+  times and cabin wardens; a drop cage for the crew. Trading tents with lanterns, festoons and sky goods fill the
+  mooring field; five islands in SERVICE make a Bright Week with strings of light over the whole lot.
+- **It costs almost nothing per frame**: the whole drift step with mooring went from 15.0 ms to 2.8 ms, flat over
+  long runs (a layout cache that thrashed, full work every step instead of once a second, and two pre-existing
+  O(n²)/O(n³) raft checks replaced by a sort-sweep).
+
+**World plumbing**
+- The far side now shows the market lots by day and their lit poles and festoons by night (full far-side rebake,
+  day and night, 400 tiles each).
+- The daily-lives chain rebaked end to end for the pier and the markets: 214,356 people, 0 unplaced, 99 % of jobs
+  staffed.
+- Fixed: a terrain rewrite had invalidated six bake stamps (roads, walks, pads, far terrain, structures, trees), so
+  every load silently rebuilt road bands; all six rebaked and verified.
+- Fixed two generator regressions the audit caught: dressing pieces could block a walk choke point (now removed as
+  a last resort), and stowed swing-girder bridges reach ~15 m along the dock face (mooring sites now keep
+  directional clearance; a few line houses and davits that stood under girders were correctly dropped).
+
+**Known issue:** standing at ground level inside a market during a celebration (town + market + moored raft all in
+view) can dip to 32-38 fps on a Steam Deck; everywhere else holds 48-156. Queued for the next performance pass.
+
 ## 0.8.2-beta.1 (2026-10-16): walkable floating cities, night light, signs everywhere, the offline audit
 
 **Floating cities (the warrens)**

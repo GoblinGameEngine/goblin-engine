@@ -1,16 +1,27 @@
 extends SceneTree
 
 ## NpcLife: determinism, where people are through the week, how they travel, and routes.
-##   ../godot/godot4 --headless --path . --script res://remake/tools/npc_life_test.gd [-- people]
+##   ../godot/godot4 --headless --path . --script res://remake/tools/npc_life_test.gd [-- people [town]]
+## (the lives are compact shards since 2026-10-08: NpcLife.people is only a decode cache, so the sample is taken from
+##  one settlement's shard, Calder by default; an empty sample quits with a message instead of dividing by zero)
 
 
 func _initialize() -> void:
 	var a := OS.get_cmdline_user_args()
 	var n := int(a[0]) if a.size() > 0 else 600
+	var town := a[1] if a.size() > 1 else "Calder"
 	var t0 := Time.get_ticks_msec()
 	var life := NpcLife.shared()
-	print("load %d ms, %d people" % [Time.get_ticks_msec() - t0, life.people.size()])
-	var pids: Array = life.people.keys()
+	life._ensure(NpcLife.shard_name(town))
+	var pids: Array = []
+	for pid in life._where:
+		if str(life._where[pid][0]) == NpcLife.shard_name(town):
+			pids.append(pid)
+	print("load %d ms, %d people in %s" % [Time.get_ticks_msec() - t0, pids.size(), town])
+	if pids.is_empty():
+		print("FAIL: no people in %s's lives shard (run remake/tools/bake_lives.gd)" % town)
+		quit(1)
+		return
 	pids.sort()
 	var step := maxi(1, pids.size() / n)
 	var sample := []
@@ -41,7 +52,7 @@ func _initialize() -> void:
 					away += 1
 				if s.kind == "trip":
 					moving += 1
-			row.append("%02d:%3d%%%s" % [h, 100 * away / sample.size(), "" if moving == 0 else "(%d)" % moving])
+			row.append("%02d:%3d%%%s" % [h, 100 * away / maxi(1, sample.size()), "" if moving == 0 else "(%d)" % moving])
 		print("day %d %s  %s" % [day, StationCalendar.DAY_SHORT[StationCalendar.weekday(day)], " ".join(row)])
 		for pid in sample:
 			var tl := life.timeline(pid, day)
@@ -55,12 +66,12 @@ func _initialize() -> void:
 					modes[s.mode] = modes.get(s.mode, 0) + 1
 				if s.kind == "at" or s.kind == "out":
 					whats[s.what] = whats.get(s.what, 0) + 1
-	print("timelines: %.1f ms per person-day; out-of-order segments %d" % [float(Time.get_ticks_msec() - t1) / (7.0 * sample.size()), bad])
+	print("timelines: %.1f ms per person-day; out-of-order segments %d" % [float(Time.get_ticks_msec() - t1) / (7.0 * maxi(1, sample.size())), bad])
 	var ks: Array = modes.keys()
 	ks.sort_custom(func(x, y): return modes[x] > modes[y])
 	var ms := []
 	for k in ks:
-		ms.append("%s %.1f%%" % [k, 100.0 * modes[k] / trips])
+		ms.append("%s %.1f%%" % [k, 100.0 * modes[k] / maxi(1, trips)])
 	print("trips %d; modes: %s" % [trips, ", ".join(ms)])
 	var wk: Array = whats.keys()
 	wk.sort_custom(func(x, y): return whats[x] > whats[y])
@@ -69,7 +80,7 @@ func _initialize() -> void:
 		ws.append("%s %d" % [k, whats[k]])
 	print("stays in a week (%d people): %s" % [sample.size(), ", ".join(ws)])
 	# a few people's Tuesdays, and their [LIFE] card
-	for pid in [sample[5], sample[40], sample[77]]:
+	for pid in [sample[5 % sample.size()], sample[40 % sample.size()], sample[77 % sample.size()]]:
 		print("\n%s (%s, %d)" % [pid, life.person(pid).occupation, int(life.person(pid).age)])
 		for s in life.timeline(pid, 1):
 			print("   %s-%s %-5s %-10s %s %s" % [NpcLife._clock(float(s.t0)), NpcLife._clock(float(s.t1)), s.kind, s.what, life.place_words(s.uid) if s.kind != "trip" else "", s.get("mode", "")])

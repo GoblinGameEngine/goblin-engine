@@ -22,7 +22,8 @@ const W := Color(1, 1, 1)
 const REGIONS := [["NORTH SEA", -8400.0], ["THE NORTH SHORE", -5300.0], ["THE NORTHLAND", -2800.0], ["THE KETTLE VALLEY", 150.0],
 	["THE SOUTHLAND", 2800.0], ["THE SOUTH SHORE", 5300.0], ["SOUTH SEA", 8400.0]]
 const AREA_NAMES := {"park": "Park", "schoolground": "School", "beach": "Beach", "plaza": "Plaza", "square": "Square",
-	"cemetery": "Cemetery", "campus": "College", "promenade": "Promenade", "sportsfield": "Ballfield", "parking": "P", "lot": "P"}
+	"cemetery": "Cemetery", "campus": "College", "promenade": "Promenade", "sportsfield": "Ballfield", "parking": "P", "lot": "P",
+	"market_floor": "Flea market", "mooring_field": "Mooring field"}
 
 var font: Font
 var bold: Font

@@ -32,6 +32,7 @@ const CUT := 820.0                    # m: near bulbs nearer, far bulbs further
 const POST_FAR := 600.0
 const PALM_FAR := 900.0
 const N_LIGHTS := 28
+const ABS_H := 100000.0              # strings' heights over this are absolute (street_lamps.py: the pier markets)
 const LIGHT_R := 110.0
 
 # per kind: [bulb positions (local: +y up, -z toward the road), bulb colour, bulb size, pool radius, pool strength,
@@ -42,6 +43,8 @@ const HEAD := {
 	2: [[Vector3(0, 3.3, -0.6)], Color(1.0, 0.8, 0.55), 0.75, 6.5, 0.55, 11.0, 2.2],
 	3: [[Vector3(0, 5.85, -1.2)], Color(1.0, 0.9, 0.74), 1.1, 11.5, 0.8, 18.0, 3.0],
 	4: [[Vector3(0, 4.4, 0.0)], Color(1.0, 0.9, 0.7), 0.85, 0.0, 0.0, 12.0, 2.2],
+	# 5: a car park's 9 m pole, two heads on a cross arm (research/flea_markets/00_plan.md §1.4: dusk to dawn, ~24 m apart)
+	5: [[Vector3(-0.95, 8.85, 0.0), Vector3(0.95, 8.85, 0.0)], Color(1.0, 0.9, 0.74), 1.15, 14.0, 0.6, 24.0, 3.0],
 }
 const BEACH_COLS := [Color(1.0, 0.2, 0.25), Color(0.25, 1.0, 0.35), Color(0.3, 0.5, 1.0), Color(1.0, 0.85, 0.2),
 	Color(1.0, 0.3, 0.9), Color(0.2, 0.95, 1.0), Color(1.0, 0.55, 0.15)]
@@ -81,6 +84,10 @@ var _light_t := 0.0
 var _night := 0.0
 var _sky: Node
 var _lights: Array[OmniLight3D] = []
+## Other systems' lamps that may take a pooled light (SkyMoorings: the islanders' tents and lanterns at a moored
+## market, 00_plan §7.2): [[world pos, Color, range m, energy]]; at most BORROW_MAX of them get one, nearest first.
+var borrowed: Array = []
+const BORROW_MAX := 8
 var _post_mesh := {}                  # kind -> Mesh
 var _palm_mesh: Mesh
 var _bulb_quad: QuadMesh
@@ -253,7 +260,7 @@ func _build(job: Dictionary) -> void:
 	var bx: Array[Transform3D] = []
 	var bc: Array[Color] = []
 	var bu: Array[Color] = []
-	var posts := {0: [], 1: [], 2: [], 3: []}
+	var posts := {0: [], 1: [], 2: [], 3: [], 5: []}
 	var palms: Array[Transform3D] = []
 	var lights := []
 	var pool := SurfaceTool.new()
@@ -272,7 +279,7 @@ func _build(job: Dictionary) -> void:
 		if near:
 			posts[kind].append(xf)
 			var centre: Vector3 = hd[0][0]
-			if kind == 1:
+			if kind == 1 or kind == 5:
 				centre = Vector3.ZERO
 			var head: Vector3 = xf * Vector3(centre.x, 0.0, centre.z)
 			_pool(pool, float(_lamps[i]) + 0.0, head, float(hd[3]) * POOL_REACH, Color(hd[1], minf(float(hd[4]) * POOL_GAIN, 1.6)))
@@ -352,8 +359,11 @@ func _festoon(i: int, bx: Array[Transform3D], bc: Array[Color], bu: Array[Color]
 	var s1: float = _strings[i + 3]
 	var x1: float = _strings[i + 4]
 	var scheme := int(_strings[i + 6])
-	var a := StationGeo.point(s0, x0, MapTerrain.elevation(s0, x0) + float(_strings[i + 2]))
-	var b := StationGeo.point(s1, x1, MapTerrain.elevation(s1, x1) + float(_strings[i + 5]))
+	# (a height over ABS_H is absolute, ABS_H + metres: a floating pier market's strings, over the water's surface)
+	var h0 := float(_strings[i + 2])
+	var h1 := float(_strings[i + 5])
+	var a := StationGeo.point(s0, x0, h0 - ABS_H if h0 > ABS_H * 0.5 else MapTerrain.elevation(s0, x0) + h0)
+	var b := StationGeo.point(s1, x1, h1 - ABS_H if h1 > ABS_H * 0.5 else MapTerrain.elevation(s1, x1) + h1)
 	var L := a.distance_to(b)
 	var n := maxi(3, int(L / 1.3))
 	var down := -StationGeo.up(StationGeo.s_of((a + b) * 0.5))
@@ -496,11 +506,28 @@ func _place_lights() -> void:
 			var d := (e[0] as Vector3).distance_squared_to(p)
 			if d < LIGHT_R * LIGHT_R:
 				cand.append([d, e])
+	var bc: Array = []
+	for e in borrowed:
+		var d := (e[0] as Vector3).distance_squared_to(p)
+		if d < LIGHT_R * LIGHT_R:
+			bc.append([d, e, true])
+	if not bc.is_empty():
+		bc.sort_custom(func(a: Array, b: Array) -> bool: return a[0] < b[0])
+		cand.append_array(bc.slice(0, BORROW_MAX))
 	cand.sort_custom(func(a: Array, b: Array) -> bool: return a[0] < b[0])
 	for k in _lights.size():
 		var l := _lights[k]
 		if k >= cand.size():
 			l.visible = false
+			continue
+		if cand[k].size() > 2:
+			var be: Array = cand[k][1]
+			l.global_position = be[0]
+			l.light_color = be[1]
+			l.omni_range = float(be[2])
+			l.light_energy = float(be[3]) * _night
+			l.omni_attenuation = 1.6
+			l.visible = true
 			continue
 		var e: Array = cand[k][1]
 		var hd: Array = HEAD[int(e[1])]
@@ -564,6 +591,14 @@ func _build_meshes() -> void:
 	_box(st, Vector3(0, 6.0, -0.6), Vector3(0.07, 0.07, 1.2))
 	_cyl(st, Vector3(0, 0, -1.2), 0.2, 0.2, 5.65, 6.05)
 	_post_mesh[3] = _finish(st, white)
+	# 5: the lot pole: a tapered steel pole, a cross arm, two shoebox heads
+	st = _st()
+	_cyl(st, Vector3.ZERO, 0.2, 0.2, 0.0, 0.6)
+	_cyl(st, Vector3.ZERO, 0.11, 0.07, 0.6, 9.0)
+	_box(st, Vector3(0, 9.0, 0), Vector3(2.3, 0.08, 0.08))
+	for sx in [-0.95, 0.95]:
+		_box(st, Vector3(sx, 8.95, 0), Vector3(0.62, 0.12, 0.38))
+	_post_mesh[5] = _finish(st, _metal(Color(0.5, 0.52, 0.53)))
 	_palm_mesh = _make_palm()
 
 

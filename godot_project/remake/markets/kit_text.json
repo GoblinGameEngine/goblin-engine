@@ -1,0 +1,426 @@
+{
+ "png": "res://remake/markets/kit_text.png",
+ "emit": "res://remake/markets/kit_text_emit.png",
+ "size": [
+  2048,
+  512
+ ],
+ "cells": {
+  "txt_mooring_office": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 0,
+   "j": 0,
+   "region": [
+    0,
+    0,
+    256,
+    256
+   ],
+   "uv": [
+    0.0,
+    0.0,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    53,
+    244,
+    150
+   ],
+   "text": "MOORING / OFFICE",
+   "lit": "letters"
+  },
+  "txt_weigh_house": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 1,
+   "j": 0,
+   "region": [
+    256,
+    0,
+    256,
+    256
+   ],
+   "uv": [
+    0.125,
+    0.0,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    53,
+    244,
+    150
+   ],
+   "text": "WEIGH / HOUSE",
+   "lit": "letters"
+  },
+  "txt_crew": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 2,
+   "j": 0,
+   "region": [
+    512,
+    0,
+    256,
+    256
+   ],
+   "uv": [
+    0.25,
+    0.0,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    73,
+    244,
+    110
+   ],
+   "text": "LINE CREW",
+   "lit": "letters"
+  },
+  "txt_first_aid": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 3,
+   "j": 0,
+   "region": [
+    768,
+    0,
+    256,
+    256
+   ],
+   "uv": [
+    0.375,
+    0.0,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    73,
+    244,
+    110
+   ],
+   "text": "FIRST AID",
+   "lit": "face"
+  },
+  "txt_gondola": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 4,
+   "j": 0,
+   "region": [
+    1024,
+    0,
+    256,
+    256
+   ],
+   "uv": [
+    0.5,
+    0.0,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    53,
+    244,
+    150
+   ],
+   "text": "GONDOLA / TO THE ISLAND",
+   "lit": "letters"
+  },
+  "txt_tickets": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 5,
+   "j": 0,
+   "region": [
+    1280,
+    0,
+    256,
+    256
+   ],
+   "uv": [
+    0.625,
+    0.0,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    73,
+    244,
+    110
+   ],
+   "text": "FARES",
+   "lit": "letters"
+  },
+  "txt_entrance": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 6,
+   "j": 0,
+   "region": [
+    1536,
+    0,
+    256,
+    256
+   ],
+   "uv": [
+    0.75,
+    0.0,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    78,
+    244,
+    100
+   ],
+   "text": "ENTRANCE",
+   "lit": null
+  },
+  "txt_exit": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 7,
+   "j": 0,
+   "region": [
+    1792,
+    0,
+    256,
+    256
+   ],
+   "uv": [
+    0.875,
+    0.0,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    78,
+    244,
+    100
+   ],
+   "text": "EXIT",
+   "lit": null
+  },
+  "txt_fire_lane": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 0,
+   "j": 1,
+   "region": [
+    0,
+    256,
+    256,
+    256
+   ],
+   "uv": [
+    0.0,
+    0.5,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    58,
+    244,
+    140
+   ],
+   "text": "FIRE LANE / NO PARKING",
+   "lit": null
+  },
+  "txt_market_office": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 1,
+   "j": 1,
+   "region": [
+    256,
+    256,
+    256,
+    256
+   ],
+   "uv": [
+    0.125,
+    0.5,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    53,
+    244,
+    150
+   ],
+   "text": "MARKET / OFFICE",
+   "lit": "face"
+  },
+  "txt_vendor_lane": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 2,
+   "j": 1,
+   "region": [
+    512,
+    256,
+    256,
+    256
+   ],
+   "uv": [
+    0.25,
+    0.5,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    58,
+    244,
+    140
+   ],
+   "text": "VENDORS / ONLY",
+   "lit": null
+  },
+  "txt_stand_clear": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 3,
+   "j": 1,
+   "region": [
+    768,
+    256,
+    256,
+    256
+   ],
+   "uv": [
+    0.375,
+    0.5,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    58,
+    244,
+    140
+   ],
+   "text": "STAND CLEAR / OF THE ROPES",
+   "lit": null
+  },
+  "txt_open": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 4,
+   "j": 1,
+   "region": [
+    1024,
+    256,
+    256,
+    256
+   ],
+   "uv": [
+    0.5,
+    0.5,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    73,
+    244,
+    110
+   ],
+   "text": "OPEN",
+   "lit": "letters"
+  },
+  "txt_info": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 5,
+   "j": 1,
+   "region": [
+    1280,
+    256,
+    256,
+    256
+   ],
+   "uv": [
+    0.625,
+    0.5,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    73,
+    244,
+    110
+   ],
+   "text": "INFO",
+   "lit": "face"
+  },
+  "txt_lowsky": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 6,
+   "j": 1,
+   "region": [
+    1536,
+    256,
+    256,
+    256
+   ],
+   "uv": [
+    0.75,
+    0.5,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    53,
+    244,
+    150
+   ],
+   "text": "ISLAND / FAIR",
+   "lit": "letters"
+  },
+  "txt_cargo": {
+   "kind": "kit_text",
+   "atlas": "kit_text",
+   "i": 7,
+   "j": 1,
+   "region": [
+    1792,
+    256,
+    256,
+    256
+   ],
+   "uv": [
+    0.875,
+    0.5,
+    0.125,
+    0.5
+   ],
+   "content": [
+    6,
+    53,
+    244,
+    150
+   ],
+   "text": "CARGO / HOIST",
+   "lit": "letters"
+  }
+ }
+}

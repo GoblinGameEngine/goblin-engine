@@ -20,6 +20,7 @@ step() {
 }
 gd() { (cd godot_project && "$GD" "$@"); }
 step import          gd --headless --path . --import
+step site_markets    $P tools/markets/site_markets.py   # (the flea markets on free land in every town's limits: areas, lots, drives; flea_markets.json)
 step road_fix        $P tools/road_fix.py        # (every road's line drivable: de-staired, rounded, joined, straight over its bridges)
 step street_rules    $P tools/street_rules.py
 step placement       $P remake/tools/placement.py
@@ -33,12 +34,15 @@ step make_places     $P tools/places/make_places.py
 step bake_places     $P tools/places/bake_places.py
 step bake_paths      $P tools/places/bake_paths.py
 step bake_lives      gd --headless --path . --script res://remake/tools/bake_lives.gd
+step vendor_pool    $P tools/markets/bake_vendor_pool.py   # (the flea markets' vendors, from the lives)
 step make_vehicles   $P tools/places/make_vehicles.py
 step bake_transit    gd --headless --path . --script res://remake/tools/bake_transit.gd
 step street_rules2   $P tools/street_rules.py
 step street_names    $P tools/street_names.py
 step parking_lots    $P tools/parking_lots.py
 step road_furniture  $P tools/road_furniture.py
+step street_lamps    $P tools/street_lamps.py    # (after road_furniture; lot poles and market festoons from flea_markets.json)
+step check_markets   $P tools/markets/check_markets.py --quiet --allow-unsited   # (Victory Bay has no free land: a warning)
 step place_aerostats gd --headless --path . --script res://remake/tools/place_aerostats.gd
 step place_ground    gd --headless --path . --script res://remake/tools/place_ground_vehicles.gd
 # (one process each: all five in one ran past the Deck's 14 GB on the 1:1 map and earlyoom killed it, 2026-10-08)

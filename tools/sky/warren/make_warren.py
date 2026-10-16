@@ -31,6 +31,7 @@ import writer  # noqa: E402
 from civ import civ_for  # noqa: E402
 from lattice import LANE, Lattice  # noqa: E402
 import kitmap
+import moorings  # noqa: E402
 import walk as walkmod  # noqa: E402
 from spine import connect_leftovers, lay_spine  # noqa: E402
 
@@ -49,6 +50,8 @@ def build(isl, civ_id, do_preview=True):
     seed = seed_of(isl["id"])
     rng = random.Random(seed)
     L = Lattice(isl, seed)
+    # the market moorings' sites on the rim (line houses, gondola stations, the davit): off the ground before the spine
+    moorings.reserve(L)
     civ = civ_for(civ_id, isl, rng)
     p = civ.params
     blocks = int(isl.get("blocks", 3))
@@ -102,6 +105,7 @@ def build(isl, civ_id, do_preview=True):
     if civ.id not in kit["palettes"] and hasattr(civ, "PALETTES"):
         kit["palettes"][civ.id] = civ.PALETTES          # (the family's own until the KIT stream adds them)
     o.recs, dropped = kitmap.translate(L, civ, o.recs, kit, shacks)
+    moorings.emit(L, o, kit)
     walkmod.physical(L, o.recs, kit["pieces"])
     # the player's clear box through every way and door (openings.py): what blocks is cleared (decor dropped, a
     # balcony/shopfront/arch over the walk swapped for a plain or wider piece), then the budget, then again (the
@@ -184,6 +188,7 @@ def build(isl, civ_id, do_preview=True):
             L.walk["edges"] = old_e
             cut = 0
         L.walk_stats["physical"]["graph"]["bridge_side_edges_cut"] = cut
+    moorings.walk(L)
     if os.environ.get("WALK_DEBUG"):
         S = openings.Scene(L, o.recs, kit["pieces"])
         for lid, bl in left["doors"][:3]:
@@ -194,7 +199,8 @@ def build(isl, civ_id, do_preview=True):
                 print("   piece world aabb", a.round(2), b.round(2))
         for c, n, bl in left["edges"][:6]:
             print("BLOCKED EDGE", c, n, L.q.get(c), L.stair.get(c), L.q.get(n), L.stair.get(n), [o.recs[k][:7] for k in bl])
-    L.lights = kitmap.lights(L, civ, o.recs, kit)
+    L.lights = kitmap.lights(L, civ, o.recs, kit) + moorings.lights(L)
+    L.moorings = moorings.doc(L, kit)
     comps = U.components(L)
     U.mark_private_roofs(L)
     fol = writer.foliage_instances(L, civ, civ.foliage(L, rng))
@@ -217,6 +223,7 @@ def build(isl, civ_id, do_preview=True):
         "walk_nodes": len(walk["nodes"]), "walk_edges": len(walk["edges"]), "walk_components": comps[:5],
         "tether_violations": tether_hits, "unsupported": unsup, "settle_removed": removed,
         "roof_shacks": len(shacks), "green_path_cells": paths, "walk_check": L.walk_stats, "chunks_shed": len(shed), "plinths": getattr(L, "plinths", 0), "missing_from_kit": dropped, "duplicates_removed": getattr(L, "dup_removed", 0),
+        "moorings": moorings.stats(L),
         "build_s": round(time.time() - t0, 2),
     }
     os.makedirs(OUT, exist_ok=True)
@@ -250,6 +257,8 @@ def main():
         st = build(by[iid], civ_id, not a.no_preview)
         print(iid, json.dumps({k: v for k, v in st.items() if k not in ("missing_from_kit",)}))
         print("  generator pieces the kit has nothing for (dropped):", st["missing_from_kit"])
+    n = moorings.write_index(OUT, os.path.join(ROOT, "godot_project", "remake", "sky", "moorings.json"))
+    print("moorings.json: %d islands" % n)
 
 
 if __name__ == "__main__":

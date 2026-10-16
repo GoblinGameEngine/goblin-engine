@@ -23,6 +23,10 @@ KIT_GLB = os.path.join(os.path.dirname(__file__), "..", "..", "..", "godot_proje
 LEAF = ("wk_frame", "wk_metal", "wk_glass")
 EPS = 0.02             # (an opening exactly CLEAR_W x CLEAR_H passes)
 REMOVABLE = ("overlay", "decor", "sign", "cell")    # (what may simply be taken out of the way)
+# dressing placed as a structure (plan_piece shares): kept while it only overhangs, but when it still BLOCKS the
+# walk after the swaps it goes too (SKY-079 2026-10-16: a windmill on a green choke cell cut 14 doors off).  A real
+# landmark (a pagoda, a tower) is never in this set.
+LAST_RESORT = ("windmill_round",)
 FLOORISH = ("ground", "stair", "water_edge", "interior", "ceiling", "slab", "bridge")   # (a bridge is walked on)
 FACE = {0: (0, -1), 1: (-1, 0), 2: (0, 1), 3: (1, 0)}
 _geo = {}
@@ -373,7 +377,7 @@ def fix(L, recs, pieces, surf_h):
     after = scan(L, recs, pieces, surf_h)
     # what still blocks after the swaps (the plain piece too small as well): it goes
     still = set(n for _, _, bl in after["edges"] for n in bl) | set(n for _, bl in after["doors"] for n in bl)
-    still = set(n for n in still if pieces.get(recs[n][0], {}).get("kind") in REMOVABLE)
+    still = set(n for n in still if pieces.get(recs[n][0], {}).get("kind") in REMOVABLE or recs[n][0] in LAST_RESORT)
     if still:
         recs = [r for n, r in enumerate(recs) if n not in still]
         after = scan(L, recs, pieces, surf_h)

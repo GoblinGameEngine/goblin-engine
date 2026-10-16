@@ -22,7 +22,9 @@
   "big_box": "a large single-storey store",
   "strip_unit": "a unit in a strip of shops",
   "tower": "a lighthouse, lifeguard tower or water tower",
-  "station_module": "a purpose-built station facility (future buildings)"
+  "station_module": "a purpose-built station facility (future buildings)",
+  "stall": "a flea market's floor: its sheds' bays and open pitches (research/flea_markets; one unit per market)",
+  "market_office": "a flea market's office and gate house (one per market)"
  },
  "types": {
   "grocery": {
@@ -2686,6 +2688,95 @@
    "station": false,
    "note": "",
    "m2_per_job": 90
+  },
+  "flea_stall": {
+   "name": "Flea market",
+   "category": "retail",
+   "shells": [
+    "stall"
+   ],
+   "jobs": {},
+   "hours": {
+    "open": "09:00",
+    "close": "18:00",
+    "days": "fri-sun"
+   },
+   "visits": [
+    {
+     "purpose": "flea",
+     "per_week": 0.35,
+     "who": "age >= 13",
+     "dwell_min": 75
+    }
+   ],
+   "third_place": true,
+   "price": 0,
+   "per1000": 0.0,
+   "contents": {
+    "fixtures": [
+     "shed_bays",
+     "open_pitches",
+     "food_trucks",
+     "festoons"
+    ],
+    "stock": [
+     "second_hand_goods",
+     "crafts",
+     "produce",
+     "food"
+    ],
+    "machinery": []
+   },
+   "signage": "pylon",
+   "hints": [],
+   "addictions": [],
+   "roles": [
+    "shopkeeper",
+    "cashier",
+    "regular"
+   ],
+   "station": false,
+   "note": "FleaCalendar.state decides the hours; FleaVendors who sells"
+  },
+  "flea_office": {
+   "name": "Flea market office",
+   "category": "civic",
+   "shells": [
+    "market_office"
+   ],
+   "jobs": {
+    "clerk": 2,
+    "janitor": 2
+   },
+   "hours": {
+    "open": "07:00",
+    "close": "19:00",
+    "days": "fri-sun"
+   },
+   "visits": [],
+   "third_place": false,
+   "price": 0,
+   "per1000": 0.0,
+   "contents": {
+    "fixtures": [
+     "counter",
+     "pitch_board",
+     "lost_and_found",
+     "first_aid"
+    ],
+    "stock": [],
+    "machinery": []
+   },
+   "signage": "board",
+   "hints": [],
+   "addictions": [],
+   "roles": [
+    "manager",
+    "office_clerk",
+    "security_guard"
+   ],
+   "station": false,
+   "note": ""
   },
   "hotel": {
    "name": "Hotel",

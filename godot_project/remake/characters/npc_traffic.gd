@@ -544,6 +544,21 @@ func _parked(door: Vector2, v: Dictionary) -> Dictionary:
 func _find_spot(door: Vector2, want_face := Vector2.ZERO) -> Dictionary:
 	## want_face: the way the car arriving will be pointing -- the space is taken on the side of the street that faces
 	## it (its right-hand kerb), so it drives straight in.
+	# a flea market: the free bay in its lot nearest the entrance (research/flea_markets/00_plan.md §6.1)
+	var mk := FleaLots.market_at(door)
+	if mk != "":
+		var day_ := int(_clock.get("day")) if _clock and _clock.get("day") != null else 0
+		for b in FleaLots.bays_on(mk, day_):
+			var bp: Vector2 = b[0]
+			var free := true
+			for q in _taken:
+				if NpcPlaces.dist(q, bp) < 2.2:
+					free = false
+					break
+			if free:
+				_taken.append(bp)
+				return {"p": bp, "dir": b[1], "lot": mk}
+		# (the lot and, on a fair day, the apron's overflow full: the kerb by the drive, as before)
 	var a := NpcPlaces._attach_on(door, ROADS)
 	if a.is_empty():
 		return {}

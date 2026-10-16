@@ -138,7 +138,7 @@ def write(L, civ, o, units, doors, foliage, out_bin, out_json, stats, kit):
         "palette_mode": "kit_variant", "lights": getattr(L, "lights", []),
         "travel": L.travel, "landmark": list(getattr(L, "landmark", ()) or ()),
         "units": units, "doors": [[u, c[0], c[1], k, rot, e] for (u, c, k, rot, e) in doors],
-        "anchors": o.anchors, "walk": L.walk,
+        "anchors": o.anchors, "walk": L.walk, "moorings": getattr(L, "moorings", []),
         "pads": [{"x": p["x"], "z": p["z"], "yaw": p.get("yaw", 0.0), "y": round(L.deck_y(p["x"], p["z"]), 2)}
                  for p in L.isl.get("pads", [])],
         "stats": stats, "chunks": chunk_stats, "notes": L.notes,

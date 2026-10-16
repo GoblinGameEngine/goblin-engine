@@ -32,6 +32,7 @@ var layouts: Array = []
 var ready_ := false
 var _task := -1
 var banners: SkyBanners              # every island's banners, dock flags and pennants (three MultiMeshes in all)
+var moorings: SkyMoorings            # the market moorings near the player (SkyMooringSite each)
 var _mm_near: MultiMeshInstance3D
 var _mm_far: MultiMeshInstance3D
 var _lines: MeshInstance3D
@@ -66,6 +67,11 @@ func setup(p_player: StationPlayer, p_clouds: RemakeClouds, p_sky: DaySkySystem)
 		defs.append({"id": L.id, "faces": L.faces, "bridges": L.bridges})
 	drift = SkyDrift.new()
 	drift.setup(defs)
+	# the market moorings (SkyMooring): the clock they follow, the wind that stops them; a set clock re-places them
+	drift.mooring.now_h = sky.now_hours() if sky else 0.0
+	drift.mooring.wind_at = _wind_at
+	if sky and sky.has_signal("clock_set"):
+		sky.clock_set.connect(func(_from: float, _to: float) -> void: _clock_jumped = true)
 	# a day and a half of sky before the player sees it (rafts formed, some under way): on a worker
 	_task = WorkerThreadPool.add_task(drift.warm_up.bind(36.0, 30.0), false, "sky islands warm-up")
 	for i in layouts.size():
@@ -95,6 +101,9 @@ func setup(p_player: StationPlayer, p_clouds: RemakeClouds, p_sky: DaySkySystem)
 	folk.name = "SkyFolk"
 	folk.sys = self
 	add_child(folk)
+	moorings = SkyMoorings.new()
+	moorings.sys = self
+	add_child(moorings)
 
 
 func _mm(n: String, mesh: Mesh) -> MultiMeshInstance3D:
@@ -178,6 +187,22 @@ var _tick := 0
 var _moved_dt := PackedFloat32Array()   # seconds since each island was last placed
 
 
+var _clock_jumped := false
+var _snap := {}                         # island index -> true: placed by a jump (no easing)
+
+
+func _wind_at(s: float, x: float) -> float:
+	## m/s at 700 m over (s, x): a steady breeze, more under a storm (the weather has no wind field: its storms)
+	var w := 5.0
+	if clouds and clouds.has_method("storms"):
+		for st in clouds.storms():
+			var d := Vector2(StationGeo.wrap_ds(float(st.s) - s), float(st.x) - x).length()
+			var rr := float(st.radius) * 1.4
+			if d < rr:
+				w = maxf(w, 5.0 + 12.0 * float(st.intensity) * (1.0 - d / rr) + (4.0 if st.thunder else 0.0))
+	return w
+
+
 func _sim_step(delta: float) -> void:
 	var n := islands.size()
 	if _sim_b.size() != n:
@@ -190,10 +215,16 @@ func _sim_step(delta: float) -> void:
 	var h := 1.0 / SIM_HZ
 	while _sim_acc >= h:
 		_sim_acc -= h
+		if drift.mooring and sky:
+			drift.mooring.now_h = sky.now_hours()
 		drift.step(h)
 		for i in n:
 			_sim_a[i] = _sim_b[i]
 			_sim_b[i] = drift.transform(i)
+		if drift.mooring and not drift.mooring.snapped.is_empty():
+			for i in drift.mooring.snapped:
+				_sim_a[i] = _sim_b[i]
+				_snap[i] = true
 
 
 func _sim_transform(i: int) -> Transform3D:
@@ -237,7 +268,12 @@ func _place_one(i: int, delta: float) -> void:
 		var t := _sim_transform(i)
 		var tp := _target_prev[i]
 		# (a turn of more than ~0.002 rad moves the basis' columns by about that: compared without quaternions)
-		if t.origin.distance_squared_to(tp.origin) > jump * jump or (t.basis.x - tp.basis.x).length_squared() \
+		if _snap.has(i):
+			# (the clock was set: the mooring placed it where the calendar has it -- straight there, no easing)
+			_snap.erase(i)
+			_corr[i] = Transform3D.IDENTITY
+			_last[i] = t
+		elif t.origin.distance_squared_to(tp.origin) > jump * jump or (t.basis.x - tp.basis.x).length_squared() \
 				+ (t.basis.z - tp.basis.z).length_squared() > 8e-6:
 			# the frame jumped: keep the island where it was (its actual transform last tick), and ease from there
 			_corr[i] = t.affine_inverse() * _last[i]

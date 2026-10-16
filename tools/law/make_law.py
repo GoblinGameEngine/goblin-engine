@@ -124,6 +124,17 @@ def main():
                       "law_of": cities[cid]["basis_city"], "state": cities[cid]["state"], "distance_km": dist, "ties": why,
                       "centre": here, "fast_travel": t in LAW.FAST_TRAVEL_TIERS})
     table.sort(key=lambda r: -r["pop"])
+    # each town's city limits and flea market (research/flea_markets/00_plan.md §1.1: tools/markets/site_markets.py
+    # writes them into flea_markets.json; kept here so a rerun of this tool doesn't drop them)
+    fmp = os.path.join(ROOT, "godot_project", "remake", "markets", "flea_markets.json")
+    if os.path.exists(fmp):
+        fm = {m["town"]: m for m in json.load(open(fmp))["markets"]}
+        for r in table:
+            m = fm.get(r["name"])
+            if m:
+                r["market"] = m["id"]
+                if m.get("limits_sx"):
+                    r["limits"] = m["limits_sx"]
     ords = {"_about": "The station's street ordinances (tools/law/canon_law.py; research/law/). Each city's rules are the station's own law modelled on its basis city; the state baselines quote the Ohio Revised Code.",
             "state": LAW.STATE, "cities": [dict(c, cross_sections=cross_sections(c)) for c in LAW.CITIES],
             "subdivision": LAW.SUBDIVISION, "park_lane_m": PARK,

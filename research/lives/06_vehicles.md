@@ -6,47 +6,47 @@ As with the buildings, these are **types and roles, not designs**. The station's
 
 **Priority 1** means the engine already asks for it: a commute mode, a place's machinery, a trait, a job. Priority 2 comes with the next systems (deliveries, emergencies, harbours, the rail line). Priority 3 adds variety and colour. Counts by priority: 1: 23, 2: 39, 3: 78. **Already modelled:** `city_car` (pod (2-seat)), `minivan` (van), `delivery_van` (van (can take a shop livery)), `service_van` (van (with ladder rack and livery)), `personal_aerostat` (aerostat).
 
-**Station count** is how many the present station (95002 households, 214134 residents, 10031 place units) needs. It combines the place units' fleets (`per_place` × the number of units of each type), the households' own vehicles (drawn per household from the residents' car access, commute, age, family, finances, farm or trade, and resort town), and one rail line.
+**Station count** is how many the present station (95054 households, 214263 residents, 10078 place units) needs. It combines the place units' fleets (`per_place` × the number of units of each type), the households' own vehicles (drawn per household from the residents' car access, commute, age, family, finances, farm or trade, and resort town), and one rail line.
 
-## Household vehicles (people's own) (24 types, 270498 on the station)
+## Household vehicles (people's own) (24 types, 270677 on the station)
 
 | vehicle | pri | size L×W×H m, seats | who / where | station count | states | npc actions |
 |---|---|---|---|---|---|---|
-| **City car / small hatchback** `city_car` (exists: pod (2-seat)) | 1 | 3.6×1.7×1.5, 4 | young adults, singles, low wages, second cars · *The pod is the station's city car.* | 22552 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Sedan** `sedan` | 1 | 4.8×1.85×1.45, 5 | the default private car; older drivers | 35307 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Station wagon / estate** `station_wagon` | 3 | 4.8×1.85×1.5, 5 | families with dogs, gear, groceries | 2055 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Crossover / SUV** `crossover_suv` | 1 | 4.7×1.9×1.7, 5 | families; the commonest new car | 32311 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Full-size SUV** `full_size_suv` | 2 | 5.3×2×1.9, 7 | large families, the comfortable, towing | 5607 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Minivan / people carrier** `minivan` (exists: van) | 1 | 5.1×2×1.8, 7 | families with young children; carpools | 9047 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied, sliding_door_open | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Pickup truck** `pickup_truck` | 1 | 5.8×2×1.9, 5 | farmers, builders, fishers, mechanics, rural households | 18948 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied, tailgate_open, bed_loaded | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child, load_bed |
-| **Sports car / coupe** `sports_car` | 3 | 4.5×1.85×1.3, 2 | the wealthy, the young who spend | 995 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Convertible** `convertible` | 3 | 4.6×1.85×1.35, 4 | resort towns, retirees, show-offs | 937 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied, roof_down | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Luxury sedan** `luxury_sedan` | 2 | 5.1×1.9×1.5, 5 | the wealthy: doctors, lawyers, bankers | 2671 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
-| **Motorcycle** `motorcycle` | 2 | 2.2×0.8×1.2, 2 | some adults, mostly men 18-60; a second vehicle | 5196 | parked_on_stand, moving, headlight | mount, dismount, put_on_helmet, ride |
-| **Scooter / moped** `scooter_moped` | 2 | 1.8×0.7×1.15, 2 | 16-17s, students, adults without a car | 1974 | parked_on_stand, moving | mount, dismount, ride |
-| **Bicycle (adult)** `bicycle` | 1 | 1.8×0.6×1.1, 1 | commute_mode bike; leisure riders; bike rentals · *NPC cyclists ride it (NpcBike); parked ones by their owners' doors are the player's to ride.* | 55800 | parked_in_rack, leaning, moving | mount, dismount, pedal, push_walking, lock_to_rack |
-| **Child's bicycle** `child_bicycle` | 2 | 1.3×0.5×0.8, 1 | children 4-12 | 16452 | lying_on_lawn, moving | pedal, fall_off |
-| **Cargo bike / e-bike** `cargo_bike` | 3 | 2.4×0.7×1.1, 3 | carless parents, shop deliveries | 619 | parked, moving, box_loaded | mount, pedal, load |
+| **City car / small hatchback** `city_car` (exists: pod (2-seat)) | 1 | 3.6×1.7×1.5, 4 | young adults, singles, low wages, second cars · *The pod is the station's city car.* | 22537 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Sedan** `sedan` | 1 | 4.8×1.85×1.45, 5 | the default private car; older drivers | 35342 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Station wagon / estate** `station_wagon` | 3 | 4.8×1.85×1.5, 5 | families with dogs, gear, groceries | 2041 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Crossover / SUV** `crossover_suv` | 1 | 4.7×1.9×1.7, 5 | families; the commonest new car | 32295 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Full-size SUV** `full_size_suv` | 2 | 5.3×2×1.9, 7 | large families, the comfortable, towing | 5612 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Minivan / people carrier** `minivan` (exists: van) | 1 | 5.1×2×1.8, 7 | families with young children; carpools | 9044 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied, sliding_door_open | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Pickup truck** `pickup_truck` | 1 | 5.8×2×1.9, 5 | farmers, builders, fishers, mechanics, rural households | 19025 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied, tailgate_open, bed_loaded | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child, load_bed |
+| **Sports car / coupe** `sports_car` | 3 | 4.5×1.85×1.3, 2 | the wealthy, the young who spend | 987 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Convertible** `convertible` | 3 | 4.6×1.85×1.35, 4 | resort towns, retirees, show-offs | 938 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied, roof_down | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Luxury sedan** `luxury_sedan` | 2 | 5.1×1.9×1.5, 5 | the wealthy: doctors, lawyers, bankers | 2681 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | get_in_driver, get_in_passenger, get_out, open_boot_load, buckle_child |
+| **Motorcycle** `motorcycle` | 2 | 2.2×0.8×1.2, 2 | some adults, mostly men 18-60; a second vehicle | 5198 | parked_on_stand, moving, headlight | mount, dismount, put_on_helmet, ride |
+| **Scooter / moped** `scooter_moped` | 2 | 1.8×0.7×1.15, 2 | 16-17s, students, adults without a car | 1971 | parked_on_stand, moving | mount, dismount, ride |
+| **Bicycle (adult)** `bicycle` | 1 | 1.8×0.6×1.1, 1 | commute_mode bike; leisure riders; bike rentals · *NPC cyclists ride it (NpcBike); parked ones by their owners' doors are the player's to ride.* | 55827 | parked_in_rack, leaning, moving | mount, dismount, pedal, push_walking, lock_to_rack |
+| **Child's bicycle** `child_bicycle` | 2 | 1.3×0.5×0.8, 1 | children 4-12 | 16451 | lying_on_lawn, moving | pedal, fall_off |
+| **Cargo bike / e-bike** `cargo_bike` | 3 | 2.4×0.7×1.1, 3 | carless parents, shop deliveries | 618 | parked, moving, box_loaded | mount, pedal, load |
 | **Adult tricycle** `adult_tricycle` | 3 | 1.9×0.8×1.1, 1 | elders who can no longer balance | 664 | parked, moving | pedal |
-| **Kick scooter** `kick_scooter` | 3 | 0.9×0.4×1, 1 | children and teens | 10084 | lying, moving | kick_ride |
-| **Skateboard** `skateboard` | 3 | 0.8×0.2×0.1, 1 | teens | 6073 | carried, moving | push_ride, carry |
-| **Golf cart / neighbourhood vehicle** `golf_cart` | 3 | 2.4×1.2×1.8, 2 | retirees and resort households | 2229 | parked, moving | get_in, drive |
-| **Riding mower / lawn tractor** `riding_mower` | 3 | 1.8×1.1×1.1, 1 | houses with lawns; groundskeepers | 23606 | in_shed, mowing | ride_mow |
-| **Motorhome / RV** `motorhome` | 3 | 9×2.5×3.5, 6 | retirees; lake-resort visitors | 2497 | parked, moving, awning_out, door_open | get_in, sit_under_awning |
-| **Travel trailer / camper** `camper_trailer` | 3 | 7×2.4×3, 0 | families who camp; parked beside houses | 1496 | parked, hitched | – |
-| **Utility trailer** `utility_trailer` | 3 | 3.5×1.8×1, 0 | rural households, builders, farmers | 8907 | parked, hitched, loaded | – |
-| **Boat on trailer** `boat_trailer` | 3 | 6.5×2.4×2.2, 0 | boat owners: in driveways and at the ramp | 4471 | parked, hitched, at_ramp | – |
+| **Kick scooter** `kick_scooter` | 3 | 0.9×0.4×1, 1 | children and teens | 10085 | lying, moving | kick_ride |
+| **Skateboard** `skateboard` | 3 | 0.8×0.2×0.1, 1 | teens | 6080 | carried, moving | push_ride, carry |
+| **Golf cart / neighbourhood vehicle** `golf_cart` | 3 | 2.4×1.2×1.8, 2 | retirees and resort households | 2231 | parked, moving | get_in, drive |
+| **Riding mower / lawn tractor** `riding_mower` | 3 | 1.8×1.1×1.1, 1 | houses with lawns; groundskeepers | 23627 | in_shed, mowing | ride_mow |
+| **Motorhome / RV** `motorhome` | 3 | 9×2.5×3.5, 6 | retirees; lake-resort visitors | 2504 | parked, moving, awning_out, door_open | get_in, sit_under_awning |
+| **Travel trailer / camper** `camper_trailer` | 3 | 7×2.4×3, 0 | families who camp; parked beside houses | 1498 | parked, hitched | – |
+| **Utility trailer** `utility_trailer` | 3 | 3.5×1.8×1, 0 | rural households, builders, farmers | 8947 | parked, hitched, loaded | – |
+| **Boat on trailer** `boat_trailer` | 3 | 6.5×2.4×2.2, 0 | boat owners: in driveways and at the ramp | 4474 | parked, hitched, at_ramp | – |
 
-## Personal mobility aids (6 types, 16764 on the station)
+## Personal mobility aids (6 types, 16799 on the station)
 
 | vehicle | pri | size L×W×H m, seats | who / where | station count | states | npc actions |
 |---|---|---|---|---|---|---|
-| **Manual wheelchair** `manual_wheelchair` | 1 | 1.1×0.65×0.9, 1 | mobility_aid wheelchair · *16 residents now; they currently walk with the slow gait.* | 1433 | occupied_moving, occupied_still, folded | wheel_self, be_pushed, push_wheelchair, transfer |
-| **Power wheelchair** `power_wheelchair` | 2 | 1.1×0.7×1, 1 | wheelchair users with less arm strength; elders | 355 | occupied_moving, occupied_still | joystick_drive, transfer |
-| **Mobility scooter** `mobility_scooter` | 2 | 1.4×0.65×1.1, 1 | elders with walkers or canes who go shopping | 1255 | parked, moving, basket_loaded | mount, drive |
-| **Rollator / walker** `rollator` | 1 | 0.7×0.6×0.9, 0 | mobility_aid walker · *The cane is a hand prop (NpcProps), not a vehicle.* | 3004 | pushed, sat_on | walk_with_rollator, sit_on_rollator |
-| **Baby stroller / pram** `baby_stroller` | 1 | 1×0.6×1.05, 1 | households with a child under 3 | 7569 | pushed, parked, hood_up, occupied | push_stroller, lift_child_out |
-| **Child's pull wagon** `child_wagon` | 3 | 1×0.5×0.5, 1 | families at the beach, park and fair | 3148 | pulled, loaded | pull_wagon |
+| **Manual wheelchair** `manual_wheelchair` | 1 | 1.1×0.65×0.9, 1 | mobility_aid wheelchair · *16 residents now; they currently walk with the slow gait.* | 1431 | occupied_moving, occupied_still, folded | wheel_self, be_pushed, push_wheelchair, transfer |
+| **Power wheelchair** `power_wheelchair` | 2 | 1.1×0.7×1, 1 | wheelchair users with less arm strength; elders | 357 | occupied_moving, occupied_still | joystick_drive, transfer |
+| **Mobility scooter** `mobility_scooter` | 2 | 1.4×0.65×1.1, 1 | elders with walkers or canes who go shopping | 1262 | parked, moving, basket_loaded | mount, drive |
+| **Rollator / walker** `rollator` | 1 | 0.7×0.6×0.9, 0 | mobility_aid walker · *The cane is a hand prop (NpcProps), not a vehicle.* | 3016 | pushed, sat_on | walk_with_rollator, sit_on_rollator |
+| **Baby stroller / pram** `baby_stroller` | 1 | 1×0.6×1.05, 1 | households with a child under 3 | 7582 | pushed, parked, hood_up, occupied | push_stroller, lift_child_out |
+| **Child's pull wagon** `child_wagon` | 3 | 1×0.5×0.5, 1 | families at the beach, park and fair | 3151 | pulled, loaded | pull_wagon |
 
 ## Hand-pushed carts at places (8 types, 2175 on the station)
 
@@ -86,7 +86,7 @@ As with the buildings, these are **types and roles, not designs**. The station's
 | **Refrigerated car** `reefer_car` | 3 | 18×3.2×4.6, 0 | the cannery, the ice plant, the fish houses · at: cannery 2 | 0 | coupled, on_siding, door_open | – |
 | **Track maintenance (hi-rail) truck** `hi_rail_truck` | 3 | 6.5×2.1×2.3, 3 | track crews · jobs: builder, mechanic | 1 | parked, charging, moving, doors_open, rear_open, working_lights, occupied, rail_wheels_down | – |
 
-## Commercial and trade (19 types, 1363 on the station)
+## Commercial and trade (19 types, 1364 on the station)
 
 | vehicle | pri | size L×W×H m, seats | who / where | station count | states | npc actions |
 |---|---|---|---|---|---|---|
@@ -108,9 +108,9 @@ As with the buildings, these are **types and roles, not designs**. The station's
 | **Armoured cash truck** `armored_truck` | 3 | 6.5×2.3×2.8, 3 | banks' cash runs · at: bank 0.2 · jobs: driver | 33 | parked, charging, moving, doors_open, rear_open, working_lights, occupied | carry_cash_bag |
 | **Hearse** `hearse` | 3 | 5.8×2×1.7, 2 | the funeral home · at: funeral_home 1 | 1 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied, rear_open | carry_coffin |
 | **Limousine / wedding car** `limousine` | 3 | 7.5×2×1.5, 8 | hotels, weddings, proms · at: hotel 0.1, funeral_home 0.5 · jobs: driver | 1 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | – |
-| **Company car / realtor's car** `company_car` | 3 | 4.8×1.85×1.5, 5 | agents, lawyers, managers on the road · at: insurance_office 0.3, law_office 0.2, bank 0.2 · jobs: agent · *A sedan or crossover with a business sign.* | 349 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | – |
+| **Company car / realtor's car** `company_car` | 3 | 4.8×1.85×1.5, 5 | agents, lawyers, managers on the road · at: insurance_office 0.3, law_office 0.2, bank 0.2 · jobs: agent · *A sedan or crossover with a business sign.* | 350 | parked, charging, moving, doors_open, boot_open, headlights, brake_lights, indicators, occupied | – |
 
-## Farm (15 types, 4687 on the station)
+## Farm (15 types, 4701 on the station)
 
 | vehicle | pri | size L×W×H m, seats | who / where | station count | states | npc actions |
 |---|---|---|---|---|---|---|
@@ -126,7 +126,7 @@ As with the buildings, these are **types and roles, not designs**. The station's
 | **Plough / disc harrow** `plough_disc` | 3 | 4×4×1.5, 0 | tillage · at: farm 0.5 | 17 | hitched, working | – |
 | **Skid-steer loader** `skid_steer` | 3 | 3×1.8×2, 1 | barns, builders' yards · at: farm 0.3, construction_yard 1 · jobs: farmhand, builder | 29 | parked, working, bucket_raised | – |
 | **UTV / side-by-side** `utv` | 2 | 3×1.6×1.9, 2 | farms, lifeguards, groundskeepers, parks · at: farm 0.5, lighthouse 0.5 · jobs: farmhand, farmer | 21 | parked, moving, bed_loaded | – |
-| **ATV / quad** `atv` | 3 | 2.1×1.2×1.2, 1 | farm checks, beach patrol, rural teens · at: farm 0.4 · jobs: farmhand | 4493 | parked, moving | – |
+| **ATV / quad** `atv` | 3 | 2.1×1.2×1.2, 1 | farm checks, beach patrol, rural teens · at: farm 0.4 · jobs: farmhand | 4507 | parked, moving | – |
 | **Livestock trailer** `livestock_trailer` | 3 | 7×2.4×2.4, 0 | livestock farms, the fair · at: farm 0.3 | 10 | parked, hitched, ramp_down | – |
 | **Farm flatbed truck** `farm_pickup_flatbed` | 3 | 6.5×2.4×2.2, 3 | feed, fencing, bales · at: farm 0.3 · jobs: farmer, farmhand | 10 | parked, charging, moving, doors_open, rear_open, working_lights, occupied, bed_loaded | – |
 
@@ -170,19 +170,19 @@ As with the buildings, these are **types and roles, not designs**. The station's
 | **Public works pickup** `public_works_pickup` | 2 | 5.8×2×1.9, 3 | the town's maintenance crew · 1 per town · at: town_hall 2 · jobs: builder, janitor | 68 | parked, charging, moving, doors_open, rear_open, working_lights, occupied, beacon_on | – |
 | **Park / grounds mower (zero-turn or gang)** `parks_mower` | 3 | 2.5×2×1.3, 1 | parks, schools, churchyards, the cemetery · at: school 0.5, park_pavilion 0.3, church 0.1 · jobs: janitor | 47 | in_shed, mowing | – |
 
-## Water (12 types, 7957 on the station)
+## Water (12 types, 7961 on the station)
 
 | vehicle | pri | size L×W×H m, seats | who / where | station count | states | npc actions |
 |---|---|---|---|---|---|---|
 | **Inshore fishing / lobster boat** `lobster_boat` | 1 | 11×3.8×3.5, 3 | fishers (commercial, day boats) · at: fish_house 2 · jobs: fisher | 0 | moored, underway, hauling, gulls_following | haul_traps, coil_rope, step_aboard |
 | **Trawler / dragger** `trawler` | 2 | 20×6×8, 5 | the cannery's supply · at: cannery 1.5 · jobs: fisher | 0 | moored, underway, nets_out, unloading | – |
-| **Skiff / small outboard boat** `fishing_skiff` | 2 | 5×1.9×1.2, 4 | part-time fishers, boat owners, bait shops · at: sporting_goods 0.5 · jobs: fisher | 3169 | moored, beached, underway, on_trailer | – |
+| **Skiff / small outboard boat** `fishing_skiff` | 2 | 5×1.9×1.2, 4 | part-time fishers, boat owners, bait shops · at: sporting_goods 0.5 · jobs: fisher | 3175 | moored, beached, underway, on_trailer | – |
 | **Rowboat / dinghy** `rowboat_dinghy` | 3 | 3.5×1.4×0.7, 3 | tenders at moorings, pond rentals | 877 | tied_up, rowed, upturned_on_shore | row |
-| **Canoe / kayak** `canoe_kayak` | 3 | 4.8×0.9×0.5, 2 | leisure on rivers and the lake; rentals · at: sporting_goods 2 | 2343 | racked, on_car_roof, paddled | paddle, carry_overhead |
-| **Sailboat** `sailboat` | 3 | 9×3×12, 6 | the yacht club, the comfortable · at: community_hall 0.5 · *Yacht Club is a community_hall hint in the registry.* | 242 | moored, sailing, sails_furled | – |
-| **Pontoon boat** `pontoon_boat` | 3 | 7.5×2.6×2.5, 10 | lake families, retirees, rentals | 709 | moored, underway | – |
-| **Cabin cruiser / motor yacht** `cabin_cruiser` | 3 | 12×4×4, 8 | the wealthy | 85 | moored, underway | – |
-| **Personal watercraft (jet ski)** `personal_watercraft` | 3 | 3.3×1.2×1.1, 2 | young people at resorts | 532 | on_trailer, underway | – |
+| **Canoe / kayak** `canoe_kayak` | 3 | 4.8×0.9×0.5, 2 | leisure on rivers and the lake; rentals · at: sporting_goods 2 | 2346 | racked, on_car_roof, paddled | paddle, carry_overhead |
+| **Sailboat** `sailboat` | 3 | 9×3×12, 6 | the yacht club, the comfortable · at: community_hall 0.5 · *Yacht Club is a community_hall hint in the registry.* | 240 | moored, sailing, sails_furled | – |
+| **Pontoon boat** `pontoon_boat` | 3 | 7.5×2.6×2.5, 10 | lake families, retirees, rentals | 706 | moored, underway | – |
+| **Cabin cruiser / motor yacht** `cabin_cruiser` | 3 | 12×4×4, 8 | the wealthy | 86 | moored, underway | – |
+| **Personal watercraft (jet ski)** `personal_watercraft` | 3 | 3.3×1.2×1.1, 2 | young people at resorts | 531 | on_trailer, underway | – |
 | **Passenger / car ferry** `ferry` | 2 | 45×12×10, 250 | across the lake: the Ferry Terminal · at: harbormaster 0.3 · jobs: dock_worker | 0 | docked_ramp_down, underway, horn | board_ferry, lean_on_rail |
 | **Workboat / harbour tug** `workboat_tug` | 3 | 15×5×6, 4 | the harbour, the boatyard, barges · at: boatyard 0.5, harbormaster 0.3 · jobs: dock_worker | 0 | moored, pushing, towing | – |
 | **Barge** `barge` | 3 | 40×11×3, 0 | gravel, grain and bulk goods on the lake · at: grain_elevator 0.3 | 0 | moored, under_tow, loaded | – |
@@ -215,7 +215,7 @@ As with the buildings, these are **types and roles, not designs**. The station's
 
 ## Totals
 
-305294 vehicles on the present station across 140 types. Household cars: 130430, for 95002 households (1.37 per household; the US average is about 1.9 including households with none). Bicycles: 55800 adult and 16452 children's.
+305527 vehicles on the present station across 140 types. Household cars: 130502, for 95054 households (1.37 per household; the US average is about 1.9 including households with none). Bicycles: 55827 adult and 16451 children's.
 
 ## Models (2026-09-30)
 - **Every type above has a model**: `godot_project/remake/vehicles/<id>.glb`, built from Grok's 2D reference images by the `ssc-asset` skill (`tools/assets`, `remake/blender/kit`): solid hulls with rigged wheels, open frames as cut-out panels, and the five people ride inside (tram, transit bus, school bus, train car, sightseeing trolley) hollow with interiors fitted from Grok's cutaway, plan and aisle views, at least 2.2 m floor to ceiling. The bicycle is hand-built (`remake/blender/vehicles/bicycle.py`).

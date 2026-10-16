@@ -24,7 +24,7 @@ import common as C  # noqa: E402
 
 SLAB, DECK, FENCE, BRIDGE, LARK = -1, -2, -3, -4, -5
 SRC_NAME = {SLAB: "floor slab", DECK: "deck", FENCE: "fence", BRIDGE: "bridge", LARK: "parked lark"}
-ASM_VERSION = 7
+ASM_VERSION = 8
 RAMP_UNDER = 0.2           # sky_warren.gd _ramp_under: every ramp quad is a slab this thick under its top
 LARK_BOX = ((-0.95, 0.0, -2.35), (0.95, 2.75, 2.35))   # sky_skiff (fleet/sky_skiff.blueprint.json: +-2.3 long, cabin 2.7)
 
@@ -284,7 +284,7 @@ def collision(W, P, K, deck, isl, bridges_down=False):
     # the island's own bodies
     gt = ground_top(W, P, K)
     dk = deck_tris(isl, W, gt)
-    fn = fence_tris(isl, deck)
+    fn = fence_tris(isl, deck, W.get("side", {}).get("moorings") if isinstance(W, dict) else None)
     br = bridge_tris(isl, bridges_down)
     lk = lark_tris(isl, deck)
     parts = [T, dk, fn, br, lk]
@@ -428,12 +428,13 @@ def deck_tris(isl, W, gt):
     return v.reshape(-1, 3, 3)
 
 
-def fence_tris(isl, deck):
-    """sky_island.gd _build_fence: a 1.4 x 0.12 box per ~3 m segment, none within a gap's half width + 1.5 m"""
+def fence_tris(isl, deck, moorings=None):
+    """sky_island.gd _build_fence: a 1.4 x 0.12 box per ~3 m segment, none within a gap's half width + 1.5 m (the
+    bridges' gaps, and the market moorings' -- the twin's moorings[].fence_gap, ASM 8)"""
     pts = isl.get("fence") or []
     if len(pts) < 2:
         return np.zeros((0, 3, 3))
-    gaps = isl.get("fence_gaps") or []
+    gaps = list(isl.get("fence_gaps") or []) + [m["fence_gap"] for m in (moorings or []) if m.get("fence_gap")]
     out = []
     n = len(pts)
     for i in range(n):

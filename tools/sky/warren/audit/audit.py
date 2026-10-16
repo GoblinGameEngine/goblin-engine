@@ -87,6 +87,14 @@ def run(iid, wdir=None, skip=(), out_dir=None, png=True, quiet=False):
                 "virtual_edges_status": dict(vs),
                 "nodes": int(len(W["nodes"])), "nodes_reached": len(W["reach"]), "nodes_reached_safe": len(W["reach_safe"]),
                 "floor_missing_rooms": sum(1 for d in W["doors"] if d.get("floor_missing"))}
+        # the market moorings' stations (tools/sky/warren/moorings.py): the walk from the street through the hall and
+        # the passage onto the berth deck -- its last node reached from the arrival over passing edges
+        ms = [m for m in (g.W["side"].get("moorings") or []) if m.get("kind") in ("pax", "cargo")]
+        walk["moor_stations"] = len(ms)
+        walk["moor_reached"] = sum(1 for m in ms if m.get("walk") and m["walk"][-1] in W["reach"])
+        walk["moor_safe"] = sum(1 for m in ms if m.get("walk") and m["walk"][-1] in W["reach_safe"])
+        walk["moor_unreached"] = [[m["kind"], m["side"], m["cell"], bool(m.get("connected"))] for m in ms
+                                  if not (m.get("walk") and m["walk"][-1] in W["reach"])]
     res = {"island": iid, "civ": g.W["civ"], "render_tris": int(len(g.rtri)), "collision_tris": int(len(g.ctri)),
            "placements": int(len(g.recs)), "times_s": {k: round(float(v), 2) for k, v in T.items()},
            "summary": {"%s/%s" % k: v for k, v in sorted(summ.items())}, "walk": walk,
@@ -128,6 +136,9 @@ def print_summary(res):
                                                                            if k != "ok"}, w["edges_tested_directed"],
                                              w["edges_status"], w["nodes_reached"], w["nodes"], w["nodes_reached_safe"],
                                              w["floor_missing_rooms"]))
+        if "moor_stations" in w:
+            print("  moorings: stations %d, berths reached %d (safe %d), unreached %s" % (
+                w["moor_stations"], w["moor_reached"], w["moor_safe"], w["moor_unreached"]))
     for k, v in res["summary"].items():
         tp = res["top_pieces"].get(k, [])[:3]
         print("  %-28s %6d   %s" % (k, v, ", ".join("%s %d" % x for x in tp)))
@@ -255,7 +266,8 @@ def main():
         w = r["walk"]
         if w:
             walk.update({"doors": w["doors"], "doors_ok": w["doors_ok"], "doors_reachable": w["doors_reachable"],
-                         "floor_missing_rooms": w["floor_missing_rooms"]})
+                         "floor_missing_rooms": w["floor_missing_rooms"], "moor_stations": w.get("moor_stations", 0),
+                         "moor_reached": w.get("moor_reached", 0), "moor_safe": w.get("moor_safe", 0)})
             for k, v in w["doors_status"].items():
                 walk["door " + k] += v
             for k, v in w["edges_status"].items():

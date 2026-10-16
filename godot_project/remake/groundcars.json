@@ -3,15 +3,15 @@
 		{
 			"id": "CAR-Bellhaven-1",
 			"kind": "pod",
-			"s": 21007.05,
+			"s": 21014.95,
 			"where": "Bellhaven",
 			"x": 2017.2,
-			"yaw": -1.5708
+			"yaw": 1.5708
 		},
 		{
 			"id": "CAR-Bellhaven-2",
 			"kind": "van",
-			"s": 21163.5,
+			"s": 21065.5,
 			"where": "Bellhaven",
 			"x": 2133.05,
 			"yaw": 3.1416
@@ -19,31 +19,31 @@
 		{
 			"id": "CAR-Bellhaven-3",
 			"kind": "pod",
-			"s": 20942.7,
+			"s": 21079.5,
 			"where": "Bellhaven",
-			"x": 1956.95,
-			"yaw": 0.0
+			"x": 2133.05,
+			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-Bellhaven-4",
 			"kind": "van",
-			"s": 20897.05,
+			"s": 21093.5,
 			"where": "Bellhaven",
-			"x": 2010.7,
-			"yaw": -1.5708
+			"x": 2133.05,
+			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-Bellhaven-5",
 			"kind": "pod",
-			"s": 20928.7,
+			"s": 20952.0,
 			"where": "Bellhaven",
-			"x": 1956.95,
-			"yaw": 0.0
+			"x": 2133.05,
+			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-Bellhaven-6",
 			"kind": "van",
-			"s": 21177.5,
+			"s": 20938.0,
 			"where": "Bellhaven",
 			"x": 2133.05,
 			"yaw": 3.1416
@@ -51,18 +51,18 @@
 		{
 			"id": "CAR-Bellhaven-7",
 			"kind": "pod",
-			"s": 20897.05,
+			"s": 21149.5,
 			"where": "Bellhaven",
-			"x": 1996.7,
-			"yaw": -1.5708
+			"x": 2133.05,
+			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-Bellhaven-8",
 			"kind": "van",
-			"s": 20897.05,
+			"s": 21163.5,
 			"where": "Bellhaven",
-			"x": 1982.7,
-			"yaw": -1.5708
+			"x": 2133.05,
+			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-Brightwater-1",
@@ -75,7 +75,7 @@
 		{
 			"id": "CAR-Brightwater-2",
 			"kind": "van",
-			"s": 54254.6,
+			"s": 54268.6,
 			"where": "Brightwater",
 			"x": -5082.45,
 			"yaw": 3.1416
@@ -83,9 +83,9 @@
 		{
 			"id": "CAR-Brightwater-3",
 			"kind": "pod",
-			"s": 54294.6,
+			"s": 54254.6,
 			"where": "Brightwater",
-			"x": -5267.86,
+			"x": -5082.45,
 			"yaw": 3.1416
 		},
 		{
@@ -163,15 +163,15 @@
 		{
 			"id": "CAR-Calder-5",
 			"kind": "pod",
-			"s": 26346.05,
+			"s": 26353.95,
 			"where": "Calder",
 			"x": 2532.6,
-			"yaw": -1.5708
+			"yaw": 1.5708
 		},
 		{
 			"id": "CAR-Calder-6",
 			"kind": "van",
-			"s": 26429.0,
+			"s": 26191.0,
 			"where": "Calder",
 			"x": 2446.65,
 			"yaw": 3.1416
@@ -179,15 +179,15 @@
 		{
 			"id": "CAR-Calder-7",
 			"kind": "pod",
-			"s": 26307.0,
+			"s": 26429.0,
 			"where": "Calder",
-			"x": 2558.65,
+			"x": 2446.65,
 			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-Calder-8",
 			"kind": "van",
-			"s": 26321.0,
+			"s": 26307.0,
 			"where": "Calder",
 			"x": 2558.65,
 			"yaw": 3.1416
@@ -291,7 +291,7 @@
 		{
 			"id": "CAR-DunmoreCrossing-5",
 			"kind": "pod",
-			"s": 13063.0,
+			"s": 13035.0,
 			"where": "Dunmore Crossing",
 			"x": -2154.95,
 			"yaw": 3.1416
@@ -381,7 +381,7 @@
 			"kind": "van",
 			"s": 43125.05,
 			"where": "Fenwick",
-			"x": -2086.2,
+			"x": -2098.92,
 			"yaw": -1.5708
 		},
 		{
@@ -413,7 +413,7 @@
 			"kind": "van",
 			"s": 7903.95,
 			"where": "Harrow Falls",
-			"x": 1909.67,
+			"x": 1909.71,
 			"yaw": 1.5708
 		},
 		{
@@ -421,7 +421,7 @@
 			"kind": "pod",
 			"s": 7903.95,
 			"where": "Harrow Falls",
-			"x": 1895.67,
+			"x": 1895.71,
 			"yaw": 1.5708
 		},
 		{
@@ -429,7 +429,7 @@
 			"kind": "van",
 			"s": 7903.95,
 			"where": "Harrow Falls",
-			"x": 1979.67,
+			"x": 1979.71,
 			"yaw": 1.5708
 		},
 		{
@@ -445,7 +445,7 @@
 			"kind": "van",
 			"s": 7903.95,
 			"where": "Harrow Falls",
-			"x": 1993.67,
+			"x": 1993.71,
 			"yaw": 1.5708
 		},
 		{
@@ -515,7 +515,7 @@
 		{
 			"id": "CAR-HavenPoint-1",
 			"kind": "pod",
-			"s": 12562.1,
+			"s": 12548.1,
 			"where": "Haven Point",
 			"x": -5098.05,
 			"yaw": 3.1416
@@ -523,39 +523,39 @@
 		{
 			"id": "CAR-HavenPoint-2",
 			"kind": "van",
+			"s": 12562.1,
+			"where": "Haven Point",
+			"x": -5098.05,
+			"yaw": 3.1416
+		},
+		{
+			"id": "CAR-HavenPoint-3",
+			"kind": "pod",
 			"s": 12451.1,
 			"where": "Haven Point",
 			"x": -5283.46,
 			"yaw": 3.1416
 		},
 		{
-			"id": "CAR-HavenPoint-3",
-			"kind": "pod",
+			"id": "CAR-HavenPoint-4",
+			"kind": "van",
 			"s": 12576.1,
 			"where": "Haven Point",
 			"x": -5098.05,
 			"yaw": 3.1416
 		},
 		{
-			"id": "CAR-HavenPoint-4",
-			"kind": "van",
+			"id": "CAR-HavenPoint-5",
+			"kind": "pod",
 			"s": 12437.1,
 			"where": "Haven Point",
 			"x": -5283.46,
 			"yaw": 3.1416
 		},
 		{
-			"id": "CAR-HavenPoint-5",
-			"kind": "pod",
-			"s": 12373.6,
-			"where": "Haven Point",
-			"x": -5182.15,
-			"yaw": 0.0
-		},
-		{
 			"id": "CAR-HavenPoint-6",
 			"kind": "van",
-			"s": 12359.6,
+			"s": 12373.6,
 			"where": "Haven Point",
 			"x": -5182.15,
 			"yaw": 0.0
@@ -563,7 +563,7 @@
 		{
 			"id": "CAR-HavenPoint-7",
 			"kind": "pod",
-			"s": 12345.6,
+			"s": 12359.6,
 			"where": "Haven Point",
 			"x": -5182.15,
 			"yaw": 0.0
@@ -571,10 +571,10 @@
 		{
 			"id": "CAR-HavenPoint-8",
 			"kind": "van",
-			"s": 12659.6,
+			"s": 12345.6,
 			"where": "Haven Point",
-			"x": -5190.05,
-			"yaw": 3.1416
+			"x": -5182.15,
+			"yaw": 0.0
 		},
 		{
 			"id": "CAR-Kessler-1",
@@ -611,10 +611,10 @@
 		{
 			"id": "CAR-Kessler-5",
 			"kind": "pod",
-			"s": 42505.05,
+			"s": 42512.95,
 			"where": "Kessler",
 			"x": 2285.0,
-			"yaw": -1.5708
+			"yaw": 1.5708
 		},
 		{
 			"id": "CAR-Kessler-6",
@@ -635,9 +635,9 @@
 		{
 			"id": "CAR-Kessler-8",
 			"kind": "van",
-			"s": 42447.0,
+			"s": 42550.0,
 			"where": "Kessler",
-			"x": 2138.05,
+			"x": 2306.05,
 			"yaw": 3.1416
 		},
 		{
@@ -747,9 +747,9 @@
 		{
 			"id": "CAR-Marlowe-8",
 			"kind": "van",
-			"s": 30186.8,
+			"s": 30048.0,
 			"where": "Marlowe",
-			"x": -1849.95,
+			"x": -2217.95,
 			"yaw": 3.1416
 		},
 		{
@@ -835,7 +835,7 @@
 		{
 			"id": "CAR-PelicanCove-3",
 			"kind": "pod",
-			"s": 49054.6,
+			"s": 49040.6,
 			"where": "Pelican Cove",
 			"x": 5189.05,
 			"yaw": 0.0
@@ -843,7 +843,7 @@
 		{
 			"id": "CAR-PelicanCove-4",
 			"kind": "van",
-			"s": 49068.6,
+			"s": 49054.6,
 			"where": "Pelican Cove",
 			"x": 5189.05,
 			"yaw": 0.0
@@ -851,31 +851,31 @@
 		{
 			"id": "CAR-PelicanCove-5",
 			"kind": "pod",
+			"s": 49068.6,
+			"where": "Pelican Cove",
+			"x": 5189.05,
+			"yaw": 0.0
+		},
+		{
+			"id": "CAR-PelicanCove-6",
+			"kind": "van",
 			"s": 48886.05,
 			"where": "Pelican Cove",
 			"x": 5289.1,
 			"yaw": 4.7124
 		},
 		{
-			"id": "CAR-PelicanCove-6",
-			"kind": "van",
+			"id": "CAR-PelicanCove-7",
+			"kind": "pod",
 			"s": 49082.6,
 			"where": "Pelican Cove",
 			"x": 5189.05,
 			"yaw": 0.0
 		},
 		{
-			"id": "CAR-PelicanCove-7",
-			"kind": "pod",
-			"s": 48927.8,
-			"where": "Pelican Cove",
-			"x": 5364.36,
-			"yaw": 3.1416
-		},
-		{
 			"id": "CAR-PelicanCove-8",
 			"kind": "van",
-			"s": 49039.8,
+			"s": 48927.8,
 			"where": "Pelican Cove",
 			"x": 5364.36,
 			"yaw": 3.1416
@@ -949,7 +949,7 @@
 			"kind": "pod",
 			"s": 36629.35,
 			"where": "Port Carrow",
-			"x": -4333.0,
+			"x": -4319.0,
 			"yaw": -1.5708
 		},
 		{
@@ -957,7 +957,7 @@
 			"kind": "van",
 			"s": 36537.25,
 			"where": "Port Carrow",
-			"x": -4267.3,
+			"x": -4253.3,
 			"yaw": 1.5708
 		},
 		{
@@ -973,7 +973,7 @@
 			"kind": "van",
 			"s": 36729.35,
 			"where": "Port Carrow",
-			"x": -4262.3,
+			"x": -4276.3,
 			"yaw": -1.5708
 		},
 		{
@@ -981,7 +981,7 @@
 			"kind": "pod",
 			"s": 36729.35,
 			"where": "Port Carrow",
-			"x": -4276.3,
+			"x": -4192.3,
 			"yaw": -1.5708
 		},
 		{
@@ -989,16 +989,16 @@
 			"kind": "van",
 			"s": 36729.35,
 			"where": "Port Carrow",
-			"x": -4192.3,
+			"x": -4178.3,
 			"yaw": -1.5708
 		},
 		{
 			"id": "CAR-PortCarrow-7",
 			"kind": "pod",
-			"s": 36729.35,
+			"s": 36537.25,
 			"where": "Port Carrow",
-			"x": -4178.3,
-			"yaw": -1.5708
+			"x": -4338.1,
+			"yaw": 1.5708
 		},
 		{
 			"id": "CAR-PortCarrow-8",
@@ -1187,26 +1187,26 @@
 		{
 			"id": "CAR-SolanaPoint-7",
 			"kind": "pod",
+			"s": 35106.4,
+			"where": "Solana Point",
+			"x": 4495.05,
+			"yaw": 3.1416
+		},
+		{
+			"id": "CAR-SolanaPoint-8",
+			"kind": "van",
 			"s": 35051.16,
 			"where": "Solana Point",
 			"x": 4463.11,
 			"yaw": 1.7535
 		},
 		{
-			"id": "CAR-SolanaPoint-8",
-			"kind": "van",
-			"s": 35037.25,
-			"where": "Solana Point",
-			"x": 4456.3,
-			"yaw": 1.5708
-		},
-		{
 			"id": "CAR-Tamarack-1",
 			"kind": "pod",
-			"s": 56369.6,
+			"s": 56468.7,
 			"where": "Tamarack",
-			"x": 2206.05,
-			"yaw": 3.1416
+			"x": 2029.95,
+			"yaw": 0.0
 		},
 		{
 			"id": "CAR-Tamarack-2",
@@ -1219,7 +1219,7 @@
 		{
 			"id": "CAR-Tamarack-3",
 			"kind": "pod",
-			"s": 56340.7,
+			"s": 56346.7,
 			"where": "Tamarack",
 			"x": 2305.95,
 			"yaw": 0.0
@@ -1227,23 +1227,23 @@
 		{
 			"id": "CAR-Tamarack-4",
 			"kind": "van",
-			"s": 56438.7,
-			"where": "Tamarack",
-			"x": 2305.95,
-			"yaw": 0.0
-		},
-		{
-			"id": "CAR-Tamarack-5",
-			"kind": "pod",
 			"s": 56551.0,
 			"where": "Tamarack",
 			"x": 2206.05,
 			"yaw": 3.1416
 		},
 		{
+			"id": "CAR-Tamarack-5",
+			"kind": "pod",
+			"s": 56444.7,
+			"where": "Tamarack",
+			"x": 2305.95,
+			"yaw": 0.0
+		},
+		{
 			"id": "CAR-Tamarack-6",
 			"kind": "van",
-			"s": 56452.7,
+			"s": 56458.7,
 			"where": "Tamarack",
 			"x": 2305.95,
 			"yaw": 0.0
@@ -1251,7 +1251,7 @@
 		{
 			"id": "CAR-Tamarack-7",
 			"kind": "pod",
-			"s": 56466.7,
+			"s": 56472.7,
 			"where": "Tamarack",
 			"x": 2305.95,
 			"yaw": 0.0
@@ -1259,15 +1259,15 @@
 		{
 			"id": "CAR-Tamarack-8",
 			"kind": "van",
-			"s": 56519.95,
+			"s": 56565.0,
 			"where": "Tamarack",
-			"x": 2274.0,
-			"yaw": 1.5708
+			"x": 2206.05,
+			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-TernHarbor-1",
 			"kind": "pod",
-			"s": 18627.8,
+			"s": 18613.8,
 			"where": "Tern Harbor",
 			"x": -5295.36,
 			"yaw": 0.0
@@ -1275,7 +1275,7 @@
 		{
 			"id": "CAR-TernHarbor-2",
 			"kind": "van",
-			"s": 18627.8,
+			"s": 18613.8,
 			"where": "Tern Harbor",
 			"x": -5304.84,
 			"yaw": 3.1416
@@ -1283,7 +1283,7 @@
 		{
 			"id": "CAR-TernHarbor-3",
 			"kind": "pod",
-			"s": 18613.8,
+			"s": 18599.8,
 			"where": "Tern Harbor",
 			"x": -5295.36,
 			"yaw": 0.0
@@ -1291,7 +1291,7 @@
 		{
 			"id": "CAR-TernHarbor-4",
 			"kind": "van",
-			"s": 18613.8,
+			"s": 18599.8,
 			"where": "Tern Harbor",
 			"x": -5304.84,
 			"yaw": 3.1416
@@ -1299,7 +1299,7 @@
 		{
 			"id": "CAR-TernHarbor-5",
 			"kind": "pod",
-			"s": 18599.8,
+			"s": 18585.8,
 			"where": "Tern Harbor",
 			"x": -5295.36,
 			"yaw": 0.0
@@ -1307,7 +1307,7 @@
 		{
 			"id": "CAR-TernHarbor-6",
 			"kind": "van",
-			"s": 18599.8,
+			"s": 18585.8,
 			"where": "Tern Harbor",
 			"x": -5304.84,
 			"yaw": 3.1416
@@ -1315,18 +1315,18 @@
 		{
 			"id": "CAR-TernHarbor-7",
 			"kind": "pod",
-			"s": 18585.8,
+			"s": 18626.2,
 			"where": "Tern Harbor",
-			"x": -5295.36,
-			"yaw": 0.0
+			"x": -5120.05,
+			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-TernHarbor-8",
 			"kind": "van",
-			"s": 18585.8,
+			"s": 18515.8,
 			"where": "Tern Harbor",
-			"x": -5304.84,
-			"yaw": 3.1416
+			"x": -5295.36,
+			"yaw": 0.0
 		},
 		{
 			"id": "CAR-VictoryBay-1",
@@ -1347,50 +1347,50 @@
 		{
 			"id": "CAR-VictoryBay-3",
 			"kind": "pod",
-			"s": 7703.95,
+			"s": 7642.4,
 			"where": "Victory Bay",
-			"x": -560.0,
-			"yaw": 1.5708
+			"x": -605.97,
+			"yaw": 3.1416
 		},
 		{
 			"id": "CAR-VictoryBay-4",
 			"kind": "van",
 			"s": 7642.4,
 			"where": "Victory Bay",
-			"x": -605.97,
-			"yaw": 3.1416
-		},
-		{
-			"id": "CAR-VictoryBay-5",
-			"kind": "pod",
-			"s": 7642.4,
-			"where": "Victory Bay",
 			"x": -594.03,
 			"yaw": 0.0
 		},
 		{
-			"id": "CAR-VictoryBay-6",
-			"kind": "van",
+			"id": "CAR-VictoryBay-5",
+			"kind": "pod",
 			"s": 7703.95,
 			"where": "Victory Bay",
 			"x": -546.0,
 			"yaw": 1.5708
 		},
 		{
-			"id": "CAR-VictoryBay-7",
-			"kind": "pod",
+			"id": "CAR-VictoryBay-6",
+			"kind": "van",
 			"s": 7628.4,
 			"where": "Victory Bay",
 			"x": -605.97,
 			"yaw": 3.1416
 		},
 		{
-			"id": "CAR-VictoryBay-8",
-			"kind": "van",
+			"id": "CAR-VictoryBay-7",
+			"kind": "pod",
 			"s": 7628.4,
 			"where": "Victory Bay",
 			"x": -594.03,
 			"yaw": 0.0
+		},
+		{
+			"id": "CAR-VictoryBay-8",
+			"kind": "van",
+			"s": 7703.95,
+			"where": "Victory Bay",
+			"x": -532.0,
+			"yaw": 1.5708
 		},
 		{
 			"id": "CAR-FARM-02",

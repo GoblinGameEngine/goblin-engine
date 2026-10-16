@@ -24,6 +24,7 @@ const SURF := {
 }
 const ROAD_CLASS := {"hwy": "asphalt", "main": "asphalt", "county": "asphalt", "street": "street", "alley": "street", "gravel": "gravel"}
 const CELL := 32.0
+const PAVED_AREAS := ["parking", "market_floor", "culdesac"]
 
 static var _loaded := false
 static var _waves: Array = []        # [n (cycles/m), direction (unit), phase, share of the band's amplitude]
@@ -69,6 +70,11 @@ static func at(p: Vector2) -> String:
 			best = ROAD_CLASS.get(str(roads[int(seg[j + 9])].get("cls", "street")), "street")
 	if best != "":
 		return best
+	# paved town areas before the land cover (a lot inside the built-up ground read "lawn"): car parks and the flea
+	# markets' floors are asphalt (research/flea_markets/00_plan.md §0 "Parking" gotcha)
+	var ak := MapTerrain.area_kind(p.x, p.y)
+	if ak in PAVED_AREAS:
+		return "asphalt"
 	match MapTerrain.landcover(p.x, p.y).x:
 		1:
 			return "lawn"
@@ -80,7 +86,7 @@ static func at(p: Vector2) -> String:
 			return "field"
 		5:
 			return "woods"
-	return "dirt" if MapTerrain.area_kind(p.x, p.y) in ["parking", "schoolground"] else "lawn"
+	return "dirt" if ak == "schoolground" else "lawn"
 
 
 static func props(name: String) -> Array:

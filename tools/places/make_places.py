@@ -37,6 +37,8 @@ SHELLS = {
     "strip_unit": "a unit in a strip of shops",
     "tower": "a lighthouse, lifeguard tower or water tower",
     "station_module": "a purpose-built station facility (future buildings)",
+    "stall": "a flea market's floor: its sheds' bays and open pitches (research/flea_markets; one unit per market)",
+    "market_office": "a flea market's office and gate house (one per market)",
 }
 
 # type id: name, category, shells, jobs {occupation: n}, hours [open, close, days], visits [(purpose,
@@ -174,6 +176,14 @@ pt("park_pavilion", "Bandstand / pavilion", "leisure", ["pavilion"], {}, ["00:00
    fixtures=["benches", "stage"], hints=["bandstand", "shelter", "ticket", "cafe"])
 pt("gym", "Gym / fitness", "leisure", SF + ["big_box"], {"shop_clerk": 1}, ["05:00", "22:00", ALL], [("workout", 0.3, "age >= 15", 60)], price=1, per1000=0.1,
    fixtures=["weights", "mats", "lockers"], machinery=["treadmills", "machines"], hints=[], m2_per_job=90)
+# -- the flea markets (research/flea_markets/00_plan.md §3.5): one unit per market (tools/places/bake_places.py, from
+#    remake/markets/flea_markets.json); its vendors are FleaVendors draws, not posts (handoff_world.md decision 4); its
+#    hours are FleaCalendar's (NpcPlaces.open_on: Fri-Sun, every day of a Bright Week or a Sky Holiday)
+pt("flea_stall", "Flea market", "retail", ["stall"], {}, ["09:00", "18:00", "fri-sun"], [("flea", 0.35, "age >= 13", 75)], third=True, price=0,
+   fixtures=["shed_bays", "open_pitches", "food_trucks", "festoons"], stock=["second_hand_goods", "crafts", "produce", "food"],
+   signage="pylon", roles=["shopkeeper", "cashier", "regular"], note="FleaCalendar.state decides the hours; FleaVendors who sells")
+pt("flea_office", "Flea market office", "civic", ["market_office"], {"clerk": 2, "janitor": 2}, ["07:00", "19:00", "fri-sun"], [], price=0,
+   fixtures=["counter", "pitch_board", "lost_and_found", "first_aid"], signage="board", roles=["manager", "office_clerk", "security_guard"])
 # -- lodging
 pt("hotel", "Hotel", "lodging", ["hotel"], {"hotel_worker": 6, "cook": 2, "waiter": 2, "janitor": 2, "clerk": 1}, ["00:00", "24:00", ALL], [], price=2,
    fixtures=["lobby_desk", "guest_rooms", "dining_room"], hints=["tavern_hotel"], m2_per_job=110)

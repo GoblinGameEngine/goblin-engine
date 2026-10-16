@@ -89,6 +89,12 @@ func _ready() -> void:
 	add_child(light_field)
 	light_field.build(street_lights)
 	_mark("street lights setup")
+	# the flea markets (research/flea_markets: sheds, stalls, signs, what's open by FleaCalendar)
+	var flea := FleaMarkets.new()
+	add_child(flea)
+	flea.target = player
+	flea.setup()
+	_mark("flea markets setup")
 	var walks := CoastalWalks.new()
 	walks.name = "Walks"
 	add_child(walks)

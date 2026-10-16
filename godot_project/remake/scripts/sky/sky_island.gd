@@ -874,7 +874,12 @@ func _build_fence() -> void:
 	var pts: Array = data.get("fence", [])
 	if pts.size() < 2:
 		return
-	var gaps: Array = data.get("fence_gaps", [])
+	var gaps: Array = (data.get("fence_gaps", []) as Array).duplicate()
+	# (and in front of the market moorings' stations, line houses and davit: tools/sky/warren/moorings.py)
+	if sys and sys.drift and sys.drift.mooring:
+		for mo in sys.drift.mooring.moor.get(str(data.id), []):
+			if (mo as Dictionary).has("fence_gap"):
+				gaps.append(mo.fence_gap)
 	var xf: Array[Transform3D] = []
 	var body := StaticBody3D.new()
 	body.name = "FenceBody"
@@ -1127,7 +1132,16 @@ func _build_props() -> void:
 
 # ------------------------------------------------------------------ cargo
 func _hoist_step(delta: float) -> void:
+	# (moored and anchored to the ground: the gondolas carry the cargo, the hoists rest -- a lashed follower's hoists
+	# still drop its loads to open ground, 00 §5.3)
+	var rest := false
+	if sys and sys.drift and sys.drift.mooring and sys.drift.mooring.is_moored(idx):
+		rest = bool(sys.drift.mooring.members[idx].get("ground", false))
 	for h in _hoists:
+		if rest and h.state == "idle":
+			h.t = maxf(float(h.t), 30.0)
+			_draw_line(h, h.top)
+			continue
 		var top: Vector3 = h.top
 		var depth := _ground_depth(top)
 		match h.state:

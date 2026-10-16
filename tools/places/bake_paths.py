@@ -185,6 +185,25 @@ def main():
         e = next(ei for ei in by_road[ri] if edges[ei][3] - 1e-6 <= u <= edges[ei][4] + 1e-6)
         attach[b["id"]] = [e, round(u, 4), round(hit[0], 1)]
 
+    # the flea markets (bake_places.py's units; no placement structure): attached where their access drive meets the
+    # lot (flea_markets.json entrances "access"), so walkers and drivers come up the drive
+    fmp = os.path.join(ROOT, "godot_project", "remake", "markets", "flea_markets.json")
+    if os.path.exists(fmp):
+        for m_ in json.load(open(fmp))["markets"]:
+            if not m_.get("sited"):
+                continue
+            f_ = m_["frame"]
+            acc = next((e_ for e_ in m_["entrances"] if e_[3] == "access"), [0.0, -1.0])
+            ca_, sa_ = math.cos(f_["yaw"]), math.sin(f_["yaw"])
+            pt_ = ((f_["s"] + acc[0] * ca_ - (acc[1] - 2.0) * sa_) % CIRC, f_["x"] + acc[0] * sa_ + (acc[1] - 2.0) * ca_)
+            hit = nearest(pt_, maxd=ATTACH, cells=2, streets_only=True)
+            if not hit:
+                far += 1
+                continue
+            _, ri, u = hit
+            e = next(ei for ei in by_road[ri] if edges[ei][3] - 1e-6 <= u <= edges[ei][4] + 1e-6)
+            attach[m_["id"]] = [e, round(u, 4), round(hit[0], 1)]
+
     # connectivity report
     par = list(range(len(nodes)))
 

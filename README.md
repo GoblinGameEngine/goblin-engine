@@ -32,6 +32,10 @@ heritages (Black Anglo families in a Maghrebi medina, Irish-Scots in a Scots clo
 of the blend. The islands dock into rafts, trail 300 m banners advertising their names and wares, fly their own
 flags, and come down to trade.
 
+Where they come down is the **flea markets**: every town keeps a weekend market with a mooring ground beside it.
+Islands book a stay, descend to 600 m, drop their crews by cage, rig trading tents and run gondolas you can ride.
+Five moored islands make a Bright Week of lights; seven at a small town shut the shops for a Sky Holiday.
+
 | | |
 |---|---|
 | ![Island banners seen from below](docs/media/2026-10-16/banners_from_below.jpg) | ![Calder's shop street at night](docs/media/2026-10-16/calder_signs_night.jpg) |
@@ -39,37 +43,37 @@ flags, and come down to trade.
 | ![An island lane by day](docs/media/2026-10-16/island_lane_day.jpg) | ![The Communicator's Date & Time app](docs/media/2026-10-16/datetime_app.jpg) |
 | A medina lane on a floating city | The Communicator's new Date & Time app |
 
-### What's new (2026-10-16)
-- **Floating cities you can walk all of.**
-  - 47,350 of 47,357 doors on the 100 islands can be reached and entered on foot from the arrival point, with no
-    jumping. That is checked by an offline audit that agrees with in-game walks.
-  - Stairs are smooth ramps, arches and doorways are clear openings of at least 1.0 × 2.2 m, and every lane has a
-    floor.
-  - Paved paths cross the greens, and grass blades sway in the wind.
-- **No more flicker.**
-  - The kit's overlapping faces are fixed at the source (0 left).
-  - Island shadows and the station floor seen from aloft are steady.
-- **Smoother level of detail:** a new middle level of detail, about 39 % of the full triangles, between the full pieces
-  and the distant boxes.
-- **Night:**
-  - pools of light at lamps and shopfronts, dark between them, with light carried in the air that fades as you
-    leave town;
-  - signs that glow only where they should, readable at night.
-- **Signs everywhere:**
-  - 3,354 shop name boards and about 870 office plaques across the 22 towns;
-  - island shopfront signs in each island's own style;
-  - 100 island flags;
-  - five sign styles per region, sharing a regional heritage.
-- **A calendar:** day 0 is Wednesday, 24 May 2752. The Communicator's Date & Time app sets the time, day and date, and
-  the sky, lights, people and traffic follow.
-- **The canon grows:**
-  - Islanders now come down often, and half their children settle on the surface as **Lowliners**. Lowliners are
-    liked in the North and meet real friction in the poorer South.
-  - Every town keeps a mooring ground by its weekend **flea market**.
-  - Five moored islands make a Bright Week; seven at a small town make a Sky Holiday. The market build is next.
+### What's new (2026-10-16, second update: the flea markets)
+- **A flea market in every town — all 22, 2,660 stalls.** Gravel lots with striped bays and lamp poles, covered shed
+  rows, open rows with fire lanes, food truck courts, entrance arches, lettered market boards and pylon signs, each
+  fitted to its town's free land by a siting search. Victory Bay had no free land, so **The Regatta Swap floats on a
+  pier over the water**.
+- **A real market week.** Markets run Friday to Sunday with setup, lantern-lit evenings and teardown. 21,280
+  townsfolk hold stalls as a weekend second job, drawn from the real population; hundreds of out-of-town shoppers
+  drive in on market days.
+- **The islands come down to trade.** Every floating city got a mooring quarter: 191 gondola stations, 255 line
+  houses, 88 crew davits, joined to the island walk nets. Islands book stays on a pure weekly calendar, descend to
+  600 m, drop crews, rig tents and hawsers, and cast off again; rafts lash together and banners furl. Gondolas are
+  rideable jig-back cabins at 8 m/s, and winds over 9 m/s hold everything.
+- **Bright Weeks and Sky Holidays.** Five islands in service light the whole lot; seven at a small town shut the
+  shops (Loomis Grove: 91 of 105 units), ring the market with islander tents and fill the town with a holiday fair.
+- **From across the ring** the market lots now show by day and glow by night (the far side rebaked, 400 tiles day
+  and night).
+- Under the hood: the whole sky-drift step with moorings costs 2.8 ms (was 15), two generator regressions the
+  offline audit caught are fixed, and a bake-stamp bug that silently rebuilt roads on every load is gone.
+
+| | |
+|---|---|
+| ![Calder's market on a Friday from above](docs/media/2026-10-16/market_calder_day_high.png) | ![Victory Bay's floating pier market](docs/media/2026-10-16/market_victorybay_pier_high.jpg) |
+| Calder's market on a market Friday | The Regatta Swap: Victory Bay's market floats on a pier |
+| ![A market aisle at Solana Point](docs/media/2026-10-16/market_solana_aisle.png) | ![Calder's market at night](docs/media/2026-10-16/market_calder_night_lot.png) |
+| A shed aisle at Solana Point | Calder's lot after dark: lamp poles and festoons |
+| ![A host island moored over Solana Point](docs/media/2026-10-16/sky_mooring_fm_sol_host_day.png) | ![Loomis Grove's Sky Holiday](docs/media/2026-10-16/market_loomis_holiday_tents.png) |
+| A host island moored at 600 m over its market | A Sky Holiday: islander tents ring Loomis Grove's market |
 
 ![Offline render of SKY-022 from the audit toolkit, no game running](docs/media/2026-10-16/audit_SKY-022_aerial.png)
-*Offline render of SKY-022 from the audit toolkit, with no game running.*
+*Offline render of SKY-022 from the audit toolkit, with no game running. The same morning's update made all 100
+floating cities walkable door to door — see [CHANGELOG.md](CHANGELOG.md).*
 
 ## The tools that build it
 
@@ -82,6 +86,9 @@ Each tool is a script you can rerun. The world is regenerated, not hand-placed.
 | `tools/sky/warren/` | The floating-city generator: it grows each island on a 3 × 3 × 3.2 m lattice in epochs, then a walk network, doors, paths, chunks and LODs |
 | `remake/blender/sky/warren_kit/` | The 402-piece warren kit, plus its middle-detail versions, ramp and frame collision, and its own flicker and bounds checks |
 | **`tools/sky/warren/audit/`** | **The offline geometry audit.** It assembles an island exactly as the game builds it (render and collision), then checks for holes, cracks, non-manifold and bad-normal meshes, z-fighting, floating pieces, pieces outside their bounds, and intrusions. Its walk simulation sweeps the player's capsule along every route to every door. It is verified by 11/11 mutation tests and against in-game walks, and renders offline views |
+| `tools/markets/` | The flea markets: the 22 markets as numbers, a layout planner (lots, sheds, rows, moorings), a siting search over each town's free land, vendor pools from the real population, and `check_markets.py` |
+| `remake/blender/markets/` | The 162-piece market kit (sheds, tents, signs, gondola cabins, ropeway gear), built in pure Python like the warren kit, with its own audit |
+| `tools/sky/warren/moorings.py` | Mooring quarters on every island: station sites, walks, plinths and signal masts, surveyed across all 100 islands |
 | `tools/signs/` | Sign sheets from 2D reference art, cut into atlases. It also renders each shop's real name in its region's style |
 | `tools/bible/` | The game bible: canon for the world, its people, history and the islands, generated into `remake/bible` |
 | `.claude/skills/ssc-asset`, `tools/assets/` | The asset pipeline. Grok makes 2D reference images only; every model is built in Blender from them, reproducibly |
@@ -146,15 +153,15 @@ Panel > Controls.
 ## Roadmap
 
 In this order:
-1. **The flea markets:** a weekend market in every town, island moorings and gondolas, trading tents, Bright Weeks and
-   Sky Holidays, a secondary economy that melds the American swap meet with the bazaar, and Lowliner neighbourhoods
-   in the South Sea cities.
-2. **A player body:** a full body with a head (never seen from inside), crouch, ledge hang and climb, and modern
+1. **A player body:** a full body with a head (never seen from inside), crouch, ledge hang and climb, and modern
    first-person movement. The same animations drive every human NPC.
-3. **The ship-blocker pass:** every clipping, non-manifold and bad-normal problem found and fixed project-wide, with
+2. **The ship-blocker pass:** every clipping, non-manifold and bad-normal problem found and fixed project-wide, with
    the audit grown into a general geometry toolkit.
-4. **Animals:** the ark's larger land mammals, wild and domestic, 500 years on.
+3. **Animals:** the ark's larger land mammals, wild and domestic, 500 years on.
+4. **Trams:** a bigger tram network inside every town and city, with stops on the maps and as fast-travel points.
 5. Then the city-states' politics, the story, and shipping.
+
+Done: ~~the flea markets~~ (this update), ~~walkable floating cities, night light, signs~~ (0.8.2-beta.1).
 
 ## License
 
@@ -163,7 +170,7 @@ source yet. A permissive license is planned once the project reaches a usable st
 
 ## Version
 
-**Current: `0.8.2-beta.1`** (beta). It is tracked in the `VERSION` file at the repo root and mirrored into
+**Current: `0.8.2-beta.2`** (beta). It is tracked in the `VERSION` file at the repo root and mirrored into
 `godot_project/project.godot`'s `config/version`. The change history is in [CHANGELOG.md](CHANGELOG.md).
 
 The scheme is `MAJOR.MINOR.PATCH-phase.N`, where the phase is one of `prealpha`, `alpha`, `beta` or `rc`. The phase is

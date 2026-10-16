@@ -16,7 +16,7 @@ class_name NpcLife
 
 const PATH := "res://remake/characters/lives/_index.json"   # the seed, the settlements, the bicycle homes
 const DIR := "res://remake/characters/lives/"                # a file per settlement: <Name_With_Underscores>.json
-const MAX_SHARDS := 2                                        # settlements' people held at once (the 1:1 station has
+const MAX_SHARDS := 3                                        # settlements' people held at once (the 1:1 station has
                                                              # 218,000: a city's are ~50 MB of JSON, ~500 MB in memory)
 const HOURS := {                                   # occupation hours column -> (start, end)
 	"day": Vector2(9.0, 17.0), "early": Vector2(6.0, 14.0), "evening": Vector2(16.0, 24.0),
@@ -449,8 +449,16 @@ func stays(pid: String, day: int) -> Array:
 		if works:
 			var s := span.x + habit * 0.5 + (today.rand() - 0.5) * 0.25
 			out.append({"t0": s, "t1": s + (span.y - span.x) + (today.rand() - 0.5) * 0.4, "uid": P.work, "what": "work"})
+	# a Sky Holiday here (00 §6.4): work stops but for the essential trades; schools close
+	var home_at := Vector2(float(P.door[0]), float(P.door[1]))
+	var hol := FleaCalendar.holiday_at(str(P.get("settlement", "")), home_at, day)
+	if hol != "":
+		for k in range(out.size() - 1, -1, -1):
+			var wt := NpcPlaces.kind_of(str(out[k].uid))
+			if out[k].what == "work" and not FleaCalendar.essential(wt, str(NpcPlaces.unit(str(out[k].uid)).get("type", ""))):
+				out.remove_at(k)
 	# school
-	if P.has("school") and wd < 5:
+	if P.has("school") and wd < 5 and hol == "":
 		match occ:
 			"student":
 				out.append({"t0": 8.0, "t1": 15.25, "uid": P.school, "what": "school"})
@@ -464,6 +472,9 @@ func stays(pid: String, day: int) -> Array:
 	if reg.has("worship") and wd == 6:
 		if P.worship == "weekly" or (P.worship == "monthly" and posmod(week + int(jit.rand() * 4.0), 4) == 0):
 			out.append({"t0": 10.0, "t1": 11.25, "uid": reg.worship, "what": "worship"})
+	# the flea markets (research/flea_markets/00_plan.md §6.1, §6.3): keeping a stall today, or a trip to another
+	# town's market (its own stream of numbers: the errands below draw as before)
+	_flea(pid, P, day, wd, out)
 	# errands and leisure
 	var types := NpcPlaces.types()
 	var free := _free(out)
@@ -489,6 +500,8 @@ func stays(pid: String, day: int) -> Array:
 			p *= 0.4 + 1.2 * float(P.E)
 		if wd >= 5 and t.category in ["retail", "leisure", "food", "drink"]:
 			p *= 1.4
+		if purpose == "flea":
+			p *= FleaCalendar.visit_boost(NpcPlaces.unit(uid).get("market", ""), day)   # (a fair x2.5, Bright Week x2)
 		if int(P.age) < 13 and not (purpose in ["snack", "outing", "ride", "games", "film"]):
 			p *= 0.15                                             # errands are the grown-ups'
 		if today.rand() >= p:
@@ -497,7 +510,7 @@ func stays(pid: String, day: int) -> Array:
 		var dwell := float(v.dwell_min) / 60.0 * (0.7 + today.rand() * 0.6)
 		var lo := maxf(hrs.x, 7.0 if not (purpose in LATE) else 17.0)
 		var hi := minf(hrs.y, 21.5 if not (purpose in LATE) else 24.5) - dwell
-		if hi <= lo or not NpcPlaces.open_on(t, day):
+		if hi <= lo or not NpcPlaces.unit_open_on(uid, t, day):
 			continue
 		for attempt in 5:
 			var s := lo + today.rand() * (hi - lo)
@@ -514,6 +527,60 @@ func stays(pid: String, day: int) -> Array:
 			out.append({"t0": s3, "t1": s3 + len3, "uid": "", "what": "stroll"})
 	out.sort_custom(func(a, b): return float(a.t0) < float(b.t0))
 	return out
+
+
+const TRIP_P := 0.06                # an out-of-town market about once in 6 weekends (00 §6.3)
+const VEND_UID := "%s/M"
+
+
+func _flea(pid: String, P: Dictionary, day: int, wd: int, out: Array) -> void:
+	var age := int(P.age)
+	var free := _free(out)
+	if age < 13:
+		# (children go to a Sky Holiday's fair with their families; otherwise the markets are the grown-ups')
+		var hk := FleaCalendar.holiday_at(str(P.get("settlement", "")), Vector2(float(P.door[0]), float(P.door[1])), day)
+		var rk := _r(pid, "holiday:%d" % day)
+		if hk != "" and rk.rand() < 0.75:
+			var t0k := 10.0 + rk.rand() * 8.0
+			if _fits(free, t0k, t0k + 3.0):
+				out.append({"t0": t0k, "t1": t0k + 3.0, "uid": VEND_UID % hk, "what": "holiday_fair"})
+		return
+	var v := FleaVendors.vending(pid, day)
+	if not v.is_empty():
+		var r := _r(pid, "vend:%d" % day)
+		var t0 := float(v.t0) + (r.rand() - 0.5) * 0.4
+		if _fits(free, t0, float(v.t1)):
+			out.append({"t0": t0, "t1": float(v.t1), "uid": VEND_UID % v.market, "what": "vending"})
+		return
+	var at := Vector2(float(P.door[0]), float(P.door[1]))
+	var hol := FleaCalendar.holiday_at(str(P.get("settlement", "")), at, day)
+	if hol != "":
+		# the Sky Holiday: the whole district at the fair (p 0.75, children with their families), 2-6 h, many in the
+		# evening (the lantern market to 22:00)
+		var rh := _r(pid, "holiday:%d" % day)
+		if rh.rand() < 0.75:
+			var dur := 2.0 + rh.rand() * 4.0
+			var t0h := (18.0 + rh.rand() * 1.0) if rh.rand() < 0.45 else (10.0 + rh.rand() * 6.0)
+			t0h = minf(t0h, 22.0 - dur * 0.5)
+			if _fits(free, t0h, t0h + dur):
+				out.append({"t0": t0h, "t1": minf(t0h + dur, 23.0), "uid": VEND_UID % hol, "what": "holiday_fair"})
+		return
+	if age < 18 or not free.is_empty():
+		return                                         # (never on a day they work, school or anything else first)
+	var near_h := FleaCalendar.holiday_near(at, day)
+	if near_h != "" and _r(pid, "holiday_trip:%d" % day).rand() < 0.15:
+		var rq := _r(pid, "trip:%d" % day)
+		var tq := 9.0 + rq.rand() * 8.0
+		out.append({"t0": tq, "t1": tq + 2.0 + rq.rand() * 3.0, "uid": VEND_UID % near_h, "what": "market_trip"})
+		return
+	# their usual out-of-town market, with its own chance (bake_vendor_pool.py "trippers"): the destination's crowd
+	# draws the same (FleaVendors.trip_today), so the people seen there are the people whose day says so
+	var mk := FleaVendors.trip_today(pid, day)
+	if mk == "":
+		return
+	var rt := _r(pid, "trip:%d" % day)
+	var t0 := 8.0 + rt.rand() * 3.0
+	out.append({"t0": t0, "t1": t0 + 2.0 + rt.rand() * 2.0, "uid": VEND_UID % mk, "what": "market_trip"})
 
 
 func _free(stays_: Array) -> Array:

@@ -130,7 +130,9 @@ const GRASS := Color(0.42, 0.53, 0.27)
 const AREA_TINT := {"lawn": Color(0.45, 0.6, 0.3), "park": Color(0.43, 0.58, 0.29), "campus": Color(0.45, 0.6, 0.3),
 	"schoolground": Color(0.44, 0.57, 0.3), "sportsfield": Color(0.4, 0.6, 0.27), "cemetery": Color(0.36, 0.5, 0.27),
 	"square": Color(0.62, 0.6, 0.55), "promenade": Color(0.66, 0.6, 0.5),
-	"parking": Color(0.28, 0.28, 0.28), "lot": Color(0.4, 0.38, 0.34), "culdesac": Color(0.3, 0.3, 0.3)}
+	"parking": Color(0.28, 0.28, 0.28), "lot": Color(0.4, 0.38, 0.34), "culdesac": Color(0.3, 0.3, 0.3),
+	# the flea markets (research/flea_markets/00_plan.md §3.1): the paved floor, the lawn apron, the mooring field
+	"market_floor": Color(0.31, 0.3, 0.29), "market_apron": Color(0.44, 0.58, 0.29), "mooring_field": Color(0.41, 0.56, 0.28)}
 ## farm fields by crop (landcover G = crop + 8 * variant): corn, soybeans, small grain, hay, pasture, set-aside grass
 const FIELD_TINT := [Color(0.28, 0.45, 0.15), Color(0.5, 0.6, 0.24), Color(0.7, 0.6, 0.33), Color(0.4, 0.58, 0.27),
 	Color(0.45, 0.53, 0.3), Color(0.56, 0.53, 0.35)]

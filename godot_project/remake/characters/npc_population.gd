@@ -35,7 +35,8 @@ var _buildings: Array = []
 var _here := Vector2.ZERO        # the player (s, x), for _trip_pos
 var _next := {}                  # pid -> day * 24 + hour before which there's nothing of theirs to see
 var _life: NpcLife               # everyone's days (null without a lives bake: the old random walks)
-const OUTDOORS := ["park_pavilion", "food_stand", "amusement"]      # places whose visitors stay in view
+const OUTDOORS := ["park_pavilion", "food_stand", "amusement", "flea_stall"]      # places whose visitors stay in view
+const FLEA_SHOPPERS := 900       # a flea market's regulars looked at per round (a hashed share of the town: 00 §6, FleaCrowd)
 const BIKE_SPEED := 4.2          # m/s, a town cyclist
 var _house_cache := {}           # building id -> NpcHouseholds.of_building (tiny; rebuilt freely)
 var _tick := 0.0
@@ -69,10 +70,18 @@ func _ready() -> void:
 		homes.append_array(NpcPlaces.flats_placed())
 		for uid in NpcPlaces.units():
 			var u: Dictionary = NpcPlaces.unit(uid)
-			var k := _cell(float(u.door[0]), float(u.door[1]))
-			if not _unit_index.has(k):
-				_unit_index[k] = []
-			_unit_index[k].append(uid)
+			var ks: Array = [_cell(float(u.door[0]), float(u.door[1]))]
+			if str(u.get("type", "")) == "flea_stall":
+				# a flea market's floor is ~100-200 m across: its unit is seen from every cell round its middle
+				var fc := FleaData.centre(FleaData.market(str(u.get("market", ""))))
+				ks = []
+				for di in range(-3, 4):
+					for dj in range(-3, 4):
+						ks.append(_cell(fc.x + di * CELL, fc.y + dj * CELL))
+			for k in ks:
+				if not _unit_index.has(k):
+					_unit_index[k] = []
+				_unit_index[k].append(uid)
 	for b in homes:
 		_buildings.append(b)
 		var k := _cell(Placement.s(b), Placement.x(b)) if b is int else _cell(float(b.s), float(b.x))
@@ -265,8 +274,16 @@ func _scan_step() -> void:
 			# time: 146 ms for Calder's square): taken in turn across frames, resuming where the budget ran out
 			if not _scan.has("upids"):
 				var pids: Array = []
+				var seen_u: Dictionary = _scan.get("seen_units", {})
 				for uid in _unit_index.get(cell, []):
-					pids.append_array(_life.regulars(uid))
+					if seen_u.has(uid):
+						continue                         # (a market's unit sits in many cells: once a round)
+					seen_u[uid] = true
+					if str(NpcPlaces.unit(uid).get("type", "")) == "flea_stall":
+						pids.append_array(_flea_people(uid))
+					else:
+						pids.append_array(_life.regulars(uid))
+				_scan.seen_units = seen_u
 				_scan.upids = pids
 				_scan.ui = 0
 			var pids2: Array = _scan.upids
@@ -325,8 +342,14 @@ func _scan_finish(want: Array) -> void:
 	var keep := {}
 	for w in want.slice(0, MAX_LIVE):
 		keep[w[1].pid] = true
+	# (and past MAX_LIVE, the unwanted ones beyond 25 m go even mid-plan: a flea market's vendors stand at their stalls
+	#  for hours, their plans never run out, and a city market's floor held 60 live -- 10 ms of people, 2026-10-16)
+	var pp := player.global_position
+	var ps := StationGeo.s_of(pp)
 	for pid in live.keys():
-		if not keep.has(pid) and live[pid].i >= (live[pid].plan as Array).size():
+		if keep.has(pid):
+			continue
+		if live[pid].i >= (live[pid].plan as Array).size() or (live.size() > MAX_LIVE and _dist(ps, pp.x, live[pid].s, live[pid].x) > 25.0):
 			_despawn(pid)
 
 
@@ -359,7 +382,10 @@ func _consider(want: Array, pid: String, ps: float, px: float) -> void:
 			want.append([d, m, b, P.pop, s])
 		return
 	if s.kind == "at" and str(NpcPlaces.unit(s.uid).get("type", "")) in OUTDOORS and str(_gone_in.get(pid, "")) != _sig(s):
-		var d2 := NpcPlaces.dist(here, _life.door(P, s.uid))
+		var fl := str(NpcPlaces.unit(s.uid).get("type", "")) == "flea_stall"
+		var d2 := NpcPlaces.dist(here, _flea_spot(pid, s, 0) if fl else _life.door(P, s.uid))
+		if fl and s.what != "vending":
+			d2 *= 0.6                                   # (a market's shoppers before its vendors: the crowd, not just the stalls)
 		if d2 < SPAWN_R:
 			want.append([d2, m, b, P.pop, s])
 		return
@@ -467,6 +493,23 @@ func _day_plan(pid: String, s: Dictionary) -> Array:
 	## The waypoints for this part of their day (pauses as negative seconds, as in _plan).
 	var P := _life.person(pid)
 	var rng := NpcRng.for_trait(world_seed, pid, "plan:" + _sig(s))
+	if s.kind == "at" and str(NpcPlaces.unit(s.uid).get("type", "")) == "flea_stall":
+		# a flea market (00 §6): a vendor behind their table; a shopper browsing along an aisle, stall by stall
+		var secs_f := (float(s.t1) - hour()) / 24.0 * DaySkySystem.DAY_LENGTH_SECONDS
+		var plan_f: Array = []
+		var k := 0
+		while secs_f > 0.0 and plan_f.size() < 16:
+			var q := _flea_spot(pid, s, k)
+			if q == Vector2.INF:
+				break
+			plan_f.append(q + Vector2(rng.rand() * 0.6 - 0.3, rng.rand() * 0.6 - 0.3))
+			var w_ := (60.0 + rng.rand() * 120.0) if s.what == "vending" else (8.0 + rng.rand() * 30.0)
+			plan_f.append(-w_)
+			secs_f -= w_ + 4.0
+			if s.what != "vending":
+				k += 1
+		if not plan_f.is_empty():
+			return plan_f
 	if s.kind == "at":                                                     # lingering out of doors
 		var d := _life.door(P, s.uid)
 		var secs := (float(s.t1) - hour()) / 24.0 * DaySkySystem.DAY_LENGTH_SECONDS
@@ -510,6 +553,59 @@ func _day_plan(pid: String, s: Dictionary) -> Array:
 		return [d0, k0.side if not k0.is_empty() else d0, -(2.0 + rng.rand() * 4.0)]        # and away
 	var k1: Dictionary = _near_road(d1)
 	return [k1.side if not k1.is_empty() else d1, -(1.0 + rng.rand() * 2.0), d1, _inside(to_b, d1)]
+
+
+func _flea_people(uid: String) -> Array:
+	## who might be at a flea market now: today's vendors (FleaVendors) and a hashed share of its regulars (the town)
+	var mk := str(NpcPlaces.unit(uid).get("market", ""))
+	var M := FleaData.market(mk)
+	var out: Array = []
+	if M.is_empty():
+		return out
+	var day := today()
+	if FleaCalendar.market_open_day(M, day):
+		var r := FleaVendors.roster(M, day)
+		var pids: PackedStringArray = FleaVendors.pool(mk).pids
+		for w in (r.who as PackedInt32Array):
+			if w >= 0:
+				out.append(pids[w])
+	# people from other towns on a trip here today (FleaVendors.trippers_today): those whose town is in memory, and
+	# those of one small neighbouring town (its lives loaded for them: NpcLife keeps MAX_SHARDS)
+	var extra := ""
+	for pid in FleaVendors.trippers_today(M, day):
+		if _life.is_loaded(pid):
+			out.append(pid)
+			continue
+		var sh := FleaVendors.trip_shard(M, pid)
+		if extra == "" and sh != "" and _small_shard(sh):
+			extra = sh
+		if sh != "" and sh == extra:
+			out.append(pid)
+	var regs := _life.regulars(uid)
+	if regs.size() <= FLEA_SHOPPERS:
+		out.append_array(regs)
+	else:
+		var start := int(FleaData.u(int(M.hid), day, 41) * regs.size())
+		for k in FLEA_SHOPPERS:
+			out.append(regs[(start + k * 7919) % regs.size()])
+	return out
+
+
+var _shard_size := {}
+
+
+func _small_shard(sh: String) -> bool:
+	## a town's lives cheap enough to load for its trippers (< 6 MB: not a city's)
+	if not _shard_size.has(sh):
+		var f := FileAccess.open(NpcLife.DIR + sh + ".bin", FileAccess.READ)
+		_shard_size[sh] = f.get_length() if f else 1 << 40
+	return int(_shard_size[sh]) < 6000000
+
+
+func _flea_spot(pid: String, s: Dictionary, k: int) -> Vector2:
+	if s.what == "vending":
+		return FleaMarkets.vendor_spot(pid, today())
+	return FleaMarkets.shopper_spot(str(NpcPlaces.unit(s.uid).get("market", "")), pid, today(), k)
 
 
 func _dist(s0: float, x0: float, s1: float, x1: float) -> float:
@@ -784,7 +880,8 @@ func _place(e: Dictionary) -> void:
 	if not e.has("g_h") or absf(StationGeo.wrap_ds(s - float(e.g_s))) + absf(x - float(e.g_x)) > GROUND_STEP:
 		e.g_s = s
 		e.g_x = x
-		e.g_h = MapTerrain.elevation(s, x)
+		var dh := FleaMarkets.deck_h(s, x)                 # (a floating pier market: the deck, not the lake bed)
+		e.g_h = dh if not is_nan(dh) else MapTerrain.elevation(s, x)
 	var xf := Transform3D(StationGeo.basis(s, float(e.get("yaw_body", e.get("yaw", 0.0)))), StationGeo.point(s, x, float(e.g_h)))
 	if e.has("bike"):
 		var bike: NpcBike = e.bike

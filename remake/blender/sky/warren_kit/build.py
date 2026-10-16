@@ -61,6 +61,10 @@ SPECIAL = {   # pieces whose walk-through runs other than straight through the w
 }
 
 
+import pieces_moor  # noqa: E402  (the market moorings: their collision frames, pass volumes and anchors)
+SPECIAL.update(pieces_moor.SPECIAL)
+
+
 def walk_frame(pid, d, m):
     """{"collide": "frame", "frame": [...], "pass": [lo, hi], "pass_kind", "clear", "foot"} for a walk-through piece"""
     if pid in SPECIAL:
@@ -104,6 +108,8 @@ def main(previews=False):
                      "slots": [s for s in geom.SLOTS if m.tris[s]], "tris": m.count(),
                      "bounds": [[round(v, 3) for v in lo], [round(v, 3) for v in hi]], "notes": d["notes"]}
         mm, how = mid.mid_mesh(pid, d, m, RAMPS.get(pid) if d["kind"] == "stair" else None)
+        if pid in pieces_moor.MIDS:
+            mm, how = flicker.finish(pid, d, pieces_moor.MIDS[pid]())[0], "mid"
         if how == "mid":
             mm, mlog = flicker.cure(mm)
             if mlog:
@@ -127,6 +133,8 @@ def main(previews=False):
         if pid in RAMPS:
             meta[pid]["collide"] = "ramp"
             meta[pid]["ramp"] = RAMPS[pid]
+        if pid in pieces_moor.ANCHORS:
+            meta[pid]["anchors"] = pieces_moor.ANCHORS[pid]
     size = geom.export_glb(os.path.join(KIT, "kit.glb"), built)
     size_mid = geom.export_glb(os.path.join(KIT, "kit_mid.glb"), mids)
     doc = {

@@ -81,6 +81,10 @@ class Net:
         self.yards = []
         self.yard_meta = {}
         self.door_lv = {}      # cell outside a door that could be -> the levels its doors need it at
+        # (cells whose paving must be at one height: the street strips behind the market moorings' stations,
+        # moorings.py -- flat at the station's floor, or off the walk)
+        self.pin = getattr(L, "pin_q", {})
+        self.pin_s = getattr(L, "pin_s", {})       # (flat at that height, or a stair rising from it)
 
     def flat_ok(self, y, q):
         """can y be (or is it) flat paving at q?  -> extra cost, or None"""
@@ -88,6 +92,8 @@ class Net:
         if f is not None:
             return 0.0 if f == ("f", q) else None
         if y in self.block:
+            return None
+        if (y in self.pin and q != self.pin[y]) or (y in self.pin_s and q != self.pin_s[y]):
             return None
         b = self.base.get(y)
         if b is None or q < b or q > b + MAXF or q > self.cap.get(y, 99):
@@ -101,7 +107,7 @@ class Net:
         f = self.fix.get(c)
         if f is not None:
             return 0.0 if f == ("s", q, rot) else None
-        if c in self.block or c in self.bank:
+        if c in self.block or c in self.bank or c in self.pin or (c in self.pin_s and q != self.pin_s[c]):
             return None                    # (no flight on a pond bank: kerbs and retaining walls box it in)
         b = self.base.get(c)
         if b is None or q < b or q > b + MAXF or q + 2 > self.cap.get(c, 99):
@@ -429,7 +435,7 @@ def ripup_r(L, N, lot, fr_of, state, travel, rad):
         for di in range(-rad, rad + 1):
             for dj in range(-rad, rad + 1):
                 x = (m[0] + di, m[1] + dj)
-                if abs(di) + abs(dj) <= rad and x in N.fix and x != travel:
+                if abs(di) + abs(dj) <= rad and x in N.fix and x != travel and x not in N.pin and x not in N.pin_s:
                     near.add(x)
     for x in near:
         del N.fix[x]

@@ -420,6 +420,11 @@ func _furl() -> void:
 		_furl_i = (_furl_i + 1) % n
 		var isl: Node3D = sys.islands[i]
 		var p := isl.global_position
+		if sys.drift and sys.drift.mooring and sys.drift.mooring.is_moored(i):
+			_len[i] = 0.08                       # (moored over a market, or coming down to one: furled)
+			if _furl_i == 0:
+				break
+			continue
 		var clear := StationGeo.h_of(p) - maxf(MapTerrain.elevation(StationGeo.s_of(p), p.x), 0.0)
 		var up := StationGeo.up(StationGeo.s_of(p))
 		var k0 := Vector3i(floori(p.x / FURL_R), floori(p.y / FURL_R), floori(p.z / FURL_R))

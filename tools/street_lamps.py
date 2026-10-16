@@ -379,10 +379,53 @@ for wk in W.walks:
         for ks, kx in ((-1, -1), (1, -1), (1, 1), (-1, 1)):
             walk_lamps.append([round((r[0] + (hs - 0.5) * ks) % C, 2), round(r[1] + (hx - 0.5) * kx, 2), ki])
 
+# ------------------------------------------------------------------ car parks: lot poles (kind 5, research/flea_markets/
+# 00_plan.md §1.4, §3.6: a 9 m pole with 1-4 heads, ~24 m apart, lit dusk to dawn) on every lot -- the flea markets' from
+# their own pole plans (flea_markets.json), every other lot (downtown, park & ride: unlit until now) along its rows'
+# backs; and the markets' aisle festoons (scheme 4, market warm, 4.2 m)
+FM_P = os.path.join(GD, "markets", "flea_markets.json")
+FM = [m for m in json.load(open(FM_P))["markets"] if m.get("sited")] if os.path.exists(FM_P) else []
+n_lot = 0
+for m in FM:
+    f = m["frame"]
+    ca, sa = math.cos(f["yaw"]), math.sin(f["yaw"])
+    at = lambda u, v, f=f, ca=ca, sa=sa: ((f["s"] + u * ca - v * sa) % C, f["x"] + u * sa + v * ca)
+    for u, v, heads in m["poles"]:
+        q = at(u, v)
+        lamps.append([round(q[0], 2), round(q[1], 2), round(f["yaw"], 3), 5])
+        n_lot += 1
+    for u0, v0, u1, v1, h, sch in m["festoons"]:
+        a, b = at(u0, v0), at(u1, v1)
+        strings.append([round(a[0], 2), round(a[1], 2), h, round(b[0], 2), round(b[1], 2), h, sch])
+    if m.get("pier"):
+        # a floating pier: its aisles' strings at an absolute height (StreetLights ABS_H: over the water, not the bed)
+        dh = float(m["pier"]["deck_h"])
+        for u0, v0, u1, v1, h, sch in m.get("pier_festoons", []):
+            a, b = at(u0, v0), at(u1, v1)
+            ah = round(100000.0 + dh + h, 2)
+            strings.append([round(a[0], 2), round(a[1], 2), ah, round(b[0], 2), round(b[1], 2), ah, sch])
+            n_lot += 0
+for A in T["areas"]:
+    lt = A.get("lot")
+    if not lt or lt.get("type") == "market":
+        continue
+    c, u = lt["centre"], lt["dir"]
+    n_ = (-u[1], u[0])
+    W_, D_ = float(lt.get("w", 44.0)), float(lt.get("d", 36.6))
+    nu = max(2, int(round((W_ - 6.0) / 24.0)) + 1)
+    for b_ in (-D_ / 2 + 1.0, 0.0, D_ / 2 - 1.0):
+        for k in range(nu):
+            a_ = -W_ / 2 + 3.0 + k * (W_ - 6.0) / (nu - 1)
+            q = (c[0] + u[0] * a_ + n_[0] * b_, c[1] + u[1] * a_ + n_[1] * b_)
+            if not in_building(q, 1.0):
+                lamps.append([round(q[0] % C, 2), round(q[1], 2), round(math.atan2(u[1], u[0]), 3), 5])
+                n_lot += 1
+print("lot poles %d (%d markets)" % (n_lot, len(FM)))
+
 flat = lambda rows: [v for r in rows for v in r]  # noqa: E731
 json.dump({"version": 1, "lamps": flat(lamps), "strings": flat(strings), "palms": flat(palms), "walk_lamps": flat(walk_lamps), "walk_kinds": WKINDS,
-           "kinds": {"0": "street", "1": "centre", "2": "alley", "3": "beach"},
-           "schemes": {"1": "beach multicolour", "2": "town-centre warm festoon"}},
+           "kinds": {"0": "street", "1": "centre", "2": "alley", "3": "beach", "5": "lot pole"},
+           "schemes": {"1": "beach multicolour", "2": "town-centre warm festoon", "4": "market warm"}},
           open(OUT, "w"), separators=(",", ":"))
 from collections import Counter  # noqa: E402
 print("walk lamps %d" % len(walk_lamps))

@@ -2,443 +2,443 @@
 	"aerostats": [
 		{
 			"id": "AERO-Bellhaven-1",
-			"s": 20872.57,
+			"s": 20874.08,
 			"where": "Bellhaven",
-			"x": 2291.14,
+			"x": 2290.77,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Bellhaven-2",
-			"s": 20719.74,
+			"s": 20868.83,
 			"where": "Bellhaven",
-			"x": 2307.46,
+			"x": 2399.84,
+			"yaw": 0.0
+		},
+		{
+			"id": "AERO-Bellhaven-3",
+			"s": 20728.33,
+			"where": "Bellhaven",
+			"x": 2286.33,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Brightwater-1",
-			"s": 54145.09,
+			"s": 54159.14,
 			"where": "Brightwater",
-			"x": -4889.73,
+			"x": -4894.26,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Brightwater-2",
-			"s": 54009.16,
+			"s": 54097.08,
 			"where": "Brightwater",
-			"x": -5180.14,
+			"x": -4891.4,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Brightwater-3",
-			"s": 54002.82,
+			"s": 53999.26,
 			"where": "Brightwater",
-			"x": -5111.1,
+			"x": -5227.45,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Brightwater-4",
-			"s": 54083.76,
+			"s": 54144.07,
 			"where": "Brightwater",
-			"x": -4887.64,
+			"x": -4804.16,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Calder-1",
-			"s": 26265.33,
-			"where": "Calder",
-			"x": 2406.93,
-			"yaw": 0.0
-		},
-		{
-			"id": "AERO-Calder-2",
 			"s": 26288.71,
 			"where": "Calder",
 			"x": 2340.57,
 			"yaw": 0.0
 		},
 		{
-			"id": "AERO-Calder-3",
-			"s": 26358.6,
+			"id": "AERO-Calder-2",
+			"s": 26336.31,
 			"where": "Calder",
-			"x": 2345.3,
+			"x": 2342.13,
+			"yaw": 0.0
+		},
+		{
+			"id": "AERO-Calder-3",
+			"s": 26240.69,
+			"where": "Calder",
+			"x": 2336.86,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Calder-4",
-			"s": 26226.04,
+			"s": 26395.34,
 			"where": "Calder",
-			"x": 2341.27,
+			"x": 2343.37,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-CedarFord-1",
-			"s": 25230.4,
+			"s": 25233.79,
 			"where": "Cedar Ford",
-			"x": -453.58,
+			"x": -431.11,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-CedarFord-2",
-			"s": 24814.68,
+			"s": 25053.82,
 			"where": "Cedar Ford",
-			"x": -896.86,
+			"x": -480.81,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-CedarFord-3",
-			"s": 24864.25,
+			"s": 24865.39,
 			"where": "Cedar Ford",
-			"x": -990.48,
+			"x": -1016.12,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-CedarFord-4",
-			"s": 24872.52,
+			"s": 24805.08,
 			"where": "Cedar Ford",
-			"x": -1036.96,
+			"x": -1017.56,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-DunmoreCrossing-1",
-			"s": 12979.64,
+			"s": 12979.28,
 			"where": "Dunmore Crossing",
-			"x": -2024.78,
+			"x": -2018.09,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-DunmoreCrossing-2",
-			"s": 13288.52,
+			"s": 13288.54,
 			"where": "Dunmore Crossing",
-			"x": -2014.49,
+			"x": -2014.47,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-DunmoreCrossing-3",
-			"s": 13299.67,
+			"s": 13301.89,
 			"where": "Dunmore Crossing",
-			"x": -1928.32,
+			"x": -1967.62,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-DunmoreCrossing-4",
-			"s": 13063.44,
+			"s": 13063.46,
 			"where": "Dunmore Crossing",
-			"x": -2296.58,
+			"x": -2296.56,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Fenwick-1",
-			"s": 42719.27,
+			"s": 42720.69,
 			"where": "Fenwick",
-			"x": -1983.35,
+			"x": -1992.17,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Fenwick-2",
-			"s": 42712.91,
+			"s": 42697.56,
 			"where": "Fenwick",
-			"x": -1935.63,
+			"x": -1897.45,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Fenwick-3",
-			"s": 42702.23,
+			"s": 42986.96,
 			"where": "Fenwick",
-			"x": -1882.1,
+			"x": -2028.06,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Fenwick-4",
-			"s": 42989.09,
+			"s": 43065.09,
 			"where": "Fenwick",
-			"x": -2027.97,
+			"x": -2023.48,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HarrowFalls-1",
-			"s": 7713.46,
+			"s": 7709.47,
 			"where": "Harrow Falls",
-			"x": 1704.99,
+			"x": 1745.33,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HarrowFalls-2",
-			"s": 7543.91,
+			"s": 7713.95,
 			"where": "Harrow Falls",
-			"x": 1726.18,
+			"x": 1697.31,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HarrowFalls-3",
-			"s": 7956.19,
+			"s": 7592.7,
 			"where": "Harrow Falls",
-			"x": 2081.43,
+			"x": 2057.88,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HarrowFalls-4",
-			"s": 7715.66,
+			"s": 7537.39,
 			"where": "Harrow Falls",
-			"x": 2297.53,
+			"x": 1704.3,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HaskinsCorner-1",
-			"s": 59193.04,
+			"s": 59198.7,
 			"where": "Haskins Corner",
-			"x": -1677.2,
+			"x": -1673.39,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HaskinsCorner-2",
-			"s": 59191.32,
+			"s": 59189.03,
 			"where": "Haskins Corner",
-			"x": -1630.35,
+			"x": -1584.91,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HaskinsCorner-3",
-			"s": 59192.13,
+			"s": 59192.36,
 			"where": "Haskins Corner",
-			"x": -1548.2,
+			"x": -1535.78,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HaskinsCorner-4",
-			"s": 59312.39,
+			"s": 59362.68,
 			"where": "Haskins Corner",
-			"x": -1524.54,
+			"x": -1546.68,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HavenPoint-1",
-			"s": 12463.89,
+			"s": 12469.65,
 			"where": "Haven Point",
-			"x": -5182.67,
+			"x": -5206.03,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-HavenPoint-2",
-			"s": 12555.72,
+			"s": 12568.11,
 			"where": "Haven Point",
-			"x": -5200.71,
-			"yaw": 0.0
-		},
-		{
-			"id": "AERO-HavenPoint-3",
-			"s": 12423.78,
-			"where": "Haven Point",
-			"x": -5336.79,
+			"x": -5200.64,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Kessler-1",
-			"s": 42648.96,
+			"s": 42538.56,
 			"where": "Kessler",
-			"x": 2088.02,
+			"x": 2112.42,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Kessler-2",
-			"s": 42542.54,
+			"s": 42638.94,
 			"where": "Kessler",
-			"x": 2112.96,
+			"x": 2389.45,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Kessler-3",
-			"s": 42652.24,
+			"s": 42687.11,
 			"where": "Kessler",
-			"x": 2380.16,
+			"x": 2393.04,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Kessler-4",
-			"s": 42700.48,
+			"s": 42774.84,
 			"where": "Kessler",
-			"x": 2395.94,
+			"x": 2320.56,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-LoomisGrove-1",
-			"s": 51424.41,
+			"s": 51257.87,
 			"where": "Loomis Grove",
-			"x": -2876.01,
+			"x": -2941.1,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-LoomisGrove-2",
-			"s": 51413.88,
+			"s": 51257.99,
 			"where": "Loomis Grove",
-			"x": -2941.11,
+			"x": -2845.96,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-LoomisGrove-3",
-			"s": 51416.14,
+			"s": 51435.63,
 			"where": "Loomis Grove",
-			"x": -2823.94,
+			"x": -2838.08,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Marlowe-1",
-			"s": 29960.6,
+			"s": 29904.49,
 			"where": "Marlowe",
-			"x": -1954.41,
+			"x": -2337.64,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Marlowe-2",
-			"s": 29891.58,
+			"s": 30064.1,
 			"where": "Marlowe",
-			"x": -2333.74,
+			"x": -1951.37,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Marlowe-3",
-			"s": 29910.46,
+			"s": 29949.05,
 			"where": "Marlowe",
-			"x": -2386.09,
-			"yaw": 0.0
-		},
-		{
-			"id": "AERO-Marlowe-4",
-			"s": 30067.13,
-			"where": "Marlowe",
-			"x": -1961.85,
+			"x": -1952.84,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Oceanview-1",
-			"s": 59837.2,
+			"s": 59834.45,
 			"where": "Oceanview",
-			"x": 4784.49,
+			"x": 4784.95,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Oceanview-2",
-			"s": 60096.41,
+			"s": 59896.59,
 			"where": "Oceanview",
-			"x": 4725.15,
+			"x": 4710.37,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Oceanview-3",
-			"s": 59899.09,
+			"s": 60095.57,
 			"where": "Oceanview",
-			"x": 4703.43,
+			"x": 4700.35,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Oceanview-4",
-			"s": 59847.97,
+			"s": 59845.22,
 			"where": "Oceanview",
-			"x": 4719.01,
+			"x": 4719.47,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PelicanCove-1",
-			"s": 48712.28,
+			"s": 48986.56,
 			"where": "Pelican Cove",
-			"x": 5348.56,
+			"x": 5265.35,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PelicanCove-2",
-			"s": 48581.38,
+			"s": 49034.98,
 			"where": "Pelican Cove",
-			"x": 5352.56,
+			"x": 5280.05,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PelicanCove-3",
-			"s": 48999.39,
+			"s": 48917.82,
 			"where": "Pelican Cove",
-			"x": 5273.33,
+			"x": 5263.44,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PelicanCove-4",
-			"s": 48931.37,
+			"s": 48856.31,
 			"where": "Pelican Cove",
-			"x": 5266.35,
+			"x": 5260.57,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PlayaVerde-1",
-			"s": 14408.12,
+			"s": 14385.68,
 			"where": "Playa Verde",
-			"x": 5254.42,
+			"x": 5253.5,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PlayaVerde-2",
-			"s": 14305.33,
+			"s": 14302.33,
 			"where": "Playa Verde",
-			"x": 5263.16,
+			"x": 5258.86,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PlayaVerde-3",
-			"s": 14482.81,
+			"s": 14483.77,
 			"where": "Playa Verde",
-			"x": 5260.85,
+			"x": 5252.08,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PlayaVerde-4",
-			"s": 14187.94,
+			"s": 14171.42,
 			"where": "Playa Verde",
-			"x": 5262.97,
+			"x": 5265.59,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PortCarrow-1",
-			"s": 36566.33,
+			"s": 36566.53,
 			"where": "Port Carrow",
-			"x": -4632.87,
+			"x": -4632.82,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PortCarrow-2",
-			"s": 36605.28,
+			"s": 36594.16,
 			"where": "Port Carrow",
-			"x": -4155.87,
+			"x": -4325.15,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PortCarrow-3",
-			"s": 36644.19,
+			"s": 36588.4,
 			"where": "Port Carrow",
-			"x": -4106.63,
+			"x": -4161.61,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PortCarrow-4",
-			"s": 36536.49,
+			"s": 36680.5,
 			"where": "Port Carrow",
-			"x": -4130.25,
+			"x": -4327.1,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PortTamsin-1",
-			"s": 7790.74,
+			"s": 7777.1,
 			"where": "Port Tamsin",
-			"x": -2159.58,
+			"x": -2156.73,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PortTamsin-2",
-			"s": 7634.38,
+			"s": 7609.57,
 			"where": "Port Tamsin",
-			"x": -2154.54,
+			"x": -2076.8,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-PortTamsin-3",
-			"s": 7939.3,
+			"s": 8031.54,
 			"where": "Port Tamsin",
-			"x": -1996.54,
+			"x": -1775.75,
+			"yaw": 0.0
+		},
+		{
+			"id": "AERO-PortTamsin-4",
+			"s": 7925.82,
+			"where": "Port Tamsin",
+			"x": -1767.21,
 			"yaw": 0.0
 		},
 		{
@@ -450,128 +450,135 @@
 		},
 		{
 			"id": "AERO-Pruett-2",
-			"s": 30312.67,
+			"s": 30322.7,
 			"where": "Pruett",
-			"x": 2495.95,
+			"x": 2352.23,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Pruett-3",
-			"s": 30343.49,
+			"s": 30349.15,
 			"where": "Pruett",
-			"x": 2400.09,
+			"x": 2403.11,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Pruett-4",
-			"s": 30244.47,
+			"s": 30038.99,
 			"where": "Pruett",
-			"x": 2337.21,
+			"x": 2031.49,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-SolanaPoint-1",
-			"s": 34839.04,
+			"s": 34956.22,
 			"where": "Solana Point",
-			"x": 4349.73,
+			"x": 4350.76,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-SolanaPoint-2",
-			"s": 34839.42,
+			"s": 34846.77,
 			"where": "Solana Point",
-			"x": 4880.24,
+			"x": 4349.88,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-SolanaPoint-3",
-			"s": 34936.41,
+			"s": 34834.95,
 			"where": "Solana Point",
-			"x": 4386.66,
+			"x": 4870.19,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-SolanaPoint-4",
-			"s": 34964.06,
+			"s": 34964.23,
 			"where": "Solana Point",
-			"x": 4281.05,
+			"x": 4280.95,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Tamarack-1",
-			"s": 56544.54,
+			"s": 56510.16,
 			"where": "Tamarack",
-			"x": 1866.46,
+			"x": 1823.86,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Tamarack-2",
-			"s": 56509.75,
+			"s": 56515.09,
 			"where": "Tamarack",
-			"x": 1817.17,
+			"x": 1761.99,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-Tamarack-3",
-			"s": 56360.88,
+			"s": 56687.69,
 			"where": "Tamarack",
-			"x": 2180.54,
+			"x": 1857.21,
+			"yaw": 0.0
+		},
+		{
+			"id": "AERO-Tamarack-4",
+			"s": 56358.8,
+			"where": "Tamarack",
+			"x": 2170.17,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-TernHarbor-1",
-			"s": 18579.76,
+			"s": 18562.19,
 			"where": "Tern Harbor",
-			"x": -5128.84,
+			"x": -5145.32,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-TernHarbor-2",
-			"s": 18590.97,
+			"s": 18590.98,
 			"where": "Tern Harbor",
 			"x": -5064.27,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-TernHarbor-3",
-			"s": 18423.26,
+			"s": 18437.67,
 			"where": "Tern Harbor",
-			"x": -5151.46,
+			"x": -5148.87,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-TernHarbor-4",
-			"s": 18410.61,
+			"s": 18410.62,
 			"where": "Tern Harbor",
 			"x": -5076.06,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-VictoryBay-1",
+			"s": 7528.95,
+			"where": "Victory Bay",
+			"x": -746.75,
+			"yaw": 0.0
+		},
+		{
+			"id": "AERO-VictoryBay-2",
 			"s": 7732.83,
 			"where": "Victory Bay",
 			"x": -511.33,
 			"yaw": 0.0
 		},
 		{
-			"id": "AERO-VictoryBay-2",
-			"s": 7635.11,
-			"where": "Victory Bay",
-			"x": -517.37,
-			"yaw": 0.0
-		},
-		{
 			"id": "AERO-VictoryBay-3",
-			"s": 7527.35,
+			"s": 7565.65,
 			"where": "Victory Bay",
-			"x": -754.6,
+			"x": -808.4,
 			"yaw": 0.0
 		},
 		{
 			"id": "AERO-VictoryBay-4",
-			"s": 7894.47,
+			"s": 7839.34,
 			"where": "Victory Bay",
-			"x": -904.5,
+			"x": -847.0,
 			"yaw": 0.0
 		},
 		{

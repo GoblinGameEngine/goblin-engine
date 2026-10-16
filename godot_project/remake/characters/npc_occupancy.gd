@@ -64,6 +64,9 @@ static func manifest(town: String) -> Dictionary:
 static func town_of(building: String) -> String:
 	var i := Placement.index(building)
 	if i < 0:
+		if building.begins_with("FM-"):              # a flea market's units (no placement structure): its town's
+			var fm := FleaData.market(building)
+			return str(fm.get("town", "_country")) if not fm.is_empty() else "_country"
 		return "_country"
 	var t := Placement.settlement(i)
 	return t if t != "" else "_country"

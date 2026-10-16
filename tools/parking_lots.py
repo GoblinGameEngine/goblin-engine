@@ -45,7 +45,8 @@ def main():
     sets = {r["name"]: r for r in json.load(open(os.path.join(GD, "law", "settlements.json")))["settlements"]}
     cities = {c["id"]: c for c in json.load(open(os.path.join(GD, "law", "ordinances.json")))["cities"]}
     transit = json.load(open(os.path.join(GD, "transit.json")))["lines"] if os.path.exists(os.path.join(GD, "transit.json")) else []
-    ter["areas"] = [a for a in ter["areas"] if "lot" not in a]          # (idempotent)
+    # (idempotent; the flea markets' lots are tools/markets/site_markets.py's and stay)
+    ter["areas"] = [a for a in ter["areas"] if "lot" not in a or a["lot"].get("type") == "market"]
 
     def footprints():
         out = []

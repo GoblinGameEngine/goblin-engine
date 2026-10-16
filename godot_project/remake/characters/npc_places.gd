@@ -315,14 +315,31 @@ static func open_on(t: Dictionary, day: int) -> bool:
 	return StationCalendar.days_in_range(day, d)
 
 
+static func unit_open_on(uid: String, t: Dictionary, day: int) -> bool:
+	## open_on for a unit: a flea market's days are its calendar's (Fri-Sun, and every day of a Bright Week or a Sky
+	## Holiday: FleaCalendar, research/flea_markets/00_plan.md §4.2)
+	var u := unit(uid)
+	if u.has("market"):
+		return FleaCalendar.market_open_day(str(u.market), day)
+	# a Sky Holiday shuts all but the essential trades in its area (research/flea_markets/00_plan.md §6.4)
+	if not u.is_empty() and FleaCalendar.holiday_at(str(u.get("settlement", "")), Vector2(float(u.door[0]), float(u.door[1])), day) != "" \
+			and not FleaCalendar.essential(t, str(u.get("type", ""))):
+		return false
+	return open_on(t, day)
+
+
 static func is_open(uid: String, day: int, hour: float) -> bool:
 	var t := kind_of(uid)
 	if t.is_empty():
 		return false
+	var u := unit(uid)
+	if u.has("market") and str(u.get("type", "")) == "flea_stall":
+		var st := FleaCalendar.state(str(u.market), day, hour)
+		return bool(st.local_open) or bool(st.islander_open)
 	var h := hours_of(t)
-	if open_on(t, day) and hour >= h.x and hour < h.y:
+	if unit_open_on(uid, t, day) and hour >= h.x and hour < h.y:
 		return true
-	return open_on(t, day - 1) and hour + 24.0 < h.y           # after midnight, from yesterday
+	return unit_open_on(uid, t, day - 1) and hour + 24.0 < h.y           # after midnight, from yesterday
 
 
 # -- routes ---------------------------------------------------------------------------------------------

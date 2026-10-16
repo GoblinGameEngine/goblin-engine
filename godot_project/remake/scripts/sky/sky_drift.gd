@@ -44,6 +44,8 @@ var _rng := RandomNumberGenerator.new()
 var _banned := {}              # Vector2i(lo, hi) island pair -> true till they've drifted apart
 var _check := 0.0
 var events: Array = []         # [kind, data] since the runtime last read them ("fire", "lash", "cast_off")
+var mooring: SkyMooring        # the market moorings (research/flea_markets/00_plan.md §5): the booked rafts it drives
+var _held := {}                # raft id -> true: placed by the mooring this step (out of the free drift)
 
 
 func setup(defs: Array, seed_: int = 20261014) -> void:
@@ -74,6 +76,8 @@ func setup(defs: Array, seed_: int = 20261014) -> void:
 				break
 		placed.append(Vector2(s, x))
 		_new_raft([i], s, x)
+	mooring = SkyMooring.new()
+	mooring.setup(self)
 
 
 func _new_raft(members: Array, s: float, x: float, h := NAN) -> Dictionary:
@@ -150,8 +154,11 @@ func deployed(i: int) -> Array:
 func step(dt: float) -> void:
 	t += dt
 	hours += dt * 24.0 / DaySkySystem.DAY_LENGTH_SECONDS
+	_held = mooring.drive(self, dt) if mooring else {}
 	for id in rafts.keys():
 		var r: Dictionary = rafts[id]
+		if _held.has(id):
+			continue                     # (booked: flown, held and lashed by the mooring)
 		_wander(r, dt)
 		_climb(r, dt)
 		var v := _raft_v(r)
@@ -168,8 +175,10 @@ func step(dt: float) -> void:
 	if _check <= 0.0:
 		_check = 2.0
 		_cast_offs()
-		_meetings()
-		_keep_apart()
+		_ext.clear()                 # (extents good for this check: members and offs only change between checks)
+		var pairs := _near_pairs(DOCK_RANGE + 2000.0)
+		_meetings(pairs)
+		_keep_apart(pairs)
 	for ln in lines:
 		ln.fly = minf(1.0, ln.fly + dt * ROCKET_SPEED / maxf(ln.dist, 1.0))
 
@@ -218,10 +227,22 @@ func _box(i: int) -> Rect2:
 	return Rect2(isl.off.x - n.W, isl.off.y - n.N, n.W + n.E, n.N + n.S)
 
 
+var _ext := {}                     # raft id -> extent Rect2, cleared each check (_gap is called per near pair)
+
+
+func _extent_c(r: Dictionary) -> Rect2:
+	var id: int = r.id
+	if _ext.has(id):
+		return _ext[id]
+	var e := _extent(r)
+	_ext[id] = e
+	return e
+
+
 func _gap(a: Dictionary, b: Dictionary) -> float:
 	## edge-to-edge distance between two rafts' bounds
-	var ra := _extent(a)
-	var rb := _extent(b)
+	var ra := _extent_c(a)
+	var rb := _extent_c(b)
 	var d := Vector2(StationGeo.wrap_ds(b.s - a.s) / K_S, b.x - a.x)
 	rb.position += d
 	var dx := maxf(0.0, maxf(ra.position.x - rb.end.x, rb.position.x - ra.end.x))
@@ -229,30 +250,55 @@ func _gap(a: Dictionary, b: Dictionary) -> float:
 	return Vector2(dx, dy).length()
 
 
-func _meetings() -> void:
-	var ids := rafts.keys()
-	for ai in ids.size():
-		var a: Dictionary = rafts[ids[ai]]
-		if not a.tow.is_empty():
+func _near_pairs(limit: float) -> Array:
+	## every pair of rafts whose centres lie within `limit` deck metres along s, [[id_a, id_b], ...], each once:
+	## the rafts sorted by s and swept with a window (the ring seam handled by a shifted copy of the head), so a
+	## check costs O(n log n + near pairs), not O(n^2) (98 rafts were 4.8 ms a check in _keep_apart alone)
+	var n0 := rafts.size()
+	var rows := []
+	for id in rafts:
+		rows.append([float(rafts[id].s), id])
+	rows.sort()
+	var lim_s := limit * K_S
+	for i in n0:
+		if rows[i][0] < lim_s:          # (near the seam: seen again past the top, so cross-seam pairs are found)
+			rows.append([rows[i][0] + StationGeo.CIRC, rows[i][1]])
+		else:
+			break
+	var out := []
+	for i in n0:
+		var si: float = rows[i][0]
+		var j := i + 1
+		while j < rows.size() and float(rows[j][0]) - si <= lim_s:
+			out.append([rows[i][1], rows[j][1]])
+			j += 1
+	return out
+
+
+func _meetings(pairs: Array) -> void:
+	var towed := {}                  # raft id -> true: another raft is winching into it (checked per pair before)
+	for o in rafts.values():
+		if not o.tow.is_empty():
+			towed[o.tow.to] = true
+	for p in pairs:
+		var a: Dictionary = rafts[p[0]]
+		var b: Dictionary = rafts[p[1]]
+		if not a.tow.is_empty() or towed.has(a.id) or _held.has(a.id):
 			continue
-		for bi in range(ai + 1, ids.size()):
-			var b: Dictionary = rafts[ids[bi]]
-			if not b.tow.is_empty() or _towing_into(a) or _towing_into(b):
-				continue
-			if a.members.size() + b.members.size() > MAX_RAFT:
-				continue
-			if absf(StationGeo.wrap_ds(b.s - a.s)) / K_S > DOCK_RANGE + 2000.0:
-				continue
-			if _gap(a, b) > DOCK_RANGE or _is_banned(a, b):
-				continue
-			var big := a if a.members.size() >= b.members.size() else b
-			var small := b if big == a else a
-			var plan := _berth(big, small)
-			if plan.is_empty():
-				_ban(a, b)
-				continue
-			_fire(big, small, plan)
-			return              # (one at a time: rafts change)
+		if not b.tow.is_empty() or _held.has(b.id) or towed.has(b.id):
+			continue
+		if a.members.size() + b.members.size() > MAX_RAFT:
+			continue
+		if _gap(a, b) > DOCK_RANGE or _is_banned(a, b):
+			continue
+		var big := a if a.members.size() >= b.members.size() else b
+		var small := b if big == a else a
+		var plan := _berth(big, small)
+		if plan.is_empty():
+			_ban(a, b)
+			continue
+		_fire(big, small, plan)
+		return              # (one at a time: rafts change)
 
 
 func _towing_into(r: Dictionary) -> bool:
@@ -406,8 +452,8 @@ func _lash(host: Dictionary, guest: Dictionary) -> void:
 func _cast_offs() -> void:
 	for id in rafts.keys():
 		var r: Dictionary = rafts.get(id, {})
-		if r.is_empty():
-			continue
+		if r.is_empty() or (r.edges as Array).is_empty() or _held.has(id):
+			continue                     # (moored: the market knot holds the lashings, the mooring casts off)
 		for e in r.edges.duplicate():
 			if hours - float(e.born) >= LASH_DAYS * 24.0:
 				_split(r, e)
@@ -471,7 +517,7 @@ func _is_banned(a: Dictionary, b: Dictionary) -> bool:
 	return false
 
 
-func _keep_apart() -> void:
+func _keep_apart(pairs: Array) -> void:
 	## Lift bans once a pair has drifted well apart; rafts that can't lash steer round each other along the axis.
 	var drop := []
 	for k in _banned:
@@ -481,19 +527,28 @@ func _keep_apart() -> void:
 			drop.append(k)
 	for k in drop:
 		_banned.erase(k)
-	var ids := rafts.keys()
-	for ai in ids.size():
-		for bi in range(ai + 1, ids.size()):
-			var a: Dictionary = rafts[ids[ai]]
-			var b: Dictionary = rafts[ids[bi]]
-			if a.tow.get("to", -1) == b.id or b.tow.get("to", -1) == a.id:
-				continue
-			if absf(StationGeo.wrap_ds(b.s - a.s)) / K_S > 3000.0:
-				continue
-			if _gap(a, b) < 150.0:
-				var away := signf(b.x - a.x + 0.01)
-				a.vx = -away * WANDER
-				b.vx = away * WANDER
+	for p in pairs:
+		var a: Dictionary = rafts[p[0]]
+		var b: Dictionary = rafts[p[1]]
+		if absf(StationGeo.wrap_ds(b.s - a.s)) / K_S > 3000.0:
+			continue
+		if a.tow.get("to", -1) == b.id or b.tow.get("to", -1) == a.id:
+			continue
+		var ha := _held.has(a.id)
+		var hb := _held.has(b.id)
+		if ha and hb:
+			continue
+		if (ha or hb) and _gap(a, b) < 400.0:
+			# (a moored raft hangs low over its market: a free one passing keeps off and above it)
+			var fr: Dictionary = b if ha else a
+			var mo: Dictionary = a if ha else b
+			fr.vx = signf(fr.x - mo.x + 0.01) * WANDER
+			fr.h_to = maxf(float(fr.h_to), SkyMooring.MOOR_H + 180.0)
+			continue
+		if _gap(a, b) < 150.0:
+			var away := signf(b.x - a.x + 0.01)
+			a.vx = -away * WANDER
+			b.vx = away * WANDER
 
 
 static func _opp(side: String) -> String:
@@ -509,6 +564,8 @@ func warm_up(game_hours: float, dt := 20.0) -> void:
 	var steps := int(game_hours * DaySkySystem.DAY_LENGTH_SECONDS / 24.0 / dt)
 	for k in steps:
 		step(dt)
+	if mooring:
+		mooring.snap(self)                # (the moored where the calendar has them now)
 	events.clear()
 
 
