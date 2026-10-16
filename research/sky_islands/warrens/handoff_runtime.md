@@ -269,3 +269,105 @@ About 25 base shapes plus 88 `KIN` species, all ≤ 250 tris. Arrays are built o
   Island pools: emission = albedo x field x 1.2 (field 1 - exp(-sum), so <= 1.2 x albedo: under the glow threshold).
   No game running; lock released.  Open: Calder storefront pools are subtle (SHOP_R 5, alpha 0.85: raise if asked);
   SKY-071's 60 m sign view can be blocked by parked larks (no collision); SKY-022 stucks left to AUDIT.
+- 2026-10-16 ~07:40 COORDINATOR ROUND 3 (after commit 5681f1d34), edited + compile 12 OK + fonts imported:
+  * door rooms: sky_warren `_door_prep` / `_door_leaf` / `_room_floors` -- a door piece (pass_kind "door", face mount)
+    whose door record (either side of the face) isn't entered -- or has no record -- gets a leaf box in its pass
+    opening (x pass +-3 cm, y 0..pass top + 3 cm, z -0.14..-0.08; drawn LOD0 + MID, solid); every entered door's room
+    cell gets a whole-cell floor slab if none within 40 cm (SKY-022: 793 of 804 floorless rooms were non-entered).
+    Stats: warren.leaves / warren.room_floors.
+  * bridges: in the DOWN pose every style's deck is flush (y 0) with a +3 cm sill; the paving meets it 6-10 cm lower
+    (the "27 cm" is rolling_lift's side tracks / the stowed pose).  sky_bridge `ramp_box` / `_make_ramp`: a 4 cm steel
+    ramp (z -1.7, y -0.12) -> (z -0.45, y +0.03), width - 0.3.  reference/tmp/bridge_walk.py SKY-022 [--ramp]
+    (audit walksim, bridges down): 19/100 walks blocked -> 2/100 (the 2: hugging rolling_lift's side track at 1.4 m).
+    Asked AUDIT (agent a9a1603c9fccf0a13) to mirror leaves / room floors / ramp in assemble.py and re-run SKY-022.
+  * banners: _atlas_cells already read banner_atlas.islands[id].name; added banners_b (atlas_b + emit, cells 500 + n:
+    an island's 3rd / 4th banner = its flag streamer 2i / clan 2i+1), sky_banners `_cell_add`.
+  * shop signs blend heritage + warren: SkySigns HERITAGE (make_flags.py's table), `_heritage_font` (fonts copied to
+    remake/fonts/heritage/, OFL, 5 MB -- DelaGothicOne 2.5 MB; no fonttools here to subset), ACCENT_SHARE 0.4 of shops
+    glow in the heritage accent.  The warren blank stays the frame.
+  * running reference/tmp/gh.sh (lock: takes it when free): SKY-022 10-door walk + gh_*.jpg shots (lanes day/night,
+    neon lane, banners from below, Calder signs at night, Date & Time app) -> research/sky_islands/img/gh_*.jpg.
+- 2026-10-16 04:10 (real clock; the "~07:40" stamp above was wrong): confirmation pass.
+  * gh*.sh shots saved, all <= 400 KB: research/sky_islands/img/gh_island_lane_day/night.jpg (SKY-099, HUD hidden),
+    gh_island_neon_night.jpg (SKY-071), gh_banners_from_below.jpg (side view under SKY-099, SIGNS atlas banners),
+    gh_calder_signs_night.jpg, gh_datetime_app.jpg.  Harness: reference/tmp/gh.sh, gh2.sh (waits for warren built).
+  * fixes found in game: `_kit` dict now carries pass_kind/pass (leaves were 0 before; now SKY-022 1350 leaves, 29 room
+    floors; SKY-099 207 / 1); MID rule "mesh" only when the MID surfaces exist + _mlocal.get fallback to the box (a kit
+    rebuilt mid-session crashed _merge_chunk: "Invalid key (35, 1, 0)").
+  * SKY-022 10-door walk: 1/10 -- 9 stuck at the arrival stair head (147.2, -2.x): pave_garden_skirt +5.2 cm lip in
+    the imported 03:31 kit; AUDIT's 03:43 kit sets ground tops to 0.  Reimported 04:05.  WAITING for AUDIT's
+    make_warren --all + lods.py to land, then rerun the walk (gh2.sh walk part).  No game running; lock free.
+- 2026-10-16 04:40 SKY-022 10-door walk on the FINAL files (make_warren --all 04:08 + lods, kit 03:43 imported 04:05):
+  9/10 ok (was 2/10 at the start of the day, 1/10 with the stale kit).  The 1 stuck: door 3137 at (-27.2, feet ~1.6,
+  100.8) -> wp (-28.5, 1.6, 100.5), cell (46,74) pave_plaza at quarter storey 2 (rf 130); not diagnosed (a later probe
+  found only an unnamed StaticBody3D at y 0.3 there -- the chunk collision may have been streamed out by then).
+  Passed to AUDIT.  NOTE wr_walk.sh polls WALK_POLLS x 5 s (default 60 = 5 min; a 10-door SKY-022 walk needs ~12 min:
+  use WALK_POLLS=200), and never re-enable player physics while WalkTest is still running.
+  No game running; lock released.  Nothing committed.
+- 2026-10-16 ~05:10 door 3137 (SKY-022) diagnosed: 6/6 stuck, streamed AND with every chunk shape preloaded
+  (reference/tmp/walk3137.sh) -> not streaming.  The blocker is a PARKED LARK (Near/Lark_0 and its door leaf
+  Hinge_SR/Leaf_SR) on the plaza at (-28.9, 100.0): islands.json pads sit at deck height (y 0.34 here) under a
+  plaza paved at 1.6, the lark sunk 1.3 m through it, across the walk.  300 of 303 pads (all islands) have walk-graph
+  nodes within 3.5 m.  GENERATOR item (pads as reserved OUT cells, like the bridge footprints in lattice.py, at the
+  paving's height); the audit doesn't model larks.  Passed to AUDIT.  No game running; lock released.
+- 05:20 AUDIT took the lark item (lattice.py: lark footprints + 0.3 m OUT; bridge footprints from bridge_footprints.json;
+  audit models larks) + kit rebuilt ~05:15 + make_warren --all running.  NEXT (me): when it lands -> headless --import,
+  compile check, rerun `WALK_POLLS=200 bash reference/tmp/wr_walk.sh 21 10` (via walk022.sh) and walk3137.sh.
+  Pad y stays islands.json's (deck: OUT cells have no paving).
+- 2026-10-16 ~06:30 FINAL FILES (make_warren --all #2 on the 05:04 kit, imported 05:23): SKY-022 10-door walk 9/10 in
+  3 full runs (2 relaunches).  The 1: door 2047 (10th) stuck at (10.7, feet ~3.0 = the deck, -11.5) under a steps_up
+  ramp (top 3.47, cell 59,37, chunk 7,4).  It PASSES alone (12/12: walkdoor.sh streamed + preloaded, twice) and after
+  3755 (walkpair.sh) -- fails only as the 10th of the full sequence, deterministically.  Not geometry (AUDIT replay
+  clean), not collision streaming (preloaded passes; the _collision change below didn't change the full-run result).
+  Lead: something time-based ~15 min into a session (bridge deploys / raft re-lash / lark flights?) -- unresolved.
+  * sky_warren _collision: chunk distance = flat distance to the chunk's box (`_box_flat_dist`, not the 3D centre less
+    0.7 x width: a tall chunk's centre is 30 m over a walker), CLOSE_M 6 -> 12 m; near_ready uses the same.  Kept
+    (compile 12 OK, walks unchanged), cost unmeasured -- measure fps/shape count aboard before the next commit.
+  * new harness: reference/tmp/walkdoor.sh DOOR (3x streamed, 3x preloaded), walkpair.sh, walk022.sh.
+  No game running; lock released.  Nothing committed.
+- ~06:45 door 2047 lead (AUDIT): no timed prop within 30 m -> likely the capsule TUNNELLING the 0-thickness ramp quad.
+  sky_warren `_ramp_under` / RAMP_UNDER 0.2: every ramp collision quad is now a closed 0.2 m slab (compile 12 OK,
+  not yet walked).  WAITING for AUDIT regen #3 + kit rebuild -> reimport -> `WALK_POLLS=200 bash
+  reference/tmp/walk022.sh` (the 10th door is 2047).
+- 2026-10-16 ~07:50 door 2047, after regen #3 (kit 06:32, imported 06:55): still 9/10 in 2 more full runs, same spot,
+  with ramp slabs (`_ramp_under`, kept) and with the harness's up_speed re-read after move_and_slide like
+  StationPlayer (walktest.gd, kept).  So NOT tunnelling, NOT streaming, NOT a stale fall speed.
+  Trace (walktest.gd trace_door, frame by frame): the walker is on the floor, pinned at (10.71, feet ~3.0, -11.5),
+  facing the next waypoint, while the island's carry is (-1.04, -0.9, 5.95) m/s -- SKY-022 drifts ~6 m/s with
+  vertical bobbing of -0.9 .. +2.6 m/s.  Drift is deterministic in game time, so the 10th door of a fresh run always
+  meets the same island motion; walked alone (other game times) it passes.  LEAD: move_and_slide on a fast,
+  bobbing island (the carry added to velocity) can't climb this stair at that moment -- may hit real players too.
+  NEXT: walk door 2047 alone at the same game time (start it ~t_session of door 10) or with the drift forced to
+  that velocity; then fix the carry (move the player in the island's frame, or snap/sweep relative to the deck).
+  * one-off: a fresh launch at 06:56 hung SKY-022's _prepare (0/134 chunks, no error) -- a relaunch built fine.
+  * warning: a headless godot run while the game is up rewrites the DevBridge token (gcmd then fails).
+  No game running; lock released.  Nothing committed.
+- ~08:10 AUDIT final (reference/tmp/audit/all_final.json vs all_before.json): doors OK 47,350 / 47,357 (was 36,511 /
+  47,460); unreachable 0 (3,145); risky 0 (2,170); entry blocked 7 (5,634); blocked cell edges 9 (10,963); rooms
+  without a floor behind a door 6 (7,870); missing walls 0 (3,754); 91 / 100 islands walk-clean.
+  The 6 "room_floor_missing" (SKY-078 x2, 025, 043, 049, 053) are NOT missing floors: assemble fkeys + a ray show a
+  floor at the room level in the 5 checked; each door cell also carries a wall_shopfront_a_* (door pass, 5 cm sill)
+  -> the "fell" is elsewhere on the entry walk.  Told AUDIT.  Nothing for _room_floors to add.
+  Door 2047 (drift/carry) stays OPEN, next step as above.
+  * AUDIT confirmed: the 6 are porch-stair/door drops (~0.7 m off a stair end at the door face), reassigned to GENERATOR as entry_drop.  RUNTIME open item: door 2047 only.
+- 2026-10-16 ~08:45 coordinator review fixes (shots re-saved, all <= 400 KB; reference/tmp/gh3.sh):
+  * Calder pools: back to the lamps' own reach/strength (POOL_REACH 1.0, POOL_GAIN 1.0), street_pool.gdshader gains
+    uniforms `gain` (POOL_SHADER_GAIN 0.55) and `falloff` (POOL_FALLOFF 2.4, was 1.7); storefront pools SHOP_R 4 m,
+    alpha 0.55.  The road is a dark night street again with distinct pools (gh_calder_signs_night.jpg).
+  * Calder fps, nothing else running, vsync off, the shop street at night: 42 fps all / no pools / no city_signs /
+    neither (GPU 10.8-12.2 ms, draws 1,557-1,816).  The 24 fps in the first shot was the AUDIT --all on the CPU.
+  * banners: the real bug -- the instance is scaled 10-20 x across (the banner's width) and the shader added sway and
+    the lean's x in those units: a "2.4 m" sway swung the foot 30-50 m (the diagonals).  sky_banner.gdshader now
+    divides by length(MODEL_MATRIX[0].xyz); sway 0.025 -> 0.008, lean 0.03 -> 0.008, billow 1.2 -> 0.5, twist 0.12 ->
+    0.04.  Furl only scales the length (no bend).  Islands near SKY-099 tilt <= 0.7 deg (max anywhere 4.3).
+    Re-shot with a LEVEL camera (island-local (-160,-110,-300) -> (0,-110,0)): plumb, flat, readable.
+  * lane day/night: a look-down-lane view picked by script (longest straight ground walk run, a 0.45 m sphere cast
+    clear for 9 m, most lights within 14 m): SKY-099 (-4.5, 6.5, -59.5) along +z.
+  * door 2047: left noted (drift/carry; not quick).  No game running; lock released.  Nothing committed.
+- ~08:35 collision A/B (reference/tmp/ab.sh old|new; dev statics SkyWarren.close_m / flat_dist / ramp_under):
+    SKY-099 stand phys 5.18 -> 4.87 ms, walk 8.15 -> 5.51; proc 15.0 -> 15.5 / 21.4 -> 21.6; shapes 10 -> 8, tris 52k -> 40k
+    SKY-071 stand phys 7.59 -> 7.75 ms, walk 7.92 -> 8.16; proc 19.3 -> 19.2 / 24.2 -> 26.0; fps 78/78, 66 -> 64
+  -> within noise / budget: KEPT (flat distance adds fewer tall far chunks; the 0.2 m slabs cost nothing measurable).
+- banner lettering read backwards from outside: the strip's front faces out along +z where +x runs to the viewer's
+  left -> sky_banner.gdshader mirrors u on FRONT_FACING (plain on the back); verified both sides (gh_banners_from_below
+  re-shot, 292 KB; far side reads "DWARF APPLES - SEED STOCK").  No game running; lock released.  Nothing committed.

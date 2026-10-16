@@ -116,15 +116,106 @@ rays.py (embree), walksim.py (batched capsule walker), checks.py, bounds.py, aud
   pierce 250,559 (int_ceiling/int_floor through walls ~175 k), floating isolated 12,944 (ov_lantern 6,473,
   ov_laundry 4,413), pass intrusions 5,415 (wall_arch_round_k 2,490, int_counter 1,122).
 
-## Next step (for whoever continues)
-1. Regenerate everything with the four generator fixes (make_warren.py --all, lods.py), re-run audit --all: expect
-   the bridge + fence classes (~7,200 blocked edges, ~2,200 unreachable doors) and the stair-head risky lips to go.
-2. GENERATOR: utility_pole off walk cells (2,798 edges); ground_falaj / brick / slate raised tops at ramp ends are
-   covered by kitmap.flush, but raised paving next to flat paving > 7.7 cm (brick +10 cm) still blocks: flush them
-   on walk cells or give them a 0 top; counters out of doorways; the 59+3,754 missing walls; leads above.
-3. KIT / RUNTIME requests: as listed under "Remaining on SKY-022" (shopfront frames, ramp widths and feet, door
-   leaves of non-entered doors, MID overruns, non-manifold meshes in kitmesh_kit.txt).
-4. Phase 2 (tools/geo/geo.py) per README.
+## Phase 3 (10-16 ~05:00, after commit 5681f1d34): I own GENERATOR + KIT now (coordinator); runtime stays RUNTIME's
+KIT (remake/blender/sky/warren_kit; rebuild `$P remake/blender/sky/warren_kit/build.py`, ~4 min; originals of the
+changed sources + pieces.json/kit.glb/kit_mid.glb in reference/tmp/audit/gen_backup/):
+* pieces.py wall_shopfront a: shutter rolled up, glass either side of a 1.16 m doorway, 5 cm sill -> frame + door
+  pass 1.2 x 2.55 (was a solid box);
+* ramps.py: steps_up quad x +-1.5 (collision 10 cm past the mesh each side: deliberate, no slot between flights);
+  stair_spiral / stair_plex_outdoor / stair_spiral_courtyard helices start at y 0; basketball_court collides as one
+  quad at its surface (y 0.005) instead of a "top" box at 3.65 m;
+* mid.py: relief rects/skirts clamped to the piece's bounds (+10 cm walls), depth key never negative (+100 m
+  band_peranakan_tile), every MID candidate must stay within the full piece +-2 cm (else the full mesh);
+  build.py: stair MIDs only for kind stair;
+* build.py: kind ground pieces with a top 0.4-30 cm over y 0 set down to y 0 (pave_garden(_skirt), brick, falaj,
+  calcada, slate); CELL_FRAMES: utility_pole collides as its pole only;
+* _hip roofs closed (cap=True) in roof_tile_flying_eave and 3 others (rays saw into rooms through the top).
+* bounds.py after: 0 mid>full, 0 declared; kitmesh: 0 inconsistent winding, 0 inside-out.  Non-manifold edges (88
+  kit meshes) left: touching parts of render-only meshes; of the collision ("mesh" rule) pieces only bridge_plank
+  and bridge_steel have 2 each -- harmless.
+* A Godot reimport is needed for the game to see the new kit (RUNTIME asked to do it under the lock).
+GENERATOR (tools/sky/warren):
+* civ/family.py: utility poles on an open non-walk cell beside the junction (or none), never on a walk cell;
+  shutters never on a shop cell's first shop face (its door);
+* pick.py: no counter in a shop cell with an entrance on a side face; a wall_plain on "buried" faces (k < the next
+  column's gk: the deck is a surface, the room looked into the island's hollow) -- the cause of the unexplained
+  missing walls (traced with /tmp/dbgwall.py: every one was k < gn);
+* units.py: a shop's door record on the face its shopfront was built on (L.shop_faces), not the first face onto the
+  walk (records pointed at plain walls);
+* (earlier) lattice.py fence clearance + bridge footprints, kitmap.py flush(), units.py no sideways stair edges.
+AUDIT: mirrors RUNTIME's new rules (assemble.py ASM 5: shut door leaves unless entered, entered rooms floored,
+bridge threshold ramp); walkcheck: non-entered doors count as shut (only their step outside matters), stair-core
+nodes are not door steps nor floors; cracks: rays start outside the face's own protrusions, only walls close a face.
+SKY-022 on all of it: doors 1309/1309 ok, edges 7478/7478, 0 missing/buried walls, 0 rooms without floors.
+
+- make_warren --all (04:08, 100/100; SKY-089's own physical check 539/541 public cells) + lods.py (exit 0) DONE on
+  the final kit (03:43 build; RUNTIME reimported it at 04:05).  RUNTIME's in-game SKY-022 walk (1/10, stuck on the
+  pave_garden_skirt lip at the arrival stair head) was the old island file vs the set-down kit: rerun pending.
+- Renders (render.py, offline): research/sky_islands/img/audit_SKY-022_aerial.png, audit_SKY-022_arrival.png,
+  audit_SKY-078_aerial.png, audit_SKY-071_aerial.png (52-300 KB, labelled OFFLINE RENDER).
+
+- audit --all #2 (04:10-05:00, after regen #1) vs the first (03:30): doors OK 36,511 -> 46,312 of 46,873 (98.8 %),
+  unreachable 3,145 -> 64, risky 2,170 -> 0, entry blocked 5,634 -> 497, blocked edges 10,963 -> 1,191, rooms
+  without floors 7,870 -> 2, no_floor 1,980 -> 0, roof_open 3,328 -> 0, missing walls 3,754 -> 226, buried 5,701 -> 0
+  (reference/tmp/audit/all_before.json, all_mid.json).
+- Residuals then fixed (round 2): RUNTIME found SKY-022 door 3137 blocked in game by a PARKED LARK (pads at deck y
+  under raised paving); now modelled (assemble.py LARK, ASM 6) and the generator keeps lark footprints OUT
+  (lattice.py LARK_HALF/LARK_M, _aerostats from bible sky_islands.json); bridge footprints measured from the bridge
+  glbs (tools/sky/warren/bridge_footprints.json, regenerate from the audit snippet in this handoff if bridges change;
+  lattice _bridge_feet, gate strip extended past them); face items at the ground storey off every entrance
+  (family.py entr: mastaba, truck art, shutters); a shop's first walk-facing face always a shopfront (pick.py
+  first_door, appended to L.shop_faces); shelves only in single-entrance shops; KIT: wall_portal_knockers_k real
+  doorway, wall_luiken_k / wall_capiz_t slits closed.  AUDIT: edges into stair-core nodes are "core" (islanders,
+  through shut doors), long court/plank edges "virtual" (reported, not in the BFS), stats split.
+- Scratch check (/tmp/scratch.py: regenerate into /tmp/w3 + audit): SKY-022 1308/1310, SKY-062 1507/1507, SKY-036
+  661/661, SKY-041 545/546, all cell edges OK.
+
+- audit --all #3 (after regen #2): doors OK 47,318 / 47,357 (99.92 %), unreachable 0, risky 0, entry blocked 39,
+  blocked cell edges 58, rooms w/o floor 6, missing walls 334 (all SKY-071, grown epoch-5 rooms), see-through 337
+  (wall_beam_ends_k 5 mm slit) -> reference/tmp/audit/all_after.json (vs all_before.json).
+- Round 3 fixes (then regen #3 + lods + audit #4 chained in the background, log reference/tmp/audit/regen_all3.log
+  ends LODS_DONE / AUDIT_DONE): make_warren.py door-face guard (an entered door's face with no pass -> shopfront_a
+  of its thickness, after the budget); pick.py: no five-foot-way / qilou bay on a cell with another entrance;
+  family.py facade: epoch-5 rooms (grown storeys) get walls; KIT: wall_beam_ends_k shutter fills its opening,
+  bridge_humpback_stone collides as a smooth hump + balustrade quads (ramps.py _hump); AUDIT: core nodes = any node
+  at k * 3.2 + 0.1; arriving higher than a node (a bridge's hump) is not a height failure (up to 1 m).
+- KNOWN, not fixed (owners): GENERATOR -- the walk graph links bridge decks (bridge_humpback_stone, bridge_red_lake
+  over canals, SKY-029/031/035/065) sideways over their balustrades (~30 edges); tower-civ roof networks (SKY-071,
+  009, 077 ...) are reached only through stair cores inside houses (islanders), the player has no way up (needs real
+  stairs/ladders to roofs: a feature).  RUNTIME -- chunk collision re-add can lag a walker (door 2047, 1 in 7 walks).
+
+- FINAL (10-16 ~07:30): regen #3 (+ lods) for all, then SKY-029/031/035/065/074 (bridge-deck side edges cut in the
+  walk graph, make_warren.py, only when nothing is cut off) and SKY-071 (kowloon_walled.facade: light-well faces
+  blank instead of bare) regenerated again; audit ASM 7 mirrors RUNTIME's `_ramp_under` (0.2 m ramp slabs).
+  Totals (reference/tmp/audit/all_final.json vs all_before.json):
+  doors OK 36,511/47,460 -> 47,350/47,357 (99.99 %); unreachable 3,145 -> 0; risky 2,170 -> 0; entry blocked 5,634
+  -> 7; blocked cell edges 10,963 -> 9; risky edges 407 -> 0; fell/height/drop 334 -> 0; rooms behind doors with no
+  floor 7,870 -> 6; walk-node holes 1,980 -> 0; open roofs 3,328 -> 0; missing walls 3,754 -> 0; buried 5,701 -> 0;
+  see-through 6,132 -> 9; clearance intrusions 1,734 -> 8.  91 of 100 islands walk-clean (every door, every edge).
+- Mutation self-test on the final tool: 11/11 caught (mut/mutate.json).  Kit bounds: 0 MID overruns, 0 declared
+  overruns; kitmesh: 0 inconsistent winding, 0 inside-out parts.
+- Renders refreshed on the final files (research/sky_islands/img/audit_*.png).
+- LEFT, all owned and explained:
+  * GENERATOR: 7 door entries -- ov_vending_machine emitted on lane faces that are doors (family.py "vending" uses
+    faces_on_lanes, not the face_items entrance filter: SKY-018/020), wall_window_medio_punto_k / wall_window_grille_t
+    / abbara_vault / portal_pishtaq on entered door faces (landmark/vault pieces placed after the door guard: SKY-028,
+    043, 081, 097); 9 blocked edges at humped canal bridges' ends (bridge_humpback_stone SKY-029/031, bridge_red_lake
+    SKY-065: the walk node sits at the paving, the deck starts higher -- give the KIT red_lake ramp quads like the
+    humpback's _hump, and let the generator place the bridge so its ends meet the paving); tower-civ roofs are reached
+    only by islanders' stair cores (no player stairs to roofs: a feature).
+  * CORRECTION (RUNTIME checked, confirmed here): the 6 "rooms without a floor" HAVE floors -- walkcheck's
+    floor_missing = "through the doorway, then fell"; e.g. SKY-043 (29,40,1): the door's outside node is a porch
+    stair's mid node (y 4.0) and the walker drops ~0.7 m off the stair end at the door face (where (-10.5, 3.91,
+    -9.2), room floor 3.2).  So: a GENERATOR porch-stair/door mismatch (L.door_feet porches), not RUNTIME.  TODO
+    AUDIT: rename the class to entry_drop when the room's floor exists.  RUNTIME: door 2047
+    on SKY-022 stuck only when the island's drift/bob carry is fast (move_and_slide + carry, RUNTIME's lead).
+  * Render-only classes are reported, not walk problems: culled_slot (19,922, civ cull_slots by design), z-fighting
+    (168,892 visible same-look-filtered pairs: corner caps, int_ceiling vs doors, skirts vs plinths -- KIT/GENERATOR
+    joint design), pierce (249,771: int_ceiling/int_floor through walls, mostly hidden), floating isolated (13,468:
+    ov_lantern/ov_laundry hung in the air between walls by design), into_room (1,711: wall_sign_column_t fins).
+
+## Next step
+Nothing running.  Optional next: the GENERATOR / KIT / RUNTIME items above; phase 2 (README).
 
 ## Commands
 P=~/.venvs/ssc-assets/bin/python

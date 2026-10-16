@@ -33,6 +33,8 @@ def hex_rgb(h, linear=True):
     return tuple(c)
 
 
+# cell pieces whose box collision (sky_warren.gd: the mesh's AABB) is far bigger than what should stop a walker
+CELL_FRAMES = {"utility_pole": [[[-0.17, 0.0, -0.17], [0.17, 8.5, 0.17]]]}    # (the pole, not its 3.6 m crossarms)
 NOPASS = {"wall_luiken_k", "wall_cumba_t", "wall_cantilever_step_t"}   # (an attic hatch, an oriel's window, a stepped face)
 H = 1.5
 
@@ -85,13 +87,23 @@ def main(previews=False):
         m, log = flicker.finish(pid, d, d["build"]())
         if log:
             fixes[pid] = log
+        if d["kind"] == "ground":
+            # (the cell frame: y 0 IS the walking surface -- a paving whose top stood 2-10 cm over it (garden beds,
+            # brick, falaj, slate, calcada) made a lip at every neighbour and stair the player's capsule can't take:
+            # the audit's walk.  Set down so its top is y 0; courts and pieces with tall parts are left)
+            lo_, hi_ = m.bounds()
+            if 0.004 < hi_[1] < 0.3:
+                gm = geom.Mesh()
+                gm.add(m, geom.move(0.0, -hi_[1], 0.0))
+                m = gm
+                fixes.setdefault(pid, []).append(("set down", "", round(hi_[1], 3), ""))
         built.append((pid, m))
         lo, hi = m.bounds()
         meta[pid] = {"glb": RES + "kit.glb", "mesh": pid, "group": d["group"], "kind": d["kind"], "civs": d["civs"],
                      "bay": [3.0, 3.2], "span": d["span"], "lod1": d["lod1"], "collide": d["collide"],
                      "slots": [s for s in geom.SLOTS if m.tris[s]], "tris": m.count(),
                      "bounds": [[round(v, 3) for v in lo], [round(v, 3) for v in hi]], "notes": d["notes"]}
-        mm, how = mid.mid_mesh(pid, d, m, RAMPS.get(pid))
+        mm, how = mid.mid_mesh(pid, d, m, RAMPS.get(pid) if d["kind"] == "stair" else None)
         if how == "mid":
             mm, mlog = flicker.cure(mm)
             if mlog:
@@ -109,6 +121,9 @@ def main(previews=False):
             if not fr.get("pass_ok", True):
                 undersized.append((pid, fr["clear"], fr.get("foot")))
             meta[pid].pop("pass_ok", None)
+        if pid in CELL_FRAMES:
+            meta[pid]["collide"] = "frame"                   # (its solid part only, not its whole box)
+            meta[pid]["frame"] = CELL_FRAMES[pid]
         if pid in RAMPS:
             meta[pid]["collide"] = "ramp"
             meta[pid]["ramp"] = RAMPS[pid]

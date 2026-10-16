@@ -57,7 +57,16 @@ def levels(side):
 def holes_walk(g, R, W):
     N = W["nodes"]
     kinds = W["node_kind"]
-    sel = [k for k in range(len(N)) if kinds[k] in ("ground", "stair", "roof")]
+    # (a stair core's nodes -- one a storey inside a house, joined by vertical "core" edges -- are the islanders'
+    # virtual stairs: no floor is expected there)
+    core = set()
+    for (a, b), kd in zip(W["edges_all"], W["edge_kind"]):
+        if kd == "core":
+            for x in (int(a), int(b)):
+                q = (N[x, 1] - 0.1) / C.STOREY
+                if abs(q - round(q)) < 0.01:
+                    core.add(x)              # (units.walk_graph: a core node stands at k * 3.2 + 0.1)
+    sel = [k for k in range(len(N)) if kinds[k] in ("ground", "stair", "roof") and k not in core]
     off = np.array([[0, 0], [0.6, 0], [-0.6, 0], [0, 0.6], [0, -0.6]])
     pts = np.repeat(N[sel][:, None, [0, 2]], 5, 1) + off[None]
     y0 = np.repeat(N[sel][:, 1], 5)
@@ -125,15 +134,21 @@ def cracks(g, RR, K):
     for n in np.nonzero(g.P["mount"] == 1)[0]:
         pid = g.pid(n)
         walls[(int(recs["i"][n]), int(recs["j"][n]), int(recs["k"][n]), int(recs["rf"][n] & 3))].append(pid)
-    O, D, meta = [], [], []
+    O, D, L_, meta = [], [], [], []
     lat = np.array([-1.47, -1.0, -0.5, 0.0, 0.5, 1.0, 1.47])
     hts = np.array([0.35, 1.2, 2.0, 2.9])
     for (i, j, k) in rooms:
         for rot, (di, dj) in enumerate(FACE):
             if (i + di, j + dj, k) in rooms:
                 continue
-            pcs = walls.get((i, j, k, rot), [])
+            allp = walls.get((i, j, k, rot), [])
+            # (only walls close a face: an overlay or sign hung there alone leaves it bare)
+            pcs = [p for p in allp if K.P.get(p, {}).get("kind") in ("wall", "passage")]
             openf = any(is_opening(p, K.P.get(p, {})) for p in pcs)
+            # (rays start outside what the face's pieces put out over it -- a jetty storey, an oriel, a bay window --
+            # not inside it)
+            out_z = max([0.4] + [float(K.aabb[p][1][2]) + 0.1 for p in allp if p in K.aabb])
+            out_z = min(out_z, 2.4)
             cx = g.x0 + C.CELL * i + 1.5
             cz = g.z0 + C.CELL * j + 1.5
             nrm = np.array([di, 0.0, dj])
@@ -142,20 +157,21 @@ def cracks(g, RR, K):
                 for l in lat:
                     if openf and abs(l) < 1.2 and h < 2.6:
                         continue
-                    p = np.array([cx, C.STOREY * k + h, cz]) + nrm * 1.9 + tang * l
+                    p = np.array([cx, C.STOREY * k + h, cz]) + nrm * (1.5 + out_z) + tang * l
                     O.append(p)
                     D.append(-nrm)
-                    meta.append((i, j, k, rot, l, h, tuple(pcs)))
+                    L_.append(out_z + 1.0)
+                    meta.append((i, j, k, rot, l, h, tuple(pcs), out_z))
     if not O:
         return []
     O = np.array(O)
     D = np.array(D)
-    t, prim, _ = RR.cast(O, D, 1.4)
+    t, prim, _ = RR.cast(O, D, np.array(L_))
     miss = ~np.isfinite(t)
     by = collections.defaultdict(list)
     for q in np.nonzero(miss)[0]:
-        i, j, k, rot, l, h, pcs = meta[q]
-        by[(i, j, k, rot)].append((l, h, pcs, O[q] + D[q] * 0.4))
+        i, j, k, rot, l, h, pcs, oz = meta[q]
+        by[(i, j, k, rot)].append((l, h, pcs, O[q] + D[q] * oz))
     out = []
     for key, v in by.items():
         pcs = v[0][2]
@@ -166,6 +182,8 @@ def cracks(g, RR, K):
             di, dj = FACE[rot]
             if (i + 2 * di, j + 2 * dj, k) in rooms:
                 kind = "culled_slot"            # (a 1-cell slot between two rooms: civ SPEC cull_slots leaves it bare)
+            elif any((i + di, j + dj, kk) in rooms for kk in range(k + 1, k + 12)):
+                kind = "culled_shaft"           # (into a light well / under rooms: e.g. kowloon_walled.facade "shaft")
         if kind == "missing_wall":
             # (pick.py leaves a face bare where the room is below the next column's ground level -- "buried": but
             # the deck is a surface, not rock: the room looks into the island's hollow under the deck)
@@ -414,6 +432,11 @@ def walk(g, W):
     out = []
     for e in W["bad_edges"]:
         lab = g.label(e["prim"], e["where"]) if e["prim"] >= 0 else None
+        if e["kind"] == "long":
+            out.append(hs(g, "walk", "virtual_" + e["status"], e["where"], [lab],
+                          {"edge": e["edge"], "from": W["nodes"][e["from"]].round(2).tolist(),
+                           "to": W["nodes"][e["to"]].round(2).tolist(), "kind": e["kind"]}))
+            continue
         out.append(hs(g, "walk", "edge_" + e["status"], e["where"], [lab],
                       {"edge": e["edge"], "from": W["nodes"][e["from"]].round(2).tolist(),
                        "to": W["nodes"][e["to"]].round(2).tolist(), "kind": e["kind"]}))

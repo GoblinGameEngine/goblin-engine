@@ -577,7 +577,7 @@ def temple_chinese_roof():
         m = Mesh()
         _hip(m, 2.1, 1.2, 0.0, 0.7, lift=0.35, flare=0.2, body=1.4, cap=True)
         m.box((-1.0, 0.7, -1.0), (1.0, 1.3, 1.0), "wall", skip=("y-", "y+"))
-        _hip(m, 1.6, 0.25, 1.3, 2.3, lift=0.25, flare=0.15, body=1.0, cap=False)
+        _hip(m, 1.6, 0.25, 1.3, 2.3, lift=0.25, flare=0.15, body=1.0, cap=True)
         m.box((-1.0, 2.2, -0.1), (1.0, 2.45, 0.1), "roof", 0.8)
         for s in (-1, 1):                                                       # swallowtails
             for dz in (-0.1, 0.1):

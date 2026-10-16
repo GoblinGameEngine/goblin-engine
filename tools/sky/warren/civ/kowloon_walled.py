@@ -155,8 +155,9 @@ class KowloonWalled(Civ):
             return None
         if ctx["slot"] == "lane":
             return ("wall_window_s", 0, w) if s < 0.12 else ("wall_plain", 0, w)
-        if out == "shaft":                  # light wells: a window every third floor, the rest left to the dark
-            return ("wall_window_s", 0, w) if rel % 3 == 0 else None
+        if out == "shaft":                  # light wells: a window every third floor, the rest blank
+            # (blank, not bare: a bare face showed the rooms' insides down the well -- the audit's missing walls)
+            return ("wall_window_s", 0, w) if rel % 3 == 0 else ("wall_plain", 0, w)
         # mostly blank concrete with sparse windows (r2: "a cliff of small windows, cages, AC boxes")
         if rel <= 3:
             return ("wall_window_grille", 0, w) if s < 0.35 else (("wall_window_s", 0, w) if s < 0.6 else

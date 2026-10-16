@@ -112,6 +112,11 @@ func setup(p_sys: Node) -> void:
 		var g: Array = _banner_atlas.get("grid", [32, 7])
 		mat.set_shader_parameter("atlas_grid", Vector2(float(g[0]), float(g[1])))
 		mat.set_shader_parameter("has_atlas", true)
+		if _banner_atlas.has("png_b") and ResourceLoader.exists(str(_banner_atlas.png_b)):
+			mat.set_shader_parameter("atlas_b", load(str(_banner_atlas.png_b)))
+			if _banner_atlas.has("emit_b"):
+				mat.set_shader_parameter("atlas_b_emit", load(str(_banner_atlas.emit_b)))
+			mat.set_shader_parameter("has_atlas_b", true)
 	else:
 		_bake_names.call_deferred(mat)
 	for m in [_near, _far]:
@@ -270,11 +275,11 @@ func step(delta: float) -> void:
 				var bx: Transform3D = xf * (lx as Transform3D)
 				# (explicit branches: each packed buffer written in place, no copies)
 				if near:
-					_put(_buf_n, k, bx, lk, ln, 0.0, (k - _slot0[i]) % 2)
+					_put(_buf_n, k, bx, lk, ln, 0.0, _cell_add(k - _slot0[i]))
 					if moved_tier:
 						_hide(_buf_f, k)
 				else:
-					_put(_buf_f, k, bx, lk, ln, 0.0, (k - _slot0[i]) % 2)
+					_put(_buf_f, k, bx, lk, ln, 0.0, _cell_add(k - _slot0[i]))
 					if moved_tier:
 						_hide(_buf_n, k)
 				k += 1
@@ -336,6 +341,11 @@ func _deco_build(i: int) -> void:
 		out.append(mi)
 	out.append(roofs.size())
 	_deco[i] = out
+
+
+static func _cell_add(j: int) -> int:
+	## an island's j-th banner: name (2i), wares (2i + 1), then banners_b's streamer (500 + 2i) and clan (500 + 2i + 1)
+	return j % 2 + (500 if j % 4 >= 2 else 0)
 
 
 static func _hide(buf: PackedFloat32Array, k: int) -> void:

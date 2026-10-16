@@ -22,9 +22,11 @@ import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common as C  # noqa: E402
 
-SLAB, DECK, FENCE, BRIDGE = -1, -2, -3, -4
-SRC_NAME = {SLAB: "floor slab", DECK: "deck", FENCE: "fence", BRIDGE: "bridge"}
-ASM_VERSION = 4
+SLAB, DECK, FENCE, BRIDGE, LARK = -1, -2, -3, -4, -5
+SRC_NAME = {SLAB: "floor slab", DECK: "deck", FENCE: "fence", BRIDGE: "bridge", LARK: "parked lark"}
+ASM_VERSION = 7
+RAMP_UNDER = 0.2           # sky_warren.gd _ramp_under: every ramp quad is a slab this thick under its top
+LARK_BOX = ((-0.95, 0.0, -2.35), (0.95, 2.75, 2.35))   # sky_skiff (fleet/sky_skiff.blueprint.json: +-2.3 long, cabin 2.7)
 
 _KIT = [None]
 
@@ -77,6 +79,8 @@ class Geo:
             j = min(max(int(np.floor((at[2] - self.z0) / C.CELL)), j0), j1 - 1)
             m = (self.fkeys[:, 0] == i) & (self.fkeys[:, 1] == j) & (self.fkeys[:, 2] == ycm)
             n = int(self.frec[m][0]) if m.any() else None
+            if n is not None and n < 0:
+                return "slab:room floor", None          # (sky_warren.gd _room_floors: an entered room's floor)
             return "slab:" + (self.pid(n) if n is not None else "?"), n
         return SRC_NAME.get(src, "?"), None
 
@@ -139,6 +143,45 @@ SLOTS = ["wall", "trim", "frame", "glass", "screen", "roof", "metal", "fabric", 
          "plant", "accent", "accent2", ""]
 
 
+LEAF_Z = (-0.14, -0.08)     # sky_warren.gd: a shut door's leaf, in the face piece's frame
+LEAF_LAP = 0.03
+
+
+def door_state(W):
+    """sky_warren.gd _door_prep: the door records by face, from both sides (a face is open if any record there is
+    entered), and the entered doors' cells"""
+    st = {}
+    entered = []
+    for (unit, i, j, lv, rot, en) in W["doors"]:
+        rot &= 3
+        di, dj = C.roundi(np.sin(rot * np.pi / 2)), C.roundi(np.cos(rot * np.pi / 2))
+        for key in ((i, j, lv, rot), (i + di, j + dj, lv, (rot + 2) % 4)):
+            st[key] = st.get(key, False) or bool(en)
+        if en:
+            entered.append((i, j, lv))
+    return st, entered
+
+
+def leaves(W, P, K):
+    """{record: (lo, hi)}: the shut door leaves sky_warren.gd _door_leaf adds (a pass_kind "door" piece on a face
+    mount whose face has no entered door record -- none at all included)"""
+    st, _ = door_state(W)
+    out = {}
+    recs = W["recs"]
+    for n in range(len(recs)):
+        pid = W["ids"][recs["p"][n]]
+        spec = K.P.get(pid, {})
+        if spec.get("pass_kind") != "door" or P["mount"][n] != 1:
+            continue
+        if st.get((int(recs["i"][n]), int(recs["j"][n]), int(recs["k"][n]), int(recs["rf"][n]) & 3), False):
+            continue
+        ps = spec.get("pass")
+        if not ps or len(ps) < 2:
+            continue
+        out[n] = ((ps[0][0] - LEAF_LAP, 0.0, LEAF_Z[0]), (ps[1][0] + LEAF_LAP, ps[1][1] + LEAF_LAP, LEAF_Z[1]))
+    return out
+
+
 def render_tris(W, P, K):
     ids = W["ids"]
     pk = W["recs"]["p"]
@@ -159,6 +202,11 @@ def render_tris(W, P, K):
         sl = np.array([SLOTS.index(s[3:]) if s.startswith("wk_") and s[3:] in SLOTS else len(SLOTS) - 1
                        for s in K.slot[pid]], np.int16)
         slot.append(np.tile(sl, len(idx)))
+    for n, (lo, hi) in leaves(W, P, K).items():           # (the shut leaves are drawn too)
+        t = _box_world(P, n, lo, hi)
+        out.append(t.astype(np.float32))
+        src.append(np.full(len(t), n, np.int32))
+        slot.append(np.full(len(t), SLOTS.index("frame"), np.int16))
     if not out:
         return {"rtri": np.zeros((0, 3, 3), np.float32), "rsrc": np.zeros(0, np.int32), "rslot": np.zeros(0, np.int16)}
     return {"rtri": np.concatenate(out), "rsrc": np.concatenate(src), "rslot": np.concatenate(slot)}
@@ -173,6 +221,8 @@ def collision(W, P, K, deck, isl, bridges_down=False):
     slab_tris = []
     rules = [K.rule.get(p) for p in ids]
     whole = [K.whole_cell(p) if p in K.aabb else False for p in ids]
+    leaf = leaves(W, P, K)
+    _, entered = door_state(W)
     for ch, (ci, cj, first, cnt) in enumerate(W["table"]):
         floors = {}                              # (i, j, ycm) -> first record
         for n in range(first, first + cnt):
@@ -182,7 +232,7 @@ def collision(W, P, K, deck, isl, bridges_down=False):
             mode, data = r
             if mode == "ramp":
                 q = _nomirror(P, n, data.reshape(-1, 3)).reshape(-1, 4, 3)
-                t = C.quads_tris(q)
+                t = np.concatenate([C.quads_tris(q), _ramp_under(q)])
             elif mode == "top":
                 if P["deck"][n]:
                     continue                     # (DECK: the deck's own collision is the surface there)
@@ -200,6 +250,18 @@ def collision(W, P, K, deck, isl, bridges_down=False):
                 t = _box_world(P, n, data[0], data[1])
             tris.append(t)
             src.append(np.full(len(t), n, np.int32))
+            if n in leaf:                        # (sky_warren.gd _door_leaf: a shut door)
+                t = _box_world(P, n, *leaf[n])
+                tris.append(t)
+                src.append(np.full(len(t), n, np.int32))
+        # sky_warren.gd _room_floors: an entered door's room cell gets a whole-cell floor at its storey if none is
+        # within 0.4 m
+        for (i, j, lv) in entered:
+            if not (ci * C.CH <= i < ci * C.CH + C.CH and cj * C.CH <= j < cj * C.CH + C.CH):
+                continue
+            ycm = C.roundi(C.STOREY * lv * 100.0)
+            if not any(k[0] == i and k[1] == j and abs(k[2] - ycm) <= 40 for k in floors):
+                floors[(i, j, ycm)] = -1
         for k, n in floors.items():
             fkeys.append(k)
             frec.append(n)
@@ -224,8 +286,10 @@ def collision(W, P, K, deck, isl, bridges_down=False):
     dk = deck_tris(isl, W, gt)
     fn = fence_tris(isl, deck)
     br = bridge_tris(isl, bridges_down)
-    parts = [T, dk, fn, br]
-    srcs = [S, np.full(len(dk), DECK, np.int32), np.full(len(fn), FENCE, np.int32), np.full(len(br), BRIDGE, np.int32)]
+    lk = lark_tris(isl, deck)
+    parts = [T, dk, fn, br, lk]
+    srcs = [S, np.full(len(dk), DECK, np.int32), np.full(len(fn), FENCE, np.int32), np.full(len(br), BRIDGE, np.int32),
+            np.full(len(lk), LARK, np.int32)]
     ctri = np.concatenate([p.reshape(-1, 3, 3) for p in parts]).astype(np.float32)
     csrc = np.concatenate(srcs)
     cslab = np.concatenate([slab_id, np.full(len(ctri) - len(slab_id), -1, np.int32)])
@@ -236,6 +300,27 @@ def collision(W, P, K, deck, isl, bridges_down=False):
 
 
 C_SLAB = SLAB
+
+
+def _ramp_under(q):
+    """sky_warren.gd _ramp_under: per quad its underside RAMP_UNDER along its upward normal and 4 edge faces"""
+    out = []
+    for qq in q:
+        nrm = np.cross(qq[1] - qq[0], qq[2] - qq[0])
+        ln = np.linalg.norm(nrm)
+        if ln < 1e-12:
+            continue
+        nrm = nrm / ln
+        if nrm[1] < 0.0:
+            nrm = -nrm
+        lo = qq - nrm * RAMP_UNDER
+        out.append([lo[0], lo[2], lo[1]])
+        out.append([lo[0], lo[3], lo[2]])
+        for k in range(4):
+            a, c = qq[k], qq[(k + 1) % 4]
+            out.append([a, lo[k], lo[(k + 1) % 4]])
+            out.append([a, lo[(k + 1) % 4], c])
+    return np.array(out).reshape(-1, 3, 3) if out else np.zeros((0, 3, 3))
 
 
 def _nomirror(P, n, pts):
@@ -379,6 +464,31 @@ def fence_tris(isl, deck):
     return np.concatenate(out) if out else np.zeros((0, 3, 3))
 
 
+_CANON = {}
+
+
+def aerostats(iid):
+    """remake/bible/sky_islands.json: the island's larks (sky_island.gd canon.aerostats, default 2)"""
+    if not _CANON:
+        import json
+        p = os.path.join(C.GP, "remake", "bible", "sky_islands.json")
+        if os.path.exists(p):
+            for e in json.load(open(p)).get("islands", []):
+                _CANON[e.get("id")] = e
+    return int(_CANON.get(iid, {}).get("aerostats", 2))
+
+
+def lark_tris(isl, deck):
+    """sky_island.gd _build_props / _spawn_lark: a parked lark (a solid craft) on each of the first `aerostats` pads,
+    at the pad's y (or the deck) + 0.02, turned by its yaw -- as a box"""
+    out = []
+    for p in (isl.get("pads") or [])[:aerostats(isl["id"])]:
+        y = float(p["y"]) if "y" in p and p["y"] is not None else float(deck.y(p["x"], p["z"]))
+        out.append(C.box_tris(LARK_BOX[0], LARK_BOX[1], C.rot_y(float(p.get("yaw", 0.0))),
+                              np.array([float(p["x"]), y + 0.02, float(p["z"])])))
+    return np.concatenate(out) if out else np.zeros((0, 3, 3))
+
+
 _BR = {}
 
 
@@ -405,9 +515,25 @@ def bridge_tris(isl, down=False):
         else:
             R, t = np.eye(3), (al, 0, f["W"])
         local = _bridge_local(sp, 1.0 if down else 0.0)
+        local = np.concatenate([local, _ramp_box(float(sp.get("width", 3.6))).reshape(-1, 3)]) if len(local) else local
         if len(local):
             out.append(local @ R.T + np.asarray(t, float))
     return np.concatenate(out).reshape(-1, 3, 3) if out else np.zeros((0, 3, 3))
+
+
+RAMP_FOOT, RAMP_HEAD, RAMP_T = (-1.7, -0.12), (-0.45, 0.03), 0.04     # sky_bridge.gd (z, y) in the bridge frame
+
+
+def _ramp_box(w):
+    """sky_bridge.gd ramp_box/_make_ramp: the threshold ramp's box (fixed on the bridge root, any pose)"""
+    a = np.array([0.0, RAMP_FOOT[1], RAMP_FOOT[0]])
+    b = np.array([0.0, RAMP_HEAD[1], RAMP_HEAD[0]])
+    along = (b - a) / np.linalg.norm(b - a)
+    up = np.cross(along, [1.0, 0.0, 0.0])
+    Rb = np.stack([[1.0, 0.0, 0.0], up, along], 1)
+    c = (a + b) * 0.5 - up * RAMP_T * 0.5
+    h = np.array([w - 0.3, RAMP_T, np.linalg.norm(b - a)]) * 0.5
+    return C.box_tris(-h, h, Rb, c)
 
 
 def _bridge_local(sp, d):

@@ -126,7 +126,7 @@ def roof_tile_flying_eave():
     """grey tile roof over a cell, shallow, its four corners swept up (Chongqing / Bashu flying eaves), a ridge"""
     def b():
         m = Mesh()
-        _hip(m, HB + 0.7, 0.6, 0.0, 1.0, lift=0.45, flare=0.3, body=HB, cap=False)
+        _hip(m, HB + 0.7, 0.6, 0.0, 1.0, lift=0.45, flare=0.3, body=HB, cap=True)   # (closed: the audit saw into the rooms through its top)
         m.box((-0.7, 0.95, -0.08), (0.7, 1.12, 0.08), "roof", 0.8, skip=("y-",))
         for x in (-0.7, 0.7):
             m.cyl(x, 0.0, 0.05, 1.05, 1.35, "roof", n=4, r1=0.0)
@@ -389,7 +389,7 @@ def wall_luiken():
         m = _wall(K, ops)
         for k, (y0, y1) in enumerate(((0.2, 1.45), (1.5, 2.75))):                              # two pairs of shutters
             for x0 in (-0.45, 0.0):
-                m.box((x0 + 0.01, y0, -0.2), (x0 + 0.44, y1, -0.14), "accent", 0.95 - 0.08 * k)
+                m.box((x0, y0, -0.2), (x0 + 0.45, y1, -0.14), "accent", 0.95 - 0.08 * k)   # (meeting: no slit to see through)
                 _strip(m, (x0 + 0.06, y0 + 0.08, -0.135), (x0 + 0.39, y1 - 0.08, -0.135), 0.05, (0, 0, 1), "accent2")
                 _strip(m, (x0 + 0.39, y0 + 0.08, -0.13), (x0 + 0.06, y1 - 0.08, -0.13), 0.05, (0, 0, 1), "accent2")
         _ring(m, -0.45, 0.2, 0.45, 2.75, 0.08, 0.0, 0.05, "trim")

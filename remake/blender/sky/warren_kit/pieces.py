@@ -144,15 +144,24 @@ def wall_door_portal():
 
 def wall_shopfront(t, kind):
     def b():
-        if kind == "a":                                        # rolling shutter, half down
+        if kind == "a":                                        # rolling shutter up, a glazed front with its shop door
+            # (the shop is entered here -- the generator's shop doors: the audit found 3,184 doors behind a shutter
+            # half down over a glass wall; now the shutter is rolled up under its box, the glass stands either side of
+            # a 1.16 m open doorway, and the step is a 5 cm sill the player's capsule rolls over)
+            g = -min(t * 0.6, 0.3)
             m = _wall(t, [_rect(-1.3, 0.0, 1.3, 2.6)])
             m.box((-1.38, 2.6, -0.05), (1.38, 2.95, 0.28), "metal")             # the shutter box
-            m.wall_cut(_rect(-1.25, 1.3, 1.25, 2.6), [], -0.05, -0.02, "metal")  # the shutter
-            for k in range(8):
-                y = 1.35 + k * 0.155
+            m.wall_cut(_rect(-1.25, 2.4, 1.25, 2.6), [], -0.05, -0.02, "metal")  # the shutter's last slats, rolled up
+            for k in range(2):
+                y = 2.42 + k * 0.09
                 m.box((-1.25, y, -0.02), (1.25, y + 0.03, 0.0), "metal")
-            m.pane(-1.25, 0.05, 1.25, 1.3, -min(t * 0.6, 0.3))
-            m.box((-1.3, 0.0, -0.02), (1.3, 0.12, 0.25), "trim")                 # a step
+            m.box((-1.25, 2.35, g - 0.03), (1.25, 2.4, g + 0.03), "frame")       # the transom
+            for x0, x1 in ((-1.25, -0.6), (0.6, 1.25)):
+                m.pane(x0, 0.05, x1, 2.35, g)                                    # the shop windows
+                m.box((x0, 0.05, g - 0.03), (x1, 0.12, g + 0.03), "frame")       # their bottom rails
+            for x0, x1 in ((-0.65, -0.6), (0.6, 0.65)):
+                m.box((x0, 0.05, g - 0.04), (x1, 2.35, g + 0.04), "frame")       # the door posts
+            m.box((-1.3, 0.0, -0.02), (1.3, 0.05, 0.25), "trim")                 # a sill
         else:                                                  # an open front under an awning
             m = _wall(t, [_rect(-1.2, 0.0, 1.2, 2.4)])
             m.pane(-1.2, 0.05, 1.2, 2.4, -min(t * 0.6, 0.3))

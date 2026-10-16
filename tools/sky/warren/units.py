@@ -34,8 +34,15 @@ def make_units(L, civ):
         shops = lot.get("shop_cells", set())
         if shops:
             units.append({"use": SHOP, "homes": 0, "floors": 1, "cells": len(shops), "lot": lot["id"]})
+            # (the shop's door is the face its shopfront was built on (pick.py L.shop_faces), not just the first face
+            # onto the walk -- the audit found shop door records on a plain wall while the shopfront faced the street)
+            sf = {}
+            for (fi, fj, fk, frot, fuse, fdoor) in getattr(L, "shop_faces", ()):
+                sf.setdefault((fi, fj, fk), []).append(frot)
             for c in sorted(shops):
-                for rot, (di, dj) in FACE.items():
+                order = sf.get((c[0], c[1], int(L.gk[c])), []) + [r for r in FACE if r not in sf.get((c[0], c[1], int(L.gk[c])), [])]
+                for rot in order:
+                    di, dj = FACE[rot]
                     m = (c[0] + di, c[1] + dj)
                     if m in L.W and L.q[m] == 4 * int(L.gk[c]) and m not in L.stoop:
                         doors.append((len(units) - 1, c, int(L.gk[c]), rot, 1))

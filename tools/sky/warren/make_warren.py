@@ -121,6 +121,28 @@ def build(isl, civ_id, do_preview=True):
         ostats["pieces_removed"] += ostats2["pieces_removed"]
         if not ostats2["pieces_swapped"] and not ostats2["pieces_removed"]:
             break
+    # every entered door's face keeps a piece one can walk through: the budget and openings.fix swap facades after
+    # the doors were chosen (five-foot ways and noren to an arcade counter, shop windows...) -- the audit's last door
+    # entries.  A wall with no pass there becomes the shopfront (frame + door pass) of its thickness
+    P_ = kit["pieces"]
+    fixed = 0
+    faces = {}
+    for n, r in enumerate(o.recs):
+        if r[6] == 1 and P_.get(r[0], {}).get("kind") == "wall":
+            faces.setdefault((r[1], r[2], r[3], r[4]), []).append(n)
+    for (u, c, k, rot, e) in getattr(L, "doors", []):
+        if not e:
+            continue
+        idx = faces.get((c[0], c[1], k, (rot + 2) & 3), [])
+        if idx and not any(P_.get(o.recs[n][0], {}).get("pass") for n in idx):
+            n = idx[0]
+            r = list(o.recs[n])
+            want = "wall_shopfront_a_k" if r[0].endswith("_k") else "wall_shopfront_a_t"
+            if want in P_:
+                r[0] = want
+                o.recs[n] = tuple(r)
+                fixed += 1
+    L.door_faces_fixed = fixed
     occ = openings.occupied(L, o.recs, kit["pieces"], L.phys_h)
     for c in occ:
         L.W.discard(c)                                   # (a landmark's footprint: off the walk)
@@ -133,6 +155,35 @@ def build(isl, civ_id, do_preview=True):
     L.walk_stats["physical"]["landmark_cells"] = len(occ)
     o.recs, gstats = openings.prune_graph(L, o.recs, kit["pieces"], [(c, n) for c, n, _ in left["edges"]], occ)
     L.walk_stats["physical"]["graph"] = gstats
+    # a bridge piece (a canal's humped bridge: kind bridge, span [1, n] along its +Z) is crossed along its deck only --
+    # the walk graph joined its cells sideways too, over the balustrades (the audit's last blocked edges)
+    KD = {0: (0, 1), 1: (1, 0), 2: (0, -1), 3: (-1, 0)}            # kit rot -> (di, dj) of the piece's +Z
+    axis = {}
+    for r in o.recs:
+        sp = kit["pieces"].get(r[0], {})
+        if sp.get("kind") == "bridge" and r[6] == 0:
+            di, dj = KD[r[4] & 3]
+            for t in range(int(sp.get("span", [1, 1])[1])):
+                axis[(r[1] + di * t, r[2] + dj * t)] = (abs(di), abs(dj))
+    if axis and getattr(L, "walk_index", None):
+        cell_of = {v: (k[1], k[2]) for k, v in L.walk_index.items() if k[0] == "g"}
+        keep, cut = [], 0
+        for e in L.walk["edges"]:
+            ca, cb = cell_of.get(e[0]), cell_of.get(e[1])
+            if ca and cb:
+                d = (abs(cb[0] - ca[0]), abs(cb[1] - ca[1]))
+                if (ca in axis and axis[ca] != d) or (cb in axis and axis[cb] != d):
+                    cut += 1
+                    continue
+            keep.append(e)
+        # (only if nothing is cut off by it: a bridge the network crosses the other way is left as it was)
+        before = U.components(L)
+        old_e = L.walk["edges"]
+        L.walk["edges"] = keep
+        if U.components(L)[:1] != before[:1]:
+            L.walk["edges"] = old_e
+            cut = 0
+        L.walk_stats["physical"]["graph"]["bridge_side_edges_cut"] = cut
     if os.environ.get("WALK_DEBUG"):
         S = openings.Scene(L, o.recs, kit["pieces"])
         for lid, bl in left["doors"][:3]:

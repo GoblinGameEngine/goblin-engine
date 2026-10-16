@@ -15,6 +15,9 @@ uniform bool flag = false;
 uniform bool has_atlas = false;
 uniform sampler2D atlas : source_color, filter_linear_mipmap, repeat_disable;
 uniform sampler2D atlas_emit : filter_linear_mipmap, repeat_disable;
+uniform sampler2D atlas_b : source_color, filter_linear_mipmap, repeat_disable;   // (banners_b: flag streamer 2i, clan 2i+1)
+uniform sampler2D atlas_b_emit : filter_linear_mipmap, repeat_disable;
+uniform bool has_atlas_b = false;
 uniform vec2 atlas_grid = vec2(8.0, 8.0);
 uniform vec3 wind = vec3(1.0, 0.0, 0.35);     // (in the island's frame: islands don't turn)
 uniform bool has_names = false;
@@ -52,14 +55,17 @@ void vertex() {
 	} else {
 		// down, weighted: a gentle billow out of its plane, a slow sway, a little lean downwind, the foot steadied
 		float foot = 1.0 - smoothstep(0.85, 1.0, t);                // (the batten: stiller at the very foot)
-		float billow = (sin(t * 5.0 - tm * 0.9 + ph) * 1.2 + sin(t * 11.0 - tm * 1.7 + ph * 2.0) * 0.4) * t * foot;
+		float billow = (sin(t * 5.0 - tm * 0.9 + ph) * 0.5 + sin(t * 11.0 - tm * 1.7 + ph * 2.0) * 0.15) * t * foot;
 		float edge = (abs(UV.x - 0.5) * 2.0);
-		billow += sin(tm * 0.8 + ph + t * 3.0) * 0.25 * edge * t;     // (the edges ripple a little more)
-		float sway = sin(tm * 0.21 + ph) * 0.025 * t * t * L;         // (a slow pendulum: ~7 m at the foot of 300 m)
-		float tw = sin(tm * 0.17 + ph * 2.0) * 0.12 * t;               // (hardly any twist: the face stays out)
+		billow += sin(tm * 0.8 + ph + t * 3.0) * 0.12 * edge * t;     // (the edges ripple a little more)
+		float sway = sin(tm * 0.21 + ph) * 0.008 * t * t * L;         // (a slow pendulum: ~2.4 m at the foot of 300 m -- plumb)
+		float tw = sin(tm * 0.17 + ph * 2.0) * 0.04 * t;               // (hardly any twist: the face stays out, readable)
 		vec2 xz = vec2(x * cos(tw), x * sin(tw));
-		vec3 lean = normalize(wind) * (t * t * L * 0.03);              // (weighted: hangs nearly plumb)
-		VERTEX = vec3(xz.x + sway, y, xz.y + billow) + lean;
+		vec3 lean = normalize(wind) * (t * t * L * 0.008);             // (weighted: hangs nearly plumb, < 0.5 deg)
+		// (the instance is scaled 10-20 x across to the banner's width: an offset along x is in those units, so the
+		// sway and the lean's x come back to metres here -- unscaled, a 2.4 m sway swung the foot 30-50 m: diagonals)
+		float sx = max(length(MODEL_MATRIX[0].xyz), 0.001);
+		VERTEX = vec3(xz.x + sway / sx + lean.x / sx, y + lean.y, xz.y + billow + lean.z);
 	}
 }
 
@@ -69,20 +75,27 @@ void fragment() {
 	float lit = 0.55;                          // night emission (x albedo); the lettering's own: SIGN_EMIT
 	if (has_atlas && cell >= 0.0 && !flag) {
 		// the SIGNS agent's banner (signs.json banner_atlas): its cell down the whole length, cap at the top, tail below
-		vec2 g = vec2(mod(cell, atlas_grid.x), floor(cell / atlas_grid.x));
-		vec4 tx = texture(atlas, (g + vec2(UV.x, t_along)) / atlas_grid);
+		// (a cell of 500 + n is banners_b's cell n: an island's 3rd and 4th banners, its streamer and clan banner)
+		bool bb = cell >= 500.0 && has_atlas_b;
+		float cl = cell >= 500.0 ? cell - 500.0 : cell;
+		vec2 g = vec2(mod(cl, atlas_grid.x), floor(cl / atlas_grid.x));
+		// (the strip's front faces out along +z, where its +x runs to the viewer's LEFT: u mirrored there, plain on the
+		// back -- so the lettering reads the right way round from both sides; unmirrored it read backwards from outside)
+		float u = FRONT_FACING ? 1.0 - UV.x : UV.x;
+		vec2 auv = (g + vec2(u, t_along)) / atlas_grid;
+		vec4 tx = bb ? texture(atlas_b, auv) : texture(atlas, auv);
 		if (tx.a < 0.5) {
 			discard;                                  // (the forked tails)
 		}
 		c = pow(tx.rgb, vec3(1.0 / 2.2));             // (source_color already linear: ALBEDO below re-linearises)
-		lit = mix(0.08, 1.6, texture(atlas_emit, (g + vec2(UV.x, t_along)) / atlas_grid).r);
+		lit = mix(0.08, 1.6, (bb ? texture(atlas_b_emit, auv) : texture(atlas_emit, auv)).r);
 	} else if (!flag && has_names) {
 		// (until SIGNS' strips land) the island's name down the banner on its colour A, repeated, framed in B with the
 		// woven motif in the border, a dark batten at the foot
 		float rep = 3.0;
 		float seg = fract(t_along * rep);
 		vec2 g = vec2(mod(name_cell, name_grid.x), floor(name_cell / name_grid.x));
-		float m = texture(names, (g + vec2(UV.x * 0.9 + 0.05, seg)) / name_grid).r;
+		float m = texture(names, (g + vec2((FRONT_FACING ? 1.0 - UV.x : UV.x) * 0.9 + 0.05, seg)) / name_grid).r;
 		float border = step(0.86, abs(UV.x - 0.5) * 2.0);
 		vec2 q = vec2(UV.x * 2.0, fract(t_along * 60.0));
 		float dia = abs(fract(q.x) - 0.5) + abs(q.y - 0.5);

@@ -21,6 +21,20 @@ class_name SkySigns
 ## Names and messages: deterministic, from the island's canon (its trade, specialty, clan, the Skein's slang).
 
 const FONTS := ["res://remake/fonts/NotoSans-Bold.ttf", "res://remake/fonts/NotoSerif-Bold.ttf"]
+## the island's people (sky_islands.json "heritage") -> [lettering, accent]: SIGNS' table (tools/signs/make_flags.py
+## HERITAGE).  A warren shop sign blends both sides (the user: "it shows how cultures mixed"): the warren family's
+## blank is the frame and ground, the name is lettered in the heritage's face, and a share of shops (by hash) glow in
+## the heritage accent.  Fonts: remake/fonts/heritage/ (OFL).
+const HERITAGE := {"anglo": ["Cinzel", "#1f3a68"], "hispanic": ["Lobster-Regular", "#d9a521"],
+	"francophone": ["PlayfairDisplay", "#2b5aa8"], "multi": ["Righteous-Regular", "#8a4fb8"],
+	"black_anglo": ["AlfaSlabOne-Regular", "#2f7d3a"], "german": ["OldStandard-Bold", "#303030"],
+	"east_asian": ["DelaGothicOne-Regular", "#c8302a"], "irish_scots": ["UncialAntiqua-Regular", "#2f8a5a"],
+	"greek": ["Marcellus-Regular", "#3a7cc0"], "polish": ["Oswald", "#c8203a"], "black": ["Shrikhand-Regular", "#d07a1a"],
+	"italian": ["PlayfairDisplay", "#3a8a4a"], "arab": ["ArefRuqaa-Bold", "#1a7a6a"], "indigenous": ["CarterOne", "#9a4a2a"],
+	"station_coined": ["Bungee-Regular", "#c0c0c8"], "se_asian": ["Chonburi-Regular", "#e0b020"],
+	"scandinavian": ["JosefinSlab", "#2a4a8a"], "south_asian": ["YatraOne-Regular", "#e07a1a"],
+	"slavic": ["RuslanDisplay-Regular", "#3a5aa8"], "hungarian": ["Arvo-Bold", "#6a8a3a"]}
+const ACCENT_SHARE := 0.4            # shops whose name glows in the heritage accent (the rest: the lane's neon)
 const SIGN_RANGE := 1400.0
 const BULB_RANGE := 900.0
 const STOREY := 3.1
@@ -140,7 +154,27 @@ static func _font(i: int) -> Font:
 	if _fonts.is_empty():
 		for p in FONTS:
 			_fonts.append(load(p))
+	if i >= _fonts.size():
+		return _fonts[0]
 	return _fonts[i]
+
+
+static var _hfont := {}              # heritage -> font index (appended to _fonts on first use)
+
+
+static func _heritage_font(her: String) -> int:
+	## the font index of a heritage's lettering (0, Noto Sans, when none)
+	if _hfont.has(her):
+		return _hfont[her]
+	_font(0)
+	var fi := 0
+	if HERITAGE.has(her):
+		var p := "res://remake/fonts/heritage/%s.ttf" % str(HERITAGE[her][0])
+		if ResourceLoader.exists(p):
+			_fonts.append(load(p))
+			fi = _fonts.size() - 1
+	_hfont[her] = fi
+	return fi
 
 
 static func _glyph(fi: int, ch: String) -> Array:
@@ -723,6 +757,9 @@ func _wblank(xf: Transform3D, kind: String, w: float, h: float, text: String, r:
 	var u0 := Vector2(float(uv[0]), float(uv[1]) + float(uv[3]))
 	var u1 := Vector2(float(uv[0]) + float(uv[2]), float(uv[1]))
 	var bucket := "atlas_" + str(cell.atlas)
+	var her := str(isl.canon.get("heritage", ""))
+	var hfi := _heritage_font(her)
+	var her_accent := float(absi(hash(text + ":accent")) % 1000) / 1000.0 < ACCENT_SHARE
 	_box(bx * Transform3D(Basis(), Vector3(0, 0, -0.04)), Vector3(W, H, 0.05), Color(0.1, 0.09, 0.08))
 	for side in ([1.0, -1.0] if blade else [1.0]):
 		var f := bx * Transform3D(Basis(Vector3.UP, 0.0 if side > 0 else PI), Vector3(0, 0, 0.0))
@@ -733,16 +770,19 @@ func _wblank(xf: Transform3D, kind: String, w: float, h: float, text: String, r:
 		var tw := (float(con[2]) - float(con[0])) / cw * W * 0.86
 		var th := (float(con[3]) - float(con[1])) / chh * H
 		var col := _neon_col(r).lerp(Color(1.0, 0.92, 0.75), 0.35)
+		if her_accent and HERITAGE.has(her):
+			var ac := Color(str(HERITAGE[her][1]))
+			col = Color.from_hsv(ac.h, minf(ac.s, 0.75), maxf(ac.v, 0.95))     # (the accent, bright enough to glow)
 		if blade:
 			var nm := _short(text)
 			var cap := minf(tw * 0.8, th * 0.9 / maxf(nm.length() * 1.35 - 0.35, 1.0))
 			var y0 := (nm.length() * cap * 1.35 - cap * 0.35) * 0.5
-			_vtext("solid", f * Transform3D(Basis(), Vector3(cx, cy + y0, 0.012)), nm, cap, Color(0.1, 0.08, 0.06), 0, 0, 0)
-			_vtext("neon", f * Transform3D(Basis(), Vector3(cx, cy + y0, 0.02)), nm, cap, Color(col, 1.0), 0.0, 0.0, 0)
+			_vtext("solid", f * Transform3D(Basis(), Vector3(cx, cy + y0, 0.012)), nm, cap, Color(0.1, 0.08, 0.06), 0, 0, hfi)
+			_vtext("neon", f * Transform3D(Basis(), Vector3(cx, cy + y0, 0.02)), nm, cap, Color(col, 1.0), 0.0, 0.0, hfi)
 		else:
 			var cap := minf(th * 0.62, 0.32)
-			_text("solid", f * Transform3D(Basis(), Vector3(cx, cy - cap * 0.5, 0.012)), text, cap, Color(0.1, 0.08, 0.06), 0, 0, 0, tw)
-			_text("neon", f * Transform3D(Basis(), Vector3(cx, cy - cap * 0.5, 0.02)), text, cap, Color(col, 1.0), 0.0, 0.0, 0, tw)
+			_text("solid", f * Transform3D(Basis(), Vector3(cx, cy - cap * 0.5, 0.012)), text, cap, Color(0.1, 0.08, 0.06), 0, 0, hfi, tw)
+			_text("neon", f * Transform3D(Basis(), Vector3(cx, cy - cap * 0.5, 0.02)), text, cap, Color(col, 1.0), 0.0, 0.0, hfi, tw)
 
 
 func _wblade(xf: Transform3D, w: float, h: float, text: String, col: Color, r: RandomNumberGenerator) -> void:

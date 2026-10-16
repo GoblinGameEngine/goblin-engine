@@ -14,6 +14,7 @@ $P tools/sky/warren/audit/kitmesh.py [x.glb ...]      # topology + normals of ev
 $P tools/sky/warren/audit/calibrate.py all            # agreement with the game's own measurements (see Verification)
 $P tools/sky/warren/audit/mutate.py SKY-099           # mutation self-test: does each check catch its fault
 $P tools/sky/warren/audit/assemble.py SKY-022         # just build + cache the geometry, print counts
+$P tools/sky/warren/audit/render.py SKY-022 --persp EX,EY,EZ TX,TY,TZ | --top   # offline PNG view (Embree, no GPU)
 ```
 Runtime: 45-70 s an island (SKY-022, 73 k placements, 2.8 M render / 0.76 M collision triangles: 45 s with the pair
 cache warm), small islands 10-20 s.  Geometry is cached per island in `reference/tmp/audit/cache/` (keyed by the
@@ -33,6 +34,7 @@ input files' mtimes), pair configurations in `cache/pairs_<kit hash>.pkl` (share
 | bounds.py | the kit client of meshlib.bounds |
 | kitmesh.py | meshlib.topology + inward_normals over every mesh of any GLB (kit.glb, kit_mid.glb by default) |
 | img.py | PNG views (front/side/top of a part against its boxes) and the island plan canvas |
+| render.py | offline perspective / top views: a ray per pixel, kit palette colours, sun + shadow ray (~1-8 s a view) |
 | audit.py, calibrate.py, mutate.py | the CLIs |
 
 ## The collision it reproduces (sky_warren.gd, file:line as of 2026-10-16)
@@ -50,7 +52,15 @@ input files' mtimes), pair configurations in `cache/pairs_<kit hash>.pkl` (share
   boxes per ~3 m, none within gap width / 2 + 1.5 m.  Bridges: sky_island.gd `_build_bridges` (l.976) +
   sky_bridge.gd `setup` (every mesh a trimesh body "solid"; the moving nodes at deploy 0 = stowed; `--` the span
   stands upright 1.0-4.5 m inland).
-* Not modelled: parked larks (RemakeFleetCraft on the first pads), the player's own body, islanders.
+* RUNTIME rules added 2026-10-16 (mirrored, ASM_VERSION 5): `_door_prep`/`_door_leaf` -- a pass_kind "door" piece on a
+  face is shut by a solid leaf box (x pass +-0.03, y 0..pass top + 0.03, z -0.14..-0.08) unless a door record on that
+  face (either side) is entered; `_room_floors` -- an entered door's cell gets a whole-cell floor at its storey if
+  none is within 0.4 m; sky_bridge.gd `ramp_box` -- the 4 cm threshold ramp (z -1.7, y -0.12 to z -0.45, y 0.03).
+  The walk check treats non-entered doors as shut (only their step outside must be reachable).
+* Parked larks (sky_island.gd `_build_props` / `_spawn_lark`): a box +-0.95 x +-2.35 m, 2.75 m tall on each of the first
+  `aerostats` pads (remake/bible/sky_islands.json), at the pad's y (or the deck) + 0.02, turned by its yaw (source
+  LARK).  RUNTIME `_ramp_under` (ASM 7): every ramp quad is a 0.2 m slab along its upward normal (underside + edges).
+* Not modelled: the player's own body, islanders, larks in flight.
 
 ## The player (StationPlayer)
 Capsule r 0.18, height 1.45 (origin 1.43 m over its bottom), floor_max_angle 55 deg, floor_snap 0.5 m, no step-up,
@@ -70,12 +80,12 @@ Capsule r 0.18, height 1.45 (origin 1.43 m over its bottom), floor_max_angle 55 
 ## The checks (hotspots: check, kind, xyz, cell (i, j, level), pieces, value)
 | check / kind | how | owner of a fix |
 |---|---|---|
-| walk / edge_blocked, edge_fell, edge_height, edge_risky, edge_drop | every walk-graph edge of neighbouring cells (and "long" court/plank edges), both ways, strict; failures re-run lenient (pass -> risky) | generator (graph, grading), kit (ramps, lips) |
+| walk / edge_blocked, edge_fell, edge_height, edge_risky, edge_drop | every walk-graph edge of neighbouring cells, both ways, strict; failures re-run lenient (pass -> risky).  Edges onto stair-core nodes (k * 3.2 + 0.1, inside houses) are the islanders' ("core", not tested); long court/plank edges are tested but reported as virtual_* and kept out of the BFS | generator (graph, grading), kit (ramps, lips) |
 | walk / door_unreachable, door_risky, door_entry_blocked, door_no_node_outside | BFS from the travel point over the passing directed edges (risky edges: reachable but not safely); each door's outside node; an entry walk 0.65 m through the doorway; unreachable doors carry the first failing edge on the graph's own route | generator / kit |
 | holes / no_floor, floor_off | rays down at every walk node (5 points) must meet collision at the node height | generator / runtime |
 | holes / roof_open | 16 rays down over every column's top room (render) must stop at its roof | generator / kit |
 | holes / room_floor_missing | a door's entry walk falls just inside: the room has no floor | runtime / generator |
-| cracks / missing_wall, buried_face, see_through, seam | rays from 0.4 m outside every exterior room face (4 heights x 7 across, openings skipped in their opening) must hit the facade (render); none = no wall piece there / looking into the hollow under the deck / through a piece / between two bays | generator / kit |
+| cracks / missing_wall, buried_face, culled_slot, see_through, seam | rays from outside every exterior room face (0.4 m, or 0.1 m beyond what the face's pieces put out: jetties, oriels) (4 heights x 7 across, openings skipped in their opening) must hit the facade (render); none = no wall piece there / looking into the hollow under the deck / through a piece / between two bays | generator / kit |
 | cracks / riser_gap | where a walk cell stands > 6 cm over its neighbour the face between must be closed (skirt, plinth) | generator |
 | manifold / kit_piece | meshlib.topology of every kit piece used (non-manifold, inconsistent winding, inside-out, duplicate faces) | kit |
 | manifold / dup_across | identical same-facing faces of two placements (per configuration) | generator |

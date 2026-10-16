@@ -77,11 +77,14 @@ def run(iid, wdir=None, skip=(), out_dir=None, png=True, quiet=False):
     walk = {}
     if W is not None:
         ds = collections.Counter(d["status"] for d in W["doors"])
-        es = collections.Counter(W["edge_status"])
+        cellq = np.array([W["edge_kind"][e] == "cell" for e in W["edge_id"]], bool)
+        es = collections.Counter(W["edge_status"][cellq])
+        vs = collections.Counter(W["edge_status"][~cellq])
         walk = {"doors": len(W["doors"]), "doors_status": dict(ds),
                 "doors_ok": ds.get("ok", 0), "doors_reachable": len(W["doors"]) - sum(
                     v for k, v in ds.items() if k.startswith("unreachable") or k.startswith("no node")),
-                "edges_tested_directed": int(len(W["edge_status"])), "edges_status": dict(es),
+                "edges_tested_directed": int(cellq.sum()), "edges_status": dict(es),
+                "virtual_edges_status": dict(vs),
                 "nodes": int(len(W["nodes"])), "nodes_reached": len(W["reach"]), "nodes_reached_safe": len(W["reach_safe"]),
                 "floor_missing_rooms": sum(1 for d in W["doors"] if d.get("floor_missing"))}
     res = {"island": iid, "civ": g.W["civ"], "render_tris": int(len(g.rtri)), "collision_tris": int(len(g.ctri)),

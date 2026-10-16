@@ -34,21 +34,38 @@ def _helix(r0, r1, a0, a1, y0, y1, n, cx=0.0, cz=0.0, zs=1.0):
     return out
 
 
+def _hump(L, n, w, peak, rail):
+    """a humped bridge's walking surface: n quads along +Z over L following peak * sin (from y 0 at both ends), and its
+    low balustrades as upright quads (the player can't fall off the sides)"""
+    zs = [-HB + L * i / n for i in range(n + 1)]
+    ys = [peak * math.sin(math.pi * i / n) for i in range(n + 1)]
+    out = [_flight(-w, w, zs[i], zs[i + 1], ys[i], ys[i + 1]) for i in range(n)]
+    for sx in (-w, w):
+        out += [[[sx, ys[i], zs[i]], [sx, ys[i + 1], zs[i + 1]], [sx, ys[i + 1] + rail, zs[i + 1]], [sx, ys[i] + rail, zs[i]]]
+                for i in range(n)]
+    return out
+
+
 RAMPS = {
+    # (the stepped deck collided as the mesh: 22 cm first step, 0.45 m steps -- the audit's walk; a smooth incline now)
+    "bridge_humpback_stone": _hump(9.0, 14, 1.08, 2.0, 0.55),
     "step_low_1": [_flight(-HB, HB, -HB, HB, 0.0, 0.2)],
     "step_low_4": [_flight(-HB, HB, -HB, HB, 0.0, 0.8)],
-    "steps_up": [_flight(-1.4, 1.4, -HB, HB, 0.0, 1.6)],
+    "steps_up": [_flight(-HB, HB, -HB, HB, 0.0, 1.6)],     # (the full cell: side by side, two flights meet)
     "stair_run": [_flight(-0.65, 0.65, -HB, 4.5, 0.0, ST)],
     "stair_street_long": [_flight(-HB, HB, -HB, 1.2, 0.0, 1.6), _flight(-HB, HB, 1.2, 2.4, 1.6, 1.6), _flight(-HB, HB, 2.4, 5.1, 1.6, ST)],
     "stair_painted": [_flight(-1.3, 1.3, -HB, HB, 0.0, 1.6)],
+    # (not a stair: the court's surface as its only collision -- its "top" box rule put a floor at the hoop, 3.65 m)
+    "basketball_court": [_flight(-HB, 4.5, -HB, 7.5, 0.005, 0.005)],
     "stair_knight": [_flight(-HB, HB, -HB, 4.5, 0.0, 1.6)],
     "ghat_steps_wide": [_flight(-HB, HB, -HB, 0.9, 0.0, -1.4), _flight(-HB, HB, 0.9, 2.1, -1.6, -1.6), _flight(-HB, HB, 2.1, 4.5, -1.6, -3.2)],
     "water_steps_private": [_flight(-HB + 0.02, -0.28, -HB, 1.4, 0.0, -1.4), _flight(-HB + 0.02, -0.28, 1.4, HB, -1.55, -1.55)],
     "pier_steps_khlong": [_flight(-0.8, 0.8, -HB, -0.4, 0.0, 0.0), _flight(-0.7, 0.7, -0.4, 1.58, 0.0, -1.98)],
     "stair_steel_external": [_flight_x(0.05, 0.9, -1.45, 0.85, 0.0, ST), _flight_x(0.05, 0.9, 0.85, 1.5, ST, ST)],
     "stair_external_white": [_flight_x(0.004, 0.85, -HB, HB, 0.0, ST)],
-    "stair_spiral": _helix(0.1, 1.3, 0.0, math.tau, ST / 16, ST, 8, zs=-1.0),
-    "stair_plex_outdoor": _helix(0.15, 1.25, math.pi / 2, math.pi / 2 + 1.5 * math.pi, ST * 0.9 / 16, ST * 0.9, 8, cz=0.1)
+    # (the helices start ON the floor: a first quad 0.18-0.21 m up was a step the player can't take)
+    "stair_spiral": _helix(0.1, 1.3, 0.0, math.tau, 0.0, ST, 8, zs=-1.0),
+    "stair_plex_outdoor": _helix(0.15, 1.25, math.pi / 2, math.pi / 2 + 1.5 * math.pi, 0.0, ST * 0.9, 8, cz=0.1)
                           + [_flight(-1.4, 1.4, -HB, -0.6, ST, ST)],
-    "stair_spiral_courtyard": _helix(0.1, 1.0, -math.pi / 2, 1.5 * math.pi, ST * 0.92 / 14, ST * 0.92, 8) + [_flight(-1.0, 1.0, -HB, -0.9, ST, ST)],
+    "stair_spiral_courtyard": _helix(0.1, 1.0, -math.pi / 2, 1.5 * math.pi, 0.0, ST * 0.92, 8) + [_flight(-1.0, 1.0, -HB, -0.9, ST, ST)],
 }

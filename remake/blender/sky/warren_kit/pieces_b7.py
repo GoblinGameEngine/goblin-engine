@@ -394,7 +394,7 @@ def wall_beam_ends():
     """OMAN: an earth bay with the row of palm-trunk beam ends projecting at the floor line, a small shuttered window"""
     def b():
         m = _wall(K, [_rect(-0.3, 1.2, 0.3, 1.9)])
-        m.box((-0.295, 1.205, -0.32), (0.295, 1.895, -0.28), "accent", 0.85)
+        m.box((-0.3, 1.2, -0.32), (0.3, 1.9, -0.28), "accent", 0.85)          # (filling its opening: no 5 mm slit)
         for k in range(8):
             x = -1.33 + k * 0.38
             sub = Mesh()
@@ -566,8 +566,10 @@ def wall_portal_knockers():
         o = arch("pointed", 1.7, 2.9, 0.0, n=8)
         m = Mesh()
         m.wall_cut(_rect(-HB, 0.0, HB, ST), [o, _rect(-1.4, 0.0, -1.0, 0.9), _rect(1.0, 0.0, 1.4, 0.9)], -0.5, 0.0, "wall", reveal_slot="wall")
-        m.wall_cut(_rect(-HB, 0.0, HB, ST), [], -K, -0.5, "wall", 0.9)
-        m.box((-0.5, 0.0, -0.5), (0.5, 2.2, -0.46), "frame", 0.85)
+        # (the door at the niche's back is a real doorway now: the back wall was solid, the leaf painted on it --
+        # the audit's door entries; the leaf is a thin panel, walk-through for the generator's entered doors)
+        m.wall_cut(_rect(-HB, 0.0, HB, ST), [_rect(-0.55, 0.0, 0.55, 2.3)], -K, -0.5, "wall", 0.9)
+        m.box((-0.55, 0.0, -0.5), (0.55, 2.3, -0.46), "frame", 0.85)
         _stud_grid(m, -0.4, 0.3, 0.4, 2.0, -0.455, 3, 5)
         m.cyl(-0.2, -0.43, 0.06, 1.3, 1.34, "metal", n=6)
         m.box((0.16, 1.15, -0.455), (0.24, 1.45, -0.42), "metal")

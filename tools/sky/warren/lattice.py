@@ -19,6 +19,35 @@ OUT, RIM, FREE, WATER, BANK, GREEN, PASTURE, MAIN, PLAZA, GATE, LANE, COURT, RES
 FENCE_CLEAR = 1.6          # m in from the outline: the first walkable cell centre (fence at 1.0 m, capsule + margin)
 BRIDGE_M = 0.25            # m round a bridge's footprint: the capsule (0.18) and a margin
 _BRIDGE_STYLES = {}
+LARK_HALF = (0.95, 2.35)   # m: a parked sky_skiff's half width and half length (fleet/sky_skiff.blueprint.json)
+LARK_M = 0.3               # m round it: the capsule and a margin
+_CANON = {}
+
+
+def _aerostats(iid):
+    """remake/bible/sky_islands.json: the island's larks (sky_island.gd canon.aerostats, default 2)"""
+    if not _CANON:
+        import json
+        import os
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "godot_project", "remake", "bible",
+                         "sky_islands.json")
+        if os.path.exists(p):
+            for e in json.load(open(p)).get("islands", []):
+                _CANON[e.get("id")] = e
+    return int(_CANON.get(iid, {}).get("aerostats", 2))
+
+
+_BRIDGE_FEET = {}
+
+
+def _bridge_feet():
+    if not _BRIDGE_FEET:
+        import json
+        import os
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bridge_footprints.json")
+        if os.path.exists(p):
+            _BRIDGE_FEET.update(json.load(open(p)).get("styles", {}))
+    return _BRIDGE_FEET
 
 
 def _bridge_styles():
@@ -136,13 +165,37 @@ class Lattice:
             self._disc(float(p["x"]), float(p["z"]), 7.5, RESERVED)
         for h in isl.get("hoists", []) + isl.get("launchers", []):
             self._disc(float(h["x"]), float(h["z"]), 4.5, RESERVED)
+        # the parked larks (sky_island.gd: a craft on each of the first `aerostats` pads, solid, at the pad's height):
+        # their footprint off the walk and the paving (the audit + the in-game walk: SKY-022 door 3137 stuck on one)
+        self.lark_cells = set()
+        n_larks = _aerostats(isl.get("id"))
+        for p in isl.get("pads", [])[:n_larks]:
+            px, pz, yaw = float(p["x"]), float(p["z"]), float(p.get("yaw", 0.0))
+            c, s_ = math.cos(yaw), math.sin(yaw)
+            hx, hz = LARK_HALF[0] + LARK_M, LARK_HALF[1] + LARK_M
+            # (the lark's box turned by its yaw: its corners' extent, then every cell whose square meets it)
+            ex = abs(hx * c) + abs(hz * s_)
+            ez = abs(hx * s_) + abs(hz * c)
+            for i in range(self.nx):
+                for j in range(self.nz):
+                    x, _, z = self.centre(i, j)
+                    if abs(x - px) <= ex + 1.5 and abs(z - pz) <= ez + 1.5:
+                        # (exact: the cell square against the turned box, by separating axes)
+                        dx, dz = x - px, z - pz
+                        u, v = dx * c - dz * s_, dx * s_ + dz * c          # (in the lark's frame)
+                        ru = 1.5 * (abs(c) + abs(s_))
+                        if abs(u) <= hx + ru and abs(v) <= hz + ru and abs(dx) <= ex + 1.5 and abs(dz) <= ez + 1.5:
+                            self.plan[i, j] = OUT
+                            self.lark_cells.add((i, j))
         # the bridges' landings and working room: a gate strip in from the face
         f = isl["faces"]
         self.gates = []
         self.bridge_cells = set()
         for bi, b in enumerate(isl.get("bridges", [])):
             side, al, w = b["side"], float(b["along"]), float(b.get("width", 3.6))
-            depth = float(b.get("clear", 6.0)) + 7.0
+            ft0 = _bridge_feet().get(isl.get("bridge_style", "bascule_timber") + ("_road" if w >= 5.0 else ""), {})
+            # (the gate strip reaches past the bridge's own footprint: its plaza and the street's end stay walkable)
+            depth = max(float(b.get("clear", 6.0)) + 7.0, float(ft0.get("inland", 0.0)) + BRIDGE_M + 4.5)
             half = w / 2 + 2.5
             if side == "N":
                 x0, x1, z0, z1 = float(f["N"]), float(f["N"]) + depth, al - half, al + half
@@ -158,8 +211,15 @@ class Lattice:
             # the bridge's own footprint: its housing and its span stowed upright (sky_bridge.gd: every mesh solid)
             # stand here -- no walk, no paving (the audit: SKY-022's arrival walk and rim lanes ran into them)
             st = _bridge_styles().get(isl.get("bridge_style", "bascule_timber") + ("_road" if w >= 5.0 else ""), {})
-            inland = float(st.get("clear", {}).get("inland", 4.6)) + BRIDGE_M
-            hw = float(st.get("width", w)) / 2 + 0.45 + BRIDGE_M
+            # (the footprint from the bridge glbs themselves -- bridge_footprints.json, the audit's -- else the style's
+            # declared clear depth and width)
+            ft = _bridge_feet().get(isl.get("bridge_style", "bascule_timber") + ("_road" if w >= 5.0 else ""))
+            if ft:
+                inland = float(ft["inland"]) + BRIDGE_M
+                hw = float(ft["half_x"]) + BRIDGE_M
+            else:
+                inland = float(st.get("clear", {}).get("inland", 4.6)) + BRIDGE_M
+                hw = float(st.get("width", w)) / 2 + 0.45 + BRIDGE_M
             fx = {"N": float(f["N"]), "S": float(f["S"])}.get(side)
             fz = {"E": float(f["E"]), "W": float(f["W"])}.get(side)
             keep = []

@@ -36,7 +36,11 @@ const NEAR_END := 520.0              # (SkyIsland.NEAR + margin: past it the isl
 const CH := 8                        # cells a chunk's side
 const COLLIDE_M := 40.0
 const COLLIDE_DROP := 55.0
-const CLOSE_M := 6.0                 # m: a chunk this near the player gets its shape at once
+static var close_m := 12.0           # (dev: 6 and flat_dist false = the old rule, for A/B timing)
+static var flat_dist := true
+const CLOSE_M := 12.0                # m (to the chunk's box, flat): a chunk this near the player gets its shape at once --
+                                     # ~2.5 s of walking at 4.2 m/s, so it is solid before the walker reaches it (6 m to
+                                     # a 3D centre-less-radius let a stair in a tall chunk be reached unbuilt: SKY-022)
 const UPLOAD_USEC := 3000            # main-thread time a frame for uploads
 const MAX_TASKS := 2                 # merges at once, an island
 const MAX_TASKS_ALL := 3             # ... and all the near warrens together (48 islands have one: several build at once)
@@ -355,6 +359,7 @@ func _prepare() -> void:
 	_grass_prep()
 	_ground_prep()
 	_field_prep()
+	_door_prep()
 
 
 static func _ensure_kit() -> void:
@@ -412,12 +417,14 @@ static func _load_pieces() -> void:
 				var mm := (scenes[mglb] as Node).find_child(str(mid.get("mesh", pid)), true, false) as MeshInstance3D
 				if mm and mm.mesh:
 					mid_surfs = _surfs_of(mm.mesh, mid.get("slots", slots))
-					mid_rule = "mesh"
+					if not mid_surfs.is_empty():
+						mid_rule = "mesh"
 		elif mid is String and not (mid in ["box", "keep", "drop"]):
 			var mm := root.find_child(str(mid), true, false) as MeshInstance3D
 			if mm and mm.mesh:
 				mid_surfs = _surfs_of(mm.mesh, slots)
-				mid_rule = "mesh"
+				if not mid_surfs.is_empty():
+					mid_rule = "mesh"
 		elif mid is String:
 			mid_rule = str(mid)
 		var col = spec.get("collide", true)
@@ -465,7 +472,8 @@ static func _load_pieces() -> void:
 			cdata = PackedVector3Array([Vector3(box.position.x, y, box.position.z), Vector3(box.end.x, y, box.position.z),
 				Vector3(box.end.x, y, box.end.z), Vector3(box.position.x, y, box.end.z)])
 		_kit[pid] = {"surfs": surfs, "aabb": box, "lod1": lod1, "group": group, "mid": mid_surfs, "mid_rule": mid_rule,
-			"collide": collide, "cmode": cmode, "cdata": cdata}
+			"collide": collide, "cmode": cmode, "cdata": cdata,
+			"pass_kind": str(spec.get("pass_kind", "")), "pass": spec.get("pass", [])}   # (the door leaves: _door_leaf)
 	for k in scenes:
 		(scenes[k] as Node).free()
 	_palettes = d.get("palettes", {})
@@ -884,7 +892,8 @@ func _merge_chunk(c: Dictionary) -> void:
 				_acc(lod1, "lod1", _blocal[Vector2i(pk, pv)], xf)
 		match str(pc.get("mid_rule", pc.lod1)):
 			"mesh":
-				var mv: Dictionary = _mlocal[vkey]
+				# (a MID mesh pieces.json names but the imported glb lacks -- a kit rebuilt, not yet reimported: the box)
+				var mv: Dictionary = _mlocal.get(vkey, {"boxvc": _blocal[Vector2i(pk, pv)]})
 				for slot in mv:
 					_acc(lmid, MAT_OF.get(slot, "solid"), mv[slot], xf)
 			"keep":
@@ -897,6 +906,8 @@ func _merge_chunk(c: Dictionary) -> void:
 				var q: PackedVector3Array = xf * (pc.cdata as PackedVector3Array)
 				for b in range(0, q.size() - 3, 4):
 					faces.append_array([q[b], q[b + 1], q[b + 2], q[b], q[b + 2], q[b + 3]])
+					if ramp_under > 0.0:
+						_ramp_under(faces, q, b)
 			"top":
 				if (recs.decode_u8(o + 5) & 4) == 0:
 					var q: PackedVector3Array = xf * (pc.cdata as PackedVector3Array)
@@ -917,6 +928,9 @@ func _merge_chunk(c: Dictionary) -> void:
 					_box_faces(faces, xf, b)
 			"box":
 				_box_faces(faces, xf, pc.get("cdata", pc.aabb))
+		if str(pc.get("pass_kind", "")) == "door" and (recs.decode_u8(o + 5) >> 4) & 3 == 1:
+			_door_leaf(recs, o, pc, vm, xf, lod0, lmid, faces)
+	_room_floors(c, floors)
 	_floor_slabs(faces, floors, c)
 	# (welded: vertices snapped to the millimetre, so neighbouring quads share their edges exactly and Jolt's internal-
 	# edge removal treats a seam between two ramps or slabs as inside one surface, not an edge to catch the player on)
@@ -948,6 +962,94 @@ func _merge_chunk(c: Dictionary) -> void:
 	_rmutex.lock()
 	_results.append([c, m0, l1, faces, Time.get_ticks_usec() - t0, m1, tris])
 	_rmutex.unlock()
+
+
+# ------------------------------------------------------------------ doors: closed leaves, entered rooms floored
+## Interiors are built only behind the doors the generator marks entered (pick.py enter_doors); the rest open (frame
+## collision) onto rooms with no floor -- 7,870 of them over the 100 islands (AUDIT, tools/sky/warren/audit).  The
+## decision (coordinator, 2026-10-16): a door whose room isn't built is SHUT -- a leaf drawn in its pass opening and
+## solid (a locked / closed door: the occupancy contract); a door into an entered room always has a floor behind it.
+const LEAF_Z := Vector2(-0.14, -0.08)  # the leaf's depth in the face piece's frame (+z out of the room; walls -0.25..0.08)
+const LEAF_LAP := 0.03                 # m it laps the jambs and lintel (no slit to see or squeeze through)
+var _doors := {}                       # Vector4i(i, j, level, rot) of a door face (either side) -> entered
+var _entered: Array = []               # [i, j, level] of every entered door's room cell
+var leaves := 0                        # (stats) leaves drawn
+var room_floors := 0                   # (stats) floors added under entered rooms
+
+
+func _door_prep() -> void:
+	## (a worker) the door records (FORMAT.md: unit, i, j, level, rot, enter) by face, from both sides of it
+	for d in head.get("doors", []):
+		var i := int(d[1])
+		var j := int(d[2])
+		var lv := int(d[3])
+		var rot := int(d[4]) & 3
+		var en := int(d[5]) != 0
+		var dv := Vector2i(roundi(sin(rot * PI * 0.5)), roundi(cos(rot * PI * 0.5)))   # (rot r: out along b * +z)
+		for key in [Vector4i(i, j, lv, rot), Vector4i(i + dv.x, j + dv.y, lv, (rot + 2) % 4)]:
+			_doors[key] = bool(_doors.get(key, false)) or en
+		if en:
+			_entered.append([i, j, lv])
+
+
+func _door_leaf(recs: PackedByteArray, o: int, pc: Dictionary, vm: Dictionary, xf: Transform3D, lod0: Dictionary,
+		lmid: Dictionary, faces: PackedVector3Array) -> void:
+	## a door piece on a face: shut unless its door is entered (no record = a door to no room: shut too)
+	var key := Vector4i(recs.decode_u8(o + 2), recs.decode_u8(o + 3), recs.decode_u8(o + 4), recs.decode_u8(o + 5) & 3)
+	if bool(_doors.get(key, false)):
+		return
+	var ps = pc.get("pass", [])
+	if not (ps is Array) or (ps as Array).size() < 2:
+		return
+	var lo := Vector3(float(ps[0][0]) - LEAF_LAP, 0.0, LEAF_Z.x)
+	var hi := Vector3(float(ps[1][0]) + LEAF_LAP, float(ps[1][1]) + LEAF_LAP, LEAF_Z.y)
+	var col := Color(0.36, 0.24, 0.15)
+	for slot in ["frame", "trim", "wall"]:
+		if vm.has(slot) and not (vm[slot][3] as PackedColorArray).is_empty():
+			col = (vm[slot][3] as PackedColorArray)[0]
+			break
+	var a := _leaf_arrays(lo, hi, col.darkened(0.15))
+	_acc(lod0, "solid", a, xf)
+	_acc(lmid, "solid", a, xf)
+	_box_faces(faces, xf, AABB(lo, hi - lo))
+	leaves += 1
+
+
+static func _leaf_arrays(lo: Vector3, hi: Vector3, col: Color) -> Array:
+	## a box as the unindexed [verts, normals, uvs, colours] _acc takes
+	var g := {}
+	_bx(g, "x", lo, hi)
+	var a: Array = g.x
+	var v := PackedVector3Array()
+	var n := PackedVector3Array()
+	var u := PackedVector2Array()
+	var c := PackedColorArray()
+	for k in (a[3] as PackedInt32Array):
+		v.append(a[0][k])
+		n.append(a[1][k])
+		u.append(a[2][k])
+		c.append(col)
+	return [v, n, u, c]
+
+
+func _room_floors(c: Dictionary, floors: Dictionary) -> void:
+	## every entered door's room cell in this chunk has a whole-cell floor at its level (added when none within 0.4 m)
+	var i0 := int(c.ci) * CH
+	var j0 := int(c.cj) * CH
+	for e in _entered:
+		var i: int = e[0]
+		var j: int = e[1]
+		if i < i0 or i >= i0 + CH or j < j0 or j >= j0 + CH:
+			continue
+		var ycm := roundi(STOREY * float(e[2]) * 100.0)
+		var have := false
+		for k in floors:
+			if k.x == i and k.y == j and absi(k.z - ycm) <= 40:
+				have = true
+				break
+		if not have:
+			floors[Vector3i(i, j, ycm)] = true
+			room_floors += 1
 
 
 const SLAB_M := 0.4                  # m thick: a floor the player can't drop through or catch the edge of
@@ -1015,6 +1117,25 @@ func _aprons(faces: PackedVector3Array, q: PackedVector3Array, cen: Vector3) -> 
 			a2.y = minf(a2.y, a.y)
 			b2.y = minf(b2.y, b.y)
 			faces.append_array([a, b, b2, a, b2, a2])
+
+
+static var ramp_under := 0.2         # (dev: 0 = the old 0-thickness ramp quads, for A/B timing)
+const RAMP_UNDER := 0.2               # m: a stair's ramp quad made a slab this thick (a 0-thickness quad can be tunnelled
+                                     # through by a falling capsule: SKY-022 door 2047, feet on the deck under a flight)
+
+
+static func _ramp_under(faces: PackedVector3Array, q: PackedVector3Array, b: int) -> void:
+	## the underside and edges of ramp quad q[b..b+3]: with its top, a closed slab RAMP_UNDER thick below it
+	var n := (q[b + 1] - q[b]).cross(q[b + 2] - q[b]).normalized()
+	if n.y < 0.0:
+		n = -n
+	var d := n * ramp_under
+	var lo := [q[b] - d, q[b + 1] - d, q[b + 2] - d, q[b + 3] - d]
+	faces.append_array([lo[0], lo[2], lo[1], lo[0], lo[3], lo[2]])
+	for k in 4:
+		var a: Vector3 = q[b + k]
+		var c: Vector3 = q[b + (k + 1) % 4]
+		faces.append_array([a, lo[k], lo[(k + 1) % 4], a, lo[(k + 1) % 4], c])
 
 
 static func _box_faces(faces: PackedVector3Array, xf: Transform3D, b: AABB) -> void:
@@ -1272,7 +1393,7 @@ func _collision() -> void:
 	for c in chunks:
 		if int(c.state) != 2:
 			continue
-		var d := (c.box as AABB).get_center().distance_to(pl) - (c.box as AABB).size.x * 0.7
+		var d := _chunk_dist(c.box as AABB, pl)
 		if int(c.owner) < 0 and d < COLLIDE_M and (c.faces as PackedVector3Array).size() > 0:
 			want.append([d, c])
 		elif int(c.owner) >= 0 and d > COLLIDE_DROP:
@@ -1282,7 +1403,7 @@ func _collision() -> void:
 	var built := 0
 	for e in want:
 		var c: Dictionary = e[1]
-		var close := float(e[0]) < CLOSE_M
+		var close := float(e[0]) < close_m
 		if not c.has("shape"):
 			if built >= 1 and not close:
 				continue
@@ -1297,6 +1418,20 @@ func _collision() -> void:
 		c.owner = o
 
 
+static func _chunk_dist(b: AABB, p: Vector3) -> float:
+	if flat_dist:
+		return _box_flat_dist(b, p)
+	return b.get_center().distance_to(p) - b.size.x * 0.7      # (the old rule)
+
+
+static func _box_flat_dist(b: AABB, p: Vector3) -> float:
+	## m from p to the box across the island (x, z): 0 inside its footprint; the height is ignored (a chunk's box is
+	## as tall as its tallest column: its centre can be 30 m over a walker on its ground floor)
+	var dx := maxf(maxf(b.position.x - p.x, p.x - b.end.x), 0.0)
+	var dz := maxf(maxf(b.position.z - p.z, p.z - b.end.z), 0.0)
+	return sqrt(dx * dx + dz * dz)
+
+
 func near_ready() -> bool:
 	## is the city round the player solid yet? (fast travel holds the traveller until it is)
 	if head.is_empty() and _decode_task < 0:
@@ -1305,8 +1440,8 @@ func near_ready() -> bool:
 		return false
 	var pl := _player_local()
 	for c in chunks:
-		var d := (c.box as AABB).get_center().distance_to(pl) - (c.box as AABB).size.x * 0.7
-		if d < COLLIDE_M * 0.5:
+		var d := _chunk_dist(c.box as AABB, pl)
+		if d < close_m:
 			if int(c.state) != 2 or ((c.faces as PackedVector3Array).size() > 0 and int(c.owner) < 0):
 				return false
 	return true

@@ -33,27 +33,36 @@ def edges_of(side):
     kind[(h < 0.5) & (dy > 0.5)] = "core"
     roofy = np.array([kinds[a].startswith("roof") or kinds[b].startswith("roof") for a, b in E], bool)
     kind[roofy & (dy > 1.5) & (h < 3.2)] = "ladder"
+    # (an edge onto a stair core's node -- the street outside a house door into the core, k * 3.2 + 0.1 inside the
+    # house -- is the islanders' too: through a door the runtime keeps shut unless the room is entered)
+    core = core_nodes(N, E, kind)
+    into = np.array([(int(a) in core) or (int(b) in core) for a, b in E], bool)
+    kind[into & (kind == "cell")] = "core"
     return N, kinds, E, kind
 
 
 def doors_of(side):
     fr = side["frame"]
     seen = {}
+    ent = {}
     for k, d in enumerate(side["doors"]):
         key = (int(d[1]), int(d[2]), int(d[3]), int(d[4]) & 3)
         seen.setdefault(key, k)
+        ent[key] = ent.get(key, False) or bool(int(d[5]) if len(d) > 5 else 0)
     out = []
     for (i, j, lv, rot), k in seen.items():
         di, dj = FACE_DIR[rot]
         c = np.array([fr["x0"] + 3.0 * i + 1.5, 3.2 * lv, fr["z0"] + 3.0 * j + 1.5])
         out.append({"door": k, "cell": (i, j, lv), "rot": rot, "out_cell": (i + di, j + dj), "centre": c,
-                    "dir": np.array([di, 0.0, dj])})
+                    "dir": np.array([di, 0.0, dj]), "entered": ent[(i, j, lv, rot)]})
     return out
 
 
 def run(g, R, soft=walksim.SOFT, log=None):
     side = g.W["side"]
     N, nkind, E, kind = edges_of(side)
+    # (long edges -- a door's outside node straight to its house's court, roof planks -- are walked too and reported,
+    # but the BFS counts only cell edges: a court is reached through its house, the islanders' shortcut)
     test = np.nonzero((kind == "cell") | (kind == "long"))[0]
     A = np.concatenate([N[E[test, 0]], N[E[test, 1]]])
     B = np.concatenate([N[E[test, 1]], N[E[test, 0]]])
@@ -78,6 +87,8 @@ def run(g, R, soft=walksim.SOFT, log=None):
     adj_safe = [[] for _ in range(nn)]
     for q in range(len(eid)):
         a, b = (E[eid[q], 0], E[eid[q], 1]) if fwd[q] else (E[eid[q], 1], E[eid[q], 0])
+        if kind[eid[q]] != "cell":
+            continue
         if status[q] in ("ok", "risky", "drop"):
             adj[a].append(b)
         if status[q] in ("ok", "drop"):
@@ -99,13 +110,16 @@ def run(g, R, soft=walksim.SOFT, log=None):
         if nkind[k] in ("ground", "stair", "blocked") or True:
             cell_nodes[g.ij(N[k])].append(k)
     entryA, entryB, dmeta = [], [], []
+    core = core_nodes(N, E, kind)
     for d in doors:
-        cands = [k for k in cell_nodes.get(d["out_cell"], []) if abs(N[k, 1] - d["centre"][1]) < 0.9]
+        cands = [k for k in cell_nodes.get(d["out_cell"], []) if abs(N[k, 1] - d["centre"][1]) < 0.9 and k not in core]
         if not cands:
             d["node"] = None
             continue
         k = min(cands, key=lambda k: abs(N[k, 1] - d["centre"][1]))
         d["node"] = k
+        if not d["entered"]:
+            continue                 # (sky_warren.gd: a door nobody enters is shut -- only its step outside counts)
         entryA.append(N[k])
         entryB.append(d["centre"] + d["dir"] * 0.8)
         dmeta.append(d)
@@ -133,7 +147,7 @@ def run(g, R, soft=walksim.SOFT, log=None):
             st = "no node outside"
         elif k not in reach:
             st = "unreachable (graph)" if k not in reach_graph else "unreachable"
-        elif d.get("entry") not in ("ok", None):
+        elif d["entered"] and d.get("entry") not in ("ok", None):
             st = "entry " + d["entry"]
         elif k not in reach_safe:
             st = "risky"
@@ -145,6 +159,14 @@ def run(g, R, soft=walksim.SOFT, log=None):
             "edge_status": status, "edge_id": eid, "edge_fwd": fwd, "bad_edges": edges, "doors": door_rows,
             "start": start, "reach": reach, "reach_safe": reach_safe, "reach_graph": reach_graph,
             "edge_where": res["where"], "edge_prim": res["prim"]}
+
+
+def core_nodes(N, E, kind):
+    """a stair core's nodes (units.walk_graph: one a storey inside a house at k * 3.2 + 0.1, joined by vertical
+    edges): the islanders' virtual stairs, not ground anyone stands on"""
+    # (ground and stair nodes stand at whole quarters (0.8 m), roofs at whole storeys: only a core node is 0.1 over one)
+    q = (N[:, 1] - 0.1) / C.STOREY
+    return set(int(x) for x in np.nonzero(np.abs(q - np.round(q)) < 0.01)[0])
 
 
 def _bfs(adj, s):

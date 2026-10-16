@@ -173,7 +173,9 @@ def _relief(m, thin, small, budget):
     zq = np.where(sbuf >= 0, np.round(zbuf / ZQ) * ZQ, -1e9)
     near = (sbuf >= 0) & ~vbuf & (np.abs(zq - vzbuf) < 0.03)      # a relief rect would lie ON a verbatim layer: lift it
     zq[near] = vzbuf[near] + 0.03
-    key = np.where(sbuf >= 0, sbuf * 100000 + np.round((zq - zfloor) * 1000).astype(int), -1)     # (depth in mm)
+    # (depth in mm over the floor, never below it: a negative depth wrapped round the modulo to +100 m -- the audit's
+    # band_peranakan_tile MID)
+    key = np.where(sbuf >= 0, sbuf * 100000 + np.maximum(np.round((zq - zfloor) * 1000), 0).astype(int), -1)
     # clean: a cell whose value hardly repeats round it takes its neighbourhood's
     k2 = key.copy()
     for i in range(nx):
@@ -210,8 +212,10 @@ def _relief(m, thin, small, budget):
             while j + h < ny and all(key[i + u, j + h] == k and not done[i + u, j + h] for u in range(w)):
                 h += 1
             done[i:i + w, j:j + h] = True
-            x0, x1 = lo[0] + i * CELL, lo[0] + (i + w) * CELL
-            y0, y1 = lo[1] + j * CELL, lo[1] + (j + h) * CELL
+            # (the grid's last cell overshoots the piece by up to a cell: clamped to the piece's bounds -- the audit
+            # found every MID wall 10 cm taller than its piece)
+            x0, x1 = lo[0] + i * CELL, min(lo[0] + (i + w) * CELL, hi[0])
+            y0, y1 = lo[1] + j * CELL, min(lo[1] + (j + h) * CELL, hi[1])
             z = kz(k)
             s = kslot(k)
             if s == "glass":
@@ -250,12 +254,12 @@ def _relief(m, thin, small, budget):
                     prev = p
                     continue
                 if di:
-                    x = lo[0] + (line + (1 if di > 0 else 0)) * CELL
-                    ya, yb = lo[1] + start * CELL, lo[1] + (prev + 1) * CELL
+                    x = min(lo[0] + (line + (1 if di > 0 else 0)) * CELL, hi[0])
+                    ya, yb = lo[1] + start * CELL, min(lo[1] + (prev + 1) * CELL, hi[1])
                     out.quad_facing((x, ya, zn), (x, yb, zn), (x, yb, z), (x, ya, z), (di, 0, 0), s, sh.get(s, 1.0) * 0.85)
                 else:
-                    y = lo[1] + (line + (1 if dj > 0 else 0)) * CELL
-                    xa, xb = lo[0] + start * CELL, lo[0] + (prev + 1) * CELL
+                    y = min(lo[1] + (line + (1 if dj > 0 else 0)) * CELL, hi[1])
+                    xa, xb = lo[0] + start * CELL, min(lo[0] + (prev + 1) * CELL, hi[0])
                     out.quad_facing((xa, y, zn), (xb, y, zn), (xb, y, z), (xa, y, z), (0, dj, 0), s, sh.get(s, 1.0) * 0.85)
                 if p is not None:
                     start = prev = p
@@ -367,8 +371,17 @@ def mid_mesh(pid, d, m, ramps=None):
     """(mesh, how): the piece's mid mesh -- or (None, "full") when its full mesh is already cheap enough to be its own
     mid, or (empty Mesh, "none") when nothing of it should draw at mid range (thin overlays: cables, wires, bars)"""
     n = m.count()
+    lo, hi = (np.array(v) for v in m.bounds())
+
+    def inside(q):
+        """the MID stays within the full piece (the audit's bounds.py: MID models stepping 5-50 cm out)"""
+        if q.count() == 0:
+            return True
+        a, b = (np.array(v) for v in q.bounds())
+        return bool(np.all(a >= lo - 0.02) and np.all(b <= hi + 0.02))
     if ramps:
-        return stair_mid(m, ramps), "ramp"
+        q = stair_mid(m, ramps)
+        return (q, "ramp") if inside(q) else (None, "full")
     if n <= KEEP:
         return None, "full"
     cands = []
@@ -387,6 +400,9 @@ def mid_mesh(pid, d, m, ramps=None):
             if cands and min(q.count() for q in cands) <= 0.2 * n:
                 break
             cands.append(simplify3d(m, **kw))
+    cands = [q for q in cands if inside(q)]
+    if not cands:
+        return None, "full"
     best = min(cands, key=lambda q: q.count())
     if best.count() == 0:
         return Mesh(), "none"

@@ -152,8 +152,9 @@ class FamilyCiv(Civ):
     def facade(self, ctx):
         f = self.SPEC["facade"]
         th = self.SPEC.get("thick", 0)
-        if ctx["epoch"] >= 5:
-            return None
+        # (epoch 5 was the roof village -- its huts become ov_shack overlays and their rooms are cleared before the
+        # pieces (make_warren.py); a room of epoch 5 still standing here was grown later (walknet storeys) and needs
+        # its walls: the audit's SKY-071 rooms open on every side at the top)
         if self.SPEC.get("cull_slots") and ctx.get("slot") == "blind":
             return None
         if self.SPEC.get("cull_slots") and ctx.get("slot") == "lane":
@@ -466,9 +467,17 @@ class FamilyCiv(Civ):
                 if k == int(L.gk[i, j]) and rng.random() < o["vending"]:
                     emit("ov_vending_machine", i, j, k, rot, 0, 0, 0, 5)
         if o.get("pole"):
+            # (a pole stands at its cell's centre: never on a walk cell -- the audit found 2,798 walk edges blocked by
+            # poles on junctions; one goes on an open cell beside the junction that nobody walks, or none)
+            from lattice import WALKABLE as _WK
             for (i, j) in cells["junctions"]:
                 if rng.random() < o["pole"]:
-                    emit(o.get("pole_piece", "utility_pole"), i, j, 0, rng.randrange(4), 4, 0, 0, 4)
+                    for di, dj in ((1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1)):
+                        c = (i + di, j + dj)
+                        if L.inb(*c) and c not in L.W and int(L.plan[c]) in _WK and not L.occ[c[0], c[1], int(L.gk[c])] \
+                                and c not in getattr(L, "keep_clear", ()):
+                            emit(o.get("pole_piece", "utility_pole"), c[0], c[1], 0, rng.randrange(4), 4, 0, 0, 4)
+                            break
         if o.get("covered_piece"):
             # a vault carrying the lane under the houses (abbara): on a share of the covered lane cells
             for (i, j, k, rot) in cells["covered"]:
@@ -479,16 +488,39 @@ class FamilyCiv(Civ):
                 if rng.random() < p:
                     emit(pid, i, j, k, rng.randrange(4), 0, 0, 0, 5)
         # pieces hung on faces: {"piece", "p", "where": ground|upper|top, "street": only street-facing}
+        # (the entrances: a lot's door, every door face, a shop cell's first shop face (its door, units.make_units):
+        # nothing hung at the ground storey goes on them -- benches, panels, shutters stood in the doorways, the
+        # audit's door entries)
+        entr = set()
+        first = {}
+        for (i, j, k, rot, use, d) in L.shop_faces:
+            first.setdefault((i, j, k), rot)
+            if d:
+                entr.add((i, j, k, rot))
+        entr |= {(i, j, k, r) for (i, j, k), r in first.items()}
+        for lot in L.lots:
+            if lot.get("door"):
+                (dc, dr) = lot["door"]
+                entr.add((dc[0], dc[1], lot.get("door_k", int(L.gk[dc])), dr))
         for fi in o.get("face_items", []):
             from pick import h01
             if fi.get("where", "ground") == "ground":
                 src = [(i, j, k, rot) for (i, j, rot, k, ep) in L.faces_on_lanes if k == int(L.gk[i, j])]
                 if fi.get("shops"):
                     src = [(i, j, k, rot) for (i, j, k, rot, use, d) in L.shop_faces if use == SHOP]
+                    if "shutter" in fi["piece"]:
+                        # (a shutter down over the shop's own door shuts it -- units.make_units takes a shop cell's
+                        # first shop face as its door; the audit found shops entered through a closed shutter)
+                        first = {}
+                        for (i, j, k, rot, use, d) in L.shop_faces:
+                            first.setdefault((i, j, k), rot)
+                        src = [(i, j, k, rot) for (i, j, k, rot) in src if first.get((i, j, k)) != rot]
             else:
                 src = [(i, j, k, rot) for (i, j, k, rot, st) in cells["upper_faces"]]
                 if fi.get("where") == "top":
                     src = [(i, j, k, rot) for (i, j, k, rot) in src if k + 1 >= L.L or not L.occ[i, j, k + 1]]
+            if fi.get("where", "ground") == "ground":
+                src = [(i, j, k, rot) for (i, j, k, rot) in src if (i, j, k, rot) not in entr]
             for (i, j, k, rot) in src:
                 if h01(L.seed, fi["piece"], i, j, k, rot) < fi["p"]:
                     emit(fi["piece"], i, j, k + fi.get("dk", 0), rot, 0, 0, 0, fi.get("epoch", 4))

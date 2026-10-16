@@ -392,7 +392,9 @@ def walk_edges(rays, A, B, ds=0.05, slack=1.6, tol_xz=0.12, tol_y=0.3, drop_max=
         done[act[fallen]] = True
     why = np.full(n, "ok", object)
     dy = bt.p[:, 1] - B[:, 1]
-    hfail = reached & (np.abs(dy) > tol_y)
+    # (arriving higher is standing on something over the node's height -- a humped bridge's deck: not a failure up to
+    # 1 m; arriving lower is)
+    hfail = reached & ((dy < -tol_y) | (dy > 1.0))
     why[~reached] = "blocked"
     why[~reached & bt.fell] = "fell"
     why[reached & bt.fell] = "fell"

@@ -724,7 +724,7 @@ def stilt_house():
             m.box((x - 0.02, 0.0, 2.16), (x + 0.02, 0.95, 2.2), "frame", 0.85, skip=("y-", "y+"))
         for x in (-1.55, 1.55):
             m.box((x - 0.05, 0.0, 2.12), (x + 0.05, h, 2.22), "frame", 0.8)
-        _hip(m, 2.25, 0.5, h, h + 1.3, lift=0.4, flare=0.25, body=1.4, cap=False)
+        _hip(m, 2.25, 0.5, h, h + 1.3, lift=0.4, flare=0.25, body=1.4, cap=True)
         m.box((-0.9, h + 1.25, -0.08), (0.9, h + 1.42, 0.08), "roof", 0.8, skip=("y-",))     # the ridge
         for x in (-1.15, 1.15):
             _chochin(m, x, h - 0.4, 2.1, r=0.14, h=0.38)

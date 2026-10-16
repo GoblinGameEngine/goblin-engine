@@ -21,6 +21,13 @@ var reach := 13.0
 var _base := Transform3D()     # where the island mounted it (match() raises or lowers it from there)
 var _plate: Node3D             # the joint plate over the meeting noses (down only)
 const PLATE_LEN := 1.2
+## the threshold ramp (fixed, on the island side of the face): the island's paving meets a bridge 6-10 cm below its
+## deck and the housings' sill stands +3 cm -- a 9-13 cm step the player stuck on walking ONTO a lowered bridge (AUDIT
+## walksim, reference/tmp/bridge_walk.py: 19/100 walks).  A steel plate from RAMP_FOOT (buried in the paving) up to
+## the sill's top at the face, ~8 degrees, between the housing's side tracks (width - 0.3).
+const RAMP_FOOT := Vector2(-1.7, -0.12)   # (z, y) in the bridge frame: inland, under the paving
+const RAMP_HEAD := Vector2(-0.45, 0.03)   # the sill's top (every style's sill: -0.50..-0.25 at +0.03)
+const RAMP_T := 0.04
 
 
 static func styles() -> Dictionary:
@@ -85,6 +92,7 @@ func setup(p_style: String) -> void:
 		(owner_ as Node3D).add_child(body)
 	_merge_fixed(inst, movers)
 	_make_plate(float(st.get("width", 3.6)))
+	_make_ramp(float(st.get("width", 3.6)))
 	_pose()
 
 
@@ -161,6 +169,40 @@ func _make_plate(w: float) -> void:
 	_plate.add_child(mi)
 	_plate.position = Vector3(0.0, nose_y + 0.02, reach)
 	add_child(_plate)
+
+
+static func ramp_box(w: float) -> Array:
+	## [size, transform] of the threshold ramp's box in the bridge frame (also used by the audit's mirror)
+	var a := Vector3(0.0, RAMP_FOOT.y, RAMP_FOOT.x)
+	var b := Vector3(0.0, RAMP_HEAD.y, RAMP_HEAD.x)
+	var along := (b - a).normalized()
+	var up := along.cross(Vector3.RIGHT)                  # (z along the slope, x across: y its normal, tilted back)
+	var basis := Basis(Vector3.RIGHT, up, along)
+	var size := Vector3(w - 0.3, RAMP_T, a.distance_to(b))   # (inside the side tracks at +-1.9 m of a 3.6 m bridge)
+	return [size, Transform3D(basis, (a + b) * 0.5 - up * RAMP_T * 0.5)]
+
+
+func _make_ramp(w: float) -> void:
+	var rb := ramp_box(w)
+	var body := StaticBody3D.new()
+	body.name = "threshold_ramp"
+	var cs := CollisionShape3D.new()
+	var box := BoxShape3D.new()
+	box.size = rb[0]
+	cs.shape = box
+	body.add_child(cs)
+	var mi := MeshInstance3D.new()
+	var bm := BoxMesh.new()
+	bm.size = rb[0]
+	mi.mesh = bm
+	var m := StandardMaterial3D.new()
+	m.albedo_color = Color(0.3, 0.31, 0.33)
+	m.metallic = 0.6
+	m.roughness = 0.55
+	mi.material_override = m
+	body.add_child(mi)
+	body.transform = rb[1]
+	add_child(body)
 
 
 func match(partner_nose_y: float) -> void:

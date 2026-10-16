@@ -46,16 +46,20 @@ const HEAD := {
 const BEACH_COLS := [Color(1.0, 0.2, 0.25), Color(0.25, 1.0, 0.35), Color(0.3, 0.5, 1.0), Color(1.0, 0.85, 0.2),
 	Color(1.0, 0.3, 0.9), Color(0.2, 0.95, 1.0), Color(1.0, 0.55, 0.15)]
 const WARM := Color(1.0, 0.82, 0.52)
-## (2026-10-16, the user: pools of light spilling from the lamps, dark between them -- no ambient lift; the pools
-##  themselves made to read: wider and stronger)
-const POOL_REACH := 1.3
-const POOL_GAIN := 1.8
+## (2026-10-16, the user: pools of light spilling from the lamps, dark between them -- no ambient lift).  The first try
+##  (reach x1.3, strength x1.8) washed Calder's asphalt out white under each lamp (coordinator review): the pools are
+##  additive and unshaded, and the real OmniLights near the player light the same road.  Now the lamps' own reach and
+##  strength, a tighter core (POOL_FALLOFF) and POOL_SHADER_GAIN on the whole pass.
+const POOL_REACH := 1.0
+const POOL_GAIN := 1.0
+const POOL_SHADER_GAIN := 0.55
+const POOL_FALLOFF := 2.4
 ## lit storefronts: a pool on the pavement in front of every shop sign below SHOP_MAX_Y (remake/signs/city_signs.json,
 ## the SIGNS agent's quads in each building's placement frame; plaques skipped), SHOP_OUT m out from the board
 const SHOP_OUT := 2.2
 const SHOP_MAX_Y := 6.0
-const SHOP_R := 5.0
-const SHOP_COL := Color(1.0, 0.86, 0.62, 0.85)
+const SHOP_R := 4.0
+const SHOP_COL := Color(1.0, 0.86, 0.62, 0.55)
 
 var target: Node3D
 var ready_ := false
@@ -528,6 +532,8 @@ func _build_meshes() -> void:
 	_far_bulb_mat.set_shader_parameter("cut_min", CUT)
 	_pool_mat = ShaderMaterial.new()
 	_pool_mat.shader = load("res://remake/shaders/street_pool.gdshader")
+	_pool_mat.set_shader_parameter("gain", POOL_SHADER_GAIN)
+	_pool_mat.set_shader_parameter("falloff", POOL_FALLOFF)
 	var iron := _metal(Color(0.12, 0.13, 0.14))
 	var green := _metal(Color(0.09, 0.16, 0.12))
 	var white := _metal(Color(0.85, 0.86, 0.84))

@@ -110,8 +110,8 @@ def pick(iid, fault):
         rooms = CK.levels(side)
         for n in rng.permutation(np.nonzero((kind_of[pk] == "wall") & (mount == 1))[0]):
             pid = ids[pk[n]]
-            if CK.is_opening(pid, K.P[pid]):
-                continue
+            if CK.is_opening(pid, K.P[pid]) or pid.startswith("plinth"):
+                continue                      # (a plinth is the retaining course under the floor, not the facade)
             i, j, k, rot = int(recs["i"][n]), int(recs["j"][n]), int(recs["k"][n]), int(recs["rf"][n] & 3)
             di, dj = CK.FACE[rot]
             if (i, j, k) in rooms and (i + di, j + dj, k) not in rooms:

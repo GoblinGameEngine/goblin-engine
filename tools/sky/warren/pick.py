@@ -134,6 +134,7 @@ def run(L, civ, rng):
     L.street_upper = []
     nx, nz, NL = L.nx, L.nz, L.L
     occ = L.occ
+    shop_door = set()                        # shop cells whose door face is chosen
     # ---------------------------------------------------------------- the shell
     for i in range(nx):
         for j in range(nz):
@@ -153,7 +154,11 @@ def run(L, civ, rng):
                     pn = int(L.plan[n]) if L.inb(*n) else OUT
                     gn = int(L.gk[n]) if L.inb(*n) else 0
                     if L.inb(*n) and k < gn and pn != OUT:
-                        continue                                    # (against the slope: buried)
+                        # (against the slope, "buried" -- but the deck is a surface, not rock: from the room (and over
+                        # the deck where it dips under the storey) one looked into the island's hollow.  The audit:
+                        # 3,754 bare faces + 5,701 below the deck.  A plain wall closes it)
+                        o.emit("wall_plain", i, j, k, rot, 0, getattr(civ, "SPEC", {}).get("thick", 0), 0, ep)
+                        continue
                     if k == g and k == gn or (k == g and pn in WALKABLE):
                         outward = OUT_NAME.get(pn, "lane")
                     else:
@@ -185,14 +190,30 @@ def run(L, civ, rng):
                             pc = ("wall_window_s" if k > g else "wall_plain", pc[1], pc[2])
                     if pc and ctx["door"] and not _is_doorlike(pc[0]):
                         pc = (getattr(civ, "SPEC", {}).get("facade", {}).get("door", "wall_door"), pc[1], pc[2])
+                    # (a shop's first shop face is its door (units.make_units): a shop window there (wall_window_l, the
+                    # civ's "shop" facade) can't be entered -- the audit's door entries -- so it takes a shopfront)
+                    # (a five-foot way / qilou bay is a covered walk 1.6-2.5 m deep inside its cell, its shop wall across
+                    # the cell's middle: with an entrance on another face of the cell that wall stands in the doorway --
+                    # the audit's door entries.  Such a cell keeps a plain shopfront instead)
+                    if pc and any(w in pc[0] for w in ("five_foot_way", "qilou")) and (
+                            any(door_at.get(((i, j), r, k)) is not None for r in range(4) if r != rot)
+                            or (i, j, k) in shop_door):
+                        pc = ("wall_shopfront", pc[1], pc[2])
+                    first_door = False
+                    if pc and use == SHOP and k == g and n in L.W and L.q.get(n) == 4 * k and (i, j, k) not in shop_door \
+                            and n not in L.stoop:
+                        shop_door.add((i, j, k))
+                        first_door = True
+                        if not (_is_doorlike(pc[0]) or "shopfront" in pc[0]):
+                            pc = ("wall_shopfront", pc[1], pc[2])
                     if pc:
                         o.emit(pc[0], i, j, k, rot, 0, pc[1], pc[2], ep)
                         if k == g and L.ground[i, j] < g * STOREY - 0.05:
                             # the base course down to the sloping deck, under this bay
                             o.emit("plinth", i, j, k, rot, 0, pc[1], pc[2], min(ep, 1))
                             L.plinths = getattr(L, "plinths", 0) + 1
-                        if ctx["door"] or (use == SHOP and outward in ("main", "plaza", "artery") and k == g
-                                           and n in L.W and L.q[n] == 4 * k):
+                        if first_door or ctx["door"] or (use == SHOP and outward in ("main", "plaza", "artery") and k == g
+                                                         and n in L.W and L.q[n] == 4 * k):
                             L.shop_faces.append((i, j, k, rot, use, bool(ctx["door"])))
                         if pn in (LANE, ARTERY):
                             L.faces_on_lanes.append((i, j, rot, k, ep))
@@ -310,6 +331,9 @@ def run(L, civ, rng):
     # ---------------------------------------------------------------- interiors (only where one can go in)
     L.enter = []
     entered = set()
+    faces_of = {}                            # (i, j, k) -> the rots of its entrances (doors and shop faces)
+    for (i, j, k, rot, use, is_door) in L.shop_faces:
+        faces_of.setdefault((i, j, k), set()).add(rot)
     for n, (i, j, k, rot, use, is_door) in enumerate(L.shop_faces):
         enter = use == SHOP or (is_door and h01(L.seed, "enter", i, j) < civ.params.get("enter_doors", 0.25)) or \
             (L.lot[i, j] >= 0 and L.lots[L.lot[i, j]]["use"] == CIVIC)
@@ -320,9 +344,12 @@ def run(L, civ, rng):
         o.emit("interior_floor", i, j, k, 0, 0, 0, civ.slot("paving"), 1)
         o.emit("interior_ceiling", i, j, k, 0, 0, h01(L.seed, "ceil", i, j) * 6, civ.slot("trim"), 1)
         # (furniture budgeted: a counter in every shop, shelves in a third, a table in half the houses one enters)
-        if use == SHOP:
+        # (the counter runs along the shopfront it faces, 2.5 m: across a second entrance on a side face it blocks
+        # the way in -- the audit found 815 doors so -- so a corner shop has none)
+        side_door = any((r - rot) % 2 for r in faces_of.get((i, j, k), ()))
+        if use == SHOP and not side_door:
             o.emit("counter", i, j, k, rot, 0, 0, civ.slot("frame"), 2)     # (the kit's +Z to the shopfront)
-            if h01(L.seed, "shelves", i, j) < 0.33:
+            if h01(L.seed, "shelves", i, j) < 0.33 and len(faces_of.get((i, j, k), ())) <= 1:   # (against the back wall)
                 o.emit("shelves", i, j, k, rot, 0, 0, civ.slot("frame"), 2)
         elif h01(L.seed, "table", i, j) < 0.5:
             o.emit("table_set", i, j, k, rot, 0, 0, civ.slot("frame"), 2)

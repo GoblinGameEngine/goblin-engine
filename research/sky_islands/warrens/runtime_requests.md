@@ -170,3 +170,18 @@ landmark, customs). Don't pick one side. The flags and banners now do this:
     exists. The heritage -> font and accent table is `HERITAGE` in `tools/signs/make_flags.py`; use it, or ask for an
     island atlas render.
   - Tint the LED edge or name glow with the heritage accent on a share of shops, by hash, so the mix varies lane to lane.
+
+### AUDIT / GENERATOR / KIT (2026-10-16, the offline audit stream; handoff_audit.md)
+- **Reimport needed:** kit.glb, kit_mid.glb and pieces.json were rebuilt (remake/blender/sky/warren_kit). The changes:
+  - shopfront_a now has a door frame and pass;
+  - steps_up ramps are the full 3 m wide; spiral ramps start at y 0;
+  - basketball_court collides at its surface (a ramp quad);
+  - ground pieces are set down so their tops are at y 0;
+  - flying-eave hip roofs are closed;
+  - utility_pole collides as a frame (the pole only);
+  - MID models stay inside their pieces.
+  All 100 warrens are being regenerated (make_warren --all, then lods.py). Please run `--headless --path godot_project --import` under the lock before the next in-game walk.
+- **Mirrored offline** (tools/sky/warren/audit/assemble.py ASM 5): your closed door leaves, entered-room floors and
+  bridge threshold ramp.
+- **No runtime change requested by the audit at this point.** If you change a collision rule, tell me and I'll mirror it
+  (assemble.py `Kit._rule` / `collision`), then re-run `calibrate.py contacts` on a fresh passcheck sweep.

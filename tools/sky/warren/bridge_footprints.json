@@ -1,0 +1,85 @@
+{
+ "_about": "per bridge style, stowed + threshold ramp: the island-side footprint below 2.2 m (|x| max, depth inland); written by the audit (tools/sky/warren/audit), read by lattice.py -- regenerate when bridge glbs change",
+ "styles": {
+  "bascule_timber": {
+   "half_x": 2.4,
+   "inland": 3.301
+  },
+  "bascule_timber_road": {
+   "half_x": 3.6,
+   "inland": 3.301
+  },
+  "bascule_iron": {
+   "half_x": 2.4,
+   "inland": 3.301
+  },
+  "bascule_iron_road": {
+   "half_x": 3.6,
+   "inland": 3.301
+  },
+  "telescope_truss": {
+   "half_x": 2.4,
+   "inland": 5.4
+  },
+  "telescope_truss_road": {
+   "half_x": 3.6,
+   "inland": 5.4
+  },
+  "rope_lowered": {
+   "half_x": 2.37,
+   "inland": 4.1
+  },
+  "rope_lowered_road": {
+   "half_x": 3.57,
+   "inland": 4.1
+  },
+  "jackknife": {
+   "half_x": 2.35,
+   "inland": 1.9
+  },
+  "jackknife_road": {
+   "half_x": 3.55,
+   "inland": 1.9
+  },
+  "swing_girder": {
+   "half_x": 2.9,
+   "inland": 1.7
+  },
+  "swing_girder_road": {
+   "half_x": 4.1,
+   "inland": 1.7
+  },
+  "rolling_lift": {
+   "half_x": 2.22,
+   "inland": 4.492
+  },
+  "rolling_lift_road": {
+   "half_x": 3.42,
+   "inland": 4.492
+  },
+  "scissor_lattice": {
+   "half_x": 2.4,
+   "inland": 3.5
+  },
+  "scissor_lattice_road": {
+   "half_x": 3.6,
+   "inland": 3.5
+  },
+  "gangplank_rail": {
+   "half_x": 2.05,
+   "inland": 12.8
+  },
+  "gangplank_rail_road": {
+   "half_x": 3.25,
+   "inland": 12.8
+  },
+  "chain_drawbridge": {
+   "half_x": 3.3,
+   "inland": 2.6
+  },
+  "chain_drawbridge_road": {
+   "half_x": 4.5,
+   "inland": 2.6
+  }
+ }
+}
