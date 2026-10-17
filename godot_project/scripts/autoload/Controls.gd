@@ -39,6 +39,7 @@ const PAD := [
 	["look_down", [], [[JOY_AXIS_RIGHT_Y, 1.0]]],
 	["jump", [JOY_BUTTON_A], []],
 	["swim_down", [JOY_BUTTON_B], []],
+	["crouch", [JOY_BUTTON_B], []],            # on land B crouches (and slides from a sprint)
 	["interact", [JOY_BUTTON_X], []],
 	["shoot", [], [[JOY_AXIS_TRIGGER_RIGHT, 1.0]]],
 	["next_weapon", [JOY_BUTTON_RIGHT_SHOULDER], []],

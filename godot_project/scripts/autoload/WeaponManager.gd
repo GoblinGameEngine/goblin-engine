@@ -82,6 +82,8 @@ func equip(weapon_id: String) -> bool:
 		return false
 	for child in _mount.get_children():
 		child.queue_free()
+	if is_instance_valid(_current_weapon):
+		_current_weapon.queue_free()        # it may have moved into the body's hand (PlayerBody)
 	var def: Dictionary = definitions[weapon_id]
 	var scene: PackedScene = load(def.scene)
 	var instance: WeaponBase = scene.instantiate()
@@ -96,6 +98,8 @@ func unequip() -> void:
 	if _mount:
 		for child in _mount.get_children():
 			child.queue_free()
+	if is_instance_valid(_current_weapon):
+		_current_weapon.queue_free()        # it may have moved into the body's hand (PlayerBody)
 	_current_weapon = null
 	equipped_index = -1
 	weapon_equipped.emit("")
@@ -108,7 +112,11 @@ func cycle(direction: int) -> void:
 
 func try_use_equipped() -> void:
 	if _current_weapon:
+		var fired := _current_weapon.can_use()
 		_current_weapon.try_use()
+		# the user's body swings/jabs/recoils with it (PlayerBody -> the shared action clips)
+		if fired and _user and _user.has_method("on_weapon_used"):
+			_user.on_weapon_used(get_equipped_id())
 
 func _build_hit_marker() -> void:
 	_hit_marker = MeshInstance3D.new()

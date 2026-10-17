@@ -25,22 +25,43 @@ var occasion := "work"
 var skeleton: Skeleton3D
 var body_mesh: MeshInstance3D
 var clothes_mesh: MeshInstance3D
+var head_mesh: MeshInstance3D          # split_head only: head+neck skin (HEAD_LAYER)
+var headwear_mesh: MeshInstance3D      # split_head only: hair + head-slot garments (HEAD_LAYER)
+var split_head := false
 var _skin: Skin
 
+## First-person bodies: the head-side meshes live on this render layer alone, the player's camera
+## culls it, and every light still shadow-maps it (shadows ignore camera cull masks) -- so the
+## player never sees inside their own head, yet their shadow and any other camera show a whole
+## person.  research/player/01_first_person_body.md.  (Vehicles use 1 << 9, INTERIOR_LAYER.)
+const HEAD_LAYER := 1 << 11
+const HEAD_PARTS := ["head", "neck"]
 
-static func create(v: Dictionary, id := "", seed := 0, p_occasion := "work") -> NpcCharacter:
+
+static func create(v: Dictionary, id := "", seed := 0, p_occasion := "work", p_split_head := false) -> NpcCharacter:
 	## Build and assemble in one go (tools; the main thread).
-	return from_prepared(prepare(v, id, seed, p_occasion))
+	return from_prepared(prepare(v, id, seed, p_occasion, p_split_head))
 
 
-static func prepare(v: Dictionary, id := "", seed := 0, p_occasion := "work") -> Dictionary:
+static func prepare(v: Dictionary, id := "", seed := 0, p_occasion := "work", p_split_head := false) -> Dictionary:
 	## Everything but nodes and materials: body, outfit, garment and hair geometry as mesh arrays.
 	## Thread-safe -- NpcPopulation runs this on the worker pool (traits must be computed first, on
-	## the main thread: Expression isn't thread-safe).
+	## the main thread: Expression isn't thread-safe).  split_head: the head and neck (and, at
+	## assemble time, hair and head-slot garments) become their own meshes on HEAD_LAYER, for a
+	## first-person body whose own camera must not see them (research/player/00_plan.md A).
 	var params := NpcBody.from_traits(v)
-	var built := NpcBody.build(params)
+	var built := NpcBody.build(params, p_split_head)
+	var parts: Array = built.parts
+	var body_parts := parts
+	var head_parts: Array = []
+	var collar_parts: Array = []
+	if p_split_head:
+		body_parts = parts.filter(func(p): return not ((p as NpcBody.Part).name in HEAD_PARTS) and (p as NpcBody.Part).name != "collar")
+		head_parts = parts.filter(func(p): return (p as NpcBody.Part).name in HEAD_PARTS)
+		collar_parts = parts.filter(func(p): return (p as NpcBody.Part).name == "collar")
 	var d := {"traits": v, "pid": id, "seed": seed, "occasion": p_occasion, "params": params, "built": built,
-		"body": _arrays(built.parts)}
+		"split": p_split_head, "body": _arrays(body_parts), "head": _arrays(head_parts),
+		"collar": _arrays(collar_parts)}
 	d.merge(_clothes(v, id, seed, p_occasion, built), true)
 	return d
 
@@ -54,6 +75,7 @@ static func from_prepared(d: Dictionary) -> NpcCharacter:
 	n.occasion = d.occasion
 	n.params = d.params
 	n.built = d.built
+	n.split_head = bool(d.get("split", false))
 	n._assemble(d)
 	return n
 
@@ -76,9 +98,25 @@ func _assemble(d: Dictionary) -> void:
 	skeleton.reset_bone_poses()
 	body_mesh = _instance("Body")
 	clothes_mesh = _instance("Clothes")
-	var m := ArrayMesh.new()
-	_add_arrays(m, d.body, _skin_material())
+	var skin_mat := _skin_material()        # ONE instance: the animator drives the face (gaze,
+	var m := ArrayMesh.new()                # blink, mouth) through body_mesh's material, and the
+	_add_arrays(m, d.body, skin_mat)        # face lives on the split-off head
+	if split_head and not (d.get("collar", []) as Array).is_empty():
+		# the dark plug in the open neckline (surface 1; the animator reads the skin from surface 0)
+		var dark := StandardMaterial3D.new()
+		dark.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		dark.albedo_color = Color(0.09, 0.065, 0.06)
+		dark.cull_mode = BaseMaterial3D.CULL_DISABLED
+		_add_arrays(m, d.collar, dark)
 	body_mesh.mesh = m
+	if split_head:
+		head_mesh = _instance("HeadM")
+		head_mesh.layers = HEAD_LAYER
+		headwear_mesh = _instance("HeadWear")
+		headwear_mesh.layers = HEAD_LAYER
+		var hm := ArrayMesh.new()
+		_add_arrays(hm, d.get("head", []), skin_mat)
+		head_mesh.mesh = hm
 	_apply_clothes(d)
 
 
@@ -101,9 +139,15 @@ func dress(p_occasion: String) -> void:
 func _apply_clothes(d: Dictionary) -> void:
 	outfit = d.outfit
 	var m := ArrayMesh.new()
+	var hw := ArrayMesh.new()
 	for s in d.surfaces:
-		_add_arrays(m, s.arrays, _fabric_material(s.g) if s.kind == "fabric" else _hair_material())
+		# split_head: what sits on the head (hair, hats, hoods) is hidden with it from the player's
+		# own camera; a scarf round the neck stays body-side (it is below the chin, never round the eyes)
+		var head_side: bool = split_head and (s.kind == "hair" or str((s.g as Dictionary).get("slot", "")) == "head")
+		_add_arrays(hw if head_side else m, s.arrays, _fabric_material(s.g) if s.kind == "fabric" else _hair_material())
 	clothes_mesh.mesh = m
+	if headwear_mesh:
+		headwear_mesh.mesh = hw
 
 
 static func _clothes(v: Dictionary, id: String, seed: int, p_occasion: String, built: Dictionary) -> Dictionary:

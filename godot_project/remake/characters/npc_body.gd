@@ -441,11 +441,13 @@ static func _weld(v: int, around: int, nrings: int) -> int:
 
 # -- the body -------------------------------------------------------------------------------------
 
-static func build(p: Dictionary) -> Dictionary:
+static func build(p: Dictionary, open_neck := false) -> Dictionary:
 	var L := landmarks(p)
 	var J := skeleton_rest(L)
 	var parts: Array[Part] = []
-	parts.append(_torso(L, J))
+	parts.append(_torso(L, J, open_neck))
+	if open_neck:
+		parts.append(_collar(L, J))
 	parts.append(_neck(L, J))
 	parts.append(_head(L, J, p))
 	for side in ["L", "R"]:
@@ -457,7 +459,7 @@ static func build(p: Dictionary) -> Dictionary:
 	return {"landmarks": L, "joints": J, "parts": parts}
 
 
-static func _torso(L: Dictionary, J: Dictionary) -> Part:
+static func _torso(L: Dictionary, J: Dictionary, open_top := false) -> Part:
 	var T: float = L.T
 	var rs := []
 	var x := Vector3.RIGHT
@@ -478,7 +480,22 @@ static func _torso(L: Dictionary, J: Dictionary) -> Part:
 	]
 	for r in rows:
 		rs.append(ring(Vector3(0, r[0], r[3]), x, z, r[1], r[2], r[5], r[4]))
-	return loft("torso", rs, RING, true, true)
+	# open_top (split-head bodies): no skin-coloured cap at the neck base -- _collar() plugs the
+	# opening with a dark funnel instead, so a first-person look down the neckline reads as the
+	# shaded inside of the collar, not a bright disc (research/player/01_first_person_body.md 3)
+	return loft("torso", rs, RING, true, not open_top)
+
+
+static func _collar(L: Dictionary, J: Dictionary) -> Part:
+	## The dark plug under an open-necked torso: a shallow funnel from the torso's top ring down
+	## and inward, capped.  Its own part so the assembler can give it a dark material.
+	var T: float = L.T
+	var w := [["UpperChest", 0.7], ["Neck", 0.3]]
+	var rs := [
+		ring(Vector3(0, L.neck_base - 0.005 * T, 0.008 * T), Vector3.RIGHT, Vector3.BACK, L.neck_r * 2.2, L.neck_r * 1.6, w, 2.0),
+		ring(Vector3(0, L.neck_base - 0.045 * T, 0.008 * T), Vector3.RIGHT, Vector3.BACK, L.neck_r * 0.7, L.neck_r * 0.5, w, 2.0),
+	]
+	return loft("collar", rs, RING, false, true)
 
 
 static func _neck(L: Dictionary, J: Dictionary) -> Part:

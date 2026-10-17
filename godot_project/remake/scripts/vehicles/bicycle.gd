@@ -9,8 +9,9 @@ class_name RemakeBicycle
 ##   E (interact) on the bike: ride;  W/S pedal / brake;  A/D steer;  Space brake;  E get off.
 ## The player rides it in person: their body (a generated character, the same for the whole game)
 ## sits on the saddle with feet on the pedals and hands on the grips (NpcAnimator.ride, as NPC
-## cyclists do), and the view is from that body's eyes, so looking down you see yourself pedal. It has
-## no head or neck: nobody but the player ever sees it.
+## cyclists do), and the view is from that body's eyes, so looking down you see yourself pedal. The
+## head and neck are split onto NpcCharacter.HEAD_LAYER (research/player/01_first_person_body.md):
+## the player's camera culls them, every light still shadows them -- the rider's shadow has a head.
 
 const MODEL := "res://remake/vehicles/bicycle.glb"
 const GEAR := 2.2
@@ -103,7 +104,6 @@ func _animate_car(delta: float) -> void:
 	model.transform.basis = Basis(Vector3.FORWARD, _lean)
 	if _rider_an:
 		_rider_an.ride = _rider_pose()
-		_headless()
 
 
 # ------------------------------------------------------------------ the player in person
@@ -116,23 +116,12 @@ func take_seat(p: StationPlayer) -> void:
 	if life:
 		seed = life.seed
 	var v := NpcTraits.shared().person(seed, "player", ["L0", "L1"], "", {"age": 30})
-	_rider = NpcCharacter.from_prepared(NpcCharacter.prepare(v, "player", seed, "work"))
+	_rider = NpcCharacter.from_prepared(NpcCharacter.prepare(v, "player", seed, "work", true))
 	_rider.name = "Rider"
 	model.add_child(_rider)                      # leans with the bike
 	_rider_an = NpcAnimator.attach(_rider)
 	_rider_an.ambient = false
 	_rider_an.ride = _rider_pose()
-	_headless()
-
-
-func _headless() -> void:
-	## The player never sees their own head or neck (a single-player game: the body exists only for
-	## them): the Neck bone is collapsed, and the head, hair, eyes, hat and collar skinned to it with it.
-	var sk := _rider.find_child("Skeleton*", true, false) as Skeleton3D if _rider else null
-	if sk:
-		var ni := sk.find_bone("Neck")
-		if ni >= 0:
-			sk.set_bone_pose_scale(ni, Vector3.ONE * 0.001)
 
 
 func leave_seat() -> void:
@@ -160,7 +149,7 @@ func _rider_pose() -> Dictionary:
 
 func pilot_transform() -> Transform3D:
 	## The view from the rider's own eyes: the player's body is placed so its camera sits where the
-	## generated body's eyes would be (its neck and head are collapsed, _headless()).
+	## generated body's eyes are (the head itself is culled from the player's camera: HEAD_LAYER).
 	if _rider == null or pilot == null:
 		return super()
 	var sk := _rider.find_child("Skeleton*", true, false) as Skeleton3D

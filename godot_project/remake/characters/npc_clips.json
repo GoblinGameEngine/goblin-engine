@@ -435,6 +435,35 @@
     {"t": 0.0, "w": 1, "head": [4, 0, 0], "face": {"eyes": 0.6}},
     {"t": 3.5, "head": [26, 0, 6], "face": {"eyes": 1.0}, "ease": "tame"},
     {"t": 3.7, "head": [2, 0, 0], "face": {"eyes": 0.2, "brow": 0.6}, "ease": "tsume"},
-    {"t": 6.0, "head": [4, 0, 0], "face": {"eyes": 0.6}}]}
+    {"t": 6.0, "head": [4, 0, 0], "face": {"eyes": 0.6}}]},
+
+  "punch": {"group": "action", "length": 0.5, "blend": 0.08, "notes": "a jab: guard up fast (tsume), fist out to the shoulder line with a chest twist, snap back (research/player/03_action_animations.md)",
+   "keys": [
+    {"t": 0.0, "w": 0},
+    {"t": 0.12, "w": 1, "handR": ["upper", 0.07, -0.07, -0.1], "gripR": "fist", "spine": [0, 9, 0], "head": [0, 0, 0], "poleR": [0.7, -0.6, 0.2], "face": {"brow": -0.3}, "ease": "tsume"},
+    {"t": 0.19, "handR": ["upper", 0.02, -0.01, -0.26], "spine": [0, -11, 0], "hips": [0, 0, -0.012], "wristR": [0, 0, 0]},
+    {"t": 0.24, "handR": ["upper", 0.02, -0.01, -0.26], "spine": [0, -11, 0]},
+    {"t": 0.5, "w": 0, "ease": "smooth"}]},
+
+  "bat_swing": {"group": "action", "length": 0.8, "blend": 0.12, "notes": "two-hand wind-up high over the right shoulder, the fast cut across to the low left, follow-through held a beat, recover",
+   "keys": [
+    {"t": 0.0, "w": 0},
+    {"t": 0.2, "w": 1, "handR": ["upper", 0.16, 0.1, -0.03], "handL": ["upper", 0.1, 0.07, -0.08], "gripR": "hold", "gripL": "hold", "spine": [0, 19, 0], "head": [0, -12, 0], "hips": [0, -0.005, 0.012], "poleR": [0.9, -0.2, 0.2], "ease": "tsume"},
+    {"t": 0.34, "handR": ["upper", -0.15, -0.1, -0.19], "handL": ["upper", -0.06, -0.12, -0.15], "spine": [0, -22, 0], "hips": [0, -0.012, -0.012], "head": [0, 6, 0]},
+    {"t": 0.44, "handR": ["upper", -0.18, -0.16, -0.11], "handL": ["upper", -0.08, -0.16, -0.1], "spine": [0, -26, 0]},
+    {"t": 0.8, "w": 0, "ease": "smooth"}]},
+
+  "pistol_fire": {"group": "action", "length": 0.3, "blend": 0.05, "notes": "the recoil only: forearm and wrist kick up and back fast, spring home slower; the aim (head, eyes) never moves",
+   "keys": [
+    {"t": 0.0, "w": 0},
+    {"t": 0.06, "w": 1, "handR": ["upper", 0.05, -0.01, -0.19], "wristR": [-24, 0, 0], "gripR": "hold", "shoulders": [0, 7], "poleR": [0.6, -0.5, 0.3]},
+    {"t": 0.3, "w": 0, "ease": "smooth"}]},
+
+  "door_reach": {"group": "action", "length": 0.55, "blend": 0.15, "notes": "reach to a door handle at waist-chest height, take it, let go and retract (played on using a door; any NPC can too)",
+   "keys": [
+    {"t": 0.0, "w": 0},
+    {"t": 0.22, "w": 1, "handR": ["hips", 0.05, 0.09, -0.17], "gripR": "cup", "poleR": [0.7, -0.5, 0.2], "ease": "smooth"},
+    {"t": 0.32, "handR": ["hips", 0.05, 0.09, -0.17], "gripR": "hold"},
+    {"t": 0.55, "w": 0, "ease": "smooth"}]}
  }
 }

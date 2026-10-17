@@ -43,7 +43,33 @@ Five moored islands make a Bright Week of lights; seven at a small town shut the
 | ![An island lane by day](docs/media/2026-10-16/island_lane_day.jpg) | ![The Communicator's Date & Time app](docs/media/2026-10-16/datetime_app.jpg) |
 | A medina lane on a floating city | The Communicator's new Date & Time app |
 
-### What's new (2026-10-16, second update: the flea markets)
+### What's new (2026-10-16, third update: a player body and modern first-person movement)
+- **You have a body now — the whole thing.** The player is a real generated person (the same body the NPCs use):
+  look down and you see your chest, legs and feet; your shadow has a head; in third person you're all there. You
+  never see the inside of your own head — it renders on a layer only your own camera skips, while shadows and every
+  other view keep it.
+- **Modern first-person movement:** a toggled crouch (C) with its own animation and capsule, sprint-slide with a
+  slide-hop, step-up, lean (Q/R), vaulting low walls, mantling chest-high ledges, ledge hang with shimmy, climb and
+  drop — and a climb out of the water into a boat while swimming.
+- **A real jump:** push-off extension, a lead-knee tuck in the air, a reach into the fall and a weighty landing that
+  recovers into the run.
+- **Weapons in hand:** the equipped weapon rides in the hand in every view, the pistol follows your aim, the bat
+  carries at your side. New authored animations for punching, shooting, the bat swing and opening doors.
+- **Every one of these animations drives all the NPC humans too** — one rig, one set, previewed and verified on NPC
+  bodies in third person.
+- Verified by a new headless movement test: 26 assertions covering every mechanic, all passing, plus 55 animation
+  clips × 12 body types with zero failures.
+
+| | |
+|---|---|
+| ![Looking down at your own body](docs/media/2026-10-16/player_fp_lookdown_body.png) | ![Pistol in hand, first person](docs/media/2026-10-16/player_fp_pistol.png) |
+| Look down: your chest, legs and feet | The pistol rides in your hand and follows your aim |
+| ![The player in third person](docs/media/2026-10-16/player_thirdperson_full_body.png) | ![The player's shadow has a head](docs/media/2026-10-16/player_shadow_with_head.png) |
+| Third person: the whole person | Your shadow keeps its head; only your own view hides it |
+| ![An NPC mid-jump](docs/media/2026-10-16/player_npc_jump_tuck.png) | ![An NPC swinging the bat](docs/media/2026-10-16/player_npc_bat_swing.png) |
+| The real jump: lead-knee tuck, shared with every NPC | The bat swing on an NPC body |
+
+### Earlier the same day: the flea markets
 - **A flea market in every town — all 22, 2,660 stalls.** Gravel lots with striped bays and lamp poles, covered shed
   rows, open rows with fire lanes, food truck courts, entrance arches, lettered market boards and pylon signs, each
   fitted to its town's free land by a siting search. Victory Bay had no free land, so **The Regatta Swap floats on a
@@ -127,6 +153,9 @@ and similar handhelds.
 |---|---|---|
 | Move / look | WASD / mouse | left stick / right stick |
 | Jump (swim up) / swim down | Space / Ctrl | A / B |
+| Climb: jump at a wall mantles it; falling past a ledge with jump held grabs it (A/D shimmy, W or jump climbs, S or crouch drops); jump while swimming climbs aboard a boat or bank | Space | A |
+| Crouch (toggle; while sprinting: slide) | C | B |
+| Lean left / right | Q / R | — |
 | Use, talk, board, leave a vehicle | E | X |
 | Attack / change weapon | left click / wheel | RT / LB, RB |
 | Sprint | hold Shift | click the left stick (stays on until you stop) |
@@ -153,15 +182,14 @@ Panel > Controls.
 ## Roadmap
 
 In this order:
-1. **A player body:** a full body with a head (never seen from inside), crouch, ledge hang and climb, and modern
-   first-person movement. The same animations drive every human NPC.
-2. **The ship-blocker pass:** every clipping, non-manifold and bad-normal problem found and fixed project-wide, with
+1. **The ship-blocker pass:** every clipping, non-manifold and bad-normal problem found and fixed project-wide, with
    the audit grown into a general geometry toolkit.
-3. **Animals:** the ark's larger land mammals, wild and domestic, 500 years on.
-4. **Trams:** a bigger tram network inside every town and city, with stops on the maps and as fast-travel points.
-5. Then the city-states' politics, the story, and shipping.
+2. **Animals:** the ark's larger land mammals, wild and domestic, 500 years on.
+3. **Trams:** a bigger tram network inside every town and city, with stops on the maps and as fast-travel points.
+4. Then the city-states' politics, the story, and shipping.
 
-Done: ~~the flea markets~~ (this update), ~~walkable floating cities, night light, signs~~ (0.8.2-beta.1).
+Done: ~~a player body and modern first-person movement~~ (this update), ~~the flea markets~~ (0.8.2-beta.2),
+~~walkable floating cities, night light, signs~~ (0.8.2-beta.1).
 
 ## License
 
@@ -170,7 +198,7 @@ source yet. A permissive license is planned once the project reaches a usable st
 
 ## Version
 
-**Current: `0.8.2-beta.2`** (beta). It is tracked in the `VERSION` file at the repo root and mirrored into
+**Current: `0.8.3-beta.1`** (beta). It is tracked in the `VERSION` file at the repo root and mirrored into
 `godot_project/project.godot`'s `config/version`. The change history is in [CHANGELOG.md](CHANGELOG.md).
 
 The scheme is `MAJOR.MINOR.PATCH-phase.N`, where the phase is one of `prealpha`, `alpha`, `beta` or `rc`. The phase is

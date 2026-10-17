@@ -80,6 +80,29 @@ var _brow0 := 0.0                  # the face's own brow height (the clip's brow
 ##   handL, handR   wrist targets (the grips; a strap; the lap)
 ##   grip   how closed the hands are (0..1);  w  the blend in (0..1)
 var ride := {}
+## Crouch, 0 standing .. 1 full crouch (the player's crouch and slide; any NPC may crouch too):
+## the hips sink and slide back, the trunk leans forward, the base widens and the stride shortens --
+## the legs bend through the normal IK, so no authored clip is needed and every body crouches true
+## to its own proportions (research/player/02_movement_reference.md).
+var crouch := 0.0
+## Aim pitch in radians, the camera/gaze convention (+ up, as Camera3D rotation.x): distributed
+## over spine, chest, neck and head so a first-person body's shadow -- and an aiming NPC -- bends
+## with the view instead of snapping the head alone.
+var aim_pitch := 0.0
+## Airborne (a jump, a fall), 0 grounded .. 1 in the air, with air_v the vertical speed sense
+## (+1 rising, -1 falling): the legs tuck (the lead leg higher), toes point, the arms still, the
+## trunk tips back on the rise and forward into the fall.  land(strength) on touchdown pulses the
+## knees (a crouch spike over 0.3 s).  The player drives these; any NPC that jumps can too.
+var air := 0.0
+var air_v := 0.0
+var _air_t := 0.0                  # time since leaving the ground (phases the jump)
+var _land_t := -1.0
+var _land_k := 0.0
+
+
+func land(strength: float) -> void:
+	_land_t = 0.0
+	_land_k = clampf(strength, 0.0, 1.0)
 
 
 func play(id: String, loop := false) -> float:
@@ -347,7 +370,7 @@ func _anim_tick(delta: float) -> void:
 	t += delta
 	_walk = move_toward(_walk, clampf(speed / 0.9, 0.0, 1.0), delta * 2.5)     # ease in / out
 	if speed > 0.02:
-		phase = fmod(phase + delta * speed / stride_length(), 1.0)
+		phase = fmod(phase + delta * speed / (stride_length() * (1.0 - 0.45 * crouch)), 1.0)
 	elif _walk > 0.02:
 		phase = fmod(phase + delta * 0.3 * _walk, 1.0)                           # finishing the step
 	# level of detail: who's seen, how near (looked at four times a second)
@@ -425,7 +448,25 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 	var T: float = _L.T
 	_clip_step(dt)
 	var cw := float(_cs.get("_w", 0.0))
-	var S := stride_length()
+	# the jump, phased (research/player/02_movement_reference.md; Mirror's-Edge-register weight):
+	# push-off (legs extended, toes hard, arms swung back), then the tuck (the lead knee up, arms
+	# out), easing toward a reach as the fall comes, and land() spikes the knees on touchdown
+	if air > 0.05 and dt > 0.0:
+		_air_t += dt
+	elif dt > 0.0:
+		_air_t = 0.0
+	var rising := maxf(air_v, 0.0)
+	var falling := maxf(-air_v, 0.0)
+	var push := (1.0 - smoothstep(0.0, 0.16, _air_t)) * rising * air
+	var tuck := smoothstep(0.08, 0.32, _air_t) * (1.0 - 0.55 * falling) * air
+	var cr := crouch
+	if _land_t >= 0.0 and dt > 0.0:
+		# touchdown: the knees take it -- a crouch spike easing out (the landing dip)
+		_land_t += dt
+		cr = clampf(cr + 0.5 * _land_k * sin(PI * clampf(_land_t / 0.3, 0.0, 1.0)), 0.0, 1.0)
+		if _land_t >= 0.3:
+			_land_t = -1.0
+	var S := stride_length() * (1.0 - 0.45 * cr)       # crouched steps are short and quick
 	var amp: float = style.amp
 	var idle := 1.0 - walk
 	var breathe := sin(time * TAU / (3.6 + 1.2 * (1.0 - float(style.breath))))
@@ -463,6 +504,12 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 		if _antic >= 0.4:
 			_antic = -1.0
 	var hip_pos := hips_rest + Vector3(shift, bob - sag - 0.012 * T * ak, 0.018 * T * ak)
+	if cr > 0.001:
+		# the squat: hips sink and slide back, weight over the balls of the feet; the legs bend
+		# through the ordinary IK below (the foot targets stay on the ground)
+		hip_pos += Vector3(0.0, -0.30 * T * cr, 0.05 * T * cr)
+	if push > 0.001:
+		hip_pos.y += 0.015 * T * push          # the extension of the push-off
 	if _cs.has("hips"):
 		var hh: Array = _cs.hips
 		hip_pos += Vector3(float(hh[0]), float(hh[1]), float(hh[2])) * T * cw
@@ -477,7 +524,7 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 	_set_rot("Hips", hq)
 	var hb := Basis(hq)
 	# -- legs: foot targets, then IK
-	var foot_x := 0.024 * T * float(style.base)
+	var foot_x := 0.024 * T * float(style.base) * (1.0 + 0.8 * cr)   # a wider base crouched
 	for side in ["L", "R"]:
 		var k := -1.0 if side == "L" else 1.0
 		var lt := fposmod(ph + (0.0 if side == "L" else 0.5), 1.0)       # 0 = heel strike
@@ -512,6 +559,15 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 		var idle_target := Vector3(k * float(_L.leg_sep) * 0.85, ank_rest.y, ank_rest.z)
 		var target := idle_target.lerp(walk_target, walk)
 		var fpitch := pitch * walk
+		if air > 0.01:
+			# in the air: push-off extension -> tuck (lead knee up) -> reach for the ground
+			var lead := 0.14 if side == "L" else 0.07
+			var tgt_push := Vector3(k * foot_x, ank_rest.y - 0.015 * T, ank_rest.z + 0.02 * T)
+			var tgt_tuck := Vector3(k * foot_x * 1.15, ank_rest.y + lead * T, ank_rest.z - 0.02 * T)
+			var tgt_reach := Vector3(k * foot_x, ank_rest.y + 0.035 * T, ank_rest.z - 0.015 * T)
+			var air_tgt := tgt_push.lerp(tgt_tuck, clampf(tuck + 0.15, 0.0, 1.0)).lerp(tgt_reach, falling * 0.6)
+			target = target.lerp(air_tgt, air)
+			fpitch = lerpf(fpitch, -(0.5 * push + 0.35 * tuck + 0.12 * falling + 0.08), air)
 		if _cs.has("foot" + side):
 			var ft: Array = _cs["foot" + side]
 			target = target.lerp(Vector3(float(ft[0]), float(ft[1]), float(ft[2])) * T, cw)
@@ -530,7 +586,8 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 	#   over that leg dips -- the counter-tilt to the hips; heavy bodies instead tip the shoulders
 	#   with the hips (a waddle)
 	var osc := deg_to_rad(PITCH_OSC) * cos(2.0 * TAU * (ph - PITCH_PH)) * amp * walk
-	var lean_t: float = float(style.lean) + float(style.get("chest_fwd", 0.0)) + deg_to_rad(4.0) * walk * float(style.speed) + osc - deg_to_rad(5.0) * ak + float(ride.get("pitch", 0.0)) * 0.4 * rw
+	var lean_t: float = float(style.lean) + float(style.get("chest_fwd", 0.0)) + deg_to_rad(4.0) * walk * float(style.speed) + osc - deg_to_rad(5.0) * ak + float(ride.get("pitch", 0.0)) * 0.4 * rw + 0.42 * cr \
+		- 0.10 * air * maxf(air_v, 0.0) + 0.16 * air * maxf(-air_v, 0.0)
 	var lean := _spring("lean", lean_t, dt, 1.6, clampf(0.9 - float(style.overshoot), 0.25, 0.9))
 	var twist_w := -yaw * 1.6 * float(style.torso_turn) / 0.29                # the chest's turn in the world
 	var turn := _spring("chest_turn", twist_w - yaw * 0.6, dt, 2.2, 0.5)       # relative to the spine
@@ -538,10 +595,14 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 	var trunk_roll := deg_to_rad(TRUNK_ROLL) * cos(TAU * (ph - TRUNK_PH)) * amp * walk * (1.0 - waddle)
 	var counter := lerpf(0.85, 0.35, waddle)
 	var sp := _clip_euler("spine")
-	var q_spine := Quaternion.from_euler(Vector3(-lean * 0.5, -yaw * 0.4, -list * counter * 0.7 + trunk_roll * 0.5) + sp * 0.35)
-	var q_chest := Quaternion.from_euler(Vector3(-lean * 0.3, turn * 0.6, -list * counter * 0.18 + trunk_roll * 0.3) + sp * 0.35)
+	# the aim: the camera's (or an aiming NPC's) pitch spread down the chain (+ up; the rig's +x
+	# tips a bone back, i.e. up, so it adds straight on).  The torso takes about half, so looking
+	# down curls the trunk -- a first-person body looking down sees its own chest.
+	var aim := aim_pitch
+	var q_spine := Quaternion.from_euler(Vector3(-lean * 0.5 + aim * 0.22, -yaw * 0.4, -list * counter * 0.7 + trunk_roll * 0.5) + sp * 0.35)
+	var q_chest := Quaternion.from_euler(Vector3(-lean * 0.3 + aim * 0.18, turn * 0.6, -list * counter * 0.18 + trunk_roll * 0.3) + sp * 0.35)
 	# the upper chest carries the breath and the rest of the lean and counter-turn
-	var q_upper := Quaternion.from_euler(Vector3(-lean * 0.2 + deg_to_rad(1.8) * breathe * idle * float(style.breath), turn * 0.4, -list * counter * 0.12 + trunk_roll * 0.2) + sp * 0.3)
+	var q_upper := Quaternion.from_euler(Vector3(-lean * 0.2 + aim * 0.12 + deg_to_rad(1.8) * breathe * idle * float(style.breath), turn * 0.4, -list * counter * 0.12 + trunk_roll * 0.2) + sp * 0.3)
 	var chest_roll := list * (1.0 - counter) + trunk_roll                     # the shoulder line's tilt in the world
 	var chest_yaw := yaw * 0.6 + turn
 	_set_rot("Spine", q_spine)
@@ -572,8 +633,8 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 			_beat_t = -1.0
 	var gesture_w := _spring("gesture_w", 1.0 if talking else 0.0, dt, 1.0, 0.8)
 	var stance_w := _spring("stance_w", idle if st != null else 0.0, dt, 1.1, 0.8)
-	var arm_amp := deg_to_rad(17.0) * float(style.arm_swing) * amp * clampf(speed / 1.3 + 0.2, 0.4, 1.0)
-	var spread := deg_to_rad(4.0) * float(style.spread)
+	var arm_amp := deg_to_rad(17.0) * float(style.arm_swing) * amp * clampf(speed / 1.3 + 0.2, 0.4, 1.0) * (1.0 - 0.7 * air)
+	var spread := deg_to_rad(4.0) * float(style.spread) + deg_to_rad(9.0) * air   # arms out for balance in the air
 	var shr: Array = _cs.get("shoulders", [0.0, 0.0])
 	for side in ["L", "R"]:
 		var k := -1.0 if side == "L" else 1.0
@@ -586,7 +647,8 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 		var q_sh := Quaternion(Vector3.UP, k * prot) * Quaternion(Vector3.BACK, k * raise)
 		_set_rot("Shoulder" + side, q_sh)
 		var t_sh := t_upper * Transform3D(Basis(q_sh), (_J["Shoulder" + side] as Vector3) - (_J.UpperChest as Vector3))
-		var arm_t := arm_amp * sw * walk + deg_to_rad(1.5) * _noise(1.0 + ls, 0.3) * idle
+		var arm_t := arm_amp * sw * walk + deg_to_rad(1.5) * _noise(1.0 + ls, 0.3) * idle \
+			+ (-0.55 * push + 0.2 * falling * air)     # arms swing back on the push-off, rise into the fall
 		var arm := _spring("arm" + side, arm_t, dt, 1.8, 0.62)
 		# the arm swings a little across the body on its forward swing (Muybridge)
 		var across := deg_to_rad(5.0) * maxf(0.0, arm / maxf(arm_amp, 0.01)) * walk
@@ -650,8 +712,8 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 	var jut := float(style.get("jut", 0.0))                                   # the neck thrust forward, the head tipped back to look ahead
 	var neck_roll := deg_to_rad(NECK_ROLL) * cos(TAU * (ph - NECK_PH)) * amp * walk * (1.0 - 0.5 * waddle) - chest_roll * 0.3
 	var hd := _clip_euler("head")
-	_set_rot("Neck", Quaternion.from_euler(Vector3(-(nod * 0.6 + jut), look * 0.4 - chest_yaw * 0.85, neck_roll) + hd * 0.4))
-	_set_rot("Head", Quaternion.from_euler(Vector3(-(nod * 0.4 - jut), look * 0.6, -(chest_roll + neck_roll) * 0.8) + hd * 0.6))
+	_set_rot("Neck", Quaternion.from_euler(Vector3(-(nod * 0.6 + jut) + aim * 0.22, look * 0.4 - chest_yaw * 0.85, neck_roll) + hd * 0.4))
+	_set_rot("Head", Quaternion.from_euler(Vector3(-(nod * 0.4 - jut) + aim * 0.26, look * 0.6, -(chest_roll + neck_roll) * 0.8) + hd * 0.6))
 	# hair: hangs back from the head, lags its turns and bounces with the step (loose, underdamped)
 	var head_now := Vector2(look + yaw * 0.5, nod + lean)
 	var hv := (head_now - _head_prev) / maxf(dt, 1e-3) if dt > 0.0 else Vector2.ZERO

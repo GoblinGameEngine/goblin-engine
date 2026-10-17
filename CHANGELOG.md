@@ -2,6 +2,46 @@
 
 Each entry gets its own screenshots in `docs/media/<date>/`.
 
+## 0.8.3-beta.1 (2026-10-16): a player body, modern first-person movement, weapons in hand
+
+**The body**
+- The player is now a true first-person full body: the same generated person the NPC systems build, glued under the
+  player capsule and posed by the shared animator. Look down and you see yourself (a dark collar seals the neck);
+  your shadow and every other camera show the whole person with the head; only your own view culls it (the head and
+  neck render on a layer the player camera skips — shadows ignore camera culling, so the shadow keeps its head).
+  Camera pitch spreads down the spine, neck and head, and past ~35° down the body eases back so the chest never
+  crosses the near plane. The bicycle rider's old collapsed-neck stopgap is replaced by the same split.
+
+**Movement**
+- Crouch toggled on C (pad B): capsule 1.45 → 0.95 m with its own squat animation and a ceiling check before
+  standing.
+- Sprint + crouch = slide, with a boost, slope gravity and a slide-hop; step-up to 0.36 m with eye smoothing;
+  lean on Q/R (0.30 m + 10°, capped at walls).
+- Vault low walls (≤ 0.55 m, speed kept) and mantle chest-high ledges (≤ 1.35 m) on jump; ledge hang with shimmy,
+  climb up and drop.
+- From the water: jump at a boat and the player hauls over the gunwale onto the deck.
+- A real jump: push-off extension, lead-knee tuck in the air, a reach into the fall, and a landing knee pulse that
+  recovers into the walk. Landing dips the eye.
+
+**Weapons and actions**
+- The equipped weapon rides in the hand (grip transforms solved against the live prop frame): the pistol follows
+  the aim, the bat carries at the side. Fixed a weapon-manager leak on equip/unequip.
+- New authored animation clips: punch, bat swing, pistol fire, door reach — wired to combat and door interactions.
+
+**Shared with every NPC**
+- All of it — jump, crouch, slide, mantles, combat clips, door opens — drives the NPC humans through the same rig
+  and clip set, previewed and verified on NPC bodies in third person.
+
+**Verification**
+- New headless movement test with real physics and synthesized input: 26 assertions, all passing (body split and
+  layers, walk/sprint/step-up, crouch including blocked stand, slide, vault, mantle, hang catch/climb/drop, jump
+  phases, swim and water-to-boat, lean, clip presence).
+- Animation clips: 55 clips × 12 body types, 0 failures.
+
+**Known remaining:** the project-wide clipping/manifold fix campaign (the ship-blocker pass) is next — the audit
+tools hold full-world baselines; the movement-critical cases (camera near-plane, mantle/hang destination checks,
+lean caps) are handled by design and test.
+
 ## 0.8.2-beta.2 (2026-10-16): the flea markets — a weekend market in every town, and the islands come down to trade
 
 **The markets (the ground side)**
