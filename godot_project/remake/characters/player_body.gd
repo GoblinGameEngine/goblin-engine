@@ -15,18 +15,10 @@ class_name PlayerBody
 
 const EYE_STAND := 1.43          # the capsule's eye height (StationPlayer: origin at the eyes)
 
-## The equipped weapon's visual moves from the camera's WeaponMount into the right hand (PropR
-## bone: the handle runs along +z through the fist, NpcProps' convention), so it shows in first
-## person, third person and the shadow alike (research/player/03_action_animations.md 3).
-## The transform seats each weapon's own model in the fist.
-const WEAPON_GRIP := {
-	"pistol": [Vector3(0, 0.02, 0.0), Vector3(-35.4, 180.0, 149.1), 0.5],   # barrel level along the aim (solved live against the hold pose's prop frame, 2026-10-16)
-	"bat": [Vector3(0, 0, 0.05), Vector3(-67.2, -73.0, -0.4), 0.9],  # carried at the side, fat end down-forward (solved live against the carry pose, 2026-10-16)
-	"fists": [Vector3.ZERO, Vector3.ZERO, 0.0],                      # the body HAS fists: no extra mesh
-}
-## The attack clip per weapon (npc_clips.json, group "action" -- NPCs share them).
-const WEAPON_CLIP := {"fists": "punch", "bat": "bat_swing", "pistol": "pistol_fire"}
-
+## The equipped weapon is held by the body: NpcWeaponPose keys the weapon in the camera's frame
+## (the boxer's guard, the bat over the shoulder, the two-handed pistol) and both hands reach it by
+## arm IK with their facing set, so it shows in first person, third person and the shadow alike
+## (research/player/04_weapon_holds.md).  The attack animates the same pose.
 var npc: NpcCharacter
 var animator: NpcAnimator
 var _player: StationPlayer
@@ -35,7 +27,12 @@ var _prepared: Dictionary = {}
 var _pose_w := 0.0               # the movement pose's blend weight (eases in and out)
 var _pose_mode := ""
 var _hold_w := 0.0               # the weapon hold pose's blend weight
-var _hand_mount: BoneAttachment3D
+var _atk_t := -1.0               # time into the current attack (-1: none)
+var _atk_id := ""
+var _punch_side := 1             # the fist that punches next (+1 right, -1 left)
+var _fight_until := 0
+var _sway := Vector3.ZERO        # the weapon lagging the look a touch
+var _last_basis := Basis.IDENTITY
 var _lock := Mutex.new()
 
 
@@ -69,6 +66,7 @@ func _assemble_if_ready() -> void:
 	npc.name = "Me"
 	add_child(npc)
 	animator = NpcAnimator.attach(npc)
+	animator.process_priority = process_priority + 1   # pose after this sets the hold, same frame
 	animator.ambient = false                 # no watch-checking from inside your own body
 	# the generated person's eyes to the capsule's: one uniform scale, so the hands, the stride and
 	# the shadow all match the collision the player actually has
@@ -109,9 +107,11 @@ func landed(fall_speed: float) -> void:
 
 
 func weapon_used(id: String) -> void:
-	## The attack: the shared action clip for this weapon (any NPC can play the same one).
-	if animator:
-		animator.play(WEAPON_CLIP.get(id, "punch"))
+	## The attack: NpcWeaponPose animates the hold (any NPC can play the same one).
+	_atk_id = id
+	_atk_t = 0.0
+	if id == "fists":
+		_punch_side = -_punch_side
 
 
 func reach(_at: Vector3) -> void:
@@ -121,24 +121,15 @@ func reach(_at: Vector3) -> void:
 
 
 func _hold_weapon() -> void:
-	## Keep the equipped weapon's visual in the right hand.
+	## The equipped weapon's visual is the body's: out of the camera's mount, placed by the hold pose.
 	var w: Node3D = WeaponManager._current_weapon
-	if w == null:
+	if w == null or not is_instance_valid(w):
 		return
-	if _hand_mount == null:
-		_hand_mount = BoneAttachment3D.new()
-		_hand_mount.name = "HandRMount"
-		npc.skeleton.add_child(_hand_mount)
-		_hand_mount.bone_name = "PropR"
-	if w.get_parent() != _hand_mount:
+	if w.get_parent() != self:
 		if w.get_parent():
 			w.get_parent().remove_child(w)
-		_hand_mount.add_child(w)
-		var g: Array = WEAPON_GRIP.get(WeaponManager.get_equipped_id(), WEAPON_GRIP.fists)
-		w.position = g[0]
-		w.rotation_degrees = g[1]
-		w.scale = Vector3.ONE * maxf(float(g[2]), 0.001)
-		w.visible = float(g[2]) > 0.0
+		add_child(w)
+		w.set("held_by_body", true)
 
 
 func _apply_pose(st: Dictionary) -> void:
@@ -168,26 +159,38 @@ func _apply_pose(st: Dictionary) -> void:
 			animator.ride = {}
 
 
-func _weapon_hold(pitch: float) -> Dictionary:
-	## The carry pose for the equipped weapon, following the aim pitch.  Only the needed channels,
-	## so the walk keeps the other arm swinging.
-	var want := WeaponManager.get_equipped_id() != "" and WeaponManager.get_equipped_id() != "fists" \
-		and animator.clip_playing() == "" and not _player.is_seated()
-	_hold_w = move_toward(_hold_w, 1.0 if want else 0.0, get_process_delta_time() / 0.2)
-	if _hold_w <= 0.001:
+func _weapon_hold(_pitch: float) -> Dictionary:
+	## The hold (and attack) pose for the equipped weapon, from NpcWeaponPose in the camera's frame.
+	## Fists come up as a guard only while fighting (a few seconds after a punch); otherwise the
+	## arms are the walk's.
+	var dt := get_process_delta_time()
+	var id := WeaponManager.get_equipped_id()
+	if has_meta("freeze"):                     # a fixed attack moment, for screenshots (DevBridge)
+		_atk_t = float(get_meta("freeze"))
+	elif _atk_t >= 0.0:
+		_atk_t += dt
+		if _atk_id != id or _atk_t > float(NpcWeaponPose.LEN.get(_atk_id, 0.5)):
+			_atk_t = -1.0
+	var guard := id == "fists" and (_atk_t >= 0.0 or _fight_until > Time.get_ticks_msec())
+	if _atk_t >= 0.0 and id == "fists":
+		_fight_until = Time.get_ticks_msec() + 4000
+	var want := id != "" and (id != "fists" or guard) and not _player.is_seated()
+	_hold_w = move_toward(_hold_w, 1.0 if want else 0.0, dt / 0.18)
+	var w: Node3D = WeaponManager._current_weapon
+	if w and is_instance_valid(w) and w.get_parent() == self:
+		w.visible = id != "fists" and _hold_w > 0.5
+	if _hold_w <= 0.001 or id == "":
 		return {}
-	match WeaponManager.get_equipped_id():
-		"pistol":
-			# half-raised ahead of the chest, the muzzle following the pitch (the arm mostly
-			# extended, so the barrel -- along the forearm -- points where the eyes do)
-			var J: Dictionary = npc.built.joints
-			var sh: Vector3 = J.UpperArmR
-			var hand := sh + Vector3(-0.01, -0.03 + 0.30 * sin(pitch), -0.34 * cos(pitch))
-			return {"w": _hold_w, "grip": 0.85, "pole": Vector3(0.35, -0.85, 0.15), "handR": hand}
-		"bat":
-			# carried low at the side, a firm grip
-			var J2: Dictionary = npc.built.joints
-			var hip: Vector3 = J2.Hips
-			return {"w": _hold_w, "grip": 0.9, "pole": Vector3(0.8, -0.3, 0.2),
-				"handR": Vector3(hip.x + 0.24, hip.y - 0.12, hip.z - 0.05)}
-	return {}
+	var cam: Camera3D = _player.camera
+	# sway: the weapon trails a fast turn a little and springs back
+	var turn := (_last_basis.inverse() * cam.global_transform.basis).get_euler()
+	_last_basis = cam.global_transform.basis
+	_sway = _sway.lerp(Vector3(clampf(turn.y, -0.05, 0.05) * 0.25, clampf(-turn.x, -0.05, 0.05) * 0.25, 0), 0.25)
+	_sway = _sway.lerp(Vector3.ZERO, minf(1.0, dt * 8.0))
+	var aim_to_skel := npc.skeleton.global_transform.affine_inverse() * cam.global_transform
+	var p: Dictionary = NpcWeaponPose.pose(id, _atk_t if _atk_id == id else -1.0, _punch_side, aim_to_skel, _sway)
+	if w and is_instance_valid(w) and w.get_parent() == self:
+		w.global_transform = cam.global_transform * (p.weapon as Transform3D)
+	var r: Dictionary = p.ride
+	r.w = _hold_w
+	return r

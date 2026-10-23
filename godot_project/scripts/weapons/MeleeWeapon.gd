@@ -34,6 +34,8 @@ func _perform() -> void:
 			break
 
 func _swing_animation() -> void:
+	if held_by_body:
+		return
 	var tw := create_tween()
 	var start_rot := rotation
 	tw.tween_property(self, "rotation:x", start_rot.x - deg_to_rad(35), 0.06)

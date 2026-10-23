@@ -2,21 +2,33 @@
 
 Each entry gets its own screenshots in `docs/media/<date>/`.
 
-## Unreleased (2026-10-22): a new splash screen, logo and emblem
+## 0.8.4-beta.1 (2026-10-23): weapons held properly, a new splash screen and logo
 
-![The boot splash: a glamorous traveller in safari dress smokes on an airship deck inside Columbia, the land curving overhead](godot_project/ui/pda/splash.png)
+![The boot splash: a smiling traveller in safari dress sits on her steamer trunk in an airship basket among floating castle islands, with the new Deco logo at the bottom left](docs/media/2026-10-23/splash.jpg)
 
-- **Splash screen:** a 1940s travel poster. A fabulous traveller (a passenger, dressed for a cosmic safari) sits on her
-  steamer trunk on an airship deck, cigarette in hand, inside the drum: farmland and towns climb both walls and meet
-  upside-down overhead, a sky island hangs in the air, and the far end cap is a canyon rim of cliffs around a disc
-  of sky above the sea ring. The art is Grok's (briefs in `tools/brand/splash_brief*.md`); `tools/brand/make_splash.py`
-  lays the logo on. The same image is the boot splash and the in-game load screen, whose gold-on-navy progress bar
-  now runs under the logo.
-- **Logo:** "aboard SPACE STATION COLUMBIA" in streamline Deco lettering with swallowtail ribbons, under the ark as a
-  sunburst disc trailing speed lines toward a guiding star. It's an SVG Grok wrote (`tools/brand/columbia_logo.svg`,
-  brief `logo_brief.md`), with its text set in Limelight and Lobster (OFL), rendered to `godot_project/ui/brand/columbia_logo.png`.
-- **Emblem:** a 1960s enamel-badge roundel (the ark over a windpump, a water tower and a pine, under a guiding star,
-  in a wheat-and-rope ring) is the game's program icon (`godot_project/ui/brand/columbia_icon.png`).
+**Weapons** (research/player/04_weapon_holds.md, from Fallout 4, Dying Light and Skyrim video reference)
+- **Pistol:** held two-handed, low and right of centre with the slide side-on and the barrel on the crosshair;
+  the support hand wraps the grip. Each shot kicks the gun up and back and settles it. The pistol is now
+  real-size (it was a 35 cm box barrel).
+- **Bat:** both hands on the taped handle, the bat up past the right shoulder. The swing cocks back, whips flat
+  across the view from right to left, holds the follow-through and recovers. In third person it reads as a
+  real batter's swing.
+- **Fists:** a boxer's guard with both fists up while you fight; jab and cross alternate, the fist turning over
+  as it lands and the other fist tucking to the chin.
+- How: the weapon is placed by the pose and both hands reach it by IK with their facing set (new
+  `NpcWeaponPose`, shared with NPCs; `NpcAnimator.ride` gained hand facing and per-arm elbow directions).
+
+![Two-handed pistol, first person](docs/media/2026-10-23/fp_pistol_two_hand.jpg)
+![The bat swing in third person](docs/media/2026-10-23/bat_swing_3p_sheet.jpg)
+![The fists' guard](docs/media/2026-10-23/fp_fists_guard.jpg)
+
+**Splash screen and logo**
+- **Splash:** the user's new travel-poster image (a traveller on her trunk in an airship basket among floating
+  castle islands). It is both the boot splash and the in-game load screen.
+- **Logo:** redone by Grok as pure Art Deco travel glamour, 1930s safari luggage label meets 1950s Pan Am
+  Clipper: swept Clipper wings round a compass-star medallion, "aboard SPACE STATION" above and COLUMBIA on a
+  navy plaque with a gold keyline (`tools/brand/columbia_logo.svg`, brief `logo_brief2.md`).
+- **Emblem:** the 1960s enamel-badge roundel stays the program icon (`godot_project/ui/brand/columbia_icon.png`).
 
 ## 0.8.3-beta.1 (2026-10-16): a player body, modern first-person movement, weapons in hand
 

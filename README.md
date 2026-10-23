@@ -16,7 +16,7 @@ Its sample game, **Space Station Columbia**, is that world.
 
 ## Space Station Columbia
 
-![Space Station Columbia's splash screen: a traveller in safari dress aboard an airship inside the drum](godot_project/ui/pda/splash.png)
+![Space Station Columbia's splash screen: a traveller in safari dress in an airship basket among floating castle islands](godot_project/ui/pda/splash.png)
 
 An ark ship 500 years into a 1,500-year voyage: an O'Neill cylinder 20 km across and 22.4 km long, launched in 2252.
 The game year is 2752. Its floor holds a research-derived American landscape at full scale:
@@ -55,8 +55,10 @@ Five moored islands make a Bright Week of lights; seven at a small town shut the
   drop — and a climb out of the water into a boat while swimming.
 - **A real jump:** push-off extension, a lead-knee tuck in the air, a reach into the fall and a weighty landing that
   recovers into the run.
-- **Weapons in hand:** the equipped weapon rides in the hand in every view, the pistol follows your aim, the bat
-  carries at your side. New authored animations for punching, shooting, the bat swing and opening doors.
+- **Weapons held properly (0.8.4):** the pistol two-handed and side-on with a kick on every shot; the bat in both
+  hands up past the shoulder, swinging flat across the view; the fists in a boxer's guard throwing jab and cross.
+  Built from Fallout 4, Dying Light and Skyrim video reference; the weapon leads and both hands grip it by IK, in
+  every view and in the shadow.
 - **Every one of these animations drives all the NPC humans too** — one rig, one set, previewed and verified on NPC
   bodies in third person.
 - Verified by a new headless movement test: 26 assertions covering every mechanic, all passing, plus 55 animation
@@ -64,8 +66,8 @@ Five moored islands make a Bright Week of lights; seven at a small town shut the
 
 | | |
 |---|---|
-| ![Looking down at your own body](docs/media/2026-10-16/player_fp_lookdown_body.png) | ![Pistol in hand, first person](docs/media/2026-10-16/player_fp_pistol.png) |
-| Look down: your chest, legs and feet | The pistol rides in your hand and follows your aim |
+| ![Looking down at your own body](docs/media/2026-10-16/player_fp_lookdown_body.png) | ![Pistol in both hands, first person](docs/media/2026-10-23/fp_pistol_two_hand.jpg) |
+| Look down: your chest, legs and feet | The pistol in both hands, on the crosshair |
 | ![The player in third person](docs/media/2026-10-16/player_thirdperson_full_body.png) | ![The player's shadow has a head](docs/media/2026-10-16/player_shadow_with_head.png) |
 | Third person: the whole person | Your shadow keeps its head; only your own view hides it |
 | ![An NPC mid-jump](docs/media/2026-10-16/player_npc_jump_tuck.png) | ![An NPC swinging the bat](docs/media/2026-10-16/player_npc_bat_swing.png) |
@@ -200,7 +202,7 @@ source yet. A permissive license is planned once the project reaches a usable st
 
 ## Version
 
-**Current: `0.8.3-beta.1`** (beta). It is tracked in the `VERSION` file at the repo root and mirrored into
+**Current: `0.8.4-beta.1`** (beta). It is tracked in the `VERSION` file at the repo root and mirrored into
 `godot_project/project.godot`'s `config/version`. The change history is in [CHANGELOG.md](CHANGELOG.md).
 
 The scheme is `MAJOR.MINOR.PATCH-phase.N`, where the phase is one of `prealpha`, `alpha`, `beta` or `rc`. The phase is

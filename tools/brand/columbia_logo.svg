@@ -1,89 +1,79 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
-  <defs>
-    <linearGradient id="hull" x1="500" y1="148" x2="830" y2="116" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3E7F86"/>
-      <stop offset="1" stop-color="#162444"/>
-    </linearGradient>
-    <clipPath id="cap">
-      <circle cx="500" cy="148" r="90"/>
-    </clipPath>
-  </defs>
-
-  <g fill="#162444">
-    <polygon points="248,392 62,366 40,394 86,404 52,442 138,418 248,456"/>
-    <polygon points="952,392 1138,366 1160,394 1114,404 1148,442 1062,418 952,456"/>
-  </g>
-  <g fill="#DEA848">
-    <polygon points="168,384 78,370 96,396 168,406"/>
-    <polygon points="1032,384 1122,370 1104,396 1032,406"/>
-  </g>
-  <g fill="#D65240">
-    <polygon points="132,398 86,388 98,404 132,410"/>
-    <polygon points="1068,398 1114,388 1102,404 1068,410"/>
-  </g>
-  <g fill="#3E7F86">
-    <polygon points="48,124 300,114 300,122 48,134"/>
-    <polygon points="78,146 270,140 270,146 78,154"/>
-    <polygon points="108,164 250,160 250,165 108,170"/>
-  </g>
-  <g>
-    <polygon points="800,78 1148,66 1148,76 800,88" fill="#DEA848"/>
-    <polygon points="830,98 1120,90 1120,98 830,108" fill="#D65240"/>
-    <polygon points="860,116 1070,112 1070,118 860,124" fill="#B8893E"/>
-  </g>
-
-  <ellipse cx="786" cy="116" rx="50" ry="31" fill="#162444"/>
-  <ellipse cx="786" cy="116" rx="34" ry="20" fill="#3E7F86"/>
-  <ellipse cx="786" cy="116" rx="50" ry="31" fill="none" stroke="#B8893E" stroke-width="4"/>
-  <path d="M500,58 C630,38 730,74 786,85 A50,31 0 0 1 786,147 C720,176 610,206 500,238 Z" fill="url(#hull)"/>
-  <path d="M528,74 C630,62 720,82 770,96" fill="none" stroke="#FAF0DA" stroke-width="5" stroke-linecap="round"/>
-  <path d="M534,98 C640,88 730,100 774,112" fill="none" stroke="#DEA848" stroke-width="12" stroke-linecap="round"/>
-  <path d="M536,126 C645,122 735,118 778,122" fill="none" stroke="#D65240" stroke-width="7" stroke-linecap="round"/>
-  <path d="M532,156 C640,146 728,136 772,132" fill="none" stroke="#B8893E" stroke-width="10" stroke-linecap="round"/>
-  <path d="M522,190 C625,170 715,154 762,146" fill="none" stroke="#FAF0DA" stroke-width="4" stroke-linecap="round"/>
-
-  <g clip-path="url(#cap)">
-    <circle cx="500" cy="148" r="90" fill="#162444"/>
-    <g transform="translate(500,148)">
-      <polygon points="0,-108 12,0 -12,0" fill="#DEA848"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#FAF0DA" transform="rotate(22.5)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#D65240" transform="rotate(45)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#FAF0DA" transform="rotate(67.5)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#DEA848" transform="rotate(90)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#FAF0DA" transform="rotate(112.5)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#D65240" transform="rotate(135)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#FAF0DA" transform="rotate(157.5)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#DEA848" transform="rotate(180)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#FAF0DA" transform="rotate(202.5)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#D65240" transform="rotate(225)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#FAF0DA" transform="rotate(247.5)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#DEA848" transform="rotate(270)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#FAF0DA" transform="rotate(292.5)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#D65240" transform="rotate(315)"/>
-      <polygon points="0,-108 12,0 -12,0" fill="#FAF0DA" transform="rotate(337.5)"/>
-    </g>
-  </g>
-  <circle cx="500" cy="148" r="90" fill="none" stroke="#162444" stroke-width="8"/>
-  <circle cx="500" cy="148" r="78" fill="none" stroke="#B8893E" stroke-width="3"/>
-  <circle cx="500" cy="148" r="28" fill="#FAF0DA"/>
-  <circle cx="500" cy="148" r="16" fill="#3E7F86"/>
-  <circle cx="500" cy="148" r="7" fill="#DEA848"/>
-
-  <g transform="translate(868,54)">
-    <polygon points="0,-32 8,-10 32,-10 12,4 20,28 0,13 -20,28 -12,4 -32,-10 -8,-10" fill="#162444" transform="translate(5,5)"/>
-    <polygon points="0,-32 8,-10 32,-10 12,4 20,28 0,13 -20,28 -12,4 -32,-10 -8,-10" fill="#DEA848" stroke="#162444" stroke-width="3" stroke-linejoin="round"/>
-  </g>
-
-  <text x="606" y="292" text-anchor="middle" font-family="Lobster" font-size="32" fill="#162444">aboard</text>
-  <text x="600" y="286" text-anchor="middle" font-family="Lobster" font-size="32" fill="#FAF0DA" stroke="#162444" stroke-width="5" paint-order="stroke" stroke-linejoin="round">aboard</text>
-
-  <text x="607" y="338" text-anchor="middle" font-family="Limelight" font-size="38" letter-spacing="16" fill="#162444">SPACE STATION</text>
-  <text x="600" y="330" text-anchor="middle" font-family="Limelight" font-size="38" letter-spacing="16" fill="#FAF0DA" stroke="#162444" stroke-width="8" paint-order="stroke" stroke-linejoin="round">SPACE STATION</text>
-
-  <line x1="250" y1="350" x2="545" y2="350" stroke="#DEA848" stroke-width="3"/>
-  <line x1="655" y1="350" x2="950" y2="350" stroke="#DEA848" stroke-width="3"/>
-  <polygon points="600,340 610,350 600,360 590,350" fill="#DEA848"/>
-
-  <text x="608" y="478" text-anchor="middle" font-family="Limelight" font-size="118" letter-spacing="5" fill="#162444">COLUMBIA</text>
-  <text x="600" y="470" text-anchor="middle" font-family="Limelight" font-size="118" letter-spacing="5" fill="#FAF0DA" stroke="#162444" stroke-width="16" paint-order="stroke" stroke-linejoin="round">COLUMBIA</text>
+<defs>
+<g id="wing">
+<path fill="#162444" d="M72,-20 C168,-38 310,-62 448,-50 C462,-48 466,-34 450,-30 C308,-40 172,-18 76,-2 Z"/>
+<path fill="#DEA848" d="M68,-4 C186,-18 348,-28 492,-8 C506,-5 504,10 486,12 C332,-2 184,14 72,22 Z"/>
+<path fill="none" stroke="#FAF0DA" stroke-width="1.6" d="M108,2 C210,-8 340,-14 456,4"/>
+<path fill="#162444" d="M76,18 C196,8 328,4 446,16 L436,30 C318,20 196,26 80,34 Z"/>
+<path fill="#3E7F86" d="M96,32 C188,28 292,30 362,40 L352,50 C280,42 188,40 100,46 Z"/>
+<path fill="#D65240" d="M418,-48 L484,-70 L468,-34 Z"/>
+<path fill="#B8893E" d="M392,-40 L430,-54 L422,-32 Z"/>
+</g>
+<polygon id="ray" points="-13,-62 13,-62 6,-168 -6,-168"/>
+<polygon id="rayS" points="-10,-62 10,-62 5,-132 -5,-132"/>
+<polygon id="dia" points="0,-8 8,0 0,8 -8,0"/>
+<polygon id="star" points="0,-40 8.2,-14.6 26.9,-28.4 14.6,-8.2 40,0 14.6,8.2 26.9,28.4 8.2,14.6 0,40 -8.2,14.6 -26.9,28.4 -14.6,8.2 -40,0 -14.6,-8.2 -26.9,-28.4 -8.2,-14.6"/>
+</defs>
+<g transform="translate(600,318)">
+<use href="#ray" transform="rotate(-52)" fill="#162444"/>
+<use href="#rayS" transform="rotate(-40)" fill="#DEA848"/>
+<use href="#ray" transform="rotate(-28)" fill="#3E7F86"/>
+<use href="#rayS" transform="rotate(-16)" fill="#B8893E"/>
+<polygon points="-16,-62 16,-62 8,-196 -8,-196" fill="#DEA848"/>
+<use href="#rayS" transform="rotate(16)" fill="#B8893E"/>
+<use href="#ray" transform="rotate(28)" fill="#3E7F86"/>
+<use href="#rayS" transform="rotate(40)" fill="#DEA848"/>
+<use href="#ray" transform="rotate(52)" fill="#162444"/>
+</g>
+<use href="#wing" transform="translate(600,236) scale(-1,1)"/>
+<use href="#wing" transform="translate(600,236)"/>
+<g fill="none" stroke="#B8893E" stroke-width="1.5">
+<line x1="118" y1="292" x2="500" y2="292"/>
+<line x1="148" y1="300" x2="490" y2="300"/>
+<line x1="700" y1="292" x2="1082" y2="292"/>
+<line x1="710" y1="300" x2="1052" y2="300"/>
+</g>
+<g fill="none" stroke="#162444" stroke-width="1.25">
+<line x1="160" y1="308" x2="470" y2="308"/>
+<line x1="730" y1="308" x2="1040" y2="308"/>
+</g>
+<path fill="#D65240" d="M132,286 L168,274 L156,300 Z"/>
+<path fill="#D65240" d="M1068,286 L1032,274 L1044,300 Z"/>
+<g fill="#DEA848">
+<circle cx="600" cy="236" r="66"/>
+</g>
+<circle cx="600" cy="236" r="58" fill="#162444"/>
+<circle cx="600" cy="236" r="52" fill="none" stroke="#B8893E" stroke-width="2"/>
+<use href="#star" transform="translate(600,236)" fill="#DEA848"/>
+<circle cx="600" cy="236" r="11" fill="#D65240"/>
+<circle cx="600" cy="236" r="4.5" fill="#FAF0DA"/>
+<g stroke="#DEA848" stroke-width="2">
+<line x1="250" y1="28" x2="560" y2="28"/>
+<line x1="640" y1="28" x2="950" y2="28"/>
+<line x1="210" y1="348" x2="520" y2="348"/>
+<line x1="680" y1="348" x2="990" y2="348"/>
+</g>
+<g fill="#DEA848">
+<use href="#dia" transform="translate(236,28)"/>
+<use href="#dia" transform="translate(964,28)"/>
+<use href="#dia" transform="translate(600,28) scale(0.7)"/>
+<use href="#dia" transform="translate(196,348)"/>
+<use href="#dia" transform="translate(1004,348)"/>
+<use href="#dia" transform="translate(600,348)"/>
+</g>
+<rect x="154" y="362" width="892" height="122" fill="none" stroke="#B8893E" stroke-width="1.5"/>
+<rect x="164" y="372" width="872" height="102" fill="#162444" stroke="#DEA848" stroke-width="3"/>
+<rect x="178" y="386" width="844" height="74" fill="none" stroke="#3E7F86" stroke-width="1.25"/>
+<g fill="#DEA848">
+<rect x="164" y="372" width="10" height="10"/>
+<rect x="1026" y="372" width="10" height="10"/>
+<rect x="164" y="464" width="10" height="10"/>
+<rect x="1026" y="464" width="10" height="10"/>
+</g>
+<text x="603" y="78" font-family="Lobster" font-size="38" text-anchor="middle" fill="#162444">aboard</text>
+<text x="600" y="75" font-family="Lobster" font-size="38" text-anchor="middle" fill="#D65240" stroke="#162444" stroke-width="4" paint-order="stroke" stroke-linejoin="round">aboard</text>
+<text x="603" y="126" font-family="Limelight" font-size="30" letter-spacing="15" text-anchor="middle" fill="#162444">SPACE STATION</text>
+<text x="600" y="123" font-family="Limelight" font-size="30" letter-spacing="15" text-anchor="middle" fill="#FAF0DA" stroke="#162444" stroke-width="6" paint-order="stroke" stroke-linejoin="round">SPACE STATION</text>
+<text x="603" y="449" font-family="Limelight" font-size="84" letter-spacing="11" text-anchor="middle" fill="#162444">COLUMBIA</text>
+<text x="600" y="446" font-family="Limelight" font-size="84" letter-spacing="11" text-anchor="middle" fill="#FAF0DA" stroke="#DEA848" stroke-width="2" paint-order="stroke" stroke-linejoin="round">COLUMBIA</text>
 </svg>

@@ -693,11 +693,18 @@ func pose(ph: float, walk: float, time: float, dt := 0.0) -> void:
 			q_lo = q_lo.slerp(ik[1], cw)
 			q_ha = q_ha.slerp(Quaternion.from_euler(_clip_euler("wrist" + side) / maxf(cw, 1e-3)), cw)
 		if rw > 0.0 and ride.has("hand" + side):
-			var pole: Vector3 = ride.get("pole", Vector3(0.6, -0.4, 0.5))
+			var pole: Vector3 = ride.get("pole" + side, ride.get("pole", Vector3(0.6, -0.4, 0.5)))
 			var ikr := _arm_ik(side, ride["hand" + side], t_sh, Vector3(pole.x * k, pole.y, pole.z))
 			q_up = q_up.slerp(ikr[0], rw)
 			q_lo = q_lo.slerp(ikr[1], rw)
-			q_ha = q_ha.slerp(Quaternion.IDENTITY, rw)
+			# the hand's own facing (a weapon grip): [fingers, palm] directions in skeleton space,
+			# solved against the forearm the IK just gave
+			var hq_aim := Quaternion.IDENTITY
+			if ride.has("aim" + side):
+				var fa: Array = ride["aim" + side]
+				var g_lo := t_sh.basis * Basis(ikr[0]) * Basis(ikr[1])
+				hq_aim = (g_lo.inverse() * hand_basis(side, fa[0], fa[1])).get_rotation_quaternion()
+			q_ha = q_ha.slerp(hq_aim, rw)
 		_set_rot("UpperArm" + side, q_up)
 		_set_rot("LowerArm" + side, q_lo)
 		_set_rot("Hand" + side, q_ha)
@@ -784,6 +791,21 @@ func _twist(side: String, q_hand: Quaternion) -> void:
 		tw = Quaternion.IDENTITY
 	tw = tw.normalized()
 	_set_rot("LowerArmTwist" + side, Quaternion.IDENTITY.slerp(tw, 0.5))
+
+
+func hand_basis(side: String, fingers: Vector3, palm: Vector3) -> Basis:
+	## The hand bone's skeleton-space basis that points the fingers (wrist -> knuckles) along
+	## `fingers` with the palm facing `palm`.  At rest the fingers run along the forearm and the
+	## palm faces the body's midline (the way the fingers curl).
+	var r2: Vector3 = ((_J["Hand" + side] as Vector3) - (_J["LowerArm" + side] as Vector3)).normalized()
+	var rest_palm := Vector3(1.0 if side == "L" else -1.0, 0, 0)
+	return _hand_frame(fingers, palm) * _hand_frame(r2, rest_palm).inverse()
+
+
+static func _hand_frame(f: Vector3, p: Vector3) -> Basis:
+	var x := f.normalized()
+	var y := (p - x * p.dot(x)).normalized()
+	return Basis(x, y, x.cross(y))
 
 
 func _arm_ik(side: String, target: Vector3, t_chest: Transform3D, pole: Vector3) -> Array:

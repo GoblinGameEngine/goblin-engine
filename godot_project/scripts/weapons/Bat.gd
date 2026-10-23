@@ -6,6 +6,8 @@ extends "res://scripts/weapons/MeleeWeapon.gd"
 # vertical chop -- hit detection/damage stays exactly as MeleeWeapon does it.
 
 func _swing_animation() -> void:
+	if held_by_body:
+		return
 	var base_rot := rotation
 	var base_pos := position
 	var tw := create_tween()

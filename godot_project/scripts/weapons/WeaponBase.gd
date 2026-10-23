@@ -11,6 +11,9 @@ var camera: Camera3D = null
 var muzzle_ray: RayCast3D = null
 
 var _cooldown_left := 0.0
+## True once the player's body holds this weapon (PlayerBody): the body animates it then, so the
+## view-model tweens below stand down.
+var held_by_body := false
 
 func setup(weapon_data: Dictionary, weapon_user: Node, weapon_camera: Camera3D, weapon_muzzle_ray: RayCast3D) -> void:
 	data = weapon_data
@@ -37,6 +40,8 @@ func _perform() -> void:
 ## Small punchy feedback shared by melee and ranged weapons: nudge the
 ## view-model back then spring it home.
 func recoil(distance: float = 0.06, out_time: float = 0.03, back_time: float = 0.09) -> void:
+	if held_by_body:
+		return
 	var tw := create_tween()
 	var start_pos := position
 	tw.tween_property(self, "position", start_pos + Vector3(0, 0, distance), out_time)

@@ -1,8 +1,9 @@
 """Compose the boot splash: Grok's travel-poster art + Grok's SVG logo (rendered with our fonts).
 
 usage: python tools/brand/make_splash.py ART.jpg OUT.png
-  art in use: reference/grok/splash/r4_img3.jpg (gitignored; briefs in tools/brand/splash_brief*.md)
-  logo: tools/brand/columbia_logo.svg (Grok, brief tools/brand/logo_brief.md); also rendered to
+  art in use: reference/grok/splash/user_photo_2026-10-23.jpg (the user's photo, 2026-10-23; gitignored --
+       the original is research/new splash screen photo.jpg)
+  logo: tools/brand/columbia_logo.svg (Grok, brief tools/brand/logo_brief2.md: 1930s safari / 1950s Pan Am Deco); also rendered to
         godot_project/ui/brand/columbia_logo.png
   OUT = godot_project/ui/pda/splash.png
 The logo's <text> uses Limelight and Lobster (OFL, reference/fonts); rsvg-convert finds them through a
