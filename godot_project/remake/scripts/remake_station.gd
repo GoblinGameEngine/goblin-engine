@@ -279,7 +279,7 @@ var _splash_bar: ProgressBar
 func _show_splash() -> void:
 	StationGeo.loading = true
 	get_viewport().disable_3d = true            # nothing to see behind the splash: let the GPU rest
-	## A placeholder splash (ui/pda/splash.png -- also the engine's boot splash) held over the start of
+	## The splash (ui/pda/splash.png, made by tools/brand/make_splash.py -- also the engine's boot splash) held over the start of
 	## the load, with a progress bar.
 	_splash = CanvasLayer.new()
 	_splash.layer = 100
@@ -302,9 +302,9 @@ func _show_splash() -> void:
 	_splash_bar.anchor_bottom = 0.9
 	_splash_bar.offset_bottom = 6
 	var fill := StyleBoxFlat.new()
-	fill.bg_color = Color(0.6, 0.72, 0.9)
+	fill.bg_color = Color(0.87, 0.66, 0.28)       # the poster's gold
 	var back := StyleBoxFlat.new()
-	back.bg_color = Color(0.12, 0.14, 0.2)
+	back.bg_color = Color(0.09, 0.14, 0.27)       # and navy
 	_splash_bar.add_theme_stylebox_override("fill", fill)
 	_splash_bar.add_theme_stylebox_override("background", back)
 	_splash.add_child(_splash_bar)

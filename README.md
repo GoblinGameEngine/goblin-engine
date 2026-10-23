@@ -16,6 +16,8 @@ Its sample game, **Space Station Columbia**, is that world.
 
 ## Space Station Columbia
 
+![Space Station Columbia's splash screen: a 1940s hostess welcomes you aboard](godot_project/ui/pda/splash.png)
+
 An ark ship 500 years into a 1,500-year voyage: an O'Neill cylinder 20 km across and 22.4 km long, launched in 2252.
 The game year is 2752. Its floor holds a research-derived American landscape at full scale:
 - 22 towns and cities; the cities are self-contained city-states, each with its own customs, diplomacy and sphere

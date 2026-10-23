@@ -2,6 +2,18 @@
 
 Each entry gets its own screenshots in `docs/media/<date>/`.
 
+## Unreleased (2026-10-22): a new splash screen and a Columbia emblem
+
+![The new boot splash: a 1940s hostess welcomes you aboard, the cylinder's farmland curving up behind her](godot_project/ui/pda/splash.png)
+
+- **Splash screen:** a 1940s travel-poster pin-up. A Columbia hostess, cigarette holder in hand, welcomes you aboard
+  the pride of Middle America while the ship's farmland, river towns, airships and a sky island curve up behind her.
+  The art is Grok's (briefs in `tools/brand/splash_brief*.md`); the type is ours (Limelight and Lobster, both OFL),
+  laid on by `tools/brand/make_splash.py`. The same image is the engine's boot splash and the in-game load screen,
+  whose progress bar is now the poster's gold on navy.
+- **Emblem:** a 1960s enamel-badge roundel (the ark with a sunburst end-cap over a windpump, a water tower and a pine,
+  under a guiding star, in a wheat-and-rope ring) is the game's program icon (`godot_project/ui/brand/`).
+
 ## 0.8.3-beta.1 (2026-10-16): a player body, modern first-person movement, weapons in hand
 
 **The body**
