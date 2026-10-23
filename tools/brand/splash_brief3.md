@@ -1,0 +1,27 @@
+Make exactly FIVE images with image_gen, each a separate fresh generation, all wide landscape 3:2. Do NOT put any text, letters, numbers, logos or words anywhere in any image (we add the title ourselves). Reply with one short line per image.
+
+## The setting: get the O'Neill cylinder RIGHT (this is the most important part)
+Columbia is a colossal O'Neill cylinder: a hollow tube 20 km in diameter and over 20 km long, spinning slowly so that "down" is OUTWARD against the inner wall. People live on the INSIDE surface of the tube. From anywhere inside:
+- There is NO horizon. The ground does not drop away; it CURVES UPWARD on both the left and the right, rising like the inside of a giant drainpipe, climbing up the walls and continuing OVERHEAD, so the land directly above you is upside-down, 20 km away, softened blue by atmospheric haze, with clouds floating in between.
+- Looking along the length of the tube, the landscape is a long curved trough: fields, roads and rivers run as long stripes along the walls toward a vanishing point, wrapping all the way round.
+- Down the exact centre line (the spin axis), high above, runs a single long glowing light-tube: the ship's sun, a bright golden-white line from one end of the tube to the other.
+- Each end of the tube is closed by a gigantic circular end-cap wall many kilometres high, its lower rim rising into rocky mountains and canyons that climb the disc, its centre a dark dish of sky.
+- The land on the inner surface: golden Midwestern farmland in patchwork strips, small towns with brick main streets, white clapboard houses, church steeples and water towers, rivers and lakes, pine-covered rocky hills; inland seas that also curve up the walls. Clouds drift in mid-air in the middle of the tube.
+- In the open air: pastel striped cigar-shaped airships (aerostats with little gondolas), and small floating "sky island" towns hanging in the air.
+Think of the famous 1970s NASA O'Neill cylinder paintings (the interior views by Rick Guidice and Don Davis), but painted as a 1940s poster.
+
+## The story
+Columbia launched from Earth in 2252, the pride of Middle America, on a 1,500-year voyage to settle a new star: Manifest Destiny among the stars. It is the last great adventure.
+
+## The woman (in all five)
+A fabulous, glamorous traveller: a PASSENGER, not crew, no uniform. A smiling, confident, elegant 1940s pin-up beauty (Gil Elvgren / 1940s airline-poster painting style), victory-roll or glossy waved hair, red lipstick, a warm, knowing smile. She is dressed for a COSMIC SAFARI in her cylindrical home: a tailored, belted 1940s khaki or cream safari jacket with patch pockets and rolled sleeves, high-waisted wide-leg trousers or a fitted safari skirt, a silk scarf knotted at the throat, a wide-brimmed safari hat or a pith-style sun helmet with a sheer veil band, leather gloves, brass binoculars on a strap, perhaps polished boots. Hints of the future in the details (a streamlined brass wrist gadget, a sleek chrome compass). Stylish, sexy in a classic pin-up way, fully clothed and tasteful. She holds an ordinary lit CIGARETTE directly between two fingers, NO cigarette holder, with a thin curl of smoke.
+
+## The look (all five)
+Highly stylised retrofuturist 1940s travel poster: bold graphic shapes, gouache and airbrush texture, streamlined Art Deco forms, warm palette of cream, ochre gold, khaki, coral red, deep navy, teal and brass. Leave a calm area for a title as noted.
+
+## The five compositions
+1. She stands three-quarter length on a high grassy bluff on the right, one hand on her hat, cigarette in the other hand, looking back at the viewer over her shoulder. Beyond her the whole cylinder interior opens up: the land curving up both walls and over the top, the axial sun-line, the distant end-cap mountains, airships. Calm sky area upper-left for the title.
+2. She lounges on stacked vintage leather steamer trunks and hat boxes on the open-air deck of a streamlined airship gondola, legs crossed, cigarette raised, smiling at the viewer; the gondola rail and the airship's striped envelope frame the top; far below and curving up all around: patchwork farmland, a river town, the land arching overhead. Title area: upper-left.
+3. Low-angle heroic poster shot: she stands on the running board of a streamlined open-top electric safari car (rounded chrome fenders, whitewall tyres, spare wheel, no exhaust pipes) on a dirt road through golden wheat, binoculars raised in one hand, cigarette in the other, laughing. The road and fields run ahead and climb the wall into the sky; the axial sun-line overhead; a small sky island above. Title area: top centre.
+4. Waist-up portrait, large on the left, smiling straight at the viewer, cigarette near her lips with smoke curling up. Behind her on the right, looking down the length of the tube: a perfect, dramatic vanishing-point view of the cylinder interior, land wrapping all the way round in a tunnel of farmland, towns and lakes, clouds in the middle, the glowing sun-line down the centre, the great end-cap disc with its canyon mountains at the far end. Title area: top-right.
+5. Vintage "See Columbia" travel-poster composition: she sits on the edge of a stone overlook wall at a lakeside resort town, a little dog in a safari collar beside her, cigarette in hand, waving to an airship passing close by. The lake and the far shore curve up the wall and become the sky; towns hang upside-down overhead in blue haze; the axial sun-line glows. Title area: bottom-left band of calm water.

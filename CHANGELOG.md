@@ -2,17 +2,21 @@
 
 Each entry gets its own screenshots in `docs/media/<date>/`.
 
-## Unreleased (2026-10-22): a new splash screen and a Columbia emblem
+## Unreleased (2026-10-22): a new splash screen, logo and emblem
 
-![The new boot splash: a 1940s hostess welcomes you aboard, the cylinder's farmland curving up behind her](godot_project/ui/pda/splash.png)
+![The boot splash: a glamorous traveller in safari dress smokes on an airship deck inside Columbia, the land curving overhead](godot_project/ui/pda/splash.png)
 
-- **Splash screen:** a 1940s travel-poster pin-up. A Columbia hostess, cigarette holder in hand, welcomes you aboard
-  the pride of Middle America while the ship's farmland, river towns, airships and a sky island curve up behind her.
-  The art is Grok's (briefs in `tools/brand/splash_brief*.md`); the type is ours (Limelight and Lobster, both OFL),
-  laid on by `tools/brand/make_splash.py`. The same image is the engine's boot splash and the in-game load screen,
-  whose progress bar is now the poster's gold on navy.
-- **Emblem:** a 1960s enamel-badge roundel (the ark with a sunburst end-cap over a windpump, a water tower and a pine,
-  under a guiding star, in a wheat-and-rope ring) is the game's program icon (`godot_project/ui/brand/`).
+- **Splash screen:** a 1940s travel poster. A fabulous traveller (a passenger, dressed for a cosmic safari) sits on her
+  steamer trunk on an airship deck, cigarette in hand, inside the drum: farmland and towns climb both walls and meet
+  upside-down overhead, a sky island hangs in the air, and the far end cap is a canyon rim of cliffs around a disc
+  of sky above the sea ring. The art is Grok's (briefs in `tools/brand/splash_brief*.md`); `tools/brand/make_splash.py`
+  lays the logo on. The same image is the boot splash and the in-game load screen, whose gold-on-navy progress bar
+  now runs under the logo.
+- **Logo:** "aboard SPACE STATION COLUMBIA" in streamline Deco lettering with swallowtail ribbons, under the ark as a
+  sunburst disc trailing speed lines toward a guiding star. It's an SVG Grok wrote (`tools/brand/columbia_logo.svg`,
+  brief `logo_brief.md`), with its text set in Limelight and Lobster (OFL), rendered to `godot_project/ui/brand/columbia_logo.png`.
+- **Emblem:** a 1960s enamel-badge roundel (the ark over a windpump, a water tower and a pine, under a guiding star,
+  in a wheat-and-rope ring) is the game's program icon (`godot_project/ui/brand/columbia_icon.png`).
 
 ## 0.8.3-beta.1 (2026-10-16): a player body, modern first-person movement, weapons in hand
 

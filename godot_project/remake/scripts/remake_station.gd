@@ -296,10 +296,10 @@ func _show_splash() -> void:
 	_splash_bar = ProgressBar.new()
 	_splash_bar.max_value = 1.0
 	_splash_bar.show_percentage = false
-	_splash_bar.anchor_left = 0.3
-	_splash_bar.anchor_right = 0.7
-	_splash_bar.anchor_top = 0.9
-	_splash_bar.anchor_bottom = 0.9
+	_splash_bar.anchor_left = 0.03
+	_splash_bar.anchor_right = 0.47      # under the logo (bottom-left of the poster)
+	_splash_bar.anchor_top = 0.982
+	_splash_bar.anchor_bottom = 0.982
 	_splash_bar.offset_bottom = 6
 	var fill := StyleBoxFlat.new()
 	fill.bg_color = Color(0.87, 0.66, 0.28)       # the poster's gold
